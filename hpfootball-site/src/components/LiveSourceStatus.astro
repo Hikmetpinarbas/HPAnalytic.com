@@ -1,0 +1,7 @@
+---
+const sources=[
+ {name:'StatsBomb Open Data',status:'CONNECTED',detail:'/api/statsbomb/competitions.json'},
+ {name:'YouTube Data API',status:'SECRET_REQUIRED',detail:'YOUTUBE_API_KEY'}
+];
+---
+<div class="source-status">{sources.map(s=><div><b>{s.name}</b><span class:list={{ok:s.status==='CONNECTED'}}>{s.status}</span><small>{s.detail}</small></div>)}</div>
