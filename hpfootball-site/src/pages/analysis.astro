@@ -1,0 +1,5 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'; import {getCollection} from 'astro:content';
+const items=(await getCollection('articles')).filter(x=>x.data.section==='analysis');
+---
+<BaseLayout title="Analysis — HP Football"><main class="listing"><p class="kicker">ANALYSIS</p><h1>Metric değil, mekanizma.</h1>{items.map(a=><a href={'/articles/'+a.id}><small>{a.data.evidenceClass}</small><h2>{a.data.title}</h2><p>{a.data.description}</p></a>)}</main></BaseLayout>
