@@ -1,0 +1,14 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import TacticalCanvas from '../components/TacticalCanvas.astro';
+import EvidenceBadge from '../components/EvidenceBadge.astro';
+import {getCollection} from 'astro:content';
+const articles=(await getCollection('articles')).sort((a,b)=>+b.data.date-+a.data.date);
+---
+<BaseLayout title="HP Football — Hikmet Pınarbaş">
+<main>
+<section class="hero"><div><p class="kicker">FOOTBALL INTELLIGENCE BY HİKMET PINARBAŞ</p><h1>STRUCTURE.<br/><em>RELATION.</em><br/>DECISION.</h1><p class="lead">Futbolu skorun öncesinde kurulan ilişkiler, mekanizmalar, zaman ve bağlam üzerinden okuyan bağımsız analiz platformu.</p></div><TacticalCanvas/></section>
+<div class="principles"><span>FOOTBALL FIRST</span><span>EVIDENCE BEFORE CONFIDENCE</span><span>MECHANISM BEFORE METRIC</span><span>CONTEXT BEFORE VERDICT</span></div>
+<section class="section"><p class="kicker">CURRENT INTELLIGENCE</p><h2>Postmatch first.</h2><p class="intro">Ciddi analiz doğrudan metne dönüşmez. HPA operasyonel yüzeyi kurar; HPFA claim sınırını denetler; HIO mekanizma katmanını zorlar; YELL güvenli bulguyu insan diline taşır.</p><div class="pipeline">{['HPA','HPFA','HIO','YELL'].map((x,i)=><article><b>{x}</b><span>{['Operational evidence','Evidence authority','Mechanism lens','Safe finding'][i]}</span></article>)}</div></section>
+<section class="section"><p class="kicker">LATEST</p><h2>Living football archive.</h2><div class="article-grid">{articles.slice(0,6).map(a=><a class="article" href={'/articles/'+a.id}><EvidenceBadge evidenceClass={a.data.evidenceClass} claimCeiling={a.data.claimCeiling}/><small>{a.data.section.toUpperCase()} · {a.data.date.toLocaleDateString('tr-TR')}</small><h3>{a.data.title}</h3><p>{a.data.description}</p></a>)}</div></section>
+</main></BaseLayout>
