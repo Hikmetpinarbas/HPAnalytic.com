@@ -1,0 +1,40 @@
+name: HP Football Linux Acceptance
+
+on:
+  pull_request:
+    paths:
+      - 'hpfootball-site/**'
+      - '.github/workflows/hp-football-linux-acceptance.yml'
+  workflow_dispatch:
+
+concurrency:
+  group: hp-football-linux-acceptance-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  site-acceptance:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    defaults:
+      run:
+        working-directory: hpfootball-site
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Install dependencies
+        run: npm install --no-audit --no-fund
+
+      - name: Unit tests
+        run: npm test
+
+      - name: Astro diagnostics
+        run: npm run check
+
+      - name: Production build
+        run: npm run build
