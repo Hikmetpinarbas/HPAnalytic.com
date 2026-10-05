@@ -2,7 +2,6 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { readFile, stat } from 'node:fs/promises';
 
-const root = new URL('../', import.meta.url);
 const layoutUrl = new URL('../src/layouts/BaseLayout.astro', import.meta.url);
 const manifestUrl = new URL('../public/manifest.webmanifest', import.meta.url);
 

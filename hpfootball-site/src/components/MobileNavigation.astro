@@ -1,5 +1,14 @@
 ---
-const { navigation = [] } = Astro.props;
+interface NavigationItem {
+  href: string;
+  label: string;
+}
+
+interface Props {
+  navigation?: NavigationItem[];
+}
+
+const { navigation = [] } = Astro.props as Props;
 ---
 
 <div class="mobile-navigation" data-mobile-nav>
@@ -30,7 +39,7 @@ const { navigation = [] } = Astro.props;
 
     if (!(trigger instanceof HTMLButtonElement) || !(panel instanceof HTMLElement)) continue;
 
-    const setOpen = (open) => {
+    const setOpen = (open: boolean) => {
       trigger.setAttribute('aria-expanded', String(open));
       trigger.setAttribute('aria-label', open ? 'Menüyü kapat' : 'Menüyü aç');
       panel.hidden = !open;
