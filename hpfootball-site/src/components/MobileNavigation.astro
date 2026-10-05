@@ -1,0 +1,58 @@
+---
+const { navigation = [] } = Astro.props;
+---
+
+<div class="mobile-navigation" data-mobile-nav>
+  <button
+    class="mobile-nav-trigger"
+    type="button"
+    aria-expanded="false"
+    aria-controls="mobile-nav-panel"
+    aria-label="Menüyü aç"
+  >
+    <span>MENU</span>
+    <span class="mobile-nav-trigger-mark" aria-hidden="true"></span>
+  </button>
+
+  <nav id="mobile-nav-panel" class="mobile-nav-panel" aria-label="Mobile primary" hidden>
+    {navigation.map((item) => <a href={item.href}>{item.label}</a>)}
+  </nav>
+</div>
+
+<script>
+  import { nextMobileMenuState } from '../lib/mobile-nav-state.mjs';
+
+  const roots = document.querySelectorAll('[data-mobile-nav]');
+
+  for (const root of roots) {
+    const trigger = root.querySelector('.mobile-nav-trigger');
+    const panel = root.querySelector('.mobile-nav-panel');
+
+    if (!(trigger instanceof HTMLButtonElement) || !(panel instanceof HTMLElement)) continue;
+
+    const setOpen = (open) => {
+      trigger.setAttribute('aria-expanded', String(open));
+      trigger.setAttribute('aria-label', open ? 'Menüyü kapat' : 'Menüyü aç');
+      panel.hidden = !open;
+    };
+
+    trigger.addEventListener('click', () => {
+      const isOpen = trigger.getAttribute('aria-expanded') === 'true';
+      setOpen(nextMobileMenuState(isOpen, 'trigger'));
+    });
+
+    panel.addEventListener('click', (event) => {
+      if (event.target instanceof Element && event.target.closest('a')) {
+        setOpen(nextMobileMenuState(true, 'navigate'));
+      }
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key !== 'Escape') return;
+      const isOpen = trigger.getAttribute('aria-expanded') === 'true';
+      if (!isOpen) return;
+      setOpen(nextMobileMenuState(true, 'escape'));
+      trigger.focus();
+    });
+  }
+</script>

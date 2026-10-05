@@ -1,7 +1,48 @@
 ---
 import '../styles/global.css';
+import { getCollection } from 'astro:content';
+import { buildVisibleNavigation } from '../lib/site-surfaces.mjs';
+import MobileNavigation from '../components/MobileNavigation.astro';
+
 const {title='HP Football',description='Football Intelligence by Hikmet Pınarbaş'}=Astro.props;
+const articles=await getCollection('articles');
+const research=await getCollection('research');
+const visuals=await getCollection('visuals');
+
+const articleSections: Record<string, number>={};
+for (const article of articles) {
+  const section=article.data.section;
+  articleSections[section]=(articleSections[section]||0)+1;
+}
+
+const navigation=buildVisibleNavigation({
+  articleSections,
+  researchCount:research.length,
+  visualCount:visuals.length,
+});
 ---
-<!doctype html><html lang="tr"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
-<title>{title}</title><meta name="description" content={description}/><meta name="theme-color" content="#050505"/>
-</head><body><div class="grain"></div><header class="nav"><a href="/" class="brand"><span class="hp">HP</span><span><b>HİKMET PINARBAŞ</b><small>FOOTBALL INTELLIGENCE</small></span></a><nav><a href="/analysis">ANALYSIS</a><a href="/scouting">SCOUTING</a><a href="/visual-lab">VISUAL LAB</a><a href="/research">RESEARCH</a><a href="/culture">CULTURE</a><a href="/about">HIKMET</a></nav></header><slot/><footer><b>HP FOOTBALL</b><span>Football Intelligence by Hikmet Pınarbaş</span></footer></body></html>
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>{title}</title>
+<meta name="description" content={description}/>
+<meta name="theme-color" content="#050505"/>
+</head>
+<body>
+<div class="grain"></div>
+<header class="nav">
+  <a href="/" class="brand">
+    <span class="hp">HP</span>
+    <span><b>HİKMET PINARBAŞ</b><small>FOOTBALL INTELLIGENCE</small></span>
+  </a>
+  <nav class="desktop-nav" aria-label="Primary">
+    {navigation.map(item=><a href={item.href}>{item.label}</a>)}
+  </nav>
+  <MobileNavigation navigation={navigation} />
+</header>
+<slot/>
+<footer><b>HP FOOTBALL</b><span>Football Intelligence by Hikmet Pınarbaş</span></footer>
+</body>
+</html>
