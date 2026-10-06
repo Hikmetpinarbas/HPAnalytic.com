@@ -82,6 +82,13 @@ const canonical = new URL(pathname, Astro.site ?? Astro.url).href;
 <link rel="manifest" href="/manifest.webmanifest"/>
 <link rel="apple-touch-icon" href="/icons/hp-192.png"/>
 <slot name="head"/>
+<script is:inline>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', () => {
+    navigator.serviceWorker.register('/sw.js', { scope: '/' }).catch(() => {});
+  });
+}
+</script>
 </head>
 <body>
 <a class="skip-link" href="#main-content">İçeriğe geç</a>
