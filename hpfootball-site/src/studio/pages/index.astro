@@ -1,0 +1,140 @@
+---
+import StudioLayout from '../StudioLayout.astro';
+import { createStore } from '../lib/store.mjs';
+import { COLUMNS, FAILURE_REASONS } from '../lib/model.mjs';
+import { engineStatus } from '../lib/engine.mjs';
+import { studioRequestProblem } from '../lib/guard.mjs';
+import { handleAction } from '../lib/actions.mjs';
+import { foundryCandidates, readFoundryQueue } from '../lib/intake.mjs';
+
+export const prerender = false;
+
+if (studioRequestProblem({ url: Astro.url, method: Astro.request.method, headers: Astro.request.headers })) {
+  return new Response('Not found', { status: 404 });
+}
+
+const store = createStore();
+if (Astro.request.method === 'POST') {
+  const { redirect, flash } = await handleAction(store, await Astro.request.formData());
+  return Astro.redirect(`${redirect}?f=${encodeURIComponent(flash)}`, 303);
+}
+
+const [topics, engine, profile, saved, queue] = await Promise.all([
+  store.listTopics(), engineStatus(), store.languageProfile(), store.suggestions(), readFoundryQueue(),
+]);
+const imported = new Set(topics.map((t: any) => t.intake.foundry_id).filter(Boolean));
+const candidates = foundryCandidates(queue.items, imported);
+const sourceLeads = queue.items.filter((i: any) => i.type === 'source_lead');
+const byColumn = new Map(COLUMNS.map((c) => [c.key, topics.filter((t: any) => c.states.includes(t.state))]));
+const parked = topics.filter((t: any) => t.state === 'HOLD' || t.state === 'REJECTED');
+const flash = Astro.url.searchParams.get('f');
+const suggestions = saved?.suggestions ?? [];
+const score = (n: number | null) => (n === null || n === undefined ? '–' : n);
+---
+<StudioLayout title="Editorial Studio — HPAnalytic" engine={engine} profileActive={Boolean(profile)} flash={flash}>
+<section class="desk" aria-labelledby="desk-title">
+  <div class="desk-copy">
+    <p class="kicker">MASA</p>
+    <h1 id="desk-title" class="desk-title">Bir fikir, bir URL ya da bir dosya bırak.</h1>
+    <p class="desk-note">Sistem sınıflandırır, araştırır, kaynaklandırır ve taslağı hazırlar. Futbol hükmü ve yayın kararı sende kalır.</p>
+  </div>
+  <form class="desk-form" method="post" enctype="multipart/form-data">
+    <input type="hidden" name="action" value="intake"/>
+    <label class="visually-hidden" for="intake-text">Fikir veya URL</label>
+    <textarea id="intake-text" name="text" rows="3" placeholder="Pas ağı merkeziliği gerçekten oyuncu önemini ölçer mi?  —  ya da: https://football-observatory.com/…"></textarea>
+    <div class="desk-actions">
+      <label class="file-pick"><span>DOSYA</span><input type="file" name="file" accept=".pdf,.txt,.md,.markdown,.csv,.json,.docx"/></label>
+      <button class="button button-primary" type="submit">MASAYA BIRAK</button>
+    </div>
+  </form>
+  <form class="desk-discover" method="post">
+    <input type="hidden" name="action" value="discover"/>
+    <button class="button button-secondary" type="submit" disabled={!engine.available} aria-describedby="discover-note">KONU BUL</button>
+    <p id="discover-note">Foundry korpusu + güncel kurumsal raporlar + akademik bulgulardan en fazla 5 konu.{!engine.available && ' Motor kapalıyken çalışmaz; aşağıdaki Foundry listesinden elle seçebilirsin.'}</p>
+  </form>
+</section>
+
+{suggestions.length > 0 && (
+  <section class="suggestions" aria-labelledby="sugg-title">
+    <h2 id="sugg-title" class="rail-title">KONU BUL · {suggestions.length} öneri <small>{saved.at?.slice(0, 16).replace('T', ' ')}</small></h2>
+    <ol>
+      {suggestions.map((s: any, i: number) => (
+        <li>
+          <h3>{s.title}</h3>
+          <p>{s.one_line}</p>
+          <dl class="mini-meta">
+            <div><dt>Neden şimdi</dt><dd>{s.why_now || '–'}</dd></div>
+            <div><dt>Köken</dt><dd>{s.origin}{s.foundry_id && ` · ${s.foundry_id}`}</dd></div>
+            <div><dt>Tür / katman</dt><dd>{s.content_type ?? '–'} · {s.destination ?? '–'}</dd></div>
+            <div><dt>Kanıt · özgünlük · HP · okur</dt><dd>{s.evidence_level} · {score(s.originality)} · {score(s.hp_fit)} · {score(s.reader_value)}</dd></div>
+          </dl>
+          <div class="inline-forms">
+            <form method="post"><input type="hidden" name="action" value="accept_suggestion"/><input type="hidden" name="index" value={i}/><button class="button button-primary" type="submit">KONU OLARAK AL</button></form>
+            <form method="post" class="dismiss">
+              <input type="hidden" name="action" value="dismiss_suggestion"/><input type="hidden" name="index" value={i}/>
+              <label class="visually-hidden" for={`dismiss-${i}`}>Ret nedeni</label>
+              <select id={`dismiss-${i}`} name="reason">{FAILURE_REASONS.map((r) => <option value={r}>{r}</option>)}</select>
+              <button class="button button-quiet" type="submit">REDDET</button>
+            </form>
+          </div>
+        </li>
+      ))}
+    </ol>
+  </section>
+)}
+
+<section class="line" aria-labelledby="line-title">
+  <h2 id="line-title" class="visually-hidden">Editoryal hat</h2>
+  {COLUMNS.map((column, i) => {
+    const items = byColumn.get(column.key) ?? [];
+    return (
+      <section class:list={['stage', `stage-${column.key}`]} aria-labelledby={`stage-${column.key}`}>
+        <header>
+          <span class="stage-no">{String(i + 1).padStart(2, '0')}</span>
+          <h3 id={`stage-${column.key}`}>{column.label}</h3>
+          <span class="stage-count">{items.length}</span>
+        </header>
+        {items.length === 0 ? <p class="stage-empty">—</p> : (
+          <ul>
+            {items.map((t: any) => (
+              <li class="entry">
+                <a href={`/studio/editorial/${t.id}`}>{t.card.title}</a>
+                <span class="entry-state">{t.state}{t.destination.primary && ` · ${t.destination.primary}`}</span>
+                <span class="entry-next">{t.state === 'READY' ? 'Onay bekliyor (insan)' : t.card.next_action}</span>
+                {t.intake.warnings.some((w: string) => w.startsWith('SIMILAR')) && <span class="entry-warn">benzer konu var</span>}
+              </li>
+            ))}
+          </ul>
+        )}
+      </section>
+    );
+  })}
+</section>
+
+{parked.length > 0 && (
+  <details class="drawer">
+    <summary>Park edilen / reddedilen · {parked.length}</summary>
+    <ul class="plain-list">
+      {parked.map((t: any) => <li><a href={`/studio/editorial/${t.id}`}>{t.card.title}</a> <span class="entry-state">{t.state}{t.state === 'REJECTED' && ` · ${t.history.at(-1)?.note}`}</span></li>)}
+    </ul>
+  </details>
+)}
+
+<details class="drawer">
+  <summary>Content Foundry · {queue.available ? `${candidates.length} aday · ${sourceLeads.length} kaynak ipucu` : 'kuyruk okunamadı'}</summary>
+  <p class="drawer-note">Salt okunur köprü. Foundry kuyruğu, preflight/routing/scoring ve promotion gate’i Foundry’nin kendi sahipliğinde kalır; Studio yalnız okur ve seçtiğin kalemi masaya alır.{!queue.available && ` (${queue.warnings.join(', ')} — HP_FOUNDRY_QUEUE_DIR ile yol verilebilir)`}</p>
+  {candidates.length > 0 && (
+    <ul class="foundry-list">
+      {candidates.map((item: any) => (
+        <li>
+          <form method="post">
+            <input type="hidden" name="action" value="import_foundry"/><input type="hidden" name="foundry_id" value={item.id}/>
+            <button class="button button-quiet" type="submit" aria-label={`${item.id} kalemini masaya al`}>AL</button>
+          </form>
+          <div><b>{item.id}</b> <span class="entry-state">{item.type}</span><p>{item.seed}</p><small>Claim ceiling: {item.claim_ceiling}</small></div>
+        </li>
+      ))}
+    </ul>
+  )}
+</details>
+</StudioLayout>

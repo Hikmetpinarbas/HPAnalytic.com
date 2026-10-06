@@ -1,4 +1,5 @@
 ---
+import { isPublic } from '../lib/public-content.mjs';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import TacticalCanvas from '../components/TacticalCanvas.astro';
 import ArticleCard from '../components/ArticleCard.astro';
@@ -6,7 +7,7 @@ import Button from '../components/Button.astro';
 import { getCollection } from 'astro:content';
 export const prerender = true;
 
-const articles = (await getCollection('articles')).sort((a, b) => +b.data.date - +a.data.date);
+const articles = (await getCollection('articles', isPublic)).sort((a, b) => +b.data.date - +a.data.date);
 const hasAnalysis = articles.some((a) => a.data.section === 'analysis');
 const pipeline = [
   ['HPA', 'OPERATIONAL EVIDENCE'],

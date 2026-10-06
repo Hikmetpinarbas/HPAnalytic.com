@@ -38,3 +38,10 @@ jobs:
 
       - name: Production build
         run: npm run build
+
+      - name: Private Studio must not reach the production build
+        run: |
+          if grep -rIl -E "src/studio|HP_EDITORIAL_ROOT|/studio/editorial" dist; then
+            echo "Editorial Studio code leaked into dist/" >&2
+            exit 1
+          fi

@@ -1,4 +1,5 @@
 ---
+import { isPublic } from '../lib/public-content.mjs';
 import '../styles/global.css';
 import { getCollection } from 'astro:content';
 import { buildVisibleNavigation, buildUtilityNavigation, currentState, SECTION_ROUTES } from '../lib/site-surfaces.mjs';
@@ -24,9 +25,9 @@ const {
   noindex = false,
 } = Astro.props as Props;
 
-const articles = await getCollection('articles');
-const research = await getCollection('research');
-const visuals = await getCollection('visuals');
+const articles = await getCollection('articles', isPublic);
+const research = await getCollection('research', isPublic);
+const visuals = await getCollection('visuals', isPublic);
 
 const articleSections: Record<string, number> = {};
 for (const article of articles) {

@@ -1,4 +1,5 @@
 ---
+import { isPublic } from '../../lib/public-content.mjs';
 import { getCollection, render } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import EvidenceBadge from '../../components/EvidenceBadge.astro';
@@ -11,7 +12,7 @@ import { evidenceMeta, humanizeCeiling } from '../../lib/evidence.mjs';
 export const prerender = true;
 
 export async function getStaticPaths() {
-  const items = await getCollection('articles');
+  const items = await getCollection('articles', isPublic);
   return items.map((a) => ({ params: { id: a.id }, props: { a, all: items } }));
 }
 
