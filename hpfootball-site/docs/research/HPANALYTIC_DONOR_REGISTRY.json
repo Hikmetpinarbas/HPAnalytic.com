@@ -1,0 +1,146 @@
+{
+  "registry": "HPANALYTIC_DONOR_REGISTRY",
+  "version": 2,
+  "updated": "2026-10-06",
+  "target_project": "HPAnalytic (hpfootball-site/)",
+  "purpose": "Anti-duplication registry. A donor/component/mechanism listed here is not re-dissected unless a re-open trigger applies: MAJOR_UPDATE, NEW_REQUIREMENT, PRIOR_ANALYSIS_INSUFFICIENT, REGRESSION.",
+  "policy": {
+    "license_rule": "MIT/Apache-2.0/BSD/ISC/CC0/OFL -> REUSE|ADAPT|REBUILD_LOCALLY|PATTERN_ONLY allowed; GPL/AGPL -> PATTERN_ONLY; UNKNOWN/NO_LICENSE/PROPRIETARY -> HOLD|PATTERN_ONLY (concept from public behaviour only, no source reading for implementation).",
+    "governance_ref": "Drive: HP FOOTBALL SYSTEMS — CLEAN-ROOM IP, PROVENANCE & DONOR GOVERNANCE — SHARED STANDARD",
+    "decisions": ["REUSE", "ADAPT", "REBUILD_LOCALLY", "PATTERN_ONLY", "HOLD", "REJECT"]
+  },
+  "donors": [
+    {
+      "id": "D01", "name": "withastro/starlight", "url": "https://github.com/withastro/starlight",
+      "commit": "f3753dd", "commit_date": "2026-10-06", "license": "MIT", "license_class": "PERMISSIVE",
+      "framework": "Astro", "batch": 1, "dossier": "docs/HPANALYTIC_DONOR_REVERSE_ENGINEERING_2026-10-06.md",
+      "examined": [
+        {"file": "packages/starlight/src/components/SkipLink.astro", "mechanism": "skip link to page title", "decision": "REBUILD_LOCALLY", "status": "IMPLEMENTED_PR2"},
+        {"file": "packages/starlight/src/components/MobileMenuToggle.astro", "mechanism": "Popover API menu, :has(~ :popover-open) state", "decision": "HOLD", "status": "NOT_ADOPTED"},
+        {"file": "packages/starlight/src/components-internals/TableOfContents/starlight-toc.ts", "mechanism": "IntersectionObserver current-heading TOC", "decision": "PATTERN_ONLY", "status": "DEFERRED_UNTIL_LONGFORM"}
+      ]
+    },
+    {
+      "id": "D02", "name": "satnaing/astro-paper", "url": "https://github.com/satnaing/astro-paper",
+      "commit": "35cfa7f", "commit_date": "2026-08-05", "license": "MIT", "license_class": "PERMISSIVE",
+      "framework": "Astro 7 + Tailwind 4", "batch": 1, "dossier": "docs/HPANALYTIC_DONOR_REVERSE_ENGINEERING_2026-10-06.md",
+      "examined": [
+        {"file": "src/pages/archives/index.astro", "mechanism": "year->month archive grouping", "decision": "REBUILD_LOCALLY", "status": "IMPLEMENTED_PR2"},
+        {"file": "src/pages/archives/_utils/getPostsByGroupCondition.ts", "mechanism": "generic group-by", "decision": "REBUILD_LOCALLY", "status": "IMPLEMENTED_PR2"},
+        {"file": "src/pages/search.astro", "mechanism": "Pagefind UI, idle-loaded, ?q= sync", "decision": "HOLD", "status": "BLOCKED_ANDROID_BUILD"},
+        {"file": "src/pages/posts/[...slug]/_components/AdjacentPostNav.astro", "mechanism": "prev/next post", "decision": "REBUILD_LOCALLY", "status": "IMPLEMENTED_PR2"},
+        {"file": "src/pages/tags/[tag]/[...page].astro", "mechanism": "tag pages", "decision": "PATTERN_ONLY", "status": "PACKET_P4-14"}
+      ]
+    },
+    {
+      "id": "D03", "name": "alphagov/govuk-frontend", "url": "https://github.com/alphagov/govuk-frontend",
+      "commit": "283cc58", "commit_date": "2026-10-01", "license": "MIT (code); Crown copyright assets/fonts excluded", "license_class": "PERMISSIVE",
+      "framework": "Nunjucks + vanilla JS", "batch": 1, "dossier": "docs/HPANALYTIC_DONOR_REVERSE_ENGINEERING_2026-10-06.md",
+      "examined": [
+        {"file": "packages/govuk-frontend/src/govuk/components/service-navigation/template.njk", "mechanism": "toggle ships hidden; aria-current page|true", "decision": "REBUILD_LOCALLY", "status": "IMPLEMENTED_PR2"},
+        {"file": "packages/govuk-frontend/src/govuk/components/service-navigation/service-navigation.mjs", "mechanism": "matchMedia breakpoint sync", "decision": "REBUILD_LOCALLY", "status": "IMPLEMENTED_PR2"},
+        {"file": "packages/govuk-frontend/src/govuk/helpers/_focused.scss", "mechanism": "forced-colours-safe focus", "decision": "ADAPT", "status": "IMPLEMENTED_PR2"},
+        {"file": "packages/govuk-frontend/src/govuk/components/summary-list/", "mechanism": "key/value structured facts list", "decision": "PATTERN_ONLY", "status": "PACKET_P3-11", "batch": 2, "note": "component named only; template not re-read (dl/dt/dd semantics are a standard HTML pattern)"}
+      ]
+    },
+    {
+      "id": "D04", "name": "edwardtufte/tufte-css", "url": "https://github.com/edwardtufte/tufte-css",
+      "commit": "b5d7b7b", "commit_date": "2026-06-25", "license": "MIT", "license_class": "PERMISSIVE",
+      "framework": "CSS", "batch": 1, "dossier": "docs/HPANALYTIC_DONOR_REVERSE_ENGINEERING_2026-10-06.md",
+      "examined": [{"file": "tufte.css", "lines": "251-290, 355-440", "mechanism": "sidenote float + checkbox toggle on narrow screens", "decision": "ADAPT", "status": "PACKET_P3-10_PHASE_B"}]
+    },
+    {
+      "id": "D05", "name": "distillpub/template", "url": "https://github.com/distillpub/template",
+      "commit": "bf862cc", "commit_date": "2020-05-18", "license": "Apache-2.0", "license_class": "PERMISSIVE",
+      "framework": "Web Components (shadow DOM)", "batch": 1, "maintenance": "STALE_SINCE_2020",
+      "examined": [{"file": "src/components/d-footnote.js, d-cite.js, d-bibliography.js, d-appendix.js", "mechanism": "hover footnotes, bibliography, appendix", "decision": "PATTERN_ONLY", "status": "SUPERSEDED_BY_D10_AND_NATIVE_GFM"}]
+    },
+    {
+      "id": "D06", "name": "KittyGiraudel/a11y-dialog", "url": "https://github.com/KittyGiraudel/a11y-dialog",
+      "commit": "04d36ff", "commit_date": "2026-09-28", "license": "MIT", "license_class": "PERMISSIVE", "batch": 1,
+      "examined": [{"file": "src/a11y-dialog.ts:329, src/dom-utils.ts", "mechanism": "modal focus trap", "decision": "REJECT", "reason": "HP mobile menu is a non-modal disclosure; trapping focus would regress a11y", "status": "REFERENCE_FOR_FUTURE_MODAL"}]
+    },
+    {
+      "id": "D07", "name": "pagefind/pagefind", "url": "https://github.com/pagefind/pagefind",
+      "commit": "b033344", "commit_date": "2026-10-01", "license": "MIT", "license_class": "PERMISSIVE", "batch": 1,
+      "npm": {"version": "1.5.2", "optionalDependencies_platforms": ["darwin-arm64", "darwin-x64", "freebsd-x64", "linux-arm64", "linux-x64", "windows-arm64", "windows-x64"]},
+      "examined": [{"file": "npm manifest (batch 2)", "mechanism": "post-build static index", "decision": "HOLD", "reason": "no android binary -> cannot run in phone/Termux local-first build; needs static HTML output", "status": "PACKET_P4-13"}]
+    },
+    {
+      "id": "D08", "name": "trys/utopia-core", "url": "https://github.com/trys/utopia-core",
+      "commit": "135c051", "commit_date": "2024-09-19", "license": "ISC (package.json; no LICENSE file)", "license_class": "PERMISSIVE", "batch": 1,
+      "examined": [{"file": "src/index.ts:89-235", "mechanism": "clamp interpolation + WCAG 1.4.4 2.5x rule", "decision": "REBUILD_LOCALLY", "status": "IMPLEMENTED_PR2"}]
+    },
+    {
+      "id": "D09", "name": "andrewRowlinson/mplsoccer", "url": "https://github.com/andrewRowlinson/mplsoccer",
+      "commit": "150be3f", "commit_date": "2026-09-14", "license": "MIT", "license_class": "PERMISSIVE", "batch": 1,
+      "examined": [
+        {"file": "mplsoccer/soccer/dimensions.py", "mechanism": "dims object separate from renderer", "decision": "REBUILD_LOCALLY", "status": "IMPLEMENTED_PR2"},
+        {"file": "mplsoccer/py_pizza.py, radar_chart.py", "mechanism": "pizza/radar player profile", "decision": "REJECT", "reason": "as primary scouting visual: shape depends on arbitrary axis order (see dossier B2 §SCOUTING)", "status": "REJECTED_B2", "batch": 2, "note": "file names only; source not read"}
+      ]
+    },
+    {
+      "id": "D10", "name": "jupyter-book/myst-theme", "url": "https://github.com/jupyter-book/myst-theme",
+      "commit": "23817b1", "commit_date": "2026-10-06", "license": "MIT", "license_class": "PERMISSIVE",
+      "framework": "React + Remix + Tailwind", "batch": 2, "dossier": "docs/research/HPANALYTIC_DEEP_RE_2026-10-06_B2.md",
+      "examined": [
+        {"file": "packages/site/src/components/Backmatter.tsx", "mechanism": "named backmatter parts render only when present", "decision": "PATTERN_ONLY", "status": "PACKET_P3-10"},
+        {"file": "packages/site/src/components/Bibliography.tsx", "mechanism": "ordered refs, #cite-<label> anchors, collapse after 15", "decision": "PATTERN_ONLY", "status": "PACKET_P3-10"},
+        {"file": "packages/myst-to-react/src/cite.tsx", "mechanism": "hover popover for citations (JS)", "decision": "HOLD", "reason": "JS-only enhancement; anchor fallback first", "status": "DEFERRED"},
+        {"file": "packages/frontmatter/src/{Authors,licenses,downloads}.tsx", "mechanism": "frontmatter block: authors, license, downloads", "decision": "PATTERN_ONLY", "status": "PACKET_P3-10"}
+      ]
+    },
+    {
+      "id": "D11", "name": "guardian/dotcom-rendering", "url": "https://github.com/guardian/dotcom-rendering",
+      "commit": "8540a6c", "commit_date": "2026-10-06", "license": "Apache-2.0", "license_class": "PERMISSIVE",
+      "framework": "React + Emotion (SSR)", "batch": 2, "dossier": "docs/research/HPANALYTIC_DEEP_RE_2026-10-06_B2.md",
+      "examined": [
+        {"file": "dotcom-rendering/src/lib/articleFormat.ts", "mechanism": "ArticleFormat = {design, display, theme} orthogonal axes", "decision": "PATTERN_ONLY", "status": "PACKET_P1-05"},
+        {"file": "dotcom-rendering/src/layouts/lib/articleArrangements.ts", "mechanism": "single DOM order; named areas repositioned per breakpoint", "decision": "PATTERN_ONLY", "status": "PACKET_P3-09"},
+        {"file": "dotcom-rendering/src/components/Standfirst.tsx", "mechanism": "opinion designs (Comment/Editorial/Letter) use lighter headline weight", "decision": "PATTERN_ONLY", "status": "PACKET_P2-07"},
+        {"file": "dotcom-rendering/src/components/FrontSection.tsx", "mechanism": "front container: title rail + content via named grid lines", "decision": "PATTERN_ONLY", "status": "PACKET_P2-08"}
+      ]
+    },
+    {
+      "id": "D12", "name": "withastro/astro examples/blog", "url": "https://github.com/withastro/astro/tree/main/examples/blog",
+      "commit": "e4f8f46", "commit_date": "2026-10-06", "license": "MIT", "license_class": "PERMISSIVE",
+      "framework": "Astro 7", "batch": 2, "dossier": "docs/research/HPANALYTIC_DEEP_RE_2026-10-06_B2.md",
+      "examined": [
+        {"file": "examples/blog/src/content.config.ts", "mechanism": "blog collection: pubDate, updatedDate, heroImage via image()", "decision": "ADAPT", "status": "PACKET_P2-07"},
+        {"file": "examples/blog/src/pages/rss.xml.js", "mechanism": "@astrojs/rss feed from collection", "decision": "ADAPT", "status": "PACKET_P2-07"},
+        {"file": "examples/blog/astro.config.mjs", "mechanism": "stable fonts API (fontProviders.local) — Astro 7 only; experimental in installed 5.18.2", "decision": "HOLD", "reason": "experimental in 5.x; API churn across 5->7", "status": "PACKET_P1-06"}
+      ]
+    },
+    {
+      "id": "D13", "name": "owid/owid-grapher", "url": "https://github.com/owid/owid-grapher",
+      "commit": "8fa2601", "commit_date": "2026-10-06", "license": "PROPRIETARY (view/study only; relicensed; MIT only up to a139fcf)", "license_class": "PROPRIETARY_REFERENCE_ONLY",
+      "batch": 2,
+      "examined": [{"file": "LICENSE.md only", "mechanism": "public UI concept: chart footer source line + sources tab", "decision": "PATTERN_ONLY", "reason": "source code NOT read for implementation after licence discovery", "status": "PACKET_P4-12"}]
+    },
+    {
+      "id": "D14", "name": "AppDeploy HP Football Intelligence (owner's own preview)", "url": "https://hp-football-intelligence-nxrqic.v2.appdeploy.ai/",
+      "version": "app version 1791201127045 (seen 2026-10-06)", "license": "OWNER_CONTENT (Hikmet Pınarbaş) + AppDeploy platform overlay (third-party)", "license_class": "OWNER",
+      "framework": "Vite static HTML", "batch": 2, "access": "egress proxy blocked direct fetch; read via scrape service (rawHtml)",
+      "examined": [
+        {"file": "index.html", "mechanism": "publication-protocol module; hero layer-map (site index as hero art); TR public method chain", "decision": "ADAPT", "status": "PACKET_P2-08"},
+        {"file": "journal.html", "mechanism": "9 authored articles; DOMAIN / CONSTRUCT two-level label", "decision": "ADAPT", "status": "PACKET_P2-07 (content needs owner approval)"},
+        {"file": "article-bir-gorsel-ne-zaman-kanittir.html", "mechanism": "prose + generic EDITORIAL NOTE", "decision": "REJECT", "reason": "generic provenance note is not a citation system (ledger WC3/5)"},
+        {"file": "<head> of all pages", "mechanism": "site-wide og:* = deploy note; author=AppDeploy; theme-color #6366f1; sw.js; third-party overlay", "decision": "REJECT", "status": "CUTOVER_RISK_NOTED"}
+      ]
+    },
+    {
+      "id": "D15", "name": "Fontsource variable fonts (Source Serif 4, Inter)", "url": "https://fontsource.org",
+      "version": "@fontsource-variable/source-serif-4@5.3.0, @fontsource-variable/inter@5.3.0", "license": "OFL-1.1 (fonts)", "license_class": "PERMISSIVE",
+      "batch": 2,
+      "examined": [{"file": "package/files/*-latin(-ext)-wght-normal.woff2, index.css unicode-range", "mechanism": "unicode-range split; TR needs latin + 5 glyphs from latin-ext", "decision": "ADAPT", "status": "PACKET_P1-06", "measurement": "latin-ext 42040 B / 85068 B -> TR-only subset 3372 B / 3052 B"}]
+    }
+  ],
+  "science_method_donors": [
+    {"id": "S01", "name": "Toulmin argument model (Toulmin, The Uses of Argument, 1958)", "role": "SCIENCE_METHOD_DONOR", "mapping": "claim->CLAIM, data->EVIDENCE, warrant->MECHANISM, backing->CONTEXT/SOURCE, qualifier->CLAIM CEILING, rebuttal->COUNTEREVIDENCE", "status": "PACKET_P3-09"},
+    {"id": "S02", "name": "Star-glyph perception (Klippel et al. 2009; Fuchs et al. 2014)", "role": "NEGATIVE_CONTROL", "evidence_level": "ABSTRACT_LEVEL_NOT_READ_IN_FULL", "use": "reject radar/pizza as primary scouting comparison visual", "status": "REJECTED_B2"}
+  ],
+  "searched_not_found": [
+    {"query": "donor lists from Gemini/Perplexity/Grok/Qwen/Manus for HPAnalytic site", "where": "repo + Google Drive (2026-09-25..2026-10-06)", "result": "NOT_FOUND"},
+    {"query": "Continuous Scout scores", "where": "repo + session", "result": "NOT_FOUND"}
+  ]
+}
