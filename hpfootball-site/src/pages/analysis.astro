@@ -1,15 +1,18 @@
 ---
+import { isPublic } from '../lib/public-content.mjs';
 import BaseLayout from '../layouts/BaseLayout.astro';
-import SectionListing from '../components/SectionListing.astro';
+import {getCollection} from 'astro:content';
+import {isPublicEditorialItem} from '../lib/site-editorial-status.mjs';
+import {editorialSeries,displaySeries,seriesDescription} from '../lib/editorial-series.mjs';
 export const prerender = true;
+const items=(await getCollection('articles')).filter(x=>isPublic(x)&&isPublicEditorialItem(x.data)&&x.data.section==='analysis').sort((a,b)=>+b.data.date-+a.data.date);
+const grouped=editorialSeries.map(series=>({...series,items:items.filter(item=>item.data.series===series.key)})).filter(group=>group.items.length>0);
+const unclassified=items.filter(item=>!item.data.series);
 ---
-<BaseLayout title="Analysis — HPAnalytic" description="Maç, takım ve oyuncu analizi: metric değil, mekanizma.">
-<div class="listing">
-  <header class="page-head">
-    <p class="kicker">ANALYSIS</p>
-    <h1 class="page-title">Metric değil, mekanizma.</h1>
-    <p class="lead">Sonuçtan geriye değil, süreçten sonuca doğru okunan postmatch analizleri.</p>
-  </header>
-  <SectionListing section="analysis" />
-</div>
-</BaseLayout>
+<BaseLayout title="Analiz — HPAnalytic" description="Maç, mekanizma, metrik ve kanıt incelemelerini editoryal seriler halinde keşfedin." section="analysis">
+<main class="listing analysis-library">
+<header class="analysis-library-head"><p class="kicker">ANALİZ</p><h1 class="page-title">Metrik değil, mekanizma.</h1><p class="lead">Yazılar tek bir kronolojik akışta kaybolmaz. Maç, mekanizma, metrik ve kanıt sorusuna göre ayrılır.</p></header>
+<nav class="series-index" aria-label="Analiz serileri">{editorialSeries.map(series=><a href={'#'+series.key.toLowerCase()}><b>{series.label}</b><span>{series.description}</span></a>)}</nav>
+{grouped.map(group=><section class="series-section" id={group.key.toLowerCase()}><header><p class="kicker">SERİ</p><h2>{displaySeries(group.key)}</h2><p>{seriesDescription(group.key)}</p></header><div class="series-list">{group.items.map(a=><a href={'/articles/'+a.id}><small>{a.data.date.toLocaleDateString('tr-TR')}</small><h3>{a.data.title}</h3><p>{a.data.description}</p><span>OKU →</span></a>)}</div></section>)}
+{unclassified.length>0&&<section class="series-section" id="arsiv"><header><p class="kicker">ARŞİV</p><h2>Diğer analizler</h2><p>Henüz seri etiketi almamış mevcut yazılar.</p></header><div class="series-list">{unclassified.map(a=><a href={'/articles/'+a.id}><small>{a.data.date.toLocaleDateString('tr-TR')}</small><h3>{a.data.title}</h3><p>{a.data.description}</p><span>OKU →</span></a>)}</div></section>}
+</main></BaseLayout>
