@@ -22,7 +22,7 @@ test('article renders next question only when it is authored', async () => {
 
 test('next question is a static, vertically readable continuation surface', async () => {
   const css = await source(cssUrl);
-  assert.match(css, /\.next-question\{/);
+  assert.match(css, /\.next-question\s*\{/);
   assert.doesNotMatch(articleSourcePlaceholder, /client:/);
 });
 const articleSourcePlaceholder = await source(articleUrl);
