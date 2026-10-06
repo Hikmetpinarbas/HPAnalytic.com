@@ -18,6 +18,7 @@ permissions:
 
 jobs:
   deploy:
+    if: github.ref == 'refs/heads/site-hp-standard-v2'
     runs-on: ubuntu-latest
     timeout-minutes: 12
     defaults:
@@ -53,8 +54,19 @@ jobs:
             exit 1
           fi
 
+      # @astrojs/cloudflare v14 emits the deployable Worker config at
+      # dist/server/wrangler.json (main: entry.mjs, assets: dist/client) and a
+      # redirect in .wrangler/deploy/config.json. Deploying the source
+      # wrangler.jsonc directly fails: its entrypoint is a package specifier
+      # that only Vite resolves.
+      - name: Deploy config must be the Astro-generated Worker
+        run: |
+          test -f dist/server/wrangler.json
+          test -f dist/server/entry.mjs
+          npx --yes wrangler@4.146.0 deploy --config dist/server/wrangler.json --dry-run
+
       - name: Deploy accepted HPAnalytic to existing Worker
         env:
           CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
-        run: npx --yes wrangler@4.146.0 deploy --config wrangler.jsonc
+        run: npx --yes wrangler@4.146.0 deploy --config dist/server/wrangler.json

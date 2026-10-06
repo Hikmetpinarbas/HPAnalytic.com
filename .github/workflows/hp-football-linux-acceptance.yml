@@ -45,3 +45,9 @@ jobs:
             echo "Editorial Studio code leaked into dist/" >&2
             exit 1
           fi
+
+      - name: Worker deploy contract (dry run, no credentials)
+        run: |
+          test -f dist/server/wrangler.json
+          test -f dist/server/entry.mjs
+          npx --yes wrangler@4.146.0 deploy --config dist/server/wrangler.json --dry-run
