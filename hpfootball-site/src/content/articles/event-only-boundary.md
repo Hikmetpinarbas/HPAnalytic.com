@@ -21,14 +21,19 @@ sourceClaimsValidated: true
 sourceRefs:
   - source_id: "STATSBOMB_360_METHOD"
     title: "StatsBomb 360 veri yapısı ve olay akışı açıklaması"
-    locator: "https://static.hudl.com/craft/Pieter-Robberechts-et-al-un-xPass-Measuring-Soccer-Players-Creativity.pdf"
+    locator: "https://blogarchive.statsbomb.com/uploads/2024/10/Match-Phases-In-Practice-Ghezzi-and-Sotudeh.pdf"
     rights: "REFERENCE_ONLY"
     claim_ceiling: "PROVIDER_METHODOLOGY"
   - source_id: "SKILLCORNER_XY"
     title: "SkillCorner XY izleme verisi metodoloji açıklaması"
-    locator: "https://skillcorner.com/products/football/xy-tracking-data"
+    locator: "https://www.skillcorner.com/products/football/xy-tracking-data"
     rights: "REFERENCE_ONLY"
     claim_ceiling: "PROVIDER_SELF_DESCRIPTION"
+  - source_id: "BOX_MODEL_DISCIPLINE"
+    title: "George E. P. Box ve Norman R. Draper — Empirical Model-Building and Response Surfaces (1987), s. 424"
+    locator: "https://mathshistory.st-andrews.ac.uk/Biographies/Box/quotations/"
+    rights: "REFERENCE_ONLY"
+    claim_ceiling: "VERIFIED_QUOTATION"
 counterevidence:
   - "Olay verisinin sınırlı olması, değersiz olduğu anlamına gelmez. Doğru soruda pas, şut, top kazanımı ve benzeri kayıtlar güçlü ve ölçeklenebilir kanıt sağlar."
   - "İzleme verisi daha geniş bir mekânsal yüzey sunar; fakat tek başına oyuncunun niyetini, teknik direktörün talimatını veya bir hareketin nedenini kanıtlamaz."
@@ -43,6 +48,12 @@ Bir futbol maçını veriden okumaya başladığımızda ilk hata genellikle ço
 Bir pas kaydı görürüz. Başlangıç ve bitiş noktası vardır. Oyuncunun kim olduğu, pasın sonucu ve zamanı bellidir. Ardından bu kaydın çevresine bir hikâye kurmaya başlarız: baskı vardı, alan açıldı, savunma bozuldu, oyuncu doğru kararı verdi.
 
 Sorun tam burada başlar.
+
+![Olay verisi, video ve izleme verisinin farklı gözlem kapasitelerini gösteren kavramsal şema](/visuals/event-data/evidence-surfaces.svg)
+
+> **George E. P. Box:** “Bütün modeller yanlıştır; bazıları kullanışlıdır.”
+>
+> Box’ın istatistik için kurduğu bu kısa cümle, futbol analizine de iyi bir disiplin önerir: model gerçeğin kendisi değil, gerçeğe bakmak için seçtiğimiz araçtır.
 
 Veri bize bazı şeyleri gerçekten gösterir. Bazı şeyleriyse yalnızca düşündürür. Bu ikisini ayırmadığımız anda analiz, kanıttan yoruma geçer; fakat okuyucuya hâlâ kanıt sunuyormuş gibi görünür.
 
@@ -73,6 +84,19 @@ Bir olayın saha üzerinde bir koordinatı bulunabilir. Bu, o anda topun veya ak
 Ama burada da yeni bir hata yapmamak gerekir:
 
 **İzleme verisi daha fazla konum bilgisi verir; futbolun bütün anlamını vermez.**
+
+### Ölçek neden bağlam değildir?
+
+Basit bir örnek düşünelim. **25 Hz** hızında çalışan varsayımsal bir izleme akışı, 90 dakikalık oyun süresinde tek bir oyuncu için yaklaşık **135.000 zaman örneği** üretir. 22 oyuncu için bu, uzatma sürelerini hesaba katmadan yaklaşık **2,97 milyon oyuncu-zaman gözlemi** demektir. Bu sayı gerçek bir maçın sağlayıcı istatistiği değil; örnekleme sıklığının ölçeğini göstermek için yapılan aritmetik bir örnektir.
+
+| Kanıt yüzeyi | Güçlü olduğu soru | Tek başına kanıtlamadığı şey |
+| --- | --- | --- |
+| Olay verisi | Ne oldu, nerede oldu, sonucu neydi? | Bütün takım şekli ve topsuz ilişkiler |
+| Video | Görünen oyuncular nasıl ilişkilendi? | Kamera dışındaki eksiksiz konumlar ve niyet |
+| İzleme verisi | Oyuncular zaman içinde nerede ve nasıl hareket etti? | Taktik talimat, kararın nedeni ve oyuncunun zihinsel niyeti |
+| Model çıktısı | Tanımlanmış probleme göre olasılık/değer nedir? | Gerçeğin kendisi veya mekanizmanın otomatik açıklaması |
+
+Milyonlarca konum kaydı, gözlem çözünürlüğünü büyütür. Fakat “oyuncu neden oraya gitti?” sorusunun cevabı bu kayıtların içinde hazır halde bulunmaz.
 
 Oyuncunun bir noktadan diğerine gitmiş olması gözlenebilir. Neden gittiği ise ayrı bir sorudur.
 
@@ -126,6 +150,8 @@ Doğru yaklaşım bunları birbirinin rakibi yapmak değildir.
 
 Asıl kalite, hangi soruda hangi kanıt yüzeyine ihtiyaç olduğunu doğru seçmekten gelir.
 
+![Gözlemden iddiaya giderken varsayım katmanlarını gösteren açıklayıcı şema](/visuals/event-data/measurement-chain.svg)
+
 ## Model çıktısı da mekanizma değildir
 
 Beklenen gol, tehdit değeri, aksiyon değeri veya benzeri modeller oyunu anlamak için güçlü araçlardır. Fakat her model belirli girdiler, tanımlar ve varsayımlar üzerine kurulur.
@@ -154,6 +180,12 @@ Futbol analizi daha fazla sayı üretme yarışı değildir.
 
 Daha zor olan şudur: **hangi sayının hangi soruya cevap vermediğini bilmek.**
 
+## Benim için mesele nerede başlıyor?
+
+Bir analist olarak veriye itiraz etmiyorum; verinin **yetki alanını** tarif etmeye çalışıyorum. Çünkü sayı, doğru soruyla birleştiğinde oyunu berraklaştırır. Yanlış sorunun cevabı yapılınca ise yalnızca daha ikna edici bir yanılgı üretir.
+
+Benim çalışma çizgim bu yüzden basit: önce kanıtı ayır, sonra mekanizmayı ara, en son hüküm kur. Bir grafiğin güzel görünmesi, bir metriğin gelişmiş olması veya bir veri setinin milyonlarca satır içermesi bu sırayı değiştirmemeli.
+
 ## Beş soruluk kontrol
 
 Bir grafik, metrik veya maç verisi gördüğümde şu beş soruyu sormak yeterli bir başlangıç sağlar:
@@ -167,3 +199,13 @@ Bir grafik, metrik veya maç verisi gördüğümde şu beş soruyu sormak yeterl
 Son soru en önemlisi.
 
 Çünkü futbol analizinde hata çoğu zaman verinin yanlış olmasından değil, **verinin taşıyabileceğinden daha büyük bir cümle kurmamızdan** doğar.
+
+## Okura son not
+
+Buraya kadar geldiyseniz artık yalnızca bir grafiğe bakmıyorsunuz; grafiğin **neyi görmediğini** de sorguluyorsunuz. İyi futbol okumasının önemli bir eşiği tam burada başlar. Veriyi küçümsemeden, ona gereğinden fazla yetki vermeden; oyunun karmaşıklığına saygı duyarak.
+
+![Karanlıkta kanıt ışığına bakan analisti temsil eden editoryal illüstrasyon](/visuals/event-data/analyst-shadow.svg)
+
+*Hikmet Pınarbaş*
+
+*Not: Son görsel temsili bir editoryal illüstrasyondur; gerçek kişi portresi değildir.*
