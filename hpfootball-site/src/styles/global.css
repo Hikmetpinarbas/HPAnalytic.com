@@ -86,7 +86,7 @@ main:focus { outline: none; }
 .skip-link:focus { top: 12px; outline: 3px solid var(--ink); outline-offset: 0; }
 
 /* Labels / kickers ----------------------------------------------------------
-   No text-transform: under lang="tr" it uppercases English "i" to "İ"
+   No CSS case transformation under Turkish locale; source labels keep their intended casing
    (ANALYSİS). Labels are written in their final case in source. */
 .kicker, .label-text {
   font-size: var(--label); font-weight: 700; letter-spacing: var(--tracking-label);
