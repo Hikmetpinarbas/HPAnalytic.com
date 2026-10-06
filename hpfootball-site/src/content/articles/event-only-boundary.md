@@ -5,6 +5,9 @@ date: 2026-10-04
 section: method
 evidenceClass: DIRECT
 claimCeiling: EVENT_OBSERVABLE_ONLY
+nextQuestion:
+  question: "Bir oyuncunun konumu, rolünü açıklamak için neden tek başına yeterli değildir?"
+  href: "/articles/position-role"
 featured: true
 ---
 Event verisi pası, şutu, taşıma aksiyonunu, recovery’yi, faulü ve kaydedilmiş olay konumlarını doğrudan destekleyebilir.

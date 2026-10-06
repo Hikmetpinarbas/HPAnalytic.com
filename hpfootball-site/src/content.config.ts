@@ -10,6 +10,10 @@ const articles=defineCollection({
     section:z.enum(['analysis','scouting','culture','method']),
     evidenceClass:z.enum(['DIRECT','DERIVED','PROXY','EDITORIAL']),
     claimCeiling:z.string(),
+    nextQuestion:z.object({
+      question:z.string(),
+      href:z.string().startsWith('/')
+    }).optional(),
     featured:z.boolean().default(false)
   })
 });
