@@ -1,20 +1,24 @@
-name: HP Football Linux Acceptance
+name: HPAnalytic Linux Acceptance
 
 on:
   pull_request:
     paths:
       - 'hpfootball-site/**'
       - '.github/workflows/hp-football-linux-acceptance.yml'
+      - '.github/workflows/hpanalytic-production-deploy.yml'
   workflow_dispatch:
 
 concurrency:
-  group: hp-football-linux-acceptance-${{ github.event.pull_request.number || github.ref }}
+  group: hpanalytic-linux-acceptance-${{ github.event.pull_request.number || github.ref }}
   cancel-in-progress: true
+
+permissions:
+  contents: read
 
 jobs:
   site-acceptance:
     runs-on: ubuntu-latest
-    timeout-minutes: 10
+    timeout-minutes: 12
     defaults:
       run:
         working-directory: hpfootball-site
@@ -26,9 +30,11 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '22'
+          cache: npm
+          cache-dependency-path: hpfootball-site/package-lock.json
 
-      - name: Install dependencies
-        run: npm install --no-audit --no-fund
+      - name: Install locked dependencies
+        run: npm ci --no-audit --no-fund
 
       - name: Unit tests
         run: npm test
@@ -39,9 +45,12 @@ jobs:
       - name: Production build
         run: npm run build
 
-      - name: Private Studio must not reach the production build
+      - name: Private Studio must not reach production
         run: |
           if grep -rIl -E "src/studio|HP_EDITORIAL_ROOT|/studio/editorial" dist; then
             echo "Editorial Studio code leaked into dist/" >&2
             exit 1
           fi
+
+      - name: Validate generated Cloudflare deployment
+        run: npx --yes wrangler@4.146.0 deploy --dry-run --config dist/server/wrangler.json
