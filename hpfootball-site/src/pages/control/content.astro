@@ -1,0 +1,82 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { loadControlItems, STATUS_FLOW } from '../../lib/content-control.mjs';
+import { loadArticleInbox } from '../../lib/article-inbox.mjs';
+const items=await loadControlItems();
+const articleInbox=await loadArticleInbox();
+const show=(v:unknown)=>Array.isArray(v)?v.join(', '):String(v??'UNKNOWN');
+const filterTags=(item:any)=>{
+  const tags=['all'];
+  if(item.site_admission==='REVIEW_READY'||item.claim_readiness==='PROFESSIONAL_CLAIM_OUTPUT_READY')tags.push('ready');
+  if(item.truth_status==='REVIEW_REQUIRED'||item.site_admission==='REVIEW_READY')tags.push('review');
+  if(item.truth_status==='BLOCKED'||item.rights_status==='BLOCKED'||item.site_admission==='BLOCKED')tags.push('blocked');
+  if(item.currentness==='STALE'||item.currentness==='SUPERSEDED')tags.push('stale');
+  if(['MATCH_ANALYSIS','PREMATCH','POSTMATCH','PLAYER_ANALYSIS','SCOUTING'].includes(item.content_type))tags.push('analysis');
+  if(item.content_type==='RESEARCH'||item.source_system?.includes('RESEARCH'))tags.push('research');
+  if(item.visual_status?.admitted_visual===true)tags.push('visual');
+  if(Object.values(item.social_status||{}).some(x=>x!=='UNKNOWN'))tags.push('social');
+  return tags.join(' ');
+};
+---
+<BaseLayout title="HP CONTENT CONTROL" description="Editorial Intake / Review / Admission">
+<main class="control-shell" data-content-control>
+  <header class="control-header">
+    <div><p class="control-eyebrow">INTERNAL / EDITORIAL CONTROL</p><h1>HP CONTENT CONTROL</h1><p class="control-subtitle">Editorial Intake / Review / Admission</p></div>
+    <div class="control-rule"><strong>READ-ONLY CONTROL SURFACE</strong><span>Review intent is visible here. No auto publish. Approval, block and publication do not write back to HPA in this WIP.</span></div>
+  </header>
+
+  <section class="control-summary" aria-label="Intake summary">
+    <span>{items.filter(x=>x.currentness==='CURRENT').length} current</span><span>{items.filter(x=>x.currentness==='STALE').length} stale</span><span>{items.filter(x=>x.currentness==='SUPERSEDED').length} superseded</span><span>{items.filter(x=>x.site_admission==='REVIEW_READY').length} review ready</span><span>{articleInbox.length} article inbox</span>
+  </section>
+
+  <section class="control-inbox" aria-label="Article inbox">
+    <div class="control-section-head"><p class="control-eyebrow">ARTICLE INBOX</p><h2>Content Intelligence review queue</h2><p>Read-only staging surface. Human approval remains required before site admission.</p></div>
+    {articleInbox.length===0
+      ? <p class="control-empty">No staged article candidate.</p>
+      : <div class="control-list">{articleInbox.map(item=><article class="control-item-card">
+          <header class="control-item-head"><div><p class="control-kicker">{item.content_type}</p><h2>{item.title}</h2><p>{item.target}</p></div><div class="control-state-stack"><span class="state">{item.quality_status}</span><span class="state">{item.rights_status}</span><span class="state">{item.approval_required}</span></div></header>
+          <div class="control-meta-grid"><dl><dt>Sources</dt><dd>{item.source_count}</dd><dt>Claims</dt><dd>{item.claim_count}</dd><dt>Reading</dt><dd>{item.reading_minutes} min</dd><dt>Claim ceiling</dt><dd>{item.claim_ceiling}</dd></dl><section><h3>Topics</h3><p>{item.topics.join(', ')||'—'}</p></section></div>
+        </article>)}</div>}
+  </section>
+
+  <section class="control-tools" aria-label="Content filters">
+    <label><span>Search</span><input type="search" placeholder="Title, target, content ID" data-control-search /></label>
+    <label><span>Filter</span><select data-control-filter>
+      <option value="all">All</option><option value="ready">Ready</option><option value="review">Review</option><option value="blocked">Blocked</option><option value="stale">Stale</option><option value="analysis">Analysis</option><option value="research">Research</option><option value="visual">Visual</option><option value="social">Social</option>
+    </select></label>
+  </section>
+
+  <section class="control-flow" aria-label="Canonical status flow">{STATUS_FLOW.map((s,i)=><span><b>{String(i+1).padStart(2,'0')}</b>{s}</span>)}</section>
+
+  <section class="control-list" aria-live="polite">
+  {items.map(item=><article class="control-item-card" data-control-item data-search={(item.id+' '+item.title+' '+item.target).toLowerCase()} data-tags={filterTags(item)}>
+    <header class="control-item-head"><div><p class="control-kicker">{item.content_type} · {item.source_system}</p><h2>{item.title}</h2><p>{item.target}</p></div><div class="control-state-stack"><span class="state">{item.currentness}</span><span class="state">{item.claim_readiness}</span><span class="state">{item.site_admission}</span></div></header>
+
+    <div class="control-meta-grid">
+      <dl><dt>Generated</dt><dd>{item.generated_at}</dd><dt>Freshness</dt><dd>{item.freshness}</dd><dt>Rights</dt><dd>{item.rights_status}</dd><dt>Destination</dt><dd>{item.destination}</dd></dl>
+      <section><h3>Evidence</h3><dl><dt>Canonical</dt><dd>{show(item.evidence_status.canonical_source_available)}</dd><dt>Evidence role</dt><dd>{show(item.evidence_status.evidence_class)}</dd><dt>Provenance</dt><dd>{show(item.evidence_status.provenance)}</dd><dt>Conflict</dt><dd>{show(item.evidence_status.unresolved_source_conflict)}</dd></dl></section>
+      <section><h3>Visual</h3><dl><dt>Available</dt><dd>{show(item.visual_status.admitted_visual)}</dd><dt>Package</dt><dd>{item.visual_status.package_status}</dd><dt>Product</dt><dd>{item.visual_status.product}</dd><dt>Rights</dt><dd>{item.visual_status.rights}</dd></dl></section>
+      <section class="control-social"><h3>Social derivatives</h3><div>{Object.entries(item.social_status).map(([name,status])=><span><b>{name}</b><small>{status}</small></span>)}</div></section>
+    </div>
+
+    <details class="control-detail">
+      <summary>Open content detail</summary>
+      <div class="control-detail-grid">
+        <dl><dt>Title</dt><dd>{item.title}</dd><dt>Target</dt><dd>{item.target}</dd><dt>Content type</dt><dd>{item.content_type}</dd><dt>Current / stale</dt><dd>{item.currentness}</dd><dt>Claim readiness</dt><dd>{item.claim_readiness}</dd><dt>Public route</dt><dd>{item.public_url}</dd></dl>
+        <section><h3>Human-readable content</h3><p class="control-body-preview">{item.body}</p></section>
+      </div>
+      <details class="control-technical"><summary>Advanced / Technical</summary><dl><dt>Content ID</dt><dd>{item.id}</dd><dt>Logical source</dt><dd>{item.source_path}</dd><dt>Source system</dt><dd>{item.source_system}</dd><dt>Current status</dt><dd>{item.current_status}</dd></dl>{item.warnings.length>0&&<div class="control-warnings"><strong>Warnings</strong>{item.warnings.map((w:string)=><code>{w}</code>)}</div>}</details>
+    </details>
+
+    <div class="control-intent" aria-label="Read-only review intent"><button type="button" disabled>REVIEW</button><button type="button" disabled>APPROVE</button><button type="button" disabled>BLOCK</button><small>Intent only — no backend mutation.</small></div>
+  </article>)}
+  </section>
+</main>
+<script>
+const search=document.querySelector('[data-control-search]');
+const filter=document.querySelector('[data-control-filter]');
+const cards=[...document.querySelectorAll('[data-control-item]')];
+const applyFilters=()=>{const q=search instanceof HTMLInputElement?search.value.trim().toLowerCase():'';const f=filter instanceof HTMLSelectElement?filter.value:'all';for(const card of cards){if(!(card instanceof HTMLElement))continue;const text=card.dataset.search||'';const tags=(card.dataset.tags||'').split(' ');card.hidden=!((!q||text.includes(q))&&(f==='all'||tags.includes(f)));}};
+search?.addEventListener('input',applyFilters);filter?.addEventListener('change',applyFilters);
+</script>
+</BaseLayout>

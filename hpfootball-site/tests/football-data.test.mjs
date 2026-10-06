@@ -1,0 +1,8 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {normalizeFootballDataMatches,getUpcomingMatches,FOOTBALL_SCOPE} from '../src/lib/football-data.mjs';
+
+test('football scope keeps the five big leagues and UEFA CL provider codes',()=>{ assert.deepEqual(FOOTBALL_SCOPE.footballData,['PL','PD','SA','BL1','FL1','CL']); assert.ok(FOOTBALL_SCOPE.labels.includes('SÜPER LİG')); });
+test('normalizer keeps future matches, sorts them, and caps output',()=>{ const now=new Date('2026-10-06T12:00:00Z'); const payload={matches:[{id:2,utcDate:'2026-10-08T18:00:00Z',competition:{name:'Serie A',code:'SA'},homeTeam:{name:'B'},awayTeam:{name:'C'},status:'TIMED'},{id:1,utcDate:'2026-10-07T18:00:00Z',competition:{name:'Premier League',code:'PL'},homeTeam:{name:'A'},awayTeam:{name:'B'},status:'SCHEDULED'},{id:0,utcDate:'2026-10-05T18:00:00Z',competition:{name:'Old'},homeTeam:{name:'X'},awayTeam:{name:'Y'}}]}; const rows=normalizeFootballDataMatches(payload,now,1); assert.equal(rows.length,1); assert.equal(rows[0].id,'1'); });
+test('missing token fails soft without fetching',async()=>{ const r=await getUpcomingMatches({token:'',fetcher:()=>{throw new Error('must not fetch')}}); assert.equal(r.status,'UNAVAILABLE'); assert.equal(r.reason,'SOURCE_NOT_CONFIGURED'); assert.deepEqual(r.matches,[]); });
+test('provider error fails soft and does not expose token',async()=>{ const secret='TOP_SECRET'; const r=await getUpcomingMatches({token:secret,fetcher:async()=>({ok:false,status:429})}); assert.equal(r.status,'UNAVAILABLE'); assert.equal(JSON.stringify(r).includes(secret),false); });

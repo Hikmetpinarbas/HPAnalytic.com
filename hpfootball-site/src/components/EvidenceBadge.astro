@@ -1,12 +1,11 @@
 ---
-import { evidenceMeta, humanizeCeiling } from '../lib/evidence.mjs';
+import { evidenceMeta } from '../lib/evidence.mjs';
+import { displayEvidenceClass, displayClaimCeiling } from '../lib/editorial-display.mjs';
 interface Props { evidenceClass?: string; claimCeiling?: string; }
 const { evidenceClass = 'EDITORIAL', claimCeiling = 'EDITORIAL' } = Astro.props as Props;
 const meta = evidenceMeta(evidenceClass);
 ---
 <dl class="evidence" data-stroke={meta.stroke} title={meta.summary}>
-  <dt>Evidence class</dt>
-  <dd class="evidence-class">{meta.label}</dd>
-  <dt>Claim ceiling</dt>
-  <dd class="evidence-ceiling">Claim ceiling · {humanizeCeiling(claimCeiling)}</dd>
+  <dt>Kanıt sınıfı</dt><dd class="evidence-class">{displayEvidenceClass(evidenceClass)}</dd>
+  <dt>İddia sınırı</dt><dd class="evidence-ceiling">Kanıt sınırı · {displayClaimCeiling(claimCeiling)}</dd>
 </dl>

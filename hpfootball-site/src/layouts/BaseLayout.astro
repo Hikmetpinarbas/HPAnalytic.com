@@ -1,5 +1,6 @@
 ---
 import { isPublic } from '../lib/public-content.mjs';
+import { isPublicEditorialItem } from '../lib/site-editorial-status.mjs';
 import '../styles/global.css';
 import { getCollection } from 'astro:content';
 import { buildVisibleNavigation, buildUtilityNavigation, currentState, SECTION_ROUTES } from '../lib/site-surfaces.mjs';
@@ -25,9 +26,9 @@ const {
   noindex = false,
 } = Astro.props as Props;
 
-const articles = await getCollection('articles', isPublic);
-const research = await getCollection('research', isPublic);
-const visuals = await getCollection('visuals', isPublic);
+const articles = (await getCollection('articles', isPublic)).filter((entry) => isPublicEditorialItem(entry.data));
+const research = (await getCollection('research', isPublic)).filter((entry) => isPublicEditorialItem(entry.data));
+const visuals = (await getCollection('visuals', isPublic)).filter((entry) => isPublicEditorialItem(entry.data));
 
 const articleSections: Record<string, number> = {};
 for (const article of articles) {
@@ -51,7 +52,6 @@ const navigation = withCurrent(buildVisibleNavigation({
 const utility = withCurrent(buildUtilityNavigation({ articleCount: articles.length }));
 const archiveLink = utility.find((item) => item.href === '/archive');
 const searchLink = utility.find((item) => item.href === '/search');
-
 const canonical = new URL(pathname, Astro.site ?? Astro.url).href;
 ---
 <!doctype html>
@@ -94,7 +94,10 @@ if ('serviceWorker' in navigator) {
 <a class="skip-link" href="#main-content">İçeriğe geç</a>
 <div class="grain" aria-hidden="true"></div>
 <header class="site-header">
-  <Logo />
+  <a href="/" class="brand" aria-label="HPAnalytic ana sayfa">
+    <span class="hp-mark" aria-hidden="true"><svg viewBox="0 0 52 52"><path class="hp-frame" d="M7 7v38M7 26h17M24 7v38M32 7v38M32 7h7c8 0 8 15 0 15h-7"/><path class="hp-break" d="M13 38 42 14"/></svg></span>
+    <span class="brand-word"><b>HPANALYTIC</b><small>HİKMET PINARBAŞ · FOOTBALL INTELLIGENCE</small></span>
+  </a>
   <nav class="desktop-nav" aria-label="Primary">
     {navigation.map(item=><a class="nav-link" href={item.href} aria-current={item.current}>{item.label}</a>)}
   </nav>
@@ -108,30 +111,14 @@ if ('serviceWorker' in navigator) {
     <MobileNavigation navigation={archiveLink ? [...navigation, archiveLink] : navigation} />
   </div>
 </header>
-<main id="main-content" tabindex="-1">
-<slot/>
-</main>
+<main id="main-content" tabindex="-1"><slot/></main>
 <footer class="site-footer">
   <div class="footer-grid">
-    <div>
-      <Logo />
-      <p class="footer-statement">Skoru değil, skoru üreten mekanizmayı okuruz. Kanıtın taşıyabildiğinden güçlü konuşmayız.</p>
-    </div>
-    <nav class="footer-nav" aria-label="Footer surfaces">
-      <h2>SURFACES</h2>
-      <ul>{navigation.map(item=><li><a href={item.href}>{item.label}</a></li>)}</ul>
-    </nav>
-    {utility.length > 0 && (
-      <nav class="footer-nav" aria-label="Footer tools">
-        <h2>TOOLS</h2>
-        <ul>{utility.map(item=><li><a href={item.href}>{item.label}</a></li>)}</ul>
-      </nav>
-    )}
+    <div><Logo /><p class="footer-statement">Skoru değil, skoru üreten mekanizmayı okuruz. Kanıtın taşıyabildiğinden güçlü konuşmayız.</p></div>
+    <nav class="footer-nav" aria-label="Footer surfaces"><h2>SURFACES</h2><ul>{[...navigation].map(item=><li><a href={item.href}>{item.label}</a></li>)}</ul></nav>
+    {utility.length > 0 && (<nav class="footer-nav" aria-label="Footer tools"><h2>TOOLS</h2><ul>{utility.map(item=><li><a href={item.href}>{item.label}</a></li>)}</ul></nav>)}
   </div>
-  <div class="footer-base">
-    <span>© {new Date().getFullYear()} Hikmet Pınarbaş · HPAnalytic</span>
-    <span>Evidence before confidence.</span>
-  </div>
+  <div class="footer-base"><span>© {new Date().getFullYear()} Hikmet Pınarbaş · HPAnalytic</span><span>Evidence before confidence.</span></div>
 </footer>
 </body>
 </html>
