@@ -40,8 +40,9 @@ async function makeFixture() {
   return root;
 }
 
-test('real current HPA item appears from current authority rather than editorial master', async () => {
-  const items=await loadControlItems();
+test('current HPA item appears from current authority rather than editorial master', async () => {
+  const root=await makeFixture();
+  const items=await loadControlItems({stateRoot:root,humanRoot:path.join(root,'human')});
   const current=items.find(x=>x.currentness==='CURRENT');
   assert.equal(current?.target,'Turkey - Italy');
   assert.equal(current?.content_type,'POSTMATCH');

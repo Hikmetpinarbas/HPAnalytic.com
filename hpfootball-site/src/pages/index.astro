@@ -8,7 +8,7 @@ import {isPublicEditorialItem} from '../lib/site-editorial-status.mjs';
 import {getUpcomingMatches, FOOTBALL_SCOPE} from '../lib/football-data.mjs';
 export const prerender = true;
 
-const articles=(await getCollection('articles',(entry)=>isPublic(entry)&&isPublicEditorialItem(entry.data))).sort((a,b)=>+b.data.date-+a.data.date);
+const articles=(await getCollection('articles',isPublic)).filter(entry=>isPublicEditorialItem(entry.data)).sort((a,b)=>+b.data.date-+a.data.date);
 const featuredAnalysis=articles.find(a=>a.data.section==='analysis' && a.data.featured) ?? articles.find(a=>a.data.section==='analysis');
 const latestAnalysis=articles.filter(a=>a.data.section==='analysis' && a.id!==featuredAnalysis?.id).slice(0,3);
 const footballToken=import.meta.env.HPA_FOOTBALL_DATA_TOKEN;
