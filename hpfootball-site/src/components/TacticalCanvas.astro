@@ -1,1 +1,51 @@
-<div class="tactical" aria-hidden="true"><svg viewBox="0 0 900 560"><g class="pitch"><rect x="40" y="40" width="820" height="480"/><line x1="450" y1="40" x2="450" y2="520"/><circle cx="450" cy="280" r="62"/><rect x="40" y="160" width="120" height="240"/><rect x="740" y="160" width="120" height="240"/></g><g class="gold"><path d="M145 410 C280 380 330 320 450 280 C580 235 650 190 770 150"/><path d="M145 150 C280 190 330 235 450 280 C580 320 650 380 770 410"/></g><g class="blue"><path d="M180 430 C260 300 330 220 450 175"/><path d="M720 430 C640 300 570 220 450 175"/></g><g class="nodes"><circle cx="145" cy="410" r="10"/><circle cx="145" cy="150" r="10"/><circle cx="450" cy="280" r="13"/><circle cx="770" cy="150" r="10"/><circle cx="770" cy="410" r="10"/></g></svg><div class="label tl">POSITION</div><div class="label tr">ROLE</div><div class="label bl">SPACE</div><div class="label br">FUNCTION</div></div>
+---
+import { pitchGeometry } from '../lib/pitch-geometry.mjs';
+// Conceptual diagram, not data: the pitch is drawn to IFAB scale, the flows are
+// an explanatory abstraction and carry the epistemic stroke vocabulary.
+interface Props { caption?: string; id?: string; }
+const { id = 'tactical', caption = 'Kavramsal diyagram. Veri, tracking veya gerçek konum iddiası değildir.' } = Astro.props as Props;
+const g = pitchGeometry({ width: 900, padding: 40 });
+const p = (mx: number, my: number) => g.toSvg(mx, my);
+const A = p(14, 56), B = p(14, 12), C = p(52.5, 34), D = p(91, 12), E = p(91, 56), F = p(52.5, 14);
+const path = (pts: { x: number; y: number }[], bend = 0) =>
+  `M${pts[0].x} ${pts[0].y} Q${(pts[0].x + pts[1].x) / 2} ${(pts[0].y + pts[1].y) / 2 + bend} ${pts[1].x} ${pts[1].y}`;
+const labels = [
+  { text: 'POSITION', x: 60, y: 70, anchor: 'start' },
+  { text: 'ROLE', x: g.width - 60, y: 70, anchor: 'end' },
+  { text: 'SPACE', x: 60, y: g.height - 56, anchor: 'start' },
+  { text: 'FUNCTION', x: g.width - 60, y: g.height - 56, anchor: 'end' },
+];
+---
+<figure class="figure">
+  <div class="tactical">
+    <svg viewBox={g.viewBox} role="img" aria-labelledby={`${id}-title ${id}-desc`}>
+      <title id={`${id}-title`}>Position, role, space ve function ilişkisi</title>
+      <desc id={`${id}-desc`}>Ölçekli saha üzerinde kavramsal akış: gözlenen ilişki düz, aday ilişki kesikli, bilinmeyen ilişki noktalı çizgiyle gösterilir.</desc>
+      <g class="pitch-lines">
+        <rect {...g.outline} />
+        <line {...g.halfway} />
+        <circle {...g.centre} />
+        {g.penaltyAreas.map((b) => <rect {...b} />)}
+        {g.goalAreas.map((b) => <rect {...b} />)}
+        {g.penaltyArcs.map((d) => <path d={d} />)}
+        {g.penaltySpots.map((s) => <circle class="spot" cx={s.cx} cy={s.cy} r="3" />)}
+        <circle class="spot" cx={g.centre.cx} cy={g.centre.cy} r="3" />
+      </g>
+      <path class="flow flow-observed" d={path([A, C], -40)} />
+      <path class="flow flow-observed" d={path([C, D], -40)} />
+      <path class="flow flow-candidate" d={path([B, C], 40)} />
+      <path class="flow flow-candidate" d={path([C, E], 40)} />
+      <path class="flow flow-unknown" d={path([A, F], -60)} />
+      <path class="flow flow-unknown" d={path([E, F], -60)} />
+      {[A, B, D, E].map((n) => <circle class="node" cx={n.x} cy={n.y} r="9" />)}
+      <circle class="node" cx={C.x} cy={C.y} r="12" />
+      {labels.map((l) => <text class="node-label" x={l.x} y={l.y} text-anchor={l.anchor}>{l.text}</text>)}
+    </svg>
+  </div>
+  <ul class="figure-legend">
+    <li><span class="legend-swatch observed"></span>Gözlenen</li>
+    <li><span class="legend-swatch candidate"></span>Aday / hipotez</li>
+    <li><span class="legend-swatch unknown"></span>Bilinmeyen</li>
+  </ul>
+  <figcaption>{caption}</figcaption>
+</figure>

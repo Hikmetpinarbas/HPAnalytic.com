@@ -1,0 +1,18 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import Button from '../components/Button.astro';
+export const prerender = true;
+---
+<BaseLayout title="Bulunamadı — HPAnalytic" noindex>
+<div class="listing">
+  <header class="page-head">
+    <p class="kicker">404 · UNKNOWN</p>
+    <h1 class="page-title">Bu sayfa için kanıt yok.</h1>
+    <p class="lead">Aradığınız adres yayımlanmamış ya da taşınmış olabilir.</p>
+    <div class="button-row">
+      <Button href="/" variant="primary">HOME</Button>
+      <Button href="/search">SEARCH ARCHIVE</Button>
+    </div>
+  </header>
+</div>
+</BaseLayout>

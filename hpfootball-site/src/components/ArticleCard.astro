@@ -1,0 +1,26 @@
+---
+import EvidenceBadge from './EvidenceBadge.astro';
+import { SECTION_LABELS } from '../lib/site-surfaces.mjs';
+interface Props {
+  id: string;
+  title: string;
+  description: string;
+  date: Date;
+  section: string;
+  evidenceClass: string;
+  claimCeiling: string;
+  headingLevel?: 2 | 3;
+}
+const { id, title, description, date, section, evidenceClass, claimCeiling, headingLevel = 3 } = Astro.props as Props;
+const Heading = headingLevel === 2 ? 'h2' : 'h3';
+const label = SECTION_LABELS[section as keyof typeof SECTION_LABELS] ?? section;
+---
+<article class="card">
+  <div class="card-meta">
+    <span class="section-name">{label}</span>
+    <time datetime={date.toISOString().slice(0, 10)}>{date.toLocaleDateString('tr-TR', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' })}</time>
+  </div>
+  <Heading class="card-title"><a href={`/articles/${id}`}>{title}</a></Heading>
+  <p>{description}</p>
+  <EvidenceBadge evidenceClass={evidenceClass} claimCeiling={claimCeiling} />
+</article>

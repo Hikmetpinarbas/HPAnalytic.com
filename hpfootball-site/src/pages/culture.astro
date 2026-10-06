@@ -1,1 +1,15 @@
---- import BaseLayout from '../layouts/BaseLayout.astro'; import {getCollection} from 'astro:content'; const items=(await getCollection('articles')).filter(x=>x.data.section==='culture'); ---<BaseLayout title="Football Culture — HP Football"><main class="listing"><p class="kicker">FOOTBALL CULTURE</p><h1>Futbol yalnızca maç değildir.</h1>{items.map(a=><a href={'/articles/'+a.id}><h2>{a.data.title}</h2><p>{a.data.description}</p></a>)}</main></BaseLayout>
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SectionListing from '../components/SectionListing.astro';
+export const prerender = true;
+---
+<BaseLayout title="Football Culture — HPAnalytic" description="Oyunun tarihi, kültürü, insanları ve uluslararası bağlamı.">
+<div class="listing">
+  <header class="page-head">
+    <p class="kicker">FOOTBALL CULTURE</p>
+    <h1 class="page-title">Futbol yalnızca maç değildir.</h1>
+    <p class="lead">Oyunun tarihi, kültürü, insanları ve uluslararası bağlamı.</p>
+  </header>
+  <SectionListing section="culture" />
+</div>
+</BaseLayout>

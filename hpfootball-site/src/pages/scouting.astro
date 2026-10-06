@@ -1,1 +1,33 @@
---- import BaseLayout from '../layouts/BaseLayout.astro'; ---<BaseLayout title="Scouting — HP Football"><main class="listing"><p class="kicker">SCOUTING & RECRUITMENT</p><h1>Oyuncu bulmak değil, karar riskini azaltmak.</h1><p class="lead">Rol, fonksiyon, sistem uyumu, partner ilişkileri, rakip bağlamı, transferability ve counterevidence aynı karar yüzeyinde okunur.</p></main></BaseLayout>
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SectionListing from '../components/SectionListing.astro';
+export const prerender = true;
+const dimensions = [
+  ['QUALITY', 'Oyuncunun bugünkü seviyesi — rol içinde, rakip kalitesine göre.'],
+  ['ROLE', 'Pozisyon adresi değil; çözdüğü futbol problemleri kümesi.'],
+  ['FIT', 'Sistem, partner ilişkileri ve hedef takımın oyun modeliyle uyum.'],
+  ['RISK', 'Örneklem, sakatlık, bağlam değişimi ve adaptasyon belirsizliği.'],
+  ['SUSTAINABILITY', 'Performansın tekrarlanabilirliği; varyans mı, mekanizma mı?'],
+  ['DEVELOPMENT', 'Gelişim eğrisi ve hangi koşulda hızlanacağı.'],
+  ['ECONOMICS', 'Toplam maliyet, maaş yapısı ve fırsat maliyeti.'],
+  ['RESALE', 'Gelecekteki piyasa değeri ve likidite.'],
+  ['DOWNSIDE', 'Karar yanlış çıkarsa en kötü senaryo ve geri dönüş yolu.'],
+];
+---
+<BaseLayout title="Scouting — HPAnalytic" description="Oyuncu bulmak değil, karar riskini azaltmak.">
+<div class="listing">
+  <header class="page-head">
+    <p class="kicker">SCOUTING &amp; RECRUITMENT</p>
+    <h1 class="page-title">Oyuncu bulmak değil, karar riskini azaltmak.</h1>
+    <p class="lead">Rol, fonksiyon, sistem uyumu, partner ilişkileri, rakip bağlamı, transferability ve counterevidence aynı karar yüzeyinde okunur.</p>
+  </header>
+  <p class="decision-question">“Bu transfer kararını ben vermiş olsaydım ve itibarım bu karara bağlı olsaydı, bu oyuncuyu alır mıydım?”</p>
+  <ul class="frame-grid" aria-label="Karar boyutları">
+    {dimensions.map(([name, text]) => <li><b>{name}</b><p>{text}</p></li>)}
+  </ul>
+  <section class="subsection" aria-labelledby="scouting-reports">
+    <h2 id="scouting-reports" class="kicker">REPORTS</h2>
+    <SectionListing section="scouting" headingLevel={3} />
+  </section>
+</div>
+</BaseLayout>

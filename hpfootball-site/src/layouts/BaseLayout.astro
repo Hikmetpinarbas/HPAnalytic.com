@@ -1,54 +1,129 @@
 ---
 import '../styles/global.css';
 import { getCollection } from 'astro:content';
-import { buildVisibleNavigation } from '../lib/site-surfaces.mjs';
+import { buildVisibleNavigation, buildUtilityNavigation, currentState, SECTION_ROUTES } from '../lib/site-surfaces.mjs';
 import MobileNavigation from '../components/MobileNavigation.astro';
+import Logo from '../components/Logo.astro';
 
-const {title='HP Football',description='Football Intelligence by Hikmet Pınarbaş'}=Astro.props;
-const articles=await getCollection('articles');
-const research=await getCollection('research');
-const visuals=await getCollection('visuals');
-
-const articleSections: Record<string, number>={};
-for (const article of articles) {
-  const section=article.data.section;
-  articleSections[section]=(articleSections[section]||0)+1;
+interface Props {
+  title?: string;
+  description?: string;
+  section?: string;
+  ogType?: 'website' | 'article';
+  publishedTime?: Date;
+  noindex?: boolean;
 }
 
-const navigation=buildVisibleNavigation({
+const SITE_NAME = 'HPAnalytic';
+const {
+  title = 'HPAnalytic — Football Intelligence',
+  description = 'HPAnalytic: Hikmet Pınarbaş tarafından futbolu mekanizma, kanıt ve bağlam üzerinden okuyan bağımsız football intelligence platformu.',
+  section,
+  ogType = 'website',
+  publishedTime,
+  noindex = false,
+} = Astro.props as Props;
+
+const articles = await getCollection('articles');
+const research = await getCollection('research');
+const visuals = await getCollection('visuals');
+
+const articleSections: Record<string, number> = {};
+for (const article of articles) {
+  const articleSection = article.data.section;
+  articleSections[articleSection] = (articleSections[articleSection] || 0) + 1;
+}
+
+const pathname = Astro.url.pathname;
+const sectionRoute = section ? SECTION_ROUTES[section as keyof typeof SECTION_ROUTES] : undefined;
+const withCurrent = (items: { href: string; label: string }[]) =>
+  items.map((item) => ({
+    ...item,
+    current: (currentState(item.href, pathname) ?? (item.href === sectionRoute ? 'true' : undefined)) as 'page' | 'true' | undefined,
+  }));
+
+const navigation = withCurrent(buildVisibleNavigation({
   articleSections,
-  researchCount:research.length,
-  visualCount:visuals.length,
-});
+  researchCount: research.length,
+  visualCount: visuals.length,
+}));
+const utility = withCurrent(buildUtilityNavigation({ articleCount: articles.length }));
+const archiveLink = utility.find((item) => item.href === '/archive');
+const searchLink = utility.find((item) => item.href === '/search');
+
+const canonical = new URL(pathname, Astro.site ?? Astro.url).href;
 ---
 <!doctype html>
-<html lang="tr">
+<html lang="tr" class="no-js">
 <head>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1"/>
+<script is:inline>document.documentElement.classList.replace('no-js','js');</script>
 <title>{title}</title>
 <meta name="description" content={description}/>
+<link rel="canonical" href={canonical}/>
+{noindex && <meta name="robots" content="noindex"/>}
+<meta property="og:site_name" content={SITE_NAME}/>
+<meta property="og:type" content={ogType}/>
+<meta property="og:title" content={title}/>
+<meta property="og:description" content={description}/>
+<meta property="og:url" content={canonical}/>
+<meta property="og:locale" content="tr_TR"/>
+{publishedTime && <meta property="article:published_time" content={publishedTime.toISOString()}/>}
+<meta name="twitter:card" content="summary"/>
 <meta name="theme-color" content="#050505"/>
-<meta name="application-name" content="HP Football Intelligence"/>
+<meta name="application-name" content="HPAnalytic"/>
 <meta name="mobile-web-app-capable" content="yes"/>
 <meta name="apple-mobile-web-app-capable" content="yes"/>
+<meta name="apple-mobile-web-app-title" content="HPAnalytic"/>
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
 <link rel="manifest" href="/manifest.webmanifest"/>
 <link rel="apple-touch-icon" href="/icons/hp-192.png"/>
+<slot name="head"/>
 </head>
 <body>
-<div class="grain"></div>
-<header class="nav">
-  <a href="/" class="brand">
-    <span class="hp">HP</span>
-    <span><b>HİKMET PINARBAŞ</b><small>FOOTBALL INTELLIGENCE</small></span>
-  </a>
+<a class="skip-link" href="#main-content">İçeriğe geç</a>
+<div class="grain" aria-hidden="true"></div>
+<header class="site-header">
+  <Logo />
   <nav class="desktop-nav" aria-label="Primary">
-    {navigation.map(item=><a href={item.href}>{item.label}</a>)}
+    {navigation.map(item=><a class="nav-link" href={item.href} aria-current={item.current}>{item.label}</a>)}
   </nav>
-  <MobileNavigation navigation={navigation} />
+  <div class="header-actions">
+    {searchLink && (
+      <a class="icon-link" href={searchLink.href} aria-current={searchLink.current}>
+        <svg viewBox="0 0 20 20" aria-hidden="true" focusable="false"><circle cx="8.5" cy="8.5" r="5.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M12.5 12.5 17 17" stroke="currentColor" stroke-width="1.6"/></svg>
+        <span class="icon-link-text">SEARCH</span>
+      </a>
+    )}
+    <MobileNavigation navigation={archiveLink ? [...navigation, archiveLink] : navigation} />
+  </div>
 </header>
+<main id="main-content" tabindex="-1">
 <slot/>
-<footer><b>HP FOOTBALL</b><span>Football Intelligence by Hikmet Pınarbaş</span></footer>
+</main>
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div>
+      <Logo />
+      <p class="footer-statement">Skoru değil, skoru üreten mekanizmayı okuruz. Kanıtın taşıyabildiğinden güçlü konuşmayız.</p>
+    </div>
+    <nav class="footer-nav" aria-label="Footer surfaces">
+      <h2>SURFACES</h2>
+      <ul>{navigation.map(item=><li><a href={item.href}>{item.label}</a></li>)}</ul>
+    </nav>
+    {utility.length > 0 && (
+      <nav class="footer-nav" aria-label="Footer tools">
+        <h2>TOOLS</h2>
+        <ul>{utility.map(item=><li><a href={item.href}>{item.label}</a></li>)}</ul>
+      </nav>
+    )}
+  </div>
+  <div class="footer-base">
+    <span>© {new Date().getFullYear()} Hikmet Pınarbaş · HPAnalytic</span>
+    <span>Evidence before confidence.</span>
+  </div>
+</footer>
 </body>
 </html>

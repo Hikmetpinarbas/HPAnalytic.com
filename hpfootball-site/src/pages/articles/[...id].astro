@@ -1,6 +1,67 @@
 ---
-import {getCollection,render} from 'astro:content'; import BaseLayout from '../../layouts/BaseLayout.astro'; import EvidenceBadge from '../../components/EvidenceBadge.astro';
-export async function getStaticPaths(){const items=await getCollection('articles');return items.map(a=>({params:{id:a.id},props:{a}}))}
-const {a}=Astro.props; const {Content}=await render(a);
+import { getCollection, render } from 'astro:content';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import EvidenceBadge from '../../components/EvidenceBadge.astro';
+import { SECTION_LABELS, SECTION_ROUTES } from '../../lib/site-surfaces.mjs';
+import { adjacentItems, readingMinutes } from '../../lib/archive.mjs';
+import { evidenceMeta, humanizeCeiling } from '../../lib/evidence.mjs';
+
+// Content routes are static: under output:'server', getStaticPaths is ignored
+// unless the page opts into prerendering (that was the 500 on every article).
+export const prerender = true;
+
+export async function getStaticPaths() {
+  const items = await getCollection('articles');
+  return items.map((a) => ({ params: { id: a.id }, props: { a, all: items } }));
+}
+
+const { a, all } = Astro.props;
+const { Content } = await render(a);
+const { newer, older } = adjacentItems(all, a.id, (x: typeof a) => x.data.date);
+const section = a.data.section;
+const sectionLabel = SECTION_LABELS[section as keyof typeof SECTION_LABELS] ?? section;
+const sectionRoute = SECTION_ROUTES[section as keyof typeof SECTION_ROUTES];
+const evidence = evidenceMeta(a.data.evidenceClass);
+const minutes = readingMinutes(a.body);
+const isoDate = a.data.date.toISOString().slice(0, 10);
+const site = Astro.site ?? Astro.url;
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  headline: a.data.title,
+  description: a.data.description,
+  datePublished: a.data.date.toISOString(),
+  inLanguage: 'tr',
+  author: { '@type': 'Person', name: 'Hikmet Pınarbaş' },
+  publisher: { '@type': 'Organization', name: 'HPAnalytic' },
+  mainEntityOfPage: new URL(Astro.url.pathname, site).href,
+};
 ---
-<BaseLayout title={a.data.title+' — HP Football'} description={a.data.description}><main class="article-page"><p class="kicker">{a.data.section.toUpperCase()}</p><h1>{a.data.title}</h1><p class="standfirst">{a.data.description}</p><EvidenceBadge evidenceClass={a.data.evidenceClass} claimCeiling={a.data.claimCeiling}/><article class="prose"><Content/></article></main></BaseLayout>
+<BaseLayout title={`${a.data.title} — HPAnalytic`} description={a.data.description} section={section} ogType="article" publishedTime={a.data.date}>
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+  <article class="article-page">
+    <header class="article-head">
+      <p class="kicker">{sectionRoute ? <a href={sectionRoute}>{sectionLabel}</a> : sectionLabel}</p>
+      <h1>{a.data.title}</h1>
+      <p class="standfirst">{a.data.description}</p>
+      <p class="article-meta">
+        <span>Hikmet Pınarbaş</span>
+        <time datetime={isoDate}>{a.data.date.toLocaleDateString('tr-TR', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' })}</time>
+        <span>{minutes} dk okuma</span>
+      </p>
+      <EvidenceBadge evidenceClass={a.data.evidenceClass} claimCeiling={a.data.claimCeiling} />
+    </header>
+    <div class="prose"><Content /></div>
+    <aside class="claim-boundary" aria-labelledby="claim-boundary-title">
+      <h2 id="claim-boundary-title">CLAIM BOUNDARY</h2>
+      <p>{evidence.summary}</p>
+      <p>Bu yazının iddia tavanı: <strong>{humanizeCeiling(a.data.claimCeiling)}</strong>. Metin, bu sınırın üzerinde bir kesinlik iddia etmez.</p>
+    </aside>
+    {(newer || older) && (
+      <nav class="adjacent-nav" aria-label="Önceki ve sonraki yazılar">
+        {newer && <a class="newer" href={`/articles/${newer.id}`} rel="prev"><span>← DAHA YENİ</span><b>{newer.data.title}</b></a>}
+        {older && <a class="older" href={`/articles/${older.id}`} rel="next"><span>DAHA ESKİ →</span><b>{older.data.title}</b></a>}
+      </nav>
+    )}
+  </article>
+</BaseLayout>

@@ -14,10 +14,13 @@ test('base layout declares the PWA manifest and standalone mobile metadata', asy
   assert.match(layout, /rel="apple-touch-icon" href="\/icons\/hp-192\.png"/);
 });
 
-test('manifest defines a stable standalone HP Football app identity', async () => {
+test('manifest defines the HPAnalytic standalone identity', async () => {
   const manifest = JSON.parse(await readFile(manifestUrl, 'utf8'));
-  assert.equal(manifest.name, 'HP Football Intelligence');
-  assert.equal(manifest.short_name, 'HP Football');
+  assert.equal(manifest.name, 'HPAnalytic — Football Intelligence');
+  assert.equal(manifest.short_name, 'HPAnalytic');
+  // Installed-app continuity: the app id must not change with the rename,
+  // otherwise Android treats the successor as a different app.
+  assert.equal(manifest.id, '/');
   assert.equal(manifest.start_url, '/');
   assert.equal(manifest.scope, '/');
   assert.equal(manifest.display, 'standalone');

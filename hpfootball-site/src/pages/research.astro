@@ -1,16 +1,22 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+export const prerender = true;
+const rules = [
+  ['FOOTBALL QUESTION', 'Önce cevaplanacak profesyonel soru tanımlanır.'],
+  ['SOURCE ROLE', 'Federation, club, provider, academic, media, transcript, open dataset.'],
+  ['INDEPENDENCE', "Aynı upstream'in farklı yansımaları bağımsız kanıt sayılmaz."],
+  ['COUNTEREVIDENCE', 'Bulgunun hangi koşulda zayıflayacağı görünür tutulur.'],
+];
 ---
-<BaseLayout title="Research — HP Football">
-<main class="listing">
-<p class="kicker">RESEARCH</p>
-<h1>Question first.<br/>Source pool dynamic.<br/>Admission fixed.</h1>
-<p class="lead">Araştırma, kaynak sayısı toplamak için değil; futbol sorusunun kanıt açığını kapatmak için yapılır. Orijinal kaynağa gitme, independence kontrolü, karşı-kanıt ve claim ceiling zorunludur.</p>
-<div class="research-grid">
-<article><b>FOOTBALL QUESTION</b><p>Önce cevaplanacak profesyonel soru tanımlanır.</p></article>
-<article><b>SOURCE ROLE</b><p>Federation, club, provider, academic, media, transcript, open dataset.</p></article>
-<article><b>INDEPENDENCE</b><p>Aynı upstream'in farklı yansımaları bağımsız kanıt sayılmaz.</p></article>
-<article><b>COUNTEREVIDENCE</b><p>Bulgunun hangi koşulda zayıflayacağı görünür tutulur.</p></article>
+<BaseLayout title="Research — HPAnalytic" description="Soru önce gelir; kaynak havuzu dinamik, kabul kriteri sabittir.">
+<div class="listing">
+  <header class="page-head">
+    <p class="kicker">RESEARCH</p>
+    <h1 class="page-title">Question first.<br/>Source pool dynamic.<br/>Admission fixed.</h1>
+    <p class="lead">Araştırma, kaynak sayısı toplamak için değil; futbol sorusunun kanıt açığını kapatmak için yapılır. Orijinal kaynağa gitme, independence kontrolü, karşı-kanıt ve claim ceiling zorunludur.</p>
+  </header>
+  <ol class="frame-grid">
+    {rules.map(([name, text]) => <li><b>{name}</b><p>{text}</p></li>)}
+  </ol>
 </div>
-</main>
 </BaseLayout>

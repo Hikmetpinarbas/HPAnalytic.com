@@ -1,0 +1,60 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+import { groupByYearMonth, monthName } from '../lib/archive.mjs';
+import { SECTION_LABELS, SECTION_ROUTES } from '../lib/site-surfaces.mjs';
+import { evidenceMeta } from '../lib/evidence.mjs';
+export const prerender = true;
+
+const articles = await getCollection('articles');
+type Entry = (typeof articles)[number];
+type YearGroup = { year: number; count: number; months: { month: number; items: Entry[] }[] };
+const years: YearGroup[] = groupByYearMonth(articles, (a: Entry) => a.data.date);
+const sectionCounts = new Map<string, number>();
+for (const a of articles) sectionCounts.set(a.data.section, (sectionCounts.get(a.data.section) ?? 0) + 1);
+const sectionChips = [...sectionCounts]
+  .filter(([section]) => section in SECTION_ROUTES)
+  .map(([section, count]) => ({
+    href: SECTION_ROUTES[section as keyof typeof SECTION_ROUTES],
+    label: SECTION_LABELS[section as keyof typeof SECTION_LABELS],
+    count,
+  }));
+---
+<BaseLayout title="Archive — HPAnalytic" description="HPAnalytic yazı arşivi: yıl ve aya göre.">
+<div class="listing">
+  <header class="page-head">
+    <p class="kicker">ARCHIVE</p>
+    <h1 class="page-title">Living football archive.</h1>
+    <p class="lead">{articles.length} yazı. Her yazı kendi kanıt sınıfını ve iddia tavanını taşır.</p>
+    {sectionChips.length > 0 && (
+      <ul class="chip-row" aria-label="Bölümler">
+        {sectionChips.map((chip) => <li><a class="chip" href={chip.href}>{chip.label} <small>{chip.count}</small></a></li>)}
+      </ul>
+    )}
+  </header>
+  {years.length === 0 ? (
+    <p class="empty-state">Arşivde henüz yayımlanmış yazı yok.</p>
+  ) : years.map((year) => (
+    <section class="archive-year" aria-labelledby={`y-${year.year}`}>
+      <h2 id={`y-${year.year}`}>{year.year} <small>{year.count} yazı</small></h2>
+      {year.months.map((month) => (
+        <div class="archive-month">
+          <h3>{monthName(month.month)} <small>{month.items.length}</small></h3>
+          <ul class="archive-list">
+            {month.items.map((a) => (
+              <li>
+                <a href={`/articles/${a.id}`}>{a.data.title}</a>
+                <div class="card-meta">
+                  <span class="section-name">{SECTION_LABELS[a.data.section as keyof typeof SECTION_LABELS]}</span>
+                  <time datetime={a.data.date.toISOString().slice(0, 10)}>{a.data.date.toLocaleDateString('tr-TR', { day: 'numeric', month: 'long', timeZone: 'UTC' })}</time>
+                  <span>{evidenceMeta(a.data.evidenceClass).label}</span>
+                </div>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </section>
+  ))}
+</div>
+</BaseLayout>

@@ -2,6 +2,7 @@
 interface NavigationItem {
   href: string;
   label: string;
+  current?: 'page' | 'true';
 }
 
 interface Props {
@@ -24,7 +25,9 @@ const { navigation = [] } = Astro.props as Props;
   </button>
 
   <nav id="mobile-nav-panel" class="mobile-nav-panel" aria-label="Mobile primary" hidden>
-    {navigation.map((item) => <a href={item.href}>{item.label}</a>)}
+    {navigation.map((item) => (
+      <a href={item.href} aria-current={item.current}>{item.label}</a>
+    ))}
   </nav>
 </div>
 
@@ -32,6 +35,7 @@ const { navigation = [] } = Astro.props as Props;
   import { nextMobileMenuState } from '../lib/mobile-nav-state.mjs';
 
   const roots = document.querySelectorAll('[data-mobile-nav]');
+  const desktop = window.matchMedia('(min-width: 901px)');
 
   for (const root of roots) {
     const trigger = root.querySelector('.mobile-nav-trigger');
@@ -39,27 +43,41 @@ const { navigation = [] } = Astro.props as Props;
 
     if (!(trigger instanceof HTMLButtonElement) || !(panel instanceof HTMLElement)) continue;
 
+    const isOpen = () => trigger.getAttribute('aria-expanded') === 'true';
     const setOpen = (open: boolean) => {
       trigger.setAttribute('aria-expanded', String(open));
       trigger.setAttribute('aria-label', open ? 'Menüyü kapat' : 'Menüyü aç');
       panel.hidden = !open;
     };
+    const dispatch = (event: string) => {
+      if (!isOpen()) return;
+      setOpen(nextMobileMenuState(true, event));
+    };
 
     trigger.addEventListener('click', () => {
-      const isOpen = trigger.getAttribute('aria-expanded') === 'true';
-      setOpen(nextMobileMenuState(isOpen, 'trigger'));
+      setOpen(nextMobileMenuState(isOpen(), 'trigger'));
     });
 
     panel.addEventListener('click', (event) => {
-      if (event.target instanceof Element && event.target.closest('a')) {
-        setOpen(nextMobileMenuState(true, 'navigate'));
-      }
+      if (event.target instanceof Element && event.target.closest('a')) dispatch('navigate');
+    });
+
+    // Non-modal disclosure: leaving the menu closes it instead of trapping focus.
+    document.addEventListener('pointerdown', (event) => {
+      if (event.target instanceof Node && !root.contains(event.target)) dispatch('outside');
+    });
+
+    root.addEventListener('focusout', (event) => {
+      const next = (event as FocusEvent).relatedTarget;
+      if (next instanceof Node && !root.contains(next)) dispatch('focusout');
+    });
+
+    desktop.addEventListener('change', (event) => {
+      if (event.matches) dispatch('desktop');
     });
 
     document.addEventListener('keydown', (event) => {
-      if (event.key !== 'Escape') return;
-      const isOpen = trigger.getAttribute('aria-expanded') === 'true';
-      if (!isOpen) return;
+      if (event.key !== 'Escape' || !isOpen()) return;
       setOpen(nextMobileMenuState(true, 'escape'));
       trigger.focus();
     });
