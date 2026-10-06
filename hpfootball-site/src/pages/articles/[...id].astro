@@ -17,7 +17,7 @@ const evidence=evidenceMeta(a.data.evidenceClass); const minutes=a.data.readingM
 const topics=a.data.topics??[]; const sourceRefs=a.data.sourceRefs??[]; const counterevidence=a.data.counterevidence??[];
 const visualAssets=(a.data.visualAssets??[]).filter(v=>['OWNED','LICENSED','EDITORIAL_LICENSED','PUBLIC_DOMAIN','ORIGINAL'].includes(String(v.rights_status||'').toUpperCase()));
 const dataInsights=a.data.dataInsights??[]; const governed=a.data.source_system==='HP_CONTENT_INTELLIGENCE'||Boolean(a.data.articleKind);
-const site=Astro.site??Astro.url; const jsonLd={'@context':'https://schema.org','@type':'Article',headline:a.data.title,description:a.data.description,datePublished:a.data.date.toISOString(),inLanguage:a.data.language??'tr',author:{'@type':'Person',name:a.data.author??'Hikmet Pınarbaş'},publisher:{'@type':'Organization',name:'HPAnalytic'},mainEntityOfPage:new URL(Astro.url.pathname,site).href};
+const site=Astro.site??Astro.url; const canonicalArticle=new URL(Astro.url.pathname,site).href; const jsonLd={'@context':'https://schema.org','@type':'Article',headline:a.data.title,description:a.data.description,datePublished:a.data.date.toISOString(),inLanguage:a.data.language??'tr',author:{'@type':'Person',name:a.data.author??'Hikmet Pınarbaş'},publisher:{'@type':'Organization',name:'HPAnalytic'},mainEntityOfPage:new URL(Astro.url.pathname,site).href};
 ---
 <BaseLayout title={a.data.title+' — HPAnalytic'} description={a.data.description} section={section} ogType="article" publishedTime={a.data.date}>
 <script slot="head" type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
@@ -26,6 +26,31 @@ const site=Astro.site??Astro.url; const jsonLd={'@context':'https://schema.org',
 <p class="article-meta"><span>{a.data.author??'Hikmet Pınarbaş'}</span><time datetime={isoDate}>{a.data.date.toLocaleDateString('tr-TR',{day:'numeric',month:'long',year:'numeric',timeZone:'UTC'})}</time><span>{minutes} dk okuma</span>{a.data.articleKind&&<span>{displayArticleKind(a.data.articleKind)}</span>}{a.data.series&&<span>{displaySeries(a.data.series)}</span>}</p>
 {topics.length>0&&<div class="article-topics" aria-label="Konular">{topics.map(topic=><span>{topic}</span>)}</div>}<EvidenceBadge evidenceClass={a.data.evidenceClass} claimCeiling={a.data.claimCeiling}/></header>
 {governed&&<aside class="article-evidence-note"><strong>Kanıt sınırı</strong><p>Bu yazı kaynak, kanıt ve iddia sınırı ayrımını korur. Site katmanı iddia gücünü yükseltmez.</p>{a.data.sourceClaimsValidated===false&&<p>Kaynaklardan çıkarılan ifadeler tek başına doğrulanmış futbol gerçeği değildir; sentez ve yorum kendi kanıt sınırı içinde okunmalıdır.</p>}</aside>}
+<div class="article-share" data-share-url={canonicalArticle} data-share-title={a.data.title}>
+  <button type="button" class="article-share-button" aria-label="Bu yazıyı paylaş">YAZIYI PAYLAŞ <span aria-hidden="true">↗</span></button>
+  <span class="article-share-status" aria-live="polite"></span>
+</div>
+<script is:inline>
+{
+  const share = document.querySelector('.article-share');
+  const button = share?.querySelector('.article-share-button');
+  const status = share?.querySelector('.article-share-status');
+  button?.addEventListener('click', async () => {
+    const url = share.dataset.shareUrl;
+    const title = share.dataset.shareTitle;
+    try {
+      if (navigator.share) {
+        await navigator.share({ title, url });
+      } else {
+        await navigator.clipboard.writeText(url);
+        if (status) status.textContent = 'Temiz bağlantı kopyalandı.';
+      }
+    } catch (error) {
+      if (error?.name !== 'AbortError' && status) status.textContent = 'Paylaşım açılamadı.';
+    }
+  });
+}
+</script>
 <div class="prose"><Content/></div>
 {visualAssets.length>0&&<section class="article-visual-evidence" aria-labelledby="visual-evidence-title"><p class="kicker">GÖRSEL KANIT</p><h2 id="visual-evidence-title">Sahadan açıklayıcı kareler</h2><div class="visual-evidence-grid">{visualAssets.map(v=><figure class="visual-evidence-card"><img src={v.src} alt={v.caption} loading="lazy"/><figcaption><b>{v.caption}</b><p>{v.claim_supported}</p><small>Hak durumu: {displayRights(v.rights_status)} · {v.truth_role==='OBSERVED_FRAME'?'Gözlenen kare':'Açıklayıcı görsel'}</small></figcaption></figure>)}</div></section>}
 {dataInsights.length>0&&<section class="article-data-notes" aria-labelledby="data-notes-title"><p class="kicker">VERİ NOTU</p><h2 id="data-notes-title">Sayı ne söylüyor?</h2><div class="data-note-grid">{dataInsights.map(d=><article class="data-note-card"><small>SORU</small><h3>{d.question}</h3><div class="data-note-metric">{d.metric}</div><p><b>HP yorumu:</b> {d.interpretation}</p><p><b>Sınır:</b> {d.limit}</p>{d.source_label&&<small>{d.source_label}</small>}</article>)}</div></section>}
