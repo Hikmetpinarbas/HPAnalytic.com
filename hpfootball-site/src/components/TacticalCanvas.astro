@@ -1,51 +1,54 @@
----
-import { pitchGeometry } from '../lib/pitch-geometry.mjs';
-// Conceptual diagram, not data: the pitch is drawn to IFAB scale, the flows are
-// an explanatory abstraction and carry the epistemic stroke vocabulary.
-interface Props { caption?: string; id?: string; }
-const { id = 'tactical', caption = 'Kavramsal diyagram. Veri, tracking veya gerçek konum iddiası değildir.' } = Astro.props as Props;
-const g = pitchGeometry({ width: 900, padding: 40 });
-const p = (mx: number, my: number) => g.toSvg(mx, my);
-const A = p(14, 56), B = p(14, 12), C = p(52.5, 34), D = p(91, 12), E = p(91, 56), F = p(52.5, 14);
-const path = (pts: { x: number; y: number }[], bend = 0) =>
-  `M${pts[0].x} ${pts[0].y} Q${(pts[0].x + pts[1].x) / 2} ${(pts[0].y + pts[1].y) / 2 + bend} ${pts[1].x} ${pts[1].y}`;
-const labels = [
-  { text: 'POSITION', x: 60, y: 70, anchor: 'start' },
-  { text: 'ROLE', x: g.width - 60, y: 70, anchor: 'end' },
-  { text: 'SPACE', x: 60, y: g.height - 56, anchor: 'start' },
-  { text: 'FUNCTION', x: g.width - 60, y: g.height - 56, anchor: 'end' },
-];
----
-<figure class="figure">
-  <div class="tactical">
-    <svg viewBox={g.viewBox} role="img" aria-labelledby={`${id}-title ${id}-desc`}>
-      <title id={`${id}-title`}>Position, role, space ve function ilişkisi</title>
-      <desc id={`${id}-desc`}>Ölçekli saha üzerinde kavramsal akış: gözlenen ilişki düz, aday ilişki kesikli, bilinmeyen ilişki noktalı çizgiyle gösterilir.</desc>
-      <g class="pitch-lines">
-        <rect {...g.outline} />
-        <line {...g.halfway} />
-        <circle {...g.centre} />
-        {g.penaltyAreas.map((b) => <rect {...b} />)}
-        {g.goalAreas.map((b) => <rect {...b} />)}
-        {g.penaltyArcs.map((d) => <path d={d} />)}
-        {g.penaltySpots.map((s) => <circle class="spot" cx={s.cx} cy={s.cy} r="3" />)}
-        <circle class="spot" cx={g.centre.cx} cy={g.centre.cy} r="3" />
+<figure class="hp-pitch">
+  <div class="hp-pitch__stage">
+    <svg viewBox="0 0 960 600" role="img" aria-labelledby="hp-pitch-title hp-pitch-desc">
+      <title id="hp-pitch-title">HPAnalytic Pitch — oyun mekanizması şeması</title>
+      <desc id="hp-pitch-desc">Saha yapısı, hareket kuvvetleri ve kritik mekanizmanın açığa çıktığı bölgeyi ayıran şematik futbol görseli. Tracking verisi değildir.</desc>
+      <defs>
+        <linearGradient id="reveal" x1="0" x2="1">
+          <stop offset="0" stop-color="currentColor" stop-opacity="0"/>
+          <stop offset=".55" stop-color="currentColor" stop-opacity=".12"/>
+          <stop offset="1" stop-color="currentColor" stop-opacity=".02"/>
+        </linearGradient>
+        <marker id="force-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+          <path d="M0 0 10 5 0 10z"/>
+        </marker>
+      </defs>
+      <g class="hp-pitch__structure">
+        <rect x="54" y="54" width="852" height="492"/>
+        <line x1="480" y1="54" x2="480" y2="546"/>
+        <circle cx="480" cy="300" r="66"/>
+        <circle cx="480" cy="300" r="2"/>
+        <rect x="54" y="168" width="136" height="264"/>
+        <rect x="770" y="168" width="136" height="264"/>
+        <rect x="54" y="230" width="48" height="140"/>
+        <rect x="858" y="230" width="48" height="140"/>
+        <line x1="267" y1="54" x2="267" y2="546" class="hp-pitch__guide"/>
+        <line x1="693" y1="54" x2="693" y2="546" class="hp-pitch__guide"/>
       </g>
-      <path class="flow flow-observed" d={path([A, C], -40)} />
-      <path class="flow flow-observed" d={path([C, D], -40)} />
-      <path class="flow flow-candidate" d={path([B, C], 40)} />
-      <path class="flow flow-candidate" d={path([C, E], 40)} />
-      <path class="flow flow-unknown" d={path([A, F], -60)} />
-      <path class="flow flow-unknown" d={path([E, F], -60)} />
-      {[A, B, D, E].map((n) => <circle class="node" cx={n.x} cy={n.y} r="9" />)}
-      <circle class="node" cx={C.x} cy={C.y} r="12" />
-      {labels.map((l) => <text class="node-label" x={l.x} y={l.y} text-anchor={l.anchor}>{l.text}</text>)}
+      <g class="hp-pitch__reveal">
+        <path d="M480 54H906V546H480Z"/>
+        <path d="M536 150C650 168 730 220 810 300C730 380 650 432 536 450Z" class="hp-pitch__reveal-core"/>
+      </g>
+      <g class="hp-pitch__force">
+        <path d="M180 404C302 382 360 342 438 304C548 250 634 214 782 182"/>
+        <path d="M206 176C324 198 382 236 458 286"/>
+        <path d="M474 320C574 354 656 382 780 416"/>
+      </g>
+      <g class="hp-pitch__players">
+        <g transform="translate(180 404)"><rect x="-11" y="-11" width="22" height="22" rx="2"/><text y="4">1</text></g>
+        <g transform="translate(206 176)"><rect x="-11" y="-11" width="22" height="22" rx="2"/><text y="4">2</text></g>
+        <g transform="translate(438 304)" class="hp-pitch__player--key"><rect x="-13" y="-13" width="26" height="26" rx="2"/><text y="4">3</text></g>
+        <g transform="translate(782 182)"><rect x="-11" y="-11" width="22" height="22" rx="2"/><text y="4">4</text></g>
+        <g transform="translate(780 416)"><rect x="-11" y="-11" width="22" height="22" rx="2"/><text y="4">5</text></g>
+      </g>
+      <circle class="hp-pitch__ball" cx="462" cy="294" r="5"/>
     </svg>
+    <div class="hp-pitch__index" aria-hidden="true">HP / 2D–01</div>
   </div>
-  <ul class="figure-legend">
-    <li><span class="legend-swatch observed"></span>Gözlenen</li>
-    <li><span class="legend-swatch candidate"></span>Aday / hipotez</li>
-    <li><span class="legend-swatch unknown"></span>Bilinmeyen</li>
-  </ul>
-  <figcaption>{caption}</figcaption>
+  <figcaption class="hp-pitch__caption">
+    <span><b>STRUCTURE</b><small>Geometri ve ilişkiler</small></span>
+    <span><b>FORCE</b><small>Hareket ve baskı yönü</small></span>
+    <span><b>REVEAL</b><small>Kritik mekanizma</small></span>
+    <em>ŞEMATİK · tracking verisi değildir</em>
+  </figcaption>
 </figure>

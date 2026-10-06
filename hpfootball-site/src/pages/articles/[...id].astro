@@ -53,6 +53,13 @@ const jsonLd = {
       <EvidenceBadge evidenceClass={a.data.evidenceClass} claimCeiling={a.data.claimCeiling} />
     </header>
     <div class="prose"><Content /></div>
+    {a.data.nextQuestion && (
+      <aside class="next-question" aria-labelledby="next-question-title">
+        <p class="next-question-label">SIRADAKİ SORU</p>
+        <h2 id="next-question-title">{a.data.nextQuestion.question}</h2>
+        <a href={a.data.nextQuestion.href}>Sorunun izini sür <span aria-hidden="true">→</span></a>
+      </aside>
+    )}
     <aside class="claim-boundary" aria-labelledby="claim-boundary-title">
       <h2 id="claim-boundary-title">CLAIM BOUNDARY</h2>
       <p>{evidence.summary}</p>
