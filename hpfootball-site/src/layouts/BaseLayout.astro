@@ -26,10 +26,9 @@ const {
   noindex = false,
 } = Astro.props as Props;
 
-const isPublicEditorial = (entry) => isPublic(entry) && isPublicEditorialItem(entry.data);
-const articles = await getCollection('articles', isPublicEditorial);
-const research = await getCollection('research', isPublicEditorial);
-const visuals = await getCollection('visuals', isPublicEditorial);
+const articles = (await getCollection('articles', isPublic)).filter((entry) => isPublicEditorialItem(entry.data));
+const research = (await getCollection('research', isPublic)).filter((entry) => isPublicEditorialItem(entry.data));
+const visuals = (await getCollection('visuals', isPublic)).filter((entry) => isPublicEditorialItem(entry.data));
 
 const articleSections: Record<string, number> = {};
 for (const article of articles) {
