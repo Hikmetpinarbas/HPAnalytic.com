@@ -419,13 +419,13 @@ export function normalizeDiscoveries(result) {
 // Claude API path.
 
 export async function engineStatus(env = process.env) {
+  if (env.HP_STUDIO_ENGINE === 'off') return { available: false, reason: 'ENGINE_DISABLED' };
   let sdk = false;
   try {
     await import('@anthropic-ai/sdk');
     sdk = true;
   } catch { /* not installed */ }
   if (!sdk) return { available: false, reason: 'SDK_NOT_INSTALLED' };
-  if (env.HP_STUDIO_ENGINE === 'off') return { available: false, reason: 'ENGINE_DISABLED' };
   if (env.ANTHROPIC_API_KEY || env.ANTHROPIC_AUTH_TOKEN || env.ANTHROPIC_PROFILE) return { available: true, reason: 'ENV_CREDENTIALS' };
   try {
     await readFile(path.join(os.homedir(), '.config', 'anthropic', 'config.json'));

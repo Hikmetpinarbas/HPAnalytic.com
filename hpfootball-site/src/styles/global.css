@@ -413,7 +413,7 @@ main:focus { outline: none; }
 }
 
 /* Deep continuation — one authored question, one real internal destination. */
-.next-question {
+.next-question{
   max-width: 790px;
   margin-top: 72px;
   padding: 28px 0 4px;
