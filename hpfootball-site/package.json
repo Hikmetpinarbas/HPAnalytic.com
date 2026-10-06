@@ -11,8 +11,8 @@
     "studio": "HP_STUDIO=1 astro dev --host 127.0.0.1"
   },
   "dependencies": {
-    "@astrojs/cloudflare": "^12.6.0",
-    "astro": "^5.14.1"
+    "@astrojs/cloudflare": "^14.3.4",
+    "astro": "^7.3.6"
   },
   "devDependencies": {
     "@anthropic-ai/sdk": "^0.131.0",
