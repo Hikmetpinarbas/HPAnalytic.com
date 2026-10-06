@@ -1,15 +1,18 @@
 {
   "id": "/",
-  "name": "HP Football Intelligence",
-  "short_name": "HP Football",
-  "description": "Football Intelligence by Hikmet Pınarbaş",
+  "name": "HPAnalytic — Football Intelligence",
+  "short_name": "HPAnalytic",
+  "description": "HPAnalytic: football intelligence by Hikmet Pınarbaş",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
   "background_color": "#050505",
   "theme_color": "#050505",
   "lang": "tr",
-  "categories": ["sports", "news"],
+  "categories": [
+    "sports",
+    "news"
+  ],
   "icons": [
     {
       "src": "/icons/hp-192.png",
@@ -22,6 +25,12 @@
       "sizes": "512x512",
       "type": "image/png",
       "purpose": "any maskable"
+    },
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
     }
   ]
 }

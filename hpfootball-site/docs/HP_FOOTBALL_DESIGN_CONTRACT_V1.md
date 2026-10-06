@@ -170,3 +170,17 @@ A new public component or surface must pass:
 10. EMPTY-SURFACE CHECK
 
 Failure on truth boundary or empty-surface check blocks public activation.
+
+## 13. Amendment A1 — HPAnalytic identity (2026-10-06, development)
+
+STATUS: DEVELOPMENT AMENDMENT. Not deployed. Sections 1–12 remain in force.
+
+- Public product name: **HPAnalytic** (target domain hpanalytic.com). Descriptor: "Football Intelligence by Hikmet Pınarbaş".
+- Mark: frame (observation boundary), vector to a node on the upper third (relation → decision point), inherited HP red tick. No ball, shield or star (§11). The mark is a v1 proposal pending owner approval.
+- Tokens live on `:root` in `src/styles/global.css`. The type scale is generated (`src/lib/fluid-type.mjs`) and tested, not hand-tuned.
+- Minimum text size: 12px. All text tokens ≥ 4.5:1 on every background token. Focus ≥ 3:1. Enforced by `tests/design-tokens.test.mjs`.
+- No CSS `text-transform`. Under `lang="tr"` it produces "ANALYSİS". Labels are authored in final case.
+- Evidence classes map to distinct strokes (§6): DIRECT solid, DERIVED double, PROXY dashed, EDITORIAL dotted (`src/lib/evidence.mjs`).
+- Navigation must work without JavaScript (progressive enhancement). Archive and Search are corpus capabilities and are hidden while the corpus is empty.
+- Content routes are prerendered. Only search and API routes run on the server.
+- Donor extraction record: `docs/HPANALYTIC_DONOR_REVERSE_ENGINEERING_2026-10-06.md`.

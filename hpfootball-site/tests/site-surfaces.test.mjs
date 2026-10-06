@@ -35,3 +35,18 @@ test('about remains available even when editorial collections are empty', () => 
   });
   assert.deepEqual(nav.map(x => x.href), ['/about']);
 });
+
+import { buildUtilityNavigation, currentState } from '../src/lib/site-surfaces.mjs';
+
+test('archive and search appear only when the editorial corpus is non-empty', () => {
+  assert.deepEqual(buildUtilityNavigation({ articleCount: 0 }), []);
+  assert.deepEqual(buildUtilityNavigation({ articleCount: 4 }).map((x) => x.href), ['/archive', '/search']);
+});
+
+test('current-page state follows GOV.UK semantics (page vs ancestor)', () => {
+  assert.equal(currentState('/analysis', '/analysis'), 'page');
+  assert.equal(currentState('/analysis', '/analysis/'), 'page');
+  assert.equal(currentState('/analysis', '/analysis/deep'), 'true');
+  assert.equal(currentState('/analysis', '/analysis-x'), undefined);
+  assert.equal(currentState('/', '/about'), undefined);
+});

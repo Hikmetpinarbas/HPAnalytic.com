@@ -1,1 +1,13 @@
---- import BaseLayout from '../layouts/BaseLayout.astro'; ---<BaseLayout title="Hikmet Pınarbaş — HP Football"><main class="listing"><p class="kicker">HİKMET PINARBAŞ</p><h1>Football analyst.<br/>TV commentator.<br/>Scouting & Recruitment.</h1><p class="lead">Maç, takım ve oyuncu performansını taktik, veri ve bağlam üzerinden inceler; futbol bilgisini istatistik, karar bilimi, kompleks sistemler, geometri, görsel analiz ve yapay zekâ ile bir araya getirir.</p></main></BaseLayout>
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+export const prerender = true;
+---
+<BaseLayout title="Hikmet Pınarbaş — HPAnalytic" description="Futbol analisti, TV yorumcusu, scouting ve recruitment analisti.">
+<div class="listing">
+  <header class="page-head">
+    <p class="kicker">HİKMET PINARBAŞ</p>
+    <h1 class="page-title">Football analyst.<br/>TV commentator.<br/>Scouting &amp; Recruitment.</h1>
+    <p class="lead">Maç, takım ve oyuncu performansını taktik, veri ve bağlam üzerinden inceler; futbol bilgisini istatistik, karar bilimi, kompleks sistemler, geometri, görsel analiz ve yapay zekâ ile bir araya getirir.</p>
+  </header>
+</div>
+</BaseLayout>

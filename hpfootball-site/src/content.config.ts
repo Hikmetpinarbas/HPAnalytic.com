@@ -14,7 +14,8 @@ const articles=defineCollection({
       question:z.string(),
       href:z.string().startsWith('/')
     }).optional(),
-    featured:z.boolean().default(false)
+    featured:z.boolean().default(false),
+    draft:z.boolean().default(false)
   })
 });
 
@@ -25,7 +26,8 @@ const research=defineCollection({
     description:z.string(),
     date:z.coerce.date(),
     claimCeiling:z.string(),
-    featured:z.boolean().default(false)
+    featured:z.boolean().default(false),
+    draft:z.boolean().default(false)
   })
 });
 
@@ -37,7 +39,8 @@ const visuals=defineCollection({
     date:z.coerce.date(),
     visualClass:z.enum(['EVIDENCE_VISUAL','DATA_VISUAL','ANALYTICAL_DIAGRAM','HYPOTHESIS_VISUAL','DOCUMENTARY_PHOTO','EDITORIAL_ILLUSTRATION','TABLE','INFOGRAPHIC']),
     claimCeiling:z.string(),
-    featured:z.boolean().default(false)
+    featured:z.boolean().default(false),
+    draft:z.boolean().default(false)
   })
 });
 

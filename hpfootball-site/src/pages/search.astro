@@ -1,0 +1,53 @@
+---
+import { isPublic } from '../lib/public-content.mjs';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import ArticleCard from '../components/ArticleCard.astro';
+import { getCollection } from 'astro:content';
+import { searchDocuments, tokenize } from '../lib/search.mjs';
+import { SECTION_LABELS } from '../lib/site-surfaces.mjs';
+
+// Server-rendered on purpose: a plain GET form works without client JS, and the
+// result URL (/search?q=…) is shareable. Pagefind needs a static HTML build
+// and is deferred until the corpus is large enough to justify it.
+export const prerender = false;
+
+const raw = Astro.url.searchParams.get('q') ?? '';
+const query = raw.slice(0, 120).trim();
+const articles = await getCollection('articles', isPublic);
+const byId = new Map(articles.map((a) => [a.id, a]));
+const documents = articles.map((a) => ({
+  id: a.id,
+  title: a.data.title,
+  description: a.data.description,
+  meta: `${SECTION_LABELS[a.data.section as keyof typeof SECTION_LABELS] ?? a.data.section} ${a.data.evidenceClass} ${a.data.claimCeiling}`,
+  body: a.body ?? '',
+}));
+const hasQuery = tokenize(query).length > 0;
+const results = hasQuery ? searchDocuments(documents, query).map((r) => byId.get(r.id)!).filter(Boolean) : [];
+---
+<BaseLayout title={query ? `“${query}” — Search — HPAnalytic` : 'Search — HPAnalytic'} description="HPAnalytic arşivinde arama." noindex={Boolean(query)}>
+<div class="listing">
+  <header class="page-head">
+    <p class="kicker">SEARCH</p>
+    <h1 class="page-title">Arşivde ara.</h1>
+    <form class="search-form" action="/search" method="get" role="search">
+      <label class="visually-hidden" for="q">Arama terimi</label>
+      <input id="q" name="q" type="search" value={query} placeholder="örn. role, event, consequence" autocomplete="off" enterkeyhint="search" maxlength="120" />
+      <button class="button button-primary" type="submit">SEARCH</button>
+    </form>
+  </header>
+  {query && (
+    <p class="search-status" role="status">
+      {hasQuery ? `“${query}” için ${results.length} sonuç` : 'En az iki harfli bir terim girin.'}
+    </p>
+  )}
+  {results.length > 0 && (
+    <ul class="card-grid">
+      {results.map((a) => <li><ArticleCard id={a.id} {...a.data} headingLevel={2} /></li>)}
+    </ul>
+  )}
+  {hasQuery && results.length === 0 && (
+    <p class="empty-state">Eşleşme yok. Türkçe karakterler önemsizdir (“gordugumuz” = “gördüğümüz”); daha az kelimeyle deneyin.</p>
+  )}
+</div>
+</BaseLayout>

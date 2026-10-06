@@ -1,14 +1,64 @@
 ---
+import { isPublic } from '../lib/public-content.mjs';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import TacticalCanvas from '../components/TacticalCanvas.astro';
-import EvidenceBadge from '../components/EvidenceBadge.astro';
-import {getCollection} from 'astro:content';
-const articles=(await getCollection('articles')).sort((a,b)=>+b.data.date-+a.data.date);
+import ArticleCard from '../components/ArticleCard.astro';
+import Button from '../components/Button.astro';
+import { getCollection } from 'astro:content';
+export const prerender = true;
+
+const articles = (await getCollection('articles', isPublic)).sort((a, b) => +b.data.date - +a.data.date);
+const hasAnalysis = articles.some((a) => a.data.section === 'analysis');
+const pipeline = [
+  ['HPA', 'OPERATIONAL EVIDENCE'],
+  ['HPFA', 'EVIDENCE AUTHORITY'],
+  ['HIO', 'MECHANISM LENS'],
+  ['YELL', 'SAFE FINDING'],
+];
 ---
-<BaseLayout title="HP Football — Hikmet Pınarbaş">
-<main>
-<section class="hero"><div><p class="kicker">FOOTBALL INTELLIGENCE BY HİKMET PINARBAŞ</p><h1>STRUCTURE.<br/><em>RELATION.</em><br/>DECISION.</h1><p class="lead">Futbolu skorun öncesinde kurulan ilişkiler, mekanizmalar, zaman ve bağlam üzerinden okuyan bağımsız analiz platformu.</p></div><TacticalCanvas/></section>
-<div class="principles"><span>FOOTBALL FIRST</span><span>EVIDENCE BEFORE CONFIDENCE</span><span>MECHANISM BEFORE METRIC</span><span>CONTEXT BEFORE VERDICT</span></div>
-<section class="section"><p class="kicker">CURRENT INTELLIGENCE</p><h2>Postmatch first.</h2><p class="intro">Ciddi analiz doğrudan metne dönüşmez. HPA operasyonel yüzeyi kurar; HPFA claim sınırını denetler; HIO mekanizma katmanını zorlar; YELL güvenli bulguyu insan diline taşır.</p><div class="pipeline">{['HPA','HPFA','HIO','YELL'].map((x,i)=><article><b>{x}</b><span>{['Operational evidence','Evidence authority','Mechanism lens','Safe finding'][i]}</span></article>)}</div></section>
-<section class="section"><p class="kicker">LATEST</p><h2>Living football archive.</h2><div class="article-grid">{articles.slice(0,6).map(a=><a class="article" href={'/articles/'+a.id}><EvidenceBadge evidenceClass={a.data.evidenceClass} claimCeiling={a.data.claimCeiling}/><small>{a.data.section.toUpperCase()} · {a.data.date.toLocaleDateString('tr-TR')}</small><h3>{a.data.title}</h3><p>{a.data.description}</p></a>)}</div></section>
-</main></BaseLayout>
+<BaseLayout title="HPAnalytic — Football Intelligence by Hikmet Pınarbaş">
+<section class="hero" aria-labelledby="hero-title">
+  <div>
+    <p class="kicker">FOOTBALL INTELLIGENCE BY HİKMET PINARBAŞ</p>
+    <h1 id="hero-title">STRUCTURE.<br/><em>RELATION.</em><br/>DECISION.</h1>
+    <p class="lead">Futbolu skorun öncesinde kurulan ilişkiler, mekanizmalar, zaman ve bağlam üzerinden okuyan bağımsız analiz platformu.</p>
+    {articles.length > 0 && (
+      <div class="button-row">
+        {hasAnalysis && <Button href="/analysis" variant="primary">READ ANALYSIS</Button>}
+        <Button href="/archive" variant={hasAnalysis ? 'secondary' : 'primary'}>EXPLORE ARCHIVE</Button>
+      </div>
+    )}
+  </div>
+  <TacticalCanvas id="hero-diagram" />
+</section>
+<ul class="principles" aria-label="İlkeler">
+  <li>FOOTBALL FIRST</li>
+  <li>EVIDENCE BEFORE CONFIDENCE</li>
+  <li>MECHANISM BEFORE METRIC</li>
+  <li>CONTEXT BEFORE VERDICT</li>
+</ul>
+<section class="section" aria-labelledby="pipeline-title">
+  <div class="section-head">
+    <p class="kicker">CURRENT INTELLIGENCE</p>
+    <h2 id="pipeline-title">Postmatch first.</h2>
+    <p class="intro">Ciddi analiz doğrudan metne dönüşmez. HPA operasyonel yüzeyi kurar; HPFA claim sınırını denetler; HIO mekanizma katmanını zorlar; YELL güvenli bulguyu insan diline taşır.</p>
+  </div>
+  <ol class="pipeline">
+    {pipeline.map(([name, role]) => <li><b>{name}</b><span>{role}</span></li>)}
+  </ol>
+</section>
+{articles.length > 0 && (
+  <section class="section" aria-labelledby="latest-title">
+    <div class="section-head">
+      <p class="kicker">LATEST</p>
+      <h2 id="latest-title">Living football archive.</h2>
+    </div>
+    <ul class="card-grid">
+      {articles.slice(0, 6).map((a) => (
+        <li><ArticleCard id={a.id} {...a.data} /></li>
+      ))}
+    </ul>
+    <div class="section-foot"><Button href="/archive" variant="quiet">FULL ARCHIVE</Button></div>
+  </section>
+)}
+</BaseLayout>

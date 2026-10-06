@@ -1,5 +1,15 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro'; import {getCollection} from 'astro:content';
-const items=(await getCollection('articles')).filter(x=>x.data.section==='analysis');
+import BaseLayout from '../layouts/BaseLayout.astro';
+import SectionListing from '../components/SectionListing.astro';
+export const prerender = true;
 ---
-<BaseLayout title="Analysis — HP Football"><main class="listing"><p class="kicker">ANALYSIS</p><h1>Metric değil, mekanizma.</h1>{items.map(a=><a href={'/articles/'+a.id}><small>{a.data.evidenceClass}</small><h2>{a.data.title}</h2><p>{a.data.description}</p></a>)}</main></BaseLayout>
+<BaseLayout title="Analysis — HPAnalytic" description="Maç, takım ve oyuncu analizi: metric değil, mekanizma.">
+<div class="listing">
+  <header class="page-head">
+    <p class="kicker">ANALYSIS</p>
+    <h1 class="page-title">Metric değil, mekanizma.</h1>
+    <p class="lead">Sonuçtan geriye değil, süreçten sonuca doğru okunan postmatch analizleri.</p>
+  </header>
+  <SectionListing section="analysis" />
+</div>
+</BaseLayout>

@@ -1,0 +1,49 @@
+---
+// Private Studio shell. Deliberately does NOT use BaseLayout: no public
+// navigation, no collection reads, no canonical/OG metadata, noindex.
+import '../styles/global.css';
+import './studio.css';
+import { flashMessage } from './lib/guard.mjs';
+
+interface Props {
+  title: string;
+  engine: { available: boolean; reason: string };
+  profileActive: boolean;
+  flash?: string | null;
+}
+const { title, engine, profileActive, flash = null } = Astro.props as Props;
+const message = flashMessage(flash);
+---
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<meta name="robots" content="noindex,nofollow,noarchive"/>
+<meta name="referrer" content="no-referrer"/>
+<title>{title}</title>
+<link rel="icon" href="/favicon.svg" type="image/svg+xml"/>
+</head>
+<body class="studio">
+<a class="skip-link" href="#studio-main">İçeriğe geç</a>
+<header class="studio-header">
+  <a class="studio-brand" href="/studio/editorial">
+    <span class="studio-mark" aria-hidden="true">HP</span>
+    <span><b>EDITORIAL STUDIO</b><small>HPAnalytic · özel çalışma alanı</small></span>
+  </a>
+  <ul class="studio-status" aria-label="Studio durumu">
+    <li class={engine.available ? 'on' : 'off'}>
+      <span>MOTOR</span>{engine.available ? 'Claude API hazır' : `Kapalı · ${engine.reason} · operatör yolu açık`}
+    </li>
+    <li class={profileActive ? 'on' : 'seed'}>
+      <span>HP DİLİ</span>{profileActive ? 'Korpustan türetilmiş profil' : 'SEED v0 · korpus profili henüz yok'}
+    </li>
+    <li class="rule"><span>KURAL</span>Otomatik yayın yok · son otorite Hikmet</li>
+  </ul>
+</header>
+<main id="studio-main" tabindex="-1">
+  {message && <p class:list={['studio-flash', message.tone]} role="status">{message.text}</p>}
+  <slot/>
+</main>
+</body>
+</html>

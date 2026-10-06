@@ -1,17 +1,23 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import TacticalCanvas from '../components/TacticalCanvas.astro';
+export const prerender = true;
+const kinds = [
+  ['TACTICAL BOARD', 'Açıklayıcı soyutlama. Tracking veya gerçek fiziksel konum iddiası değildir.'],
+  ['DATA VISUAL', 'Kaynak-bağlı sayısal destek. En fazla birkaç ana metric; tek futbol sorusu.'],
+  ['FRAME EVIDENCE', 'Gerçek source-bound kare. Raw frame korunur, annotation ayrı yüzeydir.'],
+];
 ---
-<BaseLayout title="Visual Lab — HP Football">
-<main class="listing">
-<p class="kicker">VISUAL LAB</p>
-<h1>2D football intelligence,<br/>without false certainty.</h1>
-<p class="lead">Saha geometrisi, süreç akışı, event dağılımı, rol-fonksiyon ve evidence sınırları için responsive SVG yüzeyleri. Görsel, kanıt kapasitesini yükseltmez.</p>
-<TacticalCanvas/>
-<section class="visual-cards">
-<article><b>TACTICAL BOARD</b><p>Açıklayıcı soyutlama. Tracking veya gerçek fiziksel konum iddiası değildir.</p></article>
-<article><b>DATA VISUAL</b><p>Kaynak-bağlı sayısal destek. En fazla birkaç ana metric; tek futbol sorusu.</p></article>
-<article><b>FRAME EVIDENCE</b><p>Gerçek source-bound kare. Raw frame korunur, annotation ayrı yüzeydir.</p></article>
-</section>
-</main>
+<BaseLayout title="Visual Lab — HPAnalytic" description="Saha geometrisi ve kanıt sınırları için responsive SVG yüzeyleri.">
+<div class="listing">
+  <header class="page-head">
+    <p class="kicker">VISUAL LAB</p>
+    <h1 class="page-title">2D football intelligence,<br/>without false certainty.</h1>
+    <p class="lead">Saha geometrisi, süreç akışı, event dağılımı, rol-fonksiyon ve evidence sınırları için responsive SVG yüzeyleri. Görsel, kanıt kapasitesini yükseltmez.</p>
+  </header>
+  <TacticalCanvas id="lab-diagram" caption="IFAB Law 1 ölçeğinde saha (105 × 68 m). Akışlar kavramsaldır; çizgi stili kanıt sınıfını taşır." />
+  <ul class="frame-grid subsection">
+    {kinds.map(([name, text]) => <li><b>{name}</b><p>{text}</p></li>)}
+  </ul>
+</div>
 </BaseLayout>

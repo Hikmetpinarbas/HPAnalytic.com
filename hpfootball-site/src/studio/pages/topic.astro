@@ -1,0 +1,348 @@
+---
+import StudioLayout from '../StudioLayout.astro';
+import { createStore, isTopicId } from '../lib/store.mjs';
+import {
+  allowedTargets, DERIVATIVES, DESTINATIONS, EVIDENCE_CLASSES, FAILURE_REASONS, HEADLINE_VARIANTS,
+  SCORE_DIMENSIONS, SOURCE_ROLES, SOURCE_STANCES,
+} from '../lib/model.mjs';
+import { engineStatus, STEPS } from '../lib/engine.mjs';
+import { evaluateGate, clicheHits } from '../lib/gate.mjs';
+import { exportProblems } from '../lib/export.mjs';
+import { studioRequestProblem } from '../lib/guard.mjs';
+import { handleAction, operatorBriefFor, stepPrecondition } from '../lib/actions.mjs';
+
+export const prerender = false;
+
+if (studioRequestProblem({ url: Astro.url, method: Astro.request.method, headers: Astro.request.headers })) {
+  return new Response('Not found', { status: 404 });
+}
+
+const store = createStore();
+if (Astro.request.method === 'POST') {
+  const { redirect, flash } = await handleAction(store, await Astro.request.formData());
+  return Astro.redirect(`${redirect}?f=${encodeURIComponent(flash)}`, 303);
+}
+
+const id = String(Astro.params.id ?? '');
+const topic: any = isTopicId(id) ? await store.getTopic(id) : null;
+if (!topic) return new Response('Not found', { status: 404 });
+
+const [engine, profile] = await Promise.all([engineStatus(), store.languageProfile()]);
+const gate = evaluateGate(topic);
+const targets = allowedTargets(topic);
+const flash = Astro.url.searchParams.get('f');
+const briefStep = Astro.url.searchParams.get('brief');
+const brief = briefStep && STEPS.includes(briefStep) ? await operatorBriefFor(store, topic, briefStep) : null;
+const sources = topic.research.sources as any[];
+const roleGroups = SOURCE_ROLES.map((role) => ({ role, items: sources.filter((s) => s.role === role) })).filter((g) => g.items.length > 0);
+const cliches = clicheHits(`${topic.draft.standfirst} ${topic.draft.body_md}`);
+const exportBlockers = exportProblems(topic);
+const selected = topic.headlines.find((h: any) => h.variant === topic.selected_headline);
+
+const STEP_LABEL: Record<string, string> = {
+  classify: 'SINIFLANDIR', research: 'ARAŞTIR', evidence: 'KANIT HARİTASI + YAPI', draft: 'TASLAK YAZ', headlines: '5 BAŞLIK', redteam: 'RED TEAM + SKOR',
+};
+const yes = (b: boolean) => (b ? 'EVET' : 'HAYIR');
+const n = (v: any) => (v === null || v === undefined ? '–' : v);
+---
+<StudioLayout title={`${topic.card.title} — Editorial Studio`} engine={engine} profileActive={Boolean(profile)} flash={flash}>
+<div class="topic">
+  <header class="topic-head">
+    <p class="kicker"><a href="/studio/editorial">← HAT</a> · {topic.id} · {topic.intake.kind}</p>
+    <h1 class="topic-title">{topic.card.title}</h1>
+    {topic.card.one_line && <p class="topic-line">{topic.card.one_line}</p>}
+    <dl class="topic-facts">
+      <div><dt>Durum</dt><dd class="state-pill">{topic.state}</dd></div>
+      <div><dt>Yayın katmanı</dt><dd>{topic.destination.primary ?? 'atanmadı'}{topic.destination.multi_format && ` + ${topic.destination.derivatives.join(', ')}`}</dd></div>
+      <div><dt>Tür</dt><dd>{topic.card.content_type ?? '–'}</dd></div>
+      <div><dt>Kanıt düzeyi</dt><dd>{topic.card.evidence_level}</dd></div>
+      <div><dt>Özgünlük · HP fit · okur · görsel</dt><dd>{n(topic.card.originality)} · {n(topic.card.hp_fit)} · {n(topic.card.reader_value)} · {n(topic.card.visual_potential)}</dd></div>
+      <div><dt>Köken</dt><dd>{topic.card.source_origin}</dd></div>
+      <div><dt>Neden şimdi</dt><dd>{topic.card.why_now || '–'}</dd></div>
+      <div><dt>Sıradaki iş</dt><dd>{topic.card.next_action}</dd></div>
+    </dl>
+    {topic.intake.warnings.length > 0 && <ul class="warn-list">{topic.intake.warnings.map((w: string) => <li>{w}</li>)}</ul>}
+  </header>
+
+  <div class="topic-body">
+    <div class="topic-main">
+
+      <section class="block" id="intake" aria-labelledby="h-intake">
+        <h2 id="h-intake"><span>01</span> Girdi</h2>
+        {topic.intake.raw && <blockquote class="intake-raw">{topic.intake.raw}</blockquote>}
+        {topic.intake.url && <p><a class="ext" href={topic.intake.url} rel="noreferrer noopener" target="_blank">{topic.intake.extracted_title || topic.intake.url}</a></p>}
+        {topic.intake.foundry && <p class="muted">Foundry {topic.intake.foundry_id} · {topic.intake.foundry.provenance} · claim ceiling: {topic.intake.foundry.claim_ceiling}</p>}
+        {topic.intake.assessment && (
+          <dl class="pairs">
+            <div><dt>Bu ne?</dt><dd>{topic.intake.assessment.what_is_this || '–'}</dd></div>
+            <div><dt>Ne işe yarar?</dt><dd>{topic.intake.assessment.what_is_useful || '–'}</dd></div>
+            <div><dt>Çıkabilecek yazılar</dt><dd>{topic.intake.assessment.possible_articles.length ? <ul>{topic.intake.assessment.possible_articles.map((a: string) => <li>{a}</li>)}</ul> : '–'}</dd></div>
+            {topic.intake.assessment.duplicate_of && <div><dt>Tekrar ettiği</dt><dd>{topic.intake.assessment.duplicate_of}</dd></div>}
+          </dl>
+        )}
+        {topic.intake.extracted_text && <details class="drawer"><summary>Çıkarılan metin ({topic.intake.extracted_text.length} karakter)</summary><pre class="extract">{topic.intake.extracted_text.slice(0, 6000)}</pre></details>}
+      </section>
+
+      <section class="block" id="question" aria-labelledby="h-question">
+        <h2 id="h-question"><span>02</span> Soru ve tez</h2>
+        <form method="post" class="stack">
+          <input type="hidden" name="action" value="set_question"/><input type="hidden" name="id" value={topic.id}/>
+          <label>Core question<textarea name="core_question" rows="2">{topic.research.core_question}</textarea></label>
+          <label>Working thesis<textarea name="working_thesis" rows="2">{topic.research.working_thesis}</textarea></label>
+          <button class="button button-secondary" type="submit">KAYDET</button>
+        </form>
+      </section>
+
+      <section class="block" id="sources" aria-labelledby="h-sources">
+        <h2 id="h-sources"><span>03</span> Kaynak haritası <small>{sources.length} kaynak · {sources.filter((s) => s.verified).length} doğrulanmış</small></h2>
+        <p class="muted">Motorun bulduğu kaynak <b>ipucudur</b>: açıp kontrol ettiğinde “doğrula”. Yayın kapısı doğrulanmamış kaynağa dayanan iddiayı geçirmez.</p>
+        {roleGroups.map((group) => (
+          <div class="source-group">
+            <h3>{group.role}</h3>
+            <ul class="sources">
+              {group.items.map((s: any) => (
+                <li class:list={['source', { verified: s.verified, counter: s.stance === 'COUNTER' }]}>
+                  <div class="source-head">
+                    <b>{s.id}</b>
+                    {s.url ? <a class="ext" href={s.url} rel="noreferrer noopener" target="_blank">{s.title}</a> : <span>{s.title} · {s.internal_ref}</span>}
+                    <span class="entry-state">{s.stance} · {s.origin}{s.opened_by_engine ? ' · motor açtı' : ''} · {s.verified ? 'DOĞRULANDI' : 'DOĞRULANMADI'}</span>
+                  </div>
+                  {(s.publisher || s.year) && <p class="muted">{[s.publisher, s.year].filter(Boolean).join(' · ')}</p>}
+                  <dl class="pairs compact">
+                    {s.what_it_proves && <div><dt>Kanıtladığı</dt><dd>{s.what_it_proves}</dd></div>}
+                    {s.what_it_does_not && <div><dt>Kanıtlamadığı</dt><dd>{s.what_it_does_not}</dd></div>}
+                    {s.football_relevance && <div><dt>Futbol ilgisi</dt><dd>{s.football_relevance}</dd></div>}
+                    {s.academic?.method && <div><dt>Akademik</dt><dd>Soru: {s.academic.research_question} · Veri: {s.academic.data} · Yöntem: {s.academic.method} · Sonuç: {s.academic.result} · Sınır: {s.academic.limitations}</dd></div>}
+                  </dl>
+                  <div class="inline-forms">
+                    <form method="post"><input type="hidden" name="action" value={s.verified ? 'unverify_source' : 'verify_source'}/><input type="hidden" name="id" value={topic.id}/><input type="hidden" name="source_id" value={s.id}/><button class="button button-quiet" type="submit">{s.verified ? 'DOĞRULAMAYI GERİ AL' : 'AÇTIM, DOĞRULA'}</button></form>
+                    <form method="post"><input type="hidden" name="action" value="remove_source"/><input type="hidden" name="id" value={topic.id}/><input type="hidden" name="source_id" value={s.id}/><button class="button button-quiet" type="submit">ÇIKAR</button></form>
+                  </div>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+        {(topic.research.institution_notes ?? []).length > 0 && <div class="notes"><h3>Kurum notları</h3><ul>{topic.research.institution_notes.map((x: string) => <li>{x}</li>)}</ul></div>}
+        <div class="notes-grid">
+          <div><h3>Maç örnekleri</h3>{topic.research.match_examples.length ? <ul>{topic.research.match_examples.map((x: string) => <li>{x}</li>)}</ul> : <p class="muted">–</p>}</div>
+          <div><h3>Gereken veri</h3>{topic.research.data_needed.length ? <ul>{topic.research.data_needed.map((x: string) => <li>{x}</li>)}</ul> : <p class="muted">–</p>}</div>
+          <div><h3>Açık sorular</h3>{topic.research.open_questions.length ? <ul>{topic.research.open_questions.map((x: string) => <li>{x}</li>)}</ul> : <p class="muted">–</p>}</div>
+        </div>
+        <details class="drawer">
+          <summary>Kaynak ekle (HP iç malzeme, rapor, makale…)</summary>
+          <form method="post" class="grid-form">
+            <input type="hidden" name="action" value="add_source"/><input type="hidden" name="id" value={topic.id}/>
+            <label>Başlık<input name="title"/></label>
+            <label>URL<input name="url" type="url"/></label>
+            <label>İç referans (Drive/Dropbox/HPA yolu)<input name="internal_ref"/></label>
+            <label>Yayıncı<input name="publisher"/></label>
+            <label>Yıl<input name="year"/></label>
+            <label>Rol<select name="role">{SOURCE_ROLES.map((r) => <option value={r}>{r}</option>)}</select></label>
+            <label>Duruş<select name="stance">{SOURCE_STANCES.map((r) => <option value={r}>{r}</option>)}</select></label>
+            <label class="wide">Kanıtladığı<input name="what_it_proves"/></label>
+            <label class="wide">Kanıtlamadığı<input name="what_it_does_not"/></label>
+            <label class="wide">Alıntı/özet (telif kontrolü için kaynak metni)<textarea name="excerpt" rows="3"></textarea></label>
+            <button class="button button-secondary" type="submit">KAYNAĞI EKLE</button>
+          </form>
+        </details>
+      </section>
+
+      <section class="block" id="claims" aria-labelledby="h-claims">
+        <h2 id="h-claims"><span>04</span> İddia / kanıt haritası</h2>
+        {topic.claims.length === 0 ? <p class="muted">Henüz yok. “Kanıt haritası + yapı” adımı üretir.</p> : (
+          <div class="table-wrap">
+            <table class="claims">
+              <thead><tr><th scope="col">İddia</th><th scope="col">Kanıt</th><th scope="col">Kaynak</th><th scope="col">Güven</th><th scope="col">Karşı kanıt</th><th scope="col">Yorum</th></tr></thead>
+              <tbody>
+                {topic.claims.map((c: any) => (
+                  <tr>
+                    <td>{c.claim}</td><td>{c.evidence}</td>
+                    <td>{c.source_ids.map((sid: string) => { const s = sources.find((x) => x.id === sid); return <span class:list={['cite', { unverified: !s?.verified }]}>{sid}</span>; })}</td>
+                    <td class={`conf conf-${c.confidence}`}>{c.confidence}</td><td>{c.counterevidence || '–'}</td><td>{c.interpretation || '–'}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        )}
+        {topic.outline.thesis && (
+          <dl class="pairs">
+            <div><dt>Soru</dt><dd>{topic.outline.question}</dd></div>
+            <div><dt>Tez</dt><dd>{topic.outline.thesis}</dd></div>
+            <div><dt>Mekanizma</dt><dd>{topic.outline.mechanism}</dd></div>
+            <div><dt>Karşı argüman</dt><dd>{topic.outline.counterargument}</dd></div>
+            <div><dt>Sınırlar</dt><dd>{topic.outline.limitations}</dd></div>
+            <div><dt>HP açısı</dt><dd>{topic.outline.hp_angle || '–'}</dd></div>
+            <div><dt>Yapı</dt><dd><ol>{topic.outline.structure.map((b: string) => <li>{b}</li>)}</ol></dd></div>
+          </dl>
+        )}
+      </section>
+
+      <section class="block" id="draft" aria-labelledby="h-draft">
+        <h2 id="h-draft"><span>05</span> Taslak <small>v{topic.draft.version}{topic.draft.origin && ` · ${topic.draft.origin}`}</small></h2>
+        {cliches.length > 0 && <p class="problem">Klişe taraması: {cliches.join(', ')}</p>}
+        <form method="post" class="stack">
+          <input type="hidden" name="action" value="edit_draft"/><input type="hidden" name="id" value={topic.id}/>
+          <label>Standfirst<textarea name="standfirst" rows="2">{topic.draft.standfirst}</textarea></label>
+          <label>Metin (Markdown · kaynak işaretleri [S1])<textarea class="draft-editor" name="body_md" rows="24">{topic.draft.body_md}</textarea></label>
+          <button class="button button-secondary" type="submit">TASLAĞI KAYDET</button>
+        </form>
+      </section>
+
+      <section class="block" id="headlines" aria-labelledby="h-headlines">
+        <h2 id="h-headlines"><span>06</span> Başlıklar</h2>
+        {topic.headlines.length === 0 ? <p class="muted">Taslak hazır olunca “5 başlık” adımı üretir.</p> : (
+          <div class="table-wrap">
+            <table class="headlines">
+              <thead><tr><th scope="col">Tip</th><th scope="col">Başlık</th><th scope="col">Cevaplıyor mu</th><th scope="col">Kanıttan güçlü</th><th scope="col">Yanıltıcı</th><th scope="col">Jenerik</th><th scope="col">Tık · kalite · HP</th><th scope="col"><span class="visually-hidden">Seç</span></th></tr></thead>
+              <tbody>
+                {topic.headlines.map((h: any) => (
+                  <tr class:list={{ chosen: h.variant === topic.selected_headline }}>
+                    <th scope="row">{h.variant}<small>{HEADLINE_VARIANTS[h.variant as keyof typeof HEADLINE_VARIANTS]}</small></th>
+                    <td class="headline-text">{h.text}<small>{h.mechanism}</small></td>
+                    <td class:list={{ bad: !h.safety.answers }}>{yes(h.safety.answers)}</td>
+                    <td class:list={{ bad: h.safety.stronger_than_evidence }}>{yes(h.safety.stronger_than_evidence)}</td>
+                    <td class:list={{ bad: h.safety.misleading }}>{yes(h.safety.misleading)}</td>
+                    <td class:list={{ bad: h.safety.generic }}>{yes(h.safety.generic)}</td>
+                    <td>{n(h.safety.click_value)} · {n(h.safety.editorial_quality)} · {n(h.safety.hp_fit)}</td>
+                    <td><form method="post"><input type="hidden" name="action" value="select_headline"/><input type="hidden" name="id" value={topic.id}/><input type="hidden" name="variant" value={h.variant}/><button class="button button-quiet" type="submit" disabled={h.variant === topic.selected_headline}>{h.variant === topic.selected_headline ? 'SEÇİLİ' : 'SEÇ'}</button></form></td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+        )}
+      </section>
+
+      <section class="block" id="redteam" aria-labelledby="h-redteam">
+        <h2 id="h-redteam"><span>07</span> Red team ve editoryal skor</h2>
+        {topic.red_team.ran_at ? (
+          <>
+            {topic.red_team.draft_version !== topic.draft.version && <p class="problem">Red team taslak v{topic.red_team.draft_version} üzerinde çalıştı; güncel taslak v{topic.draft.version}. Yeniden çalıştır.</p>}
+            {topic.red_team.summary && <p>{topic.red_team.summary}</p>}
+            <ul class="findings">
+              {topic.red_team.findings.map((f: any) => <li class={`v-${f.verdict}`}><b>{f.check}</b><span>{f.verdict}</span><p>{f.note}</p></li>)}
+            </ul>
+            <dl class="scores">{SCORE_DIMENSIONS.map((d) => <div><dt>{d}</dt><dd>{n(topic.score[d])}</dd></div>)}</dl>
+          </>
+        ) : <p class="muted">Henüz çalışmadı.</p>}
+      </section>
+    </div>
+
+    <aside class="topic-rail" aria-label="Hat kontrolü">
+      <section class="rail-block">
+        <h2 class="rail-title">Adımlar</h2>
+        <ol class="steps">
+          {STEPS.map((step) => {
+            const blocked = stepPrecondition(step, topic);
+            return (
+              <li>
+                <form method="post">
+                  <input type="hidden" name="action" value="run_step"/><input type="hidden" name="id" value={topic.id}/><input type="hidden" name="step" value={step}/>
+                  <button class="button button-secondary" type="submit" disabled={Boolean(blocked) || !engine.available}>{STEP_LABEL[step]}</button>
+                </form>
+                <a class="brief-link" href={`/studio/editorial/${topic.id}?brief=${step}#brief`}>operatör brief</a>
+                {blocked && <small>{blocked}</small>}
+              </li>
+            );
+          })}
+        </ol>
+        <p class="muted small">Motor adımı birkaç dakika sürebilir; sayfa cevap gelene kadar bekler.</p>
+      </section>
+
+      {brief && (
+        <section class="rail-block" id="brief">
+          <h2 class="rail-title">Operatör brief · {briefStep}</h2>
+          <p class="muted small">Kopyala, istediğin AI’da çalıştır, JSON cevabı yapıştır. Aynı doğrulamadan geçer.{topic.intake.has_pdf && ' PDF bu brief’e gömülmez: dosyayı ayrıca ekle.'}</p>
+          <textarea class="brief" readonly rows="10">{brief}</textarea>
+          <form method="post" class="stack">
+            <input type="hidden" name="action" value="paste_step"/><input type="hidden" name="id" value={topic.id}/><input type="hidden" name="step" value={briefStep}/>
+            <label>JSON cevap<textarea name="answer" rows="6"></textarea></label>
+            <button class="button button-secondary" type="submit">CEVABI UYGULA</button>
+          </form>
+        </section>
+      )}
+
+      <section class:list={['rail-block', 'gate', { pass: gate.pass }]}>
+        <h2 class="rail-title">Yayın kapısı · {gate.pass ? 'PASS' : `${gate.failed.length} açık`}</h2>
+        <ul class="gate-list">
+          {Object.entries(gate.checks).map(([name, v]: [string, any]) => (
+            <li class={v.pass ? 'ok' : 'no'}><b>{name}</b><span>{v.pass ? 'PASS' : 'FAIL'}</span>{!v.pass && <small>{v.reasons.slice(0, 4).join(' · ')}{v.reasons.length > 4 && ` +${v.reasons.length - 4}`}</small>}</li>
+          ))}
+        </ul>
+        <div class="attest">
+          {[['sources_checked', 'Kaynakları açıp kontrol ettim'], ['voice_checked', 'Metni HP sesi açısından okudum']].map(([key, label]) => (
+            <form method="post"><input type="hidden" name="action" value="attest"/><input type="hidden" name="id" value={topic.id}/><input type="hidden" name="key" value={key}/><input type="hidden" name="value" value={String(!topic.attestations[key])}/>
+              <button class="button button-quiet" type="submit" aria-pressed={Boolean(topic.attestations[key])}>{topic.attestations[key] ? '✓ ' : '○ '}{label}</button></form>
+          ))}
+        </div>
+      </section>
+
+      <section class="rail-block">
+        <h2 class="rail-title">Durum</h2>
+        <p class="state-pill">{topic.state}</p>
+        <div class="transitions">
+          {targets.filter((t) => t !== 'REJECTED').map((to) => (
+            <form method="post"><input type="hidden" name="action" value="transition"/><input type="hidden" name="id" value={topic.id}/><input type="hidden" name="to" value={to}/>
+              <button class:list={['button', to === 'APPROVED' ? 'button-primary' : 'button-secondary']} type="submit" disabled={to === 'READY' && !gate.pass}>→ {to}</button></form>
+          ))}
+        </div>
+        {targets.includes('REJECTED') && (
+          <form method="post" class="reject">
+            <input type="hidden" name="action" value="transition"/><input type="hidden" name="id" value={topic.id}/><input type="hidden" name="to" value="REJECTED"/>
+            <label>Ret nedeni (failure memory)<select name="reason">{FAILURE_REASONS.map((r) => <option value={r}>{r}</option>)}</select></label>
+            <label>Not<input name="note"/></label>
+            <button class="button button-quiet" type="submit">REDDET</button>
+          </form>
+        )}
+        <p class="muted small">APPROVED ve PUBLISHED yalnız insan geçişidir. PUBLISHED için önce public URL gerekir.</p>
+      </section>
+
+      <section class="rail-block">
+        <h2 class="rail-title">Yayın katmanı</h2>
+        <form method="post" class="stack">
+          <input type="hidden" name="action" value="set_destination"/><input type="hidden" name="id" value={topic.id}/>
+          <label>Ana katman<select name="primary">{Object.keys(DESTINATIONS).map((d) => <option value={d} selected={d === topic.destination.primary}>{d}</option>)}</select></label>
+          <fieldset><legend>Türevler (MULTI-FORMAT)</legend>
+            {DERIVATIVES.map((d) => <label class="check"><input type="checkbox" name="derivatives" value={d} checked={topic.destination.derivatives.includes(d)}/>{d}</label>)}
+          </fieldset>
+          <button class="button button-secondary" type="submit">KAYDET</button>
+        </form>
+        {topic.destination.primary === 'BLOG' && <p class="muted small">Blog koleksiyonu sitede henüz yok (route inventory V1: MISSING). Paket outbox/blog’da bekler.</p>}
+      </section>
+
+      <section class="rail-block">
+        <h2 class="rail-title">Public metadata</h2>
+        <form method="post" class="stack">
+          <input type="hidden" name="action" value="set_public_meta"/><input type="hidden" name="id" value={topic.id}/>
+          <label>Evidence class<select name="evidence_class"><option value="">—</option>{EVIDENCE_CLASSES.map((e) => <option value={e} selected={e === topic.public_meta?.evidence_class}>{e}</option>)}</select></label>
+          <label>Claim ceiling<input name="claim_ceiling" value={topic.public_meta?.claim_ceiling ?? ''} placeholder="örn. EVENT_OBSERVABLE_ONLY"/></label>
+          <label>Etiketler (virgülle)<input name="tags" value={(topic.public_meta?.tags ?? []).join(', ')}/></label>
+          <button class="button button-secondary" type="submit">KAYDET</button>
+        </form>
+      </section>
+
+      <section class="rail-block">
+        <h2 class="rail-title">Paket (draft: true)</h2>
+        {selected && <p class="headline-preview">{selected.text}</p>}
+        {exportBlockers.length > 0 ? <p class="muted small">Bekleyen: {exportBlockers.join(' · ')}</p> : <p class="muted small">Outbox’a yazılır; src/content’e yazılmaz. Siteye taşımak ayrı, gözden geçirilmiş bir adımdır.</p>}
+        <form method="post"><input type="hidden" name="action" value="export"/><input type="hidden" name="id" value={topic.id}/><button class="button button-secondary" type="submit" disabled={exportBlockers.length > 0}>PAKETİ OUTBOX’A YAZ</button></form>
+        {topic.export && <p class="muted small">Son paket: {topic.export.path} · {topic.export.at.slice(0, 16).replace('T', ' ')}</p>}
+        {topic.state === 'APPROVED' && (
+          <form method="post" class="stack">
+            <input type="hidden" name="action" value="set_public_url"/><input type="hidden" name="id" value={topic.id}/>
+            <label>Yayınlandıysa public URL<input name="public_url" type="url" value={topic.public_url ?? ''} placeholder="https://hpanalytic.com/…"/></label>
+            <button class="button button-quiet" type="submit">URL’Yİ KAYDET</button>
+          </form>
+        )}
+      </section>
+
+      <details class="rail-block drawer">
+        <summary>Geçmiş · {topic.history.length}</summary>
+        <ol class="history">{topic.history.map((h: any) => <li><time>{h.at.slice(0, 16).replace('T', ' ')}</time> {h.from} → {h.to} <small>{h.actor}{h.note && ` · ${h.note}`}</small></li>)}</ol>
+      </details>
+    </aside>
+  </div>
+</div>
+</StudioLayout>

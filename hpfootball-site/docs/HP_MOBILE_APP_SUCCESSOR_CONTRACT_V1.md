@@ -132,3 +132,11 @@ Required before cutover:
 - deployed-origin acceptance
 - Android installed-app acceptance
 - main operator cutover decision
+
+## 8. Amendment A1 — HPAnalytic rename (2026-10-06, development)
+
+The candidate manifest now uses `name: "HPAnalytic — Football Intelligence"` and `short_name: "HPAnalytic"`, with regenerated 192/512 icons and an SVG icon.
+
+Unchanged on purpose: `id: "/"`, `start_url: "/"`, `scope: "/"`, `display: standalone`, theme/background `#050505`, `lang: tr`. Keeping `id` stable is what lets an installed successor update its label and icon instead of becoming a different app (asserted in `tests/pwa-successor.test.mjs`).
+
+This amendment authorizes nothing beyond §7. The AppDeploy WebAPK stays in place. Acceptance item 16 (update behaviour after a manifest revision) must now also verify that the rename and icon change propagate on Android.

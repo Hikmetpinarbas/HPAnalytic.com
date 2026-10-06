@@ -7,6 +7,21 @@ const SURFACES = [
   { href: '/about', label: 'HIKMET', kind: 'always', key: 'about' },
 ];
 
+export const SECTION_LABELS = {
+  analysis: 'ANALYSIS',
+  scouting: 'SCOUTING',
+  culture: 'CULTURE',
+  method: 'METHOD',
+};
+
+// Sections that have their own listing route. `method` articles live only in
+// the archive until a method surface exists.
+export const SECTION_ROUTES = {
+  analysis: '/analysis',
+  scouting: '/scouting',
+  culture: '/culture',
+};
+
 export function buildVisibleNavigation({
   articleSections = {},
   researchCount = 0,
@@ -21,4 +36,25 @@ export function buildVisibleNavigation({
       return Number(collectionCounts[surface.key] || 0) > 0;
     })
     .map(({ href, label }) => ({ href, label }));
+}
+
+// Archive and search are capabilities over the whole editorial corpus:
+// they exist only while at least one article exists (EMPTY SURFACE = HIDDEN SURFACE).
+export function buildUtilityNavigation({ articleCount = 0 } = {}) {
+  if (Number(articleCount) <= 0) return [];
+  return [
+    { href: '/archive', label: 'ARCHIVE' },
+    { href: '/search', label: 'SEARCH' },
+  ];
+}
+
+// aria-current support (GOV.UK service-navigation pattern): exact match is
+// "page", a parent surface of the current route is "true".
+export function currentState(href, pathname) {
+  const clean = (value) => (value.length > 1 ? value.replace(/\/+$/, '') : value);
+  const path = clean(String(pathname || '/'));
+  const target = clean(href);
+  if (path === target) return 'page';
+  if (target !== '/' && path.startsWith(target + '/')) return 'true';
+  return undefined;
 }

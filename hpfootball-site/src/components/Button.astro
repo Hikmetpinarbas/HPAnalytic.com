@@ -1,0 +1,15 @@
+---
+// Task-language action link (Contract §5: precise football verbs, never "Learn more").
+interface Props {
+  href: string;
+  variant?: 'primary' | 'secondary' | 'quiet';
+  arrow?: boolean;
+}
+const { href, variant = 'secondary', arrow = true } = Astro.props as Props;
+---
+<a href={href} class:list={['button', `button-${variant}`]}>
+  <slot />
+  {arrow && (
+    <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M2 8h11M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg>
+  )}
+</a>
