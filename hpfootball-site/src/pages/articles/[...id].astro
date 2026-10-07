@@ -16,6 +16,7 @@ const {a,all}=Astro.props; const {Content}=await render(a); const {newer,older}=
 const section=a.data.section; const sectionLabel=SECTION_LABELS[section as keyof typeof SECTION_LABELS]??displaySection(section); const sectionRoute=SECTION_ROUTES[section as keyof typeof SECTION_ROUTES];
 const evidence=evidenceMeta(a.data.evidenceClass); const minutes=a.data.readingMinutes??readingMinutes(a.body); const isoDate=a.data.date.toISOString().slice(0,10);
 const topics=a.data.topics??[]; const sourceRefs=a.data.sourceRefs??[]; const counterevidence=a.data.counterevidence??[];
+const articleKindLabel=a.data.articleKind?displayArticleKind(a.data.articleKind):''; const seriesLabel=a.data.series?displaySeries(a.data.series):'';
 const visualAssets=(a.data.visualAssets??[]).filter(v=>['OWNED','LICENSED','EDITORIAL_LICENSED','PUBLIC_DOMAIN','ORIGINAL'].includes(String(v.rights_status||'').toUpperCase()));
 const dataInsights=a.data.dataInsights??[]; const governed=a.data.source_system==='HP_CONTENT_INTELLIGENCE'||Boolean(a.data.articleKind);
 const site=Astro.site??Astro.url; const canonicalArticle=new URL(Astro.url.pathname,site).href; const jsonLd={'@context':'https://schema.org','@type':'Article',headline:a.data.title,description:a.data.description,datePublished:a.data.date.toISOString(),inLanguage:a.data.language??'tr',author:{'@type':'Person',name:a.data.author??'Hikmet Pınarbaş'},publisher:{'@type':'Organization',name:'HPAnalytic'},mainEntityOfPage:new URL(Astro.url.pathname,site).href};
@@ -24,7 +25,7 @@ const site=Astro.site??Astro.url; const canonicalArticle=new URL(Astro.url.pathn
 <script slot="head" type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
 <article class="article-page">
 <header class="article-head"><p class="kicker">{sectionRoute?<a href={sectionRoute}>{sectionLabel}</a>:sectionLabel}</p><h1>{a.data.title}</h1><p class="standfirst">{a.data.description}</p>
-<p class="article-meta"><span>{a.data.author??'Hikmet Pınarbaş'}</span><time datetime={isoDate}>{a.data.date.toLocaleDateString('tr-TR',{day:'numeric',month:'long',year:'numeric',timeZone:'UTC'})}</time><span>{minutes} dk okuma</span>{a.data.articleKind&&<span>{displayArticleKind(a.data.articleKind)}</span>}{a.data.series&&<span>{displaySeries(a.data.series)}</span>}</p>
+<p class="article-meta"><span>{a.data.author??'Hikmet Pınarbaş'}</span><time datetime={isoDate}>{a.data.date.toLocaleDateString('tr-TR',{day:'numeric',month:'long',year:'numeric',timeZone:'UTC'})}</time><span>{minutes} dk okuma</span>{articleKindLabel&&<span>{articleKindLabel}</span>}{seriesLabel&&seriesLabel!==articleKindLabel&&<span>{seriesLabel}</span>}</p>
 {topics.length>0&&<div class="article-topics" aria-label="Konular">{topics.map(topic=><span>{topic}</span>)}</div>}<EvidenceBadge evidenceClass={a.data.evidenceClass} claimCeiling={a.data.claimCeiling}/></header>
 {governed&&<p class="article-evidence-signal"><span aria-hidden="true">◆</span> KANIT SINIRI KORUNUYOR{a.data.sourceClaimsValidated===false&&<span class="visually-hidden"> — kaynaklardan çıkarılan ifadeler tek başına doğrulanmış futbol gerçeği değildir</span>}</p>}
 <div class="article-share" data-share-url={canonicalArticle} data-share-title={a.data.title}>
