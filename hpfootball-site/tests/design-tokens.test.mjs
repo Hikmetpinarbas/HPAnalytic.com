@@ -56,3 +56,7 @@ test('no CSS case transforms: lang="tr" would render English "i" as "İ" (ANALYS
 test('large headings may wrap long tokens under 200% text resize', () => {
   assert.match(css, /h1, h2, h3 \{[^}]*overflow-wrap:\s*break-word/s);
 });
+
+test('evidence bridge heading can shrink below its longest word at 200% text resize', () => {
+  assert.match(css, /\.evidence-bridge__head h2\{[^}]*overflow-wrap:anywhere/s);
+});
