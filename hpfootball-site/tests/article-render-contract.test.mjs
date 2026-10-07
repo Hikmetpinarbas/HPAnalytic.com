@@ -20,7 +20,7 @@ test('article route renders byline reading time topics evidence limits and sourc
     'article-meta','readingMinutes','topics','counterevidence','sourceRefs',
     'claimCeiling','EvidenceBadge'
   ]) assert.match(route,new RegExp(token));
-  assert.match(route,/Kaynak zemini/);
+  assert.match(route,/Kaynakları incele/);
   assert.match(route,/Karşı kanıt|Sınır/);
 });
 
