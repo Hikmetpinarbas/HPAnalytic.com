@@ -46,6 +46,7 @@ export function evaluateAdmission(item,{human_approval}={}){
   if(!ACCEPTABLE_RIGHTS.has(item?.rights_status))reasons.push('RIGHTS_NOT_ACCEPTABLE');
   if(hasBlockingWarning(item?.warnings))reasons.push('BLOCKING_WARNING');
   if(item?.source_system==='HP_CONTENT_INTELLIGENCE'&&item?.article_meta?.psychology_status!=='PASS')reasons.push('PSYCHOLOGY_GATE_REQUIRED');
+  if(item?.source_system==='HP_CONTENT_INTELLIGENCE'&&item?.article_meta?.source_claims_validated!==true)reasons.push('SOURCE_CLAIMS_VALIDATION_REQUIRED');
   if(!destination)reasons.push('DESTINATION_UNKNOWN');
   if(!validText(item?.title))reasons.push('TITLE_REQUIRED');
   if(!validText(item?.body))reasons.push('HUMAN_BODY_REQUIRED');

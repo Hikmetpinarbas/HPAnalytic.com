@@ -36,6 +36,7 @@ function readyItem(){
   };
   const item=normalizeContentIntelligenceArticle(bundle).item;
   item.article_meta.psychology_status='PASS';
+  item.article_meta.source_claims_validated=true;
   return item;
 }
 
@@ -64,7 +65,7 @@ test('site serialization preserves article contract metadata and remains human-a
   assert.match(text,/author: "Hikmet Pınarbaş"/);
   assert.match(text,/readingMinutes: 1/);
   assert.match(text,/truthAuthority: false/);
-  assert.match(text,/sourceClaimsValidated: false/);
+  assert.match(text,/sourceClaimsValidated: true/);
   assert.doesNotMatch(text,/editorial_status:\s*"PUBLISHED"[\s\S]*auto.?publish/i);
 });
 

@@ -58,7 +58,7 @@ export async function stageArticleRun(runDir,{workspaceRoot=SITE_ROOT,editorial=
   return {status:'STAGED',publish_allowed:false,candidatePath,item:normalized.item};
 }
 
-export async function publishStagedArticle(candidatePath,{workspaceRoot=SITE_ROOT,humanApproval,psychologyReview}={}){
+export async function publishStagedArticle(candidatePath,{workspaceRoot=SITE_ROOT,humanApproval,psychologyReview,sourceClaimsValidated=false}={}){
   const staged=await readJson(candidatePath);
   if(!staged.ok)return {status:'BLOCKED',reasons:['STAGED_CANDIDATE_UNAVAILABLE']};
   const candidate=staged.value||{};
@@ -69,6 +69,7 @@ export async function publishStagedArticle(candidatePath,{workspaceRoot=SITE_ROO
     return {status:'BLOCKED',reasons:['HUMAN_APPROVAL_REQUIRED']};
   }
   const reviewedItem=applyPsychologyReview(candidate.item,psychologyReview);
+  reviewedItem.article_meta={...reviewedItem.article_meta,source_claims_validated:sourceClaimsValidated===true};
   return admitLocalContent(reviewedItem,{
     human_approval:humanApproval,
     collectionRoot:path.join(workspaceRoot,'src','content'),

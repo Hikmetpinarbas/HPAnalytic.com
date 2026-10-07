@@ -64,7 +64,7 @@ test('publishing staged candidate requires explicit HUMAN_APPROVED and writes on
   const staged=await stageArticleRun(run,{workspaceRoot:workspace,editorial:{section:'analysis',article_kind:'DEEP_ANALYSIS'}});
   const denied=await publishStagedArticle(staged.candidatePath,{workspaceRoot:workspace,humanApproval:'REVIEW_READY'});
   assert.equal(denied.status,'BLOCKED');
-  const approved=await publishStagedArticle(staged.candidatePath,{workspaceRoot:workspace,humanApproval:'HUMAN_APPROVED',psychologyReview});
+  const approved=await publishStagedArticle(staged.candidatePath,{workspaceRoot:workspace,humanApproval:'HUMAN_APPROVED',psychologyReview,sourceClaimsValidated:true});
   assert.equal(approved.status,'SITE_ADMITTED');
   const files=await readdir(path.join(workspace,'src/content/articles'));
   assert.equal(files.filter(x=>x.endsWith('.md')).length,1);
@@ -75,7 +75,7 @@ test('pipeline stores editorial history while keeping inbox candidate immutable'
   const workspace=await mkdtemp(path.join(tmpdir(),'hp-site-workspace-'));
   const staged=await stageArticleRun(run,{workspaceRoot:workspace,editorial:{section:'analysis'}});
   const before=await readFile(staged.candidatePath,'utf8');
-  await publishStagedArticle(staged.candidatePath,{workspaceRoot:workspace,humanApproval:'HUMAN_APPROVED',psychologyReview});
+  await publishStagedArticle(staged.candidatePath,{workspaceRoot:workspace,humanApproval:'HUMAN_APPROVED',psychologyReview,sourceClaimsValidated:true});
   const after=await readFile(staged.candidatePath,'utf8');
   assert.equal(after,before);
   const histDir=path.join(workspace,'src/content','.editorial-history');
