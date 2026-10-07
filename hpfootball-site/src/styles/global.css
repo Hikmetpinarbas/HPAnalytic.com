@@ -487,10 +487,10 @@ main:focus { outline: none; }
   position: relative;
   aspect-ratio: 1.6/1;
   background:
-    radial-gradient(circle at 69% 49%,rgba(215,45,39,.055),transparent 25%),
+    radial-gradient(circle at 69% 49%,rgba(240,201,119,.045),transparent 25%),
     linear-gradient(135deg,#080806,#040404);
 }
-.hp-pitch svg { display:block; width:100%; height:100%; color:var(--red); }
+.hp-pitch svg { display:block; width:100%; height:100%; color:var(--gold-2); }
 .hp-pitch__structure>* { fill:none; stroke:rgba(241,238,230,.26); stroke-width:1; }
 .hp-pitch__structure .hp-pitch__guide { stroke:rgba(200,149,69,.16); stroke-dasharray:4 10; }
 .hp-pitch__reveal path:first-child { fill:url(#reveal); stroke:none; }
