@@ -40,6 +40,7 @@ test('article intake carries series visual assets and data insights without publ
 
 test('site admission serializes only rights-cleared visual assets',async()=>{
   const item=normalizeContentIntelligenceArticle(bundle()).item;
+  item.article_meta.psychology_status='PASS';
   const root=await mkdtemp(path.join(tmpdir(),'hp-product-'));
   const out=await admitLocalContent(item,{human_approval:'HUMAN_APPROVED',collectionRoot:root});
   const text=await readFile(path.join(root,out.relativePath),'utf8');
