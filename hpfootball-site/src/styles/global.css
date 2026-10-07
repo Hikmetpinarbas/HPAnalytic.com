@@ -677,3 +677,7 @@ linear-gradient(180deg,#050505 0%,#070604 38%,#050505 100%);}
 .standfirst { max-width: min(46ch, 100%); overflow-wrap: anywhere; }
 .article-meta, .article-topics { min-width: 0; max-width: min(790px, 100%); overflow-wrap: anywhere; }
 .article-meta > *, .article-topics > * { min-width: 0; max-width: 100%; overflow-wrap: anywhere; }
+/* Physical enlarged-text closure: bound the article reading axis itself. */
+.article-page { width: 100%; min-width: 0; }
+.prose { width: min(var(--measure), 100%); min-width: 0; overflow-wrap: anywhere; }
+.prose > * { max-width: 100%; }
