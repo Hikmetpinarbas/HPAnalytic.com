@@ -670,3 +670,10 @@ linear-gradient(180deg,#050505 0%,#070604 38%,#050505 100%);}
 /* 200% text reflow: grid/flex children may shrink and long editorial tokens may wrap. */
 .site-header>*,.brand,.brand-word,.hero>*,.featured-analysis>*,.research-method>div>*,.scouting-lenses>div>*,.evidence-bridge__flow>div,.principles>span{min-width:0}
 .brand-word,.research-method p,.scouting-lenses p,.evidence-bridge__flow p,.principles>span{overflow-wrap:anywhere}
+
+/* Enlarged-text resilience: article content must reflow rather than create a horizontal reading axis. */
+.article-head { min-width: 0; width: min(900px, 100%); }
+.article-head h1 { max-width: 100%; overflow-wrap: anywhere; }
+.standfirst { max-width: min(46ch, 100%); overflow-wrap: anywhere; }
+.article-meta, .article-topics { min-width: 0; max-width: min(790px, 100%); overflow-wrap: anywhere; }
+.article-meta > *, .article-topics > * { min-width: 0; max-width: 100%; overflow-wrap: anywhere; }
