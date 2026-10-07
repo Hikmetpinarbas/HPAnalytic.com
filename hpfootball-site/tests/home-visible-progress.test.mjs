@@ -10,9 +10,9 @@ test('homepage above fold carries identity, discovery action and real featured a
   assert.match(home,/HPANALYTIC/);
   assert.match(home,/HİKMET PINARBAŞ/);
   assert.match(home,/href="\/analysis"/);
-  assert.match(home,/featuredAnalysis/);
+  assert.match(home,/featuredStory/);
   assert.match(home,/class="featured-analysis"/);
-  assert.match(home,/\/articles\/\$\{featuredAnalysis\.id\}/);
+  assert.match(home,/\/articles\/\$\{featuredStory\.id\}/);
 });
 test('global header exposes HPAnalytic product identity without duplicating navigation truth',()=>{
   assert.match(layout,/HPANALYTIC/);

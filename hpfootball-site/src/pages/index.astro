@@ -9,8 +9,7 @@ import {getUpcomingMatches, FOOTBALL_SCOPE} from '../lib/football-data.mjs';
 export const prerender = true;
 
 const articles=(await getCollection('articles',isPublic)).filter(entry=>isPublicEditorialItem(entry.data)).sort((a,b)=>+b.data.date-+a.data.date);
-const featuredAnalysis=articles.find(a=>a.data.section==='analysis' && a.data.featured) ?? articles.find(a=>a.data.section==='analysis');
-const latestAnalysis=articles.filter(a=>a.data.section==='analysis' && a.id!==featuredAnalysis?.id).slice(0,3);
+const featuredStory=articles.find(a=>a.data.section==='analysis' && a.data.featured) ?? articles.find(a=>a.data.featured) ?? articles[0];
 const footballToken=import.meta.env.HPA_FOOTBALL_DATA_TOKEN;
 const matchCentre=await getUpcomingMatches({token:footballToken});
 type MatchCentreItem={competition:string;utcDate:string;home:string;away:string;status:string};
@@ -25,36 +24,25 @@ const matchTime=(utcDate:string)=>new Intl.DateTimeFormat('tr-TR',{timeZone:'Eur
     <p class="lead">Futbolu skor tabelasından değil; yapı, ilişki, karar, kanıt ve bağlam üzerinden okuyan bağımsız football intelligence yayını.</p>
     <div class="hero-actions">
       <a class="action-primary" href="/analysis">ANALİZLERİ KEŞFET <span aria-hidden="true">↗</span></a>
-      {featuredAnalysis && <a class="action-secondary" href={`/articles/${featuredAnalysis.id}`}>ÖNE ÇIKAN YAZIYI OKU <span aria-hidden="true">→</span></a>}
+      {featuredStory && <a class="action-secondary" href={"/articles/"+featuredStory.id}>YENİ YAZIYI OKU <span aria-hidden="true">→</span></a>}
     </div>
     <p class="hero-signature">FOOTBALL FIRST <span>·</span> EVIDENCE BEFORE CONFIDENCE</p>
   </div>
   <div class="hero-field hero-reveal hero-reveal-late"><TacticalCanvas/><span class="field-caption">STRUCTURE → RELATION → DECISION</span></div>
 </section>
 
-{featuredAnalysis && <section class="featured-analysis" aria-labelledby="featured-title">
-  <div class="featured-index"><span>01</span><p>FEATURED ANALYSIS</p></div>
+{featuredStory && <section class="featured-analysis" aria-labelledby="featured-title">
+  <div class="featured-index"><span>01</span><p>NEW · EVIDENCE OBJECT</p></div>
   <div class="featured-story">
-    <EvidenceBadge evidenceClass={featuredAnalysis.data.evidenceClass} claimCeiling={featuredAnalysis.data.claimCeiling}/>
-    <p class="featured-meta">ANALYSIS · {featuredAnalysis.data.date.toLocaleDateString('tr-TR')}</p>
-    <h2 id="featured-title">{featuredAnalysis.data.title}</h2>
-    <p>{featuredAnalysis.data.description}</p>
-    <a href={`/articles/${featuredAnalysis.id}`} class="story-link">ANALİZİ OKU <span aria-hidden="true">→</span></a>
+    <EvidenceBadge evidenceClass={featuredStory.data.evidenceClass} claimCeiling={featuredStory.data.claimCeiling}/>
+    <p class="featured-meta">{featuredStory.data.section.toUpperCase()} · {featuredStory.data.date.toLocaleDateString('tr-TR')}</p>
+    <h2 id="featured-title">{featuredStory.data.title}</h2>
+    <p>{featuredStory.data.description}</p>
+    <a href={`/articles/${featuredStory.id}`} class="story-link">YAZIYI VE KANITI AÇ <span aria-hidden="true">→</span></a>
   </div>
-  <aside class="featured-question"><small>NEXT QUESTION</small><p>Bir eylemin değeri, üretildiği konumdan mı; yoksa sonraki consequence zincirinden mi gelir?</p></aside>
+  <aside class="featured-question"><small>CLAIM BOUNDARY</small><p>Gözlediğimiz olay ile oyunun tamamı aynı şey değildir. Kanıtın gördüğü alan kadar, göremediği alan da gösterilir.</p></aside>
 </section>}
 
-<section class="latest-work" aria-labelledby="latest-work-title">
-  <header class="latest-head"><div><p class="kicker">LATEST WORK · ANALYSIS</p><h2 id="latest-work-title">SON ANALİZLER</h2></div><a href="/analysis" class="section-link">TÜM ANALİZLER <span aria-hidden="true">→</span></a></header>
-  {latestAnalysis.length > 0 ? <div class="latest-layout">
-    <a class="latest-lead" href={'/articles/'+latestAnalysis[0].id}>
-      <span class="latest-number">01</span><EvidenceBadge evidenceClass={latestAnalysis[0].data.evidenceClass} claimCeiling={latestAnalysis[0].data.claimCeiling}/>
-      <small>ANALYSIS · {latestAnalysis[0].data.date.toLocaleDateString('tr-TR')}</small>
-      <h3>{latestAnalysis[0].data.title}</h3><p>{latestAnalysis[0].data.description}</p><b>OKU →</b>
-    </a>
-    <div class="latest-list">{latestAnalysis.slice(1).map((a,i)=><a href={'/articles/'+a.id}><span>0{i+2}</span><div><small>ANALYSIS · {a.data.date.toLocaleDateString('tr-TR')}</small><h3>{a.data.title}</h3><p>{a.data.description}</p></div><b aria-hidden="true">↗</b></a>)}</div>
-  </div> : <p class="latest-empty">Yeni analizler yayınlandığında burada görünecek. <a href="/analysis">Analiz katmanına git →</a></p>}
-</section>
 <section class="match-centre" aria-labelledby="match-centre-title">
   <header class="match-centre-head"><div><p class="kicker">MATCH CENTRE · 7 DAY WINDOW</p><h2 id="match-centre-title">GELECEK MAÇLAR</h2><p>Beş Büyük Lig + UEFA + Türkiye kapsamındaki yakın futbol takvimi. Yalnız doğrulanmış kaynak verisi gösterilir.</p></div><div class="match-source"><span class={matchCentre.status==='READY'?'source-ready':'source-off'}>{matchCentre.status==='READY'?'SOURCE READY':'SOURCE UNAVAILABLE'}</span><small>{matchCentre.source} · Europe/Istanbul</small></div></header>
   <div class="scope-strip" aria-label="HPAnalytic futbol kapsamı">{FOOTBALL_SCOPE.labels.map(label=><span>{label}</span>)}</div>
@@ -78,6 +66,4 @@ const matchTime=(utcDate:string)=>new Intl.DateTimeFormat('tr-TR',{timeZone:'Eur
 <div class="scouting-copy"><p class="kicker">SCOUTING · DECISION INTELLIGENCE</p><h2 id="scouting-title">OYUNCU BULMAK DEĞİL.<br/><em>KARAR RİSKİNİ</em> AZALTMAK.</h2><p>Scouting, iyi oyuncu listesi değildir. Rolün, bağlamın ve transfer edilebilir özelliklerin aynı karar problemi içinde sınanmasıdır.</p><a href="/scouting" class="story-link">SCOUTING YAKLAŞIMINI GÖR →</a></div>
 <div class="scouting-lenses"><div><span>01</span><b>ROL</b><p>Oyuncunun etiketi değil, takım içindeki fonksiyonu.</p></div><div><span>02</span><b>BAĞLAM</b><p>Lig, takım, partner, rakip ve oyun durumu etkisi.</p></div><div><span>03</span><b>TRANSFERABILITY</b><p>Gözlenen niteliğin yeni sisteme taşınabilirliği.</p></div><div><span>04</span><b>KARŞI-KANIT</b><p>Kararı zayıflatabilecek bulguların özellikle aranması.</p></div></div></section>
 <div class="principles"><span>FOOTBALL FIRST</span><span>EVIDENCE BEFORE CONFIDENCE</span><span>MECHANISM BEFORE METRIC</span><span>CONTEXT BEFORE VERDICT</span></div>
-<section class="section"><p class="kicker">CURRENT INTELLIGENCE</p><h2>Postmatch first.</h2><p class="intro">Ciddi analiz doğrudan metne dönüşmez. HPA operasyonel yüzeyi kurar; HPFA claim sınırını denetler; HIO mekanizma katmanını zorlar; YELL güvenli bulguyu insan diline taşır.</p><div class="pipeline">{['HPA','HPFA','HIO','YELL'].map((x,i)=><article><b>{x}</b><span>{['Operational evidence','Evidence authority','Mechanism lens','Safe finding'][i]}</span></article>)}</div></section>
-<section class="section"><p class="kicker">LATEST</p><h2>Living football archive.</h2><div class="article-grid">{articles.slice(0,6).map(a=><a class="article" href={'/articles/'+a.id}><EvidenceBadge evidenceClass={a.data.evidenceClass} claimCeiling={a.data.claimCeiling}/><small>{a.data.section.toUpperCase()} · {a.data.date.toLocaleDateString('tr-TR')}</small><h3>{a.data.title}</h3><p>{a.data.description}</p></a>)}</div></section>
 </BaseLayout>
