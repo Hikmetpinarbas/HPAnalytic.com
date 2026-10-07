@@ -14,8 +14,11 @@ async function inspect(name,viewport,{text200=false,reducedMotion='no-preference
   page.on('console',m=>{if(m.type()==='error')consoleErrors.push(m.text())});
   await page.goto(base,{waitUntil:'networkidle'});
   if(text200) await page.evaluate(()=>{document.documentElement.style.fontSize='200%'});
+  await page.screenshot({path:`${out}/${name}-precheck.png`,fullPage:true});
   const tabbable=page.locator('a[href],button:not([disabled]),input:not([disabled]),select:not([disabled]),textarea:not([disabled]),[tabindex]:not([tabindex="-1"])');
-  assert.ok(await tabbable.count()>=2,'page exposes fewer than two keyboard targets');
+  const targetCount=await tabbable.count();
+  const pageTitle=await page.title();
+  assert.ok(targetCount>=2,`page exposes fewer than two keyboard targets (${targetCount}); title=${pageTitle}; url=${page.url()}`);
   await tabbable.first().focus();
   await page.keyboard.press('Tab');
   const focus=await page.evaluate(()=>{
