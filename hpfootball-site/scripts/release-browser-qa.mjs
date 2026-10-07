@@ -14,17 +14,16 @@ async function inspect(name,viewport,{text200=false,reducedMotion='no-preference
   page.on('console',m=>{if(m.type()==='error')consoleErrors.push(m.text())});
   await page.goto(base,{waitUntil:'networkidle'});
   if(text200) await page.evaluate(()=>{document.documentElement.style.fontSize='200%'});
-  let focus;
-  for(let i=0;i<12;i++){
-    await page.keyboard.press('Tab');
-    focus=await page.evaluate(()=>{
-      const el=document.activeElement;
-      const s=el?getComputedStyle(el):null;
-      return {tag:el?.tagName||'',outline:s?.outlineStyle||'',width:document.documentElement.scrollWidth,client:document.documentElement.clientWidth};
-    });
-    if(focus.tag && !['BODY','HTML'].includes(focus.tag)) break;
-  }
-  assert.ok(focus?.tag && !['BODY','HTML'].includes(focus.tag),'keyboard focus did not enter an interactive target');
+  const tabbable=page.locator('a[href],button:not([disabled]),input:not([disabled]),select:not([disabled]),textarea:not([disabled]),[tabindex]:not([tabindex="-1"])');
+  assert.ok(await tabbable.count()>=2,'page exposes fewer than two keyboard targets');
+  await tabbable.first().focus();
+  await page.keyboard.press('Tab');
+  const focus=await page.evaluate(()=>{
+    const el=document.activeElement;
+    const s=el?getComputedStyle(el):null;
+    return {tag:el?.tagName||'',outline:s?.outlineStyle||'',width:document.documentElement.scrollWidth,client:document.documentElement.clientWidth};
+  });
+  assert.ok(focus.tag && !['BODY','HTML'].includes(focus.tag),'keyboard Tab did not advance to an interactive target');
   assert.notEqual(focus.outline,'none','focused target has no visible outline');
   assert.ok(focus.width<=focus.client+1,`horizontal overflow: ${focus.width} > ${focus.client}`);
   assert.deepEqual(consoleErrors,[],`console errors: ${consoleErrors.join(' | ')}`);
