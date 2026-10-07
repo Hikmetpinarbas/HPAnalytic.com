@@ -60,3 +60,8 @@ test('large headings may wrap long tokens under 200% text resize', () => {
 test('evidence bridge heading can shrink below its longest word at 200% text resize', () => {
   assert.match(css, /\.evidence-bridge__head h2\{[^}]*overflow-wrap:anywhere/s);
 });
+
+test('homepage principle cells can shrink and wrap at 200% text resize', () => {
+  assert.match(css, /\.principles>span\{min-width:0\}/);
+  assert.match(css, /\.principles>span\{overflow-wrap:anywhere\}/);
+});

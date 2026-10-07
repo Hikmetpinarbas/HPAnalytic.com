@@ -690,5 +690,5 @@ linear-gradient(180deg,#050505 0%,#070604 38%,#050505 100%);}
 @media(max-width:700px){.mechanism-card__head,.mechanism-card__grid{grid-template-columns:1fr}.mechanism-card__head{gap:8px}.mechanism-card__grid>section{padding:18px}.mechanism-card footer{line-height:1.55}}
 
 /* 200% text reflow: grid/flex children may shrink and long editorial tokens may wrap. */
-.site-header>*,.brand,.brand-word,.hero>*,.featured-analysis>*,.research-method>div>*,.scouting-lenses>div>*,.evidence-bridge__flow>div,.principles>div{min-width:0}
-.brand-word,.research-method p,.scouting-lenses p,.evidence-bridge__flow p,.principles>div{overflow-wrap:anywhere}
+.site-header>*,.brand,.brand-word,.hero>*,.featured-analysis>*,.research-method>div>*,.scouting-lenses>div>*,.evidence-bridge__flow>div,.principles>span{min-width:0}
+.brand-word,.research-method p,.scouting-lenses p,.evidence-bridge__flow p,.principles>span{overflow-wrap:anywhere}
