@@ -5,7 +5,7 @@ const model=adaptMechanismCard(Astro.props.card ?? {});
 const visible=canRenderEditorialEvidence(model);
 ---
 {visible && <section class="mechanism-card" aria-labelledby="mechanism-card-title">
-  <header class="mechanism-card__head"><p class="kicker">PRESENTATION VIEW MODEL</p><h2 id="mechanism-card-title">Kanıttan mekanizmaya.</h2></header>
+  <header class="mechanism-card__head"><p class="kicker">KANIT NESNESİ</p><h2 id="mechanism-card-title">Kanıttan mekanizmaya.</h2></header>
   <div class="mechanism-card__grid">
     <section><small>MEKANİZMA</small><p>{model.mechanism}</p></section>
     <section><small>KANIT</small><ul>{model.evidence.map((x)=><li>{x}</li>)}</ul></section>
@@ -15,5 +15,5 @@ const visible=canRenderEditorialEvidence(model);
     <section class="mechanism-card__ceiling"><small>İDDİA SINIRI</small><p>{model.claim_ceiling}</p></section>
   </div>
   {model.visual_explanation && <figure class="mechanism-card__visual"><figcaption><small>GÖRSEL AÇIKLAMA</small><p>{model.visual_explanation}</p></figcaption></figure>}
-  <footer>Kaynak kontratı: {model.source_contract} · Provenance: {model.provenance}</footer>
+  <footer>Kaynak zinciri: {model.source_contract} · Köken: {model.provenance}</footer>
 </section>}
