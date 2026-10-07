@@ -1,1 +1,18 @@
-��1�Y�
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="counter-title counter-desc" data-truth-role="EXPLANATORY_SCHEMATIC">
+<title id="counter-title">Beş saniyelik top kazanımı ile karşı pres mekanizması arasındaki fark</title>
+<desc id="counter-desc">İki yol aynı top kaybı ve beş saniye sonra top kazanımı sonucuna ulaşır; bir yolun orta aksiyonları desteklenirken diğer yolun mekanizması bilinmeyen olarak kalır.</desc>
+<rect width="1200" height="675" fill="#090b0e"/>
+<text x="80" y="105" fill="#d7a84a" font-family="Arial,sans-serif" font-size="26" font-weight="700">TOP KAYBI</text>
+<text x="520" y="105" fill="#d7a84a" font-family="Arial,sans-serif" font-size="26" font-weight="700">5 sn</text>
+<text x="885" y="105" fill="#d7a84a" font-family="Arial,sans-serif" font-size="26" font-weight="700">TOP KAZANIMI</text>
+<text x="80" y="220" fill="#6d91b8" font-family="Arial,sans-serif" font-size="22">ROTA A · GÖZLENEN</text>
+<path d="M100 270H1050" stroke="#6d91b8" stroke-width="4"/>
+<circle cx="110" cy="270" r="12" fill="#d7a84a"/><circle cx="420" cy="270" r="12" fill="#d7a84a"/><circle cx="690" cy="270" r="12" fill="#d7a84a"/><circle cx="1040" cy="270" r="12" fill="#d7a84a"/>
+<text x="365" y="320" fill="#b9c4cf" font-family="Arial,sans-serif" font-size="20">desteklenen orta aksiyonlar</text>
+<text x="80" y="410" fill="#6d91b8" font-family="Arial,sans-serif" font-size="22">ROTA B</text>
+<path d="M100 460H300M840 460H1050" stroke="#6d91b8" stroke-width="4"/>
+<path d="M300 460H840" stroke="#8798ad" stroke-width="4" stroke-dasharray="14 12"/>
+<circle cx="110" cy="460" r="12" fill="#d7a84a"/><circle cx="1040" cy="460" r="12" fill="#d7a84a"/>
+<text x="505" y="448" fill="#8798ad" font-family="Arial,sans-serif" font-size="24" font-weight="700">UNKNOWN</text>
+<text x="390" y="535" fill="#d7a84a" font-family="Arial,sans-serif" font-size="22">SAME OUTCOME ≠ SAME MECHANISM</text>
+</svg>

@@ -1,1 +1,21 @@
-��1�Y�
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="baski-title baski-desc" data-truth-role="EXPLANATORY_SCHEMATIC">
+<title id="baski-title">Baskı etiketi ile mekanizma arasındaki kanıt sınırı</title>
+<desc id="baski-desc">Baskı altında etiketi gözleme götürür; tek başına mekanizmayı kanıtlamaz. Şema pressure radius, görüş konisi veya oyuncu niyeti üretmez.</desc>
+<rect width="1200" height="675" fill="#090b0e"/>
+<text x="80" y="110" fill="#d7a84a" font-family="Arial,sans-serif" font-size="28" font-weight="700">ETİKET</text>
+<rect x="80" y="150" width="250" height="90" rx="8" fill="#151b22" stroke="#d7a84a" stroke-width="2"/>
+<text x="115" y="207" fill="#f1f3f5" font-family="Arial,sans-serif" font-size="26">BASKI ALTINDA</text>
+<path d="M330 195H445" stroke="#6d91b8" stroke-width="4"/>
+<path d="M430 184L448 195L430 206" fill="none" stroke="#6d91b8" stroke-width="4"/>
+<text x="480" y="110" fill="#d7a84a" font-family="Arial,sans-serif" font-size="28" font-weight="700">GÖZLEM</text>
+<rect x="465" y="150" width="260" height="90" rx="8" fill="#111820" stroke="#6d91b8" stroke-width="2"/>
+<text x="505" y="207" fill="#f1f3f5" font-family="Arial,sans-serif" font-size="24">gözlenen aksiyon</text>
+<path d="M725 195H840" stroke="#6d91b8" stroke-width="4"/>
+<path d="M825 184L843 195L825 206" fill="none" stroke="#6d91b8" stroke-width="4"/>
+<path d="M858 130V260" stroke="#d7a84a" stroke-width="5" stroke-dasharray="12 10"/>
+<text x="875" y="110" fill="#d7a84a" font-family="Arial,sans-serif" font-size="28" font-weight="700">MEKANİZMA?</text>
+<text x="875" y="175" fill="#8798ad" font-family="Arial,sans-serif" font-size="22">kanıtlanmadıysa</text>
+<text x="875" y="210" fill="#8798ad" font-family="Arial,sans-serif" font-size="22">çizilmez</text>
+<text x="790" y="300" fill="#d7a84a" font-family="Arial,sans-serif" font-size="20">CLAIM CEILING</text>
+<text x="80" y="520" fill="#b9c4cf" font-family="Arial,sans-serif" font-size="25">same label ≠ same mechanism</text>
+</svg>
