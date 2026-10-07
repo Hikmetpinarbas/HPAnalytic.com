@@ -18,7 +18,6 @@ const matchRows=matchCentre.matches as MatchCentreItem[];
 const matchTime=(utcDate:string)=>new Intl.DateTimeFormat('tr-TR',{timeZone:'Europe/Istanbul',day:'2-digit',month:'short',hour:'2-digit',minute:'2-digit'}).format(new Date(utcDate));
 ---
 <BaseLayout title="HPAnalytic — Football Intelligence by Hikmet Pınarbaş" description="Hikmet Pınarbaş'tan kanıt, mekanizma ve bağlam temelli bağımsız futbol analizi.">
-<main>
 <section class="hero hero-entry">
   <div class="hero-copy hero-reveal">
     <p class="kicker">HPANALYTIC · HİKMET PINARBAŞ</p>
@@ -81,4 +80,4 @@ const matchTime=(utcDate:string)=>new Intl.DateTimeFormat('tr-TR',{timeZone:'Eur
 <div class="principles"><span>FOOTBALL FIRST</span><span>EVIDENCE BEFORE CONFIDENCE</span><span>MECHANISM BEFORE METRIC</span><span>CONTEXT BEFORE VERDICT</span></div>
 <section class="section"><p class="kicker">CURRENT INTELLIGENCE</p><h2>Postmatch first.</h2><p class="intro">Ciddi analiz doğrudan metne dönüşmez. HPA operasyonel yüzeyi kurar; HPFA claim sınırını denetler; HIO mekanizma katmanını zorlar; YELL güvenli bulguyu insan diline taşır.</p><div class="pipeline">{['HPA','HPFA','HIO','YELL'].map((x,i)=><article><b>{x}</b><span>{['Operational evidence','Evidence authority','Mechanism lens','Safe finding'][i]}</span></article>)}</div></section>
 <section class="section"><p class="kicker">LATEST</p><h2>Living football archive.</h2><div class="article-grid">{articles.slice(0,6).map(a=><a class="article" href={'/articles/'+a.id}><EvidenceBadge evidenceClass={a.data.evidenceClass} claimCeiling={a.data.claimCeiling}/><small>{a.data.section.toUpperCase()} · {a.data.date.toLocaleDateString('tr-TR')}</small><h3>{a.data.title}</h3><p>{a.data.description}</p></a>)}</div></section>
-</main></BaseLayout>
+</BaseLayout>

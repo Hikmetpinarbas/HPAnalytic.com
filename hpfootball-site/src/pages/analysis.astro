@@ -10,9 +10,9 @@ const grouped=editorialSeries.map(series=>({...series,items:items.filter(item=>i
 const unclassified=items.filter(item=>!item.data.series);
 ---
 <BaseLayout title="Analiz — HPAnalytic" description="Maç, mekanizma, metrik ve kanıt incelemelerini editoryal seriler halinde keşfedin." section="analysis">
-<main class="listing analysis-library">
+<div class="listing analysis-library">
 <header class="analysis-library-head"><p class="kicker">ANALİZ</p><h1 class="page-title">Metrik değil, mekanizma.</h1><p class="lead">Yazılar tek bir kronolojik akışta kaybolmaz. Maç, mekanizma, metrik ve kanıt sorusuna göre ayrılır.</p></header>
 <nav class="series-index" aria-label="Analiz serileri">{editorialSeries.map(series=><a href={'#'+series.key.toLowerCase()}><b>{series.label}</b><span>{series.description}</span></a>)}</nav>
 {grouped.map(group=><section class="series-section" id={group.key.toLowerCase()}><header><p class="kicker">SERİ</p><h2>{displaySeries(group.key)}</h2><p>{seriesDescription(group.key)}</p></header><div class="series-list">{group.items.map(a=><a href={'/articles/'+a.id}><small>{a.data.date.toLocaleDateString('tr-TR')}</small><h3>{a.data.title}</h3><p>{a.data.description}</p><span>OKU →</span></a>)}</div></section>)}
 {unclassified.length>0&&<section class="series-section" id="arsiv"><header><p class="kicker">ARŞİV</p><h2>Diğer analizler</h2><p>Henüz seri etiketi almamış mevcut yazılar.</p></header><div class="series-list">{unclassified.map(a=><a href={'/articles/'+a.id}><small>{a.data.date.toLocaleDateString('tr-TR')}</small><h3>{a.data.title}</h3><p>{a.data.description}</p><span>OKU →</span></a>)}</div></section>}
-</main></BaseLayout>
+</div></BaseLayout>

@@ -146,3 +146,17 @@ test('site public surfaces explicitly exclude withdrawn and superseded editorial
   assert.match(config,/editorial_status/);
   for(const source of [layout,index,analysis,detail]) assert.match(source,/isPublicEditorialItem/);
 });
+
+test("public editorial admission is fail-closed and every public article projection applies it", async () => {
+  const gate = await import("../src/lib/site-editorial-status.mjs");
+  assert.equal(gate.isPublicEditorialItem({}), false);
+  assert.equal(gate.isPublicEditorialItem({ editorial_status: "" }), false);
+  assert.equal(gate.isPublicEditorialItem({ editorial_status: "WITHDRAWN" }), false);
+  assert.equal(gate.isPublicEditorialItem({ editorial_status: "SUPERSEDED" }), false);
+  assert.equal(gate.isPublicEditorialItem({ editorial_status: "PUBLISHED" }), true);
+
+  for (const file of ["src/pages/archive.astro", "src/pages/search.astro", "src/components/SectionListing.astro"]) {
+    const source = await readFile(new URL("../" + file, import.meta.url), "utf8");
+    assert.match(source, /isPublicEditorialItem/);
+  }
+});

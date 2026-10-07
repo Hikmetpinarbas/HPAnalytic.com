@@ -1,11 +1,12 @@
 ---
 import { isPublic } from '../lib/public-content.mjs';
+import { isPublicEditorialItem } from '../lib/site-editorial-status.mjs';
 import { getCollection } from 'astro:content';
 import ArticleCard from './ArticleCard.astro';
 interface Props { section: 'analysis' | 'scouting' | 'culture' | 'method'; headingLevel?: 2 | 3; }
 const { section, headingLevel = 2 } = Astro.props as Props;
 const items = (await getCollection('articles', isPublic))
-  .filter((a) => a.data.section === section)
+  .filter((a) => isPublicEditorialItem(a.data) && a.data.section === section)
   .sort((a, b) => +b.data.date - +a.data.date);
 ---
 {items.length > 0 ? (

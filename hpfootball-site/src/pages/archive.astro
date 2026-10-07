@@ -1,5 +1,6 @@
 ---
 import { isPublic } from '../lib/public-content.mjs';
+import { isPublicEditorialItem } from '../lib/site-editorial-status.mjs';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
 import { groupByYearMonth, monthName } from '../lib/archive.mjs';
@@ -7,7 +8,7 @@ import { SECTION_LABELS, SECTION_ROUTES } from '../lib/site-surfaces.mjs';
 import { evidenceMeta } from '../lib/evidence.mjs';
 export const prerender = true;
 
-const articles = await getCollection('articles', isPublic);
+const articles = (await getCollection('articles', isPublic)).filter((entry) => isPublicEditorialItem(entry.data));
 type Entry = (typeof articles)[number];
 type YearGroup = { year: number; count: number; months: { month: number; items: Entry[] }[] };
 const years: YearGroup[] = groupByYearMonth(articles, (a: Entry) => a.data.date);

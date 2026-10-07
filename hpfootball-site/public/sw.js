@@ -1,4 +1,4 @@
-const CACHE = 'hpanalytic-shell-v1';
+const CACHE = 'hpanalytic-shell-v2';
 const SHELL = ['/', '/manifest.webmanifest', '/favicon.svg', '/icons/hp-192.png', '/icons/hp-512.png'];
 
 self.addEventListener('install', (event) => {
@@ -19,17 +19,16 @@ self.addEventListener('fetch', (event) => {
 
   const url = new URL(request.url);
   if (url.origin !== self.location.origin) return;
-  if (url.pathname.startsWith('/studio/')) return;
+  if (url.pathname.startsWith('/studio/') || url.pathname.startsWith('/control/')) return;
 
   if (request.mode === 'navigate') {
     event.respondWith(
       fetch(request)
         .then((response) => {
-          const copy = response.clone();
-          caches.open(CACHE).then((cache) => cache.put(request, copy));
+          if (response && response.ok && response.type === 'basic') { const copy = response.clone(); caches.open(CACHE).then((cache) => cache.put(request, copy)); }
           return response;
         })
-        .catch(async () => (await caches.match(request)) || (await caches.match('/')))
+        .catch(async () => (await caches.match(request)) || new Response('HPAnalytic — Bu sayfa çevrimdışı kullanılamıyor.', { status: 503, headers: { 'Content-Type': 'text/plain; charset=utf-8' } }))
     );
     return;
   }
