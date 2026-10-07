@@ -299,7 +299,7 @@ main:focus { outline: none; }
 .evidence[data-stroke="dashed"] { border-top-style: dashed; border-top-color: var(--blue); }
 .evidence[data-stroke="dotted"] { border-top-style: dotted; border-top-color: var(--muted); }
 .evidence dt { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
-.evidence dd { margin: 0; }
+.evidence dd { margin: 0; min-width: 0; overflow-wrap: anywhere; }
 .evidence .evidence-class { color: var(--gold-2); font-weight: 700; }
 .evidence .evidence-ceiling { color: var(--muted); }
 
