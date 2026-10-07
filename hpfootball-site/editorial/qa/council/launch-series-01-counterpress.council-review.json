@@ -1,0 +1,39 @@
+{
+  "schema_version": "HP_EDITORIAL_COUNCIL_REVIEW_V1",
+  "article_id": "launch-series-01-counterpress",
+  "status": "REPAIR",
+  "authority": "CANDIDATE_EDITORIAL_REVIEW",
+  "truth_authority": false,
+  "human_approved": false,
+  "ordinary_reader": {
+    "verdict": "PASS",
+    "reason": "Top kaybı–beş saniye–geri kazanım zinciri futbol bilgisi dışında teknik önkoşul istemiyor."
+  },
+  "eureka": {
+    "verdict": "PASS",
+    "pivot": "TOP KAYBI → ? → 5 SANİYE → TOP KAZANIMI",
+    "transfer": "Aynı sonuçtan aynı mekanizma çıkarılamayacağını başka metriklere taşıyabiliyor."
+  },
+  "repair_actions": [
+    {
+      "action": "KEEP",
+      "target": "Top kaybı. Beş saniye. Top yeniden aynı takımda.",
+      "reason": "Düşük bilişsel yükle preconception kuruyor."
+    },
+    {
+      "action": "KEEP",
+      "target": "TOP KAYBI → ? → 5 SANİYE → TOP KAZANIMI",
+      "reason": "Eksik mekanizmayı görünür kılan canonical insight."
+    },
+    {
+      "action": "TIGHTEN",
+      "target": "Süre bize ne söyler?",
+      "reason": "Tarama metriği ile mekanizma ayrımı bir kez güçlü kurulmalı."
+    },
+    {
+      "action": "MOVE",
+      "target": "EVIDENCE NOTE / COUNTEREVIDENCE / UNCERTAINTY / RIGHTS",
+      "reason": "Okur finalindeki “nereden biliyorsun?” memory trace korunmalı."
+    }
+  ]
+}
