@@ -52,3 +52,7 @@ test('no CSS case transforms: lang="tr" would render English "i" as "İ" (ANALYS
   const withoutComments = css.replace(/\/\*[\s\S]*?\*\//g, '');
   assert.doesNotMatch(withoutComments, /text-transform\s*:/);
 });
+
+test('large headings may wrap long tokens under 200% text resize', () => {
+  assert.match(css, /h1, h2, h3 \{[^}]*overflow-wrap:\s*break-word/s);
+});
