@@ -22,3 +22,11 @@ test('core product surfaces use reader-facing Turkish headings', () => {
   assert.doesNotMatch(files.archive, /Living football archive/);
   assert.doesNotMatch(files.scouting, />REPORTS</);
 });
+
+test('public navigation and section labels use reader-facing Turkish', async()=>{
+  const surfaces=await readFile(new URL('../src/lib/site-surfaces.mjs',import.meta.url),'utf8');
+  assert.match(surfaces,/label:\s*'HİKMET'/);
+  assert.match(surfaces,/analysis:\s*'ANALİZ'/);
+  assert.match(surfaces,/culture:\s*'KÜLTÜR'/);
+  assert.match(surfaces,/method:\s*'YÖNTEM'/);
+});

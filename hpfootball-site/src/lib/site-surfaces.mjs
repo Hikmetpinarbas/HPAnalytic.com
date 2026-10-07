@@ -4,14 +4,14 @@ const SURFACES = [
   { href: '/visual-lab', label: 'GÖRSEL KANIT', kind: 'collection', key: 'visualCount' },
   { href: '/research', label: 'ARAŞTIRMA', kind: 'collection', key: 'researchCount' },
   { href: '/culture', label: 'KÜLTÜR', kind: 'article', key: 'culture' },
-  { href: '/about', label: 'HIKMET', kind: 'always', key: 'about' },
+  { href: '/about', label: 'HİKMET', kind: 'always', key: 'about' },
 ];
 
 export const SECTION_LABELS = {
-  analysis: 'ANALYSIS',
+  analysis: 'ANALİZ',
   scouting: 'SCOUTING',
-  culture: 'CULTURE',
-  method: 'METHOD',
+  culture: 'KÜLTÜR',
+  method: 'YÖNTEM',
 };
 
 // Sections that have their own listing route. `method` articles live only in
