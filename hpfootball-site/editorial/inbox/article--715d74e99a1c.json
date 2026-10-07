@@ -58,10 +58,10 @@
       "source_refs": [
         {
           "source_id": "S03",
-          "title": "HPA HRC shot-endpoint capital + admitted counterpress methodology",
+          "title": "HPFA/HPA evidence-boundary contracts + existing short-recovery/counterpress methodology capital",
           "locator": "INTERNAL_OR_NONPUBLIC_SOURCE",
           "rights": "ORIGINAL",
-          "claim_ceiling": "Short regain time is an observable outcome/operational window; it does not alone prove counterpress mechanism, quality, causality or intention."
+          "claim_ceiling": "SHORT_RECOVERY_OUTCOME_AND_OPERATIONAL_WINDOW_ONLY_NOT_COUNTERPRESS_MECHANISM_OR_QUALITY"
         }
       ],
       "source_rights": [
