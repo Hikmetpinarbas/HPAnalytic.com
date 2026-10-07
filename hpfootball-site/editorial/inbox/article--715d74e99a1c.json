@@ -1,0 +1,87 @@
+{
+  "status": "ARTICLE_REVIEW_READY",
+  "publish_allowed": false,
+  "reasons": [],
+  "item": {
+    "id": "launch-series-01-counterpress",
+    "title": "Beş saniyede topu geri kazanmak iyi karşı pres midir?",
+    "target": "Beş saniyede topu geri kazanmak iyi karşı pres midir?",
+    "content_type": "ARTICLE_METHOD",
+    "source_system": "HP_CONTENT_INTELLIGENCE",
+    "generated_at": "2026-10-07T14:20:00+03:00",
+    "freshness": "PASS",
+    "currentness": "CURRENT",
+    "truth_status": "EDITORIAL_CLAIM_OUTPUT_READY",
+    "claim_readiness": "EDITORIAL_CLAIM_OUTPUT_READY",
+    "claim_ceiling": "Short regain time is an observable outcome/operational window; it does not alone prove counterpress mechanism, quality, causality or intention.",
+    "rights_status": "OWNED",
+    "evidence_status": {
+      "evidence_class": "EDITORIAL",
+      "provenance": "HP CONTENT INTELLIGENCE → CLAIM CONTRACT → EDITORIAL REVIEW",
+      "canonical_source_available": true,
+      "source_count": 1,
+      "unresolved_source_conflict": false
+    },
+    "visual_status": {
+      "admitted_visual": true,
+      "rights": "OWNED",
+      "visual_claim_ceiling": "Kısa top kazanma süresi gözlenebilir bir sonuç ve araştırma penceresidir; karşı pres mekanizmasını, kalitesini, nedenselliği veya niyeti tek başına kanıtlamaz.",
+      "product": "/visuals/launch-series-01/karsi-pres-bes-saniye.svg"
+    },
+    "body": "# Beş saniyede topu geri kazanmak iyi karşı pres midir?\n\nSTATUS: CANDIDATE / NOT PUBLIC / HUMAN_APPROVAL_REQUIRED\nCLAIM CEILING: Kısa sürede topu geri kazanmak gözlenebilir bir sonuçtur. Tek başına karşı pres kalitesini, rest-defence geometrisini, rakibin neden kaybettiğini veya teknik ekip niyetini kanıtlamaz.\n\nTop kaybı. Beş saniye. Top yeniden aynı takımda.\n\nİstatistik temizdir. Hikâye de hazır görünür: iyi karşı pres.\n\nAma aradaki beş saniyeyi görmeden gerçekten bunu söyleyebilir miyiz?\n\nKısa sürede topu geri kazanmak önemli bir sinyaldir. Takımların top kaybı sonrasındaki davranışlarını taramak, sekansları karşılaştırmak ve tekrar eden durumları bulmak için değerli olabilir. Fakat ölçtüğümüz şey önce sonuçtur: top belirli bir süre içinde yeniden kazanılmıştır.\n\nKarşı pres ise sonuçtan daha fazlasını anlatan bir futbol mekanizmasıdır.\n\nİki sekans düşünelim.\n\nİkisinde de takım topu kaybediyor. İkisinde de beş saniye sonra top yeniden aynı takımda.\n\nİlkinde topa en yakın oyuncu hemen rakibin ileri çıkışını kapatıyor; ikinci oyuncu yakın pas seçeneğine erişimi zorlaştırıyor; arkadaki yapı görünür biçimde ikinci topa hazır kalıyor ve rakip baskı altında topu kaybediyor olabilir.\n\nDiğerinde rakip kontrol hatası yapıyor, pasını doğrudan rakibe veriyor veya kendi tercihiyle topu kaybediyor olabilir. Top yine beş saniyede geri dönmüştür.\n\nAynı süre.\n\nAynı sonuç.\n\nAma aynı mekanizma olduğunu henüz bilmiyoruz.\n\nBu nedenle güvenli zincir şudur:\n\n**TOP KAYBI → ? → 5 SANİYE → TOP KAZANIMI**\n\nSoru işareti karşı pres analizinin en değerli bölümüdür.\n\n## Süre bize ne söyler?\n\nSüre bir başlangıç filtresi sağlayabilir. Çok sayıda top kaybı içinden hızlı geri kazanımları ayırabiliriz. Takımların farklı maçlarını veya dönemlerini aynı tanım altında karşılaştırabiliriz. Sonrasında hangi sekansların gerçekten incelenmesi gerektiğini belirleyebiliriz.\n\nFakat eşik değerinin kendisi futbol gerçeği değildir.\n\nBeş saniye yerine üç, altı veya sekiz saniye seçmek araştırma tasarımının parçasıdır. Kullanılan tanım değiştiğinde sonuçların dağılımı da değişebilir. Bu nedenle “beş saniye kuralı”nı evrensel bir futbol yasası gibi kullanmak yerine, önce ölçümün nasıl kurulduğunu açıklamak gerekir.\n\nDaha önemlisi, hızlı geri kazanımın nedeni tek olmayabilir.\n\nRakibin teknik hatası, kötü ilk kontrolü, riskli pası, saha bölgesi, takım arkadaşlarının desteği, topun sekmesi veya gerçekten koordineli top-kaybı reaksiyonu aynı sonuca farklı yollarla götürebilir.\n\nBurada korelasyon ile mekanizma ayrılır.\n\n**Hızlı geri kazanım karşı pres araştırmak için iyi bir kapı olabilir. Karşı pres'in kanıtı olmak zorunda değildir.**\n\n## Peki iyi karşı presi nasıl ararız?\n\nÖnce top kaybı anını tanımlarız.\n\nSonra yalnız kronometreye değil, gözlenebilir reaksiyona bakarız: İlk cevap neydi? Rakibin hangi seçenekleri gerçekten kapandı? Kaç oyuncunun davranışı görüntüde veya güvenilir veride gözlenebiliyor? Rakip topu neden kaybettiğine dair hangi kanıt mevcut? Takım topu kazanamadığı örneklerde ne değişti?\n\nBaşarılı sekans kadar başarısız sekans da önemlidir.\n\nÇünkü yalnız topun geri kazanıldığı örnekleri seçersek, mekanizmayı sonuç üzerinden tarif etme riski doğar. Karşı kanıt tam burada işe yarar: Benzer reaksiyonun top kazanımı üretmediği anlar, “iyi karşı pres” dediğimiz şeyin gerçekten ne olduğunu sınamamıza yardım eder.\n\nYeterli oyuncu/konum takibi veya video kapsamı varsa ilişkileri daha ayrıntılı incelemek mümkün olabilir. Yalnız olay verisi varsa iddia daha dar kalmalıdır. Olay verisi bize top kaybını, bazı aksiyonları ve top kazanımını gösterebilir; görünmeyen takım geometrisini tamamlamamalıdır.\n\n## Sonuçtan mekanizmaya\n\nFutbolda metrikler çoğu zaman cevaptan önce iyi bir soru üretir.\n\nBeş saniyede geri kazanım da böyle okunabilir.\n\n“Bu takım iyi karşı pres yapıyor” demeden önce şu soruyu soralım:\n\n**Beş saniyede topu geri kazandın. Peki bunun karşı pres sayesinde olduğunu nereden biliyorsun?**\n\nCevabı gösterebiliyorsak mekanizmaya yaklaşırız.\n\nGösteremiyorsak elimizde hâlâ değerli bir sonuç vardır.\n\nAma sonuç ile açıklamayı birbirine karıştırmamış oluruz.\n\n---\nEVIDENCE NOTE: Current HPFA evidence contracts support recurrence != causality, process label != intention, event != tracking and unknown preservation. This article does not assert a universal five-second karşı pres definition.\nCOUNTEREVIDENCE: Consistently defined short-recovery metrics can be useful screening/comparison tools; richer positional/video evidence can support stronger mechanism analysis.\nUNCERTAINTY: No universal optimal recovery threshold or team-quality judgment is asserted.\nRIGHTS: Original HP reconstruction; no source passage reproduced.",
+    "provenance": "HP Content Intelligence claim-first synthesis; site admission does not upgrade source claims.",
+    "warnings": [],
+    "social_status": {},
+    "article_meta": {
+      "section": "method",
+      "description": "Beş saniye yararlı bir operasyonel pencere olabilir; mekanizmanın kendisi değildir.",
+      "article_kind": "DEEP_ANALYSIS",
+      "series": "",
+      "visual_assets": [
+        {
+          "visual_id": "launch-series-01-counterpress-figure-01",
+          "src": "/visuals/launch-series-01/karsi-pres-bes-saniye.svg",
+          "caption": "Aynı beş saniyelik sonucun farklı ve kısmen bilinmeyen süreçlerden çıkabilmesi.",
+          "claim_supported": "Beş saniyede topu geri kazanmak gözlenebilir bir sonuçtur; karşı pres mekanizmasını tek başına kanıtlamaz.",
+          "rights_status": "ORIGINAL",
+          "truth_role": "EXPLANATORY_SCHEMATIC",
+          "visual_role": "ANALYTICAL_DIAGRAM"
+        }
+      ],
+      "data_insights": [],
+      "language": "tr",
+      "author": "Hikmet Pınarbaş",
+      "topics": [
+        "kanıt sınırı"
+      ],
+      "source_count": 1,
+      "source_refs": [
+        {
+          "source_id": "S03",
+          "title": "HPA HRC shot-endpoint capital + admitted counterpress methodology",
+          "locator": "INTERNAL_OR_NONPUBLIC_SOURCE",
+          "rights": "ORIGINAL",
+          "claim_ceiling": "Short regain time is an observable outcome/operational window; it does not alone prove counterpress mechanism, quality, causality or intention."
+        }
+      ],
+      "source_rights": [
+        "ORIGINAL"
+      ],
+      "claim_ids": [
+        "launch-series-01-counterpress-C01"
+      ],
+      "counterevidence": [
+        "Farklı metodolojiler farklı regain pencereleri kullanır; positional/video evidence process claim'ini güçlendirebilir."
+      ],
+      "reading_minutes": 3,
+      "truth_authority": false,
+      "source_claims_validated": false,
+      "single_editorial_identity": true,
+      "quality_status": "EDITORIAL_REVIEW_READY"
+    },
+    "visual_required": true
+  },
+  "staged_at": "2026-10-07T11:36:34.826Z",
+  "source_run": "CONTENT_INTELLIGENCE_RUN",
+  "approval_required": "HUMAN_APPROVED"
+}

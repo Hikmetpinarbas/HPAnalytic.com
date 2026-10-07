@@ -1,9 +1,9 @@
 const SURFACES = [
-  { href: '/analysis', label: 'ANALYSIS', kind: 'article', key: 'analysis' },
+  { href: '/analysis', label: 'ANALİZ', kind: 'article', key: 'analysis' },
   { href: '/scouting', label: 'SCOUTING', kind: 'article', key: 'scouting' },
-  { href: '/visual-lab', label: 'VISUAL LAB', kind: 'collection', key: 'visualCount' },
-  { href: '/research', label: 'RESEARCH', kind: 'collection', key: 'researchCount' },
-  { href: '/culture', label: 'CULTURE', kind: 'article', key: 'culture' },
+  { href: '/visual-lab', label: 'GÖRSEL KANIT', kind: 'collection', key: 'visualCount' },
+  { href: '/research', label: 'ARAŞTIRMA', kind: 'collection', key: 'researchCount' },
+  { href: '/culture', label: 'KÜLTÜR', kind: 'article', key: 'culture' },
   { href: '/about', label: 'HIKMET', kind: 'always', key: 'about' },
 ];
 
@@ -43,8 +43,8 @@ export function buildVisibleNavigation({
 export function buildUtilityNavigation({ articleCount = 0 } = {}) {
   if (Number(articleCount) <= 0) return [];
   return [
-    { href: '/archive', label: 'ARCHIVE' },
-    { href: '/search', label: 'SEARCH' },
+    { href: '/archive', label: 'ARŞİV' },
+    { href: '/search', label: 'ARA' },
   ];
 }
 

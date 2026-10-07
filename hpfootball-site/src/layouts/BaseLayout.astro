@@ -18,8 +18,8 @@ interface Props {
 
 const SITE_NAME = 'HPAnalytic';
 const {
-  title = 'HPAnalytic — Football Intelligence',
-  description = 'HPAnalytic: Hikmet Pınarbaş tarafından futbolu mekanizma, kanıt ve bağlam üzerinden okuyan bağımsız football intelligence platformu.',
+  title = 'HPAnalytic — Futbol Analizi ve Kanıt',
+  description = 'HPAnalytic: Hikmet Pınarbaş tarafından futbolu mekanizma, kanıt ve bağlam üzerinden okuyan bağımsız analiz ve araştırma yayını.',
   section,
   ogType = 'website',
   publishedTime,
@@ -106,18 +106,15 @@ if ('serviceWorker' in navigator) {
 <a class="skip-link" href="#main-content">İçeriğe geç</a>
 <div class="grain" aria-hidden="true"></div>
 <header class="site-header">
-  <a href="/" class="brand" aria-label="HPAnalytic ana sayfa">
-    <span class="hp-mark" aria-hidden="true"><svg viewBox="0 0 52 52"><path class="hp-frame" d="M7 7v38M7 26h17M24 7v38M32 7v38M32 7h7c8 0 8 15 0 15h-7"/><path class="hp-break" d="M13 38 42 14"/></svg></span>
-    <span class="brand-word"><b>HPANALYTIC</b><small>HİKMET PINARBAŞ · FOOTBALL INTELLIGENCE</small></span>
-  </a>
-  <nav class="desktop-nav" aria-label="Primary">
+  <Logo />
+  <nav class="desktop-nav" aria-label="Ana menü">
     {navigation.map(item=><a class="nav-link" href={item.href} aria-current={item.current}>{item.label}</a>)}
   </nav>
   <div class="header-actions">
     {searchLink && (
       <a class="icon-link" href={searchLink.href} aria-current={searchLink.current}>
         <svg viewBox="0 0 20 20" aria-hidden="true" focusable="false"><circle cx="8.5" cy="8.5" r="5.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M12.5 12.5 17 17" stroke="currentColor" stroke-width="1.6"/></svg>
-        <span class="icon-link-text">SEARCH</span>
+        <span class="icon-link-text">ARA</span>
       </a>
     )}
     <MobileNavigation navigation={archiveLink ? [...navigation, archiveLink] : navigation} />
@@ -127,10 +124,10 @@ if ('serviceWorker' in navigator) {
 <footer class="site-footer">
   <div class="footer-grid">
     <div><Logo /><p class="footer-statement">Skoru değil, skoru üreten mekanizmayı okuruz. Kanıtın taşıyabildiğinden güçlü konuşmayız.</p></div>
-    <nav class="footer-nav" aria-label="Footer surfaces"><h2>SURFACES</h2><ul>{[...navigation].map(item=><li><a href={item.href}>{item.label}</a></li>)}</ul></nav>
-    {utility.length > 0 && (<nav class="footer-nav" aria-label="Footer tools"><h2>TOOLS</h2><ul>{utility.map(item=><li><a href={item.href}>{item.label}</a></li>)}</ul></nav>)}
+    <nav class="footer-nav" aria-label="Site bölümleri"><h2>BÖLÜMLER</h2><ul>{[...navigation].map(item=><li><a href={item.href}>{item.label}</a></li>)}</ul></nav>
+    {utility.length > 0 && (<nav class="footer-nav" aria-label="Site araçları"><h2>ARAÇLAR</h2><ul>{utility.map(item=><li><a href={item.href}>{item.label}</a></li>)}</ul></nav>)}
   </div>
-  <div class="footer-base"><span>© {new Date().getFullYear()} Hikmet Pınarbaş · HPAnalytic</span><span>Evidence before confidence.</span></div>
+  <div class="footer-base"><span>© {new Date().getFullYear()} Hikmet Pınarbaş · HPAnalytic</span><span>Güvenden önce kanıt.</span></div>
 </footer>
 </body>
 </html>

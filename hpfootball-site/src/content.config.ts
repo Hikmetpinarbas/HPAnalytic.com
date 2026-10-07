@@ -26,6 +26,11 @@ const articles=defineCollection({
     dataInsights:z.array(z.object({
       question:z.string(),metric:z.string(),interpretation:z.string(),limit:z.string(),source_label:z.string().optional(),
     })).optional(),
+    mechanismCard:z.object({
+      mechanism:z.string(), evidence:z.array(z.string()).min(1), counterevidence:z.array(z.string()).optional(),
+      context:z.string().optional(), confidence_level:z.string().optional(), claim_ceiling:z.string(),
+      alternative_explanations:z.array(z.string()).optional(), visual_explanation:z.string().optional(), provenance:z.string(),
+    }).optional(),
     author:z.string().optional(), language:z.enum(['tr','en']).optional(), topics:z.array(z.string()).optional(),
     sourceRefs:z.array(z.object({
       source_id:z.string(),title:z.string(),locator:z.string(),rights:z.string(),claim_ceiling:z.string(),

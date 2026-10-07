@@ -1,0 +1,87 @@
+{
+  "status": "ARTICLE_REVIEW_READY",
+  "publish_allowed": false,
+  "reasons": [],
+  "item": {
+    "id": "launch-series-01-kamera",
+    "title": "Kamera bize neyi göstermiyor?",
+    "target": "Kamera bize neyi göstermiyor?",
+    "content_type": "ARTICLE_METHOD",
+    "source_system": "HP_CONTENT_INTELLIGENCE",
+    "generated_at": "2026-10-07T14:20:00+03:00",
+    "freshness": "PASS",
+    "currentness": "CURRENT",
+    "truth_status": "EDITORIAL_CLAIM_OUTPUT_READY",
+    "claim_readiness": "EDITORIAL_CLAIM_OUTPUT_READY",
+    "claim_ceiling": "Kamera kadrajı gerçek bir anı gösterir; kadraj dışı ve tam takım geometrisi başka kanıt olmadan bilinmez.",
+    "rights_status": "OWNED",
+    "evidence_status": {
+      "evidence_class": "EDITORIAL",
+      "provenance": "HP CONTENT INTELLIGENCE → CLAIM CONTRACT → EDITORIAL REVIEW",
+      "canonical_source_available": true,
+      "source_count": 1,
+      "unresolved_source_conflict": false
+    },
+    "visual_status": {
+      "admitted_visual": true,
+      "rights": "OWNED",
+      "visual_claim_ceiling": "Kamera kadrajı gerçek bir anı gösterir; kadraj dışı ve tam takım geometrisi başka kanıt olmadan bilinmez.",
+      "product": "/visuals/launch-series-01/kamera-kanit-siniri.svg"
+    },
+    "body": "# Kamera bize neyi göstermiyor?\n\nSTATUS: CANDIDATE / NOT PUBLIC / HUMAN_APPROVAL_REQUIRED  \nCLAIM CEILING: Yayın görüntüsü, yalnız görünür ve yeterince kapsanan alan için doğrudan gözlem sağlar. Tek başına tam takım geometrisini, kadraj dışındaki oyuncuların konumunu veya oyuncu/teknik ekip niyetini kanıtlamaz.\n\nBir futbol pozisyonunu durdurup ekrana baktığımızda ilk his genellikle nettir: “Her şey ortada.”\n\nOysa değildir.\n\nTelevizyon yayını bize sahanın tamamını değil, yönetmenin seçtiği kadrajı gösterir. Topu, topa yakın oyuncuları ve aksiyonun merkezini çoğu zaman iyi görürüz. Fakat futbol yalnız topun çevresinde oynanmaz. Savunmanın geri kalanının nerede olduğu, ters taraftaki genişlik, son hattın mesafesi, kadraj dışında kalan koşu ya da pas seçeneği görüntüde olmayabilir.\n\nBuradaki kritik ayrım şudur:\n\n**Görmediğimiz şey, gerçekleşmemiş şey değildir.**\n\nVe daha önemlisi: Zihin boşluğu sevmez. Eksik resmi tamamlamaya çalışır.\n\nBir karede altı oyuncu görürüz; diğer beş oyuncunun nerede olabileceğine dair futbol bilgimiz bize güçlü bir tahmin üretir. Tahmin makul olabilir. Hatta doğru da çıkabilir. Ama makul olmakla gözlenmiş olmak aynı şey değildir.\n\nBu ayrım özellikle taktik analizde önemlidir.\n\nBir takımın “çok dar” olduğunu söylemek için yalnız top tarafındaki oyuncuların birbirine yakın görünmesi yetmez. “Savunma kompakt” demek için kadraj dışındaki hatların konumunu bilmek gerekebilir. “Ters kanat boştu” diyebilmek için o alanın gerçekten görünür olması gerekir. Tek kareden oyuncunun ne gördüğünü, hangi seçeneği bilinçli olarak reddettiğini veya teknik direktörün ne istediğini çıkarmak ise daha da güçlü kanıt ister.\n\nBu, yayın görüntüsünü değersiz yapmaz.\n\nTam tersine, doğru soruyla kullanıldığında yayın görüntüsü son derece güçlüdür. Bir oyuncunun görünür ilk kontrolünü, pas yönünü, rakibin gözlenebilir reaksiyonunu, belirli bir anda açılan veya kapanan bir hattı gösterebilir. Geniş açı, uzun sekans veya farklı kamera tekrarları kapsamı artırabilir. Bazen bir mekanizmanın önemli bölümünü gerçekten görünür hale getirir.\n\nSorun görüntüde değil; **görüntünün kanıt kapasitesinden daha büyük cümle kurmakta.**\n\nBu yüzden HPAnalytic'te bir taktik görselin sınırı, ekranın kenarında bitmez. Kanıtın bittiği yerde de bir sınır vardır.\n\n## Kadrajın kenarı aynı zamanda bir iddia sınırı olabilir\n\nBir analiz görselinde sahanın görünmeyen bölümünü hayali oyuncularla doldurmak anlatımı kolaylaştırır. Fakat açıklayıcı çizim ile gözlenmiş gerçeklik birbirine karışırsa görsel, kanıtın söylemediği bir şeyi söylemeye başlar.\n\nBu nedenle üç katmanı ayırmak gerekir:\n\n**GÖZLENEN** — görüntüde gerçekten görülen şey.  \n**AÇIKLAYICI KATMAN** — gözleneni anlamayı kolaylaştıran çizgi, alan veya ilişki.  \n**BİLİNMEYEN** — mevcut kanıtla güvenle tamamlanamayan bölüm.\n\nBilinmeyen alan bir kusur değildir. Analizin dürüstlük alanıdır.\n\nİyi analiz her boşluğu doldurmak zorunda değildir.\n\nBazen en değerli cümle şudur:\n\n**“Bu görüntü bize bunu söylemeye yetmiyor.”**\n\nÇünkü o cümleden sonra soru değişir. Daha geniş açı var mı? Sekansın öncesi ve sonrası ne gösteriyor? Başka kamera açısı var mı? Event verisi bu gözlemi destekliyor mu? Tracking verisi gerçekten mevcut mu?\n\nBöylece görüntü hüküm veren bir dekor olmaktan çıkar; araştırmanın başlangıç noktasına dönüşür.\n\n## Asıl soru\n\nBir sonraki kez ekranda durdurulmuş bir futbol karesi gördüğünüzde yalnız “Burada ne oluyor?” diye sormayın.\n\nÖnce şunu sorun:\n\n**Kamera gerçekten bunu gösterdi mi, yoksa zihnimiz kadrajın dışını tamamladı mı?**\n\nBu iki ihtimal arasındaki mesafe, futbol analizinde görüntü ile kanıt arasındaki mesafedir.\n\n---\nEVIDENCE NOTE: Current internal HPA Video Intelligence and HPFA visual/evidence contracts support the observation/visibility boundary. These sources are methodological/internal capital, not multiple independent empirical studies.\nCOUNTEREVIDENCE: Wide-angle, long-duration, multi-angle video or verified tracking can raise the observable ceiling for specific questions.\nUNCERTAINTY: Coverage sufficiency is sequence- and question-specific; no universal visible-player threshold is asserted.\nRIGHTS: Original HP reconstruction; no source passage reproduced.",
+    "provenance": "HP Content Intelligence claim-first synthesis; site admission does not upgrade source claims.",
+    "warnings": [],
+    "social_status": {},
+    "article_meta": {
+      "section": "method",
+      "description": "Kamera bize çok şey gösterir; fakat gözlem ölçeği iddia ölçeğini sınırlar.",
+      "article_kind": "DEEP_ANALYSIS",
+      "series": "",
+      "visual_assets": [
+        {
+          "visual_id": "launch-series-01-kamera-figure-01",
+          "src": "/visuals/launch-series-01/kamera-kanit-siniri.svg",
+          "caption": "Kadrajın gösterdiği alan ile bilinmeyen alan arasındaki sınır.",
+          "claim_supported": "Kamera yalnız kadraja giren alanı doğrudan gösterir; kadraj dışı alan bilinmeyen olarak kalır.",
+          "rights_status": "ORIGINAL",
+          "truth_role": "EXPLANATORY_SCHEMATIC",
+          "visual_role": "ANALYTICAL_DIAGRAM"
+        }
+      ],
+      "data_insights": [],
+      "language": "tr",
+      "author": "Hikmet Pınarbaş",
+      "topics": [
+        "kanıt sınırı"
+      ],
+      "source_count": 1,
+      "source_refs": [
+        {
+          "source_id": "S01",
+          "title": "HPA Video Intelligence + HPFA Visual/Evidence contracts",
+          "locator": "INTERNAL_OR_NONPUBLIC_SOURCE",
+          "rights": "ORIGINAL",
+          "claim_ceiling": "Kamera kadrajı gerçek bir anı gösterir; kadraj dışı ve tam takım geometrisi başka kanıt olmadan bilinmez."
+        }
+      ],
+      "source_rights": [
+        "ORIGINAL"
+      ],
+      "claim_ids": [
+        "launch-series-01-kamera-C01"
+      ],
+      "counterevidence": [
+        "Geniş açı, uzun sekans veya ek görüntü bazı belirsizlikleri azaltabilir."
+      ],
+      "reading_minutes": 3,
+      "truth_authority": false,
+      "source_claims_validated": false,
+      "single_editorial_identity": true,
+      "quality_status": "EDITORIAL_REVIEW_READY"
+    },
+    "visual_required": true
+  },
+  "staged_at": "2026-10-07T11:36:35.060Z",
+  "source_run": "CONTENT_INTELLIGENCE_RUN",
+  "approval_required": "HUMAN_APPROVED"
+}
