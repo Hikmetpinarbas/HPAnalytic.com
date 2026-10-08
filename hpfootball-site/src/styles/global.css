@@ -189,7 +189,12 @@ main:focus { outline: none; }
 }
 @media (max-width: 420px) {
   .brand-tag { display: none; }
-  .icon-link .icon-link-text { display: none; }
+  /* Visually hidden, not display:none: the text stays the link's accessible
+     name, so the icon-only link keeps the same name as the visible label. */
+  .icon-link .icon-link-text {
+    position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+    overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+  }
 }
 
 /* Buttons ---------------------------------------------------------------- */
