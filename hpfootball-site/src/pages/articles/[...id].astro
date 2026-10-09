@@ -10,11 +10,13 @@ import { evidenceMeta } from '../../lib/evidence.mjs';
 import { isPublicEditorialItem } from '../../lib/site-editorial-status.mjs';
 import { displayArticleKind, displaySection, displayRights, displayClaimCeiling } from '../../lib/editorial-display.mjs';
 import { displaySeries } from '../../lib/editorial-series.mjs';
+import { resolveNextQuestion } from '../../lib/next-question.mjs';
 export const prerender = true;
 export async function getStaticPaths(){const items=(await getCollection('articles', isPublic)).filter(x=>isPublicEditorialItem(x.data));return items.map(a=>({params:{id:a.id},props:{a,all:items}}));}
 const {a,all}=Astro.props; const {Content}=await render(a); const {newer,older}=adjacentItems(all,a.id,(x:typeof a)=>x.data.date);
 const section=a.data.section; const sectionLabel=SECTION_LABELS[section as keyof typeof SECTION_LABELS]??displaySection(section); const sectionRoute=SECTION_ROUTES[section as keyof typeof SECTION_ROUTES];
 const evidence=evidenceMeta(a.data.evidenceClass); const minutes=a.data.readingMinutes??readingMinutes(a.body); const isoDate=a.data.date.toISOString().slice(0,10);
+const nextQuestion=resolveNextQuestion(a.data.nextQuestion,all.map((x:typeof a)=>x.id));
 const topics=a.data.topics??[]; const sourceRefs=a.data.sourceRefs??[]; const counterevidence=a.data.counterevidence??[];
 const articleKindLabel=a.data.articleKind?displayArticleKind(a.data.articleKind):''; const seriesLabel=a.data.series?displaySeries(a.data.series):'';
 const visualAssets=(a.data.visualAssets??[]).filter(v=>['OWNED','LICENSED','EDITORIAL_LICENSED','PUBLIC_DOMAIN','ORIGINAL'].includes(String(v.rights_status||'').toUpperCase()));
@@ -59,7 +61,7 @@ const site=Astro.site??Astro.url; const canonicalArticle=new URL(Astro.url.pathn
 {dataInsights.length>0&&<section class="article-data-notes" aria-labelledby="data-notes-title"><p class="kicker">VERİ NOTU</p><h2 id="data-notes-title">Sayı ne söylüyor?</h2><div class="data-note-grid">{dataInsights.map(d=><article class="data-note-card"><small>SORU</small><h3>{d.question}</h3><div class="data-note-metric">{d.metric}</div><p><b>HP yorumu:</b> {d.interpretation}</p><p><b>Sınır:</b> {d.limit}</p>{d.source_label&&<small>{d.source_label}</small>}</article>)}</div></section>}
 {counterevidence.length>0&&<details class="article-disclosure article-counterevidence"><summary>Karşı kanıt ve sınırlar <span aria-hidden="true">＋</span></summary><div class="disclosure-ghost"><ul>{counterevidence.map(item=><li>{item}</li>)}</ul></div></details>}
 {sourceRefs.length>0&&<details class="article-disclosure article-sources"><summary>Kaynakları incele <span aria-hidden="true">＋</span></summary><div class="disclosure-ghost"><ol>{sourceRefs.map(source=><li>{/https?:\/\//.test(source.locator)?<a href={source.locator} rel="noreferrer">{source.title}</a>:<span>{source.title}</span>}<small>{displayRights(source.rights)} · {displayClaimCeiling(source.claim_ceiling)}</small></li>)}</ol></div></details>}
-{a.data.nextQuestion&&<aside class="next-question" aria-labelledby="next-question-title"><p class="next-question-label">SIRADAKİ SORU</p><h2 id="next-question-title">{a.data.nextQuestion.question}</h2><a href={a.data.nextQuestion.href}>Sorunun izini sür <span aria-hidden="true">→</span></a></aside>}
+{nextQuestion&&<aside class="next-question" aria-labelledby="next-question-title"><p class="next-question-label">SIRADAKİ SORU</p><h2 id="next-question-title">{nextQuestion.question}</h2>{nextQuestion.href&&<a href={nextQuestion.href}>Sorunun izini sür <span aria-hidden="true">→</span></a>}</aside>}
 <aside class="claim-boundary" aria-labelledby="claim-boundary-title"><h2 id="claim-boundary-title">KANIT SINIRI</h2><p>{evidence.summary}</p><p>Bu yazının iddia sınırı: <strong>{displayClaimCeiling(a.data.claimCeiling)}</strong>.</p></aside>
 {(newer||older)&&<nav class="adjacent-nav" aria-label="Önceki ve sonraki yazılar">{newer&&<a class="newer" href={'/articles/'+newer.id} rel="prev"><span>← DAHA YENİ</span><b>{newer.data.title}</b></a>}{older&&<a class="older" href={'/articles/'+older.id} rel="next"><span>DAHA ESKİ →</span><b>{older.data.title}</b></a>}</nav>}
 </article></BaseLayout>
