@@ -22,3 +22,10 @@ test('robots advertises sitemap and blocks control surface', async () => {
   assert.match(src, /sitemap-index\.xml/);
   assert.match(src, /Disallow: \/control\//);
 });
+
+test('sitemap advertises only surfaces the navigation would show', async () => {
+  const src = await read('sitemap-0.xml.ts');
+  assert.match(src, /buildVisibleNavigation\(/);
+  assert.match(src, /buildUtilityNavigation\(/);
+  assert.doesNotMatch(src, /STATIC_ROUTES|'\/culture'|'\/visual-lab'/);
+});
