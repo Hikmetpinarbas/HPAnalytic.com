@@ -1,0 +1,1370 @@
+{
+ "schema": "hpweb-unified-source-manifest/v1",
+ "task": "HPWEB-UNIFIED-TREE-20261009-001",
+ "candidate_commit": "77e2387896da24621dde5eea13836eb87f83f550",
+ "candidate_tree": "b0d8fda4b0d634323becad03d9e9b0e556575d98",
+ "branch": "integration/hpanalytic-unified-20261009",
+ "base": {
+  "remote_base": "59b9b851d46aff8776eaa6a56c43009225ab957d",
+  "cc01_reconstructed": "14ca0d1db39ebe41390618896daa2968434c4e5c",
+  "production": "ddb0ed7470f3e13fe937d9f2791f8dd603620e8b"
+ },
+ "merged_sources": [
+  {
+   "ref": "source/phone-integration-preview-20261009",
+   "commit": "14cc946140d686f22e99ac636e6f93a38cdc02a9",
+   "origin": "Termux ~/HPA_SITE_DEV/WORKTREE_RECONCILIATION_20261009/integration-preview on 9ecb912",
+   "transport_sha256": "00f398b12122b96582afd9d71e6b745a0c0b618e85927dd3722e1b95475e6ddd",
+   "blobs_verified": "58/58"
+  }
+ ],
+ "preserved_not_merged": [
+  {
+   "ref": "source/phone-brand-delta-9e7109f",
+   "content_equal_to": "9e7109fa59d58399125e585c3fc411c9489359a7",
+   "blobs_verified": "4/4",
+   "commit_sha_equal": false
+  }
+ ],
+ "flags": {
+  "AUTOPUBLISH": "OFF",
+  "HUMAN_APPROVED": false,
+  "deployed": false,
+  "pushed": false
+ },
+ "file_count": 222,
+ "files": [
+  {
+   "path": ".editorconfig",
+   "blob": "1014ba78880c899e842b397cb89a878be4671f7d",
+   "size": 188,
+   "last_change": "14cc946 Snapshot phone integration-preview working tree (source evidence)"
+  },
+  {
+   "path": ".gitattributes",
+   "blob": "5e7ab39a8d91421669bed45c2c29d266be80bfda",
+   "size": 165,
+   "last_change": "14cc946 Snapshot phone integration-preview working tree (source evidence)"
+  },
+  {
+   "path": ".github/pull_request_template.md",
+   "blob": "2203c90cc6511cfe0ab6370d01014f1564d5ef59",
+   "size": 631,
+   "last_change": "14cc946 Snapshot phone integration-preview working tree (source evidence)"
+  },
+  {
+   "path": ".github/workflows/hp-football-linux-acceptance.yml",
+   "blob": "0cf65a6c3c014011ec1108b536ccf37d915ff63d",
+   "size": 2380,
+   "last_change": "2199ffa Add Release Pack 01 physical browser QA"
+  },
+  {
+   "path": ".github/workflows/hpanalytic-production-deploy.yml",
+   "blob": "c731ab771edbe39bdba5d3688e92e41e9043506a",
+   "size": 1729,
+   "last_change": "c8e43d3 Deploy HPAnalytic with Astro generated Cloudflare config"
+  },
+  {
+   "path": ".gitignore",
+   "blob": "2d9ee889a98bbc6a4f9871f37edbd5c9ed2f7720",
+   "size": 220,
+   "last_change": "14cc946 Snapshot phone integration-preview working tree (source evidence)"
+  },
+  {
+   "path": "BRAND_PRODUCT_DELTA_01.md",
+   "blob": "345c7e4edd4f73a85d1a1bd93e4c3aa53d328652",
+   "size": 9926,
+   "last_change": "14cc946 Snapshot phone integration-preview working tree (source evidence)"
+  },
+  {
+   "path": "CONTRIBUTING.md",
+   "blob": "1831b619043622615347ce39415d7428b6f493be",
+   "size": 1131,
+   "last_change": "14cc946 Snapshot phone integration-preview working tree (source evidence)"
+  },
+  {
+   "path": "README.md",
+   "blob": "a93cbdfaa21b77739ba159f7650bafd467ff4bd1",
+   "size": 1607,
+   "last_change": "14cc946 Snapshot phone integration-preview working tree (source evidence)"
+  },
+  {
+   "path": "SECURITY.md",
+   "blob": "b088c1b76213b4ed4e479fdde4157e4d4b66e25f",
+   "size": 752,
+   "last_change": "14cc946 Snapshot phone integration-preview working tree (source evidence)"
+  },
+  {
+   "path": "docs/REPOSITORY_GOVERNANCE.md",
+   "blob": "13390f2c063ec3f308bd019c186615c82b8cc42a",
+   "size": 2449,
+   "last_change": "14cc946 Snapshot phone integration-preview working tree (source evidence)"
+  },
+  {
+   "path": "hpfootball-site/.gitignore",
+   "blob": "eb1c4640a1416ec338f50d537118b86cb4187863",
+   "size": 39,
+   "last_change": "d4f8ad5 site: rebuild as HPAnalytic and fix 500 on every article route"
+  },
+  {
+   "path": "hpfootball-site/.nvmrc",
+   "blob": "2bd5a0a98a36cc08ada88b804d3be047e6aa5b8a",
+   "size": 3,
+   "last_change": "14cc946 Snapshot phone integration-preview working tree (source evidence)"
+  },
+  {
+   "path": "hpfootball-site/astro.config.mjs",
+   "blob": "0754786eba124248090137e46cb55759f389fe2e",
+   "size": 625,
+   "last_change": "92912f1 Actually drop unused SESSION KV and IMAGES Worker bindings"
+  },
+  {
+   "path": "hpfootball-site/docs/HPANALYTIC_DONOR_REVERSE_ENGINEERING_2026-10-06.md",
+   "blob": "d363c93ec1abf1b3272514e4d952955f60862d70",
+   "size": 16616,
+   "last_change": "67c2d00 docs: HPAnalytic donor reverse-engineering report and contract amendments"
+  },
+  {
+   "path": "hpfootball-site/docs/HPANALYTIC_EDITORIAL_STUDIO_V1.md",
+   "blob": "600a75930e6a2939b644c4ee5a8dd6e35e527072",
+   "size": 13001,
+   "last_change": "257cf5f studio: add private Editorial Intelligence Studio at /studio/editorial"
+  },
+  {
+   "path": "hpfootball-site/docs/HPWEB_CC01_SITE_COMPLETION_2026-10-09.md",
+   "blob": "3a23cf423fe0e6f88bb1817df7ca59d8b0baa934",
+   "size": 8134,
+   "last_change": "14ca0d1 Record CC-01 site completion audit, QA package and rollback"
+  },
+  {
+   "path": "hpfootball-site/docs/HPWEB_P0_RELEASE_REPAIR_2026-10-09.md",
+   "blob": "6e0fda236b1be217dc0781cb568d6578ccf3339d",
+   "size": 8933,
+   "last_change": "59b9b85 Record HPWEB P0 release repair evidence and QA handoff"
+  },
+  {
+   "path": "hpfootball-site/docs/HP_FOOTBALL_DESIGN_CONTRACT_V1.md",
+   "blob": "f0ca1cbb6b65237321ada8a44b185fc428fb20e4",
+   "size": 6712,
+   "last_change": "67c2d00 docs: HPAnalytic donor reverse-engineering report and contract amendments"
+  },
+  {
+   "path": "hpfootball-site/docs/HP_MOBILE_APP_SUCCESSOR_CONTRACT_V1.md",
+   "blob": "e8d954d60284e1731bba12c6151d7398318e9548",
+   "size": 4456,
+   "last_change": "67c2d00 docs: HPAnalytic donor reverse-engineering report and contract amendments"
+  },
+  {
+   "path": "hpfootball-site/docs/HP_SITE_RESEARCH_2026-10-04.md",
+   "blob": "3f6708e17c84345d8642bf13fde975437002690e",
+   "size": 3596,
+   "last_change": "4545c3d HP site v2: add docs/HP_SITE_RESEARCH_2026-10-04.md"
+  },
+  {
+   "path": "hpfootball-site/docs/editorial-candidates/futbol-nedir-v2-CANDIDATE.md",
+   "blob": "757d2ffee8193fc316f7de9a2a171e8cf7f9afac",
+   "size": 6294,
+   "last_change": "14cc946 Snapshot phone integration-preview working tree (source evidence)"
+  },
+  {
+   "path": "hpfootball-site/docs/editorial-candidates/position-role-v2-CANDIDATE.md",
+   "blob": "c48a9771436b16675452c18dbd6b91eccfe13c1c",
+   "size": 5408,
+   "last_change": "14cc946 Snapshot phone integration-preview working tree (source evidence)"
+  },
+  {
+   "path": "hpfootball-site/docs/editorial-candidates/production-consequence-v2-CANDIDATE.md",
+   "blob": "c8fb0e6ecd71a1432b324d9161afb5e28e24d998",
+   "size": 4756,
+   "last_change": "14cc946 Snapshot phone integration-preview working tree (source evidence)"
+  },
+  {
+   "path": "hpfootball-site/docs/editorial-candidates/relative-age-effect-CANDIDATE.md",
+   "blob": "b3aae82a4059943d6ffbbb046704265619781aab",
+   "size": 1360,
+   "last_change": "14cc946 Snapshot phone integration-preview working tree (source evidence)"
+  },
+  {
+   "path": "hpfootball-site/docs/operations/BUILD_ENVIRONMENT_DIAGNOSIS_2026-10-08.md",
+   "blob": "c679b6dee6e02b68595e369ff612938c0267c4a6",
+   "size": 1410,
+   "last_change": "14cc946 Snapshot phone integration-preview working tree (source evidence)"
+  },
+  {
+   "path": "hpfootball-site/docs/operations/EDITORIAL_COMMAND_STUDIO_CANDIDATE.md",
+   "blob": "5dcf6c0e2559aa3962bb0d738acdb3a613736145",
+   "size": 2485,
+   "last_change": "14cc946 Snapshot phone integration-preview working tree (source evidence)"
+  },
+  {
+   "path": "hpfootball-site/docs/operations/EDITORIAL_LAUNCH_WIP_2026-10-08.md",
+   "blob": "63e68076e556488a60151d0b8d92f6598917d17b",
+   "size": 2891,
+   "last_change": "14cc946 Snapshot phone integration-preview working tree (source evidence)"
+  },
+  {
+   "path": "hpfootball-site/docs/operations/EDITORIAL_QA_CANDIDATES_2026-10-08.md",
+   "blob": "1c4630298fb53a60bc5df80276c47cbeac67d9fe",
+   "size": 1546,
+   "last_change": "14cc946 Snapshot phone integration-preview working tree (source evidence)"
+  },
+  {
+   "path": "hpfootball-site/docs/operations/OPERATOR_HANDOFF_2026-10-08_DESIGN_LOGO.md",
+   "blob": "0c294feae67eb3e849d61876848de38ae6057b62",
+   "size": 3289,
+   "last_change": "14cc946 Snapshot phone integration-preview working tree (source evidence)"
+  },
+  {
+   "path": "hpfootball-site/docs/operations/chatgpt-project/CHATGPT_PROJECT_EXECUTION_DECISION_2026-10-08.md",
+   "blob": "043b87b5539164db9602bd11e59da8869c9bc818",
+   "size": 2171,
+   "last_change": "14cc946 Snapshot phone integration-preview working tree (source evidence)"
+  },
+  {
+   "path": "hpfootball-site/docs/operations/chatgpt-project/CHATGPT_PROJECT_ROUTING_V1.md",
+   "blob": "cf9b1258ca6f314108c969859d58991f3d970131",
+   "size": 4848,
+   "last_change": "14cc946 Snapshot phone integration-preview working tree (source evidence)"
+  },
+  {
+   "path": "hpfootball-site/docs/research/HPANALYTIC_DEEP_RE_2026-10-06_B2.md",
+   "blob": "b16aa1e747c4cebb4e0222f94c5a5626a8e12573",
+   "size": 24549,
+   "last_change": "fa87a7f docs: HPAnalytic deep reverse-engineering batch 2 and implementation packets"
+  },
+  {
+   "path": "hpfootball-site/docs/research/HPANALYTIC_DONOR_REGISTRY.json",
+   "blob": "fe20985cf568ac50b0075fa845d670562b8fe6c1",
+   "size": 14313,
+   "last_change": "fa87a7f docs: HPAnalytic deep reverse-engineering batch 2 and implementation packets"
+  },
+  {
+   "path": "hpfootball-site/docs/research/HPANALYTIC_IMPLEMENTATION_PACKETS_B2.md",
+   "blob": "1f6c07617ddefb3f1b1e88170964e8541c676ccf",
+   "size": 31708,
+   "last_change": "fa87a7f docs: HPAnalytic deep reverse-engineering batch 2 and implementation packets"
+  },
+  {
+   "path": "hpfootball-site/editorial/governance/HP_EDITORIAL_COUNCIL_100.md",
+   "blob": "09841552e7c324e1ea1e2d24bab453c205a2bcc9",
+   "size": 8607,
+   "last_change": "cceb637 Add Editorial Council 100 review framework"
+  },
+  {
+   "path": "hpfootball-site/editorial/inbox/article--09f39215f996.json",
+   "blob": "c10bcac6a7260788add8656a240e417efa976744",
+   "size": 7217,
+   "last_change": "5bc6539 Repair Launch Series editorial narrative"
+  },
+  {
+   "path": "hpfootball-site/editorial/inbox/article--28ac3467e7c2.json",
+   "blob": "f24269d7f759a249142811e6697bc42a8a496a43",
+   "size": 7294,
+   "last_change": "5bc6539 Repair Launch Series editorial narrative"
+  },
+  {
+   "path": "hpfootball-site/editorial/inbox/article--715d74e99a1c.json",
+   "blob": "176e66a989664fab44a7904b350474d755e884ab",
+   "size": 7891,
+   "last_change": "033049d repair release evidence and visual semantics"
+  },
+  {
+   "path": "hpfootball-site/editorial/qa/55-shots-2-goals.mechanism-card.json",
+   "blob": "b16cbcf7468a93a51e262229cb8e6df8dc8accbd",
+   "size": 1206,
+   "last_change": "5e0d82b Complete Release Pack 01 editorial product surfaces"
+  },
+  {
+   "path": "hpfootball-site/editorial/qa/council/launch-series-01-baski-altinda.council-review.json",
+   "blob": "c62bf5521b4f2b3adf5bfc7cb6109e95985b64ac",
+   "size": 1303,
+   "last_change": "cceb637 Add Editorial Council 100 review framework"
+  },
+  {
+   "path": "hpfootball-site/editorial/qa/council/launch-series-01-counterpress.council-review.json",
+   "blob": "12672549959b4002b5c8b3d67877ea94f3a80594",
+   "size": 1357,
+   "last_change": "cceb637 Add Editorial Council 100 review framework"
+  },
+  {
+   "path": "hpfootball-site/editorial/qa/council/launch-series-01-kamera.council-review.json",
+   "blob": "c85108994e03ed4e9ee085bed99a052c7df32741",
+   "size": 1327,
+   "last_change": "cceb637 Add Editorial Council 100 review framework"
+  },
+  {
+   "path": "hpfootball-site/editorial/qa/psychology/launch-series-01-baski-altinda.psychology.json",
+   "blob": "fcc2b3bb2f934b5394798ed32ac34c32dbd1e08c",
+   "size": 960,
+   "last_change": "11f24aa Add fail-closed editorial psychology gate"
+  },
+  {
+   "path": "hpfootball-site/editorial/qa/psychology/launch-series-01-counterpress.psychology.json",
+   "blob": "44aa61a89b20792783deab9283ad803a29b35396",
+   "size": 951,
+   "last_change": "11f24aa Add fail-closed editorial psychology gate"
+  },
+  {
+   "path": "hpfootball-site/editorial/qa/psychology/launch-series-01-kamera.psychology.json",
+   "blob": "e3b1d5258276cc8cc5ba383d2a340144ed669dc8",
+   "size": 989,
+   "last_change": "11f24aa Add fail-closed editorial psychology gate"
+  },
+  {
+   "path": "hpfootball-site/package-lock.json",
+   "blob": "6f36b2ed53f0a754e7282e636b81a566daf034bf",
+   "size": 232409,
+   "last_change": "9a568f7 security: move production build to current Astro and Cloudflare adapter"
+  },
+  {
+   "path": "hpfootball-site/package.json",
+   "blob": "699889a9f60cf4f813943b2f8da2fd7e1f50da7a",
+   "size": 678,
+   "last_change": "14cc946 Snapshot phone integration-preview working tree (source evidence)"
+  },
+  {
+   "path": "hpfootball-site/public/.assetsignore",
+   "blob": "b7ccb6cba31c5465e5477aa66dada54734076c36",
+   "size": 24,
+   "last_change": "22b0f87 deploy: bind accepted HPAnalytic source to canonical Worker"
+  },
+  {
+   "path": "hpfootball-site/public/favicon.svg",
+   "blob": "1ac6bc3aa97c04255606d69b1ec1bad8d8299169",
+   "size": 502,
+   "last_change": "d4f8ad5 site: rebuild as HPAnalytic and fix 500 on every article route"
+  },
+  {
+   "path": "hpfootball-site/public/icons/hp-192.png",
+   "blob": "09b6b77ccbded16b109591b077b3187f753e2aa8",
+   "size": 2537,
+   "last_change": "d4f8ad5 site: rebuild as HPAnalytic and fix 500 on every article route"
+  },
+  {
+   "path": "hpfootball-site/public/icons/hp-512.png",
+   "blob": "410979259c83f1fb1d35e04cb1a3eb720ba69146",
+   "size": 6948,
+   "last_change": "d4f8ad5 site: rebuild as HPAnalytic and fix 500 on every article route"
+  },
+  {
+   "path": "hpfootball-site/public/manifest.webmanifest",
+   "blob": "0911b54814370c2cffb1c867ec4632cf3cb687de",
+   "size": 758,
+   "last_change": "d4f8ad5 site: rebuild as HPAnalytic and fix 500 on every article route"
+  },
+  {
+   "path": "hpfootball-site/public/sw.js",
+   "blob": "7db73b21880522cf27c03c93316d247d393648cf",
+   "size": 1732,
+   "last_change": "ba957eb Harden HPAnalytic public launch surfaces"
+  },
+  {
+   "path": "hpfootball-site/public/visuals/event-data/analyst-shadow.svg",
+   "blob": "c808b59bd51a503c99c35c532485a0be66529f75",
+   "size": 1424,
+   "last_change": "1015ad0 Enrich event data article with visual evidence"
+  },
+  {
+   "path": "hpfootball-site/public/visuals/event-data/evidence-surfaces.svg",
+   "blob": "1ff10a1da97e925e900a59c08354b6011c5bae3b",
+   "size": 2072,
+   "last_change": "1015ad0 Enrich event data article with visual evidence"
+  },
+  {
+   "path": "hpfootball-site/public/visuals/event-data/measurement-chain.svg",
+   "blob": "1fbf67065312c9c1e88a22f91293af49adb2c86c",
+   "size": 1752,
+   "last_change": "1015ad0 Enrich event data article with visual evidence"
+  },
+  {
+   "path": "hpfootball-site/public/visuals/launch-series-01/baski-baglamlari.svg",
+   "blob": "1903369e4266bffc37960daf42d9cdb254dd70de",
+   "size": 2052,
+   "last_change": "65d488e Restore Launch Series evidence visuals"
+  },
+  {
+   "path": "hpfootball-site/public/visuals/launch-series-01/kamera-kanit-siniri.svg",
+   "blob": "ca3be0a8e593deafa941bd8b2f16a8be20dd1b6d",
+   "size": 1414,
+   "last_change": "65d488e Restore Launch Series evidence visuals"
+  },
+  {
+   "path": "hpfootball-site/public/visuals/launch-series-01/karsi-pres-bes-saniye.svg",
+   "blob": "dfa07b75265ee684580fb372240707c725b6ad9b",
+   "size": 1960,
+   "last_change": "65d488e Restore Launch Series evidence visuals"
+  },
+  {
+   "path": "hpfootball-site/scripts/article-publish.mjs",
+   "blob": "92427b620113a355f1d2ec643feff973414fb24f",
+   "size": 673,
+   "last_change": "187d8c6 Consolidate accepted HPAnalytic local work into production candidate"
+  },
+  {
+   "path": "hpfootball-site/scripts/article-stage.mjs",
+   "blob": "0eab56fca5c5226b59c1855e6004c8b030d2b981",
+   "size": 864,
+   "last_change": "187d8c6 Consolidate accepted HPAnalytic local work into production candidate"
+  },
+  {
+   "path": "hpfootball-site/scripts/release-browser-qa.mjs",
+   "blob": "011322b9965857ddffe69436010faac0e6e14836",
+   "size": 2343,
+   "last_change": "340c413 Capture browser precheck evidence"
+  },
+  {
+   "path": "hpfootball-site/scripts/release-regression.mjs",
+   "blob": "6036d071cf5ecd54ff57a494109a00ff980e7b37",
+   "size": 888,
+   "last_change": "14cc946 Snapshot phone integration-preview working tree (source evidence)"
+  },
+  {
+   "path": "hpfootball-site/scripts/repo-health.mjs",
+   "blob": "f0af051e91d9dc07caeeac79d151dfba2fd6ad4b",
+   "size": 2338,
+   "last_change": "7bd24e9 Merge phone integration-preview into the CC-01 line"
+  },
+  {
+   "path": "hpfootball-site/scripts/repo-observer.mjs",
+   "blob": "f6a356b7f6c03e8eee1a8e6dd8fa7bfe8c436815",
+   "size": 835,
+   "last_change": "14cc946 Snapshot phone integration-preview working tree (source evidence)"
+  },
+  {
+   "path": "hpfootball-site/src/cloudflare-workers.d.ts",
+   "blob": "c8e8741d988dc957a4bc92f8b94a2d1a194149a5",
+   "size": 181,
+   "last_change": "7f15fe6 Restore fail-closed YouTube endpoint on Astro 7"
+  },
+  {
+   "path": "hpfootball-site/src/components/ArticleCard.astro",
+   "blob": "89b1fc98d8e32343d4db0a015de1020129528613",
+   "size": 1008,
+   "last_change": "d4f8ad5 site: rebuild as HPAnalytic and fix 500 on every article route"
+  },
+  {
+   "path": "hpfootball-site/src/components/ArticleEvidenceBlock.astro",
+   "blob": "42ccb59362b041c31f65059fa964b44a61cea3a3",
+   "size": 1518,
+   "last_change": "14cc946 Snapshot phone integration-preview working tree (source evidence)"
+  },
+  {
+   "path": "hpfootball-site/src/components/Button.astro",
+   "blob": "1517abd258956900d429e7ff6f963f5be0090868",
+   "size": 528,
+   "last_change": "d4f8ad5 site: rebuild as HPAnalytic and fix 500 on every article route"
+  },
+  {
+   "path": "hpfootball-site/src/components/EvidenceBadge.astro",
+   "blob": "50b10888c43b5e984d7ca1326ed4b97d5a5755eb",
+   "size": 521,
+   "last_change": "14cc946 Snapshot phone integration-preview working tree (source evidence)"
+  },
+  {
+   "path": "hpfootball-site/src/components/EvidenceInterpretation.astro",
+   "blob": "bfbe481c5bb6aac2c225a2074d9fc33e0dd1ac59",
+   "size": 744,
+   "last_change": "14cc946 Snapshot phone integration-preview working tree (source evidence)"
+  },
+  {
+   "path": "hpfootball-site/src/components/IntentDiscovery.astro",
+   "blob": "024e20aee1ebc54b4c8a32db0e32427a2c2638c7",
+   "size": 1654,
+   "last_change": "14cc946 Snapshot phone integration-preview working tree (source evidence)"
+  },
+  {
+   "path": "hpfootball-site/src/components/KnowledgePath.astro",
+   "blob": "941c26729b0e2c00d3c28d10862b4461ee66b786",
+   "size": 954,
+   "last_change": "81ab4ff Type legacy_wip knowledge and sequence components for astro check"
+  },
+  {
+   "path": "hpfootball-site/src/components/KnowledgeRelations.astro",
+   "blob": "0842624b290529b9780f2747b247f754150cd0e2",
+   "size": 764,
+   "last_change": "81ab4ff Type legacy_wip knowledge and sequence components for astro check"
+  },
+  {
+   "path": "hpfootball-site/src/components/Logo.astro",
+   "blob": "61c4852d7bdc78f70f08c05264a4421cf4658118",
+   "size": 581,
+   "last_change": "5e0d82b Complete Release Pack 01 editorial product surfaces"
+  },
+  {
+   "path": "hpfootball-site/src/components/MechanismCard.astro",
+   "blob": "a055355cb2311dafe4cb8020452726b8b6788900",
+   "size": 1636,
+   "last_change": "14cc946 Snapshot phone integration-preview working tree (source evidence)"
+  },
+  {
+   "path": "hpfootball-site/src/components/MobileNavigation.astro",
+   "blob": "38f55b026ab4555f184451be0788d3920ce901db",
+   "size": 2618,
+   "last_change": "d4f8ad5 site: rebuild as HPAnalytic and fix 500 on every article route"
+  },
+  {
+   "path": "hpfootball-site/src/components/SectionListing.astro",
+   "blob": "482b402ad55ce59365fbb0454c07b12873d2627c",
+   "size": 811,
+   "last_change": "fb43097 Speak to readers on empty sections and noindex an empty culture page"
+  },
+  {
+   "path": "hpfootball-site/src/components/TacticalCanvas.astro",
+   "blob": "f89f5ade1d012bad7f147b74a95ef1f6e07e2744",
+   "size": 3256,
+   "last_change": "14cc946 Snapshot phone integration-preview working tree (source evidence)"
+  },
+  {
+   "path": "hpfootball-site/src/components/TacticalSequence.astro",
+   "blob": "de695f22b590a711264f1b78f5aa0537af797906",
+   "size": 1409,
+   "last_change": "81ab4ff Type legacy_wip knowledge and sequence components for astro check"
+  },
+  {
+   "path": "hpfootball-site/src/content.config.ts",
+   "blob": "542c22f05197d99194d6ba285acce5f7fc87bfbb",
+   "size": 3930,
+   "last_change": "14cc946 Snapshot phone integration-preview working tree (source evidence)"
+  },
+  {
+   "path": "hpfootball-site/src/content/articles/event-only-boundary.md",
+   "blob": "44d2fb52d42f2b7999988683bf306be1061e43c6",
+   "size": 13179,
+   "last_change": "033049d repair release evidence and visual semantics"
+  },
+  {
+   "path": "hpfootball-site/src/content/articles/futbol-nedir.md",
+   "blob": "952407416eda17fba4947a8eed3a724cfbfbe3c2",
+   "size": 887,
+   "last_change": "1db9455 HP site v2: add src/content/articles/futbol-nedir.md"
+  },
+  {
+   "path": "hpfootball-site/src/content/articles/position-role.md",
+   "blob": "ab20abd1f9cd2dfc2958c121b222f1a3239cdab3",
+   "size": 764,
+   "last_change": "a76c154 HP site v2: add src/content/articles/position-role.md"
+  },
+  {
+   "path": "hpfootball-site/src/content/articles/production-consequence.md",
+   "blob": "e44ad2e25efe370ae8c78a1865a1c3fc459b5505",
+   "size": 731,
+   "last_change": "580360e HP site v2: add src/content/articles/production-consequence.md"
+  },
+  {
+   "path": "hpfootball-site/src/layouts/BaseLayout.astro",
+   "blob": "c6f5f9777e6c95e8c3d3ad8f3bdb65ed07c6c19b",
+   "size": 6055,
+   "last_change": "4f14929 Keep header search name equal to its visible label"
+  },
+  {
+   "path": "hpfootball-site/src/lib/archive.mjs",
+   "blob": "7c8d3b8b2f4cb89030ad27676f549a36e3284c98",
+   "size": 1608,
+   "last_change": "d4f8ad5 site: rebuild as HPAnalytic and fix 500 on every article route"
+  },
+  {
+   "path": "hpfootball-site/src/lib/article-inbox.mjs",
+   "blob": "3c25fc6a752620786803c7dad309a4a436c47a2d",
+   "size": 1514,
+   "last_change": "187d8c6 Consolidate accepted HPAnalytic local work into production candidate"
+  },
+  {
+   "path": "hpfootball-site/src/lib/article-intake-contract.mjs",
+   "blob": "a975896128ad005fb7d4f68529b275cf94254b35",
+   "size": 6147,
+   "last_change": "187d8c6 Consolidate accepted HPAnalytic local work into production candidate"
+  },
+  {
+   "path": "hpfootball-site/src/lib/article-pipeline.mjs",
+   "blob": "e57e0f201275ef2743ceae8a8b8d3b5b8c17117f",
+   "size": 3545,
+   "last_change": "54c1805 Require source validation before article admission"
+  },
+  {
+   "path": "hpfootball-site/src/lib/content-control.mjs",
+   "blob": "460e0f044a1b0de1bc2b9de7f1da8404e1ee110f",
+   "size": 9860,
+   "last_change": "187d8c6 Consolidate accepted HPAnalytic local work into production candidate"
+  },
+  {
+   "path": "hpfootball-site/src/lib/editorial-display.mjs",
+   "blob": "0adf199cdb9900756f45e0537dffc65876c25380",
+   "size": 1911,
+   "last_change": "187d8c6 Consolidate accepted HPAnalytic local work into production candidate"
+  },
+  {
+   "path": "hpfootball-site/src/lib/editorial-evidence-adapter.mjs",
+   "blob": "8b96141d9cc947b90151da89c06da0c217eeb5bb",
+   "size": 1368,
+   "last_change": "5e0d82b Complete Release Pack 01 editorial product surfaces"
+  },
+  {
+   "path": "hpfootball-site/src/lib/editorial-psychology-gate.mjs",
+   "blob": "6910331ab6841058b4cda277a5c42d3fd5c7ca24",
+   "size": 1467,
+   "last_change": "11f24aa Add fail-closed editorial psychology gate"
+  },
+  {
+   "path": "hpfootball-site/src/lib/editorial-series.mjs",
+   "blob": "e7364d6f6942b287017c185a19bcd2278980d4dc",
+   "size": 1044,
+   "last_change": "187d8c6 Consolidate accepted HPAnalytic local work into production candidate"
+  },
+  {
+   "path": "hpfootball-site/src/lib/evidence.mjs",
+   "blob": "5ff5e709d0bffd36834719e7b78029c18c19a4e0",
+   "size": 1142,
+   "last_change": "d4f8ad5 site: rebuild as HPAnalytic and fix 500 on every article route"
+  },
+  {
+   "path": "hpfootball-site/src/lib/fluid-type.mjs",
+   "blob": "81255acfb56976874bf37f152d5bf3de5cbd5c45",
+   "size": 1499,
+   "last_change": "d4f8ad5 site: rebuild as HPAnalytic and fix 500 on every article route"
+  },
+  {
+   "path": "hpfootball-site/src/lib/football-data.mjs",
+   "blob": "da2baa607c2db40a2fe69dd472e1f9792cfb1020",
+   "size": 3828,
+   "last_change": "51a9cce Make the Match Centre honest about source, scope and time"
+  },
+  {
+   "path": "hpfootball-site/src/lib/knowledge-relations.mjs",
+   "blob": "51cef1f6e7dac3c1c684f2105c3f85229cffc3d4",
+   "size": 1307,
+   "last_change": "14cc946 Snapshot phone integration-preview working tree (source evidence)"
+  },
+  {
+   "path": "hpfootball-site/src/lib/mobile-nav-state.mjs",
+   "blob": "be272a96ca71e22969fd3ab1f9a9b7d3d010d62d",
+   "size": 462,
+   "last_change": "d4f8ad5 site: rebuild as HPAnalytic and fix 500 on every article route"
+  },
+  {
+   "path": "hpfootball-site/src/lib/next-question.mjs",
+   "blob": "7050492a0e884d3352e080f11a2013bbffa42926",
+   "size": 715,
+   "last_change": "a382b04 Do not link next questions to unpublished articles"
+  },
+  {
+   "path": "hpfootball-site/src/lib/pitch-geometry.mjs",
+   "blob": "cd9c17cb27abc487c8b5a672e7b4d823f5df666f",
+   "size": 2397,
+   "last_change": "d4f8ad5 site: rebuild as HPAnalytic and fix 500 on every article route"
+  },
+  {
+   "path": "hpfootball-site/src/lib/public-content.mjs",
+   "blob": "d8f0868c4bf72ad00c5d53e1ab93d50eecf13d2b",
+   "size": 342,
+   "last_change": "257cf5f studio: add private Editorial Intelligence Studio at /studio/editorial"
+  },
+  {
+   "path": "hpfootball-site/src/lib/search.mjs",
+   "blob": "9d3a8bddc013eb43b3898cc66a263471cbce6e9f",
+   "size": 1731,
+   "last_change": "d4f8ad5 site: rebuild as HPAnalytic and fix 500 on every article route"
+  },
+  {
+   "path": "hpfootball-site/src/lib/site-admission.mjs",
+   "blob": "a5343c1b5089fa4212cda29cacfc2cd3eca0fd2f",
+   "size": 11168,
+   "last_change": "54c1805 Require source validation before article admission"
+  },
+  {
+   "path": "hpfootball-site/src/lib/site-editorial-status.mjs",
+   "blob": "b501f13ed99494e840d8e4d2c01f090f4d554532",
+   "size": 185,
+   "last_change": "5e0d82b Complete Release Pack 01 editorial product surfaces"
+  },
+  {
+   "path": "hpfootball-site/src/lib/site-surfaces.mjs",
+   "blob": "e095d1226144b96d2260e41352e43da26aae9f50",
+   "size": 2192,
+   "last_change": "9ecb912 repair public Turkish labels"
+  },
+  {
+   "path": "hpfootball-site/src/pages/404.astro",
+   "blob": "0241a2b578d7d10e6b57bdeded0b3acc2988d8f2",
+   "size": 620,
+   "last_change": "5e0d82b Complete Release Pack 01 editorial product surfaces"
+  },
+  {
+   "path": "hpfootball-site/src/pages/about.astro",
+   "blob": "928e7efc2b41283a6ed97daaff7777a3c2d41cf6",
+   "size": 650,
+   "last_change": "f9f8d9f Remove AI language from public identity"
+  },
+  {
+   "path": "hpfootball-site/src/pages/analysis.astro",
+   "blob": "ef74ac21d810767bc87e691a0036b2bc8759d590",
+   "size": 2298,
+   "last_change": "14cc946 Snapshot phone integration-preview working tree (source evidence)"
+  },
+  {
+   "path": "hpfootball-site/src/pages/api/youtube.json.ts",
+   "blob": "7bfb5908d9aeb33ffd002d2fa7f1dd82ace2ab5d",
+   "size": 1218,
+   "last_change": "7f15fe6 Restore fail-closed YouTube endpoint on Astro 7"
+  },
+  {
+   "path": "hpfootball-site/src/pages/archive.astro",
+   "blob": "cad73a88e56fe0f383b4c2a476b1aceb9d44d36c",
+   "size": 2963,
+   "last_change": "19d7d38 Clarify public product language"
+  },
+  {
+   "path": "hpfootball-site/src/pages/articles/[...id].astro",
+   "blob": "3bedfc2e863f6103a0f78fb5220bd4e3a2e2c3f4",
+   "size": 7876,
+   "last_change": "7bd24e9 Merge phone integration-preview into the CC-01 line"
+  },
+  {
+   "path": "hpfootball-site/src/pages/control/content.astro",
+   "blob": "563a4dc41607e8dabf79fe836972501757c5a27c",
+   "size": 8212,
+   "last_change": "e82e750 Keep internal content control off production"
+  },
+  {
+   "path": "hpfootball-site/src/pages/culture.astro",
+   "blob": "d80bfe8691531a107269d2091c6dfc9ac50726b0",
+   "size": 1023,
+   "last_change": "fb43097 Speak to readers on empty sections and noindex an empty culture page"
+  },
+  {
+   "path": "hpfootball-site/src/pages/index.astro",
+   "blob": "6dd874768963753f0bd337f111f0f076451f281e",
+   "size": 10456,
+   "last_change": "7bd24e9 Merge phone integration-preview into the CC-01 line"
+  },
+  {
+   "path": "hpfootball-site/src/pages/research.astro",
+   "blob": "15f59791659cc78862576a95e3090dedc2a80786",
+   "size": 1137,
+   "last_change": "19d7d38 Clarify public product language"
+  },
+  {
+   "path": "hpfootball-site/src/pages/robots.txt.ts",
+   "blob": "5428507d70dbe2db98425f6a8479975a5b4b9ceb",
+   "size": 401,
+   "last_change": "ba957eb Harden HPAnalytic public launch surfaces"
+  },
+  {
+   "path": "hpfootball-site/src/pages/scouting.astro",
+   "blob": "1b4d679b4007f0b6e445bd39e2f752175267c2ca",
+   "size": 1863,
+   "last_change": "19d7d38 Clarify public product language"
+  },
+  {
+   "path": "hpfootball-site/src/pages/search.astro",
+   "blob": "cee81b55bb3f5530246470a4b1b4bccb3e7a4601",
+   "size": 2620,
+   "last_change": "5e0d82b Complete Release Pack 01 editorial product surfaces"
+  },
+  {
+   "path": "hpfootball-site/src/pages/sitemap-0.xml.ts",
+   "blob": "19c2d946ef7a703c6fa3950016dae422c4514523",
+   "size": 1979,
+   "last_change": "7b81343 Advertise in the sitemap only surfaces the navigation shows"
+  },
+  {
+   "path": "hpfootball-site/src/pages/sitemap-index.xml.ts",
+   "blob": "9986e0fdfc5e7b86a999db139954e326f378672a",
+   "size": 496,
+   "last_change": "ba957eb Harden HPAnalytic public launch surfaces"
+  },
+  {
+   "path": "hpfootball-site/src/pages/visual-lab.astro",
+   "blob": "0f477bf273bc2afaa3fc82c3e2de8423504273b1",
+   "size": 1481,
+   "last_change": "14cc946 Snapshot phone integration-preview working tree (source evidence)"
+  },
+  {
+   "path": "hpfootball-site/src/studio/StudioLayout.astro",
+   "blob": "6a800ec0a59c5f4444c14e257ccd1aa13e2b1a5e",
+   "size": 1845,
+   "last_change": "257cf5f studio: add private Editorial Intelligence Studio at /studio/editorial"
+  },
+  {
+   "path": "hpfootball-site/src/studio/integration.mjs",
+   "blob": "643c9db1092a514dbd775acbdd0e089c74259531",
+   "size": 1190,
+   "last_change": "257cf5f studio: add private Editorial Intelligence Studio at /studio/editorial"
+  },
+  {
+   "path": "hpfootball-site/src/studio/lib/actions.mjs",
+   "blob": "73be993bae41e79542945077e0f24a456395ac38",
+   "size": 17767,
+   "last_change": "257cf5f studio: add private Editorial Intelligence Studio at /studio/editorial"
+  },
+  {
+   "path": "hpfootball-site/src/studio/lib/engine.mjs",
+   "blob": "1b7693ddf82d6ab30d9800da13e1322685bb9175",
+   "size": 24191,
+   "last_change": "d7fa2c5 fix: stabilize next-question contract and studio engine disable gate"
+  },
+  {
+   "path": "hpfootball-site/src/studio/lib/export.mjs",
+   "blob": "a68ae2d98e2218bf71b14934b1445e8ccc5c6b69",
+   "size": 3783,
+   "last_change": "257cf5f studio: add private Editorial Intelligence Studio at /studio/editorial"
+  },
+  {
+   "path": "hpfootball-site/src/studio/lib/gate.mjs",
+   "blob": "90992a61646b93806d2db16749c5565d925ad45d",
+   "size": 8379,
+   "last_change": "257cf5f studio: add private Editorial Intelligence Studio at /studio/editorial"
+  },
+  {
+   "path": "hpfootball-site/src/studio/lib/guard.mjs",
+   "blob": "e110d642cf7ec9d267edea70c7cb43e0a9649821",
+   "size": 2432,
+   "last_change": "257cf5f studio: add private Editorial Intelligence Studio at /studio/editorial"
+  },
+  {
+   "path": "hpfootball-site/src/studio/lib/intake.mjs",
+   "blob": "8c2ed1d2673a41b92016f3196eb1d79483b7528d",
+   "size": 7183,
+   "last_change": "257cf5f studio: add private Editorial Intelligence Studio at /studio/editorial"
+  },
+  {
+   "path": "hpfootball-site/src/studio/lib/model.mjs",
+   "blob": "0ac33d6d8b5515900f3bb18ce3ce4b2338ee76f3",
+   "size": 10446,
+   "last_change": "257cf5f studio: add private Editorial Intelligence Studio at /studio/editorial"
+  },
+  {
+   "path": "hpfootball-site/src/studio/lib/prompts.mjs",
+   "blob": "cb4d9b9da8efae6a9f32c41d2a724587f4005ec8",
+   "size": 5250,
+   "last_change": "257cf5f studio: add private Editorial Intelligence Studio at /studio/editorial"
+  },
+  {
+   "path": "hpfootball-site/src/studio/lib/store.mjs",
+   "blob": "15733ac52e91a5f4082e1d1a30612466668b0795",
+   "size": 3739,
+   "last_change": "257cf5f studio: add private Editorial Intelligence Studio at /studio/editorial"
+  },
+  {
+   "path": "hpfootball-site/src/studio/pages/index.astro",
+   "blob": "0a2d3aa97d6b4d4584351028afa1096edc4cf9cb",
+   "size": 7633,
+   "last_change": "257cf5f studio: add private Editorial Intelligence Studio at /studio/editorial"
+  },
+  {
+   "path": "hpfootball-site/src/studio/pages/topic.astro",
+   "blob": "52b28077a796bb91d6c32c92cf6e3e28d409f594",
+   "size": 24280,
+   "last_change": "257cf5f studio: add private Editorial Intelligence Studio at /studio/editorial"
+  },
+  {
+   "path": "hpfootball-site/src/studio/studio.css",
+   "blob": "e8b05b468a3c28836457c7560234bca591c1bbd8",
+   "size": 16861,
+   "last_change": "257cf5f studio: add private Editorial Intelligence Studio at /studio/editorial"
+  },
+  {
+   "path": "hpfootball-site/src/styles/global.css",
+   "blob": "975433b24743524ac6f1290126088725d3b0b3df",
+   "size": 63032,
+   "last_change": "77e2387 Keep the one-row mobile header inside 320px"
+  },
+  {
+   "path": "hpfootball-site/tests/archive.test.mjs",
+   "blob": "1f797cd85ce0de721035237c020a1ba419cb3041",
+   "size": 1256,
+   "last_change": "d4f8ad5 site: rebuild as HPAnalytic and fix 500 on every article route"
+  },
+  {
+   "path": "hpfootball-site/tests/article-cli-contract.test.mjs",
+   "blob": "47a58c9b4da03455e56b214af36115b226db8e6a",
+   "size": 1040,
+   "last_change": "187d8c6 Consolidate accepted HPAnalytic local work into production candidate"
+  },
+  {
+   "path": "hpfootball-site/tests/article-editorial-illustration.test.mjs",
+   "blob": "b264f359e2402d82b9e1ac0baa14150ef2ee8bb6",
+   "size": 414,
+   "last_change": "033049d repair release evidence and visual semantics"
+  },
+  {
+   "path": "hpfootball-site/tests/article-evidence-block.test.mjs",
+   "blob": "da4c854b4e60ec15e39bc05bd55c8d37d5c87482",
+   "size": 965,
+   "last_change": "14cc946 Snapshot phone integration-preview working tree (source evidence)"
+  },
+  {
+   "path": "hpfootball-site/tests/article-inbox.test.mjs",
+   "blob": "7729203eea3d27fb1eb7be815bb7db4ea77cdc24",
+   "size": 1931,
+   "last_change": "187d8c6 Consolidate accepted HPAnalytic local work into production candidate"
+  },
+  {
+   "path": "hpfootball-site/tests/article-intake-contract.test.mjs",
+   "blob": "3e53621167aef54bd22ac0eb2e5e8dc4118a7091",
+   "size": 5513,
+   "last_change": "187d8c6 Consolidate accepted HPAnalytic local work into production candidate"
+  },
+  {
+   "path": "hpfootball-site/tests/article-next-question-publication.test.mjs",
+   "blob": "60092918cd37544ef3534a0ba0626b3ace8b9da2",
+   "size": 981,
+   "last_change": "7bd24e9 Merge phone integration-preview into the CC-01 line"
+  },
+  {
+   "path": "hpfootball-site/tests/article-pipeline.test.mjs",
+   "blob": "3c0e4332fd076624385c212ab81fa301ed1ad4b5",
+   "size": 6198,
+   "last_change": "54c1805 Require source validation before article admission"
+  },
+  {
+   "path": "hpfootball-site/tests/article-product-pipeline.test.mjs",
+   "blob": "b830c9ebf5ea0ddf4453d72fb120489241d1e581",
+   "size": 2940,
+   "last_change": "54c1805 Require source validation before article admission"
+  },
+  {
+   "path": "hpfootball-site/tests/article-progressive-evidence.test.mjs",
+   "blob": "695b97975ebb9e8583d403f91acd4f91f2060674",
+   "size": 1190,
+   "last_change": "ddb0ed7 Make article evidence progressive disclosure"
+  },
+  {
+   "path": "hpfootball-site/tests/article-psychology-admission.test.mjs",
+   "blob": "c7196a5a5fc17f176125b6679e5438babf2bdfe3",
+   "size": 1032,
+   "last_change": "54c1805 Require source validation before article admission"
+  },
+  {
+   "path": "hpfootball-site/tests/article-render-contract.test.mjs",
+   "blob": "1221df011dd5e190da1d798d67e1ca355d1768cc",
+   "size": 2290,
+   "last_change": "3dd7157 deduplicate article metadata labels"
+  },
+  {
+   "path": "hpfootball-site/tests/article-site-admission.test.mjs",
+   "blob": "753de82274a6fa8520d2bc4074075bd68321d475",
+   "size": 4037,
+   "last_change": "54c1805 Require source validation before article admission"
+  },
+  {
+   "path": "hpfootball-site/tests/brand-evidence-typography.test.mjs",
+   "blob": "f8c4fe14eb4f2a348d4b223ee5324a9628583df5",
+   "size": 591,
+   "last_change": "14cc946 Snapshot phone integration-preview working tree (source evidence)"
+  },
+  {
+   "path": "hpfootball-site/tests/brand-geometry-language.test.mjs",
+   "blob": "d8cdaaec4ccc008cbc1aa9560fca125c465819ca",
+   "size": 630,
+   "last_change": "033049d repair release evidence and visual semantics"
+  },
+  {
+   "path": "hpfootball-site/tests/brand-mobile-hierarchy.test.mjs",
+   "blob": "afc202410bf0421b1489cc5dafdbbdb1aedb11de",
+   "size": 2219,
+   "last_change": "77e2387 Keep the one-row mobile header inside 320px"
+  },
+  {
+   "path": "hpfootball-site/tests/brand-unity.test.mjs",
+   "blob": "df498467fa45462482e3399dfe9ceb73c1b702cd",
+   "size": 820,
+   "last_change": "5e0d82b Complete Release Pack 01 editorial product surfaces"
+  },
+  {
+   "path": "hpfootball-site/tests/browser-qa-contract.test.mjs",
+   "blob": "37589e445f6621449cd9d6942eb443b858150315",
+   "size": 565,
+   "last_change": "2199ffa Add Release Pack 01 physical browser QA"
+  },
+  {
+   "path": "hpfootball-site/tests/clean-public-share.test.mjs",
+   "blob": "ecd20e02a3e1dd0eb67c2c7f9457c8896d14ba2c",
+   "size": 839,
+   "last_change": "c6727af Keep public share links canonical and clean"
+  },
+  {
+   "path": "hpfootball-site/tests/content-control-intake.test.mjs",
+   "blob": "b8e7f62c9d7461065bb5a35fae0fafeee155d4cf",
+   "size": 7940,
+   "last_change": "80c0956 Close deterministic acceptance gaps for unified candidate"
+  },
+  {
+   "path": "hpfootball-site/tests/content-control.test.mjs",
+   "blob": "1f669dc262261f315ebe12ed2052ecb437242841",
+   "size": 6614,
+   "last_change": "187d8c6 Consolidate accepted HPAnalytic local work into production candidate"
+  },
+  {
+   "path": "hpfootball-site/tests/control-surface-local-only.test.mjs",
+   "blob": "2bf465295216b1c4abef792ebb47d8698f6ac024",
+   "size": 789,
+   "last_change": "e82e750 Keep internal content control off production"
+  },
+  {
+   "path": "hpfootball-site/tests/design-tokens.test.mjs",
+   "blob": "a9651c025d0921cec71fe2a28d0547308d5d071f",
+   "size": 3385,
+   "last_change": "7bd24e9 Merge phone integration-preview into the CC-01 line"
+  },
+  {
+   "path": "hpfootball-site/tests/discovery-surface.test.mjs",
+   "blob": "af3c605ff50c2e094e420ad13d3ba04c218d8b61",
+   "size": 1217,
+   "last_change": "7b81343 Advertise in the sitemap only surfaces the navigation shows"
+  },
+  {
+   "path": "hpfootball-site/tests/donor-registry.test.mjs",
+   "blob": "487c05afd1337470c40e954eff3142a989baedf3",
+   "size": 1817,
+   "last_change": "fa87a7f docs: HPAnalytic deep reverse-engineering batch 2 and implementation packets"
+  },
+  {
+   "path": "hpfootball-site/tests/editorial-council-contract.test.mjs",
+   "blob": "ad145af64910e7debf40bb0671f51721bf788d46",
+   "size": 746,
+   "last_change": "cceb637 Add Editorial Council 100 review framework"
+  },
+  {
+   "path": "hpfootball-site/tests/editorial-evidence-adapter.test.mjs",
+   "blob": "24059a75072e1a63ec48598a51b89a6759b429d0",
+   "size": 1327,
+   "last_change": "5e0d82b Complete Release Pack 01 editorial product surfaces"
+  },
+  {
+   "path": "hpfootball-site/tests/editorial-product-surfaces.test.mjs",
+   "blob": "c1cf8de0dde482de174d73ccf8ee125b323550f0",
+   "size": 1590,
+   "last_change": "187d8c6 Consolidate accepted HPAnalytic local work into production candidate"
+  },
+  {
+   "path": "hpfootball-site/tests/editorial-psychology-gate.test.mjs",
+   "blob": "bca3c013f658ea251740a4c5aefd1e3eb5f4241e",
+   "size": 2117,
+   "last_change": "11f24aa Add fail-closed editorial psychology gate"
+  },
+  {
+   "path": "hpfootball-site/tests/empty-surface-copy.test.mjs",
+   "blob": "6ddcca64145cf137449a3cc76890728a54ae50cd",
+   "size": 669,
+   "last_change": "fb43097 Speak to readers on empty sections and noindex an empty culture page"
+  },
+  {
+   "path": "hpfootball-site/tests/evidence-interpretation.test.mjs",
+   "blob": "3c83abc22f703183d3ce55cf4358e450395ef9d1",
+   "size": 775,
+   "last_change": "14cc946 Snapshot phone integration-preview working tree (source evidence)"
+  },
+  {
+   "path": "hpfootball-site/tests/evidence.test.mjs",
+   "blob": "bee886e1da9c5cd4a5cf4fe835397319da903fdb",
+   "size": 1490,
+   "last_change": "d4f8ad5 site: rebuild as HPAnalytic and fix 500 on every article route"
+  },
+  {
+   "path": "hpfootball-site/tests/fixtures/studio-topic.mjs",
+   "blob": "13e1b30655234e9b5da64232251f6a3127c05b30",
+   "size": 1728,
+   "last_change": "257cf5f studio: add private Editorial Intelligence Studio at /studio/editorial"
+  },
+  {
+   "path": "hpfootball-site/tests/football-data.test.mjs",
+   "blob": "9f5c6b3223f61c5957788398b2a322aedad21188",
+   "size": 2628,
+   "last_change": "51a9cce Make the Match Centre honest about source, scope and time"
+  },
+  {
+   "path": "hpfootball-site/tests/global-css-single-owner.test.mjs",
+   "blob": "2ae0f2c14122076d5368392e03e44c0ae4bfa238",
+   "size": 753,
+   "last_change": "033049d repair release evidence and visual semantics"
+  },
+  {
+   "path": "hpfootball-site/tests/hero-headline-integrity.test.mjs",
+   "blob": "348f6d80a5a79cc0846c11fba1a4acc52b1bf6a9",
+   "size": 357,
+   "last_change": "f07bc31 repair first-contact render integrity"
+  },
+  {
+   "path": "hpfootball-site/tests/home-hikmet-spotlight.test.mjs",
+   "blob": "921bea2a0467060ec3b8fb84fe0bcd052a43fd6e",
+   "size": 722,
+   "last_change": "14cc946 Snapshot phone integration-preview working tree (source evidence)"
+  },
+  {
+   "path": "hpfootball-site/tests/home-latest-work.test.mjs",
+   "blob": "2e741511922afe2f96f9894aa504fb31fe745f0d",
+   "size": 571,
+   "last_change": "5e0d82b Complete Release Pack 01 editorial product surfaces"
+  },
+  {
+   "path": "hpfootball-site/tests/home-public-story.test.mjs",
+   "blob": "713249d7c247d23abb8f2f78ae53100f2e5d333c",
+   "size": 718,
+   "last_change": "978cbf3 Replace empty homepage prototype with admitted story"
+  },
+  {
+   "path": "hpfootball-site/tests/home-research-spotlight.test.mjs",
+   "blob": "a5a60b3c41588cdebaad04e45f694e1dea7c754b",
+   "size": 933,
+   "last_change": "187d8c6 Consolidate accepted HPAnalytic local work into production candidate"
+  },
+  {
+   "path": "hpfootball-site/tests/home-scouting-spotlight.test.mjs",
+   "blob": "6cd63ba5c05e7d1f3d7f27d1fc6b7f8c2f9f393e",
+   "size": 876,
+   "last_change": "5e0d82b Complete Release Pack 01 editorial product surfaces"
+  },
+  {
+   "path": "hpfootball-site/tests/home-visible-progress.test.mjs",
+   "blob": "a4510c02afc150df4ae5afeaba3f98381323a585",
+   "size": 1316,
+   "last_change": "5e0d82b Complete Release Pack 01 editorial product surfaces"
+  },
+  {
+   "path": "hpfootball-site/tests/hp-brand-evidence-visual-contract.test.mjs",
+   "blob": "4d43450b1fec47953000694669dd7106020897fb",
+   "size": 1118,
+   "last_change": "14cc946 Snapshot phone integration-preview working tree (source evidence)"
+  },
+  {
+   "path": "hpfootball-site/tests/hpa-55-shots-mechanism-card.test.mjs",
+   "blob": "0c80405d93f5657905342b9ae21e95a66209cdef",
+   "size": 812,
+   "last_change": "5e0d82b Complete Release Pack 01 editorial product surfaces"
+  },
+  {
+   "path": "hpfootball-site/tests/hpanalytic-pitch.test.mjs",
+   "blob": "35b80d2286fb4de10758a869e1a6c7a680f32155",
+   "size": 1132,
+   "last_change": "5e0d82b Complete Release Pack 01 editorial product surfaces"
+  },
+  {
+   "path": "hpfootball-site/tests/hpanalytic-sequence.test.mjs",
+   "blob": "e6b04e00ca536b35f4094c706ce625a3dd41b352",
+   "size": 844,
+   "last_change": "14cc946 Snapshot phone integration-preview working tree (source evidence)"
+  },
+  {
+   "path": "hpfootball-site/tests/intent-discovery.test.mjs",
+   "blob": "5a40abd80532a6b69a8fd9bb7c29eef77a605528",
+   "size": 912,
+   "last_change": "14cc946 Snapshot phone integration-preview working tree (source evidence)"
+  },
+  {
+   "path": "hpfootball-site/tests/knowledge-path.test.mjs",
+   "blob": "fe9bffaed260fe8221a068605488d6a8d551c551",
+   "size": 1573,
+   "last_change": "14cc946 Snapshot phone integration-preview working tree (source evidence)"
+  },
+  {
+   "path": "hpfootball-site/tests/knowledge-relations.test.mjs",
+   "blob": "161c85e7daf1b4ceb54de5bd173bd2e1f89c4ed9",
+   "size": 1554,
+   "last_change": "14cc946 Snapshot phone integration-preview working tree (source evidence)"
+  },
+  {
+   "path": "hpfootball-site/tests/launch-series-council-review.test.mjs",
+   "blob": "a66f683d6b29131e5c1e6b74020c50e2151a7d21",
+   "size": 616,
+   "last_change": "cceb637 Add Editorial Council 100 review framework"
+  },
+  {
+   "path": "hpfootball-site/tests/launch-series-editorial-repair.test.mjs",
+   "blob": "5a61f00e6cac7cba523c5db9c6c51dd49c09947f",
+   "size": 1357,
+   "last_change": "ef68cca Lock Launch Series editorial repair boundaries"
+  },
+  {
+   "path": "hpfootball-site/tests/launch-series-psychology-verdicts.test.mjs",
+   "blob": "c32ef56a2db16dc8cb12da4d45851e49304d63a7",
+   "size": 906,
+   "last_change": "11f24aa Add fail-closed editorial psychology gate"
+  },
+  {
+   "path": "hpfootball-site/tests/launch-series-source-reconciliation.test.mjs",
+   "blob": "1c6190679b1dadf63ecde6b483df38ff230121e4",
+   "size": 597,
+   "last_change": "033049d repair release evidence and visual semantics"
+  },
+  {
+   "path": "hpfootball-site/tests/launch-series-visual-assets.test.mjs",
+   "blob": "af142bdab7d3f37541cbeca6fcf50b04f5b7396c",
+   "size": 1008,
+   "last_change": "65d488e Restore Launch Series evidence visuals"
+  },
+  {
+   "path": "hpfootball-site/tests/match-centre-surface.test.mjs",
+   "blob": "8df3983b8b7066f6d799118829351519dc1d9b4a",
+   "size": 698,
+   "last_change": "51a9cce Make the Match Centre honest about source, scope and time"
+  },
+  {
+   "path": "hpfootball-site/tests/mechanism-card-surface.test.mjs",
+   "blob": "50461cae0298c1e5044d58df300674325fd784e3",
+   "size": 1294,
+   "last_change": "5e0d82b Complete Release Pack 01 editorial product surfaces"
+  },
+  {
+   "path": "hpfootball-site/tests/mobile-navigation.test.mjs",
+   "blob": "5ab6c7994a847455b2ed3836a880f285c40a01cb",
+   "size": 3762,
+   "last_change": "d4f8ad5 site: rebuild as HPAnalytic and fix 500 on every article route"
+  },
+  {
+   "path": "hpfootball-site/tests/next-question.test.mjs",
+   "blob": "772cc400128be1f93dfe982c48d3988a0db1f2e7",
+   "size": 2180,
+   "last_change": "7bd24e9 Merge phone integration-preview into the CC-01 line"
+  },
+  {
+   "path": "hpfootball-site/tests/pitch-geometry.test.mjs",
+   "blob": "1d9e2fab71662ba3bccd0aef1908481f0d402500",
+   "size": 1281,
+   "last_change": "d4f8ad5 site: rebuild as HPAnalytic and fix 500 on every article route"
+  },
+  {
+   "path": "hpfootball-site/tests/public-identity-language.test.mjs",
+   "blob": "86b9d4036f724e29b70662389c3ff291eca8e3ce",
+   "size": 776,
+   "last_change": "f9f8d9f Remove AI language from public identity"
+  },
+  {
+   "path": "hpfootball-site/tests/public-product-language.test.mjs",
+   "blob": "c423c9448aa9dbee47a780f8f259230c446b224b",
+   "size": 1643,
+   "last_change": "9ecb912 repair public Turkish labels"
+  },
+  {
+   "path": "hpfootball-site/tests/public-product-shell.test.mjs",
+   "blob": "2dc8795ccdd4a63972d6efa7f06d227e1d6ce9af",
+   "size": 1787,
+   "last_change": "481afab Offer the home analysis CTA only when an analysis is published"
+  },
+  {
+   "path": "hpfootball-site/tests/pwa-installability.test.mjs",
+   "blob": "7c17b32ece2069e57b98bf35b60b780f1886a381",
+   "size": 1133,
+   "last_change": "7bc687f app: make HPAnalytic installable from canonical site"
+  },
+  {
+   "path": "hpfootball-site/tests/pwa-successor.test.mjs",
+   "blob": "619af5f87cdc6ae9bd7c184bbb631d575c89630c",
+   "size": 2515,
+   "last_change": "dfa7664 test: update PWA successor contract for canonical app"
+  },
+  {
+   "path": "hpfootball-site/tests/red-semantic-language.test.mjs",
+   "blob": "5fdde6fa8a30b970dcb72d785046a4305e19cc4d",
+   "size": 876,
+   "last_change": "a98834e close tactical red semantic gap"
+  },
+  {
+   "path": "hpfootball-site/tests/repo-health.test.mjs",
+   "blob": "3dabb385820de96c82284105ce222ae8c066bcfe",
+   "size": 539,
+   "last_change": "14cc946 Snapshot phone integration-preview working tree (source evidence)"
+  },
+  {
+   "path": "hpfootball-site/tests/repo-observer.test.mjs",
+   "blob": "b1407b9ee43eca0b6879627c56d8863844aa1a20",
+   "size": 1115,
+   "last_change": "14cc946 Snapshot phone integration-preview working tree (source evidence)"
+  },
+  {
+   "path": "hpfootball-site/tests/routes.test.mjs",
+   "blob": "de57c5cef368a7f563b940414f6c030049096a0c",
+   "size": 1514,
+   "last_change": "d4f8ad5 site: rebuild as HPAnalytic and fix 500 on every article route"
+  },
+  {
+   "path": "hpfootball-site/tests/search-link-accessible-name.test.mjs",
+   "blob": "45127aeeb0a51756daa00bdb41d05dac275a79bb",
+   "size": 3385,
+   "last_change": "4f14929 Keep header search name equal to its visible label"
+  },
+  {
+   "path": "hpfootball-site/tests/search.test.mjs",
+   "blob": "9f06a323168f90c703b4eb75e3df6c31a40da9a9",
+   "size": 1849,
+   "last_change": "d4f8ad5 site: rebuild as HPAnalytic and fix 500 on every article route"
+  },
+  {
+   "path": "hpfootball-site/tests/single-entry-surface.test.mjs",
+   "blob": "cc567117bb1706aa86bddb369d949909a2c186f8",
+   "size": 418,
+   "last_change": "74725af Remove legacy public root shadow"
+  },
+  {
+   "path": "hpfootball-site/tests/site-admission.test.mjs",
+   "blob": "0d78ffadc3e4f58964767b1d47b0edca8d31a287",
+   "size": 9285,
+   "last_change": "5e0d82b Complete Release Pack 01 editorial product surfaces"
+  },
+  {
+   "path": "hpfootball-site/tests/site-surfaces.test.mjs",
+   "blob": "9c071d87e6786cf3b7b4e53ba793747c8a6e5e06",
+   "size": 1825,
+   "last_change": "d4f8ad5 site: rebuild as HPAnalytic and fix 500 on every article route"
+  },
+  {
+   "path": "hpfootball-site/tests/source-validation-admission.test.mjs",
+   "blob": "1a25fc868fbcaba3de076f1a9aaa321a79718c35",
+   "size": 969,
+   "last_change": "54c1805 Require source validation before article admission"
+  },
+  {
+   "path": "hpfootball-site/tests/studio-engine-export.test.mjs",
+   "blob": "21bb184a24494a14224040c93b93144837583a7c",
+   "size": 4716,
+   "last_change": "257cf5f studio: add private Editorial Intelligence Studio at /studio/editorial"
+  },
+  {
+   "path": "hpfootball-site/tests/studio-intake-privacy.test.mjs",
+   "blob": "8dfa780848c63d4ab2532565df1e242bffdfa847",
+   "size": 10550,
+   "last_change": "257cf5f studio: add private Editorial Intelligence Studio at /studio/editorial"
+  },
+  {
+   "path": "hpfootball-site/tests/studio-model-gate.test.mjs",
+   "blob": "dfa8580287269ab3b7e07444899816944b75bdda",
+   "size": 6174,
+   "last_change": "257cf5f studio: add private Editorial Intelligence Studio at /studio/editorial"
+  },
+  {
+   "path": "hpfootball-site/tests/tactical-caption-integrity.test.mjs",
+   "blob": "76cbbc01d730c839e44aa8006718a9be345d37ad",
+   "size": 489,
+   "last_change": "f07bc31 repair first-contact render integrity"
+  },
+  {
+   "path": "hpfootball-site/tests/visual-lab-claim-boundary.test.mjs",
+   "blob": "c1bdca38edfbaeff9340d712a3d2e73991b84d59",
+   "size": 572,
+   "last_change": "14cc946 Snapshot phone integration-preview working tree (source evidence)"
+  },
+  {
+   "path": "hpfootball-site/tests/worker-bindings.test.mjs",
+   "blob": "c638d033c0640c0b6ae4c1a66b9b56cf44e4fa75",
+   "size": 579,
+   "last_change": "92912f1 Actually drop unused SESSION KV and IMAGES Worker bindings"
+  },
+  {
+   "path": "hpfootball-site/tests/youtube-endpoint-contract.test.mjs",
+   "blob": "b17333c5261d9f7b9cc2ecce0cc211f4b16674a0",
+   "size": 682,
+   "last_change": "7f15fe6 Restore fail-closed YouTube endpoint on Astro 7"
+  },
+  {
+   "path": "hpfootball-site/tsconfig.json",
+   "blob": "fd659a5f939716f899b1b4befe2e318fb67851d7",
+   "size": 36,
+   "last_change": "56d0bed HP site v2: add tsconfig.json"
+  },
+  {
+   "path": "hpfootball-site/wrangler.jsonc",
+   "blob": "f687122e954df24220a1d30c3830c2c16bd1da8a",
+   "size": 378,
+   "last_change": "22b0f87 deploy: bind accepted HPAnalytic source to canonical Worker"
+  }
+ ]
+}

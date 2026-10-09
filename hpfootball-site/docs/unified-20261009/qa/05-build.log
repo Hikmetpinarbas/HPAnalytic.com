@@ -1,0 +1,79 @@
+
+> build
+> astro build
+
+[33m▲ [43;33m[[43;30mWARNING[43;33m][0m [1mProxy environment variables detected. We'll use your proxy for fetch requests.[0m
+
+
+14:56:53 [content] Syncing content
+14:56:53 [WARN] [glob-loader] The base directory "/tmp/claude-0/-home-user-HPAnalytic-com/3abb5336-9b25-5062-9f3d-87356aa332ab/scratchpad/qa3/hpfootball-site/src/content/research/" does not exist.
+14:56:53 [WARN] [glob-loader] The base directory "/tmp/claude-0/-home-user-HPAnalytic-com/3abb5336-9b25-5062-9f3d-87356aa332ab/scratchpad/qa3/hpfootball-site/src/content/visuals/" does not exist.
+14:56:53 [content] Synced content
+14:56:53 [types] Generated 1.40s
+14:56:53 [build] output: "server"
+14:56:53 [build] mode: "server"
+14:56:53 [build] directory: /tmp/claude-0/-home-user-HPAnalytic-com/3abb5336-9b25-5062-9f3d-87356aa332ab/scratchpad/qa3/hpfootball-site/dist/
+14:56:53 [build] adapter: @astrojs/cloudflare
+14:56:53 [build] Collecting build info...
+14:56:53 [build] ✓ Completed in 1.50s.
+14:56:53 [build] Building server entrypoints...
+14:56:54 [vite] ✓ built in 1.17s
+14:56:55 [vite] ✓ built in 658ms
+14:56:55 [vite] ✓ built in 47ms
+Default inspector port 9229 not available, using 9231 instead
+
+
+ prerendering static routes 
+Unable to fetch the `Request.cf` object! Falling back to a default placeholder...
+Error: Request was cancelled.
+    at new DOMException (node:internal/per_context/domexception:76:18)
+    at makeAppropriateNetworkError (/tmp/claude-0/-home-user-HPAnalytic-com/3abb5336-9b25-5062-9f3d-87356aa332ab/scratchpad/qa3/hpfootball-site/node_modules/undici/lib/web/fetch/response.js:488:38)
+    at httpNetworkFetch (/tmp/claude-0/-home-user-HPAnalytic-com/3abb5336-9b25-5062-9f3d-87356aa332ab/scratchpad/qa3/hpfootball-site/node_modules/undici/lib/web/fetch/index.js:1971:14)
+    at process.processTicksAndRejections (node:internal/process/task_queues:105:5)
+    at async httpNetworkOrCacheFetch (/tmp/claude-0/-home-user-HPAnalytic-com/3abb5336-9b25-5062-9f3d-87356aa332ab/scratchpad/qa3/hpfootball-site/node_modules/undici/lib/web/fetch/index.js:1600:29)
+    at async httpFetch (/tmp/claude-0/-home-user-HPAnalytic-com/3abb5336-9b25-5062-9f3d-87356aa332ab/scratchpad/qa3/hpfootball-site/node_modules/undici/lib/web/fetch/index.js:1142:33)
+    at async mainFetch (/tmp/claude-0/-home-user-HPAnalytic-com/3abb5336-9b25-5062-9f3d-87356aa332ab/scratchpad/qa3/hpfootball-site/node_modules/undici/lib/web/fetch/index.js:596:20)
+14:56:57   ├─ /404.html14:56:57 [WARN] [content] The collection "research" does not exist or is empty. Please check your content config file for errors.
+14:56:57 [WARN] [content] The collection "visuals" does not exist or is empty. Please check your content config file for errors.
+ (+49ms) 
+14:56:57   ├─ /about/index.html14:56:57 [WARN] [content] The collection "research" does not exist or is empty. Please check your content config file for errors.
+14:56:57 [WARN] [content] The collection "visuals" does not exist or is empty. Please check your content config file for errors.
+ (+26ms) 
+14:56:57   ├─ /analysis/index.html14:56:57 [WARN] [content] The collection "research" does not exist or is empty. Please check your content config file for errors.
+14:56:57 [WARN] [content] The collection "visuals" does not exist or is empty. Please check your content config file for errors.
+ (+20ms) 
+14:56:57   ├─ /archive/index.html14:56:57 [WARN] [content] The collection "research" does not exist or is empty. Please check your content config file for errors.
+14:56:57 [WARN] [content] The collection "visuals" does not exist or is empty. Please check your content config file for errors.
+ (+24ms) 
+14:56:57   ├─ /articles/event-only-boundary/index.html14:56:57 [WARN] [content] The collection "research" does not exist or is empty. Please check your content config file for errors.
+14:56:57 [WARN] [content] The collection "visuals" does not exist or is empty. Please check your content config file for errors.
+ (+21ms) 
+14:56:57   ├─ /culture/index.html14:56:57 [WARN] [content] The collection "research" does not exist or is empty. Please check your content config file for errors.
+14:56:57 [WARN] [content] The collection "visuals" does not exist or is empty. Please check your content config file for errors.
+ (+18ms) 
+14:56:57   ├─ /research/index.html14:56:57 [WARN] [content] The collection "research" does not exist or is empty. Please check your content config file for errors.
+14:56:57 [WARN] [content] The collection "visuals" does not exist or is empty. Please check your content config file for errors.
+ (+16ms) 
+14:56:57   ├─ /robots.txt (+15ms) 
+14:56:57   ├─ /scouting/index.html14:56:57 [WARN] [content] The collection "research" does not exist or is empty. Please check your content config file for errors.
+14:56:57 [WARN] [content] The collection "visuals" does not exist or is empty. Please check your content config file for errors.
+ (+21ms) 
+14:56:57   ├─ /sitemap-0.xml14:56:57 [WARN] [content] The collection "research" does not exist or is empty. Please check your content config file for errors.
+14:56:57 [WARN] [content] The collection "visuals" does not exist or is empty. Please check your content config file for errors.
+ (+14ms) 
+14:56:57   ├─ /sitemap-index.xml (+15ms) 
+14:56:57   ├─ /visual-lab/index.html14:56:57 [WARN] [content] The collection "research" does not exist or is empty. Please check your content config file for errors.
+14:56:57 [WARN] [content] The collection "visuals" does not exist or is empty. Please check your content config file for errors.
+ (+15ms) 
+14:56:57   ├─ /index.html14:56:57 [WARN] [content] The collection "research" does not exist or is empty. Please check your content config file for errors.
+14:56:57 [WARN] [content] The collection "visuals" does not exist or is empty. Please check your content config file for errors.
+14:56:57 [WARN] [content] The collection "research" does not exist or is empty. Please check your content config file for errors.
+14:56:57 [WARN] [content] The collection "visuals" does not exist or is empty. Please check your content config file for errors.
+ (+18ms) 
+14:56:57 ✓ Completed in 2.44s.
+
+14:56:57 [build] Rearranging server assets...
+14:56:57 [build] ✓ Completed in 4.39s.
+14:56:57 [@astrojs/cloudflare] Injected immutable Cache-Control for /_astro/* into _headers.
+14:56:57 [build] Server built in 5.89s
+14:56:57 [build] Complete!

@@ -1,0 +1,1766 @@
+
+> test
+> node --test tests/*.test.mjs
+
+TAP version 13
+# Subtest: groups newest-first by year then month
+ok 1 - groups newest-first by year then month
+  ---
+  duration_ms: 3.38572
+  type: 'test'
+  ...
+# Subtest: month names are Turkish and timezone-stable
+ok 2 - month names are Turkish and timezone-stable
+  ---
+  duration_ms: 23.619985
+  type: 'test'
+  ...
+# Subtest: reading time never reports zero minutes
+ok 3 - reading time never reports zero minutes
+  ---
+  duration_ms: 2.207052
+  type: 'test'
+  ...
+# Subtest: adjacent items follow archive order
+ok 4 - adjacent items follow archive order
+  ---
+  duration_ms: 0.629976
+  type: 'test'
+  ...
+# Subtest: package exposes explicit stage and publish operator commands
+ok 5 - package exposes explicit stage and publish operator commands
+  ---
+  duration_ms: 9.250813
+  type: 'test'
+  ...
+# Subtest: publish CLI requires explicit HUMAN_APPROVED token
+ok 6 - publish CLI requires explicit HUMAN_APPROVED token
+  ---
+  duration_ms: 2.557541
+  type: 'test'
+  ...
+# Subtest: stage CLI has no publication call
+ok 7 - stage CLI has no publication call
+  ---
+  duration_ms: 1.683364
+  type: 'test'
+  ...
+# Subtest: editorial illustration does not carry a defensive portrait disclaimer
+ok 8 - editorial illustration does not carry a defensive portrait disclaimer
+  ---
+  duration_ms: 0.85714
+  type: 'test'
+  ...
+# Subtest: evidence block follows HPAnalytic argument chain
+ok 9 - evidence block follows HPAnalytic argument chain
+  ---
+  duration_ms: 1.344125
+  type: 'test'
+  ...
+# Subtest: evidence block composes pitch sequence and interpretation rather than duplicating them
+ok 10 - evidence block composes pitch sequence and interpretation rather than duplicating them
+  ---
+  duration_ms: 0.297816
+  type: 'test'
+  ...
+# Subtest: evidence block requires authored source and claim boundary surfaces
+ok 11 - evidence block requires authored source and claim boundary surfaces
+  ---
+  duration_ms: 0.287497
+  type: 'test'
+  ...
+# Subtest: evidence block never fabricates a visual fallback
+ok 12 - evidence block never fabricates a visual fallback
+  ---
+  duration_ms: 0.395192
+  type: 'test'
+  ...
+# Subtest: article inbox exposes review metadata without raw local paths or body dump
+ok 13 - article inbox exposes review metadata without raw local paths or body dump
+  ---
+  duration_ms: 13.787737
+  type: 'test'
+  ...
+# Subtest: content control page includes read-only article inbox surface
+ok 14 - content control page includes read-only article inbox surface
+  ---
+  duration_ms: 3.080822
+  type: 'test'
+  ...
+# Subtest: ready bundle normalizes to one site article candidate without publishing
+ok 15 - ready bundle normalizes to one site article candidate without publishing
+  ---
+  duration_ms: 4.248378
+  type: 'test'
+  ...
+# Subtest: claim decomposition backlog blocks article readiness
+ok 16 - claim decomposition backlog blocks article readiness
+  ---
+  duration_ms: 2.25025
+  type: 'test'
+  ...
+# Subtest: quality gate and export must both be ready
+ok 17 - quality gate and export must both be ready
+  ---
+  duration_ms: 0.371844
+  type: 'test'
+  ...
+# Subtest: unknown or unsafe source rights fail closed
+ok 18 - unknown or unsafe source rights fail closed
+  ---
+  duration_ms: 0.328656
+  type: 'test'
+  ...
+# Subtest: missing counterevidence blocks serious analytical article
+ok 19 - missing counterevidence blocks serious analytical article
+  ---
+  duration_ms: 0.268125
+  type: 'test'
+  ...
+# Subtest: article contract never upgrades source claim ceiling or truth authority
+ok 20 - article contract never upgrades source claim ceiling or truth authority
+  ---
+  duration_ms: 0.568731
+  type: 'test'
+  ...
+# Subtest: Turkish article normalizes reader-facing technical topics to Turkish labels
+ok 21 - Turkish article normalizes reader-facing technical topics to Turkish labels
+  ---
+  duration_ms: 0.505276
+  type: 'test'
+  ...
+# Subtest: source references prefer Turkish display title while preserving original source identity
+ok 22 - source references prefer Turkish display title while preserving original source identity
+  ---
+  duration_ms: 0.339905
+  type: 'test'
+  ...
+# Subtest: article next-question links are restricted to admitted public articles
+ok 23 - article next-question links are restricted to admitted public articles
+  ---
+  duration_ms: 2.539465
+  type: 'test'
+  ...
+# Subtest: staging creates review candidate in inbox and never writes public article
+ok 24 - staging creates review candidate in inbox and never writes public article
+  ---
+  duration_ms: 16.645255
+  type: 'test'
+  ...
+# Subtest: staging fails closed when final review package is missing
+ok 25 - staging fails closed when final review package is missing
+  ---
+  duration_ms: 8.19885
+  type: 'test'
+  ...
+# Subtest: publishing staged candidate requires explicit HUMAN_APPROVED and writes one article
+ok 26 - publishing staged candidate requires explicit HUMAN_APPROVED and writes one article
+  ---
+  duration_ms: 15.667262
+  type: 'test'
+  ...
+# Subtest: pipeline stores editorial history while keeping inbox candidate immutable
+ok 27 - pipeline stores editorial history while keeping inbox candidate immutable
+  ---
+  duration_ms: 18.159124
+  type: 'test'
+  ...
+# Subtest: staging carries series data insights and review-only visual metadata through article intake
+ok 28 - staging carries series data insights and review-only visual metadata through article intake
+  ---
+  duration_ms: 8.818882
+  type: 'test'
+  ...
+# Subtest: article intake carries series visual assets and data insights without publishing them
+ok 29 - article intake carries series visual assets and data insights without publishing them
+  ---
+  duration_ms: 2.928473
+  type: 'test'
+  ...
+# Subtest: site admission serializes only rights-cleared visual assets
+ok 30 - site admission serializes only rights-cleared visual assets
+  ---
+  duration_ms: 18.192129
+  type: 'test'
+  ...
+# Subtest: sources and counterevidence are progressive disclosure after the article body
+ok 31 - sources and counterevidence are progressive disclosure after the article body
+  ---
+  duration_ms: 2.746146
+  type: 'test'
+  ...
+# Subtest: expanded evidence uses a ghost layer rather than a boxed card
+ok 32 - expanded evidence uses a ghost layer rather than a boxed card
+  ---
+  duration_ms: 0.94017
+  type: 'test'
+  ...
+# Subtest: content-intelligence article admission fails closed without psychology PASS
+ok 33 - content-intelligence article admission fails closed without psychology PASS
+  ---
+  duration_ms: 1.491779
+  type: 'test'
+  ...
+# Subtest: content-intelligence article may pass psychology gate only with explicit PASS
+ok 34 - content-intelligence article may pass psychology gate only with explicit PASS
+  ---
+  duration_ms: 0.264069
+  type: 'test'
+  ...
+# Subtest: article content schema supports governed editorial metadata
+ok 35 - article content schema supports governed editorial metadata
+  ---
+  duration_ms: 8.775831
+  type: 'test'
+  ...
+# Subtest: article route renders byline reading time topics evidence limits and source layer
+ok 36 - article route renders byline reading time topics evidence limits and source layer
+  ---
+  duration_ms: 2.35141
+  type: 'test'
+  ...
+# Subtest: article route never presents source claims as validated truth when contract says false
+ok 37 - article route never presents source claims as validated truth when contract says false
+  ---
+  duration_ms: 1.640749
+  type: 'test'
+  ...
+# Subtest: reader-facing article metadata uses Turkish display labels instead of internal codes
+ok 38 - reader-facing article metadata uses Turkish display labels instead of internal codes
+  ---
+  duration_ms: 4.145431
+  type: 'test'
+  ...
+# Subtest: article metadata does not render duplicate labels when kind and series are the same taxonomy
+ok 39 - article metadata does not render duplicate labels when kind and series are the same taxonomy
+  ---
+  duration_ms: 5.881204
+  type: 'test'
+  ...
+# Subtest: editorial article readiness is admissible only after explicit human approval
+ok 40 - editorial article readiness is admissible only after explicit human approval
+  ---
+  duration_ms: 2.126914
+  type: 'test'
+  ...
+# Subtest: content-intelligence article routes to analysis collection
+ok 41 - content-intelligence article routes to analysis collection
+  ---
+  duration_ms: 6.426233
+  type: 'test'
+  ...
+# Subtest: site serialization preserves article contract metadata and remains human-approved only
+ok 42 - site serialization preserves article contract metadata and remains human-approved only
+  ---
+  duration_ms: 16.475193
+  type: 'test'
+  ...
+# Subtest: site does not admit content-intelligence article with unresolved claim state
+ok 43 - site does not admit content-intelligence article with unresolved claim state
+  ---
+  duration_ms: 1.775506
+  type: 'test'
+  ...
+# Subtest: Evidence Bridge uses defined editorial typography tokens
+ok 44 - Evidence Bridge uses defined editorial typography tokens
+  ---
+  duration_ms: 3.761355
+  type: 'test'
+  ...
+# Subtest: HP visual grammar has named evidence geometry tokens
+ok 45 - HP visual grammar has named evidence geometry tokens
+  ---
+  duration_ms: 1.187405
+  type: 'test'
+  ...
+# Subtest: brand geometry is structural rather than decorative card styling
+ok 46 - brand geometry is structural rather than decorative card styling
+  ---
+  duration_ms: 0.278962
+  type: 'test'
+  ...
+# Subtest: mobile header stays on one row with JS while no-JS navigation can wrap
+ok 47 - mobile header stays on one row with JS while no-JS navigation can wrap
+  ---
+  duration_ms: 1.791608
+  type: 'test'
+  ...
+# Subtest: mobile first screen compresses whitespace without removing football or admitted evidence
+ok 48 - mobile first screen compresses whitespace without removing football or admitted evidence
+  ---
+  duration_ms: 0.682684
+  type: 'test'
+  ...
+# Subtest: small mobile header preserves the HPAnalytic wordmark without reducing tap targets
+ok 49 - small mobile header preserves the HPAnalytic wordmark without reducing tap targets
+  ---
+  duration_ms: 0.661788
+  type: 'test'
+  ...
+# Subtest: one-row header at 320px keeps controls inside the viewport without shrinking the identity
+ok 50 - one-row header at 320px keeps controls inside the viewport without shrinking the identity
+  ---
+  duration_ms: 0.474546
+  type: 'test'
+  ...
+# Subtest: header and footer use the same canonical Logo component
+ok 51 - header and footer use the same canonical Logo component
+  ---
+  duration_ms: 1.558234
+  type: 'test'
+  ...
+# Subtest: canonical Logo is the LINE-BREAK HP monogram and publisher signature
+ok 52 - canonical Logo is the LINE-BREAK HP monogram and publisher signature
+  ---
+  duration_ms: 0.491209
+  type: 'test'
+  ...
+# Subtest: release browser QA covers mobile desktop 200% text keyboard and reduced motion
+ok 53 - release browser QA covers mobile desktop 200% text keyboard and reduced motion
+  ---
+  duration_ms: 1.370054
+  type: 'test'
+  ...
+# Subtest: public layout removes tracking parameters from the visible URL
+ok 54 - public layout removes tracking parameters from the visible URL
+  ---
+  duration_ms: 6.522807
+  type: 'test'
+  ...
+# Subtest: article share uses canonical URL instead of current tracked URL
+ok 55 - article share uses canonical URL instead of current tracked URL
+  ---
+  duration_ms: 1.50656
+  type: 'test'
+  ...
+# Subtest: current HPA item appears from current authority rather than editorial master
+ok 56 - current HPA item appears from current authority rather than editorial master
+  ---
+  duration_ms: 25.847166
+  type: 'test'
+  ...
+# Subtest: stale editorial/publication pointers cannot override current authority
+ok 57 - stale editorial/publication pointers cannot override current authority
+  ---
+  duration_ms: 19.274454
+  type: 'test'
+  ...
+# Subtest: missing paths fail soft without crashing
+ok 58 - missing paths fail soft without crashing
+  ---
+  duration_ms: 5.235888
+  type: 'test'
+  ...
+# Subtest: invalid JSON fails soft and exposes no raw local path
+ok 59 - invalid JSON fails soft and exposes no raw local path
+  ---
+  duration_ms: 5.468232
+  type: 'test'
+  ...
+# Subtest: blocked or unknown rights cannot look publishable
+ok 60 - blocked or unknown rights cannot look publishable
+  ---
+  duration_ms: 12.913774
+  type: 'test'
+  ...
+# Subtest: accepted visual package is linked as package state without inventing asset rights
+ok 61 - accepted visual package is linked as package state without inventing asset rights
+  ---
+  duration_ms: 30.402746
+  type: 'test'
+  ...
+# Subtest: social derivatives link only when target and mode match current authority
+ok 62 - social derivatives link only when target and mode match current authority
+  ---
+  duration_ms: 10.055853
+  type: 'test'
+  ...
+# Subtest: read-only intake does not mutate source files
+ok 63 - read-only intake does not mutate source files
+  ---
+  duration_ms: 25.393722
+  type: 'test'
+  ...
+# Subtest: normalized output contains no raw machine paths, API keys, tokens or secrets
+ok 64 - normalized output contains no raw machine paths, API keys, tokens or secrets
+  ---
+  duration_ms: 8.701193
+  type: 'test'
+  ...
+# Subtest: control UI exposes read-only review intent, required filters, and human detail without raw JSON
+ok 65 - control UI exposes read-only review intent, required filters, and human detail without raw JSON
+  ---
+  duration_ms: 1.838328
+  type: 'test'
+  ...
+# Subtest: control route exists with required internal editorial identity
+ok 66 - control route exists with required internal editorial identity
+  ---
+  duration_ms: 12.232245
+  type: 'test'
+  ...
+# Subtest: control route is not added to public navigation
+ok 67 - control route is not added to public navigation
+  ---
+  duration_ms: 3.80866
+  type: 'test'
+  ...
+# Subtest: existing empty public surface rule remains intact
+ok 68 - existing empty public surface rule remains intact
+  ---
+  duration_ms: 1.834241
+  type: 'test'
+  ...
+# Subtest: normalized item preserves missing fields as UNKNOWN rather than inventing values
+ok 69 - normalized item preserves missing fields as UNKNOWN rather than inventing values
+  ---
+  duration_ms: 0.659559
+  type: 'test'
+  ...
+# Subtest: blocked truth item never appears publish-ready
+ok 70 - blocked truth item never appears publish-ready
+  ---
+  duration_ms: 0.398175
+  type: 'test'
+  ...
+# Subtest: review item is not promoted to approved
+ok 71 - review item is not promoted to approved
+  ---
+  duration_ms: 0.147127
+  type: 'test'
+  ...
+# Subtest: rights BLOCKED prevents site admission even if another source says approved
+ok 72 - rights BLOCKED prevents site admission even if another source says approved
+  ---
+  duration_ms: 0.224726
+  type: 'test'
+  ...
+# Subtest: current pointer produces a normalized control item
+ok 73 - current pointer produces a normalized control item
+  ---
+  duration_ms: 10.242715
+  type: 'test'
+  ...
+# Subtest: missing sources fail soft and return UNKNOWN rather than throw
+ok 74 - missing sources fail soft and return UNKNOWN rather than throw
+  ---
+  duration_ms: 7.440225
+  type: 'test'
+  ...
+# Subtest: mobile markup is operable without horizontal table dependency
+ok 75 - mobile markup is operable without horizontal table dependency
+  ---
+  duration_ms: 2.822401
+  type: 'test'
+  ...
+# Subtest: control surface contains no automatic publish action
+ok 76 - control surface contains no automatic publish action
+  ---
+  duration_ms: 1.467892
+  type: 'test'
+  ...
+# Subtest: adapter is presentation-only and does not create a second truth engine
+ok 77 - adapter is presentation-only and does not create a second truth engine
+  ---
+  duration_ms: 2.876553
+  type: 'test'
+  ...
+# Subtest: social derivative states are mapped as state only, without publishing
+ok 78 - social derivative states are mapped as state only, without publishing
+  ---
+  duration_ms: 0.235158
+  type: 'test'
+  ...
+# Subtest: UNKNOWN or REVIEW_REQUIRED rights never permit site admission
+ok 79 - UNKNOWN or REVIEW_REQUIRED rights never permit site admission
+  ---
+  duration_ms: 0.171386
+  type: 'test'
+  ...
+# Subtest: internal content control answers 404 in production before loading local sources
+ok 80 - internal content control answers 404 in production before loading local sources
+  ---
+  duration_ms: 1.351026
+  type: 'test'
+  ...
+# Subtest: text tokens meet WCAG AA (4.5:1) on page and surface backgrounds
+ok 81 - text tokens meet WCAG AA (4.5:1) on page and surface backgrounds
+  ---
+  duration_ms: 2.096589
+  type: 'test'
+  ...
+# Subtest: focus indicator meets 3:1 non-text contrast against the page
+ok 82 - focus indicator meets 3:1 non-text contrast against the page
+  ---
+  duration_ms: 0.366459
+  type: 'test'
+  ...
+# Subtest: CSS type scale is exactly the generated fluid scale
+ok 83 - CSS type scale is exactly the generated fluid scale
+  ---
+  duration_ms: 1.590421
+  type: 'test'
+  ...
+# Subtest: every fluid step stays zoomable to 200% (WCAG 1.4.4)
+ok 84 - every fluid step stays zoomable to 200% (WCAG 1.4.4)
+  ---
+  duration_ms: 0.291629
+  type: 'test'
+  ...
+# Subtest: no text is set below 12px (Contract §7: avoid tiny copy)
+ok 85 - no text is set below 12px (Contract §7: avoid tiny copy)
+  ---
+  duration_ms: 0.619184
+  type: 'test'
+  ...
+# Subtest: no CSS case transforms: lang="tr" would render English "i" as "İ" (ANALYSİS)
+ok 86 - no CSS case transforms: lang="tr" would render English "i" as "İ" (ANALYSİS)
+  ---
+  duration_ms: 0.374944
+  type: 'test'
+  ...
+# Subtest: large headings may wrap long tokens under 200% text resize
+ok 87 - large headings may wrap long tokens under 200% text resize
+  ---
+  duration_ms: 0.217535
+  type: 'test'
+  ...
+# Subtest: evidence bridge heading can shrink below its longest word at 200% text resize
+ok 88 - evidence bridge heading can shrink below its longest word at 200% text resize
+  ---
+  duration_ms: 0.222301
+  type: 'test'
+  ...
+# Subtest: homepage principle cells can shrink and wrap at 200% text resize
+ok 89 - homepage principle cells can shrink and wrap at 200% text resize
+  ---
+  duration_ms: 0.348544
+  type: 'test'
+  ...
+# Subtest: every referenced global CSS custom property has a declaration
+ok 90 - every referenced global CSS custom property has a declaration
+  ---
+  duration_ms: 2.008783
+  type: 'test'
+  ...
+# Subtest: sitemap index points to canonical child sitemap
+ok 91 - sitemap index points to canonical child sitemap
+  ---
+  duration_ms: 10.07679
+  type: 'test'
+  ...
+# Subtest: public sitemap uses fail-closed editorial admission for articles
+ok 92 - public sitemap uses fail-closed editorial admission for articles
+  ---
+  duration_ms: 1.95977
+  type: 'test'
+  ...
+# Subtest: robots advertises sitemap and blocks control surface
+ok 93 - robots advertises sitemap and blocks control surface
+  ---
+  duration_ms: 1.458592
+  type: 'test'
+  ...
+# Subtest: sitemap advertises only surfaces the navigation would show
+ok 94 - sitemap advertises only surfaces the navigation would show
+  ---
+  duration_ms: 5.460771
+  type: 'test'
+  ...
+# Subtest: every donor is pinned and licence-classified
+ok 95 - every donor is pinned and licence-classified
+  ---
+  duration_ms: 0.893054
+  type: 'test'
+  ...
+# Subtest: every examined component has a decision from the fixed vocabulary
+ok 96 - every examined component has a decision from the fixed vocabulary
+  ---
+  duration_ms: 1.327236
+  type: 'test'
+  ...
+# Subtest: restricted licences never yield code reuse (policy §7)
+ok 97 - restricted licences never yield code reuse (policy §7)
+  ---
+  duration_ms: 0.193788
+  type: 'test'
+  ...
+# Subtest: REJECT and HOLD decisions carry a reason
+ok 98 - REJECT and HOLD decisions carry a reason
+  ---
+  duration_ms: 0.258222
+  type: 'test'
+  ...
+# Subtest: council contains exactly 100 numbered members
+ok 99 - council contains exactly 100 numbered members
+  ---
+  duration_ms: 0.932666
+  type: 'test'
+  ...
+# Subtest: council protects voice evidence comprehension and insight
+ok 100 - council protects voice evidence comprehension and insight
+  ---
+  duration_ms: 1.771886
+  type: 'test'
+  ...
+# Subtest: editorial adapter consumes governed presentation contracts only
+ok 101 - editorial adapter consumes governed presentation contracts only
+  ---
+  duration_ms: 9.174634
+  type: 'test'
+  ...
+# Subtest: presentation view keeps mechanism evidence counterevidence context confidence and ceiling distinct
+ok 102 - presentation view keeps mechanism evidence counterevidence context confidence and ceiling distinct
+  ---
+  duration_ms: 1.603136
+  type: 'test'
+  ...
+# Subtest: missing evidence or claim ceiling fails closed
+ok 103 - missing evidence or claim ceiling fails closed
+  ---
+  duration_ms: 0.208601
+  type: 'test'
+  ...
+# Subtest: article schema supports series visual evidence and data insight surfaces
+ok 104 - article schema supports series visual evidence and data insight surfaces
+  ---
+  duration_ms: 9.847075
+  type: 'test'
+  ...
+# Subtest: analysis series use Turkish public labels and intent descriptions
+ok 105 - analysis series use Turkish public labels and intent descriptions
+  ---
+  duration_ms: 0.532958
+  type: 'test'
+  ...
+# Subtest: article route renders governed visual evidence and data insight when present
+ok 106 - article route renders governed visual evidence and data insight when present
+  ---
+  duration_ms: 2.204554
+  type: 'test'
+  ...
+# Subtest: analysis page exposes content series rather than one flat chronological list
+ok 107 - analysis page exposes content series rather than one flat chronological list
+  ---
+  duration_ms: 1.117121
+  type: 'test'
+  ...
+# Subtest: psychology gate passes only a complete explicit PASS review
+ok 108 - psychology gate passes only a complete explicit PASS review
+  ---
+  duration_ms: 3.183059
+  type: 'test'
+  ...
+# Subtest: psychology gate fails closed when review is absent
+ok 109 - psychology gate fails closed when review is absent
+  ---
+  duration_ms: 0.290449
+  type: 'test'
+  ...
+# Subtest: psychology gate holds when any cognitive-safety dimension is not PASS
+ok 110 - psychology gate holds when any cognitive-safety dimension is not PASS
+  ---
+  duration_ms: 0.307452
+  type: 'test'
+  ...
+# Subtest: psychology gate does not accept a bare status without auditable dimensions
+ok 111 - psychology gate does not accept a bare status without auditable dimensions
+  ---
+  duration_ms: 0.20532
+  type: 'test'
+  ...
+# Subtest: psychology review can be attached without changing football claim authority
+ok 112 - psychology review can be attached without changing football claim authority
+  ---
+  duration_ms: 1.994425
+  type: 'test'
+  ...
+# Subtest: empty section copy speaks to readers, not to the editorial rulebook
+ok 113 - empty section copy speaks to readers, not to the editorial rulebook
+  ---
+  duration_ms: 8.816587
+  type: 'test'
+  ...
+# Subtest: an empty culture page is noindex
+ok 114 - an empty culture page is noindex
+  ---
+  duration_ms: 1.462579
+  type: 'test'
+  ...
+# Subtest: visual evidence must answer the four editorial questions
+ok 115 - visual evidence must answer the four editorial questions
+  ---
+  duration_ms: 1.31827
+  type: 'test'
+  ...
+# Subtest: interpretation is authored and claim bounded
+ok 116 - interpretation is authored and claim bounded
+  ---
+  duration_ms: 0.301742
+  type: 'test'
+  ...
+# Subtest: component does not manufacture metrics or recommendations
+ok 117 - component does not manufacture metrics or recommendations
+  ---
+  duration_ms: 0.313455
+  type: 'test'
+  ...
+# Subtest: every content-schema evidence class has a visual mapping
+ok 118 - every content-schema evidence class has a visual mapping
+  ---
+  duration_ms: 11.062097
+  type: 'test'
+  ...
+# Subtest: evidence classes never look identical (Contract §6): distinct stroke per class
+ok 119 - evidence classes never look identical (Contract §6): distinct stroke per class
+  ---
+  duration_ms: 0.299877
+  type: 'test'
+  ...
+# Subtest: every non-solid stroke has a CSS rule
+ok 120 - every non-solid stroke has a CSS rule
+  ---
+  duration_ms: 3.676884
+  type: 'test'
+  ...
+# Subtest: unknown classes fall back to the weakest claim, not the strongest
+ok 121 - unknown classes fall back to the weakest claim, not the strongest
+  ---
+  duration_ms: 0.543321
+  type: 'test'
+  ...
+# Subtest: claim ceilings are humanized for readers
+ok 122 - claim ceilings are humanized for readers
+  ---
+  duration_ms: 0.305825
+  type: 'test'
+  ...
+# Subtest: football scope keeps the five big leagues and UEFA CL provider codes
+ok 123 - football scope keeps the five big leagues and UEFA CL provider codes
+  ---
+  duration_ms: 3.294424
+  type: 'test'
+  ...
+# Subtest: normalizer keeps future matches, sorts them, and caps output
+ok 124 - normalizer keeps future matches, sorts them, and caps output
+  ---
+  duration_ms: 0.528918
+  type: 'test'
+  ...
+# Subtest: missing token fails soft without fetching
+ok 125 - missing token fails soft without fetching
+  ---
+  duration_ms: 0.271141
+  type: 'test'
+  ...
+# Subtest: provider error fails soft and does not expose token
+ok 126 - provider error fails soft and does not expose token
+  ---
+  duration_ms: 1.991239
+  type: 'test'
+  ...
+# Subtest: match centre stays hidden unless the source is ready
+ok 127 - match centre stays hidden unless the source is ready
+  ---
+  duration_ms: 0.561395
+  type: 'test'
+  ...
+# Subtest: match centre shows data time, covered scope only and Turkish status labels
+ok 128 - match centre shows data time, covered scope only and Turkish status labels
+  ---
+  duration_ms: 15.294194
+  type: 'test'
+  ...
+# Subtest: public product shell CSS has one canonical owner block
+ok 129 - public product shell CSS has one canonical owner block
+  ---
+  duration_ms: 2.727393
+  type: 'test'
+  ...
+# Subtest: article share control inherits product typography, tokens and a 44px target at every viewport
+ok 130 - article share control inherits product typography, tokens and a 44px target at every viewport
+  ---
+  duration_ms: 0.533662
+  type: 'test'
+  ...
+# Subtest: hero thesis keeps the emphasized word intact across release viewports
+ok 131 - hero thesis keeps the emphasized word intact across release viewports
+  ---
+  duration_ms: 1.22746
+  type: 'test'
+  ...
+# Subtest: hikmet spotlight uses a real public culture article
+ok 132 - hikmet spotlight uses a real public culture article
+  ---
+  duration_ms: 1.403016
+  type: 'test'
+  ...
+# Subtest: hikmet spotlight has responsive editorial hierarchy
+ok 133 - hikmet spotlight has responsive editorial hierarchy
+  ---
+  duration_ms: 0.56948
+  type: 'test'
+  ...
+# Subtest: homepage promotes one real admitted story instead of rendering empty latest-work scaffolding
+ok 134 - homepage promotes one real admitted story instead of rendering empty latest-work scaffolding
+  ---
+  duration_ms: 0.996119
+  type: 'test'
+  ...
+# Subtest: homepage promotes the newest admitted public story even when no analysis story is published
+ok 135 - homepage promotes the newest admitted public story even when no analysis story is published
+  ---
+  duration_ms: 1.282189
+  type: 'test'
+  ...
+# Subtest: homepage does not render empty or duplicate archive scaffolding
+ok 136 - homepage does not render empty or duplicate archive scaffolding
+  ---
+  duration_ms: 0.321637
+  type: 'test'
+  ...
+# Subtest: research spotlight is honest and deep-links to research
+ok 137 - research spotlight is honest and deep-links to research
+  ---
+  duration_ms: 1.020936
+  type: 'test'
+  ...
+# Subtest: research spotlight communicates method rather than fabricated publication
+ok 138 - research spotlight communicates method rather than fabricated publication
+  ---
+  duration_ms: 0.185728
+  type: 'test'
+  ...
+# Subtest: research spotlight has editorial desktop and mobile hierarchy
+ok 139 - research spotlight has editorial desktop and mobile hierarchy
+  ---
+  duration_ms: 0.343635
+  type: 'test'
+  ...
+# Subtest: scouting spotlight exposes decision discipline and real deep link
+ok 140 - scouting spotlight exposes decision discipline and real deep link
+  ---
+  duration_ms: 1.111597
+  type: 'test'
+  ...
+# Subtest: scouting surface states decision lenses without fake player claims
+ok 141 - scouting surface states decision lenses without fake player claims
+  ---
+  duration_ms: 0.224639
+  type: 'test'
+  ...
+# Subtest: scouting surface has responsive visual contract
+ok 142 - scouting surface has responsive visual contract
+  ---
+  duration_ms: 0.371227
+  type: 'test'
+  ...
+# Subtest: homepage above fold carries identity, discovery action and real featured analysis
+ok 143 - homepage above fold carries identity, discovery action and real featured analysis
+  ---
+  duration_ms: 1.441422
+  type: 'test'
+  ...
+# Subtest: global header exposes HPAnalytic product identity without duplicating navigation truth
+ok 144 - global header exposes HPAnalytic product identity without duplicating navigation truth
+  ---
+  duration_ms: 0.466215
+  type: 'test'
+  ...
+# Subtest: above-fold system has explicit responsive hero and featured transition
+ok 145 - above-fold system has explicit responsive hero and featured transition
+  ---
+  duration_ms: 0.484572
+  type: 'test'
+  ...
+# Subtest: canonical HP monogram retains line-break geometry and editorial identity
+ok 146 - canonical HP monogram retains line-break geometry and editorial identity
+  ---
+  duration_ms: 1.774894
+  type: 'test'
+  ...
+# Subtest: hero uses the existing tactical canvas and the canonical entry headline
+ok 147 - hero uses the existing tactical canvas and the canonical entry headline
+  ---
+  duration_ms: 0.477204
+  type: 'test'
+  ...
+# Subtest: tactical illustration remains accessible without repeated warning banner
+ok 148 - tactical illustration remains accessible without repeated warning banner
+  ---
+  duration_ms: 0.436073
+  type: 'test'
+  ...
+# Subtest: evidence flow foregrounds analysis and counterevidence
+ok 149 - evidence flow foregrounds analysis and counterevidence
+  ---
+  duration_ms: 1.854581
+  type: 'test'
+  ...
+# Subtest: 55 shots / 2 goals remains a bounded HPA candidate while exercising the public mechanism surface
+ok 150 - 55 shots / 2 goals remains a bounded HPA candidate while exercising the public mechanism surface
+  ---
+  duration_ms: 1.142632
+  type: 'test'
+  ...
+# Subtest: HPAnalytic Pitch exposes the three-part visual grammar
+ok 151 - HPAnalytic Pitch exposes the three-part visual grammar
+  ---
+  duration_ms: 1.466222
+  type: 'test'
+  ...
+# Subtest: schematic pitch is explicitly bounded from tracking evidence
+ok 152 - schematic pitch is explicitly bounded from tracking evidence
+  ---
+  duration_ms: 0.360378
+  type: 'test'
+  ...
+# Subtest: pitch has accessible meaning instead of being hidden decoration
+ok 153 - pitch has accessible meaning instead of being hidden decoration
+  ---
+  duration_ms: 0.39753
+  type: 'test'
+  ...
+# Subtest: pitch remains static and reduced-motion safe
+ok 154 - pitch remains static and reduced-motion safe
+  ---
+  duration_ms: 0.316507
+  type: 'test'
+  ...
+# Subtest: authored stages
+ok 155 - authored stages
+  ---
+  duration_ms: 1.13767
+  type: 'test'
+  ...
+# Subtest: delegates geometry
+ok 156 - delegates geometry
+  ---
+  duration_ms: 0.331558
+  type: 'test'
+  ...
+# Subtest: evidence bounded
+ok 157 - evidence bounded
+  ---
+  duration_ms: 0.268289
+  type: 'test'
+  ...
+# Subtest: discovery starts from football intent rather than product jargon
+ok 158 - discovery starts from football intent rather than product jargon
+  ---
+  duration_ms: 1.065305
+  type: 'test'
+  ...
+# Subtest: destinations are content-gated and reuse site surface truth
+ok 159 - destinations are content-gated and reuse site surface truth
+  ---
+  duration_ms: 0.309968
+  type: 'test'
+  ...
+# Subtest: ask HPA is not falsely exposed as a working destination
+ok 160 - ask HPA is not falsely exposed as a working destination
+  ---
+  duration_ms: 0.296418
+  type: 'test'
+  ...
+# Subtest: discovery remains static and accessible
+ok 161 - discovery remains static and accessible
+  ---
+  duration_ms: 0.220661
+  type: 'test'
+  ...
+# Subtest: builds a multi-axis football discovery path with explicit reasons
+ok 162 - builds a multi-axis football discovery path with explicit reasons
+  ---
+  duration_ms: 3.43436
+  type: 'test'
+  ...
+# Subtest: path never invents a relation when authored axes do not intersect
+ok 163 - path never invents a relation when authored axes do not intersect
+  ---
+  duration_ms: 0.478159
+  type: 'test'
+  ...
+# Subtest: knowledge path UI explains movement rather than recommendation
+ok 164 - knowledge path UI explains movement rather than recommendation
+  ---
+  duration_ms: 9.854216
+  type: 'test'
+  ...
+# Subtest: returns only explicit shared authored axes
+ok 165 - returns only explicit shared authored axes
+  ---
+  duration_ms: 2.412859
+  type: 'test'
+  ...
+# Subtest: never relates an article to itself
+ok 166 - never relates an article to itself
+  ---
+  duration_ms: 0.237103
+  type: 'test'
+  ...
+# Subtest: component exposes relation reason rather than recommendation language
+ok 167 - component exposes relation reason rather than recommendation language
+  ---
+  duration_ms: 11.792158
+  type: 'test'
+  ...
+# Subtest: article schema supports authored relation axes
+ok 168 - article schema supports authored relation axes
+  ---
+  duration_ms: 2.125176
+  type: 'test'
+  ...
+# Subtest: launch-series-01-kamera has bounded council repair review
+ok 169 - launch-series-01-kamera has bounded council repair review
+  ---
+  duration_ms: 1.803129
+  type: 'test'
+  ...
+# Subtest: launch-series-01-baski-altinda has bounded council repair review
+ok 170 - launch-series-01-baski-altinda has bounded council repair review
+  ---
+  duration_ms: 0.51415
+  type: 'test'
+  ...
+# Subtest: launch-series-01-counterpress has bounded council repair review
+ok 171 - launch-series-01-counterpress has bounded council repair review
+  ---
+  duration_ms: 0.251806
+  type: 'test'
+  ...
+# Subtest: launch series keeps publication and source-validation boundaries
+ok 172 - launch series keeps publication and source-validation boundaries
+  ---
+  duration_ms: 1.064834
+  type: 'test'
+  ...
+# Subtest: pressure article uses ordinary Turkish and preserves label-to-mechanism reveal
+ok 173 - pressure article uses ordinary Turkish and preserves label-to-mechanism reveal
+  ---
+  duration_ms: 1.674335
+  type: 'test'
+  ...
+# Subtest: camera and counterpress preserve their canonical memory traces
+ok 174 - camera and counterpress preserve their canonical memory traces
+  ---
+  duration_ms: 0.280208
+  type: 'test'
+  ...
+# Subtest: launch-series-01-kamera has an auditable psychology/cognitive-safety PASS candidate
+ok 175 - launch-series-01-kamera has an auditable psychology/cognitive-safety PASS candidate
+  ---
+  duration_ms: 1.751983
+  type: 'test'
+  ...
+# Subtest: launch-series-01-baski-altinda has an auditable psychology/cognitive-safety PASS candidate
+ok 176 - launch-series-01-baski-altinda has an auditable psychology/cognitive-safety PASS candidate
+  ---
+  duration_ms: 0.355732
+  type: 'test'
+  ...
+# Subtest: launch-series-01-counterpress has an auditable psychology/cognitive-safety PASS candidate
+ok 177 - launch-series-01-counterpress has an auditable psychology/cognitive-safety PASS candidate
+  ---
+  duration_ms: 0.280641
+  type: 'test'
+  ...
+# Subtest: counterpress launch candidate does not use HRC shot-endpoint as its main source
+ok 178 - counterpress launch candidate does not use HRC shot-endpoint as its main source
+  ---
+  duration_ms: 1.391176
+  type: 'test'
+  ...
+# Subtest: kamera-kanit-siniri.svg is a usable accessible explanatory SVG
+ok 179 - kamera-kanit-siniri.svg is a usable accessible explanatory SVG
+  ---
+  duration_ms: 1.410124
+  type: 'test'
+  ...
+# Subtest: baski-baglamlari.svg is a usable accessible explanatory SVG
+ok 180 - baski-baglamlari.svg is a usable accessible explanatory SVG
+  ---
+  duration_ms: 0.365565
+  type: 'test'
+  ...
+# Subtest: karsi-pres-bes-saniye.svg is a usable accessible explanatory SVG
+ok 181 - karsi-pres-bes-saniye.svg is a usable accessible explanatory SVG
+  ---
+  duration_ms: 0.237249
+  type: 'test'
+  ...
+# Subtest: home renders the match centre only through its gated view
+ok 182 - home renders the match centre only through its gated view
+  ---
+  duration_ms: 1.10741
+  type: 'test'
+  ...
+# Subtest: home does not promise data it cannot deliver
+ok 183 - home does not promise data it cannot deliver
+  ---
+  duration_ms: 0.364522
+  type: 'test'
+  ...
+# Subtest: Mechanism Card exposes the full bounded editorial sequence
+ok 184 - Mechanism Card exposes the full bounded editorial sequence
+  ---
+  duration_ms: 1.155716
+  type: 'test'
+  ...
+# Subtest: article schema and article surface accept governed mechanism cards
+ok 185 - article schema and article surface accept governed mechanism cards
+  ---
+  duration_ms: 0.382489
+  type: 'test'
+  ...
+# Subtest: mechanism card has responsive and evidence-boundary styling
+ok 186 - mechanism card has responsive and evidence-boundary styling
+  ---
+  duration_ms: 0.36047
+  type: 'test'
+  ...
+# Subtest: desktop and mobile share one computed navigation truth
+ok 187 - desktop and mobile share one computed navigation truth
+  ---
+  duration_ms: 10.173967
+  type: 'test'
+  ...
+# Subtest: mobile disclosure exposes accessible state and dynamic accessible name
+ok 188 - mobile disclosure exposes accessible state and dynamic accessible name
+  ---
+  duration_ms: 1.371331
+  type: 'test'
+  ...
+# Subtest: mobile state reducer toggles and closes on every way of leaving the menu
+ok 189 - mobile state reducer toggles and closes on every way of leaving the menu
+  ---
+  duration_ms: 0.252825
+  type: 'test'
+  ...
+# Subtest: mobile interaction closes on link, outside pointer, focus leaving and desktop resize
+ok 190 - mobile interaction closes on link, outside pointer, focus leaving and desktop resize
+  ---
+  duration_ms: 2.973755
+  type: 'test'
+  ...
+# Subtest: navigation is progressively enhanced: usable without JavaScript
+ok 191 - navigation is progressively enhanced: usable without JavaScript
+  ---
+  duration_ms: 1.957509
+  type: 'test'
+  ...
+# Subtest: mobile presentation is operable and respects reduced motion
+ok 192 - mobile presentation is operable and respects reduced motion
+  ---
+  duration_ms: 2.543115
+  type: 'test'
+  ...
+# Subtest: skip link targets the main landmark
+ok 193 - skip link targets the main landmark
+  ---
+  duration_ms: 1.67566
+  type: 'test'
+  ...
+# Subtest: article schema supports one optional authored next question with a real internal destination
+ok 194 - article schema supports one optional authored next question with a real internal destination
+  ---
+  duration_ms: 8.491747
+  type: 'test'
+  ...
+# Subtest: article renders next question only when authored and destination is public
+ok 195 - article renders next question only when authored and destination is public
+  ---
+  duration_ms: 1.423443
+  type: 'test'
+  ...
+# Subtest: next question is a static, vertically readable continuation surface
+ok 196 - next question is a static, vertically readable continuation surface
+  ---
+  duration_ms: 2.713824
+  type: 'test'
+  ...
+# Subtest: next question links an article only when that article is public
+ok 197 - next question links an article only when that article is public
+  ---
+  duration_ms: 2.336563
+  type: 'test'
+  ...
+# Subtest: pitch keeps the IFAB 105 × 68 aspect ratio
+ok 198 - pitch keeps the IFAB 105 × 68 aspect ratio
+  ---
+  duration_ms: 1.589673
+  type: 'test'
+  ...
+# Subtest: penalty and goal areas are to scale and centred
+ok 199 - penalty and goal areas are to scale and centred
+  ---
+  duration_ms: 0.254986
+  type: 'test'
+  ...
+# Subtest: centre circle and penalty spots use the 9.15 m / 11 m marks
+ok 200 - centre circle and penalty spots use the 9.15 m / 11 m marks
+  ---
+  duration_ms: 0.326865
+  type: 'test'
+  ...
+# Subtest: penalty arc starts on the penalty-area edge
+ok 201 - penalty arc starts on the penalty-area edge
+  ---
+  duration_ms: 1.712979
+  type: 'test'
+  ...
+# Subtest: public identity does not market artificial intelligence
+ok 202 - public identity does not market artificial intelligence
+  ---
+  duration_ms: 1.558592
+  type: 'test'
+  ...
+# Subtest: about identity leads with football analysis, evidence and context
+ok 203 - about identity leads with football analysis, evidence and context
+  ---
+  duration_ms: 0.363745
+  type: 'test'
+  ...
+# Subtest: public evidence object does not expose internal presentation-model jargon
+ok 204 - public evidence object does not expose internal presentation-model jargon
+  ---
+  duration_ms: 0.986392
+  type: 'test'
+  ...
+# Subtest: core product surfaces use reader-facing Turkish headings
+ok 205 - core product surfaces use reader-facing Turkish headings
+  ---
+  duration_ms: 0.31528
+  type: 'test'
+  ...
+# Subtest: public navigation and section labels use reader-facing Turkish
+ok 206 - public navigation and section labels use reader-facing Turkish
+  ---
+  duration_ms: 4.648612
+  type: 'test'
+  ...
+# Subtest: brand has vector HP mark and wordmark
+ok 207 - brand has vector HP mark and wordmark
+  ---
+  duration_ms: 1.028241
+  type: 'test'
+  ...
+# Subtest: shell has accessible mobile index and real CTA
+ok 208 - shell has accessible mobile index and real CTA
+  ---
+  duration_ms: 0.175177
+  type: 'test'
+  ...
+# Subtest: page content does not nest a second main landmark inside BaseLayout
+ok 209 - page content does not nest a second main landmark inside BaseLayout
+  ---
+  duration_ms: 0.350039
+  type: 'test'
+  ...
+# Subtest: entry motion is lightweight, reduced-motion safe, and content is visible before animation
+ok 210 - entry motion is lightweight, reduced-motion safe, and content is visible before animation
+  ---
+  duration_ms: 0.222886
+  type: 'test'
+  ...
+# Subtest: home analysis CTA is gated on a published analysis
+ok 211 - home analysis CTA is gated on a published analysis
+  ---
+  duration_ms: 0.218684
+  type: 'test'
+  ...
+# Subtest: HPAnalytic manifest is canonical and installable
+ok 212 - HPAnalytic manifest is canonical and installable
+  ---
+  duration_ms: 6.635662
+  type: 'test'
+  ...
+# Subtest: public shell registers a same-origin service worker
+ok 213 - public shell registers a same-origin service worker
+  ---
+  duration_ms: 2.019435
+  type: 'test'
+  ...
+# Subtest: service worker never caches private editorial studio routes
+ok 214 - service worker never caches private editorial studio routes
+  ---
+  duration_ms: 1.317682
+  type: 'test'
+  ...
+# Subtest: base layout declares the PWA manifest and standalone mobile metadata
+ok 215 - base layout declares the PWA manifest and standalone mobile metadata
+  ---
+  duration_ms: 10.000467
+  type: 'test'
+  ...
+# Subtest: manifest defines the HPAnalytic standalone identity
+ok 216 - manifest defines the HPAnalytic standalone identity
+  ---
+  duration_ms: 1.534612
+  type: 'test'
+  ...
+# Subtest: manifest provides 192 and 512 pixel install icons including maskable coverage
+ok 217 - manifest provides 192 and 512 pixel install icons including maskable coverage
+  ---
+  duration_ms: 1.501093
+  type: 'test'
+  ...
+# Subtest: PWA successor has an explicit same-origin service-worker contract
+ok 218 - PWA successor has an explicit same-origin service-worker contract
+  ---
+  duration_ms: 3.329491
+  type: 'test'
+  ...
+# Subtest: brand line break and hero reveal do not teach red as a generic accent
+ok 219 - brand line break and hero reveal do not teach red as a generic accent
+  ---
+  duration_ms: 2.115934
+  type: 'test'
+  ...
+# Subtest: tactical explanatory geometry reserves red for epistemic risk
+ok 220 - tactical explanatory geometry reserves red for epistemic risk
+  ---
+  duration_ms: 0.502124
+  type: 'test'
+  ...
+# Subtest: repository governance and structural health gate passes
+ok 221 - repository governance and structural health gate passes
+  ---
+  duration_ms: 70.915912
+  type: 'test'
+  ...
+# Subtest: offline observer is deterministic and rejects nonallowlisted input
+ok 222 - offline observer is deterministic and rejects nonallowlisted input
+  ---
+  duration_ms: 217.000271
+  type: 'test'
+  ...
+# Subtest: article route prerenders (regression: getStaticPaths was ignored under output:server → 500)
+ok 223 - article route prerenders (regression: getStaticPaths was ignored under output:server → 500)
+  ---
+  duration_ms: 8.193581
+  type: 'test'
+  ...
+# Subtest: every content page prerenders; only search and API routes run on the server
+ok 224 - every content page prerenders; only search and API routes run on the server
+  ---
+  duration_ms: 7.941671
+  type: 'test'
+  ...
+# Subtest: search is a plain GET form with a labelled input (works without JS)
+ok 225 - search is a plain GET form with a labelled input (works without JS)
+  ---
+  duration_ms: 1.282571
+  type: 'test'
+  ...
+# Subtest: article pages declare structured data and a claim boundary
+ok 226 - article pages declare structured data and a claim boundary
+  ---
+  duration_ms: 1.301232
+  type: 'test'
+  ...
+# Subtest: label-in-name check rejects a name that drops the visible label
+ok 227 - label-in-name check rejects a name that drops the visible label
+  ---
+  duration_ms: 1.165271
+  type: 'test'
+  ...
+# Subtest: header search link name contains its visible label (WCAG 2.5.3)
+ok 228 - header search link name contains its visible label (WCAG 2.5.3)
+  ---
+  duration_ms: 7.060504
+  type: 'test'
+  ...
+# Subtest: header search visible label follows the utility navigation label
+ok 229 - header search visible label follows the utility navigation label
+  ---
+  duration_ms: 1.843285
+  type: 'test'
+  ...
+# Subtest: narrow viewports hide the search text visually but keep it as the accessible name
+ok 230 - narrow viewports hide the search text visually but keep it as the accessible name
+  ---
+  duration_ms: 4.035611
+  type: 'test'
+  ...
+# Subtest: header search icon stays decorative so it never competes with the link name
+ok 231 - header search icon stays decorative so it never competes with the link name
+  ---
+  duration_ms: 3.253181
+  type: 'test'
+  ...
+# Subtest: Turkish case and diacritics fold to a shared form
+ok 232 - Turkish case and diacritics fold to a shared form
+  ---
+  duration_ms: 1.74798
+  type: 'test'
+  ...
+# Subtest: tokenize drops one-letter noise and duplicates
+ok 233 - tokenize drops one-letter noise and duplicates
+  ---
+  duration_ms: 2.657042
+  type: 'test'
+  ...
+# Subtest: ASCII query finds Turkish text
+ok 234 - ASCII query finds Turkish text
+  ---
+  duration_ms: 5.396121
+  type: 'test'
+  ...
+# Subtest: all tokens must match (AND semantics)
+ok 235 - all tokens must match (AND semantics)
+  ---
+  duration_ms: 0.812157
+  type: 'test'
+  ...
+# Subtest: title matches outrank body matches
+ok 236 - title matches outrank body matches
+  ---
+  duration_ms: 0.621927
+  type: 'test'
+  ...
+# Subtest: empty query returns nothing rather than everything
+ok 237 - empty query returns nothing rather than everything
+  ---
+  duration_ms: 0.23462
+  type: 'test'
+  ...
+# Subtest: Astro src/pages owns the public root; no legacy root index shadows it
+ok 238 - Astro src/pages owns the public root; no legacy root index shadows it
+  ---
+  duration_ms: 6.470922
+  type: 'test'
+  ...
+# Subtest: content types route to the required public collections
+ok 239 - content types route to the required public collections
+  ---
+  duration_ms: 1.68806
+  type: 'test'
+  ...
+# Subtest: admission requires human approval and all publication gates
+ok 240 - admission requires human approval and all publication gates
+  ---
+  duration_ms: 1.054462
+  type: 'test'
+  ...
+# Subtest: approved item writes to the correct local collection and preserves required metadata
+ok 241 - approved item writes to the correct local collection and preserves required metadata
+  ---
+  duration_ms: 13.765039
+  type: 'test'
+  ...
+# Subtest: blocked/review/rights-blocked items do not write collection files
+ok 242 - blocked/review/rights-blocked items do not write collection files
+  ---
+  duration_ms: 4.015012
+  type: 'test'
+  ...
+# Subtest: same canonical content id updates one file instead of creating a duplicate
+ok 243 - same canonical content id updates one file instead of creating a duplicate
+  ---
+  duration_ms: 12.433351
+  type: 'test'
+  ...
+# Subtest: first admitted analysis item makes Analysis navigation visible by existing navigation truth
+ok 244 - first admitted analysis item makes Analysis navigation visible by existing navigation truth
+  ---
+  duration_ms: 4.949812
+  type: 'test'
+  ...
+# Subtest: withdrawal keeps history but removes item from public collection view
+ok 245 - withdrawal keeps history but removes item from public collection view
+  ---
+  duration_ms: 8.651685
+  type: 'test'
+  ...
+# Subtest: claim metadata is preserved and social is never auto-published
+ok 246 - claim metadata is preserved and social is never auto-published
+  ---
+  duration_ms: 5.230165
+  type: 'test'
+  ...
+# Subtest: real HPA current item can traverse only a local human-approved test fixture, without changing real intake
+ok 247 - real HPA current item can traverse only a local human-approved test fixture, without changing real intake
+  ---
+  duration_ms: 4.631684
+  type: 'test'
+  ...
+# Subtest: site public surfaces explicitly exclude withdrawn and superseded editorial items
+ok 248 - site public surfaces explicitly exclude withdrawn and superseded editorial items
+  ---
+  duration_ms: 3.377011
+  type: 'test'
+  ...
+# Subtest: public editorial admission is fail-closed and every public article projection applies it
+ok 249 - public editorial admission is fail-closed and every public article projection applies it
+  ---
+  duration_ms: 6.224417
+  type: 'test'
+  ...
+# Subtest: hides surfaces that have no real content
+ok 250 - hides surfaces that have no real content
+  ---
+  duration_ms: 2.439245
+  type: 'test'
+  ...
+# Subtest: reveals a surface automatically when real content exists
+ok 251 - reveals a surface automatically when real content exists
+  ---
+  duration_ms: 0.219303
+  type: 'test'
+  ...
+# Subtest: about remains available even when editorial collections are empty
+ok 252 - about remains available even when editorial collections are empty
+  ---
+  duration_ms: 0.21123
+  type: 'test'
+  ...
+# Subtest: archive and search appear only when the editorial corpus is non-empty
+ok 253 - archive and search appear only when the editorial corpus is non-empty
+  ---
+  duration_ms: 0.196994
+  type: 'test'
+  ...
+# Subtest: current-page state follows GOV.UK semantics (page vs ancestor)
+ok 254 - current-page state follows GOV.UK semantics (page vs ancestor)
+  ---
+  duration_ms: 1.767633
+  type: 'test'
+  ...
+# Subtest: content-intelligence article fails closed until source claims are validated
+ok 255 - content-intelligence article fails closed until source claims are validated
+  ---
+  duration_ms: 1.1025
+  type: 'test'
+  ...
+# Subtest: every step schema is strict (structured outputs contract)
+ok 256 - every step schema is strict (structured outputs contract)
+  ---
+  duration_ms: 3.806853
+  type: 'test'
+  ...
+# Subtest: research: urlless sources are dropped, engine sources start unverified
+ok 257 - research: urlless sources are dropped, engine sources start unverified
+  ---
+  duration_ms: 1.850473
+  type: 'test'
+  ...
+# Subtest: evidence: citations to unknown source ids are removed, bad enums become UNKNOWN
+ok 258 - evidence: citations to unknown source ids are removed, bad enums become UNKNOWN
+  ---
+  duration_ms: 9.0642
+  type: 'test'
+  ...
+# Subtest: headlines: missing safety answers default to the unsafe side
+ok 259 - headlines: missing safety answers default to the unsafe side
+  ---
+  duration_ms: 0.713095
+  type: 'test'
+  ...
+# Subtest: draft: a new draft clears the human voice check
+ok 260 - draft: a new draft clears the human voice check
+  ---
+  duration_ms: 0.910764
+  type: 'test'
+  ...
+# Subtest: parseJsonAnswer reads fenced, bare and wrapped JSON
+ok 261 - parseJsonAnswer reads fenced, bare and wrapped JSON
+  ---
+  duration_ms: 0.610287
+  type: 'test'
+  ...
+# Subtest: operator brief carries the role, the task and the output schema
+ok 262 - operator brief carries the role, the task and the output schema
+  ---
+  duration_ms: 3.584323
+  type: 'test'
+  ...
+# Subtest: package is always draft:true, cites only used sources, and is blocked before READY
+ok 263 - package is always draft:true, cites only used sources, and is blocked before READY
+  ---
+  duration_ms: 1.548628
+  type: 'test'
+  ...
+# Subtest: HTML extraction keeps in-content headers and drops page chrome
+ok 264 - HTML extraction keeps in-content headers and drops page chrome
+  ---
+  duration_ms: 6.378448
+  type: 'test'
+  ...
+# Subtest: readUrl reports failures instead of guessing
+ok 265 - readUrl reports failures instead of guessing
+  ---
+  duration_ms: 73.116601
+  type: 'test'
+  ...
+# Subtest: uploaded files: text read, PDF kept for the engine, DOCX reported
+ok 266 - uploaded files: text read, PDF kept for the engine, DOCX reported
+  ---
+  duration_ms: 0.608255
+  type: 'test'
+  ...
+# Subtest: Foundry bridge reads the queue shape, skips incomplete items, never writes
+ok 267 - Foundry bridge reads the queue shape, skips incomplete items, never writes
+  ---
+  duration_ms: 14.831479
+  type: 'test'
+  ...
+# Subtest: Studio routes are injected only with HP_STUDIO=1, and never in a build
+ok 268 - Studio routes are injected only with HP_STUDIO=1, and never in a build
+  ---
+  duration_ms: 1.069643
+  type: 'test'
+  ...
+# Subtest: request guard: loopback only, same-origin POST only
+ok 269 - request guard: loopback only, same-origin POST only
+  ---
+  duration_ms: 0.591096
+  type: 'test'
+  ...
+# Subtest: public site: draft content is filtered from every collection read
+ok 270 - public site: draft content is filtered from every collection read
+  ---
+  duration_ms: 11.629609
+  type: 'test'
+  ...
+# Subtest: public code never imports Studio code
+ok 271 - public code never imports Studio code
+  ---
+  duration_ms: 16.327177
+  type: 'test'
+  ...
+# Subtest: store keeps data outside the repo and rejects path tricks
+ok 272 - store keeps data outside the repo and rejects path tricks
+  ---
+  duration_ms: 1.438952
+  type: 'test'
+  ...
+# Subtest: end to end, OPERATOR path: idea → READY → APPROVED → package, never published
+ok 273 - end to end, OPERATOR path: idea → READY → APPROVED → package, never published
+  ---
+  duration_ms: 56.258748
+  type: 'test'
+  ...
+# Subtest: engine can never approve or publish
+ok 274 - engine can never approve or publish
+  ---
+  duration_ms: 1.746343
+  type: 'test'
+  ...
+# Subtest: READY requires a passing gate; PUBLISHED requires a public URL
+ok 275 - READY requires a passing gate; PUBLISHED requires a public URL
+  ---
+  duration_ms: 1.766338
+  type: 'test'
+  ...
+# Subtest: illegal jumps, terminal states, HOLD round-trip and rejection reason
+ok 276 - illegal jumps, terminal states, HOLD round-trip and rejection reason
+  ---
+  duration_ms: 1.589405
+  type: 'test'
+  ...
+# Subtest: advance walks the editorial line and records every step
+ok 277 - advance walks the editorial line and records every step
+  ---
+  duration_ms: 0.613344
+  type: 'test'
+  ...
+# Subtest: gate passes the complete candidate
+ok 278 - gate passes the complete candidate
+  ---
+  duration_ms: 0.347459
+  type: 'test'
+  ...
+# Subtest: SOURCE_TRACEABILITY fails on unverified, missing or uncited sources
+ok 279 - SOURCE_TRACEABILITY fails on unverified, missing or uncited sources
+  ---
+  duration_ms: 0.74609
+  type: 'test'
+  ...
+# Subtest: CLAIM_DISCIPLINE fails on UNKNOWN confidence, causal leap, or a stale red team
+ok 280 - CLAIM_DISCIPLINE fails on UNKNOWN confidence, causal leap, or a stale red team
+  ---
+  duration_ms: 0.709583
+  type: 'test'
+  ...
+# Subtest: COUNTEREVIDENCE requires a counter source or per-claim counterevidence
+ok 281 - COUNTEREVIDENCE requires a counter source or per-claim counterevidence
+  ---
+  duration_ms: 1.681921
+  type: 'test'
+  ...
+# Subtest: COPYRIGHT_SAFETY catches 12-word verbatim reuse, Turkish-fold insensitive
+ok 282 - COPYRIGHT_SAFETY catches 12-word verbatim reuse, Turkish-fold insensitive
+  ---
+  duration_ms: 0.656545
+  type: 'test'
+  ...
+# Subtest: HP_LANGUAGE flags generic AI phrasing and needs a human voice check
+ok 283 - HP_LANGUAGE flags generic AI phrasing and needs a human voice check
+  ---
+  duration_ms: 0.542593
+  type: 'test'
+  ...
+# Subtest: ORIGINAL_VALUE and HEADLINE_HONESTY fail closed
+ok 284 - ORIGINAL_VALUE and HEADLINE_HONESTY fail closed
+  ---
+  duration_ms: 0.667288
+  type: 'test'
+  ...
+# Subtest: similarity and slug helpers are Turkish-aware
+ok 285 - similarity and slug helpers are Turkish-aware
+  ---
+  duration_ms: 0.780634
+  type: 'test'
+  ...
+# Subtest: tactical semantic boundary owns a full row instead of clipping beside evidence columns
+ok 286 - tactical semantic boundary owns a full row instead of clipping beside evidence columns
+  ---
+  duration_ms: 0.949337
+  type: 'test'
+  ...
+# Subtest: visual lab retains existing tactical component
+ok 287 - visual lab retains existing tactical component
+  ---
+  duration_ms: 1.630865
+  type: 'test'
+  ...
+# Subtest: visual lab leads with football analysis, not warning copy
+ok 288 - visual lab leads with football analysis, not warning copy
+  ---
+  duration_ms: 0.394979
+  type: 'test'
+  ...
+# Subtest: visual lab routes readers to analysis
+ok 289 - visual lab routes readers to analysis
+  ---
+  duration_ms: 0.284908
+  type: 'test'
+  ...
+# Subtest: unused SESSION KV and IMAGES bindings stay out of the generated Worker config
+ok 290 - unused SESSION KV and IMAGES bindings stay out of the generated Worker config
+  ---
+  duration_ms: 0.997899
+  type: 'test'
+  ...
+# Subtest: youtube endpoint reads Worker env from cloudflare:workers, not the removed locals.runtime
+ok 291 - youtube endpoint reads Worker env from cloudflare:workers, not the removed locals.runtime
+  ---
+  duration_ms: 0.918204
+  type: 'test'
+  ...
+# Subtest: youtube endpoint fails closed: 503 without key, 502 when upstream is unreachable
+ok 292 - youtube endpoint fails closed: 503 without key, 502 when upstream is unreachable
+  ---
+  duration_ms: 0.269898
+  type: 'test'
+  ...
+1..292
+# tests 292
+# suites 0
+# pass 292
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 3194.432662
