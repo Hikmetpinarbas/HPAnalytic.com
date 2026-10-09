@@ -5,16 +5,16 @@ import TacticalCanvas from '../components/TacticalCanvas.astro';
 import EvidenceBadge from '../components/EvidenceBadge.astro';
 import {getCollection} from 'astro:content';
 import {isPublicEditorialItem} from '../lib/site-editorial-status.mjs';
-import {getUpcomingMatches, FOOTBALL_SCOPE} from '../lib/football-data.mjs';
+import {getUpcomingMatches, matchCentreView} from '../lib/football-data.mjs';
 export const prerender = true;
 
 const articles=(await getCollection('articles',isPublic)).filter(entry=>isPublicEditorialItem(entry.data)).sort((a,b)=>+b.data.date-+a.data.date);
 const featuredStory=articles.find(a=>a.data.section==='analysis' && a.data.featured) ?? articles.find(a=>a.data.featured) ?? articles[0];
 const footballToken=import.meta.env.HPA_FOOTBALL_DATA_TOKEN;
 const matchCentre=await getUpcomingMatches({token:footballToken});
-type MatchCentreItem={competition:string;utcDate:string;home:string;away:string;status:string};
-const matchRows=matchCentre.matches as MatchCentreItem[];
-const matchTime=(utcDate:string)=>new Intl.DateTimeFormat('tr-TR',{timeZone:'Europe/Istanbul',day:'2-digit',month:'short',hour:'2-digit',minute:'2-digit'}).format(new Date(utcDate));
+const matchView=matchCentreView(matchCentre);
+type MatchCentreRow={competition:string;utcDate:string;home:string;away:string;time:string;statusLabel:string};
+const matchRows=matchView.rows as MatchCentreRow[];
 ---
 <BaseLayout title="HPAnalytic — Hikmet Pınarbaş Futbol Analizi" description="Hikmet Pınarbaş'tan kanıt, mekanizma ve bağlam temelli bağımsız futbol analizi.">
 <section class="hero hero-entry">
@@ -43,11 +43,11 @@ const matchTime=(utcDate:string)=>new Intl.DateTimeFormat('tr-TR',{timeZone:'Eur
   <aside class="featured-question"><small>İDDİA SINIRI</small><p>Gözlediğimiz olay ile oyunun tamamı aynı şey değildir. Kanıtın gördüğü alan kadar, göremediği alan da gösterilir.</p></aside>
 </section>}
 
-<section class="match-centre" aria-labelledby="match-centre-title">
-  <header class="match-centre-head"><div><p class="kicker">MAÇ MERKEZİ · 7 GÜNLÜK PENCERE</p><h2 id="match-centre-title">GELECEK MAÇLAR</h2><p>Beş Büyük Lig + UEFA + Türkiye kapsamındaki yakın futbol takvimi. Yalnız doğrulanmış kaynak verisi gösterilir.</p></div><div class="match-source"><span class={matchCentre.status==='READY'?'source-ready':'source-off'}>{matchCentre.status==='READY'?'KAYNAK HAZIR':'KAYNAK KULLANILAMIYOR'}</span><small>{matchCentre.source} · Europe/Istanbul</small></div></header>
-  <div class="scope-strip" aria-label="HPAnalytic futbol kapsamı">{FOOTBALL_SCOPE.labels.map(label=><span>{label}</span>)}</div>
-  {matchRows.length ? <div class="fixture-list">{matchRows.map((m:MatchCentreItem,i:number)=><article class="fixture-row"><span class="fixture-index">{String(i+1).padStart(2,'0')}</span><div class="fixture-meta"><small>{m.competition}</small><time datetime={m.utcDate}>{matchTime(m.utcDate)}</time></div><div class="fixture-teams"><b>{m.home}</b><span>—</span><b>{m.away}</b></div><span class="fixture-status">{m.status}</span></article>)}</div> : <div class="fixture-empty"><b>DOĞRULANMIŞ MAÇ VERİSİ ŞU ANDA GÖSTERİLEMİYOR.</b><p>{matchCentre.status==='READY'?'Seçili yedi günlük pencerede bu kaynakta eşleşen fikstür bulunamadı.':'Kaynak yapılandırması veya erişimi hazır olduğunda fikstür burada otomatik görünecek.'}</p></div>}
-</section>
+{matchView.visible && <section class="match-centre" aria-labelledby="match-centre-title">
+  <header class="match-centre-head"><div><p class="kicker">MAÇ MERKEZİ · 7 GÜNLÜK PENCERE</p><h2 id="match-centre-title">GELECEK MAÇLAR</h2><p>Beş büyük lig ve UEFA Şampiyonlar Ligi takvimi. Yalnız kaynak verisi gösterilir; liste canlı değildir, aşağıdaki veri zamanındaki durumu yansıtır.</p></div><div class="match-source"><span class="source-ready">VERİ ZAMANI · {matchView.dataTime}</span><small>{matchCentre.source} · Europe/Istanbul</small></div></header>
+  <div class="scope-strip" aria-label="Kaynağın kapsadığı yarışmalar">{matchView.coveredLabels.map(label=><span>{label}</span>)}</div>
+  {matchRows.length ? <div class="fixture-list">{matchRows.map((m:MatchCentreRow,i:number)=><article class="fixture-row"><span class="fixture-index">{String(i+1).padStart(2,'0')}</span><div class="fixture-meta"><small>{m.competition}</small><time datetime={m.utcDate}>{m.time}</time></div><div class="fixture-teams"><b>{m.home}</b><span>—</span><b>{m.away}</b></div><span class="fixture-status">{m.statusLabel}</span></article>)}</div> : <div class="fixture-empty"><b>BU PENCEREDE MAÇ YOK.</b><p>Veri zamanında, seçili yedi günlük pencerede kaynakta eşleşen fikstür bulunamadı.</p></div>}
+</section>}
 <section class="evidence-bridge" aria-labelledby="evidence-bridge-title">
   <div class="evidence-bridge__head">
     <p class="kicker">KANITTAN AÇIKLAMAYA</p>
