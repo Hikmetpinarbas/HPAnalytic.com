@@ -9,6 +9,8 @@ import {getUpcomingMatches, matchCentreView} from '../lib/football-data.mjs';
 export const prerender = true;
 
 const articles=(await getCollection('articles',isPublic)).filter(entry=>isPublicEditorialItem(entry.data)).sort((a,b)=>+b.data.date-+a.data.date);
+// The analysis CTA is offered only when an analysis exists (EMPTY SURFACE = HIDDEN SURFACE).
+const hasAnalysis=articles.some(a=>a.data.section==='analysis');
 const featuredStory=articles.find(a=>a.data.section==='analysis' && a.data.featured) ?? articles.find(a=>a.data.featured) ?? articles[0];
 const footballToken=import.meta.env.HPA_FOOTBALL_DATA_TOKEN;
 const matchCentre=await getUpcomingMatches({token:footballToken});
@@ -23,8 +25,8 @@ const matchRows=matchView.rows as MatchCentreRow[];
     <h1>OYUNU<br/><em>SONUÇTAN</em><br/>ÖNCE OKU.</h1>
     <p class="lead">Futbolu skor tabelasından değil; yapı, ilişki, karar, kanıt ve bağlam üzerinden okuyan bağımsız futbol analizi ve araştırma yayını.</p>
     <div class="hero-actions">
-      <a class="action-primary" href="/analysis">ANALİZLERİ KEŞFET <span aria-hidden="true">↗</span></a>
-      {featuredStory && <a class="action-secondary" href={"/articles/"+featuredStory.id}>YENİ YAZIYI OKU <span aria-hidden="true">→</span></a>}
+      {hasAnalysis && <a class="action-primary" href="/analysis">ANALİZLERİ KEŞFET <span aria-hidden="true">↗</span></a>}
+      {featuredStory && <a class={hasAnalysis?'action-secondary':'action-primary'} href={"/articles/"+featuredStory.id}>YENİ YAZIYI OKU <span aria-hidden="true">→</span></a>}
     </div>
     <p class="hero-signature">ÖNCE FUTBOL <span>·</span> GÜVENDEN ÖNCE KANIT</p>
   </div>
