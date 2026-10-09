@@ -1,7 +1,9 @@
 ---
 import TacticalCanvas from './TacticalCanvas.astro';
 const stageNames=['START','MOVEMENT','REACTION','ACTION','OUTCOME'];
-const {stages=[],title='Oyun mekanizması',evidenceLabel='ŞEMATİK',trackingClaim=false}=Astro.props;
+interface Stage { label?: string; title?: string; description?: string; evidenceLabel?: string; trackingClaim?: boolean; claim?: string; players?: unknown; forces?: unknown; reveal?: string; ball?: unknown }
+interface Props { stages?: Stage[]; title?: string; evidenceLabel?: string; trackingClaim?: boolean }
+const {stages=[],title='Oyun mekanizması',evidenceLabel='ŞEMATİK',trackingClaim=false}=Astro.props as Props;
 ---
 <section class="hp-sequence" aria-label={title}>
   <header class="hp-sequence__head"><p>HPANALYTIC / SEQUENCE</p><h2>{title}</h2><span>{evidenceLabel}</span></header>

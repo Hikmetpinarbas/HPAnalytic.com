@@ -1,5 +1,8 @@
 ---
-const {items=[]}=Astro.props;
+interface RelatedArticle { id: string; data: { title: string; description: string } }
+interface Relation { article: RelatedArticle; reason: string; axis?: string; shared: string[] }
+interface Props { items?: Relation[] }
+const {items=[]}=Astro.props as Props;
 ---
 {items.length>0 && <aside class="hp-relations" aria-labelledby="hp-relations-title">
   <header><p>KNOWLEDGE RELATIONS</p><h2 id="hp-relations-title">Bu düşüncenin devam ettiği yerler</h2></header>

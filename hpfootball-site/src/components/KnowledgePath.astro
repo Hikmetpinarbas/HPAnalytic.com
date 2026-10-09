@@ -1,5 +1,8 @@
 ---
-const {items=[]}=Astro.props;
+interface RelatedArticle { id: string; data: { title: string; description: string } }
+interface Relation { article: RelatedArticle; reason: string; axis?: string; shared: string[] }
+interface Props { items?: Relation[] }
+const {items=[]}=Astro.props as Props;
 ---
 {items.length>0 && <nav class="hp-knowledge-path" aria-labelledby="hp-knowledge-path-title">
   <header><p>FUTBOL BİLGİ AĞI</p><h2 id="hp-knowledge-path-title">Bu fikir başka nerelere açılıyor?</h2><span>Bir tavsiye algoritması değil; editoryal olarak tanımlanmış futbol bağlantıları.</span></header>
