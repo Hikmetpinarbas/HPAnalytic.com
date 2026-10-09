@@ -718,4 +718,10 @@ linear-gradient(180deg,#050505 0%,#070604 38%,#050505 100%);}
   .brand b { white-space: nowrap; }
   .site-header { padding-inline: 12px; }
   .mobile-nav-trigger { min-width: 76px; }
+  /* Spacing subset of brand_delta 9e7109f: with the header on one row the
+     MENU trigger overflowed 320px by 5px. Identity sizes are unchanged. */
+  .site-header { gap: 8px; }
+  .site-header > .brand { gap: 8px; }
+  .header-actions { gap: 6px; }
+  .mobile-nav-trigger { padding-inline: 9px; gap: 8px; }
 }

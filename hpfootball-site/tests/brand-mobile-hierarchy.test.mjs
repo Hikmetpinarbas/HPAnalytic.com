@@ -27,3 +27,10 @@ test('small mobile header preserves the HPAnalytic wordmark without reducing tap
   assert.match(css, /@media\s*\(max-width:\s*420px\)[\s\S]*?\.mobile-nav-trigger\s*\{[^}]*min-width:\s*76px;/);
   assert.match(css, /\.mobile-nav-trigger\s*\{[^}]*min-height:\s*var\(--tap\);/);
 });
+
+test('one-row header at 320px keeps controls inside the viewport without shrinking the identity', () => {
+  const narrow = css.match(/@media \(max-width: 420px\) \{\n  \.brand b \{ white-space: nowrap; \}[\s\S]*?\n\}/)?.[0] ?? '';
+  assert.match(narrow, /\.header-actions \{ gap: 6px; \}/);
+  assert.match(narrow, /\.mobile-nav-trigger \{ padding-inline: 9px; gap: 8px; \}/);
+  assert.doesNotMatch(narrow, /\.hp-mark|font-size/);
+});
