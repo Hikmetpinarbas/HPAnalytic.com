@@ -12,10 +12,15 @@ const kinds = [
 <div class="listing">
   <header class="page-head">
     <p class="kicker">VISUAL LAB</p>
-    <h1 class="page-title">Görsel kanıt,<br/>sahte kesinlik olmadan.</h1>
-    <p class="lead">Saha geometrisi, süreç akışı, event dağılımı, rol-fonksiyon ve evidence sınırları için responsive SVG yüzeyleri. Görsel, kanıt kapasitesini yükseltmez.</p>
+    <h1 class="page-title">Oyunu gör.<br/>İlişkiyi çöz.</h1>
+    <p class="lead">Saha geometrisi, süreç akışı, event dağılımı, rol-fonksiyon ve evidence sınırları için responsive SVG yüzeyleri. Saha üzerindeki ilişkileri açıklayan görsel çalışmalar.</p>
   </header>
-  <TacticalCanvas id="lab-diagram" caption="IFAB Law 1 ölçeğinde saha (105 × 68 m). Akışlar kavramsaldır; çizgi stili kanıt sınıfını taşır." />
+  <section class="subsection" aria-labelledby="visual-lab-schematic-title">
+    <h2 id="visual-lab-schematic-title">Şematik saha anlatımı</h2>
+    <p>Oyunun yapısını, aksiyon bağlantılarını ve süreçleri görsel olarak incele.</p>
+    <TacticalCanvas />
+    <a href="/analysis">Kanıta bağlı analizleri incele →</a>
+  </section>
   <ul class="frame-grid subsection">
     {kinds.map(([name, text]) => <li><b>{name}</b><p>{text}</p></li>)}
   </ul>

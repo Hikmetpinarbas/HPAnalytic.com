@@ -16,6 +16,8 @@ const articles=defineCollection({
     section:z.enum(['analysis','scouting','culture','method']),
     evidenceClass:z.enum(['DIRECT','DERIVED','PROXY','EDITORIAL']), claimCeiling:z.string(),
     nextQuestion:z.object({question:z.string(),href:z.string().startsWith('/')}).optional(),
+    relations:z.object({mechanisms:z.array(z.string()).default([]),teams:z.array(z.string()).default([]),roles:z.array(z.string()).default([]),researchLines:z.array(z.string()).default([])}).optional(),
+
     featured:z.boolean().default(false), draft:z.boolean().default(false),
     articleKind:z.enum(['DEEP_ANALYSIS','EXPLAINER','EVIDENCE_REVIEW','FOOTBALL_SCIENCE','MYTH_REALITY','DATA_STORY','VIDEO_INTELLIGENCE','HISTORICAL_RECONSTRUCTION','CROSS_DOMAIN_ESSAY']).optional(),
     series:z.enum(['MATCH_ANALYSIS','MECHANISM_EXPLAINER','METRIC_EXPLAINER','EVIDENCE_REVIEW','WHAT_TO_WATCH']).optional(),

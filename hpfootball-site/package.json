@@ -8,6 +8,7 @@
     "preview": "astro preview",
     "check": "astro check",
     "test": "node --test tests/*.test.mjs",
+    "repo:health": "node scripts/repo-health.mjs",
     "studio": "HP_STUDIO=1 astro dev --host 127.0.0.1",
     "article:stage": "node scripts/article-stage.mjs",
     "article:publish": "node scripts/article-publish.mjs"

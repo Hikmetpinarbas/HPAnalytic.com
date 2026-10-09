@@ -16,6 +16,9 @@ const {a,all}=Astro.props; const {Content}=await render(a); const {newer,older}=
 const section=a.data.section; const sectionLabel=SECTION_LABELS[section as keyof typeof SECTION_LABELS]??displaySection(section); const sectionRoute=SECTION_ROUTES[section as keyof typeof SECTION_ROUTES];
 const evidence=evidenceMeta(a.data.evidenceClass); const minutes=a.data.readingMinutes??readingMinutes(a.body); const isoDate=a.data.date.toISOString().slice(0,10);
 const topics=a.data.topics??[]; const sourceRefs=a.data.sourceRefs??[]; const counterevidence=a.data.counterevidence??[];
+const publicArticleIds=new Set(all.map((entry:typeof a)=>entry.id));
+const nextQuestion=a.data.nextQuestion;
+const safeNextQuestion=nextQuestion && /^\/articles\/[a-z0-9-]+$/.test(nextQuestion.href) && publicArticleIds.has(nextQuestion.href.slice('/articles/'.length)) ? nextQuestion : null;
 const articleKindLabel=a.data.articleKind?displayArticleKind(a.data.articleKind):''; const seriesLabel=a.data.series?displaySeries(a.data.series):'';
 const visualAssets=(a.data.visualAssets??[]).filter(v=>['OWNED','LICENSED','EDITORIAL_LICENSED','PUBLIC_DOMAIN','ORIGINAL'].includes(String(v.rights_status||'').toUpperCase()));
 const dataInsights=a.data.dataInsights??[]; const governed=a.data.source_system==='HP_CONTENT_INTELLIGENCE'||Boolean(a.data.articleKind);
@@ -27,7 +30,7 @@ const site=Astro.site??Astro.url; const canonicalArticle=new URL(Astro.url.pathn
 <header class="article-head"><p class="kicker">{sectionRoute?<a href={sectionRoute}>{sectionLabel}</a>:sectionLabel}</p><h1>{a.data.title}</h1><p class="standfirst">{a.data.description}</p>
 <p class="article-meta"><span>{a.data.author??'Hikmet Pınarbaş'}</span><time datetime={isoDate}>{a.data.date.toLocaleDateString('tr-TR',{day:'numeric',month:'long',year:'numeric',timeZone:'UTC'})}</time><span>{minutes} dk okuma</span>{articleKindLabel&&<span>{articleKindLabel}</span>}{seriesLabel&&seriesLabel!==articleKindLabel&&<span>{seriesLabel}</span>}</p>
 {topics.length>0&&<div class="article-topics" aria-label="Konular">{topics.map(topic=><span>{topic}</span>)}</div>}<EvidenceBadge evidenceClass={a.data.evidenceClass} claimCeiling={a.data.claimCeiling}/></header>
-{governed&&<p class="article-evidence-signal"><span aria-hidden="true">◆</span> KANIT SINIRI KORUNUYOR{a.data.sourceClaimsValidated===false&&<span class="visually-hidden"> — kaynaklardan çıkarılan ifadeler tek başına doğrulanmış futbol gerçeği değildir</span>}</p>}
+
 <div class="article-share" data-share-url={canonicalArticle} data-share-title={a.data.title}>
   <button type="button" class="article-share-button" aria-label="Bu yazıyı paylaş">YAZIYI PAYLAŞ <span aria-hidden="true">↗</span></button>
   <span class="article-share-status" aria-live="polite"></span>
@@ -53,13 +56,15 @@ const site=Astro.site??Astro.url; const canonicalArticle=new URL(Astro.url.pathn
   });
 }
 </script>
+{a.data.sourceClaimsValidated!==true&&<aside class="article-source-validation" role="note"><strong>Kaynak doğrulama sınırı:</strong> Bu yazıdaki kaynak iddiaları bağımsız doğrulanmış futbol gerçeği değildir; doğrulama kapsamı tamamlanmamıştır.</aside>}
 <div class="prose"><Content/></div>
 {a.data.mechanismCard&&<MechanismCard card={a.data.mechanismCard} />}
 {visualAssets.length>0&&<section class="article-visual-evidence" aria-labelledby="visual-evidence-title"><p class="kicker">GÖRSEL KANIT</p><h2 id="visual-evidence-title">Sahadan açıklayıcı kareler</h2><div class="visual-evidence-grid">{visualAssets.map(v=><figure class="visual-evidence-card"><img src={v.src} alt={v.caption} loading="lazy"/><figcaption><b>{v.caption}</b><p>{v.claim_supported}</p><small>Hak durumu: {displayRights(v.rights_status)} · {v.truth_role==='OBSERVED_FRAME'?'Gözlenen kare':'Açıklayıcı görsel'}</small></figcaption></figure>)}</div></section>}
 {dataInsights.length>0&&<section class="article-data-notes" aria-labelledby="data-notes-title"><p class="kicker">VERİ NOTU</p><h2 id="data-notes-title">Sayı ne söylüyor?</h2><div class="data-note-grid">{dataInsights.map(d=><article class="data-note-card"><small>SORU</small><h3>{d.question}</h3><div class="data-note-metric">{d.metric}</div><p><b>HP yorumu:</b> {d.interpretation}</p><p><b>Sınır:</b> {d.limit}</p>{d.source_label&&<small>{d.source_label}</small>}</article>)}</div></section>}
 {counterevidence.length>0&&<details class="article-disclosure article-counterevidence"><summary>Karşı kanıt ve sınırlar <span aria-hidden="true">＋</span></summary><div class="disclosure-ghost"><ul>{counterevidence.map(item=><li>{item}</li>)}</ul></div></details>}
 {sourceRefs.length>0&&<details class="article-disclosure article-sources"><summary>Kaynakları incele <span aria-hidden="true">＋</span></summary><div class="disclosure-ghost"><ol>{sourceRefs.map(source=><li>{/https?:\/\//.test(source.locator)?<a href={source.locator} rel="noreferrer">{source.title}</a>:<span>{source.title}</span>}<small>{displayRights(source.rights)} · {displayClaimCeiling(source.claim_ceiling)}</small></li>)}</ol></div></details>}
-{a.data.nextQuestion&&<aside class="next-question" aria-labelledby="next-question-title"><p class="next-question-label">SIRADAKİ SORU</p><h2 id="next-question-title">{a.data.nextQuestion.question}</h2><a href={a.data.nextQuestion.href}>Sorunun izini sür <span aria-hidden="true">→</span></a></aside>}
+{safeNextQuestion&&<aside class="next-question" aria-labelledby="next-question-title"><p class="next-question-label">SIRADAKİ SORU</p><h2 id="next-question-title">{safeNextQuestion.question}</h2><a href={safeNextQuestion.href}>Sorunun izini sür <span aria-hidden="true">→</span></a></aside>}
+
 <aside class="claim-boundary" aria-labelledby="claim-boundary-title"><h2 id="claim-boundary-title">KANIT SINIRI</h2><p>{evidence.summary}</p><p>Bu yazının iddia sınırı: <strong>{displayClaimCeiling(a.data.claimCeiling)}</strong>.</p></aside>
 {(newer||older)&&<nav class="adjacent-nav" aria-label="Önceki ve sonraki yazılar">{newer&&<a class="newer" href={'/articles/'+newer.id} rel="prev"><span>← DAHA YENİ</span><b>{newer.data.title}</b></a>}{older&&<a class="older" href={'/articles/'+older.id} rel="next"><span>DAHA ESKİ →</span><b>{older.data.title}</b></a>}</nav>}
 </article></BaseLayout>
