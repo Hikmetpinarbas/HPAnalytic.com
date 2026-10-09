@@ -1,9 +1,14 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import SectionListing from '../components/SectionListing.astro';
+import { isPublic } from '../lib/public-content.mjs';
+import { isPublicEditorialItem } from '../lib/site-editorial-status.mjs';
+import { getCollection } from 'astro:content';
 export const prerender = true;
+// An empty section page stays reachable but is not offered to search engines.
+const hasItems = (await getCollection('articles', isPublic)).some((a) => isPublicEditorialItem(a.data) && a.data.section === 'culture');
 ---
-<BaseLayout title="Football Culture — HPAnalytic" description="Oyunun tarihi, kültürü, insanları ve uluslararası bağlamı.">
+<BaseLayout title="Football Culture — HPAnalytic" description="Oyunun tarihi, kültürü, insanları ve uluslararası bağlamı." noindex={!hasItems}>
 <div class="listing">
   <header class="page-head">
     <p class="kicker">FOOTBALL CULTURE</p>
