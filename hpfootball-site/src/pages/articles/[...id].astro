@@ -29,7 +29,7 @@ const site=Astro.site??Astro.url; const canonicalArticle=new URL(Astro.url.pathn
 <header class="article-head"><p class="kicker">{sectionRoute?<a href={sectionRoute}>{sectionLabel}</a>:sectionLabel}</p><h1>{a.data.title}</h1><p class="standfirst">{a.data.description}</p>
 <p class="article-meta"><span>{a.data.author??'Hikmet Pınarbaş'}</span><time datetime={isoDate}>{a.data.date.toLocaleDateString('tr-TR',{day:'numeric',month:'long',year:'numeric',timeZone:'UTC'})}</time><span>{minutes} dk okuma</span>{articleKindLabel&&<span>{articleKindLabel}</span>}{seriesLabel&&seriesLabel!==articleKindLabel&&<span>{seriesLabel}</span>}</p>
 {topics.length>0&&<div class="article-topics" aria-label="Konular">{topics.map(topic=><span>{topic}</span>)}</div>}<EvidenceBadge evidenceClass={a.data.evidenceClass} claimCeiling={a.data.claimCeiling}/></header>
-{governed&&<p class="article-evidence-signal"><span aria-hidden="true">◆</span> KANIT SINIRI KORUNUYOR{a.data.sourceClaimsValidated===false&&<span class="visually-hidden"> — kaynaklardan çıkarılan ifadeler tek başına doğrulanmış futbol gerçeği değildir</span>}</p>}
+
 <div class="article-share" data-share-url={canonicalArticle} data-share-title={a.data.title}>
   <button type="button" class="article-share-button" aria-label="Bu yazıyı paylaş">YAZIYI PAYLAŞ <span aria-hidden="true">↗</span></button>
   <span class="article-share-status" aria-live="polite"></span>
@@ -55,6 +55,7 @@ const site=Astro.site??Astro.url; const canonicalArticle=new URL(Astro.url.pathn
   });
 }
 </script>
+{a.data.sourceClaimsValidated!==true&&<aside class="article-source-validation" role="note"><strong>Kaynak doğrulama sınırı:</strong> Bu yazıdaki kaynak iddiaları bağımsız doğrulanmış futbol gerçeği değildir; doğrulama kapsamı tamamlanmamıştır.</aside>}
 <div class="prose"><Content/></div>
 {a.data.mechanismCard&&<MechanismCard card={a.data.mechanismCard} />}
 {visualAssets.length>0&&<section class="article-visual-evidence" aria-labelledby="visual-evidence-title"><p class="kicker">GÖRSEL KANIT</p><h2 id="visual-evidence-title">Sahadan açıklayıcı kareler</h2><div class="visual-evidence-grid">{visualAssets.map(v=><figure class="visual-evidence-card"><img src={v.src} alt={v.caption} loading="lazy"/><figcaption><b>{v.caption}</b><p>{v.claim_supported}</p><small>Hak durumu: {displayRights(v.rights_status)} · {v.truth_role==='OBSERVED_FRAME'?'Gözlenen kare':'Açıklayıcı görsel'}</small></figcaption></figure>)}</div></section>}

@@ -12,7 +12,7 @@ test('article schema supports one optional authored next question with a real in
   assert.match(schema, /nextQuestion\s*:\s*z\.object\(\{[\s\S]*question\s*:\s*z\.string\(\)[\s\S]*href\s*:\s*z\.string\(\)[\s\S]*\}\)\.optional\(\)/);
 });
 
-test('article renders next question only when it is authored', async () => {
+test('article renders next question only when authored and destination is public', async () => {
   const article = await source(articleUrl);
   assert.match(article, /resolveNextQuestion\(a\.data\.nextQuestion,/);
   assert.match(article, /\{nextQuestion\s*&&/);

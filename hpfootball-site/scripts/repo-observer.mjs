@@ -1,0 +1,10 @@
+import {readFileSync} from 'node:fs';
+import {createHash} from 'node:crypto';
+const path=process.argv[2];
+if(!path)process.exit(2);
+const data=JSON.parse(readFileSync(path,'utf8'));
+if(data.repository!=='Hikmetpinarbas/HPAnalytic.com'||!/^[a-f0-9]{40}$/.test(data.sha||''))process.exit(2);
+const runs=(data.runs||[]).map(x=>({id:String(x.id),status:String(x.status),conclusion:String(x.conclusion)})).sort((a,b)=>a.id.localeCompare(b.id));
+const findings=runs.some(x=>x.conclusion==='failure')?['REVIEW_CI_FAILURE']:runs.length?[]:['MISSING_CI_EVIDENCE'];
+const fingerprint=createHash('sha256').update(JSON.stringify({sha:data.sha,runs})).digest('hex');
+console.log(JSON.stringify({schema:'hp-observer/v1',repository:data.repository,sha:data.sha,runs,findings,fingerprint,source:'OFFLINE_SNAPSHOT_NOT_LIVE',mode:'READ_ONLY'},null,2));

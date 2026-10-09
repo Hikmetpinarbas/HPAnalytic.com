@@ -6,11 +6,19 @@ import EvidenceBadge from '../components/EvidenceBadge.astro';
 import {getCollection} from 'astro:content';
 import {isPublicEditorialItem} from '../lib/site-editorial-status.mjs';
 import {getUpcomingMatches, matchCentreView} from '../lib/football-data.mjs';
+import {buildVisibleNavigation, buildUtilityNavigation} from '../lib/site-surfaces.mjs';
 export const prerender = true;
 
 const articles=(await getCollection('articles',isPublic)).filter(entry=>isPublicEditorialItem(entry.data)).sort((a,b)=>+b.data.date-+a.data.date);
 // The analysis CTA is offered only when an analysis exists (EMPTY SURFACE = HIDDEN SURFACE).
 const hasAnalysis=articles.some(a=>a.data.section==='analysis');
+const hikmetEditorial=articles.find(a=>a.data.section==='culture');
+// Discovery links follow the navigation gate: a surface without admitted content is not advertised.
+const researchItems=(await getCollection('research',isPublic)).filter(entry=>isPublicEditorialItem(entry.data));
+const visualItems=(await getCollection('visuals',isPublic)).filter(entry=>isPublicEditorialItem(entry.data));
+const articleSections:Record<string,number>={};
+for(const a of articles) articleSections[a.data.section]=(articleSections[a.data.section]||0)+1;
+const visibleSurfaces=new Set([...buildVisibleNavigation({articleSections,researchCount:researchItems.length,visualCount:visualItems.length}),...buildUtilityNavigation({articleCount:articles.length})].map(item=>item.href));
 const featuredStory=articles.find(a=>a.data.section==='analysis' && a.data.featured) ?? articles.find(a=>a.data.featured) ?? articles[0];
 const footballToken=import.meta.env.HPA_FOOTBALL_DATA_TOKEN;
 const matchCentre=await getUpcomingMatches({token:footballToken});
@@ -42,9 +50,22 @@ const matchRows=matchView.rows as MatchCentreRow[];
     <p>{featuredStory.data.description}</p>
     <a href={`/articles/${featuredStory.id}`} class="story-link">YAZIYI VE KANITI AÇ <span aria-hidden="true">→</span></a>
   </div>
-  <aside class="featured-question"><small>İDDİA SINIRI</small><p>Gözlediğimiz olay ile oyunun tamamı aynı şey değildir. Kanıtın gördüğü alan kadar, göremediği alan da gösterilir.</p></aside>
+  <aside class="featured-question"><small>OYUNUN ANAHTARI</small><p>Bir aksiyonun değeri, öncesiyle ve sonrasıyla kurduğu ilişkide saklıdır.</p></aside>
 </section>}
 
+{hikmetEditorial && <section class="hikmet-spotlight" aria-labelledby="hikmet-spotlight-title">
+  <div class="hikmet-spotlight__meta"><p class="kicker">HİKMET’TEN · OYUN KÜLTÜRÜ</p><span>EDİTORYAL BAKIŞ</span></div>
+  <div class="hikmet-spotlight__body"><h2 id="hikmet-spotlight-title">{hikmetEditorial.data.title}</h2><p class="hikmet-statement">{hikmetEditorial.data.description}</p><a class="story-link" href={`/articles/${hikmetEditorial.id}`}>YAZIYI OKU <span aria-hidden="true">→</span></a></div>
+</section>}
+{['/analysis','/research','/scouting','/archive'].some(h=>visibleSurfaces.has(h)) && <section class="launch-directory" aria-labelledby="launch-directory-title">
+  <div class="launch-directory__intro"><p class="kicker">HPANALYTIC · KEŞİF</p><h2 id="launch-directory-title">FUTBOLU BİR SORUDAN OKUMAYA BAŞLA.</h2><p>Yayımlanmış analizden kaynaklara, araştırma yönteminden oyuncu değerlendirme disiplinine geç.</p></div>
+  <nav class="launch-directory__links" aria-label="İçeriği keşfet">
+    {visibleSurfaces.has('/analysis') && <a href="/analysis"><span>01 / ANALİZ</span><b>Oyunu çözümle</b><small>Yayımlanmış futbol analizleri</small><span aria-hidden="true">↗</span></a>}
+    {visibleSurfaces.has('/research') && <a href="/research"><span>02 / ARAŞTIRMA</span><b>Kanıtı sorgula</b><small>Kaynak, yöntem ve belirsizlik</small><span aria-hidden="true">↗</span></a>}
+    {visibleSurfaces.has('/scouting') && <a href="/scouting"><span>03 / SCOUTING</span><b>Rolü ve bağlamı incele</b><small>Oyuncu kararına analitik yaklaşım</small><span aria-hidden="true">↗</span></a>}
+    {visibleSurfaces.has('/archive') && <a href="/archive"><span>04 / ARŞİV</span><b>Yayımlananları oku</b><small>Mevcut onaylı içerikler</small><span aria-hidden="true">↗</span></a>}
+  </nav>
+</section>}
 {matchView.visible && <section class="match-centre" aria-labelledby="match-centre-title">
   <header class="match-centre-head"><div><p class="kicker">MAÇ MERKEZİ · 7 GÜNLÜK PENCERE</p><h2 id="match-centre-title">GELECEK MAÇLAR</h2><p>Beş büyük lig ve UEFA Şampiyonlar Ligi takvimi. Yalnız kaynak verisi gösterilir; liste canlı değildir, aşağıdaki veri zamanındaki durumu yansıtır.</p></div><div class="match-source"><span class="source-ready">VERİ ZAMANI · {matchView.dataTime}</span><small>{matchCentre.source} · Europe/Istanbul</small></div></header>
   <div class="scope-strip" aria-label="Kaynağın kapsadığı yarışmalar">{matchView.coveredLabels.map(label=><span>{label}</span>)}</div>
@@ -53,15 +74,15 @@ const matchRows=matchView.rows as MatchCentreRow[];
 <section class="evidence-bridge" aria-labelledby="evidence-bridge-title">
   <div class="evidence-bridge__head">
     <p class="kicker">KANITTAN AÇIKLAMAYA</p>
-    <h2 id="evidence-bridge-title">GÖRÜLENİ TAŞI.<br/><em>GÖRÜLMEYENİ ÜRETME.</em></h2>
-    <p>HPAnalytic bir bulguyu yalnız sonuç olarak göstermez. Bağlamı, gözlenen süreci, alternatif açıklamayı ve iddia sınırını aynı yüzeyde tutar.</p>
+    <h2 id="evidence-bridge-title">AKSİYONU GÖR.<br/><em>MEKANİZMAYI ÇÖZ.</em></h2>
+    <p>HPAnalytic bir futbol sorusunu bağlam, aksiyon, süreç ve rakip yanıtı üzerinden inceler.</p>
   </div>
   <div class="evidence-bridge__flow" aria-label="HPAnalytic kanıt sunum modeli">
     <div><span>01</span><b>BAĞLAM</b><p>Maçın ve aksiyonun hangi koşulda oluştuğu.</p></div>
     <div><span>02</span><b>GÖZLENEN</b><p>Veri veya görüntünün gerçekten taşıdığı bulgu.</p></div>
     <div><span>03</span><b>MEKANİZMA?</b><p>Kanıtın desteklediği açıklama; otomatik hüküm değil.</p></div>
     <div><span>04</span><b>KARŞI KANIT</b><p>İlk açıklamayı zayıflatan veya başka yöne açan bulgu.</p></div>
-    <div><span>05</span><b>İDDİA SINIRI</b><p>Bu kanıttan hangi sonucun çıkarılamayacağı.</p></div>
+    <div><span>05</span><b>ANALİST YORUMU</b><p>Bulgunun oyuna ve karar süreçlerine anlamı.</p></div>
   </div>
 </section>
 <section class="research-spotlight" aria-labelledby="research-title">

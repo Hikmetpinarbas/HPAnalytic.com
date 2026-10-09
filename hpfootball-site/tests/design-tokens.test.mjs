@@ -65,3 +65,11 @@ test('homepage principle cells can shrink and wrap at 200% text resize', () => {
   assert.match(css, /\.principles>span\{min-width:0\}/);
   assert.match(css, /\.principles>span\{overflow-wrap:anywhere\}/);
 });
+
+test('every referenced global CSS custom property has a declaration', () => {
+  const source = css.replace(/\/\*[\s\S]*?\*\//g, '');
+  const declared = new Set([...source.matchAll(/--([\w-]+)\s*:/g)].map((m) => m[1]));
+  const referenced = new Set([...source.matchAll(/var\(\s*--([\w-]+)/g)].map((m) => m[1]));
+  const missing = [...referenced].filter((name) => !declared.has(name)).sort();
+  assert.deepEqual(missing, [], 'Undefined CSS custom properties: ' + missing.join(', '));
+});
