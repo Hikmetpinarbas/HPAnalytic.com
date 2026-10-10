@@ -1,4 +1,5 @@
 ---
+import { serializeJsonLd } from '../../lib/json-ld.mjs';
 import { isPublic } from '../../lib/public-content.mjs';
 import { getCollection, render } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
@@ -24,7 +25,7 @@ const dataInsights=a.data.dataInsights??[]; const governed=a.data.source_system=
 const site=Astro.site??Astro.url; const canonicalArticle=new URL(Astro.url.pathname,site).href; const jsonLd={'@context':'https://schema.org','@type':'Article',headline:a.data.title,description:a.data.description,datePublished:a.data.date.toISOString(),inLanguage:a.data.language??'tr',author:{'@type':'Person',name:a.data.author??'Hikmet Pınarbaş'},publisher:{'@type':'Organization',name:'HPAnalytic'},mainEntityOfPage:new URL(Astro.url.pathname,site).href};
 ---
 <BaseLayout title={a.data.title+' — HPAnalytic'} description={a.data.description} section={section} ogType="article" publishedTime={a.data.date}>
-<script slot="head" type="application/ld+json" set:html={JSON.stringify(jsonLd)} />
+<script slot="head" type="application/ld+json" set:html={serializeJsonLd(jsonLd)} />
 <article class="article-page">
 <header class="article-head"><p class="kicker">{sectionRoute?<a href={sectionRoute}>{sectionLabel}</a>:sectionLabel}</p><h1>{a.data.title}</h1><p class="standfirst">{a.data.description}</p>
 <p class="article-meta"><span>{a.data.author??'Hikmet Pınarbaş'}</span><time datetime={isoDate}>{a.data.date.toLocaleDateString('tr-TR',{day:'numeric',month:'long',year:'numeric',timeZone:'UTC'})}</time><span>{minutes} dk okuma</span>{articleKindLabel&&<span>{articleKindLabel}</span>}{seriesLabel&&seriesLabel!==articleKindLabel&&<span>{seriesLabel}</span>}</p>
