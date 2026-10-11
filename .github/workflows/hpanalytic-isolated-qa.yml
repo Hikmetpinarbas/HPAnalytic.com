@@ -7,25 +7,24 @@ jobs:
   qa:
     runs-on: ubuntu-latest
     timeout-minutes: 12
+    defaults:
+      run:
+        working-directory: hpfootball-site
     steps:
       - uses: actions/checkout@v4
-      - name: Verify checkout
+      - name: Verify site source
         shell: bash
         run: |
           set -euo pipefail
-          if [ ! -f package.json ]; then
-            echo "::warning::Site source is not yet present on this isolated branch. Sync the verified project before running QA."
-            exit 0
-          fi
-          node --version
+          test -f package.json || { echo "::error::Missing hpfootball-site/package.json on this branch"; exit 1; }
+          test -f package-lock.json || { echo "::error::Missing hpfootball-site/package-lock.json on this branch"; exit 1; }
       - name: Prepare Node
-        if: hashFiles('package-lock.json') != ''
         uses: actions/setup-node@v4
         with:
           node-version: '24'
           cache: npm
+          cache-dependency-path: hpfootball-site/package-lock.json
       - name: Install, test and build
-        if: hashFiles('package-lock.json') != ''
         run: |
           npm ci
           npm test --if-present
