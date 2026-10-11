@@ -1,0 +1,3 @@
+import test from'node:test';import assert from'node:assert/strict';import{readFileSync}from'node:fs';const h=readFileSync(new URL('../src/pages/index.astro',import.meta.url),'utf8'),c=readFileSync(new URL('../src/styles/global.css',import.meta.url),'utf8');
+test('hikmet spotlight uses a real public culture article',()=>{assert.match(h,/hikmetEditorial/);assert.match(h,/section==='culture'/);assert.match(h,/class="hikmet-spotlight"/);assert.match(h,/HİKMET’TEN/);assert.match(h,/hikmetEditorial\.id/)});
+test('hikmet spotlight has responsive editorial hierarchy',()=>{assert.match(c,/\.hikmet-spotlight\{/);assert.match(c,/\.hikmet-statement/);assert.match(c,/@media\(max-width:560px\)[\s\S]*\.hikmet-spotlight/)});
