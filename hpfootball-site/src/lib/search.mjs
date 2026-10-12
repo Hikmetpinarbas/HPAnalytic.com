@@ -53,6 +53,13 @@ export function searchDocuments(documents, query, { limit = 50 } = {}) {
 }
 
 // Server-rendered pagination: clamp untrusted page numbers and keep a stable result order.
+/**
+ * @template T
+ * @param {T[]} results
+ * @param {string | number | null} requestedPage
+ * @param {number} [pageSize]
+ * @returns {{ page: number, totalPages: number, total: number, items: T[] }}
+ */
 export function paginateResults(results, requestedPage, pageSize = 20) {
   const size = Number.isSafeInteger(pageSize) && pageSize > 0 ? Math.min(pageSize, 100) : 20;
   const totalPages = Math.max(1, Math.ceil(results.length / size));
