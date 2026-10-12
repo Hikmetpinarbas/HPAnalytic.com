@@ -1,0 +1,23 @@
+{
+  "schema_version": "HPANALYTIC_PSYCHOLOGY_GATE_V1",
+  "article_id": "launch-series-01-counterpress",
+  "authority": "CANDIDATE_REVIEW",
+  "status": "PASS",
+  "reviewer_scope": "EDITORIAL_PSYCHOLOGY_COGNITIVE_SAFETY",
+  "dimensions": {
+    "observation_intention_boundary": "PASS",
+    "evidence_perception_boundary": "PASS",
+    "autonomy_safety": "PASS",
+    "cognitive_integrity": "PASS",
+    "visual_truth_boundary": "PASS"
+  },
+  "rationale": [
+    "Kısa geri kazanım süresi teknik ekip niyeti veya karşı pres kalitesi olarak yükseltilmiyor.",
+    "Başarılı sonuç ile nedensel mekanizma ayrılıyor; alternatif açıklamalar görünür tutuluyor.",
+    "Görsel sözleşme aynı sonuçtan aynı mekanizma çıkarımını engelliyor."
+  ],
+  "limits": [
+    "PASS is a cognitive/editorial safety verdict, not football-truth validation.",
+    "PASS does not grant HUMAN_APPROVED, site admission, deploy or publication authority."
+  ]
+}

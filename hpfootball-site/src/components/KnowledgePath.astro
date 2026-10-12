@@ -1,0 +1,15 @@
+---
+interface RelatedArticle { id: string; data: { title: string; description: string } }
+interface Relation { article: RelatedArticle; reason: string; axis?: string; shared: string[] }
+interface Props { items?: Relation[] }
+const {items=[]}=Astro.props as Props;
+---
+{items.length>0 && <nav class="hp-knowledge-path" aria-labelledby="hp-knowledge-path-title">
+  <header><p>FUTBOL BİLGİ AĞI</p><h2 id="hp-knowledge-path-title">Bu fikir başka nerelere açılıyor?</h2><span>Bir tavsiye algoritması değil; editoryal olarak tanımlanmış futbol bağlantıları.</span></header>
+  <ol>{items.map((item,index)=><li>
+    <a href={'/articles/'+item.article.id}>
+      <div class="hp-knowledge-path__index">{String(index+1).padStart(2,'0')}</div>
+      <div><small>BAĞLANTI NEDENİ / {item.reason}</small><h3>{item.article.data.title}</h3><p>{item.article.data.description}</p><b>{item.shared.join(' · ')} →</b></div>
+    </a>
+  </li>)}</ol>
+</nav>}

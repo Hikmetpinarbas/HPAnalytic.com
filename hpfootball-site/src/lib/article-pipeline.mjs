@@ -3,6 +3,7 @@ import path from 'node:path';
 import { createHash } from 'node:crypto';
 import { normalizeContentIntelligenceArticle } from './article-intake-contract.mjs';
 import { admitLocalContent } from './site-admission.mjs';
+import { applyPsychologyReview } from './editorial-psychology-gate.mjs';
 
 const SITE_ROOT=path.resolve(path.dirname(new URL(import.meta.url).pathname),'../..');
 
@@ -57,7 +58,7 @@ export async function stageArticleRun(runDir,{workspaceRoot=SITE_ROOT,editorial=
   return {status:'STAGED',publish_allowed:false,candidatePath,item:normalized.item};
 }
 
-export async function publishStagedArticle(candidatePath,{workspaceRoot=SITE_ROOT,humanApproval}={}){
+export async function publishStagedArticle(candidatePath,{workspaceRoot=SITE_ROOT,humanApproval,psychologyReview,sourceClaimsValidated=false}={}){
   const staged=await readJson(candidatePath);
   if(!staged.ok)return {status:'BLOCKED',reasons:['STAGED_CANDIDATE_UNAVAILABLE']};
   const candidate=staged.value||{};
@@ -67,7 +68,9 @@ export async function publishStagedArticle(candidatePath,{workspaceRoot=SITE_ROO
   if(humanApproval!=='HUMAN_APPROVED'){
     return {status:'BLOCKED',reasons:['HUMAN_APPROVAL_REQUIRED']};
   }
-  return admitLocalContent(candidate.item,{
+  const reviewedItem=applyPsychologyReview(candidate.item,psychologyReview);
+  reviewedItem.article_meta={...reviewedItem.article_meta,source_claims_validated:sourceClaimsValidated===true};
+  return admitLocalContent(reviewedItem,{
     human_approval:humanApproval,
     collectionRoot:path.join(workspaceRoot,'src','content'),
   });

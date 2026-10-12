@@ -1,0 +1,10 @@
+{
+  "id":"hpa-55-shots-2-goals-release-pack-01","status":"HPA_EXPORT_CANDIDATE",
+  "mechanism":"Şut hacmi benzer görünürken bitirişe ulaşılan koşulların ve yaratılan avantajın aynı olup olmadığı araştırılmalıdır.",
+  "evidence":["Türkiye: 55 şut, 21 isabet, 5.36 xG, 2 gol.","Rakipler: 54 şut, 27 isabet, 7.33 xG, 11 gol."],
+  "counterevidence":["Fransa maçındaki ceza sahası erişimleri, “Türkiye ceza sahasına giremiyor” genellemesini zayıflatır.","Dört maçlık örneklem kalıcı bitiricilik kalitesi veya nedensel mekanizma hükmü kurmak için yeterli değildir."],
+  "context":"HPA dört maçlık final paketinden Release Pack 01 görsel sistem test case'i.","confidence_level":"BOUNDED_CANDIDATE",
+  "claim_ceiling":"Veri farkını ve gözlenen erişim karşı örneğini gösterebilir; bitiricilik kalitesi, savunmayı bozma düzeyi veya nedensel mekanizma hakkında kalıcı hüküm kuramaz.",
+  "visual_explanation":"VERİ → KARŞI KANIT → MEKANİZMA? → İDDİA SINIRI. Şut sayısı sonuç değil; sorunun başlangıç noktasıdır.",
+  "provenance":"HPA_EXPORT candidate — FINAL VISUAL 55 ŞUT 2 GOL + four-match final package. Not HUMAN_APPROVED."
+}

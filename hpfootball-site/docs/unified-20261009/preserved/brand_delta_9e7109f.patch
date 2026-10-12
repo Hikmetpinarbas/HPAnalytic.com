@@ -1,0 +1,156 @@
+From 9e7109fa59d58399125e585c3fc411c9489359a7 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Hikmet=20P=C4=B1narba=C5=9F?=
+ <108670827+Hikmetpinarbas@users.noreply.github.com>
+Date: Thu, 8 Oct 2026 02:19:51 +0300
+Subject: [PATCH] brand candidate evidence object
+
+---
+ BRAND_PRODUCT_DELTA_01.md                     | 58 +++++++++++++++++++
+ hpfootball-site/src/pages/index.astro         |  8 ++-
+ hpfootball-site/src/styles/global.css         | 19 ++++++
+ .../home-featured-evidence-object.test.mjs    | 20 +++++++
+ 4 files changed, 104 insertions(+), 1 deletion(-)
+ create mode 100644 BRAND_PRODUCT_DELTA_01.md
+ create mode 100644 hpfootball-site/tests/home-featured-evidence-object.test.mjs
+
+diff --git a/BRAND_PRODUCT_DELTA_01.md b/BRAND_PRODUCT_DELTA_01.md
+new file mode 100644
+index 0000000..c437544
+--- /dev/null
++++ b/BRAND_PRODUCT_DELTA_01.md
+@@ -0,0 +1,58 @@
++# HPAnalytic — Brand/Product Delta 01
++Date: 2026-10-08. Status: CANDIDATE / REVIEW. Publication: OFF.
++
++## Baseline protection
++- ACCEPTED RELEASE BASELINE: 9ecb9126d8684bd42865eb8c334c24d0618be204.
++- Baseline branch release-pack-01-candidate was not modified.
++- Candidate isolated in git worktree/branch brand-product-delta-01.
++- Explicit HOLD tests/home-hikmet-spotlight.test.mjs untouched.
++- No deployment, no publication, no HUMAN_APPROVED.
++
++## Evidence inspected
++- Current physical repo HEAD and source: homepage, Logo, BaseLayout, global CSS.
++- Approved, currently public article: event-only-boundary.md (qualityStatus HUMAN_APPROVED, sourceClaimsValidated true, sourceRefs reference-only).
++- Existing visual asset evidence-surfaces.svg, explicitly labeled conceptual and NOT actual match coordinates.
++- Existing physical Chrome baseline screenshots hpa-final-mobile.png and hpa-final-wide.png. The candidate physical screenshot was attempted but screen capture returned black (device screen asleep); candidate physical visual acceptance remains PENDING.
++- Candidate generated HTML: 12-page QA static build PASS; homepage contains featured evidence object and explicit conceptual disclaimer.
++- Regression after candidate: 237/237 PASS (baseline 235 + two focused tests), excluding explicit HOLD.
++
++## Section-by-section new value vs repetition
++- Hero: clear football thesis and brand; mobile first viewport is mostly text and buttons, while actual football/evidence visual appears later. Brand/product delta OPEN.
++- Featured analysis: real admitted article, source/claim boundaries. Before candidate lacked visible evidence object; candidate reuses existing approved conceptual visual with explicit 'GERÇEK MAÇ VERİSİ DEĞİL'. Delta improved; physical candidate review pending.
++- Match Centre: actual fail-closed feed; when unavailable, large empty state risks competing with evidence. Keep integrity; prioritize product behavior based on real data readiness. Delta OPEN.
++- Evidence Bridge: transparent claim-discipline, but abstract method overlaps Research and Principles. Preserve, consider progressive disclosure only after actual corpus/object admission.
++- Research: useful question/counterevidence method and real /research link; overlaps Evidence Bridge; no public research objects admitted. Keep but do not fabricate.
++- Scouting: distinct role/context/transferability decision framework and real /scouting link; no admitted player case. Keep, later anchor in real corpus.
++- Principles: restates hero signature and evidence discipline; candidate for lower visual prominence, not deletion.
++
++## Visual grammar physical/source assessment
++- HP monogram: diagonal break + white/amber identity present; master geometry not reopened. Identity acceptance not fully closed by technical tests.
++- Header/navigation: mobile search and MENU are distinct; landscape/tablet screenshot shows header wrapping to two rows. Responsive refinement OPEN.
++- Background/light: controlled black/amber; no neon/dashboard. Source geometry may be more decorative than explanatory above fold; OPEN.
++- Type: large editorial serif headline legible on baseline screenshot but consumes mobile first viewport; OPEN.
++- Buttons: primary and secondary clear and >=44px, but occupy substantial mobile height; OPEN.
++- Mobile compression: no observed baseline clipping, yet football evidence object is below first fold; OPEN.
++- Cool blue relation / red breach rules preserved in candidate.
++
++## Candidate change
++- Added a featured evidence figure ONLY when the admitted featured article is event-only-boundary.
++- Reused existing source asset; no new rights or data assumptions.
++- Caption explicitly marks conceptual schema, not real match data.
++- Changed abstract sidebar explanation to a concrete football question for that article only.
++- CSS responsive and readable; font size >=12px.
++- No new route, product surface, fake tracking, or claim escalation.
++
++## Acceptance
++- Source/claim/rights boundary: PASS (existing admitted asset; no new data).
++- Generated QA build: PASS 12 pages.
++- Baseline regression: PASS 237/237 including two new tests.
++- Physical candidate mobile/desktop/200%: PENDING (screen asleep/black capture).
++- BRAND READY: NOT YET.
++- EDITORIAL CORPUS READY: NOT ASSESSED in this WIP.
++- DATA/API READY: NOT ASSESSED in this WIP.
++- RELEASE READY: baseline only; candidate not admitted.
++
++## Next bounded action
++- When physical Chrome is available without disturbing user: capture candidate mobile, landscape, 200% and compare to baseline. If figure fails legibility/hierarchy, REPAIR or REJECT candidate.
++- Then address mobile first-screen compression and header wrap as one evidence-driven visual delta; rerun all 235 baseline tests.
++- Do not merge candidate into baseline or deploy without higher-stage acceptance.
+diff --git a/hpfootball-site/src/pages/index.astro b/hpfootball-site/src/pages/index.astro
+index 0af1b32..83b95ed 100644
+--- a/hpfootball-site/src/pages/index.astro
++++ b/hpfootball-site/src/pages/index.astro
+@@ -38,9 +38,15 @@ const matchTime=(utcDate:string)=>new Intl.DateTimeFormat('tr-TR',{timeZone:'Eur
+     <p class="featured-meta">{featuredStory.data.section.toUpperCase()} · {featuredStory.data.date.toLocaleDateString('tr-TR')}</p>
+     <h2 id="featured-title">{featuredStory.data.title}</h2>
+     <p>{featuredStory.data.description}</p>
++    {featuredStory.id === 'event-only-boundary' && (
++      <figure class="featured-evidence-object">
++        <img src="/visuals/event-data/evidence-surfaces.svg" alt="Olay verisi, video ve izleme verisinin farklı gözlem alanlarını karşılaştıran kavramsal şema" width="1200" height="675" loading="lazy" decoding="async" />
++        <figcaption><b>KAVRAMSAL ŞEMA</b><span>Olay · video · izleme: aynı maç için farklı sorular. GERÇEK MAÇ VERİSİ DEĞİL.</span></figcaption>
++      </figure>
++    )}
+     <a href={`/articles/${featuredStory.id}`} class="story-link">YAZIYI VE KANITI AÇ <span aria-hidden="true">→</span></a>
+   </div>
+-  <aside class="featured-question"><small>İDDİA SINIRI</small><p>Gözlediğimiz olay ile oyunun tamamı aynı şey değildir. Kanıtın gördüğü alan kadar, göremediği alan da gösterilir.</p></aside>
++  <aside class="featured-question"><small>İDDİA SINIRI</small><p>{featuredStory.id === 'event-only-boundary' ? 'Bir pasın kaydı, pası mümkün kılan topsuz koşuyu da gösterir mi? Cevap, kullanılan kanıt yüzeyine bağlıdır.' : 'Gözlediğimiz olay ile oyunun tamamı aynı şey değildir. Kanıtın gördüğü alan kadar, göremediği alan da gösterilir.'}</p></aside>
+ </section>}
+ 
+ <section class="match-centre" aria-labelledby="match-centre-title">
+diff --git a/hpfootball-site/src/styles/global.css b/hpfootball-site/src/styles/global.css
+index be08895..9a84caf 100644
+--- a/hpfootball-site/src/styles/global.css
++++ b/hpfootball-site/src/styles/global.css
+@@ -681,3 +681,22 @@ linear-gradient(180deg,#050505 0%,#070604 38%,#050505 100%);}
+ .article-page { width: 100%; min-width: 0; }
+ .prose { width: min(var(--measure), 100%); min-width: 0; overflow-wrap: anywhere; }
+ .prose > * { max-width: 100%; }
++
++/* Brand/Product candidate: let an admitted article show its actual evidence object. */
++.featured-evidence-object{
++  width:min(100%,580px);margin:28px 0 4px;
++  border:1px solid rgba(200,149,69,.24);
++  background:linear-gradient(145deg,rgba(240,201,119,.055),#08090a 54%);
++  overflow:hidden;
++}
++.featured-evidence-object img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:contain}
++.featured-evidence-object figcaption{
++  display:grid;gap:7px;padding:14px 18px;
++  border-top:1px solid var(--line);color:var(--muted);
++  font-size:12px;line-height:1.5;overflow-wrap:anywhere;
++}
++.featured-evidence-object figcaption b{font-size:12px;letter-spacing:.15em;color:var(--gold-2)}
++@media(max-width:560px){
++  .featured-evidence-object{margin:22px 0 2px}
++  .featured-evidence-object figcaption{padding:12px 14px}
++}
+diff --git a/hpfootball-site/tests/home-featured-evidence-object.test.mjs b/hpfootball-site/tests/home-featured-evidence-object.test.mjs
+new file mode 100644
+index 0000000..7bb6270
+--- /dev/null
++++ b/hpfootball-site/tests/home-featured-evidence-object.test.mjs
+@@ -0,0 +1,20 @@
++import test from 'node:test';
++import assert from 'node:assert/strict';
++import { readFileSync } from 'node:fs';
++
++const home = readFileSync(new URL('../src/pages/index.astro', import.meta.url), 'utf8');
++const css = readFileSync(new URL('../src/styles/global.css', import.meta.url), 'utf8');
++
++test('featured approved event-data article exposes its existing conceptual evidence object', () => {
++  assert.match(home, /featuredStory\.id === 'event-only-boundary'/);
++  assert.match(home, /class="featured-evidence-object"/);
++  assert.match(home, /\/visuals\/event-data\/evidence-surfaces\.svg/);
++  assert.match(home, /KAVRAMSAL ŞEMA/);
++  assert.match(home, /GERÇEK MAÇ VERİSİ DEĞİL/);
++});
++
++test('featured evidence object is responsive, legible, and bounded', () => {
++  assert.match(css, /\.featured-evidence-object\{/);
++  assert.match(css, /\.featured-evidence-object img\{/);
++  assert.match(css, /@media\(max-width:560px\)[\s\S]*\.featured-evidence-object/);
++});
+--
+2.56.0
+

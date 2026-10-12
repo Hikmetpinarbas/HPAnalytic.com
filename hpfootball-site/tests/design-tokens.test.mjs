@@ -52,3 +52,24 @@ test('no CSS case transforms: lang="tr" would render English "i" as "İ" (ANALYS
   const withoutComments = css.replace(/\/\*[\s\S]*?\*\//g, '');
   assert.doesNotMatch(withoutComments, /text-transform\s*:/);
 });
+
+test('large headings may wrap long tokens under 200% text resize', () => {
+  assert.match(css, /h1, h2, h3 \{[^}]*overflow-wrap:\s*break-word/s);
+});
+
+test('evidence bridge heading can shrink below its longest word at 200% text resize', () => {
+  assert.match(css, /\.evidence-bridge__head h2\{[^}]*overflow-wrap:anywhere/s);
+});
+
+test('homepage principle cells can shrink and wrap at 200% text resize', () => {
+  assert.match(css, /\.principles>span\{min-width:0\}/);
+  assert.match(css, /\.principles>span\{overflow-wrap:anywhere\}/);
+});
+
+test('every referenced global CSS custom property has a declaration', () => {
+  const source = css.replace(/\/\*[\s\S]*?\*\//g, '');
+  const declared = new Set([...source.matchAll(/--([\w-]+)\s*:/g)].map((m) => m[1]));
+  const referenced = new Set([...source.matchAll(/var\(\s*--([\w-]+)/g)].map((m) => m[1]));
+  const missing = [...referenced].filter((name) => !declared.has(name)).sort();
+  assert.deepEqual(missing, [], 'Undefined CSS custom properties: ' + missing.join(', '));
+});

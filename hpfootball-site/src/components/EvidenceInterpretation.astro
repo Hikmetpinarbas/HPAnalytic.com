@@ -1,0 +1,26 @@
+---
+const {
+  observation,
+  mechanism,
+  meaning,
+  boundary,
+  claimClass='ANALYST INTERPRETATION',
+  sourceLabel
+}=Astro.props;
+const items=[
+  ['01','NE GÖRÜYORUZ?',observation],
+  ['02','NEDEN OLUYOR?',mechanism],
+  ['03','NE ANLAMA GELİYOR?',meaning],
+  ['04','KANIT SINIRI',boundary]
+].filter(([, ,value])=>value);
+---
+<aside class="hp-evidence-reading" aria-label="Görsel kanıtın futbol yorumu">
+  <header><p>HPANALYTIC / EVIDENCE READING</p><span>{claimClass}</span></header>
+  <div class="hp-evidence-reading__grid">
+    {items.map(([index,label,value])=><section>
+      <div><b>{index}</b><h3>{label}</h3></div>
+      <p>{value}</p>
+    </section>)}
+  </div>
+  {sourceLabel && <footer>KAYNAK / {sourceLabel}</footer>}
+</aside>

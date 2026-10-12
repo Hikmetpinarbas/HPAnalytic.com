@@ -1,0 +1,15 @@
+---
+interface RelatedArticle { id: string; data: { title: string; description: string } }
+interface Relation { article: RelatedArticle; reason: string; axis?: string; shared: string[] }
+interface Props { items?: Relation[] }
+const {items=[]}=Astro.props as Props;
+---
+{items.length>0 && <aside class="hp-relations" aria-labelledby="hp-relations-title">
+  <header><p>KNOWLEDGE RELATIONS</p><h2 id="hp-relations-title">Bu düşüncenin devam ettiği yerler</h2></header>
+  <div class="hp-relations__grid">{items.map(({article,reason,shared})=><a href={'/articles/'+article.id}>
+    <small>NEDEN BAĞLANTILI / {reason}</small>
+    <h3>{article.data.title}</h3>
+    <p>{article.data.description}</p>
+    <span>{shared.join(' · ')} →</span>
+  </a>)}</div>
+</aside>}

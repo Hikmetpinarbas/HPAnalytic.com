@@ -1,7 +1,11 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { loadControlItems, STATUS_FLOW } from '../../lib/content-control.mjs';
-import { loadArticleInbox } from '../../lib/article-inbox.mjs';
+// Local-only editorial surface: it reads the phone/workspace filesystem and
+// shows rights, truth and approval state. A production build must answer 404
+// before any of that code is evaluated (the Worker has no such filesystem).
+if(import.meta.env.PROD) return new Response(null,{status:404,headers:{'x-robots-tag':'noindex'}});
+const { loadControlItems, STATUS_FLOW } = await import('../../lib/content-control.mjs');
+const { loadArticleInbox } = await import('../../lib/article-inbox.mjs');
 const items=await loadControlItems();
 const articleInbox=await loadArticleInbox();
 const show=(v:unknown)=>Array.isArray(v)?v.join(', '):String(v??'UNKNOWN');

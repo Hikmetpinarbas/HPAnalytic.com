@@ -1,0 +1,22 @@
+---
+import { buildVisibleNavigation } from '../lib/site-surfaces.mjs';
+const {articleSections={},researchCount=0,visualCount=0}=Astro.props;
+const available=buildVisibleNavigation({articleSections,researchCount,visualCount});
+const hrefs=new Set(available.map((item)=>item.href));
+const intents=[
+ {kicker:'MATCH',question:'Bir maçı anlamak istiyorum',detail:'Sonucu değil, sonucu üreten mekanizmayı aç.',href:'/analysis',action:'ANALYSIS'},
+ {kicker:'PLAYER',question:'Bir oyuncuyu anlamak istiyorum',detail:'Pozisyon etiketinden role, davranışa ve uyuma geç.',href:'/scouting',action:'SCOUTING'},
+ {kicker:'CLAIM',question:'Bir iddiayı sınamak istiyorum',detail:'Kanıtı, yöntemi ve karşı kanıtı birlikte incele.',href:'/research',action:'RESEARCH'},
+ {kicker:'EVIDENCE',question:'Veriyi görmek istiyorum',detail:'Grafik, saha ve görsel kanıt üzerinden oyunu oku.',href:'/visual-lab',action:'VISUAL'}
+];
+const visibleIntents=intents.filter((item)=>hrefs.has(item.href));
+---
+<nav class="hp-intent" aria-label="Futbol niyetine göre keşfet">
+  <header><p>NEREDEN BAŞLAMAK İSTİYORSUN?</p><span>FOOTBALL FIRST</span></header>
+  <div class="hp-intent__grid">
+    {visibleIntents.map((item)=><a href={item.href}><small>{item.kicker}</small><h2>{item.question}</h2><p>{item.detail}</p><b>{item.action} →</b></a>)}
+    <article class="hp-intent__ask" aria-label="ASK HPA araştırma aşamasında">
+      <small>QUESTION ENGINE</small><h2>Bir futbol sorusu sormak istiyorum</h2><p>ASK HPA · Kaynak seçimi → kanıt → kısa cevap → güven sınırı.</p><b>ARAŞTIRMA / HENÜZ YAYINDA DEĞİL</b>
+    </article>
+  </div>
+</nav>

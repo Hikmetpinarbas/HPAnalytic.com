@@ -1,0 +1,18 @@
+## 10 image audit (public/ + dist/client)
+6948	hpfootball-site/public/icons/hp-512.png
+2537	hpfootball-site/public/icons/hp-192.png
+2072	hpfootball-site/public/visuals/event-data/evidence-surfaces.svg
+2052	hpfootball-site/public/visuals/launch-series-01/baski-baglamlari.svg
+1960	hpfootball-site/public/visuals/launch-series-01/karsi-pres-bes-saniye.svg
+1752	hpfootball-site/public/visuals/event-data/measurement-chain.svg
+1424	hpfootball-site/public/visuals/event-data/analyst-shadow.svg
+1414	hpfootball-site/public/visuals/launch-series-01/kamera-kanit-siniri.svg
+502	hpfootball-site/public/favicon.svg
+
+img tags in built HTML without width/height or loading:
+NO-SIZE: <img src="/visuals/event-data/analyst-shadow.svg" alt="Karanlıkta kanıt ışığına bakan analisti temsil eden editoryal illüstrasyon">
+NO-LOADING: <img src="/visuals/event-data/analyst-shadow.svg" alt="Karanlıkta kanıt ışığına bakan analisti temsil eden editoryal illüstrasyon">
+NO-SIZE: <img src="/visuals/event-data/evidence-surfaces.svg" alt="Olay verisi, video ve izleme verisinin farklı gözlem kapasitelerini gösteren ka
+NO-LOADING: <img src="/visuals/event-data/evidence-surfaces.svg" alt="Olay verisi, video ve izleme verisinin farklı gözlem kapasitelerini gösteren ka
+NO-SIZE: <img src="/visuals/event-data/measurement-chain.svg" alt="Gözlemden iddiaya giderken varsayım katmanlarını gösteren açıklayıcı şem
+NO-LOADING: <img src="/visuals/event-data/measurement-chain.svg" alt="Gözlemden iddiaya giderken varsayım katmanlarını gösteren açıklayıcı şem

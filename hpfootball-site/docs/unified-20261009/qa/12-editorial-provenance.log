@@ -1,0 +1,7 @@
+## 12 editorial provenance — articles in src/content/articles
+{"id":"event-only-boundary","section":"method","editorial_status":"PUBLISHED","qualityStatus":"HUMAN_APPROVED","sourceClaimsValidated":"true","claimCeiling":"EVENT_OBSERVABLE_AND_METHOD_INTERPRETATION","sourceRefs":3,"rights":["REFERENCE_ONLY"],"published_in_dist":true}
+{"id":"futbol-nedir","section":"culture","editorial_status":null,"qualityStatus":null,"sourceClaimsValidated":null,"claimCeiling":"CONCEPTUAL_FRAMEWORK","sourceRefs":0,"rights":[],"published_in_dist":false}
+{"id":"position-role","section":"analysis","editorial_status":null,"qualityStatus":null,"sourceClaimsValidated":null,"claimCeiling":"ANALYTICAL_PRINCIPLE","sourceRefs":0,"rights":[],"published_in_dist":false}
+{"id":"production-consequence","section":"analysis","editorial_status":null,"qualityStatus":null,"sourceClaimsValidated":null,"claimCeiling":"PROCESS_CONSEQUENCE","sourceRefs":0,"rights":[],"published_in_dist":false}
+editorial-candidates docs: 4 present as public routes: none
+visual assets referenced by built pages: {"event-data/analyst-shadow.svg":true,"event-data/evidence-surfaces.svg":true,"event-data/measurement-chain.svg":true,"launch-series-01/baski-baglamlari.svg":false,"launch-series-01/kamera-kanit-siniri.svg":false,"launch-series-01/karsi-pres-bes-saniye.svg":false}

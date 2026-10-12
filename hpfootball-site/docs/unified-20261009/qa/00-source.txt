@@ -1,0 +1,6 @@
+source_commit: 77e2387896da24621dde5eea13836eb87f83f550
+source_tree: b0d8fda4b0d634323becad03d9e9b0e556575d98
+worktree_dirty_lines: 0
+node: v22.22.0  npm: 10.9.4  os: Linux 6.18.44-fc-v80 x86_64
+lockfile_sha256: 94d9809759dd2bbc8379307847eb3e04c7a7ca535bffee8fe90c29689d100f60
+date_utc: 2026-10-09T14:56:16Z

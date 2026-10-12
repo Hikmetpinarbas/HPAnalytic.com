@@ -1,0 +1,23 @@
+---
+import TacticalCanvas from './TacticalCanvas.astro';
+import TacticalSequence from './TacticalSequence.astro';
+import EvidenceInterpretation from './EvidenceInterpretation.astro';
+const {
+  claim,claimClass='ANALYST INTERPRETATION',sourceLabel,
+  visualType,visual={},sequence=[],
+  observation,mechanism,meaning,boundary,
+  counterevidence,nextQuestion
+}=Astro.props;
+const hasVisual=visualType==='pitch'||(visualType==='sequence'&&sequence.length>0);
+---
+<section class="hp-argument" aria-label="Analitik kanıt bloğu">
+  <header class="hp-argument__claim"><span>CLAIM</span><p>{claim}</p><small>{claimClass}</small></header>
+  {hasVisual && <div class="hp-argument__evidence">
+    <p class="hp-argument__label">EVIDENCE</p>
+    {visualType==='pitch' && <TacticalCanvas {...visual} evidenceLabel={visual.evidenceLabel ?? claimClass} trackingClaim={visual.trackingClaim ?? false}/>}
+    {visualType==='sequence' && <TacticalSequence stages={sequence} title={visual.title ?? 'Oyun mekanizması'} evidenceLabel={visual.evidenceLabel ?? claimClass} trackingClaim={visual.trackingClaim ?? false}/>}
+    <EvidenceInterpretation observation={observation} mechanism={mechanism} meaning={meaning} boundary={boundary} claimClass={claimClass} sourceLabel={sourceLabel}/>
+  </div>}
+  {counterevidence && <aside class="hp-argument__counter"><span>COUNTEREVIDENCE</span><p>{counterevidence}</p></aside>}
+  {nextQuestion && <footer class="hp-argument__next"><span>NEXT QUESTION</span><p>{nextQuestion}</p></footer>}
+</section>
