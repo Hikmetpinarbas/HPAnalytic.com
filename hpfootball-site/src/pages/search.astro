@@ -25,7 +25,7 @@ const documents = articles.map((a) => ({
 }));
 const hasQuery = tokenize(query).length > 0;
 const matches = hasQuery ? searchDocuments(documents, query, { limit: documents.length }).map((r) => byId.get(r.id)!).filter(Boolean) : [];
-const { items: results, page, totalPages, total } = paginateResults(matches, Astro.url.searchParams.get('page')); 
+const { items: results, page, totalPages, total } = paginateResults<typeof articles[number]>(matches, Astro.url.searchParams.get('page')); 
 const pageHref = (n: number) => `/search?${new URLSearchParams({ q: query, page: String(n) }).toString()}`;
 ---
 <BaseLayout title={query ? `“${query}” — Search — HPAnalytic` : 'Search — HPAnalytic'} description="HPAnalytic arşivinde arama." noindex={Boolean(query)}>
