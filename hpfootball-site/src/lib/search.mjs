@@ -9,7 +9,7 @@ export function normalizeText(value) {
     .replace(/[ışğçöüâîû]/g, (ch) => TR_FOLD[ch])
     .normalize('NFD')
     .replace(/[̀-ͯ]/g, '')
-    .replace(/[*_`#>\[\]()]/g, ' ')
+    .replace(/[^a-z0-9\s]/g, ' ')
     .replace(/\s+/g, ' ')
     .trim();
 }

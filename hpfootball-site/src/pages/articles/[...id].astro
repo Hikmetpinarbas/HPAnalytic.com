@@ -32,6 +32,19 @@ const site=Astro.site??Astro.url; const canonicalArticle=new URL(Astro.url.pathn
 <p class="article-meta"><span>{a.data.author??'Hikmet Pınarbaş'}</span><time datetime={isoDate}>{a.data.date.toLocaleDateString('tr-TR',{day:'numeric',month:'long',year:'numeric',timeZone:'UTC'})}</time><span>{minutes} dk okuma</span>{articleKindLabel&&<span>{articleKindLabel}</span>}{seriesLabel&&seriesLabel!==articleKindLabel&&<span>{seriesLabel}</span>}</p>
 {topics.length>0&&<div class="article-topics" aria-label="Konular">{topics.map(topic=><span>{topic}</span>)}</div>}<EvidenceBadge evidenceClass={a.data.evidenceClass} claimCeiling={a.data.claimCeiling}/></header>
 
+<div class="article-reader-tools" aria-label="Okuma araçları"><a href="#article-body">YAZIYA GEÇ ↓</a><button type="button" data-reading-save data-path={Astro.url.pathname} aria-pressed="false">SONRA OKU ＋</button><span data-reading-save-status aria-live="polite"></span></div>
+<script>
+  import { READING_LIST_KEY, parseReadingList, toggleReadingList } from '../../lib/reading-list.mjs';
+  const saveButton = document.querySelector<HTMLButtonElement>('[data-reading-save]');
+  const saveStatus = document.querySelector<HTMLElement>('[data-reading-save-status]');
+  if (saveButton) {
+    const path = saveButton.dataset.path || '';
+    const read = () => { try { return parseReadingList(localStorage.getItem(READING_LIST_KEY)); } catch { return []; } };
+    const render = () => { const saved = read().includes(path); saveButton.setAttribute('aria-pressed', String(saved)); saveButton.textContent = saved ? 'KAYDEDİLDİ ✓' : 'SONRA OKU ＋'; };
+    render();
+    saveButton.addEventListener('click', () => { try { const next = toggleReadingList(read(), path); localStorage.setItem(READING_LIST_KEY, JSON.stringify(next)); render(); if(saveStatus) saveStatus.textContent = next.includes(path) ? 'Bu cihazda kaydedildi.' : 'Okuma listesinden çıkarıldı.'; } catch { if(saveStatus) saveStatus.textContent = 'Bu tarayıcıda kayıt yapılamadı.'; } });
+  }
+</script>
 <div class="article-share" data-share-url={canonicalArticle} data-share-title={a.data.title}>
   <button type="button" class="article-share-button" aria-label="Bu yazıyı paylaş">YAZIYI PAYLAŞ <span aria-hidden="true">↗</span></button>
   <span class="article-share-status" aria-live="polite"></span>
@@ -58,7 +71,7 @@ const site=Astro.site??Astro.url; const canonicalArticle=new URL(Astro.url.pathn
 }
 </script>
 {a.data.sourceClaimsValidated!==true&&<aside class="article-source-validation" role="note"><strong>Kaynak doğrulama sınırı:</strong> Bu yazıdaki kaynak iddiaları bağımsız doğrulanmış futbol gerçeği değildir; doğrulama kapsamı tamamlanmamıştır.</aside>}
-<div class="prose"><Content/></div>
+<div class="prose" id="article-body"><Content/></div>
 {a.data.mechanismCard&&<MechanismCard card={a.data.mechanismCard} />}
 {visualAssets.length>0&&<section class="article-visual-evidence" aria-labelledby="visual-evidence-title"><p class="kicker">GÖRSEL KANIT</p><h2 id="visual-evidence-title">Sahadan açıklayıcı kareler</h2><div class="visual-evidence-grid">{visualAssets.map(v=><figure class="visual-evidence-card"><img src={v.src} alt={v.caption} loading="lazy"/><figcaption><b>{v.caption}</b><p>{v.claim_supported}</p><small>Hak durumu: {displayRights(v.rights_status)} · {v.truth_role==='OBSERVED_FRAME'?'Gözlenen kare':'Açıklayıcı görsel'}</small></figcaption></figure>)}</div></section>}
 {dataInsights.length>0&&<section class="article-data-notes" aria-labelledby="data-notes-title"><p class="kicker">VERİ NOTU</p><h2 id="data-notes-title">Sayı ne söylüyor?</h2><div class="data-note-grid">{dataInsights.map(d=><article class="data-note-card"><small>SORU</small><h3>{d.question}</h3><div class="data-note-metric">{d.metric}</div><p><b>HP yorumu:</b> {d.interpretation}</p><p><b>Sınır:</b> {d.limit}</p>{d.source_label&&<small>{d.source_label}</small>}</article>)}</div></section>}

@@ -10,6 +10,7 @@ export const prerender = true;
 
 const articles=(await getCollection('articles',isPublic)).filter(entry=>isPublicEditorialItem(entry.data)).sort((a,b)=>+b.data.date-+a.data.date);
 const hikmetEditorial=articles.find(a=>a.data.section==='culture');
+const readingDesk=articles.filter(a=>a.data.section==='analysis' || a.data.section==='scouting' || a.data.section==='culture').slice(0,3);
 const featuredStory=articles.find(a=>a.data.section==='analysis' && a.data.featured) ?? articles.find(a=>a.data.featured) ?? articles[0];
 const footballToken=import.meta.env.HPA_FOOTBALL_DATA_TOKEN;
 const matchCentre=await getUpcomingMatches({token:footballToken});
@@ -31,6 +32,11 @@ const matchTime=(utcDate:string)=>new Intl.DateTimeFormat('tr-TR',{timeZone:'Eur
   </div>
   <div class="hero-field hero-reveal hero-reveal-late"><TacticalCanvas/><span class="field-caption">YAPI → İLİŞKİ → KARAR</span></div>
 </section>
+
+{readingDesk.length > 0 && <section class="reading-desk" aria-labelledby="reading-desk-title">
+  <header class="reading-desk-head"><div><p class="kicker">OKUMA MASASI · GÜNCEL SEÇKİ</p><h2 id="reading-desk-title">BUGÜN NEYİ ANLAMAYA DEĞER?</h2><p>Yeni bir iddia üretmeden, yayımlanmış ve editoryal kabulden geçmiş dosyalardan seçki.</p></div><a href="/archive" class="story-link">TÜM DOSYALAR →</a></header>
+  <div class="reading-desk-grid">{readingDesk.map((item,i)=><article class="reading-desk-item"><span class="reading-desk-number">{String(i+1).padStart(2,'0')} / {item.data.section.toUpperCase()}</span><h3><a href={`/articles/${item.id}`}>{item.data.title}</a></h3><p>{item.data.description}</p><small>{item.data.date.toLocaleDateString('tr-TR')}</small></article>)}</div>
+</section>}
 
 {featuredStory && <section class="featured-analysis" aria-labelledby="featured-title">
   <div class="featured-index"><span>01</span><p>YENİ · KANIT NESNESİ</p></div>

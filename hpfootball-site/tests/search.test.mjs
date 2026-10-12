@@ -37,3 +37,10 @@ test('title matches outrank body matches', () => {
 test('empty query returns nothing rather than everything', () => {
   assert.deepEqual(searchDocuments(docs, ''), []);
 });
+
+test('punctuation separates search terms without losing Turkish folding', () => {
+  assert.deepEqual(tokenize('Pres, geçiş'), ['pres', 'gecis']);
+  assert.deepEqual(tokenize('role-based'), ['role', 'based']);
+  assert.deepEqual(searchDocuments(docs, 'role, defence').map((r) => r.id), ['role']);
+  assert.deepEqual(searchDocuments(docs, 'role-based').map((r) => r.id), []);
+});
