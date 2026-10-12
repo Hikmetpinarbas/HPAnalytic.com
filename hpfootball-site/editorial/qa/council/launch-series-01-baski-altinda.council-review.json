@@ -1,0 +1,39 @@
+{
+  "schema_version": "HP_EDITORIAL_COUNCIL_REVIEW_V1",
+  "article_id": "launch-series-01-baski-altinda",
+  "status": "REPAIR",
+  "authority": "CANDIDATE_EDITORIAL_REVIEW",
+  "truth_authority": false,
+  "human_approved": false,
+  "ordinary_reader": {
+    "verdict": "PASS_WITH_REPAIR",
+    "reason": "Ana fikir anlaşılır; orta bölümde annotation/operational-definition dili daha gündelik Türkçeye çevrilmeli."
+  },
+  "eureka": {
+    "verdict": "PASS_WITH_REPAIR",
+    "pivot": "ETİKET → GÖZLEM → MEKANİZMA?",
+    "transfer": "Okur veri etiketini açıklama sanmamayı öğreniyor."
+  },
+  "repair_actions": [
+    {
+      "action": "KEEP",
+      "target": "ETİKET → GÖZLEM → MEKANİZMA?",
+      "reason": "Yazının zihinsel modeli."
+    },
+    {
+      "action": "EUREKA",
+      "target": "açılış",
+      "reason": "Aynı “baskı altında” etiketine sahip iki farklı futbol durumunu önce göster; açıklamayı sonra ver."
+    },
+    {
+      "action": "EXPLAIN",
+      "target": "pressure annotation",
+      "reason": "İlk kullanımda “verideki baskı etiketi” olarak sadeleştir."
+    },
+    {
+      "action": "MOVE",
+      "target": "EVIDENCE NOTE / COUNTEREVIDENCE / UNCERTAINTY / RIGHTS",
+      "reason": "Progressive evidence disclosure katmanına."
+    }
+  ]
+}

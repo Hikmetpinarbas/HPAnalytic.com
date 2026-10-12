@@ -25,8 +25,12 @@ const dimensions = [
   <ul class="frame-grid" aria-label="Karar boyutları">
     {dimensions.map(([name, text]) => <li><b>{name}</b><p>{text}</p></li>)}
   </ul>
+  <section class="subsection" aria-labelledby="expertise-scouting">
+    <h2 id="expertise-scouting" class="kicker">SAHANIN VE KARARIN UZMANLARI</h2>
+    <p class="lead">Antrenör, scout, performans analisti, fizyoterapist ve yöneticilerin katkısını; kadın veya erkek takımlarında çalıştıklarından bağımsız olarak karar kalitesi, yöntem ve somut etki üzerinden inceleriz. Kadın uzmanların görünmeyen emeği de bu araştırmanın parçasıdır.</p>
+  </section>
   <section class="subsection" aria-labelledby="scouting-reports">
-    <h2 id="scouting-reports" class="kicker">REPORTS</h2>
+    <h2 id="scouting-reports" class="kicker">RAPORLAR</h2>
     <SectionListing section="scouting" headingLevel={3} />
   </section>
 </div>

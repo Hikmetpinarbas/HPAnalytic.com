@@ -24,7 +24,7 @@ const { navigation = [] } = Astro.props as Props;
     <span class="mobile-nav-trigger-mark" aria-hidden="true"></span>
   </button>
 
-  <nav id="mobile-nav-panel" class="mobile-nav-panel" aria-label="Mobile primary" hidden>
+  <nav id="mobile-nav-panel" class="mobile-nav-panel" aria-label="Mobil ana menü" hidden>
     {navigation.map((item) => (
       <a href={item.href} aria-current={item.current}>{item.label}</a>
     ))}

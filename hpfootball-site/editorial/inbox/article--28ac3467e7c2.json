@@ -1,0 +1,96 @@
+{
+  "status": "ARTICLE_REVIEW_READY",
+  "publish_allowed": false,
+  "reasons": [],
+  "item": {
+    "id": "launch-series-01-baski-altinda",
+    "title": "“Baskı altında” ne demek?",
+    "target": "“Baskı altında” ne demek?",
+    "content_type": "ARTICLE_METHOD",
+    "source_system": "HP_CONTENT_INTELLIGENCE",
+    "generated_at": "2026-10-07T14:20:00+03:00",
+    "freshness": "PASS",
+    "currentness": "CURRENT",
+    "truth_status": "EDITORIAL_CLAIM_OUTPUT_READY",
+    "claim_readiness": "EDITORIAL_CLAIM_OUTPUT_READY",
+    "claim_ceiling": "Provider/event pressure label is a bounded classification/context signal; it does not alone prove tactical pressure mechanism, geometry, perception or intention.",
+    "rights_status": "OWNED",
+    "evidence_status": {
+      "evidence_class": "EDITORIAL",
+      "provenance": "HP CONTENT INTELLIGENCE → CLAIM CONTRACT → EDITORIAL REVIEW",
+      "canonical_source_available": true,
+      "source_count": 1,
+      "unresolved_source_conflict": false
+    },
+    "visual_status": {
+      "admitted_visual": true,
+      "rights": "OWNED",
+      "visual_claim_ceiling": "Veri sağlayıcı veya olay verisindeki baskı etiketi sınırlı bir bağlam işaretidir; taktik mekanizmayı, geometriyi, algıyı veya niyeti tek başına kanıtlamaz.",
+      "product": "/visuals/launch-series-01/baski-baglamlari.svg"
+    },
+    "body": "# “Baskı altında” ne demek?\n\nSTATUS: CANDIDATE / NOT PUBLIC / HUMAN_APPROVAL_REQUIRED\nCLAIM CEILING: Bir sağlayıcı etiketi veya event alanı tek başına baskının bütün mekanizmasını, oyuncunun algısını, rakibin niyetini ya da takım geometrisini kanıtlamaz.\n\nAynı veri etiketi. İki farklı futbol anı.\n\nİlkinde rakip top sahibine hızla yaklaşıyor, ileri pas hattını kapatıyor ve oyuncunun karar süresini daraltıyor.\n\nİkincisinde rakip yalnızca yakınında. Oyuncunun hâlâ zamanı ve çıkış seçenekleri olabilir.\n\nVeri tablosunda ikisinin yanında da aynı ifade durabilir:\n\n**“Baskı altında.”**\n\nPeki aynı etiketi taşıyan bu iki aksiyon, gerçekten aynı futbol durumunu mu anlatır?\n\nBunu henüz bilmiyoruz.\n\nFutbol verisinde bazı kelimeler açıklama gibi görünür. “Baskı altında” bunlardan biridir. Bir pasın veya top kontrolünün yanına bu etiket geldiğinde cümle kolayca tamamlanır:\n\nOyuncu baskı altındaydı, **bu yüzden** hata yaptı.\n\nAsıl problem “bu yüzden” kısmıdır.\n\nEtiket bize önce bir sınıflandırma verir. Mekanizmanın tamamını değil.\n\n**ETİKET → GÖZLEM → MEKANİZMA?**\n\nSoru işareti önemlidir.\n\nİyi tanımlanmış bir baskı etiketi binlerce aksiyonu taramak, benzer koşulları karşılaştırmak ve incelenecek sekansları bulmak için çok değerlidir. Fakat etiket ile futbol açıklaması aynı şey değildir.\n\nBir oyuncunun baskı altında pas kaybettiğini biliyorsak iki şeyi kaydetmiş olabiliriz: baskı etiketi ve top kaybı. “Baskı top kaybına neden oldu” dediğimiz anda yeni bir iddia kurarız.\n\nO zaman başka sorular gerekir: Baskı nasıl tanımlandı? Rakip gerçekten hangi seçeneği kapattı? Oyuncunun başka çıkışı var mıydı? İlk kontrolü nasıldı? Benzer durumda başarılı olduğu örnekler var mıydı?\n\nHer veri seti bunların hepsini cevaplayamaz. Bu veriyi değersiz yapmaz; yalnızca **iddianın sınırını** belirler.\n\n## Yakınlık, baskının tamamı değildir\n\nBaskı ilişkisel bir futbol olayıdır. Top sahibi, rakip, zaman, alan ve destek seçenekleri birlikte önem kazanabilir.\n\nBu nedenle gerçek tracking verisi olmadan kesin baskı yarıçapları, görüş konileri veya görünmeyen takım geometrileri çizmek tehlikelidir. Açıklayıcı bir görsel, kolayca kanıt görüntüsü gibi algılanabilir.\n\nHPAnalytic'in sınırı burada nettir:\n\n**Veri neyi işaretliyorsa onu göster. Mekanizma kanıtlanmamışsa mekanizmayı çizme.**\n\nBu sınır analizi küçültmez. Soruyu büyütür.\n\n“Kaç kez baskı altında kaldı?” sorusunun yanına artık şunu koyabiliriz:\n\n**Baskı hangi koşullarda oluştu ve oyuncunun cevabını gerçekten ne değiştirdi?**\n\nBir sonraki kez veride “baskı altında” gördüğünüzde önce oyuncuyu değil, etiketi sorgulayın:\n\n**Bu çalışmada baskı tam olarak nasıl tanımlandı?**\n\nÇünkü **aynı etiket, aynı futbol mekanizması değildir.**",
+    "provenance": "HP Content Intelligence claim-first synthesis; site admission does not upgrade source claims.",
+    "warnings": [],
+    "social_status": {},
+    "article_meta": {
+      "section": "method",
+      "description": "Bir veri etiketinin adı ile sahadaki futbol mekanizması aynı şey değildir.",
+      "article_kind": "DEEP_ANALYSIS",
+      "series": "",
+      "visual_assets": [
+        {
+          "visual_id": "launch-series-01-baski-altinda-figure-01",
+          "src": "/visuals/launch-series-01/baski-baglamlari.svg",
+          "caption": "Aynı “baskı altında” etiketinin farklı futbol bağlamlarına işaret edebilmesi.",
+          "claim_supported": "Etiket, tek başına baskının mekanizmasını veya oyuncunun algısını kanıtlamaz.",
+          "rights_status": "ORIGINAL",
+          "truth_role": "EXPLANATORY_SCHEMATIC",
+          "visual_role": "ANALYTICAL_DIAGRAM"
+        }
+      ],
+      "data_insights": [],
+      "language": "tr",
+      "author": "Hikmet Pınarbaş",
+      "topics": [
+        "kanıt sınırı"
+      ],
+      "source_count": 1,
+      "source_refs": [
+        {
+          "source_id": "S02",
+          "title": "HPFA current evidence/audit contracts",
+          "locator": "INTERNAL_OR_NONPUBLIC_SOURCE",
+          "rights": "ORIGINAL",
+          "claim_ceiling": "Provider/event pressure label is a bounded classification/context signal; it does not alone prove tactical pressure mechanism, geometry, perception or intention."
+        }
+      ],
+      "source_rights": [
+        "ORIGINAL"
+      ],
+      "claim_ids": [
+        "launch-series-01-baski-altinda-C01"
+      ],
+      "counterevidence": [
+        "Şeffaf operasyonel tanım ve daha güçlü video/konumsal kanıt claim ceiling'i yükseltebilir."
+      ],
+      "reading_minutes": 3,
+      "truth_authority": false,
+      "source_claims_validated": false,
+      "single_editorial_identity": true,
+      "quality_status": "EDITORIAL_REVIEW_READY",
+      "editorial_council_review": "PASS_WITH_REPAIR",
+      "ordinary_reader_test": "PASS",
+      "eureka_test": "PASS_BOUNDED",
+      "production_evidence_footer": {
+        "evidence_note": "Current HPFA visual/evidence and operator contracts support provider-label != tactical truth, coordinate != tracking, and process-label != intention boundaries.",
+        "counterevidence": "A provider with a transparent operational definition, reliable annotation process and suitable positional evidence can support substantially richer pressure analysis.",
+        "uncertainty": "No provider-specific pressure definition is asserted in this article.",
+        "rights": "Original HP reconstruction; no source passage reproduced."
+      }
+    },
+    "visual_required": true
+  },
+  "staged_at": "2026-10-07T11:36:34.562Z",
+  "source_run": "CONTENT_INTELLIGENCE_RUN",
+  "approval_required": "HUMAN_APPROVED"
+}

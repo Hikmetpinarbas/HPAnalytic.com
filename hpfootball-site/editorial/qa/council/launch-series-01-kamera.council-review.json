@@ -1,0 +1,39 @@
+{
+  "schema_version": "HP_EDITORIAL_COUNCIL_REVIEW_V1",
+  "article_id": "launch-series-01-kamera",
+  "status": "REPAIR",
+  "authority": "CANDIDATE_EDITORIAL_REVIEW",
+  "truth_authority": false,
+  "human_approved": false,
+  "ordinary_reader": {
+    "verdict": "PASS",
+    "reason": "Merkez ayrım gündelik dille kuruluyor: görülen, açıklayıcı katman, bilinmeyen."
+  },
+  "eureka": {
+    "verdict": "PASS",
+    "pivot": "Görmediğimiz şey, gerçekleşmemiş şey değildir.",
+    "transfer": "Durdurulmuş her yayın karesinde kadraj dışını zihinsel olarak tamamlama riskini sorgulatıyor."
+  },
+  "repair_actions": [
+    {
+      "action": "KEEP",
+      "target": "Her şey ortada. / Oysa değildir.",
+      "reason": "Güçlü expectation violation."
+    },
+    {
+      "action": "KEEP",
+      "target": "GÖZLENEN / AÇIKLAYICI KATMAN / BİLİNMEYEN",
+      "reason": "Gestalt figure-ground ve chunking için ana kavrayış."
+    },
+    {
+      "action": "MOVE",
+      "target": "EVIDENCE NOTE / COUNTEREVIDENCE / UNCERTAINTY / RIGHTS",
+      "reason": "Okur finalindeki memory trace bozulmasın; evidence disclosure katmanına taşınmalı."
+    },
+    {
+      "action": "TIGHTEN",
+      "target": "orta bölüm",
+      "reason": "Aynı kanıt-sınırı fikrini tekrar eden cümleler azaltılabilir."
+    }
+  ]
+}

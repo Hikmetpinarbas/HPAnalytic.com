@@ -1,0 +1,48 @@
+# Reference only. GitHub Actions discovers workflows in repository root .github/workflows/.
+name: HPAnalytic Cloudflare Build Validation
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - 'src/**'
+      - 'public/**'
+      - 'scripts/**'
+      - 'tests/**'
+      - 'astro.config.mjs'
+      - 'package.json'
+      - 'package-lock.json'
+      - 'wrangler.jsonc'
+      - '.github/workflows/cloudflare-build-validation.yml'
+permissions:
+  contents: read
+jobs:
+  validate:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22.20.0'
+          cache: npm
+      - name: Install locked dependencies
+        run: npm ci --no-audit --no-fund
+      - name: Configuration preflight
+        run: node scripts/cloudflare-preflight.mjs
+      - name: Test
+        run: npm test
+      - name: Cloudflare production build (no deploy)
+        run: npm run build
+      - name: Validate build artifacts
+        run: |
+          test -d dist
+          test -n "$(find dist -type f -print -quit)"
+          echo 'CLOUDFLARE_BUILD_ARTIFACTS_PRESENT'
+      - name: Upload build evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: hpanalytic-build-evidence
+          path: dist/
+          if-no-files-found: warn
+          retention-days: 3
