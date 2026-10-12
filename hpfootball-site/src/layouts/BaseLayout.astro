@@ -110,6 +110,7 @@ if ('serviceWorker' in navigator) {
 <body>
 <a class="skip-link" href="#main-content">İçeriğe geç</a>
 <div class="grain" aria-hidden="true"></div>
+<div class="publication-masthead" aria-label="Yayın kimliği"><span>HP / HİKMET PINARBAŞ</span><span>BAĞIMSIZ FUTBOL YAYINI <i aria-hidden="true">·</i> ANALİZ / ARAŞTIRMA / KÜLTÜR</span></div>
 <header class="site-header">
   <Logo />
   <nav class="desktop-nav" aria-label="Ana menü">
@@ -117,7 +118,7 @@ if ('serviceWorker' in navigator) {
   </nav>
   <div class="header-actions">
     {searchLink && (
-      <a class="icon-link" href={searchLink.href} aria-current={searchLink.current}>
+      <a class="icon-link" href={searchLink.href} aria-current={searchLink.current} aria-label="Ara">
         <svg viewBox="0 0 20 20" aria-hidden="true" focusable="false"><circle cx="8.5" cy="8.5" r="5.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M12.5 12.5 17 17" stroke="currentColor" stroke-width="1.6"/></svg>
         <span class="icon-link-text">ARA</span>
       </a>
