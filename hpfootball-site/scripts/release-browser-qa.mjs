@@ -40,5 +40,32 @@ await inspect('mobile-420',{width:420,height:900});
 await inspect('desktop-1440',{width:1440,height:1000});
 await inspect('text-200-mobile',{width:375,height:812},{text200:true});
 await inspect('reduced-motion',{width:1440,height:1000},{reducedMotion:'reduce'});
+// Interaction regression: mobile disclosure, Escape focus return, search GET, and critical routes.
+{
+  const context=await browser.newContext({viewport:{width:375,height:812}});
+  const page=await context.newPage();
+  const failedRequests=[];
+  page.on('requestfailed',r=>failedRequests.push(`${r.method()} ${r.url()} ${r.failure()?.errorText}`));
+  await page.goto(base,{waitUntil:'networkidle'});
+  const trigger=page.locator('.mobile-nav-trigger');
+  await assert.doesNotReject(()=>trigger.click());
+  assert.equal(await trigger.getAttribute('aria-expanded'),'true','mobile menu failed to open');
+  assert.equal(await page.locator('#mobile-nav-panel').isVisible(),true,'mobile panel hidden after open');
+  await page.keyboard.press('Escape');
+  assert.equal(await trigger.getAttribute('aria-expanded'),'false','Escape did not close mobile menu');
+  assert.equal(await trigger.evaluate(el=>el===document.activeElement),true,'Escape did not restore focus');
+  await page.goto(new URL('/search',base).toString(),{waitUntil:'networkidle'});
+  await page.locator('input[name=q]').fill('futbol');
+  await Promise.all([page.waitForURL(/\/search\/?\?q=futbol/),page.locator('button[type=submit]').click()]);
+  assert.ok((await page.locator('[role=status]').innerText()).includes('futbol'),'search status missing');
+  for(const route of ['/analysis','/research','/scouting','/about','/archive']){
+    const response=await page.goto(new URL(route,base).toString(),{waitUntil:'domcontentloaded'});
+    assert.equal(response?.status(),200,`critical route ${route} returned ${response?.status()}`);
+  }
+  assert.deepEqual(failedRequests,[],'failed browser network requests');
+  await page.screenshot({path:`${out}/interaction-regression.png`,fullPage:true});
+  await context.close();
+}
+
 await browser.close();
 console.log('BROWSER_QA_PASS');
