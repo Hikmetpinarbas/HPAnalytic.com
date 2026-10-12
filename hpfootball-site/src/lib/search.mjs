@@ -9,7 +9,7 @@ export function normalizeText(value) {
     .replace(/[ışğçöüâîû]/g, (ch) => TR_FOLD[ch])
     .normalize('NFD')
     .replace(/[̀-ͯ]/g, '')
-    .replace(/[*_`#>\[\]()]/g, ' ')
+    .replace(/[^\p{L}\p{N}]+/gu, ' ')
     .replace(/\s+/g, ' ')
     .trim();
 }
@@ -50,4 +50,20 @@ export function searchDocuments(documents, query, { limit = 50 } = {}) {
   return results
     .sort((a, b) => b.score - a.score || String(a.id).localeCompare(String(b.id)))
     .slice(0, limit);
+}
+
+// Server-rendered pagination: clamp untrusted page numbers and keep a stable result order.
+/**
+ * @template T
+ * @param {T[]} results
+ * @param {string | number | null} requestedPage
+ * @param {number} [pageSize]
+ * @returns {{ page: number, totalPages: number, total: number, items: T[] }}
+ */
+export function paginateResults(results, requestedPage, pageSize = 20) {
+  const size = Number.isSafeInteger(pageSize) && pageSize > 0 ? Math.min(pageSize, 100) : 20;
+  const totalPages = Math.max(1, Math.ceil(results.length / size));
+  const rawPage = Number(requestedPage);
+  const page = Number.isSafeInteger(rawPage) && rawPage > 0 ? Math.min(rawPage, totalPages) : 1;
+  return { page, totalPages, total: results.length, items: results.slice((page - 1) * size, page * size) };
 }
