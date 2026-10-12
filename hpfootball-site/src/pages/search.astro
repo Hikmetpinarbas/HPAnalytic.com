@@ -4,7 +4,7 @@ import { isPublicEditorialItem } from '../lib/site-editorial-status.mjs';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ArticleCard from '../components/ArticleCard.astro';
 import { getCollection } from 'astro:content';
-import { searchDocuments, tokenize } from '../lib/search.mjs';
+import { paginateResults, searchDocuments, tokenize } from '../lib/search.mjs';
 import { SECTION_LABELS } from '../lib/site-surfaces.mjs';
 
 // Server-rendered on purpose: a plain GET form works without client JS, and the
@@ -24,7 +24,9 @@ const documents = articles.map((a) => ({
   body: a.body ?? '',
 }));
 const hasQuery = tokenize(query).length > 0;
-const results = hasQuery ? searchDocuments(documents, query).map((r) => byId.get(r.id)!).filter(Boolean) : [];
+const matches = hasQuery ? searchDocuments(documents, query, { limit: documents.length }).map((r) => byId.get(r.id)!).filter(Boolean) : [];
+const { items: results, page, totalPages, total } = paginateResults(matches, Astro.url.searchParams.get('page')); 
+const pageHref = (n: number) => `/search?${new URLSearchParams({ q: query, page: String(n) }).toString()}`;
 ---
 <BaseLayout title={query ? `“${query}” — Search — HPAnalytic` : 'Search — HPAnalytic'} description="HPAnalytic arşivinde arama." noindex={Boolean(query)}>
 <div class="listing">
@@ -39,13 +41,20 @@ const results = hasQuery ? searchDocuments(documents, query).map((r) => byId.get
   </header>
   {query && (
     <p class="search-status" role="status">
-      {hasQuery ? `“${query}” için ${results.length} sonuç` : 'En az iki harfli bir terim girin.'}
+      {hasQuery ? `“${query}” için ${total} sonuç` : 'En az iki harfli bir terim girin.'}
     </p>
   )}
   {results.length > 0 && (
     <ul class="card-grid">
       {results.map((a) => <li><ArticleCard id={a.id} {...a.data} headingLevel={2} /></li>)}
     </ul>
+  )}
+  {hasQuery && totalPages > 1 && (
+    <nav class="search-pagination" aria-label="Arama sonuç sayfaları">
+      {page > 1 && <a href={pageHref(page - 1)} rel="prev">← Önceki</a>}
+      <span>Sayfa {page} / {totalPages}</span>
+      {page < totalPages && <a href={pageHref(page + 1)} rel="next">Sonraki →</a>}
+    </nav>
   )}
   {hasQuery && results.length === 0 && (
     <p class="empty-state">Eşleşme yok. Türkçe karakterler önemsizdir (“gordugumuz” = “gördüğümüz”); daha az kelimeyle deneyin.</p>
