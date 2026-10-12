@@ -1,6 +1,6 @@
 import type {APIRoute} from 'astro';
-export const GET:APIRoute=async({locals})=>{
-  const env=(locals as any).runtime?.env ?? {};
+import { env } from 'cloudflare:workers';
+export const GET:APIRoute=async()=>{
   const key=env.YOUTUBE_API_KEY; const channel=env.YOUTUBE_CHANNEL_ID || 'UCCTW85AzLAgwIDV_lPHXyYg';
   if(!key) return new Response(JSON.stringify({status:'not_configured',message:'YOUTUBE_API_KEY secret is not configured'}),{status:503,headers:{'content-type':'application/json'}});
   const url=new URL('https://www.googleapis.com/youtube/v3/search'); url.searchParams.set('key',key);url.searchParams.set('channelId',channel);url.searchParams.set('part','snippet');url.searchParams.set('order','date');url.searchParams.set('maxResults','6');url.searchParams.set('type','video');
