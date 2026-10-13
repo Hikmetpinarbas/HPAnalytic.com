@@ -572,7 +572,7 @@ main:focus { outline: none; }
 .research-intro h2{margin:14px 0 24px;font:400 clamp(48px,6.2vw,88px)/.86 Georgia,serif;letter-spacing:-.045em}.research-intro>p:not(.kicker){max-width:540px;color:#a39b8f;font-size:17px;line-height:1.65}.research-intro .story-link{display:inline-block;margin-top:28px}
 .research-method{counter-reset:research;border-top:1px solid var(--line)}.research-method>div{display:grid;grid-template-columns:54px minmax(105px,.38fr) 1fr;gap:22px;align-items:start;padding:26px 0;border-bottom:1px solid var(--line)}.research-method span{color:#725a39;font:400 24px/1 Georgia,serif}.research-method b{color:var(--gold-2);font-size:12px;letter-spacing:.16em}.research-method p{margin:0;color:#91897d;font-size:14px;line-height:1.55;max-width:440px}
 @media(max-width:900px){.research-spotlight{grid-template-columns:1fr}.research-intro>p:not(.kicker){max-width:680px}}
-@media(max-width:560px){.research-spotlight{padding:64px 20px;gap:42px}.research-intro h2{font-size:52px}.research-method>div{grid-template-columns:38px 100px 1fr;gap:12px;padding:22px 0}.research-method p{font-size:12px}}
+@media(max-width:560px){.research-spotlight{padding:64px 20px;gap:42px}.research-intro h2{font-size:clamp(40px,14vw,52px)}.research-method>div{grid-template-columns:38px 100px 1fr;gap:12px;padding:22px 0}.research-method p{font-size:12px}}
 
 /* Homepage — Scouting Spotlight */
 .scouting-spotlight{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(320px,.85fr);gap:clamp(50px,7vw,110px);padding:clamp(86px,9vw,140px) clamp(20px,6vw,90px);border-bottom:1px solid var(--line)}
@@ -698,3 +698,29 @@ linear-gradient(180deg,#050505 0%,#070604 38%,#050505 100%);}
 .hikmet-spotlight__body h2{font-family:var(--font-serif);font-size:clamp(32px,4.4vw,64px);line-height:1.12;margin:0 0 20px}
 .hikmet-statement{font-size:clamp(17px,2vw,24px);line-height:1.55;max-width:55ch;color:var(--ink-2)}
 @media(max-width:560px){.hikmet-spotlight{grid-template-columns:1fr;gap:22px;padding:52px 20px}.hikmet-spotlight__body h2{font-size:clamp(32px,9vw,44px)}.hikmet-statement{font-size:17px}}
+
+/* Editorial reading desk: public content only; no fabricated daily update. */
+.reading-desk{padding:clamp(42px,5vw,72px) clamp(20px,6vw,90px);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.reading-desk-head{display:flex;align-items:end;justify-content:space-between;gap:20px;margin-bottom:26px}.reading-desk-head h2{font-size:clamp(27px,3vw,42px);line-height:1.12;margin:10px 0}.reading-desk-head p:not(.kicker){max-width:650px;color:var(--muted);line-height:1.6}
+.reading-desk-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}.reading-desk-item{min-width:0;padding:24px 20px;border:1px solid var(--line)}.reading-desk-number{font-size:12px;letter-spacing:.1em;color:var(--gold-2)}.reading-desk-item h3{font-size:clamp(20px,2vw,28px);line-height:1.22;margin:20px 0 12px}.reading-desk-item h3 a{color:inherit;text-decoration:none}.reading-desk-item h3 a:hover{text-decoration:underline;text-underline-offset:4px}.reading-desk-item p{line-height:1.6;color:var(--muted)}.reading-desk-item small{display:block;margin-top:20px;color:var(--muted)}
+@media(max-width:700px){.reading-desk-grid{grid-template-columns:1fr}.reading-desk-head{align-items:start;flex-direction:column}.reading-desk-item{padding:22px 18px}}
+
+/* Editorial identity pass — masthead, navigation and typographic hierarchy. */
+.publication-masthead{display:flex;align-items:center;justify-content:space-between;gap:18px;min-height:32px;padding:6px var(--gutter);border-bottom:1px solid rgba(241,238,230,.16);color:#c7c1b7;background:#0b0a09;font:600 12px/1.4 var(--font-sans);letter-spacing:.1em}
+.publication-masthead span:first-child{color:var(--ink);font-weight:800}.publication-masthead i{font-style:normal;color:var(--gold-2);margin:0 5px}
+.site-header{background:rgba(7,7,7,.98);border-bottom-color:rgba(241,238,230,.2);gap:clamp(12px,2vw,30px);padding-block:16px}
+.brand-word b{font-size:clamp(18px,1.7vw,25px);letter-spacing:-.055em;line-height:1.02;font-weight:850}.brand-word small{font-size:12px;letter-spacing:.075em;margin-top:6px;color:#b4aca0}
+.desktop-nav{gap:clamp(2px,.5vw,10px)}.nav-link{font-size:12px;letter-spacing:.07em;padding-inline:clamp(8px,1vw,16px);font-weight:700}.nav-link[aria-current]{color:#fff;border-bottom-color:var(--ink)}
+.featured-story h2{font-family:var(--font-serif);font-size:clamp(36px,4.6vw,70px);line-height:1.06;letter-spacing:-.04em;max-width:17ch;margin:12px 0 24px}.featured-story>p:not(.featured-meta){font-family:var(--font-sans);font-size:clamp(17px,1.35vw,21px);line-height:1.68;max-width:58ch;color:#bdb6aa}.reading-desk-item h3{font-family:var(--font-serif);font-weight:500;letter-spacing:-.025em}.reading-desk-item p{font-size:16px;line-height:1.7}
+@media(max-width:700px){.publication-masthead{font-size:12px;align-items:flex-start;flex-direction:column;gap:2px;padding-block:8px}.site-header{padding-block:10px}.featured-story h2{font-size:clamp(34px,9vw,48px)}}
+
+.article-reader-tools{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin:0 0 24px}.article-reader-tools a,.article-reader-tools button{display:inline-flex;align-items:center;min-height:44px;padding:10px 15px;border:1px solid var(--line-strong);background:transparent;color:var(--ink);font:700 12px/1.4 var(--font-sans);letter-spacing:.09em;cursor:pointer}.article-reader-tools button[aria-pressed="true"]{border-color:var(--gold-2)}.article-reader-tools [data-reading-save-status]{font-size:12px;color:var(--muted)}.article-reader-tools a:focus-visible,.article-reader-tools button:focus-visible{outline:3px solid var(--focus);outline-offset:3px}
+
+/* HPANALYTIC — restrained editorial quote, 2026-10-12 */
+.publication-masthead:has(.hp-masthead-quote){display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.hp-masthead-quote{display:inline-flex;align-items:center;justify-content:flex-end;gap:.65rem;min-width:0;color:var(--ink-2);font-size:clamp(.75rem,.82vw,.83rem);font-style:italic;letter-spacing:.015em}
+.hp-triquetra{width:24px;height:24px;flex:none;color:var(--gold)}
+@media(max-width:760px){.publication-masthead:has(.hp-masthead-quote){gap:.5rem}.hp-masthead-identity{display:none}.hp-masthead-quote{width:100%;justify-content:center;font-size:.75rem;line-height:1.3;text-align:center}.hp-triquetra{width:18px;height:18px}}
+@media(max-width:390px){.hp-masthead-quote{font-size:.75rem;gap:.35rem}}
+.evidence-bridge__head h2, .research-intro h2 { overflow-wrap: normal; word-break: normal; hyphens: none; }
+@media (min-width: 901px) { .research-spotlight { grid-template-columns: minmax(0, 1fr) minmax(0, 1.18fr); } .research-intro h2 { font-size: clamp(42px, 5vw, 72px); } }
