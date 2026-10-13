@@ -1,0 +1,232 @@
+{
+  "generated_at": "2026-10-11T22:24:20.242Z",
+  "publication_authorized": false,
+  "total": 5,
+  "reports": [
+    {
+      "job_id": "HPEDITOR-4db14c089b98b54a",
+      "status": "REWORK_REQUIRED",
+      "autopublish": false,
+      "original_preserved": true,
+      "tasks": [
+        {
+          "gate": "SOURCE",
+          "action": "VERIFY_PRIMARY_AND_CROSSREF",
+          "owner": "Researcher"
+        },
+        {
+          "gate": "METHOD",
+          "action": "REVIEW_METHOD_AND_COUNTEREVIDENCE",
+          "owner": "Auditor"
+        },
+        {
+          "gate": "FOOTBALL",
+          "action": "ESTABLISH_FOOTBALL_APPLICABILITY_WITH_EVIDENCE",
+          "owner": "Researcher"
+        },
+        {
+          "gate": "RIGHTS",
+          "action": "VERIFY_LICENSE_OR_CREATE_ORIGINAL_ALTERNATIVE",
+          "owner": "Publisher"
+        },
+        {
+          "gate": "VISUAL",
+          "action": "PRODUCE_SOURCE_BOUND_VISUAL_OR_EXPLICIT_NO_VISUAL",
+          "owner": "Builder"
+        },
+        {
+          "gate": "HPFA",
+          "action": "REVIEW_CLAIM_CEILING_AND_EVIDENCE",
+          "owner": "Auditor"
+        },
+        {
+          "gate": "EDITORIAL",
+          "action": "REQUEST_HUMAN_EDITORIAL_APPROVAL",
+          "owner": "Publisher"
+        }
+      ],
+      "title": "Spatial and Temporal Entropies in the Spanish Football League: A Network Science Perspective",
+      "source_id": "https://openalex.org/W3003416799"
+    },
+    {
+      "job_id": "HPEDITOR-61c72e90ccc693e2",
+      "status": "REWORK_REQUIRED",
+      "autopublish": false,
+      "original_preserved": true,
+      "tasks": [
+        {
+          "gate": "SOURCE",
+          "action": "VERIFY_PRIMARY_AND_CROSSREF",
+          "owner": "Researcher"
+        },
+        {
+          "gate": "METHOD",
+          "action": "REVIEW_METHOD_AND_COUNTEREVIDENCE",
+          "owner": "Auditor"
+        },
+        {
+          "gate": "FOOTBALL",
+          "action": "ESTABLISH_FOOTBALL_APPLICABILITY_WITH_EVIDENCE",
+          "owner": "Researcher"
+        },
+        {
+          "gate": "RIGHTS",
+          "action": "VERIFY_LICENSE_OR_CREATE_ORIGINAL_ALTERNATIVE",
+          "owner": "Publisher"
+        },
+        {
+          "gate": "VISUAL",
+          "action": "PRODUCE_SOURCE_BOUND_VISUAL_OR_EXPLICIT_NO_VISUAL",
+          "owner": "Builder"
+        },
+        {
+          "gate": "HPFA",
+          "action": "REVIEW_CLAIM_CEILING_AND_EVIDENCE",
+          "owner": "Auditor"
+        },
+        {
+          "gate": "EDITORIAL",
+          "action": "REQUEST_HUMAN_EDITORIAL_APPROVAL",
+          "owner": "Publisher"
+        }
+      ],
+      "title": "Identification and Optimization of High-Performance Passing Networks in Football",
+      "source_id": "https://openalex.org/W4407170448"
+    },
+    {
+      "job_id": "HPEDITOR-65d72cd3b74af04f",
+      "status": "REWORK_REQUIRED",
+      "autopublish": false,
+      "original_preserved": true,
+      "tasks": [
+        {
+          "gate": "SOURCE",
+          "action": "VERIFY_PRIMARY_AND_CROSSREF",
+          "owner": "Researcher"
+        },
+        {
+          "gate": "METHOD",
+          "action": "REVIEW_METHOD_AND_COUNTEREVIDENCE",
+          "owner": "Auditor"
+        },
+        {
+          "gate": "FOOTBALL",
+          "action": "ESTABLISH_FOOTBALL_APPLICABILITY_WITH_EVIDENCE",
+          "owner": "Researcher"
+        },
+        {
+          "gate": "RIGHTS",
+          "action": "VERIFY_LICENSE_OR_CREATE_ORIGINAL_ALTERNATIVE",
+          "owner": "Publisher"
+        },
+        {
+          "gate": "VISUAL",
+          "action": "PRODUCE_SOURCE_BOUND_VISUAL_OR_EXPLICIT_NO_VISUAL",
+          "owner": "Builder"
+        },
+        {
+          "gate": "HPFA",
+          "action": "REVIEW_CLAIM_CEILING_AND_EVIDENCE",
+          "owner": "Auditor"
+        },
+        {
+          "gate": "EDITORIAL",
+          "action": "REQUEST_HUMAN_EDITORIAL_APPROVAL",
+          "owner": "Publisher"
+        }
+      ],
+      "title": "Prediction of football match outcomes from passing network structure",
+      "source_id": "https://openalex.org/W4401942230"
+    },
+    {
+      "job_id": "HPEDITOR-a0fc7b138ffe3479",
+      "status": "REWORK_REQUIRED",
+      "autopublish": false,
+      "original_preserved": true,
+      "tasks": [
+        {
+          "gate": "SOURCE",
+          "action": "VERIFY_PRIMARY_AND_CROSSREF",
+          "owner": "Researcher"
+        },
+        {
+          "gate": "METHOD",
+          "action": "REVIEW_METHOD_AND_COUNTEREVIDENCE",
+          "owner": "Auditor"
+        },
+        {
+          "gate": "FOOTBALL",
+          "action": "ESTABLISH_FOOTBALL_APPLICABILITY_WITH_EVIDENCE",
+          "owner": "Researcher"
+        },
+        {
+          "gate": "RIGHTS",
+          "action": "VERIFY_LICENSE_OR_CREATE_ORIGINAL_ALTERNATIVE",
+          "owner": "Publisher"
+        },
+        {
+          "gate": "VISUAL",
+          "action": "PRODUCE_SOURCE_BOUND_VISUAL_OR_EXPLICIT_NO_VISUAL",
+          "owner": "Builder"
+        },
+        {
+          "gate": "HPFA",
+          "action": "REVIEW_CLAIM_CEILING_AND_EVIDENCE",
+          "owner": "Auditor"
+        },
+        {
+          "gate": "EDITORIAL",
+          "action": "REQUEST_HUMAN_EDITORIAL_APPROVAL",
+          "owner": "Publisher"
+        }
+      ],
+      "title": "Exploring Team Passing Networks and Player Movement Dynamics in Youth Association Football",
+      "source_id": "https://openalex.org/W2584258665"
+    },
+    {
+      "job_id": "HPEDITOR-ac62868179ff49fb",
+      "status": "REWORK_REQUIRED",
+      "autopublish": false,
+      "original_preserved": true,
+      "tasks": [
+        {
+          "gate": "SOURCE",
+          "action": "VERIFY_PRIMARY_AND_CROSSREF",
+          "owner": "Researcher"
+        },
+        {
+          "gate": "METHOD",
+          "action": "REVIEW_METHOD_AND_COUNTEREVIDENCE",
+          "owner": "Auditor"
+        },
+        {
+          "gate": "FOOTBALL",
+          "action": "ESTABLISH_FOOTBALL_APPLICABILITY_WITH_EVIDENCE",
+          "owner": "Researcher"
+        },
+        {
+          "gate": "RIGHTS",
+          "action": "VERIFY_LICENSE_OR_CREATE_ORIGINAL_ALTERNATIVE",
+          "owner": "Publisher"
+        },
+        {
+          "gate": "VISUAL",
+          "action": "PRODUCE_SOURCE_BOUND_VISUAL_OR_EXPLICIT_NO_VISUAL",
+          "owner": "Builder"
+        },
+        {
+          "gate": "HPFA",
+          "action": "REVIEW_CLAIM_CEILING_AND_EVIDENCE",
+          "owner": "Auditor"
+        },
+        {
+          "gate": "EDITORIAL",
+          "action": "REQUEST_HUMAN_EDITORIAL_APPROVAL",
+          "owner": "Publisher"
+        }
+      ],
+      "title": "Using Network Science to Analyse Football Passing Networks: Dynamics, Space, Time, and the Multilayer Nature of the Game",
+      "source_id": "https://openalex.org/W2810421121"
+    }
+  ]
+}

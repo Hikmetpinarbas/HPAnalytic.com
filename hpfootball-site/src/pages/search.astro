@@ -15,7 +15,7 @@ export const prerender = false;
 const raw = Astro.url.searchParams.get('q') ?? '';
 const query = raw.slice(0, 120).trim();
 const articles = (await getCollection('articles', isPublic)).filter((entry) => isPublicEditorialItem(entry.data));
-const byId = new Map(articles.map((a) => [a.id, a]));
+const byId = new Map(articles.map((a: (typeof articles)[number]) => [a.id, a]));
 const documents = articles.map((a) => ({
   id: a.id,
   title: a.data.title,

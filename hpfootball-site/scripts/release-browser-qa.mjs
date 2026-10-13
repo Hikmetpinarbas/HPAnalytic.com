@@ -7,12 +7,13 @@ const out='qa-artifacts';
 await mkdir(out,{recursive:true});
 const browser=await chromium.launch({headless:true});
 
-async function inspect(name,viewport,{text200=false,reducedMotion='no-preference'}={}){
+async function inspect(name,viewport,{text200=false,reducedMotion='no-preference',route='/'}={}){
   const context=await browser.newContext({viewport,reducedMotion});
   const page=await context.newPage();
   const consoleErrors=[];
   page.on('console',m=>{if(m.type()==='error')consoleErrors.push(m.text())});
-  await page.goto(base,{waitUntil:'networkidle'});
+  const response=await page.goto(new URL(route,base).toString(),{waitUntil:'networkidle'});
+  assert.ok(response && response.status()===200,`route ${route} returned HTTP ${response?.status() ?? 'no response'}; url=${page.url()}`);
   if(text200) await page.evaluate(()=>{document.documentElement.style.fontSize='200%'});
   await page.screenshot({path:`${out}/${name}-precheck.png`,fullPage:true});
   const tabbable=page.locator('a[href],button:not([disabled]),input:not([disabled]),select:not([disabled]),textarea:not([disabled]),[tabindex]:not([tabindex="-1"])');
@@ -28,13 +29,30 @@ async function inspect(name,viewport,{text200=false,reducedMotion='no-preference
   });
   assert.ok(focus.tag && !['BODY','HTML'].includes(focus.tag),'keyboard Tab did not advance to an interactive target');
   assert.notEqual(focus.outline,'none','focused target has no visible outline');
+  if(focus.width>focus.client+1){
+    const offenders=await page.evaluate(()=>[...document.querySelectorAll('body *')].map(el=>{
+      const r=el.getBoundingClientRect();
+      return {tag:el.tagName,cls:String(el.className||'').slice(0,80),left:Math.round(r.left),right:Math.round(r.right),width:Math.round(r.width)};
+    }).filter(x=>x.right>innerWidth+2&&x.width>0).sort((a,b)=>b.right-a.right).slice(0,15));
+    console.log('OVERFLOW_ELEMENTS',JSON.stringify(offenders));
+  }
   assert.ok(focus.width<=focus.client+1,`horizontal overflow: ${focus.width} > ${focus.client}`);
   assert.deepEqual(consoleErrors,[],`console errors: ${consoleErrors.join(' | ')}`);
   await page.screenshot({path:`${out}/${name}.png`,fullPage:true});
   await context.close();
 }
 
+await inspect('mobile-320',{width:320,height:812});
 await inspect('mobile-375',{width:375,height:812});
+await inspect('mobile-420',{width:420,height:812});
+await inspect('mobile-430',{width:430,height:812});
+// Route-level smoke coverage: avoid treating homepage-only QA as site-wide acceptance.
+await inspect('analysis-mobile-375',{width:375,height:812},{route:'/analysis'});
+await inspect('scouting-mobile-375',{width:375,height:812},{route:'/scouting'});
+await inspect('research-mobile-375',{width:375,height:812},{route:'/research'});
+await inspect('visual-lab-mobile-375',{width:375,height:812},{route:'/visual-lab'});
+await inspect('archive-mobile-375',{width:375,height:812},{route:'/archive'});
+await inspect('search-mobile-375',{width:375,height:812},{route:'/search?q=role'});
 await inspect('desktop-1440',{width:1440,height:1000});
 await inspect('text-200-mobile',{width:375,height:812},{text200:true});
 await inspect('reduced-motion',{width:1440,height:1000},{reducedMotion:'reduce'});
