@@ -7,12 +7,12 @@ const out='qa-artifacts';
 await mkdir(out,{recursive:true});
 const browser=await chromium.launch({headless:true});
 
-async function inspect(name,viewport,{text200=false,reducedMotion='no-preference'}={}){
+async function inspect(name,viewport,{text200=false,reducedMotion='no-preference',route='/'}={}){
   const context=await browser.newContext({viewport,reducedMotion});
   const page=await context.newPage();
   const consoleErrors=[];
   page.on('console',m=>{if(m.type()==='error')consoleErrors.push(m.text())});
-  await page.goto(base,{waitUntil:'networkidle'});
+  await page.goto(new URL(route,base),{waitUntil:'networkidle'});
   if(text200) await page.evaluate(()=>{document.documentElement.style.fontSize='200%'});
   await page.screenshot({path:`${out}/${name}-precheck.png`,fullPage:true});
   const tabbable=page.locator('a[href],button:not([disabled]),input:not([disabled]),select:not([disabled]),textarea:not([disabled]),[tabindex]:not([tabindex="-1"])');
@@ -45,6 +45,13 @@ await inspect('mobile-320',{width:320,height:812});
 await inspect('mobile-375',{width:375,height:812});
 await inspect('mobile-420',{width:420,height:812});
 await inspect('mobile-430',{width:430,height:812});
+// Route-level smoke coverage: avoid treating homepage-only QA as site-wide acceptance.
+await inspect('analysis-mobile-375',{width:375,height:812},{route:'/analysis'});
+await inspect('scouting-mobile-375',{width:375,height:812},{route:'/scouting'});
+await inspect('research-mobile-375',{width:375,height:812},{route:'/research'});
+await inspect('visual-lab-mobile-375',{width:375,height:812},{route:'/visual-lab'});
+await inspect('archive-mobile-375',{width:375,height:812},{route:'/archive'});
+await inspect('search-mobile-375',{width:375,height:812},{route:'/search?q=role'});
 await inspect('desktop-1440',{width:1440,height:1000});
 await inspect('text-200-mobile',{width:375,height:812},{text200:true});
 await inspect('reduced-motion',{width:1440,height:1000},{reducedMotion:'reduce'});
