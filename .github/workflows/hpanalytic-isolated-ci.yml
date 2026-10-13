@@ -1,0 +1,76 @@
+name: HPAnalytic Isolated Release CI
+
+on:
+  workflow_dispatch:
+    inputs:
+      target_sha:
+        description: 'Exact source SHA to verify'
+        required: true
+        type: string
+
+permissions:
+  contents: read
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    defaults:
+      run:
+        working-directory: hpfootball-site
+    steps:
+      - name: Checkout explicit SHA
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.inputs.target_sha }}
+          fetch-depth: 0
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: hpfootball-site/package-lock.json
+
+      - name: Install locked dependencies
+        run: npm ci --no-audit --no-fund
+
+      - name: Unit tests
+        run: npm test
+
+      - name: Astro diagnostics
+        run: npm run check
+
+      - name: Production build
+        run: npm run build
+
+      - name: Install browser QA runtime
+        run: |
+          npm install --no-save --no-package-lock playwright@1.56.1
+          npx playwright install --with-deps chromium
+
+      - name: Physical browser QA
+        run: |
+          mkdir -p qa-artifacts
+          npm run dev -- --host 127.0.0.1 > /tmp/hpanalytic-astro.log 2>&1 &
+          SERVER_PID=$!
+          trap 'kill $SERVER_PID 2>/dev/null || true' EXIT
+          for i in $(seq 1 40); do
+            if curl -fsS http://127.0.0.1:4321/ >/dev/null; then break; fi
+            sleep 1
+          done
+          curl -fsS http://127.0.0.1:4321/ >/dev/null || { cat /tmp/hpanalytic-astro.log; false; }
+          node scripts/release-browser-qa.mjs
+
+      - name: Record Artifact Hashes
+        run: |
+          find qa-artifacts -type f -exec sha256sum {} + > qa-artifacts/hashes.txt
+          cat qa-artifacts/hashes.txt
+
+      - name: Upload browser QA evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: release-pack-01-browser-qa
+          path: hpfootball-site/qa-artifacts/
+          if-no-files-found: error
