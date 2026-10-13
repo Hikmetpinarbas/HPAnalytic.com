@@ -28,6 +28,13 @@ async function inspect(name,viewport,{text200=false,reducedMotion='no-preference
   });
   assert.ok(focus.tag && !['BODY','HTML'].includes(focus.tag),'keyboard Tab did not advance to an interactive target');
   assert.notEqual(focus.outline,'none','focused target has no visible outline');
+  if(focus.width>focus.client+1){
+    const offenders=await page.evaluate(()=>[...document.querySelectorAll('body *')].map(el=>{
+      const r=el.getBoundingClientRect();
+      return {tag:el.tagName,cls:String(el.className||'').slice(0,80),left:Math.round(r.left),right:Math.round(r.right),width:Math.round(r.width)};
+    }).filter(x=>x.right>innerWidth+2&&x.width>0).sort((a,b)=>b.right-a.right).slice(0,15));
+    console.log('OVERFLOW_ELEMENTS',JSON.stringify(offenders));
+  }
   assert.ok(focus.width<=focus.client+1,`horizontal overflow: ${focus.width} > ${focus.client}`);
   assert.deepEqual(consoleErrors,[],`console errors: ${consoleErrors.join(' | ')}`);
   await page.screenshot({path:`${out}/${name}.png`,fullPage:true});
