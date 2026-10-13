@@ -1,0 +1,22 @@
+name: Cloud Worker Unit Tests
+on:
+  pull_request:
+    paths:
+      - 'cloud-worker/**'
+      - '.github/workflows/cloud-worker-tests.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Unit tests (no credentials required)
+        run: python -m unittest discover -s cloud-worker -p 'test_*.py'
