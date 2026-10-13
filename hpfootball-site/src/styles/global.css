@@ -724,3 +724,6 @@ linear-gradient(180deg,#050505 0%,#070604 38%,#050505 100%);}
 @media(max-width:390px){.hp-masthead-quote{font-size:.75rem;gap:.35rem}}
 .evidence-bridge__head h2, .research-intro h2 { overflow-wrap: normal; word-break: normal; hyphens: none; }
 @media (min-width: 901px) { .research-spotlight { grid-template-columns: minmax(0, 1fr) minmax(0, 1.18fr); } .research-intro h2 { font-size: clamp(42px, 5vw, 72px); } }
+
+/* Mobile regression: allow the evidence-bridge heading and labels to wrap within the viewport. */
+@media(max-width:900px){.evidence-bridge__head h2,.evidence-bridge__head h2 em{overflow-wrap:anywhere;word-break:normal;white-space:normal;max-width:100%}.evidence-bridge__flow b,.evidence-bridge__flow span{overflow-wrap:anywhere;white-space:normal}}
