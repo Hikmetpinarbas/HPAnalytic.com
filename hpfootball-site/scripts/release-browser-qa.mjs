@@ -12,7 +12,7 @@ async function inspect(name,viewport,{text200=false,reducedMotion='no-preference
   const page=await context.newPage();
   const consoleErrors=[];
   page.on('console',m=>{if(m.type()==='error')consoleErrors.push(m.text())});
-  await page.goto(new URL(route,base),{waitUntil:'networkidle'});
+  await page.goto(new URL(route,base).toString(),{waitUntil:'networkidle'});
   if(text200) await page.evaluate(()=>{document.documentElement.style.fontSize='200%'});
   await page.screenshot({path:`${out}/${name}-precheck.png`,fullPage:true});
   const tabbable=page.locator('a[href],button:not([disabled]),input:not([disabled]),select:not([disabled]),textarea:not([disabled]),[tabindex]:not([tabindex="-1"])');
