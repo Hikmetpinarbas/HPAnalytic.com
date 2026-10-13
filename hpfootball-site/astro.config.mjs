@@ -5,6 +5,6 @@ import editorialStudio from './src/studio/integration.mjs';
 export default defineConfig({
   output:'server',
   adapter:cloudflare({ session: false }),
-  site:'https://hpanalytic.com',
+  site:'https://www.hpanalytic.com',
   integrations:[editorialStudio()],
 });

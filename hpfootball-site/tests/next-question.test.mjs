@@ -12,12 +12,14 @@ test('article schema supports one optional authored next question with a real in
   assert.match(schema, /nextQuestion\s*:\s*z\.object\(\{[\s\S]*question\s*:\s*z\.string\(\)[\s\S]*href\s*:\s*z\.string\(\)[\s\S]*\}\)\.optional\(\)/);
 });
 
-test('article renders next question only when it is authored', async () => {
+test('article renders next question only when authored and destination is public', async () => {
   const article = await source(articleUrl);
-  assert.match(article, /a\.data\.nextQuestion\s*&&/);
+  assert.match(article, /const nextQuestion=a\.data\.nextQuestion/);
+  assert.match(article, /publicArticleIds\.has/);
+  assert.match(article, /safeNextQuestion&&/);
   assert.match(article, /SIRADAKİ SORU/);
-  assert.match(article, /a\.data\.nextQuestion\.question/);
-  assert.match(article, /href=\{a\.data\.nextQuestion\.href\}/);
+  assert.match(article, /safeNextQuestion\.question/);
+  assert.match(article, /href=\{safeNextQuestion\.href\}/);
 });
 
 test('next question is a static, vertically readable continuation surface', async () => {
