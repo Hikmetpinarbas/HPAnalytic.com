@@ -41,7 +41,10 @@ async function inspect(name,viewport,{text200=false,reducedMotion='no-preference
   await context.close();
 }
 
+await inspect('mobile-320',{width:320,height:812});
 await inspect('mobile-375',{width:375,height:812});
+await inspect('mobile-420',{width:420,height:812});
+await inspect('mobile-430',{width:430,height:812});
 await inspect('desktop-1440',{width:1440,height:1000});
 await inspect('text-200-mobile',{width:375,height:812},{text200:true});
 await inspect('reduced-motion',{width:1440,height:1000},{reducedMotion:'reduce'});
