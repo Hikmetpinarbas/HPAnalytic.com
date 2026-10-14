@@ -1,0 +1,14 @@
+# Repository-wide generated artifacts and local secrets
+**/node_modules/
+**/dist/
+**/.astro/
+**/.wrangler/
+**/qa-artifacts/
+**/coverage/
+**/.cache/
+**/.env
+**/.env.*
+!**/.env.example
+**/*.tsbuildinfo
+.DS_Store
+Thumbs.db
