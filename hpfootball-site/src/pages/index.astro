@@ -11,7 +11,15 @@ export const prerender = true;
 const articles=(await getCollection('articles',isPublic)).filter(entry=>isPublicEditorialItem(entry.data)).sort((a,b)=>+b.data.date-+a.data.date);
 const hikmetEditorial=articles.find(a=>a.data.section==='culture');
 const readingDesk=articles.filter(a=>a.data.section==='analysis' || a.data.section==='scouting' || a.data.section==='culture').slice(0,3);
+// The analysis CTA and tile are offered only when an analysis exists (EMPTY SURFACE = HIDDEN SURFACE).
+const hasAnalysis=articles.some(a=>a.data.section==='analysis');
 const featuredStory=articles.find(a=>a.data.section==='analysis' && a.data.featured) ?? articles.find(a=>a.data.featured) ?? articles[0];
+const launchLinks=[
+  hasAnalysis && {href:'/analysis',label:'ANALİZ',title:'Oyunu çözümle',note:'Yayımlanmış futbol analizleri'},
+  {href:'/research',label:'ARAŞTIRMA',title:'Kanıtı sorgula',note:'Kaynak, yöntem ve belirsizlik'},
+  {href:'/scouting',label:'SCOUTING',title:'Rolü ve bağlamı incele',note:'Oyuncu kararına analitik yaklaşım'},
+  {href:'/archive',label:'ARŞİV',title:'Yayımlananları oku',note:'Mevcut onaylı içerikler'},
+].filter(Boolean) as {href:string;label:string;title:string;note:string}[];
 const footballToken=import.meta.env.HPA_FOOTBALL_DATA_TOKEN;
 const matchCentre=await getUpcomingMatches({token:footballToken});
 type MatchCentreItem={competition:string;utcDate:string;home:string;away:string;status:string};
@@ -25,8 +33,8 @@ const matchTime=(utcDate:string)=>new Intl.DateTimeFormat('tr-TR',{timeZone:'Eur
     <h1>OYUNU<br/><em>SONUÇTAN</em><br/>ÖNCE OKU.</h1>
     <p class="lead">Futbolu skor tabelasından değil; yapı, ilişki, karar, kanıt ve bağlam üzerinden okuyan bağımsız futbol analizi ve araştırma yayını.</p>
     <div class="hero-actions">
-      <a class="action-primary" href="/analysis">ANALİZLERİ KEŞFET <span aria-hidden="true">→</span></a>
-      {featuredStory && <a class="action-secondary" href={"/articles/"+featuredStory.id}>YENİ YAZIYI OKU <span aria-hidden="true">→</span></a>}
+      {hasAnalysis && <a class="action-primary" href="/analysis">ANALİZLERİ KEŞFET <span aria-hidden="true">→</span></a>}
+      {featuredStory && <a class={hasAnalysis?'action-secondary':'action-primary'} href={"/articles/"+featuredStory.id}>YENİ YAZIYI OKU <span aria-hidden="true">→</span></a>}
     </div>
     <p class="hero-signature">ÖNCE FUTBOL <span>·</span> GÜVENDEN ÖNCE KANIT</p>
   </div>
@@ -57,10 +65,7 @@ const matchTime=(utcDate:string)=>new Intl.DateTimeFormat('tr-TR',{timeZone:'Eur
 <section class="launch-directory" aria-labelledby="launch-directory-title">
   <div class="launch-directory__intro"><p class="kicker">HPANALYTIC · KEŞİF</p><h2 id="launch-directory-title">FUTBOLU BİR SORUDAN OKUMAYA BAŞLA.</h2><p>Yayımlanmış analizden kaynaklara, araştırma yönteminden oyuncu değerlendirme disiplinine geç.</p></div>
   <nav class="launch-directory__links" aria-label="İçeriği keşfet">
-    <a href="/analysis"><span>01 / ANALİZ</span><b>Oyunu çözümle</b><small>Yayımlanmış futbol analizleri</small><span aria-hidden="true">↗</span></a>
-    <a href="/research"><span>02 / ARAŞTIRMA</span><b>Kanıtı sorgula</b><small>Kaynak, yöntem ve belirsizlik</small><span aria-hidden="true">↗</span></a>
-    <a href="/scouting"><span>03 / SCOUTING</span><b>Rolü ve bağlamı incele</b><small>Oyuncu kararına analitik yaklaşım</small><span aria-hidden="true">↗</span></a>
-    <a href="/archive"><span>04 / ARŞİV</span><b>Yayımlananları oku</b><small>Mevcut onaylı içerikler</small><span aria-hidden="true">↗</span></a>
+    {launchLinks.map((link,i)=><a href={link.href}><span>{String(i+1).padStart(2,'0')} / {link.label}</span><b>{link.title}</b><small>{link.note}</small><span aria-hidden="true">↗</span></a>)}
   </nav>
 </section>
 {matchRows.length > 0 && <section class="match-centre" aria-labelledby="match-centre-title">

@@ -14,5 +14,5 @@ const items = (await getCollection('articles', isPublic))
     {items.map((a) => <li><ArticleCard id={a.id} {...a.data} headingLevel={headingLevel} /></li>)}
   </ul>
 ) : (
-  <p class="empty-state">Bu yüzeyde henüz yayımlanmış içerik yok. Boş yüzey navigasyonda gösterilmez.</p>
+  <p class="empty-state">Bu bölümde henüz yayımlanmış yazı yok.</p>
 )}
