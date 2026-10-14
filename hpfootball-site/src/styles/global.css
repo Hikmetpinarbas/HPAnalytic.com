@@ -747,3 +747,8 @@ linear-gradient(180deg,#050505 0%,#070604 38%,#050505 100%);}
 /* At 200% text the three fixed caption columns clipped "MEKANİZMA?" (figure is overflow:hidden).
    Let the cells wrap onto new rows instead of cutting the label. */
 @media(max-width:700px){.hp-pitch__caption{display:flex;flex-wrap:wrap}.hp-pitch__caption span{flex:1 1 auto;border-bottom:1px solid rgba(200,149,69,.13)}}
+
+/* HP masthead identity: typographic separator, no unrelated emblem. */
+.hp-masthead-rule{display:inline-block;flex:none;width:24px;height:1px;background:var(--gold-2);transform:rotate(-42deg);transform-origin:center}
+@media(max-width:760px){.hp-masthead-rule{width:15px}}
+@media(prefers-reduced-motion:reduce){.brand:hover .hp-break{transform:none}}
