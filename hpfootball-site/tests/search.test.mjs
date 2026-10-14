@@ -44,3 +44,22 @@ test('punctuation separates search terms without losing Turkish folding', () => 
   assert.deepEqual(searchDocuments(docs, 'role, defence').map((r) => r.id), ['role']);
   assert.deepEqual(searchDocuments(docs, 'role-based').map((r) => r.id), []);
 });
+
+// --- Pagination (ported from feat/night-search-query-20261012) -------------
+import { paginateResults } from '../src/lib/search.mjs';
+
+test('pagination clamps untrusted page numbers and keeps stable slices', () => {
+  const rows = Array.from({ length: 45 }, (_, i) => i);
+  assert.deepEqual(paginateResults(rows, '2').items, rows.slice(20, 40));
+  assert.equal(paginateResults(rows, '999').page, 3);
+  assert.equal(paginateResults(rows, '1e3').page, 3, 'numeric notation clamps like any large page');
+  for (const bad of ['0', '-1', '1.5', 'abc', null, ' ']) assert.equal(paginateResults(rows, bad).page, 1);
+  assert.deepEqual(paginateResults([], '3'), { page: 1, totalPages: 1, total: 0, items: [] });
+  assert.equal(paginateResults(rows, 1, 1000).items.length, 45);
+});
+
+test('search total is not capped by the default result limit', () => {
+  const many = Array.from({ length: 60 }, (_, i) => ({ id: `d${i}`, title: 'pres', description: '', meta: '', body: '' }));
+  assert.equal(searchDocuments(many, 'pres').length, 50);
+  assert.equal(searchDocuments(many, 'pres', { limit: many.length }).length, 60);
+});
