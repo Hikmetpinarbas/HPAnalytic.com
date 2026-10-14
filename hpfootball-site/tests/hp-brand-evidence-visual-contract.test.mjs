@@ -5,7 +5,7 @@ const read=(p)=>readFileSync(new URL('../'+p,import.meta.url),'utf8');
 test('canonical HP monogram retains line-break geometry and editorial identity',()=>{
  const s=read('src/components/Logo.astro');
  assert.match(s,/viewBox="0 0 52 52"/);
- assert.match(s,/class="hp-break" d="M13 38 42 14"/);
+ assert.match(s,/class="hp-break" d="M20 36L39 17"/);
  assert.match(s,/EVIDENCE MADE VISIBLE/);
 });
 test('hero uses the existing tactical canvas and the canonical entry headline',()=>{
