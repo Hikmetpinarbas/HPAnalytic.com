@@ -5,6 +5,9 @@ import { getCollection, render } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import EvidenceBadge from '../../components/EvidenceBadge.astro';
 import MechanismCard from '../../components/MechanismCard.astro';
+import KnowledgePath from '../../components/KnowledgePath.astro';
+import KnowledgeRelations from '../../components/KnowledgeRelations.astro';
+import { buildKnowledgePath, resolveKnowledgeRelations } from '../../lib/knowledge-relations.mjs';
 import { SECTION_LABELS, SECTION_ROUTES } from '../../lib/site-surfaces.mjs';
 import { adjacentItems, readingMinutes } from '../../lib/archive.mjs';
 import { evidenceMeta } from '../../lib/evidence.mjs';
@@ -18,6 +21,8 @@ const section=a.data.section; const sectionLabel=SECTION_LABELS[section as keyof
 const evidence=evidenceMeta(a.data.evidenceClass); const minutes=a.data.readingMinutes??readingMinutes(a.body); const isoDate=a.data.date.toISOString().slice(0,10);
 const topics=a.data.topics??[]; const sourceRefs=a.data.sourceRefs??[]; const counterevidence=a.data.counterevidence??[];
 const publicArticleIds=new Set(all.map((entry:typeof a)=>entry.id));
+const knowledgePath=buildKnowledgePath(a,all);
+const knowledgeRelations=resolveKnowledgeRelations(a,all).filter(item=>!knowledgePath.some(pathItem=>pathItem.article.id===item.article.id));
 const nextQuestion=a.data.nextQuestion;
 const safeNextQuestion=nextQuestion && /^\/articles\/[a-z0-9-]+$/.test(nextQuestion.href) && publicArticleIds.has(nextQuestion.href.slice('/articles/'.length)) ? nextQuestion : null;
 const articleKindLabel=a.data.articleKind?displayArticleKind(a.data.articleKind):''; const seriesLabel=a.data.series?displaySeries(a.data.series):'';
@@ -77,6 +82,8 @@ const site=Astro.site??Astro.url; const canonicalArticle=new URL(Astro.url.pathn
 {dataInsights.length>0&&<section class="article-data-notes" aria-labelledby="data-notes-title"><p class="kicker">VERİ NOTU</p><h2 id="data-notes-title">Sayı ne söylüyor?</h2><div class="data-note-grid">{dataInsights.map(d=><article class="data-note-card"><small>SORU</small><h3>{d.question}</h3><div class="data-note-metric">{d.metric}</div><p><b>HP yorumu:</b> {d.interpretation}</p><p><b>Sınır:</b> {d.limit}</p>{d.source_label&&<small>{d.source_label}</small>}</article>)}</div></section>}
 {counterevidence.length>0&&<details class="article-disclosure article-counterevidence"><summary>Karşı kanıt ve sınırlar <span aria-hidden="true">＋</span></summary><div class="disclosure-ghost"><ul>{counterevidence.map(item=><li>{item}</li>)}</ul></div></details>}
 {sourceRefs.length>0&&<details class="article-disclosure article-sources"><summary>Kaynakları incele <span aria-hidden="true">＋</span></summary><div class="disclosure-ghost"><ol>{sourceRefs.map(source=><li>{/https?:\/\//.test(source.locator)?<a href={source.locator} rel="noreferrer">{source.title}</a>:<span>{source.title}</span>}<small>{displayRights(source.rights)} · {displayClaimCeiling(source.claim_ceiling)}</small></li>)}</ol></div></details>}
+<KnowledgePath items={knowledgePath} />
+<KnowledgeRelations items={knowledgeRelations} />
 {safeNextQuestion&&<aside class="next-question" aria-labelledby="next-question-title"><p class="next-question-label">SIRADAKİ SORU</p><h2 id="next-question-title">{safeNextQuestion.question}</h2><a href={safeNextQuestion.href}>Sorunun izini sür <span aria-hidden="true">→</span></a></aside>}
 
 <aside class="claim-boundary" aria-labelledby="claim-boundary-title"><h2 id="claim-boundary-title">KANIT SINIRI</h2><p>{evidence.summary}</p><p>Bu yazının iddia sınırı: <strong>{displayClaimCeiling(a.data.claimCeiling)}</strong>.</p></aside>

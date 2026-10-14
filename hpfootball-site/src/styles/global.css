@@ -752,3 +752,15 @@ linear-gradient(180deg,#050505 0%,#070604 38%,#050505 100%);}
 .hp-masthead-rule{display:inline-block;flex:none;width:24px;height:1px;background:var(--gold-2);transform:rotate(-42deg);transform-origin:center}
 @media(max-width:760px){.hp-masthead-rule{width:15px}}
 @media(prefers-reduced-motion:reduce){.brand:hover .hp-break{transform:none}}
+
+/* HPAnalytic knowledge network: editorial-only links */
+.hp-knowledge-path,.hp-relations{margin-block:2rem;padding:1.5rem;border:1px solid var(--line, #666);border-radius:0.75rem}
+.hp-knowledge-path header,.hp-relations header{margin-bottom:1rem}
+.hp-knowledge-path ol{list-style:none;padding:0;margin:0;display:grid;gap:0.75rem}
+.hp-knowledge-path li a,.hp-relations__grid a{display:flex;gap:1rem;padding:1rem;border:1px solid var(--line, #666);border-radius:0.5rem;text-decoration:none;color:inherit}
+.hp-knowledge-path__index{font-weight:700;font-variant-numeric:tabular-nums}
+.hp-relations__grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,16rem),1fr));gap:0.75rem}
+.hp-relations__grid a{display:block}
+.hp-knowledge-path h3,.hp-relations h3{margin:0.4rem 0}
+.hp-knowledge-path a:focus-visible,.hp-relations a:focus-visible{outline:3px solid currentColor;outline-offset:3px}
+@media(max-width:600px){.hp-knowledge-path,.hp-relations{padding:1rem}}
