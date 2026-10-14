@@ -1,5 +1,6 @@
 ---
 import { serializeJsonLd } from '../../lib/json-ld.mjs';
+import { canonicalPath } from '../../lib/canonical-path.mjs';
 import { isPublic } from '../../lib/public-content.mjs';
 import { getCollection, render } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
@@ -29,7 +30,7 @@ const safeNextQuestion=resolvePublicNextQuestion(nextQuestion, publicArticleIds)
 const articleKindLabel=a.data.articleKind?displayArticleKind(a.data.articleKind):''; const seriesLabel=a.data.series?displaySeries(a.data.series):'';
 const visualAssets=(a.data.visualAssets??[]).filter(v=>['OWNED','LICENSED','EDITORIAL_LICENSED','PUBLIC_DOMAIN','ORIGINAL'].includes(String(v.rights_status||'').toUpperCase()));
 const dataInsights=a.data.dataInsights??[]; const governed=a.data.source_system==='HP_CONTENT_INTELLIGENCE'||Boolean(a.data.articleKind);
-const site=Astro.site??Astro.url; const canonicalArticle=new URL(Astro.url.pathname,site).href; const jsonLd={'@context':'https://schema.org','@type':'Article',headline:a.data.title,description:a.data.description,datePublished:a.data.date.toISOString(),inLanguage:a.data.language??'tr',author:{'@type':'Person',name:a.data.author??'Hikmet Pınarbaş'},publisher:{'@type':'Organization',name:'HPAnalytic'},mainEntityOfPage:new URL(Astro.url.pathname,site).href};
+const site=Astro.site??Astro.url; const canonicalArticle=new URL(canonicalPath(Astro.url.pathname),site).href; const jsonLd={'@context':'https://schema.org','@type':'Article',headline:a.data.title,description:a.data.description,datePublished:a.data.date.toISOString(),inLanguage:a.data.language??'tr',author:{'@type':'Person',name:a.data.author??'Hikmet Pınarbaş'},publisher:{'@type':'Organization',name:'HPAnalytic'},mainEntityOfPage:new URL(canonicalPath(Astro.url.pathname),site).href};
 ---
 <BaseLayout title={a.data.title+' — HPAnalytic'} description={a.data.description} section={section} ogType="article" publishedTime={a.data.date}>
 <script slot="head" type="application/ld+json" set:html={serializeJsonLd(jsonLd)} />

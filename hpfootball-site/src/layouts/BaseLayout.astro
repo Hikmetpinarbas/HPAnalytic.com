@@ -6,6 +6,7 @@ import { getCollection } from 'astro:content';
 import { buildVisibleNavigation, buildUtilityNavigation, currentState, SECTION_ROUTES } from '../lib/site-surfaces.mjs';
 import MobileNavigation from '../components/MobileNavigation.astro';
 import Logo from '../components/Logo.astro';
+import { canonicalPath } from '../lib/canonical-path.mjs';
 
 interface Props {
   title?: string;
@@ -52,7 +53,7 @@ const navigation = withCurrent(buildVisibleNavigation({
 const utility = withCurrent(buildUtilityNavigation({ articleCount: articles.length }));
 const archiveLink = utility.find((item) => item.href === '/archive');
 const searchLink = utility.find((item) => item.href === '/search');
-const canonical = new URL(pathname, Astro.site ?? Astro.url).href;
+const canonical = new URL(canonicalPath(pathname), Astro.site ?? Astro.url).href;
 ---
 <!doctype html>
 <html lang="tr" class="no-js">

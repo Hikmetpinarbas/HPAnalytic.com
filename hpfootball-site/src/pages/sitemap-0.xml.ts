@@ -2,6 +2,7 @@ import type { APIRoute } from 'astro';
 import { getCollection } from 'astro:content';
 import { isPublic } from '../lib/public-content.mjs';
 import { isPublicEditorialItem } from '../lib/site-editorial-status.mjs';
+import { canonicalPath } from '../lib/canonical-path.mjs';
 
 export const prerender = true;
 
@@ -23,8 +24,8 @@ export const GET: APIRoute = async ({ site }) => {
     ...(visuals.length ? ['/visual-lab'] : []),
   ];
   const urls = [
-    ...[...STATIC_ROUTES, ...visibleRoutes].map((pathname) => new URL(pathname, base).href),
-    ...articles.map((entry) => new URL('/articles/' + entry.id, base).href),
+    ...[...STATIC_ROUTES, ...visibleRoutes].map((pathname) => new URL(canonicalPath(pathname), base).href),
+    ...articles.map((entry) => new URL(canonicalPath('/articles/' + entry.id), base).href),
   ];
   const body = urls.map((url) => `<url><loc>${esc(url)}</loc></url>`).join('');
   return new Response(
