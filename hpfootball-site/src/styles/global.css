@@ -727,3 +727,23 @@ linear-gradient(180deg,#050505 0%,#070604 38%,#050505 100%);}
 
 /* Mobile regression: allow the evidence-bridge heading and labels to wrap within the viewport. */
 @media(max-width:900px){.evidence-bridge__head h2,.evidence-bridge__head h2 em{overflow-wrap:anywhere;word-break:normal;white-space:normal;max-width:100%}.evidence-bridge__flow b,.evidence-bridge__flow span{overflow-wrap:anywhere;white-space:normal}}
+
+/* Release visual pass, 2026-10-14. Presentation only; no content, gating or data change.
+   - Turkish diacritics (Ç, Ş, Ö, İ) need line-height headroom; .84/.88 made marks collide across lines.
+   - The schematic disclaimer had no rule and fell back to body copy outside the panel padding.
+   - Article share sat centred under a left-aligned header; meta was glued to the standfirst.
+   - Launch-directory tiles used an off-palette navy; brand surfaces are warm black. */
+.hero h1{line-height:.96}
+.evidence-bridge__head h2{line-height:1;letter-spacing:-.025em}
+.hp-pitch__disclaimer{margin:0;padding:12px 15px;border-top:1px solid rgba(200,149,69,.16);color:var(--muted);font:400 .8125rem/1.5 var(--font-sans);letter-spacing:.01em}
+.article-head .article-meta{margin-top:24px}
+.article-share{width:min(900px,100%);max-width:none;margin:0 0 32px;padding:0 0 24px}
+.launch-directory__links a{background:var(--surface-2)}
+.launch-directory__links a:last-child:nth-child(odd){grid-column:1/-1}
+.launch-directory__links a:hover,.launch-directory__links a:focus-visible{background:#1c1811}
+@media(min-width:901px){.principles>span:first-child{padding-left:var(--gutter)}}
+@media(max-width:900px){.evidence-bridge__head h2,.evidence-bridge__head h2 em{overflow-wrap:break-word}}
+.empty-state a{color:var(--gold-2);text-decoration:underline;text-underline-offset:3px}
+/* At 200% text the three fixed caption columns clipped "MEKANİZMA?" (figure is overflow:hidden).
+   Let the cells wrap onto new rows instead of cutting the label. */
+@media(max-width:700px){.hp-pitch__caption{display:flex;flex-wrap:wrap}.hp-pitch__caption span{flex:1 1 auto;border-bottom:1px solid rgba(200,149,69,.13)}}
