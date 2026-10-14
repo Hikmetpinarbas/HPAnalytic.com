@@ -4,6 +4,7 @@
 **/.astro/
 **/.wrangler/
 **/qa-artifacts/
+**/p0-visual-qa/
 **/coverage/
 **/.cache/
 **/.env

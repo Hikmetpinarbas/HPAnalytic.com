@@ -71,6 +71,28 @@ jobs:
           path: hpfootball-site/qa-artifacts/
           if-no-files-found: error
 
+      # P0 closure: article page + open mobile menu at 320/375/430/1440 and 200% text,
+      # against the production build (astro preview, Cloudflare workerd) rather than the dev server.
+      - name: P0 visual QA on production build
+        run: |
+          npm run preview -- --host 127.0.0.1 --port 4321 > /tmp/hpanalytic-preview.log 2>&1 &
+          PREVIEW_PID=$!
+          trap 'kill $PREVIEW_PID 2>/dev/null || true' EXIT
+          for i in $(seq 1 60); do
+            if curl -fsS http://127.0.0.1:4321/ >/dev/null; then break; fi
+            sleep 1
+          done
+          curl -fsS http://127.0.0.1:4321/ >/dev/null || { cat /tmp/hpanalytic-preview.log; exit 1; }
+          node scripts/p0-visual-qa.mjs
+
+      - name: Upload P0 visual QA evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: p0-visual-qa
+          path: hpfootball-site/p0-visual-qa/
+          if-no-files-found: error
+
       - name: Private Studio must not reach production
         run: |
           if grep -rIl -E "src/studio|HP_EDITORIAL_ROOT|/studio/editorial" dist; then
