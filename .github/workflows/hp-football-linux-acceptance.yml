@@ -61,6 +61,7 @@ jobs:
           done
           curl -fsS http://127.0.0.1:4321/ >/dev/null || { cat /tmp/hpanalytic-astro.log; exit 1; }
           node scripts/release-browser-qa.mjs
+          node tests/browser/search-discovery.browser.mjs
 
       - name: Upload browser QA evidence
         if: always()

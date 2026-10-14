@@ -5,15 +5,25 @@ import { isPublicEditorialItem } from '../lib/site-editorial-status.mjs';
 
 export const prerender = true;
 
-const STATIC_ROUTES = ['/', '/analysis', '/research', '/scouting', '/culture', '/visual-lab', '/archive', '/search', '/about'];
+const STATIC_ROUTES = ['/', '/archive', '/about'];
 
 const esc = (value: string) => value.replace(/[&<>"']/g, (char) => ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&apos;' }[char] ?? char));
 
 export const GET: APIRoute = async ({ site }) => {
   const base = site ?? new URL('https://hpanalytic.com');
   const articles = (await getCollection('articles', isPublic)).filter((entry) => isPublicEditorialItem(entry.data));
+  const research = (await getCollection('research', isPublic)).filter((entry) => isPublicEditorialItem(entry.data));
+  const visuals = (await getCollection('visuals', isPublic)).filter((entry) => isPublicEditorialItem(entry.data));
+  const activeSections = new Set(articles.map((entry) => entry.data.section));
+  const visibleRoutes = [
+    ...(activeSections.has('analysis') ? ['/analysis'] : []),
+    ...(activeSections.has('scouting') ? ['/scouting'] : []),
+    ...(activeSections.has('culture') ? ['/culture'] : []),
+    ...(research.length ? ['/research'] : []),
+    ...(visuals.length ? ['/visual-lab'] : []),
+  ];
   const urls = [
-    ...STATIC_ROUTES.map((pathname) => new URL(pathname, base).href),
+    ...[...STATIC_ROUTES, ...visibleRoutes].map((pathname) => new URL(pathname, base).href),
     ...articles.map((entry) => new URL('/articles/' + entry.id, base).href),
   ];
   const body = urls.map((url) => `<url><loc>${esc(url)}</loc></url>`).join('');
