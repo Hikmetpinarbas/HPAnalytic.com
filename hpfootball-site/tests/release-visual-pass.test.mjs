@@ -1,0 +1,12 @@
+import test from "node:test";
+import assert from "node:assert/strict";
+import {readFileSync} from "node:fs";
+const read=(p)=>readFileSync(new URL(p,import.meta.url),"utf8");
+const home=read("../src/pages/index.astro");
+const analysis=read("../src/pages/analysis.astro");
+const listing=read("../src/components/SectionListing.astro");
+const css=read("../src/styles/global.css");
+test("home offers the analysis CTA and tile only when an analysis is published",()=>{assert.match(home,/const hasAnalysis=articles\.some\(a=>a\.data\.section==='analysis'\)/);assert.match(home,/\{hasAnalysis && <a class="action-primary" href="\/analysis">/);assert.match(home,/hasAnalysis && \{href:'\/analysis'/)});
+test("empty analysis listing speaks to readers and stays out of search indexes",()=>{assert.match(analysis,/noindex=\{items\.length===0\}/);assert.match(analysis,/class="empty-state"/);assert.doesNotMatch(listing,/Boş yüzey navigasyonda gösterilmez/)});
+test("display headings leave headroom for Turkish diacritics",()=>{assert.match(css,/\.hero h1\{line-height:\.96\}/);assert.match(css,/\.evidence-bridge__head h2\{line-height:1;/)});
+test("schematic disclaimer is styled inside the pitch panel",()=>{assert.match(css,/\.hp-pitch__disclaimer\{margin:0;padding:12px 15px;/)});

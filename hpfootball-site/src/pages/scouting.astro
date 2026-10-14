@@ -19,14 +19,18 @@ const dimensions = [
   <header class="page-head">
     <p class="kicker">SCOUTING &amp; RECRUITMENT</p>
     <h1 class="page-title">Oyuncu bulmak değil, karar riskini azaltmak.</h1>
-    <p class="lead">Rol, fonksiyon, sistem uyumu, partner ilişkileri, rakip bağlamı, transferability ve counterevidence aynı karar yüzeyinde okunur.</p>
+    <p class="lead">Bir oyuncunun rolünü, takım içindeki işlevini, partnerleriyle ilişkisini ve rakip seviyesini birlikte değerlendiririz. Başka bir takıma uyum sağlayıp sağlayamayacağını, kararı çürütebilecek kanıtlarla da sınarız.</p>
   </header>
   <p class="decision-question">“Bu transfer kararını ben vermiş olsaydım ve itibarım bu karara bağlı olsaydı, bu oyuncuyu alır mıydım?”</p>
   <ul class="frame-grid" aria-label="Karar boyutları">
     {dimensions.map(([name, text]) => <li><b>{name}</b><p>{text}</p></li>)}
   </ul>
+  <section class="subsection" aria-labelledby="expertise-scouting">
+    <h2 id="expertise-scouting" class="kicker">SAHANIN VE KARARIN UZMANLARI</h2>
+    <p class="lead">Antrenör, scout, performans analisti, fizyoterapist ve yöneticilerin katkısını; kadın veya erkek takımlarında çalıştıklarından bağımsız olarak karar kalitesi, yöntem ve somut etki üzerinden inceleriz. Kadın uzmanların görünmeyen emeği de bu araştırmanın parçasıdır.</p>
+  </section>
   <section class="subsection" aria-labelledby="scouting-reports">
-    <h2 id="scouting-reports" class="kicker">REPORTS</h2>
+    <h2 id="scouting-reports" class="kicker">RAPORLAR</h2>
     <SectionListing section="scouting" headingLevel={3} />
   </section>
 </div>

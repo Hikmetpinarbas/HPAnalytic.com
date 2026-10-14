@@ -2,12 +2,57 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 export const prerender = true;
 ---
-<BaseLayout title="Hikmet Pınarbaş — HPAnalytic" description="Futbol analisti, TV yorumcusu, scouting ve recruitment analisti.">
-<div class="listing">
-  <header class="page-head">
-    <p class="kicker">HİKMET PINARBAŞ</p>
-    <h1 class="page-title">Football analyst.<br/>TV commentator.<br/>Scouting &amp; Recruitment.</h1>
-    <p class="lead">Maç, takım ve oyuncu performansını taktik, veri, kanıt ve bağlam üzerinden inceler; futbol bilgisini karar, mekanizma ve oyun içi ilişkiler üzerinden yorumlar.</p>
+<BaseLayout title="Hikmet Pınarbaş — Hakkımda | HPAnalytic" description="Hikmet Pınarbaş'ın medya deneyimi, analitik düşünme biçimi, bilim ve kanıt yaklaşımı.">
+<div class="portrait">
+  <header class="portrait-hero">
+    <p class="eyebrow">HAKKIMDA / HİKMET PINARBAŞ</p>
+    <h1>Bir sonuca varmadan önce,<br/><em>nasıl bildiğimizi</em> sorarım.</h1>
+    <p class="intro">Futbol analisti ve medya yorumcusuyum. Futbol analizi, medya, bilimsel düşünme ve problem çözme. Bunlar benim için birbirinden kopuk uğraşlar değil; karmaşık meseleleri anlamaya, anlatmaya ve gerektiğinde yeniden düşünmeye yönelik ortak bir çalışma alanı.</p>
   </header>
+  <nav class="portrait-nav" aria-label="Hakkımda bölümleri">
+    <a href="#dusunme">Düşünme biçimi</a><a href="#medya">Medya ve anlatı</a><a href="#bilim">Bilim ve belirsizlik</a><a href="#insan">İnsan ve hayat</a><a href="#futbol">Futbol ve sistemler</a><a href="#kamera-disinda">Kamera dışında</a>
+  </nav>
+  <section id="dusunme" class="portrait-section">
+    <p class="section-number">01 / DÜŞÜNME BİÇİMİ</p><h2>Önce sorunun yapısı.</h2>
+    <p>Bir sonucu tek başına açıklama saymam. Onu üreten koşulları, ilişkileri ve görünmeyen seçenekleri anlamaya çalışırım. İlk açıklama, üzerinde çalışılacak bir ihtimaldir; kesin hüküm değil.</p>
+    <p>Bu yaklaşımın merkezinde üç soru var: Neyi gerçekten gözledik? Hangi yorumu yaptık? Bizi hangi yeni kanıt fikrimizi değiştirmeye zorlar?</p>
+  </section>
+  <section id="medya" class="portrait-section">
+    <p class="section-number">02 / MEDYA VE ANLATI</p><h2>Anlaşılır olmak, gerçeği eksiltmek değildir.</h2>
+    <p>Medya deneyimimin erken duraklarından biri, 2009–2010 sezonunda SKYTURK ekranlarında konuk olarak yer aldığım dönemdi. Yıllara yayılan medya pratiğim, futbol yorumculuğunun ötesinde bir iletişim deneyimi. Canlı yayın, uzun stüdyo tartışması ve kısa anlatım aynı soruyu farklı biçimlerde gündeme getirir: Karmaşık bir meseleyi, onu bozup basitleştirmeden nasıl anlatabiliriz?</p>
+    <p>2022–2026 yayın ve analiz arşivimde, bir öngörünün yanlış çıktığını kabul etme ve yeni gözlem karşısında yorumu güncelleme örnekleri bulunuyor. Benim için güvenilirlik, her seferinde haklı çıkmaktan çok, gerektiğinde düşünceyi düzeltmeye açık kalmakla ilgili.</p>
+    <p class="editorial-note">Bu döneme ilişkin program ve bölüm bilgileri, yayın kayıtlarıyla doğrulanabildikçe arşive eklenecektir.</p>
+  </section>
+  <section id="bilim" class="portrait-section">
+    <p class="section-number">03 / BİLİM VE BELİRSİZLİK</p><h2>Bilim, kesinlik gösterisi değil; düzeltilebilir düşüncedir.</h2>
+    <p>Veriyi önemli bulurum; fakat bir sayı tek başına neden-sonuç ilişkisini kanıtlamaz. Model, gerçekliğin yerine geçmez. Belirsizliği saklamak yerine tarif etmek, karşı kanıtı aramak ve bir iddianın sınırını bilmek daha güçlü bir çalışma biçimi sunar.</p>
+    <div class="hp-principle" aria-labelledby="principle-title">
+      <p class="section-number">HP / EPISTEMIC PRINCIPLE 01</p>
+      <h3 id="principle-title">Kanıtın sınırı, iddianın sınırıdır.</h3>
+      <div class="hp-principle-formula" role="math" aria-label="İddianın gücü, kanıtın gücünden küçük veya ona eşittir."><span>Güç(İddia)</span><span class="relation">≤</span><span>Güç(Kanıt)</span></div>
+      <p>Hiçbir iddia, dayandığı kanıttan daha güçlü olamaz.</p>
+      <p class="editorial-note">Bu matematiksel biçim sayısal olarak kalibre edilmiş bir model değil, kanıt ve hüküm arasındaki sınırı anlatan kavramsal ilkedir.</p>
+    </div>
+  </section>
+  <section id="insan" class="portrait-section">
+    <p class="section-number">04 / İNSAN VE HAYAT</p><h2>Her sorun bir veri problemine indirgenemez.</h2>
+    <p>Gündelik hayatta ve insan ilişkilerinde, bir meselenin görünen tarafı kadar koşullarını ve karşı tarafın bakış açısını anlamaya da değer veriyorum. Ancak insan ilişkilerinin tek bir formülle çözülemeyeceğini biliyorum. Dinlemek, yanlış anlamış olma ihtimalini açık tutmak ve gerektiğinde kendi tutumunu gözden geçirmek de çözümün parçası.</p>
+    
+  </section>
+  <section id="futbol" class="portrait-section">
+    <p class="section-number">05 / FUTBOL VE SİSTEMLER</p><h2>Futbol, düşüncenin sınandığı bir laboratuvar.</h2>
+    <p>Analiz, scouting ve yayın çalışmalarımdaki ortak hedef yalnızca bir performansı adlandırmak değil; davranışın nasıl oluştuğunu, hangi bağlamda anlam kazandığını ve hangi kanıtlarla savunulabileceğini göstermek. HPFA ve HPAnalytic bu yaklaşımın metodolojik ve editoryal yüzeyleri.</p>
+    <p>Bir pozisyonun arkasındaki ilişkileri anlamak, bir fikrin nasıl oluştuğunu sorgulamak ve karmaşık bir süreci açık biçimde anlatmak: Futbol benim için daha geniş bir düşünme biçiminin somut uygulaması.</p>
+  </section>
+  <section id="kamera-disinda" class="portrait-section">
+    <p class="section-number">06 / KAMERA DIŞINDA</p>
+    <h2>Meslekten ibaret olmayan bir hayat.</h2>
+    <p>Evliyim, iki oğlum var. Aile hayatım, mesleki kimliğimin dışında kalan ve kamuya açık bir biyografide ayrıntılarını sınırlı tutmayı tercih ettiğim bir alan.</p>
+    <p>Gündelik hayatımda nelerle uğraştığım, hobilerim, okumaktan ve izlemekten hoşlandığım eserler bu portrenin zaman içinde gelişecek bir başka parçası. Bunları genel geçer ilgi alanlarıyla doldurmak yerine kendi seçimlerim ve sözlerimle anlatmak istiyorum.</p>
+    
+  </section>
 </div>
+<style>
+.portrait{max-width:1100px;margin:0 auto;padding:clamp(1.25rem,4vw,4rem) clamp(1rem,4vw,3rem) 5rem;color:#ece9e2}.portrait-hero{padding:clamp(2rem,6vw,6rem) 0 3rem;border-bottom:1px solid #423b32}.eyebrow,.section-number{font:600 .72rem/1.5 system-ui,sans-serif;letter-spacing:.14em;color:#d5b778}.portrait-hero h1{font:400 clamp(2.5rem,6.4vw,5.5rem)/1.06 Georgia,serif;letter-spacing:-.035em;max-width:18ch;margin:1.3rem 0 2rem}.portrait-hero h1 em{font-weight:400;color:#d5b778}.intro{font-size:clamp(1.05rem,2vw,1.4rem);line-height:1.65;max-width:47rem;color:#c9c4ba}.portrait-nav{display:flex;flex-wrap:wrap;gap:.65rem 1.25rem;padding:1.2rem 0;border-bottom:1px solid #423b32}.portrait-nav a{color:#e5d4af;font:500 .85rem/1.5 system-ui,sans-serif;text-underline-offset:.3rem}.portrait-nav a:focus-visible{outline:2px solid #f0c977;outline-offset:4px}.portrait-section{padding:clamp(2.5rem,5vw,5rem) 0;border-bottom:1px solid #423b32;scroll-margin-top:5rem}.portrait-section h2{font:400 clamp(1.8rem,4vw,3.25rem)/1.15 Georgia,serif;max-width:22ch;margin:1rem 0 1.5rem}.portrait-section>p:not(.section-number){max-width:45rem;font-size:1.05rem;line-height:1.85;color:#cbc6bc}.editorial-note{font:400 .85rem/1.65 system-ui,sans-serif!important;color:#a79e90!important}.hp-principle{margin-top:2.2rem;border:1px solid #665135;background:linear-gradient(140deg,#1b160e,#080808);padding:clamp(1.2rem,4vw,3rem)}.hp-principle h3{font:400 clamp(1.5rem,3vw,2.5rem)/1.2 Georgia,serif;margin:1rem 0 2rem}.hp-principle-formula{display:flex;flex-wrap:wrap;align-items:center;gap:clamp(.5rem,2vw,1.5rem);font:400 clamp(1.15rem,3vw,2.3rem)/1.4 Georgia,serif}.relation{color:#f0c977;font-size:1.4em}.hp-principle>p:not(.section-number){max-width:45rem;line-height:1.7}@media(max-width:420px){.portrait-hero h1{overflow-wrap:anywhere}.portrait-nav{gap:.8rem 1rem}}
+</style>
 </BaseLayout>

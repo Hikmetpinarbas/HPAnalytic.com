@@ -6,9 +6,9 @@ const component = await readFile(new URL('../src/components/TacticalCanvas.astro
 const css = await readFile(new URL('../src/styles/global.css', import.meta.url), 'utf8');
 
 test('HPAnalytic Pitch exposes the three-part visual grammar', () => {
-  assert.match(component, /STRUCTURE/);
-  assert.match(component, /FORCE/);
-  assert.match(component, /REVEAL/);
+  assert.match(component, /YAPI/);
+  assert.match(component, /İLİŞKİ/);
+  assert.match(component, /MEKANİZMA\?/);
   assert.match(component, /hp-pitch/);
 });
 

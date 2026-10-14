@@ -45,6 +45,32 @@ jobs:
       - name: Production build
         run: npm run build
 
+      - name: Install browser QA runtime
+        run: |
+          npm install --no-save --no-package-lock playwright@1.56.1
+          npx playwright install --with-deps chromium
+
+      - name: Physical browser QA
+        run: |
+          npm run dev -- --host 127.0.0.1 > /tmp/hpanalytic-astro.log 2>&1 &
+          SERVER_PID=$!
+          trap 'kill $SERVER_PID 2>/dev/null || true' EXIT
+          for i in $(seq 1 40); do
+            if curl -fsS http://127.0.0.1:4321/ >/dev/null; then break; fi
+            sleep 1
+          done
+          curl -fsS http://127.0.0.1:4321/ >/dev/null || { cat /tmp/hpanalytic-astro.log; exit 1; }
+          node scripts/release-browser-qa.mjs
+          node tests/browser/search-discovery.browser.mjs
+
+      - name: Upload browser QA evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: release-pack-01-browser-qa
+          path: hpfootball-site/qa-artifacts/
+          if-no-files-found: error
+
       - name: Private Studio must not reach production
         run: |
           if grep -rIl -E "src/studio|HP_EDITORIAL_ROOT|/studio/editorial" dist; then

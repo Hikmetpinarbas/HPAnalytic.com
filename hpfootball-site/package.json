@@ -10,7 +10,8 @@
     "test": "node --test tests/*.test.mjs",
     "studio": "HP_STUDIO=1 astro dev --host 127.0.0.1",
     "article:stage": "node scripts/article-stage.mjs",
-    "article:publish": "node scripts/article-publish.mjs"
+    "article:publish": "node scripts/article-publish.mjs",
+    "article:audit": "node scripts/publication-readiness.mjs"
   },
   "dependencies": {
     "@astrojs/cloudflare": "^14.3.4",
