@@ -9,5 +9,23 @@ export const prerender = true;
     <h1 class="page-title">Football analyst.<br/>TV commentator.<br/>Scouting &amp; Recruitment.</h1>
     <p class="lead">Maç, takım ve oyuncu performansını taktik, veri, kanıt ve bağlam üzerinden inceler; futbol bilgisini karar, mekanizma ve oyun içi ilişkiler üzerinden yorumlar.</p>
   </header>
+  <section class="hp-principle" aria-labelledby="hp-principle-title">
+    <p class="hp-principle-eyebrow">HP / EPISTEMIC PRINCIPLE 01</p>
+    <h2 id="hp-principle-title">Kanıtın sınırı, iddianın sınırıdır.</h2>
+    <div class="hp-principle-formula" role="math" aria-label="İddianın gücü, kanıtın gücünden küçük veya ona eşittir.">
+      <span>Güç(İddia)</span><span class="hp-principle-relation">≤</span><span>Güç(Kanıt)</span>
+    </div>
+    <p>Hiçbir iddia, dayandığı kanıttan daha güçlü olamaz.</p>
+    <p class="hp-principle-note">Bu ifade sayısal bir performans modeli değil, analizde kanıt ve hüküm arasındaki sınırı anlatan kavramsal bir ilkedir. Mekanizma ve bağlam incelenmeden yalnızca metriğe dayanarak hüküm verilmez.</p>
+  </section>
 </div>
+<style>
+  .hp-principle{margin:clamp(2rem,6vw,5rem) 0;border:1px solid #4f412b;background:linear-gradient(145deg,#12100c,#050505);padding:clamp(1.25rem,4vw,3.5rem);color:#f1eee6}
+  .hp-principle-eyebrow{font:600 .7rem/1.5 system-ui,sans-serif;letter-spacing:.16em;color:#f0c977}
+  .hp-principle h2{font:400 clamp(1.5rem,3.5vw,2.7rem)/1.16 Georgia,serif;max-width:24ch;margin:1.1rem 0 1.8rem}
+  .hp-principle-formula{display:flex;align-items:center;flex-wrap:wrap;gap:clamp(.5rem,2vw,1.5rem);font:400 clamp(1.05rem,3.4vw,2.5rem)/1.35 Georgia,serif;margin:0 0 1.6rem}
+  .hp-principle-relation{color:#f0c977;font-size:1.3em}
+  .hp-principle>p:not(.hp-principle-eyebrow){max-width:65ch;line-height:1.7}
+  .hp-principle-note{color:#aaa293;font-size:.9rem}
+</style>
 </BaseLayout>
