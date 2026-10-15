@@ -40,10 +40,14 @@ async function common(page, consoleErrors, label) {
   assert.equal(m.frame, PUBLISHED_FRAME, `${label}: header logo frame is not the published HP mark`);
   assert.equal(m.brk, PUBLISHED_BREAK, `${label}: header logo break is not the published HP mark`);
   if (m.scroll > m.client + 1) {
-    const offenders = await page.evaluate(() => [...document.querySelectorAll('body *')].map(el => {
-      const r = el.getBoundingClientRect();
-      return { tag: el.tagName, className: typeof el.className === 'string' ? el.className.slice(0, 90) : '', text: (el.textContent || '').trim().slice(0, 65), left: Math.round(r.left), right: Math.round(r.right), width: Math.round(r.width) };
-    }).filter(x => x.right > document.documentElement.clientWidth + 1 || x.left < -1).slice(0, 25));
+    const offenders = await page.evaluate(() => {
+      const vw = document.documentElement.clientWidth;
+      return [...document.querySelectorAll('html,body,body *')].map(el => {
+        const r = el.getBoundingClientRect();
+        const s = getComputedStyle(el);
+        return { tag: el.tagName, cls: typeof el.className === 'string' ? el.className.slice(0, 90) : '', text: (el.textContent || '').trim().slice(0, 45), left: Math.round(r.left), right: Math.round(r.right), client: el.clientWidth, scroll: el.scrollWidth, overflowX: s.overflowX, whiteSpace: s.whiteSpace, transform: s.transform };
+      }).filter(x => x.scroll > x.client + 1 || x.right > vw + 1 || x.left < -1).slice(0, 45);
+    });
     console.error(`P0_OVERFLOW ${label}: ${JSON.stringify(offenders)}`);
     await page.screenshot({ path: `${out}/overflow-${label.replace(/[^a-z0-9-]/gi, '-')}.jpg`, fullPage: true, type: 'jpeg', quality: 65 });
   }
