@@ -767,3 +767,6 @@ linear-gradient(180deg,#050505 0%,#070604 38%,#050505 100%);}
 
 /* P0: enlarged text must reflow the home hero rather than forcing horizontal scrolling. */
 @media(max-width:560px){.hero h1 em{white-space:normal;overflow-wrap:anywhere}}
+
+/* P0: allow enlarged mobile discovery labels to wrap inside their grid cells. */
+@media(max-width:620px){.launch-directory__links a,.launch-directory__links b,.launch-directory__links small,.launch-directory__links a>span{min-width:0;max-width:100%;overflow-wrap:anywhere}}
