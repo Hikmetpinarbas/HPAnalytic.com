@@ -5,9 +5,11 @@
 import { mkdir, readFile, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import {
-  advance, createTopic, DESTINATIONS, DERIVATIVES, EVIDENCE_CLASSES, FAILURE_REASONS,
-  HEADLINE_VARIANTS, SOURCE_ROLES, SOURCE_STANCES, transition,
+  advance, CONFIDENCE, createTopic, DESTINATIONS, DERIVATIVES, EVIDENCE_CLASSES, EVIDENCE_LEVELS, FAILURE_REASONS,
+  HEADLINE_VARIANTS, RED_TEAM_CHECKS, SOURCE_ROLES, SOURCE_STANCES, TOPIC_KINDS, transition,
 } from './model.mjs';
+import { CLAIM_CLASSES, CLAIM_STATUSES, REVIEW_DISPOSITIONS } from './contracts.mjs';
+import { createApproval, evaluateApproval } from './approval.mjs';
 import { evaluateGate, similarity, SIMILARITY_WARN } from './gate.mjs';
 import {
   applyStep, discoverInput, engineStatus, normalizeDiscoveries, operatorBrief, parseJsonAnswer, runOnClaude, stepInput,
@@ -248,7 +250,15 @@ export async function handleAction(store, form) {
         const to = field(form, 'to');
         const reason = field(form, 'reason');
         const note = to === 'REJECTED' ? (FAILURE_REASONS.includes(reason) ? reason : '') : field(form, 'note');
-        const r = transition(topic, to, { actor: 'HUMAN', note, gate: to === 'READY' ? evaluateGate(topic) : undefined });
+        const options = { actor: 'HUMAN', note };
+        if (to === 'READY' || to === 'APPROVED') options.gate = evaluateGate(topic);
+        if (to === 'APPROVED') {
+          const made = createApproval(topic, { approver: field(form, 'approver'), note: field(form, 'note'), gate: options.gate });
+          if (!made.ok) return back(made.error);
+          options.approval = made.approval;
+        }
+        if (to === 'PUBLISHED') options.approvalCheck = evaluateApproval(topic);
+        const r = transition(topic, to, options);
         if (!r.ok) return back(r.error);
         if (to === 'REJECTED') {
           await store.rememberFailure({ at: new Date().toISOString(), topic_id: id, title: topic.card.title, reason: note, note: field(form, 'note') });
@@ -260,6 +270,17 @@ export async function handleAction(store, form) {
         if (!DESTINATIONS[primary]) return back('DESTINATION_INVALID');
         const derivatives = form.getAll('derivatives').map(String).filter((d) => DERIVATIVES.includes(d));
         return save({ ...topic, destination: { primary, derivatives, multi_format: derivatives.length > 0 } }, 'DESTINATION_SET', { primary });
+      }
+      case 'set_card': {
+        const card = {
+          ...topic.card,
+          title: field(form, 'title').slice(0, 140) || topic.card.title,
+          one_line: field(form, 'one_line'),
+          why_now: field(form, 'why_now'),
+          content_type: TOPIC_KINDS.includes(field(form, 'content_type')) ? field(form, 'content_type') : null,
+          evidence_level: EVIDENCE_LEVELS.includes(field(form, 'evidence_level')) ? field(form, 'evidence_level') : 'UNKNOWN',
+        };
+        return save({ ...topic, card }, 'CARD_SET');
       }
       case 'set_question': {
         return save({ ...topic, research: { ...topic.research, core_question: field(form, 'core_question'), working_thesis: field(form, 'working_thesis') } }, 'QUESTION_SET');
@@ -278,6 +299,7 @@ export async function handleAction(store, form) {
           opened_by_engine: false, academic: null,
           what_it_proves: field(form, 'what_it_proves'), what_it_does_not: field(form, 'what_it_does_not'), football_relevance: '',
           excerpt: field(form, 'excerpt'),
+          independence_key: field(form, 'independence_key'), derived_from: field(form, 'derived_from'),
           verified: true, // added and checked by a human
           origin: 'HUMAN', added_at: new Date().toISOString(),
         };
@@ -288,6 +310,43 @@ export async function handleAction(store, form) {
         const sid = field(form, 'source_id');
         const sources = topic.research.sources.map((s) => (s.id === sid ? { ...s, verified: action === 'verify_source', verified_at: new Date().toISOString() } : s));
         return save({ ...topic, research: { ...topic.research, sources } }, action.toUpperCase(), { source: sid });
+      }
+      case 'set_source_origin': {
+        const sid = field(form, 'source_id');
+        if (!topic.research.sources.some((s) => s.id === sid)) return back('SOURCE_NOT_FOUND');
+        const derivedFrom = field(form, 'derived_from');
+        if (derivedFrom && (derivedFrom === sid || !topic.research.sources.some((s) => s.id === derivedFrom))) return back('DERIVED_FROM_INVALID');
+        const sources = topic.research.sources.map((s) => (s.id === sid ? { ...s, independence_key: field(form, 'independence_key'), derived_from: derivedFrom } : s));
+        return save({ ...topic, research: { ...topic.research, sources } }, 'SOURCE_ORIGIN_SET', { source: sid });
+      }
+      case 'update_claim': {
+        const cid = field(form, 'claim_id');
+        const claim = topic.claims.find((c) => c.id === cid);
+        if (!claim) return back('CLAIM_NOT_FOUND');
+        const claimClass = field(form, 'claim_class');
+        const status = field(form, 'status');
+        const confidence = field(form, 'confidence');
+        if (!CLAIM_CLASSES.includes(claimClass) || !CLAIM_STATUSES.includes(status) || !CONFIDENCE.includes(confidence)) return back('CLAIM_FIELDS_INVALID');
+        const claims = topic.claims.map((c) => (c.id === cid ? { ...c, claim_class: claimClass, status, confidence, ledger_note: field(form, 'note') } : c));
+        return save({ ...topic, claims }, 'CLAIM_UPDATED', { claim: cid, claim_class: claimClass, status, confidence });
+      }
+      case 'review_disposition': {
+        const check = field(form, 'check');
+        const disposition = field(form, 'disposition');
+        const finding = topic.red_team.findings.find((f) => f.check === check);
+        if (!RED_TEAM_CHECKS.includes(check) || !finding || !REVIEW_DISPOSITIONS.includes(disposition)) return back('DISPOSITION_INVALID');
+        if (finding.verdict === 'FAIL') return back('FAIL_NEEDS_FIX_AND_RERUN');
+        const entry = { disposition, note: field(form, 'note'), by: field(form, 'by'), at: new Date().toISOString(), red_team_ran_at: topic.red_team.ran_at };
+        const review = topic.critical_review ?? { dispositions: {}, sign_off: null };
+        return save({ ...topic, critical_review: { ...review, dispositions: { ...review.dispositions, [check]: entry } } }, 'DISPOSITION_SET', { check, disposition });
+      }
+      case 'review_signoff': {
+        const reviewer = field(form, 'reviewer');
+        const note = field(form, 'note');
+        if (!reviewer || !note) return back('SIGNOFF_REVIEWER_AND_NOTE_REQUIRED');
+        const review = topic.critical_review ?? { dispositions: {}, sign_off: null };
+        const signOff = { reviewer, note, at: new Date().toISOString(), draft_version: topic.draft.version };
+        return save({ ...topic, critical_review: { ...review, sign_off: signOff } }, 'SIGNOFF_SET', { reviewer, draft_version: topic.draft.version });
       }
       case 'remove_source': {
         const sid = field(form, 'source_id');
@@ -310,6 +369,9 @@ export async function handleAction(store, form) {
         const draft = { standfirst: field(form, 'standfirst'), body_md: body, version: topic.draft.version + 1, updated_at: new Date().toISOString(), origin: 'HUMAN' };
         let next = { ...topic, draft, attestations: { ...topic.attestations, voice_checked: false } };
         if (['OUTLINE', 'DRAFTING'].includes(topic.state) && body.trim()) next = advance(next, 'DRAFT', { actor: 'HUMAN', note: 'human draft' }).topic;
+        // Approved or gate-passed text that changes goes back to review; leaving
+        // APPROVED drops the approval (model.mjs#transition).
+        if (['READY', 'APPROVED'].includes(topic.state)) next = transition(next, 'EDITORIAL_REVIEW', { actor: 'HUMAN', note: 'draft edited after gate' }).topic;
         return save(next, 'DRAFT_SAVED', { version: draft.version });
       }
       case 'set_public_meta': {

@@ -6,6 +6,7 @@
 // route and search (see src/lib/public-content.mjs).
 
 import { DESTINATIONS, slugify } from './model.mjs';
+import { evaluateApproval } from './approval.mjs';
 
 const q = (value) => JSON.stringify(String(value ?? ''));
 
@@ -23,6 +24,8 @@ export function exportProblems(topic) {
     if (!topic.public_meta?.claim_ceiling) problems.push('CLAIM_CEILING_MISSING');
   }
   if (destination?.collection === 'research' && !topic.public_meta?.claim_ceiling) problems.push('CLAIM_CEILING_MISSING');
+  // A package that claims to be approved must carry a still-valid approval.
+  if (topic.state === 'APPROVED') problems.push(...evaluateApproval(topic).reasons);
   return problems;
 }
 
@@ -67,7 +70,11 @@ export function buildPackage(topic, { now = new Date(), author = 'Hikmet Pınarb
   for (const s of sources) {
     lines.push(`  - id: ${s.id}`, `    title: ${q(s.title)}`, `    url: ${q(s.url || s.internal_ref)}`, `    role: ${s.role}`);
   }
-  lines.push('cover: null', `studioTopic: ${q(topic.id)}`, `editorialState: ${topic.state}`, '---', '');
+  lines.push('cover: null', `studioTopic: ${q(topic.id)}`, `editorialState: ${topic.state}`);
+  if (topic.state === 'APPROVED') {
+    lines.push(`approvedBy: ${q(topic.approval.approver)}`, `approvedAt: ${q(topic.approval.at)}`, `approvalFingerprint: ${q(topic.approval.fingerprint)}`);
+  }
+  lines.push('---', '');
 
   const body = `${topic.draft.body_md.trim()}${referenceList(topic)}`;
   const folder = destination.collection ?? 'blog';

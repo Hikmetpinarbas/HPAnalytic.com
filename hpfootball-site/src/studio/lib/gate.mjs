@@ -6,15 +6,22 @@
 // overrides — a human-written draft can still pass without an engine.
 
 import { normalizeText } from '../../lib/search.mjs';
+import {
+  evaluateClaimLedger, evaluateCriticalReview, evaluateSourceIndependence, evaluateTopicCard, liveClaims,
+} from './contracts.mjs';
 
 export const GATE_CHECKS = [
+  'TOPIC_CARD',
   'SOURCE_TRACEABILITY',
+  'CLAIM_LEDGER',
+  'SOURCE_INDEPENDENCE',
   'CLAIM_DISCIPLINE',
   'COUNTEREVIDENCE',
   'COPYRIGHT_SAFETY',
   'HP_LANGUAGE',
   'ORIGINAL_VALUE',
   'HEADLINE_HONESTY',
+  'CRITICAL_REVIEW',
 ];
 
 // Phrases that mark generic AI / filler prose in Turkish and English. Matched on
@@ -85,7 +92,7 @@ function sourceTraceability(topic) {
   for (const s of sources) {
     if (!filled(s.url) && !filled(s.internal_ref)) reasons.push(`SOURCE_WITHOUT_LOCATOR:${s.id}`);
   }
-  const claims = topic.claims ?? [];
+  const claims = liveClaims(topic);
   if (claims.length === 0) reasons.push('NO_CLAIM_MAP');
   for (const [i, c] of claims.entries()) {
     const ids = c.source_ids ?? [];
@@ -102,12 +109,12 @@ function sourceTraceability(topic) {
 
 function claimDiscipline(topic) {
   const reasons = [];
-  for (const [i, c] of (topic.claims ?? []).entries()) {
+  for (const [i, c] of liveClaims(topic).entries()) {
     if (!filled(c.claim)) reasons.push(`EMPTY_CLAIM:${i + 1}`);
     if (!filled(c.evidence)) reasons.push(`CLAIM_WITHOUT_EVIDENCE:${i + 1}`);
     if (!c.confidence || c.confidence === 'UNKNOWN') reasons.push(`CLAIM_CONFIDENCE_UNKNOWN:${i + 1}`);
   }
-  if ((topic.claims ?? []).length === 0) reasons.push('NO_CLAIM_MAP');
+  if (liveClaims(topic).length === 0) reasons.push('NO_CLAIM_MAP');
   const causation = redTeam(topic, 'DATA_TO_CAUSATION');
   if (causation?.verdict === 'FAIL') reasons.push('RED_TEAM:DATA_TO_CAUSATION');
   if (!topic.red_team?.ran_at) reasons.push('RED_TEAM_NOT_RUN');
@@ -120,7 +127,7 @@ function claimDiscipline(topic) {
 function counterevidence(topic) {
   const reasons = [];
   const counterSource = (topic.research?.sources ?? []).some((s) => s.stance === 'COUNTER' || s.role === 'COUNTEREVIDENCE');
-  const claims = topic.claims ?? [];
+  const claims = liveClaims(topic);
   const everyClaimCountered = claims.length > 0 && claims.every((c) => filled(c.counterevidence));
   if (!counterSource && !everyClaimCountered) reasons.push('NO_COUNTEREVIDENCE');
   if (!filled(topic.outline?.counterargument)) reasons.push('OUTLINE_WITHOUT_COUNTERARGUMENT');
@@ -171,13 +178,17 @@ function headlineHonesty(topic) {
 }
 
 const CHECKS = {
+  TOPIC_CARD: evaluateTopicCard,
   SOURCE_TRACEABILITY: sourceTraceability,
+  CLAIM_LEDGER: evaluateClaimLedger,
+  SOURCE_INDEPENDENCE: evaluateSourceIndependence,
   CLAIM_DISCIPLINE: claimDiscipline,
   COUNTEREVIDENCE: counterevidence,
   COPYRIGHT_SAFETY: copyrightSafety,
   HP_LANGUAGE: hpLanguage,
   ORIGINAL_VALUE: originalValue,
   HEADLINE_HONESTY: headlineHonesty,
+  CRITICAL_REVIEW: evaluateCriticalReview,
 };
 
 export function evaluateGate(topic) {

@@ -11,19 +11,17 @@ import { readFile } from 'node:fs/promises';
 import os from 'node:os';
 import path from 'node:path';
 import {
-  CONFIDENCE, DERIVATIVES, DESTINATIONS, EVIDENCE_LEVELS, HEADLINE_VARIANTS, SCORE_DIMENSIONS,
+  CONFIDENCE, DERIVATIVES, RED_TEAM_CHECKS, DESTINATIONS, EVIDENCE_LEVELS, HEADLINE_VARIANTS, SCORE_DIMENSIONS,
   SOURCE_ROLES, SOURCE_STANCES, TOPIC_KINDS,
 } from './model.mjs';
 import { ROLES, systemPrompt } from './prompts.mjs';
+import { CLAIM_CLASSES, CONFIDENCE_CEILING } from './contracts.mjs';
 
 export const MODEL = 'claude-opus-5-5';
 
 export const STEPS = ['classify', 'research', 'evidence', 'draft', 'headlines', 'redteam'];
 
-export const RED_TEAM_CHECKS = [
-  'THESIS_PROVEN', 'MECHANISM', 'DATA_TO_CAUSATION', 'SMALL_SAMPLE', 'COUNTEREVIDENCE',
-  'SOURCE_QUALITY', 'RETELLING', 'HP_VALUE', 'HEADLINE_VS_TEXT', 'JARGON', 'AI_CLICHE',
-];
+export { RED_TEAM_CHECKS };
 
 // ---------------------------------------------------------------------------
 // JSON schemas (structured outputs require every property listed in `required`
@@ -73,7 +71,7 @@ export const SCHEMAS = {
     open_questions: arr(str),
   }),
   evidence: obj({
-    claims: arr(obj({ claim: str, evidence: str, source_ids: arr(str), confidence: en(CONFIDENCE), counterevidence: str, interpretation: str })),
+    claims: arr(obj({ claim: str, claim_class: en(CLAIM_CLASSES), evidence: str, source_ids: arr(str), confidence: en(CONFIDENCE), counterevidence: str, interpretation: str })),
     question: str,
     thesis: str,
     structure: arr(str),
@@ -120,7 +118,8 @@ const clip = (text, n) => {
 function sourcesForPrompt(topic) {
   return (topic.research.sources ?? []).map((s) => ({
     id: s.id, title: s.title, url: s.url || s.internal_ref, role: s.role, stance: s.stance,
-    verified: Boolean(s.verified), what_it_proves: s.what_it_proves, what_it_does_not: s.what_it_does_not,
+    verified: Boolean(s.verified), origin: s.independence_key || null, derived_from: s.derived_from || null,
+    what_it_proves: s.what_it_proves, what_it_does_not: s.what_it_does_not,
   }));
 }
 
@@ -164,6 +163,7 @@ export function stepInput(step, topic, context = {}) {
         'Build the claim/evidence map and the argument structure. No prose article yet.',
         'Each claim cites source ids from the list below (e.g. "S2"). A claim without a source is not allowed; drop it or move it to limitations.',
         'confidence reflects the evidence, not how much you like the claim. Mark interpretation separately from evidence.',
+        `claim_class: what kind of statement it is (${CLAIM_CLASSES.join(', ')}). confidence may not exceed the class ceiling: ${JSON.stringify(CONFIDENCE_CEILING)}. HIGH also needs two independent supporting origins — two articles reporting the same study are one origin.`,
         'structure: ordered section beats (HOOK, QUESTION, COMMON BELIEF, EVIDENCE, MECHANISM, CONTEXT, COUNTEREVIDENCE, EXAMPLE, IMPLICATION, HP VERDICT) — only the beats this piece needs, each with one line of content.',
         'hp_angle: what HP adds that the sources do not already say. If nothing, say so.',
         `CORE QUESTION: ${topic.research.core_question}`,
@@ -315,6 +315,7 @@ export function applyStep(step, topic, result, { origin = 'ENGINE', now = new Da
           what_it_proves: text(s.what_it_proves), what_it_does_not: text(s.what_it_does_not), football_relevance: text(s.football_relevance),
           excerpt: '',
           verified: false, // only a human verifies (gate: SOURCE_TRACEABILITY)
+          independence_key: '', derived_from: '', // only a human states origin (gate: SOURCE_INDEPENDENCE)
           origin,
           added_at: at,
         });
@@ -328,14 +329,17 @@ export function applyStep(step, topic, result, { origin = 'ENGINE', now = new Da
     }
     case 'evidence': {
       const ids = new Set(t.research.sources.map((s) => s.id));
-      t.claims = list(result.claims).map((c) => ({
+      t.claims = list(result.claims).filter((c) => text(c.claim)).map((c, i) => ({
+        id: `C${i + 1}`,
         claim: text(c.claim),
+        claim_class: oneOf(c.claim_class, CLAIM_CLASSES, null),
+        status: 'ACTIVE',
         evidence: text(c.evidence),
         source_ids: list(c.source_ids).map(text).filter((id) => ids.has(id)),
         confidence: oneOf(c.confidence, CONFIDENCE, 'UNKNOWN'),
         counterevidence: text(c.counterevidence),
         interpretation: text(c.interpretation),
-      })).filter((c) => c.claim);
+      }));
       t.outline = {
         question: text(result.question),
         thesis: text(result.thesis),
