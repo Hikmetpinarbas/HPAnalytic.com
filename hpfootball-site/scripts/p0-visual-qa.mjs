@@ -39,6 +39,14 @@ async function common(page, consoleErrors, label) {
   });
   assert.equal(m.frame, PUBLISHED_FRAME, `${label}: header logo frame is not the published HP mark`);
   assert.equal(m.brk, PUBLISHED_BREAK, `${label}: header logo break is not the published HP mark`);
+  if (m.scroll > m.client + 1) {
+    const offenders = await page.evaluate(() => [...document.querySelectorAll('body *')].map(el => {
+      const r = el.getBoundingClientRect();
+      return { tag: el.tagName, className: typeof el.className === 'string' ? el.className.slice(0, 90) : '', text: (el.textContent || '').trim().slice(0, 65), left: Math.round(r.left), right: Math.round(r.right), width: Math.round(r.width) };
+    }).filter(x => x.right > document.documentElement.clientWidth + 1 || x.left < -1).slice(0, 25));
+    console.error(`P0_OVERFLOW ${label}: ${JSON.stringify(offenders)}`);
+    await page.screenshot({ path: `${out}/overflow-${label.replace(/[^a-z0-9-]/gi, '-')}.jpg`, fullPage: true, type: 'jpeg', quality: 65 });
+  }
   assert.ok(m.scroll <= m.client + 1, `${label}: horizontal overflow ${m.scroll} > ${m.client}`);
   assert.deepEqual(consoleErrors, [], `${label}: console errors ${consoleErrors.join(' | ')}`);
   return { overflow: m.scroll - m.client };
@@ -87,6 +95,9 @@ for (const vp of VIEWPORTS) {
           assert.ok(l.height >= 24, `menu ${tag}: ${l.href} tap target ${l.height}px < 24px (WCAG 2.5.8)`);
           assert.ok(l.right <= vp.width + 1, `menu ${tag}: ${l.href} outside viewport`);
         }
+        await panel.evaluate(el => Promise.all(el.getAnimations().map(a => a.finished.catch(() => {}))));
+        const visibility = await panel.locator('a').evaluateAll(els => els.map(el => { const s = getComputedStyle(el); const r = el.getBoundingClientRect(); return { text: el.textContent.trim(), color: s.color, background: s.backgroundColor, opacity: s.opacity, visibility: s.visibility, width: r.width }; }));
+        console.log(`P0_MENU_VISIBILITY ${tag}: ${JSON.stringify(visibility)}`);
         await page.screenshot({ path: `${out}/menu-open-${tag}.jpg`, type: 'jpeg', quality: 72 });
         await page.keyboard.press('Escape');
         assert.equal(await trigger.getAttribute('aria-expanded'), 'false', `menu ${tag}: Escape did not close`);

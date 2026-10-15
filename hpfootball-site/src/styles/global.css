@@ -764,3 +764,6 @@ linear-gradient(180deg,#050505 0%,#070604 38%,#050505 100%);}
 .hp-knowledge-path h3,.hp-relations h3{margin:0.4rem 0}
 .hp-knowledge-path a:focus-visible,.hp-relations a:focus-visible{outline:3px solid currentColor;outline-offset:3px}
 @media(max-width:600px){.hp-knowledge-path,.hp-relations{padding:1rem}}
+
+/* P0: enlarged text must reflow the home hero rather than forcing horizontal scrolling. */
+@media(max-width:560px){.hero h1 em{white-space:normal;overflow-wrap:anywhere}}
