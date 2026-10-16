@@ -39,7 +39,7 @@ const site=Astro.site??Astro.url; const canonicalArticle=new URL(canonicalPath(A
 <p class="article-meta"><span>{a.data.author??'Hikmet Pınarbaş'}</span><time datetime={isoDate}>{a.data.date.toLocaleDateString('tr-TR',{day:'numeric',month:'long',year:'numeric',timeZone:'UTC'})}</time><span>{minutes} dk okuma</span>{articleKindLabel&&<span>{articleKindLabel}</span>}{seriesLabel&&seriesLabel!==articleKindLabel&&<span>{seriesLabel}</span>}</p>
 {topics.length>0&&<div class="article-topics" aria-label="Konular">{topics.map(topic=><span>{topic}</span>)}</div>}<EvidenceBadge evidenceClass={a.data.evidenceClass} claimCeiling={a.data.claimCeiling}/></header>
 
-<div class="article-reader-tools" aria-label="Okuma araçları"><a href="#article-body">YAZIYA GEÇ ↓</a><button type="button" data-reading-save data-path={Astro.url.pathname} aria-pressed="false">SONRA OKU ＋</button><span data-reading-save-status aria-live="polite"></span></div>
+<nav class="article-reader-tools" aria-label="Okuma araçları"><a href="#article-body">YAZIYA GEÇ ↓</a><button type="button" data-reading-save data-path={Astro.url.pathname} aria-pressed="false">SONRA OKU ＋</button><span data-reading-save-status aria-live="polite"></span></nav>
 <script>
   import { READING_LIST_KEY, parseReadingList, toggleReadingList } from '../../lib/reading-list.mjs';
   const saveButton = document.querySelector<HTMLButtonElement>('[data-reading-save]');
@@ -53,7 +53,7 @@ const site=Astro.site??Astro.url; const canonicalArticle=new URL(canonicalPath(A
   }
 </script>
 <div class="article-share" data-share-url={canonicalArticle} data-share-title={a.data.title}>
-  <button type="button" class="article-share-button" aria-label="Bu yazıyı paylaş">YAZIYI PAYLAŞ <span aria-hidden="true">↗</span></button>
+  <button type="button" class="article-share-button">YAZIYI PAYLAŞ <span aria-hidden="true">↗</span></button>
   <span class="article-share-status" aria-live="polite"></span>
 </div>
 <script is:inline>
