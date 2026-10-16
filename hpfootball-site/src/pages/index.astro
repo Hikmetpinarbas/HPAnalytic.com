@@ -6,6 +6,7 @@ import EvidenceBadge from '../components/EvidenceBadge.astro';
 import {getCollection} from 'astro:content';
 import {isPublicEditorialItem} from '../lib/site-editorial-status.mjs';
 import {getUpcomingMatches, FOOTBALL_SCOPE} from '../lib/football-data.mjs';
+import {validMatchRows, shouldShowMatchCentre, heroPrimaryCta, launchDirectoryLinks} from '../lib/home-surfaces.mjs';
 export const prerender = true;
 
 const articles=(await getCollection('articles',isPublic)).filter(entry=>isPublicEditorialItem(entry.data)).sort((a,b)=>+b.data.date-+a.data.date);
@@ -15,7 +16,11 @@ const featuredStory=articles.find(a=>a.data.section==='analysis' && a.data.featu
 const footballToken=import.meta.env.HPA_FOOTBALL_DATA_TOKEN;
 const matchCentre=await getUpcomingMatches({token:footballToken});
 type MatchCentreItem={competition:string;utcDate:string;home:string;away:string;status:string};
-const matchRows=matchCentre.matches as MatchCentreItem[];
+const matchRows=validMatchRows(matchCentre) as MatchCentreItem[];
+const showMatchCentre=shouldShowMatchCentre(matchCentre);
+const publicAnalysisCount=articles.filter(a=>a.data.section==='analysis').length;
+const primaryCta=heroPrimaryCta(publicAnalysisCount);
+const directoryLinks=launchDirectoryLinks(publicAnalysisCount);
 const matchTime=(utcDate:string)=>new Intl.DateTimeFormat('tr-TR',{timeZone:'Europe/Istanbul',day:'2-digit',month:'short',hour:'2-digit',minute:'2-digit'}).format(new Date(utcDate));
 ---
 <BaseLayout title="HPAnalytic — Hikmet Pınarbaş Futbol Analizi" description="Hikmet Pınarbaş'tan kanıt, mekanizma ve bağlam temelli bağımsız futbol analizi.">
@@ -25,7 +30,7 @@ const matchTime=(utcDate:string)=>new Intl.DateTimeFormat('tr-TR',{timeZone:'Eur
     <h1>OYUNU<br/><em>SONUÇTAN</em><br/>ÖNCE OKU.</h1>
     <p class="lead">Futbolu skor tabelasından değil; yapı, ilişki, karar, kanıt ve bağlam üzerinden okuyan bağımsız futbol analizi ve araştırma yayını.</p>
     <div class="hero-actions">
-      <a class="action-primary" href="/analysis">ANALİZLERİ KEŞFET <span aria-hidden="true">→</span></a>
+      <a class="action-primary" href={primaryCta.href}>{primaryCta.label} <span aria-hidden="true">→</span></a>
       {featuredStory && <a class="action-secondary" href={"/articles/"+featuredStory.id}>YENİ YAZIYI OKU <span aria-hidden="true">→</span></a>}
     </div>
     <p class="hero-signature">ÖNCE FUTBOL <span>·</span> GÜVENDEN ÖNCE KANIT</p>
@@ -55,19 +60,16 @@ const matchTime=(utcDate:string)=>new Intl.DateTimeFormat('tr-TR',{timeZone:'Eur
   <div class="hikmet-spotlight__body"><h2 id="hikmet-spotlight-title">{hikmetEditorial.data.title}</h2><p class="hikmet-statement">{hikmetEditorial.data.description}</p><a class="story-link" href={`/articles/${hikmetEditorial.id}`}>YAZIYI OKU <span aria-hidden="true">→</span></a></div>
 </section>}
 <section class="launch-directory" aria-labelledby="launch-directory-title">
-  <div class="launch-directory__intro"><p class="kicker">HPANALYTIC · KEŞİF</p><h2 id="launch-directory-title">FUTBOLU BİR SORUDAN OKUMAYA BAŞLA.</h2><p>Yayımlanmış analizden kaynaklara, araştırma yönteminden oyuncu değerlendirme disiplinine geç.</p></div>
+  <div class="launch-directory__intro"><p class="kicker">HPANALYTIC · KEŞİF</p><h2 id="launch-directory-title">FUTBOLU BİR SORUDAN OKUMAYA BAŞLA.</h2><p>{publicAnalysisCount > 0 ? 'Yayımlanmış analizden arşive, araştırma ve scouting yöntem notlarına geç.' : 'Yayımlanmış dosyalardan arşive, araştırma ve scouting yöntem notlarına geç.'}</p></div>
   <nav class="launch-directory__links" aria-label="İçeriği keşfet">
-    <a href="/analysis"><span>01 / ANALİZ</span><b>Oyunu çözümle</b><small>Yayımlanmış futbol analizleri</small><span aria-hidden="true">↗</span></a>
-    <a href="/research"><span>02 / ARAŞTIRMA</span><b>Kanıtı sorgula</b><small>Kaynak, yöntem ve belirsizlik</small><span aria-hidden="true">↗</span></a>
-    <a href="/scouting"><span>03 / SCOUTING</span><b>Rolü ve bağlamı incele</b><small>Oyuncu kararına analitik yaklaşım</small><span aria-hidden="true">↗</span></a>
-    <a href="/archive"><span>04 / ARŞİV</span><b>Yayımlananları oku</b><small>Mevcut onaylı içerikler</small><span aria-hidden="true">↗</span></a>
+    {directoryLinks.map(link=><a href={link.href}><span>{link.index} / {link.kind}</span><b>{link.title}</b><small>{link.note}</small><span aria-hidden="true">↗</span></a>)}
   </nav>
 </section>
-<section class="match-centre" aria-labelledby="match-centre-title">
-  <header class="match-centre-head"><div><p class="kicker">MAÇ MERKEZİ · 7 GÜNLÜK PENCERE</p><h2 id="match-centre-title">GELECEK MAÇLAR</h2><p>Beş Büyük Lig + UEFA + Türkiye kapsamındaki yakın futbol takvimi. Yalnız doğrulanmış kaynak verisi gösterilir.</p></div><div class="match-source"><span class={matchCentre.status==='READY'?'source-ready':'source-off'}>{matchCentre.status==='READY'?'KAYNAK HAZIR':'KAYNAK KULLANILAMIYOR'}</span><small>{matchCentre.source} · Europe/Istanbul</small></div></header>
+{showMatchCentre && <section class="match-centre" aria-labelledby="match-centre-title">
+  <header class="match-centre-head"><div><p class="kicker">MAÇ MERKEZİ · 7 GÜNLÜK PENCERE</p><h2 id="match-centre-title">GELECEK MAÇLAR</h2><p>Beş Büyük Lig + UEFA + Türkiye kapsamındaki yakın futbol takvimi. Yalnız doğrulanmış kaynak verisi gösterilir.</p></div><div class="match-source"><span class="source-ready">KAYNAK HAZIR</span><small>{matchCentre.source} · Europe/Istanbul</small></div></header>
   <div class="scope-strip" aria-label="HPAnalytic futbol kapsamı">{FOOTBALL_SCOPE.labels.map(label=><span>{label}</span>)}</div>
-  {matchRows.length ? <div class="fixture-list">{matchRows.map((m:MatchCentreItem,i:number)=><article class="fixture-row"><span class="fixture-index">{String(i+1).padStart(2,'0')}</span><div class="fixture-meta"><small>{m.competition}</small><time datetime={m.utcDate}>{matchTime(m.utcDate)}</time></div><div class="fixture-teams"><b>{m.home}</b><span>—</span><b>{m.away}</b></div><span class="fixture-status">{m.status}</span></article>)}</div> : <div class="fixture-empty"><b>DOĞRULANMIŞ MAÇ VERİSİ ŞU ANDA GÖSTERİLEMİYOR.</b><p>{matchCentre.status==='READY'?'Seçili yedi günlük pencerede bu kaynakta eşleşen fikstür bulunamadı.':'Kaynak yapılandırması veya erişimi hazır olduğunda fikstür burada otomatik görünecek.'}</p></div>}
-</section>
+  <div class="fixture-list">{matchRows.map((m:MatchCentreItem,i:number)=><article class="fixture-row"><span class="fixture-index">{String(i+1).padStart(2,'0')}</span><div class="fixture-meta"><small>{m.competition}</small><time datetime={m.utcDate}>{matchTime(m.utcDate)}</time></div><div class="fixture-teams"><b>{m.home}</b><span>—</span><b>{m.away}</b></div><span class="fixture-status">{m.status}</span></article>)}</div>
+</section>}
 <section class="evidence-bridge" aria-labelledby="evidence-bridge-title">
   <div class="evidence-bridge__head">
     <p class="kicker">KANITTAN AÇIKLAMAYA</p>
