@@ -63,11 +63,11 @@ const matchTime=(utcDate:string)=>new Intl.DateTimeFormat('tr-TR',{timeZone:'Eur
     <a href="/archive"><span>04 / ARŞİV</span><b>Yayımlananları oku</b><small>Mevcut onaylı içerikler</small><span aria-hidden="true">↗</span></a>
   </nav>
 </section>
-{matchRows.length > 0 && <section class="match-centre" aria-labelledby="match-centre-title">
+<section class="match-centre" aria-labelledby="match-centre-title">
   <header class="match-centre-head"><div><p class="kicker">MAÇ MERKEZİ · 7 GÜNLÜK PENCERE</p><h2 id="match-centre-title">GELECEK MAÇLAR</h2><p>Beş Büyük Lig + UEFA + Türkiye kapsamındaki yakın futbol takvimi. Yalnız doğrulanmış kaynak verisi gösterilir.</p></div><div class="match-source"><span class={matchCentre.status==='READY'?'source-ready':'source-off'}>{matchCentre.status==='READY'?'KAYNAK HAZIR':'KAYNAK KULLANILAMIYOR'}</span><small>{matchCentre.source} · Europe/Istanbul</small></div></header>
   <div class="scope-strip" aria-label="HPAnalytic futbol kapsamı">{FOOTBALL_SCOPE.labels.map(label=><span>{label}</span>)}</div>
   {matchRows.length ? <div class="fixture-list">{matchRows.map((m:MatchCentreItem,i:number)=><article class="fixture-row"><span class="fixture-index">{String(i+1).padStart(2,'0')}</span><div class="fixture-meta"><small>{m.competition}</small><time datetime={m.utcDate}>{matchTime(m.utcDate)}</time></div><div class="fixture-teams"><b>{m.home}</b><span>—</span><b>{m.away}</b></div><span class="fixture-status">{m.status}</span></article>)}</div> : <div class="fixture-empty"><b>DOĞRULANMIŞ MAÇ VERİSİ ŞU ANDA GÖSTERİLEMİYOR.</b><p>{matchCentre.status==='READY'?'Seçili yedi günlük pencerede bu kaynakta eşleşen fikstür bulunamadı.':'Kaynak yapılandırması veya erişimi hazır olduğunda fikstür burada otomatik görünecek.'}</p></div>}
-</section>}
+</section>
 <section class="evidence-bridge" aria-labelledby="evidence-bridge-title">
   <div class="evidence-bridge__head">
     <p class="kicker">KANITTAN AÇIKLAMAYA</p>
