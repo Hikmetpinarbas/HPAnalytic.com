@@ -10,7 +10,7 @@ const STATIC_ROUTES = ['/', '/analysis', '/research', '/scouting', '/culture', '
 const esc = (value: string) => value.replace(/[&<>"']/g, (char) => ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&apos;' }[char] ?? char));
 
 export const GET: APIRoute = async ({ site }) => {
-  const base = site ?? new URL('https://hpanalytic.com');
+  const base = site ?? new URL('https://www.hpanalytic.com');
   const articles = (await getCollection('articles', isPublic)).filter((entry) => isPublicEditorialItem(entry.data));
   const urls = [
     ...STATIC_ROUTES.map((pathname) => new URL(pathname, base).href),
