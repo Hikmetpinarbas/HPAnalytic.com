@@ -1,0 +1,53 @@
+---
+// Discovery by football intent. Presentational only: the caller passes intents
+// already summarized from the public corpus (summarizeIntents), so an intent
+// with no published article never reaches this component. No client JS.
+import { buildSearchHref } from '../lib/search.mjs';
+
+interface DiscoveryIntent { id: string; label: string; question: string; detail: string; count: number; }
+interface Props { intents: DiscoveryIntent[]; current?: string | null; query?: string; compact?: boolean; }
+const { intents = [], current = null, query = '', compact = false } = Astro.props as Props;
+---
+{intents.length > 0 && (compact ? (
+  <nav class="hp-intent-filter" aria-label="Sonuçları niyete göre daralt">
+    <ul>
+      <li><a href={buildSearchHref({ query })} aria-current={current ? undefined : 'page'}>TÜMÜ</a></li>
+      {intents.map((intent) => (
+        <li><a href={buildSearchHref({ query, intent: intent.id })} aria-current={current === intent.id ? 'page' : undefined}>{intent.label}</a></li>
+      ))}
+    </ul>
+  </nav>
+) : (
+  <nav class="hp-intent" aria-labelledby="hp-intent-title">
+    <h2 id="hp-intent-title" class="kicker">NEREDEN BAŞLAMAK İSTİYORSUN?</h2>
+    <ul>
+      {intents.map((intent) => (
+        <li>
+          <a href={buildSearchHref({ intent: intent.id })}>
+            <small>{intent.label}</small>
+            <b>{intent.question}</b>
+            <span>{intent.detail}</span>
+            <em>{intent.count} yazı <span aria-hidden="true">→</span></em>
+          </a>
+        </li>
+      ))}
+    </ul>
+  </nav>
+))}
+
+<style>
+  .hp-intent { margin-top: 40px; }
+  .hp-intent ul, .hp-intent-filter ul { list-style: none; margin: 0; padding: 0; }
+  .hp-intent ul { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr)); gap: 1px; margin-top: 18px; background: var(--line); border: 1px solid var(--line); }
+  .hp-intent a { display: flex; flex-direction: column; gap: 10px; min-height: 100%; padding: 22px 20px; background: var(--surface); color: var(--ink); text-decoration: none; }
+  .hp-intent a:hover { background: var(--surface-2); }
+  .hp-intent small { color: var(--gold-2); font-size: var(--label); font-weight: 700; letter-spacing: var(--tracking-label); }
+  .hp-intent b { font-family: var(--font-serif); font-weight: 400; font-size: var(--step-1); line-height: 1.2; }
+  .hp-intent a > span { color: var(--muted); line-height: 1.55; }
+  .hp-intent em { margin-top: auto; color: var(--ink-2); font-style: normal; font-size: var(--label); letter-spacing: .08em; }
+  .hp-intent-filter { margin: 8px 0 24px; }
+  .hp-intent-filter ul { display: flex; flex-wrap: wrap; gap: 8px; }
+  .hp-intent-filter a { display: inline-flex; align-items: center; min-height: 44px; padding: 0 14px; border: 1px solid var(--line-strong); color: var(--ink-2); font-size: var(--label); font-weight: 700; letter-spacing: .1em; text-decoration: none; }
+  .hp-intent-filter a[aria-current="page"] { border-color: var(--gold-2); color: var(--ink); }
+  .hp-intent a:focus-visible, .hp-intent-filter a:focus-visible { outline: 3px solid var(--focus); outline-offset: -3px; }
+</style>
