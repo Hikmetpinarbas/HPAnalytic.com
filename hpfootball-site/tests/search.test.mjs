@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { normalizeText, tokenize, searchDocuments } from '../src/lib/search.mjs';
+import { normalizeText, tokenize, searchDocuments, paginateResults } from '../src/lib/search.mjs';
 
 const docs = [
   { id: 'event', title: 'Event-only boundary: Gördüğümüz ile görmediğimizi ayırmak', description: 'Pass, shot ve recovery', meta: 'Method DIRECT', body: 'off-ball positioning' },
@@ -36,4 +36,25 @@ test('title matches outrank body matches', () => {
 
 test('empty query returns nothing rather than everything', () => {
   assert.deepEqual(searchDocuments(docs, ''), []);
+});
+
+test('pagination preserves all ranked matches without overlap', () => {
+  const results = Array.from({ length: 45 }, (_, id) => ({ id }));
+  const first = paginateResults(results, '1');
+  const second = paginateResults(results, '2');
+  const third = paginateResults(results, '3');
+  assert.deepEqual([first.items.length, second.items.length, third.items.length], [20, 20, 5]);
+  assert.equal(first.total, 45);
+  assert.equal(third.totalPages, 3);
+  assert.deepEqual([...first.items, ...second.items, ...third.items], results);
+});
+
+test('pagination rejects invalid pages and clamps out-of-range requests', () => {
+  const results = Array.from({ length: 3 }, (_, id) => ({ id }));
+  for (const value of ['-1', 'NaN', '1.5', 'Infinity', '0', 'abc']) {
+    assert.equal(paginateResults(results, value, 2).page, 1);
+  }
+  assert.equal(paginateResults(results, '999', 2).page, 2);
+  assert.equal(paginateResults([], '99').page, 1);
+  assert.equal(paginateResults(results, '1', 0).items.length, 3);
 });
