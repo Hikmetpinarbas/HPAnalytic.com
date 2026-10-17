@@ -185,6 +185,10 @@ main:focus { outline: none; }
   .js .desktop-nav { display: none; }
   .js .mobile-navigation { display: block; }
   .site-header { flex-wrap: wrap; }
+  /* The trigger can wrap to the start of the row, so anchor the panel to the sticky header,
+     not to the trigger: it opens below the header and stays inside the gutters. */
+  .mobile-navigation { position: static; }
+  .mobile-nav-panel { left: var(--gutter); right: var(--gutter); top: calc(100% + 8px); width: auto; }
   html:not(.js) .desktop-nav { order: 3; width: 100%; }
 }
 @media (max-width: 420px) {
