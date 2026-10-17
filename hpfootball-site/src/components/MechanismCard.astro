@@ -1,0 +1,20 @@
+---
+import { adaptMechanismCard, canRenderEditorialEvidence } from '../lib/editorial-evidence-adapter.mjs';
+interface Props { card: Record<string, any>; }
+const model=adaptMechanismCard(Astro.props.card ?? {});
+const visible=canRenderEditorialEvidence(model);
+---
+{visible && <section class="mechanism-card" aria-labelledby="mechanism-card-title">
+  <header class="mechanism-card__head"><p class="kicker">KANIT NESNESİ</p><h2 id="mechanism-card-title">Kanıttan mekanizmaya.</h2></header>
+  <div class="mechanism-card__grid">
+    <section><small>MEKANİZMA</small><p>{model.mechanism}</p></section>
+    <section><small>KANIT</small><ul>{model.evidence.map((x)=><li>{x}</li>)}</ul></section>
+    <section><small>KARŞI KANIT</small>{model.counterevidence.length?<ul>{model.counterevidence.map((x)=><li>{x}</li>)}</ul>:<p>Karşıkanıt henüz belgelenmedi; karşıkanıt bulunmadığı sonucuna varılamaz.</p>}</section>
+    {model.alternative_explanations.length>0 && <section><small>ALTERNATİF AÇIKLAMALAR</small><ul>{model.alternative_explanations.map((x)=><li>{x}</li>)}</ul></section>}
+    <section><small>BAĞLAM</small><p>{model.context}</p></section>
+    <section><small>GÜVEN SEVİYESİ</small><p>{model.confidence}</p></section>
+    <section class="mechanism-card__ceiling"><small>İDDİA SINIRI</small><p>{model.claim_ceiling}</p></section>
+  </div>
+  {model.visual_explanation && <figure class="mechanism-card__visual"><figcaption><small>GÖRSEL AÇIKLAMA</small><p>{model.visual_explanation}</p></figcaption></figure>}
+  <footer>Kaynak zinciri: {model.source_contract} · Köken: {model.provenance}</footer>
+</section>}

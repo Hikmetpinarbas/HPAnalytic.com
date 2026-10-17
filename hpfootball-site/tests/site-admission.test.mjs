@@ -153,7 +153,9 @@ test("public editorial admission is fail-closed and every public article project
   assert.equal(gate.isPublicEditorialItem({ editorial_status: "" }), false);
   assert.equal(gate.isPublicEditorialItem({ editorial_status: "WITHDRAWN" }), false);
   assert.equal(gate.isPublicEditorialItem({ editorial_status: "SUPERSEDED" }), false);
-  assert.equal(gate.isPublicEditorialItem({ editorial_status: "PUBLISHED" }), true);
+  assert.equal(gate.isPublicEditorialItem({ editorial_status: "PUBLISHED" }), false);
+  assert.equal(gate.isPublicEditorialItem({ editorial_status: "PUBLISHED", qualityStatus: "HUMAN_APPROVED" }), false);
+  assert.equal(gate.isPublicEditorialItem({ editorial_status: "PUBLISHED", qualityStatus: "HUMAN_APPROVED", sourceClaimsValidated: true }), true);
 
   for (const file of ["src/pages/archive.astro", "src/pages/search.astro", "src/components/SectionListing.astro"]) {
     const source = await readFile(new URL("../" + file, import.meta.url), "utf8");

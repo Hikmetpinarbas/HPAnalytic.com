@@ -15,7 +15,7 @@ export const prerender = false;
 const raw = Astro.url.searchParams.get('q') ?? '';
 const query = raw.slice(0, 120).trim();
 const articles = (await getCollection('articles', isPublic)).filter((entry) => isPublicEditorialItem(entry.data));
-const byId = new Map(articles.map((a) => [a.id, a]));
+const byId = new Map(articles.map((a: (typeof articles)[number]) => [a.id, a]));
 const documents = articles.map((a) => ({
   id: a.id,
   title: a.data.title,
@@ -29,12 +29,12 @@ const results = hasQuery ? searchDocuments(documents, query).map((r) => byId.get
 <BaseLayout title={query ? `“${query}” — Search — HPAnalytic` : 'Search — HPAnalytic'} description="HPAnalytic arşivinde arama." noindex={Boolean(query)}>
 <div class="listing">
   <header class="page-head">
-    <p class="kicker">SEARCH</p>
+    <p class="kicker">ARA</p>
     <h1 class="page-title">Arşivde ara.</h1>
     <form class="search-form" action="/search" method="get" role="search">
       <label class="visually-hidden" for="q">Arama terimi</label>
       <input id="q" name="q" type="search" value={query} placeholder="örn. role, event, consequence" autocomplete="off" enterkeyhint="search" maxlength="120" />
-      <button class="button button-primary" type="submit">SEARCH</button>
+      <button class="button button-primary" type="submit">ARA</button>
     </form>
   </header>
   {query && (

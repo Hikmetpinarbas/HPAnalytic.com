@@ -39,3 +39,10 @@ test('reader-facing article metadata uses Turkish display labels instead of inte
   assert.doesNotMatch(route,/COUNTEREVIDENCE \/ SINIR|SOURCE LAYER/);
   assert.doesNotMatch(badge,/CLAIM CEILING/);
 });
+
+test('article metadata does not render duplicate labels when kind and series are the same taxonomy', async () => {
+  const route = await readFile(new URL('../src/pages/articles/[...id].astro', import.meta.url), 'utf8');
+  assert.match(route, /articleKindLabel/);
+  assert.match(route, /seriesLabel/);
+  assert.match(route, /seriesLabel\s*!==\s*articleKindLabel/);
+});

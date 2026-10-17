@@ -208,4 +208,3 @@ Buraya kadar geldiyseniz artık yalnızca bir grafiğe bakmıyorsunuz; grafiğin
 
 *Hikmet Pınarbaş*
 
-*Not: Son görsel temsili bir editoryal illüstrasyondur; gerçek kişi portresi değildir.*
