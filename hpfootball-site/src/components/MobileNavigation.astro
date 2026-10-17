@@ -18,7 +18,7 @@ const { navigation = [] } = Astro.props as Props;
     type="button"
     aria-expanded="false"
     aria-controls="mobile-nav-panel"
-    aria-label="Menüyü aç"
+
   >
     <span>MENU</span>
     <span class="mobile-nav-trigger-mark" aria-hidden="true"></span>
@@ -46,7 +46,6 @@ const { navigation = [] } = Astro.props as Props;
     const isOpen = () => trigger.getAttribute('aria-expanded') === 'true';
     const setOpen = (open: boolean) => {
       trigger.setAttribute('aria-expanded', String(open));
-      trigger.setAttribute('aria-label', open ? 'Menüyü kapat' : 'Menüyü aç');
       panel.hidden = !open;
     };
     const dispatch = (event: string) => {
