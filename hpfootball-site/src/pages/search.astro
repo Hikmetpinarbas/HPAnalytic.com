@@ -3,52 +3,87 @@ import { isPublic } from '../lib/public-content.mjs';
 import { isPublicEditorialItem } from '../lib/site-editorial-status.mjs';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import ArticleCard from '../components/ArticleCard.astro';
+import IntentDiscovery from '../components/IntentDiscovery.astro';
 import { getCollection } from 'astro:content';
-import { searchDocuments, tokenize } from '../lib/search.mjs';
+import { buildSearchHref, classifyIntents, DISCOVERY_INTENTS, MAX_QUERY_LENGTH, paginateResults, parseIntent, sanitizeQuery, searchDocuments, summarizeIntents, tokenize } from '../lib/search.mjs';
 import { SECTION_LABELS } from '../lib/site-surfaces.mjs';
 
 // Server-rendered on purpose: a plain GET form works without client JS, and the
-// result URL (/search?q=…) is shareable. Pagefind needs a static HTML build
+// result URL (/search?q=…&intent=…) is shareable. Pagefind needs a static HTML build
 // and is deferred until the corpus is large enough to justify it.
 export const prerender = false;
 
-const raw = Astro.url.searchParams.get('q') ?? '';
-const query = raw.slice(0, 120).trim();
+const query = sanitizeQuery(Astro.url.searchParams.get('q'));
+// Only published, editorially admitted articles are indexed; drafts never reach search or intent counts.
 const articles = (await getCollection('articles', isPublic)).filter((entry) => isPublicEditorialItem(entry.data));
-const byId = new Map(articles.map((a) => [a.id, a]));
+type Article = (typeof articles)[number];
+const byId = new Map(articles.map((a: Article) => [a.id, a]));
 const documents = articles.map((a) => ({
   id: a.id,
   title: a.data.title,
   description: a.data.description,
-  meta: `${SECTION_LABELS[a.data.section as keyof typeof SECTION_LABELS] ?? a.data.section} ${a.data.evidenceClass} ${a.data.claimCeiling}`,
+  meta: `${SECTION_LABELS[a.data.section as keyof typeof SECTION_LABELS] ?? a.data.section} ${a.data.evidenceClass} ${a.data.claimCeiling} ${(a.data.topics ?? []).join(' ')}`,
   body: a.body ?? '',
+  intents: classifyIntents({ section: a.data.section, series: a.data.series, articleKind: a.data.articleKind, title: a.data.title, description: a.data.description, topics: a.data.topics }),
 }));
+const intents = summarizeIntents(documents);
+// An intent is honoured only if it is known AND has public articles; otherwise it is ignored, not echoed.
+const requestedIntent = parseIntent(Astro.url.searchParams.get('intent'));
+const intent = intents.some((i) => i.id === requestedIntent) ? requestedIntent : null;
+const intentInfo = DISCOVERY_INTENTS.find((i) => i.id === intent);
+const scoped = intent ? documents.filter((d) => d.intents.includes(intent)) : documents;
+
 const hasQuery = tokenize(query).length > 0;
-const results = hasQuery ? searchDocuments(documents, query).map((r) => byId.get(r.id)!).filter(Boolean) : [];
+const matchedIds = hasQuery
+  ? searchDocuments(scoped, query, { limit: scoped.length }).map((r) => r.id)
+  : intent ? [...scoped].sort((a, b) => +byId.get(b.id)!.data.date - +byId.get(a.id)!.data.date).map((d) => d.id) : [];
+const matches = matchedIds.map((id) => byId.get(id)).filter((a): a is Article => Boolean(a));
+const { items: results, page, totalPages, total } = paginateResults<Article>(matches, Astro.url.searchParams.get('page'));
+const pageHref = (n: number) => buildSearchHref({ query, intent, page: n });
+const showResults = hasQuery || Boolean(intent);
+const scopeLabel = intentInfo ? ` · ${intentInfo.label}` : '';
+const status = hasQuery
+  ? `“${query}” için ${total} sonuç${scopeLabel}`
+  : intent ? `${intentInfo!.label}: ${total} yazı` : query ? 'En az iki harfli bir terim girin.' : '';
+const titleBase = query ? `“${query}”` : intentInfo ? intentInfo.label : '';
 ---
-<BaseLayout title={query ? `“${query}” — Search — HPAnalytic` : 'Search — HPAnalytic'} description="HPAnalytic arşivinde arama." noindex={Boolean(query)}>
+<BaseLayout title={titleBase ? `${titleBase} — Search — HPAnalytic` : 'Search — HPAnalytic'} description="HPAnalytic arşivinde arama." noindex={Boolean(query || intent)}>
 <div class="listing">
   <header class="page-head">
-    <p class="kicker">SEARCH</p>
+    <p class="kicker">ARA</p>
     <h1 class="page-title">Arşivde ara.</h1>
     <form class="search-form" action="/search" method="get" role="search">
       <label class="visually-hidden" for="q">Arama terimi</label>
-      <input id="q" name="q" type="search" value={query} placeholder="örn. role, event, consequence" autocomplete="off" enterkeyhint="search" maxlength="120" />
-      <button class="button button-primary" type="submit">SEARCH</button>
+      <input id="q" name="q" type="search" value={query} placeholder="örn. rol, veri, mekanizma" autocomplete="off" enterkeyhint="search" maxlength={MAX_QUERY_LENGTH} />
+      {intent && <input type="hidden" name="intent" value={intent} />}
+      <button class="button button-primary" type="submit">ARA</button>
     </form>
   </header>
-  {query && (
-    <p class="search-status" role="status">
-      {hasQuery ? `“${query}” için ${results.length} sonuç` : 'En az iki harfli bir terim girin.'}
-    </p>
-  )}
+  {status && <p class="search-status" role="status">{status}</p>}
+  {showResults && <IntentDiscovery intents={intents} current={intent} query={query} compact />}
   {results.length > 0 && (
     <ul class="card-grid">
       {results.map((a) => <li><ArticleCard id={a.id} {...a.data} headingLevel={2} /></li>)}
     </ul>
   )}
-  {hasQuery && results.length === 0 && (
-    <p class="empty-state">Eşleşme yok. Türkçe karakterler önemsizdir (“gordugumuz” = “gördüğümüz”); daha az kelimeyle deneyin.</p>
+  {showResults && totalPages > 1 && (
+    <nav class="search-pagination" aria-label="Arama sonuç sayfaları">
+      {page > 1 && <a href={pageHref(page - 1)} rel="prev">← Önceki</a>}
+      <span>Sayfa {page} / {totalPages}</span>
+      {page < totalPages && <a href={pageHref(page + 1)} rel="next">Sonraki →</a>}
+    </nav>
   )}
+  {hasQuery && results.length === 0 && (
+    <p class="empty-state">Eşleşme yok. Türkçe karakterler önemsizdir (“gordugumuz” = “gördüğümüz”); daha az kelimeyle deneyin{intent && <> ya da <a href={buildSearchHref({ query })}>tüm arşivde arayın</a></>}.</p>
+  )}
+  {!showResults && <IntentDiscovery intents={intents} />}
 </div>
 </BaseLayout>
+
+<style>
+  .search-pagination { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 20px; margin-top: 32px; }
+  .search-pagination a { display: inline-flex; align-items: center; min-height: 44px; padding: 0 14px; border: 1px solid var(--line-strong); color: var(--ink); text-decoration: none; }
+  .search-pagination a:focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; }
+  .search-pagination span { color: var(--muted); }
+  .empty-state a { color: var(--gold-2); text-decoration: underline; text-underline-offset: 3px; }
+</style>

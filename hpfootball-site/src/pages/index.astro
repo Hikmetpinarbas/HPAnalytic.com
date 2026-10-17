@@ -6,33 +6,45 @@ import EvidenceBadge from '../components/EvidenceBadge.astro';
 import {getCollection} from 'astro:content';
 import {isPublicEditorialItem} from '../lib/site-editorial-status.mjs';
 import {getUpcomingMatches, FOOTBALL_SCOPE} from '../lib/football-data.mjs';
+import {validMatchRows, shouldShowMatchCentre, heroPrimaryCta, launchDirectoryLinks} from '../lib/home-surfaces.mjs';
 export const prerender = true;
 
 const articles=(await getCollection('articles',isPublic)).filter(entry=>isPublicEditorialItem(entry.data)).sort((a,b)=>+b.data.date-+a.data.date);
+const hikmetEditorial=articles.find(a=>a.data.section==='culture');
+const readingDesk=articles.filter(a=>a.data.section==='analysis' || a.data.section==='scouting' || a.data.section==='culture').slice(0,3);
 const featuredStory=articles.find(a=>a.data.section==='analysis' && a.data.featured) ?? articles.find(a=>a.data.featured) ?? articles[0];
 const footballToken=import.meta.env.HPA_FOOTBALL_DATA_TOKEN;
 const matchCentre=await getUpcomingMatches({token:footballToken});
 type MatchCentreItem={competition:string;utcDate:string;home:string;away:string;status:string};
-const matchRows=matchCentre.matches as MatchCentreItem[];
+const matchRows=validMatchRows(matchCentre) as MatchCentreItem[];
+const showMatchCentre=shouldShowMatchCentre(matchCentre);
+const publicAnalysisCount=articles.filter(a=>a.data.section==='analysis').length;
+const primaryCta=heroPrimaryCta(publicAnalysisCount);
+const directoryLinks=launchDirectoryLinks(publicAnalysisCount);
 const matchTime=(utcDate:string)=>new Intl.DateTimeFormat('tr-TR',{timeZone:'Europe/Istanbul',day:'2-digit',month:'short',hour:'2-digit',minute:'2-digit'}).format(new Date(utcDate));
 ---
-<BaseLayout title="HPAnalytic — Football Intelligence by Hikmet Pınarbaş" description="Hikmet Pınarbaş'tan kanıt, mekanizma ve bağlam temelli bağımsız futbol analizi.">
+<BaseLayout title="HPAnalytic — Hikmet Pınarbaş Futbol Analizi" description="Hikmet Pınarbaş'tan kanıt, mekanizma ve bağlam temelli bağımsız futbol analizi.">
 <section class="hero hero-entry">
   <div class="hero-copy hero-reveal">
     <p class="kicker">HPANALYTIC · HİKMET PINARBAŞ</p>
     <h1>OYUNU<br/><em>SONUÇTAN</em><br/>ÖNCE OKU.</h1>
-    <p class="lead">Futbolu skor tabelasından değil; yapı, ilişki, karar, kanıt ve bağlam üzerinden okuyan bağımsız football intelligence yayını.</p>
+    <p class="lead">Futbolu skor tabelasından değil; yapı, ilişki, karar, kanıt ve bağlam üzerinden okuyan bağımsız futbol analizi ve araştırma yayını.</p>
     <div class="hero-actions">
-      <a class="action-primary" href="/analysis">ANALİZLERİ KEŞFET <span aria-hidden="true">↗</span></a>
+      <a class="action-primary" href={primaryCta.href}>{primaryCta.label} <span aria-hidden="true">→</span></a>
       {featuredStory && <a class="action-secondary" href={"/articles/"+featuredStory.id}>YENİ YAZIYI OKU <span aria-hidden="true">→</span></a>}
     </div>
-    <p class="hero-signature">FOOTBALL FIRST <span>·</span> EVIDENCE BEFORE CONFIDENCE</p>
+    <p class="hero-signature">ÖNCE FUTBOL <span>·</span> GÜVENDEN ÖNCE KANIT</p>
   </div>
-  <div class="hero-field hero-reveal hero-reveal-late"><TacticalCanvas/><span class="field-caption">STRUCTURE → RELATION → DECISION</span></div>
+  <div class="hero-field hero-reveal hero-reveal-late"><TacticalCanvas/><span class="field-caption">YAPI → İLİŞKİ → KARAR</span></div>
 </section>
 
+{readingDesk.length > 0 && <section class="reading-desk" aria-labelledby="reading-desk-title">
+  <header class="reading-desk-head"><div><p class="kicker">OKUMA MASASI · GÜNCEL SEÇKİ</p><h2 id="reading-desk-title">BUGÜN NEYİ ANLAMAYA DEĞER?</h2><p>Yeni bir iddia üretmeden, yayımlanmış ve editoryal kabulden geçmiş dosyalardan seçki.</p></div><a href="/archive" class="story-link">TÜM DOSYALAR →</a></header>
+  <div class="reading-desk-grid">{readingDesk.map((item,i)=><article class="reading-desk-item"><span class="reading-desk-number">{String(i+1).padStart(2,'0')} / {item.data.section.toUpperCase()}</span><h3><a href={`/articles/${item.id}`}>{item.data.title}</a></h3><p>{item.data.description}</p><small>{item.data.date.toLocaleDateString('tr-TR')}</small></article>)}</div>
+</section>}
+
 {featuredStory && <section class="featured-analysis" aria-labelledby="featured-title">
-  <div class="featured-index"><span>01</span><p>NEW · EVIDENCE OBJECT</p></div>
+  <div class="featured-index"><span>01</span><p>YENİ · KANIT NESNESİ</p></div>
   <div class="featured-story">
     <EvidenceBadge evidenceClass={featuredStory.data.evidenceClass} claimCeiling={featuredStory.data.claimCeiling}/>
     <p class="featured-meta">{featuredStory.data.section.toUpperCase()} · {featuredStory.data.date.toLocaleDateString('tr-TR')}</p>
@@ -40,17 +52,41 @@ const matchTime=(utcDate:string)=>new Intl.DateTimeFormat('tr-TR',{timeZone:'Eur
     <p>{featuredStory.data.description}</p>
     <a href={`/articles/${featuredStory.id}`} class="story-link">YAZIYI VE KANITI AÇ <span aria-hidden="true">→</span></a>
   </div>
-  <aside class="featured-question"><small>CLAIM BOUNDARY</small><p>Gözlediğimiz olay ile oyunun tamamı aynı şey değildir. Kanıtın gördüğü alan kadar, göremediği alan da gösterilir.</p></aside>
+  <aside class="featured-question"><small>OYUNUN ANAHTARI</small><p>Bir aksiyonun değeri, öncesiyle ve sonrasıyla kurduğu ilişkide saklıdır.</p></aside>
 </section>}
 
-<section class="match-centre" aria-labelledby="match-centre-title">
-  <header class="match-centre-head"><div><p class="kicker">MATCH CENTRE · 7 DAY WINDOW</p><h2 id="match-centre-title">GELECEK MAÇLAR</h2><p>Beş Büyük Lig + UEFA + Türkiye kapsamındaki yakın futbol takvimi. Yalnız doğrulanmış kaynak verisi gösterilir.</p></div><div class="match-source"><span class={matchCentre.status==='READY'?'source-ready':'source-off'}>{matchCentre.status==='READY'?'SOURCE READY':'SOURCE UNAVAILABLE'}</span><small>{matchCentre.source} · Europe/Istanbul</small></div></header>
+{hikmetEditorial && <section class="hikmet-spotlight" aria-labelledby="hikmet-spotlight-title">
+  <div class="hikmet-spotlight__meta"><p class="kicker">HİKMET’TEN · OYUN KÜLTÜRÜ</p><span>EDİTORYAL BAKIŞ</span></div>
+  <div class="hikmet-spotlight__body"><h2 id="hikmet-spotlight-title">{hikmetEditorial.data.title}</h2><p class="hikmet-statement">{hikmetEditorial.data.description}</p><a class="story-link" href={`/articles/${hikmetEditorial.id}`}>YAZIYI OKU <span aria-hidden="true">→</span></a></div>
+</section>}
+<section class="launch-directory" aria-labelledby="launch-directory-title">
+  <div class="launch-directory__intro"><p class="kicker">HPANALYTIC · KEŞİF</p><h2 id="launch-directory-title">FUTBOLU BİR SORUDAN OKUMAYA BAŞLA.</h2><p>{publicAnalysisCount > 0 ? 'Yayımlanmış analizden arşive, araştırma ve scouting yöntem notlarına geç.' : 'Yayımlanmış dosyalardan arşive, araştırma ve scouting yöntem notlarına geç.'}</p></div>
+  <nav class="launch-directory__links" aria-label="İçeriği keşfet">
+    {directoryLinks.map(link=><a href={link.href}><span>{link.index} / {link.kind}</span><b>{link.title}</b><small>{link.note}</small><span aria-hidden="true">↗</span></a>)}
+  </nav>
+</section>
+{showMatchCentre && <section class="match-centre" aria-labelledby="match-centre-title">
+  <header class="match-centre-head"><div><p class="kicker">MAÇ MERKEZİ · 7 GÜNLÜK PENCERE</p><h2 id="match-centre-title">GELECEK MAÇLAR</h2><p>Beş Büyük Lig + UEFA + Türkiye kapsamındaki yakın futbol takvimi. Yalnız doğrulanmış kaynak verisi gösterilir.</p></div><div class="match-source"><span class="source-ready">KAYNAK HAZIR</span><small>{matchCentre.source} · Europe/Istanbul</small></div></header>
   <div class="scope-strip" aria-label="HPAnalytic futbol kapsamı">{FOOTBALL_SCOPE.labels.map(label=><span>{label}</span>)}</div>
-  {matchRows.length ? <div class="fixture-list">{matchRows.map((m:MatchCentreItem,i:number)=><article class="fixture-row"><span class="fixture-index">{String(i+1).padStart(2,'0')}</span><div class="fixture-meta"><small>{m.competition}</small><time datetime={m.utcDate}>{matchTime(m.utcDate)}</time></div><div class="fixture-teams"><b>{m.home}</b><span>—</span><b>{m.away}</b></div><span class="fixture-status">{m.status}</span></article>)}</div> : <div class="fixture-empty"><b>DOĞRULANMIŞ MAÇ VERİSİ ŞU ANDA GÖSTERİLEMİYOR.</b><p>{matchCentre.status==='READY'?'Seçili yedi günlük pencerede bu kaynakta eşleşen fikstür bulunamadı.':'Kaynak yapılandırması veya erişimi hazır olduğunda fikstür burada otomatik görünecek.'}</p></div>}
+  <div class="fixture-list">{matchRows.map((m:MatchCentreItem,i:number)=><article class="fixture-row"><span class="fixture-index">{String(i+1).padStart(2,'0')}</span><div class="fixture-meta"><small>{m.competition}</small><time datetime={m.utcDate}>{matchTime(m.utcDate)}</time></div><div class="fixture-teams"><b>{m.home}</b><span>—</span><b>{m.away}</b></div><span class="fixture-status">{m.status}</span></article>)}</div>
+</section>}
+<section class="evidence-bridge" aria-labelledby="evidence-bridge-title">
+  <div class="evidence-bridge__head">
+    <p class="kicker">KANITTAN AÇIKLAMAYA</p>
+    <h2 id="evidence-bridge-title">AKSİYONU GÖR.<br/><em>MEKANİZMAYI ÇÖZ.</em></h2>
+    <p>HPAnalytic bir futbol sorusunu bağlam, aksiyon, süreç ve rakip yanıtı üzerinden inceler.</p>
+  </div>
+  <div class="evidence-bridge__flow" aria-label="HPAnalytic kanıt sunum modeli">
+    <div><span>01</span><b>BAĞLAM</b><p>Maçın ve aksiyonun hangi koşulda oluştuğu.</p></div>
+    <div><span>02</span><b>GÖZLENEN</b><p>Veri veya görüntünün gerçekten taşıdığı bulgu.</p></div>
+    <div><span>03</span><b>MEKANİZMA?</b><p>Kanıtın desteklediği açıklama; otomatik hüküm değil.</p></div>
+    <div><span>04</span><b>KARŞI KANIT</b><p>İlk açıklamayı zayıflatan veya başka yöne açan bulgu.</p></div>
+    <div><span>05</span><b>ANALİST YORUMU</b><p>Bulgunun oyuna ve karar süreçlerine anlamı.</p></div>
+  </div>
 </section>
 <section class="research-spotlight" aria-labelledby="research-title">
   <div class="research-intro">
-    <p class="kicker">RESEARCH · EVIDENCE DESK</p>
+    <p class="kicker">ARAŞTIRMA · KANIT MASASI</p>
     <h2 id="research-title">ARAŞTIRMA<br/>MASASI</h2>
     <p>Bir iddiayı güçlendirmek için daha çok veri değil, doğru kanıt gerekir. HPAnalytic araştırmayı cevaptan değil sorudan başlatır.</p>
     <a href="/research" class="story-link">ARAŞTIRMA YAKLAŞIMINI GÖR <span aria-hidden="true">→</span></a>
@@ -63,7 +99,7 @@ const matchTime=(utcDate:string)=>new Intl.DateTimeFormat('tr-TR',{timeZone:'Eur
   </div>
 </section>
 <section class="scouting-spotlight" aria-labelledby="scouting-title">
-<div class="scouting-copy"><p class="kicker">SCOUTING · DECISION INTELLIGENCE</p><h2 id="scouting-title">OYUNCU BULMAK DEĞİL.<br/><em>KARAR RİSKİNİ</em> AZALTMAK.</h2><p>Scouting, iyi oyuncu listesi değildir. Rolün, bağlamın ve transfer edilebilir özelliklerin aynı karar problemi içinde sınanmasıdır.</p><a href="/scouting" class="story-link">SCOUTING YAKLAŞIMINI GÖR →</a></div>
-<div class="scouting-lenses"><div><span>01</span><b>ROL</b><p>Oyuncunun etiketi değil, takım içindeki fonksiyonu.</p></div><div><span>02</span><b>BAĞLAM</b><p>Lig, takım, partner, rakip ve oyun durumu etkisi.</p></div><div><span>03</span><b>TRANSFERABILITY</b><p>Gözlenen niteliğin yeni sisteme taşınabilirliği.</p></div><div><span>04</span><b>KARŞI-KANIT</b><p>Kararı zayıflatabilecek bulguların özellikle aranması.</p></div></div></section>
-<div class="principles"><span>FOOTBALL FIRST</span><span>EVIDENCE BEFORE CONFIDENCE</span><span>MECHANISM BEFORE METRIC</span><span>CONTEXT BEFORE VERDICT</span></div>
+<div class="scouting-copy"><p class="kicker">SCOUTING · KARAR DİSİPLİNİ</p><h2 id="scouting-title">OYUNCU BULMAK DEĞİL.<br/><em>KARAR RİSKİNİ</em> AZALTMAK.</h2><p>Scouting, iyi oyuncu listesi değildir. Rolün, bağlamın ve transfer edilebilir özelliklerin aynı karar problemi içinde sınanmasıdır.</p><a href="/scouting" class="story-link">SCOUTING YAKLAŞIMINI GÖR →</a></div>
+<div class="scouting-lenses"><div><span>01</span><b>ROL</b><p>Oyuncunun etiketi değil, takım içindeki fonksiyonu.</p></div><div><span>02</span><b>BAĞLAM</b><p>Lig, takım, partner, rakip ve oyun durumu etkisi.</p></div><div><span>03</span><b>TAŞINABİLİRLİK</b><p>Gözlenen niteliğin yeni sisteme taşınabilirliği.</p></div><div><span>04</span><b>KARŞI-KANIT</b><p>Kararı zayıflatabilecek bulguların özellikle aranması.</p></div></div></section>
+<div class="principles"><span>ÖNCE FUTBOL</span><span>GÜVENDEN ÖNCE KANIT</span><span>METRİKTEN ÖNCE MEKANİZMA</span><span>HÜKÜMDEN ÖNCE BAĞLAM</span></div>
 </BaseLayout>

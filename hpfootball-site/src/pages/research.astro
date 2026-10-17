@@ -2,18 +2,18 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 export const prerender = true;
 const rules = [
-  ['FOOTBALL QUESTION', 'Önce cevaplanacak profesyonel soru tanımlanır.'],
-  ['SOURCE ROLE', 'Federation, club, provider, academic, media, transcript, open dataset.'],
-  ['INDEPENDENCE', "Aynı upstream'in farklı yansımaları bağımsız kanıt sayılmaz."],
-  ['COUNTEREVIDENCE', 'Bulgunun hangi koşulda zayıflayacağı görünür tutulur.'],
+  ['FUTBOL SORUSU', 'Önce cevaplanacak profesyonel soru tanımlanır.'],
+  ['KAYNAĞIN ROLÜ', 'Federation, club, provider, academic, media, transcript, open dataset.'],
+  ['BAĞIMSIZLIK', "Aynı upstream'in farklı yansımaları bağımsız kanıt sayılmaz."],
+  ['KARŞI KANIT', 'Bulgunun hangi koşulda zayıflayacağı görünür tutulur.'],
 ];
 ---
 <BaseLayout title="Research — HPAnalytic" description="Soru önce gelir; kaynak havuzu dinamik, kabul kriteri sabittir.">
 <div class="listing">
   <header class="page-head">
-    <p class="kicker">RESEARCH</p>
-    <h1 class="page-title">Question first.<br/>Source pool dynamic.<br/>Admission fixed.</h1>
-    <p class="lead">Araştırma, kaynak sayısı toplamak için değil; futbol sorusunun kanıt açığını kapatmak için yapılır. Orijinal kaynağa gitme, independence kontrolü, karşı-kanıt ve claim ceiling zorunludur.</p>
+    <p class="kicker">ARAŞTIRMA</p>
+    <h1 class="page-title">Önce soru.<br/>Sonra kanıt.<br/>Sınır hep görünür.</h1>
+    <p class="lead">Araştırma, kaynak sayısı toplamak için değil; futbol sorusunun kanıt açığını kapatmak için yapılır. Orijinal kaynağa gitme, bağımsızlık kontrolü, karşı kanıt ve iddia sınırı zorunludur.</p>
   </header>
   <ol class="frame-grid">
     {rules.map(([name, text]) => <li><b>{name}</b><p>{text}</p></li>)}
