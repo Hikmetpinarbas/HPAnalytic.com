@@ -1,0 +1,35 @@
+name: HPAnalytic overnight QA (no deploy)
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: '17 0 * * *'
+permissions:
+  contents: read
+concurrency:
+  group: hpanalytic-overnight-qa
+  cancel-in-progress: false
+jobs:
+  qa:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    defaults:
+      run:
+        working-directory: hpfootball-site
+    steps:
+      - uses: actions/checkout@v4
+      - name: Verify site source
+        shell: bash
+        run: |
+          set -euo pipefail
+          test -f package.json
+          test -f package-lock.json
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+          cache-dependency-path: hpfootball-site/package-lock.json
+      - name: Install, test and build
+        run: |
+          npm ci
+          npm test --if-present
+          npm run build
