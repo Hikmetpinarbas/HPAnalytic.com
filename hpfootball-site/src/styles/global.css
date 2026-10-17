@@ -317,6 +317,7 @@ main:focus { outline: none; }
 
 /* Sub-sections */
 .subsection { margin-top: clamp(48px, 6vw, 80px); }
+.subsection > a { display: inline-flex; align-items: center; min-height: 44px; color: var(--gold-2); }
 
 /* Framework grids (scouting / research / visual lab) --------------------- */
 .frame-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 260px), 1fr)); gap: 16px; margin: 0; padding: 0; list-style: none; }
@@ -485,7 +486,7 @@ main:focus { outline: none; }
 }
 .hp-pitch__stage {
   position: relative;
-  aspect-ratio: 1.6/1;
+  aspect-ratio: var(--hp-pitch-ratio, 1.6/1);
   background:
     radial-gradient(circle at 69% 49%,rgba(240,201,119,.045),transparent 25%),
     linear-gradient(135deg,#080806,#040404);

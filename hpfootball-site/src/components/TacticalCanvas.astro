@@ -1,6 +1,63 @@
+---
+import { pitchGeometry, IFAB_PITCH } from '../lib/pitch-geometry.mjs';
+
+// Structure is computed from IFAB Law 1 metres; this file only draws it.
+const pitch = pitchGeometry({ width: 960, padding: 54 });
+const at = (mx: number, my: number) => pitch.toSvg(mx, my);
+const n = (v: number) => Math.round(v * 100) / 100;
+const P = (mx: number, my: number) => { const { x, y } = at(mx, my); return [n(x), n(y)] as const; };
+const S = (pt: readonly [number, number] | [number, number]) => `${pt[0]} ${pt[1]}`;
+
+const { x: ox, y: oy, width: ow, height: oh } = pitch.outline;
+const right = n(ox + ow);
+const bottom = n(oy + oh);
+const cx = n(pitch.centre.cx);
+const cy = n(pitch.centre.cy);
+
+// Markers and arrows live in football metres so they travel with the geometry.
+const PLAYERS = [
+  { id: '1', mx: 15.5, my: 48.4 },
+  { id: '2', mx: 18.7, my: 16.9 },
+  { id: '3', mx: 47.3, my: 34.6, key: true },
+  { id: '4', mx: 89.7, my: 17.7 },
+  { id: '5', mx: 89.5, my: 50.0 },
+];
+const BALL = { mx: 50.3, my: 33.2 };
+
+const guides = [IFAB_PITCH.length / 4, (IFAB_PITCH.length * 3) / 4].map((mx) => n(at(mx, 0).x));
+
+const smooth = (metres: number[][]) => {
+  const pts = metres.map(([mx, my]) => P(mx, my));
+  let d = `M${S(pts[0])}`;
+  for (let i = 0; i < pts.length - 1; i++) {
+    const a = pts[i - 1] ?? pts[i];
+    const b = pts[i];
+    const c = pts[i + 1];
+    const z = pts[i + 2] ?? c;
+    d += ` C${S([n(b[0] + (c[0] - a[0]) / 6), n(b[1] + (c[1] - a[1]) / 6)])} ${S([
+      n(c[0] - (z[0] - b[0]) / 6),
+      n(c[1] - (z[1] - b[1]) / 6),
+    ])} ${S(c)}`;
+  }
+  return d;
+};
+
+const FORCES = [
+  [[15.5, 48.4], [33.5, 37.7], [47.3, 34.6], [66.8, 22.3], [89.7, 17.7]],
+  [[18.7, 16.9], [36.2, 20.5], [50.3, 33.2]],
+  [[50.3, 33.2], [69.1, 38.6], [89.5, 50.0]],
+];
+
+// Lens around the right half: anchors in metres, centred on the halfway line.
+const LENS: [number, number][] = [
+  [59.4, 15.51], [73.45, 17.73], [83.31, 24.14], [93.17, 34],
+  [83.31, 43.86], [73.45, 50.27], [59.4, 52.49],
+];
+const lensD = `M${S(P(LENS[0][0], LENS[0][1]))} C${S(P(LENS[1][0], LENS[1][1]))} ${S(P(LENS[2][0], LENS[2][1]))} ${S(P(LENS[3][0], LENS[3][1]))} ${S(P(LENS[4][0], LENS[4][1]))} ${S(P(LENS[5][0], LENS[5][1]))} ${S(P(LENS[6][0], LENS[6][1]))} Z`;
+---
 <figure class="hp-pitch">
-  <div class="hp-pitch__stage">
-    <svg viewBox="0 0 960 600" role="img" aria-labelledby="hp-pitch-title hp-pitch-desc">
+  <div class="hp-pitch__stage" style={`--hp-pitch-ratio: ${pitch.width} / ${pitch.height}`}>
+    <svg viewBox={pitch.viewBox} role="img" aria-labelledby="hp-pitch-title hp-pitch-desc">
       <title id="hp-pitch-title">HPAnalytic — mekanizma görünümü</title>
       <desc id="hp-pitch-desc">Saha yapısı, gözlenebilir ilişkiler ve kritik mekanizma adayını ayıran açıklayıcı futbol görseli. Oyuncu/konum takibi verisi değildir.</desc>
       <defs>
@@ -14,34 +71,36 @@
         </marker>
       </defs>
       <g class="hp-pitch__structure">
-        <rect x="54" y="54" width="852" height="492"/>
-        <line x1="480" y1="54" x2="480" y2="546"/>
-        <circle cx="480" cy="300" r="66"/>
-        <circle cx="480" cy="300" r="2"/>
-        <rect x="54" y="168" width="136" height="264"/>
-        <rect x="770" y="168" width="136" height="264"/>
-        <rect x="54" y="230" width="48" height="140"/>
-        <rect x="858" y="230" width="48" height="140"/>
-        <line x1="267" y1="54" x2="267" y2="546" class="hp-pitch__guide"/>
-        <line x1="693" y1="54" x2="693" y2="546" class="hp-pitch__guide"/>
+        <rect x={n(ox)} y={n(oy)} width={n(ow)} height={n(oh)}/>
+        <line x1={n(pitch.halfway.x1)} y1={n(pitch.halfway.y1)} x2={n(pitch.halfway.x2)} y2={n(pitch.halfway.y2)}/>
+        <circle cx={cx} cy={cy} r={n(pitch.centre.r)}/>
+        <circle cx={cx} cy={cy} r="2"/>
+        {pitch.penaltyAreas.map((box) => <rect x={n(box.x)} y={n(box.y)} width={n(box.width)} height={n(box.height)}/>)}
+        {pitch.goalAreas.map((box) => <rect x={n(box.x)} y={n(box.y)} width={n(box.width)} height={n(box.height)}/>)}
+        {pitch.penaltyArcs.map((d) => <path d={d}/>)}
+        {pitch.penaltySpots.map((spot) => <circle cx={n(spot.cx)} cy={n(spot.cy)} r="2"/>)}
+        {guides.map((gx) => <line x1={gx} y1={n(oy)} x2={gx} y2={bottom} class="hp-pitch__guide"/>)}
       </g>
       <g class="hp-pitch__reveal">
-        <path d="M480 54H906V546H480Z"/>
-        <path d="M536 150C650 168 730 220 810 300C730 380 650 432 536 450Z" class="hp-pitch__reveal-core"/>
+        <path d={`M${cx} ${n(oy)}H${right}V${bottom}H${cx}Z`}/>
+        <path d={lensD} class="hp-pitch__reveal-core"/>
       </g>
       <g class="hp-pitch__force">
-        <path d="M180 404C302 382 360 342 438 304C548 250 634 214 782 182"/>
-        <path d="M206 176C324 198 382 236 458 286"/>
-        <path d="M474 320C574 354 656 382 780 416"/>
+        {FORCES.map((anchors) => <path d={smooth(anchors)}/>)}
       </g>
       <g class="hp-pitch__players">
-        <g transform="translate(180 404)"><rect x="-11" y="-11" width="22" height="22" rx="2"/><text y="4">1</text></g>
-        <g transform="translate(206 176)"><rect x="-11" y="-11" width="22" height="22" rx="2"/><text y="4">2</text></g>
-        <g transform="translate(438 304)" class="hp-pitch__player--key"><rect x="-13" y="-13" width="26" height="26" rx="2"/><text y="4">3</text></g>
-        <g transform="translate(782 182)"><rect x="-11" y="-11" width="22" height="22" rx="2"/><text y="4">4</text></g>
-        <g transform="translate(780 416)"><rect x="-11" y="-11" width="22" height="22" rx="2"/><text y="4">5</text></g>
+        {PLAYERS.map((p) => {
+          const [x, y] = P(p.mx, p.my);
+          const half = p.key ? 13 : 11;
+          return (
+            <g transform={`translate(${x} ${y})`} class={p.key ? 'hp-pitch__player--key' : undefined}>
+              <rect x={-half} y={-half} width={half * 2} height={half * 2} rx="2"/>
+              <text y="4">{p.id}</text>
+            </g>
+          );
+        })}
       </g>
-      <circle class="hp-pitch__ball" cx="462" cy="294" r="5"/>
+      <circle class="hp-pitch__ball" cx={P(BALL.mx, BALL.my)[0]} cy={P(BALL.mx, BALL.my)[1]} r="5"/>
     </svg>
     <div class="hp-pitch__index" aria-hidden="true">HP / 2D–01</div>
   </div>
