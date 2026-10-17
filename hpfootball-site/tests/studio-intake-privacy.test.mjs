@@ -122,23 +122,45 @@ test('end to end, OPERATOR path: idea → READY → APPROVED → package, never 
 
   const paste = (step, answer) => run({ action: 'paste_step', id, step, answer: JSON.stringify(answer) });
   assert.equal((await run({ action: 'run_step', id, step: 'classify' })).flash, 'ENGINE_UNAVAILABLE:ENGINE_DISABLED');
-  await paste('classify', { title: 'Merkezilik önem mi?', destination: 'RESEARCH', core_question: 'q', working_thesis: 't', content_type: 'MISUNDERSTOOD_METRIC' });
+  await paste('classify', { title: 'Merkezilik önem mi?', one_line: 'Merkezilik konumdur, önem değil.', why_now: 'Transfer sunumlarında kullanılıyor.', evidence_level: 'MODERATE', destination: 'RESEARCH', core_question: 'q', working_thesis: 't', content_type: 'MISUNDERSTOOD_METRIC' });
   assert.equal((await paste('evidence', {})).flash, 'NO_SOURCES', 'steps respect preconditions');
   await paste('research', { sources: [{ title: 'A', url: 'https://a.org', role: 'ACADEMIC', stance: 'SUPPORTS' }, { title: 'B', url: 'https://b.org', role: 'COUNTEREVIDENCE', stance: 'COUNTER' }] });
-  await paste('evidence', { claims: [{ claim: 'c', evidence: 'e', source_ids: ['S1'], confidence: 'MEDIUM', counterevidence: 'x', interpretation: '' }], thesis: 't', counterargument: 'ca', hp_angle: 'hp' });
+  await paste('evidence', { claims: [{ claim: 'c', claim_class: 'INFERENCE', evidence: 'e', source_ids: ['S1'], confidence: 'HIGH', counterevidence: 'x', interpretation: '' }], thesis: 't', counterargument: 'ca', hp_angle: 'hp' });
   await paste('draft', { standfirst: 's', body_md: 'Merkezilik akışı ölçer, önemi değil. [S1]' });
   await paste('headlines', { headlines: [{ variant: 'A', text: 'Merkezilik önem değildir', answers: true, stronger_than_evidence: false, misleading: false, generic: false }] });
   await paste('redteam', { findings: [], scores: { ORIGINALITY: 7 }, summary: '' });
   assert.equal((await store.getTopic(id)).state, 'EDITORIAL_REVIEW');
+  await run({ action: 'set_card', id, title: 'Merkezilik önem mi?', one_line: '', why_now: 'Transfer sunumlarında kullanılıyor.', content_type: 'NOT_A_KIND', evidence_level: 'MODERATE' });
+  assert.match((await run({ action: 'transition', id, to: 'READY' })).flash, /^GATE_FAILED:TOPIC_CARD,/, 'card edits are held to the card contract');
+  await run({ action: 'set_card', id, title: 'Merkezilik önem mi?', one_line: 'Merkezilik konumdur, önem değil.', why_now: 'Transfer sunumlarında kullanılıyor.', content_type: 'MISUNDERSTOOD_METRIC', evidence_level: 'MODERATE' });
+  const gateFlash = (await run({ action: 'transition', id, to: 'READY' })).flash;
+  assert.match(gateFlash, /^GATE_FAILED:SOURCE_TRACEABILITY,CLAIM_LEDGER,SOURCE_INDEPENDENCE/);
+  assert.match(gateFlash, /CRITICAL_REVIEW/, 'an empty red team is not a review');
 
-  assert.match((await run({ action: 'transition', id, to: 'READY' })).flash, /^GATE_FAILED:SOURCE_TRACEABILITY/);
+  // Claim ledger: INFERENCE cannot be HIGH. The editor downgrades it on record.
+  await run({ action: 'update_claim', id, claim_id: 'C1', claim_class: 'INFERENCE', status: 'DOWNGRADED', confidence: 'MEDIUM', note: 'tek kaynak' });
+  assert.equal((await store.getTopic(id)).claims[0].status, 'DOWNGRADED');
+  // Source independence: engine sources have no origin until a human states it.
+  assert.equal((await run({ action: 'set_source_origin', id, source_id: 'S1', independence_key: 'S1', derived_from: 'S1' })).flash, 'DERIVED_FROM_INVALID');
+  await run({ action: 'set_source_origin', id, source_id: 'S1', independence_key: 'centrality-paper-2019', derived_from: '' });
+  // Critical review: every check answered, WARN gets a human disposition, FAIL cannot be waved through.
+  const checks = ['THESIS_PROVEN', 'MECHANISM', 'DATA_TO_CAUSATION', 'SMALL_SAMPLE', 'COUNTEREVIDENCE', 'SOURCE_QUALITY', 'RETELLING', 'HP_VALUE', 'HEADLINE_VS_TEXT', 'JARGON', 'AI_CLICHE'];
+  await paste('redteam', { findings: checks.map((check) => ({ check, verdict: check === 'JARGON' ? 'FAIL' : 'PASS', note: '' })), scores: { ORIGINALITY: 7 }, summary: '' });
+  assert.equal((await run({ action: 'review_disposition', id, check: 'JARGON', disposition: 'DISPUTED', note: 'x', by: 'H' })).flash, 'FAIL_NEEDS_FIX_AND_RERUN');
+  await paste('redteam', { findings: checks.map((check) => ({ check, verdict: check === 'JARGON' ? 'WARN' : 'PASS', note: 'xG tanımı eksik' })), scores: { ORIGINALITY: 7 }, summary: '' });
+  await run({ action: 'review_disposition', id, check: 'JARGON', disposition: 'FIXED', note: 'xG ilk geçişte tanımlandı.', by: 'Hikmet' });
+  assert.equal((await run({ action: 'review_signoff', id, reviewer: 'Hikmet', note: '' })).flash, 'SIGNOFF_REVIEWER_AND_NOTE_REQUIRED');
+  await run({ action: 'review_signoff', id, reviewer: 'Hikmet Pınarbaş', note: 'Tez kanıtın sınırında; karşı kanıt metinde.' });
+
   await run({ action: 'verify_source', id, source_id: 'S1' });
   await run({ action: 'attest', id, key: 'sources_checked', value: 'true' });
   await run({ action: 'attest', id, key: 'voice_checked', value: 'true' });
   await run({ action: 'select_headline', id, variant: 'A' });
   assert.equal((await run({ action: 'transition', id, to: 'READY' })).flash, 'STATE:READY');
   await run({ action: 'set_public_meta', id, evidence_class: '', claim_ceiling: 'CONCEPTUAL', tags: '' });
-  assert.equal((await run({ action: 'transition', id, to: 'APPROVED' })).flash, 'STATE:APPROVED');
+  assert.equal((await run({ action: 'transition', id, to: 'APPROVED' })).flash, 'APPROVER_REQUIRED');
+  assert.equal((await run({ action: 'transition', id, to: 'APPROVED', approver: 'Hikmet Pınarbaş', note: 'Yayına uygun.' })).flash, 'STATE:APPROVED');
+  assert.equal((await store.getTopic(id)).approval.approver, 'Hikmet Pınarbaş');
   assert.equal((await run({ action: 'export', id })).flash, 'EXPORTED');
   assert.equal((await run({ action: 'transition', id, to: 'PUBLISHED' })).flash, 'PUBLIC_URL_REQUIRED');
   assert.equal((await run({ action: 'set_public_url', id, public_url: 'https://evil.example/x' })).flash, 'PUBLIC_URL_MUST_BE_HPANALYTIC');
@@ -146,6 +168,14 @@ test('end to end, OPERATOR path: idea → READY → APPROVED → package, never 
   const topicAfter = await store.getTopic(id);
   const pkg = await readFile(path.join(root, 'outbox', topicAfter.export.path), 'utf8');
   assert.match(pkg, /\ndraft: true\n/);
+  assert.match(pkg, /\napprovedBy: "Hikmet Pınarbaş"\n/);
+
+  // Editing approved text sends it back to review and drops the approval.
+  await run({ action: 'edit_draft', id, standfirst: 's', body_md: 'Merkezilik akışı ölçer, önemi değil; yeni cümle. [S1]' });
+  const reopened = await store.getTopic(id);
+  assert.equal(reopened.state, 'EDITORIAL_REVIEW');
+  assert.equal(reopened.approval, null);
+  assert.match((await run({ action: 'transition', id, to: 'READY' })).flash, /CRITICAL_REVIEW/, 'sign-off was for the old draft');
   const ledger = (await readFile(path.join(root, 'ledger.jsonl'), 'utf8')).trim().split('\n').map((l) => JSON.parse(l));
   assert.ok(ledger.some((e) => e.type === 'TRANSITION' && e.to === 'APPROVED'));
 
