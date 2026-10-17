@@ -167,11 +167,10 @@ main:focus { outline: none; }
 .mobile-nav-trigger[aria-expanded="true"] { border-color: var(--gold); color: var(--ink); }
 .mobile-nav-trigger-mark { width: 14px; height: 9px; position: relative; border-top: 2px solid currentColor; border-bottom: 2px solid currentColor; }
 .mobile-nav-panel {
-  position: fixed; right: var(--gutter); top: 73px; z-index: 999;
-  width: min(calc(100vw - 32px), 320px); padding: 12px;
+  position: absolute; right: 0; top: calc(100% + 10px); z-index: 30;
+  width: min(86vw, 340px); padding: 8px;
   background: var(--surface); border: 1px solid var(--line-strong);
-  border-radius: 6px;
-  box-shadow: 0 16px 36px rgba(0, 0, 0, .65);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, .55);
 }
 .mobile-nav-panel[hidden] { display: none; }
 .mobile-nav-panel a {
