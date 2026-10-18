@@ -1,13 +1,13 @@
 name: HPAnalytic Production Deploy
 
 on:
-  push:
-    branches:
-      - site-hp-standard-v2
-    paths:
-      - 'hpfootball-site/**'
-      - '.github/workflows/hpanalytic-production-deploy.yml'
   workflow_dispatch:
+    inputs:
+      confirm_production_deploy:
+        description: Confirm the production release was approved
+        type: boolean
+        required: true
+        default: false
 
 concurrency:
   group: hpanalytic-production
@@ -18,7 +18,8 @@ permissions:
 
 jobs:
   deploy:
-    if: github.ref == 'refs/heads/site-hp-standard-v2'
+    if: github.ref == 'refs/heads/site-hp-standard-v2' && inputs.confirm_production_deploy == true
+    environment: production
     runs-on: ubuntu-latest
     timeout-minutes: 12
     defaults:
@@ -46,6 +47,31 @@ jobs:
 
       - name: Production build
         run: npm run build
+
+      - name: Install browser QA runtime
+        run: |
+          npm install --no-save --no-package-lock playwright@1.56.1
+          npx playwright install --with-deps chromium
+
+      - name: Physical browser QA
+        run: |
+          npm run dev -- --host 127.0.0.1 > /tmp/hpanalytic-astro.log 2>&1 &
+          SERVER_PID=$!
+          trap 'kill $SERVER_PID 2>/dev/null || true' EXIT
+          for i in $(seq 1 40); do
+            if curl -fsS http://127.0.0.1:4321/ >/dev/null; then break; fi
+            sleep 1
+          done
+          curl -fsS http://127.0.0.1:4321/ >/dev/null || { cat /tmp/hpanalytic-astro.log; exit 1; }
+          node scripts/release-browser-qa.mjs
+
+      - name: Upload browser QA evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: release-pack-01-browser-qa
+          path: hpfootball-site/qa-artifacts/
+          if-no-files-found: error
 
       - name: Private Studio must not reach production
         run: |
