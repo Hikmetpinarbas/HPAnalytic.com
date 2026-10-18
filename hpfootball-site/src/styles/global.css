@@ -806,3 +806,9 @@ body { background-image: radial-gradient(circle at 90% 2%, rgba(142,165,139,.12)
 .site-header { background: rgba(255, 254, 251, .96); border-bottom-color: var(--line); }
 .brand-word small { color: var(--muted); }
 .hp-pitch__disclaimer { color: #e7e2d6; }
+/* Home sections still used dark-theme greys (#8c8377–#bdb6aa) and light gold #d8ad69 as text:
+   2.0–3.7:1 on the light surfaces (Chromium probe). Bound to the light text tokens. */
+/* Selectors match the specificity of the rules they replace. */
+.research-method p, .research-intro>p:not(.kicker), .scouting-copy>p:not(.kicker), .scouting-lenses p, .featured-story>p:not(.featured-meta), .featured-story>p:last-of-type, .featured-question p { color: var(--ink-2); }
+.featured-story .featured-meta { color: var(--muted); }
+.launch-directory__links a>span:first-child, .launch-directory__links a>span:last-child { color: var(--gold); }

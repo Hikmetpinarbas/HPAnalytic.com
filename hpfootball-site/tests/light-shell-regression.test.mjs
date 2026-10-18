@@ -24,3 +24,8 @@ for (const sel of ['.site-header', '.publication-masthead']) {
 test('pitch disclaimer is not left on the page ink over the dark pitch canvas', () => {
   assert.match(css, /\.hp-pitch__disclaimer\s*\{[^}]*color\s*:\s*#e7e2d6/i);
 });
+
+test('home copy is bound to light text tokens, not dark-theme greys', () => {
+  assert.match(css, /\.featured-story>p:not\(\.featured-meta\), \.featured-story>p:last-of-type, \.featured-question p \{ color: var\(--ink-2\); \}/);
+  assert.match(css, /\.launch-directory__links a>span:last-child \{ color: var\(--gold\); \}/);
+});
