@@ -797,3 +797,12 @@ body { background-image: radial-gradient(circle at 90% 2%, rgba(142,165,139,.12)
 .series-list small, .visual-evidence-card figcaption small, .data-note-card>small { color: #666d67; }
 .data-note-card p b { color: #181d19; }
 .launch-directory__links a:hover, .series-index a:hover { background: #e5ede4; }
+
+/* Consolidation 2026-10-18: the late shell rules above (publication masthead, site header, brand tag)
+   still carried dark literals and overrode the light header, leaving the logo word at ~1.1:1.
+   Light values restated here; the tactical pitch keeps its dark canvas (pending decision), so its
+   own caption gets light ink instead of inheriting the page ink. */
+.publication-masthead { background: var(--surface); color: var(--ink-2); border-bottom-color: var(--line); }
+.site-header { background: rgba(255, 254, 251, .96); border-bottom-color: var(--line); }
+.brand-word small { color: var(--muted); }
+.hp-pitch__disclaimer { color: #e7e2d6; }

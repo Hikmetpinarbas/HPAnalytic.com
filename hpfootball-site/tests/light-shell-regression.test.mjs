@@ -1,0 +1,26 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import { readFileSync } from 'node:fs';
+
+// The light header regressed once because a later rule re-declared a dark background.
+// The cascade winner is the last declaration of the same selector, so check the last one.
+const css = readFileSync(new URL('../src/styles/global.css', import.meta.url), 'utf8');
+const lastBackground = (selector) => {
+  const esc = selector.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+  const rules = [...css.matchAll(new RegExp(`(?:^|[}\\s])${esc}\\s*\\{([^}]*)\\}`, 'g'))].map((m) => m[1]);
+  const withBg = rules.filter((r) => /background\s*:/.test(r));
+  assert.ok(withBg.length, `${selector} declares a background`);
+  return /background\s*:\s*([^;]+)/.exec(withBg.at(-1))[1].trim();
+};
+const isDark = (v) => /#0[0-9a-f]{5}\b|#1[0-2][0-9a-f]{4}\b|rgba\(\s*(?:[0-9]|1[0-2])\s*,\s*(?:[0-9]|1[0-2])\s*,/i.test(v);
+
+for (const sel of ['.site-header', '.publication-masthead']) {
+  test(`${sel}: the winning background is light`, () => {
+    const bg = lastBackground(sel);
+    assert.ok(!isDark(bg), `${sel} ends on a dark background: ${bg}`);
+  });
+}
+
+test('pitch disclaimer is not left on the page ink over the dark pitch canvas', () => {
+  assert.match(css, /\.hp-pitch__disclaimer\s*\{[^}]*color\s*:\s*#e7e2d6/i);
+});
