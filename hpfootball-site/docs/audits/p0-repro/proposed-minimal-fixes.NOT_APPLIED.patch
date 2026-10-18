@@ -1,0 +1,180 @@
+diff --git a/hpfootball-site/public/sw.js b/hpfootball-site/public/sw.js
+index 7db73b2..399cf5a 100644
+--- a/hpfootball-site/public/sw.js
++++ b/hpfootball-site/public/sw.js
+@@ -33,6 +33,9 @@ self.addEventListener('fetch', (event) => {
+     return;
+   }
+ 
++  // Cache-first only for content-hashed build assets; everything else stays network-owned.
++  if (!url.pathname.startsWith('/_astro/')) return;
++
+   event.respondWith(
+     caches.match(request).then((cached) => cached || fetch(request).then((response) => {
+       if (!response || response.status !== 200 || response.type !== 'basic') return response;
+diff --git a/hpfootball-site/src/components/TacticalCanvas.astro b/hpfootball-site/src/components/TacticalCanvas.astro
+index dfeeac9..9b12e3b 100644
+--- a/hpfootball-site/src/components/TacticalCanvas.astro
++++ b/hpfootball-site/src/components/TacticalCanvas.astro
+@@ -1,6 +1,10 @@
+ ---
+ import { pitchGeometry, IFAB_PITCH } from '../lib/pitch-geometry.mjs';
+ 
++interface Props { idPrefix?: string }
++const { idPrefix = 'hp-pitch' } = Astro.props as Props;
++const id = (name: string) => `${idPrefix}-${name}`;
++
+ // Structure is computed from IFAB Law 1 metres; this file only draws it.
+ const pitch = pitchGeometry({ width: 960, padding: 54 });
+ const at = (mx: number, my: number) => pitch.toSvg(mx, my);
+@@ -57,16 +61,16 @@ const lensD = `M${S(P(LENS[0][0], LENS[0][1]))} C${S(P(LENS[1][0], LENS[1][1]))}
+ ---
+ <figure class="hp-pitch">
+   <div class="hp-pitch__stage" style={`--hp-pitch-ratio: ${pitch.width} / ${pitch.height}`}>
+-    <svg viewBox={pitch.viewBox} role="img" aria-labelledby="hp-pitch-title hp-pitch-desc">
+-      <title id="hp-pitch-title">HPAnalytic — mekanizma görünümü</title>
+-      <desc id="hp-pitch-desc">Saha yapısı, gözlenebilir ilişkiler ve kritik mekanizma adayını ayıran açıklayıcı futbol görseli. Oyuncu/konum takibi verisi değildir.</desc>
++    <svg viewBox={pitch.viewBox} role="img" aria-labelledby={`${id('title')} ${id('desc')}`}>
++      <title id={id('title')}>HPAnalytic — mekanizma görünümü</title>
++      <desc id={id('desc')}>Saha yapısı, gözlenebilir ilişkiler ve kritik mekanizma adayını ayıran açıklayıcı futbol görseli. Oyuncu/konum takibi verisi değildir.</desc>
+       <defs>
+-        <linearGradient id="reveal" x1="0" x2="1">
++        <linearGradient id={id('reveal')} x1="0" x2="1">
+           <stop offset="0" stop-color="currentColor" stop-opacity="0"/>
+           <stop offset=".55" stop-color="currentColor" stop-opacity=".12"/>
+           <stop offset="1" stop-color="currentColor" stop-opacity=".02"/>
+         </linearGradient>
+-        <marker id="force-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
++        <marker id={id('force-arrow')} viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse">
+           <path d="M0 0 10 5 0 10z"/>
+         </marker>
+       </defs>
+@@ -82,11 +86,11 @@ const lensD = `M${S(P(LENS[0][0], LENS[0][1]))} C${S(P(LENS[1][0], LENS[1][1]))}
+         {guides.map((gx) => <line x1={gx} y1={n(oy)} x2={gx} y2={bottom} class="hp-pitch__guide"/>)}
+       </g>
+       <g class="hp-pitch__reveal">
+-        <path d={`M${cx} ${n(oy)}H${right}V${bottom}H${cx}Z`}/>
++        <path d={`M${cx} ${n(oy)}H${right}V${bottom}H${cx}Z`} fill={`url(#${id('reveal')})`}/>
+         <path d={lensD} class="hp-pitch__reveal-core"/>
+       </g>
+       <g class="hp-pitch__force">
+-        {FORCES.map((anchors) => <path d={smooth(anchors)}/>)}
++        {FORCES.map((anchors) => <path d={smooth(anchors)} marker-end={`url(#${id('force-arrow')})`}/>)}
+       </g>
+       <g class="hp-pitch__players">
+         {PLAYERS.map((p) => {
+diff --git a/hpfootball-site/src/layouts/BaseLayout.astro b/hpfootball-site/src/layouts/BaseLayout.astro
+index 2470a5d..30b3aaa 100644
+--- a/hpfootball-site/src/layouts/BaseLayout.astro
++++ b/hpfootball-site/src/layouts/BaseLayout.astro
+@@ -76,7 +76,7 @@ const canonical = new URL(canonicalPath(pathname), Astro.site ?? Astro.url).href
+ </script>
+ <title>{title}</title>
+ <meta name="description" content={description}/>
+-<link rel="canonical" href={canonical}/>
++{!noindex && <link rel="canonical" href={canonical}/>}
+ {noindex && <meta name="robots" content="noindex"/>}
+ <meta property="og:site_name" content={SITE_NAME}/>
+ <meta property="og:type" content={ogType}/>
+diff --git a/hpfootball-site/src/pages/analysis.astro b/hpfootball-site/src/pages/analysis.astro
+index ef74ac2..70cb013 100644
+--- a/hpfootball-site/src/pages/analysis.astro
++++ b/hpfootball-site/src/pages/analysis.astro
+@@ -9,7 +9,7 @@ const items=(await getCollection('articles')).filter(x=>isPublic(x)&&isPublicEdi
+ const grouped=editorialSeries.map(series=>({...series,items:items.filter(item=>item.data.series===series.key)})).filter(group=>group.items.length>0);
+ const unclassified=items.filter(item=>!item.data.series);
+ ---
+-<BaseLayout title="Analiz — HPAnalytic" description="Maç, mekanizma, metrik ve kanıt incelemelerini editoryal seriler halinde keşfedin." section="analysis">
++<BaseLayout title="Analiz — HPAnalytic" description="Maç, mekanizma, metrik ve kanıt incelemelerini editoryal seriler halinde keşfedin." section="analysis" noindex={items.length===0}>
+ <div class="listing analysis-library">
+ <header class="analysis-library-head"><p class="kicker">ANALİZ</p><h1 class="page-title">Metrik değil, mekanizma.</h1><p class="lead">Yazılar tek bir kronolojik akışta kaybolmaz. Maç, mekanizma, metrik ve kanıt sorusuna göre ayrılır.</p></header>
+ <nav class="series-index" aria-label="Analiz serileri">{editorialSeries.filter(series=>grouped.some(group=>group.key===series.key)).map(series=><a href={'#'+series.key.toLowerCase()}><b>{series.label}</b><span>{series.description}</span></a>)}</nav>
+diff --git a/hpfootball-site/src/pages/culture.astro b/hpfootball-site/src/pages/culture.astro
+index fc2d178..c93bd2e 100644
+--- a/hpfootball-site/src/pages/culture.astro
++++ b/hpfootball-site/src/pages/culture.astro
+@@ -1,9 +1,13 @@
+ ---
+ import BaseLayout from '../layouts/BaseLayout.astro';
+ import SectionListing from '../components/SectionListing.astro';
++import { getCollection } from 'astro:content';
++import { isPublic } from '../lib/public-content.mjs';
++import { isPublicEditorialItem } from '../lib/site-editorial-status.mjs';
+ export const prerender = true;
++const empty = !(await getCollection('articles', isPublic)).some((a) => isPublicEditorialItem(a.data) && a.data.section === 'culture');
+ ---
+-<BaseLayout title="Football Culture — HPAnalytic" description="Oyunun tarihi, kültürü, insanları ve uluslararası bağlamı.">
++<BaseLayout title="Football Culture — HPAnalytic" description="Oyunun tarihi, kültürü, insanları ve uluslararası bağlamı." noindex={empty}>
+ <div class="listing">
+   <header class="page-head">
+     <p class="kicker">FOOTBALL CULTURE</p>
+diff --git a/hpfootball-site/src/pages/visual-lab.astro b/hpfootball-site/src/pages/visual-lab.astro
+index 0f477bf..ceea2c3 100644
+--- a/hpfootball-site/src/pages/visual-lab.astro
++++ b/hpfootball-site/src/pages/visual-lab.astro
+@@ -1,14 +1,18 @@
+ ---
+ import BaseLayout from '../layouts/BaseLayout.astro';
+ import TacticalCanvas from '../components/TacticalCanvas.astro';
++import { getCollection } from 'astro:content';
++import { isPublic } from '../lib/public-content.mjs';
++import { isPublicEditorialItem } from '../lib/site-editorial-status.mjs';
+ export const prerender = true;
++const empty = !(await getCollection('visuals', isPublic)).some((v) => isPublicEditorialItem(v.data));
+ const kinds = [
+   ['TACTICAL BOARD', 'Açıklayıcı soyutlama. Tracking veya gerçek fiziksel konum iddiası değildir.'],
+   ['DATA VISUAL', 'Kaynak-bağlı sayısal destek. En fazla birkaç ana metric; tek futbol sorusu.'],
+   ['FRAME EVIDENCE', 'Gerçek source-bound kare. Raw frame korunur, annotation ayrı yüzeydir.'],
+ ];
+ ---
+-<BaseLayout title="Visual Lab — HPAnalytic" description="Saha geometrisi ve kanıt sınırları için responsive SVG yüzeyleri.">
++<BaseLayout title="Visual Lab — HPAnalytic" description="Saha geometrisi ve kanıt sınırları için responsive SVG yüzeyleri." noindex={empty}>
+ <div class="listing">
+   <header class="page-head">
+     <p class="kicker">VISUAL LAB</p>
+diff --git a/hpfootball-site/src/styles/global.css b/hpfootball-site/src/styles/global.css
+index 788ed33..ed9db9f 100644
+--- a/hpfootball-site/src/styles/global.css
++++ b/hpfootball-site/src/styles/global.css
+@@ -498,9 +498,9 @@ main:focus { outline: none; }
+ .hp-pitch svg { display:block; width:100%; height:100%; color:var(--gold-2); }
+ .hp-pitch__structure>* { fill:none; stroke:rgba(241,238,230,.26); stroke-width:1; }
+ .hp-pitch__structure .hp-pitch__guide { stroke:rgba(200,149,69,.16); stroke-dasharray:4 10; }
+-.hp-pitch__reveal path:first-child { fill:url(#reveal); stroke:none; }
++.hp-pitch__reveal path:first-child { stroke:none; }
+ .hp-pitch__reveal-core { fill:rgba(240,201,119,.035); stroke:rgba(240,201,119,.42); stroke-width:1; stroke-dasharray:3 7; }
+-.hp-pitch__force path { fill:none; stroke:rgba(241,238,230,.64); stroke-width:1.5; marker-end:url(#force-arrow); }
++.hp-pitch__force path { fill:none; stroke:rgba(241,238,230,.64); stroke-width:1.5; }
+ .hp-pitch__force path:first-child { stroke:var(--gold-2); stroke-width:2; }
+ .hp-pitch__players rect { fill:#090909; stroke:rgba(241,238,230,.72); stroke-width:1.2; }
+ .hp-pitch__players text { fill:#c9c4ba; text-anchor:middle; font:700 12px/1 var(--font-sans); }
+@@ -607,7 +607,7 @@ main:focus { outline: none; }
+ .control-detail{margin-top:18px;border-top:1px solid var(--line);padding-top:14px}.control-detail>summary,.control-technical>summary{cursor:pointer;min-height:44px;display:flex;align-items:center;font:650 11px/1 var(--font-sans);letter-spacing:.08em;grid-template-columns:minmax(240px,.8fr) minmax(0,1.2fr);gap:24px;padding:14px 0}.control-detail-grid dl,.control-technical dl{display:grid;grid-template-columns:130px minmax(0,1fr);gap:8px 14px}.control-detail-grid dt,.control-technical dt{color:var(--muted);font:500 11px/1.3 var(--font-sans);overflow-wrap:anywhere}.control-body-preview{white-space:pre-wrap;max-height:22rem;overflow:auto;color:#c8c0b4}.control-technical{margin-top:12px;border:1px dotted var(--line);padding:0 14px 14px}.control-intent{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-top:16px}.control-intent button{min-height:44px;padding:0 14px;border:1px solid var(--line);background:#090806;color:var(--muted);font:650 10px/1 var(--font-sans);letter-spacing:.08em}.control-intent small{color:var(--muted)}
+ @media(max-width:700px){.control-detail-grid{grid-template-columns:1fr}.control-detail-grid dl,.control-technical dl{grid-template-columns:110px minmax(0,1fr)}}
+ 
+-.article-meta{display:flex;flex-wrap:wrap;gap:8px 18px;max-width:790px;margin:0 0 18px;color:#81796e;font-size:12px;letter-spacing:.12em;margin-right:18px;color:var(--gold-2)}.article-topics{display:flex;flex-wrap:wrap;gap:8px;max-width:790px;margin:0 0 26px}.article-topics span{border:1px solid var(--line);padding:6px 9px;color:#978e81;font-size:12px;letter-spacing:.1em}.article-evidence-note,.article-counterevidence,.article-sources{max-width:790px;margin:36px 0;padding:22px 0;border-top:1px solid rgba(200,149,69,.28);border-bottom:1px solid var(--line)}.article-evidence-note strong,.article-counterevidence h2,.article-sources h2{font-family:Georgia,serif;font-weight:400;color:var(--ink)}.article-evidence-note p,.article-counterevidence li,.article-sources li{color:#9e968a}.article-counterevidence ul,.article-sources ol{padding-left:22px}.article-sources li{margin:14px 0}.article-sources a{color:var(--gold-2);text-decoration:underline;text-underline-offset:3px}.article-sources small{display:block;margin-top:4px;color:#736d63;font-size:12px;letter-spacing:.08em}
++.article-meta{display:flex;flex-wrap:wrap;gap:8px 18px;max-width:790px;margin:0 0 18px;color:#81796e;font-size:12px;letter-spacing:.12em;margin-right:18px;color:var(--gold-2)}.article-topics{display:flex;flex-wrap:wrap;gap:8px;max-width:790px;margin:0 0 26px}.article-topics span{border:1px solid var(--line);padding:6px 9px;color:var(--muted);font-size:12px;letter-spacing:.1em}.article-evidence-note,.article-counterevidence,.article-sources{max-width:790px;margin:36px 0;padding:22px 0;border-top:1px solid rgba(200,149,69,.28);border-bottom:1px solid var(--line)}.article-evidence-note strong,.article-counterevidence h2,.article-sources h2{font-family:Georgia,serif;font-weight:400;color:var(--ink)}.article-evidence-note p,.article-counterevidence li,.article-sources li{color:#9e968a}.article-counterevidence ul,.article-sources ol{padding-left:22px}.article-sources li{margin:14px 0}.article-sources a{color:var(--gold-2);text-decoration:underline;text-underline-offset:3px}.article-sources small{display:block;margin-top:4px;color:#736d63;font-size:12px;letter-spacing:.08em}
+ 
+ 
+ 
+@@ -619,15 +619,15 @@ main:focus { outline: none; }
+ 
+ /* Article progressive evidence — reading first, verification on demand. */
+ .article-disclosure{width:min(790px,100%);margin:18px 0;border:0;border-top:1px solid rgba(200,149,69,.22);background:transparent}
+-.article-disclosure summary{display:flex;align-items:center;justify-content:space-between;gap:18px;min-height:52px;padding:13px 0;cursor:pointer;list-style:none;color:#a69d90;font:700 12px/1.3 var(--font-sans);letter-spacing:.12em}
++.article-disclosure summary{display:flex;align-items:center;justify-content:space-between;gap:18px;min-height:52px;padding:13px 0;cursor:pointer;list-style:none;color:var(--muted);font:700 12px/1.3 var(--font-sans);letter-spacing:.12em}
+ .article-disclosure summary::-webkit-details-marker{display:none}
+ .article-disclosure summary span{color:var(--gold-2);font-size:18px;font-weight:400;transition:transform .18s ease}
+ .article-disclosure[open] summary span{transform:rotate(45deg)}
+-.article-disclosure[open] .disclosure-ghost{background:rgba(12,10,7,.72);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:0 24px 70px rgba(0,0,0,.26);animation:ghost-reveal .18s ease-out}
+-.disclosure-ghost{padding:10px 0 22px;color:#9e968a}
+-.disclosure-ghost p{max-width:66ch;margin:8px 0;color:#9e968a}
++.article-disclosure[open] .disclosure-ghost{background:var(--surface);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);box-shadow:0 24px 70px rgba(0,0,0,.26);animation:ghost-reveal .18s ease-out}
++.disclosure-ghost{padding:10px 0 22px;color:var(--muted)}
++.disclosure-ghost p{max-width:66ch;margin:8px 0;color:var(--muted)}
+ .article-counterevidence ul,.article-sources ol{margin:0;padding-left:22px}
+-.article-counterevidence li,.article-sources li{margin:12px 0;color:#a69d90}
++.article-counterevidence li,.article-sources li{margin:12px 0;color:var(--muted)}
+ .article-sources a{color:var(--gold-2);text-decoration:underline;text-underline-offset:3px}
+ .article-sources small{display:block;margin-top:4px;color:#736d63;font-size:12px;letter-spacing:.08em}
+ @keyframes ghost-reveal{from{opacity:0;transform:translateY(-4px)}to{opacity:1;transform:none}}
