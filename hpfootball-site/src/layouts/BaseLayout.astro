@@ -6,6 +6,8 @@ import { getCollection } from 'astro:content';
 import { buildVisibleNavigation, buildUtilityNavigation, currentState, SECTION_ROUTES } from '../lib/site-surfaces.mjs';
 import MobileNavigation from '../components/MobileNavigation.astro';
 import Logo from '../components/Logo.astro';
+import NavigationIcon from '../components/NavigationIcon.astro';
+import { canonicalPath } from '../lib/canonical-path.mjs';
 
 interface Props {
   title?: string;
@@ -18,8 +20,8 @@ interface Props {
 
 const SITE_NAME = 'HPAnalytic';
 const {
-  title = 'HPAnalytic — Football Intelligence',
-  description = 'HPAnalytic: Hikmet Pınarbaş tarafından futbolu mekanizma, kanıt ve bağlam üzerinden okuyan bağımsız football intelligence platformu.',
+  title = 'HPAnalytic — Futbol Analizi ve Kanıt',
+  description = 'HPAnalytic: Hikmet Pınarbaş tarafından futbolu mekanizma, kanıt ve bağlam üzerinden okuyan bağımsız analiz ve araştırma yayını.',
   section,
   ogType = 'website',
   publishedTime,
@@ -52,7 +54,7 @@ const navigation = withCurrent(buildVisibleNavigation({
 const utility = withCurrent(buildUtilityNavigation({ articleCount: articles.length }));
 const archiveLink = utility.find((item) => item.href === '/archive');
 const searchLink = utility.find((item) => item.href === '/search');
-const canonical = new URL(pathname, Astro.site ?? Astro.url).href;
+const canonical = new URL(canonicalPath(pathname), Astro.site ?? Astro.url).href;
 ---
 <!doctype html>
 <html lang="tr" class="no-js">
@@ -83,8 +85,13 @@ const canonical = new URL(pathname, Astro.site ?? Astro.url).href;
 <meta property="og:url" content={canonical}/>
 <meta property="og:locale" content="tr_TR"/>
 {publishedTime && <meta property="article:published_time" content={publishedTime.toISOString()}/>}
-<meta name="twitter:card" content="summary"/>
-<meta name="theme-color" content="#050505"/>
+<meta property="og:image" content={new URL("/social-card.png", Astro.site ?? Astro.url).href}/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+<meta property="og:image:alt" content="HPAnalytic — Evidence Made Visible"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content={new URL("/social-card.png", Astro.site ?? Astro.url).href}/>
+<meta name="theme-color" content="#F5F1E8"/>
 <meta name="application-name" content="HPAnalytic"/>
 <meta name="mobile-web-app-capable" content="yes"/>
 <meta name="apple-mobile-web-app-capable" content="yes"/>
@@ -105,19 +112,17 @@ if ('serviceWorker' in navigator) {
 <body>
 <a class="skip-link" href="#main-content">İçeriğe geç</a>
 <div class="grain" aria-hidden="true"></div>
+<div class="publication-masthead" aria-label="Yayın kimliği"><span>HP / HİKMET PINARBAŞ</span><span>BAĞIMSIZ FUTBOL YAYINI <i aria-hidden="true">·</i> ANALİZ / ARAŞTIRMA / KÜLTÜR</span></div>
 <header class="site-header">
-  <a href="/" class="brand" aria-label="HPAnalytic ana sayfa">
-    <span class="hp-mark" aria-hidden="true"><svg viewBox="0 0 52 52"><path class="hp-frame" d="M7 7v38M7 26h17M24 7v38M32 7v38M32 7h7c8 0 8 15 0 15h-7"/><path class="hp-break" d="M13 38 42 14"/></svg></span>
-    <span class="brand-word"><b>HPANALYTIC</b><small>HİKMET PINARBAŞ · FOOTBALL INTELLIGENCE</small></span>
-  </a>
-  <nav class="desktop-nav" aria-label="Primary">
-    {navigation.map(item=><a class="nav-link" href={item.href} aria-current={item.current}>{item.label}</a>)}
+  <Logo />
+  <nav class="desktop-nav" aria-label="Ana menü">
+    {navigation.map(item=><a class="nav-link" href={item.href} aria-current={item.current}><NavigationIcon href={item.href}/><span>{item.label}</span></a>)}
   </nav>
   <div class="header-actions">
     {searchLink && (
-      <a class="icon-link" href={searchLink.href} aria-current={searchLink.current}>
+      <a class="icon-link" href={searchLink.href} aria-current={searchLink.current} aria-label="Ara">
         <svg viewBox="0 0 20 20" aria-hidden="true" focusable="false"><circle cx="8.5" cy="8.5" r="5.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M12.5 12.5 17 17" stroke="currentColor" stroke-width="1.6"/></svg>
-        <span class="icon-link-text">SEARCH</span>
+        <span class="icon-link-text">ARA</span>
       </a>
     )}
     <MobileNavigation navigation={archiveLink ? [...navigation, archiveLink] : navigation} />
@@ -127,10 +132,25 @@ if ('serviceWorker' in navigator) {
 <footer class="site-footer">
   <div class="footer-grid">
     <div><Logo /><p class="footer-statement">Skoru değil, skoru üreten mekanizmayı okuruz. Kanıtın taşıyabildiğinden güçlü konuşmayız.</p></div>
-    <nav class="footer-nav" aria-label="Footer surfaces"><h2>SURFACES</h2><ul>{[...navigation].map(item=><li><a href={item.href}>{item.label}</a></li>)}</ul></nav>
-    {utility.length > 0 && (<nav class="footer-nav" aria-label="Footer tools"><h2>TOOLS</h2><ul>{utility.map(item=><li><a href={item.href}>{item.label}</a></li>)}</ul></nav>)}
+    <nav class="footer-nav" aria-label="Site bölümleri"><h2>BÖLÜMLER</h2><ul>{[...navigation].map(item=><li><a href={item.href}>{item.label}</a></li>)}</ul></nav>
+    {utility.length > 0 && (<nav class="footer-nav" aria-label="Site araçları"><h2>ARAÇLAR</h2><ul>{utility.map(item=><li><a href={item.href}>{item.label}</a></li>)}</ul></nav>)}
   </div>
-  <div class="footer-base"><span>© {new Date().getFullYear()} Hikmet Pınarbaş · HPAnalytic</span><span>Evidence before confidence.</span></div>
+  <div class="footer-base"><span>© {new Date().getFullYear()} Hikmet Pınarbaş · HPAnalytic</span><span>Güvenden önce kanıt.</span></div>
 </footer>
+<script is:inline>
+/* HPAnalytic motion: finite, one-shot effects. No polling and no background loops. */
+(() => {
+  if (!('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const targets = document.querySelectorAll('.featured-analysis,.research-spotlight,.scouting-spotlight,.mechanism-card,.section-heading');
+  const observer = new IntersectionObserver((entries, self) => {
+    for (const entry of entries) {
+      if (!entry.isIntersecting) continue;
+      entry.target.classList.add('hp-motion-observed');
+      self.unobserve(entry.target);
+    }
+  }, { rootMargin: '0px 0px -32px 0px', threshold: 0.06 });
+  for (const el of targets) observer.observe(el);
+})();
+</script>
 </body>
 </html>

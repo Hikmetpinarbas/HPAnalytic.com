@@ -1,22 +1,18 @@
 ---
-// HPAnalytic mark: a frame (the pitch / the observation boundary), a vector
-// from the corner to a node on the upper third (relation → decision point),
-// and the inherited HP red tick. No ball, shield or star (Contract §11).
 interface Props { withWordmark?: boolean; }
 const { withWordmark = true } = Astro.props as Props;
 ---
-<a href="/" class="brand" aria-label="HPAnalytic — ana sayfa">
-  <svg class="brand-mark" viewBox="0 0 40 40" aria-hidden="true" focusable="false">
-    <rect x="1.5" y="1.5" width="37" height="37" fill="none" stroke="#c89545" stroke-width="2"/>
-    <line x1="20" y1="1.5" x2="20" y2="38.5" stroke="#c89545" stroke-opacity=".35" stroke-width="1"/>
-    <path d="M8 31 L27 13" stroke="#f1eee6" stroke-width="2.5" stroke-linecap="square"/>
-    <circle cx="27.5" cy="12.5" r="4.5" fill="#f0c977"/>
-    <path d="M8 24 L13 19" stroke="#d72d27" stroke-width="2.5" stroke-linecap="square"/>
-  </svg>
+<a href="/" class="brand">
+  <span class="hp-mark" aria-hidden="true">
+    <svg viewBox="0 0 52 52" focusable="false">
+      <path class="hp-frame" d="M7 7v38M7 26h17M24 7v38M32 7v38M32 7h7c8 0 8 15 0 15h-7"/>
+      <path class="hp-break" d="M13 38 42 14"/>
+    </svg>
+  </span>
   {withWordmark && (
     <span class="brand-word">
-      <span class="brand-name">HP<span>Analytic</span></span>
-      <span class="brand-tag">FOOTBALL INTELLIGENCE</span>
+      <b>HPANALYTIC</b>
+      <small>HİKMET PINARBAŞ · EVIDENCE MADE VISIBLE.</small>
     </span>
   )}
 </a>

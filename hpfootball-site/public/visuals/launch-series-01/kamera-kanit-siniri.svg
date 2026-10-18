@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" role="img" aria-labelledby="kamera-title kamera-desc" data-truth-role="EXPLANATORY_SCHEMATIC">
+<title id="kamera-title">Kamera kanıt sınırı</title>
+<desc id="kamera-desc">Kadraj içinde gözlenebilen alan ile kadraj dışında bilinmeyen alanı ayıran açıklayıcı şema. Kadraj dışı oyuncu veya takım şekli uydurulmaz.</desc>
+<rect width="1200" height="675" fill="#090b0e"/>
+<rect x="72" y="82" width="730" height="510" rx="10" fill="#111820" stroke="#d7a84a" stroke-width="3"/>
+<path d="M802 82V592" stroke="#d7a84a" stroke-width="5" stroke-dasharray="14 12"/>
+<rect x="802" y="82" width="326" height="510" fill="#07090c"/>
+<text x="112" y="145" fill="#d7a84a" font-family="Arial,sans-serif" font-size="30" font-weight="700">OBSERVED FRAME</text>
+<text x="842" y="145" fill="#8798ad" font-family="Arial,sans-serif" font-size="30" font-weight="700">UNKNOWN</text>
+<text x="824" y="568" fill="#d7a84a" font-family="Arial,sans-serif" font-size="22">CLAIM CEILING</text>
+<circle cx="260" cy="330" r="16" fill="#d7a84a"/><circle cx="430" cy="250" r="16" fill="#d7a84a"/><circle cx="590" cy="400" r="16" fill="#d7a84a"/>
+<path d="M260 330L430 250L590 400" fill="none" stroke="#6d91b8" stroke-width="4"/>
+<text x="112" y="540" fill="#b9c4cf" font-family="Arial,sans-serif" font-size="22">EXPLANATORY OVERLAY · tracking değildir</text>
+</svg>

@@ -23,8 +23,9 @@ test('mobile disclosure exposes accessible state and dynamic accessible name', a
   const component = await source(componentUrl);
   assert.match(component, /aria-expanded="false"/);
   assert.match(component, /aria-controls="mobile-nav-panel"/);
-  assert.match(component, /aria-label="Menüyü aç"/);
-  assert.match(component, /trigger\.setAttribute\('aria-label', open \? 'Menüyü kapat' : 'Menüyü aç'\)/);
+  assert.doesNotMatch(component, /aria-label="Menüyü aç"/);
+  assert.match(component, /<nav[^>]*aria-label="Mobil ana menü"/);
+  assert.doesNotMatch(component, /trigger\.setAttribute\('aria-label', open \? 'Menüyü kapat' : 'Menüyü aç'\)/);
   assert.match(component, /aria-current=\{item\.current\}/);
 });
 

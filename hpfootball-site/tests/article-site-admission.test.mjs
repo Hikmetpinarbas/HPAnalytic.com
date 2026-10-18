@@ -34,7 +34,10 @@ function readyItem(){
     },
     editorial:{section:'analysis',article_kind:'DEEP_ANALYSIS',language:'tr',author:'Hikmet Pınarbaş',topics:['counter-press','transition']},
   };
-  return normalizeContentIntelligenceArticle(bundle).item;
+  const item=normalizeContentIntelligenceArticle(bundle).item;
+  item.article_meta.psychology_status='PASS';
+  item.article_meta.source_claims_validated=true;
+  return item;
 }
 
 test('editorial article readiness is admissible only after explicit human approval', () => {
@@ -62,7 +65,7 @@ test('site serialization preserves article contract metadata and remains human-a
   assert.match(text,/author: "Hikmet Pınarbaş"/);
   assert.match(text,/readingMinutes: 1/);
   assert.match(text,/truthAuthority: false/);
-  assert.match(text,/sourceClaimsValidated: false/);
+  assert.match(text,/sourceClaimsValidated: true/);
   assert.doesNotMatch(text,/editorial_status:\s*"PUBLISHED"[\s\S]*auto.?publish/i);
 });
 

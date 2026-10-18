@@ -1,0 +1,5 @@
+---
+// Reading list is not built yet; route visitors to the archive instead of a 404.
+export const prerender = true;
+return Astro.redirect('/archive', 301);
+---

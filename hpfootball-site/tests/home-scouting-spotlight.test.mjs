@@ -1,4 +1,4 @@
 import test from'node:test';import assert from'node:assert/strict';import{readFileSync}from'node:fs';const h=readFileSync(new URL('../src/pages/index.astro',import.meta.url),'utf8'),c=readFileSync(new URL('../src/styles/global.css',import.meta.url),'utf8');
 test('scouting spotlight exposes decision discipline and real deep link',()=>{assert.match(h,/class="scouting-spotlight"/);assert.match(h,/SCOUTING/);assert.match(h,/KARAR RİSKİNİ/);assert.match(h,/href="\/scouting"/)});
-test('scouting surface states decision lenses without fake player claims',()=>{for(const x of ['ROL','BAĞLAM','TRANSFERABILITY','KARŞI-KANIT'])assert.match(h,new RegExp(x));});
+test('scouting surface states decision lenses without fake player claims',()=>{for(const x of ['ROL','BAĞLAM','TAŞINABİLİRLİK','KARŞI-KANIT'])assert.match(h,new RegExp(x));});
 test('scouting surface has responsive visual contract',()=>{assert.match(c,/\.scouting-spotlight\{/);assert.match(c,/\.scouting-lenses\{/);assert.match(c,/@media\(max-width:560px\)[\s\S]*\.scouting-spotlight/)});

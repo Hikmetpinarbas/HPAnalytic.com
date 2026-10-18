@@ -106,6 +106,13 @@ export const HEADLINE_VARIANTS = {
 
 export const ACTORS = ['HUMAN', 'ENGINE'];
 
+// Independent-review checks. Every one must be answered on the current draft
+// (contracts.mjs#evaluateCriticalReview); engine.mjs asks for exactly these.
+export const RED_TEAM_CHECKS = [
+  'THESIS_PROVEN', 'MECHANISM', 'DATA_TO_CAUSATION', 'SMALL_SAMPLE', 'COUNTEREVIDENCE',
+  'SOURCE_QUALITY', 'RETELLING', 'HP_VALUE', 'HEADLINE_VS_TEXT', 'JARGON', 'AI_CLICHE',
+];
+
 // Mirrors the articles collection schema (src/content.config.ts).
 export const EVIDENCE_CLASSES = ['DIRECT', 'DERIVED', 'PROXY', 'EDITORIAL'];
 
@@ -166,13 +173,17 @@ export function createTopic({ kind = 'IDEA', raw = '', url = null, fileName = nu
       open_questions: [],
       plan: [],
     },
-    claims: [],
+    claims: [], // claim ledger: { id, claim, claim_class, status, confidence, evidence, source_ids, counterevidence, interpretation }
     outline: { question: '', thesis: '', structure: [], mechanism: '', counterargument: '', limitations: '', hp_angle: '' },
     headlines: [],
     selected_headline: null,
     headlines_draft_version: null,
     draft: { standfirst: '', body_md: '', version: 0, updated_at: null, origin: null },
     red_team: { findings: [], ran_at: null, origin: null },
+    // Human side of the critical review: answers to red-team WARNs and a named
+    // sign-off on the current draft (contracts.mjs#evaluateCriticalReview).
+    critical_review: { dispositions: {}, sign_off: null },
+    approval: null,
     score: {},
     attestations: { voice_checked: false, sources_checked: false },
     derivatives: {},
@@ -186,7 +197,7 @@ export function createTopic({ kind = 'IDEA', raw = '', url = null, fileName = nu
 }
 
 // Pure transition. Returns { ok, topic, error }. Never mutates the input.
-export function transition(topic, to, { actor = 'HUMAN', note = '', now = new Date(), gate } = {}) {
+export function transition(topic, to, { actor = 'HUMAN', note = '', now = new Date(), gate, approval, approvalCheck } = {}) {
   const from = topic.state;
   const fail = (error) => ({ ok: false, topic, error });
 
@@ -201,11 +212,18 @@ export function transition(topic, to, { actor = 'HUMAN', note = '', now = new Da
   else allowed = FORWARD[from]?.includes(to) ?? false;
   if (!allowed) return fail(`ILLEGAL_TRANSITION:${from}->${to}`);
 
-  if (to === 'READY') {
+  if (to === 'APPROVED') {
+    // A human approval is a record built by approval.mjs#createApproval, bound
+    // to the draft version it was given for.
+    if (!approval?.approver || !approval.fingerprint) return fail('HUMAN_APPROVAL_RECORD_REQUIRED');
+    if (approval.draft_version !== topic.draft?.version) return fail('HUMAN_APPROVAL_RECORD_STALE');
+  }
+  if (to === 'READY' || to === 'APPROVED') {
     if (!gate) return fail('GATE_REQUIRED');
     if (!gate.pass) return fail(`GATE_FAILED:${gate.failed.join(',')}`);
   }
   if (to === 'PUBLISHED' && !topic.public_url) return fail('PUBLIC_URL_REQUIRED');
+  if (to === 'PUBLISHED' && !approvalCheck?.valid) return fail(`APPROVAL_INVALID:${(approvalCheck?.reasons ?? ['NOT_CHECKED']).join(',')}`);
   if (to === 'REJECTED' && !note) return fail('REJECTION_REASON_REQUIRED');
 
   const at = now.toISOString();
@@ -213,6 +231,8 @@ export function transition(topic, to, { actor = 'HUMAN', note = '', now = new Da
     ...topic,
     state: to,
     parked_from: to === 'HOLD' ? from : from === 'HOLD' ? null : topic.parked_from,
+    // Leaving APPROVED (except into PUBLISHED) drops the approval: re-approve.
+    approval: to === 'APPROVED' ? approval : from === 'APPROVED' && to !== 'PUBLISHED' ? null : topic.approval ?? null,
     updated_at: at,
     history: [...topic.history, { at, from, to, actor, note }],
   };

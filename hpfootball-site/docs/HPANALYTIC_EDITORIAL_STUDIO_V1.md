@@ -80,6 +80,8 @@ Hard rules in code, each tested:
 
 Defaults fail closed: missing safety booleans are read as unsafe.
 
+**2026-10-15:** four more checks (TOPIC_CARD, CLAIM_LEDGER, SOURCE_INDEPENDENCE, CRITICAL_REVIEW) and a bound human-approval record were added — see `docs/operations/EDITORIAL_MVP_CONTRACTS_V0_1.md`.
+
 ## 5. Public-site change: draft filter
 
 `draft: z.boolean().default(false)` added to `articles`, `research`, `visuals`. Every public `getCollection()` call passes `isPublic` (`src/lib/public-content.mjs`); a test asserts this for every call site.

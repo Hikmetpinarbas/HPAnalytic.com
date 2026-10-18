@@ -2,9 +2,11 @@
 import StudioLayout from '../StudioLayout.astro';
 import { createStore, isTopicId } from '../lib/store.mjs';
 import {
-  allowedTargets, DERIVATIVES, DESTINATIONS, EVIDENCE_CLASSES, FAILURE_REASONS, HEADLINE_VARIANTS,
-  SCORE_DIMENSIONS, SOURCE_ROLES, SOURCE_STANCES,
+  allowedTargets, CONFIDENCE, DERIVATIVES, DESTINATIONS, EVIDENCE_CLASSES, EVIDENCE_LEVELS, FAILURE_REASONS, HEADLINE_VARIANTS,
+  SCORE_DIMENSIONS, SOURCE_ROLES, SOURCE_STANCES, TOPIC_KINDS,
 } from '../lib/model.mjs';
+import { CLAIM_CLASSES, CLAIM_STATUSES, REVIEW_DISPOSITIONS, sourceOrigin, supportingOrigins } from '../lib/contracts.mjs';
+import { evaluateApproval } from '../lib/approval.mjs';
 import { engineStatus, STEPS } from '../lib/engine.mjs';
 import { evaluateGate, clicheHits } from '../lib/gate.mjs';
 import { exportProblems } from '../lib/export.mjs';
@@ -38,6 +40,10 @@ const roleGroups = SOURCE_ROLES.map((role) => ({ role, items: sources.filter((s)
 const cliches = clicheHits(`${topic.draft.standfirst} ${topic.draft.body_md}`);
 const exportBlockers = exportProblems(topic);
 const selected = topic.headlines.find((h: any) => h.variant === topic.selected_headline);
+const sourceById = new Map(sources.map((s) => [s.id, s]));
+const originOf = (s: any) => { const o = sourceOrigin(s, sourceById); return o.origin ?? o.problem; };
+const review = topic.critical_review ?? { dispositions: {}, sign_off: null };
+const approvalCheck = topic.state === 'APPROVED' ? evaluateApproval(topic) : null;
 
 const STEP_LABEL: Record<string, string> = {
   classify: 'SINIFLANDIR', research: 'ARAŞTIR', evidence: 'KANIT HARİTASI + YAPI', draft: 'TASLAK YAZ', headlines: '5 BAŞLIK', redteam: 'RED TEAM + SKOR',
@@ -105,7 +111,7 @@ const n = (v: any) => (v === null || v === undefined ? '–' : v);
                   <div class="source-head">
                     <b>{s.id}</b>
                     {s.url ? <a class="ext" href={s.url} rel="noreferrer noopener" target="_blank">{s.title}</a> : <span>{s.title} · {s.internal_ref}</span>}
-                    <span class="entry-state">{s.stance} · {s.origin}{s.opened_by_engine ? ' · motor açtı' : ''} · {s.verified ? 'DOĞRULANDI' : 'DOĞRULANMADI'}</span>
+                    <span class="entry-state">{s.stance} · {s.origin}{s.opened_by_engine ? ' · motor açtı' : ''} · {s.verified ? 'DOĞRULANDI' : 'DOĞRULANMADI'} · köken: {originOf(s)}</span>
                   </div>
                   {(s.publisher || s.year) && <p class="muted">{[s.publisher, s.year].filter(Boolean).join(' · ')}</p>}
                   <dl class="pairs compact">
@@ -116,6 +122,10 @@ const n = (v: any) => (v === null || v === undefined ? '–' : v);
                   </dl>
                   <div class="inline-forms">
                     <form method="post"><input type="hidden" name="action" value={s.verified ? 'unverify_source' : 'verify_source'}/><input type="hidden" name="id" value={topic.id}/><input type="hidden" name="source_id" value={s.id}/><button class="button button-quiet" type="submit">{s.verified ? 'DOĞRULAMAYI GERİ AL' : 'AÇTIM, DOĞRULA'}</button></form>
+                    <form method="post" class="inline-origin"><input type="hidden" name="action" value="set_source_origin"/><input type="hidden" name="id" value={topic.id}/><input type="hidden" name="source_id" value={s.id}/>
+                      <label>Köken anahtarı<input name="independence_key" value={s.independence_key ?? ''} placeholder="örn. uefa-2025-tech-report"/></label>
+                      <label>Türediği kaynak<input name="derived_from" value={s.derived_from ?? ''} placeholder="örn. S1"/></label>
+                      <button class="button button-quiet" type="submit">KÖKENİ KAYDET</button></form>
                     <form method="post"><input type="hidden" name="action" value="remove_source"/><input type="hidden" name="id" value={topic.id}/><input type="hidden" name="source_id" value={s.id}/><button class="button button-quiet" type="submit">ÇIKAR</button></form>
                   </div>
                 </li>
@@ -140,6 +150,8 @@ const n = (v: any) => (v === null || v === undefined ? '–' : v);
             <label>Yıl<input name="year"/></label>
             <label>Rol<select name="role">{SOURCE_ROLES.map((r) => <option value={r}>{r}</option>)}</select></label>
             <label>Duruş<select name="stance">{SOURCE_STANCES.map((r) => <option value={r}>{r}</option>)}</select></label>
+            <label>Köken anahtarı (aynı çalışma/veri = aynı anahtar)<input name="independence_key"/></label>
+            <label>Türediği kaynak (örn. S1)<input name="derived_from"/></label>
             <label class="wide">Kanıtladığı<input name="what_it_proves"/></label>
             <label class="wide">Kanıtlamadığı<input name="what_it_does_not"/></label>
             <label class="wide">Alıntı/özet (telif kontrolü için kaynak metni)<textarea name="excerpt" rows="3"></textarea></label>
@@ -148,23 +160,48 @@ const n = (v: any) => (v === null || v === undefined ? '–' : v);
         </details>
       </section>
 
+      <details class="block drawer" id="card">
+        <summary>Konu kartı (yayın kapısı: TOPIC_CARD)</summary>
+        <form method="post" class="grid-form">
+          <input type="hidden" name="action" value="set_card"/><input type="hidden" name="id" value={topic.id}/>
+          <label class="wide">Başlık<input name="title" value={topic.card.title}/></label>
+          <label class="wide">Tek cümle<input name="one_line" value={topic.card.one_line}/></label>
+          <label class="wide">Neden şimdi<input name="why_now" value={topic.card.why_now}/></label>
+          <label>Tür<select name="content_type"><option value="">—</option>{TOPIC_KINDS.map((k) => <option value={k} selected={k === topic.card.content_type}>{k}</option>)}</select></label>
+          <label>Kanıt düzeyi<select name="evidence_level">{EVIDENCE_LEVELS.map((k) => <option value={k} selected={k === topic.card.evidence_level}>{k}</option>)}</select></label>
+          <button class="button button-secondary" type="submit">KARTI KAYDET</button>
+        </form>
+      </details>
+
       <section class="block" id="claims" aria-labelledby="h-claims">
         <h2 id="h-claims"><span>04</span> İddia / kanıt haritası</h2>
         {topic.claims.length === 0 ? <p class="muted">Henüz yok. “Kanıt haritası + yapı” adımı üretir.</p> : (
           <div class="table-wrap">
             <table class="claims">
-              <thead><tr><th scope="col">İddia</th><th scope="col">Kanıt</th><th scope="col">Kaynak</th><th scope="col">Güven</th><th scope="col">Karşı kanıt</th><th scope="col">Yorum</th></tr></thead>
+              <thead><tr><th scope="col">ID</th><th scope="col">Sınıf · durum</th><th scope="col">İddia</th><th scope="col">Kanıt</th><th scope="col">Kaynak · bağımsız köken</th><th scope="col">Güven</th><th scope="col">Karşı kanıt</th><th scope="col">Yorum</th></tr></thead>
               <tbody>
                 {topic.claims.map((c: any) => (
-                  <tr>
+                  <tr class:list={{ withdrawn: c.status === 'WITHDRAWN' }}>
+                    <th scope="row">{c.id ?? '–'}</th><td>{c.claim_class ?? 'UNKNOWN'} · {c.status ?? '–'}</td>
                     <td>{c.claim}</td><td>{c.evidence}</td>
-                    <td>{c.source_ids.map((sid: string) => { const s = sources.find((x) => x.id === sid); return <span class:list={['cite', { unverified: !s?.verified }]}>{sid}</span>; })}</td>
+                    <td>{c.source_ids.map((sid: string) => { const s = sources.find((x) => x.id === sid); return <span class:list={['cite', { unverified: !s?.verified }]}>{sid}</span>; })} · {supportingOrigins(topic, c).size}</td>
                     <td class={`conf conf-${c.confidence}`}>{c.confidence}</td><td>{c.counterevidence || '–'}</td><td>{c.interpretation || '–'}</td>
                   </tr>
                 ))}
               </tbody>
             </table>
           </div>
+        )}
+        {topic.claims.some((c: any) => c.id) && (
+          <form method="post" class="grid-form">
+            <input type="hidden" name="action" value="update_claim"/><input type="hidden" name="id" value={topic.id}/>
+            <label>İddia<select name="claim_id">{topic.claims.filter((c: any) => c.id).map((c: any) => <option value={c.id}>{c.id}</option>)}</select></label>
+            <label>Sınıf<select name="claim_class">{CLAIM_CLASSES.map((k) => <option value={k}>{k}</option>)}</select></label>
+            <label>Durum<select name="status">{CLAIM_STATUSES.map((k) => <option value={k}>{k}</option>)}</select></label>
+            <label>Güven<select name="confidence">{CONFIDENCE.map((k) => <option value={k}>{k}</option>)}</select></label>
+            <label class="wide">Defter notu (neden düşürüldü / daraltıldı)<input name="note"/></label>
+            <button class="button button-secondary" type="submit">DEFTERİ GÜNCELLE</button>
+          </form>
         )}
         {topic.outline.thesis && (
           <dl class="pairs">
@@ -222,11 +259,36 @@ const n = (v: any) => (v === null || v === undefined ? '–' : v);
             {topic.red_team.draft_version !== topic.draft.version && <p class="problem">Red team taslak v{topic.red_team.draft_version} üzerinde çalıştı; güncel taslak v{topic.draft.version}. Yeniden çalıştır.</p>}
             {topic.red_team.summary && <p>{topic.red_team.summary}</p>}
             <ul class="findings">
-              {topic.red_team.findings.map((f: any) => <li class={`v-${f.verdict}`}><b>{f.check}</b><span>{f.verdict}</span><p>{f.note}</p></li>)}
+              {topic.red_team.findings.map((f: any) => {
+                const d = review.dispositions?.[f.check];
+                const current = d && d.red_team_ran_at === topic.red_team.ran_at;
+                return (
+                  <li class={`v-${f.verdict}`}><b>{f.check}</b><span>{f.verdict}</span><p>{f.note}</p>
+                    {f.verdict === 'WARN' && (current
+                      ? <p class="muted small">İnsan kararı: {d.disposition} · {d.by || '–'} · {d.note}</p>
+                      : (
+                        <form method="post" class="inline-origin"><input type="hidden" name="action" value="review_disposition"/><input type="hidden" name="id" value={topic.id}/><input type="hidden" name="check" value={f.check}/>
+                          <label>Karar<select name="disposition">{REVIEW_DISPOSITIONS.map((k) => <option value={k}>{k}</option>)}</select></label>
+                          <label>Not<input name="note" required/></label>
+                          <label>Kim<input name="by"/></label>
+                          <button class="button button-quiet" type="submit">KARARI YAZ</button></form>
+                      ))}
+                    {f.verdict === 'FAIL' && <p class="problem small">FAIL insan kararıyla geçilmez: düzelt, red team’i yeniden çalıştır.</p>}
+                  </li>
+                );
+              })}
             </ul>
             <dl class="scores">{SCORE_DIMENSIONS.map((d) => <div><dt>{d}</dt><dd>{n(topic.score[d])}</dd></div>)}</dl>
           </>
         ) : <p class="muted">Henüz çalışmadı.</p>}
+        <h3>İnsan eleştirel inceleme</h3>
+        {review.sign_off && <p class:list={['small', { problem: review.sign_off.draft_version !== topic.draft.version }]}>İmza: {review.sign_off.reviewer} · taslak v{review.sign_off.draft_version} · {review.sign_off.note}{review.sign_off.draft_version !== topic.draft.version && ' — taslak değişti, yeniden imzala.'}</p>}
+        <form method="post" class="grid-form">
+          <input type="hidden" name="action" value="review_signoff"/><input type="hidden" name="id" value={topic.id}/>
+          <label>İnceleyen<input name="reviewer" required/></label>
+          <label class="wide">Ne okudun, neyi kabul ettin (zorunlu)<input name="note" required/></label>
+          <button class="button button-secondary" type="submit">TASLAK v{topic.draft.version} İÇİN İMZALA</button>
+        </form>
       </section>
     </div>
 
@@ -284,10 +346,14 @@ const n = (v: any) => (v === null || v === undefined ? '–' : v);
         <p class="state-pill">{topic.state}</p>
         <div class="transitions">
           {targets.filter((t) => t !== 'REJECTED').map((to) => (
-            <form method="post"><input type="hidden" name="action" value="transition"/><input type="hidden" name="id" value={topic.id}/><input type="hidden" name="to" value={to}/>
-              <button class:list={['button', to === 'APPROVED' ? 'button-primary' : 'button-secondary']} type="submit" disabled={to === 'READY' && !gate.pass}>→ {to}</button></form>
+            <form method="post" class:list={{ stack: to === 'APPROVED' }}><input type="hidden" name="action" value="transition"/><input type="hidden" name="id" value={topic.id}/><input type="hidden" name="to" value={to}/>
+              {to === 'APPROVED' && <label>Onaylayan (ad soyad)<input name="approver" required/></label>}
+              {to === 'APPROVED' && <label>Onay notu<input name="note"/></label>}
+              <button class:list={['button', to === 'APPROVED' ? 'button-primary' : 'button-secondary']} type="submit" disabled={(to === 'READY' || to === 'APPROVED') && !gate.pass}>→ {to}</button></form>
           ))}
         </div>
+        {topic.approval && <p class="small">Onay: {topic.approval.approver} · {topic.approval.at.slice(0, 16).replace('T', ' ')} · taslak v{topic.approval.draft_version}</p>}
+        {approvalCheck && !approvalCheck.valid && <p class="problem small">Onay geçersiz: {approvalCheck.reasons.join(' · ')}</p>}
         {targets.includes('REJECTED') && (
           <form method="post" class="reject">
             <input type="hidden" name="action" value="transition"/><input type="hidden" name="id" value={topic.id}/><input type="hidden" name="to" value="REJECTED"/>
