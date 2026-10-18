@@ -36,6 +36,11 @@ export const FLASH = {
   DRAFT_SAVED: 'Taslak kaydedildi. Ses kontrolü yeniden gerekiyor.',
   PUBLIC_META_SET: 'Public metadata kaydedildi.',
   PUBLIC_URL_SET: 'Public URL kaydedildi.',
+  CARD_SET: 'Konu kartı kaydedildi.',
+  SOURCE_ORIGIN_SET: 'Kaynak kökeni kaydedildi (bağımsızlık kontrolü).',
+  CLAIM_UPDATED: 'İddia defteri güncellendi.',
+  DISPOSITION_SET: 'Red team uyarısına insan kararı yazıldı.',
+  SIGNOFF_SET: 'Eleştirel inceleme imzalandı (bu taslak sürümü için).',
   EXPORTED: 'Paket outbox’a yazıldı (draft: true). Yayın yapılmadı.',
   TOPIC_NOT_FOUND: 'Konu bulunamadı.',
 };

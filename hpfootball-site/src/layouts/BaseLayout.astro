@@ -6,6 +6,8 @@ import { getCollection } from 'astro:content';
 import { buildVisibleNavigation, buildUtilityNavigation, currentState, SECTION_ROUTES } from '../lib/site-surfaces.mjs';
 import MobileNavigation from '../components/MobileNavigation.astro';
 import Logo from '../components/Logo.astro';
+import NavigationIcon from '../components/NavigationIcon.astro';
+import { canonicalPath } from '../lib/canonical-path.mjs';
 
 interface Props {
   title?: string;
@@ -52,7 +54,7 @@ const navigation = withCurrent(buildVisibleNavigation({
 const utility = withCurrent(buildUtilityNavigation({ articleCount: articles.length }));
 const archiveLink = utility.find((item) => item.href === '/archive');
 const searchLink = utility.find((item) => item.href === '/search');
-const canonical = new URL(pathname, Astro.site ?? Astro.url).href;
+const canonical = new URL(canonicalPath(pathname), Astro.site ?? Astro.url).href;
 ---
 <!doctype html>
 <html lang="tr" class="no-js">
@@ -89,7 +91,7 @@ const canonical = new URL(pathname, Astro.site ?? Astro.url).href;
 <meta property="og:image:alt" content="HPAnalytic — Evidence Made Visible"/>
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content={new URL("/social-card.png", Astro.site ?? Astro.url).href}/>
-<meta name="theme-color" content="#050505"/>
+<meta name="theme-color" content="#F5F1E8"/>
 <meta name="application-name" content="HPAnalytic"/>
 <meta name="mobile-web-app-capable" content="yes"/>
 <meta name="apple-mobile-web-app-capable" content="yes"/>
@@ -114,7 +116,7 @@ if ('serviceWorker' in navigator) {
 <header class="site-header">
   <Logo />
   <nav class="desktop-nav" aria-label="Ana menü">
-    {navigation.map(item=><a class="nav-link" href={item.href} aria-current={item.current}>{item.label}</a>)}
+    {navigation.map(item=><a class="nav-link" href={item.href} aria-current={item.current}><NavigationIcon href={item.href}/><span>{item.label}</span></a>)}
   </nav>
   <div class="header-actions">
     {searchLink && (
@@ -135,5 +137,20 @@ if ('serviceWorker' in navigator) {
   </div>
   <div class="footer-base"><span>© {new Date().getFullYear()} Hikmet Pınarbaş · HPAnalytic</span><span>Güvenden önce kanıt.</span></div>
 </footer>
+<script is:inline>
+/* HPAnalytic motion: finite, one-shot effects. No polling and no background loops. */
+(() => {
+  if (!('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const targets = document.querySelectorAll('.featured-analysis,.research-spotlight,.scouting-spotlight,.mechanism-card,.section-heading');
+  const observer = new IntersectionObserver((entries, self) => {
+    for (const entry of entries) {
+      if (!entry.isIntersecting) continue;
+      entry.target.classList.add('hp-motion-observed');
+      self.unobserve(entry.target);
+    }
+  }, { rootMargin: '0px 0px -32px 0px', threshold: 0.06 });
+  for (const el of targets) observer.observe(el);
+})();
+</script>
 </body>
 </html>

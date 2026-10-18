@@ -1,6 +1,9 @@
 name: HPAnalytic Linux Acceptance
 
 on:
+  push:
+    branches:
+      - 'qa/consolidation-20261018'
   pull_request:
     paths:
       - 'hpfootball-site/**'
@@ -52,7 +55,7 @@ jobs:
 
       - name: Physical browser QA
         run: |
-          npm run dev -- --host 127.0.0.1 > /tmp/hpanalytic-astro.log 2>&1 &
+          npx --yes wrangler@4.146.0 dev --config dist/server/wrangler.json --local --ip 127.0.0.1 --port 4321 > /tmp/hpanalytic-astro.log 2>&1 &
           SERVER_PID=$!
           trap 'kill $SERVER_PID 2>/dev/null || true' EXIT
           for i in $(seq 1 40); do
@@ -60,6 +63,8 @@ jobs:
             sleep 1
           done
           curl -fsS http://127.0.0.1:4321/ >/dev/null || { cat /tmp/hpanalytic-astro.log; exit 1; }
+          node scripts/worker-http-gate.mjs
+          node scripts/public-dist-signatures.mjs dist
           node scripts/release-browser-qa.mjs
 
       - name: Upload browser QA evidence
@@ -68,7 +73,7 @@ jobs:
         with:
           name: release-pack-01-browser-qa
           path: hpfootball-site/qa-artifacts/
-          if-no-files-found: warn
+          if-no-files-found: error
 
       - name: Private Studio must not reach production
         run: |

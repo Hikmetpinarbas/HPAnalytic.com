@@ -1,5 +1,6 @@
 ---
 import { serializeJsonLd } from '../../lib/json-ld.mjs';
+import { canonicalPath } from '../../lib/canonical-path.mjs';
 import { isPublic } from '../../lib/public-content.mjs';
 import { getCollection, render } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
@@ -23,7 +24,7 @@ const safeNextQuestion=nextQuestion && /^\/articles\/[a-z0-9-]+$/.test(nextQuest
 const articleKindLabel=a.data.articleKind?displayArticleKind(a.data.articleKind):''; const seriesLabel=a.data.series?displaySeries(a.data.series):'';
 const visualAssets=(a.data.visualAssets??[]).filter(v=>['OWNED','LICENSED','EDITORIAL_LICENSED','PUBLIC_DOMAIN','ORIGINAL'].includes(String(v.rights_status||'').toUpperCase()));
 const dataInsights=a.data.dataInsights??[]; const governed=a.data.source_system==='HP_CONTENT_INTELLIGENCE'||Boolean(a.data.articleKind);
-const site=Astro.site??Astro.url; const canonicalArticle=new URL(Astro.url.pathname,site).href; const jsonLd={'@context':'https://schema.org','@type':'Article',headline:a.data.title,description:a.data.description,datePublished:a.data.date.toISOString(),inLanguage:a.data.language??'tr',author:{'@type':'Person',name:a.data.author??'Hikmet Pınarbaş'},publisher:{'@type':'Organization',name:'HPAnalytic'},mainEntityOfPage:new URL(Astro.url.pathname,site).href};
+const site=Astro.site??Astro.url; const canonicalArticle=new URL(canonicalPath(Astro.url.pathname),site).href; const jsonLd={'@context':'https://schema.org','@type':'Article',headline:a.data.title,description:a.data.description,datePublished:a.data.date.toISOString(),inLanguage:a.data.language??'tr',author:{'@type':'Person',name:a.data.author??'Hikmet Pınarbaş'},publisher:{'@type':'Organization',name:'HPAnalytic'},mainEntityOfPage:new URL(canonicalPath(Astro.url.pathname),site).href};
 ---
 <BaseLayout title={a.data.title+' — HPAnalytic'} description={a.data.description} section={section} ogType="article" publishedTime={a.data.date}>
 <script slot="head" type="application/ld+json" set:html={serializeJsonLd(jsonLd)} />
@@ -32,7 +33,7 @@ const site=Astro.site??Astro.url; const canonicalArticle=new URL(Astro.url.pathn
 <p class="article-meta"><span>{a.data.author??'Hikmet Pınarbaş'}</span><time datetime={isoDate}>{a.data.date.toLocaleDateString('tr-TR',{day:'numeric',month:'long',year:'numeric',timeZone:'UTC'})}</time><span>{minutes} dk okuma</span>{articleKindLabel&&<span>{articleKindLabel}</span>}{seriesLabel&&seriesLabel!==articleKindLabel&&<span>{seriesLabel}</span>}</p>
 {topics.length>0&&<div class="article-topics" aria-label="Konular">{topics.map(topic=><span>{topic}</span>)}</div>}<EvidenceBadge evidenceClass={a.data.evidenceClass} claimCeiling={a.data.claimCeiling}/></header>
 
-<div class="article-reader-tools" aria-label="Okuma araçları"><a href="#article-body">YAZIYA GEÇ ↓</a><button type="button" data-reading-save data-path={Astro.url.pathname} aria-pressed="false">SONRA OKU ＋</button><span data-reading-save-status aria-live="polite"></span></div>
+<div class="article-reader-tools" role="group" aria-label="Okuma araçları"><a href="#article-body">YAZIYA GEÇ ↓</a><button type="button" data-reading-save data-path={Astro.url.pathname} aria-pressed="false">SONRA OKU ＋</button><span data-reading-save-status aria-live="polite"></span></div>
 <script>
   import { READING_LIST_KEY, parseReadingList, toggleReadingList } from '../../lib/reading-list.mjs';
   const saveButton = document.querySelector<HTMLButtonElement>('[data-reading-save]');
@@ -46,7 +47,7 @@ const site=Astro.site??Astro.url; const canonicalArticle=new URL(Astro.url.pathn
   }
 </script>
 <div class="article-share" data-share-url={canonicalArticle} data-share-title={a.data.title}>
-  <button type="button" class="article-share-button" aria-label="Bu yazıyı paylaş">YAZIYI PAYLAŞ <span aria-hidden="true">↗</span></button>
+  <button type="button" class="article-share-button">YAZIYI PAYLAŞ <span aria-hidden="true">↗</span></button>
   <span class="article-share-status" aria-live="polite"></span>
 </div>
 <script is:inline>

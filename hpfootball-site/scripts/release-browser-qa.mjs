@@ -34,9 +34,23 @@ async function inspect(name,viewport,{text200=false,reducedMotion='no-preference
   await context.close();
 }
 
+await inspect('mobile-320',{width:320,height:740});
 await inspect('mobile-375',{width:375,height:812});
+await inspect('mobile-390',{width:390,height:844});
 await inspect('desktop-1440',{width:1440,height:1000});
 await inspect('text-200-mobile',{width:375,height:812},{text200:true});
 await inspect('reduced-motion',{width:1440,height:1000},{reducedMotion:'reduce'});
+// Disclosed mobile menu must open, close on Escape and remain in viewport.
+const menuContext=await browser.newContext({viewport:{width:320,height:740},reducedMotion:'reduce'});
+const menuPage=await menuContext.newPage();
+await menuPage.goto(base,{waitUntil:'networkidle'});
+const menuButton=menuPage.locator('.mobile-nav-trigger');
+assert.ok(await menuButton.isVisible(),'mobile menu trigger is invisible at 320px');
+await menuButton.click();
+assert.equal(await menuButton.getAttribute('aria-expanded'),'true','mobile menu fails to open');
+assert.ok(await menuPage.locator('#mobile-nav-panel').isVisible(),'mobile menu panel stays hidden');
+await menuPage.keyboard.press('Escape');
+assert.equal(await menuButton.getAttribute('aria-expanded'),'false','Escape fails to close mobile menu');
+await menuContext.close();
 await browser.close();
 console.log('BROWSER_QA_PASS');

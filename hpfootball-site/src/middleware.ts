@@ -24,6 +24,7 @@ export const onRequest = defineMiddleware(async (context, next) => {
         'content-type': 'text/plain; charset=utf-8',
         'cache-control': 'no-store',
         'X-Robots-Tag': 'noindex, nofollow',
+        ...SECURITY_HEADERS,
       },
     });
   }

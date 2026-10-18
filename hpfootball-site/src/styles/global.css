@@ -3,26 +3,26 @@
    controlled darkness, hierarchy through light). */
 
 :root {
-  color-scheme: dark;
+  color-scheme: light;
 
   /* Colour — light means evidence, darkness means context/unknown. */
-  --bg: #050505;
-  --surface: #0b0a08;
-  --surface-2: #12100c;
-  --ink: #f1eee6;
-  --ink-2: #d2cabb;
-  --muted: #aaa293;
-  --faint: #8c8475;
-  --line: #2e271c;
-  --line-strong: #4f412b;
-  --gold: #c89545;
-  --gold-2: #f0c977;
-  --blue: #63a9e8;
-  --red: #d72d27;
-  --ok: #9fbd83;
-  --warn: #d39a5d;
-  --focus: #f0c977;
-  --focus-ink: #050505;
+  --bg: #f5f1e8;
+  --surface: #fffefb;
+  --surface-2: #eceee5;
+  --ink: #181d19;
+  --ink-2: #4a534d;
+  --muted: #666d67;
+  --faint: #666d67;
+  --line: #d7dcd2;
+  --line-strong: #8ea58b;
+  --gold: #795b30;
+  --gold-2: #795b30;
+  --blue: #275d80;
+  --red: #9c3b2e;
+  --ok: #234338;
+  --warn: #855a2d;
+  --focus: #234338;
+  --focus-ink: #fffefb;
 
   /* HP visual grammar — geometry carries meaning, never decoration. */
   --hp-axis: rgba(240, 201, 119, .24);
@@ -125,7 +125,7 @@ main:focus { outline: none; }
   position: sticky; top: 0; z-index: 20;
   display: flex; align-items: center; justify-content: space-between; gap: 24px;
   min-height: var(--header-h); padding: 10px var(--gutter);
-  background: rgba(5, 5, 5, .94); backdrop-filter: blur(16px);
+  background: rgba(255, 254, 251, .94); backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--line);
 }
 .header-actions { display: flex; align-items: center; gap: 8px; }
@@ -185,6 +185,10 @@ main:focus { outline: none; }
   .js .desktop-nav { display: none; }
   .js .mobile-navigation { display: block; }
   .site-header { flex-wrap: wrap; }
+  /* The trigger can wrap to the start of the row, so anchor the panel to the sticky header,
+     not to the trigger: it opens below the header and stays inside the gutters. */
+  .mobile-navigation { position: static; }
+  .mobile-nav-panel { left: var(--gutter); right: var(--gutter); top: calc(100% + 8px); width: auto; }
   html:not(.js) .desktop-nav { order: 3; width: 100%; }
 }
 @media (max-width: 420px) {
@@ -317,6 +321,7 @@ main:focus { outline: none; }
 
 /* Sub-sections */
 .subsection { margin-top: clamp(48px, 6vw, 80px); }
+.subsection > a { display: inline-flex; align-items: center; min-height: 44px; color: var(--gold-2); }
 
 /* Framework grids (scouting / research / visual lab) --------------------- */
 .frame-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 260px), 1fr)); gap: 16px; margin: 0; padding: 0; list-style: none; }
@@ -485,7 +490,7 @@ main:focus { outline: none; }
 }
 .hp-pitch__stage {
   position: relative;
-  aspect-ratio: 1.6/1;
+  aspect-ratio: var(--hp-pitch-ratio, 1.6/1);
   background:
     radial-gradient(circle at 69% 49%,rgba(240,201,119,.045),transparent 25%),
     linear-gradient(135deg,#080806,#040404);
@@ -722,3 +727,88 @@ linear-gradient(180deg,#050505 0%,#070604 38%,#050505 100%);}
 @media(max-width:700px){.publication-masthead{font-size:12px;align-items:flex-start;flex-direction:column;gap:2px;padding-block:8px}.site-header{padding-block:10px}.featured-story h2{font-size:clamp(34px,9vw,48px)}}
 
 .article-reader-tools{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin:0 0 24px}.article-reader-tools a,.article-reader-tools button{display:inline-flex;align-items:center;min-height:44px;padding:10px 15px;border:1px solid var(--line-strong);background:transparent;color:var(--ink);font:700 12px/1.4 var(--font-sans);letter-spacing:.09em;cursor:pointer}.article-reader-tools button[aria-pressed="true"]{border-color:var(--gold-2)}.article-reader-tools [data-reading-save-status]{font-size:12px;color:var(--muted)}.article-reader-tools a:focus-visible,.article-reader-tools button:focus-visible{outline:3px solid var(--focus);outline-offset:3px}
+
+
+/* HPAnalytic light staging — interaction enhancements, not live production. */
+.site-header { box-shadow: 0 7px 28px rgba(35,67,56,.07); }
+.desktop-nav { gap: 6px; }
+.nav-link { border: 1px solid transparent; border-radius: 12px; gap: 8px; letter-spacing: .025em; transition: transform .18s ease, background .18s ease, border-color .18s ease, color .18s ease; }
+.nav-link svg { flex: none; width: 18px; height: 18px; color: #456759; transition: transform .18s ease; }
+.nav-link:hover { background: #e5ede4; border-color: #cadacc; transform: translateY(-2px); }
+.nav-link:hover svg { transform: rotate(-7deg) scale(1.08); }
+.nav-link[aria-current] { background: #dfe9dd; border-color: #9bb49a; color: #234338; }
+.icon-link:hover { background: #e5ede4; border-radius: 10px; }
+body { background-image: radial-gradient(circle at 90% 2%, rgba(142,165,139,.12), transparent 29%); }
+.grain { opacity: .014; background-image: radial-gradient(#234338 .7px, transparent .7px); }
+@media (prefers-reduced-motion: reduce) {
+ .nav-link,.nav-link svg { transition: none; }
+ .nav-link:hover { transform: none; }
+ .nav-link:hover svg { transform: none; }
+}
+
+/* Light-theme visual coherence and interaction acceptance. */
+.mobile-nav-panel { border-radius: 14px; box-shadow: 0 18px 46px rgba(24,29,25,.16); max-height: min(76dvh, 620px); overflow-y: auto; overscroll-behavior: contain; }
+.mobile-nav-trigger { border-radius: 10px; }
+.mobile-nav-trigger:hover { background: #e5ede4; }
+.mobile-nav-panel a { border-radius: 8px; letter-spacing: .03em; }
+.mobile-nav-panel a:hover, .mobile-nav-panel a:focus-visible { background: #e5ede4; color: #234338; }
+.button-primary { background: #234338; border-color: #234338; color: #fffefb; }
+.button-primary:hover { background: #181d19; color: #fffefb; }
+.button-secondary:hover { background: #e5ede4; }
+@media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+
+/* HP motion v1: paint/transform-only; visible content remains accessible without JS. */
+:root { --hp-motion-fast: 160ms; --hp-motion-medium: 420ms; --hp-motion-ease: cubic-bezier(.22,.75,.25,1); }
+@media (prefers-reduced-motion: no-preference) {
+  .hp-motion-observed { animation: hp-content-enter var(--hp-motion-medium) var(--hp-motion-ease) both; }
+  .hp-motion-observed:nth-child(2n) { animation-delay: 65ms; }
+  .hp-motion-observed:nth-child(3n) { animation-delay: 110ms; }
+  @keyframes hp-content-enter {
+    from { opacity: .65; transform: translate3d(0,12px,0); }
+    to { opacity: 1; transform: translate3d(0,0,0); }
+  }
+  .featured-analysis, .research-spotlight, .scouting-spotlight, .mechanism-card {
+    transition: box-shadow 180ms ease, border-color 180ms ease;
+  }
+  .featured-analysis:hover, .research-spotlight:hover, .scouting-spotlight:hover, .mechanism-card:hover {
+    box-shadow: 0 18px 50px rgba(35,67,56,.10);
+  }
+  .hero-field .tactical { animation: hp-field-enter 700ms var(--hp-motion-ease) both; }
+  @keyframes hp-field-enter {
+    from { opacity:.65; transform: translate3d(0,8px,0); }
+    to { opacity:1; transform:translate3d(0,0,0); }
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .hp-motion-observed, .hero-field .tactical { animation: none !important; transform:none!important; opacity:1!important; }
+}
+
+/* HP launch acceptance — light editorial surfaces; the tactical pitch retains its intentional dark canvas. */
+.hp-mark { background: #e6ede3; border-color: #9bb49a; border-radius: 12px; }
+.hp-frame { stroke: #234338; }
+.hp-break { stroke: #795b30; }
+.action-primary { background: #234338; color: #fffefb; border-radius: 10px; }
+.action-secondary { color: #234338; border-color: #9bb49a; border-radius: 10px; }
+.action-secondary:hover { background: #e6ede3; }
+.hero-signature, .field-caption { color: #4a534d; }
+.series-index a, .visual-evidence-card, .data-note-card, .launch-directory__links a { background: #fffefb; color: #181d19; }
+.series-index span, .series-section>header>p:not(.kicker), .series-list p, .visual-evidence-card figcaption p, .data-note-card p { color: #4a534d; }
+.series-list small, .visual-evidence-card figcaption small, .data-note-card>small { color: #666d67; }
+.data-note-card p b { color: #181d19; }
+.launch-directory__links a:hover, .series-index a:hover { background: #e5ede4; }
+
+/* Consolidation 2026-10-18: the late shell rules above (publication masthead, site header, brand tag)
+   still carried dark literals and overrode the light header, leaving the logo word at ~1.1:1.
+   Light values restated here; the tactical pitch keeps its dark canvas (pending decision), so its
+   own caption gets light ink instead of inheriting the page ink. */
+.publication-masthead { background: var(--surface); color: var(--ink-2); border-bottom-color: var(--line); }
+.site-header { background: rgba(255, 254, 251, .96); border-bottom-color: var(--line); }
+.brand-word small { color: var(--muted); }
+.hp-pitch__disclaimer { color: #e7e2d6; }
+/* Home sections still used dark-theme greys (#8c8377–#bdb6aa) and light gold #d8ad69 as text:
+   2.0–3.7:1 on the light surfaces (Chromium probe). Bound to the light text tokens. */
+/* Selectors match the specificity of the rules they replace. */
+.research-method p, .research-intro>p:not(.kicker), .scouting-copy>p:not(.kicker), .scouting-lenses p, .featured-story>p:not(.featured-meta), .featured-story>p:last-of-type, .featured-question p { color: var(--ink-2); }
+.featured-story .featured-meta { color: var(--muted); }
+.launch-directory__links a>span:first-child, .launch-directory__links a>span:last-child { color: var(--gold); }

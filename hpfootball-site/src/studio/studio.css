@@ -63,6 +63,9 @@ button.button-quiet { color: var(--gold-2); }
 .mini-meta dt { color: var(--faint); letter-spacing: .06em; }
 .mini-meta dd { margin: 2px 0 0; color: var(--ink-2); }
 .inline-forms { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 16px; }
+.inline-origin { display: flex; flex-wrap: wrap; align-items: end; gap: 8px; }
+.inline-origin label { display: grid; gap: 2px; font-size: 0.8rem; }
+.claims tr.withdrawn td { text-decoration: line-through; opacity: 0.6; }
 .dismiss { display: flex; gap: 8px; align-items: center; }
 .dismiss select { width: auto; font-size: var(--label); }
 

@@ -2,6 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { advance, allowedTargets, createTopic, forwardPath, transition, columnOf, slugify } from '../src/studio/lib/model.mjs';
 import { evaluateGate, verbatimOverlaps, clicheHits, similarity } from '../src/studio/lib/gate.mjs';
+import { createApproval } from '../src/studio/lib/approval.mjs';
 import { readyCandidate } from './fixtures/studio-topic.mjs';
 
 const now = new Date('2026-10-06T12:00:00Z');
@@ -10,7 +11,9 @@ test('engine can never approve or publish', () => {
   const t = { ...readyCandidate(), state: 'READY' };
   assert.equal(transition(t, 'APPROVED', { actor: 'ENGINE' }).error, 'HUMAN_ONLY:APPROVED');
   assert.equal(transition({ ...t, state: 'APPROVED', public_url: 'https://hpanalytic.com/x' }, 'PUBLISHED', { actor: 'ENGINE' }).error, 'HUMAN_ONLY:PUBLISHED');
-  assert.ok(transition(t, 'APPROVED', { actor: 'HUMAN' }).ok);
+  assert.equal(transition(t, 'APPROVED', { actor: 'HUMAN' }).error, 'HUMAN_APPROVAL_RECORD_REQUIRED');
+  const { approval } = createApproval(t, { approver: 'Hikmet Pınarbaş' });
+  assert.ok(transition(t, 'APPROVED', { actor: 'HUMAN', approval, gate: evaluateGate(t) }).ok);
 });
 
 test('READY requires a passing gate; PUBLISHED requires a public URL', () => {
