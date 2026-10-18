@@ -24,8 +24,8 @@ test('manifest defines the HPAnalytic standalone identity', async () => {
   assert.equal(manifest.start_url, '/');
   assert.equal(manifest.scope, '/');
   assert.equal(manifest.display, 'standalone');
-  assert.equal(manifest.theme_color, '#050505');
-  assert.equal(manifest.background_color, '#050505');
+  assert.equal(manifest.theme_color, '#F5F1E8');
+  assert.equal(manifest.background_color, '#F5F1E8');
   assert.equal(manifest.lang, 'tr');
 });
 
