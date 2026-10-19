@@ -1,0 +1,46 @@
+/* HPAnalytic P0 — editorial primitives. Non-production design branch.
+   Brandbook 2026-10-18: logo candidate is NOT approved. No logo assets defined here.
+   Semantic emphasis requires text/shape; never encode epistemic class by hue alone. */
+:root {
+  --hp-surface-paper:#F5F1E8; --hp-surface-raised:#FFFEFB; --hp-surface-muted:#EDE7DA;
+  --hp-ink-primary:#181D19; --hp-ink-secondary:#4A554E; --hp-ink-muted:#5E655F;
+  --hp-brand-forest:#234338; --hp-brand-forest-deep:#1B3329;
+  --hp-brand-sage:#8EA58B; --hp-brand-rose:#B78C72; --hp-brand-gold:#C3A469;
+  --hp-brand-gold-text:#795B30;
+  --hp-data-evidence:#206A97; --hp-data-evidence-soft:#EAF1F6;
+  --hp-data-breach:#AA414D; --hp-data-breach-soft:#F6E6E6;
+  --hp-data-unobserved:#7A8079;
+  --hp-inference-observed:#234338; --hp-inference-proxy:#8EA58B; --hp-inference-hypothesis:#B78C72;
+  --hp-status-border:rgba(24,29,25,.08); --hp-border-visible:#DDD5C5;
+  --hp-font-editorial:"Newsreader","Source Serif 4",Georgia,serif;
+  --hp-font-ui:"Archivo",Inter,system-ui,sans-serif;
+  --hp-font-data:"IBM Plex Mono","JetBrains Mono",ui-monospace,monospace;
+  --hp-space-1:4px;--hp-space-2:8px;--hp-space-3:12px;--hp-space-4:16px;
+  --hp-space-6:24px;--hp-space-8:32px;--hp-space-12:48px;--hp-space-16:64px;
+  --hp-radius-none:0;--hp-radius-sm:2px;--hp-radius-card:4px;
+  --hp-shadow-subtle:none;--hp-shadow-paper:none;
+  --hp-header-height:56px;--hp-content-max:1200px;--hp-article-measure:680px;
+  --hp-focus-outline:2px solid var(--hp-brand-forest);
+}
+.hp-editorial {
+  color:var(--hp-ink-primary);background:var(--hp-surface-paper);
+  font:400 16px/1.6 var(--hp-font-ui);font-synthesis:none;
+}
+.hp-editorial *, .hp-editorial *::before,.hp-editorial *::after{box-sizing:border-box}
+.hp-editorial :focus-visible{outline:var(--hp-focus-outline);outline-offset:2px}
+.hp-editorial .hp-shell{width:min(calc(100% - 32px),var(--hp-content-max));margin-inline:auto}
+.hp-editorial .hp-section{padding-block:clamp(32px,5vw,64px);border-top:1px solid var(--hp-status-border)}
+.hp-editorial .hp-kicker{font:600 12px/1.5 var(--hp-font-data);letter-spacing:.08em;color:var(--hp-ink-secondary)}
+.hp-editorial .hp-display{font:400 clamp(2.4rem,5vw,4.5rem)/1.03 var(--hp-font-editorial);letter-spacing:-.035em;max-width:18ch;margin:12px 0 24px}
+.hp-editorial .hp-lead{font:400 clamp(1rem,1.6vw,1.2rem)/1.6 var(--hp-font-ui);max-width:62ch;color:var(--hp-ink-secondary)}
+.hp-editorial .hp-paper{background:var(--hp-surface-raised);border:1px solid var(--hp-status-border);border-radius:var(--hp-radius-card);box-shadow:none;padding:clamp(16px,2vw,32px)}
+.hp-editorial .hp-link{display:inline-flex;align-items:center;min-height:44px;padding:10px 16px;border:1px solid var(--hp-brand-forest);border-radius:2px;color:var(--hp-brand-forest);font-weight:600;text-decoration:none}
+.hp-editorial .hp-link:hover{background:var(--hp-surface-muted)}
+.hp-editorial .hp-rule{height:3px;width:48px;background:var(--hp-brand-gold)}
+.hp-editorial .hp-evidence-label{color:var(--hp-brand-forest);font-weight:700}
+.hp-editorial .hp-proxy-label,.hp-editorial .hp-hypothesis-label{color:var(--hp-ink-primary);font-weight:700}
+.hp-editorial .hp-data-value{font-family:var(--hp-font-data);font-variant-numeric:tabular-nums}
+.hp-editorial .hp-grid{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));gap:24px}
+.hp-editorial .hp-grid > *{min-width:0}
+@media(max-width:767px){.hp-editorial .hp-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}}
+@media(prefers-reduced-motion:reduce){.hp-editorial *{scroll-behavior:auto!important;transition:none!important;animation:none!important}}
