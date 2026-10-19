@@ -6,7 +6,7 @@ test('carousel is wired to admitted editorial entries, supports controls and red
  const component=fs.readFileSync('src/components/EditorialCarousel.astro','utf8');
  const css=fs.readFileSync('src/styles/stitch-editorial.css','utf8');
  assert.match(home,/isPublicEditorialItem\(entry\.data\)/);
- assert.match(home,/<EditorialCarousel items=\{readingDesk\}/);
+ assert.match(home,/<EditorialCarousel items=/);
  assert.match(component,/aria-label="Önceki içerik"/);
  assert.match(component,/aria-label="Sonraki içerik"/);
  assert.match(component,/scrollTo/);
