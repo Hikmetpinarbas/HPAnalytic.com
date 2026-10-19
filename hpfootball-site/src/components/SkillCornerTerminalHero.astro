@@ -1,0 +1,74 @@
+---
+/** Unified primary homepage hero. Field vectors are illustrative, not tracking data. */
+---
+<section class="terminal-hero" data-testid="skillcorner-terminal-hero" aria-labelledby="terminal-title">
+  <div class="terminal-field" aria-hidden="true">
+    <svg viewBox="0 0 1000 600" fill="none" preserveAspectRatio="xMidYMid slice">
+      <rect x="50" y="50" width="900" height="500" stroke="#1E293B" stroke-width="1.5"/>
+      <line x1="500" y1="50" x2="500" y2="550" stroke="#1E293B" stroke-width="1.5"/>
+      <circle cx="500" cy="300" r="100" stroke="#1E293B" stroke-width="1.5"/>
+      <rect x="50" y="175" width="165" height="250" stroke="#1E293B" stroke-width="1.5"/>
+      <rect x="785" y="175" width="165" height="250" stroke="#1E293B" stroke-width="1.5"/>
+      <polygon points="500,300 850,150 850,450" fill="url(#terminal-caravaggio-glow)" opacity=".3"/>
+      <g class="pulse-layer">
+        <circle cx="680" cy="220" r="6" fill="#00E676"/>
+        <line x1="680" y1="220" x2="740" y2="280" stroke="#00E676" stroke-width="2" stroke-dasharray="4 4"/>
+        <circle cx="740" cy="280" r="8" fill="#D4AF37"/>
+        <circle cx="780" cy="340" r="6" fill="#38BDF8"/>
+        <line x1="740" y1="280" x2="780" y2="340" stroke="#D4AF37" stroke-width="2"/>
+      </g>
+      <defs><radialGradient id="terminal-caravaggio-glow"><stop offset="0%" stop-color="#D4AF37" stop-opacity=".8"/><stop offset="100%" stop-color="#07090B" stop-opacity="0"/></radialGradient></defs>
+    </svg>
+  </div>
+  <div class="terminal-intro">
+    <p class="terminal-badge"><span class="pulse-indicator" aria-hidden="true"></span> SPATIOTEMPORAL EVIDENCE TERMINAL</p>
+    <h1 id="terminal-title">Oyunu sonuçtan önce oku: <span>Mekânsal Hakikat.</span></h1>
+    <p class="terminal-lead">Olay verisinin gizlediği negatif uzayı, karar mekanizmalarını ve Markov tehdit modellerini araştıran bağımsız futbol analizi.</p>
+    <p class="terminal-disclaimer">EPİSTEMİK NOT: Temsili Saha Geometrisi · Optik Takip Verisi Değildir · EVENT ⊂ ZFGV</p>
+    <div class="terminal-actions">
+      <a href="/research/" class="action-primary">Laboratuvar Metodolojisi →</a>
+      <a href="/about/" class="action-secondary">Laboratuvar Manifestosu</a>
+    </div>
+  </div>
+  <div class="terminal-showcase" id="featured-rail">
+    <div class="terminal-rail-head"><h2>ÖNE ÇIKAN DİSİPLİNLER</h2><span>01 / 03</span></div>
+    <div class="cards-rail" tabindex="0" aria-label="Disiplin kartlarını yatay kaydırın">
+      <a href="/monographs/g01-bakiyorlar-ama-gormuyorlar" class="card-item">
+        <div><span class="card-kicker">01 · EPİSTEMOLOJİ</span><h3>Bakıyorlar Ama Görmüyorlar</h3><p>Olay verisinin yarattığı algı körlüğü ve negatif alanın matematiği.</p></div>
+        <div class="card-foot"><span>G01 MONOGRAFİ</span><span>İNCELE →</span></div>
+      </a>
+      <a href="/research/" class="card-item">
+        <div><span class="card-kicker">02 · TAKTİK MEKANİK</span><h3>Spatiotemporal Tehdit Hatları</h3><p>Topsuz alandaki dinamik koridorlar ve Markov zinciri karar modelleri.</p></div>
+        <div class="card-foot"><span>ZFGV MODELİ</span><span>İNCELE →</span></div>
+      </a>
+      <a href="/about/" class="card-item">
+        <div><span class="card-kicker">03 · KARAR DESTEK</span><h3>Kanıtın Taşıdığı Sınır</h3><p>Menajerlikten bağımsız, kanıtın sınırlarını açıkça tanımlayan futbol araştırması.</p></div>
+        <div class="card-foot"><span>MANİFESTO</span><span>İNCELE →</span></div>
+      </a>
+    </div>
+  </div>
+</section>
+<style>
+.terminal-hero{position:relative;isolation:isolate;display:flex;flex-direction:column;justify-content:space-between;gap:clamp(28px,5vw,65px);min-height:85svh;padding:clamp(28px,5vw,70px) clamp(18px,5vw,72px);background:#07090B;border-bottom:1px solid #1E293B;color:#F3F5F7;overflow:hidden}
+.terminal-field{position:absolute;inset:0;z-index:-1;pointer-events:none;opacity:.4}.terminal-field svg{display:block;width:100%;height:100%;object-fit:cover}
+.terminal-intro{max-width:830px;z-index:1}.terminal-badge{display:inline-flex;align-items:center;gap:10px;padding:8px 12px;background:#141B20;border:1px solid #24303A;border-radius:50px;color:#00E676!important;font:600 12px/1.5 "IBM Plex Mono",monospace;letter-spacing:.1em}
+.pulse-indicator{width:8px;height:8px;background:#00E676;border-radius:100%;animation:hpaPing 2s ease-in-out infinite}
+.terminal-hero h1{font:400 clamp(36px,5.2vw,76px)/1.08 Newsreader,Georgia,serif;letter-spacing:-.03em;color:#F3F5F7!important;margin:24px 0;overflow-wrap:break-word}.terminal-hero h1 span{display:block;color:#D4AF37!important;font-style:italic}
+.terminal-lead{max-width:620px;font:400 clamp(16px,1.8vw,20px)/1.65 Archivo,Arial,sans-serif;color:#B4C0CC!important}
+.terminal-disclaimer{font:500 12px/1.5 "IBM Plex Mono",monospace;color:#ADBEAF!important;margin:18px 0 28px}
+.terminal-actions{display:flex;flex-wrap:wrap;gap:14px}.terminal-actions a{display:inline-flex;align-items:center;min-height:48px;padding:12px 20px;border-radius:6px;text-decoration:none;font:600 14px Archivo,Arial,sans-serif}
+.terminal-actions .action-primary{background:#D4AF37;color:#07090B!important}.terminal-actions .action-secondary{border:1px solid #34424E;background:#141B20;color:#F3F5F7!important}
+.terminal-showcase{z-index:1;min-width:0}.terminal-rail-head{display:flex;align-items:center;justify-content:space-between;gap:10px;border-bottom:1px solid #1E293B;padding-bottom:14px;margin-bottom:16px}
+.terminal-rail-head h2{margin:0;color:#B4C0CC!important;font:600 12px "IBM Plex Mono",monospace;letter-spacing:.2em}.terminal-rail-head span{color:#00E676;font:600 12px "IBM Plex Mono",monospace}
+.cards-rail{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;overscroll-behavior-inline:contain;-webkit-overflow-scrolling:touch;padding:2px 2px 20px;scrollbar-color:#D4AF37 #0E1317}
+.card-item{flex:0 0 clamp(280px,33vw,360px);min-height:220px;display:flex;flex-direction:column;justify-content:space-between;gap:20px;padding:22px;border:1px solid #1E293B;border-radius:12px;background:#0E1317;text-decoration:none;scroll-snap-align:start;transition:border-color .2s ease}
+.card-item:hover,.card-item:focus-visible{border-color:#D4AF37}.card-kicker{font:600 12px "IBM Plex Mono",monospace;color:#D4AF37}.card-item:nth-child(2) .card-kicker{color:#00E676}.card-item:nth-child(3) .card-kicker{color:#38BDF8}
+.card-item h3{font:400 24px/1.2 Newsreader,Georgia,serif;color:#F3F5F7!important;margin:10px 0}.card-item p{color:#B4C0CC!important;font:400 14px/1.5 Archivo,Arial,sans-serif}
+.card-foot{display:flex;justify-content:space-between;gap:10px;border-top:1px solid #1E293B;padding-top:14px;font:600 11px "IBM Plex Mono",monospace;color:#B4C0CC}.card-foot span:last-child{color:#00E676}
+.terminal-hero a:focus-visible,.cards-rail:focus-visible{outline:2px solid #00E676;outline-offset:3px}
+.pulse-layer{transform-origin:74% 47%;animation:hpaPulse 3s ease-in-out infinite alternate}
+@keyframes hpaPulse{from{opacity:.35;transform:scale(.99)}to{opacity:.85;transform:scale(1.01)}}
+@keyframes hpaPing{75%,100%{transform:scale(2);opacity:0}}
+@media(max-width:700px){.terminal-hero{padding:28px 18px 32px}.card-item{flex-basis:min(84vw,340px)}}
+@media(prefers-reduced-motion:reduce){.pulse-layer,.pulse-indicator{animation:none!important}.card-item{transition:none}}
+</style>

@@ -1,9 +1,7 @@
 ---
 import { isPublic } from '../lib/public-content.mjs';
 import BaseLayout from '../layouts/BaseLayout.astro';
-import HeroCartography from '../components/HeroCartography.astro';
-import InteractiveHeroRail from '../components/InteractiveHeroRail.astro';
-import MethodologyTrinity from '../components/MethodologyTrinity.astro';
+import SkillCornerTerminalHero from '../components/SkillCornerTerminalHero.astro';
 import EvidenceBadge from '../components/EvidenceBadge.astro';
 import {getCollection} from 'astro:content';
 import {isPublicEditorialItem} from '../lib/site-editorial-status.mjs';
@@ -27,8 +25,7 @@ const directoryLinks=launchDirectoryLinks(publicAnalysisCount);
 const matchTime=(utcDate:string)=>new Intl.DateTimeFormat('tr-TR',{timeZone:'Europe/Istanbul',day:'2-digit',month:'short',hour:'2-digit',minute:'2-digit'}).format(new Date(utcDate));
 ---
 <BaseLayout title="HPAnalytic — Hikmet Pınarbaş Futbol Analizi" description="Hikmet Pınarbaş'tan kanıt, mekanizma ve bağlam temelli bağımsız futbol analizi.">
-<div class="editorial-home-stage"><HeroCartography/><MethodologyTrinity/></div>
-<InteractiveHeroRail />
+<SkillCornerTerminalHero />
 <section class="analysis-rail" aria-labelledby="analysis-rail-title">
   <p class="kicker">HPANALYTIC · EVIDENCE LAB</p>
   <h2 id="analysis-rail-title" class="analysis-rail__heading">ARAŞTIRMA VİTRİNİ</h2>

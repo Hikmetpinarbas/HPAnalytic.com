@@ -10,8 +10,8 @@ test('editorial wordmark retains typography and publication identity',()=>{
 });
 test('hero uses the independent P0 pitch figure and editorial headline',()=>{
  const s=read('src/pages/index.astro');
- assert.match(read('src/components/HeroCartography.astro'),/<HeroPitchFigure\s*\/>/);
- assert.match(read('src/components/HeroCartography.astro'),/Oyunu sonuçtan önce oku\./);
+ assert.match(s,/<SkillCornerTerminalHero \/>/);
+ assert.match(read('src/components/SkillCornerTerminalHero.astro'),/Oyunu sonuçtan önce oku/);
  assert.match(read('src/components/HeroPitchFigure.astro'),/@keyframes hp-p0-appear/);
 });
 test('tactical illustration remains accessible without repeated warning banner',()=>{
