@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675">
+  <defs>
+    <style>
+      .bg-void { fill: #121518; }
+      .grid-line { stroke: rgba(235, 238, 242, 0.12); stroke-width: 1; }
+      .box-dark { fill: #181D22; stroke: #242E38; rx: 6px; }
+      .text-title { font-family: 'Newsreader', serif; fill: #F8FAFC; font-size: 20px; font-weight: 700; }
+      .text-sub { font-family: 'IBM Plex Mono', monospace; fill: #94A3B8; font-size: 11px; }
+      .text-amber { font-family: 'IBM Plex Mono', monospace; fill: #E5A93C; font-weight: 700; }
+      .text-cobalt { font-family: 'IBM Plex Mono', monospace; fill: #3A86C8; font-weight: 700; }
+    </style>
+  </defs>
+  <rect width="1200" height="675" class="bg-void" />
+  <text x="80" y="52" class="text-title">HPANALYTIC · TAKTİKSEL DÖNGÜ (2000–2026)</text>
+  <text x="80" y="70" class="text-sub">ALAN-ZAMAN TÜKENİŞİ VE VEKTÖREL MELEZLEŞME · ATLAS 02</text>
+  <rect x="80" y="140" width="320" height="420" class="box-dark" />
+  <text x="110" y="180" class="text-cobalt" font-size="16">2000'LER: SAF 4-4-2</text>
+  <text x="110" y="210" fill="#CBD5E1" font-size="13">Hat Derinliği: 20-25 m</text>
+  <text x="110" y="240" fill="#CBD5E1" font-size="13">Kırılma: Klasik 10 No Cepleri</text>
+  <rect x="440" y="140" width="320" height="420" class="box-dark" />
+  <text x="470" y="180" class="text-amber" font-size="16">2010'LAR: GEGENPRESS</text>
+  <text x="470" y="210" fill="#CBD5E1" font-size="13">Tiki-Taka Yayılımı vs Kaos</text>
+  <text x="470" y="240" fill="#CBD5E1" font-size="13">Kırılma: İlk 5 sn Geçiş Şoku</text>
+  <rect x="800" y="140" width="320" height="420" class="box-dark" />
+  <text x="830" y="180" class="text-title" font-size="16" fill="#10B981">2020'LER: HİBRİT 3-2-4-1</text>
+  <text x="830" y="210" fill="#CBD5E1" font-size="13">5 Koridor &amp; Ters Bek</text>
+  <text x="830" y="240" fill="#CBD5E1" font-size="13">Rest-Defence Emniyeti (3-2)</text>
+  <text x="80" y="630" class="text-sub">EVENT ⊂ ZFGV · CARAVAGGIO ATLAS 02</text>
+</svg>

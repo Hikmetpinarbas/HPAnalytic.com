@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675">
+  <defs>
+    <style>
+      .bg-void { fill: #121518; }
+      .field-line { stroke: rgba(235, 238, 242, 0.22); stroke-width: 1.2; fill: none; }
+      .sight-cone { fill: rgba(58, 134, 200, 0.09); stroke: #3A86C8; stroke-width: 1.5; stroke-dasharray: 6, 4; }
+      .blind-cone { fill: rgba(190, 122, 55, 0.12); stroke: #BE7A37; stroke-width: 1.5; }
+      .text-title { font-family: 'Newsreader', serif; fill: #F8FAFC; font-size: 20px; font-weight: 700; }
+      .text-meta { font-family: 'IBM Plex Mono', monospace; fill: #94A3B8; font-size: 11px; letter-spacing: 0.15em; }
+      .text-amber { font-family: 'IBM Plex Mono', monospace; fill: #E5A93C; font-weight: 700; }
+      .text-cobalt { font-family: 'IBM Plex Mono', monospace; fill: #3A86C8; font-weight: 700; }
+    </style>
+  </defs>
+  <rect width="1200" height="675" class="bg-void" />
+  <!-- Saha ve Kale Çerçevesi -->
+  <g class="field-line">
+    <rect x="180" y="100" width="840" height="460" />
+    <line x1="600" y1="100" x2="600" y2="560" />
+    <circle cx="600" cy="330" r="70" />
+    <!-- Ceza Sahası -->
+    <rect x="180" y="210" width="140" height="240" />
+  </g>
+  <!-- Kulübe Pozisyonu (Taktik İzleme İstasyonu) -->
+  <rect x="520" y="580" width="160" height="35" fill="#181D22" stroke="#242E38" rx="3" />
+  <text x="545" y="602" class="text-cobalt" font-size="11">YEDEK KULÜBESİ</text>
+  <!-- Kulübeden Açılan Taktik Görüş Açısı (Kobalt Konik Işık) -->
+  <polygon points="600,580 260,250 820,250" class="sight-cone" />
+  <!-- Birinci Kaleci Kör Noktası (Sahadaki Kaleci #1) -->
+  <circle cx="230" cy="330" r="9" fill="#181D22" stroke="#BE7A37" stroke-width="2" />
+  <text x="210" y="315" fill="#BE7A37" font-family="'IBM Plex Mono', monospace" font-size="11">GK 1 (Açık Alan Körlüğü)</text>
+  <polygon points="230,330 380,180 380,240" class="blind-cone" />
+  <!-- İkinci Kalecinin Tespit Vektörü (Amber Analiz Oku) -->
+  <path d="M 600,580 Q 420,460 250,335" stroke="#E5A93C" stroke-width="2.5" stroke-linecap="round" fill="none" />
+  <polygon points="245,332 258,342 262,328" fill="#E5A93C" />
+  <text x="380" y="490" class="text-amber" font-size="12">Geri Hat İletişim Açığı Tespiti</text>
+  <!-- Başlık -->
+  <text x="80" y="52" class="text-title">HPANALYTIC · KULÜBENİN GÖLGESİ: İKİNCİ KALECİ VE BİLİŞSEL DERİNLİK</text>
+  <text x="80" y="70" class="text-meta">BENCH PERSPECTIVE · SECOND GOALKEEPER SPATIAL AUDIT · ATLAS 02</text>
+  <text x="80" y="630" class="text-meta">EVENT ⊂ ZFGV · TENEBRIST CANVAS 1200x675</text>
+</svg>
