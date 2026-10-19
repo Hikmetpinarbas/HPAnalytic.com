@@ -1,19 +1,62 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675">
   <defs>
+
+    <radialGradient id="chiaroscuroBeam" cx="82%" cy="18%" r="78%">
+      <stop offset="0%" stop-color="#E5A93C" stop-opacity="0.32" />
+      <stop offset="42%" stop-color="#E5A93C" stop-opacity="0.07" />
+      <stop offset="100%" stop-color="#121518" stop-opacity="0" />
+    </radialGradient>
+
     <style>
       .bg-void { fill: #121518; }
-      .field-line { stroke: rgba(235, 238, 242, 0.22); stroke-width: 1.2; fill: none; }
+      .field-line davinci-grid { stroke: rgba(235, 238, 242, 0.22); stroke-width: 1.2; fill: none; }
       .sight-cone { fill: rgba(58, 134, 200, 0.09); stroke: #3A86C8; stroke-width: 1.5; stroke-dasharray: 6, 4; }
       .blind-cone { fill: rgba(190, 122, 55, 0.12); stroke: #BE7A37; stroke-width: 1.5; }
       .text-title { font-family: 'Newsreader', serif; fill: #F8FAFC; font-size: 20px; font-weight: 700; }
       .text-meta { font-family: 'IBM Plex Mono', monospace; fill: #94A3B8; font-size: 11px; letter-spacing: 0.15em; }
       .text-amber { font-family: 'IBM Plex Mono', monospace; fill: #E5A93C; font-weight: 700; }
       .text-cobalt { font-family: 'IBM Plex Mono', monospace; fill: #3A86C8; font-weight: 700; }
+    
+    @keyframes teslaFlow {
+      from { stroke-dashoffset: 40; }
+      to { stroke-dashoffset: 0; }
+    }
+    @keyframes pulseEvidence {
+      0% { r: 6px; opacity: 0.8; }
+      50% { r: 9px; opacity: 1; filter: drop-shadow(0 0 6px #E5A93C); }
+      100% { r: 6px; opacity: 0.8; }
+    }
+    @keyframes pulseEmerald {
+      0% { r: 7px; filter: drop-shadow(0 0 2px #00E676); }
+      50% { r: 10px; filter: drop-shadow(0 0 8px #00E676); }
+      100% { r: 7px; filter: drop-shadow(0 0 2px #00E676); }
+    }
+    .tesla-flow {
+      stroke-dasharray: 6 4 !important;
+      animation: teslaFlow 1.8s linear infinite !important;
+    }
+    .pulse-amber {
+      animation: pulseEvidence 2.2s ease-in-out infinite !important;
+      transform-origin: center;
+    }
+    .pulse-emerald {
+      animation: pulseEmerald 2s ease-in-out infinite !important;
+      transform-origin: center;
+    }
+    .chiaroscuro-cone {
+      mix-blend-mode: screen;
+      pointer-events: none;
+    }
+    .davinci-grid {
+      stroke: rgba(235, 238, 242, 0.08) !important;
+      stroke-width: 0.6px !important;
+    }
+
     </style>
   </defs>
   <rect width="1200" height="675" class="bg-void" />
   <!-- Saha ve Kale Çerçevesi -->
-  <g class="field-line">
+  <g class="field-line davinci-grid">
     <rect x="180" y="100" width="840" height="460" />
     <line x1="600" y1="100" x2="600" y2="560" />
     <circle cx="600" cy="330" r="70" />
