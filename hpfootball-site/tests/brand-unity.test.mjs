@@ -15,5 +15,5 @@ test('canonical Logo is the Newsreader editorial wordmark and publisher signatur
   assert.match(logo, /Newsreader/);
   assert.match(logo, /IBM Plex Mono/);
   assert.match(logo, /hp-wordmark__name/);
-  assert.match(logo, /EVIDENCE LAB · BOTANICAL INTELLIGENCE/);
+  assert.match(logo, /EVIDENCE LAB · SPATIOTEMPORAL INTELLIGENCE/);
 });

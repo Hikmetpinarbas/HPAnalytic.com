@@ -15,9 +15,9 @@ const lastBackground = (selector) => {
 const isDark = (v) => /#0[0-9a-f]{5}\b|#1[0-2][0-9a-f]{4}\b|rgba\(\s*(?:[0-9]|1[0-2])\s*,\s*(?:[0-9]|1[0-2])\s*,/i.test(v);
 
 for (const sel of ['.site-header', '.publication-masthead']) {
-  test(`${sel}: the winning background is light`, () => {
+  test(`${sel}: the winning background is dark`, () => {
     const bg = lastBackground(sel);
-    assert.ok(!isDark(bg), `${sel} ends on a dark background: ${bg}`);
+    assert.ok(isDark(bg), `${sel} ends on a dark background: ${bg}`);
   });
 }
 
@@ -25,7 +25,7 @@ test('pitch disclaimer is not left on the page ink over the dark pitch canvas', 
   assert.match(css, /\.hp-pitch__disclaimer\s*\{[^}]*color\s*:\s*#e7e2d6/i);
 });
 
-test('home copy is bound to light text tokens, not dark-theme greys', () => {
+test('home copy is bound to accessible dark theme text tokens', () => {
   assert.match(css, /\.featured-story>p:not\(\.featured-meta\), \.featured-story>p:last-of-type, \.featured-question p \{ color: var\(--ink-2\); \}/);
   assert.match(css, /\.launch-directory__links a>span:last-child \{ color: var\(--gold\); \}/);
 });
