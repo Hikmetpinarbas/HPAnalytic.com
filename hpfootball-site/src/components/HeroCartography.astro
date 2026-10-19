@@ -1,0 +1,34 @@
+---
+interface Metric { label:string; value:string; emphasis?:boolean }
+interface Props { kicker?:string; headline?:string; atlasSrc?:string; metrics?:Metric[]; evidenceStatus?:string }
+const {
+  kicker='MAÇ ATLASI · SÜPER LİG',
+  headline='Gençlerbirliği – Galatasaray: Maç atlası',
+  atlasSrc='/figures/live-match-gs.svg',
+  metrics=[],
+  evidenceStatus='MODEL METRİKLERİ DOĞRULANMADI'
+}=Astro.props;
+---
+<section class="master-stage" aria-label="Manşet Kartografisi">
+  <header class="stage-header"><span class="stage-kicker">{kicker}</span><h1 class="stage-headline">{headline}</h1></header>
+  <div class="stage-grid">
+    <figure class="atlas-frame">
+      <div class="svg-viewport"><object type="image/svg+xml" data={atlasSrc} class="atlas-object" aria-label="SportsBase maç atlası"><a href={atlasSrc}>SVG maç atlasını aç</a></object></div>
+      <figcaption class="claim-ceiling"><strong>İddia sınırı:</strong> Gösterilen geometriler ve veri türleri SVG kaynak künyesine tabidir; tracking veya nedensel baskı çıkarımı değildir.</figcaption>
+    </figure>
+    <aside class="metric-card" aria-label="Kartografik kanıt sicili">
+      <div class="metric-card-header"><span class="card-title">KARTOGRAFİK SİCİL</span><span class="metric-badge">REFERANS SAHA · 105 × 68 m</span></div>
+      <div class="scale-ruler" aria-hidden="true"><div class="ruler-line"><span class="ruler-tick tick-start"></span><span class="ruler-tick tick-mid"></span><span class="ruler-tick tick-end"></span></div><span class="ruler-label">Ölçek şematik · kaynak SVG kendi viewBox oranını kullanır</span></div>
+      <div class="metric-rows">{metrics.length ? metrics.map(m=><div class="metric-row"><span class="metric-label">{m.label}</span><span class:list={['metric-value',{gold:m.emphasis}]}>{m.value}</span></div>) : <div class="metric-row"><span class="metric-label">DOĞRULAMA</span><span class="metric-value">{evidenceStatus}</span><p class="metric-description">xT, faz sayısı, özvektör merkeziliği ve baskı endeksi kaynak doğrulaması olmadan yayımlanmaz.</p></div>}</div>
+      <div class="metric-footer"><span class="verification-dot" aria-hidden="true"></span><span>SPORTSBASE · KANIT SINIRI AKTİF</span></div>
+    </aside>
+  </div>
+</section>
+<style>
+  .master-stage{padding:32px 0 48px;border-bottom:.5px solid rgba(142,165,139,.25)}
+  .stage-header{margin-bottom:24px}.stage-kicker{font:10.5px var(--mono,monospace);letter-spacing:.18em;color:#4A554E;display:block;margin-bottom:8px}.stage-headline{font:500 clamp(2rem,3.8vw,3.2rem)/1.15 var(--serif,Newsreader,Georgia,serif);letter-spacing:-.025em;color:#181D19;max-width:980px}
+  .stage-grid{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:24px;align-items:stretch}.atlas-frame{margin:0;background:#FFFEFB;border:.5px solid rgba(35,67,56,.14);border-radius:4px;padding:16px;min-width:0;display:flex;flex-direction:column;justify-content:space-between}
+  .svg-viewport{width:100%;aspect-ratio:1050/680;overflow:hidden;background:#F5F1E8;border-radius:2px}.atlas-object{width:100%;height:100%;display:block}.claim-ceiling{margin-top:12px;font:italic 12px/1.5 var(--serif,Georgia,serif);color:#4A554E;border-top:.5px solid rgba(35,67,56,.08);padding-top:8px}.claim-ceiling strong{font:600 10px var(--mono,monospace)}
+  .metric-card{background:#FFFEFB;border:.5px solid rgba(35,67,56,.14);border-radius:4px;padding:20px;display:flex;flex-direction:column;justify-content:space-between;gap:18px}.metric-card-header{display:flex;justify-content:space-between;gap:10px;align-items:center;border-bottom:.5px solid rgba(35,67,56,.1);padding-bottom:12px}.card-title{font:600 9.5px var(--mono,monospace);letter-spacing:.15em;color:#234338}.metric-badge{font:8.5px var(--mono,monospace);color:#4A554E;text-align:right}.scale-ruler{margin:4px 0}.ruler-line{height:6px;border-bottom:1px solid #234338;position:relative;margin-bottom:6px}.ruler-tick{position:absolute;width:1px;height:6px;background:#234338;bottom:0}.tick-start{left:0}.tick-mid{left:50%;height:4px}.tick-end{right:0}.ruler-label{font:8px var(--mono,monospace);color:#8EA58B}.metric-rows{display:flex;flex-direction:column;gap:14px}.metric-row{display:flex;flex-direction:column;gap:4px}.metric-label{font:9px var(--mono,monospace);letter-spacing:.05em;color:#4A554E}.metric-value{font:600 15px var(--sans,Archivo,sans-serif);color:#181D19}.metric-value.gold{color:#234338;border-left:2px solid #C3A469;padding-left:6px}.metric-description{font:12px/1.5 var(--sans,Archivo,sans-serif);color:#4A554E}.metric-footer{display:flex;align-items:center;gap:6px;padding-top:16px;border-top:.5px solid rgba(35,67,56,.08);font:8px var(--mono,monospace);letter-spacing:.1em;color:#4A554E}.verification-dot{width:5px;height:5px;background:#C3A469;border-radius:50%}
+  @media(max-width:1024px){.stage-grid{grid-template-columns:1fr}}
+</style>
