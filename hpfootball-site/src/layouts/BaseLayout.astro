@@ -6,6 +6,7 @@ import { getCollection } from 'astro:content';
 import { buildVisibleNavigation, buildUtilityNavigation, currentState, SECTION_ROUTES } from '../lib/site-surfaces.mjs';
 import MobileNavigation from '../components/MobileNavigation.astro';
 import Logo from '../components/Logo.astro';
+import EditorialHeader from '../components/layout/EditorialHeader.astro';
 import NavigationIcon from '../components/NavigationIcon.astro';
 import { canonicalPath } from '../lib/canonical-path.mjs';
 
@@ -112,22 +113,12 @@ if ('serviceWorker' in navigator) {
 <body>
 <a class="skip-link" href="#main-content">İçeriğe geç</a>
 <div class="grain" aria-hidden="true"></div>
-<div class="publication-masthead" aria-label="Yayın kimliği"><span>HP / HİKMET PINARBAŞ</span><span>BAĞIMSIZ FUTBOL YAYINI <i aria-hidden="true">·</i> ANALİZ / ARAŞTIRMA / KÜLTÜR</span></div>
-<header class="site-header">
-  <Logo />
-  <nav class="desktop-nav" aria-label="Ana menü">
-    {navigation.map(item=><a class="nav-link" href={item.href} aria-current={item.current}><NavigationIcon href={item.href}/><span>{item.label}</span></a>)}
-  </nav>
+<EditorialHeader>
   <div class="header-actions">
-    {searchLink && (
-      <a class="icon-link" href={searchLink.href} aria-current={searchLink.current} aria-label="Ara">
-        <svg viewBox="0 0 20 20" aria-hidden="true" focusable="false"><circle cx="8.5" cy="8.5" r="5.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M12.5 12.5 17 17" stroke="currentColor" stroke-width="1.6"/></svg>
-        <span class="icon-link-text">ARA</span>
-      </a>
-    )}
+    {searchLink && <a class="icon-link" href={searchLink.href} aria-current={searchLink.current} aria-label="Ara">ARA</a>}
     <MobileNavigation navigation={archiveLink ? [...navigation, archiveLink] : navigation} />
   </div>
-</header>
+</EditorialHeader>
 <main id="main-content" tabindex="-1"><slot/></main>
 <footer class="site-footer">
   <div class="footer-grid">

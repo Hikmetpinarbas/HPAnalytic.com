@@ -1,0 +1,66 @@
+---
+/** All locations are metres on a 105 × 68 pitch; no inferred tracking. */
+interface Actor { id: string | number; x: number; y: number; label?: string; radius?: number }
+interface Pass { from: string | number; to: string | number; count?: number; kind?: 'whisper' | 'spine' }
+interface Event { x: number; y: number; kind: 'shot' | 'interception' }
+interface Props { players?: Actor[]; passes?: Pass[]; events?: Event[]; focus?: {x:number;y:number;label?:string}; matchLabel?: string; evidence?: string }
+const { players = [], passes = [], events = [], focus, matchLabel = 'VERİ BEKLENİYOR', evidence = 'DOĞRULANMIŞ MAÇ OLAYI YOK' } = Astro.props;
+const valid = (p: {x:number;y:number}) => Number.isFinite(p.x) && Number.isFinite(p.y) && p.x >= 0 && p.x <= 105 && p.y >= 0 && p.y <= 68;
+const nodes = players.filter(valid).map(p => ({...p, sx:p.x*10, sy:p.y*10, r:Math.max(5, Math.min(14, p.radius ?? 9))}));
+const lookup = new Map(nodes.map(n => [String(n.id), n]));
+const links = passes.flatMap(p => {
+  const a=lookup.get(String(p.from)), b=lookup.get(String(p.to));
+  if(!a || !b || a.id===b.id) return [];
+  const dx=b.sx-a.sx, dy=b.sy-a.sy, d=Math.hypot(dx,dy), start=a.r+3, end=b.r+3;
+  if(d <= start+end) return [];
+  const ux=dx/d, uy=dy/d;
+  return [{x1:a.sx+ux*start,y1:a.sy+uy*start,x2:b.sx-ux*end,y2:b.sy-uy*end,kind:p.kind ?? 'whisper'}];
+});
+const points=nodes.map(n=>[n.sx,n.sy]);
+const cross=(o:number[],a:number[],b:number[])=>(a[0]-o[0])*(b[1]-o[1])-(a[1]-o[1])*(b[0]-o[0]);
+const sorted=[...points].sort((a,b)=>a[0]-b[0]||a[1]-b[1]);
+const lower:number[][]=[],upper:number[][]=[];
+for(const p of sorted){while(lower.length>=2 && cross(lower[lower.length-2],lower[lower.length-1],p)<=0)lower.pop();lower.push(p)}
+for(const p of [...sorted].reverse()){while(upper.length>=2 && cross(upper[upper.length-2],upper[upper.length-1],p)<=0)upper.pop();upper.push(p)}
+const hull=sorted.length>=3?[...lower.slice(0,-1),...upper.slice(0,-1)].map(p=>p.join(',')).join(' '):'';
+const eventPoints=events.filter(valid).map(e=>({...e,sx:e.x*10,sy:e.y*10}));
+const selectedFocus=focus && valid(focus) ? {x:focus.x*10,y:focus.y*10,label:focus.label} : null;
+---
+<figure class="hp-live-figure" aria-label="HPAnalytic maç olayları kartografyası">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1050 680" role="img" aria-labelledby="hp-figure-title hp-figure-desc">
+    <title id="hp-figure-title">HPAnalytic — maç figürü</title>
+    <desc id="hp-figure-desc">105 × 68 metre saha üzerindeki sağlanmış olay verileri. Oyuncu hareketi veya tracking tahmini içermez.</desc>
+    <g id="L01_substrate"><rect width="1050" height="680" fill="#F5F1E8" /></g>
+    <g id="L02_metric_grid" class="hp-layer hp-grid" stroke="#234338" stroke-width="0.5" stroke-opacity="0.07" stroke-dasharray="2 4">
+      {[175,350,525,700,875].map(x=><line x1={x} x2={x} y1="0" y2="680" />)}
+      {[680/3,1360/3].map(y=><line x1="0" x2="1050" y1={y} y2={y} />)}
+    </g>
+    <g id="L03_pitch_markings" class="hp-layer hp-pitch" fill="none" stroke="#234338" stroke-width="0.75" stroke-opacity="0.22">
+      <rect width="1050" height="680"/><line x1="525" x2="525" y1="0" y2="680"/><circle cx="525" cy="340" r="91.5"/><circle cx="525" cy="340" r="2" fill="#234338"/>
+      <path d="M0 138.4 H165 V541.6 H0 M0 248.4 H55 V431.6 H0 M1050 138.4 H885 V541.6 H1050 M1050 248.4 H995 V431.6 H1050"/>
+      <circle cx="110" cy="340" r="2" fill="#234338"/><circle cx="940" cy="340" r="2" fill="#234338"/>
+      <path d="M201.5 248.5 A91.5 91.5 0 0 1 201.5 431.5 M848.5 248.5 A91.5 91.5 0 0 0 848.5 431.5"/>
+      <path d="M0 10 A10 10 0 0 0 10 0 M1040 0 A10 10 0 0 0 1050 10 M0 670 A10 10 0 0 1 10 680 M1040 680 A10 10 0 0 1 1050 670"/>
+    </g>
+    <g id="L04_territory_hull">{hull && <polygon points={hull} fill="#8EA58B" fill-opacity="0.10"/>}</g>
+    <g id="L05_whisper_vectors" class="hp-layer hp-events" stroke="#234338" stroke-width="0.75" stroke-opacity="0.3" stroke-dasharray="2 4">{links.filter(l=>l.kind==='whisper').map(l=><line x1={l.x1} y1={l.y1} x2={l.x2} y2={l.y2}/>)}</g>
+    <g id="L06_spine_vectors" class="hp-layer hp-events" stroke="#234338" stroke-width="1.5">{links.filter(l=>l.kind==='spine').map(l=><line x1={l.x1} y1={l.y1} x2={l.x2} y2={l.y2}/>)}</g>
+    <g id="L07_occlusion_shields">{nodes.map(n=><circle cx={n.sx} cy={n.sy} r={n.r+3} fill="#F5F1E8"/>)}</g>
+    <g id="L08_player_nodes" class="hp-layer hp-events">{nodes.map(n=><g><circle cx={n.sx} cy={n.sy} r={n.r} fill="#FFFEFB" stroke="#234338" stroke-width="1.5"/>{n.label && <text x={n.sx} y={n.sy+3} text-anchor="middle" font-size="9" fill="#181D19">{n.label}</text>}</g>)}</g>
+    <g id="L09_critical_focus" class="hp-layer hp-events">{selectedFocus && <circle cx={selectedFocus.x} cy={selectedFocus.y} r="7" fill="#C3A469"/>}</g>
+    <g id="L10_event_markers" class="hp-layer hp-events">{eventPoints.map(e=>e.kind==='shot'?<circle cx={e.sx} cy={e.sy} r="5" fill="none" stroke="#234338" stroke-width="1.5"/>:<path d={`M${e.sx-4} ${e.sy-4}l8 8m0-8l-8 8`} stroke="#234338" stroke-width="1.5"/>)}</g>
+    <g id="L11_spatial_callouts" class="hp-layer hp-callout">{selectedFocus?.label && <><path d={`M${selectedFocus.x} ${selectedFocus.y} l18 -18 h32`} fill="none" stroke="#234338" stroke-width="0.75"/><text x={selectedFocus.x+54} y={selectedFocus.y-20} font-size="10" class="hp-text-halo">{selectedFocus.label}</text></>}</g>
+    <g id="L12_metadata_seal" fill="#181D19" font-size="10" class="hp-layer hp-hud"><text x="20" y="24">HPANALYTIC · {matchLabel}</text><text x="1030" y="662" text-anchor="end">EVIDENCE MADE VISIBLE</text></g>
+  </svg>
+  <figcaption>{evidence} · 105 × 68 m referans düzlemi</figcaption>
+</figure>
+<style>
+  .hp-live-figure{margin:0;width:100%;background:#F5F1E8;overflow:hidden}
+  .hp-live-figure svg{display:block;width:100%;height:auto}
+  .hp-live-figure figcaption{font:10px Archivo,system-ui,sans-serif;color:#4A554E;padding:6px 12px}
+  .hp-text-halo{fill:#181D19;stroke:#FFFEFB;stroke-width:3px;stroke-linejoin:round;paint-order:stroke fill;font-family:Archivo,monospace}
+  .hp-layer{animation:hp-figure-reveal 400ms cubic-bezier(.22,1,.36,1) both}
+  .hp-grid{animation-delay:180ms}.hp-events{animation-delay:400ms}.hp-callout{animation-delay:800ms}.hp-hud{animation-delay:1050ms}
+  @keyframes hp-figure-reveal{from{opacity:0;transform:translateY(3px)}to{opacity:1;transform:translateY(0)}}
+  @media(prefers-reduced-motion:reduce){.hp-layer{animation:none}}
+</style>

@@ -14,6 +14,6 @@ test('canonical Logo is the LINE-BREAK HP monogram and publisher signature', () 
   assert.match(logo, /class="hp-mark"/);
   assert.match(logo, /class="hp-frame"/);
   assert.match(logo, /class="hp-break"/);
-  assert.match(logo, /HPANALYTIC/);
+  assert.match(logo, /hp-wordmark__name/);
   assert.match(logo, /HİKMET PINARBAŞ · EVIDENCE MADE VISIBLE\./);
 });
