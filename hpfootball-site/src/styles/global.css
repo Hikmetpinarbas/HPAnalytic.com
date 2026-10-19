@@ -703,7 +703,7 @@ body{background:var(--surface-paper);color:var(--ink-primary)}
 }
 .hp-p0-heading {
  font:400 clamp(2.8rem,4.8vw,4.4rem)/1.14 var(--serif);
- letter-spacing:-.035em; text-transform:none;color:var(--ink-primary);
+ letter-spacing:-.035em; color:var(--ink-primary);
 }
 .hp-p0-figure { background:var(--surface-card); min-width:0; }
 .hp-p0-figure .hp-live-figure {background:var(--surface-card);}
