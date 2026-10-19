@@ -12,6 +12,9 @@ async function inspect(name,viewport,{text200=false,reducedMotion='no-preference
   const page=await context.newPage();
   const consoleErrors=[];
   page.on('console',m=>{if(m.type()==='error')consoleErrors.push(m.text())});
+  page.on('response',r=>{if(r.status()>=400) consoleErrors.push('HTTP '+r.status()+' '+r.url())});
+  page.on('pageerror',e=>consoleErrors.push('PAGE '+e.message));
+
   await page.goto(base,{waitUntil:'networkidle'});
   if(text200) await page.evaluate(()=>{document.documentElement.style.fontSize='200%'});
   await page.screenshot({path:`${out}/${name}-precheck.png`,fullPage:true});
