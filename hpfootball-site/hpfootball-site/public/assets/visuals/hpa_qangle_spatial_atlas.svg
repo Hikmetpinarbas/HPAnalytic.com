@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675">
+  <defs>
+
+    <radialGradient id="chiaroscuroBeam" cx="82%" cy="18%" r="78%">
+      <stop offset="0%" stop-color="#E5A93C" stop-opacity="0.32" />
+      <stop offset="42%" stop-color="#E5A93C" stop-opacity="0.07" />
+      <stop offset="100%" stop-color="#121518" stop-opacity="0" />
+    </radialGradient>
+
+    <style>
+      .bg-void { fill: #121518; }
+      .grid-davinci davinci-grid { stroke: rgba(235, 238, 242, 0.12); stroke-width: 1; }
+      .bone-cobalt { stroke: #3A86C8; stroke-width: 3.5; stroke-linecap: round; }
+      .torque-amber { stroke: #E5A93C; stroke-width: 2.5; stroke-dasharray: 6, 6; }
+      .text-title { font-family: 'Newsreader', serif; fill: #F8FAFC; font-size: 20px; font-weight: 700; }
+      .text-meta { font-family: 'IBM Plex Mono', monospace; fill: #94A3B8; font-size: 11px; }
+      .text-amber { font-family: 'IBM Plex Mono', monospace; fill: #E5A93C; font-weight: 700; }
+    
+    @keyframes teslaFlow {
+      from { stroke-dashoffset: 40; }
+      to { stroke-dashoffset: 0; }
+    }
+    @keyframes pulseEvidence {
+      0% { r: 6px; opacity: 0.8; }
+      50% { r: 9px; opacity: 1; filter: drop-shadow(0 0 6px #E5A93C); }
+      100% { r: 6px; opacity: 0.8; }
+    }
+    @keyframes pulseEmerald {
+      0% { r: 7px; filter: drop-shadow(0 0 2px #00E676); }
+      50% { r: 10px; filter: drop-shadow(0 0 8px #00E676); }
+      100% { r: 7px; filter: drop-shadow(0 0 2px #00E676); }
+    }
+    .tesla-flow {
+      stroke-dasharray: 6 4 !important;
+      animation: teslaFlow 1.8s linear infinite !important;
+    }
+    .pulse-amber {
+      animation: pulseEvidence 2.2s ease-in-out infinite !important;
+      transform-origin: center;
+    }
+    .pulse-emerald {
+      animation: pulseEmerald 2s ease-in-out infinite !important;
+      transform-origin: center;
+    }
+    .chiaroscuro-cone {
+      mix-blend-mode: screen;
+      pointer-events: none;
+    }
+    .davinci-grid {
+      stroke: rgba(235, 238, 242, 0.08) !important;
+      stroke-width: 0.6px !important;
+    }
+
+    </style>
+  </defs>
+  <rect width="1200" height="675" class="bg-void" />
+  <g class="grid-davinci davinci-grid">
+    <line x1="80" y1="80" x2="1120" y2="80" />
+    <line x1="80" y1="337" x2="1120" y2="337" />
+    <line x1="80" y1="600" x2="1120" y2="600" />
+    <line x1="400" y1="80" x2="400" y2="600" />
+    <line x1="800" y1="80" x2="800" y2="600" />
+  </g>
+  <text x="80" y="52" class="text-title">HPANALYTIC · Q-ANGLE &amp; KINETIC TORQUE</text>
+  <text x="80" y="70" class="text-meta">MODEL: SPATIOTEMPORAL DECELERATION · CARAVAGGIO ATLAS 01</text>
+  <!-- Biyomekanik Hatlar -->
+  <line x1="320" y1="160" x2="420" y2="380" class="bone-cobalt" />
+  <line x1="420" y1="380" x2="420" y2="540" stroke="rgba(235, 238, 242, 0.22)" stroke-width="2" stroke-dasharray="4, 4" />
+  <line x1="420" y1="380" x2="390" y2="530" class="bone-cobalt" />
+  <circle cx="420" cy="380" r="8" fill="#E5A93C" / class=\"pulse-amber\">
+  <text x="440" y="375" class="text-amber" font-size="22">Q = 17.2°</text>
+  <path d="M 480,360 Q 430,380 380,380" fill="none" class="torque-amber" />
+  <!-- Panel -->
+  <rect x="580" y="140" width="520" height="400" fill="#181D22" stroke="#242E38" rx="6" />
+  <text x="610" y="180" class="text-title" font-size="16">BİLİŞSEL KALKAN VE MENGENE KİLİDİ</text>
+  <text x="610" y="230" fill="#CBD5E1" font-size="14">Plant Phase Şoku: 0–40 ms (Vücut Ağırlığının 4.2x Katı)</text>
+  <text x="610" y="270" class="text-amber" font-size="13">Nöromüsküler Tepki: Δt ≤ 48 ms (Erken Hamstring Kilit)</text>
+  <text x="610" y="310" fill="#3A86C8" font-size="13">Normalizasyon Momenti: 0.65 Nm/kg (Dinamik Valgus Sönümlendi)</text>
+  <text x="80" y="630" class="text-meta">EVENT ⊂ ZFGV · TENEBRIST CANVAS 1200x675</text>
+</svg>
