@@ -2,6 +2,7 @@
 import { isPublic } from '../lib/public-content.mjs';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import HeroCartography from '../components/HeroCartography.astro';
+import InteractiveHeroRail from '../components/InteractiveHeroRail.astro';
 import MethodologyTrinity from '../components/MethodologyTrinity.astro';
 import EvidenceBadge from '../components/EvidenceBadge.astro';
 import {getCollection} from 'astro:content';
@@ -27,6 +28,7 @@ const matchTime=(utcDate:string)=>new Intl.DateTimeFormat('tr-TR',{timeZone:'Eur
 ---
 <BaseLayout title="HPAnalytic — Hikmet Pınarbaş Futbol Analizi" description="Hikmet Pınarbaş'tan kanıt, mekanizma ve bağlam temelli bağımsız futbol analizi.">
 <div class="editorial-home-stage"><HeroCartography/><MethodologyTrinity/></div>
+<InteractiveHeroRail />
 <section class="analysis-rail" aria-labelledby="analysis-rail-title">
   <p class="kicker">HPANALYTIC · EVIDENCE LAB</p>
   <h2 id="analysis-rail-title" class="analysis-rail__heading">ARAŞTIRMA VİTRİNİ</h2>
