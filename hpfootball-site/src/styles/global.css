@@ -3,26 +3,31 @@
    controlled darkness, hierarchy through light). */
 
 :root {
-  color-scheme: light;
-
-  /* Colour — light means evidence, darkness means context/unknown. */
-  --bg: #f5f1e8;
-  --surface: #fffefb;
-  --surface-2: #eceee5;
-  --ink: #181d19;
-  --ink-2: #4a534d;
-  --muted: #666d67;
-  --faint: #666d67;
-  --line: #d7dcd2;
-  --line-strong: #8ea58b;
-  --gold: #795b30;
-  --gold-2: #795b30;
-  --blue: #275d80;
-  --red: #9c3b2e;
-  --ok: #234338;
-  --warn: #855a2d;
-  --focus: #234338;
-  --focus-ink: #fffefb;
+  color-scheme: dark;
+  --bg-surface: #0B0F12;
+  --bg-card: #141B20;
+  --border-subtle: #24303A;
+  --ink-primary: #F3F5F7;
+  --ink-secondary: #9BA8B3;
+  --accent-gold: #D4AF37;
+  --accent-emerald: #00E676;
+  --bg: var(--bg-surface);
+  --surface: var(--bg-card);
+  --surface-2: #19232A;
+  --ink: var(--ink-primary);
+  --ink-2: var(--ink-secondary);
+  --muted: var(--ink-secondary);
+  --faint: var(--ink-secondary);
+  --line: var(--border-subtle);
+  --line-strong: #455765;
+  --gold: var(--accent-gold);
+  --gold-2: var(--accent-gold);
+  --blue: #6AB6E8;
+  --red: #FF807C;
+  --ok: var(--accent-emerald);
+  --warn: var(--accent-gold);
+  --focus: var(--accent-emerald);
+  --focus-ink: #0B0F12;
 
   /* HP visual grammar — geometry carries meaning, never decoration. */
   --hp-axis: rgba(240, 201, 119, .24);
@@ -125,7 +130,7 @@ main:focus { outline: none; }
   position: sticky; top: 0; z-index: 20;
   display: flex; align-items: center; justify-content: space-between; gap: 24px;
   min-height: var(--header-h); padding: 10px var(--gutter);
-  background: rgba(255, 254, 251, .94); backdrop-filter: blur(16px);
+  background: rgba(11, 15, 18, .96); backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--line);
 }
 .header-actions { display: flex; align-items: center; gap: 8px; }
@@ -730,10 +735,10 @@ body{background:var(--surface-paper);color:var(--ink-primary)}
 .nav-link svg { flex: none; width: 18px; height: 18px; color: #456759; transition: transform .18s ease; }
 .nav-link:hover { background: #e5ede4; border-color: #cadacc; transform: translateY(-2px); }
 .nav-link:hover svg { transform: rotate(-7deg) scale(1.08); }
-.nav-link[aria-current] { background: #dfe9dd; border-color: #9bb49a; color: #234338; }
+.nav-link[aria-current] { background: #dfe9dd; border-color: #9bb49a; color: #00E676; }
 .icon-link:hover { background: #e5ede4; border-radius: 10px; }
 body { background-image: radial-gradient(circle at 90% 2%, rgba(142,165,139,.12), transparent 29%); }
-.grain { opacity: .014; background-image: radial-gradient(#234338 .7px, transparent .7px); }
+.grain { opacity: .014; background-image: radial-gradient(#00E676 .7px, transparent .7px); }
 @media (prefers-reduced-motion: reduce) {
  .nav-link,.nav-link svg { transition: none; }
  .nav-link:hover { transform: none; }
@@ -745,9 +750,9 @@ body { background-image: radial-gradient(circle at 90% 2%, rgba(142,165,139,.12)
 .mobile-nav-trigger { border-radius: 10px; }
 .mobile-nav-trigger:hover { background: #e5ede4; }
 .mobile-nav-panel a { border-radius: 8px; letter-spacing: .03em; }
-.mobile-nav-panel a:hover, .mobile-nav-panel a:focus-visible { background: #e5ede4; color: #234338; }
-.button-primary { background: #234338; border-color: #234338; color: #fffefb; }
-.button-primary:hover { background: #181d19; color: #fffefb; }
+.mobile-nav-panel a:hover, .mobile-nav-panel a:focus-visible { background: #e5ede4; color: #00E676; }
+.button-primary { background: #00E676; border-color: #00E676; color: #141B20; }
+.button-primary:hover { background: #181d19; color: #141B20; }
 .button-secondary:hover { background: #e5ede4; }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 
@@ -780,14 +785,14 @@ body { background-image: radial-gradient(circle at 90% 2%, rgba(142,165,139,.12)
 
 /* HP launch acceptance — light editorial surfaces; the tactical pitch retains its intentional dark canvas. */
 .hp-mark { background: #e6ede3; border-color: #9bb49a; border-radius: 12px; }
-.hp-frame { stroke: #234338; }
-.hp-break { stroke: #795b30; }
-.action-primary { background: #234338; color: #fffefb; border-radius: 10px; }
-.action-secondary { color: #234338; border-color: #9bb49a; border-radius: 10px; }
+.hp-frame { stroke: #00E676; }
+.hp-break { stroke: #D4AF37; }
+.action-primary { background: #00E676; color: #141B20; border-radius: 10px; }
+.action-secondary { color: #00E676; border-color: #9bb49a; border-radius: 10px; }
 .action-secondary:hover { background: #e6ede3; }
-.hero-signature, .field-caption { color: #4a534d; }
-.series-index a, .visual-evidence-card, .data-note-card, .launch-directory__links a { background: #fffefb; color: #181d19; }
-.series-index span, .series-section>header>p:not(.kicker), .series-list p, .visual-evidence-card figcaption p, .data-note-card p { color: #4a534d; }
+.hero-signature, .field-caption { color: #9BA8B3; }
+.series-index a, .visual-evidence-card, .data-note-card, .launch-directory__links a { background: #141B20; color: #181d19; }
+.series-index span, .series-section>header>p:not(.kicker), .series-list p, .visual-evidence-card figcaption p, .data-note-card p { color: #9BA8B3; }
 .series-list small, .visual-evidence-card figcaption small, .data-note-card>small { color: #666d67; }
 .data-note-card p b { color: #181d19; }
 .launch-directory__links a:hover, .series-index a:hover { background: #e5ede4; }
@@ -809,9 +814,9 @@ body { background-image: radial-gradient(circle at 90% 2%, rgba(142,165,139,.12)
 
 /* Hero P0 isolated integration — no existing token overridden */
 :root {
- --surface-paper:#F5F1E8; --surface-card:#FFFEFB;
+ --surface-paper:#0B0F12; --surface-card:#141B20;
  --ink-primary:#181D19; --ink-secondary:#4A554E;
- --brand-forest:#234338; --brand-sage:#8EA58B; --brand-gold:#C3A469;
+ --brand-forest:#00E676; --brand-sage:#8EA58B; --brand-gold:#C3A469;
  --serif:Newsreader,Georgia,serif; --sans:Archivo,Arial,sans-serif;
  --mono:"IBM Plex Mono",ui-monospace,monospace;
 }

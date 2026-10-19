@@ -29,12 +29,12 @@ const matchTime=(utcDate:string)=>new Intl.DateTimeFormat('tr-TR',{timeZone:'Eur
 <div class="editorial-home-stage"><HeroCartography/><MethodologyTrinity/></div>
 
 {featuredMonographs.length > 0 && <section class="reading-desk" aria-labelledby="monographs-title">
-  <header class="reading-desk-head"><div><p class="kicker">ARAŞTIRMA · MONOGRAFİLER</p><h2 id="monographs-title">ÖNE ÇIKAN MONOGRAFİLER VE ANALİZLER</h2></div></header>
+  <header class="reading-desk-head"><div><p class="kicker">ARAŞTIRMA · MONOGRAFİLER</p><h2 id="monographs-title">ÖNE ÇIKAN ARAŞTIRMALAR</h2></div></header>
   <div class="reading-desk-grid">{featuredMonographs.map((item)=><article class="reading-desk-item">
     <span class="reading-desk-number">{item.data.category} · {item.data.readingTime}</span>
     <h3><a href={`/monographs/${item.id}`}>{item.data.title}</a></h3>
     <p>{item.data.subtitle ?? item.data.description}</p>
-    <small>{item.data.evidenceLevel}</small>
+    <small>{item.data.author} · {item.data.evidenceLevel}</small>
   </article>)}</div>
 </section>}
 {readingDesk.length > 0 && <section class="reading-desk" aria-labelledby="reading-desk-title">
