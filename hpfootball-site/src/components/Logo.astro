@@ -1,18 +1,28 @@
 ---
-interface Props { withWordmark?: boolean; }
-const { withWordmark = true } = Astro.props as Props;
+interface Props {
+  height?: number | string;
+  class?: string;
+  variant?: 'header' | 'footer' | 'default';
+  showSubtitle?: boolean;
+  withWordmark?: boolean;
+}
+const {
+  height,
+  class: className = '',
+  variant = 'default',
+  showSubtitle = true,
+  withWordmark = true,
+} = Astro.props as Props;
+const logoStyle = height === undefined ? undefined : `--hp-logo-height: ${typeof height === 'number' ? `${height}px` : height}`;
+
 ---
-<a href="/" class="brand">
-  <span class="hp-mark" aria-hidden="true">
-    <svg viewBox="0 0 52 52" focusable="false">
-      <path class="hp-frame" d="M7 7v38M7 26h17M24 7v38M32 7v38M32 7h7c8 0 8 15 0 15h-7"/>
-      <path class="hp-break" d="M13 38 42 14"/>
-    </svg>
-  </span>
-  {withWordmark && (
-    <span class="brand-word">
-      <b>HPANALYTIC</b>
-      <small>HİKMET PINARBAŞ · EVIDENCE MADE VISIBLE.</small>
-    </span>
-  )}
+<a href="/" class:list={['brand', 'hp-wordmark', className, `hp-wordmark--${variant}`]} style={logoStyle} aria-label="HPAnalytic ana sayfa">
+  <span class="hp-wordmark__name">HP<span class="hp-wordmark__small">Analytic</span></span>
+  {withWordmark && showSubtitle && <span class="hp-wordmark__tag">HİKMET PINARBAŞ · EVIDENCE MADE VISIBLE</span>}
 </a>
+<style>
+.hp-wordmark{display:inline-flex;flex-direction:column;justify-content:center;text-decoration:none;color:#234338;gap:3px}
+.hp-wordmark__name{font:400 clamp(23px,2.5vw,34px)/1.05 Newsreader,Georgia,serif;letter-spacing:-.035em}
+.hp-wordmark__small{font-variant:small-caps;letter-spacing:.015em}
+.hp-wordmark__tag{font:400 9px/1.5 "IBM Plex Mono",monospace;letter-spacing:.1em;color:#4A554E}
+</style>

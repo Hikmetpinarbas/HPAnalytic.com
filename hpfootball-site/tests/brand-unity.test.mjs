@@ -6,14 +6,14 @@ const layout = await readFile(new URL('../src/layouts/BaseLayout.astro', import.
 const logo = await readFile(new URL('../src/components/Logo.astro', import.meta.url), 'utf8');
 
 test('header and footer use the same canonical Logo component', () => {
-  assert.equal((layout.match(/<Logo\b/g) || []).length, 2);
+  assert.match(layout, /<EditorialHeader navigation=\{editorialNavigation\}/);
+  assert.equal((layout.match(/<Logo\b/g) || []).length, 1);
   assert.doesNotMatch(layout, /class="hp-mark"/);
 });
 
-test('canonical Logo is the LINE-BREAK HP monogram and publisher signature', () => {
-  assert.match(logo, /class="hp-mark"/);
-  assert.match(logo, /class="hp-frame"/);
-  assert.match(logo, /class="hp-break"/);
-  assert.match(logo, /HPANALYTIC/);
-  assert.match(logo, /HİKMET PINARBAŞ · EVIDENCE MADE VISIBLE\./);
+test('canonical Logo is the Newsreader editorial wordmark and publisher signature', () => {
+  assert.match(logo, /Newsreader/);
+  assert.match(logo, /IBM Plex Mono/);
+  assert.match(logo, /hp-wordmark__name/);
+  assert.match(logo, /HİKMET PINARBAŞ · EVIDENCE MADE VISIBLE/);
 });

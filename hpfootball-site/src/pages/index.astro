@@ -1,7 +1,8 @@
 ---
 import { isPublic } from '../lib/public-content.mjs';
 import BaseLayout from '../layouts/BaseLayout.astro';
-import TacticalCanvas from '../components/TacticalCanvas.astro';
+import HeroCartography from '../components/HeroCartography.astro';
+import MethodologyTrinity from '../components/MethodologyTrinity.astro';
 import EvidenceBadge from '../components/EvidenceBadge.astro';
 import {getCollection} from 'astro:content';
 import {isPublicEditorialItem} from '../lib/site-editorial-status.mjs';
@@ -24,19 +25,7 @@ const directoryLinks=launchDirectoryLinks(publicAnalysisCount);
 const matchTime=(utcDate:string)=>new Intl.DateTimeFormat('tr-TR',{timeZone:'Europe/Istanbul',day:'2-digit',month:'short',hour:'2-digit',minute:'2-digit'}).format(new Date(utcDate));
 ---
 <BaseLayout title="HPAnalytic — Hikmet Pınarbaş Futbol Analizi" description="Hikmet Pınarbaş'tan kanıt, mekanizma ve bağlam temelli bağımsız futbol analizi.">
-<section class="hero hero-entry">
-  <div class="hero-copy hero-reveal">
-    <p class="kicker">HPANALYTIC · HİKMET PINARBAŞ</p>
-    <h1>OYUNU<br/><em>SONUÇTAN</em><br/>ÖNCE OKU.</h1>
-    <p class="lead">Futbolu skor tabelasından değil; yapı, ilişki, karar, kanıt ve bağlam üzerinden okuyan bağımsız futbol analizi ve araştırma yayını.</p>
-    <div class="hero-actions">
-      <a class="action-primary" href={primaryCta.href}>{primaryCta.label} <span aria-hidden="true">→</span></a>
-      {featuredStory && <a class="action-secondary" href={"/articles/"+featuredStory.id}>YENİ YAZIYI OKU <span aria-hidden="true">→</span></a>}
-    </div>
-    <p class="hero-signature">ÖNCE FUTBOL <span>·</span> GÜVENDEN ÖNCE KANIT</p>
-  </div>
-  <div class="hero-field hero-reveal hero-reveal-late"><TacticalCanvas/><span class="field-caption">YAPI → İLİŞKİ → KARAR</span></div>
-</section>
+<div class="editorial-home-stage"><HeroCartography/><MethodologyTrinity/></div>
 
 {readingDesk.length > 0 && <section class="reading-desk" aria-labelledby="reading-desk-title">
   <header class="reading-desk-head"><div><p class="kicker">OKUMA MASASI · GÜNCEL SEÇKİ</p><h2 id="reading-desk-title">BUGÜN NEYİ ANLAMAYA DEĞER?</h2><p>Yeni bir iddia üretmeden, yayımlanmış ve editoryal kabulden geçmiş dosyalardan seçki.</p></div><a href="/archive" class="story-link">TÜM DOSYALAR →</a></header>
@@ -103,3 +92,5 @@ const matchTime=(utcDate:string)=>new Intl.DateTimeFormat('tr-TR',{timeZone:'Eur
 <div class="scouting-lenses"><div><span>01</span><b>ROL</b><p>Oyuncunun etiketi değil, takım içindeki fonksiyonu.</p></div><div><span>02</span><b>BAĞLAM</b><p>Lig, takım, partner, rakip ve oyun durumu etkisi.</p></div><div><span>03</span><b>TAŞINABİLİRLİK</b><p>Gözlenen niteliğin yeni sisteme taşınabilirliği.</p></div><div><span>04</span><b>KARŞI-KANIT</b><p>Kararı zayıflatabilecek bulguların özellikle aranması.</p></div></div></section>
 <div class="principles"><span>ÖNCE FUTBOL</span><span>GÜVENDEN ÖNCE KANIT</span><span>METRİKTEN ÖNCE MEKANİZMA</span><span>HÜKÜMDEN ÖNCE BAĞLAM</span></div>
 </BaseLayout>
+
+<style>.editorial-home-stage{max-width:1440px;margin-inline:auto;padding-inline:clamp(16px,2vw,28px)}</style>
