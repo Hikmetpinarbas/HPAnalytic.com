@@ -33,14 +33,14 @@ const matchTime=(utcDate:string)=>new Intl.DateTimeFormat('tr-TR',{timeZone:'Eur
   <div class="analysis-rail__track" tabindex="0" aria-label="Yatay kaydırılabilir araştırma kartları">
     {featuredMonographs.filter(item => item.id.startsWith('g01-') || item.id.startsWith('g02-')).map(item => <article class="analysis-rail__card">
       <span class="analysis-rail__meta">{item.id.startsWith('g01-') ? 'MEKÂNSAL ANALİZ' : 'YÖNTEMSEL ÇERÇEVE'} · {item.data.readingTime}</span>
-      <h3>{item.id.startsWith('g01-') ? 'Bakıyorlar Ama Görmüyorlar (Algı Körlüğü)' : 'Mekânsal Karar Mimarisi & Spatiotemporal Akış'}</h3>
+      <h3>{item.id.startsWith('g01-') ? 'Bakıyorlar Ama Görmüyorlar (Olay Verisinde Algı Körlüğü)' : 'Israrla Görmezden Gelme (Spatiotemporal Mekanik)'}</h3>
       <p>{item.data.subtitle ?? item.data.description}</p>
       <a href={`/monographs/${item.id}`}>ARAŞTIRMAYI OKU →</a>
     </article>)}
     <article class="analysis-rail__card">
-      <span class="analysis-rail__meta">VERİ ENVANTERİ · DOĞRULAMA BEKLİYOR</span>
-      <h3>Dört Maçlık Veri Envanteri</h3>
-      <p>Galatasaray–Barcelona / Hoffenheim–Beşiktaş: maç ve kaynak kayıtları henüz yayın kabulünden geçmedi. Veri ve okuma süresi doğrulanmadan analiz olarak sunulmaz.</p>
+      <span class="analysis-rail__meta">EDİTORYAL ÖNERİ · YAYIN BEKLİYOR</span>
+      <h3>Halkın Metrikleri: xG ve xT Neyi Gizler?</h3>
+      <p>Araştırma sorusu kayıtlıdır; doğrulanmış monografi metni ve kaynak incelemesi henüz bulunmadığından yayın bağlantısı ve okuma süresi sunulmaz.</p>
     </article>
   </div>
 </section>

@@ -25,8 +25,8 @@ const { navigation = [] } = Astro.props as Props;
   </button>
 
   <nav id="mobile-nav-panel" class="mobile-nav-panel" aria-label="Mobil ana menü" hidden>
-    {navigation.map((item) => (
-      <a href={item.href} aria-current={item.current}>{item.label}</a>
+    {navigation.map((item,index) => (
+      <a href={item.href} aria-current={item.current}><span class="mobile-nav-index">{String(index+1).padStart(2,'0')}</span><span>{['Analizler & Monografiler','Spatiotemporal Metodoloji','Laboratuvar Manifestosu (Hakkımda)','Arşiv & Turnuva Atlası'][index] ?? item.label}</span></a>
     ))}
   </nav>
 </div>
@@ -82,3 +82,13 @@ const { navigation = [] } = Astro.props as Props;
     });
   }
 </script>
+
+<style>
+@media(max-width:900px){
+  .mobile-nav-panel:not([hidden]){position:fixed;inset:56px 0 0 !important;width:100vw;height:calc(100dvh - 56px);background:#07090B !important;overflow:auto;animation:hp-drawer-in .25s cubic-bezier(.2,.8,.2,1) both;z-index:90}
+  .mobile-nav-panel a{display:flex;align-items:center;gap:20px;border-bottom:1px solid #1E293B;color:#F3F5F7;font-size:clamp(1rem,4vw,1.35rem)}
+  .mobile-nav-index{font:600 .8rem ui-monospace,monospace;color:#D4AF37}
+}
+@keyframes hp-drawer-in{from{transform:translateX(100%);opacity:.7}to{transform:translateX(0);opacity:1}}
+@media(prefers-reduced-motion:reduce){.mobile-nav-panel:not([hidden]){animation:none}}
+</style>

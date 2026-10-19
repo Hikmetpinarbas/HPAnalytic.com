@@ -4,15 +4,15 @@
 
 :root {
   color-scheme: dark;
-  --bg-surface: #0B0F12;
-  --bg-card: #141B20;
+  --bg-surface: #07090B;
+  --bg-card: #11171D;
   --border-subtle: #24303A;
   --ink-primary: #F3F5F7;
   --ink-secondary: #9BA8B3;
   --accent-gold: #D4AF37;
   --accent-emerald: #00E676;
-  --bg: #0B0F12;
-  --surface: #141B20;
+  --bg: #07090B;
+  --surface: #11171D;
   --surface-2: #19232A;
   --ink: #F3F5F7;
   --ink-2: #9BA8B3;
@@ -849,3 +849,13 @@ body { background-image: radial-gradient(circle at 90% 2%, rgba(142,165,139,.12)
 .analysis-rail__card a { margin-top: auto; color: #00E676; text-decoration: underline; text-underline-offset: 5px; }
 .analysis-rail__meta { color: #D4AF37; font: 600 .8rem var(--font-mono); }
 @media (prefers-reduced-motion:reduce) { .analysis-rail__card,.mobile-nav-panel { transition: none; } }
+
+/* HPAnalytic Caravaggio chiaroscuro — final cascade authority */
+html,body { background:#07090B !important; color:#F3F5F7; }
+h1,h2,h3,.stage-headline { color:#F3F5F7 !important; }
+.lead,.intro,.standfirst,.card p,.reading-desk-item p,.analysis-rail__card p,.figure figcaption,.label-text,.nav-item,.footer-statement { color:#A0AEC0 !important; }
+a.hp-wordmark,.hp-wordmark__name,.brand-name { color:#F3F5F7 !important; }
+.hp-p0-figure,.hp-live-figure,.tactical,.hp-geometry-frame .tactical { background:#0E1317 !important; border:1px solid #1E293B !important; box-shadow:0 0 30px rgba(0,0,0,.8) !important; }
+.analysis-rail__card { background:#11171D !important; border-color:#24303A; }
+.analysis-rail__card:hover,.analysis-rail__card:focus-within { border-color:#D4AF37 !important; box-shadow:0 0 18px rgba(212,175,55,.2); }
+@media(max-width:900px) { .analysis-rail__track { scroll-padding-inline:var(--gutter); -webkit-overflow-scrolling:touch; } }
