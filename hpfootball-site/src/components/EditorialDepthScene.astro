@@ -1,0 +1,31 @@
+---
+import '../styles/editorial-depth-scene.css';
+---
+<div class="hp-depth" aria-hidden="true" data-depth-scene>
+  <div class="hp-depth__ambient"></div>
+  <div class="hp-depth__webgl" data-depth-webgl></div>
+  <svg class="hp-depth__geometry" viewBox="0 0 1000 680" preserveAspectRatio="xMidYMid slice">
+    <defs>
+      <linearGradient id="hp-depth-line" x1="0" y1="0" x2="1" y2="1">
+        <stop stop-color="#234338" stop-opacity=".08"/>
+        <stop offset=".55" stop-color="#8EA58B" stop-opacity=".46"/>
+        <stop offset="1" stop-color="#C3A469" stop-opacity=".25"/>
+      </linearGradient>
+    </defs>
+    <g fill="none" stroke="url(#hp-depth-line)" stroke-width="1.5">
+      <ellipse cx="520" cy="350" rx="350" ry="210" transform="rotate(-18 520 350)"/>
+      <ellipse cx="520" cy="350" rx="290" ry="165" transform="rotate(-18 520 350)"/>
+      <ellipse cx="520" cy="350" rx="225" ry="125" transform="rotate(-18 520 350)"/>
+      <path d="M130 460 Q380 80 855 240"/>
+      <path d="M145 520 Q440 185 920 320"/>
+      <path d="M200 575 Q490 300 938 405"/>
+    </g>
+    <g fill="#234338" fill-opacity=".55">
+      <circle cx="270" cy="296" r="5"/><circle cx="540" cy="180" r="4"/><circle cx="800" cy="365" r="6"/>
+    </g>
+  </svg>
+  <div class="hp-depth__veil"></div>
+  <div class="hp-depth__glass"></div>
+</div>
+
+<script src="../scripts/editorial-depth-runtime.js"></script>

@@ -5,7 +5,7 @@ const home=readFileSync(new URL('../src/pages/index.astro',import.meta.url),'utf
 const css=readFileSync(new URL('../src/styles/global.css',import.meta.url),'utf8');
 test('reading desk only uses approved public articles and does not invent daily stories',()=>{
  assert.match(home,/const readingDesk=articles\.filter/);
- assert.match(home,/readingDesk\.length > 0/);
+ assert.match(home,/const displayReadingDesk=readingDesk.length===1/);
  assert.match(home,/readingDesk\.map/);
  assert.match(home,/href=\{`\/articles\/\$\{item\.id\}`\}/);
  assert.doesNotMatch(home,/BUGÜNÜN ÜÇ GÖZLEMİ/);

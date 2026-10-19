@@ -1,0 +1,12 @@
+/* Spatial atmosphere: progressive static editorial fallback, no data assertions. */
+.hero-field{position:relative;isolation:isolate}
+.hp-depth{position:absolute;inset:0;z-index:0;overflow:hidden;pointer-events:none;border-radius:inherit;isolation:isolate}
+.hp-depth__ambient{position:absolute;inset:-15%;background:radial-gradient(ellipse at 68% 30%,rgba(195,164,105,.38),transparent 50%),radial-gradient(ellipse at 19% 74%,rgba(142,165,139,.45),transparent 54%),linear-gradient(125deg,#F5F1E8,#E4E9E0 55%,#FFFEFB);filter:saturate(.88)}
+.hp-depth__geometry{position:absolute;width:110%;height:110%;inset:-5%;opacity:.95}
+.hp-depth__veil{position:absolute;inset:0;background:linear-gradient(160deg,transparent 20%,rgba(35,67,56,.06) 70%,rgba(255,254,251,.12))}
+.hp-depth__glass{position:absolute;inset:11% 10%;border-radius:2.5rem;background:linear-gradient(135deg,rgba(255,254,251,.16),rgba(142,165,139,.07));backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);mix-blend-mode:overlay;box-shadow:0 16px 70px rgba(24,29,25,.07)}
+.hero-field>:not(.hp-depth){position:relative;z-index:1}
+@media(prefers-reduced-motion:reduce){.hp-depth *, .hp-depth{animation:none!important;transition:none!important}}
+@media(max-width:600px){.hp-depth__glass{inset:8% 5%;border-radius:1.5rem}}
+
+.hp-depth__webgl{position:absolute;inset:0;opacity:.36;pointer-events:none}.hp-depth__webgl canvas{display:block;width:100%;height:100%}

@@ -1,0 +1,64 @@
+---
+interface Props {items: Array<{id:string;data:{title:string;description:string;section:string;date:Date;claimCeiling:string}}> }
+const {items=[]}=Astro.props as Props;
+const uid='editorial-carousel';
+---
+{items.length>0 && <section class="hpa-carousel" aria-label="Editoryal seçki" data-editorial-carousel>
+ <div class="hpa-carousel-head">
+  <div><p class="kicker">HPANALYTIC / EDİTORYAL SEÇKİ</p><h2>OYUNU DERİNLEMESİNE OKU.</h2></div>
+  {items.length>1 && <div class="hpa-carousel-controls">
+   <button type="button" data-carousel-previous aria-label="Önceki içerik" aria-controls={uid}>←</button>
+   <button type="button" data-carousel-next aria-label="Sonraki içerik" aria-controls={uid}>→</button>
+  </div>}
+ </div>
+ <div id={uid} class="hpa-carousel-track" tabindex="0" aria-label="Yayınlanmış analizler">
+ {items.map((item,i)=><article class="hpa-carousel-card">
+  <p class="hpa-carousel-meta"><span>{String(i+1).padStart(2,'0')}</span> / {item.data.section.toUpperCase()}</p>
+  <h3><a href={`/articles/${item.id}`}>{item.data.title}</a></h3>
+  <p>{item.data.description}</p>
+  <div class="hpa-carousel-foot"><span>{item.data.date.toLocaleDateString('tr-TR')}</span><span title={item.data.claimCeiling}>KANIT SINIRI ↗</span></div>
+ </article>)}
+ </div>
+</section>}
+<script>
+ document.querySelectorAll('[data-editorial-carousel]').forEach(root=>{
+  const track=root.querySelector('.hpa-carousel-track');
+  if(!(track instanceof HTMLElement)) return;
+  const previous=root.querySelector<HTMLButtonElement>('[data-carousel-previous]');
+  const next=root.querySelector<HTMLButtonElement>('[data-carousel-next]');
+  const updateControls = () => {
+    const atStart=track.scrollLeft<=2;
+    const atEnd=track.scrollLeft+track.clientWidth>=track.scrollWidth-2;
+    if(previous) previous.disabled=atStart;
+    if(next) next.disabled=atEnd;
+  };
+  track.addEventListener('scroll', updateControls, { passive:true });
+  const resizeObserver=new ResizeObserver(updateControls);
+  resizeObserver.observe(track);
+  updateControls();
+  const step = () => {
+    const card=track.querySelector<HTMLElement>('.hpa-carousel-card');
+    if(!card) return 0;
+    const cards=track.querySelectorAll<HTMLElement>('.hpa-carousel-card');
+    return cards.length>1 ? cards[1].offsetLeft-card.offsetLeft : card.getBoundingClientRect().width+16;
+  };
+  const move = (direction:number) => {
+    const distance=step();
+    if(!distance) return;
+    const end=track.scrollWidth-track.clientWidth;
+    const target=Math.max(0,Math.min(end,Math.round(track.scrollLeft/distance+direction)*distance));
+    track.scrollTo({left:target,behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});
+  };
+  track.addEventListener('keydown',(event:KeyboardEvent)=>{
+    if(event.key!=='ArrowLeft' && event.key!=='ArrowRight') return;
+    if(event.target!==track) return;
+    event.preventDefault();
+    move(event.key==='ArrowRight'?1:-1);
+  });
+  root.querySelectorAll<HTMLButtonElement>('[data-carousel-previous],[data-carousel-next]').forEach(button=>{
+   button.addEventListener('click',()=>{
+    move(button.hasAttribute('data-carousel-next')?1:-1);
+   });
+  });
+ });
+</script>
