@@ -20,8 +20,7 @@ async function start(element) {
   const host = element.querySelector('[data-depth-webgl]');
   if (!host || !host.clientWidth || !host.clientHeight) return;
   let THREE;
-  const threeModuleUrl = '/vendor/hp-depth/three.module.js';
-  try { THREE = await import(/* @vite-ignore */ threeModuleUrl); } catch { return; }
+  try { THREE = await import('./vendor/three.module.js'); } catch { return; }
   if (!element.isConnected || !eligible()) return;
   let renderer;
   try { renderer = new THREE.WebGLRenderer({ alpha: true, antialias: false, powerPreference: 'low-power' }); }

@@ -11,5 +11,6 @@ test('layered runtime uses local Three.js GSAP and bounds GPU work',()=>{
  assert.match(code,/document\.hidden/);
  assert.match(code,/lastFrame < 33/);
  assert.match(code,/\.dispose\(\)/);
- for(const name of ['three.module.js','three.core.js','gsap.min.js']) assert.ok(existsSync('public/vendor/hp-depth/'+name));
+ for(const name of ['three.module.js','three.core.js']) assert.ok(existsSync('src/scripts/vendor/'+name));
+ assert.ok(existsSync('public/vendor/hp-depth/gsap.min.js'));
 });
