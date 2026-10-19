@@ -1,0 +1,41 @@
+<figure class="hp-p0-figure">
+  <figcaption><strong>Saha atlası / Geometrik okuma</strong><span class="hp-p0-caption">HP / 2D–01</span></figcaption>
+  <svg viewBox="0 0 1050 680" role="img" aria-labelledby="hp-p0-title hp-p0-desc">
+    <title id="hp-p0-title">105 × 68 metre kanonik futbol sahası</title>
+    <desc id="hp-p0-desc">Üç makro bölge ve beş koridora ayrılmış şematik saha. Altın nokta örnek odaktır. Gerçek maç, pas veya hareket verisi değildir.</desc>
+    <g id="L01_canvas"><rect width="1050" height="680" fill="#FFFEFB"/></g>
+    <g id="L02_pitch" class="layer field"><rect class="pitch" x="40" y="38" width="970" height="604"/><path class="field-lines" d="M525 38V642 M40 204H197V476H40 M1010 204H853V476H1010 M40 260H102V420H40 M1010 260H948V420H1010"/><circle class="field-lines" cx="525" cy="340" r="84"/><circle class="mark" cx="525" cy="340" r="3"/></g>
+    <g id="L03_macro_grid" class="layer grid"><path class="grid-lines" d="M363.333 38V642 M686.667 38V642"/></g>
+    <g id="L04_five_lanes" class="layer grid"><path class="grid-lines" d="M40 158.8H1010 M40 279.6H1010 M40 400.4H1010 M40 521.2H1010"/></g>
+    <g id="L05_geometry_notes" class="layer metadata labels"><text x="44" y="27">0 m</text><text x="505" y="27">52,5 m</text><text x="975" y="27">105 m</text></g>
+    <g id="L06_reference_points" class="layer players"><circle class="mark" cx="340" cy="340" r="5"/><circle class="mark" cx="525" cy="340" r="5"/><circle class="mark" cx="710" cy="340" r="5"/></g>
+    <g id="L07_reference_labels" class="layer players labels"><text x="302" y="321">Bölge I</text><text x="486" y="321">Bölge II</text><text x="676" y="321">Bölge III</text></g>
+    <g id="L08_structural_axis" class="layer relations"><path class="guides" d="M340 340H710"/></g>
+    <g id="L09_focus_region" class="layer relations"><rect x="476" y="292" width="98" height="96" fill="#8EA58B" fill-opacity=".09" stroke="#234338" stroke-opacity=".3" stroke-dasharray="3 7"/></g>
+    <g id="L10_single_gold_focus" class="layer highlight"><circle class="gold" cx="525" cy="340" r="7"/></g>
+    <g id="L11_legend" class="layer metadata labels"><text x="42" y="666">Şema · Koordinat / bölge kılavuzu</text></g>
+    <g id="L12_evidence_seal" class="layer metadata labels"><text x="665" y="666">Gerçek tracking veya event verisi değildir</text></g>
+  </svg>
+  <p class="hp-p0-note">Şematik saha geometrisi; gerçek maç verisi değildir. Hareket, oyuncu konumu veya doğrulanmamış pas ilişkisi gösterilmez. Odak noktası yalnızca tasarım prototipidir.</p>
+</figure>
+<style>
+.hp-p0-figure{margin:0;background:var(--surface-card,#FFFEFB);border:1px solid rgba(24,29,25,.12);padding:clamp(12px,2vw,24px);min-width:0}
+.hp-p0-figure figcaption{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;align-items:baseline;margin-bottom:12px}
+.hp-p0-figure figcaption strong{font:500 17px var(--serif,Newsreader,Georgia,serif)}
+.hp-p0-caption{font:500 12px var(--mono,ui-monospace,monospace);color:var(--ink-secondary,#4A554E)}
+.hp-p0-figure svg{display:block;width:100%;height:auto}
+.hp-p0-note{font:400 12px/1.5 var(--sans,Archivo,Arial,sans-serif);color:var(--ink-secondary,#4A554E);border-top:1px solid rgba(24,29,25,.12);padding-top:12px;margin:12px 0 0}
+.pitch{fill:var(--surface-card,#FFFEFB);stroke:var(--brand-forest,#234338);stroke-width:1.2}
+.mark{fill:var(--brand-forest,#234338)}
+.gold{stroke:var(--brand-gold,#C3A469);stroke-width:1.5;fill:var(--brand-gold,#C3A469);fill-opacity:.15}
+.field-lines{stroke:var(--brand-forest,#234338);stroke-width:.9;stroke-opacity:.24;fill:none}
+.grid-lines{stroke:var(--brand-forest,#234338);stroke-width:1;stroke-opacity:.10;stroke-dasharray:5 7;fill:none}
+.guides{stroke:var(--ink-primary,#181D19);stroke-width:1.5;stroke-dasharray:4 7;stroke-opacity:.52;fill:none}
+.labels{font:500 12px var(--sans,Archivo,Arial,sans-serif);fill:var(--ink-secondary,#4A554E)}
+.layer{opacity:0;transform:translateY(3px);animation:hp-p0-appear .22s ease-out forwards;animation-iteration-count:1}
+.field{animation-delay:0s;animation-duration:.4s}.grid{animation-delay:.2s;animation-duration:.2s}
+.players{animation-delay:.4s;animation-duration:.25s}.relations{animation-delay:.65s;animation-duration:.25s}
+.highlight{animation-delay:.9s;animation-duration:.4s}.metadata{animation-delay:1.3s;animation-duration:.2s}
+@keyframes hp-p0-appear{from{opacity:0;transform:translateY(3px)}to{opacity:1;transform:translateY(0)}}
+@media(prefers-reduced-motion:reduce){.layer{animation:none!important;opacity:1!important;transform:none!important}}
+</style>

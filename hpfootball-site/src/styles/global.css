@@ -698,3 +698,24 @@ linear-gradient(180deg,#050505 0%,#070604 38%,#050505 100%);}
 .hikmet-spotlight__body h2{font-family:var(--font-serif);font-size:clamp(32px,4.4vw,64px);line-height:1.12;margin:0 0 20px}
 .hikmet-statement{font-size:clamp(17px,2vw,24px);line-height:1.55;max-width:55ch;color:var(--ink-2)}
 @media(max-width:560px){.hikmet-spotlight{grid-template-columns:1fr;gap:22px;padding:52px 20px}.hikmet-spotlight__body h2{font-size:clamp(32px,9vw,44px)}.hikmet-statement{font-size:17px}}
+
+/* Hero P0 isolated integration — no existing token overridden */
+:root {
+ --surface-paper:#F5F1E8; --surface-card:#FFFEFB;
+ --ink-primary:#181D19; --ink-secondary:#4A554E;
+ --brand-forest:#234338; --brand-sage:#8EA58B; --brand-gold:#C3A469;
+ --serif:Newsreader,Georgia,serif; --sans:Archivo,Arial,sans-serif;
+ --mono:"IBM Plex Mono",ui-monospace,monospace;
+}
+.hp-p0-heading {
+ font:400 clamp(2.8rem,4.8vw,4.4rem)/1.14 var(--serif);
+ letter-spacing:-.035em; text-transform:none;color:var(--ink-primary);
+}
+.hp-p0-figure { background:var(--surface-card); min-width:0; }
+.hp-p0-figure .hp-live-figure {background:var(--surface-card);}
+.hp-p0-figure #L01_substrate rect {fill:var(--surface-card);}
+.hp-p0-figure #L03_pitch_markings {stroke-opacity:.24;stroke-width:.9;}
+.hp-p0-figure #L02_metric_grid {stroke-opacity:.10;}
+.hp-p0-figure .hp-layer {animation-iteration-count:1;}
+@keyframes hp-p0-appear {from{opacity:0;transform:translateY(3px)}to{opacity:1;transform:translateY(0)}}
+@media (prefers-reduced-motion:reduce) {.hp-p0-figure .hp-layer{animation:none!important;opacity:1!important;transform:none!important}}
