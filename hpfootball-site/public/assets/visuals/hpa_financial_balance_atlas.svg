@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675">
+  <defs>
+    <style>
+      .bg-void { fill: #121518; }
+      .box-dark { fill: #181D22; stroke: #242E38; rx: 6px; }
+      .text-title { font-family: 'Newsreader', serif; fill: #F8FAFC; font-size: 20px; font-weight: 700; }
+      .text-sub { font-family: 'IBM Plex Mono', monospace; fill: #94A3B8; font-size: 11px; }
+      .text-amber { font-family: 'IBM Plex Mono', monospace; fill: #E5A93C; font-weight: 700; }
+      .text-copper { font-family: 'IBM Plex Mono', monospace; fill: #BE7A37; font-weight: 700; }
+      .text-cobalt { font-family: 'IBM Plex Mono', monospace; fill: #3A86C8; font-weight: 700; }
+    </style>
+  </defs>
+  <rect width="1200" height="675" class="bg-void" />
+  <text x="90" y="55" class="text-title">HPANALYTIC · AMORTİSMAN UÇURUMU VE SÜREÇ MADENCİLİĞİ</text>
+  <text x="90" y="75" class="text-sub">EKONOMETRİK SERMAYE VARLIĞI MODELİ · ATLAS 04</text>
+  <!-- Sol Kutu -->
+  <rect x="90" y="140" width="480" height="420" class="box-dark" />
+  <text x="120" y="180" class="text-copper" font-size="16">GELENEKSEL DEV (30+ Yaş Kontrat)</text>
+  <text x="120" y="220" fill="#CBD5E1" font-size="14">Bonservis: 100M € (5 Yıl Düz Amortisman)</text>
+  <text x="120" y="260" fill="#BE7A37" font-size="14">Yıllık Amortisman Defter Yükü: 20M € / Yıl</text>
+  <text x="120" y="300" fill="#CBD5E1" font-size="14">3. Yıl Sonu Fiziksel Değer: ~0M €</text>
+  <text x="120" y="340" class="text-copper" font-size="15">Net Defter Batığı: -40M €</text>
+  <!-- Sağ Kutu -->
+  <rect x="630" y="140" width="480" height="420" class="box-dark" />
+  <text x="660" y="180" class="text-cobalt" font-size="16">BRIGHTON / BENFICA (Süreç Madenciliği)</text>
+  <text x="660" y="220" fill="#CBD5E1" font-size="14">Cucurella Satış: 65M €</text>
+  <text x="660" y="260" fill="#CBD5E1" font-size="14">Estupiñán İkame: 18M € (Metrik Profil Eşit)</text>
+  <text x="660" y="300" class="text-amber" font-size="16">Net Faaliyet Kârı: +47M €</text>
+  <text x="660" y="340" fill="#10B981" font-size="14">Sermaye Kazancı: Altyapı Yeniden Yatırımı</text>
+  <text x="90" y="630" class="text-sub">EVENT ⊂ ZFGV · CARAVAGGIO ATLAS 04</text>
+</svg>

@@ -1,0 +1,64 @@
+<?xml version='1.0' encoding='utf-8'?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 675" width="1200" height="675" role="img" aria-labelledby="t d">
+  <title id="t">HPAnalytic · Q açısı ve dinamik valgus · kavramsal şema</title>
+  <desc id="d">Kavramsal biyomekanik illüstrasyon; hasta veya sporcu ölçümü değildir. Chiaroscuro aydınlatma, geometrik eksenler ve kuvvet yönlerinin şematik temsili.</desc>
+  <defs>
+    <radialGradient id="caravaggioLight" cx="18%" cy="14%" r="76%">
+      <stop offset="0%" stop-color="#FFF8E7" stop-opacity="0.23" />
+      <stop offset="24%" stop-color="#D4AF37" stop-opacity="0.07" />
+      <stop offset="100%" stop-color="#07090B" stop-opacity="0" />
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="675" fill="#07090B" />
+  <rect width="1200" height="675" fill="url(#caravaggioLight)" />
+  <g id="L02_leonardo_geometric_grid">
+    <line x1="120" y1="110" x2="120" y2="590" stroke="#8A7968" stroke-width=".5" stroke-opacity=".2" stroke-dasharray="3 6" />
+    <line x1="240" y1="110" x2="240" y2="590" stroke="#8A7968" stroke-width=".5" stroke-opacity=".2" stroke-dasharray="3 6" />
+    <line x1="360" y1="110" x2="360" y2="590" stroke="#8A7968" stroke-width=".5" stroke-opacity=".2" stroke-dasharray="3 6" />
+    <line x1="480" y1="110" x2="480" y2="590" stroke="#8A7968" stroke-width=".5" stroke-opacity=".2" stroke-dasharray="3 6" />
+    <line x1="600" y1="110" x2="600" y2="590" stroke="#8A7968" stroke-width=".5" stroke-opacity=".2" stroke-dasharray="3 6" />
+    <line x1="720" y1="110" x2="720" y2="590" stroke="#8A7968" stroke-width=".5" stroke-opacity=".2" stroke-dasharray="3 6" />
+    <line x1="840" y1="110" x2="840" y2="590" stroke="#8A7968" stroke-width=".5" stroke-opacity=".2" stroke-dasharray="3 6" />
+    <line x1="960" y1="110" x2="960" y2="590" stroke="#8A7968" stroke-width=".5" stroke-opacity=".2" stroke-dasharray="3 6" />
+    <line x1="1080" y1="110" x2="1080" y2="590" stroke="#8A7968" stroke-width=".5" stroke-opacity=".2" stroke-dasharray="3 6" />
+    <line x1="100" y1="150" x2="1100" y2="150" stroke="#8A7968" stroke-width=".5" stroke-opacity=".2" stroke-dasharray="3 6" />
+    <line x1="100" y1="230" x2="1100" y2="230" stroke="#8A7968" stroke-width=".5" stroke-opacity=".2" stroke-dasharray="3 6" />
+    <line x1="100" y1="310" x2="1100" y2="310" stroke="#8A7968" stroke-width=".5" stroke-opacity=".2" stroke-dasharray="3 6" />
+    <line x1="100" y1="390" x2="1100" y2="390" stroke="#8A7968" stroke-width=".5" stroke-opacity=".2" stroke-dasharray="3 6" />
+    <line x1="100" y1="470" x2="1100" y2="470" stroke="#8A7968" stroke-width=".5" stroke-opacity=".2" stroke-dasharray="3 6" />
+    <line x1="100" y1="550" x2="1100" y2="550" stroke="#8A7968" stroke-width=".5" stroke-opacity=".2" stroke-dasharray="3 6" />
+  </g>
+  <g id="L01_leonardo_tesla_brand_seal">
+    <circle cx="63" cy="52" r="19" fill="none" stroke="#8A7968" stroke-width=".5" stroke-dasharray="4 4" />
+    <line x1="38" y1="52" x2="88" y2="52" stroke="#8A7968" stroke-width=".5" />
+    <line x1="63" y1="27" x2="63" y2="77" stroke="#8A7968" stroke-width=".5" />
+    <text x="100" y="52" font-size="26" fill="#FFF8E7" font-family="Newsreader, Georgia, serif">HP</text>
+    <text x="137" y="52" font-size="26" fill="#FFF8E7" font-family="Newsreader, Georgia, serif" font-style="italic">Analytic</text>
+    <text x="100" y="70" font-size="7" fill="#8A7968" font-family="IBM Plex Mono, monospace" letter-spacing="1.75">EVIDENCE LAB · SPATIOTEMPORAL INTELLIGENCE</text>
+  </g>
+  <text x="110" y="122" font-size="35" fill="#FFF8E7" font-family="Newsreader, Georgia, serif">Q Açısı &amp; Dinamik Valgus Torku</text>
+  <text x="110" y="148" font-size="10" fill="#8A7968" font-family="IBM Plex Mono, monospace" letter-spacing="1.5">LEONARDO GEOMETRİSİ  /  TESLA ALAN VEKTÖRLERİ</text>
+  <g id="L04_anatomical_axes">
+    <path d="M460 210 L554 360 L618 540" fill="none" stroke="#FFF8E7" stroke-width="5" stroke-linecap="round" />
+    <path d="M554 200 L590 545" fill="none" stroke="#8A7968" stroke-width="1" stroke-dasharray="5 6" />
+    <path d="M554 360 A48 48 0 0 1 608 389" fill="none" stroke="#D4AF37" stroke-width="2" />
+    <circle cx="460" cy="210" r="6" fill="#D4AF37" />
+    <circle cx="554" cy="360" r="6" fill="#D4AF37" />
+    <circle cx="618" cy="540" r="6" fill="#D4AF37" />
+  </g>
+  <g id="L05_tesla_vector_field">
+    <path d="M 526 323 l 94 31" fill="none" stroke="#38BDF8" stroke-width=".75" stroke-dasharray="2 2" />
+    <path d="M 541 345 l 94 31" fill="none" stroke="#38BDF8" stroke-width=".75" stroke-dasharray="2 2" />
+    <path d="M 559 368 l 94 31" fill="none" stroke="#38BDF8" stroke-width=".75" stroke-dasharray="2 2" />
+    <circle cx="554" cy="360" r="17" stroke="#00E676" stroke-width="1" fill="none" />
+  </g>
+  <g id="L11_editorial_callouts">
+    <text x="740" y="270" font-size="12" fill="#D4AF37" font-family="IBM Plex Mono, monospace">01  /  MEKANİK EKSEN</text>
+    <text x="740" y="300" font-size="17" fill="#FFF8E7" font-family="Newsreader, Georgia, serif">Femur–tibia ilişkisi: şematik gösterim</text>
+    <text x="740" y="390" font-size="12" fill="#D4AF37" font-family="IBM Plex Mono, monospace">02  /  DİNAMİK VALGUS</text>
+    <text x="740" y="420" font-size="16" fill="#FFF8E7" font-family="Newsreader, Georgia, serif">Hareket anında frontal düzlem yer değiştirmesi</text>
+    <text x="740" y="510" font-size="12" fill="#D4AF37" font-family="IBM Plex Mono, monospace">03  /  TORQUE VEKTÖRLERİ</text>
+    <text x="740" y="540" font-size="16" fill="#FFF8E7" font-family="Newsreader, Georgia, serif">Yön gösterimi; hesaplanmış kuvvet değildir</text>
+  </g>
+  <text x="110" y="632" font-size="10" fill="#8A7968" font-family="IBM Plex Mono, monospace">KAVRAMSAL ŞEMA · ÖLÇEKLİ ANATOMİ VE KLİNİK TANI İDDİASI YOKTUR</text>
+</svg>
