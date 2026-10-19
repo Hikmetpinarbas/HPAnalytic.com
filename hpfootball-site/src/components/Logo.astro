@@ -14,16 +14,30 @@ const {
   withWordmark = true,
 } = Astro.props as Props;
 const logoStyle = height === undefined ? undefined : `--hp-logo-height: ${typeof height === 'number' ? `${height}px` : height}`;
-
 ---
 <a href="/" class:list={['brand', 'hp-wordmark', className, `hp-wordmark--${variant}`]} style={logoStyle} aria-label="HPAnalytic ana sayfa" data-testid="brand-logo">
-  <svg class="hp-wordmark__emblem" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#D4AF37" stroke-width="1.5" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4" stroke="#00E676"/><line x1="12" y1="3" x2="12" y2="21" stroke-dasharray="2 2"/><line x1="3" y1="12" x2="21" y2="12" stroke-dasharray="2 2"/></svg>
-  <span class="hp-wordmark__name">HP<span class="hp-wordmark__small">Analytic</span></span>
-  {withWordmark && showSubtitle && <span class="hp-wordmark__tag">EVIDENCE LAB · SPATIOTEMPORAL INTELLIGENCE</span>}
+  <svg width="34" height="34" viewBox="0 0 100 100" fill="none" class="brand-sigil hp-wordmark__emblem" data-testid="brand-logo-sigil" aria-hidden="true" focusable="false">
+    <circle cx="50" cy="50" r="46" stroke="#D4AF37" stroke-width="1.5" stroke-opacity="0.85"/>
+    <circle cx="50" cy="50" r="32" stroke="#24303A" stroke-width="1" stroke-dasharray="3 3"/>
+    <path d="M 50 4 A 46 46 0 0 1 96 50" stroke="#00E676" stroke-width="1.5" stroke-linecap="round"/>
+    <path d="M 18 50 Q 50 18 82 50 Q 50 82 18 50 Z" stroke="#D4AF37" stroke-width="1.2" fill="none"/>
+    <path d="M 50 18 Q 18 50 50 82 Q 82 50 50 18 Z" stroke="#38BDF8" stroke-width="0.8" stroke-opacity="0.6" fill="none"/>
+    <circle cx="50" cy="50" r="4" fill="#F3F5F7"/>
+    <line x1="50" y1="12" x2="50" y2="88" stroke="#D4AF37" stroke-width="0.75" stroke-opacity="0.4"/>
+    <line x1="12" y1="50" x2="88" y2="50" stroke="#D4AF37" stroke-width="0.75" stroke-opacity="0.4"/>
+  </svg>
+  {withWordmark && <span class="hp-wordmark__identity">
+    <span class="hp-wordmark__name"><span class="hp-wordmark__hp">HP</span><span class="hp-wordmark__small">Analytic</span></span>
+    {showSubtitle && <span class="hp-wordmark__tag">EVIDENCE LAB · SPATIOTEMPORAL INTELLIGENCE</span>}
+  </span>}
 </a>
 <style>
-.hp-wordmark{display:inline-flex;flex-direction:row;flex-wrap:wrap;align-items:center;justify-content:center;text-decoration:none;color:var(--ink-primary,#F3F5F7);gap:3px}
-.hp-wordmark__emblem{flex:none;margin-right:7px}.hp-wordmark__name{font:400 clamp(23px,2.5vw,34px)/1.05 Newsreader,Georgia,serif;letter-spacing:-.035em}
-.hp-wordmark__small{font-variant:small-caps;letter-spacing:.015em}
-.hp-wordmark__tag{flex-basis:100%;padding-left:31px;font:400 9px/1.5 "IBM Plex Mono",monospace;letter-spacing:.1em;color:var(--ink-secondary,#9BA8B3)}
+.hp-wordmark{display:inline-flex;flex-flow:row nowrap;align-items:center;justify-content:flex-start;gap:12px;min-width:0;max-width:100%;text-decoration:none;color:#F3F5F7;line-height:1.1}
+.brand-sigil{width:34px;height:34px;flex:none;display:block}
+.hp-wordmark__identity{display:flex;flex-direction:column;justify-content:center;gap:4px;min-width:0}
+.hp-wordmark__name{display:block;font:400 clamp(23px,2.5vw,34px)/1 Newsreader,Georgia,serif;letter-spacing:-.035em;white-space:nowrap;color:#F3F5F7}
+.hp-wordmark__hp{font-style:normal;color:#D4AF37}
+.hp-wordmark__small{font-style:italic;font-variant:normal;letter-spacing:-.015em;color:#F3F5F7}
+.hp-wordmark__tag{display:block;font:500 8.5px/1.4 "IBM Plex Mono",ui-monospace,monospace;letter-spacing:.2em;color:#9BA8B3;max-width:38ch}
+@media(max-width:420px){.hp-wordmark{gap:8px}.hp-wordmark__name{font-size:23px}.hp-wordmark__tag{font-size:8.5px;letter-spacing:.08em;max-width:24ch}}
 </style>
