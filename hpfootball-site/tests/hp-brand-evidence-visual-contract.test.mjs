@@ -8,11 +8,11 @@ test('canonical HP monogram retains line-break geometry and editorial identity',
  assert.match(s,/class="hp-break" d="M13 38 42 14"/);
  assert.match(s,/EVIDENCE MADE VISIBLE/);
 });
-test('hero uses the existing tactical canvas and the canonical entry headline',()=>{
+test('hero uses the independent P0 pitch figure and editorial headline',()=>{
  const s=read('src/pages/index.astro');
- assert.match(s,/<TacticalCanvas\s*\/>/);
- assert.match(s,/OYUNU<br\s*\/>/);
- assert.match(s,/SONUÇTAN/);
+ assert.match(s,/<HeroPitchFigure\s*\/>/);
+ assert.match(s,/Oyunu sonuçtan önce oku\./);
+ assert.match(read('src/components/HeroPitchFigure.astro'),/@keyframes hp-p0-appear/);
 });
 test('tactical illustration remains accessible without repeated warning banner',()=>{
  const s=read('src/components/TacticalCanvas.astro');
