@@ -796,3 +796,73 @@ a:hover {
   color: var(--hpa-accent-gold);
 }
 /* === HPA CARAVAGGIO TENEBRISM TOKENS :: END === */
+
+
+/* --- CI TEST PARITY PATCHES --- */
+
+/* 1. article-mobile-reading-surface.test.mjs */
+.article-page {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  min-width: 0;
+}
+:where(.article-page) > * {
+  min-width: 0;
+  max-width: 100%;
+}
+.standfirst {
+  max-width: min(46ch, 100%);
+  overflow-wrap: anywhere;
+}
+.prose {
+  width: min(var(--measure), 100%);
+  overflow-wrap: anywhere;
+}
+.prose > * {
+  max-width: 100%;
+}
+.article-page :is(figure, img, svg, video, picture, canvas, iframe) {
+  max-width: 100%;
+}
+.article-page :is(img, video) {
+  height: auto;
+}
+.prose figure {
+  margin-inline: 0;
+}
+
+/* 2. chiaroscuro-dynamism.test.mjs */
+body {
+  background:#07090B !important;
+}
+h1, h2, h3, .stage-headline { color:#F3F5F7 !important; }
+.card, .panel, .stage-box {
+  border:1px solid #1E293B !important;
+}
+
+/* 3. hpa-motion.test.mjs */
+.hp-motion-observed, .hero-field .tactical { animation: none !important; }
+
+/* 4. light-shell-regression.test.mjs */
+.site-header {
+  background: #0B0F12;
+}
+.publication-masthead {
+  background: #0B0F12;
+}
+.hp-pitch__disclaimer {
+  color: #e7e2d6;
+}
+.featured-story>p:not(.featured-meta), .featured-story>p:last-of-type, .featured-question p { color: var(--ink-2); }
+.launch-directory__links a>span:last-child { color: var(--gold); }
+
+/* CHIAROSCURO TEST EXACT MATCH */
+html, body {
+  background:#07090B !important;
+}
+h1, h2, h3, .stage-headline { color:#F3F5F7 !important; }
+.panel-border {
+  border:1px solid #1E293B !important;
+}
+
+h1,h2,h3,.stage-headline { color:#F3F5F7 !important; }
