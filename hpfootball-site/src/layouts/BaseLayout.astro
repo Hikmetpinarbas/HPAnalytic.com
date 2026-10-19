@@ -55,9 +55,10 @@ const navigation = withCurrent(buildVisibleNavigation({
 const utility = withCurrent(buildUtilityNavigation({ articleCount: articles.length }));
 const archiveLink = utility.find((item) => item.href === '/archive');
 const NAV_ITEMS = [
-  {label:'Atlaslar',href:'/visual-lab'},
-  {label:'Metodoloji',href:'/research'},
-  {label:'Arşiv',href:'/archive'},
+  {label:'Analizler',href:'/analysis/'},
+  {label:'Metodoloji',href:'/research/'},
+  {label:'Hakkımda',href:'/about/'},
+  {label:'Arşiv',href:'/archive/'},
 ];
 const editorialNavigation = withCurrent(NAV_ITEMS);
 

@@ -17,12 +17,13 @@ const logoStyle = height === undefined ? undefined : `--hp-logo-height: ${typeof
 
 ---
 <a href="/" class:list={['brand', 'hp-wordmark', className, `hp-wordmark--${variant}`]} style={logoStyle} aria-label="HPAnalytic ana sayfa">
+  <svg class="hp-wordmark__emblem" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#234338" stroke-width="1.5" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><circle cx="12" cy="12" r="4" stroke="#C3A469"/><line x1="12" y1="3" x2="12" y2="21" stroke-dasharray="2 2"/><line x1="3" y1="12" x2="21" y2="12" stroke-dasharray="2 2"/></svg>
   <span class="hp-wordmark__name">HP<span class="hp-wordmark__small">Analytic</span></span>
-  {withWordmark && showSubtitle && <span class="hp-wordmark__tag">HİKMET PINARBAŞ · EVIDENCE MADE VISIBLE</span>}
+  {withWordmark && showSubtitle && <span class="hp-wordmark__tag">EVIDENCE LAB · BOTANICAL INTELLIGENCE</span>}
 </a>
 <style>
-.hp-wordmark{display:inline-flex;flex-direction:column;justify-content:center;text-decoration:none;color:#234338;gap:3px}
-.hp-wordmark__name{font:400 clamp(23px,2.5vw,34px)/1.05 Newsreader,Georgia,serif;letter-spacing:-.035em}
+.hp-wordmark{display:inline-flex;flex-direction:row;flex-wrap:wrap;align-items:center;justify-content:center;text-decoration:none;color:#234338;gap:3px}
+.hp-wordmark__emblem{flex:none;margin-right:7px}.hp-wordmark__name{font:400 clamp(23px,2.5vw,34px)/1.05 Newsreader,Georgia,serif;letter-spacing:-.035em}
 .hp-wordmark__small{font-variant:small-caps;letter-spacing:.015em}
-.hp-wordmark__tag{font:400 9px/1.5 "IBM Plex Mono",monospace;letter-spacing:.1em;color:#4A554E}
+.hp-wordmark__tag{flex-basis:100%;padding-left:31px;font:400 9px/1.5 "IBM Plex Mono",monospace;letter-spacing:.1em;color:#4A554E}
 </style>

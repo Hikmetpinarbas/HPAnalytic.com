@@ -1,13 +1,16 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-export const prerender = true;
+export const prerender=true;
 ---
-<BaseLayout title="Hikmet Pınarbaş — HPAnalytic" description="Futbol analisti, TV yorumcusu, mekânsal performans çözümlemesi ve karar destek araştırmacısı.">
-<div class="listing">
-  <header class="page-head">
-    <p class="kicker">HİKMET PINARBAŞ</p>
-    <h1 class="page-title">Futbol analisti.<br/>TV yorumcusu.<br/>Mekânsal Performans Çözümlemesi.</h1>
-    <p class="lead">Maç, takım ve oyuncu performansını taktik, veri, kanıt ve bağlam üzerinden inceler; futbol bilgisini karar, mekanizma ve oyun içi ilişkiler üzerinden yorumlar.</p>
-  </header>
-</div>
+<BaseLayout title="Hakkımda — HPAnalytic" description="Hikmet Pınarbaş'ın bağımsız futbol araştırma laboratuvarı ve editoryal ilkeleri.">
+<section class="about-manifesto">
+<p class="kicker">HİKMET PINARBAŞ · EDİTORYAL MANİFESTO</p>
+<h1>Epistemik Futbol Analitiği ve Bağımsız Karar Destek</h1>
+<p class="lead">HPAnalytic, TV yayıncılığının ve yüzeysel istatistiklerin ötesinde; oyunun uzay-zaman geometrisini, Markov tehdit modellerini ve karar mekanizmalarını araştıran bağımsız bir futbol laboratuvarıdır.</p>
+<h2>Kanıtın sınırı, iddianın sınırıdır.</h2>
+<p>Olay verisi gözlenen aksiyonları tarif eder; tek başına oyuncuların hareket ettiği bütün alanı veya gözlenmeyen alternatifleri açıklamaz. Mekânsal performans çözümlemesi ve stokastik süreç modellemesi bu ayrımı görünür kılmak için kullanılır. Doğrulanmayan sonuçlar bilimsel kesinlik olarak sunulmaz.</p>
+<h2>Bağımsızlık ilkesi</h2>
+<p>Menajerlik, oyuncu ticareti veya komisyonculuk yapılmaz. Kulüplere, teknik heyetlere ve araştırmacılara yalnızca bilimsel kanıt, yöntem açıklaması ve karar desteği sunulur.</p>
+</section>
 </BaseLayout>
+<style>.about-manifesto{max-width:880px;margin:auto;padding:clamp(32px,6vw,80px) 20px}.about-manifesto h1{font:500 clamp(32px,4vw,54px)/1.14 Newsreader,Georgia,serif;color:#234338}.about-manifesto h2{font:500 26px Newsreader,Georgia,serif;margin-top:40px}.about-manifesto p{line-height:1.75}</style>
