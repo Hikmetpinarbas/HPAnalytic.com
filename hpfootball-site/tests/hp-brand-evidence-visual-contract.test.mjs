@@ -10,7 +10,7 @@ test('editorial wordmark retains typography and publication identity',()=>{
 });
 test('hero uses the independent P0 pitch figure and editorial headline',()=>{
  const s=read('src/pages/index.astro');
- assert.match(s,/<HeroPitchFigure\s*\/>/);
+ assert.match(read('src/components/HeroCartography.astro'),/<HeroPitchFigure\s*\/>/);
  assert.match(s,/Oyunu sonuçtan önce oku\./);
  assert.match(read('src/components/HeroPitchFigure.astro'),/@keyframes hp-p0-appear/);
 });

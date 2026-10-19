@@ -1,4 +1,5 @@
 ---
+import HeroPitchFigure from "./HeroPitchFigure.astro";
 interface Metric { label:string; value:string; emphasis?:boolean }
 interface GoalEvidence { verified:boolean; goalId:string; cells:number[]; xG:number; xGOT:number; source:string; shotCell?:number }
 interface Props { kicker?:string; headline?:string; atlasSrc?:string; metrics?:Metric[]; evidenceStatus?:string; goal?:GoalEvidence }
@@ -26,10 +27,12 @@ const cellY = (cell:number) => Math.floor(cell/16) * (680/12);
 ---
 <section class="master-stage" aria-label="Manşet Kartografisi">
   <header class="stage-header"><span class="stage-kicker">{kicker}</span><h1 class="stage-headline">{headline}</h1></header>
-  <div class="stage-grid">
+  <div class="editorial-byline"><span>ANALİZ &amp; METODOLOJİ:</span> <strong>HİKMET PINARBAŞ</strong></div>
+  <a href="/visual-lab" class="action-primary" aria-label="Canlı Maç Laboratuvarını İncele">Canlı Taktik Atlasını Aç</a>
+  <div class="stage-grid hero-entry">
     <figure class="atlas-frame">
       <div class="svg-viewport">
-        <object type="image/svg+xml" data={atlasSrc} class="atlas-object" aria-label="SportsBase maç atlası"><a href={atlasSrc}>SVG maç atlasını aç</a></object>
+        <HeroPitchFigure />
         <svg class="xt-goal-overlay" viewBox="0 0 1050 680" aria-hidden="true" focusable="false">
           <g id="L04b_hidden_xt_goal_accumulation" opacity="0">
             {gridCells.map(c => <rect x={cellX(c)} y={cellY(c)} width={1050/16} height={680/12} fill="#C3A469" fill-opacity={highlights.has(c) ? '0.18' : '0'} />)}
@@ -61,6 +64,7 @@ const cellY = (cell:number) => Math.floor(cell/16) * (680/12);
   .master-stage:has(.goal-inspection-trigger:is(:hover,:focus-visible,:active)) .xt-goal-overlay g{opacity:1}
   .goal-inspection{display:grid;gap:9px}.goal-inspection-trigger{border:1px solid #8EA58B;background:#F5F1E8;color:#234338;padding:9px 12px;cursor:pointer;font:600 11px var(--mono,monospace)}.goal-inspection-trigger:focus-visible{outline:2px solid #234338;outline-offset:3px}.goal-inspection-values{display:grid;gap:5px;font:11px var(--mono,monospace);color:#4A554E}.goal-inspection-values strong{color:#234338}.goal-inspection-values small{font-size:9px}
   @media(prefers-reduced-motion:reduce){.xt-goal-overlay g{transition:none}}
+  .editorial-byline{font:10px var(--mono,monospace);color:#4A554E;margin-bottom:12px}.editorial-byline strong{color:#234338}.action-primary{display:inline-block;padding:10px 16px;margin-bottom:18px;background:#234338;color:#FFFEFB;text-decoration:none;font:600 12px var(--sans,Archivo,sans-serif)}.action-primary:focus-visible{outline:2px solid #C3A469;outline-offset:3px}
   .master-stage{padding:32px 0 48px;border-bottom:.5px solid rgba(142,165,139,.25)}
   .stage-header{margin-bottom:24px}.stage-kicker{font:10.5px var(--mono,monospace);letter-spacing:.18em;color:#4A554E;display:block;margin-bottom:8px}.stage-headline{font:500 clamp(2rem,3.8vw,3.2rem)/1.15 var(--serif,Newsreader,Georgia,serif);letter-spacing:-.025em;color:#181D19;max-width:980px}
   .stage-grid{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:24px;align-items:stretch}.atlas-frame{margin:0;background:#FFFEFB;border:.5px solid rgba(35,67,56,.14);border-radius:4px;padding:16px;min-width:0;display:flex;flex-direction:column;justify-content:space-between}
