@@ -1,10 +1,24 @@
 ---
-interface Props { withWordmark?: boolean; }
-const { withWordmark = true } = Astro.props as Props;
+interface Props {
+  height?: number | string;
+  class?: string;
+  variant?: 'header' | 'footer' | 'default';
+  showSubtitle?: boolean;
+  withWordmark?: boolean;
+}
+const {
+  height,
+  class: className = '',
+  variant = 'default',
+  showSubtitle = true,
+  withWordmark = true,
+} = Astro.props as Props;
+const logoStyle = height === undefined ? undefined : `--hp-logo-height: ${typeof height === 'number' ? `${height}px` : height}`;
+
 ---
-<a href="/" class="brand hp-wordmark" aria-label="HPAnalytic ana sayfa">
+<a href="/" class:list={['brand', 'hp-wordmark', className, `hp-wordmark--${variant}`]} style={logoStyle} aria-label="HPAnalytic ana sayfa">
   <span class="hp-wordmark__name">HP<span class="hp-wordmark__small">Analytic</span></span>
-  {withWordmark && <span class="hp-wordmark__tag">HİKMET PINARBAŞ · EVIDENCE MADE VISIBLE</span>}
+  {withWordmark && showSubtitle && <span class="hp-wordmark__tag">HİKMET PINARBAŞ · EVIDENCE MADE VISIBLE</span>}
 </a>
 <style>
 .hp-wordmark{display:inline-flex;flex-direction:column;justify-content:center;text-decoration:none;color:#234338;gap:3px}
