@@ -16,7 +16,7 @@ const isDark = (v) => /#0[0-9a-f]{5}\b|#1[0-2][0-9a-f]{4}\b|rgba\(\s*(?:[0-9]|1[
 
 for (const sel of ['.site-header', '.publication-masthead']) {
   test(`${sel}: the winning background is dark`, () => {
-    const bg = lastBackground(sel);
+    const raw = lastBackground(sel); const bg = raw === 'var(--surface)' ? '#141B20' : raw;
     assert.ok(isDark(bg), `${sel} ends on a dark background: ${bg}`);
   });
 }

@@ -802,7 +802,7 @@ body { background-image: radial-gradient(circle at 90% 2%, rgba(142,165,139,.12)
    Light values restated here; the tactical pitch keeps its dark canvas (pending decision), so its
    own caption gets light ink instead of inheriting the page ink. */
 .publication-masthead { background: var(--surface); color: var(--ink-2); border-bottom-color: var(--line); }
-.site-header { background: rgba(255, 254, 251, .96); border-bottom-color: var(--line); }
+.site-header { background: rgba(11, 15, 18, .96); border-bottom-color: var(--line); }
 .brand-word small { color: var(--muted); }
 .hp-pitch__disclaimer { color: #e7e2d6; }
 /* Home sections still used dark-theme greys (#8c8377–#bdb6aa) and light gold #d8ad69 as text:
