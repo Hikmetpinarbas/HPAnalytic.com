@@ -49,7 +49,7 @@ const matchTime=(utcDate:string)=>new Intl.DateTimeFormat('tr-TR',{timeZone:'Eur
   <div class="hikmet-spotlight__body"><h2 id="hikmet-spotlight-title">{hikmetEditorial.data.title}</h2><p class="hikmet-statement">{hikmetEditorial.data.description}</p><a class="story-link" href={`/articles/${hikmetEditorial.id}`}>YAZIYI OKU <span aria-hidden="true">→</span></a></div>
 </section>}
 <section class="launch-directory" aria-labelledby="launch-directory-title">
-  <div class="launch-directory__intro"><p class="kicker">HPANALYTIC · KEŞİF</p><h2 id="launch-directory-title">FUTBOLU BİR SORUDAN OKUMAYA BAŞLA.</h2><p>{publicAnalysisCount > 0 ? 'Yayımlanmış analizden arşive, araştırma ve scouting yöntem notlarına geç.' : 'Yayımlanmış dosyalardan arşive, araştırma ve scouting yöntem notlarına geç.'}</p></div>
+  <div class="launch-directory__intro"><p class="kicker">HPANALYTIC · KEŞİF</p><h2 id="launch-directory-title">FUTBOLU BİR SORUDAN OKUMAYA BAŞLA.</h2><p>{publicAnalysisCount > 0 ? 'Yayımlanmış analizden arşive, araştırma ve karar destek laboratuvarı yöntem notlarına geç.' : 'Yayımlanmış dosyalardan arşive, araştırma ve karar destek laboratuvarı yöntem notlarına geç.'}</p></div>
   <nav class="launch-directory__links" aria-label="İçeriği keşfet">
     {directoryLinks.map(link=><a href={link.href}><span>{link.index} / {link.kind}</span><b>{link.title}</b><small>{link.note}</small><span aria-hidden="true">↗</span></a>)}
   </nav>

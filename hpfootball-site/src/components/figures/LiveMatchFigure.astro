@@ -50,7 +50,7 @@ const selectedFocus=focus && valid(focus) ? {x:focus.x*10,y:focus.y*10,label:foc
     <g id="L09_critical_focus" class="hp-layer hp-events">{selectedFocus && <circle cx={selectedFocus.x} cy={selectedFocus.y} r="7" fill="#C3A469"/>}</g>
     <g id="L10_event_markers" class="hp-layer hp-events">{eventPoints.map(e=>e.kind==='shot'?<circle cx={e.sx} cy={e.sy} r="5" fill="none" stroke="#234338" stroke-width="1.5"/>:<path d={`M${e.sx-4} ${e.sy-4}l8 8m0-8l-8 8`} stroke="#234338" stroke-width="1.5"/>)}</g>
     <g id="L11_spatial_callouts" class="hp-layer hp-callout">{selectedFocus?.label && <><path d={`M${selectedFocus.x} ${selectedFocus.y} l18 -18 h32`} fill="none" stroke="#234338" stroke-width="0.75"/><text x={selectedFocus.x+54} y={selectedFocus.y-20} font-size="10" class="hp-text-halo">{selectedFocus.label}</text></>}</g>
-    <g id="L12_metadata_seal" fill="#181D19" font-size="10" class="hp-layer hp-hud"><text x="20" y="24">HPANALYTIC · {matchLabel}</text><text x="1030" y="662" text-anchor="end">EVIDENCE MADE VISIBLE</text></g>
+    <g id="L12_metadata_seal" fill="#181D19" font-size="10" class="hp-layer hp-hud"><text x="20" y="24">HPAnalytic · {matchLabel}</text><text x="1030" y="662" text-anchor="end">EVIDENCE MADE VISIBLE</text></g>
   </svg>
   <figcaption>{evidence} · 105 × 68 m referans düzlemi</figcaption>
 </figure>
