@@ -10,7 +10,7 @@ const logo=readFileSync(new URL('../src/components/Logo.astro', import.meta.url)
 test('homepage above fold carries identity, discovery action and real featured analysis',()=>{
   assert.match(home,/HPANALYTIC/);
   assert.match(readFileSync(new URL('../src/components/HeroCartography.astro', import.meta.url),'utf8'),/HİKMET PINARBAŞ/);
-  assert.match(home,/class="action-primary" href=\{primaryCta\.href\}/);
+  assert.match(readFileSync(new URL("../src/components/HeroCartography.astro",import.meta.url),"utf8"),/href="\/visual-lab" class="action-primary"/);
   assert.match(home,/featuredStory/);
   assert.match(home,/class="featured-analysis"/);
   assert.match(home,/\/articles\/\$\{featuredStory\.id\}/);

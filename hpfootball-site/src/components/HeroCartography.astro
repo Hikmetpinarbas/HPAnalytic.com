@@ -26,7 +26,7 @@ const cellX = (cell:number) => (cell % 16) * (1050/16);
 const cellY = (cell:number) => Math.floor(cell/16) * (680/12);
 ---
 <section class="master-stage" aria-label="Manşet Kartografisi">
-  <header class="stage-header"><span class="stage-kicker">{kicker}</span><h1 class="stage-headline">{headline}</h1></header>
+  <header class="stage-header"><span class="stage-kicker">{kicker}</span><h1 class="stage-headline">Oyunu sonuçtan önce oku.</h1><p class="stage-subheadline">{headline}</p></header>
   <div class="editorial-byline"><span>ANALİZ &amp; METODOLOJİ:</span> <strong>HİKMET PINARBAŞ</strong></div>
   <a href="/visual-lab" class="action-primary" aria-label="Canlı Maç Laboratuvarını İncele">Canlı Taktik Atlasını Aç</a>
   <div class="stage-grid hero-entry">
@@ -67,6 +67,7 @@ const cellY = (cell:number) => Math.floor(cell/16) * (680/12);
   @media(prefers-reduced-motion:reduce){.xt-goal-overlay g{transition:none}}
   .editorial-byline{font:10px var(--mono,monospace);color:#4A554E;margin-bottom:12px}.editorial-byline strong{color:#234338}.action-primary{display:inline-block;padding:10px 16px;margin-bottom:18px;background:#234338;color:#FFFEFB;text-decoration:none;font:600 12px var(--sans,Archivo,sans-serif)}.action-primary:focus-visible{outline:2px solid #C3A469;outline-offset:3px}
   .master-stage{padding:32px 0 48px;border-bottom:.5px solid rgba(142,165,139,.25)}
+  .stage-subheadline{font:400 16px/1.5 var(--serif,Newsreader,Georgia,serif);color:var(--ink-secondary,#4A554E);margin:8px 0 0}
   .stage-header{margin-bottom:24px}.stage-kicker{font:10.5px var(--mono,monospace);letter-spacing:.18em;color:#4A554E;display:block;margin-bottom:8px}.stage-headline{font:500 clamp(2rem,3.8vw,3.2rem)/1.15 var(--serif,Newsreader,Georgia,serif);letter-spacing:-.025em;color:#181D19;max-width:980px}
   .stage-grid{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:24px;align-items:stretch}.atlas-frame{margin:0;background:#FFFEFB;border:.5px solid rgba(35,67,56,.14);border-radius:4px;padding:16px;min-width:0;display:flex;flex-direction:column;justify-content:space-between}
   .svg-viewport{width:100%;aspect-ratio:1050/680;overflow:hidden;background:#F5F1E8;border-radius:2px}.atlas-object{width:100%;height:100%;display:block}.claim-ceiling{margin-top:14px;font:italic 11.5px/1.5 var(--serif,Georgia,serif);color:var(--ink-muted,#5E655F);border-top:.5px solid rgba(35,67,56,.08);padding-top:10px}.claim-ceiling strong{font:600 10px var(--mono,monospace)}
