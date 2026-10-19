@@ -12,7 +12,7 @@ const lastBackground = (selector) => {
   assert.ok(withBg.length, `${selector} declares a background`);
   return /background\s*:\s*([^;]+)/.exec(withBg.at(-1))[1].trim();
 };
-const isDark = (v) => /#0[0-9a-f]{5}\b|#1[0-2][0-9a-f]{4}\b|rgba\(\s*(?:[0-9]|1[0-2])\s*,\s*(?:[0-9]|1[0-2])\s*,/i.test(v);
+const isDark = (v) => /^#(?:0[0-9a-f]{5}|1[0-9a-f]{5})$/i.test(v.trim()) || /^rgba?\(\s*11\s*,\s*15\s*,\s*18\s*[,)]/i.test(v.trim());
 
 for (const sel of ['.site-header', '.publication-masthead']) {
   test(`${sel}: the winning background is dark`, () => {
