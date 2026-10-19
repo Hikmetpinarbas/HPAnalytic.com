@@ -1,4 +1,4 @@
-const CACHE = 'hpanalytic-shell-v2';
+const CACHE = 'hpanalytic-shell-v3';
 const SHELL = ['/', '/manifest.webmanifest', '/favicon.svg', '/icons/hp-192.png', '/icons/hp-512.png'];
 
 self.addEventListener('install', (event) => {
@@ -20,6 +20,18 @@ self.addEventListener('fetch', (event) => {
   const url = new URL(request.url);
   if (url.origin !== self.location.origin) return;
   if (url.pathname.startsWith('/studio/') || url.pathname.startsWith('/control/')) return;
+
+  // Visual assets are evidence-bearing: never return a stale cached figure.
+  // Offline visual requests fail closed rather than resurrecting superseded graphics.
+  if (url.pathname.startsWith('/visuals/')) {
+    event.respondWith(fetch(request, {cache: 'no-store'}).catch(() =>
+      new Response('Görsel çevrimdışı kullanılamıyor', {
+        status: 503, headers: {'Content-Type': 'text/plain; charset=utf-8'}
+      })
+    ));
+    return;
+  }
+
 
   if (request.mode === 'navigate') {
     event.respondWith(
