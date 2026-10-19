@@ -54,6 +54,13 @@ const navigation = withCurrent(buildVisibleNavigation({
 }));
 const utility = withCurrent(buildUtilityNavigation({ articleCount: articles.length }));
 const archiveLink = utility.find((item) => item.href === '/archive');
+const NAV_ITEMS = [
+  {label:'Atlaslar',href:'/visual-lab'},
+  {label:'Metodoloji',href:'/research'},
+  {label:'Arşiv',href:'/archive'},
+];
+const editorialNavigation = withCurrent(NAV_ITEMS);
+
 const searchLink = utility.find((item) => item.href === '/search');
 const canonical = new URL(canonicalPath(pathname), Astro.site ?? Astro.url).href;
 ---
@@ -113,10 +120,9 @@ if ('serviceWorker' in navigator) {
 <body>
 <a class="skip-link" href="#main-content">İçeriğe geç</a>
 <div class="grain" aria-hidden="true"></div>
-<EditorialHeader>
+<EditorialHeader navigation={editorialNavigation}>
   <div class="header-actions">
-    {searchLink && <a class="icon-link" href={searchLink.href} aria-current={searchLink.current} aria-label="Ara">ARA</a>}
-    <MobileNavigation navigation={archiveLink ? [...navigation, archiveLink] : navigation} />
+    <MobileNavigation navigation={editorialNavigation} />
   </div>
 </EditorialHeader>
 <main id="main-content" tabindex="-1"><slot/></main>

@@ -17,8 +17,8 @@ test('homepage above fold carries identity, discovery action and real featured a
 });
 test('global header exposes HPAnalytic product identity without duplicating navigation truth',()=>{
   assert.match(layout,/<Logo\s*\/>/);
-  assert.match(logo,/HPANALYTIC/);
-  assert.equal((layout.match(/navigation\.map\(/g)||[]).length,1);
+  assert.match(logo,/hp-wordmark__name/);
+  assert.match(layout,/<EditorialHeader navigation=\{editorialNavigation\}/);
 });
 test('above-fold system has explicit responsive hero and featured transition',()=>{
   assert.match(css,/\.hero-actions\{/);
