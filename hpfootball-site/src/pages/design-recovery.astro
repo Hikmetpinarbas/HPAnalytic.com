@@ -1,0 +1,66 @@
+---
+import '../styles/hp-editorial-tokens.css';
+const desks=[
+ {n:'01',label:'MAÇ ANALİZİ',heading:'Bir maçın sonucu, oyunun bütün hikâyesi değildir.',href:'/articles',note:'Olay dizisi · oyun durumu · rakip yanıtı'},
+ {n:'02',label:'OYUNCU & SCOUTING',heading:'Performans ile karar arasındaki mesafe.',href:'/scouting',note:'Rol · örneklem · bağlam · karşı-kanıt'},
+ {n:'03',label:'ARAŞTIRMA',heading:'İddianın sınırını bilmek, analizin parçasıdır.',href:'/research',note:'Kaynak · ölçüm · yöntem · belirsizlik'}
+];
+---
+<!doctype html>
+<html lang="tr">
+<head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<meta name="robots" content="noindex,nofollow"/><title>HPAnalytic · Editoryal Tasarım İncelemesi</title>
+<meta name="description" content="HPAnalytic P0 bağımsız editoryal tasarım adayı. Logo onayı ve tarayıcı kabulü bekliyor."/>
+</head>
+<body class="hp-editorial">
+<header class="topbar"><div class="hp-shell topbar-inner"><span class="site-name">HPANALYTIC <span class="provisional">(geçici metin, logo değildir)</span></span><nav aria-label="Sayfa bölümleri"><a href="#dosyalar">Dosyalar</a><a href="#atlas">Saha atlası</a><a href="#yontem">Yöntem</a></nav><a class="head-archive" href="/archive">Arşiv ↗</a></div></header>
+<main id="main">
+<section class="hp-shell cover" aria-labelledby="cover-heading"><div class="cover-intro"><span class="hp-kicker">BAĞIMSIZ FUTBOL ARAŞTIRMASI / EDITION 01</span><div class="hp-rule" aria-hidden="true"></div><h1 id="cover-heading" class="hp-display">Oyunu sonuçtan önce oku.</h1><p class="hp-lead">Bir maçın akışını, oyuncunun kararlarını ve görünmeyen varsayımları aynı sorunun çevresinde inceliyoruz. Kanıttan futbol anlamına uzanan bağımsız analiz.</p><div class="cover-actions"><a class="hp-link" href="#dosyalar">Dosyaları keşfet ↗</a><a class="quiet-link" href="#yontem">Nasıl analiz ediyoruz? →</a></div></div>
+<aside class="figure-card" id="atlas" aria-label="Şematik saha atlası"><div class="figure-head"><span>HP / 2D–01</span><span>SAHA ATLASI · ŞEMA</span></div>
+<svg viewBox="0 0 670 465" role="img" aria-labelledby="pitch-title pitch-desc"><title id="pitch-title">Kanonik futbol sahasının şematik geometrisi</title><desc id="pitch-desc">105 çarpı 68 metre saha. Üç yatay bölge ve beş koridor kılavuzu; oyuncu, olay veya tracking verisi gösterilmez.</desc>
+<rect x="32" y="24" width="606" height="392" fill="#F0F4F0" stroke="#234338" stroke-width="1.25"/>
+<g fill="none" stroke="#234338" stroke-width="1.1" stroke-opacity=".42"><path d="M335 24V416"/><circle cx="335" cy="220" r="52"/><circle cx="335" cy="220" r="2" fill="#234338"/><path d="M32 114H108V326H32 M638 114H562V326H638 M32 168H63V272H32 M638 168H607V272H638"/><circle cx="94" cy="220" r="2" fill="#234338"/><circle cx="576" cy="220" r="2" fill="#234338"/></g>
+<g stroke="#234338" stroke-opacity=".22" stroke-width="1" stroke-dasharray="5 7"><path d="M234 24V416 M436 24V416"/><path d="M32 102.4H638 M32 180.8H638 M32 259.2H638 M32 337.6H638"/></g>
+<g fill="#234338" font-family="system-ui,sans-serif" font-size="13"><text x="34" y="448">0 m</text><text x="305" y="448">52,5 m</text><text x="594" y="448">105 m</text></g>
+</svg><div class="figure-foot"><strong>105 × 68 m</strong><span>Şematik gösterim · gerçek tracking veya maç olayı değildir.</span></div></aside></section>
+<section id="dosyalar" class="hp-section"><div class="hp-shell"><div class="section-heading"><div><span class="hp-kicker">YAYIN / ARAŞTIRMA / SCOUTING</span><h2>Futbolu üç ayrı mercekten okumak.</h2></div><p>Bir sayfa dolusu vaat değil; analizin kendisine götüren açık bir editoryal dizin.</p></div><div class="desk-grid">{desks.map(d=><article class="hp-paper desk-card"><div class="card-top"><span>{d.label}</span><span>{d.n}</span></div><h3><a href={d.href}>{d.heading}</a></h3><p>{d.note}</p><a href={d.href} class="card-arrow" aria-label={d.label+' bölümüne git'}>↗</a></article>)}</div></div></section>
+<section id="yontem" class="hp-section method"><div class="hp-shell method-layout"><div><span class="hp-kicker">KANIT MASASI / METODOLOJİ</span><h2>İyi bir analiz, önce kendi iddiasını sınar.</h2><p>Verinin taşıdığı bilgi ile analistin öne sürdüğü mekanizma aynı şey değildir. Her yorumun sınırı görünür olmalıdır.</p></div><div class="method-steps"><div><span>01</span><strong>Soru</strong><p>Hangi futbol problemi açıklanıyor?</p></div><div><span>02</span><strong>Kanıt</strong><p>Kaynak, örneklem ve bağlam neyi doğruluyor?</p></div><div class="counter"><span>03</span><strong>Karşı-kanıt</strong><p>İlk açıklamayı hangi bulgu çürütebilir?</p></div><div><span>04</span><strong>İddia sınırı</strong><p>Neyi henüz söyleyemiyoruz?</p></div></div></div></section>
+</main><footer class="footer"><div class="hp-shell">HPAnalytic / Tasarım inceleme sürümü · Üretim yayını değildir.</div></footer>
+</body></html>
+<style>
+.topbar{position:sticky;top:0;z-index:10;background:rgba(245,241,232,.97);border-bottom:1px solid var(--hp-status-border)}
+.topbar-inner{min-height:56px;display:flex;justify-content:space-between;align-items:center;gap:24px}
+.site-name{font-weight:800;letter-spacing:.035em;font-size:17px;white-space:nowrap}.provisional{font-size:10px;font-weight:400;color:var(--hp-ink-secondary)}
+.topbar nav{display:flex;gap:30px;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.08em}
+.topbar a:hover,.quiet-link:hover{color:var(--hp-brand-forest);text-decoration:underline}
+.head-archive{font:600 12px var(--hp-font-data);white-space:nowrap}
+.cover{display:grid;grid-template-columns:minmax(0,.88fr) minmax(0,1.12fr);gap:clamp(28px,5vw,68px);align-items:center;padding-block:clamp(38px,5vw,76px)}
+.cover-intro .hp-rule{margin:32px 0 20px}
+.cover .hp-display{font-size:clamp(3rem,5.2vw,5.2rem);max-width:11ch}
+.cover-actions{display:flex;align-items:center;flex-wrap:wrap;gap:20px;margin-top:32px}
+.quiet-link{font-size:14px;font-weight:600;color:var(--hp-brand-forest)}
+.figure-card{min-width:0;background:var(--hp-surface-raised);border:1px solid var(--hp-status-border);padding:20px}
+.figure-head,.figure-foot{display:flex;justify-content:space-between;gap:14px;align-items:center;font:500 12px/1.5 var(--hp-font-data);color:var(--hp-ink-secondary)}
+.figure-card svg{display:block;width:100%;height:auto;margin:12px 0}
+.figure-foot{border-top:1px solid var(--hp-status-border);padding-top:12px;flex-wrap:wrap}.figure-foot strong{color:var(--hp-brand-forest)}
+.section-heading{display:flex;justify-content:space-between;gap:32px;align-items:end;margin-bottom:28px}
+.section-heading h2,.method h2{font:400 clamp(2rem,3.4vw,3.5rem)/1.13 var(--hp-font-editorial);letter-spacing:-.025em;margin:12px 0 0;max-width:20ch}
+.section-heading>p{max-width:31ch;color:var(--hp-ink-secondary)}
+.desk-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.desk-card{display:flex;flex-direction:column;min-height:295px}.card-top{display:flex;justify-content:space-between;gap:12px;font:600 12px var(--hp-font-data);color:var(--hp-ink-secondary)}
+.card-top span:last-child{color:var(--hp-brand-gold-text)}
+.desk-card h3{font:400 clamp(1.5rem,2.15vw,2.1rem)/1.2 var(--hp-font-editorial);margin:28px 0 12px}
+.desk-card p{color:var(--hp-ink-secondary);font-size:14px}
+.card-arrow{margin-top:auto;align-self:flex-end;font-size:22px;color:var(--hp-brand-forest)}
+.method{background:var(--hp-surface-raised)}
+.method-layout{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(32px,6vw,100px)}
+.method-layout>div>p{max-width:53ch;color:var(--hp-ink-secondary)}
+.method-steps{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.method-steps>div{border:1px solid var(--hp-status-border);padding:22px;background:var(--hp-surface-paper)}
+.method-steps>div.counter{background:#EFF2EC}
+.method-steps span{display:block;font:600 12px var(--hp-font-data);color:var(--hp-brand-gold-text);margin-bottom:20px}
+.method-steps strong{font-size:17px}.method-steps p{font-size:14px;color:var(--hp-ink-secondary);margin-bottom:0}
+.footer{padding:30px 0;font-size:12px;color:var(--hp-ink-secondary)}
+@media(max-width:900px){.topbar nav{display:none}.cover{grid-template-columns:1fr}.cover .hp-display{max-width:18ch}.figure-card{max-width:800px}.desk-grid{grid-template-columns:1fr 1fr}.method-layout{grid-template-columns:1fr}}
+@media(max-width:600px){.provisional{display:none}.cover{padding-block:32px;gap:32px}.cover .hp-display{font-size:clamp(2.75rem,12vw,4rem)}.figure-card{padding:12px}.desk-grid,.method-steps{grid-template-columns:1fr}.desk-card{min-height:230px}.section-heading{display:block}.section-heading>p{max-width:55ch}.method-steps>div{padding:16px}}
+</style>
