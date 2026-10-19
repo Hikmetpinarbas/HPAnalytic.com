@@ -1,7 +1,7 @@
 ---
 import { isPublic } from '../lib/public-content.mjs';
 import BaseLayout from '../layouts/BaseLayout.astro';
-import TacticalCanvas from '../components/TacticalCanvas.astro';
+import LiveMatchFigure from '../components/figures/LiveMatchFigure.astro';
 import EvidenceBadge from '../components/EvidenceBadge.astro';
 import {getCollection} from 'astro:content';
 import {isPublicEditorialItem} from '../lib/site-editorial-status.mjs';
@@ -29,7 +29,7 @@ const matchTime=(utcDate:string)=>new Intl.DateTimeFormat('tr-TR',{timeZone:'Eur
     </div>
     <p class="hero-signature">ÖNCE FUTBOL <span>·</span> GÜVENDEN ÖNCE KANIT</p>
   </div>
-  <div class="hero-field hero-reveal hero-reveal-late"><TacticalCanvas/><span class="field-caption">YAPI → İLİŞKİ → KARAR</span></div>
+  <div class="hero-field hero-reveal hero-reveal-late"><LiveMatchFigure/><span class="field-caption">YAPI → İLİŞKİ → KARAR</span></div>
 </section>
 
 {featuredStory && <section class="featured-analysis" aria-labelledby="featured-title">
