@@ -8,6 +8,12 @@ tags: ["Kemik Yorgunluğu", "Epifiz Plakları", "Hücresel Tükeniş", "Pedri Se
 summary: "Epifiz plakları henüz kapanmamış 18-20 yaşındaki genç yıldızlara sezon başına 70 maç yükleyen endüstri, geleceğin efsanelerini değil, yürüyen kronik sakatlık raporlarını üretiyor."
 visualAtlas: "/assets/visuals/hpa_bone_fatigue_load_atlas.svg"
 draft: false
+
+description: "Epifiz plakları henüz kapanmamış 18-20 yaşındaki genç yıldızlara sezon başına 70 maç yükleyen endüstri, geleceğin efsanelerini değil, yürüyen kronik sakatlık raporlarını üretiyor."
+claimCeiling: "İddia birincil spatiotemporal gözlem verisinin bittiği sınırda durur."
+methodology: "Mekânsal Performans Çözümlemesi"
+provenance: "HPAnalytic Primary Observation Framework · EVENT ⊂ ZFGV"
+readingTime: "6 dk"
 ---
 
 ### Blok 1: Modern Futbolun Çocuk İşçileri: Pedri ve Yamal Sendromu

@@ -8,6 +8,12 @@ tags: ["Harald Bohr", "La Pausa", "Fourier Analizi", "Uzamsal Geometri", "Karar 
 summary: "1908 Londra Olimpiyatı'nda Danimarka formasıyla gümüş madalya kazanan bir futbolcudan, Fourier analizini sarsan matematik dehasına: Harald Bohr'un saha içi karar geometrisi ve La Pausa faz kilidi."
 visualAtlas: "/assets/visuals/hpa_harald_bohr_geometry_atlas.svg"
 draft: false
+
+description: "1908 Londra Olimpiyatı'nda Danimarka formasıyla gümüş madalya kazanan bir futbolcudan, Fourier analizini sarsan matematik dehasına: Harald Bohr'un saha içi karar geometrisi ve La Pausa faz kilidi."
+claimCeiling: "İddia birincil spatiotemporal gözlem verisinin bittiği sınırda durur."
+methodology: "Mekânsal Performans Çözümlemesi"
+provenance: "HPAnalytic Primary Observation Framework · EVENT ⊂ ZFGV"
+readingTime: "6 dk"
 ---
 
 ### Blok 1: 1908 Londra ve Kopenhag Çizgisi

@@ -8,6 +8,12 @@ tags: ["İkinci Kaleci", "Zihinsel Direnç", "Görünmez Liderlik", "Görüş Ko
 summary: "90 dakika boyunca kenarda eldivenleriyle ısınan ama sahaya giremeyeceğini bilen bir profesyonelin mental anatomisi. Kulübeden sahaya açılan geniş taktik görüş konisi ve görünmez liderlik."
 visualAtlas: "/assets/visuals/hpa_second_goalkeeper_radar_atlas.svg"
 draft: false
+
+description: "90 dakika boyunca kenarda eldivenleriyle ısınan ama sahaya giremeyeceğini bilen bir profesyonelin mental anatomisi. Kulübeden sahaya açılan geniş taktik görüş konisi ve görünmez liderlik."
+claimCeiling: "İddia birincil spatiotemporal gözlem verisinin bittiği sınırda durur."
+methodology: "Mekânsal Performans Çözümlemesi"
+provenance: "HPAnalytic Primary Observation Framework · EVENT ⊂ ZFGV"
+readingTime: "6 dk"
 ---
 
 ### Blok 1: Futbolun En Yalnız Koltuğu

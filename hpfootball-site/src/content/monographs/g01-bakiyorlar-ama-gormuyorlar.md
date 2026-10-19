@@ -14,6 +14,7 @@ methodology: "Mekânsal Performans Çözümlemesi"
 provenance: "Editoryal G01 · kullanıcı tarafından sağlanan giriş"
 sourceRefs: []
 visualAssets: []
+
 ---
 
 ### Giriş: Skor Tahtasının Ötesindeki Görünmez Oyun

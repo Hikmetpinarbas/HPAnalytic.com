@@ -8,6 +8,12 @@ tags: ["xG", "xT", "EPV", "Markov Tehdidi", "Olay Verisi Körlüğü", "Spatiote
 summary: "Televizyon ekranında beliren her sayı bir futbol gerçeği değil, bir model varsayımıdır. Olay verisinin (event-data) göremediği topsuz alan kinetiği ve Markov tehdit modellerinin yapısal kısıtları."
 visualAtlas: "/assets/visuals/hpa_metrics_epistemology_atlas.svg"
 draft: false
+
+description: "Televizyon ekranında beliren her sayı bir futbol gerçeği değil, bir model varsayımıdır. Olay verisinin (event-data) göremediği topsuz alan kinetiği ve Markov tehdit modellerinin yapısal kısıtları."
+claimCeiling: "İddia birincil spatiotemporal gözlem verisinin bittiği sınırda durur."
+methodology: "Mekânsal Performans Çözümlemesi"
+provenance: "HPAnalytic Primary Observation Framework · EVENT ⊂ ZFGV"
+readingTime: "6 dk"
 ---
 
 ### Blok 1: Ekrandaki İllüzyon: Sayı Gerçek Değildir, Modeldir

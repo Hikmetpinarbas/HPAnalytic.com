@@ -8,6 +8,12 @@ tags: ["Kadın Futbolu", "Q Açısı", "Biyomekanik", "Plant Phase", "Hamstring 
 summary: "17.2 derecelik Q açısının yarattığı dinamik valgus momenti, kramponun zemine kenetlendiği ilk 40 milisaniyede diz eklemine biner. Eklemi koruyan kaba kas gücü değil, 48 milisaniyenin altındaki topsuz alan uzamsal zekâsıdır."
 visualAtlas: "/assets/visuals/hpa_qangle_spatial_atlas.svg"
 draft: false
+
+description: "17.2 derecelik Q açısının yarattığı dinamik valgus momenti, kramponun zemine kenetlendiği ilk 40 milisaniyede diz eklemine biner. Eklemi koruyan kaba kas gücü değil, 48 milisaniyenin altındaki topsuz alan uzamsal zekâsıdır."
+claimCeiling: "İddia birincil spatiotemporal gözlem verisinin bittiği sınırda durur."
+methodology: "Mekânsal Performans Çözümlemesi"
+provenance: "HPAnalytic Primary Observation Framework · EVENT ⊂ ZFGV"
+readingTime: "6 dk"
 ---
 
 ### Blok 1: Pelvis Morfolojisi ve 17.2° Q Açısının Rotasyonel Torku

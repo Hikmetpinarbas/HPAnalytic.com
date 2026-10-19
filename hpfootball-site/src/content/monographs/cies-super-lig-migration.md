@@ -9,6 +9,11 @@ summary: "CIES verileri ışığında Süper Lig'in U-21 dakika payındaki %3.8'
 visualAtlas: "/assets/visuals/hpa_cies_demography_atlas.svg"
 draft: true
 claimCeiling: "UNVERIFIED_EDITORIAL_DRAFT — CIES verileri, koşu metrikleri, nedensellik ve ekonometrik model sonuçları bağımsız doğrulanmamıştır."
+
+description: "CIES verileri ışığında Süper Lig'in U-21 dakika payındaki %3.8'lik iflası, tecrübe alımı değil; Avrupa'nın yüksek pres hızına yetişemeyen biyolojik bir borç sarmalıdır."
+methodology: "Mekânsal Performans Çözümlemesi"
+provenance: "HPAnalytic Primary Observation Framework · EVENT ⊂ ZFGV"
+readingTime: "6 dk"
 ---
 
 > **YAYIN ÖNCESİ KANIT UYARISI:** Aşağıdaki metin kullanıcı tarafından sağlanan, kaynak ve hesaplama denetiminden geçmemiş bir editoryal taslaktır. Özellikle CIES yüzdeleri, fiziksel koşu metrikleri, merkeziyet ölçüleri, transfer kazançları ve karşı-olgusal tahminler doğrulanmış bulgular olarak kullanılamaz.

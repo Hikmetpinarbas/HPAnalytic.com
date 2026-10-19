@@ -13,6 +13,7 @@ methodology: "Mekânsal Performans Çözümlemesi"
 provenance: "HPAnalytic editoryal yöntem tanıtımı; ampirik bulgu değildir."
 sourceRefs: []
 visualAssets: []
+
 ---
 ## Uzay ve zaman birlikte okunmalıdır
 

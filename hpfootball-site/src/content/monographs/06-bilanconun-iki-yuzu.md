@@ -8,6 +8,12 @@ tags: ["Amortisman", "Süreç Madenciliği", "Brighton Modeli", "Finansal Fair P
 summary: "100 milyon Euro harcamak zenginlik göstergesi değil, çoğu zaman yapısal iflasın başlangıcıdır. 30 yaş üstü kontratların yarattığı amortisman defter batığı ile süreç madenciliği arasındaki uçurum."
 visualAtlas: "/assets/visuals/hpa_financial_balance_atlas.svg"
 draft: false
+
+description: "100 milyon Euro harcamak zenginlik göstergesi değil, çoğu zaman yapısal iflasın başlangıcıdır. 30 yaş üstü kontratların yarattığı amortisman defter batığı ile süreç madenciliği arasındaki uçurum."
+claimCeiling: "İddia birincil spatiotemporal gözlem verisinin bittiği sınırda durur."
+methodology: "Mekânsal Performans Çözümlemesi"
+provenance: "HPAnalytic Primary Observation Framework · EVENT ⊂ ZFGV"
+readingTime: "6 dk"
 ---
 
 ### Blok 1: Medyanın Bonservis İllüzyonu

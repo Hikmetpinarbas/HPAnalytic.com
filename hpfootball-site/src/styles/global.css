@@ -1,3 +1,6 @@
+:root {
+  --bg-surface: #07090B;
+}
 /* HPAnalytic — global stylesheet
    Tokens first; components below. Dark-only by design (Design Contract §1:
    controlled darkness, hierarchy through light). */

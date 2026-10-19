@@ -8,6 +8,12 @@ tags: ["Hibrit Roller", "Inverted Fullback", "Raumdeuter", "Zone 14", "Half-Spac
 summary: "Televizyon ekranındaki statik dizilişler modern futbolu açıklayamaz. Beklerin merkeze devrildiği, forvetlerin kör noktada heykel gibi beklediği uzamsal hacim mücadelesi."
 visualAtlas: "/assets/visuals/hpa_hybrid_roles_atlas.svg"
 draft: false
+
+description: "Televizyon ekranındaki statik dizilişler modern futbolu açıklayamaz. Beklerin merkeze devrildiği, forvetlerin kör noktada heykel gibi beklediği uzamsal hacim mücadelesi."
+claimCeiling: "İddia birincil spatiotemporal gözlem verisinin bittiği sınırda durur."
+methodology: "Mekânsal Performans Çözümlemesi"
+provenance: "HPAnalytic Primary Observation Framework · EVENT ⊂ ZFGV"
+readingTime: "6 dk"
 ---
 
 ### Blok 1: Statik Mevkilerin İflası
