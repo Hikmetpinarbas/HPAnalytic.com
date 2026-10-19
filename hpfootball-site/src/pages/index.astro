@@ -10,6 +10,7 @@ import {getUpcomingMatches, FOOTBALL_SCOPE} from '../lib/football-data.mjs';
 import {validMatchRows, shouldShowMatchCentre, heroPrimaryCta, launchDirectoryLinks} from '../lib/home-surfaces.mjs';
 export const prerender = true;
 
+const featuredMonographs=(await getCollection('monographs',({data})=>!data.draft)).sort((a,b)=>+b.data.date-+a.data.date).slice(0,3);
 const articles=(await getCollection('articles',isPublic)).filter(entry=>isPublicEditorialItem(entry.data)).sort((a,b)=>+b.data.date-+a.data.date);
 const hikmetEditorial=articles.find(a=>a.data.section==='culture');
 const readingDesk=articles.filter(a=>a.data.section==='analysis' || a.data.section==='scouting' || a.data.section==='culture').slice(0,3);
@@ -27,6 +28,15 @@ const matchTime=(utcDate:string)=>new Intl.DateTimeFormat('tr-TR',{timeZone:'Eur
 <BaseLayout title="HPAnalytic — Hikmet Pınarbaş Futbol Analizi" description="Hikmet Pınarbaş'tan kanıt, mekanizma ve bağlam temelli bağımsız futbol analizi.">
 <div class="editorial-home-stage"><HeroCartography/><MethodologyTrinity/></div>
 
+{featuredMonographs.length > 0 && <section class="reading-desk" aria-labelledby="monographs-title">
+  <header class="reading-desk-head"><div><p class="kicker">ARAŞTIRMA · MONOGRAFİLER</p><h2 id="monographs-title">ÖNE ÇIKAN MONOGRAFİLER</h2></div></header>
+  <div class="reading-desk-grid">{featuredMonographs.map((item)=><article class="reading-desk-item">
+    <span class="reading-desk-number">{item.data.category} · {item.data.readingTime}</span>
+    <h3><a href={`/monographs/${item.id}`}>{item.data.title}</a></h3>
+    <p>{item.data.subtitle ?? item.data.description}</p>
+    <small>{item.data.evidenceLevel}</small>
+  </article>)}</div>
+</section>}
 {readingDesk.length > 0 && <section class="reading-desk" aria-labelledby="reading-desk-title">
   <header class="reading-desk-head"><div><p class="kicker">OKUMA MASASI · GÜNCEL SEÇKİ</p><h2 id="reading-desk-title">BUGÜN NEYİ ANLAMAYA DEĞER?</h2><p>Yeni bir iddia üretmeden, yayımlanmış ve editoryal kabulden geçmiş dosyalardan seçki.</p></div><a href="/archive" class="story-link">TÜM DOSYALAR →</a></header>
   <div class="reading-desk-grid">{readingDesk.map((item,i)=><article class="reading-desk-item"><span class="reading-desk-number">{String(i+1).padStart(2,'0')} / {item.data.section.toUpperCase()}</span><h3><a href={`/articles/${item.id}`}>{item.data.title}</a></h3><p>{item.data.description}</p><small>{item.data.date.toLocaleDateString('tr-TR')}</small></article>)}</div>

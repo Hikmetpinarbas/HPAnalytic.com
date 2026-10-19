@@ -64,6 +64,12 @@ const monographs=defineCollection({
   schema:z.object({
     title:z.string(),
     description:z.string(),
+    subtitle:z.string().optional(),
+    author:z.string().optional(),
+    category:z.string().optional(),
+    readingTime:z.string().optional(),
+    heroImage:z.string().optional(),
+    evidenceLevel:z.string().optional(),
     date:z.coerce.date(),
     draft:z.boolean().default(true),
     claimCeiling:z.string(),
