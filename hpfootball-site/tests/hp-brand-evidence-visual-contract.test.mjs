@@ -6,7 +6,7 @@ test('editorial wordmark retains typography and publication identity',()=>{
  const s=read('src/components/Logo.astro');
  assert.match(s,/hp-wordmark__name/);
  assert.match(s,/Newsreader/);
- assert.match(s,/SPATIOTEMPORAL INTELLIGENCE/);
+ assert.match(s,/HIKMET PINARBAŞ FOOTBALL LAB/);
 });
 test('hero uses the independent P0 pitch figure and editorial headline',()=>{
  const s=read('src/pages/index.astro');
