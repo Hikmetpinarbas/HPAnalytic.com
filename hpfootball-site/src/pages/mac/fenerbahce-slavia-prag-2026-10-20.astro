@@ -150,7 +150,7 @@ export const prerender = true;
         <div class="corr" id="corr"></div>
         <div class="legend">
           <span><span class="sw" style="background:var(--line-2)"></span> Hücum sayısı</span>
-          <span class="mono" style="letter-spacing:.04em;text-transform:none">kutudaki ikinci sayı: şutla biten</span>
+          <span class="mono" style="letter-spacing:.04em;">kutudaki ikinci sayı: şutla biten</span>
         </div>
       </div>
     </div>
@@ -310,7 +310,7 @@ const el = (tag, attrs={}, parent) => { const n=document.createElementNS(NS,tag)
     order.forEach(t=>{
       const px=x(AGG[t][key]); const r=(t==='FEN'||t==='SLA')?(small?9:11):(small?5:7);
       let y=cy, step=0;
-      for(;;){ const ok=placed.every(p=>Math.hypot(p.x-px,p.y-y)>=p.r+r+2); if(ok) break; step++; y = cy + (step%2?1:-1)*Math.ceil(step/2)*(small?5:7); }
+      for(;){ const ok=placed.every(p=>Math.hypot(p.x-px,p.y-y)>=p.r+r+2); if(ok) break; step++; y = cy + (step%2?1:-1)*Math.ceil(step/2)*(small?5:7); }
       placed.push({x:px,y,r,t});
       dots[t].setAttribute('cx',px); dots[t].setAttribute('cy',y);
     });
@@ -552,8 +552,8 @@ section.block{padding-block:clamp(44px,7vw,88px);border-bottom:1px solid var(--l
 .mp .db-x,.mp .db-g{position:absolute;top:3px;width:15px;height:15px;margin-left:-7.5px;border-radius:50%}
 .mp .db-x{border:2px solid var(--chalk);background:var(--night)}
 .mp .db-g{background:var(--chalk)}
-.mp .db-t{display:block;margin-top:4px;letter-spacing:.03em;text-transform:none}
-.mp .db-axis{display:flex;justify-content:space-between;margin-inline:7px;letter-spacing:0;text-transform:none}
+.mp .db-t{display:block;margin-top:4px;letter-spacing:.03em;}
+.mp .db-axis{display:flex;justify-content:space-between;margin-inline:7px;letter-spacing:0;}
 .mp /* corridors */
 .corr{display:grid;gap:14px}
 .mp .corr .row{display:grid;gap:6px}
@@ -580,13 +580,13 @@ section.block{padding-block:clamp(44px,7vw,88px);border-bottom:1px solid var(--l
   .mp .dot,.mp .stack div,.mp .mcard{transition:none}
 }
 
-.mp h2{font-weight:500;letter-spacing:-.005em;text-transform:none;line-height:1.02}
-.mp .versus{font-family:var(--display);text-transform:none;letter-spacing:-.01em;font-weight:500}
+.mp h2{font-weight:500;letter-spacing:-.005em;line-height:1.02}
+.mp .versus{font-family:var(--display);letter-spacing:-.01em;font-weight:500}
 .mp .versus .v{font-family:var(--ui)}
-.mp .score,.mp .score .t{font-family:var(--ui);text-transform:none}
+.mp .score,.mp .score .t{font-family:var(--ui);}
 .mp .score .g,.mp .count .n,.mp .ticker-item b,.mp .meta b{font-family:var(--mono);font-weight:500}
 .mp .lab{font-family:var(--mono);font-weight:500;font-size:14px}
-.mp .gap-row .who{font-family:var(--ui);font-weight:600;text-transform:none}
+.mp .gap-row .who{font-family:var(--ui);font-weight:600;}
 .mp .hero{border-bottom-width:4px}
 
 </style>
