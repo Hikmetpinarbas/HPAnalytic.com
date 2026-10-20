@@ -310,7 +310,7 @@ const el = (tag, attrs={}, parent) => { const n=document.createElementNS(NS,tag)
     order.forEach(t=>{
       const px=x(AGG[t][key]); const r=(t==='FEN'||t==='SLA')?(small?9:11):(small?5:7);
       let y=cy, step=0;
-      for(;){ const ok=placed.every(p=>Math.hypot(p.x-px,p.y-y)>=p.r+r+2); if(ok) break; step++; y = cy + (step%2?1:-1)*Math.ceil(step/2)*(small?5:7); }
+      for(;;){ const ok=placed.every(p=>Math.hypot(p.x-px,p.y-y)>=p.r+r+2); if(ok) break; step++; y = cy + (step%2?1:-1)*Math.ceil(step/2)*(small?5:7); }
       placed.push({x:px,y,r,t});
       dots[t].setAttribute('cx',px); dots[t].setAttribute('cy',y);
     });
