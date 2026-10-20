@@ -1,6 +1,6 @@
 ---
-// Typographic wordmark. The emblem/sigil is not approved yet (HUMAN_APPROVED=false),
-// so the mark is set in type only until a logo decision is made.
+// Brand lockup: HP monogram (Bodoni Moda ligature lit from the upper right,
+// approved by Hikmet Pınarbaş on 2026-10-20) + typographic wordmark.
 interface Props {
   class?: string;
   variant?: 'header' | 'footer' | 'default';
@@ -11,6 +11,7 @@ interface Props {
 const { class: className = '', variant = 'default', showSubtitle = true } = Astro.props as Props;
 ---
 <a href="/" class:list={['brand', 'hp-wordmark', className, `hp-wordmark--${variant}`]} aria-label="HPAnalytic ana sayfa" data-testid="brand-logo">
+  <img class="hp-wordmark__mark" src="/brand/hp-mark.svg" alt="" width="36" height="36" decoding="async" />
   <span class="hp-wordmark__name"><span class="hp-wordmark__hp">HP</span>Analytic</span>
   {showSubtitle && <span class="hp-wordmark__tag">Football Intelligence</span>}
 </a>

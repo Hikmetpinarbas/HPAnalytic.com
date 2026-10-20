@@ -2,6 +2,7 @@
 // Each entry is a hand-built, source-checked page under /mac/.
 export const MATCH_PREVIEWS = [
   {
+    status: 'published',
     slug: 'fenerbahce-slavia-prag-2026-10-20',
     href: '/mac/fenerbahce-slavia-prag-2026-10-20',
     kind: 'MAÇ ÖNÜ',
@@ -21,6 +22,7 @@ export const MATCH_PREVIEWS = [
     evidence: 'SportsBase olay ve takım verisi · 2 maç / takım',
   },
   {
+    status: 'published',
     slug: 'lille-galatasaray-2026-10-21',
     href: '/mac/lille-galatasaray-2026-10-21',
     kind: 'MAÇ ÖNÜ',
@@ -42,8 +44,11 @@ export const MATCH_PREVIEWS = [
 ];
 
 // The match page to feature at build time: the next kickoff still ahead, otherwise the most recent one.
+// Only editorially approved pages are advertised anywhere on the site.
+export const PUBLIC_MATCH_PREVIEWS = MATCH_PREVIEWS.filter((m) => m.status === 'published');
+
 export function featuredMatch(now = Date.now()) {
-  const ahead = MATCH_PREVIEWS.filter((m) => Date.parse(m.kickoff) > now).sort((a, b) => Date.parse(a.kickoff) - Date.parse(b.kickoff));
+  const ahead = PUBLIC_MATCH_PREVIEWS.filter((m) => Date.parse(m.kickoff) > now).sort((a, b) => Date.parse(a.kickoff) - Date.parse(b.kickoff));
   if (ahead.length) return ahead[0];
-  return [...MATCH_PREVIEWS].sort((a, b) => Date.parse(b.kickoff) - Date.parse(a.kickoff))[0];
+  return [...PUBLIC_MATCH_PREVIEWS].sort((a, b) => Date.parse(b.kickoff) - Date.parse(a.kickoff))[0];
 }

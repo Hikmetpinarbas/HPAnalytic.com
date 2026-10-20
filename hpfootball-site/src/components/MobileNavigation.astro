@@ -21,7 +21,7 @@ const { navigation = [] } = Astro.props as Props;
   import { nextMobileMenuState } from '../lib/mobile-nav-state.mjs';
 
   const roots = document.querySelectorAll('[data-mobile-nav]');
-  const desktop = window.matchMedia('(min-width: 961px)');
+  const desktop = window.matchMedia('(min-width: 901px)');
 
   for (const root of roots) {
     const trigger = root.querySelector('.mobile-nav-trigger');

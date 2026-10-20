@@ -43,11 +43,20 @@ test('match pages never use CSS case transforms (Turkish dotted İ)', () => {
   for (const m of MATCH_PREVIEWS) assert.doesNotMatch(read(`src/pages/mac/${m.slug}.astro`), /text-transform\s*:/, m.slug);
 });
 
-test('wordmark is typographic until a logo is approved, shared by header and footer', () => {
+test('only published match previews are advertised', () => {
+  const src = read('src/data/match-previews.mjs');
+  assert.match(src, /PUBLIC_MATCH_PREVIEWS = MATCH_PREVIEWS\.filter\(\(m\) => m\.status === 'published'\)/);
+  for (const m of MATCH_PREVIEWS) assert.ok(['published', 'draft'].includes(m.status), m.slug);
+  assert.match(read('src/pages/analysis.astro'), /PUBLIC_MATCH_PREVIEWS/);
+});
+
+test('approved HP monogram + wordmark, shared by header and footer', () => {
   const logo = read('src/components/Logo.astro');
   assert.match(logo, /data-testid="brand-logo"/);
   assert.match(logo, /hp-wordmark__name/);
-  assert.doesNotMatch(logo, /<svg/);
+  assert.match(logo, /src="\/brand\/hp-mark\.svg" alt=""/);
+  assert.match(read('public/brand/hp-mark.svg'), /^<svg xmlns="http:\/\/www\.w3\.org\/2000\/svg"/);
+  assert.match(read('public/favicon.svg'), /^<svg xmlns="http:\/\/www\.w3\.org\/2000\/svg"/);
   assert.match(read('src/components/EditorialHeader.astro'), /<Logo /);
   assert.match(read('src/layouts/BaseLayout.astro'), /<Logo variant="footer" \/>/);
 });

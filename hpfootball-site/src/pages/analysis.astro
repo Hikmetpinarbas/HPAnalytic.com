@@ -4,7 +4,7 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import {getCollection} from 'astro:content';
 import {isPublicEditorialItem} from '../lib/site-editorial-status.mjs';
 import {editorialSeries,displaySeries,seriesDescription} from '../lib/editorial-series.mjs';
-import { MATCH_PREVIEWS } from '../data/match-previews.mjs';
+import { PUBLIC_MATCH_PREVIEWS as MATCH_PREVIEWS } from '../data/match-previews.mjs';
 export const prerender = true;
 const items=(await getCollection('articles')).filter(x=>isPublic(x)&&isPublicEditorialItem(x.data)&&x.data.section==='analysis').sort((a,b)=>+b.data.date-+a.data.date);
 const grouped=editorialSeries.map(series=>({...series,items:items.filter(item=>item.data.series===series.key)})).filter(group=>group.items.length>0);
