@@ -7,7 +7,7 @@ category: "Zihinsel Direnç & Taktik Görüş"
 tags: ["İkinci Kaleci", "Zihinsel Direnç", "Görünmez Liderlik", "Görüş Konisi", "Taktik Radar"]
 summary: "90 dakika boyunca kenarda eldivenleriyle ısınan ama sahaya giremeyeceğini bilen bir profesyonelin mental anatomisi. Kulübeden sahaya açılan geniş taktik görüş konisi ve görünmez liderlik."
 visualAtlas: "/assets/visuals/hpa_second_goalkeeper_radar_atlas.svg"
-draft: false
+draft: true
 
 description: "90 dakika boyunca kenarda eldivenleriyle ısınan ama sahaya giremeyeceğini bilen bir profesyonelin mental anatomisi. Kulübeden sahaya açılan geniş taktik görüş konisi ve görünmez liderlik."
 claimCeiling: "İddia birincil spatiotemporal gözlem verisinin bittiği sınırda durur."
