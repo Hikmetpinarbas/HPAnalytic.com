@@ -4,12 +4,12 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
 import { isPublicEditorialItem } from '../lib/site-editorial-status.mjs';
 import { SECTION_LABELS } from '../lib/site-surfaces.mjs';
-import { MATCH_PREVIEWS } from '../data/match-previews.mjs';
+import { featuredMatch } from '../data/match-previews.mjs';
 export const prerender = true;
 
 const monographs = (await getCollection('monographs', isPublic)).sort((a, b) => +b.data.date - +a.data.date);
 const articles = (await getCollection('articles', isPublic)).filter((entry) => isPublicEditorialItem(entry.data)).sort((a, b) => +b.data.date - +a.data.date);
-const match = MATCH_PREVIEWS[0];
+const match = featuredMatch();
 const dateTr = (d: Date) => d.toLocaleDateString('tr-TR', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' });
 const steps = [
   { key: 'yapi', label: 'Yapı', text: 'Önce oyunun iskeleti: alan, zaman, rol ve rakip. Skor bu yapının en son katmanıdır.' },
@@ -46,7 +46,7 @@ const steps = [
       <p class="kicker">{match.kind} · {match.competition}</p>
       <h2 id="feature-title"><span>{match.home}</span><span style="color:var(--ink-2)">– {match.away}</span></h2>
       <p class="lead">{match.description}</p>
-      <div class="feature-band__meta"><span>20 Ekim · <b>19.45</b> TSİ</span><span>Chobani Stadyumu</span><span>{match.evidence}</span></div>
+      <div class="feature-band__meta"><span>{new Date(match.kickoff).toLocaleString("tr-TR",{day:"numeric",month:"long",hour:"2-digit",minute:"2-digit",timeZone:"Europe/Istanbul"})} TSİ</span><span>{match.evidence}</span></div>
       <div class="button-row"><a class="button button-primary" href={match.href}>Dosyayı aç <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M2 8h11M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a></div>
     </div>
     <div class="feature-panel reveal" aria-label="Dosyadan üç sayı">

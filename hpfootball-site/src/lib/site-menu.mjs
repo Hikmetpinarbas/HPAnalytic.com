@@ -1,7 +1,7 @@
 // Single source for header, mega-menu and mobile menu.
-import { MATCH_PREVIEWS } from '../data/match-previews.mjs';
+import { featuredMatch } from '../data/match-previews.mjs';
 
-const latestMatch = MATCH_PREVIEWS[0];
+const latestMatch = featuredMatch();
 
 export const SITE_MENU = [
   {

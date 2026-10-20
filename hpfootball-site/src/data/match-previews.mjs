@@ -20,4 +20,30 @@ export const MATCH_PREVIEWS = [
     ],
     evidence: 'SportsBase olay ve takım verisi · 2 maç / takım',
   },
+  {
+    slug: 'lille-galatasaray-2026-10-21',
+    href: '/mac/lille-galatasaray-2026-10-21',
+    kind: 'MAÇ ÖNÜ',
+    competition: 'UEFA Şampiyonlar Ligi · Lig aşaması 3. hafta',
+    date: '2026-10-21',
+    kickoff: '2026-10-21T19:45:00+03:00',
+    home: 'Lille',
+    away: 'Galatasaray',
+    club: 'galatasaray',
+    title: "Lille – Galatasaray: Lille'in oyun kurulumunu yüksekte boğmak",
+    description: "Turnuvanın en az şut atan iki takımı karşı karşıya. Lille topu kendi yarısında Avrupa'da en çok kaybeden ikinci takım; Galatasaray'ın kapısı yüksek baskıda.",
+    stats: [
+      { value: '12 · 10', label: 'İki maçta atılan şut', note: 'turnuvanın en düşük iki değeri' },
+      { value: '41', label: "Lille'in kendi yarısında top kaybı", note: '36 takımda 2.' },
+      { value: '−2,81', label: "Lille'in Ligue 1 xG farkı", note: 'son 6 maç' },
+    ],
+    evidence: 'SportsBase turnuva ve kulüp verisi · 2 maç / takım',
+  },
 ];
+
+// The match page to feature at build time: the next kickoff still ahead, otherwise the most recent one.
+export function featuredMatch(now = Date.now()) {
+  const ahead = MATCH_PREVIEWS.filter((m) => Date.parse(m.kickoff) > now).sort((a, b) => Date.parse(a.kickoff) - Date.parse(b.kickoff));
+  if (ahead.length) return ahead[0];
+  return [...MATCH_PREVIEWS].sort((a, b) => Date.parse(b.kickoff) - Date.parse(a.kickoff))[0];
+}

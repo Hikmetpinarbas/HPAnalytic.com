@@ -1,14 +1,14 @@
 ---
 import Logo from './Logo.astro';
 import { SITE_MENU } from '../lib/site-menu.mjs';
-import { MATCH_PREVIEWS } from '../data/match-previews.mjs';
+import { featuredMatch } from '../data/match-previews.mjs';
 interface Props { navigation?: {label:string;href:string;current?:string}[] }
 const path = Astro.url.pathname.replace(/\/+$/, '') || '/';
 const isCurrent = (href: string) => {
   const target = href.replace(/\/+$/, '') || '/';
   return path === target || (target !== '/' && path.startsWith(target + '/'));
 };
-const latest = MATCH_PREVIEWS[0];
+const latest = featuredMatch();
 ---
 <header class="site-header editorial-header">
   <div class="site-header__inner header-container">

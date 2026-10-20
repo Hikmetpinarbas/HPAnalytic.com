@@ -1,0 +1,465 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+export const prerender = true;
+---
+<BaseLayout title="Lille – Galatasaray maç önü — HPAnalytic" description="Turnuvanın en az şut atan iki takımı karşı karşıya. 36 takımlık dağılım, Lille'in lig ve Avrupa xG farkı, pres eşleşmesi ve izlenecek beş soru." ogType="article" publishedTime={new Date('2026-10-20T00:00:00Z')} club="galatasaray">
+<div class="mp">
+<section class="hero">
+  <div class="wrap">
+    <p class="eyebrow">UEFA Şampiyonlar Ligi · Lig aşaması 3. hafta · Stade Pierre-Mauroy, Lille</p>
+    <h1 class="versus" aria-label="Galatasaray ile Lille">
+      <span class="fen">Galatasaray</span>
+      <span class="v">deplasmanda</span>
+      <span class="sla" lang="fr">LOSC Lille</span>
+    </h1>
+    <p class="mono" style="color:var(--chalk-2)">Hikmet Pınarbaş · 20 Ekim 2026</p>
+    <p class="thesis">Turnuvanın en az şut atan iki takımı karşı karşıya. Lille, Avrupa'da topu kendi yarısında en çok kaybeden ikinci takım. <em>Galatasaray'ın kapısı, Lille'in oyun kurulumunu yüksekte boğmakta.</em></p>
+    <div class="meta">
+      <div><span class="mono">Puan</span><b class="num"><span class="fen">0</span> · <span class="sla">0</span></b></div>
+      <div><span class="mono">Atılan şut (2 maç)</span><b class="num"><span class="fen">12</span> · <span class="sla">10</span></b></div>
+      <div><span class="mono">Hakem</span><b>Rade Obrenovic</b></div>
+      <div><span class="mono">Yayın</span><b>TRT 1 (bekleniyor)</b></div>
+    </div>
+    <div class="count" id="count" aria-live="polite">
+      <span class="mono" style="width:100%">Başlama vuruşuna</span>
+      <span class="n num" id="cd-h">--</span><span class="u">saat</span>
+      <span class="n num" id="cd-m">--</span><span class="u">dakika</span>
+    </div>
+  </div>
+</section>
+
+<div class="ticker" aria-label="Öne çıkan sayılar"><div class="ticker-track" id="ticker"></div></div>
+
+<section class="block">
+  <div class="wrap">
+    <div class="head col">
+      <p class="eyebrow">Avrupa karnesi · 2 maç / takım</p>
+      <h2>İki takım, dört yenilgi</h2>
+      <p class="lede">İkisi de puansız. Galatasaray iki maçta 7 gol yedi; Lille Arsenal deplasmanında 90 dakikada yalnız 4 şut atabildi ve 0,22 xG üretti. Bu maç, iki takımın da "Avrupa'da tutunabilir miyiz" sorusuna verdiği ilk ciddi cevap olacak.</p>
+    </div>
+    <div class="rail" id="rail" tabindex="0" aria-label="Takımların Şampiyonlar Ligi maçları, yatay kaydırılabilir"></div>
+    <div class="claim"><span class="ev mod">MODEL</span><span>xG ve PPDA SportsBase model çıktısıdır. Galatasaray'ın maç bazlı satırları bu sürümde yok; Galatasaray kartlarında yalnız skor var. Lille'in maç satırları kulübün SportsBase dosyasından.</span></div>
+  </div>
+</section>
+
+<section class="block band">
+  <div class="wrap">
+    <div class="head col">
+      <p class="eyebrow">36 takımlık lig aşaması · iki maç toplamı</p>
+      <h2>Herkesin arasında nerede duruyorlar?</h2>
+      <p class="lede">Her nokta bir takım. Sarı Galatasaray, beyaz Lille; çizgi 36 takımın medyanı. "Atılan şut"ta iki nokta grafiğin en ucunda yan yana duruyor: turnuvada bundan az şut atan takım yok.</p>
+    </div>
+    <div class="tabs" id="tabs" role="group" aria-label="Metrik seç"></div>
+    <div class="figure"><svg id="swarm" viewBox="0 0 960 300" role="img" aria-labelledby="swarm-t"><title id="swarm-t">36 takımın seçili metrikteki dağılımı</title></svg></div>
+    <p class="readout" id="readout"></p>
+    <div class="claim"><span class="ev obs">KAYNAK</span><span>Takım başına iki maç var ve rakipler çok farklı: Galatasaray Sporting ve Barcelona ile, Lille Betis ve Arsenal ile oynadı. Sıralama rakip gücüne göre düzeltilmedi.</span></div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <div class="duo">
+      <div>
+        <div class="head">
+          <p class="eyebrow">Lille'in iki yüzü · gol ve xG</p>
+          <h2>Ligde sonuç var, altyapı zayıf</h2>
+          <p class="lede">Lille, Ligue 1'de son altı maçta 4 galibiyet, 1 beraberlik, 1 yenilgi aldı ve 9–4'lük gol farkı yakaladı. Ama aynı maçlarda rakiplerine kendi ürettiğinden fazla xG verdi. Avrupa'da bu fark artık skora da yansıyor.</p>
+        </div>
+        <div class="gap-grid" id="gaps"></div>
+        <div class="legend">
+          <span><svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><circle cx="7" cy="7" r="5" fill="none" stroke="var(--chalk)" stroke-width="2"/></svg> xG (beklenen)</span>
+          <span><svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><circle cx="7" cy="7" r="5.5" fill="var(--chalk)"/></svg> Gerçek gol</span>
+        </div>
+      </div>
+      <div>
+        <div class="head">
+          <p class="eyebrow">Ligue 1 · son 6 maç · xG farkı</p>
+          <h2>Kazandığı maçlarda bile geride</h2>
+          <p class="lede">Her çubuk bir maç: üretilen ile verilen xG arasındaki fark. Yukarı Lille lehine, aşağı rakip lehine. Altı maçın yalnız ikisinde Lille rakibinden fazla xG üretti.</p>
+        </div>
+        <div class="figure"><svg id="form" viewBox="0 0 420 240" role="img" aria-labelledby="form-t"><title id="form-t">Lille'in son altı Ligue 1 maçında xG farkı</title></svg></div>
+      </div>
+    </div>
+    <div class="claim"><span class="ev hyp">HİPOTEZ</span><span>Ligde xG'nin üzerinde sonuç almak kalıcı bir yetenek de olabilir, şans da. Altı maç bunu ayırmaya yetmez. Bu yüzden yalnız şunu söylüyoruz: Lille'in skor tablosu, oyununun ürettiğinden daha iyimser görünüyor.</span></div>
+  </div>
+</section>
+
+<section class="block band">
+  <div class="wrap">
+    <div class="head col">
+      <p class="eyebrow">Eşleşmenin kilidi</p>
+      <h2>Pres mi, sabır mı?</h2>
+      <p class="lede">Lille Avrupa'da topu kendi yarısında iki maçta 41 kez kaybetti; Arsenal maçında tek başına 27 kez. Aynı maçta PPDA'sı 17,84 idi, yani neredeyse hiç baskı yapmadı. Galatasaray'ın rakip yarıda top kazanımı (21) turnuva medyanında. Bu maçı belirleyecek soru, Galatasaray'ın baskıyı yükseltip bu kayıpları gerçek fırsata çevirip çeviremeyeceği.</p>
+    </div>
+    <div class="corr" id="press"></div>
+    <div class="claim"><span class="ev der">TÜRETİLMİŞ</span><span>Kayıp ve kazanım sayıları iki ayrı rakibe karşı oluştu. Lille'in kayıp sayısının bir kısmı Arsenal'in pres gücünden gelebilir; Galatasaray aynı baskıyı kuramazsa bu sayı düşer.</span></div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <div class="head col">
+      <p class="eyebrow">Maç içinde izlenecekler</p>
+      <h2>Beş soru, beş gösterge</h2>
+      <p class="lede">Bu analiz bir tahmin değil. Maç başladığında hangi sorunun cevabının değiştiğine bakacağız.</p>
+    </div>
+    <ul class="qs">
+      <li><span class="tag">Yüksek baskı</span><p>Galatasaray, Lille'in kaleciden başlayan oyun kurulumunda ilk pası zorlayabiliyor mu?</p><small>Gösterge: Lille'in kendi yarısında top kaybı</small></li>
+      <li><span class="tag">Kayıptan şuta</span><p>Rakip yarıda kazanılan toplar on saniye içinde şuta dönüşüyor mu?</p><small>Gösterge: rakip yarıda kazanım ve ardından şut</small></li>
+      <li><span class="tag">Şut hacmi</span><p>İki maçta 12 şut atan Galatasaray, deplasmanda şut sayısını artırabiliyor mu?</p><small>Gösterge: şut ve ceza sahası girişi</small></li>
+      <li><span class="tag">Savunma arkası</span><p>İki maçta 7 gol yiyen savunma, Lille'in seyrek ama ani ataklarına karşı dengede mi?</p><small>Gösterge: Lille kontratak sayısı ve şutu</small></li>
+      <li><span class="tag">Sabır</span><p>Lille derin bloğa çekilirse Galatasaray topu sabırla dolaştırıp boşluk bulabiliyor mu?</p><small>Gösterge: topa sahip olma ve son bölge girişleri</small></li>
+    </ul>
+    <div class="claim" style="margin-top:28px"><span class="ev obs">KADRO</span><span>Bu sürümde iki takımın sakat ve cezalı listesi doğrulanmadı. Güncel kadro maç günü resmi listeden kesinleştirilmeli.</span></div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap src">
+    <div>
+      <h3>Kaynaklar</h3>
+      <ul>
+        <li>SportsBase · UEFA Şampiyonlar Ligi takım maç istatistikleri, 19.10.2026 dışa aktarımı (36 takım)</li>
+        <li>SportsBase · LOSC Lille kulüp maç istatistikleri, 20.10.2026 dışa aktarımı (Ligue 1 ve Avrupa kırılımı)</li>
+        <li><a href="https://www.sokgazetesi.com.tr/lille-galatasaray-macinin-hakemi-kim-mac-ne-zaman-saat-kacta-uefa-acikladi" target="_blank" rel="noopener">Şok Gazetesi · hakem ve maç saati</a></li>
+        <li><a href="https://www.internethaber.com/barcelona-yenilgisinin-ardindan-gozler-lille-macinda-lille-galatasaray-maci-ne-zaman-saat-kacta-hangi-kanalda-2463949h.htm" target="_blank" rel="noopener">İnternet Haber · sonuçlar, stadyum, yayın</a></li>
+      </ul>
+    </div>
+    <div>
+      <h3>Kaynak sınırı ve red-team</h3>
+      <ul>
+        <li>Olay düzeyindeki haritalar (Arsenal–Lille ve Galatasaray–Barcelona olay paketleri) bu sürüme eklenmedi; telefon erişimi açılınca eklenecek.</li>
+        <li>Takım başına iki Avrupa maçı var; rakip gücü ve skor durumu düzeltilmedi.</li>
+        <li>Lille'in lig sayıları farklı bir lig evreninden; Avrupa sayılarıyla doğrudan sıralanmadı.</li>
+      </ul>
+    </div>
+    <div>
+      <h3>Belge künyesi</h3>
+      <table class="meta-table">
+        <tr><td>Sürüm</td><td>v0.1 · 20.10.2026 · taslak</td></tr>
+        <tr><td>Yöntem</td><td>Turnuva takım tablosundan iki maç toplamı ve 36 takım sıralaması; kulüp dosyasından maç satırları</td></tr>
+        <tr><td>Kanıt sınıfları</td><td>GÖZLENEN · MODEL · TÜRETİLMİŞ · HİPOTEZ</td></tr>
+        <tr><td>Yayın durumu</td><td>Editoryal onay bekliyor</td></tr>
+      </table>
+    </div>
+  </div>
+</section>
+</div>
+<script is:inline>
+
+const AGG = {"AEK":{"xg":3.13,"oxg":2.74,"goals":2,"ga":3,"shots":25,"poss":0.46,"ppda":6.46,"counter":28,"reco":23,"lost_own":29,"xpts":2.7},"ARS":{"xg":5.43,"oxg":0.44,"goals":4,"ga":0,"shots":44,"poss":0.57,"ppda":6.94,"counter":29,"reco":29,"lost_own":5,"xpts":5.4},"ATM":{"xg":1.57,"oxg":2.57,"goals":3,"ga":2,"shots":18,"poss":0.55,"ppda":7.4,"counter":24,"reco":14,"lost_own":43,"xpts":1.8},"AVL":{"xg":5.88,"oxg":3.08,"goals":9,"ga":2,"shots":39,"poss":0.45,"ppda":9.88,"counter":32,"reco":16,"lost_own":24,"xpts":5.0},"BAR":{"xg":4.65,"oxg":1.07,"goals":9,"ga":2,"shots":43,"poss":0.68,"ppda":5.42,"counter":20,"reco":24,"lost_own":19,"xpts":5.0},"BAY":{"xg":7.4,"oxg":0.77,"goals":8,"ga":3,"shots":51,"poss":0.62,"ppda":4.9,"counter":18,"reco":25,"lost_own":17,"xpts":5.4},"BOD":{"xg":1.25,"oxg":3.65,"goals":1,"ga":5,"shots":12,"poss":0.44,"ppda":13.04,"counter":21,"reco":7,"lost_own":36,"xpts":1.6},"BRU":{"xg":4.99,"oxg":8.01,"goals":6,"ga":6,"shots":29,"poss":0.5,"ppda":6.08,"counter":20,"reco":23,"lost_own":23,"xpts":0.6},"BVB":{"xg":4.44,"oxg":3.21,"goals":3,"ga":3,"shots":24,"poss":0.53,"ppda":7.7,"counter":12,"reco":25,"lost_own":18,"xpts":3.0},"COM":{"xg":2.81,"oxg":1.88,"goals":6,"ga":4,"shots":22,"poss":0.5,"ppda":8.79,"counter":17,"reco":17,"lost_own":28,"xpts":3.5},"FEN":{"xg":2.73,"oxg":3.86,"goals":1,"ga":7,"shots":26,"poss":0.47,"ppda":11.73,"counter":20,"reco":13,"lost_own":31,"xpts":2.1},"FEY":{"xg":1.35,"oxg":3.04,"goals":4,"ga":7,"shots":16,"poss":0.42,"ppda":13.99,"counter":30,"reco":15,"lost_own":27,"xpts":1.0},"GAL":{"xg":1.87,"oxg":3.88,"goals":2,"ga":7,"shots":12,"poss":0.46,"ppda":8.09,"counter":23,"reco":21,"lost_own":22,"xpts":1.6},"IM":{"xg":8.17,"oxg":6.7,"goals":4,"ga":6,"shots":47,"poss":0.6,"ppda":7.9,"counter":24,"reco":18,"lost_own":27,"xpts":3.2},"LAS":{"xg":3.07,"oxg":5.54,"goals":3,"ga":7,"shots":21,"poss":0.42,"ppda":8.44,"counter":24,"reco":20,"lost_own":30,"xpts":0.6},"LEN":{"xg":3.25,"oxg":2.93,"goals":3,"ga":4,"shots":41,"poss":0.6,"ppda":5.21,"counter":19,"reco":25,"lost_own":32,"xpts":2.7},"LIL":{"xg":1.28,"oxg":3.57,"goals":2,"ga":6,"shots":10,"poss":0.44,"ppda":14.73,"counter":14,"reco":13,"lost_own":41,"xpts":0.8},"LIV":{"xg":5.63,"oxg":2.25,"goals":8,"ga":4,"shots":37,"poss":0.56,"ppda":5.88,"counter":30,"reco":32,"lost_own":16,"xpts":5.0},"MCI":{"xg":6.01,"oxg":2.11,"goals":4,"ga":4,"shots":46,"poss":0.58,"ppda":6.26,"counter":25,"reco":43,"lost_own":31,"xpts":5.0},"MUN":{"xg":4.14,"oxg":1.89,"goals":4,"ga":2,"shots":28,"poss":0.48,"ppda":8.99,"counter":20,"reco":21,"lost_own":22,"xpts":3.4},"NAP":{"xg":2.25,"oxg":4.45,"goals":1,"ga":4,"shots":16,"poss":0.45,"ppda":15.91,"counter":20,"reco":15,"lost_own":24,"xpts":2.4},"POR":{"xg":1.85,"oxg":4.73,"goals":2,"ga":5,"shots":16,"poss":0.42,"ppda":7.78,"counter":21,"reco":20,"lost_own":31,"xpts":0.8},"PSG":{"xg":6.71,"oxg":4.24,"goals":10,"ga":3,"shots":47,"poss":0.56,"ppda":5.78,"counter":24,"reco":31,"lost_own":37,"xpts":3.0},"PSV":{"xg":1.66,"oxg":3.35,"goals":1,"ga":2,"shots":17,"poss":0.52,"ppda":5.56,"counter":18,"reco":24,"lost_own":33,"xpts":1.0},"RB":{"xg":3.62,"oxg":2.71,"goals":6,"ga":4,"shots":36,"poss":0.55,"ppda":8.96,"counter":34,"reco":21,"lost_own":29,"xpts":3.5},"RBL":{"xg":3.73,"oxg":3.02,"goals":2,"ga":4,"shots":33,"poss":0.48,"ppda":6.98,"counter":15,"reco":28,"lost_own":19,"xpts":2.8},"RMA":{"xg":5.66,"oxg":4.13,"goals":6,"ga":4,"shots":29,"poss":0.44,"ppda":7.92,"counter":23,"reco":21,"lost_own":19,"xpts":4.0},"ROM":{"xg":1.95,"oxg":3.6,"goals":4,"ga":5,"shots":22,"poss":0.54,"ppda":6.68,"counter":15,"reco":25,"lost_own":19,"xpts":1.0},"SAB":{"xg":1.95,"oxg":7.02,"goals":2,"ga":4,"shots":23,"poss":0.46,"ppda":11.31,"counter":33,"reco":17,"lost_own":34,"xpts":0.2},"SHK":{"xg":2.31,"oxg":1.74,"goals":4,"ga":2,"shots":19,"poss":0.54,"ppda":7.04,"counter":13,"reco":21,"lost_own":31,"xpts":3.0},"SLA":{"xg":5.06,"oxg":3.23,"goals":2,"ga":5,"shots":31,"poss":0.44,"ppda":4.76,"counter":31,"reco":24,"lost_own":20,"xpts":3.2},"SLO":{"xg":1.95,"oxg":7.57,"goals":1,"ga":9,"shots":23,"poss":0.36,"ppda":12.98,"counter":28,"reco":17,"lost_own":31,"xpts":0.2},"SPO":{"xg":2.66,"oxg":2.69,"goals":5,"ga":1,"shots":18,"poss":0.42,"ppda":10.57,"counter":26,"reco":15,"lost_own":37,"xpts":2.2},"VFB":{"xg":5.12,"oxg":2.06,"goals":6,"ga":1,"shots":30,"poss":0.62,"ppda":4.4,"counter":24,"reco":23,"lost_own":21,"xpts":5.0},"VIK":{"xg":1.77,"oxg":7.16,"goals":4,"ga":6,"shots":16,"poss":0.38,"ppda":10.34,"counter":24,"reco":17,"lost_own":31,"xpts":0.4},"VIL":{"xg":3.0,"oxg":5.41,"goals":5,"ga":4,"shots":29,"poss":0.5,"ppda":9.54,"counter":20,"reco":17,"lost_own":27,"xpts":0.8}};
+const HOME='GAL', AWAY='LIL';
+const fmt = (v,d=2)=>Number(v).toLocaleString('tr-TR',{minimumFractionDigits:d,maximumFractionDigits:d});
+const NS = "http://www.w3.org/2000/svg";
+const el = (tag, attrs={}, parent) => { const n=document.createElementNS(NS,tag); for (const k in attrs) n.setAttribute(k, attrs[k]); if(parent) parent.appendChild(n); return n; };
+
+/* countdown */
+(function(){
+  const ko = new Date("2026-10-21T19:45:00+03:00").getTime();
+  const box = document.getElementById('count');
+  function tick(){
+    const ms = ko - Date.now();
+    if (ms <= 0) { box.innerHTML = ms > -2*3600e3 ? '<span class="n">Maç oynanıyor</span>' : '<span class="n">Maç tamamlandı</span><span class="mono" style="width:100%">Bu sayfa maç öncesi analizdir</span>'; return; }
+    document.getElementById('cd-h').textContent = Math.floor(ms/3600e3);
+    document.getElementById('cd-m').textContent = String(Math.floor(ms%3600e3/60e3)).padStart(2,'0');
+  }
+  tick(); setInterval(tick, 30e3);
+})();
+
+/* ticker */
+(function(){
+  const items = [
+    ["12 · 10","İki maçta atılan şut · turnuvanın en düşük iki değeri"],
+    ["41","Lille'in kendi yarısında top kaybı · 36 takımda 2."],
+    ["14,73","Lille PPDA · en az baskı yapan 2. takım"],
+    ["0,22","Lille'in Arsenal deplasmanındaki xG'si"],
+    ["7","Galatasaray'ın iki maçta yediği gol"],
+    ["−2,81","Lille'in Ligue 1'de son 6 maçta xG farkı"]
+  ];
+  const t = document.getElementById('ticker');
+  const html = items.map(([b,s],i)=>`<div class="ticker-item"><b class="${i%2?'sla':'fen'} num">${b}</b><span>${s}</span></div>`).join('');
+  t.innerHTML = html + html.replace(/class="ticker-item"/g,'class="ticker-item" aria-hidden="true"');
+})();
+
+/* match rail */
+(function(){
+  const M = [
+    {date:"10.09", comp:"1. hafta", home:"Sporting", away:"Galatasaray", hg:3, ag:1, us:"away", team:"fen"},
+    {date:"13.10", comp:"2. hafta", home:"Galatasaray", away:"Barcelona", hg:1, ag:4, us:"home", team:"fen"},
+    {date:"08.09", comp:"1. hafta", home:"Lille", away:"Real Betis", hg:2, ag:3, hx:1.06, ax:1.56, us:"home", team:"sla", ppda:11.62, tac:"4-3-3", poss:46},
+    {date:"13.10", comp:"2. hafta", home:"Arsenal", away:"Lille", hg:3, ag:0, hx:2.01, ax:0.22, us:"away", team:"sla", ppda:17.84, tac:"4-3-3", poss:42}
+  ];
+  const r = document.getElementById('rail');
+  r.innerHTML = M.map(m=>{
+    const cH = (m.us==='home') ? `var(--${m.team})` : 'var(--grey)';
+    const cA = (m.us==='away') ? `var(--${m.team})` : 'var(--grey)';
+    const hasX = m.hx!=null;
+    const xg = hasX ? (()=>{const tot=m.hx+m.ax; return `<div class="xgbar"><span class="mono">xG payı</span><div class="row"><span class="num">${fmt(m.hx)}</span><div class="track" aria-hidden="true"><i style="width:${(m.hx/tot*100).toFixed(1)}%;background:${cH}"></i><i style="width:${(m.ax/tot*100).toFixed(1)}%;background:${cA};opacity:.75"></i></div><span class="num">${fmt(m.ax)}</span></div></div>`;})() : `<div class="xgbar"><span class="mono">xG payı</span><span class="mono" style="letter-spacing:.02em">Maç satırı bu sürümde yok</span></div>`;
+    const stats = hasX ? `<div class="mstats"><span>Diziliş<b>${m.tac}</b></span><span>Topa sahip<b class="num">%${m.poss}</b></span><span>PPDA<b class="num">${fmt(m.ppda)}</b></span></div>` : `<div class="mstats"><span>Sonuç<b>Yenilgi</b></span><span>Puan<b class="num">0</b></span></div>`;
+    return `<article class="mcard"><div class="top"><span class="mono">${m.date} · ${m.comp}</span><span class="mono ${m.team}">${m.team==='fen'?'GALATASARAY':'LILLE'}</span></div>
+      <div class="score"><span class="t" style="color:${cH}">${m.home}</span><span class="g">${m.hg}–${m.ag}</span><span class="t" style="color:${cA}">${m.away}</span></div>${xg}${stats}</article>`;
+  }).join('');
+})();
+
+/* swarm */
+(function(){
+  const M = {
+    shots:{t:"Atılan şut",d:0,note:"İki maçta toplam şut."},
+    xg:{t:"Üretilen xG",d:2,note:"İki maç toplam beklenen gol."},
+    lost_own:{t:"Kendi yarıda top kaybı",d:0,note:"Yüksek değer, oyun kurulumunda risk demek."},
+    ppda:{t:"Pres yoğunluğu (PPDA)",d:2,rev:true,note:"Düşük PPDA daha yoğun pres demek; eksen ters, sağ taraf daha agresif."},
+    reco:{t:"Rakip yarıda top kazanımı",d:0,note:"İki maçta rakip yarıda kazanılan top."},
+    oxg:{t:"Verilen xG",d:2,note:"Rakibe izin verilen beklenen gol."}
+  };
+  const teams = Object.keys(AGG); const svg = document.getElementById('swarm');
+  let W=960,H=300,L=40,R=40,cy=150,small=false,cur='shots';
+  function size(){ W=Math.max(300,Math.round(svg.parentNode.clientWidth-28)); small=W<600; H=small?260:300; cy=small?128:150; L=small?14:40; R=L; svg.setAttribute('viewBox',`0 0 ${W} ${H}`); }
+  size();
+  const axis=el('g',{},svg), medG=el('g',{},svg); const dots={}, labs={};
+  const big=t=>t===HOME||t===AWAY; const rad=t=>big(t)?(small?9:11):(small?5:7);
+  teams.forEach(k=>{ dots[k]=el('circle',{class:'dot',r:rad(k),cx:W/2,cy,fill:k===HOME?'var(--fen)':k===AWAY?'var(--sla)':'var(--grey)',stroke:'var(--night)','stroke-width':2},svg); el('title',{},dots[k]).textContent=k; });
+  [HOME,AWAY].forEach(k=>{ svg.appendChild(dots[k]); labs[k]=el('text',{class:'lab','text-anchor':'middle',fill:k===HOME?'var(--fen)':'var(--sla)'},svg); });
+  const tabs=document.getElementById('tabs');
+  Object.entries(M).forEach(([k,m],i)=>{ const b=document.createElement('button'); b.type='button'; b.textContent=m.t; b.dataset.m=k; b.setAttribute('aria-pressed',i===0?'true':'false'); tabs.appendChild(b); });
+  tabs.addEventListener('click',e=>{ const b=e.target.closest('button'); if(!b) return; tabs.querySelectorAll('button').forEach(x=>x.setAttribute('aria-pressed',x===b?'true':'false')); draw(b.dataset.m); });
+  function draw(key){
+    cur=key; const m=M[key]; const vals=teams.map(t=>AGG[t][key]);
+    let lo=Math.min(...vals), hi=Math.max(...vals); const pad=(hi-lo)*.06; lo-=pad; hi+=pad;
+    const x=v=> m.rev ? L+(hi-v)/(hi-lo)*(W-L-R) : L+(v-lo)/(hi-lo)*(W-L-R);
+    const placed=[];
+    teams.slice().sort((a,b)=>AGG[a][key]-AGG[b][key]).forEach(t=>{
+      const px=x(AGG[t][key]), r=rad(t); let y=cy, step=0;
+      while(!placed.every(p=>Math.hypot(p.x-px,p.y-y)>=p.r+r+2)){ step++; y=cy+(step%2?1:-1)*Math.ceil(step/2)*(small?5:7); }
+      placed.push({x:px,y,r,t}); dots[t].setAttribute('cx',px); dots[t].setAttribute('cy',y); dots[t].setAttribute('r',r);
+    });
+    axis.innerHTML=''; el('line',{x1:L,x2:W-R,y1:H-32,y2:H-32,stroke:'var(--line-2)'},axis);
+    const ticks=small?3:5; for(let i=0;i<=ticks;i++){ const v=lo+pad+(hi-lo-2*pad)*i/ticks, tx=x(v); el('line',{x1:tx,x2:tx,y1:H-36,y2:H-28,stroke:'var(--line-2)'},axis); el('text',{x:tx,y:H-12,class:'ax','text-anchor':i===0?'start':i===ticks?'end':'middle'},axis).textContent=fmt(v,m.d); }
+    el('text',{x:L,y:22,class:'ax'},axis).textContent = m.rev?'← daha az pres':'← düşük';
+    el('text',{x:W-R,y:22,class:'ax','text-anchor':'end'},axis).textContent = m.rev?'daha yoğun pres →':'yüksek →';
+    const s=vals.slice().sort((a,b)=>a-b), med=(s[17]+s[18])/2;
+    medG.innerHTML=''; el('line',{x1:x(med),x2:x(med),y1:40,y2:H-38,stroke:'var(--chalk)','stroke-dasharray':'3 5',opacity:.45},medG);
+    el('text',{x:x(med)+6,y:52,class:'ax'},medG).textContent='medyan '+fmt(med,m.d);
+    [HOME,AWAY].forEach(t=>{ const p=placed.find(q=>q.t===t); labs[t].setAttribute('x',p.x); labs[t].setAttribute('y',p.y<cy?p.y-18:p.y+30); labs[t].textContent=(t===HOME?'GS ':'LIL ')+fmt(AGG[t][key],m.d); });
+    const rank=t=>{ const v=AGG[t][key]; return 1+teams.filter(q=> m.rev ? AGG[q][key]<v : AGG[q][key]>v).length; };
+    const word = m.rev ? 'en yoğun' : 'en yüksek';
+    document.getElementById('readout').innerHTML = `<b>${m.t}.</b> ${m.note} Galatasaray <b class="fen num">${fmt(AGG[HOME][key],m.d)}</b> ile ${word} ${rank(HOME)}. sırada; Lille <b class="sla num">${fmt(AGG[AWAY][key],m.d)}</b> ile ${rank(AWAY)}. sırada (36 takım, eşitlikte aynı sıra).`;
+  }
+  draw('shots');
+  let rt; addEventListener('resize',()=>{ clearTimeout(rt); rt=setTimeout(()=>{ size(); draw(cur); },150); });
+})();
+
+/* xG gaps */
+(function(){
+  const rows=[
+    {who:'Lille · Ligue 1',sub:'Hücum · xG → gol (6 maç)',c:'sla',xg:7.98,g:9},
+    {who:'Lille · Ligue 1',sub:'Savunma · verilen xG → yenen',c:'sla',xg:10.79,g:4},
+    {who:'Lille · Avrupa',sub:'Hücum · xG → gol (2 maç)',c:'sla',xg:1.28,g:2},
+    {who:'Lille · Avrupa',sub:'Savunma · verilen xG → yenen',c:'sla',xg:3.57,g:6},
+    {who:'Galatasaray · Avrupa',sub:'Hücum · xG → gol (2 maç)',c:'fen',xg:1.87,g:2},
+    {who:'Galatasaray · Avrupa',sub:'Savunma · verilen xG → yenen',c:'fen',xg:3.88,g:7}
+  ];
+  const max=12, box=document.getElementById('gaps');
+  box.innerHTML=rows.map(r=>{
+    const a=r.xg/max*100, b=r.g/max*100, lo=Math.min(a,b), w=Math.abs(a-b), d=r.g-r.xg;
+    return `<div class="gap-row"><div class="who ${r.c}">${r.who}<small>${r.sub}</small></div>
+      <div><div class="db" role="img" aria-label="${r.who}, ${r.sub}: xG ${fmt(r.xg)}, gol ${r.g}">
+        <span class="db-bar" style="left:${lo}%;width:${w}%;background:var(--${r.c})"></span>
+        <span class="db-x" style="left:${a}%"></span><span class="db-g" style="left:${b}%"></span>
+      </div><span class="mono num db-t">xG ${fmt(r.xg)} · gol ${r.g} · fark ${d>0?'+':''}${fmt(d)}</span></div></div>`;
+  }).join('') + `<div class="gap-row"><span></span><div class="db-axis mono num"><span>0</span><span>3</span><span>6</span><span>9</span><span>12</span></div></div>`;
+})();
+
+/* Ligue 1 form: xG difference per match */
+(function(){
+  const G=[["23.08","Angers (d)","2–0",1.21,2.61],["28.08","PSG (i)","2–2",0.93,1.48],["03.09","Toulouse (d)","0–1",1.44,3.36],["13.09","Troyes (i)","2–0",1.24,0.80],["20.09","Nice (d)","2–1",2.28,1.01],["10.10","Le Havre (i)","1–0",0.88,1.53]];
+  const svg=document.getElementById('form'); const W=420,H=240,top=24,mid=120,sc=40, bw=46, gap=(W-20-6*bw)/5;
+  el('line',{x1:10,x2:W-10,y1:mid,y2:mid,stroke:'var(--line-2)'},svg);
+  [-2,-1,1].forEach(v=>{ el('line',{x1:10,x2:W-10,y1:mid-v*sc,y2:mid-v*sc,stroke:'var(--line)','stroke-dasharray':'2 4'},svg); el('text',{x:W-10,y:mid-v*sc-4,class:'ax','text-anchor':'end'},svg).textContent=(v>0?'+':'')+v; });
+  G.forEach(([d,opp,res,xg,oxg],i)=>{
+    const diff=xg-oxg, x=10+i*(bw+gap), h=Math.abs(diff)*sc, y=diff>=0?mid-h:mid;
+    const g=el('g',{},svg);
+    el('rect',{x,y,width:bw,height:Math.max(h,1.5),fill:diff>=0?'var(--sla)':'var(--grey)',rx:2},g);
+    el('text',{x:x+bw/2,y:diff>=0?y-6:y+h+14,class:'ax','text-anchor':'middle',style:'fill:var(--chalk)'},g).textContent=(diff>0?'+':'')+fmt(diff);
+    el('text',{x:x+bw/2,y:H-22,class:'ax','text-anchor':'middle'},g).textContent=res;
+    el('text',{x:x+bw/2,y:H-8,class:'ax','text-anchor':'middle'},g).textContent=d;
+    el('title',{},g).textContent=`${d} ${opp} ${res} · xG ${fmt(xg)} – ${fmt(oxg)}`;
+  });
+})();
+
+/* press matchup bars */
+(function(){
+  const vals=k=>Object.values(AGG).map(v=>v[k]);
+  const rows=[
+    {who:'Lille · kendi yarıda top kaybı',v:AGG.LIL.lost_own,k:'lost_own',c:'sla',d:0,note:'36 takımda 2. en yüksek'},
+    {who:'Galatasaray · rakip yarıda top kazanımı',v:AGG.GAL.reco,k:'reco',c:'fen',d:0,note:'turnuva medyanında'},
+    {who:'Lille · pres yoğunluğu (PPDA, düşük = yoğun)',v:AGG.LIL.ppda,k:'ppda',c:'sla',d:2,note:'en az baskı yapan 2. takım'},
+    {who:'Galatasaray · pres yoğunluğu (PPDA)',v:AGG.GAL.ppda,k:'ppda',c:'fen',d:2,note:'36 takımda 21.'}
+  ];
+  document.getElementById('press').innerHTML=rows.map(r=>{
+    const all=vals(r.k), mx=Math.max(...all), s=all.slice().sort((a,b)=>a-b), med=(s[17]+s[18])/2;
+    return `<div class="row"><span class="mono">${r.who} · <b class="num ${r.c}">${fmt(r.v,r.d)}</b> · ${r.note}</span>
+      <div class="pbar" role="img" aria-label="${r.who}: ${fmt(r.v,r.d)}, medyan ${fmt(med,r.d)}"><i style="width:${(r.v/mx*100).toFixed(1)}%;background:var(--${r.c})"></i><em style="left:${(med/mx*100).toFixed(1)}%"></em></div></div>`;
+  }).join('') + `<p class="mono" style="letter-spacing:.03em">Çubuk boyu: 36 takımın en yüksek değerine göre. İnce çizgi: medyan.</p>`;
+})();
+
+
+</script>
+<style is:global>
+.mp{
+  --night:var(--bg); --band:var(--bg-2); --raise:var(--panel); --line:var(--line); --line-2:var(--line-2);
+  --chalk:var(--ink); --chalk-2:var(--ink-2); --mute:var(--muted);
+  --fen:var(--amber); --fen-ink:var(--amber-ink); --sla:#EEF1F5; --sla-ink:#0B0D10; --sage:var(--amber);
+  --f-display:var(--display); --f-body:var(--reading); --f-mono:var(--mono);
+  --grey:#6E3D47; --gs-red:#A90432;
+  background:var(--night); color:var(--chalk); font:400 1.0625rem/1.6 var(--f-body);
+}
+
+
+.mp /* Layout: FT-style reading column (64ch) broken by full-bleed "floodlit" chart bands; scoreboard type for numbers,.mp editorial serif for argument. */
+
+a{color:var(--chalk);text-decoration-color:var(--sage);text-underline-offset:3px}
+.mp :focus-visible{outline:2px solid var(--focus);outline-offset:3px;border-radius:2px}
+.mp .wrap{max-width:1180px;margin-inline:auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.mp .col{max-width:64ch}
+.mp .eyebrow,.mp .mono{font-family:var(--f-mono);font-size:.72rem;letter-spacing:.12em;color:var(--mute)}
+.mp h1,.mp h2,.mp h3{font-family:var(--f-display);font-weight:700;letter-spacing:.01em;line-height:.95;text-wrap:balance;margin:0}
+.mp h2{font-size:clamp(2rem,5.2vw,3.4rem)}
+.mp h3{font-size:1.35rem;letter-spacing:.03em}
+.mp p{margin:0}
+.mp .num{font-variant-numeric:tabular-nums}
+.mp .fen{color:var(--fen)} .mp .sla{color:var(--sla)}
+
+.mp /* hero */
+.hero{padding-block:clamp(36px,7vw,84px) 28px;position:relative;overflow:hidden;border-bottom:0}
+.mp .hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:6px;background:linear-gradient(90deg,var(--fen) 0 50%,var(--gs-red) 50% 100%)}
+.mp .hero::before{content:"";position:absolute;inset:-30% -10% auto;height:120%;background:radial-gradient(ellipse 55% 60% at 15% 25%,color-mix(in srgb,var(--fen) 22%,transparent),transparent 70%),radial-gradient(ellipse 60% 50% at 92% 0%,color-mix(in srgb,var(--gs-red) 55%,transparent),transparent 70%);pointer-events:none;animation:flood 9s ease-in-out infinite alternate}
+@keyframes flood{to{transform:translateY(4%) scale(1.04)}}
+.mp .hero .wrap{position:relative;display:grid;gap:22px;grid-template-columns:minmax(0,1fr)}
+.mp .hero .wrap>*{min-width:0}
+.mp .versus span{overflow-wrap:break-word}
+.mp .versus{display:grid;grid-template-columns:1fr;gap:2px;font-family:var(--f-display);font-weight:900;font-size:clamp(2.9rem,11.5vw,8.6rem);line-height:.86;letter-spacing:-.005em}
+.mp .versus .v{font-size:.32em;color:var(--mute);font-weight:500;letter-spacing:.2em;padding-block:.15em}
+.mp .thesis{font-size:clamp(1.2rem,2.6vw,1.6rem);line-height:1.35;max-width:36ch;color:var(--chalk)}
+.mp .thesis em{font-style:italic;color:var(--chalk-2)}
+.mp .meta{display:flex;flex-wrap:wrap;gap:8px 18px}
+.mp .meta div{display:grid;gap:2px}
+.mp .meta b{font-family:var(--f-display);font-weight:700;font-size:1.25rem;letter-spacing:.02em}
+.mp .count{display:flex;gap:10px;align-items:baseline;flex-wrap:wrap}
+.mp .count .n{font-family:var(--f-display);font-weight:900;font-size:2.4rem;line-height:1}
+.mp .count .u{font-family:var(--f-mono);font-size:.7rem;color:var(--mute);margin-right:8px}
+
+.mp /* ticker */
+.ticker{border-block:1px solid var(--line);overflow:hidden;background:var(--band)}
+.mp .ticker-track{display:flex;width:max-content;animation:tick 48s linear infinite}
+.mp .ticker:hover .ticker-track{animation-play-state:paused}
+.mp .ticker-item{display:flex;align-items:baseline;gap:10px;padding:12px 28px;border-right:1px solid var(--line);white-space:nowrap}
+.mp .ticker-item b{font-family:var(--f-display);font-size:1.5rem;font-weight:700}
+.mp .ticker-item span{font-family:var(--f-mono);font-size:.72rem;color:var(--chalk-2);letter-spacing:.04em}
+@keyframes tick{to{transform:translateX(-50%)}}
+
+.mp /* sections */
+section.block{padding-block:clamp(44px,7vw,88px);border-bottom:1px solid var(--line)}
+.mp section.band{background:var(--band)}
+.mp .head{display:grid;gap:12px;margin-bottom:28px;grid-template-columns:minmax(0,1fr)}
+.mp h1,.mp h2,.mp h3,.mp .lede,.mp .eyebrow,.mp .readout,.mp .claim span{overflow-wrap:break-word;hyphens:auto}
+.mp .lede{color:var(--chalk-2);font-size:1.075rem}
+.mp .claim{display:flex;gap:10px;align-items:flex-start;margin-top:18px;padding:12px 14px;border:1px solid var(--line);border-radius:4px;background:var(--raise);font-size:.95rem;color:var(--chalk-2)}
+.mp .claim>span:last-child{min-width:0}
+.mp .meta-table td{overflow-wrap:anywhere}
+.mp .legend span,.mp .figcap span,.mp .qs li *{min-width:0;overflow-wrap:break-word}
+.mp .ev{flex:none;font-family:var(--f-mono);font-size:.62rem;letter-spacing:.1em;padding:3px 6px;border-radius:3px;border:1px solid currentColor;margin-top:3px}
+.mp .ev.obs{color:#9FE3BC}.mp .ev.mod{color:#9EC3FF}.mp .ev.der{color:#FFD31A}.mp .ev.hyp{color:#F2B8DC}
+
+.mp /* match rail */
+.rail{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(260px,1fr);gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:10px;scrollbar-color:var(--line-2) transparent}
+.mp .mcard{scroll-snap-align:start;border:1px solid var(--line);border-radius:4px;background:var(--raise);padding:16px;display:grid;gap:14px;transition:transform .25s ease,border-color .25s ease}
+.mp .mcard:hover{transform:translateY(-3px);border-color:var(--line-2)}
+.mp .mcard .top{display:flex;justify-content:space-between;gap:8px}
+.mp .score{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:8px;font-family:var(--f-display)}
+.mp .score .t{font-weight:700;font-size:1.05rem;line-height:1;min-width:0;overflow-wrap:anywhere}
+.mp .score .t:last-child{text-align:right}
+.mp .score .g{font-weight:900;font-size:2.3rem;white-space:nowrap;line-height:1;font-variant-numeric:tabular-nums}
+.mp .xgbar{display:grid;gap:6px}
+.mp .xgbar .row{display:grid;grid-template-columns:40px 1fr 40px;align-items:center;gap:8px;font-family:var(--f-mono);font-size:.72rem}
+.mp .xgbar .row span:last-child{text-align:right}
+.mp .track{height:8px;border-radius:2px;background:var(--line);display:flex;overflow:hidden}
+.mp .track i{display:block;height:100%}
+.mp .mstats{display:flex;justify-content:space-between;gap:8px;font-family:var(--f-mono);font-size:.68rem;color:var(--mute);border-top:1px solid var(--line);padding-top:10px}
+.mp .mstats b{display:block;color:var(--chalk);font-size:.85rem;font-weight:500}
+
+.mp /* tabs */
+.tabs{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px}
+.mp .tabs button{font:500 .74rem var(--f-mono);letter-spacing:.06em;color:var(--chalk-2);background:transparent;border:1px solid var(--line-2);border-radius:999px;padding:9px 13px;min-height:40px;cursor:pointer;transition:background .2s,color .2s}
+.mp .tabs button[aria-pressed="true"]{background:var(--chalk);color:var(--night);border-color:var(--chalk)}
+.mp .figure{border:1px solid var(--line);border-radius:4px;background:var(--night);padding:14px;overflow-x:auto}
+.mp .figure svg{display:block;width:100%;height:auto}
+.mp .figcap{display:flex;flex-wrap:wrap;gap:6px 18px;justify-content:space-between;margin-top:10px;font-family:var(--f-mono);font-size:.68rem;color:var(--mute)}
+.mp .readout{font-size:1.05rem;margin-top:14px;min-height:3.2em;color:var(--chalk-2)}
+.mp .readout b{color:var(--chalk)}
+.mp .ax{font-family:var(--f-mono);font-size:11px;fill:var(--mute)}
+.mp .lab{font-family:var(--f-display);font-weight:700;font-size:16px;letter-spacing:.03em}
+.mp .dot{transition:cx .7s cubic-bezier(.2,.8,.2,1),cy .7s cubic-bezier(.2,.8,.2,1)}
+
+.mp /* two-col */
+.duo{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,420px),1fr));gap:16px}
+.mp .duo > *{min-width:0}
+.mp .legend{display:flex;flex-wrap:wrap;gap:8px 16px;font-family:var(--f-mono);font-size:.7rem;color:var(--chalk-2);margin-top:10px}
+.mp .legend span{display:inline-flex;align-items:center;gap:6px}
+.mp .sw{width:12px;height:12px;display:inline-block}
+
+.mp /* dumbbell */
+.gap-grid{display:grid;gap:18px}
+.mp .gap-row{display:grid;grid-template-columns:minmax(0,170px) minmax(0,1fr);gap:12px;align-items:center}
+.mp .gap-row .who{font-family:var(--f-display);font-weight:700;font-size:1.05rem;line-height:1.05}
+.mp .gap-row .who small{display:block;font-family:var(--f-mono);font-weight:400;font-size:.66rem;color:var(--mute);letter-spacing:.06em;margin-top:3px}
+
+.mp .db{position:relative;height:22px;margin-inline:7px}
+.mp .db::before{content:"";position:absolute;left:0;right:0;top:10px;height:1px;background:var(--line-2)}
+.mp .db-bar{position:absolute;top:8px;height:5px;opacity:.5}
+.mp .db-x,.mp .db-g{position:absolute;top:3px;width:15px;height:15px;margin-left:-7.5px;border-radius:50%}
+.mp .db-x{border:2px solid var(--chalk);background:var(--night)}
+.mp .db-g{background:var(--chalk)}
+.mp .db-t{display:block;margin-top:4px;letter-spacing:.03em;text-transform:none}
+.mp .db-axis{display:flex;justify-content:space-between;margin-inline:7px;letter-spacing:0;text-transform:none}
+.mp /* corridors */
+.corr{display:grid;gap:14px}
+.mp .corr .row{display:grid;gap:6px}
+.mp .stack{display:flex;height:34px;border-radius:3px;overflow:hidden;gap:2px}
+.mp .stack div{display:flex;align-items:center;justify-content:center;font-family:var(--f-mono);font-size:.66rem;white-space:nowrap;overflow:hidden;min-width:0;transition:flex-basis .8s ease}
+
+.mp /* questions */
+.qs{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,300px),1fr));gap:12px;margin:0;padding:0;list-style:none}
+.mp .qs li{border-top:2px solid var(--line-2);padding-top:12px;display:grid;gap:8px}
+.mp .qs li .tag{font-family:var(--f-mono);font-size:.66rem;letter-spacing:.1em;color:var(--sage)}
+.mp .qs li p{font-size:1.02rem}
+.mp .qs li small{font-family:var(--f-mono);font-size:.68rem;color:var(--mute)}
+
+.mp /* sources */
+.src{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:20px 32px;font-size:.92rem;color:var(--chalk-2)}
+.mp .src h3{font-size:1rem;margin-bottom:8px}
+.mp .src ul{margin:0;padding-left:18px;display:grid;gap:6px}
+.mp .meta-table{width:100%;border-collapse:collapse;font-family:var(--f-mono);font-size:.72rem}
+.mp .meta-table td{border-top:1px solid var(--line);padding:7px 8px 7px 0;vertical-align:top;color:var(--chalk-2)}
+.mp .meta-table td:first-child{color:var(--mute);width:34%;letter-spacing:.08em}
+@media (prefers-reduced-motion:reduce){
+  .mp .hero::before,.mp .ticker-track{animation:none}
+  .mp .ticker{overflow-x:auto}
+  .mp .dot,.mp .stack div,.mp .mcard{transition:none}
+}
+
+.mp .pbar{position:relative;height:30px;background:var(--line);border-radius:3px;overflow:hidden}
+.mp .pbar i{display:block;height:100%;transition:width .8s ease}
+.mp .pbar em{position:absolute;top:-2px;bottom:-2px;width:2px;background:var(--chalk);opacity:.7}
+.mp #press .row{display:grid;gap:6px;margin-bottom:14px}
+
+
+.mp h2{font-weight:500;letter-spacing:-.005em;line-height:1.02}
+.mp .versus{font-family:var(--display);letter-spacing:-.01em;font-weight:500}
+.mp .versus .v{font-family:var(--ui)}
+.mp .score,.mp .score .t{font-family:var(--ui)}
+.mp .score .g,.mp .count .n,.mp .ticker-item b,.mp .meta b{font-family:var(--mono);font-weight:500}
+.mp .lab{font-family:var(--mono);font-weight:500;font-size:14px}
+.mp .gap-row .who{font-family:var(--ui);font-weight:600}
+
+</style>
+</BaseLayout>
