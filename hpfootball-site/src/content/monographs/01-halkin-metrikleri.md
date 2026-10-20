@@ -19,7 +19,7 @@ readingTime: "6 dk"
 ### Blok 1: Ekrandaki İllüzyon: Sayı Gerçek Değildir, Modeldir
 Televizyon yayınlarında ve sosyal medyada bir forvetin kaçırdığı pozisyonun ardından ekrana hemen bir metrik fırlatılıyor: *"0.74 xG'lik pozisyonu harcadı!"* Seyirci bu sayıyı doğa kanunu gibi mutlak bir hakikat zannediyor. Oysa xG (Gol Beklentisi), xT (Beklenen Tehdit) veya EPV (Beklenen Pozisyon Değeri) birer ölçüm değil; geçmiş binlerce vuruşun ortalamasını alan **olasılıksal model varsayımlarıdır**.
 
-En büyük körlük buradadır: Klasik olay verisi (event data) yalnızca topa dokunulduğu anı kaydeder: $x, y$ koordinatı, vuruş açısı, topun hızı. Peki topa dokunulmayan o devasa 89 dakikada sahada ne oluyor?
+En büyük körlük buradadır: Klasik olay verisi (event data) yalnızca topa dokunulduğu anı kaydeder: (x, y) koordinatı, vuruş açısı, topun hızı. Peki topa dokunulmayan o devasa 89 dakikada sahada ne oluyor?
 
 ### Blok 2: Olay Verisi Körlüğü ve Zone 14 İkilemi
 Tenebrist Atlas 05 üzerinde Kobalt Mavi (#3A86C8) ile modellenen dikine pas rotası, bir xT modelinde "devasa tehdit kazancı" olarak kodlanır. Top orta sahadan Zone 14'e aktarılmıştır, metrik tavan yapar.
