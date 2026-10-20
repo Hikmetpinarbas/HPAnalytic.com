@@ -7,7 +7,7 @@ category: "Futbol Ekonomisi & Ekonometri"
 tags: ["Amortisman", "Süreç Madenciliği", "Brighton Modeli", "Finansal Fair Play", "Kadro Mühendisliği"]
 summary: "100 milyon Euro harcamak zenginlik göstergesi değil, çoğu zaman yapısal iflasın başlangıcıdır. 30 yaş üstü kontratların yarattığı amortisman defter batığı ile süreç madenciliği arasındaki uçurum."
 visualAtlas: "/assets/visuals/hpa_financial_balance_atlas.svg"
-draft: false
+draft: true
 
 description: "100 milyon Euro harcamak zenginlik göstergesi değil, çoğu zaman yapısal iflasın başlangıcıdır. 30 yaş üstü kontratların yarattığı amortisman defter batığı ile süreç madenciliği arasındaki uçurum."
 claimCeiling: "İddia birincil spatiotemporal gözlem verisinin bittiği sınırda durur."

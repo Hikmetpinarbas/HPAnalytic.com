@@ -7,7 +7,7 @@ category: "Taktik Tarihi & Mekanizma"
 tags: ["Taktik Döngü", "4-4-2", "Gegenpressing", "3-2-4-1", "Rest-Defence", "Spatiotemporal"]
 summary: "Taktik evrim tahta başında bulunan mistik formüllerle değil; sahadaki alan ve zaman pencerelerinin matematiksel olarak tükenmesiyle ilerler. 4-4-2'nin 25 metrelik hat aşınmasından 2020'lerin 3-2 dinlenme savunmasına uzanan uzamsal zorunluluk."
 visualAtlas: "/assets/visuals/hpa_tactical_cycle_atlas.svg"
-draft: false
+draft: true
 
 description: "Taktik evrim tahta başında bulunan mistik formüllerle değil; sahadaki alan ve zaman pencerelerinin matematiksel olarak tükenmesiyle ilerler. 4-4-2'nin 25 metrelik hat aşınmasından 2020'lerin 3-2 dinlenme savunmasına uzanan uzamsal zorunluluk."
 claimCeiling: "İddia birincil spatiotemporal gözlem verisinin bittiği sınırda durur."

@@ -7,7 +7,7 @@ category: "Biyomekanik & Nörobiliş"
 tags: ["Kadın Futbolu", "Q Açısı", "Biyomekanik", "Plant Phase", "Hamstring Kilidi", "Spatiotemporal"]
 summary: "17.2 derecelik Q açısının yarattığı dinamik valgus momenti, kramponun zemine kenetlendiği ilk 40 milisaniyede diz eklemine biner. Eklemi koruyan kaba kas gücü değil, 48 milisaniyenin altındaki topsuz alan uzamsal zekâsıdır."
 visualAtlas: "/assets/visuals/hpa_qangle_spatial_atlas.svg"
-draft: false
+draft: true
 
 description: "17.2 derecelik Q açısının yarattığı dinamik valgus momenti, kramponun zemine kenetlendiği ilk 40 milisaniyede diz eklemine biner. Eklemi koruyan kaba kas gücü değil, 48 milisaniyenin altındaki topsuz alan uzamsal zekâsıdır."
 claimCeiling: "İddia birincil spatiotemporal gözlem verisinin bittiği sınırda durur."

@@ -4,7 +4,7 @@ description: "Futbolun gözlemlenebilir yüzeyi ile mekânsal hakikat arasındak
 subtitle: "Futbolun Gözlemlenebilir Yüzeyi ile Mekânsal Hakikat Arasındaki Epistemik Uçurum"
 author: "Hikmet Pınarbaş"
 date: "2026-10-20"
-draft: false
+draft: true
 category: "Epistemoloji & Karar Destek"
 readingTime: "7 dk"
 heroImage: "/images/monographs/g01-cover.png"

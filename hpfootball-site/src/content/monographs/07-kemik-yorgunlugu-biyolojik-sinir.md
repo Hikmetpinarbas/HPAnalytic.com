@@ -7,7 +7,7 @@ category: "Fizyoloji & Spatiotemporal Yük"
 tags: ["Kemik Yorgunluğu", "Epifiz Plakları", "Hücresel Tükeniş", "Pedri Sendromu", "Aşırı Yük"]
 summary: "Epifiz plakları henüz kapanmamış 18-20 yaşındaki genç yıldızlara sezon başına 70 maç yükleyen endüstri, geleceğin efsanelerini değil, yürüyen kronik sakatlık raporlarını üretiyor."
 visualAtlas: "/assets/visuals/hpa_bone_fatigue_load_atlas.svg"
-draft: false
+draft: true
 
 description: "Epifiz plakları henüz kapanmamış 18-20 yaşındaki genç yıldızlara sezon başına 70 maç yükleyen endüstri, geleceğin efsanelerini değil, yürüyen kronik sakatlık raporlarını üretiyor."
 claimCeiling: "İddia birincil spatiotemporal gözlem verisinin bittiği sınırda durur."

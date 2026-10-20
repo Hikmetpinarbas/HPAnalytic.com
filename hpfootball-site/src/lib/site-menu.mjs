@@ -20,7 +20,6 @@ export const SITE_MENU = [
     href: '/research',
     intro: { title: 'Önce soru, sonra kanıt.', text: 'Uzun soluklu monografiler ve yöntem çerçevesi.' },
     items: [
-      { label: 'Monografiler', href: '/monographs', text: 'Futbolun gizli mekanizmalarına uzun okumalar.' },
       { label: 'Yöntem', href: '/research', text: 'Kaynak, bağımsızlık, karşı kanıt ve iddia sınırı.' },
       { label: 'Görsel laboratuvar', href: '/visual-lab', text: 'Saha geometrisi ve kanıt sınırı için şemalar.' },
       { label: 'Arşiv', href: '/archive', text: 'Bütün yazılar, yıl ve aya göre.' },
@@ -32,7 +31,6 @@ export const SITE_MENU = [
 export const MOBILE_MENU = [
   ...(latestMatch ? [{ label: 'Maç önü', href: latestMatch.href, text: `${latestMatch.home} – ${latestMatch.away}` }] : []),
   { label: 'Analiz', href: '/analysis', text: 'Maç, mekanizma ve kanıt incelemeleri' },
-  { label: 'Monografiler', href: '/monographs', text: 'Uzun soluklu araştırmalar' },
   { label: 'Scouting', href: '/scouting', text: 'Karar destek yüzeyi' },
   { label: 'Yöntem', href: '/research', text: 'Kanıtın nasıl kabul edildiği' },
   { label: 'Arşiv', href: '/archive', text: 'Bütün yazılar' },

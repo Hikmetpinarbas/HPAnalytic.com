@@ -4,7 +4,7 @@ description: "Oyundaki konum, zaman ve karar ilişkilerini incelemek için yönt
 subtitle: "Mekânsal ilişkiler, zaman dizileri ve karar mekanizmaları"
 author: "Hikmet Pınarbaş"
 date: "2026-10-20"
-draft: false
+draft: true
 category: "Mekânsal Performans Çözümlemesi"
 readingTime: "3 dk"
 claimCeiling: "Yöntemsel açıklamadır; tracking verisi, ölçülmüş oyuncu koordinatı veya doğrulanmış maç sonucu içermez."

@@ -7,7 +7,7 @@ category: "Epistemoloji & Model Mekaniği"
 tags: ["xG", "xT", "EPV", "Markov Tehdidi", "Olay Verisi Körlüğü", "Spatiotemporal"]
 summary: "Televizyon ekranında beliren her sayı bir futbol gerçeği değil, bir model varsayımıdır. Olay verisinin (event-data) göremediği topsuz alan kinetiği ve Markov tehdit modellerinin yapısal kısıtları."
 visualAtlas: "/assets/visuals/hpa_metrics_epistemology_atlas.svg"
-draft: false
+draft: true
 
 description: "Televizyon ekranında beliren her sayı bir futbol gerçeği değil, bir model varsayımıdır. Olay verisinin (event-data) göremediği topsuz alan kinetiği ve Markov tehdit modellerinin yapısal kısıtları."
 claimCeiling: "İddia birincil spatiotemporal gözlem verisinin bittiği sınırda durur."

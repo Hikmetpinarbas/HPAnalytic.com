@@ -7,7 +7,7 @@ category: "Rol Mimarisi & Geometri"
 tags: ["Hibrit Roller", "Inverted Fullback", "Raumdeuter", "Zone 14", "Half-Space", "Spatiotemporal"]
 summary: "Televizyon ekranındaki statik dizilişler modern futbolu açıklayamaz. Beklerin merkeze devrildiği, forvetlerin kör noktada heykel gibi beklediği uzamsal hacim mücadelesi."
 visualAtlas: "/assets/visuals/hpa_hybrid_roles_atlas.svg"
-draft: false
+draft: true
 
 description: "Televizyon ekranındaki statik dizilişler modern futbolu açıklayamaz. Beklerin merkeze devrildiği, forvetlerin kör noktada heykel gibi beklediği uzamsal hacim mücadelesi."
 claimCeiling: "İddia birincil spatiotemporal gözlem verisinin bittiği sınırda durur."
