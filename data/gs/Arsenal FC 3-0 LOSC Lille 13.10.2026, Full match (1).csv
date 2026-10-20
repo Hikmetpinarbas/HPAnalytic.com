@@ -1,0 +1,134 @@
+ID;start;end;code;team;action;half;pos_x;pos_y
+1;5.33;5.33;Start of the 1st half;;Start of the 1st half;1;;
+2;5.33;14.33;1. Berke Özer (1101947) - Passes accurate;LOSC Lille (43954);Passes accurate;1;25.94;34.07
+3;35.33;47.33;1. Berke Özer (1101947) - Inaccurate passes;LOSC Lille (43954);Inaccurate passes;1;11.33;45.43
+4;35.33;47.33;1. Berke Özer (1101947) - Incomplete long passes;LOSC Lille (43954);Incomplete long passes;1;11.33;45.43
+5;47.33;59.33;1. David Raya (1209476) - Passes accurate;Arsenal FC (5358);Passes accurate;1;14.27;18.93
+6;206.33;218.33;1. Berke Özer (1101947) - Long passes;LOSC Lille (43954);Long passes;1;11.9;62.76
+7;206.33;218.33;1. Berke Özer (1101947) - Passes accurate;LOSC Lille (43954);Passes accurate;1;11.9;62.76
+8;269.33;281.33;1. Berke Özer (1101947) - Goal kicks;LOSC Lille (43954);Goal kicks;1;4.5;31.86
+9;269.33;281.33;1. Berke Özer (1101947) - Goal kicks long (40+ m);LOSC Lille (43954);Goal kicks long (40+ m);1;4.5;31.86
+10;269.33;281.33;1. Berke Özer (1101947) - Long passes;LOSC Lille (43954);Long passes;1;4.5;31.86
+11;269.33;281.33;1. Berke Özer (1101947) - Passes accurate;LOSC Lille (43954);Passes accurate;1;4.5;31.86
+12;295.33;307.33;1. Berke Özer (1101947) - Passes accurate;LOSC Lille (43954);Passes accurate;1;13.23;36.5
+13;445.33;457.33;1. David Raya (1209476) - Passes accurate;Arsenal FC (5358);Passes accurate;1;22.34;33.49
+14;544.33;556.33;1. David Raya (1209476) - Passes accurate;Arsenal FC (5358);Passes accurate;1;3.92;41.71
+15;732.33;744.33;1. Berke Özer (1101947) - Passes accurate;LOSC Lille (43954);Passes accurate;1;13.07;32.24
+16;740.33;752.33;1. Berke Özer (1101947) - Long passes;LOSC Lille (43954);Long passes;1;11.1;33.96
+17;740.33;752.33;1. Berke Özer (1101947) - Passes accurate;LOSC Lille (43954);Passes accurate;1;11.1;33.96
+18;846.33;858.33;1. Berke Özer (1101947) - Passes accurate;LOSC Lille (43954);Passes accurate;1;10.91;31.78
+19;934.33;946.33;1. David Raya (1209476) - Passes accurate;Arsenal FC (5358);Passes accurate;1;14.15;33.93
+20;982.33;994.33;1. Berke Özer (1101947) - Passes accurate;LOSC Lille (43954);Passes accurate;1;7.46;35.44
+21;1032.33;1044.33;1. Berke Özer (1101947) - Passes accurate;LOSC Lille (43954);Passes accurate;1;6.87;34.07
+22;1141.33;1153.33;1. Berke Özer (1101947) - Shots off target;LOSC Lille (43954);Shots off target;1;95.57;30.27
+23;1208.33;1220.33;1. David Raya (1209476) - Passes accurate;Arsenal FC (5358);Passes accurate;1;6.78;30.95
+24;1221.33;1233.33;1. David Raya (1209476) - Passes accurate;Arsenal FC (5358);Passes accurate;1;14.25;43.09
+25;1257.33;1269.33;1. Berke Özer (1101947) - Opponent's close-range shots on target;LOSC Lille (43954);Opponent's close-range shots on target;1;95.67;34.04
+26;1257.33;1269.33;1. Berke Özer (1101947) - Shots on target;LOSC Lille (43954);Shots on target;1;95.67;34.04
+27;1257.33;1269.33;1. Berke Özer (1101947) - Shots saved;LOSC Lille (43954);Shots saved;1;95.67;34.04
+28;1495.33;1507.33;1. Berke Özer (1101947) - Long passes;LOSC Lille (43954);Long passes;1;4.91;33.96
+29;1495.33;1507.33;1. Berke Özer (1101947) - Passes accurate;LOSC Lille (43954);Passes accurate;1;4.91;33.96
+30;1507.33;1519.33;1. David Raya (1209476) - Passes accurate;Arsenal FC (5358);Passes accurate;1;11.1;45.95
+31;1569.33;1581.33;1. Berke Özer (1101947) - Passes accurate;LOSC Lille (43954);Passes accurate;1;6.48;34.41
+32;1648.33;1660.33;1. Berke Özer (1101947) - Passes accurate;LOSC Lille (43954);Passes accurate;1;3.43;36.59
+33;1743.33;1755.33;1. Berke Özer (1101947) - Passes accurate;LOSC Lille (43954);Passes accurate;1;14.25;34.18
+34;1798.33;1810.33;1. Berke Özer (1101947) - Inaccurate passes;LOSC Lille (43954);Inaccurate passes;1;23.69;41.05
+35;1798.33;1810.33;1. Berke Özer (1101947) - Incomplete long passes;LOSC Lille (43954);Incomplete long passes;1;23.69;41.05
+36;1805.33;1817.33;1. David Raya (1209476) - Passes accurate;Arsenal FC (5358);Passes accurate;1;13.86;40.34
+37;1877.33;1889.33;1. Berke Özer (1101947) - Long passes;LOSC Lille (43954);Long passes;1;15.33;10.04
+38;1877.33;1889.33;1. Berke Özer (1101947) - Passes accurate;LOSC Lille (43954);Passes accurate;1;15.33;10.04
+39;1923.33;1935.33;1. Berke Özer (1101947) - Passes accurate;LOSC Lille (43954);Passes accurate;1;10.22;34.76
+40;1949.33;1961.33;1. Berke Özer (1101947) - Passes accurate;LOSC Lille (43954);Passes accurate;1;4.02;32.35
+41;1955.33;1967.33;1. Berke Özer (1101947) - Passes accurate;LOSC Lille (43954);Passes accurate;1;7.07;34.41
+42;2055.33;2067.33;1. Berke Özer (1101947) - Shots off target;LOSC Lille (43954);Shots off target;1;95.86;41.71
+43;2080.33;2092.33;1. Berke Özer (1101947) - Passes accurate;LOSC Lille (43954);Passes accurate;1;6.28;34.64
+44;2168.33;2180.33;1. David Raya (1209476) - Passes accurate;Arsenal FC (5358);Passes accurate;1;12.68;35.53
+45;2208.33;2220.33;1. Berke Özer (1101947) - Opponent's mid-range shots on target;LOSC Lille (43954);Opponent's mid-range shots on target;1;91.83;37.59
+46;2208.33;2220.33;1. Berke Özer (1101947) - Shots on target;LOSC Lille (43954);Shots on target;1;91.83;37.59
+47;2208.33;2220.33;1. Berke Özer (1101947) - Shots saved;LOSC Lille (43954);Shots saved;1;91.83;37.59
+48;2209.33;2221.33;1. Berke Özer (1101947) - Supersaves;LOSC Lille (43954);Supersaves;1;2.65;34.41
+49;2319.33;2331.33;1. Berke Özer (1101947) - Long passes;LOSC Lille (43954);Long passes;1;4.32;30.06
+50;2319.33;2331.33;1. Berke Özer (1101947) - Passes accurate;LOSC Lille (43954);Passes accurate;1;4.32;30.06
+51;2418.33;2430.33;1. David Raya (1209476) - Successful cross and pass interception attempts;Arsenal FC (5358);Successful cross and pass interception attempts;1;8.68;54.46
+52;2420.33;2432.33;1. David Raya (1209476) - Passes accurate;Arsenal FC (5358);Passes accurate;1;11.05;44.08
+53;2435.33;2447.33;1. David Raya (1209476) - Passes accurate;Arsenal FC (5358);Passes accurate;1;15.79;43.42
+54;2507.33;2519.33;1. David Raya (1209476) - Long passes;Arsenal FC (5358);Long passes;1;17.31;43.31
+55;2507.33;2519.33;1. David Raya (1209476) - Passes accurate;Arsenal FC (5358);Passes accurate;1;17.31;43.31
+56;2647.33;2659.33;1. David Raya (1209476) - Long passes;Arsenal FC (5358);Long passes;1;37.61;49.6
+57;2647.33;2659.33;1. David Raya (1209476) - Passes accurate;Arsenal FC (5358);Passes accurate;1;37.61;49.6
+58;2706.33;2718.33;1. Berke Özer (1101947) - Opponent's long-range shots on target;LOSC Lille (43954);Opponent's long-range shots on target;1;80.39;25.33
+59;2706.33;2718.33;1. Berke Özer (1101947) - Shots on target;LOSC Lille (43954);Shots on target;1;80.39;25.33
+60;2706.33;2718.33;1. Berke Özer (1101947) - Shots saved;LOSC Lille (43954);Shots saved;1;80.39;25.33
+61;2780.33;2780.33;Halftime;;Halftime;1;;
+62;2852.24;2852.24;Start of the 2nd half;;Start of the 2nd half;2;;
+63;3015.24;3027.24;1. Berke Özer (1101947) - Goal kicks;LOSC Lille (43954);Goal kicks;2;4.98;26.32
+64;3015.24;3027.24;1. Berke Özer (1101947) - Goal kicks long (40+ m);LOSC Lille (43954);Goal kicks long (40+ m);2;4.98;26.32
+65;3015.24;3027.24;1. Berke Özer (1101947) - Long passes;LOSC Lille (43954);Long passes;2;4.98;26.32
+66;3015.24;3027.24;1. Berke Özer (1101947) - Passes accurate;LOSC Lille (43954);Passes accurate;2;4.98;26.32
+67;3025.24;3037.24;1. David Raya (1209476) - Passes accurate;Arsenal FC (5358);Passes accurate;2;8.77;22.59
+68;3076.24;3088.24;1. Berke Özer (1101947) - Shots off target;LOSC Lille (43954);Shots off target;2;83.8;24.91
+69;3099.24;3111.24;1. Berke Özer (1101947) - Passes accurate;LOSC Lille (43954);Passes accurate;2;4.12;33.49
+70;3103.24;3115.24;1. Berke Özer (1101947) - Inaccurate passes;LOSC Lille (43954);Inaccurate passes;2;4.41;37.02
+71;3103.24;3115.24;1. Berke Özer (1101947) - Incomplete long passes;LOSC Lille (43954);Incomplete long passes;2;4.41;37.02
+72;3131.24;3143.24;1. David Raya (1209476) - Passes accurate;Arsenal FC (5358);Passes accurate;2;39.31;20.6
+73;3258.24;3270.24;1. Berke Özer (1101947) - Inaccurate passes;LOSC Lille (43954);Inaccurate passes;2;14.54;55.09
+74;3258.24;3270.24;1. Berke Özer (1101947) - Incomplete long passes;LOSC Lille (43954);Incomplete long passes;2;14.54;55.09
+75;3267.24;3279.24;1. Berke Özer (1101947) - Successful cross and pass interception attempts;LOSC Lille (43954);Successful cross and pass interception attempts;2;14.14;49.26
+76;3283.24;3295.24;1. Berke Özer (1101947) - Passes accurate;LOSC Lille (43954);Passes accurate;2;13.44;33.99
+77;3360.24;3372.24;1. Berke Özer (1101947) - Inaccurate passes;LOSC Lille (43954);Inaccurate passes;2;14.44;33.64
+78;3360.24;3372.24;1. Berke Özer (1101947) - Incomplete long passes;LOSC Lille (43954);Incomplete long passes;2;14.44;33.64
+79;3368.24;3380.24;1. David Raya (1209476) - Passes accurate;Arsenal FC (5358);Passes accurate;2;15.24;43.34
+80;3449.24;3461.24;1. Berke Özer (1101947) - Passes accurate;LOSC Lille (43954);Passes accurate;2;9.33;31.89
+81;3534.24;3546.24;1. Berke Özer (1101947) - Passes accurate;LOSC Lille (43954);Passes accurate;2;11.43;32.47
+82;3651.24;3663.24;1. Berke Özer (1101947) - Passes accurate;LOSC Lille (43954);Passes accurate;2;6.32;27.81
+83;3810.24;3822.24;1. Berke Özer (1101947) - Inaccurate passes;LOSC Lille (43954);Inaccurate passes;2;11.73;32.24
+84;3810.24;3822.24;1. Berke Özer (1101947) - Incomplete long passes;LOSC Lille (43954);Incomplete long passes;2;11.73;32.24
+85;3828.24;3840.24;1. David Raya (1209476) - Passes accurate;Arsenal FC (5358);Passes accurate;2;8.23;42.99
+86;3843.24;3855.24;1. David Raya (1209476) - Passes accurate;Arsenal FC (5358);Passes accurate;2;13.44;33.08
+87;3941.24;3953.24;1. Berke Özer (1101947) - Goals conceded;LOSC Lille (43954);Goals conceded;2;100.58;24.1
+88;3941.24;3953.24;1. Berke Özer (1101947) - Opponent's mid-range shots on target;LOSC Lille (43954);Opponent's mid-range shots on target;2;100.58;24.1
+89;3941.24;3953.24;1. Berke Özer (1101947) - Shots on target;LOSC Lille (43954);Shots on target;2;100.58;24.1
+90;4046.24;4058.24;1. Berke Özer (1101947) - Inaccurate passes;LOSC Lille (43954);Inaccurate passes;2;9.26;27.22
+91;4046.24;4058.24;1. Berke Özer (1101947) - Incomplete long passes;LOSC Lille (43954);Incomplete long passes;2;9.26;27.22
+92;4115.24;4127.24;1. Berke Özer (1101947) - Goals conceded;LOSC Lille (43954);Goals conceded;2;90.89;37.05
+93;4115.24;4127.24;1. Berke Özer (1101947) - Opponent's mid-range shots on target;LOSC Lille (43954);Opponent's mid-range shots on target;2;90.89;37.05
+94;4115.24;4127.24;1. Berke Özer (1101947) - Shots on target;LOSC Lille (43954);Shots on target;2;90.89;37.05
+95;4204.24;4216.24;1. Berke Özer (1101947) - Successful cross and pass interception attempts;LOSC Lille (43954);Successful cross and pass interception attempts;2;6.42;33.72
+96;4266.24;4278.24;1. Berke Özer (1101947) - Inaccurate passes;LOSC Lille (43954);Inaccurate passes;2;21.17;42.57
+97;4266.24;4278.24;1. Berke Özer (1101947) - Incomplete long passes;LOSC Lille (43954);Incomplete long passes;2;21.17;42.57
+98;4271.24;4283.24;1. David Raya (1209476) - Passes accurate;Arsenal FC (5358);Passes accurate;2;26.48;26.93
+99;4305.24;4317.24;1. Berke Özer (1101947) - Passes accurate;LOSC Lille (43954);Passes accurate;2;14.57;30.74
+100;4343.24;4355.24;1. Berke Özer (1101947) - Opponent's mid-range shots on target;LOSC Lille (43954);Opponent's mid-range shots on target;2;93.73;43.12
+101;4343.24;4355.24;1. Berke Özer (1101947) - Shots on target;LOSC Lille (43954);Shots on target;2;93.73;43.12
+102;4343.24;4355.24;1. Berke Özer (1101947) - Shots saved;LOSC Lille (43954);Shots saved;2;93.73;43.12
+103;4343.24;4355.24;1. Berke Özer (1101947) - Successful cross and pass interception attempts;LOSC Lille (43954);Successful cross and pass interception attempts;2;5.41;26.8
+104;4343.24;4355.24;1. Berke Özer (1101947) - Supersaves;LOSC Lille (43954);Supersaves;2;4.67;29.46
+105;4381.24;4393.24;1. Berke Özer (1101947) - Goals conceded;LOSC Lille (43954);Goals conceded;2;98.49;27.89
+106;4381.24;4393.24;1. Berke Özer (1101947) - Opponent's mid-range shots on target;LOSC Lille (43954);Opponent's mid-range shots on target;2;98.49;27.89
+107;4381.24;4393.24;1. Berke Özer (1101947) - Shots on target;LOSC Lille (43954);Shots on target;2;98.49;27.89
+108;4566.24;4578.24;1. David Raya (1209476) - Shots off target;Arsenal FC (5358);Shots off target;2;76.32;39.9
+109;4601.24;4613.24;1. David Raya (1209476) - Goal kicks;Arsenal FC (5358);Goal kicks;2;4.12;34.49
+110;4601.24;4613.24;1. David Raya (1209476) - Goal kicks long (40+ m);Arsenal FC (5358);Goal kicks long (40+ m);2;4.12;34.49
+111;4601.24;4613.24;1. David Raya (1209476) - Long passes;Arsenal FC (5358);Long passes;2;4.12;34.49
+112;4601.24;4613.24;1. David Raya (1209476) - Passes accurate;Arsenal FC (5358);Passes accurate;2;4.12;34.49
+113;4738.24;4750.24;1. Berke Özer (1101947) - Passes accurate;LOSC Lille (43954);Passes accurate;2;7.79;33.83
+114;4750.24;4762.24;1. Berke Özer (1101947) - Opponent's long-range shots on target;LOSC Lille (43954);Opponent's long-range shots on target;2;84.02;31.29
+115;4750.24;4762.24;1. Berke Özer (1101947) - Shots on target;LOSC Lille (43954);Shots on target;2;84.02;31.29
+116;4750.24;4762.24;1. Berke Özer (1101947) - Shots saved;LOSC Lille (43954);Shots saved;2;84.02;31.29
+117;4751.24;4763.24;1. Berke Özer (1101947) - Supersaves;LOSC Lille (43954);Supersaves;2;1.38;30.74
+118;5238.24;5250.24;1. David Raya (1209476) - Passes accurate;Arsenal FC (5358);Passes accurate;2;3.03;38.65
+119;5248.24;5260.24;1. David Raya (1209476) - Long passes;Arsenal FC (5358);Long passes;2;5.5;24.26
+120;5248.24;5260.24;1. David Raya (1209476) - Passes accurate;Arsenal FC (5358);Passes accurate;2;5.5;24.26
+121;5261.24;5273.24;1. Berke Özer (1101947) - Successful cross and pass interception attempts;LOSC Lille (43954);Successful cross and pass interception attempts;2;3.94;46.51
+122;5272.24;5284.24;1. Berke Özer (1101947) - Passes accurate;LOSC Lille (43954);Passes accurate;2;8.16;33.83
+123;5390.24;5402.24;1. Berke Özer (1101947) - Passes accurate;LOSC Lille (43954);Passes accurate;2;6.78;32.98
+124;5402.24;5414.24;1. Berke Özer (1101947) - Long passes;LOSC Lille (43954);Long passes;2;6.14;28.71
+125;5402.24;5414.24;1. Berke Özer (1101947) - Passes accurate;LOSC Lille (43954);Passes accurate;2;6.14;28.71
+126;5411.24;5423.24;1. David Raya (1209476) - Passes accurate;Arsenal FC (5358);Passes accurate;2;12.1;42.59
+127;5460.24;5472.24;1. David Raya (1209476) - Passes accurate;Arsenal FC (5358);Passes accurate;2;20.43;32.68
+128;5578.24;5590.24;1. Berke Özer (1101947) - Passes accurate;LOSC Lille (43954);Passes accurate;2;11.64;29.78
+129;5627.24;5639.24;1. Berke Özer (1101947) - Passes accurate;LOSC Lille (43954);Passes accurate;2;6.78;33.94
+130;5631.24;5643.24;1. Berke Özer (1101947) - Fouls suffered;LOSC Lille (43954);Fouls suffered;2;96.66;34.17
+131;5631.24;5643.24;1. Berke Özer (1101947) - YC suffered;LOSC Lille (43954);YC suffered;2;96.84;34.28
+132;5681.24;5693.24;1. Berke Özer (1101947) - Passes accurate;LOSC Lille (43954);Passes accurate;2;5.32;33.08
+133;5735.24;5735.24;End of the match;;End of the match;2;;

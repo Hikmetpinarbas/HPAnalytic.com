@@ -1,0 +1,45 @@
+{
+  "group": "matches/2026-10-13_galatasaray_vs_fc-barcelona",
+  "files": [
+    {
+      "name": "Galatasaray 1-4 FC Barcelona 13.10.2026, Full match (1).csv",
+      "sha256": "b7bbf04d24da4cf82a5fff2d18b9793a60c23808f7850d0a3570cb8e1f558269",
+      "bytes": 20890
+    },
+    {
+      "name": "Galatasaray 1-4 FC Barcelona 13.10.2026, Full match (1).xml",
+      "sha256": "27ae73e9cd87acae59c70883790f6e3a6073e6a427edde563ab48714113a7ed5",
+      "bytes": 107191
+    },
+    {
+      "name": "Galatasaray 1-4 FC Barcelona 13.10.2026, Full match (2).csv",
+      "sha256": "d476ee24a45d088bc2b66d67bca3b54d7bc365e3379b730799046e7418734cc9",
+      "bytes": 376803
+    },
+    {
+      "name": "Galatasaray 1-4 FC Barcelona 13.10.2026, Full match (2).xml",
+      "sha256": "99d50b9e1df305cac1841785f5ddbd860ef9ef8838ecb9982a7d1da6f8c49f7d",
+      "bytes": 1958146
+    },
+    {
+      "name": "Galatasaray 1-4 FC Barcelona 13.10.2026, Full match.csv",
+      "sha256": "3aefd6ca0bcd0b03e2ee984ba30aab745a30c7a777c5d6889c4b49151e0c8ef9",
+      "bytes": 405948
+    },
+    {
+      "name": "Galatasaray 1-4 FC Barcelona 13.10.2026, Full match.xml",
+      "sha256": "2f0eca39d5cdd56b098e97bc31253064e3aaf49eb54ce0f92fcaf4bc64a99ca0",
+      "bytes": 1971767
+    },
+    {
+      "name": "Galatasaray 1-4 FC Barcelona, Europe. UEFA Champions League, 13.10.2026 (1).xlsx",
+      "sha256": "949651714941e712d3993110b5b5bd2fa4affa2cc691fafcdecd9137af4864e5",
+      "bytes": 8892
+    },
+    {
+      "name": "Galatasaray 1-4 FC Barcelona, Europe. UEFA Champions League, 13.10.2026.xlsx",
+      "sha256": "c8bff960405e3b9b161afdd098556666e2bb80184ff9c7b2adc0bca3873b879e",
+      "bytes": 22995
+    }
+  ]
+}

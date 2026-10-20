@@ -1,0 +1,4522 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<file>
+  <SORT_INFO>
+    <sort_type>sort order</sort_type>
+  </SORT_INFO>
+  <ALL_INSTANCES>
+    <instance>
+      <ID>1</ID>
+      <start>5.38</start>
+      <end>5.38</end>
+      <code>Start of the 1st half</code>
+      <label>
+        <group>Team</group>
+        <text>None</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Start of the 1st half</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>1</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>None</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>None</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>2</ID>
+      <start>5.38</start>
+      <end>15.38</end>
+      <code>1. Uğurcan Çakır (235597) - Inaccurate passes</code>
+      <label>
+        <group>Team</group>
+        <text>Galatasaray (29205)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Inaccurate passes</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>1</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>26.37</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>34.44</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>3</ID>
+      <start>5.38</start>
+      <end>15.38</end>
+      <code>1. Uğurcan Çakır (235597) - Incomplete long passes</code>
+      <label>
+        <group>Team</group>
+        <text>Galatasaray (29205)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Incomplete long passes</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>1</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>26.37</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>34.44</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>4</ID>
+      <start>89.38</start>
+      <end>101.38</end>
+      <code>1. Uğurcan Çakır (235597) - Goal kicks</code>
+      <label>
+        <group>Team</group>
+        <text>Galatasaray (29205)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Goal kicks</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>1</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>4.62</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>29.81</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>5</ID>
+      <start>89.38</start>
+      <end>101.38</end>
+      <code>1. Uğurcan Çakır (235597) - Goal kicks long (40+ m)</code>
+      <label>
+        <group>Team</group>
+        <text>Galatasaray (29205)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Goal kicks long (40+ m)</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>1</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>4.62</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>29.81</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>6</ID>
+      <start>89.38</start>
+      <end>101.38</end>
+      <code>1. Uğurcan Çakır (235597) - Long passes</code>
+      <label>
+        <group>Team</group>
+        <text>Galatasaray (29205)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Long passes</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>1</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>4.62</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>29.81</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>7</ID>
+      <start>89.38</start>
+      <end>101.38</end>
+      <code>1. Uğurcan Çakır (235597) - Passes accurate</code>
+      <label>
+        <group>Team</group>
+        <text>Galatasaray (29205)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Passes accurate</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>1</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>4.62</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>29.81</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>8</ID>
+      <start>124.38</start>
+      <end>136.38</end>
+      <code>1. Uğurcan Çakır (235597) - Long passes</code>
+      <label>
+        <group>Team</group>
+        <text>Galatasaray (29205)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Long passes</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>1</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>14.05</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>24.08</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>9</ID>
+      <start>124.38</start>
+      <end>136.38</end>
+      <code>1. Uğurcan Çakır (235597) - Passes accurate</code>
+      <label>
+        <group>Team</group>
+        <text>Galatasaray (29205)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Passes accurate</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>1</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>14.05</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>24.08</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>10</ID>
+      <start>186.38</start>
+      <end>198.38</end>
+      <code>1. Joan García (502462) - Passes accurate</code>
+      <label>
+        <group>Team</group>
+        <text>FC Barcelona (87754)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Passes accurate</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>1</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>27.21</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>41.71</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>11</ID>
+      <start>210.38</start>
+      <end>222.38</end>
+      <code>1. Uğurcan Çakır (235597) - Passes accurate</code>
+      <label>
+        <group>Team</group>
+        <text>Galatasaray (29205)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Passes accurate</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>1</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>19.46</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>25.99</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>12</ID>
+      <start>220.38</start>
+      <end>232.38</end>
+      <code>1. Uğurcan Çakır (235597) - Long passes</code>
+      <label>
+        <group>Team</group>
+        <text>Galatasaray (29205)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Long passes</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>1</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>7.98</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>29.71</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>13</ID>
+      <start>220.38</start>
+      <end>232.38</end>
+      <code>1. Uğurcan Çakır (235597) - Passes accurate</code>
+      <label>
+        <group>Team</group>
+        <text>Galatasaray (29205)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Passes accurate</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>1</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>7.98</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>29.71</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>14</ID>
+      <start>238.38</start>
+      <end>250.38</end>
+      <code>1. Uğurcan Çakır (235597) - Passes accurate</code>
+      <label>
+        <group>Team</group>
+        <text>Galatasaray (29205)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Passes accurate</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>1</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>11.99</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>42.59</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>15</ID>
+      <start>385.38</start>
+      <end>397.38</end>
+      <code>1. Joan García (502462) - Passes accurate</code>
+      <label>
+        <group>Team</group>
+        <text>FC Barcelona (87754)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Passes accurate</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>1</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>20.86</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>43.01</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>16</ID>
+      <start>385.38</start>
+      <end>397.38</end>
+      <code>1. Joan García (502462) - Successful cross and pass interception attempts</code>
+      <label>
+        <group>Team</group>
+        <text>FC Barcelona (87754)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Successful cross and pass interception attempts</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>1</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>20.86</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>43.01</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>17</ID>
+      <start>429.38</start>
+      <end>441.38</end>
+      <code>1. Uğurcan Çakır (235597) - Long passes</code>
+      <label>
+        <group>Team</group>
+        <text>Galatasaray (29205)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Long passes</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>1</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>10.03</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>34.84</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>18</ID>
+      <start>429.38</start>
+      <end>441.38</end>
+      <code>1. Uğurcan Çakır (235597) - Passes accurate</code>
+      <label>
+        <group>Team</group>
+        <text>Galatasaray (29205)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Passes accurate</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>1</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>10.03</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>34.84</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>19</ID>
+      <start>595.38</start>
+      <end>607.38</end>
+      <code>1. Uğurcan Çakır (235597) - Long passes</code>
+      <label>
+        <group>Team</group>
+        <text>Galatasaray (29205)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Long passes</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>1</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>20.39</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>6.98</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>20</ID>
+      <start>595.38</start>
+      <end>607.38</end>
+      <code>1. Uğurcan Çakır (235597) - Passes accurate</code>
+      <label>
+        <group>Team</group>
+        <text>Galatasaray (29205)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Passes accurate</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>1</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>20.39</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>6.98</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>21</ID>
+      <start>607.38</start>
+      <end>619.38</end>
+      <code>1. Joan García (502462) - Passes accurate</code>
+      <label>
+        <group>Team</group>
+        <text>FC Barcelona (87754)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Passes accurate</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>1</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>11.62</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>35.57</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>22</ID>
+      <start>618.38</start>
+      <end>630.38</end>
+      <code>1. Joan García (502462) - Passes accurate</code>
+      <label>
+        <group>Team</group>
+        <text>FC Barcelona (87754)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Passes accurate</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>1</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>1.91</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>41.41</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>23</ID>
+      <start>712.38</start>
+      <end>724.38</end>
+      <code>1. Uğurcan Çakır (235597) - Shots off target</code>
+      <label>
+        <group>Team</group>
+        <text>Galatasaray (29205)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Shots off target</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>1</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>78.73</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>24.81</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>24</ID>
+      <start>743.38</start>
+      <end>755.38</end>
+      <code>1. Uğurcan Çakır (235597) - Passes accurate</code>
+      <label>
+        <group>Team</group>
+        <text>Galatasaray (29205)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Passes accurate</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>1</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>8.07</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>33.23</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>25</ID>
+      <start>944.38</start>
+      <end>956.38</end>
+      <code>1. Uğurcan Çakır (235597) - Opponent's mid-range shots on target</code>
+      <label>
+        <group>Team</group>
+        <text>Galatasaray (29205)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Opponent's mid-range shots on target</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>1</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>93.01</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>41.1</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>26</ID>
+      <start>944.38</start>
+      <end>956.38</end>
+      <code>1. Uğurcan Çakır (235597) - Shots on target</code>
+      <label>
+        <group>Team</group>
+        <text>Galatasaray (29205)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Shots on target</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>1</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>93.01</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>41.1</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>27</ID>
+      <start>944.38</start>
+      <end>956.38</end>
+      <code>1. Uğurcan Çakır (235597) - Shots saved</code>
+      <label>
+        <group>Team</group>
+        <text>Galatasaray (29205)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Shots saved</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>1</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>93.01</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>41.1</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>28</ID>
+      <start>945.38</start>
+      <end>957.38</end>
+      <code>1. Uğurcan Çakır (235597) - Supersaves</code>
+      <label>
+        <group>Team</group>
+        <text>Galatasaray (29205)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Supersaves</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>1</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>2.47</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>33.34</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>29</ID>
+      <start>1022.38</start>
+      <end>1034.38</end>
+      <code>1. Uğurcan Çakır (235597) - Shots off target</code>
+      <label>
+        <group>Team</group>
+        <text>Galatasaray (29205)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Shots off target</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>1</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>87.13</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>33.56</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>30</ID>
+      <start>1051.38</start>
+      <end>1063.38</end>
+      <code>1. Uğurcan Çakır (235597) - Goal kicks</code>
+      <label>
+        <group>Team</group>
+        <text>Galatasaray (29205)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Goal kicks</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>1</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>4.43</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>33.44</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>31</ID>
+      <start>1051.38</start>
+      <end>1063.38</end>
+      <code>1. Uğurcan Çakır (235597) - Goal kicks long (40+ m)</code>
+      <label>
+        <group>Team</group>
+        <text>Galatasaray (29205)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Goal kicks long (40+ m)</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>1</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>4.43</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>33.44</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>32</ID>
+      <start>1051.38</start>
+      <end>1063.38</end>
+      <code>1. Uğurcan Çakır (235597) - Long passes</code>
+      <label>
+        <group>Team</group>
+        <text>Galatasaray (29205)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Long passes</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>1</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>4.43</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>33.44</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>33</ID>
+      <start>1051.38</start>
+      <end>1063.38</end>
+      <code>1. Uğurcan Çakır (235597) - Passes accurate</code>
+      <label>
+        <group>Team</group>
+        <text>Galatasaray (29205)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Passes accurate</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>1</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>4.43</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>33.44</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>34</ID>
+      <start>1062.38</start>
+      <end>1074.38</end>
+      <code>1. Joan García (502462) - Passes accurate</code>
+      <label>
+        <group>Team</group>
+        <text>FC Barcelona (87754)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Passes accurate</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>1</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>3.87</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>22.39</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>35</ID>
+      <start>1152.38</start>
+      <end>1164.38</end>
+      <code>1. Uğurcan Çakır (235597) - Inaccurate passes</code>
+      <label>
+        <group>Team</group>
+        <text>Galatasaray (29205)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Inaccurate passes</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>1</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>6.77</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>35.35</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>36</ID>
+      <start>1152.38</start>
+      <end>1164.38</end>
+      <code>1. Uğurcan Çakır (235597) - Incomplete long passes</code>
+      <label>
+        <group>Team</group>
+        <text>Galatasaray (29205)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Incomplete long passes</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>1</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>6.77</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>35.35</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>37</ID>
+      <start>1251.38</start>
+      <end>1263.38</end>
+      <code>1. Uğurcan Çakır (235597) - Long passes</code>
+      <label>
+        <group>Team</group>
+        <text>Galatasaray (29205)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Long passes</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>1</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>17.59</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>29.01</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>38</ID>
+      <start>1251.38</start>
+      <end>1263.38</end>
+      <code>1. Uğurcan Çakır (235597) - Passes accurate</code>
+      <label>
+        <group>Team</group>
+        <text>Galatasaray (29205)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Passes accurate</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>1</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>17.59</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>29.01</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>39</ID>
+      <start>1288.38</start>
+      <end>1300.38</end>
+      <code>1. Uğurcan Çakır (235597) - Inaccurate passes</code>
+      <label>
+        <group>Team</group>
+        <text>Galatasaray (29205)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Inaccurate passes</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>1</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>17.69</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>30.92</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>40</ID>
+      <start>1288.38</start>
+      <end>1300.38</end>
+      <code>1. Uğurcan Çakır (235597) - Incomplete long passes</code>
+      <label>
+        <group>Team</group>
+        <text>Galatasaray (29205)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Incomplete long passes</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>1</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>17.69</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>30.92</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>41</ID>
+      <start>1385.38</start>
+      <end>1397.38</end>
+      <code>1. Uğurcan Çakır (235597) - Shots off target</code>
+      <label>
+        <group>Team</group>
+        <text>Galatasaray (29205)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Shots off target</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>1</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>97.39</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>36.37</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>42</ID>
+      <start>1467.38</start>
+      <end>1479.38</end>
+      <code>1. Uğurcan Çakır (235597) - Opponent's long-range shots on target</code>
+      <label>
+        <group>Team</group>
+        <text>Galatasaray (29205)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Opponent's long-range shots on target</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>1</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>86.47</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>50.66</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>43</ID>
+      <start>1467.38</start>
+      <end>1479.38</end>
+      <code>1. Uğurcan Çakır (235597) - Shots on target</code>
+      <label>
+        <group>Team</group>
+        <text>Galatasaray (29205)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Shots on target</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>1</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>86.47</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>50.66</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>44</ID>
+      <start>1467.38</start>
+      <end>1479.38</end>
+      <code>1. Uğurcan Çakır (235597) - Shots saved</code>
+      <label>
+        <group>Team</group>
+        <text>Galatasaray (29205)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Shots saved</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>1</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>86.47</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>50.66</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>45</ID>
+      <start>1468.38</start>
+      <end>1480.38</end>
+      <code>1. Uğurcan Çakır (235597) - Supersaves</code>
+      <label>
+        <group>Team</group>
+        <text>Galatasaray (29205)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Supersaves</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>1</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>1.91</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>35.55</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>46</ID>
+      <start>1555.38</start>
+      <end>1567.38</end>
+      <code>1. Uğurcan Çakır (235597) - Passes accurate</code>
+      <label>
+        <group>Team</group>
+        <text>Galatasaray (29205)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Passes accurate</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>1</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>10.59</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>48.43</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>47</ID>
+      <start>1566.38</start>
+      <end>1578.38</end>
+      <code>1. Uğurcan Çakır (235597) - Long passes</code>
+      <label>
+        <group>Team</group>
+        <text>Galatasaray (29205)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Long passes</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>1</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>18.34</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>25.99</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>48</ID>
+      <start>1566.38</start>
+      <end>1578.38</end>
+      <code>1. Uğurcan Çakır (235597) - Passes accurate</code>
+      <label>
+        <group>Team</group>
+        <text>Galatasaray (29205)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Passes accurate</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>1</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>18.34</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>25.99</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>49</ID>
+      <start>1578.38</start>
+      <end>1590.38</end>
+      <code>1. Uğurcan Çakır (235597) - Passes accurate</code>
+      <label>
+        <group>Team</group>
+        <text>Galatasaray (29205)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Passes accurate</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>1</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>16.57</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>34.95</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>50</ID>
+      <start>1586.38</start>
+      <end>1598.38</end>
+      <code>1. Joan García (502462) - Successful cross and pass interception attempts</code>
+      <label>
+        <group>Team</group>
+        <text>FC Barcelona (87754)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Successful cross and pass interception attempts</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>1</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>24.41</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>19.27</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>51</ID>
+      <start>1589.38</start>
+      <end>1601.38</end>
+      <code>1. Joan García (502462) - Passes accurate</code>
+      <label>
+        <group>Team</group>
+        <text>FC Barcelona (87754)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Passes accurate</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>1</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>24.59</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>12.83</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>52</ID>
+      <start>1608.38</start>
+      <end>1620.38</end>
+      <code>1. Uğurcan Çakır (235597) - Passes accurate</code>
+      <label>
+        <group>Team</group>
+        <text>Galatasaray (29205)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Passes accurate</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>1</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>13.21</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>17.14</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>53</ID>
+      <start>1622.38</start>
+      <end>1634.38</end>
+      <code>1. Joan García (502462) - Goals conceded</code>
+      <label>
+        <group>Team</group>
+        <text>FC Barcelona (87754)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Goals conceded</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>1</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>87.87</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>31.12</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>54</ID>
+      <start>1622.38</start>
+      <end>1634.38</end>
+      <code>1. Joan García (502462) - Opponent's mid-range shots on target</code>
+      <label>
+        <group>Team</group>
+        <text>FC Barcelona (87754)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Opponent's mid-range shots on target</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>1</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>87.87</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>31.12</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>55</ID>
+      <start>1622.38</start>
+      <end>1634.38</end>
+      <code>1. Joan García (502462) - Shots on target</code>
+      <label>
+        <group>Team</group>
+        <text>FC Barcelona (87754)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Shots on target</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>1</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>87.87</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>31.12</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>56</ID>
+      <start>1819.38</start>
+      <end>1831.38</end>
+      <code>1. Joan García (502462) - Passes accurate</code>
+      <label>
+        <group>Team</group>
+        <text>FC Barcelona (87754)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Passes accurate</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>1</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>36.17</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>28.43</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>57</ID>
+      <start>1852.38</start>
+      <end>1864.38</end>
+      <code>1. Uğurcan Çakır (235597) - Long passes</code>
+      <label>
+        <group>Team</group>
+        <text>Galatasaray (29205)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Long passes</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>1</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>4.34</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>27.8</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>58</ID>
+      <start>1852.38</start>
+      <end>1864.38</end>
+      <code>1. Uğurcan Çakır (235597) - Passes accurate</code>
+      <label>
+        <group>Team</group>
+        <text>Galatasaray (29205)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Passes accurate</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>1</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>4.34</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>27.8</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>59</ID>
+      <start>1898.38</start>
+      <end>1910.38</end>
+      <code>1. Joan García (502462) - Passes accurate</code>
+      <label>
+        <group>Team</group>
+        <text>FC Barcelona (87754)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Passes accurate</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>1</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>7.51</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>37.08</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>60</ID>
+      <start>1914.38</start>
+      <end>1926.38</end>
+      <code>1. Joan García (502462) - Passes accurate</code>
+      <label>
+        <group>Team</group>
+        <text>FC Barcelona (87754)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Passes accurate</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>1</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>8.35</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>38.49</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>61</ID>
+      <start>2164.38</start>
+      <end>2176.38</end>
+      <code>1. Joan García (502462) - Passes accurate</code>
+      <label>
+        <group>Team</group>
+        <text>FC Barcelona (87754)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Passes accurate</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>1</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>4.62</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>34.26</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>62</ID>
+      <start>2180.38</start>
+      <end>2192.38</end>
+      <code>1. Uğurcan Çakır (235597) - Long passes</code>
+      <label>
+        <group>Team</group>
+        <text>Galatasaray (29205)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Long passes</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>1</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>20.21</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>23.58</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>63</ID>
+      <start>2180.38</start>
+      <end>2192.38</end>
+      <code>1. Uğurcan Çakır (235597) - Passes accurate</code>
+      <label>
+        <group>Team</group>
+        <text>Galatasaray (29205)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Passes accurate</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>1</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>20.21</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>23.58</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>64</ID>
+      <start>2192.38</start>
+      <end>2204.38</end>
+      <code>1. Joan García (502462) - Successful cross and pass interception attempts</code>
+      <label>
+        <group>Team</group>
+        <text>FC Barcelona (87754)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Successful cross and pass interception attempts</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>1</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>4.71</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>28.53</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>65</ID>
+      <start>2199.38</start>
+      <end>2211.38</end>
+      <code>1. Joan García (502462) - Opponent's mid-range shots on target</code>
+      <label>
+        <group>Team</group>
+        <text>FC Barcelona (87754)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Opponent's mid-range shots on target</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>1</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>97.49</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>25.69</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>66</ID>
+      <start>2199.38</start>
+      <end>2211.38</end>
+      <code>1. Joan García (502462) - Shots on target</code>
+      <label>
+        <group>Team</group>
+        <text>FC Barcelona (87754)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Shots on target</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>1</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>97.49</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>25.69</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>67</ID>
+      <start>2199.38</start>
+      <end>2211.38</end>
+      <code>1. Joan García (502462) - Shots saved</code>
+      <label>
+        <group>Team</group>
+        <text>FC Barcelona (87754)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Shots saved</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>1</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>97.49</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>25.69</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>68</ID>
+      <start>2206.38</start>
+      <end>2218.38</end>
+      <code>1. Joan García (502462) - Passes accurate</code>
+      <label>
+        <group>Team</group>
+        <text>FC Barcelona (87754)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Passes accurate</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>1</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>13.49</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>29.73</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>69</ID>
+      <start>2247.38</start>
+      <end>2259.38</end>
+      <code>1. Joan García (502462) - Passes accurate</code>
+      <label>
+        <group>Team</group>
+        <text>FC Barcelona (87754)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Passes accurate</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>1</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>5.83</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>27.02</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>70</ID>
+      <start>2332.38</start>
+      <end>2344.38</end>
+      <code>1. Uğurcan Çakır (235597) - Passes accurate</code>
+      <label>
+        <group>Team</group>
+        <text>Galatasaray (29205)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Passes accurate</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>1</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>14.89</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>29.31</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>71</ID>
+      <start>2381.38</start>
+      <end>2393.38</end>
+      <code>1. Uğurcan Çakır (235597) - Inaccurate passes</code>
+      <label>
+        <group>Team</group>
+        <text>Galatasaray (29205)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Inaccurate passes</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>1</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>17.03</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>28.2</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>72</ID>
+      <start>2381.38</start>
+      <end>2393.38</end>
+      <code>1. Uğurcan Çakır (235597) - Incomplete long passes</code>
+      <label>
+        <group>Team</group>
+        <text>Galatasaray (29205)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Incomplete long passes</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>1</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>17.03</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>28.2</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>73</ID>
+      <start>2418.38</start>
+      <end>2430.38</end>
+      <code>1. Joan García (502462) - Inaccurate passes</code>
+      <label>
+        <group>Team</group>
+        <text>FC Barcelona (87754)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Inaccurate passes</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>1</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>6.77</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>34.77</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>74</ID>
+      <start>2418.38</start>
+      <end>2430.38</end>
+      <code>1. Joan García (502462) - Incomplete long passes</code>
+      <label>
+        <group>Team</group>
+        <text>FC Barcelona (87754)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Incomplete long passes</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>1</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>6.77</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>34.77</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>75</ID>
+      <start>2492.38</start>
+      <end>2504.38</end>
+      <code>1. Uğurcan Çakır (235597) - Successful cross and pass interception attempts</code>
+      <label>
+        <group>Team</group>
+        <text>Galatasaray (29205)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Successful cross and pass interception attempts</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>1</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>4.43</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>36.86</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>76</ID>
+      <start>2527.38</start>
+      <end>2539.38</end>
+      <code>1. Uğurcan Çakır (235597) - Goals conceded</code>
+      <label>
+        <group>Team</group>
+        <text>Galatasaray (29205)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Goals conceded</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>1</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>95.9</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>41.91</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>77</ID>
+      <start>2527.38</start>
+      <end>2539.38</end>
+      <code>1. Uğurcan Çakır (235597) - Opponent's mid-range shots on target</code>
+      <label>
+        <group>Team</group>
+        <text>Galatasaray (29205)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Opponent's mid-range shots on target</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>1</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>95.9</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>41.91</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>78</ID>
+      <start>2527.38</start>
+      <end>2539.38</end>
+      <code>1. Uğurcan Çakır (235597) - Shots on target</code>
+      <label>
+        <group>Team</group>
+        <text>Galatasaray (29205)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Shots on target</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>1</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>95.9</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>41.91</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>79</ID>
+      <start>2607.38</start>
+      <end>2619.38</end>
+      <code>1. Uğurcan Çakır (235597) - Long passes</code>
+      <label>
+        <group>Team</group>
+        <text>Galatasaray (29205)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Long passes</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>1</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>20.95</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>35.15</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>80</ID>
+      <start>2607.38</start>
+      <end>2619.38</end>
+      <code>1. Uğurcan Çakır (235597) - Passes accurate</code>
+      <label>
+        <group>Team</group>
+        <text>Galatasaray (29205)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Passes accurate</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>1</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>20.95</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>35.15</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>81</ID>
+      <start>2643.38</start>
+      <end>2655.38</end>
+      <code>1. Uğurcan Çakır (235597) - Opponent's long-range shots on target</code>
+      <label>
+        <group>Team</group>
+        <text>Galatasaray (29205)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Opponent's long-range shots on target</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>1</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>77.51</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>33.36</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>82</ID>
+      <start>2643.38</start>
+      <end>2655.38</end>
+      <code>1. Uğurcan Çakır (235597) - Shots on target</code>
+      <label>
+        <group>Team</group>
+        <text>Galatasaray (29205)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Shots on target</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>1</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>77.51</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>33.36</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>83</ID>
+      <start>2643.38</start>
+      <end>2655.38</end>
+      <code>1. Uğurcan Çakır (235597) - Shots saved</code>
+      <label>
+        <group>Team</group>
+        <text>Galatasaray (29205)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Shots saved</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>1</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>77.51</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>33.36</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>84</ID>
+      <start>2663.38</start>
+      <end>2675.38</end>
+      <code>1. Uğurcan Çakır (235597) - Passes accurate</code>
+      <label>
+        <group>Team</group>
+        <text>Galatasaray (29205)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Passes accurate</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>1</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>13.02</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>32.63</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>85</ID>
+      <start>2670.38</start>
+      <end>2682.38</end>
+      <code>1. Joan García (502462) - Passes accurate</code>
+      <label>
+        <group>Team</group>
+        <text>FC Barcelona (87754)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Passes accurate</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>1</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>20.77</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>44.32</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>86</ID>
+      <start>2670.38</start>
+      <end>2682.38</end>
+      <code>1. Joan García (502462) - Successful cross and pass interception attempts</code>
+      <label>
+        <group>Team</group>
+        <text>FC Barcelona (87754)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Successful cross and pass interception attempts</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>1</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>20.77</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>44.32</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>87</ID>
+      <start>2709.38</start>
+      <end>2721.38</end>
+      <code>1. Uğurcan Çakır (235597) - Opponent's mid-range shots on target</code>
+      <label>
+        <group>Team</group>
+        <text>Galatasaray (29205)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Opponent's mid-range shots on target</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>1</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>91.89</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>45.43</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>88</ID>
+      <start>2709.38</start>
+      <end>2721.38</end>
+      <code>1. Uğurcan Çakır (235597) - Shots on target</code>
+      <label>
+        <group>Team</group>
+        <text>Galatasaray (29205)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Shots on target</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>1</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>91.89</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>45.43</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>89</ID>
+      <start>2709.38</start>
+      <end>2721.38</end>
+      <code>1. Uğurcan Çakır (235597) - Shots saved</code>
+      <label>
+        <group>Team</group>
+        <text>Galatasaray (29205)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Shots saved</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>1</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>91.89</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>45.43</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>90</ID>
+      <start>2710.38</start>
+      <end>2722.38</end>
+      <code>1. Uğurcan Çakır (235597) - Supersaves</code>
+      <label>
+        <group>Team</group>
+        <text>Galatasaray (29205)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Supersaves</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>1</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>1.35</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>35.35</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>91</ID>
+      <start>2803.38</start>
+      <end>2815.38</end>
+      <code>1. Uğurcan Çakır (235597) - Opponent's long-range shots on target</code>
+      <label>
+        <group>Team</group>
+        <text>Galatasaray (29205)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Opponent's long-range shots on target</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>1</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>73.97</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>43.32</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>92</ID>
+      <start>2803.38</start>
+      <end>2815.38</end>
+      <code>1. Uğurcan Çakır (235597) - Shots on target</code>
+      <label>
+        <group>Team</group>
+        <text>Galatasaray (29205)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Shots on target</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>1</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>73.97</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>43.32</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>93</ID>
+      <start>2803.38</start>
+      <end>2815.38</end>
+      <code>1. Uğurcan Çakır (235597) - Shots saved</code>
+      <label>
+        <group>Team</group>
+        <text>Galatasaray (29205)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Shots saved</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>1</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>73.97</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>43.32</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>94</ID>
+      <start>2892.38</start>
+      <end>2892.38</end>
+      <code>Halftime</code>
+      <label>
+        <group>Team</group>
+        <text>None</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Halftime</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>1</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>None</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>None</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>95</ID>
+      <start>2931.34</start>
+      <end>2931.34</end>
+      <code>Start of the 2nd half</code>
+      <label>
+        <group>Team</group>
+        <text>None</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Start of the 2nd half</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>2</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>None</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>None</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>96</ID>
+      <start>2993.34</start>
+      <end>3005.34</end>
+      <code>1. Uğurcan Çakır (235597) - Shots off target</code>
+      <label>
+        <group>Team</group>
+        <text>Galatasaray (29205)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Shots off target</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>2</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>100.66</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>40.82</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>97</ID>
+      <start>3037.34</start>
+      <end>3049.34</end>
+      <code>1. Uğurcan Çakır (235597) - Passes accurate</code>
+      <label>
+        <group>Team</group>
+        <text>Galatasaray (29205)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Passes accurate</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>2</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>14.33</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>48.31</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>98</ID>
+      <start>3202.34</start>
+      <end>3214.34</end>
+      <code>1. Uğurcan Çakır (235597) - Goals conceded</code>
+      <label>
+        <group>Team</group>
+        <text>Galatasaray (29205)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Goals conceded</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>2</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>97.49</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>34.38</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>99</ID>
+      <start>3202.34</start>
+      <end>3214.34</end>
+      <code>1. Uğurcan Çakır (235597) - Opponent's close-range shots on target</code>
+      <label>
+        <group>Team</group>
+        <text>Galatasaray (29205)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Opponent's close-range shots on target</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>2</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>97.49</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>34.38</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>100</ID>
+      <start>3202.34</start>
+      <end>3214.34</end>
+      <code>1. Uğurcan Çakır (235597) - Shots on target</code>
+      <label>
+        <group>Team</group>
+        <text>Galatasaray (29205)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Shots on target</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>2</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>97.49</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>34.38</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>101</ID>
+      <start>3288.34</start>
+      <end>3300.34</end>
+      <code>1. Joan García (502462) - Passes accurate</code>
+      <label>
+        <group>Team</group>
+        <text>FC Barcelona (87754)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Passes accurate</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>2</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>11.06</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>29.25</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>102</ID>
+      <start>3313.34</start>
+      <end>3325.34</end>
+      <code>1. Uğurcan Çakır (235597) - Shots off target</code>
+      <label>
+        <group>Team</group>
+        <text>Galatasaray (29205)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Shots off target</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>2</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>92.35</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>21.8</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>103</ID>
+      <start>3333.34</start>
+      <end>3345.34</end>
+      <code>1. Uğurcan Çakır (235597) - Passes accurate</code>
+      <label>
+        <group>Team</group>
+        <text>Galatasaray (29205)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Passes accurate</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>2</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>8.26</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>33.82</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>104</ID>
+      <start>3388.34</start>
+      <end>3400.34</end>
+      <code>1. Uğurcan Çakır (235597) - Goals conceded</code>
+      <label>
+        <group>Team</group>
+        <text>Galatasaray (29205)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Goals conceded</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>2</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>102.34</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>26.03</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>105</ID>
+      <start>3388.34</start>
+      <end>3400.34</end>
+      <code>1. Uğurcan Çakır (235597) - Mistakes leading to goals</code>
+      <label>
+        <group>Team</group>
+        <text>Galatasaray (29205)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Mistakes leading to goals</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>2</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>2.66</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>41.97</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>106</ID>
+      <start>3388.34</start>
+      <end>3400.34</end>
+      <code>1. Uğurcan Çakır (235597) - Opponent's close-range shots on target</code>
+      <label>
+        <group>Team</group>
+        <text>Galatasaray (29205)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Opponent's close-range shots on target</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>2</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>102.34</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>26.03</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>107</ID>
+      <start>3388.34</start>
+      <end>3400.34</end>
+      <code>1. Uğurcan Çakır (235597) - Shots on target</code>
+      <label>
+        <group>Team</group>
+        <text>Galatasaray (29205)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Shots on target</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>2</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>102.34</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>26.03</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>108</ID>
+      <start>3471.34</start>
+      <end>3483.34</end>
+      <code>1. Uğurcan Çakır (235597) - Inaccurate passes</code>
+      <label>
+        <group>Team</group>
+        <text>Galatasaray (29205)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Inaccurate passes</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>2</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>7.61</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>27.58</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>109</ID>
+      <start>3471.34</start>
+      <end>3483.34</end>
+      <code>1. Uğurcan Çakır (235597) - Incomplete long passes</code>
+      <label>
+        <group>Team</group>
+        <text>Galatasaray (29205)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Incomplete long passes</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>2</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>7.61</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>27.58</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>110</ID>
+      <start>3498.34</start>
+      <end>3510.34</end>
+      <code>1. Uğurcan Çakır (235597) - Passes accurate</code>
+      <label>
+        <group>Team</group>
+        <text>Galatasaray (29205)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Passes accurate</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>2</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>12.83</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>27.18</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>111</ID>
+      <start>3524.34</start>
+      <end>3536.34</end>
+      <code>1. Uğurcan Çakır (235597) - Passes accurate</code>
+      <label>
+        <group>Team</group>
+        <text>Galatasaray (29205)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Passes accurate</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>2</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>15.07</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>29.8</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>112</ID>
+      <start>3547.34</start>
+      <end>3559.34</end>
+      <code>1. Joan García (502462) - Passes accurate</code>
+      <label>
+        <group>Team</group>
+        <text>FC Barcelona (87754)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Passes accurate</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>2</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>8.35</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>34.08</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>113</ID>
+      <start>3555.34</start>
+      <end>3567.34</end>
+      <code>1. Joan García (502462) - Passes accurate</code>
+      <label>
+        <group>Team</group>
+        <text>FC Barcelona (87754)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Passes accurate</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>2</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>6.95</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>41.12</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>114</ID>
+      <start>3583.34</start>
+      <end>3595.34</end>
+      <code>1. Uğurcan Çakır (235597) - Long passes</code>
+      <label>
+        <group>Team</group>
+        <text>Galatasaray (29205)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Long passes</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>2</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>13.77</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>18.63</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>115</ID>
+      <start>3583.34</start>
+      <end>3595.34</end>
+      <code>1. Uğurcan Çakır (235597) - Passes accurate</code>
+      <label>
+        <group>Team</group>
+        <text>Galatasaray (29205)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Passes accurate</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>2</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>13.77</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>18.63</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>116</ID>
+      <start>3752.34</start>
+      <end>3764.34</end>
+      <code>1. Joan García (502462) - Passes accurate</code>
+      <label>
+        <group>Team</group>
+        <text>FC Barcelona (87754)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Passes accurate</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>2</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>4.43</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>41.32</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>117</ID>
+      <start>3756.34</start>
+      <end>3768.34</end>
+      <code>1. Joan García (502462) - Passes accurate</code>
+      <label>
+        <group>Team</group>
+        <text>FC Barcelona (87754)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Passes accurate</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>2</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>1.35</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>33.57</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>118</ID>
+      <start>3820.34</start>
+      <end>3832.34</end>
+      <code>1. Uğurcan Çakır (235597) - Passes accurate</code>
+      <label>
+        <group>Team</group>
+        <text>Galatasaray (29205)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Passes accurate</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>2</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>11.25</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>29.8</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>119</ID>
+      <start>3834.34</start>
+      <end>3846.34</end>
+      <code>1. Uğurcan Çakır (235597) - Passes accurate</code>
+      <label>
+        <group>Team</group>
+        <text>Galatasaray (29205)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Passes accurate</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>2</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>2.85</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>34.33</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>120</ID>
+      <start>3858.34</start>
+      <end>3870.34</end>
+      <code>1. Uğurcan Çakır (235597) - Long passes</code>
+      <label>
+        <group>Team</group>
+        <text>Galatasaray (29205)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Long passes</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>2</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>6.39</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>34.22</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>121</ID>
+      <start>3858.34</start>
+      <end>3870.34</end>
+      <code>1. Uğurcan Çakır (235597) - Passes accurate</code>
+      <label>
+        <group>Team</group>
+        <text>Galatasaray (29205)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Passes accurate</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>2</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>6.39</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>34.22</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>122</ID>
+      <start>3907.34</start>
+      <end>3919.34</end>
+      <code>1. Uğurcan Çakır (235597) - Inaccurate passes</code>
+      <label>
+        <group>Team</group>
+        <text>Galatasaray (29205)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Inaccurate passes</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>2</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>7.23</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>33.62</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>123</ID>
+      <start>3962.34</start>
+      <end>3974.34</end>
+      <code>1. Joan García (502462) - Passes accurate</code>
+      <label>
+        <group>Team</group>
+        <text>FC Barcelona (87754)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Passes accurate</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>2</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>38.5</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>40.01</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>124</ID>
+      <start>4078.34</start>
+      <end>4090.34</end>
+      <code>1. Joan García (502462) - Passes accurate</code>
+      <label>
+        <group>Team</group>
+        <text>FC Barcelona (87754)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Passes accurate</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>2</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>7.14</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>29.85</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>125</ID>
+      <start>4121.34</start>
+      <end>4133.34</end>
+      <code>1. Uğurcan Çakır (235597) - Goals conceded</code>
+      <label>
+        <group>Team</group>
+        <text>Galatasaray (29205)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Goals conceded</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>2</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>93.85</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>46.25</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>126</ID>
+      <start>4121.34</start>
+      <end>4133.34</end>
+      <code>1. Uğurcan Çakır (235597) - Opponent's mid-range shots on target</code>
+      <label>
+        <group>Team</group>
+        <text>Galatasaray (29205)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Opponent's mid-range shots on target</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>2</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>93.85</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>46.25</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>127</ID>
+      <start>4121.34</start>
+      <end>4133.34</end>
+      <code>1. Uğurcan Çakır (235597) - Shots on target</code>
+      <label>
+        <group>Team</group>
+        <text>Galatasaray (29205)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Shots on target</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>2</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>93.85</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>46.25</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>128</ID>
+      <start>4243.34</start>
+      <end>4255.34</end>
+      <code>1. Uğurcan Çakır (235597) - Long passes</code>
+      <label>
+        <group>Team</group>
+        <text>Galatasaray (29205)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Long passes</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>2</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>12.27</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>37.92</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>129</ID>
+      <start>4243.34</start>
+      <end>4255.34</end>
+      <code>1. Uğurcan Çakır (235597) - Passes accurate</code>
+      <label>
+        <group>Team</group>
+        <text>Galatasaray (29205)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Passes accurate</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>2</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>12.27</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>37.92</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>130</ID>
+      <start>4316.34</start>
+      <end>4328.34</end>
+      <code>1. Uğurcan Çakır (235597) - Shots off target</code>
+      <label>
+        <group>Team</group>
+        <text>Galatasaray (29205)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Shots off target</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>2</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>90.77</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>27.56</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>131</ID>
+      <start>4366.34</start>
+      <end>4378.34</end>
+      <code>1. Uğurcan Çakır (235597) - Passes accurate</code>
+      <label>
+        <group>Team</group>
+        <text>Galatasaray (29205)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Passes accurate</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>2</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>13.58</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>36.51</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>132</ID>
+      <start>4378.34</start>
+      <end>4390.34</end>
+      <code>1. Uğurcan Çakır (235597) - Passes accurate</code>
+      <label>
+        <group>Team</group>
+        <text>Galatasaray (29205)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Passes accurate</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>2</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>7.79</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>41.54</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>133</ID>
+      <start>4390.34</start>
+      <end>4402.34</end>
+      <code>1. Joan García (502462) - Fouls suffered</code>
+      <label>
+        <group>Team</group>
+        <text>FC Barcelona (87754)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Fouls suffered</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>2</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>84.33</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>17.3</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>134</ID>
+      <start>4390.34</start>
+      <end>4402.34</end>
+      <code>1. Joan García (502462) - Successful cross and pass interception attempts</code>
+      <label>
+        <group>Team</group>
+        <text>FC Barcelona (87754)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Successful cross and pass interception attempts</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>2</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>21.14</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>51.81</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>135</ID>
+      <start>4459.34</start>
+      <end>4471.34</end>
+      <code>1. Uğurcan Çakır (235597) - Inaccurate passes</code>
+      <label>
+        <group>Team</group>
+        <text>Galatasaray (29205)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Inaccurate passes</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>2</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>23.75</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>31.38</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>136</ID>
+      <start>4459.34</start>
+      <end>4471.34</end>
+      <code>1. Uğurcan Çakır (235597) - Incomplete long passes</code>
+      <label>
+        <group>Team</group>
+        <text>Galatasaray (29205)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Incomplete long passes</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>2</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>23.75</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>31.38</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>137</ID>
+      <start>4552.34</start>
+      <end>4564.34</end>
+      <code>1. Uğurcan Çakır (235597) - Passes accurate</code>
+      <label>
+        <group>Team</group>
+        <text>Galatasaray (29205)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Passes accurate</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>2</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>12.65</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>28.26</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>138</ID>
+      <start>4629.34</start>
+      <end>4641.34</end>
+      <code>1. Joan García (502462) - Passes accurate</code>
+      <label>
+        <group>Team</group>
+        <text>FC Barcelona (87754)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Passes accurate</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>2</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>0.98</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>45.17</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>139</ID>
+      <start>4637.34</start>
+      <end>4649.34</end>
+      <code>1. Joan García (502462) - Opponent's long-range shots on target</code>
+      <label>
+        <group>Team</group>
+        <text>FC Barcelona (87754)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Opponent's long-range shots on target</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>2</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>79.75</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>32.49</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>140</ID>
+      <start>4637.34</start>
+      <end>4649.34</end>
+      <code>1. Joan García (502462) - Shots on target</code>
+      <label>
+        <group>Team</group>
+        <text>FC Barcelona (87754)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Shots on target</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>2</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>79.75</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>32.49</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>141</ID>
+      <start>4637.34</start>
+      <end>4649.34</end>
+      <code>1. Joan García (502462) - Shots saved</code>
+      <label>
+        <group>Team</group>
+        <text>FC Barcelona (87754)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Shots saved</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>2</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>79.75</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>32.49</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>142</ID>
+      <start>4641.34</start>
+      <end>4653.34</end>
+      <code>1. Joan García (502462) - Passes accurate</code>
+      <label>
+        <group>Team</group>
+        <text>FC Barcelona (87754)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Passes accurate</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>2</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>5.37</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>32.69</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>143</ID>
+      <start>4679.34</start>
+      <end>4691.34</end>
+      <code>1. Uğurcan Çakır (235597) - Passes accurate</code>
+      <label>
+        <group>Team</group>
+        <text>Galatasaray (29205)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Passes accurate</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>2</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>10.87</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>31.99</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>144</ID>
+      <start>4697.34</start>
+      <end>4709.34</end>
+      <code>1. Uğurcan Çakır (235597) - Passes accurate</code>
+      <label>
+        <group>Team</group>
+        <text>Galatasaray (29205)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Passes accurate</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>2</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>6.49</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>39.73</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>145</ID>
+      <start>4715.34</start>
+      <end>4727.34</end>
+      <code>1. Joan García (502462) - Passes accurate</code>
+      <label>
+        <group>Team</group>
+        <text>FC Barcelona (87754)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Passes accurate</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>2</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>19.46</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>25.55</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>146</ID>
+      <start>4766.34</start>
+      <end>4778.34</end>
+      <code>1. Uğurcan Çakır (235597) - Shots off target</code>
+      <label>
+        <group>Team</group>
+        <text>Galatasaray (29205)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Shots off target</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>2</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>97.58</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>46.28</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>147</ID>
+      <start>4776.34</start>
+      <end>4788.34</end>
+      <code>1. Uğurcan Çakır (235597) - Goal kicks</code>
+      <label>
+        <group>Team</group>
+        <text>Galatasaray (29205)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Goal kicks</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>2</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>5.37</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>33.29</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>148</ID>
+      <start>4776.34</start>
+      <end>4788.34</end>
+      <code>1. Uğurcan Çakır (235597) - Goal kicks medium (15-40 m)</code>
+      <label>
+        <group>Team</group>
+        <text>Galatasaray (29205)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Goal kicks medium (15-40 m)</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>2</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>5.37</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>33.29</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>149</ID>
+      <start>4776.34</start>
+      <end>4788.34</end>
+      <code>1. Uğurcan Çakır (235597) - Passes accurate</code>
+      <label>
+        <group>Team</group>
+        <text>Galatasaray (29205)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Passes accurate</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>2</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>5.37</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>33.29</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>150</ID>
+      <start>4861.34</start>
+      <end>4873.34</end>
+      <code>1. Uğurcan Çakır (235597) - Passes accurate</code>
+      <label>
+        <group>Team</group>
+        <text>Galatasaray (29205)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Passes accurate</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>2</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>7.51</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>35.21</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>151</ID>
+      <start>5183.34</start>
+      <end>5195.34</end>
+      <code>1. Uğurcan Çakır (235597) - Opponent's mid-range shots on target</code>
+      <label>
+        <group>Team</group>
+        <text>Galatasaray (29205)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Opponent's mid-range shots on target</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>2</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>91.23</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>34.5</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>152</ID>
+      <start>5183.34</start>
+      <end>5195.34</end>
+      <code>1. Uğurcan Çakır (235597) - Shots on target</code>
+      <label>
+        <group>Team</group>
+        <text>Galatasaray (29205)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Shots on target</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>2</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>91.23</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>34.5</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>153</ID>
+      <start>5183.34</start>
+      <end>5195.34</end>
+      <code>1. Uğurcan Çakır (235597) - Shots saved</code>
+      <label>
+        <group>Team</group>
+        <text>Galatasaray (29205)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Shots saved</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>2</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>91.23</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>34.5</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>154</ID>
+      <start>5183.34</start>
+      <end>5195.34</end>
+      <code>1. Uğurcan Çakır (235597) - Supersaves</code>
+      <label>
+        <group>Team</group>
+        <text>Galatasaray (29205)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Supersaves</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>2</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>1.45</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>33.7</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>155</ID>
+      <start>5219.34</start>
+      <end>5231.34</end>
+      <code>1. Uğurcan Çakır (235597) - Fouls suffered</code>
+      <label>
+        <group>Team</group>
+        <text>Galatasaray (29205)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Fouls suffered</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>2</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>102.62</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>29.68</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>156</ID>
+      <start>5252.34</start>
+      <end>5264.34</end>
+      <code>1. Uğurcan Çakır (235597) - Inaccurate passes</code>
+      <label>
+        <group>Team</group>
+        <text>Galatasaray (29205)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Inaccurate passes</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>2</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>13.21</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>39.03</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>157</ID>
+      <start>5252.34</start>
+      <end>5264.34</end>
+      <code>1. Uğurcan Çakır (235597) - Incomplete long passes</code>
+      <label>
+        <group>Team</group>
+        <text>Galatasaray (29205)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Incomplete long passes</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>2</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>13.21</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>39.03</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>158</ID>
+      <start>5266.34</start>
+      <end>5278.34</end>
+      <code>1. Uğurcan Çakır (235597) - Unsuccessful cross and pass interception attempts</code>
+      <label>
+        <group>Team</group>
+        <text>Galatasaray (29205)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Unsuccessful cross and pass interception attempts</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>2</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>4.43</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>35.1</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>159</ID>
+      <start>5267.34</start>
+      <end>5279.34</end>
+      <code>1. Uğurcan Çakır (235597) - Mistakes leading to chances</code>
+      <label>
+        <group>Team</group>
+        <text>Galatasaray (29205)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Mistakes leading to chances</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>2</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>3.41</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>34.0</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>160</ID>
+      <start>5267.34</start>
+      <end>5279.34</end>
+      <code>1. Uğurcan Çakır (235597) - Opponent's close-range shots on target</code>
+      <label>
+        <group>Team</group>
+        <text>Galatasaray (29205)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Opponent's close-range shots on target</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>2</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>98.61</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>41.35</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>161</ID>
+      <start>5267.34</start>
+      <end>5279.34</end>
+      <code>1. Uğurcan Çakır (235597) - Shots on target</code>
+      <label>
+        <group>Team</group>
+        <text>Galatasaray (29205)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Shots on target</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>2</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>98.61</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>41.35</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>162</ID>
+      <start>5508.34</start>
+      <end>5520.34</end>
+      <code>1. Uğurcan Çakır (235597) - Passes accurate</code>
+      <label>
+        <group>Team</group>
+        <text>Galatasaray (29205)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Passes accurate</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>2</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>24.31</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>31.99</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>163</ID>
+      <start>5517.34</start>
+      <end>5529.34</end>
+      <code>1. Uğurcan Çakır (235597) - Long passes</code>
+      <label>
+        <group>Team</group>
+        <text>Galatasaray (29205)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Long passes</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>2</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>22.17</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>31.99</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>164</ID>
+      <start>5517.34</start>
+      <end>5529.34</end>
+      <code>1. Uğurcan Çakır (235597) - Passes accurate</code>
+      <label>
+        <group>Team</group>
+        <text>Galatasaray (29205)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Passes accurate</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>2</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>22.17</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>31.99</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>165</ID>
+      <start>5637.34</start>
+      <end>5649.34</end>
+      <code>1. Uğurcan Çakır (235597) - Passes accurate</code>
+      <label>
+        <group>Team</group>
+        <text>Galatasaray (29205)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Passes accurate</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>2</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>14.05</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>34.2</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>166</ID>
+      <start>5643.34</start>
+      <end>5655.34</end>
+      <code>1. Uğurcan Çakır (235597) - Inaccurate passes</code>
+      <label>
+        <group>Team</group>
+        <text>Galatasaray (29205)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Inaccurate passes</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>2</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>13.11</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>26.25</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>167</ID>
+      <start>5728.34</start>
+      <end>5740.34</end>
+      <code>1. Joan García (502462) - Long passes</code>
+      <label>
+        <group>Team</group>
+        <text>FC Barcelona (87754)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Long passes</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>2</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>7.42</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>36.82</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>168</ID>
+      <start>5728.34</start>
+      <end>5740.34</end>
+      <code>1. Joan García (502462) - Passes accurate</code>
+      <label>
+        <group>Team</group>
+        <text>FC Barcelona (87754)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Passes accurate</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>2</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>7.42</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>36.82</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>169</ID>
+      <start>5736.34</start>
+      <end>5748.34</end>
+      <code>1. Uğurcan Çakır (235597) - Long passes</code>
+      <label>
+        <group>Team</group>
+        <text>Galatasaray (29205)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Long passes</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>2</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>23.1</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>24.34</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>170</ID>
+      <start>5736.34</start>
+      <end>5748.34</end>
+      <code>1. Uğurcan Çakır (235597) - Passes accurate</code>
+      <label>
+        <group>Team</group>
+        <text>Galatasaray (29205)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Passes accurate</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>2</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>23.1</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>24.34</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>171</ID>
+      <start>5748.34</start>
+      <end>5760.34</end>
+      <code>1. Joan García (502462) - Passes accurate</code>
+      <label>
+        <group>Team</group>
+        <text>FC Barcelona (87754)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Passes accurate</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>2</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>3.13</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>25.65</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>172</ID>
+      <start>5802.34</start>
+      <end>5814.34</end>
+      <code>1. Joan García (502462) - Passes accurate</code>
+      <label>
+        <group>Team</group>
+        <text>FC Barcelona (87754)</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>Passes accurate</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>2</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>14.61</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>28.57</text>
+      </label>
+    </instance>
+    <instance>
+      <ID>173</ID>
+      <start>5816.34</start>
+      <end>5816.34</end>
+      <code>End of the match</code>
+      <label>
+        <group>Team</group>
+        <text>None</text>
+      </label>
+      <label>
+        <group>Action</group>
+        <text>End of the match</text>
+      </label>
+      <label>
+        <group>Half</group>
+        <text>2</text>
+      </label>
+      <label>
+        <group>pos_x</group>
+        <text>None</text>
+      </label>
+      <label>
+        <group>pos_y</group>
+        <text>None</text>
+      </label>
+    </instance>
+  </ALL_INSTANCES>
+  <ROWS>
+    <row>
+      <code>1. Uğurcan Çakır (235597)</code>
+      <sort_order>1</sort_order>
+      <R>51400</R>
+      <G>51400</G>
+      <B>51400</B>
+    </row>
+    <row>
+      <code>1. Joan García (502462)</code>
+      <sort_order>101</sort_order>
+      <R>14649</R>
+      <G>14649</G>
+      <B>14649</B>
+    </row>
+  </ROWS>
+</file>

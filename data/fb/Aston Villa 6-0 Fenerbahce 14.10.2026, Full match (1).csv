@@ -1,0 +1,134 @@
+ID;start;end;code;team;action;half;pos_x;pos_y
+1;4.59;4.59;Start of the 1st half;;Start of the 1st half;1;;
+2;4.59;16.59;31. Ederson (1293693) - Long passes;Fenerbahce (27041);Long passes;1;22.58;33.89
+3;4.59;16.59;31. Ederson (1293693) - Passes accurate;Fenerbahce (27041);Passes accurate;1;22.58;33.89
+4;50.59;62.59;31. Ederson (1293693) - Passes accurate;Fenerbahce (27041);Passes accurate;1;10.76;28.9
+5;127.59;139.59;31. Ederson (1293693) - Goal kicks;Fenerbahce (27041);Goal kicks;1;4.11;32.46
+6;127.59;139.59;31. Ederson (1293693) - Goal kicks medium (15-40 m);Fenerbahce (27041);Goal kicks medium (15-40 m);1;4.11;32.46
+7;127.59;139.59;31. Ederson (1293693) - Passes accurate;Fenerbahce (27041);Passes accurate;1;4.11;32.46
+8;153.59;165.59;31. Ederson (1293693) - Shots off target;Fenerbahce (27041);Shots off target;1;81.99;29.62
+9;170.59;182.59;31. Ederson (1293693) - Passes accurate;Fenerbahce (27041);Passes accurate;1;3.76;30.06
+10;276.59;288.59;31. Ederson (1293693) - Shots off target;Fenerbahce (27041);Shots off target;1;97.48;33.78
+11;294.59;306.59;31. Ederson (1293693) - Goal kicks;Fenerbahce (27041);Goal kicks;1;3.33;30.8
+12;294.59;306.59;31. Ederson (1293693) - Goal kicks short (0-15 m);Fenerbahce (27041);Goal kicks short (0-15 m);1;3.33;30.8
+13;294.59;306.59;31. Ederson (1293693) - Passes accurate;Fenerbahce (27041);Passes accurate;1;3.33;30.8
+14;411.59;423.59;31. Ederson (1293693) - Opponent's long-range shots on target;Fenerbahce (27041);Opponent's long-range shots on target;1;86.98;46.58
+15;411.59;423.59;31. Ederson (1293693) - Shots on target;Fenerbahce (27041);Shots on target;1;86.98;46.58
+16;411.59;423.59;31. Ederson (1293693) - Shots saved;Fenerbahce (27041);Shots saved;1;86.98;46.58
+17;425.59;437.59;31. Ederson (1293693) - Passes accurate;Fenerbahce (27041);Passes accurate;1;5.43;27.42
+18;426.59;438.59;31. Ederson (1293693) - Inaccurate passes;Fenerbahce (27041);Inaccurate passes;1;3.85;27.42
+19;438.59;450.59;1. Zion Suzuki (1422998) - Passes accurate;Aston Villa (5786);Passes accurate;1;17.06;33.74
+20;479.59;491.59;31. Ederson (1293693) - Passes accurate;Fenerbahce (27041);Passes accurate;1;9.89;33.89
+21;501.59;513.59;31. Ederson (1293693) - Passes accurate;Fenerbahce (27041);Passes accurate;1;18.29;34.45
+22;564.59;576.59;31. Ederson (1293693) - Passes accurate;Fenerbahce (27041);Passes accurate;1;4.29;22.62
+23;691.59;703.59;31. Ederson (1293693) - Goals conceded;Fenerbahce (27041);Goals conceded;1;93.8;35.12
+24;691.59;703.59;31. Ederson (1293693) - Opponent's mid-range shots on target;Fenerbahce (27041);Opponent's mid-range shots on target;1;93.8;35.12
+25;691.59;703.59;31. Ederson (1293693) - Shots on target;Fenerbahce (27041);Shots on target;1;93.8;35.12
+26;884.59;896.59;1. Zion Suzuki (1422998) - Opponent's close-range shots on target;Aston Villa (5786);Opponent's close-range shots on target;1;102.64;39.53
+27;884.59;896.59;1. Zion Suzuki (1422998) - Shots on target;Aston Villa (5786);Shots on target;1;102.64;39.53
+28;884.59;896.59;1. Zion Suzuki (1422998) - Shots saved;Aston Villa (5786);Shots saved;1;102.64;39.53
+29;884.59;896.59;1. Zion Suzuki (1422998) - Supersaves;Aston Villa (5786);Supersaves;1;2.1;31.52
+30;902.59;914.59;1. Zion Suzuki (1422998) - Passes accurate;Aston Villa (5786);Passes accurate;1;13.12;30.69
+31;911.59;923.59;1. Zion Suzuki (1422998) - Passes accurate;Aston Villa (5786);Passes accurate;1;17.68;33.74
+32;969.59;981.59;1. Zion Suzuki (1422998) - Opponent's close-range shots on target;Aston Villa (5786);Opponent's close-range shots on target;1;95.11;35.19
+33;969.59;981.59;1. Zion Suzuki (1422998) - Shots on target;Aston Villa (5786);Shots on target;1;95.11;35.19
+34;969.59;981.59;1. Zion Suzuki (1422998) - Shots saved;Aston Villa (5786);Shots saved;1;95.11;35.19
+35;970.59;982.59;1. Zion Suzuki (1422998) - Successful cross and pass interception attempts;Aston Villa (5786);Successful cross and pass interception attempts;1;7.09;33.46
+36;970.59;982.59;1. Zion Suzuki (1422998) - Supersaves;Aston Villa (5786);Supersaves;1;8.31;33.37
+37;984.59;996.59;31. Ederson (1293693) - Successful cross and pass interception attempts;Fenerbahce (27041);Successful cross and pass interception attempts;1;26.86;41.75
+38;985.59;997.59;31. Ederson (1293693) - Inaccurate passes;Fenerbahce (27041);Inaccurate passes;1;28.26;43.23
+39;985.59;997.59;31. Ederson (1293693) - Incomplete long passes;Fenerbahce (27041);Incomplete long passes;1;28.26;43.23
+40;1068.59;1080.59;1. Zion Suzuki (1422998) - Opponent's mid-range shots on target;Aston Villa (5786);Opponent's mid-range shots on target;1;86.71;33.39
+41;1068.59;1080.59;1. Zion Suzuki (1422998) - Shots on target;Aston Villa (5786);Shots on target;1;86.71;33.39
+42;1068.59;1080.59;1. Zion Suzuki (1422998) - Shots saved;Aston Villa (5786);Shots saved;1;86.71;33.39
+43;1082.59;1094.59;1. Zion Suzuki (1422998) - Passes accurate;Aston Villa (5786);Passes accurate;1;6.48;35.08
+44;1315.59;1327.59;31. Ederson (1293693) - Shots off target;Fenerbahce (27041);Shots off target;1;95.64;36.32
+45;1341.59;1353.59;31. Ederson (1293693) - Goal kicks;Fenerbahce (27041);Goal kicks;1;4.11;32.42
+46;1341.59;1353.59;31. Ederson (1293693) - Goal kicks medium (15-40 m);Fenerbahce (27041);Goal kicks medium (15-40 m);1;4.11;32.42
+47;1341.59;1353.59;31. Ederson (1293693) - Passes accurate;Fenerbahce (27041);Passes accurate;1;4.11;32.42
+48;1352.59;1364.59;31. Ederson (1293693) - Passes accurate;Fenerbahce (27041);Passes accurate;1;3.59;32.05
+49;1534.59;1546.59;31. Ederson (1293693) - Long passes;Fenerbahce (27041);Long passes;1;26.25;33.8
+50;1534.59;1546.59;31. Ederson (1293693) - Passes accurate;Fenerbahce (27041);Passes accurate;1;26.25;33.8
+51;1646.59;1658.59;1. Zion Suzuki (1422998) - Passes accurate;Aston Villa (5786);Passes accurate;1;22.92;35.95
+52;1740.59;1752.59;31. Ederson (1293693) - Opponent's mid-range shots on target;Fenerbahce (27041);Opponent's mid-range shots on target;1;87.76;31.79
+53;1740.59;1752.59;31. Ederson (1293693) - Shots on target;Fenerbahce (27041);Shots on target;1;87.76;31.79
+54;1740.59;1752.59;31. Ederson (1293693) - Shots saved;Fenerbahce (27041);Shots saved;1;87.76;31.79
+55;1741.59;1753.59;31. Ederson (1293693) - Supersaves;Fenerbahce (27041);Supersaves;1;1.4;34.26
+56;1760.59;1772.59;31. Ederson (1293693) - Passes accurate;Fenerbahce (27041);Passes accurate;1;9.36;26.04
+57;1801.59;1813.59;31. Ederson (1293693) - Goals conceded;Fenerbahce (27041);Goals conceded;1;89.16;31.84
+58;1801.59;1813.59;31. Ederson (1293693) - Opponent's mid-range shots on target;Fenerbahce (27041);Opponent's mid-range shots on target;1;89.16;31.84
+59;1801.59;1813.59;31. Ederson (1293693) - Shots on target;Fenerbahce (27041);Shots on target;1;89.16;31.84
+60;1956.59;1968.59;1. Zion Suzuki (1422998) - Inaccurate passes;Aston Villa (5786);Inaccurate passes;1;6.82;7.35
+61;1956.59;1968.59;1. Zion Suzuki (1422998) - Incomplete long passes;Aston Villa (5786);Incomplete long passes;1;6.82;7.35
+62;1970.59;1982.59;31. Ederson (1293693) - Passes accurate;Fenerbahce (27041);Passes accurate;1;10.85;33.48
+63;2013.59;2025.59;1. Zion Suzuki (1422998) - Shots on post / bar;Aston Villa (5786);Shots on post / bar;1;99.31;44.15
+64;2082.59;2094.59;31. Ederson (1293693) - Opponent's mid-range shots on target;Fenerbahce (27041);Opponent's mid-range shots on target;1;94.94;49.45
+65;2082.59;2094.59;31. Ederson (1293693) - Shots on target;Fenerbahce (27041);Shots on target;1;94.94;49.45
+66;2082.59;2094.59;31. Ederson (1293693) - Shots saved;Fenerbahce (27041);Shots saved;1;94.94;49.45
+67;2095.59;2107.59;31. Ederson (1293693) - Passes accurate;Fenerbahce (27041);Passes accurate;1;0.88;31.12
+68;2148.59;2160.59;1. Zion Suzuki (1422998) - Goal kicks;Aston Villa (5786);Goal kicks;1;0.09;35.4
+69;2148.59;2160.59;1. Zion Suzuki (1422998) - Goal kicks medium (15-40 m);Aston Villa (5786);Goal kicks medium (15-40 m);1;0.09;35.4
+70;2148.59;2160.59;1. Zion Suzuki (1422998) - Passes accurate;Aston Villa (5786);Passes accurate;1;0.09;35.4
+71;2264.59;2276.59;1. Zion Suzuki (1422998) - Free-kick shots;Aston Villa (5786);Free-kick shots;1;79.01;21.69
+72;2264.59;2276.59;1. Zion Suzuki (1422998) - Shots off target;Aston Villa (5786);Shots off target;1;79.01;21.69
+73;2289.59;2301.59;1. Zion Suzuki (1422998) - Long passes;Aston Villa (5786);Long passes;1;8.05;34.38
+74;2289.59;2301.59;1. Zion Suzuki (1422998) - Passes accurate;Aston Villa (5786);Passes accurate;1;8.05;34.38
+75;2307.59;2319.59;31. Ederson (1293693) - Goals conceded;Fenerbahce (27041);Goals conceded;1;90.39;27.17
+76;2307.59;2319.59;31. Ederson (1293693) - Opponent's mid-range shots on target;Fenerbahce (27041);Opponent's mid-range shots on target;1;90.39;27.17
+77;2307.59;2319.59;31. Ederson (1293693) - Shots on target;Fenerbahce (27041);Shots on target;1;90.39;27.17
+78;2432.59;2444.59;1. Zion Suzuki (1422998) - Passes accurate;Aston Villa (5786);Passes accurate;1;13.48;28.56
+79;2494.59;2506.59;31. Ederson (1293693) - Passes accurate;Fenerbahce (27041);Passes accurate;1;17.06;35.1
+80;2554.59;2566.59;31. Ederson (1293693) - Opponent's long-range shots on target;Fenerbahce (27041);Opponent's long-range shots on target;1;87.5;22.64
+81;2554.59;2566.59;31. Ederson (1293693) - Shots on target;Fenerbahce (27041);Shots on target;1;87.5;22.64
+82;2554.59;2566.59;31. Ederson (1293693) - Shots saved;Fenerbahce (27041);Shots saved;1;87.5;22.64
+83;2559.59;2571.59;31. Ederson (1293693) - Passes accurate;Fenerbahce (27041);Passes accurate;1;11.29;35.0
+84;2772.59;2772.59;Halftime;;Halftime;1;;
+85;2821.88;2821.88;Start of the 2nd half;;Start of the 2nd half;2;;
+86;2859.88;2871.88;1. Zion Suzuki (1422998) - Passes accurate;Aston Villa (5786);Passes accurate;2;13.91;27.79
+87;2864.88;2876.88;1. Zion Suzuki (1422998) - Passes accurate;Aston Villa (5786);Passes accurate;2;6.74;36.39
+88;3130.88;3142.88;1. Zion Suzuki (1422998) - Opponent's mid-range shots on target;Aston Villa (5786);Opponent's mid-range shots on target;2;96.42;44.36
+89;3130.88;3142.88;1. Zion Suzuki (1422998) - Shots on target;Aston Villa (5786);Shots on target;2;96.42;44.36
+90;3130.88;3142.88;1. Zion Suzuki (1422998) - Shots saved;Aston Villa (5786);Shots saved;2;96.42;44.36
+91;3134.88;3146.88;1. Zion Suzuki (1422998) - Inaccurate passes;Aston Villa (5786);Inaccurate passes;2;14.26;30.29
+92;3134.88;3146.88;1. Zion Suzuki (1422998) - Incomplete long passes;Aston Villa (5786);Incomplete long passes;2;14.26;30.29
+93;3163.88;3175.88;31. Ederson (1293693) - Passes accurate;Fenerbahce (27041);Passes accurate;2;11.29;22.74
+94;3191.88;3203.88;31. Ederson (1293693) - Opponent's mid-range shots on target;Fenerbahce (27041);Opponent's mid-range shots on target;2;88.81;24.19
+95;3191.88;3203.88;31. Ederson (1293693) - Shots on target;Fenerbahce (27041);Shots on target;2;88.81;24.19
+96;3191.88;3203.88;31. Ederson (1293693) - Shots saved;Fenerbahce (27041);Shots saved;2;88.81;24.19
+97;3202.88;3214.88;31. Ederson (1293693) - Passes accurate;Fenerbahce (27041);Passes accurate;2;13.21;34.94
+98;3365.88;3377.88;31. Ederson (1293693) - Opponent's mid-range shots on target;Fenerbahce (27041);Opponent's mid-range shots on target;2;100.8;46.74
+99;3365.88;3377.88;31. Ederson (1293693) - Shots on target;Fenerbahce (27041);Shots on target;2;100.8;46.74
+100;3365.88;3377.88;31. Ederson (1293693) - Shots saved;Fenerbahce (27041);Shots saved;2;100.8;46.74
+101;3522.88;3534.88;1. Zion Suzuki (1422998) - Shots off target;Aston Villa (5786);Shots off target;2;85.92;44.64
+102;3554.88;3566.88;1. Zion Suzuki (1422998) - Passes accurate;Aston Villa (5786);Passes accurate;2;8.75;34.17
+103;3668.88;3680.88;1. Zion Suzuki (1422998) - Goal kicks;Aston Villa (5786);Goal kicks;2;3.76;31.86
+104;3668.88;3680.88;1. Zion Suzuki (1422998) - Goal kicks medium (15-40 m);Aston Villa (5786);Goal kicks medium (15-40 m);2;3.76;31.86
+105;3668.88;3680.88;1. Zion Suzuki (1422998) - Passes accurate;Aston Villa (5786);Passes accurate;2;3.76;31.86
+106;3865.88;3877.88;1. Zion Suzuki (1422998) - Passes accurate;Aston Villa (5786);Passes accurate;2;10.41;34.36
+107;4004.88;4016.88;1. Zion Suzuki (1422998) - Free-kick shots;Aston Villa (5786);Free-kick shots;2;84.35;23.48
+108;4015.88;4027.88;31. Ederson (1293693) - Opponent's mid-range shots on target;Fenerbahce (27041);Opponent's mid-range shots on target;2;94.06;40.41
+109;4015.88;4027.88;31. Ederson (1293693) - Shots on target;Fenerbahce (27041);Shots on target;2;94.06;40.41
+110;4015.88;4027.88;31. Ederson (1293693) - Shots saved;Fenerbahce (27041);Shots saved;2;94.06;40.41
+111;4015.88;4027.88;31. Ederson (1293693) - Successful cross and pass interception attempts;Fenerbahce (27041);Successful cross and pass interception attempts;2;7.44;26.3
+112;4015.88;4027.88;31. Ederson (1293693) - Supersaves;Fenerbahce (27041);Supersaves;2;8.84;26.67
+113;4074.88;4086.88;1. Zion Suzuki (1422998) - Passes accurate;Aston Villa (5786);Passes accurate;2;10.06;41.06
+114;4183.88;4195.88;31. Ederson (1293693) - Goals conceded;Fenerbahce (27041);Goals conceded;2;94.0;34.0
+115;4183.88;4195.88;31. Ederson (1293693) - Opponent's mid-range shots on target;Fenerbahce (27041);Opponent's mid-range shots on target;2;94.0;34.0
+116;4183.88;4195.88;31. Ederson (1293693) - Opponent's penalties;Fenerbahce (27041);Opponent's penalties;2;94.0;34.0
+117;4183.88;4195.88;31. Ederson (1293693) - Shots on target;Fenerbahce (27041);Shots on target;2;94.0;34.0
+118;4382.88;4394.88;1. Zion Suzuki (1422998) - Passes accurate;Aston Villa (5786);Passes accurate;2;11.02;26.96
+119;4423.88;4435.88;31. Ederson (1293693) - Goals conceded;Fenerbahce (27041);Goals conceded;2;84.61;36.67
+120;4423.88;4435.88;31. Ederson (1293693) - Opponent's long-range shots on target;Fenerbahce (27041);Opponent's long-range shots on target;2;84.61;36.67
+121;4423.88;4435.88;31. Ederson (1293693) - Shots on target;Fenerbahce (27041);Shots on target;2;84.61;36.67
+122;4917.88;4929.88;1. Zion Suzuki (1422998) - Passes accurate;Aston Villa (5786);Passes accurate;2;11.55;34.68
+123;4949.88;4961.88;31. Ederson (1293693) - Inaccurate passes;Fenerbahce (27041);Inaccurate passes;2;2.28;23.06
+124;4949.88;4961.88;31. Ederson (1293693) - Incomplete long passes;Fenerbahce (27041);Incomplete long passes;2;2.28;23.06
+125;5202.88;5214.88;1. Zion Suzuki (1422998) - Opponent's long-range shots on target;Aston Villa (5786);Opponent's long-range shots on target;2;85.31;52.82
+126;5202.88;5214.88;1. Zion Suzuki (1422998) - Shots on target;Aston Villa (5786);Shots on target;2;85.31;52.82
+127;5202.88;5214.88;1. Zion Suzuki (1422998) - Shots saved;Aston Villa (5786);Shots saved;2;85.31;52.82
+128;5245.88;5257.88;1. Zion Suzuki (1422998) - Passes accurate;Aston Villa (5786);Passes accurate;2;3.59;30.57
+129;5371.88;5383.88;1. Zion Suzuki (1422998) - Passes accurate;Aston Villa (5786);Passes accurate;2;11.29;34.73
+130;5472.88;5484.88;31. Ederson (1293693) - Goals conceded;Fenerbahce (27041);Goals conceded;2;102.72;35.56
+131;5472.88;5484.88;31. Ederson (1293693) - Opponent's close-range shots on target;Fenerbahce (27041);Opponent's close-range shots on target;2;102.72;35.56
+132;5472.88;5484.88;31. Ederson (1293693) - Shots on target;Fenerbahce (27041);Shots on target;2;102.72;35.56
+133;5586.88;5586.88;End of the match;;End of the match;2;;
