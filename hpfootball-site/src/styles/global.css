@@ -35,9 +35,9 @@
   --ui: "Inter", "Helvetica Neue", Arial, system-ui, sans-serif;
   --mono: "IBM Plex Mono", ui-monospace, "SFMono-Regular", Menlo, monospace;
 
-  --t-hero: clamp(2.9rem, 9vw, 7.4rem);
-  --t-1: clamp(2.2rem, 5.4vw, 4.2rem);
-  --t-2: clamp(1.7rem, 3.4vw, 2.6rem);
+  --t-hero: min(clamp(2.9rem, 9vw, 7.4rem), 15vw);
+  --t-1: min(clamp(2.2rem, 5.4vw, 4.2rem), 11vw);
+  --t-2: min(clamp(1.7rem, 3.4vw, 2.6rem), 9vw);
   --t-3: clamp(1.25rem, 2vw, 1.55rem);
   --t-body: 1.0625rem;
   --t-small: .9rem;
@@ -96,7 +96,7 @@ img { height: auto; }
 a { color: inherit; text-decoration-color: color-mix(in srgb, var(--amber) 60%, transparent); text-underline-offset: 3px; }
 a:hover { text-decoration-color: var(--amber); }
 :focus-visible { outline: 3px solid var(--focus); outline-offset: 3px; border-radius: 2px; }
-h1, h2, h3 { margin: 0; font-weight: 400; text-wrap: balance; overflow-wrap: break-word; hyphens: auto; }
+h1, h2, h3 { margin: 0; font-weight: 400; text-wrap: balance; overflow-wrap: break-word; hyphens: auto; min-width: 0; }
 h4 { margin: 0; font-weight: 500; overflow-wrap: break-word; }
 p { margin: 0; }
 ul, ol { margin: 0; }
@@ -413,7 +413,7 @@ main:focus { outline: none; }
 /* rails / carousels */
 .rail-section { padding-block: clamp(48px, 7vw, 96px); border-bottom: 1px solid var(--line); }
 .rail-head { max-width: var(--wide); margin-inline: auto; padding-left: var(--gutter); padding-right: var(--gutter-r); display: flex; flex-wrap: wrap; align-items: end; justify-content: space-between; gap: 18px; margin-bottom: 26px; }
-.rail-head > div { display: grid; gap: 12px; max-width: 760px; }
+.rail-head > div { display: grid; gap: 12px; max-width: 760px; min-width: 0; flex: 1 1 18rem; }
 .rail-head h2 { font: 400 var(--t-1)/1 var(--display); }
 .rail-head p:not(.kicker) { color: var(--ink-2); max-width: 56ch; }
 .rail-controls { display: flex; gap: 8px; }
