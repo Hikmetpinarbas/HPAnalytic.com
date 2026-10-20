@@ -113,17 +113,17 @@
       var pos = {}; N.nodes.forEach(function (n) { pos[n.p] = n; });
       var maxW = Math.max.apply(null, N.edges.map(function (e) { return e.w; }));
       var maxP = Math.max.apply(null, N.nodes.map(function (n) { return n.pass; })) || 1;
-      var eg = el('g', {}, svg), ng = el('g', {}, svg), edgeEls = [], labels = [];
-      N.edges.slice(0, 22).forEach(function (e) {
+      var eg = el('g', {}, svg), ng = el('g', {}, svg), edgeEls = [], labels = [], selected = null;
+      N.edges.forEach(function (e, idx) {
         var a = pos[e.a], b = pos[e.b];
         var ln = el('line', { x1: a.x, y1: 68 - a.y, x2: b.x, y2: 68 - b.y, stroke: col, 'stroke-width': .25 + 1.6 * Math.sqrt(e.w / maxW), 'stroke-linecap': 'round', opacity: .25 + .6 * Math.sqrt(e.w / maxW) }, eg);
         el('title', {}, ln, surname(e.a) + ' ↔ ' + surname(e.b) + ': ' + e.w);
-        edgeEls.push({ el: ln, e: e });
+        edgeEls.push({ el: ln, e: e, top: idx < 22 });
       });
       function focus(p) {
         edgeEls.forEach(function (o) {
-          var on = !p || o.e.a === p || o.e.b === p;
-          o.el.style.opacity = on ? '' : '.06';
+          var on = p ? (o.e.a === p || o.e.b === p) : o.top;
+          o.el.style.display = on ? '' : 'none';
         });
         if (!p) { out.innerHTML = meta.read; return; }
         var mine = N.edges.filter(function (e) { return e.a === p || e.b === p; }).slice(0, 3)
@@ -137,8 +137,7 @@
         el('text', { x: n.x, y: 68 - n.y + f * .36, 'text-anchor': 'middle', fill: C.ink, 'font-size': f, 'font-weight': 700 }, g, n.num || '');
         var lb = el('text', { x: n.x, y: 68 - n.y + r + f * .95, 'text-anchor': 'middle', fill: C.ink, 'font-size': f * .85, stroke: '#0B1530', 'stroke-width': f * .25, 'paint-order': 'stroke' }, g, surname(n.p));
         labels.push({ el: lb, x: n.x, y: 68 - n.y + r + f * .6, w: surname(n.p).length * f * .47, h: f * .9, pass: n.pass });
-        var on = false;
-        function t() { on = !on; ng.querySelectorAll('g').forEach(function (x) { x.style.opacity = ''; }); focus(on ? n.p : null); }
+        function t() { selected = selected === n.p ? null : n.p; focus(selected); }
         g.addEventListener('click', t);
         g.addEventListener('keydown', function (ev) { if (ev.key === 'Enter' || ev.key === ' ') { ev.preventDefault(); t(); } });
       });
@@ -163,7 +162,7 @@
     clear(svg);
     var Wd = 540, Ht = 470, cx = Wd / 2, cy = Ht / 2 + 2, n = axes.length;
     svg.setAttribute('viewBox', '0 0 ' + Wd + ' ' + Ht);
-    var f = Math.min(px(svg, Wd, 13), 20), R = 190 - f * 3.2;
+    var f = Math.min(px(svg, Wd, 13), 26), R = Math.max(105, 190 - f * 3.2);
     var ang = function (i) { return -Math.PI / 2 + i * 2 * Math.PI / n; };
     var pt = function (i, v) { return [cx + Math.cos(ang(i)) * R * v / 100, cy + Math.sin(ang(i)) * R * v / 100]; };
     [25, 50, 75, 100].forEach(function (lv) {
