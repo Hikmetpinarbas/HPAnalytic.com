@@ -82,3 +82,18 @@ test('monograph surfaces read only public entries', () => {
     for (const call of read(p).match(/getCollection\([^)]*\)/g) ?? []) assert.match(call, /isPublic/, `${p}: ${call}`);
   }
 });
+
+test('match pages carry the four data-bound charts and keep the evidence rules', () => {
+  const js = read('public/js/hp-match-charts.js');
+  assert.doesNotMatch(js, /marker-end|arrowhead/, 'no pass arrows without a verified receiver (HPA-LOZA K3)');
+  assert.match(js, /stroke-dasharray/, 'team B is distinguished by stroke, not colour alone');
+  for (const m of MATCH_PREVIEWS) {
+    const page = read(`src/pages/mac/${m.slug}.astro`);
+    for (const kind of ['teamradar', 'momentum', 'network', 'playerradar']) assert.match(page, new RegExp(`data-hpc="${kind}"`), `${m.slug}: ${kind}`);
+    assert.match(page, /id="hpc-data"/);
+    assert.match(page, /<span class="ev hyp">TAHMİNİ<\/span>Veride pası alan oyuncu yok/, `${m.slug}: proxy network labelled`);
+    assert.match(page, /<details class="hpc-det"><summary>Kaynaklar<\/summary>/, `${m.slug}: sources collapsed`);
+    const data = JSON.parse(page.match(/id="hpc-data" is:inline>(.*?)<\/script>/s)[1].replace(/<\\\//g, '</'));
+    assert.ok(data.players.players.length >= 10 && data.team.teams[data.keys.a] && data.team.teams[data.keys.b]);
+  }
+});
