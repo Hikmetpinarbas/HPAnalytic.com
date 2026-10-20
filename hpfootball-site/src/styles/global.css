@@ -612,3 +612,4 @@ main:focus { outline: none; }
 h1, h2, h3 { letter-spacing: -.02em; }
 .prose, .monograph-body { color: #ECE7DE; }
 .prose p, .monograph-body p { max-width: 68ch; }
+@media print { .prose, .monograph-body, .standfirst { color: #000; } }
