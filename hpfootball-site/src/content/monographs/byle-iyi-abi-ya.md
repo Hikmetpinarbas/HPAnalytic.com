@@ -9,7 +9,7 @@ date: "2026-10-20"
 draft: true
 claimCeiling: "Kulübedeki görünmezlik, en az sahadaki hatalar kadar ağır bir psikolojik maliyettir."
 evidenceLevel: "GÖZLENEN / HİPOTEZ"
-methodology: "Karar Destek Laboratuvarı & Psikolojik Derinlik Analizi"
+methodology: "Karar Destek Laboratuvarı"
 provenance: "HPAnalytic Monografi Boru Hattı / 2026-10-20"
 sourceRefs:
   - { title: "Chelsea FC Squad Archives & Hilario Match Logs", locator: "UEFA/Opta" }
