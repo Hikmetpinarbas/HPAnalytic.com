@@ -1,0 +1,39 @@
+name: Cloud Drive Worker (isolated)
+on:
+  workflow_dispatch:
+    inputs:
+      task:
+        description: Approved task
+        required: true
+        type: choice
+        options:
+          - connectivity
+
+permissions:
+  contents: read
+
+concurrency:
+  group: cloud-drive-worker
+  cancel-in-progress: false
+
+jobs:
+  worker:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: pip
+          cache-dependency-path: cloud-worker/requirements.txt
+      - name: Unit tests
+        run: python -m unittest discover -s cloud-worker -p 'test_*.py'
+      - name: Install Google API dependencies
+        run: python -m pip install -r cloud-worker/requirements.txt
+      - name: Deliver report to Drive
+        env:
+          WORKER_TASK: ${{ inputs.task }}
+          GDRIVE_SERVICE_ACCOUNT_JSON: ${{ secrets.GDRIVE_SERVICE_ACCOUNT_JSON }}
+          GDRIVE_OUTPUT_FOLDER_ID: ${{ vars.GDRIVE_OUTPUT_FOLDER_ID }}
+        run: python cloud-worker/worker.py
