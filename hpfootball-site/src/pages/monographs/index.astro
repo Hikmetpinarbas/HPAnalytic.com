@@ -1,0 +1,27 @@
+---
+import { isPublic } from '../../lib/public-content.mjs';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getCollection } from 'astro:content';
+export const prerender = true;
+const items = (await getCollection('monographs', isPublic)).sort((a, b) => +b.data.date - +a.data.date);
+---
+<BaseLayout title="Monografiler — HPAnalytic" description="Futbolun görünmeyen tarafına tek bir soruyla giren uzun soluklu araştırmalar.">
+<div class="listing">
+  <header class="page-head">
+    <p class="kicker">Araştırma</p>
+    <h1 class="page-title">Monografiler</h1>
+    <p class="lead">Futbolun görünmeyen tarafına tek bir soruyla giren uzun okumalar. Her biri kendi iddia sınırını taşır; sınırın ötesine geçen cümle yazılmaz.</p>
+  </header>
+  {items.length === 0 ? <p class="empty-state">Henüz yayımlanmış monografi yok.</p> : (
+    <ul class="card-grid">
+      {items.map((m) => (
+        <li><article class="card">
+          <div class="card-meta"><span class="section-name">{m.data.category ?? 'Monografi'}</span><span>{m.data.readingTime}</span></div>
+          <h2 class="card-title"><a href={`/monographs/${m.id}`}>{m.data.title}</a></h2>
+          <p>{m.data.subtitle ?? m.data.description}</p>
+        </article></li>
+      ))}
+    </ul>
+  )}
+</div>
+</BaseLayout>
