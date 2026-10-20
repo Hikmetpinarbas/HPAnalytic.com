@@ -99,6 +99,57 @@ export const prerender = true;
 <section class="block">
   <div class="wrap">
     <div class="head col">
+      <p class="eyebrow">Kazanım ve kayıp · olay verisi</p>
+      <h2>Arsenal'in yaptığını Galatasaray yapabilir mi?</h2>
+      <p class="lede">Lille Arsenal deplasmanında topu kendi yarısında 26 kez kaybetti; 14'ü kendi kalesine 35 metreden yakın. Arsenal aynı maçta Lille yarısında 19 top kazandı, 11'i kaleye 35 metreden yakın. Galatasaray ise Barcelona karşısında rakip yarıda 8 top kazandı ve bunlardan yalnız biri kaleye 35 metreden yakındı. Aradaki fark, baskının yüksekliği.</p>
+    </div>
+    <div class="tabs" id="ptabs" role="group" aria-label="Katman seç">
+      <button type="button" data-l="all" aria-pressed="true">Hepsi</button>
+      <button type="button" data-l="loss" aria-pressed="false">Lille kayıpları</button>
+      <button type="button" data-l="ars" aria-pressed="false">Arsenal kazanımları</button>
+      <button type="button" data-l="gal" aria-pressed="false">Galatasaray kazanımları</button>
+    </div>
+    <div class="figure"><svg id="pitch" viewBox="-4 -6 113 82" role="img" aria-labelledby="pitch-t"><title id="pitch-t">Lille'in kendi yarısındaki top kayıpları, Arsenal'in ve Galatasaray'ın rakip yarıdaki top kazanımları</title></svg></div>
+    <div class="legend">
+      <span><svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 3l8 8M11 3l-8 8" stroke="var(--sla)" stroke-width="2.2" fill="none"/></svg> Lille top kaybı (kendi yarı) · Arsenal maçı</span>
+      <span><svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><rect x="2.5" y="2.5" width="9" height="9" fill="none" stroke="var(--chalk-2)" stroke-width="1.6"/></svg> Arsenal top kazanımı (rakip yarı)</span>
+      <span><svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><rect x="2" y="2" width="10" height="10" fill="var(--fen)"/></svg> Galatasaray top kazanımı (rakip yarı) · Barcelona maçı</span>
+    </div>
+    <p class="readout" id="pread"></p>
+    <div class="claim"><span class="ev der">TÜRETİLMİŞ</span><span>Koordinatların her takım için hücum yönüne normalize edildiği kendi/rakip yarı etiketlerinin %100 uyumuyla doğrulandı. Lille kayıpları Galatasaray'ın hücum yönüne çevrildi; sağa doğru Lille kalesi. Sol/sağ kanat yönü doğrulanmadı. Galatasaray'ın kazanımları Barcelona'ya, Lille'in kayıpları Arsenal'e karşı oluştu; bu bir tahmin değil, karşılaştırma zemini.</span></div>
+  </div>
+</section>
+
+<section class="block band">
+  <div class="wrap">
+    <div class="head col">
+      <p class="eyebrow">Şut haritaları · takım olay dosyası</p>
+      <h2>Lille kaleyi bulamadı, Galatasaray kalesi korunamadı</h2>
+      <p class="lede">Solda Lille'in Arsenal'e karşı bütün şutları: 4 şut, 3'ü bloklandı, hiçbiri kaleyi bulmadı. Sağda Barcelona'nın Galatasaray kalesine şutları: 21 şut, 4 gol. Galatasaray aynı maçta 3 şut atabildi.</p>
+    </div>
+    <div class="duo">
+      <div>
+        <div class="figure"><svg id="shot-lil" viewBox="50.5 -4 56.5 76" role="img" aria-labelledby="sl-t"><title id="sl-t">Lille şutları, Arsenal maçı</title></svg></div>
+        <div class="figcap"><span class="sla">LILLE → ARSENAL KALESİ</span><span class="num">4 şut · 0 isabet · 3 blok</span></div>
+      </div>
+      <div>
+        <div class="figure"><svg id="shot-bar" viewBox="50.5 -4 56.5 76" role="img" aria-labelledby="sb-t"><title id="sb-t">Barcelona şutları, Galatasaray kalesine</title></svg></div>
+        <div class="figcap"><span class="fen">BARCELONA → GALATASARAY KALESİ</span><span class="num">21 şut · 4 gol · 3 blok</span></div>
+      </div>
+    </div>
+    <div class="legend">
+      <span><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6" fill="var(--chalk)"/><circle cx="8" cy="8" r="7.3" fill="none" stroke="var(--fen)" stroke-width="1.4"/></svg> Gol</span>
+      <span><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6" fill="none" stroke="var(--chalk)" stroke-width="1.6"/><circle cx="8" cy="8" r="2" fill="var(--chalk)"/></svg> İsabetli</span>
+      <span><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><circle cx="8" cy="8" r="6" fill="none" stroke="var(--mute)" stroke-width="1.6" stroke-dasharray="2 2"/></svg> İsabetsiz</span>
+      <span><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><rect x="3" y="3" width="10" height="10" fill="none" stroke="var(--chalk-2)" stroke-width="1.6" transform="rotate(45 8 8)"/></svg> Bloklandı</span>
+    </div>
+    <div class="claim"><span class="ev obs">GÖZLENEN</span><span>Şutlar takım olay dosyasından; bloklanan şutlar dahil, tablolarla birebir eşleşiyor. Olay düzeyinde xG yok, noktalar eşit boyutta. Tek maçlık şut haritası bir takımın kimliği değil, o maçın resmi.</span></div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <div class="head col">
       <p class="eyebrow">Maç içinde izlenecekler</p>
       <h2>Beş soru, beş gösterge</h2>
       <p class="lede">Bu analiz bir tahmin değil. Maç başladığında hangi sorunun cevabının değiştiğine bakacağız.</p>
@@ -121,6 +172,8 @@ export const prerender = true;
       <ul>
         <li>SportsBase · UEFA Şampiyonlar Ligi takım maç istatistikleri, 19.10.2026 dışa aktarımı (36 takım)</li>
         <li>SportsBase · LOSC Lille kulüp maç istatistikleri, 20.10.2026 dışa aktarımı (Ligue 1 ve Avrupa kırılımı)</li>
+        <li>SportsBase · Arsenal 3–0 Lille, 13.10.2026, oyuncu ve takım olay dosyaları</li>
+        <li>SportsBase · Galatasaray 1–4 Barcelona, 13.10.2026, oyuncu ve takım olay dosyaları</li>
         <li><a href="https://www.sokgazetesi.com.tr/lille-galatasaray-macinin-hakemi-kim-mac-ne-zaman-saat-kacta-uefa-acikladi" target="_blank" rel="noopener">Şok Gazetesi · hakem ve maç saati</a></li>
         <li><a href="https://www.internethaber.com/barcelona-yenilgisinin-ardindan-gozler-lille-macinda-lille-galatasaray-maci-ne-zaman-saat-kacta-hangi-kanalda-2463949h.htm" target="_blank" rel="noopener">İnternet Haber · sonuçlar, stadyum, yayın</a></li>
       </ul>
@@ -128,7 +181,7 @@ export const prerender = true;
     <div>
       <h3>Kaynak sınırı ve red-team</h3>
       <ul>
-        <li>Olay düzeyindeki haritalar (Arsenal–Lille ve Galatasaray–Barcelona olay paketleri) bu sürüme eklenmedi; telefon erişimi açılınca eklenecek.</li>
+        <li>Olay düzeyindeki haritalar tek maçtan: Lille için Arsenal deplasmanı, Galatasaray için Barcelona maçı. Sporting–Galatasaray ve Lille–Betis olay paketleri bu sürümde yok.</li>
         <li>Takım başına iki Avrupa maçı var; rakip gücü ve skor durumu düzeltilmedi.</li>
         <li>Lille'in lig sayıları farklı bir lig evreninden; Avrupa sayılarıyla doğrudan sıralanmadı.</li>
       </ul>
@@ -136,7 +189,7 @@ export const prerender = true;
     <div>
       <h3>Belge künyesi</h3>
       <table class="meta-table">
-        <tr><td>Sürüm</td><td>v0.1 · 20.10.2026 · taslak</td></tr>
+        <tr><td>Sürüm</td><td>v0.2 · 20.10.2026 · taslak</td></tr>
         <tr><td>Yöntem</td><td>Turnuva takım tablosundan iki maç toplamı ve 36 takım sıralaması; kulüp dosyasından maç satırları</td></tr>
         <tr><td>Kanıt sınıfları</td><td>GÖZLENEN · MODEL · TÜRETİLMİŞ · HİPOTEZ</td></tr>
         <tr><td>Yayın durumu</td><td>Editoryal onay bekliyor</td></tr>
@@ -302,6 +355,48 @@ const el = (tag, attrs={}, parent) => { const n=document.createElementNS(NS,tag)
   }).join('') + `<p class="mono" style="letter-spacing:.03em">Çubuk boyu: 36 takımın en yüksek değerine göre. İnce çizgi: medyan.</p>`;
 })();
 
+
+const EV = {"lil_loss":[[29.1,2.4,"Maxima Adeagan Goffi",1],[41.6,13.9,"Ngalayel Mukau",1],[48.4,25.1,"Ayase Ueda",1],[34.0,34.5,"Nabil Bentaleb",1],[32.6,54.9,"Hákon Arnar Haraldsson",1],[28.1,49.0,"Benjamin André",1],[40.5,3.6,"Dilane Bakwa",1],[12.8,8.2,"Maxima Adeagan Goffi",1],[51.1,23.1,"Dilane Bakwa",1],[33.9,42.9,"Alexsandro",1],[44.2,21.3,"Nabil Bentaleb",1],[35.0,46.3,"Hákon Arnar Haraldsson",2],[16.3,43.7,"Hákon Arnar Haraldsson",2],[50.5,13.5,"Dilane Bakwa",2],[45.7,13.9,"Nathan Ngoy",2],[39.7,12.7,"Benjamin André",2],[6.3,57.5,"Benjamin André",2],[29.5,3.1,"Ngalayel Mukau",2],[29.1,44.7,"Hákon Arnar Haraldsson",2],[40.8,32.6,"Ngalayel Mukau",2],[30.7,56.0,"Nabil Bentaleb",2],[37.6,64.6,"Hákon Arnar Haraldsson",2],[31.8,34.4,"Benjamin André",2],[34.4,22.1,"Nathan Ngoy",2],[24.4,64.5,"Calvin Verdonk",2],[43.5,63.5,"Osame Sahraoui",2]],"ars_rec":[[75.9,65.6,"Bruno Guimaraes",1],[56.6,42.9,"Gabriel Magalhaes",1],[71.0,33.5,"Mikel Merino",1],[76.9,19.1,"Noni Madueke",1],[64.5,64.4,"Myles Lewis-Skelly",1],[92.2,59.8,"Eberechi Eze",1],[71.1,25.1,"Ezri Konsa",1],[60.8,46.7,"Bruno Guimaraes",1],[70.0,21.7,"Noni Madueke",2],[88.7,24.3,"Mikel Merino",2],[59.3,54.1,"Myles Lewis-Skelly",2],[65.3,55.4,"Myles Lewis-Skelly",2],[75.9,23.3,"Jurriën Timber",2],[64.2,35.4,"Declan Rice",2],[74.3,12.0,"Jurriën Timber",2],[74.8,3.7,"Bukayo Saka",2],[67.4,3.4,"Bruno Guimaraes",2],[73.2,33.6,"Bruno Guimaraes",2],[70.6,45.9,"Declan Rice",2]],"gal_rec":[[64.2,49.2,"Eren Elmalı",1],[54.5,62.0,"Eren Elmalı",1],[63.8,10.1,"Barış Alper Yılmaz",1],[59.4,62.8,"Eren Elmalı",1],[66.0,43.6,"Aleksei Batrakov",1],[54.2,53.2,"Eren Elmalı",2],[63.9,48.5,"Eren Elmalı",2],[75.7,13.8,"Lucas Torreira",2]],"lil_shots":[[87.4,30.0,"blk",1],[76.5,23.1,"blk",1],[89.8,36.6,"blk",2],[76.3,39.9,"off",2]],"bar_shots":[[78.7,24.8,"off",1],[93.0,41.1,"on",1],[87.1,33.6,"off",1],[97.4,36.4,"off",1],[86.5,50.7,"on",1],[92.5,18.2,"blk",1],[95.9,41.9,"goal",1],[77.5,33.4,"on",1],[91.9,45.4,"on",1],[74.0,43.3,"on",1],[100.7,40.8,"off",2],[97.5,34.4,"goal",2],[92.3,21.8,"off",2],[102.3,26.0,"goal",2],[91.7,35.0,"blk",2],[93.8,46.2,"goal",2],[90.8,27.6,"off",2],[97.6,46.3,"off",2],[91.2,34.5,"on",2],[93.8,28.7,"blk",2],[98.6,41.4,"on",2]]};
+function drawPitch(svg, half){
+  const g = el('g',{fill:'none',stroke:'var(--line-2)','stroke-width':.35},svg);
+  el('rect',{x:0,y:0,width:105,height:68,fill:'var(--band)'},g);
+  if(!half){ el('line',{x1:52.5,y1:0,x2:52.5,y2:68},g); el('circle',{cx:52.5,cy:34,r:9.15},g); el('rect',{x:0,y:13.84,width:16.5,height:40.32},g); el('rect',{x:0,y:24.84,width:5.5,height:18.32},g); el('rect',{x:-1.6,y:30.34,width:1.6,height:7.32},g); }
+  else { el('path',{d:'M52.5 0 V68'},g); el('path',{d:'M52.5 24.85 A9.15 9.15 0 0 1 52.5 43.15'},g); }
+  el('rect',{x:88.5,y:13.84,width:16.5,height:40.32},g); el('rect',{x:99.5,y:24.84,width:5.5,height:18.32},g); el('rect',{x:105,y:30.34,width:1.6,height:7.32},g);
+  el('circle',{cx:94,cy:34,r:.45,fill:'var(--line-2)'},g);
+}
+(function(){
+  const svg=document.getElementById('pitch'); drawPitch(svg,false);
+  const z=el('g',{},svg);
+  el('rect',{x:70,y:0,width:35,height:68,fill:'var(--fen)',opacity:.11},z);
+  [35,70].forEach(v=>el('line',{x1:v,x2:v,y1:0,y2:68,stroke:'var(--chalk)','stroke-width':.25,'stroke-dasharray':'1 1.2',opacity:.5},z));
+  [['1. bölge · 0–35 m',17.5],['2. bölge · 35–70 m',52.5],['3. bölge · 70–105 m',87.5]].forEach(([t,xx])=>{ el('text',{x:xx,y:-2,'text-anchor':'middle',class:'ax',style:'font-size:2.6px'},z).textContent=t; });
+  el('text',{x:104,y:72,'text-anchor':'end',class:'ax',style:'font-size:2.4px'},z).textContent='hücum yönü → (Lille kalesi)';
+  const loss=el('g',{},svg), ars=el('g',{},svg), gal=el('g',{},svg);
+  EV.lil_loss.forEach(([x,y,p,h])=>{ const X=105-x, Y=y; const g=el('g',{stroke:'var(--sla)','stroke-width':.6},loss); el('path',{d:`M${X-1.2} ${Y-1.2}L${X+1.2} ${Y+1.2}M${X+1.2} ${Y-1.2}L${X-1.2} ${Y+1.2}`},g); el('title',{},g).textContent=`Lille kaybı · ${p} · ${h}. devre`; });
+  EV.ars_rec.forEach(([x,y,p,h])=>{ const r=el('rect',{x:x-1.2,y:68-y-1.2,width:2.4,height:2.4,fill:'none',stroke:'var(--chalk-2)','stroke-width':.45},ars); el('title',{},r).textContent=`Arsenal kazanımı · ${p} · ${h}. devre`; });
+  EV.gal_rec.forEach(([x,y,p,h])=>{ const r=el('rect',{x:x-1.4,y:68-y-1.4,width:2.8,height:2.8,fill:'var(--fen)'},gal); el('title',{},r).textContent=`Galatasaray kazanımı · ${p} · ${h}. devre`; });
+  const T={all:"Üç katman aynı sahada. Lille'in kayıplarının yarısından fazlası sarı bantta, yani kendi kalesine 35 metreden yakın. Arsenal'in kazanımları da büyük ölçüde orada. Galatasaray'ın sarı kareleri ise orta sahanın hemen ilerisinde toplanıyor.",
+           loss:"Lille'in 26 kaybının 14'ü kendi kalesine 35 metreden yakın. Hákon Arnar Haraldsson 5, Benjamin André 4 kayıpla öne çıkıyor; topun kaleciden sonraki ilk iki üç pasta gittiği bir yapı.",
+           ars:"Arsenal'in 19 kazanımının 11'i Lille kalesine 35 metreden yakın. Bu maçta Lille'in sorunu kendi hatası kadar Arsenal'in baskısıydı da.",
+           gal:"Galatasaray'ın Barcelona karşısındaki 8 kazanımının 5'i Eren Elmalı'dan. Yalnız biri kaleye 35 metreden yakın; baskı orta sahada kalmış."};
+  const read=document.getElementById('pread');
+  function set(l){ loss.style.opacity=(l==='all'||l==='loss')?1:.1; ars.style.opacity=(l==='all'||l==='ars')?1:.1; gal.style.opacity=(l==='all'||l==='gal')?1:.1; read.innerHTML=T[l]; }
+  [loss,ars,gal].forEach(g=>g.style.transition='opacity .4s');
+  document.getElementById('ptabs').addEventListener('click',e=>{ const b=e.target.closest('button'); if(!b) return; document.querySelectorAll('#ptabs button').forEach(x=>x.setAttribute('aria-pressed',x===b?'true':'false')); set(b.dataset.l); });
+  set('all');
+})();
+function shotMap(id, data, ring){
+  const svg=document.getElementById(id); drawPitch(svg,true); const g=el('g',{},svg);
+  data.forEach(([x,y,k,h])=>{ const Y=68-y; let n;
+    if(k==='goal'){ n=el('g',{},g); el('circle',{cx:x,cy:Y,r:1.6,fill:'var(--chalk)'},n); el('circle',{cx:x,cy:Y,r:2.4,fill:'none',stroke:ring,'stroke-width':.5},n); }
+    else if(k==='on'){ n=el('g',{},g); el('circle',{cx:x,cy:Y,r:1.6,fill:'var(--band)',stroke:'var(--chalk)','stroke-width':.45},n); el('circle',{cx:x,cy:Y,r:.5,fill:'var(--chalk)'},n); }
+    else if(k==='blk'){ n=el('rect',{x:x-1.3,y:Y-1.3,width:2.6,height:2.6,fill:'var(--band)',stroke:'var(--chalk-2)','stroke-width':.45,transform:`rotate(45 ${x} ${Y})`},g); }
+    else { n=el('circle',{cx:x,cy:Y,r:1.6,fill:'none',stroke:'var(--mute)','stroke-width':.45,'stroke-dasharray':'.6 .6'},g); }
+    el('title',{},n).textContent=`${({goal:'Gol',on:'İsabetli',blk:'Bloklandı',off:'İsabetsiz',post:'Direk'})[k]} · ${h}. devre`; });
+}
+shotMap('shot-lil', EV.lil_shots, 'var(--sla)');
+shotMap('shot-bar', EV.bar_shots, 'var(--fen)');
 
 </script>
 <style is:global>
