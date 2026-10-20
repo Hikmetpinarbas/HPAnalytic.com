@@ -12,9 +12,9 @@ evidenceLevel: "MODEL"
 methodology: "Mekânsal Performans Çözümlemesi"
 provenance: "HPAnalytic Monografi Boru Hattı / 2026-10-20"
 sourceRefs:
-  - { title: "Karun Singh, Expected Threat", locator: "https://karun.in" }
-  - { title: "Fernández, Bornn, Cervone, EPV Methodology", locator: "MIT Sloan / Sports Analytics" }
-  - { title: "StatsBomb xG Calculation Framework", locator: "StatsBomb Official Methodology" }
+  - { title: "Introducing Expected Threat (xT)", locator: "Karun Singh, 2019, karun.in" }
+  - { title: "A framework for the fine-grained evaluation of the instantaneous expected value of soccer possessions", locator: "Fernández, Bornn, Cervone, 2021, Machine Learning 110(6), 1389–1427, doi:10.1007/s10994-021-05989-6" }
+  - { title: "What is xG? How is it calculated?", locator: "Hudl StatsBomb, resmî açıklama" }
 visualAssets:
   - { visual_id: "cambaza-bak-metrikleri-xg-cover", src: "/images/monographs/cambaza-bak-metrikleri-xg-cover.png", caption: "Tek bir şut konumunun karanlık sahada amber ışıkla aydınlatılması", rights_status: "HPAnalytic üretimi" }
 ---
