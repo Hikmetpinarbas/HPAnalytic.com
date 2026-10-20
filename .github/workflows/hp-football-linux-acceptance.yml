@@ -84,3 +84,11 @@ jobs:
 
       - name: Validate generated Cloudflare deployment
         run: npx --yes wrangler@4.146.0 deploy --dry-run --config dist/server/wrangler.json
+
+      - name: Preserve production build for deployment handoff
+        uses: actions/upload-artifact@v4
+        with:
+          name: hpanalytic-production-dist
+          path: hpfootball-site/dist
+          retention-days: 1
+          if-no-files-found: error
