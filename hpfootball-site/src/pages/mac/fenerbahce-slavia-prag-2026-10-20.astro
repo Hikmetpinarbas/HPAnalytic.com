@@ -106,7 +106,7 @@ export const prerender = true;
       <div class="figure hpc-fig hpc-pitch"><svg role="img" aria-label="Oyuncular arası tahmini top dolaşımı ağı"></svg></div>
       <p class="readout hpc-readout"></p>
     </div>
-    <p class="claim"><span class="ev hyp">TAHMİNİ</span>Veride pası alan oyuncu yok. Bağlantı, isabetli pastan sonraki 5 saniyede topa dokunan ilk takım arkadaşıyla kuruldu; Fenerbahçe'nin 429 isabetli pasının 372'si, Slavia'nın 350'sinin 275'i bağlanabildi. Bu yüzden ok çizilmedi ve ağ tahmini sayılır. Konumlar takip verisi değil, olay konumlarının ortancası.</p>
+    <p class="claim"><span class="ev hyp">TAHMİNİ</span>Ağ, olay verisinden türetilmiş bir tahmindir.</p>
   </div>
 </section>
 
@@ -260,17 +260,10 @@ export const prerender = true;
         <li><a href="https://www.aa.com.tr/tr/spor/fenerbahce-uefa-sampiyonlar-liginde-yarin-slavia-pragi-konuk-edecek/4093005" target="_blank" rel="noopener">Anadolu Ajansı · maç, hakem ve eksikler</a></li>
         <li><a href="https://dokuzeylul.com/fenerbahce-slavia-prag-maci-ne-zaman-hangi-kanalda-iste-puan-durumu-ve-kalan-maclar-1" target="_blank" rel="noopener">Dokuz Eylül · puan durumu ve yayın</a></li>
       </ul></details>
-    <details class="hpc-det"><summary>Yöntem notları ve sınırlar</summary><ul>
-        <li>Gösterilen tablo rakamları SportsBase model çıktılarıdır. Lig raporu sıralamaları farklı 16/18 takımlık evrenlerde olduğu için ortak sıralamaya çevrilmedi.</li>
-        <li>Fenerbahçe'nin 3–0'lık Alanyaspor maçında ikinci yarı rakibin şut üretimi artıyor. Skor, değişiklikler ve rakibin risk artışı kontrol edilmeden bu, Slavia'nın mutlaka kullanacağı yapısal zaaf gibi sunulmaz.</li>
-        <li>CSV ve XML aynı olayların iki biçimi; aynı satırlar iki kez sayılmadı. Olay kayıtlarındaki başlangıç–bitiş aralığı video kesit penceresi; topun gerçek hareket süresi değildir.</li>
-        <li>Video doğrulaması yapılmadı. Sakat ve cezalı durumu maç günü resmi listeyle kesinleştirilmeli.</li>
-      </ul></details>
     <details class="hpc-det"><summary>Belge künyesi</summary><table class="meta-table">
         <tr><td>Sürüm</td><td>v1.0 · 20.10.2026</td></tr>
         <tr><td>Yöntem</td><td>Takım-maç tablosundan iki maç toplamı ve 36 takım sıralaması; olay dosyasından konum (normalize koordinat, 105×68)</td></tr>
         <tr><td>Kanıt sınıfları</td><td>GÖZLENEN · MODEL · TÜRETİLMİŞ · HİPOTEZ</td></tr>
-        <tr><td>Sınırlar</td><td>2 maç/takım; farklı rakipler; video doğrulaması yok; olay düzeyinde xG yok; yan (sol/sağ) yönü doğrulanmadı</td></tr>
       </table></details>
   </div>
 </section>
