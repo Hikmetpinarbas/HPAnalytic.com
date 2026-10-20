@@ -1,122 +1,210 @@
 ---
 import { isPublic } from '../lib/public-content.mjs';
 import BaseLayout from '../layouts/BaseLayout.astro';
-import SkillCornerTerminalHero from '../components/SkillCornerTerminalHero.astro';
-import EvidenceBadge from '../components/EvidenceBadge.astro';
-import {getCollection} from 'astro:content';
-import {isPublicEditorialItem} from '../lib/site-editorial-status.mjs';
-import {getUpcomingMatches, FOOTBALL_SCOPE} from '../lib/football-data.mjs';
-import {validMatchRows, shouldShowMatchCentre, heroPrimaryCta, launchDirectoryLinks} from '../lib/home-surfaces.mjs';
+import { getCollection } from 'astro:content';
+import { isPublicEditorialItem } from '../lib/site-editorial-status.mjs';
+import { SECTION_LABELS } from '../lib/site-surfaces.mjs';
+import { featuredMatch } from '../data/match-previews.mjs';
 export const prerender = true;
 
-const featuredMonographs=(await getCollection('monographs',isPublic)).sort((a,b)=>+b.data.date-+a.data.date).slice(0,3);
-const articles=(await getCollection('articles',isPublic)).filter(entry=>isPublicEditorialItem(entry.data)).sort((a,b)=>+b.data.date-+a.data.date);
-const hikmetEditorial=articles.find(a=>a.data.section==='culture');
-const readingDesk=articles.filter(a=>a.data.section==='analysis' || a.data.section==='scouting' || a.data.section==='culture').slice(0,3);
-const featuredStory=articles.find(a=>a.data.section==='analysis' && a.data.featured) ?? articles.find(a=>a.data.featured) ?? articles[0];
-const footballToken=import.meta.env.HPA_FOOTBALL_DATA_TOKEN;
-const matchCentre=await getUpcomingMatches({token:footballToken});
-type MatchCentreItem={competition:string;utcDate:string;home:string;away:string;status:string};
-const matchRows=validMatchRows(matchCentre) as MatchCentreItem[];
-const showMatchCentre=shouldShowMatchCentre(matchCentre);
-const publicAnalysisCount=articles.filter(a=>a.data.section==='analysis').length;
-const primaryCta=heroPrimaryCta(publicAnalysisCount);
-const directoryLinks=launchDirectoryLinks(publicAnalysisCount);
-const matchTime=(utcDate:string)=>new Intl.DateTimeFormat('tr-TR',{timeZone:'Europe/Istanbul',day:'2-digit',month:'short',hour:'2-digit',minute:'2-digit'}).format(new Date(utcDate));
+const monographs = (await getCollection('monographs', isPublic)).sort((a, b) => +b.data.date - +a.data.date);
+const articles = (await getCollection('articles', isPublic)).filter((entry) => isPublicEditorialItem(entry.data)).sort((a, b) => +b.data.date - +a.data.date);
+const match = featuredMatch();
+const dateTr = (d: Date) => d.toLocaleDateString('tr-TR', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' });
+const steps = [
+  { key: 'yapi', label: 'Yapı', text: 'Önce oyunun iskeleti: alan, zaman, rol ve rakip. Skor bu yapının en son katmanıdır.' },
+  { key: 'iliski', label: 'İlişki', text: 'Sonra bağlar: hangi aksiyon hangisini doğurdu, hangi kayıp hangi fırsatı açtı.' },
+  { key: 'karar', label: 'Karar', text: 'En son hüküm, ama kanıtın taşıyabildiği kadar. Bilmediğimizi bilmiyoruz diye yazarız.' },
+];
 ---
 <BaseLayout title="HPAnalytic — Hikmet Pınarbaş Futbol Analizi" description="Hikmet Pınarbaş'tan kanıt, mekanizma ve bağlam temelli bağımsız futbol analizi.">
-<SkillCornerTerminalHero />
-<section class="analysis-rail" aria-labelledby="analysis-rail-title">
-  <p class="kicker">HPANALYTIC · EVIDENCE LAB</p>
-  <h2 id="analysis-rail-title" class="analysis-rail__heading">ARAŞTIRMA VİTRİNİ</h2>
-  <div class="analysis-rail__track" tabindex="0" aria-label="Yatay kaydırılabilir araştırma kartları">
-    {featuredMonographs.filter(item => item.id.startsWith('g01-') || item.id.startsWith('g02-')).map(item => <article class="analysis-rail__card">
-      <span class="analysis-rail__meta">{item.id.startsWith('g01-') ? 'MEKÂNSAL ANALİZ' : 'YÖNTEMSEL ÇERÇEVE'} · {item.data.readingTime}</span>
-      <h3>{item.id.startsWith('g01-') ? 'Bakıyorlar Ama Görmüyorlar (Olay Verisinde Algı Körlüğü)' : 'Israrla Görmezden Gelme (Spatiotemporal Mekanik)'}</h3>
-      <p>{item.data.subtitle ?? item.data.description}</p>
-      <a href={`/monographs/${item.id}`}>ARAŞTIRMAYI OKU →</a>
-    </article>)}
-    <article class="analysis-rail__card">
-      <span class="analysis-rail__meta">EDİTORYAL ÖNERİ · YAYIN BEKLİYOR</span>
-      <h3>Halkın Metrikleri: xG ve xT Neyi Gizler?</h3>
-      <p>Araştırma sorusu kayıtlıdır; doğrulanmış monografi metni ve kaynak incelemesi henüz bulunmadığından yayın bağlantısı ve okuma süresi sunulmaz.</p>
-    </article>
+
+<section class="home-hero" aria-labelledby="hero-title">
+  <canvas class="home-hero__canvas" aria-hidden="true" data-threads></canvas>
+  <div class="home-hero__inner">
+    <p class="kicker">HPANALYTIC · FUTBOL · ARAŞTIRMA · SCOUTING</p>
+    <h1 id="hero-title">Oyunu sonuçtan <em>önce</em> oku.</h1>
+    <p class="home-hero__sub">Skoru değil, skoru üreten mekanizmayı okuyan bağımsız futbol analizi. Her iddia kendi kanıt sınıfını ve sınırını taşır.</p>
+    <div class="home-hero__actions">
+      {match && <a class="button button-primary" href={match.href}>Bu haftanın dosyası <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M2 8h11M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a>}
+      <a class="button" href="/monographs">Monografiler</a>
+    </div>
+    <div class="steps" data-steps>
+      <div class="steps__rail"><span class="steps__bar" aria-hidden="true"></span>
+      <ol class="steps__track" role="tablist" aria-label="Okuma sırası">
+        {steps.map((s, i) => <li role="presentation"><button type="button" role="tab" id={`step-${s.key}`} aria-controls={`panel-${s.key}`} aria-selected={i === 0 ? 'true' : 'false'} tabindex={i === 0 ? 0 : -1}>{s.label}</button></li>)}
+      </ol></div>
+      {steps.map((s, i) => <p class="steps__panel" role="tabpanel" id={`panel-${s.key}`} aria-labelledby={`step-${s.key}`} hidden={i !== 0}>{s.text}</p>)}
+    </div>
   </div>
 </section>
 
-{featuredMonographs.length > 0 && <section class="reading-desk" aria-labelledby="monographs-title">
-  <header class="reading-desk-head"><div><p class="kicker">ARAŞTIRMA · MONOGRAFİLER</p><h2 id="monographs-title">ÖNE ÇIKAN ARAŞTIRMALAR</h2></div></header>
-  <div class="reading-desk-grid">{featuredMonographs.map((item)=><article class="reading-desk-item">
-    <span class="reading-desk-number">{item.data.category} · {item.data.readingTime}</span>
-    <h3><a href={`/monographs/${item.id}`}>{item.data.title}</a></h3>
-    <p>{item.data.subtitle ?? item.data.description}</p>
-    <small>{item.data.author} · {item.data.evidenceLevel}</small>
-  </article>)}</div>
-</section>}
-{readingDesk.length > 0 && <section class="reading-desk" aria-labelledby="reading-desk-title">
-  <header class="reading-desk-head"><div><p class="kicker">OKUMA MASASI · GÜNCEL SEÇKİ</p><h2 id="reading-desk-title">BUGÜN NEYİ ANLAMAYA DEĞER?</h2><p>Yeni bir iddia üretmeden, yayımlanmış ve editoryal kabulden geçmiş dosyalardan seçki.</p></div><a href="/archive" class="story-link">TÜM DOSYALAR →</a></header>
-  <div class="reading-desk-grid">{readingDesk.map((item,i)=><article class="reading-desk-item"><span class="reading-desk-number">{String(i+1).padStart(2,'0')} / {item.data.section.toUpperCase()}</span><h3><a href={`/articles/${item.id}`}>{item.data.title}</a></h3><p>{item.data.description}</p><small>{item.data.date.toLocaleDateString('tr-TR')}</small></article>)}</div>
-</section>}
+{match && (
+<section class="feature-band" data-club={match.club} aria-labelledby="feature-title">
+  <div class="feature-band__inner">
+    <div class="feature-band__copy reveal">
+      <p class="kicker">{match.kind} · {match.competition}</p>
+      <h2 id="feature-title"><span>{match.home}</span><span style="color:var(--ink-2)">– {match.away}</span></h2>
+      <p class="lead">{match.description}</p>
+      <div class="feature-band__meta"><span>{new Date(match.kickoff).toLocaleString("tr-TR",{day:"numeric",month:"long",hour:"2-digit",minute:"2-digit",timeZone:"Europe/Istanbul"})} TSİ</span><span>{match.evidence}</span></div>
+      <div class="button-row"><a class="button button-primary" href={match.href}>Dosyayı aç <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M2 8h11M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a></div>
+    </div>
+    <div class="feature-panel reveal" aria-label="Dosyadan üç sayı">
+      {match.stats.map((st) => <div class="stat-pair"><span>{st.label}</span><b>{st.value}</b><small>{st.note}</small></div>)}
+    </div>
+  </div>
+</section>
+)}
 
-{featuredStory && <section class="featured-analysis" aria-labelledby="featured-title">
-  <div class="featured-index"><span>01</span><p>YENİ · KANIT NESNESİ</p></div>
-  <div class="featured-story">
-    <EvidenceBadge evidenceClass={featuredStory.data.evidenceClass} claimCeiling={featuredStory.data.claimCeiling}/>
-    <p class="featured-meta">{featuredStory.data.section.toUpperCase()} · {featuredStory.data.date.toLocaleDateString('tr-TR')}</p>
-    <h2 id="featured-title">{featuredStory.data.title}</h2>
-    <p>{featuredStory.data.description}</p>
-    <a href={`/articles/${featuredStory.id}`} class="story-link">YAZIYI VE KANITI AÇ <span aria-hidden="true">→</span></a>
+{monographs.length > 0 && (
+<section class="rail-section" aria-labelledby="mono-title">
+  <div class="rail-head">
+    <div>
+      <p class="kicker">Araştırma · Monografiler</p>
+      <h2 id="mono-title">Uzun soluklu okumalar</h2>
+      <p>Futbolun görünmeyen tarafına tek bir soruyla giren araştırmalar. Her biri kendi iddia sınırıyla.</p>
+    </div>
+    <div class="rail-controls" data-rail-controls="mono-rail">
+      <button type="button" data-dir="-1" aria-label="Önceki monografiler"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M10 3L5 8l5 5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></button>
+      <button type="button" data-dir="1" aria-label="Sonraki monografiler"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></button>
+    </div>
   </div>
-  <aside class="featured-question"><small>OYUNUN ANAHTARI</small><p>Bir aksiyonun değeri, öncesiyle ve sonrasıyla kurduğu ilişkide saklıdır.</p></aside>
-</section>}
+  <div class="rail" id="mono-rail" tabindex="0" role="region" aria-label="Monografiler, yatay kaydırılabilir">
+    {monographs.map((m) => (
+      <article class="rail-card">
+        <div class="rail-card__meta"><span>{m.data.category ?? 'Monografi'}</span><span>{m.data.readingTime}</span></div>
+        <h3><a href={`/monographs/${m.id}`}>{m.data.title}</a></h3>
+        <p>{m.data.subtitle ?? m.data.description}</p>
+        <div class="rail-card__foot"><span>OKU</span><span aria-hidden="true">→</span></div>
+      </article>
+    ))}
+  </div>
+</section>
+)}
 
-{hikmetEditorial && <section class="hikmet-spotlight" aria-labelledby="hikmet-spotlight-title">
-  <div class="hikmet-spotlight__meta"><p class="kicker">HİKMET’TEN · OYUN KÜLTÜRÜ</p><span>EDİTORYAL BAKIŞ</span></div>
-  <div class="hikmet-spotlight__body"><h2 id="hikmet-spotlight-title">{hikmetEditorial.data.title}</h2><p class="hikmet-statement">{hikmetEditorial.data.description}</p><a class="story-link" href={`/articles/${hikmetEditorial.id}`}>YAZIYI OKU <span aria-hidden="true">→</span></a></div>
-</section>}
-<section class="launch-directory" aria-labelledby="launch-directory-title">
-  <div class="launch-directory__intro"><p class="kicker">HPANALYTIC · KEŞİF</p><h2 id="launch-directory-title">FUTBOLU BİR SORUDAN OKUMAYA BAŞLA.</h2><p>{publicAnalysisCount > 0 ? 'Yayımlanmış analizden arşive, araştırma ve karar destek laboratuvarı yöntem notlarına geç.' : 'Yayımlanmış dosyalardan arşive, araştırma ve karar destek laboratuvarı yöntem notlarına geç.'}</p></div>
-  <nav class="launch-directory__links" aria-label="İçeriği keşfet">
-    {directoryLinks.map(link=><a href={link.href}><span>{link.index} / {link.kind}</span><b>{link.title}</b><small>{link.note}</small><span aria-hidden="true">↗</span></a>)}
-  </nav>
-</section>
-{showMatchCentre && <section class="match-centre" aria-labelledby="match-centre-title">
-  <header class="match-centre-head"><div><p class="kicker">MAÇ MERKEZİ · 7 GÜNLÜK PENCERE</p><h2 id="match-centre-title">GELECEK MAÇLAR</h2><p>Beş Büyük Lig + UEFA + Türkiye kapsamındaki yakın futbol takvimi. Yalnız doğrulanmış kaynak verisi gösterilir.</p></div><div class="match-source"><span class="source-ready">KAYNAK HAZIR</span><small>{matchCentre.source} · Europe/Istanbul</small></div></header>
-  <div class="scope-strip" aria-label="HPAnalytic futbol kapsamı">{FOOTBALL_SCOPE.labels.map(label=><span>{label}</span>)}</div>
-  <div class="fixture-list">{matchRows.map((m:MatchCentreItem,i:number)=><article class="fixture-row"><span class="fixture-index">{String(i+1).padStart(2,'0')}</span><div class="fixture-meta"><small>{m.competition}</small><time datetime={m.utcDate}>{matchTime(m.utcDate)}</time></div><div class="fixture-teams"><b>{m.home}</b><span>—</span><b>{m.away}</b></div><span class="fixture-status">{m.status}</span></article>)}</div>
-</section>}
-<section class="evidence-bridge" aria-labelledby="evidence-bridge-title">
-  <div class="evidence-bridge__head">
-    <p class="kicker">KANITTAN AÇIKLAMAYA</p>
-    <h2 id="evidence-bridge-title">AKSİYONU GÖR.<br/><em>MEKANİZMAYI ÇÖZ.</em></h2>
-    <p>HPAnalytic bir futbol sorusunu bağlam, aksiyon, süreç ve rakip yanıtı üzerinden inceler.</p>
+{articles.length > 0 && (
+<section class="rail-section" aria-labelledby="analysis-title">
+  <div class="rail-head">
+    <div>
+      <p class="kicker">Analiz · Yöntem</p>
+      <h2 id="analysis-title">Mekanizma kütüphanesi</h2>
+      <p>Bir futbol kavramını parçalarına ayıran kısa analizler: ne görülür, ne görülmez, ne ölçülür.</p>
+    </div>
+    <a class="button" href="/analysis">Tüm analizler</a>
   </div>
-  <div class="evidence-bridge__flow" aria-label="HPAnalytic kanıt sunum modeli">
-    <div><span>01</span><b>BAĞLAM</b><p>Maçın ve aksiyonun hangi koşulda oluştuğu.</p></div>
-    <div><span>02</span><b>GÖZLENEN</b><p>Veri veya görüntünün gerçekten taşıdığı bulgu.</p></div>
-    <div><span>03</span><b>MEKANİZMA?</b><p>Kanıtın desteklediği açıklama; otomatik hüküm değil.</p></div>
-    <div><span>04</span><b>KARŞI KANIT</b><p>İlk açıklamayı zayıflatan veya başka yöne açan bulgu.</p></div>
-    <div><span>05</span><b>ANALİST YORUMU</b><p>Bulgunun oyuna ve karar süreçlerine anlamı.</p></div>
+  <div class="bento">
+    {articles.slice(0, 4).map((a, i) => (
+      <article class:list={['tile', 'reveal', i === 0 ? 'tile--wide' : i === 1 ? 'tile--narrow' : 'tile--half']}>
+        <div class="card-meta"><span class="section-name">{SECTION_LABELS[a.data.section as keyof typeof SECTION_LABELS] ?? a.data.section}</span><time datetime={a.data.date.toISOString().slice(0, 10)}>{dateTr(a.data.date)}</time></div>
+        <h3><a href={`/articles/${a.id}`}>{a.data.title}</a></h3>
+        <p>{a.data.description}</p>
+      </article>
+    ))}
   </div>
 </section>
-<section class="research-spotlight" aria-labelledby="research-title">
-  <div class="research-intro">
-    <p class="kicker">ARAŞTIRMA · KANIT MASASI</p>
-    <h2 id="research-title">ARAŞTIRMA<br/>MASASI</h2>
-    <p>Bir iddiayı güçlendirmek için daha çok veri değil, doğru kanıt gerekir. HPAnalytic araştırmayı cevaptan değil sorudan başlatır.</p>
-    <a href="/research" class="story-link">ARAŞTIRMA YAKLAŞIMINI GÖR <span aria-hidden="true">→</span></a>
+)}
+
+<section class="method" aria-labelledby="method-title">
+  <div class="rail-head" style="padding:0;margin:0">
+    <div>
+      <p class="kicker">Nasıl çalışıyoruz</p>
+      <h2 id="method-title">Önce soru. Sonra kanıt. Sınır hep görünür.</h2>
+    </div>
   </div>
-  <div class="research-method" aria-label="HPAnalytic araştırma yöntemi">
-    <div><span>01</span><b>SORU</b><p>Önce gerçekten cevaplanması gereken futbol problemi tanımlanır.</p></div>
-    <div><span>02</span><b>KANIT</b><p>Kaynak, iddianın taşıyabileceği güven düzeyine göre seçilir.</p></div>
-    <div><span>03</span><b>KARŞI-KANIT</b><p>İlk açıklamayı bozan veya sınırlandıran veri özellikle aranır.</p></div>
-    <div><span>04</span><b>SINIR</b><p>Kanıtın söylemediği şey, söylediği şey kadar görünür tutulur.</p></div>
+  <ol class="method__grid">
+    <li><span>01</span><b>Soru</b><p>Önce gerçekten cevaplanması gereken futbol problemi tanımlanır.</p></li>
+    <li><span>02</span><b>Kanıt</b><p>Kaynak, iddianın taşıyabileceği güven düzeyine göre seçilir.</p></li>
+    <li><span>03</span><b>Karşı kanıt</b><p>İlk açıklamayı bozan ya da sınırlayan veri özellikle aranır.</p></li>
+    <li><span>04</span><b>Sınır</b><p>Kanıtın söylemediği şey, söylediği şey kadar görünür tutulur.</p></li>
+  </ol>
+  <div class="evidence-legend" aria-label="Kanıt sınıfları">
+    <span><i style="background:var(--amber)"></i>GÖZLENEN</span>
+    <span><i style="background:var(--context)"></i>MODEL</span>
+    <span><i style="background:var(--amber-2)"></i>TÜRETİLMİŞ</span>
+    <span><i style="background:var(--ink-2)"></i>HİPOTEZ</span>
+    <span><i style="background:var(--breach)"></i>KANIT İHLALİ</span>
   </div>
 </section>
-<section class="scouting-spotlight" aria-labelledby="scouting-title">
-<div class="scouting-copy"><p class="kicker">SCOUTING · KARAR DİSİPLİNİ</p><h2 id="scouting-title">OYUNCU BULMAK DEĞİL.<br/><em>KARAR RİSKİNİ</em> AZALTMAK.</h2><p>Scouting, iyi oyuncu listesi değildir. Rolün, bağlamın ve transfer edilebilir özelliklerin aynı karar problemi içinde sınanmasıdır.</p><a href="/scouting" class="story-link">SCOUTING YAKLAŞIMINI GÖR →</a></div>
-<div class="scouting-lenses"><div><span>01</span><b>ROL</b><p>Oyuncunun etiketi değil, takım içindeki fonksiyonu.</p></div><div><span>02</span><b>BAĞLAM</b><p>Lig, takım, partner, rakip ve oyun durumu etkisi.</p></div><div><span>03</span><b>TAŞINABİLİRLİK</b><p>Gözlenen niteliğin yeni sisteme taşınabilirliği.</p></div><div><span>04</span><b>KARŞI-KANIT</b><p>Kararı zayıflatabilecek bulguların özellikle aranması.</p></div></div></section>
-<div class="principles"><span>ÖNCE FUTBOL</span><span>GÜVENDEN ÖNCE KANIT</span><span>METRİKTEN ÖNCE MEKANİZMA</span><span>HÜKÜMDEN ÖNCE BAĞLAM</span></div>
+
+<script>
+  // Steps carousel: Yapı → İlişki → Karar. Auto-advances only while the hero is visible and untouched.
+  const root = document.querySelector<HTMLElement>('[data-steps]');
+  if (root) {
+    const tabs = [...root.querySelectorAll<HTMLButtonElement>('[role="tab"]')];
+    const panels = [...root.querySelectorAll<HTMLElement>('[role="tabpanel"]')];
+    const bar = root.querySelector<HTMLElement>('.steps__bar');
+    let index = 0; let timer: number | undefined; let touched = false;
+    const select = (i: number, focus = false) => {
+      index = (i + tabs.length) % tabs.length;
+      tabs.forEach((t, k) => { t.setAttribute('aria-selected', String(k === index)); t.tabIndex = k === index ? 0 : -1; });
+      panels.forEach((p, k) => { p.hidden = k !== index; });
+      if (bar) bar.style.width = `${(index * 2 + 1) / (tabs.length * 2) * 100}%`;
+      if (focus) tabs[index].focus();
+    };
+    tabs.forEach((t, k) => {
+      t.addEventListener('click', () => { touched = true; select(k); });
+      t.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowRight') { touched = true; select(index + 1, true); }
+        if (e.key === 'ArrowLeft') { touched = true; select(index - 1, true); }
+      });
+    });
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!reduce) timer = window.setInterval(() => { if (!touched && !document.hidden) select(index + 1); }, 5200);
+    root.addEventListener('pointerenter', () => { touched = true; });
+    select(0);
+  }
+
+  // Rail controls
+  document.querySelectorAll<HTMLElement>('[data-rail-controls]').forEach((controls) => {
+    const rail = document.getElementById(controls.dataset.railControls || '');
+    if (!rail) return;
+    const [prev, next] = controls.querySelectorAll<HTMLButtonElement>('button');
+    const update = () => {
+      prev.disabled = rail.scrollLeft < 8;
+      next.disabled = rail.scrollLeft + rail.clientWidth >= rail.scrollWidth - 8;
+    };
+    controls.querySelectorAll<HTMLButtonElement>('button').forEach((b) => b.addEventListener('click', () => {
+      const card = rail.querySelector<HTMLElement>('.rail-card');
+      const step = card ? card.offsetWidth + 14 : rail.clientWidth * .8;
+      rail.scrollBy({ left: Number(b.dataset.dir) * step, behavior: 'smooth' });
+    }));
+    rail.addEventListener('scroll', update, { passive: true });
+    update();
+  });
+
+  // Hero threads: decorative light lines drifting across the field. Not data.
+  const canvas = document.querySelector<HTMLCanvasElement>('[data-threads]');
+  if (canvas && canvas.getContext) {
+    const ctx = canvas.getContext('2d')!;
+    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    const amber = getComputedStyle(document.documentElement).getPropertyValue('--amber').trim() || '#F2A33A';
+    let w = 0, h = 0, dpr = 1, raf = 0, t0 = performance.now();
+    const nodes = Array.from({ length: 26 }, (_, i) => ({ x: Math.random(), y: .25 + Math.random() * .7, vx: (Math.random() - .5) * .00006, vy: (Math.random() - .5) * .00004, hot: i % 5 === 0 }));
+    const size = () => { dpr = Math.min(2, window.devicePixelRatio || 1); w = canvas.clientWidth; h = canvas.clientHeight; canvas.width = w * dpr; canvas.height = h * dpr; ctx.setTransform(dpr, 0, 0, dpr, 0, 0); };
+    const draw = (now: number) => {
+      const dt = Math.min(48, now - t0); t0 = now;
+      ctx.clearRect(0, 0, w, h);
+      // long floodlight streaks
+      for (let k = 0; k < 5; k++) {
+        const phase = now * .00005 + k * 1.3;
+        ctx.beginPath();
+        for (let x = -20; x <= w + 20; x += 24) {
+          const y = h * (.62 + k * .07) + Math.sin(x * .004 + phase) * h * .06 - x * .12;
+          x === -20 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
+        }
+        ctx.strokeStyle = `rgba(242,163,58,${.05 + k * .025})`; ctx.lineWidth = 1; ctx.stroke();
+      }
+      for (const n of nodes) { n.x += n.vx * dt; n.y += n.vy * dt; if (n.x < 0 || n.x > 1) n.vx *= -1; if (n.y < .2 || n.y > 1) n.vy *= -1; }
+      for (let i = 0; i < nodes.length; i++) for (let j = i + 1; j < nodes.length; j++) {
+        const a = nodes[i], b = nodes[j]; const dx = (a.x - b.x) * w, dy = (a.y - b.y) * h; const d = Math.hypot(dx, dy);
+        if (d < 170) { ctx.strokeStyle = (a.hot || b.hot) ? `rgba(242,163,58,${.32 * (1 - d / 170)})` : `rgba(242,238,230,${.09 * (1 - d / 170)})`; ctx.beginPath(); ctx.moveTo(a.x * w, a.y * h); ctx.lineTo(b.x * w, b.y * h); ctx.stroke(); }
+      }
+      for (const n of nodes) { ctx.beginPath(); ctx.arc(n.x * w, n.y * h, n.hot ? 2.2 : 1.2, 0, Math.PI * 2); ctx.fillStyle = n.hot ? amber : 'rgba(242,238,230,.5)'; ctx.fill(); }
+      if (!reduce) raf = requestAnimationFrame(draw);
+    };
+    size(); draw(performance.now());
+    window.addEventListener('resize', () => { size(); if (reduce) draw(performance.now()); });
+    document.addEventListener('visibilitychange', () => { if (document.hidden) cancelAnimationFrame(raf); else if (!reduce) raf = requestAnimationFrame(draw); });
+  }
+</script>
 </BaseLayout>
-
-<style>.editorial-home-stage{max-width:1440px;margin-inline:auto;padding-inline:clamp(16px,2vw,28px)}</style>
