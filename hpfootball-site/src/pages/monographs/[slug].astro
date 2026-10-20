@@ -19,6 +19,5 @@ const {Content}=await render(item);
     <p class="monograph-evidence">{item.data.evidenceLevel} · {item.data.claimCeiling}</p>
     <div class="monograph-body"><Content /></div>
     {item.data.sourceRefs.length > 0 && <details class="article-disclosure"><summary>Kaynaklar <span aria-hidden="true">＋</span></summary><div class="disclosure-ghost"><ol>{item.data.sourceRefs.map((r) => <li>{/^https?:\/\//.test(r.locator) ? <a href={r.locator} rel="noreferrer">{r.title}</a> : <span>{r.title}</span>}</li>)}</ol></div></details>}
-    <aside class="claim-boundary"><h2>Kanıt sınırı</h2><p>{item.data.claimCeiling}</p></aside>
   </article>
 </BaseLayout>

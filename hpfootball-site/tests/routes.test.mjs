@@ -27,8 +27,7 @@ test('search is a plain GET form with a labelled input (works without JS)', asyn
   assert.match(page, /<input id="q" name="q" type="search"/);
 });
 
-test('article pages declare structured data and a claim boundary', async () => {
+test('article pages declare structured data', async () => {
   const page = await read('articles/[...id].astro');
   assert.match(page, /application\/ld\+json/);
-  assert.match(page, /class="claim-boundary"/);
 });

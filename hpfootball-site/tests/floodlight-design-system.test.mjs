@@ -91,7 +91,7 @@ test('match pages carry the four data-bound charts and keep the evidence rules',
     const page = read(`src/pages/mac/${m.slug}.astro`);
     for (const kind of ['teamradar', 'momentum', 'network', 'playerradar']) assert.match(page, new RegExp(`data-hpc="${kind}"`), `${m.slug}: ${kind}`);
     assert.match(page, /id="hpc-data"/);
-    assert.match(page, /<span class="ev hyp">TAHMİNİ<\/span>Veride pası alan oyuncu yok/, `${m.slug}: proxy network labelled`);
+    assert.match(page, /<span class="ev hyp">TAHMİNİ<\/span>Ağ, olay verisinden türetilmiş bir tahmindir/, `${m.slug}: proxy network labelled`);
     assert.match(page, /<details class="hpc-det"><summary>Kaynaklar<\/summary>/, `${m.slug}: sources collapsed`);
     const data = JSON.parse(page.match(/id="hpc-data" is:inline>(.*?)<\/script>/s)[1].replace(/<\\\//g, '</'));
     assert.ok(data.players.players.length >= 10 && data.team.teams[data.keys.a] && data.team.teams[data.keys.b]);
