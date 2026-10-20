@@ -1,0 +1,35 @@
+---
+---
+<div class="hp-carousel">
+  <div class="hp-track">
+    <div class="hp-card" data-theme="fba">
+      <span class="hp-badge">PREMIER</span>
+      <h3>Fenerbahçe: Taktiksel Rezonans</h3>
+      <a href="/monographs/fenerbahce-analiz">İncele ↗</a>
+    </div>
+    <div class="hp-card" data-theme="direnc">
+      <span class="hp-badge">BİYOMEKANİK</span>
+      <h3>Narin Değil Dirençli</h3>
+      <a href="/monographs/narin-degil-direncli">İncele ↗</a>
+    </div>
+    <div class="hp-card" data-theme="psikoloji">
+      <span class="hp-badge">KULÜBE</span>
+      <h3>Böyle iyi abi ya!</h3>
+      <a href="/monographs/byle-iyi-abi-ya">İncele ↗</a>
+    </div>
+  </div>
+</div>
+
+<style>
+  .hp-carousel { width: 100%; max-width: 700px; margin: 20px auto; background: #08090B; border: 1px solid rgba(242,163,58,0.2); border-radius: 10px; padding: 20px; }
+  .hp-track { display: flex; overflow-x: auto; scroll-snap-type: x mandatory; gap: 16px; scrollbar-width: none; }
+  .hp-track::-webkit-scrollbar { display: none; }
+  .hp-card { min-width: 100%; scroll-snap-align: start; background: #14161A; border-left: 3px solid #F2A33A; padding: 20px; border-radius: 6px; }
+  .hp-card[data-theme="fba"] { border-left-color: #002D62; }
+  .hp-card[data-theme="direnc"] { border-left-color: #4F6C64; }
+  .hp-card[data-theme="psikoloji"] { border-left-color: #8B4513; }
+  .hp-badge { font-size: 0.7rem; font-weight: 700; color: #F2A33A; text-transform: uppercase; display: block; margin-bottom: 6px; }
+  .hp-card h3 { font-size: 1.25rem; color: #E0E1E2; margin-bottom: 12px; }
+  .hp-card a { color: #F2A33A; text-decoration: none; font-weight: 600; font-size: 0.9rem; }
+</style>
+
