@@ -457,9 +457,10 @@ const el = (tag, attrs={}, parent) => { const n=document.createElementNS(NS,tag)
   ];
   document.getElementById('press').innerHTML=rows.map(r=>{
     const all=vals(r.k), mx=Math.max(...all), s=all.slice().sort((a,b)=>a-b), med=(s[17]+s[18])/2;
+    const scale=v=>r.k==='ppda' ? (mx-v)/mx*100 : v/mx*100;
     return `<div class="row"><span class="mono">${r.who} · <b class="num ${r.c}">${fmt(r.v,r.d)}</b> · ${r.note}</span>
-      <div class="pbar" role="img" aria-label="${r.who}: ${fmt(r.v,r.d)}, medyan ${fmt(med,r.d)}"><i style="width:${(r.v/mx*100).toFixed(1)}%;background:var(--${r.c})"></i><em style="left:${(med/mx*100).toFixed(1)}%"></em></div></div>`;
-  }).join('') + `<p class="mono" style="letter-spacing:.03em">Çubuk boyu: 36 takımın en yüksek değerine göre. İnce çizgi: medyan.</p>`;
+      <div class="pbar" role="img" aria-label="${r.who}: ${fmt(r.v,r.d)}, medyan ${fmt(med,r.d)}"><i style="width:${scale(r.v).toFixed(1)}%;background:var(--${r.c})"></i><em style="left:${scale(med).toFixed(1)}%"></em></div></div>`;
+  }).join('') + `<p class="mono" style="letter-spacing:.03em">Çubuk boyu: 36 takım dağılımı. PPDA çubuğu ters ölçeklidir: daha uzun = daha yoğun pres. İnce çizgi: medyan.</p>`;
 })();
 
 
