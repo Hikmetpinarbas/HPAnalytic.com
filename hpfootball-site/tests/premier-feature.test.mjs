@@ -10,7 +10,7 @@ test('Lille–Galatasaray remains editorial premier independent of match kickoff
 });
 test('newer premier can supersede current selection without match date heuristics',()=>{
  const newer={slug:'approved-new-premier',status:'published',premier:true,premier_order:2,href:'/mac/new',category:'PREMIER',team:'Takım A × Takım B',title:'Yeni analiz',description:'Doğrulanmış açıklama',club:'galatasaray'};
- const item=featuredPremier(Date.now(),[...PREMIER_FEATURES,newer]);
+ const item=featuredPremier(Date.now(),[...PREMIER_FEATURES,newer],[{slug:'lille-galatasaray-2026-10-21',status:'published'},{slug:'approved-new-premier',status:'published'}]);
  assert.equal(item.slug,'approved-new-premier');
 });
 test('draft premier is never public or promoted',()=>{
