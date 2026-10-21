@@ -56,7 +56,7 @@ export const prerender = true;
       <p class="lede">İkisi de puansız. Galatasaray iki maçta 7 gol yedi; Lille Arsenal deplasmanında 90 dakikada yalnız 4 şut atabildi ve 0,22 xG üretti. Bu maç, iki takımın da "Avrupa'da tutunabilir miyiz" sorusuna verdiği ilk ciddi cevap olacak.</p>
     </div>
     <div class="rail" id="rail" tabindex="0" aria-label="Takımların Şampiyonlar Ligi maçları, yatay kaydırılabilir"></div>
-    <div class="claim"><span class="ev mod">MODEL</span><span>xG ve PPDA SportsBase model çıktısıdır. Galatasaray'ın maç bazlı satırları bu sürümde yok; Galatasaray kartlarında yalnız skor var. Lille'in maç satırları kulübün SportsBase dosyasından.</span></div>
+    <div class="claim"><span class="ev mod">MODEL</span><span>xG ve PPDA SportsBase model çıktısıdır. Galatasaray için bu kaynakta maç bazlı xG ve PPDA bulunmadığından kartlarda yalnız doğrulanmış skor ve puan gösterilir; eksik metrik görseli oluşturulmaz.</span></div>
   </div>
 </section>
 
@@ -457,7 +457,7 @@ const el = (tag, attrs={}, parent) => { const n=document.createElementNS(NS,tag)
     const cH = (m.us==='home') ? `var(--${m.team})` : 'var(--grey)';
     const cA = (m.us==='away') ? `var(--${m.team})` : 'var(--grey)';
     const hasX = m.hx!=null;
-    const xg = hasX ? (()=>{const tot=m.hx+m.ax; return `<div class="xgbar"><span class="mono">xG payı</span><div class="row"><span class="num">${fmt(m.hx)}</span><div class="track" aria-hidden="true"><i style="width:${(m.hx/tot*100).toFixed(1)}%;background:${cH}"></i><i style="width:${(m.ax/tot*100).toFixed(1)}%;background:${cA};opacity:.75"></i></div><span class="num">${fmt(m.ax)}</span></div></div>`;})() : `<div class="xgbar"><span class="mono">xG payı</span><span class="mono" style="letter-spacing:.02em">Maç satırı bu sürümde yok</span></div>`;
+    const xg = hasX ? (()=>{const tot=m.hx+m.ax; return `<div class="xgbar"><span class="mono">xG payı</span><div class="row"><span class="num">${fmt(m.hx)}</span><div class="track" aria-hidden="true"><i style="width:${(m.hx/tot*100).toFixed(1)}%;background:${cH}"></i><i style="width:${(m.ax/tot*100).toFixed(1)}%;background:${cA};opacity:.75"></i></div><span class="num">${fmt(m.ax)}</span></div></div>`;})() : '';
     const stats = hasX ? `<div class="mstats"><span>Diziliş<b>${m.tac}</b></span><span>Topa sahip<b class="num">%${m.poss}</b></span><span>PPDA<b class="num">${fmt(m.ppda)}</b></span></div>` : `<div class="mstats"><span>Sonuç<b>Yenilgi</b></span><span>Puan<b class="num">0</b></span></div>`;
     return `<article class="mcard"><div class="top"><span class="mono">${m.date} · ${m.comp}</span><span class="mono ${m.team}">${m.team==='fen'?'GALATASARAY':'LILLE'}</span></div>
       <div class="score"><span class="t" style="color:${cH}">${m.home}</span><span class="g">${m.hg}–${m.ag}</span><span class="t" style="color:${cA}">${m.away}</span></div>${xg}${stats}</article>`;
