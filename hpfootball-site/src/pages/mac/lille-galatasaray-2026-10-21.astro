@@ -489,12 +489,19 @@ function drawPitch(svg, half){
            ars:"Arsenal'in 19 kazanımının 11'i gösterimde Lille kale tarafındaki ilk 35 birimlik bölgede. İki takımın olay dağılımı baskı ile top kaybı ilişkisinin incelenmesi için güçlü bir başlangıçtır.",
            gal:"Galatasaray'ın Barcelona karşısındaki 8 kazanımının 5'i Eren Elmalı'dan. Yalnız biri şematik sahada ileri 35 birimlik bölgede; konum tek başına pres düzenini tarif etmez."};
   const read=document.getElementById('pread');
-  function set(l){ loss.style.opacity=(l==='all'||l==='loss')?1:.1; ars.style.opacity=(l==='all'||l==='ars')?1:.1; gal.style.opacity=(l==='all'||l==='gal')?1:.1; read.innerHTML=T[l]; }
+  let activeLayer='all', activePhase=0;
+  function updatePitchReadout(){
+    if(activePhase===0){read.innerHTML=T[activeLayer];return;}
+    const groups=[['loss','Lille',EV.lil_loss],['ars','Arsenal',EV.ars_rec],['gal','Galatasaray',EV.gal_rec]].filter(g=>activeLayer==='all'||activeLayer===g[0]);
+    read.textContent=activePhase+'. devre · '+groups.map(g=>g[1]+': '+g[2].filter(e=>e[3]===activePhase).length).join(' · ')+' · Farklı maçların olay kayıtları.';
+  }
+  function set(l){ activeLayer=l; loss.style.opacity=(l==='all'||l==='loss')?1:.1; ars.style.opacity=(l==='all'||l==='ars')?1:.1; gal.style.opacity=(l==='all'||l==='gal')?1:.1; updatePitchReadout(); }
   [loss,ars,gal].forEach(g=>g.style.transition='opacity .4s');
   document.getElementById('ptabs').addEventListener('click',e=>{ const b=e.target.closest('button'); if(!b) return; document.querySelectorAll('#ptabs button').forEach(x=>x.setAttribute('aria-pressed',x===b?'true':'false')); set(b.dataset.l); });
   set('all');
   const phasePanel=document.getElementById('phase-controls'), metrics=document.getElementById('phase-metrics');
   function setPhase(phase){
+    activePhase=phase;
     const series=[
       {name:'Lille kayıpları',data:EV.lil_loss.filter(e=>phase===0||e[3]===phase),layer:loss},
       {name:'Arsenal kazanımları',data:EV.ars_rec.filter(e=>phase===0||e[3]===phase),layer:ars},
@@ -506,11 +513,13 @@ function drawPitch(svg, half){
         node.style.display=phase===0||raw[3]===phase?'':'none';
       });
     }
+    updatePhaseNarrative();
     metrics.textContent=series.map(item=>item.name+': '+item.data.length).join(' · ')+
       (phase===0?' · Tüm maç':' · '+phase+'. devre')+' · Ayrı maçların olay sayıları';
     phasePanel.querySelectorAll('button[data-phase]').forEach(btn=>
       btn.setAttribute('aria-pressed',String(Number(btn.dataset.phase)===phase)));
   }
+  const updatePhaseNarrative=updatePitchReadout;
   phasePanel.addEventListener('click',event=>{
     const btn=event.target.closest('button[data-phase]');
     if(btn&&phasePanel.contains(btn))setPhase(Number(btn.dataset.phase));
