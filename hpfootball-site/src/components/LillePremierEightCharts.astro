@@ -24,13 +24,46 @@ import aggregates from '../data/lille-premier-v2-aggregates.json';
         <article class="vizcard" data-viz="7"><p class="eyebrow">#7 · DÖRT UCL MAÇI</p><h3>Maç bazlı performans matrisi</h3><div class="scrolltable"><table><thead><tr><th>Maç</th><th>Şut</th><th>xG</th><th>xGA</th><th>PPDA</th><th>Kendi yarısı kaybı</th></tr></thead><tbody>{aggregates.fixtures.map(m=><tr data-team={m.team}><th>{m.id}</th><td>{m.shots}</td><td>{m.xG.toFixed(2)}</td><td>{m.xGA.toFixed(2)}</td><td>{m.ppda.toFixed(2)}</td><td>{m.ownHalfLosses}</td></tr>)}</tbody></table></div></article>
         <article class="vizcard" data-viz="8"><p class="eyebrow">#8 · P0 · PREMIUM COMPARE</p><h3>İki maçlık profil panosu</h3><p>Dört ayrı sinyal: hücum, savunma riski, pres göstergesi ve kayıp bölgesi.</p><div class="metriccards">{aggregates.teams.map(t=><div class="teammetric" data-team={t.id}><h3>{t.id}</h3><dl><div><dt>xG</dt><dd>{t.xG.toFixed(2)}</dd></div><div><dt>xGA</dt><dd>{t.xGA.toFixed(2)}</dd></div><div><dt>PPDA</dt><dd>{t.ppda.toFixed(2)}</dd></div><div><dt>Kendi yarısında kayıp</dt><dd>{t.ownHalfLosses}/{t.losses}</dd></div><div><dt>Kazanım</dt><dd>{t.recoveries}</dd></div></dl></div>)}</div></article>
       </div>
-      <p class="small"><strong>Kaynak ve örneklem:</strong> <a href={aggregates.source_sheet} target="_blank" rel="noopener noreferrer">UCL maç istatistikleri XLSX</a> · takım başına iki maç. Aggregate sayılar kullanıcı tarafından sağlandı; kaynak satırıyla bağımsız mutabakat henüz PASS değil. Saha olayları Google Drive CSV oyuncu kayıtlarıdır. Hover: nokta/çubuk ayrıntısı; click: takım filtresi.</p>
+      <details class="evidence-details"><summary>Veri kaynakları ve yöntem</summary><p><strong>Kaynak ve örneklem:</strong> <a href={aggregates.source_sheet} target="_blank" rel="noopener noreferrer">UCL maç istatistikleri XLSX</a> · takım başına iki maç. Aggregate sayılar kullanıcı tarafından sağlandı; kaynak satırıyla bağımsız mutabakat henüz PASS değil. Saha olayları Google Drive CSV oyuncu kayıtlarıdır. Hover: nokta/çubuk ayrıntısı; click: takım filtresi.</p></details>
     </section>
 
 </div>
 <script is:inline>document.querySelectorAll("[data-team-filter]").forEach(b=>b.addEventListener("click",()=>{let team=b.dataset.teamFilter;document.querySelectorAll("[data-team-filter]").forEach(x=>{x.classList.toggle("chosen",x===b);x.setAttribute("aria-pressed",String(x===b))});document.querySelectorAll("#eight-graphs [data-team]").forEach(x=>{x.style.display=team==="ALL"||x.dataset.team===team?"":"none"})}))</script>
 <style>
-.hpv2{max-width:1140px;margin:auto;color:#e8eff4;padding:24px 14px;background:#0b1621}.hpv2 .eyebrow{font:bold .75rem/1.5 monospace;letter-spacing:.1em;color:#85ced3}.hpv2 h2{color:#f2ce78;font-size:clamp(1.5rem,3vw,2.5rem)}.hpv2 h3{color:#fff}.hpv2 p{line-height:1.6;color:#cbd6e1}
-.viztoolbar{display:flex;flex-wrap:wrap;gap:8px;margin:1rem 0}.viztoolbar button{background:#182d3e;border:1px solid #527485;border-radius:7px;color:#fff;padding:.65rem 1rem;cursor:pointer}.viztoolbar button.chosen{background:#b89037;color:#0b1724}.vizgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.vizcard{background:#111f30;border:1px solid #2c5060;padding:1.1rem;border-radius:14px;min-width:0}.vizcard h3{font-size:1.35rem}.vizcard p{font-size:.9rem}.pitchsets{display:grid;grid-template-columns:1fr;gap:14px}.pitchfig{margin:0;padding:.5rem;background:#071923;border-radius:6px}.pitchfig svg,.metricplot{display:block;width:100%;height:auto;max-height:280px}.pitchfig figcaption{padding:.35rem;color:#e7dba7}.aggrow{display:flex;gap:12px;margin:1rem 0}.aggrow>strong{width:40px}.aggrow>div{flex:1}.minibar{display:inline-block;height:12px;background:#58c5cb;max-width:100%;vertical-align:middle}.minibar.against{background:#df9268}.metriccards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.teammetric{background:#182c3f;border:1px solid #345468;border-radius:8px;padding:1rem}.teammetric dl div{display:flex;justify-content:space-between;gap:12px;border-bottom:1px solid #345468;padding:.3rem 0}.teammetric dt{color:#c4d1de}.teammetric dd{margin:0;font-weight:700}.scrolltable{overflow-x:auto}.scrolltable table{width:100%;border-collapse:collapse;font-size:.85rem}.scrolltable th,.scrolltable td{border-bottom:1px solid #345468;padding:.6rem;text-align:left;white-space:nowrap}#eight-graphs{scroll-margin-top:120px}@media(max-width:850px){.vizgrid{grid-template-columns:1fr}}@media(max-width:700px){.metriccards{grid-template-columns:1fr}.vizcard{padding:.8rem}}
-
+.hpv2{max-width:1140px;margin:clamp(50px,7vw,96px) auto;padding:clamp(22px,4vw,40px) clamp(16px,3vw,30px);color:var(--ink,#f2eee6);background:transparent;font-family:var(--ui,Inter,sans-serif)}
+.hpv2 section{margin:0 0 48px}
+.hpv2 .eyebrow{font:600 .78rem/1.5 var(--mono,'IBM Plex Mono',monospace);letter-spacing:.075em;color:var(--amber,#f2a33a)}
+.hpv2 h2{font-family:var(--display,'Bodoni Moda',Georgia,serif);color:var(--ink,#f2eee6);font-size:clamp(1.55rem,3vw,2.45rem)}
+.hpv2 h3{font-family:var(--ui,Inter,sans-serif);color:var(--ink,#f2eee6)}
+.hpv2 p{line-height:1.65;color:var(--ink-2,#bdb7ac)}
+.hpv2 .viztoolbar{display:flex;flex-wrap:wrap;gap:9px;margin:26px 0 32px}
+.hpv2 .viztoolbar button{min-height:44px;background:var(--panel-2,#181c21);border:1px solid var(--line-2,#2e333a);border-radius:8px;color:var(--ink,#f2eee6);padding:10px 16px;cursor:pointer;font:600 .86rem var(--ui,Inter,sans-serif)}
+.hpv2 .viztoolbar button.chosen{background:var(--amber,#f2a33a);border-color:var(--amber,#f2a33a);color:#120707}
+.hpv2 .viztoolbar button:focus-visible{outline:3px solid var(--focus,#ffd08a);outline-offset:2px}
+.hpv2 .vizgrid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(22px,3vw,38px);align-items:stretch}
+.hpv2 .vizcard{background:#1a1e24;border:1px solid rgba(255,255,255,.18);padding:clamp(18px,2.5vw,30px);border-radius:8px;min-width:0;box-shadow:none}
+.hpv2 .vizcard h3{font-size:clamp(1.12rem,2vw,1.35rem);margin:12px 0 22px;line-height:1.32}
+.hpv2 .vizcard>p:not(.eyebrow){font-size:.9rem;margin:0 0 28px}
+.hpv2 .pitchsets{display:grid;grid-template-columns:1fr;gap:26px}
+.hpv2 .pitchfig{margin:0;padding:clamp(10px,2vw,18px);background:#171b20;border:1px solid rgba(255,255,255,.12);border-radius:8px}
+.hpv2 .pitchfig svg,.hpv2 .metricplot{display:block;width:100%;height:auto;max-height:320px;margin:0 auto}
+.hpv2 .pitchfig figcaption{padding:0 0 13px;color:var(--ink-2,#bdb7ac);font:500 .8rem/1.5 var(--mono,'IBM Plex Mono',monospace)}
+.hpv2 .aggrow{display:flex;gap:12px;margin:1.15rem 0}.hpv2 .aggrow>strong{width:40px}.hpv2 .aggrow>div{flex:1}
+.hpv2 .minibar{display:inline-block;height:12px;background:var(--amber,#f2a33a);max-width:100%;vertical-align:middle}
+.hpv2 .minibar.against{background:#eef1f5}
+.hpv2 .metriccards{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.hpv2 .teammetric{background:#121519;border:1px solid rgba(255,255,255,.18);border-radius:8px;padding:1.1rem}
+.hpv2 .teammetric dl div{display:flex;justify-content:space-between;gap:12px;border-bottom:1px solid #2e333a;padding:.46rem 0}
+.hpv2 .teammetric dt{color:var(--ink-2,#bdb7ac)}.hpv2 .teammetric dd{margin:0;font-weight:700}
+.hpv2 .scrolltable{overflow-x:auto;margin-bottom:8px}
+.hpv2 .scrolltable table{width:100%;border-collapse:collapse;font:500 .84rem var(--ui,Inter,sans-serif)}
+.hpv2 .scrolltable th,.hpv2 .scrolltable td{border-bottom:1px solid #2e333a;padding:12px 10px;text-align:left;white-space:nowrap}
+.hpv2 .pitchfig>p.small{display:none}
+.hpv2 .evidence-details{margin:36px 0 0;border-top:1px solid var(--line-2,#2e333a);color:var(--ink-2,#bdb7ac);font:.8rem/1.7 var(--ui,Inter,sans-serif)}
+.hpv2 .evidence-details summary{cursor:pointer;padding:16px 0;min-height:44px}
+.hpv2 .evidence-details p{font-size:.82rem;margin:0 0 16px}
+#eight-graphs{scroll-margin-top:130px}
+@media(max-width:850px){.hpv2 .vizgrid{grid-template-columns:1fr;gap:28px}}
+@media(max-width:700px){.hpv2 .metriccards{grid-template-columns:1fr}.hpv2 .vizcard{padding:18px}.hpv2{padding:24px 12px;margin-block:44px}.hpv2 .vizcard>p:not(.eyebrow){margin-bottom:24px}}
+@media(prefers-reduced-motion:reduce){.hpv2 *{animation:none!important;transition:none!important}}
 </style>
