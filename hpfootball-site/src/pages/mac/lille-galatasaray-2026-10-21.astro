@@ -163,7 +163,7 @@ export const prerender = true;
     <div class="head col">
       <p class="eyebrow">Eşleşmenin kilidi</p>
       <h2>Pres mi, sabır mı?</h2>
-      <p class="lede">Lille Avrupa'da topu kendi yarısında iki maçta 41 kez kaybetti; yarıdan fazlası Arsenal deplasmanında. Aynı maçta PPDA'sı 17,84 idi, yani neredeyse hiç baskı yapmadı. Galatasaray'ın rakip yarıda top kazanımı (21) turnuva medyanında. Bu maçı belirleyecek soru, Galatasaray'ın baskıyı yükseltip bu kayıpları gerçek fırsata çevirip çeviremeyeceği.</p>
+      <p class="lede">Lille Avrupa'da topu kendi yarısında iki maçta 41 kez kaybetti; yarıdan fazlası Arsenal deplasmanında. Aynı maçta PPDA'sı 17,84 idi, bu örneklemde daha düşük pres yoğunluğuna işaret eder. Galatasaray'ın rakip yarıda top kazanımı (21) turnuva medyanında. Bu maçı belirleyecek soru, Galatasaray'ın baskıyı yükseltip bu kayıpları gerçek fırsata çevirip çeviremeyeceği.</p>
     </div>
     <div class="corr" id="press"></div>
     <div class="claim"><span class="ev der">TÜRETİLMİŞ</span><span>Kayıp ve kazanım sayıları iki ayrı rakibe karşı oluştu. Lille'in kayıp sayısının bir kısmı Arsenal'in pres gücünden gelebilir; Galatasaray aynı baskıyı kuramazsa bu sayı düşer.</span></div>
@@ -212,7 +212,7 @@ export const prerender = true;
     <div class="head col">
       <p class="eyebrow">Kazanım ve kayıp · olay verisi</p>
       <h2>Arsenal'in yaptığını Galatasaray yapabilir mi?</h2>
-      <p class="lede">Lille Arsenal deplasmanında topu kendi yarısında 26 kez kaybetti; 14'ü kendi kalesine 35 metreden yakın. Arsenal aynı maçta Lille yarısında 19 top kazandı, 11'i kaleye 35 metreden yakın. Galatasaray ise Barcelona karşısında rakip yarıda 8 top kazandı ve bunlardan yalnız biri kaleye 35 metreden yakındı. Aradaki fark, baskının yüksekliği.</p>
+      <p class="lede">Lille, Arsenal deplasmanında kendi yarısında 27 top kaybetti. Haritada gösterilen 26 olayın 14'ü şematik sahanın ilk 35 birimlik bölgesinde. Arsenal aynı maçta Lille yarısında 19 top kazandı; haritada 11'i aynı şematik bölge içinde. Galatasaray ise Barcelona karşısında rakip yarıda 8 top kazandı; haritada yalnız biri ileri 35 birimlik bölgede. Bu karşılaştırma kazanımların konumunu gösterir, pres mekanizmasını tek başına kanıtlamaz.</p>
     </div>
     <div class="tabs" id="ptabs" role="group" aria-label="Katman seç">
       <button type="button" data-l="all" aria-pressed="true">Hepsi</button>
@@ -227,7 +227,7 @@ export const prerender = true;
       <span><svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><rect x="2" y="2" width="10" height="10" fill="var(--fen)"/></svg> Galatasaray top kazanımı (rakip yarı) · Barcelona maçı</span>
     </div>
     <p class="readout" id="pread"></p>
-    <div class="claim"><span class="ev der">TÜRETİLMİŞ</span><span>Koordinatların her takım için hücum yönüne normalize edildiği kendi/rakip yarı etiketlerinin %100 uyumuyla doğrulandı. Lille kayıpları Galatasaray'ın hücum yönüne çevrildi; sağa doğru Lille kalesi. Sol/sağ kanat yönü doğrulanmadı. Galatasaray'ın kazanımları Barcelona'ya, Lille'in kayıpları Arsenal'e karşı oluştu; bu bir tahmin değil, karşılaştırma zemini.</span></div>
+    <div class="claim"><span class="ev der">TÜRETİLMİŞ</span><span>Üç olay kümesi şematik saha üzerinde aynı karşılaştırma eksenine yerleştirildi; sağ uç Lille kalesini temsil eder. Galatasaray'ın kazanımları Barcelona'ya, Lille'in kayıpları Arsenal'e karşı oluştu; bu bir tahmin değil, karşılaştırma zemini.</span></div>
   </div>
 </section>
 
@@ -471,16 +471,16 @@ function drawPitch(svg, half){
   const z=el('g',{},svg);
   el('rect',{x:70,y:0,width:35,height:68,fill:'var(--fen)',opacity:.11},z);
   [35,70].forEach(v=>el('line',{x1:v,x2:v,y1:0,y2:68,stroke:'var(--chalk)','stroke-width':.25,'stroke-dasharray':'1 1.2',opacity:.5},z));
-  [['1. bölge · 0–35 m',17.5],['2. bölge · 35–70 m',52.5],['3. bölge · 70–105 m',87.5]].forEach(([t,xx])=>{ el('text',{x:xx,y:-2,'text-anchor':'middle',class:'ax',style:'font-size:2.6px'},z).textContent=t; });
+  [['1. bölge · 0–35',17.5],['2. bölge · 35–70',52.5],['3. bölge · 70–105',87.5]].forEach(([t,xx])=>{ el('text',{x:xx,y:-2,'text-anchor':'middle',class:'ax',style:'font-size:2.6px'},z).textContent=t; });
   el('text',{x:104,y:72,'text-anchor':'end',class:'ax',style:'font-size:2.4px'},z).textContent='hücum yönü → (Lille kalesi)';
   const loss=el('g',{},svg), ars=el('g',{},svg), gal=el('g',{},svg);
   EV.lil_loss.forEach(([x,y,p,h])=>{ const X=105-x, Y=y; const g=el('g',{stroke:'var(--sla)','stroke-width':.6},loss); el('path',{d:`M${X-1.2} ${Y-1.2}L${X+1.2} ${Y+1.2}M${X+1.2} ${Y-1.2}L${X-1.2} ${Y+1.2}`},g); el('title',{},g).textContent=`Lille kaybı · ${p} · ${h}. devre`; });
   EV.ars_rec.forEach(([x,y,p,h])=>{ const r=el('rect',{x:x-1.2,y:68-y-1.2,width:2.4,height:2.4,fill:'none',stroke:'var(--chalk-2)','stroke-width':.45},ars); el('title',{},r).textContent=`Arsenal kazanımı · ${p} · ${h}. devre`; });
   EV.gal_rec.forEach(([x,y,p,h])=>{ const r=el('rect',{x:x-1.4,y:68-y-1.4,width:2.8,height:2.8,fill:'var(--fen)'},gal); el('title',{},r).textContent=`Galatasaray kazanımı · ${p} · ${h}. devre`; });
   const T={all:"Üç katman aynı sahada. Lille'in kayıplarının yarısından fazlası sarı bantta, yani kendi kalesine 35 metreden yakın. Arsenal'in kazanımları da büyük ölçüde orada. Galatasaray'ın sarı kareleri ise orta sahanın hemen ilerisinde toplanıyor.",
-           loss:"Lille'in 26 kaybının 14'ü kendi kalesine 35 metreden yakın. Hákon Arnar Haraldsson 5, Benjamin André 4 kayıpla öne çıkıyor; topun kaleciden sonraki ilk iki üç pasta gittiği bir yapı.",
-           ars:"Arsenal'in 19 kazanımının 11'i Lille kalesine 35 metreden yakın. Bu maçta Lille'in sorunu kendi hatası kadar Arsenal'in baskısıydı da.",
-           gal:"Galatasaray'ın Barcelona karşısındaki 8 kazanımının 5'i Eren Elmalı'dan. Yalnız biri kaleye 35 metreden yakın; baskı orta sahada kalmış."};
+           loss:"Haritada gösterilen 26 Lille top kaybı olayının 14'ü ilk 35 birimlik bölgede. Hákon Arnar Haraldsson 5, Benjamin André 4 kayıpla öne çıkıyor; oyun kurulumunun ilk bölgesindeki top güvenliği sorununu gösteren bir dağılım.",
+           ars:"Arsenal'in 19 kazanımının 11'i gösterimde Lille kale tarafındaki ilk 35 birimlik bölgede. İki takımın olay dağılımı baskı ile top kaybı ilişkisinin incelenmesi için güçlü bir başlangıçtır.",
+           gal:"Galatasaray'ın Barcelona karşısındaki 8 kazanımının 5'i Eren Elmalı'dan. Yalnız biri şematik sahada ileri 35 birimlik bölgede; konum tek başına pres düzenini tarif etmez."};
   const read=document.getElementById('pread');
   function set(l){ loss.style.opacity=(l==='all'||l==='loss')?1:.1; ars.style.opacity=(l==='all'||l==='ars')?1:.1; gal.style.opacity=(l==='all'||l==='gal')?1:.1; read.innerHTML=T[l]; }
   [loss,ars,gal].forEach(g=>g.style.transition='opacity .4s');
