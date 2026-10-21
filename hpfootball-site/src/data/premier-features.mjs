@@ -1,3 +1,4 @@
+import { PUBLIC_MATCH_PREVIEWS } from './match-previews.mjs';
 /**
  * Curated homepage PREMIER selection.
  * A new approved premier with a higher premier_order supersedes Lille.
@@ -13,8 +14,8 @@ export const PREMIER_FEATURES = [
     club:'galatasaray'
   }
 ];
-export function featuredPremier(now=Date.now(),items=PREMIER_FEATURES){
+export function featuredPremier(now=Date.now(),items=PREMIER_FEATURES,registry=PUBLIC_MATCH_PREVIEWS){
   void now; // deliberately does not expire with kickoff
-  return items.filter(x=>x.premier===true&&x.status==='published'&&x.href)
+  return items.filter(x=>x.premier===true&&x.status==='published'&&typeof x.href==='string'&&x.href.startsWith('/')&&['slug','category','team','title','description','club'].every(k=>typeof x[k]==='string'&&x[k].trim())&&registry.some(m=>m.slug===x.slug&&m.status==='published'))
     .sort((a,b)=>(b.premier_order??0)-(a.premier_order??0))[0]??null;
 }
