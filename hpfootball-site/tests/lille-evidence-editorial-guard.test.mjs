@@ -80,3 +80,14 @@ test('editorial spatial prose stays grammatically correct and in schematic units
  assert.doesNotMatch(src,/içindedı/);
  assert.doesNotMatch(src,/35 m sınırı/);
 });
+
+test('scenario carousel has navigation, touch and keyboard-accessible hotspot affordances',()=>{
+ assert.match(src,/id="hpa-scenario-prev"/);
+ assert.match(src,/id="hpa-scenario-next"/);
+ assert.match(src,/id="hpa-scenario-counter"/);
+ assert.match(src,/id="hpa-scenario-tooltip"/);
+ assert.match(src,/function nextScenario\(/);
+ assert.match(src,/pointerenter/);
+ assert.match(src,/touchstart/);
+ assert.match(src,/prefers-reduced-motion:reduce/);
+});
