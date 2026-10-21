@@ -134,3 +134,14 @@ test('official fixture kickoff and editorial verification appear in hero',()=>{
  assert.match(src,/https:\/\/www\.galatasaray\.org\/haber\/futbol\/sampiyonlar-ligi\/maca-dogru-lille-galatasaray\/61183/);
  assert.doesNotMatch(src,/TRT 1 \(bekleniyor\)/);
 });
+
+test('ranked ticker uses full competition data and evidence-safe player fallback',()=>{
+ assert.match(src,/function buildRankedTicker\(/);
+ assert.match(src,/Object\.entries\(AGG\)/);
+ assert.match(src,/data-sentiment="positive"/);
+ assert.match(src,/data-sentiment="negative"/);
+ assert.match(src,/id="ticker-pause"/);
+ assert.match(src,/id="ticker-static"/);
+ assert.match(src,/oyuncu bazında doğrulanmış etki sıralaması/);
+ assert.match(src,/prefers-reduced-motion/);
+});
