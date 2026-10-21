@@ -22,13 +22,14 @@ const steps = [
 <BaseLayout title="HPAnalytic — Hikmet Pınarbaş Futbol Analizi" description="Hikmet Pınarbaş'tan kanıt, mekanizma ve bağlam temelli bağımsız futbol analizi.">
 
 <section id="premier-feature" class="hpa-premier" aria-labelledby="premier-title" data-club="galatasaray">
+  <div class="hpa-premier__orbit" aria-hidden="true"><i></i><i></i><i></i></div>
   <div class="hpa-premier__inner">
     <div class="hpa-premier__overline"><span>HPANALYTIC / PREMIER</span><span>BAŞ ANALİZ · EDITOR'S PICK</span></div>
     {premier && <>
-      <div class="hpa-premier__matchup" aria-label="Galatasaray ve LOSC Lille karşılaşması">
-        <div class="hpa-premier__club"><strong>GALATASARAY</strong><span>Türkiye · Sarı–Kırmızı</span></div>
+      <div class="hpa-premier__matchup" aria-label="Ev sahibi LOSC Lille, konuk Galatasaray">
+        <div class="hpa-premier__club"><strong>LOSC LILLE</strong><span>Ev sahibi · Lille</span></div>
         <span class="hpa-premier__versus" aria-hidden="true">×</span>
-        <div class="hpa-premier__club"><strong>LOSC LILLE</strong><span>Fransa · Kırmızı–Lacivert</span></div>
+        <div class="hpa-premier__club"><strong>GALATASARAY</strong><span>Konuk · Galatasaray</span></div>
       </div>
       <p class="hpa-premier__eyebrow">{premier.category} · {premier.team}</p>
       <h2 id="premier-title">{premier.title}</h2>
@@ -40,6 +41,12 @@ const steps = [
 <style>
 .hpa-premier{position:relative;isolation:isolate;background:linear-gradient(124deg,#120707 0%,#350B16 48%,#711523 78%,#8B451C 100%);color:#F6F1E8;border-block:1px solid #F2B705}
 .hpa-premier::before{content:"";position:absolute;inset:0;z-index:-1;background:repeating-linear-gradient(90deg,transparent 0,transparent calc(33.333% - 1px),rgba(255,221,162,.12) 33.333%)}
+.hpa-premier__orbit{position:absolute;right:-9%;top:-55%;width:min(80vw,890px);aspect-ratio:1;z-index:-1;pointer-events:none;opacity:.38;transform:rotate(-19deg)}
+.hpa-premier__orbit i{position:absolute;inset:12%;border:1px solid rgba(255,212,108,.54);border-radius:50%;transform:rotateX(65deg);box-shadow:0 0 45px rgba(242,183,5,.09);animation:hpa-orbit 28s linear infinite}
+.hpa-premier__orbit i:nth-child(2){inset:26%;transform:rotateY(68deg);border-color:rgba(235,240,255,.4);animation-duration:39s;animation-direction:reverse}
+.hpa-premier__orbit i:nth-child(3){inset:4%;border-style:dashed;border-color:rgba(215,63,79,.42);animation-duration:52s}
+@keyframes hpa-orbit{to{rotate:360deg}}
+@media (prefers-reduced-motion: reduce){.hpa-premier__orbit i{animation:none}.hpa-premier__club{transition:none}}
 .hpa-premier__inner{width:min(1200px,calc(100% - 36px));margin:auto;padding:clamp(36px,6vw,78px) 0}
 .hpa-premier__overline{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;border-bottom:1px solid rgba(255,255,255,.28);padding-bottom:13px;font-size:.72rem;font-weight:700;letter-spacing:.15em;color:#FFD24D}
 .hpa-premier__eyebrow{color:#F9CB7B;font-size:.78rem;letter-spacing:.1em;margin-top:24px}
