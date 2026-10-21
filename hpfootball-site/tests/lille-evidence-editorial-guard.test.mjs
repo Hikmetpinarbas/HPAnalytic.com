@@ -91,3 +91,13 @@ test('scenario carousel has navigation, touch and keyboard-accessible hotspot af
  assert.match(src,/touchstart/);
  assert.match(src,/prefers-reduced-motion:reduce/);
 });
+
+test('five tactical corridors run parallel to touchlines along full pitch length',()=>{
+ assert.match(src,/id="hpa-corridor-controls"/);
+ assert.match(src,/data-corridor="all"/);
+ assert.match(src,/data-corridor="4"/);
+ assert.match(src,/const corridorBounds=\[0,13\.6,27\.2,40\.8,54\.4,68\]/);
+ assert.match(src,/width:105,height:y1-y0/);
+ assert.match(src,/x1:0,x2:105/);
+ assert.match(src,/function setCorridor\(/);
+});
