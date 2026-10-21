@@ -1108,4 +1108,66 @@ section.block{padding-block:clamp(44px,7vw,88px);border-bottom:1px solid var(--l
 .mp #premier-evidence .hpc-table th,.mp #premier-evidence .hpc-table td{padding:14px 10px;vertical-align:middle}
 @media(max-width:650px){.mp #premier-evidence .claim{margin-bottom:54px}.mp #premier-evidence .hpc-table th,.mp #premier-evidence .hpc-table td{padding:14px 8px;font-size:.83rem}}
 </style>
+
+<!-- Shared, accessible dropdown presentation for all article/chart button filters.
+     Original button nodes remain intact: existing chart handlers and data bindings do not change. -->
+<style is:global>
+.mp .hpa-menu-filter, .hpv2 .hpa-menu-filter{position:relative;display:inline-block;vertical-align:top;max-width:100%;margin:4px 8px 10px 0;isolation:isolate;z-index:1}
+.mp .hpa-menu-filter[open],.hpv2 .hpa-menu-filter[open]{z-index:101}
+.mp .hpa-menu-filter>summary,.hpv2 .hpa-menu-filter>summary{list-style:none;display:flex;align-items:center;justify-content:space-between;gap:14px;min-width:160px;max-width:100%;min-height:44px;padding:10px 15px;border:1px solid rgba(242,163,58,.52);border-radius:9px;background:#210e12;color:#f2eee6;cursor:pointer;font:600 .88rem/1.35 Inter,sans-serif}
+.mp .hpa-menu-filter>summary::-webkit-details-marker,.hpv2 .hpa-menu-filter>summary::-webkit-details-marker{display:none}
+.mp .hpa-menu-filter>summary::after,.hpv2 .hpa-menu-filter>summary::after{content:"⌄";color:#f2b705;font-size:1.2rem;line-height:1}
+.mp .hpa-menu-filter[open]>summary::after,.hpv2 .hpa-menu-filter[open]>summary::after{content:"⌃"}
+.mp .hpa-menu-filter>summary:focus-visible,.hpv2 .hpa-menu-filter>summary:focus-visible{outline:3px solid #f2a33a;outline-offset:3px}
+.mp .hpa-menu-filter .hpa-menu-panel,.hpv2 .hpa-menu-filter .hpa-menu-panel{position:absolute!important;top:calc(100% + 5px)!important;left:0!important;right:auto!important;display:grid!important;grid-template-columns:1fr!important;gap:3px!important;align-items:stretch!important;width:max-content!important;min-width:100%!important;max-width:min(360px,calc(100vw - 36px))!important;max-height:320px!important;overflow-y:auto!important;overflow-x:hidden!important;margin:0!important;padding:7px!important;border:1px solid rgba(242,163,58,.38)!important;border-radius:10px!important;background:#240e13!important;box-shadow:0 14px 36px rgba(0,0,0,.5)!important}
+.mp .hpa-menu-filter:not([open]) .hpa-menu-panel,.hpv2 .hpa-menu-filter:not([open]) .hpa-menu-panel{display:none!important}
+.mp .hpa-menu-filter .hpa-menu-panel>button,.hpv2 .hpa-menu-filter .hpa-menu-panel>button{display:block!important;width:100%!important;min-width:0!important;min-height:40px!important;height:auto!important;padding:10px 12px!important;margin:0!important;border:0!important;border-radius:6px!important;text-align:left!important;white-space:normal!important;color:#f2eee6!important;background:transparent!important;font:500 .88rem/1.35 Inter,sans-serif!important;letter-spacing:0!important}
+.mp .hpa-menu-filter .hpa-menu-panel>button:is(:hover,:focus-visible,[aria-pressed="true"]),.hpv2 .hpa-menu-filter .hpa-menu-panel>button:is(:hover,:focus-visible,[aria-pressed="true"]){background:rgba(242,163,58,.2)!important;color:#f2bf1a!important}
+.mp .hpa-menu-filter .hpa-menu-panel>button::before,.hpv2 .hpa-menu-filter .hpa-menu-panel>button::before{content:none!important}
+.mp .hpa-menu-filter .hpa-menu-panel>strong,.hpv2 .hpa-menu-filter .hpa-menu-panel>strong{display:none!important}
+.mp .hpa-menu-filter .hpa-menu-panel.hpc-pa,.mp .hpa-menu-filter .hpa-menu-panel.hpc-pb{max-height:280px!important}
+@media(max-width:700px){.mp .hpa-menu-filter,.hpv2 .hpa-menu-filter{margin:3px 6px 8px 0}.mp .hpa-menu-filter>summary,.hpv2 .hpa-menu-filter>summary{min-width:0;font-size:.81rem;padding:9px 12px}}
+</style>
+<script is:inline>
+(function(){
+  const targets=[
+    '.mp #tabs','.mp #ptabs','.mp .hpc-tabs','.mp .hpc-chips',
+    '.mp .hpa-scenario-controls','.mp #hpa-zone-controls','.mp #hpa-corridor-controls',
+    '.mp .hpa-atlas-controls > [role="group"]','.mp #phase-controls',
+    '.hpv2 .viztoolbar'
+  ];
+  function compact(group){
+    if(group.dataset.hpaCompact==='yes')return;
+    const buttons=[...group.children].filter(n=>n.tagName==='BUTTON');
+    if(buttons.length<2)return;
+    const heading=group.getAttribute('aria-label')||'Grafik seçimi';
+    const wrap=document.createElement('details');
+    wrap.className='hpa-menu-filter';
+    wrap.setAttribute('aria-label',heading);
+    const summary=document.createElement('summary');
+    summary.setAttribute('aria-label',heading+' — seçenekleri aç');
+    const selected=()=>group.querySelector('button[aria-pressed="true"],button.chosen,button.active')||buttons[0];
+    const title=()=>{const b=selected();const label=b?.textContent?.trim().replace(/^✓\s*/,'')||'Tamamı';summary.textContent=heading+' · '+label};
+    const parent=group.parentNode;
+    parent.insertBefore(wrap,group);
+    wrap.appendChild(summary);
+    wrap.appendChild(group);
+    group.classList.add('hpa-menu-panel');
+    group.dataset.hpaCompact='yes';
+    title();
+    group.addEventListener('click',ev=>{
+      if(!ev.target.closest('button'))return;
+      queueMicrotask(()=>{title();wrap.open=false});
+    });
+    group.addEventListener('change',()=>queueMicrotask(title));
+    wrap.addEventListener('keydown',ev=>{if(ev.key==='Escape'){wrap.open=false;summary.focus()}});
+    wrap.addEventListener('toggle',()=>{
+      if(!wrap.open)return;
+      document.querySelectorAll('details.hpa-menu-filter[open]').forEach(other=>{if(other!==wrap)other.open=false});
+    });
+  }
+  const scan=()=>document.querySelectorAll(targets.join(',')).forEach(compact);
+  if(document.readyState==='complete')scan();else window.addEventListener('load',scan,{once:true});
+})();
+</script>
 </BaseLayout>
