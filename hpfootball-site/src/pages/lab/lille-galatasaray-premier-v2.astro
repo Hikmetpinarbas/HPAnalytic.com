@@ -3,14 +3,13 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import dataset from '../../data/lille-premier-v2-observations.json';
 export const prerender=true;
 const matches=dataset.matches;
-const esc=(n)=>String(n);
 const pass=(m)=>m.counts['Passes accurate'];
 const incorrect=(m)=>m.counts['Inaccurate passes'];
 const progressive=(m)=>m.counts['Progressive passes accurate'];
 const maxPass=Math.max(...matches.map(pass));
 const sourceUrl=(id)=>'https://drive.google.com/file/d/'+id+'/view';
 ---
-<BaseLayout title="Lille – Galatasaray | Premier V2 kanıt laboratuvarı" description="Lille ve Galatasaray'ın rakip bağımlı olay profili: kaynaklı, doğrulanabilir dört maçlık CSV ön analizi." club="galatasaray">
+<BaseLayout title="Lille – Galatasaray | Premier V2 kanıt laboratuvarı" description="Lille ve Galatasaray'ın rakip bağımlı olay profili: kaynaklı, doğrulanabilir dört maçlık CSV ön analizi." club="galatasaray" noindex={true}>
 <main class="p2">
   <div class="wrap">
     <p class="eyebrow">HPANALYTIC / PREMIER V2 · EVIDENCE LAB</p>
