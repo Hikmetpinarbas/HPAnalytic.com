@@ -5,11 +5,13 @@ import { getCollection } from 'astro:content';
 import { isPublicEditorialItem } from '../lib/site-editorial-status.mjs';
 import { SECTION_LABELS } from '../lib/site-surfaces.mjs';
 import { featuredMatch } from '../data/match-previews.mjs';
+import { featuredPremier } from '../data/premier-features.mjs';
 export const prerender = true;
 
 const monographs = (await getCollection('monographs', isPublic)).sort((a, b) => +b.data.date - +a.data.date);
 const articles = (await getCollection('articles', isPublic)).filter((entry) => isPublicEditorialItem(entry.data)).sort((a, b) => +b.data.date - +a.data.date);
 const match = featuredMatch();
+const premier = featuredPremier();
 const dateTr = (d: Date) => d.toLocaleDateString('tr-TR', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' });
 const steps = [
   { key: 'yapi', label: 'Yapı', text: 'Önce oyunun iskeleti: alan, zaman, rol ve rakip. Skor bu yapının en son katmanıdır.' },
@@ -18,6 +20,29 @@ const steps = [
 ];
 ---
 <BaseLayout title="HPAnalytic — Hikmet Pınarbaş Futbol Analizi" description="Hikmet Pınarbaş'tan kanıt, mekanizma ve bağlam temelli bağımsız futbol analizi.">
+
+<section id="premier-feature" class="hpa-premier" aria-labelledby="premier-title" data-club="galatasaray">
+  <div class="hpa-premier__inner">
+    <div class="hpa-premier__overline"><span>HPANALYTIC / PREMIER</span><span>BAŞ ANALİZ · EDITOR'S PICK</span></div>
+    {premier && <>
+      <p class="hpa-premier__eyebrow">{premier.category} · {premier.team}</p>
+      <h2 id="premier-title">{premier.title}</h2>
+      <p>{premier.description}</p>
+      <a class="hpa-premier__link" href={premier.href} aria-label={premier.title + ' premier analizini oku'}>PREMIER DOSYASINI KEŞFET <span aria-hidden="true">↗</span></a>
+    </>}
+  </div>
+</section>
+<style>
+.hpa-premier{position:relative;isolation:isolate;background:linear-gradient(124deg,#0D1925 0%,#172A35 55%,#38261C 100%);color:#F6F1E8;border-block:1px solid #966E39}
+.hpa-premier::before{content:"";position:absolute;inset:0;z-index:-1;background:repeating-linear-gradient(90deg,transparent 0,transparent calc(33.333% - 1px),rgba(255,221,162,.12) 33.333%)}
+.hpa-premier__inner{width:min(1200px,calc(100% - 36px));margin:auto;padding:clamp(36px,6vw,78px) 0}
+.hpa-premier__overline{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;border-bottom:1px solid rgba(255,255,255,.28);padding-bottom:13px;font-size:.72rem;font-weight:700;letter-spacing:.15em;color:#F9CB7B}
+.hpa-premier__eyebrow{color:#F9CB7B;font-size:.78rem;letter-spacing:.1em;margin-top:24px}
+.hpa-premier h2{font-size:clamp(2rem,5vw,4.5rem);line-height:1.08;max-width:900px;margin:13px 0 20px;letter-spacing:-.045em}
+.hpa-premier__inner>p:not(.hpa-premier__eyebrow){max-width:650px;color:#D5DEE2;line-height:1.65}
+.hpa-premier__link{display:inline-flex;gap:18px;align-items:center;margin-top:24px;color:#15202B;background:#F4BE65;text-decoration:none;padding:15px 20px;min-height:48px;font-weight:800;font-size:.82rem;letter-spacing:.05em;border-radius:4px}
+.hpa-premier__link:focus-visible{outline:3px solid #FFF;outline-offset:4px}
+</style>
 
 <section class="home-hero" aria-labelledby="hero-title">
   <canvas class="home-hero__canvas" aria-hidden="true" data-threads></canvas>
