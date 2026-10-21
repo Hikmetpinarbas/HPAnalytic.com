@@ -44,3 +44,12 @@ test('single Lille-white Galatasaray-yellow headline with local rotating star sc
  assert.match(home,/@media\s*\(prefers-reduced-motion:\s*reduce\)/);
  assert.doesNotMatch(home,/football-logos\.cc|seeklogo\.com/);
 });
+
+test('actual match article uses the same Lille-white Galatasaray-yellow editorial masthead',()=>{
+ const article=readFileSync(new URL('../src/pages/mac/lille-galatasaray-2026-10-21.astro',import.meta.url),'utf8');
+ assert.match(article,/class="hpa-match-stars"/);
+ assert.match(article,/class="hpa-match-away"/);
+ assert.match(article,/class="hpa-match-home"/);
+ assert.doesNotMatch(article,/<span class="v">deplasmanda<\/span>/);
+ assert.match(article,/@media\s*\(prefers-reduced-motion:\s*reduce\)/);
+});
