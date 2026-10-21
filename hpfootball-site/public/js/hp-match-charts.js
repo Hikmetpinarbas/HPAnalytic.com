@@ -102,6 +102,21 @@
   function network(fig) {
     var svg = fig.querySelector('svg'), out = fig.querySelector('.hpc-readout');
     var cur;
+    var showEstimated = false;
+    var toggle = document.createElement('button');
+    toggle.type = 'button';
+    toggle.className = 'hpc-network-toggle';
+    toggle.setAttribute('aria-pressed', 'false');
+    toggle.textContent = 'Tahmini bağlantıları göster';
+    toggle.style.cssText = 'display:inline-block;min-height:44px;padding:10px 16px;margin:12px 0;border:1px solid currentColor;border-radius:999px;background:transparent;color:inherit;font:inherit;cursor:pointer';
+    var figure = fig.querySelector('.figure');
+    figure.after(toggle);
+    toggle.addEventListener('click', function () {
+      showEstimated = !showEstimated;
+      toggle.setAttribute('aria-pressed', String(showEstimated));
+      toggle.textContent = showEstimated ? 'Tahmini bağlantıları gizle' : 'Tahmini bağlantıları göster';
+      draw(cur);
+    });
     function draw(key) {
       cur = key;
       var N = D.net[key], meta = D.netMeta[key], col = meta.color;
@@ -122,10 +137,10 @@
       });
       function focus(p) {
         edgeEls.forEach(function (o) {
-          var on = p ? (o.e.a === p || o.e.b === p) : o.top;
+          var on = showEstimated && (p ? (o.e.a === p || o.e.b === p) : o.top);
           o.el.style.display = on ? '' : 'none';
         });
-        if (!p) { out.innerHTML = meta.read; return; }
+        if (!p) { out.textContent = meta.read + (showEstimated ? ' Tahmini bağlantı çizgileri gösteriliyor.' : ' Tahmini bağlantı çizgileri gizli; göstermek için düğmeyi kullanın.'); return; }
         var mine = N.edges.filter(function (e) { return e.a === p || e.b === p; }).slice(0, 3)
           .map(function (e) { return '<b>' + surname(e.a === p ? e.b : e.a) + '</b> (' + e.w + ')'; });
         out.innerHTML = '<b>' + p + '</b>: ' + pos[p].pass + ' isabetli pas. En sık tahmini bağlantılar: ' + (mine.join(', ') || 'eşik altında') + '.';

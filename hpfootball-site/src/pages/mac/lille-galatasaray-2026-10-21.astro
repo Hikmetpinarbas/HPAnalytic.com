@@ -2,7 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 export const prerender = true;
 ---
-<BaseLayout title="Lille – Galatasaray maç önü — HPAnalytic" description="Turnuvanın en az şut atan iki takımı karşı karşıya. 36 takımlık dağılım, Lille'in lig ve Avrupa xG farkı, pres eşleşmesi ve izlenecek beş soru." ogType="article" publishedTime={new Date('2026-10-20T00:00:00Z')} club="galatasaray">
+<BaseLayout title="Lille – Galatasaray maç önü — HPAnalytic" description="Lille 10 şutla son sırada; Galatasaray ve Bodø/Glimt 12'şer şutla bir üst basamağı paylaşıyor. 36 takımlık dağılım, Lille'in lig ve Avrupa xG farkı, pres eşleşmesi ve izlenecek beş soru." ogType="article" publishedTime={new Date('2026-10-20T00:00:00Z')} club="galatasaray">
 <div class="mp">
 <section class="hero">
   <div class="wrap">
@@ -12,14 +12,15 @@ export const prerender = true;
       <span class="v">deplasmanda</span>
       <span class="sla" lang="fr">LOSC Lille</span>
     </h1>
-    <p class="mono" style="color:var(--chalk-2)">Hikmet Pınarbaş · 20 Ekim 2026</p>
-    <p class="thesis">Turnuvanın en az şut atan iki takımı karşı karşıya. Lille, Avrupa'da topu kendi yarısında en çok kaybeden ikinci takım. <em>Galatasaray'ın kapısı, Lille'in oyun kurulumunu yüksekte boğmakta.</em></p>
+    <p class="mono" style="color:var(--chalk-2)">Hikmet Pınarbaş · 20 Ekim 2026 · Maç: 21 Ekim 2026 · 19.45 TSİ</p>
+    <p class="thesis">Lille 10 şutla son sırada; Galatasaray ve Bodø/Glimt 12'şer şutla bir üst basamağı paylaşıyor. Lille, Avrupa'da topu kendi yarısında en çok kaybeden ikinci takım. <em>Galatasaray'ın kapısı, Lille'in oyun kurulumunu yüksekte boğmakta.</em></p>
     <div class="meta">
       <div><span class="mono">Puan</span><b class="num"><span class="fen">0</span> · <span class="sla">0</span></b></div>
       <div><span class="mono">Atılan şut (2 maç)</span><b class="num"><span class="fen">12</span> · <span class="sla">10</span></b></div>
-      <div><span class="mono">Hakem</span><b>Rade Obrenovic</b></div>
-      <div><span class="mono">Yayın</span><b>TRT 1 (bekleniyor)</b></div>
+      <div><span class="mono">Hakem</span><b>Rade Obrenovič</b></div>
+      <div><span class="mono">Başlama</span><b>19.45 TSİ</b></div>
     </div>
+    <p class="mono" style="font-size:.78rem;color:var(--chalk-2);line-height:1.65">Maç bilgisi: <a href="https://www.uefa.com/uefachampionsleague/match/2049605/" rel="noopener noreferrer" target="_blank">UEFA resmî maç sayfası</a> · <a href="https://www.galatasaray.org/haber/futbol/sampiyonlar-ligi/maca-dogru-lille-galatasaray/61183" rel="noopener noreferrer" target="_blank">Galatasaray maç önü açıklaması</a>. Yayın kanalı teyit edilmediği için belirtilmemiştir.</p>
     <div class="count" id="count" aria-live="polite">
       <span class="mono" style="width:100%">Başlama vuruşuna</span>
       <span class="n num" id="cd-h">--</span><span class="u">saat</span>
@@ -28,7 +29,11 @@ export const prerender = true;
   </div>
 </section>
 
-<div class="ticker" aria-label="Öne çıkan sayılar"><div class="ticker-track" id="ticker"></div></div>
+<section class="hpa-newswire" aria-label="36 takım sıralamaları ve haber bandı">
+ <div class="hpa-newswire-bar"><span class="hpa-newswire-heading">HPANALYTIC / DATA WIRE</span><div role="group" aria-label="Haber bandı kontrolü"><button type="button" id="ticker-pause" aria-pressed="false">Durdur</button><a href="#ticker-static">Tüm veriler</a></div></div>
+ <div class="ticker" aria-label="36 takımın metrik sıralamalarından türetilmiş akan haberler" tabindex="0"><div class="ticker-track" id="ticker"></div></div>
+ <div id="ticker-static" class="hpa-newswire-static" aria-label="Haber bandının durağan metin eşdeğeri"><p>İki takımın 36 takım arasındaki metrikleri yükleniyor. Oyuncu bazında doğrulanmış etki sıralaması bulunmadan pozitif veya negatif oyuncu listesi yayımlanmayacak.</p></div>
+</section>
 
 <section class="block">
   <div class="wrap">
@@ -79,15 +84,15 @@ export const prerender = true;
   <div class="wrap">
     <div class="head col">
       <p class="eyebrow">Maçın nabzı · son üçte birdeki topla oyun farkı</p>
-      <h2 id="hpc-mom-t">Maç kimin elindeydi?</h2>
-      <p class="lede">Her üç dakikada iki takımın son üçte birdeki topla oyun sayısı farkı. Yukarı taşan alan takımın baskın olduğu, aşağı taşan alan rakibin baskın olduğu dakikalar. Halkalar goller.</p>
+      <h2 id="hpc-mom-t">Son üçte birde kim daha fazla aksiyon yaptı?</h2>
+      <p class="lede">Her üç dakikada iki takımın son üçte birdeki kaydedilmiş topla eylemleri arasındaki farkın hareketli ortalaması. Pozitif ve negatif değerler bu olayların sayısal farkını gösterir; topa sahip olma, pres şiddeti veya oyunun kontrolünü doğrudan ölçmez. Halkalar golleri işaretler.</p>
     </div>
     <div data-hpc="momentum">
       <div class="hpc-tabs" role="group" aria-label="Maç seç"><button type="button" data-k="gs" aria-pressed="true">Galatasaray 1–4 Barcelona</button><button type="button" data-k="lil" aria-pressed="false">Arsenal 3–0 Lille</button></div>
-      <div class="figure hpc-fig"><svg role="img" aria-label="Maçın dakika dakika baskı grafiği"></svg></div>
+      <div class="figure hpc-fig"><svg role="img" aria-label="Maçın üç dakikalık dilimlerde son üçte bir aksiyon sayısı farkı grafiği"></svg></div>
       <p class="readout hpc-readout"></p>
     </div>
-    <p class="claim"><span class="ev der">TÜRETİLMİŞ</span>Olay dosyasından hesaplandı: son üçte birde (x > 70) topla yapılan benzersiz eylemler, üç dakikalık dilim, üç dilimlik kayan ortalama. Bu bir baskı ölçüsüdür, gol beklentisi değildir.</p>
+    <p class="claim"><span class="ev der">TÜRETİLMİŞ</span>Olay dosyasından hesaplandı: son üçte birde (x > 70) topla yapılan benzersiz eylemler, üç dakikalık dilim, üç dilimlik kayan ortalama. Bu, son üçte birdeki topla eylem etkinliğinin dolaylı göstergesidir; pres şiddetini, topa sahip olma oranını veya gol beklentisini doğrudan ölçmez.</p>
   </div>
 </section>
 
@@ -103,7 +108,7 @@ export const prerender = true;
       <div class="figure hpc-fig hpc-pitch"><svg role="img" aria-label="Oyuncular arası tahmini top dolaşımı ağı"></svg></div>
       <p class="readout hpc-readout"></p>
     </div>
-    <p class="claim"><span class="ev hyp">TAHMİNİ</span>Veride pası alan oyuncu yok. Bağlantı, isabetli pastan sonraki 5 saniyede topa dokunan ilk takım arkadaşıyla kuruldu; Galatasaray'ın 204 isabetli pasının 156'sı, Lille'in 329'unun 266'sı bağlanabildi. Bu yüzden ok çizilmedi ve ağ tahmini sayılır. Konumlar takip verisi değil, olay konumlarının ortancası.</p>
+    <p class="claim"><span class="ev hyp">TAHMİNİ</span>Veride pası alan oyuncu yok. Bu nedenle ağ, isabetli pastan sonraki beş saniyelik takım arkadaşı temaslarından tahmini olarak türetildi. Galatasaray'da 204, Lille'de 329 isabetli pas etiketi bulunuyor. Tahmini bağlantıların kesin toplamı kaynak eşleştirmesine bağlı olduğu için burada sayısal sonuç olarak kullanılmaz. Bu yüzden yönlü pas oku çizilmez. Oyuncu konumları takip verisi değil, olay konumlarının ortancasıdır.</p>
   </div>
 </section>
 
@@ -163,19 +168,113 @@ export const prerender = true;
     <div class="head col">
       <p class="eyebrow">Eşleşmenin kilidi</p>
       <h2>Pres mi, sabır mı?</h2>
-      <p class="lede">Lille Avrupa'da topu kendi yarısında iki maçta 41 kez kaybetti; yarıdan fazlası Arsenal deplasmanında. Aynı maçta PPDA'sı 17,84 idi, yani neredeyse hiç baskı yapmadı. Galatasaray'ın rakip yarıda top kazanımı (21) turnuva medyanında. Bu maçı belirleyecek soru, Galatasaray'ın baskıyı yükseltip bu kayıpları gerçek fırsata çevirip çeviremeyeceği.</p>
+      <p class="lede">Lille Avrupa'da topu kendi yarısında iki maçta 41 kez kaybetti; yarıdan fazlası Arsenal deplasmanında. Aynı maçta PPDA'sı 17,84 idi, bu örneklemde daha düşük pres yoğunluğuna işaret eder. Galatasaray'ın rakip yarıda top kazanımı (21) turnuva medyanında. Bu maçı belirleyecek soru, Galatasaray'ın baskıyı yükseltip bu kayıpları gerçek fırsata çevirip çeviremeyeceği.</p>
     </div>
     <div class="corr" id="press"></div>
     <div class="claim"><span class="ev der">TÜRETİLMİŞ</span><span>Kayıp ve kazanım sayıları iki ayrı rakibe karşı oluştu. Lille'in kayıp sayısının bir kısmı Arsenal'in pres gücünden gelebilir; Galatasaray aynı baskıyı kuramazsa bu sayı düşer.</span></div>
   </div>
 </section>
 
+<section class="block band" aria-labelledby="match-mechanism-title">
+  <div class="wrap">
+    <div class="head col">
+      <p class="eyebrow">Yeni analiz · mekânsal eşleşme</p>
+      <h2 id="match-mechanism-title">Baskının miktarı değil, kazanımın yeri</h2>
+      <p class="lede">Lille'in Arsenal'e karşı yaşadığı kayıplar ile rakiplerinin ileri bölgede kazandıkları toplar aynı olay değildir. Üç ayrı kaydın mekânsal dağılımı bir soru doğuruyor: Galatasaray topu kazanabiliyor mu, yoksa <em>kaleye yeterince yakın</em> kazanabiliyor mu?</p>
+    </div>
+    <div class="hp-mechanism">
+      <div class="hp-mechanism__item">
+        <div class="hp-mechanism__meta"><strong>Lille · kendi yarısında kayıp</strong><span>Arsenal karşısında</span></div>
+        <p><strong>14 / 26</strong> kayıp, kendi kalesine 35 birimlik bölge içinde</p>
+        <div class="hp-mechanism__track" role="img" aria-label="26 kendi yarı kaybının 14'ü kaleye 35 birimlik bölge içinde"><span style="width:53.85%;background:var(--sla)"></span></div>
+        <small>%54 · Lille'in kayıp kayıtları içindeki bölgesel oran</small>
+      </div>
+      <div class="hp-mechanism__item">
+        <div class="hp-mechanism__meta"><strong>Arsenal · rakip yarıda kazanım</strong><span>Lille karşısında</span></div>
+        <p><strong>11 / 19</strong> kazanım, Lille kalesine 35 birimlik bölge içinde</p>
+        <div class="hp-mechanism__track" role="img" aria-label="19 rakip yarı kazanımının 11'i kaleye 35 birimlik bölge içinde"><span style="width:57.89%;background:var(--chalk-2)"></span></div>
+        <small>%58 · Arsenal'in kazanım kayıtları içindeki bölgesel oran</small>
+      </div>
+      <div class="hp-mechanism__item">
+        <div class="hp-mechanism__meta"><strong>Galatasaray · rakip yarıda kazanım</strong><span>Barcelona karşısında</span></div>
+        <p><strong>1 / 8</strong> kazanım, Barcelona kalesine 35 birimlik bölge içinde</p>
+        <div class="hp-mechanism__track" role="img" aria-label="8 rakip yarı kazanımının 1'i kaleye 35 birimlik bölge içinde"><span style="width:12.5%;background:var(--fen)"></span></div>
+        <small>%13 · Galatasaray'ın kazanım kayıtları içindeki bölgesel oran</small>
+      </div>
+    </div>
+    <div class="hp-mechanism__reading">
+      <h3>Bu eşleşmede hangi sorular belirleyici?</h3>
+      <details><summary>Galatasaray için fırsat nerede?</summary><p>Lille'in Arsenal maçındaki 26 kendi yarı kaybının 14'ü kalesine 35 birimlik bölge içindeydi. Bu, Galatasaray'ın aynı bölgeye baskı taşıması için incelenmesi gereken bir zafiyet işaretidir; Lille'in her rakibe karşı aynı sıklıkta kayıp yapacağını kanıtlamaz.</p></details>
+      <details><summary>Veri Galatasaray'ın bunu başardığını gösteriyor mu?</summary><p>Barcelona karşısında Galatasaray'ın sekiz rakip yarı kazanımından yalnız biri kaleye 35 birimlik bölge içindeydi. Arsenal'in Lille'e karşı 11/19 oranını doğrudan Galatasaray'a aktaramayız. İki maçın rakipleri, akışları ve örneklemleri farklı.</p></details>
+      <details><summary>Maçta hipotezi nasıl sınayacağız?</summary><p>İlk 15 dakikada Lille'in ilk pas hattına uygulanan baskıyı; top kazanımlarının kaleye uzaklığını; bu kazanımlardan sonraki ilk iki aksiyonu ve şuta dönüşen dizileri ayrı ayrı izleyeceğiz. Salt kazanım adedi değil, kazanımın konumu ve devamı önemlidir.</p></details>
+    </div>
+    <div class="claim"><span class="ev der">TÜRETİLMİŞ</span><span>Pay ve paydalar aşağıdaki olay haritasında açıklanan üç ayrı maç verisinden alınmıştır. Yüzdeler yalnız kendi örneklemi içindeki bölge paylarıdır; rakip gücüne göre düzeltilmiş pres başarısı, nedensellik veya maç tahmini değildir. 35 birimlik eşik şematik koordinat karşılaştırmasıdır; fiziksel saha mesafesi veya doğrudan pres başarısı ölçüsü değildir.</span></div>
+  </div>
+</section>
+
+<section class="block hpa-scenario-lab" id="hpa-scenario-lab" aria-labelledby="hpa-scenario-title">
+  <div class="wrap">
+    <div class="head col">
+      <p class="eyebrow">Taktik laboratuvarı · maç önü senaryoları</p>
+      <h2 id="hpa-scenario-title">Kazanılan top nasıl fırsata dönüşür?</h2>
+      <p class="lede">Lille'in Arsenal karşısındaki bölgesel top kayıpları, Galatasaray için bir imkâna işaret ediyor; ancak tek başına pres planı tarif etmiyor. Üç olası mekanizmayı ve her birini sahada yanlışlayabilecek göstergeleri karşılaştır.</p>
+    </div>
+    <div class="hpa-scenario-controls" role="group" aria-label="Taktik senaryo seçimi">
+      <button type="button" data-scenario="press" aria-pressed="true">01 · İlk pas baskısı</button>
+      <button type="button" data-scenario="trap" aria-pressed="false">02 · Kenar tuzağı</button>
+      <button type="button" data-scenario="release" aria-pressed="false">03 · Baskı kırılırsa</button>
+    </div>
+    <div class="hpa-carousel-bar" aria-label="Senaryo gezinmesi"><button type="button" id="hpa-scenario-prev" aria-label="Önceki senaryo">←</button><span id="hpa-scenario-counter" aria-live="polite">01 / 03</span><button type="button" id="hpa-scenario-next" aria-label="Sonraki senaryo">→</button></div>
+    <div class="hpa-corridor-controls" id="hpa-zone-controls" role="group" aria-label="Sahanın uzunluk bölgeleri">
+      <button type="button" data-zone="all" aria-pressed="true">Tüm bölgeler</button>
+      <button type="button" data-zone="0" aria-pressed="false">Bölge 1 · 0–35</button>
+      <button type="button" data-zone="1" aria-pressed="false">Bölge 2 · 35–70</button>
+      <button type="button" data-zone="2" aria-pressed="false">Bölge 3 · 70–105</button>
+    </div>
+    <div class="hpa-corridor-controls" id="hpa-corridor-controls" role="group" aria-label="Sahanın genişlik koridorları">
+      <button type="button" data-corridor="all" aria-pressed="true">Tüm koridorlar</button>
+      <button type="button" data-corridor="0" aria-pressed="false">Sol dış</button>
+      <button type="button" data-corridor="1" aria-pressed="false">Sol iç</button>
+      <button type="button" data-corridor="2" aria-pressed="false">Merkez</button>
+      <button type="button" data-corridor="3" aria-pressed="false">Sağ iç</button>
+      <button type="button" data-corridor="4" aria-pressed="false">Sağ dış</button>
+    </div>
+    <div class="hpa-scenario-grid">
+      <div class="hpa-scenario-field">
+        <svg id="hpa-scenario-svg" viewBox="0 0 105 68" role="group" aria-label="Seçilen taktik senaryonun şematik saha çizimi ve seçilebilir oyuncu noktaları"></svg>
+        <p id="hpa-spatial-readout" class="hpa-spot-tooltip" aria-live="polite">3 bölge × 5 koridor · tüm saha</p>
+        <p id="hpa-scenario-tooltip" class="hpa-spot-tooltip" role="status" aria-live="polite">Oyuncu işaretine dokunarak veya üzerine gelerek rolünü incele.</p>
+        <p class="mono">Şematik yerleşim · oyuncu takip verisi veya gerçekleşmiş maç sekansı değildir.</p>
+      </div>
+      <div class="hpa-scenario-copy" id="hpa-scenario-reading" aria-live="polite">
+        <p class="eyebrow">Hipotez ve sınama</p>
+        <h3>İlk pasın yönünü sınırla</h3>
+        <p>Galatasaray'ın ön hattı merkez pasını kapatırken ilk savunmacı topu alan oyuncuya yaklaşır.</p>
+      </div>
+    </div>
+    <p class="claim"><span class="ev hyp">HİPOTEZ</span><span>Bu çizimler maçta yaşanmış pozisyonlar değildir. Çıkış noktası Lille'in Arsenal maçındaki 27 resmî kendi yarı top kaybı ve haritada temsil edilen 26 olaydır; üç senaryonun başarısı maç başladığında ayrı ayrı test edilmelidir.</span></p>
+  </div>
+</section>
+
+<section class="block hpa-evidence-atlas" id="hpa-evidence-atlas" aria-labelledby="hpa-atlas-heading">
+<div class="wrap">
+<div class="head col"><p class="eyebrow">VERİ ATLASI · 15 MEKÂNSAL HÜCRE</p><h2 id="hpa-atlas-heading">Top nerede kaybediliyor, nerede kazanılıyor?</h2><p class="lede">Üç uzunluk bölgesi ve beş genişlik koridorunu ayrı ayrı seç. Olay, devre ve mekân filtreleri tek saha üzerinde kesişir; her hücre orijinal maç kayıtlarından sayılır.</p></div>
+<div class="hpa-atlas-controls">
+  <div role="group" aria-label="Olay veri serisi"><strong>Olay serisi</strong><button data-atlas-event="loss" aria-pressed="true">Lille kaybı</button><button data-atlas-event="ars" aria-pressed="false">Arsenal kazanımı</button><button data-atlas-event="gal" aria-pressed="false">Galatasaray kazanımı</button></div>
+  <div role="group" aria-label="Devre filtresi"><strong>Devre</strong><button data-atlas-phase="0" aria-pressed="true">Tümü</button><button data-atlas-phase="1" aria-pressed="false">1. devre</button><button data-atlas-phase="2" aria-pressed="false">2. devre</button></div>
+  <div role="group" aria-label="Uzunluk bölgesi"><strong>3 bölge</strong><button data-atlas-zone="all" aria-pressed="true">Tümü</button><button data-atlas-zone="0" aria-pressed="false">1</button><button data-atlas-zone="1" aria-pressed="false">2</button><button data-atlas-zone="2" aria-pressed="false">3</button></div>
+  <div role="group" aria-label="Genişlik koridoru"><strong>5 koridor</strong><button data-atlas-corridor="all" aria-pressed="true">Tümü</button><button data-atlas-corridor="0" aria-pressed="false">Sol dış</button><button data-atlas-corridor="1" aria-pressed="false">Sol iç</button><button data-atlas-corridor="2" aria-pressed="false">Merkez</button><button data-atlas-corridor="3" aria-pressed="false">Sağ iç</button><button data-atlas-corridor="4" aria-pressed="false">Sağ dış</button></div>
+</div>
+<div class="hpa-atlas-layout"><div class="hpa-atlas-field"><svg id="hpa-atlas-map" viewBox="-3 -3 111 76" role="img" aria-label="Üç bölge beş koridor yoğunluk haritası"></svg><p>Koridorlar taç çizgisine paralel; bölge çizgileri kale çizgisine paralel.</p></div>
+<div class="hpa-atlas-side"><p class="eyebrow">SEÇİLİ VERİ</p><strong id="hpa-atlas-count" class="hpa-atlas-count" aria-live="polite">—</strong><p id="hpa-atlas-context" aria-live="polite"></p><p>Veri kapsamı: Lille–Arsenal ve Galatasaray–Barcelona ayrı kaynak karşılaşmalardır. <strong>Bu olay dosyalarında dakika damgası olmadığından</strong> 15 dakikalık veya 0–35 / 36–70 / 71–105 zaman blokları üretilmiyor; yalnız devre bilgisi kullanılabiliyor.</p></div></div>
+</div></section>
+
 <section class="block">
   <div class="wrap">
     <div class="head col">
       <p class="eyebrow">Kazanım ve kayıp · olay verisi</p>
       <h2>Arsenal'in yaptığını Galatasaray yapabilir mi?</h2>
-      <p class="lede">Lille Arsenal deplasmanında topu kendi yarısında 26 kez kaybetti; 14'ü kendi kalesine 35 metreden yakın. Arsenal aynı maçta Lille yarısında 19 top kazandı, 11'i kaleye 35 metreden yakın. Galatasaray ise Barcelona karşısında rakip yarıda 8 top kazandı ve bunlardan yalnız biri kaleye 35 metreden yakındı. Aradaki fark, baskının yüksekliği.</p>
+      <p class="lede">Lille, Arsenal deplasmanında kendi yarısında 27 top kaybetti. Haritada gösterilen 26 olayın 14'ü şematik sahanın ilk 35 birimlik bölgesinde. Arsenal aynı maçta Lille yarısında 19 top kazandı; haritada 11'i aynı şematik bölge içinde. Galatasaray ise Barcelona karşısında rakip yarıda 8 top kazandı; haritada yalnız biri ileri 35 birimlik bölgede. Bu karşılaştırma kazanımların konumunu gösterir, pres mekanizmasını tek başına kanıtlamaz.</p>
     </div>
     <div class="tabs" id="ptabs" role="group" aria-label="Katman seç">
       <button type="button" data-l="all" aria-pressed="true">Hepsi</button>
@@ -183,6 +282,12 @@ export const prerender = true;
       <button type="button" data-l="ars" aria-pressed="false">Arsenal kazanımları</button>
       <button type="button" data-l="gal" aria-pressed="false">Galatasaray kazanımları</button>
     </div>
+    <div class="hp-phase-selector" id="phase-controls" role="group" aria-label="Saha olayları için devre seçimi">
+      <button type="button" data-phase="0" aria-pressed="true">90 dakika</button>
+      <button type="button" data-phase="1" aria-pressed="false">İlk devre</button>
+      <button type="button" data-phase="2" aria-pressed="false">İkinci devre</button>
+    </div>
+    <p class="hp-phase-metrics" id="phase-metrics" aria-live="polite"></p>
     <div class="figure"><svg id="pitch" viewBox="-4 -6 113 82" role="img" aria-labelledby="pitch-t"><title id="pitch-t">Lille'in kendi yarısındaki top kayıpları, Arsenal'in ve Galatasaray'ın rakip yarıdaki top kazanımları</title></svg></div>
     <div class="legend">
       <span><svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M3 3l8 8M11 3l-8 8" stroke="var(--sla)" stroke-width="2.2" fill="none"/></svg> Lille top kaybı (kendi yarı) · Arsenal maçı</span>
@@ -190,7 +295,7 @@ export const prerender = true;
       <span><svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><rect x="2" y="2" width="10" height="10" fill="var(--fen)"/></svg> Galatasaray top kazanımı (rakip yarı) · Barcelona maçı</span>
     </div>
     <p class="readout" id="pread"></p>
-    <div class="claim"><span class="ev der">TÜRETİLMİŞ</span><span>Koordinatların her takım için hücum yönüne normalize edildiği kendi/rakip yarı etiketlerinin %100 uyumuyla doğrulandı. Lille kayıpları Galatasaray'ın hücum yönüne çevrildi; sağa doğru Lille kalesi. Sol/sağ kanat yönü doğrulanmadı. Galatasaray'ın kazanımları Barcelona'ya, Lille'in kayıpları Arsenal'e karşı oluştu; bu bir tahmin değil, karşılaştırma zemini.</span></div>
+    <div class="claim"><span class="ev der">TÜRETİLMİŞ</span><span>Üç olay kümesi şematik saha üzerinde aynı karşılaştırma eksenine yerleştirildi; sağ uç Lille kalesini temsil eder. Galatasaray'ın kazanımları Barcelona'ya, Lille'in kayıpları Arsenal'e karşı oluştu; bu bir tahmin değil, karşılaştırma zemini.</span></div>
   </div>
 </section>
 
@@ -283,19 +388,47 @@ const el = (tag, attrs={}, parent) => { const n=document.createElementNS(NS,tag)
   tick(); setInterval(tick, 30e3);
 })();
 
-/* ticker */
+/* 36-team evidence-ranked multilingual-ready newswire; numbers always get own color. */
 (function(){
-  const items = [
-    ["12 · 10","İki maçta atılan şut · turnuvanın en düşük iki değeri"],
-    ["41","Lille'in kendi yarısında top kaybı · 36 takımda 2."],
-    ["14,73","Lille PPDA · en az baskı yapan 2. takım"],
-    ["0,22","Lille'in Arsenal deplasmanındaki xG'si"],
-    ["7","Galatasaray'ın iki maçta yediği gol"],
-    ["−2,81","Lille'in Ligue 1'de son 6 maçta xG farkı"]
-  ];
-  const t = document.getElementById('ticker');
-  const html = items.map(([b,s],i)=>`<div class="ticker-item"><b class="${i%2?'sla':'fen'} num">${b}</b><span>${s}</span></div>`).join('');
-  t.innerHTML = html + html.replace(/class="ticker-item"/g,'class="ticker-item" aria-hidden="true"');
+ const t=document.getElementById('ticker'),staticBox=document.getElementById('ticker-static'),pause=document.getElementById('ticker-pause');
+ if(!t||!staticBox||!pause)return;
+ const metricDefs=[
+   {key:'shots',name:'Şut',higher:true,format:v=>String(v)},
+   {key:'xg',name:'Üretilen xG',higher:true,format:v=>fmt(v)},
+   {key:'oxg',name:'Rakibe verilen xG',higher:false,format:v=>fmt(v)},
+   {key:'ga',name:'Yenilen gol',higher:false,format:v=>String(v)},
+   {key:'goals',name:'Atılan gol',higher:true,format:v=>String(v)},
+   {key:'lost_own',name:'Kendi yarısında top kaybı',higher:false,format:v=>String(v)},
+   {key:'reco',name:'Rakip yarıda top kazanımı',higher:true,format:v=>String(v)},
+   {key:'ppda',name:'PPDA · daha düşük = daha yoğun pres',higher:false,format:v=>fmt(v)}
+ ];
+ const teams=[{code:'GAL',name:'Galatasaray'},{code:'LIL',name:'Lille'}];
+ const total=Object.keys(AGG).length;
+ function rankFor(code,metric){
+   const values=Object.entries(AGG).filter(([,r])=>Number.isFinite(r[metric.key]));
+   const sorted=values.sort((a,b)=>metric.higher?b[1][metric.key]-a[1][metric.key]:a[1][metric.key]-b[1][metric.key]);
+   const idx=sorted.findIndex(([id])=>id===code);if(idx<0)return null;
+   return {rank:idx+1,total:sorted.length,value:AGG[code][metric.key]};
+ }
+ function buildRankedTicker(){
+   const cards=[];
+   for(const team of teams){
+     const results=metricDefs.map(metric=>({metric,...rankFor(team.code,metric)})).filter(x=>Number.isFinite(x.rank));
+     const ordered=results.slice().sort((a,b)=>a.rank-b.rank);
+     for(const r of ordered.slice(0,2))cards.push({sentiment:'positive',team:team.name,label:r.metric.name,number:r.metric.format(r.value),rank:r.rank,den:r.total});
+     for(const r of ordered.slice(-2).reverse())cards.push({sentiment:'negative',team:team.name,label:r.metric.name,number:r.metric.format(r.value),rank:r.rank,den:r.total});
+   }
+   return cards;
+ }
+ const cards=buildRankedTicker();
+ function cardHtml(c,hidden=false){
+   const label=c.team+' · '+c.label+' · '+c.rank+'/'+c.den+' sıra';
+   return '<div class="ticker-item" data-sentiment="'+c.sentiment+'"'+(hidden?' aria-hidden="true"':'')+'><span class="hpa-wire-label">'+label+'</span><b class="hpa-wire-value num">'+c.number+'</b></div>';
+ }
+ t.innerHTML=cards.map(c=>cardHtml(c)).join('')+cards.map(c=>cardHtml(c,true)).join('');
+ staticBox.innerHTML='<h3>36 takımlı metrik karşılaştırması</h3><ul>'+cards.map(c=>'<li data-sentiment="'+c.sentiment+'">'+c.team+' · '+c.label+' · '+c.number+' · '+c.rank+'/'+c.den+'. sıra</li>').join('')+'</ul>'+
+ '<p>Karşılaştırma yalnızca mevcut SportsBase özetindeki metrikleri kapsar. Eşitliklerde aynı sıradaki takımlar veri sırasıyla gösterilir; sıralamanın kesin eşitlik çözümü değildir. oyuncu bazında doğrulanmış etki sıralaması bulunmadığından bireysel pozitif/negatif oyuncu listeleri bu bantta sunulmaz.</p>';
+ pause.addEventListener('click',()=>{const pressed=pause.getAttribute('aria-pressed')==='true';pause.setAttribute('aria-pressed',String(!pressed));pause.textContent=pressed?'Durdur':'Devam et';t.classList.toggle('is-paused',!pressed);});
 })();
 
 /* match rail */
@@ -414,13 +547,98 @@ const el = (tag, attrs={}, parent) => { const n=document.createElementNS(NS,tag)
   ];
   document.getElementById('press').innerHTML=rows.map(r=>{
     const all=vals(r.k), mx=Math.max(...all), s=all.slice().sort((a,b)=>a-b), med=(s[17]+s[18])/2;
+    const scale=v=>r.k==='ppda' ? (mx-v)/mx*100 : v/mx*100;
     return `<div class="row"><span class="mono">${r.who} · <b class="num ${r.c}">${fmt(r.v,r.d)}</b> · ${r.note}</span>
-      <div class="pbar" role="img" aria-label="${r.who}: ${fmt(r.v,r.d)}, medyan ${fmt(med,r.d)}"><i style="width:${(r.v/mx*100).toFixed(1)}%;background:var(--${r.c})"></i><em style="left:${(med/mx*100).toFixed(1)}%"></em></div></div>`;
-  }).join('') + `<p class="mono" style="letter-spacing:.03em">Çubuk boyu: 36 takımın en yüksek değerine göre. İnce çizgi: medyan.</p>`;
+      <div class="pbar" role="img" aria-label="${r.who}: ${fmt(r.v,r.d)}, medyan ${fmt(med,r.d)}"><i style="width:${scale(r.v).toFixed(1)}%;background:var(--${r.c})"></i><em style="left:${scale(med).toFixed(1)}%"></em></div></div>`;
+  }).join('') + `<p class="mono" style="letter-spacing:.03em">Çubuk boyu: 36 takım dağılımı. PPDA çubuğu ters ölçeklidir: daha uzun = daha yoğun pres. İnce çizgi: medyan.</p>`;
 })();
 
 
 const EV = {"lil_loss":[[29.1,2.4,"Maxima Adeagan Goffi",1],[41.6,13.9,"Ngalayel Mukau",1],[48.4,25.1,"Ayase Ueda",1],[34.0,34.5,"Nabil Bentaleb",1],[32.6,54.9,"Hákon Arnar Haraldsson",1],[28.1,49.0,"Benjamin André",1],[40.5,3.6,"Dilane Bakwa",1],[12.8,8.2,"Maxima Adeagan Goffi",1],[51.1,23.1,"Dilane Bakwa",1],[33.9,42.9,"Alexsandro",1],[44.2,21.3,"Nabil Bentaleb",1],[35.0,46.3,"Hákon Arnar Haraldsson",2],[16.3,43.7,"Hákon Arnar Haraldsson",2],[50.5,13.5,"Dilane Bakwa",2],[45.7,13.9,"Nathan Ngoy",2],[39.7,12.7,"Benjamin André",2],[6.3,57.5,"Benjamin André",2],[29.5,3.1,"Ngalayel Mukau",2],[29.1,44.7,"Hákon Arnar Haraldsson",2],[40.8,32.6,"Ngalayel Mukau",2],[30.7,56.0,"Nabil Bentaleb",2],[37.6,64.6,"Hákon Arnar Haraldsson",2],[31.8,34.4,"Benjamin André",2],[34.4,22.1,"Nathan Ngoy",2],[24.4,64.5,"Calvin Verdonk",2],[43.5,63.5,"Osame Sahraoui",2]],"ars_rec":[[75.9,65.6,"Bruno Guimaraes",1],[56.6,42.9,"Gabriel Magalhaes",1],[71.0,33.5,"Mikel Merino",1],[76.9,19.1,"Noni Madueke",1],[64.5,64.4,"Myles Lewis-Skelly",1],[92.2,59.8,"Eberechi Eze",1],[71.1,25.1,"Ezri Konsa",1],[60.8,46.7,"Bruno Guimaraes",1],[70.0,21.7,"Noni Madueke",2],[88.7,24.3,"Mikel Merino",2],[59.3,54.1,"Myles Lewis-Skelly",2],[65.3,55.4,"Myles Lewis-Skelly",2],[75.9,23.3,"Jurriën Timber",2],[64.2,35.4,"Declan Rice",2],[74.3,12.0,"Jurriën Timber",2],[74.8,3.7,"Bukayo Saka",2],[67.4,3.4,"Bruno Guimaraes",2],[73.2,33.6,"Bruno Guimaraes",2],[70.6,45.9,"Declan Rice",2]],"gal_rec":[[64.2,49.2,"Eren Elmalı",1],[54.5,62.0,"Eren Elmalı",1],[63.8,10.1,"Barış Alper Yılmaz",1],[59.4,62.8,"Eren Elmalı",1],[66.0,43.6,"Aleksei Batrakov",1],[54.2,53.2,"Eren Elmalı",2],[63.9,48.5,"Eren Elmalı",2],[75.7,13.8,"Lucas Torreira",2]],"lil_shots":[[87.4,30.0,"blk",1],[76.5,23.1,"blk",1],[89.8,36.6,"blk",2],[76.3,39.9,"off",2]],"bar_shots":[[78.7,24.8,"off",1],[93.0,41.1,"on",1],[87.1,33.6,"off",1],[97.4,36.4,"off",1],[86.5,50.7,"on",1],[92.5,18.2,"blk",1],[95.9,41.9,"goal",1],[77.5,33.4,"on",1],[91.9,45.4,"on",1],[74.0,43.3,"on",1],[100.7,40.8,"off",2],[97.5,34.4,"goal",2],[92.3,21.8,"off",2],[102.3,26.0,"goal",2],[91.7,35.0,"blk",2],[93.8,46.2,"goal",2],[90.8,27.6,"off",2],[97.6,46.3,"off",2],[91.2,34.5,"on",2],[93.8,28.7,"blk",2],[98.6,41.4,"on",2]]};
+/* Tactical scenario laboratory — hypothetical coaching diagrams, not inferred tracking. */
+(function(){
+ const root=document.getElementById('hpa-scenario-lab'); if(!root)return;
+ const svg=root.querySelector('#hpa-scenario-svg'),reading=root.querySelector('#hpa-scenario-reading');
+ const scenes={
+  press:{title:'01 · İlk pasın yönünü sınırla',desc:'Ön hat merkez bağlantısını kapatır; baskı topa en yakın oyuncuyla başlar. Amaç topun kaleye yakın bölgede yeniden kazanılmasıdır.',watch:'Sınama: Lille ilk iki pası hangi bölgede tamamlıyor? Baskı top kazanımına ve ardından şuta dönüşüyor mu?',fail:'Karşı kanıt: Lille merkezden üçüncü adama düzenli çıkarsa ilk baskı fırsat değil, açık alan üretir.',points:[[12,34,'L'],[29,21,'L'],[28,47,'L'],[42,33,'L'],[20,34,'G'],[31,31,'G'],[37,44,'G']],arrows:[[31,31,22,34],[37,44,29,47]],zone:[0,0,35,68]},
+  trap:{title:'02 · Kenara yönlendir, çıkışı kapat',desc:'Merkez geçişi gölgelenirken Lille topu kenara taşır. Yakın kanat ve bek ikilisi pas hattını sıkıştırır.',watch:'Sınama: Top kazanımları kenarda mı gerçekleşiyor, yoksa Lille ters kanada temiz dönebiliyor mu?',fail:'Karşı kanıt: Tek pasla ters kanada geçişler çoğalırsa tuzak takımın yatay dengesini bozar.',points:[[15,12,'L'],[28,10,'L'],[32,31,'L'],[12,40,'L'],[25,8,'G'],[34,16,'G'],[39,29,'G']],arrows:[[34,16,27,11],[39,29,31,28]],zone:[0,0,52,22]},
+  release:{title:'03 · İlk hat aşılırsa geri dengele',desc:'İlk baskı kırıldığında ikinci hat merkezi kapatır; savunma çizgisi koşu yönünü kontrol eder. Üst üste yüksek baskı yerine geri koşu öncelik kazanır.',watch:'Sınama: Lille ilk hattı geçtiğinde Galatasaray rakibi dış koridora yönlendirebiliyor mu?',fail:'Karşı kanıt: İkinci bölgeden art arda serbest koşu ve şutlar gelirse baskı mesafeleri işlevini kaybetmiştir.',points:[[24,34,'L'],[49,30,'L'],[62,47,'L'],[30,13,'L'],[45,39,'G'],[56,25,'G'],[69,36,'G']],arrows:[[45,39,54,33],[56,25,63,30]],zone:[35,0,35,68]}
+ };
+ const ns='http://www.w3.org/2000/svg';
+ const keys=['press','trap','release'];let current='press';
+ const corridorBounds=[0,13.6,27.2,40.8,54.4,68];
+ const zoneBounds=[0,35,70,105];
+ let selectedZone='all';
+ function setZone(value){selectedZone=value;
+   root.querySelectorAll('[data-zone]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.zone===value)));
+   renderScenario(current);
+ }
+ let selectedCorridor='all';
+ function setCorridor(value){selectedCorridor=value;
+   root.querySelectorAll('[data-corridor]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.corridor===value)));
+   renderScenario(current);
+ }
+ const tooltip=root.querySelector('#hpa-scenario-tooltip'),counter=root.querySelector('#hpa-scenario-counter');
+ function nextScenario(delta){renderScenario(keys[(keys.indexOf(current)+keys.length+delta)%keys.length]);}
+ function E(tag,attrs,parent=svg){const n=document.createElementNS(ns,tag);for(const k in attrs)n.setAttribute(k,attrs[k]);parent.appendChild(n);return n;}
+ function renderScenario(key){
+   if(!scenes[key])return;
+   current=key;const x=scenes[key];svg.replaceChildren();
+   counter.textContent=String(keys.indexOf(key)+1).padStart(2,'0')+' / 03';
+   tooltip.textContent='Oyuncu işaretine dokunarak veya üzerine gelerek rolünü incele.';
+   E('rect',{x:0,y:0,width:105,height:68,rx:1,fill:'#111E29',stroke:'#74818B','stroke-width':'.45'});
+   // x bands are three pitch-length zones; y bands are five width corridors.
+   const zonex=selectedZone==='all'?0:zoneBounds[Number(selectedZone)];
+   const zoneWidth=selectedZone==='all'?105:zoneBounds[Number(selectedZone)+1]-zonex;
+   const cy0=selectedCorridor==='all'?0:corridorBounds[Number(selectedCorridor)];
+   const cy1=selectedCorridor==='all'?68:corridorBounds[Number(selectedCorridor)+1];
+   root.querySelector('#hpa-spatial-readout').textContent=
+      (selectedZone==='all'?'3 bölge': 'Bölge '+(Number(selectedZone)+1))+' × '+
+      (selectedCorridor==='all'?'5 koridor':['Sol dış','Sol iç','Merkez','Sağ iç','Sağ dış'][Number(selectedCorridor)])+
+      ' · şematik oyuncu yerleşimi';
+   E('rect',{x:x.zone[0],y:x.zone[1],width:x.zone[2],height:x.zone[3],fill:'#F2A33A','fill-opacity':'.12'});
+   if(selectedCorridor!=='all'){
+     const i=Number(selectedCorridor),y0=corridorBounds[i],y1=corridorBounds[i+1];
+     E('rect',{x:0,y:y0,width:105,height:y1-y0,fill:'#F2A33A','fill-opacity':'.19'});
+   }
+   E('rect',{x:zonex,y:cy0,width:zoneWidth,height:cy1-cy0,fill:'#F2A33A','fill-opacity':'.12',stroke:'#F2A33A','stroke-width':'.5'});
+   zoneBounds.slice(1,-1).forEach(x=>E('line',{x1:x,x2:x,y1:0,y2:68,stroke:'#F2A33A','stroke-width':'.3','stroke-dasharray':'1 1.5',opacity:'.9'}));
+   corridorBounds.slice(1,-1).forEach(y=>E('line',{x1:0,x2:105,y1:y,y2:y,stroke:'#B4BEC4','stroke-width':'.25','stroke-dasharray':'1 1.5',opacity:'.75'}));
+   E('path',{d:'M52.5 0V68M0 13.8H16.5V54.2H0M105 13.8H88.5V54.2H105',stroke:'#6E8390','stroke-width':'.35',fill:'none'});
+   E('circle',{cx:52.5,cy:34,r:9.15,stroke:'#6E8390','stroke-width':'.35',fill:'none'});
+   x.arrows.forEach(([x1,y1,x2,y2])=>{E('path',{d:'M'+x1+' '+y1+'L'+x2+' '+y2,stroke:'#F2A33A','stroke-width':'.85','stroke-dasharray':'2 1.3',fill:'none'});E('circle',{cx:x2,cy:y2,r:1,fill:'#F2A33A'});});
+   x.points.forEach(([cx,cy,t],i)=>{
+     if(selectedZone!=='all'&&(cx<zoneBounds[Number(selectedZone)]||cx>=zoneBounds[Number(selectedZone)+1]))return;
+     if(selectedCorridor!=='all'&&(cy<corridorBounds[Number(selectedCorridor)]||cy>=corridorBounds[Number(selectedCorridor)+1]))return;
+     const g=E('g',{tabindex:0,role:'button','aria-label':(t==='G'?'Galatasaray':'Lille')+' şematik oyuncu '+(i+1)+'; rolünü göster'});
+     E('circle',{cx,cy,r:2.65,fill:t==='G'?'#F2A33A':'#DFE8ED',stroke:'#0A1018','stroke-width':'.55'},g);
+     E('text',{x:cx,y:cy+.85,'font-size':'2.4','font-weight':'bold','text-anchor':'middle',fill:'#111923','pointer-events':'none'},g).textContent=t;
+     const reveal=()=>{tooltip.textContent=(t==='G'?'Galatasaray: '+x.desc:'Lille: baskının hedefi veya çıkış opsiyonu.')+' Şematik yerleşim; takip koordinatı değildir.';};
+     g.addEventListener('pointerenter',reveal);
+     g.addEventListener('focus',reveal);
+     g.addEventListener('click',reveal);
+     g.addEventListener('keydown',ev=>{if(ev.key==='Enter'||ev.key===' '){ev.preventDefault();reveal();}});
+   });
+   reading.replaceChildren();
+   const e=document.createElement('p');e.className='eyebrow';e.textContent='Taktik hipotez';
+   const h=document.createElement('h3');h.textContent=x.title;
+   const d=document.createElement('p');d.textContent=x.desc;
+   const w=document.createElement('p');w.textContent=x.watch;
+   const f=document.createElement('p');f.textContent=x.fail;
+   reading.append(e,h,d,w,f);
+   root.querySelectorAll('[data-scenario]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.scenario===key)));
+ }
+ root.querySelector('.hpa-scenario-controls').addEventListener('click',ev=>{const b=ev.target.closest('button[data-scenario]');if(b&&root.contains(b))renderScenario(b.dataset.scenario);});
+ root.querySelector('#hpa-zone-controls').addEventListener('click',ev=>{const b=ev.target.closest('button[data-zone]');if(b&&root.contains(b))setZone(b.dataset.zone);});
+ root.querySelector('#hpa-corridor-controls').addEventListener('click',ev=>{const b=ev.target.closest('button[data-corridor]');if(b&&root.contains(b))setCorridor(b.dataset.corridor);});
+ root.querySelector('#hpa-scenario-prev').addEventListener('click',()=>nextScenario(-1));
+ root.querySelector('#hpa-scenario-next').addEventListener('click',()=>nextScenario(1));
+ let touchX=null;
+ svg.addEventListener('touchstart',e=>{touchX=e.touches[0].clientX;},{passive:true});
+ svg.addEventListener('touchend',e=>{if(touchX===null)return;const dx=e.changedTouches[0].clientX-touchX;touchX=null;if(Math.abs(dx)>65)nextScenario(dx<0?1:-1);},{passive:true});
+ renderScenario('press');
+})();
+
 function drawPitch(svg, half){
   const g = el('g',{fill:'none',stroke:'var(--line-2)','stroke-width':.35},svg);
   el('rect',{x:0,y:0,width:105,height:68,fill:'var(--band)'},g);
@@ -434,22 +652,105 @@ function drawPitch(svg, half){
   const z=el('g',{},svg);
   el('rect',{x:70,y:0,width:35,height:68,fill:'var(--fen)',opacity:.11},z);
   [35,70].forEach(v=>el('line',{x1:v,x2:v,y1:0,y2:68,stroke:'var(--chalk)','stroke-width':.25,'stroke-dasharray':'1 1.2',opacity:.5},z));
-  [['1. bölge · 0–35 m',17.5],['2. bölge · 35–70 m',52.5],['3. bölge · 70–105 m',87.5]].forEach(([t,xx])=>{ el('text',{x:xx,y:-2,'text-anchor':'middle',class:'ax',style:'font-size:2.6px'},z).textContent=t; });
+  [['1. bölge · 0–35',17.5],['2. bölge · 35–70',52.5],['3. bölge · 70–105',87.5]].forEach(([t,xx])=>{ el('text',{x:xx,y:-2,'text-anchor':'middle',class:'ax',style:'font-size:2.6px'},z).textContent=t; });
   el('text',{x:104,y:72,'text-anchor':'end',class:'ax',style:'font-size:2.4px'},z).textContent='hücum yönü → (Lille kalesi)';
   const loss=el('g',{},svg), ars=el('g',{},svg), gal=el('g',{},svg);
   EV.lil_loss.forEach(([x,y,p,h])=>{ const X=105-x, Y=y; const g=el('g',{stroke:'var(--sla)','stroke-width':.6},loss); el('path',{d:`M${X-1.2} ${Y-1.2}L${X+1.2} ${Y+1.2}M${X+1.2} ${Y-1.2}L${X-1.2} ${Y+1.2}`},g); el('title',{},g).textContent=`Lille kaybı · ${p} · ${h}. devre`; });
   EV.ars_rec.forEach(([x,y,p,h])=>{ const r=el('rect',{x:x-1.2,y:68-y-1.2,width:2.4,height:2.4,fill:'none',stroke:'var(--chalk-2)','stroke-width':.45},ars); el('title',{},r).textContent=`Arsenal kazanımı · ${p} · ${h}. devre`; });
   EV.gal_rec.forEach(([x,y,p,h])=>{ const r=el('rect',{x:x-1.4,y:68-y-1.4,width:2.8,height:2.8,fill:'var(--fen)'},gal); el('title',{},r).textContent=`Galatasaray kazanımı · ${p} · ${h}. devre`; });
-  const T={all:"Üç katman aynı sahada. Lille'in kayıplarının yarısından fazlası sarı bantta, yani kendi kalesine 35 metreden yakın. Arsenal'in kazanımları da büyük ölçüde orada. Galatasaray'ın sarı kareleri ise orta sahanın hemen ilerisinde toplanıyor.",
-           loss:"Lille'in 26 kaybının 14'ü kendi kalesine 35 metreden yakın. Hákon Arnar Haraldsson 5, Benjamin André 4 kayıpla öne çıkıyor; topun kaleciden sonraki ilk iki üç pasta gittiği bir yapı.",
-           ars:"Arsenal'in 19 kazanımının 11'i Lille kalesine 35 metreden yakın. Bu maçta Lille'in sorunu kendi hatası kadar Arsenal'in baskısıydı da.",
-           gal:"Galatasaray'ın Barcelona karşısındaki 8 kazanımının 5'i Eren Elmalı'dan. Yalnız biri kaleye 35 metreden yakın; baskı orta sahada kalmış."};
+  const T={all:"Üç katman aynı sahada. Lille'in kayıplarının yarısından fazlası sarı bantta, yani şematik sahanın kale tarafındaki ilk 35 birimlik bölgesinde. Arsenal'in kazanımları da büyük ölçüde orada. Galatasaray'ın sarı kareleri ise orta sahanın hemen ilerisinde toplanıyor.",
+           loss:"Haritada gösterilen 26 Lille top kaybı olayının 14'ü ilk 35 birimlik bölgede. Hákon Arnar Haraldsson 5, Benjamin André 4 kayıpla öne çıkıyor; oyun kurulumunun ilk bölgesindeki top güvenliği sorununu gösteren bir dağılım.",
+           ars:"Arsenal'in 19 kazanımının 11'i gösterimde Lille kale tarafındaki ilk 35 birimlik bölgede. İki takımın olay dağılımı baskı ile top kaybı ilişkisinin incelenmesi için güçlü bir başlangıçtır.",
+           gal:"Galatasaray'ın Barcelona karşısındaki 8 kazanımının 5'i Eren Elmalı'dan. Yalnız biri şematik sahada ileri 35 birimlik bölgede; konum tek başına pres düzenini tarif etmez."};
   const read=document.getElementById('pread');
-  function set(l){ loss.style.opacity=(l==='all'||l==='loss')?1:.1; ars.style.opacity=(l==='all'||l==='ars')?1:.1; gal.style.opacity=(l==='all'||l==='gal')?1:.1; read.innerHTML=T[l]; }
+  let activeLayer='all', activePhase=0;
+  function updatePitchReadout(){
+    if(activePhase===0){read.innerHTML=T[activeLayer];return;}
+    const groups=[['loss','Lille',EV.lil_loss],['ars','Arsenal',EV.ars_rec],['gal','Galatasaray',EV.gal_rec]].filter(g=>activeLayer==='all'||activeLayer===g[0]);
+    read.textContent=activePhase+'. devre · '+groups.map(g=>g[1]+': '+g[2].filter(e=>e[3]===activePhase).length).join(' · ')+' · Farklı maçların olay kayıtları.';
+  }
+  function set(l){ activeLayer=l; loss.style.opacity=(l==='all'||l==='loss')?1:.1; ars.style.opacity=(l==='all'||l==='ars')?1:.1; gal.style.opacity=(l==='all'||l==='gal')?1:.1; updatePitchReadout(); }
   [loss,ars,gal].forEach(g=>g.style.transition='opacity .4s');
   document.getElementById('ptabs').addEventListener('click',e=>{ const b=e.target.closest('button'); if(!b) return; document.querySelectorAll('#ptabs button').forEach(x=>x.setAttribute('aria-pressed',x===b?'true':'false')); set(b.dataset.l); });
   set('all');
+  const phasePanel=document.getElementById('phase-controls'), metrics=document.getElementById('phase-metrics');
+  function setPhase(phase){
+    activePhase=phase;
+    const series=[
+      {name:'Lille kayıpları',data:EV.lil_loss.filter(e=>phase===0||e[3]===phase),layer:loss},
+      {name:'Arsenal kazanımları',data:EV.ars_rec.filter(e=>phase===0||e[3]===phase),layer:ars},
+      {name:'Galatasaray kazanımları',data:EV.gal_rec.filter(e=>phase===0||e[3]===phase),layer:gal}
+    ];
+    for(const item of series){
+      Array.from(item.layer.children).forEach((node,index)=>{
+        const raw=({loss:EV.lil_loss,ars:EV.ars_rec,gal:EV.gal_rec})[item.layer===loss?'loss':item.layer===ars?'ars':'gal'][index];
+        node.style.display=phase===0||raw[3]===phase?'':'none';
+      });
+    }
+    updatePhaseNarrative();
+    metrics.textContent=series.map(item=>item.name+': '+item.data.length).join(' · ')+
+      (phase===0?' · Tüm maç':' · '+phase+'. devre')+' · Ayrı maçların olay sayıları';
+    phasePanel.querySelectorAll('button[data-phase]').forEach(btn=>
+      btn.setAttribute('aria-pressed',String(Number(btn.dataset.phase)===phase)));
+  }
+  const updatePhaseNarrative=updatePitchReadout;
+  phasePanel.addEventListener('click',event=>{
+    const btn=event.target.closest('button[data-phase]');
+    if(btn&&phasePanel.contains(btn))setPhase(Number(btn.dataset.phase));
+  });
+  setPhase(0);
 })();
+
+/* Evidence atlas — independent zone × corridor × event × half, source positions only. */
+(function(){
+ const root=document.getElementById('hpa-evidence-atlas');if(!root)return;
+ const svg=root.querySelector('#hpa-atlas-map'),count=root.querySelector('#hpa-atlas-count'),context=root.querySelector('#hpa-atlas-context');
+ const atlasZoneBounds=[0,35,70,105];
+ const atlasCorridorBounds=[0,13.6,27.2,40.8,54.4,68];
+ const state={event:'loss',phase:0,zone:'all',corridor:'all'};
+ const sets={loss:{name:'Lille kendi yarı kaybı',events:EV.lil_loss,source:'Arsenal–Lille',project:e=>[105-e[0],e[1]]},
+ ars:{name:'Arsenal rakip yarı kazanımı',events:EV.ars_rec,source:'Arsenal–Lille',project:e=>[e[0],68-e[1]]},
+ gal:{name:'Galatasaray rakip yarı kazanımı',events:EV.gal_rec,source:'Galatasaray–Barcelona',project:e=>[e[0],68-e[1]]}};
+ const ns='http://www.w3.org/2000/svg';
+ function n(tag,attrs,parent=svg){const p=document.createElementNS(ns,tag);for(const k in attrs)p.setAttribute(k,attrs[k]);parent.appendChild(p);return p;}
+ function indexOf(v,bounds){return Math.min(bounds.length-2,Math.max(0,bounds.findIndex((e,i)=>i<bounds.length-1&&v>=e&&v<bounds[i+1])));}
+ function renderAtlas(){
+   const source=sets[state.event];const cells=Array.from({length:15},()=>0);const points=[];
+   source.events.filter(e=>state.phase===0||e[3]===state.phase).forEach(e=>{
+     const [x,y]=source.project(e);if(!Number.isFinite(x)||!Number.isFinite(y)||x<0||x>105||y<0||y>68)return;
+     const z=indexOf(x,atlasZoneBounds),c=indexOf(y,atlasCorridorBounds);
+     cells[c*3+z]++;
+     if((state.zone==='all'||Number(state.zone)===z)&&(state.corridor==='all'||Number(state.corridor)===c))points.push({x,y,name:e[2]});
+   });
+   svg.replaceChildren();
+   n('rect',{x:0,y:0,width:105,height:68,fill:'#122634',stroke:'#9CB0BB','stroke-width':'.5'});
+   const max=Math.max(1,...cells);
+   for(let c=0;c<5;c++)for(let z=0;z<3;z++){
+     const active=(state.zone==='all'||Number(state.zone)===z)&&(state.corridor==='all'||Number(state.corridor)===c);
+     const val=cells[c*3+z],x=atlasZoneBounds[z],y=atlasCorridorBounds[c];
+     n('rect',{x,y,width:atlasZoneBounds[z+1]-x,height:atlasCorridorBounds[c+1]-y,fill:active?'#F2A33A':'#80909A','fill-opacity':active?(.1+.55*val/max):'.045',stroke:'#8494A0','stroke-width':'.18'});
+     const label=n('text',{x:x+17.5,y:y+7.9,'text-anchor':'middle',fill:'#EFF1EA','font-size':'4.1','font-weight':'bold'});
+     label.textContent=active?String(val):'·';
+   }
+   n('path',{d:'M52.5 0V68M0 13.84H16.5V54.16H0M105 13.84H88.5V54.16H105',stroke:'#C2CDD3','stroke-width':'.32',fill:'none'});
+   n('circle',{cx:52.5,cy:34,r:9.15,stroke:'#C2CDD3','stroke-width':'.3',fill:'none'});
+   points.forEach(p=>{const dot=n('circle',{cx:p.x,cy:p.y,r:'.95',fill:'#FFF2C4',stroke:'#1B2D38','stroke-width':'.2'});n('title',{},dot).textContent=p.name;});
+   count.textContent=points.length+' olay';
+   context.textContent=source.name+' · '+source.source+' · '+(state.phase===0?'iki devre':state.phase+'. devre')+
+      ' · '+(state.zone==='all'?'tüm bölgeler':'bölge '+(Number(state.zone)+1))+
+      ' · '+(state.corridor==='all'?'tüm koridorlar':['sol dış','sol iç','merkez','sağ iç','sağ dış'][Number(state.corridor)]);
+   root.querySelectorAll('button[data-atlas-event],button[data-atlas-phase],button[data-atlas-zone],button[data-atlas-corridor]').forEach(b=>{
+     const key=Object.keys(b.dataset).find(k=>k.startsWith('atlas'));const field=key.slice(5).toLowerCase();
+     b.setAttribute('aria-pressed',String(String(state[field])===b.dataset[key]));
+   });
+ }
+ root.querySelector('.hpa-atlas-controls').addEventListener('click',e=>{
+   const b=e.target.closest('button');if(!b||!root.contains(b))return;
+   for(const attr of ['event','phase','zone','corridor']){const value=b.getAttribute('data-atlas-'+attr);if(value!==null){state[attr]=attr==='phase'?Number(value):value;renderAtlas();break;}}
+ });
+ renderAtlas();
+})();
+
 function shotMap(id, data, ring){
   const svg=document.getElementById(id); drawPitch(svg,true); const g=el('g',{},svg);
   data.forEach(([x,y,k,h])=>{ const Y=68-y; let n;
@@ -463,9 +764,67 @@ shotMap('shot-lil', EV.lil_shots, 'var(--sla)');
 shotMap('shot-bar', EV.bar_shots, 'var(--fen)');
 
 </script>
-<script type="application/json" id="hpc-data" is:inline>{"colors":{"a":"#F2B705","b":"#EEF1F5","opp":"#8A7470","ink":"#F2EEE6","mute":"#C9BBB4","line":"#8A5A5A"},"names":{"a":"Galatasaray","b":"Lille"},"keys":{"a":"GAL","b":"LIL"},"momMeta":{"gs":{"label":"Galatasaray 1–4 Barcelona","team":"Galatasaray","opp":"Barcelona","teamKey":"Galatasaray","teamColor":"#F2B705","read":"Galatasaray 31 dilimin yalnız 5'inde son üçte birde Barcelona'dan daha çok topla oynadı. Barcelona'nın dört golü de kendi baskın olduğu dilimlerde geldi. Galatasaray'ın golü de (Batrakov, 27') gri alanın içinden çıktı: baskı yokken gelen tek vuruş."},"lil":{"label":"Arsenal 3–0 Lille","team":"Lille","opp":"Arsenal","teamKey":"LOSC Lille","teamColor":"#EEF1F5","read":"Lille 90 dakikanın hiçbir üç dakikalık diliminde son üçte birde Arsenal'den daha çok topla oynamadı. Arsenal'in üç golü 63. ile 71. dakika arasında, baskının en uzun sürdüğü bölümde geldi."}},"netMeta":{"gs":{"label":"Galatasaray · Barcelona maçı","team":"Galatasaray","color":"#F2B705","read":"Galatasaray'ın en sık bağlantısı sol kanatta: Eren Elmalı–Rafael Leão (15). Stoperler Sánchez–Jakobs (14) dağıtımın ikinci ayağı. Bütün maçta 204 isabetli pas var; ağ seyrek, top az el değiştirdi. Bir oyuncuya dokun: yalnız onun bağlantıları kalır."},"lil":{"label":"Lille · Arsenal maçı","team":"Lille","color":"#EEF1F5","read":"Lille'de top en çok iki stoper arasında döndü: Alexsandro–Ngoy 22 bağlantı. En çok pası da Ngoy verdi (56). Dolaşım geride kaldı, ileri hatta güçlü bir bağ oluşmadı. Bir oyuncuya dokun: yalnız onun bağlantıları kalır."}},"mom":{"gs":{"bin":3,"v":[-2.33,-1.0,-1.67,-4.33,-9.0,-7.33,-5.33,-4.0,-3.67,-1.33,0.67,-1.33,-6.33,-8.67,-12.67,-9.67,-12.0,-6.33,-7.33,-6.0,-6.0,-4.0,-0.67,0.67,0.67,0.67,-3.33,-5.33,-4.67,-1.67,0.67,0.0],"raw":[-4.0,-3.0,4.0,-6.0,-11.0,-10.0,-1.0,-5.0,-6.0,0.0,2.0,0.0,-6.0,-13.0,-7.0,-18.0,-4.0,-14.0,-1.0,-7.0,-10.0,-1.0,-1.0,0.0,3.0,-1.0,0.0,-9.0,-7.0,2.0,0.0,0.0],"goals":[{"t":"Galatasaray","m":26.9,"p":"Aleksei Batrakov"},{"t":"FC Barcelona","m":42.0,"p":"João Cancelo"},{"t":"FC Barcelona","m":49.5,"p":"Fermín López"},{"t":"FC Barcelona","m":52.6,"p":"Anthony Gordon"},{"t":"FC Barcelona","m":64.8,"p":"Karim Adeyemi"}],"shots":{"Galatasaray":[26.9,36.6,73.4],"FC Barcelona":[11.8,15.7,16.9,23.0,24.4,42.0,44.0,45.1,46.6,46.0,49.5,51.4,52.6,64.8,68.1,75.6,82.5,83.9]}},"lil":{"bin":3,"v":[-3.67,-4.0,-3.0,-6.0,-5.67,-9.67,-6.33,-10.0,-6.0,-4.67,-9.67,-10.0,-10.67,-3.0,-5.67,-13.67,-14.0,-15.0,-7.33,-11.33,-8.0,-9.0,-10.0,-6.0,-8.0,-5.33,-13.0,-9.67,-9.0,-4.67,-4.33,-1.33],"raw":[-7.0,-4.0,-1.0,-4.0,-13.0,0.0,-16.0,-3.0,-11.0,-4.0,1.0,-26.0,-5.0,-1.0,-3.0,-13.0,-25.0,-4.0,-16.0,-2.0,-16.0,-6.0,-5.0,-19.0,6.0,-11.0,-11.0,-17.0,-1.0,-9.0,-4.0,0.0],"goals":[{"t":"Arsenal FC","m":63.1,"p":"Jurriën Timber"},{"t":"Arsenal FC","m":66.0,"p":"Eberechi Eze"},{"t":"Arsenal FC","m":70.5,"p":"Bukayo Saka"}],"shots":{"LOSC Lille":[73.6],"Arsenal FC":[18.9,20.9,34.2,36.7,45.0,48.7,63.1,66.0,69.8,70.5,76.6]}}},"net":{"gs":{"nodes":[{"p":"Aleksei Batrakov","x":59.4,"y":34.9,"n":20,"num":"83","pass":9},{"p":"Barış Alper Yılmaz","x":35.3,"y":9.4,"n":37,"num":"53","pass":16},{"p":"Davinson Sánchez","x":26.0,"y":24.1,"n":54,"num":"6","pass":28},{"p":"Eren Elmalı","x":43.1,"y":59.9,"n":54,"num":"17","pass":33},{"p":"Gabriel Sara","x":59.4,"y":44.3,"n":15,"num":"8","pass":7},{"p":"Ismail Jakobs","x":25.6,"y":42.8,"n":51,"num":"4","pass":36},{"p":"Leroy Sané","x":56.0,"y":13.5,"n":17,"num":"10","pass":7},{"p":"Lucas Torreira","x":39.1,"y":37.4,"n":32,"num":"34","pass":13},{"p":"Mario Lemina","x":54.2,"y":25.0,"n":22,"num":"99","pass":9},{"p":"Rafael Leão","x":55.8,"y":50.6,"n":47,"num":"27","pass":21},{"p":"Victor Osimhen","x":57.9,"y":32.1,"n":25,"num":"45","pass":3},{"p":"Yunus Akgün","x":42.0,"y":14.4,"n":18,"num":"11","pass":8}],"edges":[{"a":"Eren Elmalı","b":"Rafael Leão","w":15},{"a":"Davinson Sánchez","b":"Ismail Jakobs","w":14},{"a":"Eren Elmalı","b":"Ismail Jakobs","w":12},{"a":"Davinson Sánchez","b":"Lucas Torreira","w":8},{"a":"Barış Alper Yılmaz","b":"Davinson Sánchez","w":7},{"a":"Barış Alper Yılmaz","b":"Yunus Akgün","w":7},{"a":"Ismail Jakobs","b":"Lucas Torreira","w":6},{"a":"Davinson Sánchez","b":"Yunus Akgün","w":4},{"a":"Ismail Jakobs","b":"Rafael Leão","w":4},{"a":"Barış Alper Yılmaz","b":"Lucas Torreira","w":3},{"a":"Aleksei Batrakov","b":"Eren Elmalı","w":3},{"a":"Aleksei Batrakov","b":"Ismail Jakobs","w":3},{"a":"Victor Osimhen","b":"Yunus Akgün","w":3},{"a":"Aleksei Batrakov","b":"Rafael Leão","w":3},{"a":"Leroy Sané","b":"Lucas Torreira","w":3},{"a":"Gabriel Sara","b":"Leroy Sané","w":3},{"a":"Leroy Sané","b":"Rafael Leão","w":3},{"a":"Gabriel Sara","b":"Rafael Leão","w":3}],"linked":156,"passes":204},"lil":{"nodes":[{"p":"Alexsandro","x":22.1,"y":41.7,"n":65,"num":"4","pass":46},{"p":"Ayase Ueda","x":57.4,"y":25.6,"n":27,"num":"18","pass":10},{"p":"Benjamin André","x":41.9,"y":34.3,"n":73,"num":"21","pass":45},{"p":"Dilane Bakwa","x":56.8,"y":13.8,"n":41,"num":"7","pass":24},{"p":"Hákon Arnar Haraldsson","x":44.1,"y":30.8,"n":44,"num":"10","pass":17},{"p":"Maxima Adeagan Goffi","x":33.1,"y":14.4,"n":47,"num":"38","pass":26},{"p":"Nabil Bentaleb","x":29.9,"y":34.2,"n":52,"num":"6","pass":34},{"p":"Nathan Ngoy","x":27.4,"y":24.1,"n":66,"num":"3","pass":56},{"p":"Ngalayel Mukau","x":48.2,"y":19.4,"n":30,"num":"17","pass":15},{"p":"Osame Sahraoui","x":45.3,"y":38.7,"n":26,"num":"11","pass":18},{"p":"Romain Perraud","x":30.9,"y":63.0,"n":31,"num":"15","pass":15}],"edges":[{"a":"Alexsandro","b":"Nathan Ngoy","w":22},{"a":"Benjamin André","b":"Nabil Bentaleb","w":16},{"a":"Nabil Bentaleb","b":"Nathan Ngoy","w":14},{"a":"Maxima Adeagan Goffi","b":"Nathan Ngoy","w":14},{"a":"Benjamin André","b":"Nathan Ngoy","w":10},{"a":"Alexsandro","b":"Nabil Bentaleb","w":10},{"a":"Benjamin André","b":"Osame Sahraoui","w":10},{"a":"Alexsandro","b":"Benjamin André","w":9},{"a":"Dilane Bakwa","b":"Nathan Ngoy","w":7},{"a":"Dilane Bakwa","b":"Ngalayel Mukau","w":7},{"a":"Benjamin André","b":"Romain Perraud","w":6},{"a":"Alexsandro","b":"Romain Perraud","w":6},{"a":"Dilane Bakwa","b":"Maxima Adeagan Goffi","w":5},{"a":"Ayase Ueda","b":"Dilane Bakwa","w":5},{"a":"Benjamin André","b":"Dilane Bakwa","w":5},{"a":"Alexsandro","b":"Maxima Adeagan Goffi","w":5},{"a":"Benjamin André","b":"Maxima Adeagan Goffi","w":4},{"a":"Dilane Bakwa","b":"Nabil Bentaleb","w":4},{"a":"Benjamin André","b":"Ngalayel Mukau","w":4},{"a":"Maxima Adeagan Goffi","b":"Nabil Bentaleb","w":4},{"a":"Dilane Bakwa","b":"Hákon Arnar Haraldsson","w":4},{"a":"Nathan Ngoy","b":"Ngalayel Mukau","w":4},{"a":"Nathan Ngoy","b":"Osame Sahraoui","w":4},{"a":"Nabil Bentaleb","b":"Romain Perraud","w":3},{"a":"Hákon Arnar Haraldsson","b":"Nathan Ngoy","w":3},{"a":"Benjamin André","b":"Hákon Arnar Haraldsson","w":3},{"a":"Hákon Arnar Haraldsson","b":"Romain Perraud","w":3},{"a":"Hákon Arnar Haraldsson","b":"Nabil Bentaleb","w":3},{"a":"Alexsandro","b":"Dilane Bakwa","w":3},{"a":"Hákon Arnar Haraldsson","b":"Maxima Adeagan Goffi","w":3},{"a":"Ayase Ueda","b":"Osame Sahraoui","w":3},{"a":"Osame Sahraoui","b":"Romain Perraud","w":3}],"linked":266,"passes":329}},"team":{"n":36,"axes":[{"k":"xg","l":"xG üretimi","hb":1},{"k":"shots","l":"Şut","hb":1},{"k":"oxg","l":"Verilen xG","hb":0,"r":"Az xG verme"},{"k":"poss","l":"Topla oynama","hb":1},{"k":"ppda","l":"PPDA","hb":0,"r":"Pres yoğunluğu"},{"k":"reco","l":"Rakip yarıda top kazanma","hb":1},{"k":"counter","l":"Kontratak","hb":1},{"k":"lost_own","l":"Kendi yarısında kayıp","hb":0,"r":"Kendi yarısında az kayıp"}],"teams":{"GAL":[{"k":"xg","v":1.87,"pct":20},{"k":"shots","v":12,"pct":4},{"k":"oxg","v":3.88,"pct":31},{"k":"poss","v":0.46,"pct":37},{"k":"ppda","v":8.09,"pct":43},{"k":"reco","v":21,"pct":51},{"k":"counter","v":23,"pct":50},{"k":"lost_own","v":22,"pct":70}],"LIL":[{"k":"xg","v":1.28,"pct":3},{"k":"shots","v":10,"pct":0},{"k":"oxg","v":3.57,"pct":43},{"k":"poss","v":0.44,"pct":21},{"k":"ppda","v":14.73,"pct":3},{"k":"reco","v":13,"pct":4},{"k":"counter","v":14,"pct":6},{"k":"lost_own","v":41,"pct":3}]}},"players":{"min":90,"groups":{"Santrfor":{"axes":["xG","Şut","xA","Kilit pas","Son üçte bire giriş","Hava topu %","Başarılı çalım","Top kazanma"],"n":39},"Hücum orta saha / kanat":{"axes":["xG","xA","Kilit pas","Ceza sahasına pas","Başarılı çalım","Son üçte bire giriş","Top kazanma","Az top kaybı"],"n":83},"Ön libero / merkez":{"axes":["Progresif pas","Pas isabeti %","İleri pas (son üçte bir)","Kilit pas","Top kesme","Top kazanma","Savunma ikilisi %","Az top kaybı"],"n":95},"Bek":{"axes":["Progresif pas","İsabetli orta","Kilit pas","Son üçte bire giriş","Top kazanma","Başarılı müdahale","Savunma ikilisi %","Kendi yarısında az kayıp"],"n":85},"Stoper":{"axes":["Progresif pas","Pas isabeti %","İleri pas (son üçte bir)","Top kesme","Top kazanma","Savunma ikilisi %","Hava topu %","Kendi yarısında az kayıp"],"n":85}},"players":[{"p":"Ayase Ueda","team":"b","pos":"CF","grp":"Santrfor","min":156,"axes":[{"a":"xG","v":0.32,"pct":55},{"a":"Şut","v":1.15,"pct":32},{"a":"xA","v":0.02,"pct":29},{"a":"Kilit pas","v":0.0,"pct":22},{"a":"Son üçte bire giriş","v":0.58,"pct":27},{"a":"Hava topu %","v":0.6,"pct":91},{"a":"Başarılı çalım","v":0.58,"pct":35},{"a":"Top kazanma","v":0.58,"pct":46}]},{"p":"Victor Osimhen","team":"a","pos":"CF","grp":"Santrfor","min":96,"axes":[{"a":"xG","v":0.0,"pct":8},{"a":"Şut","v":0.0,"pct":8},{"a":"xA","v":0.0,"pct":9},{"a":"Kilit pas","v":0.94,"pct":68},{"a":"Son üçte bire giriş","v":0.0,"pct":9},{"a":"Hava topu %","v":0.25,"pct":42},{"a":"Başarılı çalım","v":0.0,"pct":17},{"a":"Top kazanma","v":0.0,"pct":17}]},{"p":"Yunus Akgün","team":"a","pos":"LAM","grp":"Hücum orta saha / kanat","min":146,"axes":[{"a":"xG","v":0.13,"pct":36},{"a":"xA","v":0.18,"pct":36},{"a":"Kilit pas","v":0.62,"pct":27},{"a":"Ceza sahasına pas","v":1.85,"pct":45},{"a":"Başarılı çalım","v":1.23,"pct":44},{"a":"Son üçte bire giriş","v":4.32,"pct":75},{"a":"Top kazanma","v":0.0,"pct":5},{"a":"Az top kaybı","v":4.32,"pct":91}]},{"p":"Rafael Leão","team":"a","pos":"LAM","grp":"Hücum orta saha / kanat","min":133,"axes":[{"a":"xG","v":0.0,"pct":4},{"a":"xA","v":0.23,"pct":45},{"a":"Kilit pas","v":1.35,"pct":49},{"a":"Ceza sahasına pas","v":0.68,"pct":14},{"a":"Başarılı çalım","v":2.03,"pct":64},{"a":"Son üçte bire giriş","v":1.35,"pct":16},{"a":"Top kazanma","v":0.0,"pct":5},{"a":"Az top kaybı","v":8.12,"pct":27}]},{"p":"Aleksei Batrakov","team":"a","pos":"CAM","grp":"Hücum orta saha / kanat","min":126,"axes":[{"a":"xG","v":0.06,"pct":14},{"a":"xA","v":0.11,"pct":26},{"a":"Kilit pas","v":0.71,"pct":33},{"a":"Ceza sahasına pas","v":0.71,"pct":17},{"a":"Başarılı çalım","v":0.0,"pct":8},{"a":"Son üçte bire giriş","v":2.14,"pct":36},{"a":"Top kazanma","v":1.43,"pct":45},{"a":"Az top kaybı","v":4.29,"pct":93}]},{"p":"Gabriel Sara","team":"a","pos":"CAM","grp":"Hücum orta saha / kanat","min":121,"axes":[{"a":"xG","v":0.14,"pct":40},{"a":"xA","v":0.09,"pct":21},{"a":"Kilit pas","v":1.49,"pct":55},{"a":"Ceza sahasına pas","v":2.98,"pct":70},{"a":"Başarılı çalım","v":0.74,"pct":30},{"a":"Son üçte bire giriş","v":1.49,"pct":19},{"a":"Top kazanma","v":1.49,"pct":46},{"a":"Az top kaybı","v":8.18,"pct":25}]},{"p":"Dilane Bakwa","team":"b","pos":"RAM","grp":"Hücum orta saha / kanat","min":116,"axes":[{"a":"xG","v":0.15,"pct":43},{"a":"xA","v":0.22,"pct":42},{"a":"Kilit pas","v":0.78,"pct":34},{"a":"Ceza sahasına pas","v":2.33,"pct":56},{"a":"Başarılı çalım","v":0.0,"pct":8},{"a":"Son üçte bire giriş","v":1.55,"pct":20},{"a":"Top kazanma","v":0.0,"pct":5},{"a":"Az top kaybı","v":7.76,"pct":36}]},{"p":"Leroy Sané","team":"a","pos":"RAM","grp":"Hücum orta saha / kanat","min":94,"axes":[{"a":"xG","v":0.15,"pct":45},{"a":"xA","v":0.1,"pct":22},{"a":"Kilit pas","v":0.0,"pct":10},{"a":"Ceza sahasına pas","v":1.91,"pct":49},{"a":"Başarılı çalım","v":1.91,"pct":60},{"a":"Son üçte bire giriş","v":1.91,"pct":26},{"a":"Top kazanma","v":0.96,"pct":28},{"a":"Az top kaybı","v":6.7,"pct":55}]},{"p":"Hákon Arnar Haraldsson","team":"b","pos":"LCM","grp":"Ön libero / merkez","min":191,"axes":[{"a":"Progresif pas","v":2.36,"pct":6},{"a":"Pas isabeti %","v":0.86,"pct":30},{"a":"İleri pas (son üçte bir)","v":1.88,"pct":23},{"a":"Kilit pas","v":0.94,"pct":65},{"a":"Top kesme","v":1.41,"pct":10},{"a":"Top kazanma","v":0.94,"pct":4},{"a":"Savunma ikilisi %","v":0.11,"pct":3},{"a":"Az top kaybı","v":8.01,"pct":7}]},{"p":"Benjamin André","team":"b","pos":"LCM","grp":"Ön libero / merkez","min":172,"axes":[{"a":"Progresif pas","v":4.19,"pct":32},{"a":"Pas isabeti %","v":0.82,"pct":19},{"a":"İleri pas (son üçte bir)","v":2.09,"pct":27},{"a":"Kilit pas","v":0.0,"pct":18},{"a":"Top kesme","v":5.76,"pct":79},{"a":"Top kazanma","v":4.71,"pct":71},{"a":"Savunma ikilisi %","v":0.5,"pct":45},{"a":"Az top kaybı","v":8.37,"pct":6}]},{"p":"Lucas Torreira","team":"a","pos":"RCDM","grp":"Ön libero / merkez","min":169,"axes":[{"a":"Progresif pas","v":5.86,"pct":48},{"a":"Pas isabeti %","v":0.91,"pct":66},{"a":"İleri pas (son üçte bir)","v":3.73,"pct":65},{"a":"Kilit pas","v":0.53,"pct":47},{"a":"Top kesme","v":3.2,"pct":35},{"a":"Top kazanma","v":3.73,"pct":55},{"a":"Savunma ikilisi %","v":0.5,"pct":45},{"a":"Az top kaybı","v":3.2,"pct":68}]},{"p":"Ngalayel Mukau","team":"b","pos":"RCM","grp":"Ön libero / merkez","min":123,"axes":[{"a":"Progresif pas","v":2.93,"pct":14},{"a":"Pas isabeti %","v":0.94,"pct":85},{"a":"İleri pas (son üçte bir)","v":1.46,"pct":16},{"a":"Kilit pas","v":0.0,"pct":18},{"a":"Top kesme","v":4.39,"pct":53},{"a":"Top kazanma","v":4.39,"pct":66},{"a":"Savunma ikilisi %","v":0.6,"pct":64},{"a":"Az top kaybı","v":5.85,"pct":25}]},{"p":"Nabil Bentaleb","team":"b","pos":"CDM","grp":"Ön libero / merkez","min":120,"axes":[{"a":"Progresif pas","v":3.75,"pct":26},{"a":"Pas isabeti %","v":0.91,"pct":72},{"a":"İleri pas (son üçte bir)","v":3.75,"pct":66},{"a":"Kilit pas","v":0.0,"pct":18},{"a":"Top kesme","v":6.0,"pct":85},{"a":"Top kazanma","v":6.0,"pct":86},{"a":"Savunma ikilisi %","v":0.8,"pct":94},{"a":"Az top kaybı","v":3.75,"pct":60}]},{"p":"Eren Elmalı","team":"a","pos":"LB","grp":"Bek","min":193,"axes":[{"a":"Progresif pas","v":3.26,"pct":28},{"a":"İsabetli orta","v":0.0,"pct":25},{"a":"Kilit pas","v":0.47,"pct":37},{"a":"Son üçte bire giriş","v":2.33,"pct":43},{"a":"Top kazanma","v":4.66,"pct":51},{"a":"Başarılı müdahale","v":2.8,"pct":70},{"a":"Savunma ikilisi %","v":0.67,"pct":71},{"a":"Kendi yarısında az kayıp","v":0.93,"pct":54}]},{"p":"Romain Perraud","team":"b","pos":"LB","grp":"Bek","min":167,"axes":[{"a":"Progresif pas","v":2.16,"pct":11},{"a":"İsabetli orta","v":0.0,"pct":25},{"a":"Kilit pas","v":0.0,"pct":18},{"a":"Son üçte bire giriş","v":1.62,"pct":32},{"a":"Top kazanma","v":4.31,"pct":48},{"a":"Başarılı müdahale","v":1.62,"pct":34},{"a":"Savunma ikilisi %","v":0.57,"pct":36},{"a":"Kendi yarısında az kayıp","v":0.54,"pct":71}]},{"p":"Barış Alper Yılmaz","team":"a","pos":"RB","grp":"Bek","min":166,"axes":[{"a":"Progresif pas","v":2.71,"pct":19},{"a":"İsabetli orta","v":0.0,"pct":25},{"a":"Kilit pas","v":0.0,"pct":18},{"a":"Son üçte bire giriş","v":0.0,"pct":3},{"a":"Top kazanma","v":3.8,"pct":35},{"a":"Başarılı müdahale","v":2.71,"pct":69},{"a":"Savunma ikilisi %","v":0.67,"pct":71},{"a":"Kendi yarısında az kayıp","v":0.0,"pct":90}]},{"p":"Roland Sallai","team":"a","pos":"RB","grp":"Bek","min":123,"axes":[{"a":"Progresif pas","v":13.17,"pct":98},{"a":"İsabetli orta","v":0.0,"pct":25},{"a":"Kilit pas","v":0.0,"pct":18},{"a":"Son üçte bire giriş","v":5.85,"pct":90},{"a":"Top kazanma","v":5.12,"pct":65},{"a":"Başarılı müdahale","v":1.46,"pct":30},{"a":"Savunma ikilisi %","v":0.33,"pct":5},{"a":"Kendi yarısında az kayıp","v":0.0,"pct":90}]},{"p":"Tiago Santos","team":"b","pos":"RB","grp":"Bek","min":97,"axes":[{"a":"Progresif pas","v":8.35,"pct":89},{"a":"İsabetli orta","v":0.0,"pct":25},{"a":"Kilit pas","v":1.86,"pct":88},{"a":"Son üçte bire giriş","v":2.78,"pct":51},{"a":"Top kazanma","v":4.64,"pct":50},{"a":"Başarılı müdahale","v":1.86,"pct":38},{"a":"Savunma ikilisi %","v":0.8,"pct":91},{"a":"Kendi yarısında az kayıp","v":0.0,"pct":90}]},{"p":"Maxima Adeagan Goffi","team":"b","pos":"RB","grp":"Bek","min":94,"axes":[{"a":"Progresif pas","v":0.0,"pct":1},{"a":"İsabetli orta","v":0.0,"pct":25},{"a":"Kilit pas","v":0.0,"pct":18},{"a":"Son üçte bire giriş","v":0.0,"pct":3},{"a":"Top kazanma","v":4.79,"pct":58},{"a":"Başarılı müdahale","v":3.83,"pct":93},{"a":"Savunma ikilisi %","v":0.62,"pct":59},{"a":"Kendi yarısında az kayıp","v":1.91,"pct":15}]},{"p":"Ismail Jakobs","team":"a","pos":"LCB","grp":"Stoper","min":193,"axes":[{"a":"Progresif pas","v":6.53,"pct":41},{"a":"Pas isabeti %","v":0.85,"pct":14},{"a":"İleri pas (son üçte bir)","v":1.4,"pct":14},{"a":"Top kesme","v":8.39,"pct":77},{"a":"Top kazanma","v":6.99,"pct":61},{"a":"Savunma ikilisi %","v":0.47,"pct":19},{"a":"Hava topu %","v":0.5,"pct":28},{"a":"Kendi yarısında az kayıp","v":1.87,"pct":11}]},{"p":"Davinson Sánchez","team":"a","pos":"RCB","grp":"Stoper","min":193,"axes":[{"a":"Progresif pas","v":6.53,"pct":41},{"a":"Pas isabeti %","v":0.9,"pct":38},{"a":"İleri pas (son üçte bir)","v":3.26,"pct":51},{"a":"Top kesme","v":7.46,"pct":62},{"a":"Top kazanma","v":7.93,"pct":75},{"a":"Savunma ikilisi %","v":0.54,"pct":28},{"a":"Hava topu %","v":0.2,"pct":6},{"a":"Kendi yarısında az kayıp","v":0.93,"pct":42}]},{"p":"Nathan Ngoy","team":"b","pos":"RCB","grp":"Stoper","min":191,"axes":[{"a":"Progresif pas","v":7.07,"pct":52},{"a":"Pas isabeti %","v":0.95,"pct":79},{"a":"İleri pas (son üçte bir)","v":1.88,"pct":25},{"a":"Top kesme","v":7.54,"pct":64},{"a":"Top kazanma","v":4.71,"pct":22},{"a":"Savunma ikilisi %","v":0.8,"pct":82},{"a":"Hava topu %","v":1.0,"pct":94},{"a":"Kendi yarısında az kayıp","v":0.94,"pct":36}]},{"p":"Alexsandro","team":"b","pos":"LCB","grp":"Stoper","min":191,"axes":[{"a":"Progresif pas","v":7.54,"pct":59},{"a":"Pas isabeti %","v":0.93,"pct":56},{"a":"İleri pas (son üçte bir)","v":3.3,"pct":54},{"a":"Top kesme","v":8.48,"pct":79},{"a":"Top kazanma","v":8.95,"pct":82},{"a":"Savunma ikilisi %","v":0.83,"pct":87},{"a":"Hava topu %","v":0.78,"pct":66},{"a":"Kendi yarısında az kayıp","v":1.41,"pct":17}]}],"start":"Hücum orta saha / kanat"}}</script>
+<script type="application/json" id="hpc-data" is:inline>{"colors":{"a":"#F2B705","b":"#EEF1F5","opp":"#8A7470","ink":"#F2EEE6","mute":"#C9BBB4","line":"#8A5A5A"},"names":{"a":"Galatasaray","b":"Lille"},"keys":{"a":"GAL","b":"LIL"},"momMeta":{"gs":{"label":"Galatasaray 1–4 Barcelona","team":"Galatasaray","opp":"Barcelona","teamKey":"Galatasaray","teamColor":"#F2B705","read":"Galatasaray 31 dilimin yalnız 5'inde son üçte birde Barcelona'dan daha çok topla oynadı. Barcelona'nın dört golü de kendi baskın olduğu dilimlerde geldi. Galatasaray'ın golü de (Batrakov, 27') gri alanın içinden çıktı: baskı yokken gelen tek vuruş."},"lil":{"label":"Arsenal 3–0 Lille","team":"Lille","opp":"Arsenal","teamKey":"LOSC Lille","teamColor":"#EEF1F5","read":"Lille'in üç dakikalık ham olay farkı bazı dilimlerde pozitif olsa da üç dilimlik hareketli ortalama boyunca negatif kaldı. Bu gösterge topla oynama süresini değil son üçte birde kaydedilen aksiyon farkını ölçer. Arsenal'in üç golü 63. ile 71. dakika arasında, baskının en uzun sürdüğü bölümde geldi."}},"netMeta":{"gs":{"label":"Galatasaray · Barcelona maçı","team":"Galatasaray","color":"#F2B705","read":"Galatasaray'ın en sık bağlantısı sol kanatta: Eren Elmalı–Rafael Leão (15). Stoperler Sánchez–Jakobs (14) dağıtımın ikinci ayağı. Bütün maçta 204 isabetli pas var; ağ seyrek, top az el değiştirdi. Bir oyuncuya dokun: yalnız onun bağlantıları kalır."},"lil":{"label":"Lille · Arsenal maçı","team":"Lille","color":"#EEF1F5","read":"Lille'de top en çok iki stoper arasında döndü: Alexsandro–Ngoy 22 bağlantı. En çok pası da Ngoy verdi (56). Dolaşım geride kaldı, ileri hatta güçlü bir bağ oluşmadı. Bir oyuncuya dokun: yalnız onun bağlantıları kalır."}},"mom":{"gs":{"bin":3,"v":[-2.33,-1.0,-1.67,-4.33,-9.0,-7.33,-5.33,-4.0,-3.67,-1.33,0.67,-1.33,-6.33,-8.67,-12.67,-9.67,-12.0,-6.33,-7.33,-6.0,-6.0,-4.0,-0.67,0.67,0.67,0.67,-3.33,-5.33,-4.67,-1.67,0.67,0.0],"raw":[-4.0,-3.0,4.0,-6.0,-11.0,-10.0,-1.0,-5.0,-6.0,0.0,2.0,0.0,-6.0,-13.0,-7.0,-18.0,-4.0,-14.0,-1.0,-7.0,-10.0,-1.0,-1.0,0.0,3.0,-1.0,0.0,-9.0,-7.0,2.0,0.0,0.0],"goals":[{"t":"Galatasaray","m":26.9,"p":"Aleksei Batrakov"},{"t":"FC Barcelona","m":42.0,"p":"João Cancelo"},{"t":"FC Barcelona","m":49.5,"p":"Fermín López"},{"t":"FC Barcelona","m":52.6,"p":"Anthony Gordon"},{"t":"FC Barcelona","m":64.8,"p":"Karim Adeyemi"}],"shots":{"Galatasaray":[26.9,36.6,73.4],"FC Barcelona":[11.8,15.7,16.9,23.0,24.4,42.0,44.0,45.1,46.6,46.0,49.5,51.4,52.6,64.8,68.1,75.6,82.5,83.9]}},"lil":{"bin":3,"v":[-3.67,-4.0,-3.0,-6.0,-5.67,-9.67,-6.33,-10.0,-6.0,-4.67,-9.67,-10.0,-10.67,-3.0,-5.67,-13.67,-14.0,-15.0,-7.33,-11.33,-8.0,-9.0,-10.0,-6.0,-8.0,-5.33,-13.0,-9.67,-9.0,-4.67,-4.33,-1.33],"raw":[-7.0,-4.0,-1.0,-4.0,-13.0,0.0,-16.0,-3.0,-11.0,-4.0,1.0,-26.0,-5.0,-1.0,-3.0,-13.0,-25.0,-4.0,-16.0,-2.0,-16.0,-6.0,-5.0,-19.0,6.0,-11.0,-11.0,-17.0,-1.0,-9.0,-4.0,0.0],"goals":[{"t":"Arsenal FC","m":63.1,"p":"Jurriën Timber"},{"t":"Arsenal FC","m":66.0,"p":"Eberechi Eze"},{"t":"Arsenal FC","m":70.5,"p":"Bukayo Saka"}],"shots":{"LOSC Lille":[73.6],"Arsenal FC":[18.9,20.9,34.2,36.7,45.0,48.7,63.1,66.0,69.8,70.5,76.6]}}},"net":{"gs":{"nodes":[{"p":"Aleksei Batrakov","x":59.4,"y":34.9,"n":20,"num":"83","pass":9},{"p":"Barış Alper Yılmaz","x":35.3,"y":9.4,"n":37,"num":"53","pass":16},{"p":"Davinson Sánchez","x":26.0,"y":24.1,"n":54,"num":"6","pass":28},{"p":"Eren Elmalı","x":43.1,"y":59.9,"n":54,"num":"17","pass":33},{"p":"Gabriel Sara","x":59.4,"y":44.3,"n":15,"num":"8","pass":7},{"p":"Ismail Jakobs","x":25.6,"y":42.8,"n":51,"num":"4","pass":36},{"p":"Leroy Sané","x":56.0,"y":13.5,"n":17,"num":"10","pass":7},{"p":"Lucas Torreira","x":39.1,"y":37.4,"n":32,"num":"34","pass":13},{"p":"Mario Lemina","x":54.2,"y":25.0,"n":22,"num":"99","pass":9},{"p":"Rafael Leão","x":55.8,"y":50.6,"n":47,"num":"27","pass":21},{"p":"Victor Osimhen","x":57.9,"y":32.1,"n":25,"num":"45","pass":3},{"p":"Yunus Akgün","x":42.0,"y":14.4,"n":18,"num":"11","pass":8}],"edges":[{"a":"Eren Elmalı","b":"Rafael Leão","w":15},{"a":"Davinson Sánchez","b":"Ismail Jakobs","w":14},{"a":"Eren Elmalı","b":"Ismail Jakobs","w":12},{"a":"Davinson Sánchez","b":"Lucas Torreira","w":8},{"a":"Barış Alper Yılmaz","b":"Davinson Sánchez","w":7},{"a":"Barış Alper Yılmaz","b":"Yunus Akgün","w":7},{"a":"Ismail Jakobs","b":"Lucas Torreira","w":6},{"a":"Davinson Sánchez","b":"Yunus Akgün","w":4},{"a":"Ismail Jakobs","b":"Rafael Leão","w":4},{"a":"Barış Alper Yılmaz","b":"Lucas Torreira","w":3},{"a":"Aleksei Batrakov","b":"Eren Elmalı","w":3},{"a":"Aleksei Batrakov","b":"Ismail Jakobs","w":3},{"a":"Victor Osimhen","b":"Yunus Akgün","w":3},{"a":"Aleksei Batrakov","b":"Rafael Leão","w":3},{"a":"Leroy Sané","b":"Lucas Torreira","w":3},{"a":"Gabriel Sara","b":"Leroy Sané","w":3},{"a":"Leroy Sané","b":"Rafael Leão","w":3},{"a":"Gabriel Sara","b":"Rafael Leão","w":3}],"linked":null,"passes":204},"lil":{"nodes":[{"p":"Alexsandro","x":22.1,"y":41.7,"n":65,"num":"4","pass":46},{"p":"Ayase Ueda","x":57.4,"y":25.6,"n":27,"num":"18","pass":10},{"p":"Benjamin André","x":41.9,"y":34.3,"n":73,"num":"21","pass":45},{"p":"Dilane Bakwa","x":56.8,"y":13.8,"n":41,"num":"7","pass":24},{"p":"Hákon Arnar Haraldsson","x":44.1,"y":30.8,"n":44,"num":"10","pass":17},{"p":"Maxima Adeagan Goffi","x":33.1,"y":14.4,"n":47,"num":"38","pass":26},{"p":"Nabil Bentaleb","x":29.9,"y":34.2,"n":52,"num":"6","pass":34},{"p":"Nathan Ngoy","x":27.4,"y":24.1,"n":66,"num":"3","pass":56},{"p":"Ngalayel Mukau","x":48.2,"y":19.4,"n":30,"num":"17","pass":15},{"p":"Osame Sahraoui","x":45.3,"y":38.7,"n":26,"num":"11","pass":18},{"p":"Romain Perraud","x":30.9,"y":63.0,"n":31,"num":"15","pass":15}],"edges":[{"a":"Alexsandro","b":"Nathan Ngoy","w":22},{"a":"Benjamin André","b":"Nabil Bentaleb","w":16},{"a":"Nabil Bentaleb","b":"Nathan Ngoy","w":14},{"a":"Maxima Adeagan Goffi","b":"Nathan Ngoy","w":14},{"a":"Benjamin André","b":"Nathan Ngoy","w":10},{"a":"Alexsandro","b":"Nabil Bentaleb","w":10},{"a":"Benjamin André","b":"Osame Sahraoui","w":10},{"a":"Alexsandro","b":"Benjamin André","w":9},{"a":"Dilane Bakwa","b":"Nathan Ngoy","w":7},{"a":"Dilane Bakwa","b":"Ngalayel Mukau","w":7},{"a":"Benjamin André","b":"Romain Perraud","w":6},{"a":"Alexsandro","b":"Romain Perraud","w":6},{"a":"Dilane Bakwa","b":"Maxima Adeagan Goffi","w":5},{"a":"Ayase Ueda","b":"Dilane Bakwa","w":5},{"a":"Benjamin André","b":"Dilane Bakwa","w":5},{"a":"Alexsandro","b":"Maxima Adeagan Goffi","w":5},{"a":"Benjamin André","b":"Maxima Adeagan Goffi","w":4},{"a":"Dilane Bakwa","b":"Nabil Bentaleb","w":4},{"a":"Benjamin André","b":"Ngalayel Mukau","w":4},{"a":"Maxima Adeagan Goffi","b":"Nabil Bentaleb","w":4},{"a":"Dilane Bakwa","b":"Hákon Arnar Haraldsson","w":4},{"a":"Nathan Ngoy","b":"Ngalayel Mukau","w":4},{"a":"Nathan Ngoy","b":"Osame Sahraoui","w":4},{"a":"Nabil Bentaleb","b":"Romain Perraud","w":3},{"a":"Hákon Arnar Haraldsson","b":"Nathan Ngoy","w":3},{"a":"Benjamin André","b":"Hákon Arnar Haraldsson","w":3},{"a":"Hákon Arnar Haraldsson","b":"Romain Perraud","w":3},{"a":"Hákon Arnar Haraldsson","b":"Nabil Bentaleb","w":3},{"a":"Alexsandro","b":"Dilane Bakwa","w":3},{"a":"Hákon Arnar Haraldsson","b":"Maxima Adeagan Goffi","w":3},{"a":"Ayase Ueda","b":"Osame Sahraoui","w":3},{"a":"Osame Sahraoui","b":"Romain Perraud","w":3}],"linked":null,"passes":329}},"team":{"n":36,"axes":[{"k":"xg","l":"xG üretimi","hb":1},{"k":"shots","l":"Şut","hb":1},{"k":"oxg","l":"Verilen xG","hb":0,"r":"Az xG verme"},{"k":"poss","l":"Topla oynama","hb":1},{"k":"ppda","l":"PPDA","hb":0,"r":"Pres yoğunluğu"},{"k":"reco","l":"Rakip yarıda top kazanma","hb":1},{"k":"counter","l":"Kontratak","hb":1},{"k":"lost_own","l":"Kendi yarısında kayıp","hb":0,"r":"Kendi yarısında az kayıp"}],"teams":{"GAL":[{"k":"xg","v":1.87,"pct":20},{"k":"shots","v":12,"pct":4},{"k":"oxg","v":3.88,"pct":31},{"k":"poss","v":0.46,"pct":37},{"k":"ppda","v":8.09,"pct":43},{"k":"reco","v":21,"pct":51},{"k":"counter","v":23,"pct":50},{"k":"lost_own","v":22,"pct":70}],"LIL":[{"k":"xg","v":1.28,"pct":3},{"k":"shots","v":10,"pct":0},{"k":"oxg","v":3.57,"pct":43},{"k":"poss","v":0.44,"pct":21},{"k":"ppda","v":14.73,"pct":3},{"k":"reco","v":13,"pct":4},{"k":"counter","v":14,"pct":6},{"k":"lost_own","v":41,"pct":3}]}},"players":{"min":90,"groups":{"Santrfor":{"axes":["xG","Şut","xA","Kilit pas","Son üçte bire giriş","Hava topu %","Başarılı çalım","Top kazanma"],"n":39},"Hücum orta saha / kanat":{"axes":["xG","xA","Kilit pas","Ceza sahasına pas","Başarılı çalım","Son üçte bire giriş","Top kazanma","Az top kaybı"],"n":83},"Ön libero / merkez":{"axes":["Progresif pas","Pas isabeti %","İleri pas (son üçte bir)","Kilit pas","Top kesme","Top kazanma","Savunma ikilisi %","Az top kaybı"],"n":95},"Bek":{"axes":["Progresif pas","İsabetli orta","Kilit pas","Son üçte bire giriş","Top kazanma","Başarılı müdahale","Savunma ikilisi %","Kendi yarısında az kayıp"],"n":85},"Stoper":{"axes":["Progresif pas","Pas isabeti %","İleri pas (son üçte bir)","Top kesme","Top kazanma","Savunma ikilisi %","Hava topu %","Kendi yarısında az kayıp"],"n":85}},"players":[{"p":"Ayase Ueda","team":"b","pos":"CF","grp":"Santrfor","min":156,"axes":[{"a":"xG","v":0.32,"pct":55},{"a":"Şut","v":1.15,"pct":32},{"a":"xA","v":0.02,"pct":29},{"a":"Kilit pas","v":0.0,"pct":22},{"a":"Son üçte bire giriş","v":0.58,"pct":27},{"a":"Hava topu %","v":0.6,"pct":91},{"a":"Başarılı çalım","v":0.58,"pct":35},{"a":"Top kazanma","v":0.58,"pct":46}]},{"p":"Victor Osimhen","team":"a","pos":"CF","grp":"Santrfor","min":96,"axes":[{"a":"xG","v":0.0,"pct":8},{"a":"Şut","v":0.0,"pct":8},{"a":"xA","v":0.0,"pct":9},{"a":"Kilit pas","v":0.94,"pct":68},{"a":"Son üçte bire giriş","v":0.0,"pct":9},{"a":"Hava topu %","v":0.25,"pct":42},{"a":"Başarılı çalım","v":0.0,"pct":17},{"a":"Top kazanma","v":0.0,"pct":17}]},{"p":"Yunus Akgün","team":"a","pos":"LAM","grp":"Hücum orta saha / kanat","min":146,"axes":[{"a":"xG","v":0.13,"pct":36},{"a":"xA","v":0.18,"pct":36},{"a":"Kilit pas","v":0.62,"pct":27},{"a":"Ceza sahasına pas","v":1.85,"pct":45},{"a":"Başarılı çalım","v":1.23,"pct":44},{"a":"Son üçte bire giriş","v":4.32,"pct":75},{"a":"Top kazanma","v":0.0,"pct":5},{"a":"Az top kaybı","v":4.32,"pct":91}]},{"p":"Rafael Leão","team":"a","pos":"LAM","grp":"Hücum orta saha / kanat","min":133,"axes":[{"a":"xG","v":0.0,"pct":4},{"a":"xA","v":0.23,"pct":45},{"a":"Kilit pas","v":1.35,"pct":49},{"a":"Ceza sahasına pas","v":0.68,"pct":14},{"a":"Başarılı çalım","v":2.03,"pct":64},{"a":"Son üçte bire giriş","v":1.35,"pct":16},{"a":"Top kazanma","v":0.0,"pct":5},{"a":"Az top kaybı","v":8.12,"pct":27}]},{"p":"Aleksei Batrakov","team":"a","pos":"CAM","grp":"Hücum orta saha / kanat","min":126,"axes":[{"a":"xG","v":0.06,"pct":14},{"a":"xA","v":0.11,"pct":26},{"a":"Kilit pas","v":0.71,"pct":33},{"a":"Ceza sahasına pas","v":0.71,"pct":17},{"a":"Başarılı çalım","v":0.0,"pct":8},{"a":"Son üçte bire giriş","v":2.14,"pct":36},{"a":"Top kazanma","v":1.43,"pct":45},{"a":"Az top kaybı","v":4.29,"pct":93}]},{"p":"Gabriel Sara","team":"a","pos":"CAM","grp":"Hücum orta saha / kanat","min":121,"axes":[{"a":"xG","v":0.14,"pct":40},{"a":"xA","v":0.09,"pct":21},{"a":"Kilit pas","v":1.49,"pct":55},{"a":"Ceza sahasına pas","v":2.98,"pct":70},{"a":"Başarılı çalım","v":0.74,"pct":30},{"a":"Son üçte bire giriş","v":1.49,"pct":19},{"a":"Top kazanma","v":1.49,"pct":46},{"a":"Az top kaybı","v":8.18,"pct":25}]},{"p":"Dilane Bakwa","team":"b","pos":"RAM","grp":"Hücum orta saha / kanat","min":116,"axes":[{"a":"xG","v":0.15,"pct":43},{"a":"xA","v":0.22,"pct":42},{"a":"Kilit pas","v":0.78,"pct":34},{"a":"Ceza sahasına pas","v":2.33,"pct":56},{"a":"Başarılı çalım","v":0.0,"pct":8},{"a":"Son üçte bire giriş","v":1.55,"pct":20},{"a":"Top kazanma","v":0.0,"pct":5},{"a":"Az top kaybı","v":7.76,"pct":36}]},{"p":"Leroy Sané","team":"a","pos":"RAM","grp":"Hücum orta saha / kanat","min":94,"axes":[{"a":"xG","v":0.15,"pct":45},{"a":"xA","v":0.1,"pct":22},{"a":"Kilit pas","v":0.0,"pct":10},{"a":"Ceza sahasına pas","v":1.91,"pct":49},{"a":"Başarılı çalım","v":1.91,"pct":60},{"a":"Son üçte bire giriş","v":1.91,"pct":26},{"a":"Top kazanma","v":0.96,"pct":28},{"a":"Az top kaybı","v":6.7,"pct":55}]},{"p":"Hákon Arnar Haraldsson","team":"b","pos":"LCM","grp":"Ön libero / merkez","min":191,"axes":[{"a":"Progresif pas","v":2.36,"pct":6},{"a":"Pas isabeti %","v":0.86,"pct":30},{"a":"İleri pas (son üçte bir)","v":1.88,"pct":23},{"a":"Kilit pas","v":0.94,"pct":65},{"a":"Top kesme","v":1.41,"pct":10},{"a":"Top kazanma","v":0.94,"pct":4},{"a":"Savunma ikilisi %","v":0.11,"pct":3},{"a":"Az top kaybı","v":8.01,"pct":7}]},{"p":"Benjamin André","team":"b","pos":"LCM","grp":"Ön libero / merkez","min":172,"axes":[{"a":"Progresif pas","v":4.19,"pct":32},{"a":"Pas isabeti %","v":0.82,"pct":19},{"a":"İleri pas (son üçte bir)","v":2.09,"pct":27},{"a":"Kilit pas","v":0.0,"pct":18},{"a":"Top kesme","v":5.76,"pct":79},{"a":"Top kazanma","v":4.71,"pct":71},{"a":"Savunma ikilisi %","v":0.5,"pct":45},{"a":"Az top kaybı","v":8.37,"pct":6}]},{"p":"Lucas Torreira","team":"a","pos":"RCDM","grp":"Ön libero / merkez","min":169,"axes":[{"a":"Progresif pas","v":5.86,"pct":48},{"a":"Pas isabeti %","v":0.91,"pct":66},{"a":"İleri pas (son üçte bir)","v":3.73,"pct":65},{"a":"Kilit pas","v":0.53,"pct":47},{"a":"Top kesme","v":3.2,"pct":35},{"a":"Top kazanma","v":3.73,"pct":55},{"a":"Savunma ikilisi %","v":0.5,"pct":45},{"a":"Az top kaybı","v":3.2,"pct":68}]},{"p":"Ngalayel Mukau","team":"b","pos":"RCM","grp":"Ön libero / merkez","min":123,"axes":[{"a":"Progresif pas","v":2.93,"pct":14},{"a":"Pas isabeti %","v":0.94,"pct":85},{"a":"İleri pas (son üçte bir)","v":1.46,"pct":16},{"a":"Kilit pas","v":0.0,"pct":18},{"a":"Top kesme","v":4.39,"pct":53},{"a":"Top kazanma","v":4.39,"pct":66},{"a":"Savunma ikilisi %","v":0.6,"pct":64},{"a":"Az top kaybı","v":5.85,"pct":25}]},{"p":"Nabil Bentaleb","team":"b","pos":"CDM","grp":"Ön libero / merkez","min":120,"axes":[{"a":"Progresif pas","v":3.75,"pct":26},{"a":"Pas isabeti %","v":0.91,"pct":72},{"a":"İleri pas (son üçte bir)","v":3.75,"pct":66},{"a":"Kilit pas","v":0.0,"pct":18},{"a":"Top kesme","v":6.0,"pct":85},{"a":"Top kazanma","v":6.0,"pct":86},{"a":"Savunma ikilisi %","v":0.8,"pct":94},{"a":"Az top kaybı","v":3.75,"pct":60}]},{"p":"Eren Elmalı","team":"a","pos":"LB","grp":"Bek","min":193,"axes":[{"a":"Progresif pas","v":3.26,"pct":28},{"a":"İsabetli orta","v":0.0,"pct":25},{"a":"Kilit pas","v":0.47,"pct":37},{"a":"Son üçte bire giriş","v":2.33,"pct":43},{"a":"Top kazanma","v":4.66,"pct":51},{"a":"Başarılı müdahale","v":2.8,"pct":70},{"a":"Savunma ikilisi %","v":0.67,"pct":71},{"a":"Kendi yarısında az kayıp","v":0.93,"pct":54}]},{"p":"Romain Perraud","team":"b","pos":"LB","grp":"Bek","min":167,"axes":[{"a":"Progresif pas","v":2.16,"pct":11},{"a":"İsabetli orta","v":0.0,"pct":25},{"a":"Kilit pas","v":0.0,"pct":18},{"a":"Son üçte bire giriş","v":1.62,"pct":32},{"a":"Top kazanma","v":4.31,"pct":48},{"a":"Başarılı müdahale","v":1.62,"pct":34},{"a":"Savunma ikilisi %","v":0.57,"pct":36},{"a":"Kendi yarısında az kayıp","v":0.54,"pct":71}]},{"p":"Barış Alper Yılmaz","team":"a","pos":"RB","grp":"Bek","min":166,"axes":[{"a":"Progresif pas","v":2.71,"pct":19},{"a":"İsabetli orta","v":0.0,"pct":25},{"a":"Kilit pas","v":0.0,"pct":18},{"a":"Son üçte bire giriş","v":0.0,"pct":3},{"a":"Top kazanma","v":3.8,"pct":35},{"a":"Başarılı müdahale","v":2.71,"pct":69},{"a":"Savunma ikilisi %","v":0.67,"pct":71},{"a":"Kendi yarısında az kayıp","v":0.0,"pct":90}]},{"p":"Roland Sallai","team":"a","pos":"RB","grp":"Bek","min":123,"axes":[{"a":"Progresif pas","v":13.17,"pct":98},{"a":"İsabetli orta","v":0.0,"pct":25},{"a":"Kilit pas","v":0.0,"pct":18},{"a":"Son üçte bire giriş","v":5.85,"pct":90},{"a":"Top kazanma","v":5.12,"pct":65},{"a":"Başarılı müdahale","v":1.46,"pct":30},{"a":"Savunma ikilisi %","v":0.33,"pct":5},{"a":"Kendi yarısında az kayıp","v":0.0,"pct":90}]},{"p":"Tiago Santos","team":"b","pos":"RB","grp":"Bek","min":97,"axes":[{"a":"Progresif pas","v":8.35,"pct":89},{"a":"İsabetli orta","v":0.0,"pct":25},{"a":"Kilit pas","v":1.86,"pct":88},{"a":"Son üçte bire giriş","v":2.78,"pct":51},{"a":"Top kazanma","v":4.64,"pct":50},{"a":"Başarılı müdahale","v":1.86,"pct":38},{"a":"Savunma ikilisi %","v":0.8,"pct":91},{"a":"Kendi yarısında az kayıp","v":0.0,"pct":90}]},{"p":"Maxima Adeagan Goffi","team":"b","pos":"RB","grp":"Bek","min":94,"axes":[{"a":"Progresif pas","v":0.0,"pct":1},{"a":"İsabetli orta","v":0.0,"pct":25},{"a":"Kilit pas","v":0.0,"pct":18},{"a":"Son üçte bire giriş","v":0.0,"pct":3},{"a":"Top kazanma","v":4.79,"pct":58},{"a":"Başarılı müdahale","v":3.83,"pct":93},{"a":"Savunma ikilisi %","v":0.62,"pct":59},{"a":"Kendi yarısında az kayıp","v":1.91,"pct":15}]},{"p":"Ismail Jakobs","team":"a","pos":"LCB","grp":"Stoper","min":193,"axes":[{"a":"Progresif pas","v":6.53,"pct":41},{"a":"Pas isabeti %","v":0.85,"pct":14},{"a":"İleri pas (son üçte bir)","v":1.4,"pct":14},{"a":"Top kesme","v":8.39,"pct":77},{"a":"Top kazanma","v":6.99,"pct":61},{"a":"Savunma ikilisi %","v":0.47,"pct":19},{"a":"Hava topu %","v":0.5,"pct":28},{"a":"Kendi yarısında az kayıp","v":1.87,"pct":11}]},{"p":"Davinson Sánchez","team":"a","pos":"RCB","grp":"Stoper","min":193,"axes":[{"a":"Progresif pas","v":6.53,"pct":41},{"a":"Pas isabeti %","v":0.9,"pct":38},{"a":"İleri pas (son üçte bir)","v":3.26,"pct":51},{"a":"Top kesme","v":7.46,"pct":62},{"a":"Top kazanma","v":7.93,"pct":75},{"a":"Savunma ikilisi %","v":0.54,"pct":28},{"a":"Hava topu %","v":0.2,"pct":6},{"a":"Kendi yarısında az kayıp","v":0.93,"pct":42}]},{"p":"Nathan Ngoy","team":"b","pos":"RCB","grp":"Stoper","min":191,"axes":[{"a":"Progresif pas","v":7.07,"pct":52},{"a":"Pas isabeti %","v":0.95,"pct":79},{"a":"İleri pas (son üçte bir)","v":1.88,"pct":25},{"a":"Top kesme","v":7.54,"pct":64},{"a":"Top kazanma","v":4.71,"pct":22},{"a":"Savunma ikilisi %","v":0.8,"pct":82},{"a":"Hava topu %","v":1.0,"pct":94},{"a":"Kendi yarısında az kayıp","v":0.94,"pct":36}]},{"p":"Alexsandro","team":"b","pos":"LCB","grp":"Stoper","min":191,"axes":[{"a":"Progresif pas","v":7.54,"pct":59},{"a":"Pas isabeti %","v":0.93,"pct":56},{"a":"İleri pas (son üçte bir)","v":3.3,"pct":54},{"a":"Top kesme","v":8.48,"pct":79},{"a":"Top kazanma","v":8.95,"pct":82},{"a":"Savunma ikilisi %","v":0.83,"pct":87},{"a":"Hava topu %","v":0.78,"pct":66},{"a":"Kendi yarısında az kayıp","v":1.41,"pct":17}]}],"start":"Hücum orta saha / kanat"}}</script>
 <script src="/js/hp-match-charts.js" defer is:inline></script>
 <style is:global>
+
+/* Gestalt: consistent chromatic polarity, proximity, hierarchy, continuation, reversible motion. */
+.mp .hpa-newswire{--hpa-positive:#76D5B6;--hpa-negative:#F1A0A4;--hpa-numeric:#F8D27B;--hpa-letters:#E6EAF0;background:#101D2A;border-block:1px solid #566674;color:var(--hpa-letters)}
+.mp .hpa-newswire-bar{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:9px clamp(15px,3vw,34px);border-bottom:1px solid #344653}
+.mp .hpa-newswire-heading{font:700 .75rem var(--mono);letter-spacing:.14em;color:#F8D27B}
+.mp .hpa-newswire-bar>div{display:flex;align-items:center;gap:15px}
+.mp .hpa-newswire-bar button,.mp .hpa-newswire-bar a{font:600 .79rem var(--ui);background:none;border:1px solid #7C909D;color:#F5F7FA;border-radius:5px;padding:7px 12px;cursor:pointer;text-decoration:none}
+.mp .hpa-newswire .ticker-item{gap:15px}
+.mp .hpa-newswire .hpa-wire-label{color:var(--hpa-letters);font:600 .83rem var(--ui);letter-spacing:normal}
+.mp .hpa-newswire .ticker-item[data-sentiment="positive"]{border-top:3px solid var(--hpa-positive)}
+.mp .hpa-newswire .ticker-item[data-sentiment="negative"]{border-top:3px solid var(--hpa-negative)}
+.mp .hpa-newswire .ticker-item[data-sentiment="positive"] .hpa-wire-label::before{content:"▲";color:var(--hpa-positive);margin-right:9px}
+.mp .hpa-newswire .ticker-item[data-sentiment="negative"] .hpa-wire-label::before{content:"▼";color:var(--hpa-negative);margin-right:9px}
+.mp .hpa-newswire .ticker-item .hpa-wire-value{color:var(--hpa-numeric);font:700 1.4rem var(--mono);font-variant-numeric:tabular-nums}
+.mp .ticker-track.is-paused,.mp .ticker:focus-within .ticker-track{animation-play-state:paused}
+.mp .hpa-newswire-static{max-width:1000px;margin:auto;padding:12px 20px;color:var(--hpa-letters);font:400 .85rem/1.65 var(--ui)}
+.mp .hpa-newswire-static ul{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px 22px;padding-left:20px}
+.mp .hpa-newswire-static li[data-sentiment="positive"]::marker{color:var(--hpa-positive)}
+.mp .hpa-newswire-static li[data-sentiment="negative"]::marker{color:var(--hpa-negative)}
+@media(max-width:650px){.mp .hpa-newswire-static ul{grid-template-columns:1fr}.mp .hpa-newswire-bar{flex-wrap:wrap}}
+@media(prefers-reduced-motion:reduce){.mp .hpa-newswire .ticker-track{animation:none;transform:none}}
+
+.mp .hpa-evidence-atlas{background:var(--band)}.mp .hpa-atlas-controls{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px;margin:25px 0}.mp .hpa-atlas-controls>div{display:flex;flex-wrap:wrap;align-items:center;gap:7px}.mp .hpa-atlas-controls strong{width:100%;font:600 .77rem var(--f-mono);color:var(--chalk-2);letter-spacing:.08em}.mp .hpa-atlas-controls button{min-height:44px;border:1px solid var(--line-2);border-radius:10px;padding:9px 13px;background:var(--raise);color:var(--chalk);cursor:pointer;font:inherit;font-size:.78rem}.mp .hpa-atlas-controls button[aria-pressed="true"]{border-color:var(--fen);color:var(--fen)}.mp .hpa-atlas-controls button:focus-visible{outline:3px solid var(--fen);outline-offset:2px}.mp .hpa-atlas-layout{display:grid;grid-template-columns:minmax(0,1.8fr) minmax(240px,.8fr);gap:clamp(15px,3vw,40px)}.mp .hpa-atlas-field{background:#0E1A25;padding:16px;border-radius:12px}.mp #hpa-atlas-map{display:block;width:100%;height:auto}.mp .hpa-atlas-field p{color:#C1CFD6;font-size:.8rem;line-height:1.5}.mp .hpa-atlas-side{border-top:2px solid var(--fen);padding-top:18px}.mp .hpa-atlas-side p{line-height:1.65}.mp .hpa-atlas-count{display:block;color:var(--fen);font-size:clamp(2.4rem,5vw,4.5rem);line-height:1.1}@media(max-width:800px){.mp .hpa-atlas-controls,.mp .hpa-atlas-layout{grid-template-columns:1fr}}
+.mp .hpa-corridor-controls{display:flex;flex-wrap:wrap;gap:7px;margin:6px 0 24px}
+.mp .hpa-corridor-controls button{font:inherit;font-size:.76rem;min-height:44px;padding:8px 12px;border:1px solid var(--line-2);border-radius:9px;color:var(--chalk);background:var(--raise);cursor:pointer}
+.mp .hpa-corridor-controls button[aria-pressed="true"]{color:var(--fen);border-color:var(--fen)}
+.mp .hpa-corridor-controls button:focus-visible{outline:3px solid var(--fen);outline-offset:2px}
+
+.mp .hpa-carousel-bar{display:flex;align-items:center;justify-content:flex-end;gap:16px;margin:12px 0 20px}
+.mp .hpa-carousel-bar button{min-height:44px;min-width:48px;border-radius:10px;border:1px solid var(--line-2);background:var(--raise);color:var(--chalk);font-size:1.4rem;cursor:pointer}
+.mp .hpa-carousel-bar button:hover,.mp .hpa-carousel-bar button:focus-visible{border-color:var(--fen);outline-offset:2px}
+.mp #hpa-scenario-counter{font-family:var(--f-mono);font-variant-numeric:tabular-nums;color:var(--chalk-2)}
+.mp .hpa-spot-tooltip{font-size:.8rem;line-height:1.5;padding:12px 14px;border:1px solid #50606A;border-radius:8px;background:#172835;color:#E8E9E8}
+.mp #hpa-scenario-svg g[role="button"]{cursor:pointer;outline:none}
+.mp #hpa-scenario-svg g[role="button"]:focus circle,.mp #hpa-scenario-svg g[role="button"]:hover circle{stroke:#FFF;stroke-width:1.2}
+@media(prefers-reduced-motion:reduce){.mp #hpa-scenario-svg *{animation:none!important;transition:none!important}}
+
+.mp .hpa-scenario-lab{background:radial-gradient(ellipse at 14% 18%,rgba(242,163,58,.1),transparent 58%),var(--band)}
+.mp .hpa-scenario-controls{display:flex;flex-wrap:wrap;gap:9px;margin:24px 0}
+.mp .hpa-scenario-controls button{font:inherit;cursor:pointer;min-height:44px;padding:12px 18px;border-radius:999px;border:1px solid var(--line-2);background:var(--raise);color:var(--chalk)}
+.mp .hpa-scenario-controls button[aria-pressed="true"]{border-color:var(--fen);color:var(--fen);background:color-mix(in srgb,var(--fen) 13%,var(--raise))}
+.mp .hpa-scenario-controls button:focus-visible{outline:3px solid var(--fen);outline-offset:3px}
+.mp .hpa-scenario-grid{display:grid;grid-template-columns:minmax(0,1.65fr) minmax(240px,.85fr);gap:clamp(18px,4vw,46px);align-items:center}
+.mp .hpa-scenario-field{padding:clamp(14px,2vw,28px);border:1px solid var(--line-2);border-radius:16px;background:#0C1721}
+.mp #hpa-scenario-svg{width:100%;height:auto;display:block}
+.mp .hpa-scenario-field p{margin:14px 0 0;font-size:.72rem;line-height:1.6;color:#C6D0D6}
+.mp .hpa-scenario-copy{border-top:1px solid var(--fen);padding-top:18px}
+.mp .hpa-scenario-copy h3{font-size:clamp(1.2rem,2.2vw,2rem);line-height:1.15}
+.mp .hpa-scenario-copy p{margin:16px 0;line-height:1.65}
+@media(max-width:780px){.mp .hpa-scenario-grid{grid-template-columns:1fr}}
+
+.mp .hp-phase-selector{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0 10px}
+.mp .hp-phase-selector button{font:inherit;font-size:.82rem;cursor:pointer;padding:10px 17px;border:1px solid var(--line-2);border-radius:999px;color:var(--chalk);background:var(--raise);min-height:44px}
+.mp .hp-phase-selector button[aria-pressed="true"]{border-color:var(--fen);color:var(--fen);background:color-mix(in srgb,var(--fen) 12%,var(--raise))}
+.mp .hp-phase-selector button:focus-visible{outline:3px solid var(--fen);outline-offset:3px}
+.mp .hp-phase-metrics{font-family:var(--f-mono);font-size:.76rem;line-height:1.8;color:var(--chalk-2);margin:0 0 14px;font-variant-numeric:tabular-nums}
+@media (prefers-reduced-motion:reduce){.mp #pitch>g{transition:none!important}}
+
 .mp{
   --night:var(--bg); --band:var(--bg-2); --raise:var(--panel); --line:var(--line); --line-2:var(--line-2);
   --chalk:var(--ink); --chalk-2:var(--ink-2); --mute:var(--muted);
@@ -663,5 +1022,23 @@ section.block{padding-block:clamp(44px,7vw,88px);border-bottom:1px solid var(--l
 .mp .hpc-fig svg{font-family:var(--ui)}
 .mp .hpc-table td{white-space:nowrap}
 
+
+/* Lille–Galatasaray: evidence-linked tactical mechanism panel */
+.mp .hp-mechanism{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:22px 0}
+.mp .hp-mechanism__item{min-width:0;padding:20px;border:1px solid var(--line);border-radius:8px;background:var(--fig)}
+.mp .hp-mechanism__meta{display:flex;flex-direction:column;gap:5px;font:500 .85rem/1.45 var(--ui);color:var(--chalk)}
+.mp .hp-mechanism__meta span{color:var(--mute)}
+.mp .hp-mechanism__item p{margin:16px 0 12px;font:400 .94rem/1.5 var(--ui);color:var(--chalk)}
+.mp .hp-mechanism__item p strong{font:700 1.6rem/1 var(--ui)}
+.mp .hp-mechanism__track{height:11px;border:1px solid var(--line-2);background:rgba(255,255,255,.12);overflow:hidden;border-radius:6px}
+.mp .hp-mechanism__track span{display:block;height:100%}
+.mp .hp-mechanism__item small{display:block;margin-top:10px;font:400 .78rem/1.5 var(--ui);color:var(--chalk-2)}
+.mp .hp-mechanism__reading{margin:10px 0 22px;max-width:900px}
+.mp .hp-mechanism__reading h3{font:600 1.1rem/1.4 var(--ui);margin:0 0 12px}
+.mp .hp-mechanism__reading details{border-top:1px solid var(--line);padding:12px 0}
+.mp .hp-mechanism__reading details:last-child{border-bottom:1px solid var(--line)}
+.mp .hp-mechanism__reading summary{cursor:pointer;min-height:44px;font:600 .95rem/1.5 var(--ui);color:var(--chalk)}
+.mp .hp-mechanism__reading details p{margin:8px 0 12px;color:var(--chalk-2);font:400 .91rem/1.65 var(--ui)}
+@media(max-width:820px){.mp .hp-mechanism{grid-template-columns:1fr}}
 </style>
 </BaseLayout>
