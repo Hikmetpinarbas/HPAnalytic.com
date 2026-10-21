@@ -101,3 +101,14 @@ test('five tactical corridors run parallel to touchlines along full pitch length
  assert.match(src,/x1:0,x2:105/);
  assert.match(src,/function setCorridor\(/);
 });
+
+test('three pitch length zones and five corridors intersect independently',()=>{
+ assert.match(src,/id="hpa-zone-controls"/);
+ assert.match(src,/data-zone="all"/);
+ assert.match(src,/data-zone="2"/);
+ assert.match(src,/const zoneBounds=\[0,35,70,105\]/);
+ assert.match(src,/let selectedZone='all'/);
+ assert.match(src,/function setZone\(/);
+ assert.match(src,/selectedZone!=='all'&&\(cx</);
+ assert.match(src,/id="hpa-spatial-readout"/);
+});
