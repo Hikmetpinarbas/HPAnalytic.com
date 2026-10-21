@@ -25,6 +25,17 @@ const steps = [
   <div class="hpa-premier__inner">
     <div class="hpa-premier__overline"><span>HPANALYTIC / PREMIER</span><span>BAŞ ANALİZ · EDITOR'S PICK</span></div>
     {premier && <>
+      <div class="hpa-premier__matchup" aria-label="Galatasaray ve Lille kulüp armaları">
+        <div class="hpa-premier__club" tabindex="0" aria-label="Galatasaray: 36 takım karşılaştırması">
+          <img src="https://assets.football-logos.cc/logos/turkey/512x512/galatasaray.beadfca5.png" alt="Galatasaray arması" width="104" height="104" loading="eager" decoding="async"/>
+          <strong>GALATASARAY</strong><span class="hpa-premier__hover">36 takımlık analiz · veri atlası</span>
+        </div>
+        <span class="hpa-premier__versus" aria-hidden="true">×</span>
+        <div class="hpa-premier__club" tabindex="0" aria-label="LOSC Lille: baskı ve top kaybı analizi">
+          <img src="https://images.seeklogo.com/logo-png/21/1/lille-osc-logo-png_seeklogo-214308.png" alt="LOSC Lille arması" width="104" height="104" loading="eager" decoding="async"/>
+          <strong>LOSC LILLE</strong><span class="hpa-premier__hover">Pres eşleşmesi · bölgesel riskler</span>
+        </div>
+      </div>
       <p class="hpa-premier__eyebrow">{premier.category} · {premier.team}</p>
       <h2 id="premier-title">{premier.title}</h2>
       <p>{premier.description}</p>
@@ -42,6 +53,15 @@ const steps = [
 .hpa-premier__inner>p:not(.hpa-premier__eyebrow){max-width:650px;color:#D5DEE2;line-height:1.65}
 .hpa-premier__link{display:inline-flex;gap:18px;align-items:center;margin-top:24px;color:#2A0705;background:#F2B705;text-decoration:none;padding:15px 20px;min-height:48px;font-weight:800;font-size:.82rem;letter-spacing:.05em;border-radius:4px}
 .hpa-premier__link:focus-visible{outline:3px solid #FFF;outline-offset:4px}
+.hpa-premier__matchup{display:flex;align-items:center;justify-content:flex-start;gap:clamp(12px,3vw,42px);padding:28px 0 6px;max-width:610px}
+.hpa-premier__club{display:flex;flex-direction:column;align-items:center;gap:8px;min-width:0;flex:1;border:1px solid rgba(255,210,77,.23);border-radius:12px;padding:12px 8px;transition:transform .22s,border-color .22s;background:rgba(17,4,8,.35)}
+.hpa-premier__club img{width:clamp(76px,12vw,104px);height:104px;object-fit:contain}
+.hpa-premier__club strong{font-size:.76rem;letter-spacing:.09em}
+.hpa-premier__hover{font-size:.72rem;color:#F9CF82;text-align:center}
+.hpa-premier__club:hover,.hpa-premier__club:focus-visible{transform:translateY(-5px);border-color:#FFD24D;outline:2px solid transparent}
+.hpa-premier__versus{color:#FFD24D;font-size:2rem}
+@media(prefers-reduced-motion:reduce){.hpa-premier__club{transition:none}.hpa-premier__club:hover,.hpa-premier__club:focus-visible{transform:none}}
+@media(max-width:520px){.hpa-premier__club img{height:78px}.hpa-premier__club strong{font-size:.63rem}.hpa-premier__hover{font-size:.65rem}}
 </style>
 
 <section class="home-hero" aria-labelledby="hero-title">
