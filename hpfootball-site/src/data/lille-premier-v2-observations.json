@@ -1,0 +1,165 @@
+{
+  "schema": "hpa-pre-match-v2-csv-observations/v1",
+  "created": "2026-10-21",
+  "status": "PROVISIONAL_CSV_ONLY",
+  "meaning": "Action-label occurrence counts on player-level CSV; not six-family canonical events",
+  "claim_ceiling": "No tracking/pressing/possession/control or pass receiver inference",
+  "matches": [
+    {
+      "key": "lille_arsenal",
+      "source": {
+        "drive_id": "1AegYm_Z-dTL2q-q_u0gCNfXClhGUIZm7",
+        "layer": "CSV players",
+        "path": "Full match.csv or Halves-.csv",
+        "rows": 2957
+      },
+      "target": "LOSC Lille (43954)",
+      "opponent": "Arsenal FC (5358)",
+      "counts": {
+        "Passes accurate": 329,
+        "Inaccurate passes": 45,
+        "Progressive passes accurate": 25,
+        "Ball recoveries": 36,
+        "Ball recoveries in opponent's half": 1,
+        "Shots on target": 0,
+        "Shots off target": 1,
+        "Goals": 0
+      },
+      "pass_start_x_bins": [
+        {
+          "range": "0–<35",
+          "count": 152
+        },
+        {
+          "range": "35–<70",
+          "count": 156
+        },
+        {
+          "range": "70+",
+          "count": 21
+        }
+      ],
+      "half_anchors_seconds": [
+        5.33,
+        2852.24
+      ]
+    },
+    {
+      "key": "lille_brest",
+      "source": {
+        "drive_id": "1yf4fxINBNp8Ri4oIkdSQTRrZw_ntBD6b",
+        "layer": "CSV players",
+        "path": "Full match.csv or Halves-.csv",
+        "rows": 3020
+      },
+      "target": "LOSC Lille (43954)",
+      "opponent": "Stade Brestois 29 (72740)",
+      "counts": {
+        "Passes accurate": 597,
+        "Inaccurate passes": 63,
+        "Progressive passes accurate": 101,
+        "Ball recoveries": 40,
+        "Ball recoveries in opponent's half": 14,
+        "Shots on target": 5,
+        "Shots off target": 9,
+        "Goals": 1
+      },
+      "pass_start_x_bins": [
+        {
+          "range": "0–<35",
+          "count": 121
+        },
+        {
+          "range": "35–<70",
+          "count": 332
+        },
+        {
+          "range": "70+",
+          "count": 144
+        }
+      ],
+      "half_anchors_seconds": [
+        5,
+        2888
+      ]
+    },
+    {
+      "key": "galatasaray_sporting",
+      "source": {
+        "drive_id": "1feat2Q_kdQaUR7ATcsuU2EZYIi2HSoql",
+        "layer": "CSV players",
+        "path": "Full match.csv or Halves-.csv",
+        "rows": 3113
+      },
+      "target": "Galatasaray (29205)",
+      "opponent": "Sporting CP (72014)",
+      "counts": {
+        "Passes accurate": 517,
+        "Inaccurate passes": 68,
+        "Progressive passes accurate": 82,
+        "Ball recoveries": 40,
+        "Ball recoveries in opponent's half": 13,
+        "Shots on target": 3,
+        "Shots off target": 5,
+        "Goals": 0
+      },
+      "pass_start_x_bins": [
+        {
+          "range": "0–<35",
+          "count": 83
+        },
+        {
+          "range": "35–<70",
+          "count": 354
+        },
+        {
+          "range": "70+",
+          "count": 80
+        }
+      ],
+      "half_anchors_seconds": [
+        4.58,
+        2862.64
+      ]
+    },
+    {
+      "key": "galatasaray_barcelona",
+      "source": {
+        "drive_id": "1W1nSi6T8iLtViKgl-0QzamDSuXBSff4-",
+        "layer": "CSV players",
+        "path": "Full match.csv or Halves-.csv",
+        "rows": 3147
+      },
+      "target": "Galatasaray (29205)",
+      "opponent": "FC Barcelona (87754)",
+      "counts": {
+        "Passes accurate": 204,
+        "Inaccurate passes": 57,
+        "Progressive passes accurate": 27,
+        "Ball recoveries": 30,
+        "Ball recoveries in opponent's half": 8,
+        "Shots on target": 3,
+        "Shots off target": 0,
+        "Goals": 1
+      },
+      "pass_start_x_bins": [
+        {
+          "range": "0–<35",
+          "count": 77
+        },
+        {
+          "range": "35–<70",
+          "count": 114
+        },
+        {
+          "range": "70+",
+          "count": 13
+        }
+      ],
+      "half_anchors_seconds": [
+        5.38,
+        2931.34
+      ]
+    }
+  ]
+}
