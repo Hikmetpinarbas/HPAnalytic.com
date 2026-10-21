@@ -9,7 +9,7 @@ test('Lille–Galatasaray remains editorial premier independent of match kickoff
  assert.equal(item.status,'published');
 });
 test('newer premier can supersede current selection without match date heuristics',()=>{
- const newer={slug:'approved-new-premier',status:'published',premier:true,premier_order:2,href:'/mac/new'};
+ const newer={slug:'approved-new-premier',status:'published',premier:true,premier_order:2,href:'/mac/new',category:'PREMIER',team:'Takım A × Takım B',title:'Yeni analiz',description:'Doğrulanmış açıklama',club:'galatasaray'};
  const item=featuredPremier(Date.now(),[...PREMIER_FEATURES,newer]);
  assert.equal(item.slug,'approved-new-premier');
 });
@@ -21,4 +21,17 @@ test('homepage features premier prominently before other editorial cards',()=>{
  assert.match(home,/featuredPremier\(/);
  assert.match(home,/id="premier-feature"/);
  assert.match(home,/PREMIER/);
+});
+
+test('withdrawn match cannot remain promoted as premier',()=>{
+ const registry=[{slug:'lille-galatasaray-2026-10-21',status:'draft'}];
+ assert.equal(featuredPremier(Date.now(),PREMIER_FEATURES,registry),null);
+});
+test('incomplete higher order premier cannot displace complete feature',()=>{
+ const incomplete={slug:'missing-copy',status:'published',premier:true,premier_order:999,href:'/missing'};
+ assert.equal(featuredPremier(Date.now(),[...PREMIER_FEATURES,incomplete]).slug,'lille-galatasaray-2026-10-21');
+});
+test('CTA accessible name retains visible label',()=>{
+ assert.doesNotMatch(home,/aria-label={premier\.title \+ ' premier analizini oku'}/);
+ assert.match(home,/PREMIER DOSYASINI KEŞFET/);
 });
