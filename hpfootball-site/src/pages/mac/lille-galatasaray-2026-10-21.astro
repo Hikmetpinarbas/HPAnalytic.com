@@ -14,7 +14,7 @@ export const prerender = true;
       <span class="hpa-match-away">Galatasaray</span>
     </h1>
     <p class="mono" style="color:var(--chalk-2)">Hikmet Pınarbaş · 20 Ekim 2026 · Maç: 21 Ekim 2026 · 19.45 TSİ</p>
-    <p class="thesis">Lille 10 şutla son sırada; Galatasaray ve Bodø/Glimt 12'şer şutla bir üst basamağı paylaşıyor. Lille, Avrupa'da topu kendi yarısında en çok kaybeden ikinci takım. <em>Galatasaray'ın kapısı, Lille'in oyun kurulumunu yüksekte boğmakta.</em></p>
+    <p class="thesis">Lille 10 şutla son sırada; Galatasaray ve Bodø/Glimt 12'şer şutla bir üst basamağı paylaşıyor. Lille, Avrupa'da topu kendi yarısında en çok kaybeden ikinci takım. <em>Eşleşmenin ana sorusu iki yönlü: Lille'in kendi yarısındaki kayıplarını Galatasaray ne ölçüde değerlendirebilir; Lille, Galatasaray'ın hücum üretimini ne ölçüde sınırlayabilir?</em></p>
     <div class="meta">
       <div><span class="mono">Puan</span><b class="num"><span class="fen">0</span> · <span class="sla">0</span></b></div>
       <div><span class="mono">Atılan şut (2 maç)</span><b class="num"><span class="fen">12</span> · <span class="sla">10</span></b></div>
@@ -30,6 +30,28 @@ export const prerender = true;
   </div>
 </section>
 
+
+<section class="block" id="premier-evidence" aria-labelledby="premier-evidence-title">
+  <div class="wrap">
+    <div class="head col">
+      <p class="eyebrow">HPANALYTIC / PREMIER · MATEMATİKSEL EŞLEŞME</p>
+      <h2 id="premier-evidence-title">Aynı 122 kayıp; aynı oyun değil</h2>
+      <p class="lede">İki takımın ilk iki Avrupa maçında toplam top kaybı eşit: Lille 122, Galatasaray 122. Ancak Lille'in kendi yarısındaki kaybı 41 (%33,6), Galatasaray'ın 22 (%18,0). Aradaki 15,6 yüzde puanlık fark, maç öncesinde sınanacak bir konum ve koşul sorusudur; doğrudan pres üstünlüğü hükmü değildir.</p>
+    </div>
+    <div class="hpc-tablewrap"><table class="hpc-table"><caption>UEFA ilk iki maç, SportsBase kaynak özetinden karşılaştırma</caption><thead><tr><th scope="col">İki maç toplamı</th><th scope="col">Lille</th><th scope="col">Galatasaray</th></tr></thead><tbody>
+      <tr><th scope="row">Top kaybı</th><td>122</td><td>122</td></tr>
+      <tr><th scope="row">Kendi yarısında kayıp</th><td>41 / 122</td><td>22 / 122</td></tr>
+      <tr><th scope="row">Kendi yarısında kayıp payı</th><td>%33,6</td><td>%18,0</td></tr>
+      <tr><th scope="row">xG</th><td>1,28</td><td>1,87</td></tr>
+      <tr><th scope="row">Rakip xG</th><td>3,57</td><td>3,88</td></tr>
+      <tr><th scope="row">Net xG</th><td>−2,29</td><td>−2,01</td></tr>
+      <tr><th scope="row">Şut / xG-şut</th><td>10 / 0,128</td><td>12 / 0,156</td></tr>
+      <tr><th scope="row">Top kazanımı</th><td>85</td><td>81</td></tr>
+    </tbody></table></div>
+    <div class="claim"><span class="ev der">HESAP</span><span>Pay: kendi yarısındaki top kayıpları; payda: aynı iki maçta toplam top kayıpları. Net xG = xG − rakip xG; xG/şut = xG / şut. Lille Betis ve Arsenal'e, Galatasaray Sporting ve Barcelona'ya karşı oynadı. Kaynak: <a href="https://docs.google.com/spreadsheets/d/13ojWneJfjI_POQRLPnqeEGRILHyLGfCS/edit" target="_blank" rel="noopener noreferrer">SportsBase UEFA Match statistics, 19.10.2026</a>.</span></div>
+    <div class="head col"><h3>İki yönlü futbol sorusu</h3><p>Galatasaray için mesele Lille'in topu nerede kaybettiği kadar, o kayıplardan sonra hücumu sürdürebilmek. Lille için mesele ise Galatasaray'ın Sporting maçındaki 1,55 xG üretimini hangi savunma aksiyonlarıyla sınırlayabileceği. Arsenal–Lille ve Barcelona–Galatasaray verileri ayrı rakip koşullarının ürünüdür.</p><p><strong>Karşı hipotez:</strong> Lille'in Arsenal karşısında artan kendi yarı kayıpları Arsenal'in yarattığı koşullara bağlı olabilir. Galatasaray'ın düşük PPDA örneklemi aynı baskı düzenini otomatik olarak tekrarlayacağını göstermez.</p></div>
+  </div>
+</section>
 <section class="hpa-newswire" aria-label="36 takım sıralamaları ve haber bandı">
  <div class="hpa-newswire-bar"><span class="hpa-newswire-heading">HPANALYTIC / DATA WIRE</span><div role="group" aria-label="Haber bandı kontrolü"><button type="button" id="ticker-pause" aria-pressed="false">Durdur</button><a href="#ticker-static">Tüm veriler</a></div></div>
  <div class="ticker" aria-label="36 takımın metrik sıralamalarından türetilmiş akan haberler" tabindex="0"><div class="ticker-track" id="ticker"></div></div>
@@ -44,7 +66,7 @@ export const prerender = true;
       <p class="lede">İkisi de puansız. Galatasaray iki maçta 7 gol yedi; Lille Arsenal deplasmanında 90 dakikada yalnız 4 şut atabildi ve 0,22 xG üretti. Bu maç, iki takımın da "Avrupa'da tutunabilir miyiz" sorusuna verdiği ilk ciddi cevap olacak.</p>
     </div>
     <div class="rail" id="rail" tabindex="0" aria-label="Takımların Şampiyonlar Ligi maçları, yatay kaydırılabilir"></div>
-    <div class="claim"><span class="ev mod">MODEL</span><span>xG ve PPDA SportsBase model çıktısıdır. Galatasaray'ın maç bazlı satırları bu sürümde yok; Galatasaray kartlarında yalnız skor var. Lille'in maç satırları kulübün SportsBase dosyasından.</span></div>
+    <div class="claim"><span class="ev mod">MODEL</span><span>xG ve PPDA SportsBase model çıktısıdır. Galatasaray'ın maç bazlı SportsBase XLSX kayıtları da bulunuyor; karşılaştırma lig/Avrupa ve rakip farkı gözetilerek okunmalı. Lille'in maç satırları kulübün SportsBase dosyasından.</span></div>
   </div>
 </section>
 
@@ -267,7 +289,7 @@ export const prerender = true;
   <div role="group" aria-label="Genişlik koridoru"><strong>5 koridor</strong><button data-atlas-corridor="all" aria-pressed="true">Tümü</button><button data-atlas-corridor="0" aria-pressed="false">Sol dış</button><button data-atlas-corridor="1" aria-pressed="false">Sol iç</button><button data-atlas-corridor="2" aria-pressed="false">Merkez</button><button data-atlas-corridor="3" aria-pressed="false">Sağ iç</button><button data-atlas-corridor="4" aria-pressed="false">Sağ dış</button></div>
 </div>
 <div class="hpa-atlas-layout"><div class="hpa-atlas-field"><svg id="hpa-atlas-map" viewBox="-3 -3 111 76" role="img" aria-label="Üç bölge beş koridor yoğunluk haritası"></svg><p>Koridorlar taç çizgisine paralel; bölge çizgileri kale çizgisine paralel.</p></div>
-<div class="hpa-atlas-side"><p class="eyebrow">SEÇİLİ VERİ</p><strong id="hpa-atlas-count" class="hpa-atlas-count" aria-live="polite">—</strong><p id="hpa-atlas-context" aria-live="polite"></p><p>Veri kapsamı: Lille–Arsenal ve Galatasaray–Barcelona ayrı kaynak karşılaşmalardır. <strong>Bu olay dosyalarında dakika damgası olmadığından</strong> 15 dakikalık veya 0–35 / 36–70 / 71–105 zaman blokları üretilmiyor; yalnız devre bilgisi kullanılabiliyor.</p></div></div>
+<div class="hpa-atlas-side"><p class="eyebrow">SEÇİLİ VERİ</p><strong id="hpa-atlas-count" class="hpa-atlas-count" aria-live="polite">—</strong><p id="hpa-atlas-context" aria-live="polite"></p><p>Veri kapsamı: Lille–Arsenal ve Galatasaray–Barcelona ayrı kaynak karşılaşmalardır. <strong>Bu olay dosyalarında start/end saniye alanları bulunduğundan</strong> 15 dakikalık veya 0–35 / 36–70 / 71–105 zaman blokları üretilmiyor; yalnız devre bilgisi kullanılabiliyor.</p></div></div>
 </div></section>
 
 <section class="block">
