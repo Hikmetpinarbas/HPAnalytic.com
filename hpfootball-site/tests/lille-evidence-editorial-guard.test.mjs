@@ -18,3 +18,16 @@ test('spatial panel uses schematic units, not physical metres',()=>{
  assert.doesNotMatch(panel,/35 metreden/);
  assert.match(panel,/35 birim/);
 });
+
+test('match own-half losses use original 27 total and distinguish 26 mapped events',()=>{
+ assert.match(src,/Arsenal deplasmanında kendi yarısında 27 top kaybetti/);
+ assert.match(src,/Haritada gösterilen 26 olay/);
+ assert.doesNotMatch(src,/kendi yarısında 26 kez kaybetti/);
+});
+test('pitch narrative does not confuse schematic units with metres or establish causality from isolated events',()=>{
+ assert.doesNotMatch(src,/35 metreden/);
+ assert.doesNotMatch(src,/0–35 m/);
+ assert.doesNotMatch(src,/normalize edildiği.*%100 uyumuyla doğrulandı/);
+ assert.doesNotMatch(src,/neredeyse hiç baskı yapmadı/);
+ assert.doesNotMatch(src,/ilk iki üç pasta gittiği/);
+});
