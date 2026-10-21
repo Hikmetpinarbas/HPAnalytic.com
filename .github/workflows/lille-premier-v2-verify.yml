@@ -1,0 +1,27 @@
+name: Lille Premier V2 verification (no deploy)
+on:
+  push:
+    branches:
+      - 'work/lille-galatasaray-premier-v2-evidence-20261021'
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    defaults:
+      run:
+        working-directory: hpfootball-site
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: hpfootball-site/package-lock.json
+      - run: npm ci --no-audit --no-fund
+      - run: node --test tests/lille-premier-v2-data.test.mjs
+      - run: npm test
+      - run: npm run check
+      - run: npm run build
