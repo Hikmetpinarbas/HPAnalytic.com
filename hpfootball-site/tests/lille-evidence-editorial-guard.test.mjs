@@ -126,3 +126,11 @@ test('multidimensional evidence atlas separates three zones from five corridors 
  assert.match(src,/id="hpa-atlas-count"/);
  assert.match(src,/olay dosyalarında dakika damgası olmadığından/);
 });
+
+test('official fixture kickoff and editorial verification appear in hero',()=>{
+ assert.match(src,/21 Ekim 2026 · 19\.45 TSİ/);
+ assert.match(src,/Rade Obrenovič/);
+ assert.match(src,/https:\/\/www\.uefa\.com\/uefachampionsleague\/match\/2049605\//);
+ assert.match(src,/https:\/\/www\.galatasaray\.org\/haber\/futbol\/sampiyonlar-ligi\/maca-dogru-lille-galatasaray\/61183/);
+ assert.doesNotMatch(src,/TRT 1 \(bekleniyor\)/);
+});
