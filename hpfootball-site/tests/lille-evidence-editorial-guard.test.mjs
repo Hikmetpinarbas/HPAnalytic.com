@@ -31,3 +31,15 @@ test('pitch narrative does not confuse schematic units with metres or establish 
  assert.doesNotMatch(src,/neredeyse hiç baskı yapmadı/);
  assert.doesNotMatch(src,/ilk iki üç pasta gittiği/);
 });
+
+test('pitch phase selector uses original three event series with keyboard buttons',()=>{
+ assert.match(src,/id="phase-controls"/);
+ assert.match(src,/data-phase="0"/);
+ assert.match(src,/data-phase="1"/);
+ assert.match(src,/data-phase="2"/);
+ assert.match(src,/id="phase-metrics"/);
+ assert.match(src,/EV\.lil_loss\.filter/);
+ assert.match(src,/EV\.ars_rec\.filter/);
+ assert.match(src,/EV\.gal_rec\.filter/);
+ assert.match(src,/aria-live="polite"/);
+});
