@@ -220,6 +220,12 @@ export const prerender = true;
       <button type="button" data-scenario="release" aria-pressed="false">03 · Baskı kırılırsa</button>
     </div>
     <div class="hpa-carousel-bar" aria-label="Senaryo gezinmesi"><button type="button" id="hpa-scenario-prev" aria-label="Önceki senaryo">←</button><span id="hpa-scenario-counter" aria-live="polite">01 / 03</span><button type="button" id="hpa-scenario-next" aria-label="Sonraki senaryo">→</button></div>
+    <div class="hpa-corridor-controls" id="hpa-zone-controls" role="group" aria-label="Sahanın uzunluk bölgeleri">
+      <button type="button" data-zone="all" aria-pressed="true">Tüm bölgeler</button>
+      <button type="button" data-zone="0" aria-pressed="false">Bölge 1 · 0–35</button>
+      <button type="button" data-zone="1" aria-pressed="false">Bölge 2 · 35–70</button>
+      <button type="button" data-zone="2" aria-pressed="false">Bölge 3 · 70–105</button>
+    </div>
     <div class="hpa-corridor-controls" id="hpa-corridor-controls" role="group" aria-label="Sahanın genişlik koridorları">
       <button type="button" data-corridor="all" aria-pressed="true">Tüm koridorlar</button>
       <button type="button" data-corridor="0" aria-pressed="false">Sol dış</button>
@@ -231,6 +237,7 @@ export const prerender = true;
     <div class="hpa-scenario-grid">
       <div class="hpa-scenario-field">
         <svg id="hpa-scenario-svg" viewBox="0 0 105 68" role="group" aria-label="Seçilen taktik senaryonun şematik saha çizimi ve seçilebilir oyuncu noktaları"></svg>
+        <p id="hpa-spatial-readout" class="hpa-spot-tooltip" aria-live="polite">3 bölge × 5 koridor · tüm saha</p>
         <p id="hpa-scenario-tooltip" class="hpa-spot-tooltip" role="status" aria-live="polite">Oyuncu işaretine dokunarak veya üzerine gelerek rolünü incele.</p>
         <p class="mono">Şematik yerleşim · oyuncu takip verisi veya gerçekleşmiş maç sekansı değildir.</p>
       </div>
@@ -514,6 +521,12 @@ const EV = {"lil_loss":[[29.1,2.4,"Maxima Adeagan Goffi",1],[41.6,13.9,"Ngalayel
  const ns='http://www.w3.org/2000/svg';
  const keys=['press','trap','release'];let current='press';
  const corridorBounds=[0,13.6,27.2,40.8,54.4,68];
+ const zoneBounds=[0,35,70,105];
+ let selectedZone='all';
+ function setZone(value){selectedZone=value;
+   root.querySelectorAll('[data-zone]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.zone===value)));
+   renderScenario(current);
+ }
  let selectedCorridor='all';
  function setCorridor(value){selectedCorridor=value;
    root.querySelectorAll('[data-corridor]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.corridor===value)));
@@ -528,17 +541,28 @@ const EV = {"lil_loss":[[29.1,2.4,"Maxima Adeagan Goffi",1],[41.6,13.9,"Ngalayel
    counter.textContent=String(keys.indexOf(key)+1).padStart(2,'0')+' / 03';
    tooltip.textContent='Oyuncu işaretine dokunarak veya üzerine gelerek rolünü incele.';
    E('rect',{x:0,y:0,width:105,height:68,rx:1,fill:'#111E29',stroke:'#74818B','stroke-width':'.45'});
-   // x bands are length zones; y bands are five touchline-parallel width corridors.
+   // x bands are three pitch-length zones; y bands are five width corridors.
+   const zonex=selectedZone==='all'?0:zoneBounds[Number(selectedZone)];
+   const zoneWidth=selectedZone==='all'?105:zoneBounds[Number(selectedZone)+1]-zonex;
+   const cy0=selectedCorridor==='all'?0:corridorBounds[Number(selectedCorridor)];
+   const cy1=selectedCorridor==='all'?68:corridorBounds[Number(selectedCorridor)+1];
+   root.querySelector('#hpa-spatial-readout').textContent=
+      (selectedZone==='all'?'3 bölge': 'Bölge '+(Number(selectedZone)+1))+' × '+
+      (selectedCorridor==='all'?'5 koridor':['Sol dış','Sol iç','Merkez','Sağ iç','Sağ dış'][Number(selectedCorridor)])+
+      ' · şematik oyuncu yerleşimi';
    E('rect',{x:x.zone[0],y:x.zone[1],width:x.zone[2],height:x.zone[3],fill:'#F2A33A','fill-opacity':'.12'});
    if(selectedCorridor!=='all'){
      const i=Number(selectedCorridor),y0=corridorBounds[i],y1=corridorBounds[i+1];
      E('rect',{x:0,y:y0,width:105,height:y1-y0,fill:'#F2A33A','fill-opacity':'.19'});
    }
+   E('rect',{x:zonex,y:cy0,width:zoneWidth,height:cy1-cy0,fill:'#F2A33A','fill-opacity':'.12',stroke:'#F2A33A','stroke-width':'.5'});
+   zoneBounds.slice(1,-1).forEach(x=>E('line',{x1:x,x2:x,y1:0,y2:68,stroke:'#F2A33A','stroke-width':'.3','stroke-dasharray':'1 1.5',opacity:'.9'}));
    corridorBounds.slice(1,-1).forEach(y=>E('line',{x1:0,x2:105,y1:y,y2:y,stroke:'#B4BEC4','stroke-width':'.25','stroke-dasharray':'1 1.5',opacity:'.75'}));
    E('path',{d:'M52.5 0V68M0 13.8H16.5V54.2H0M105 13.8H88.5V54.2H105',stroke:'#6E8390','stroke-width':'.35',fill:'none'});
    E('circle',{cx:52.5,cy:34,r:9.15,stroke:'#6E8390','stroke-width':'.35',fill:'none'});
    x.arrows.forEach(([x1,y1,x2,y2])=>{E('path',{d:'M'+x1+' '+y1+'L'+x2+' '+y2,stroke:'#F2A33A','stroke-width':'.85','stroke-dasharray':'2 1.3',fill:'none'});E('circle',{cx:x2,cy:y2,r:1,fill:'#F2A33A'});});
    x.points.forEach(([cx,cy,t],i)=>{
+     if(selectedZone!=='all'&&(cx<zoneBounds[Number(selectedZone)]||cx>=zoneBounds[Number(selectedZone)+1]))return;
      if(selectedCorridor!=='all'&&(cy<corridorBounds[Number(selectedCorridor)]||cy>=corridorBounds[Number(selectedCorridor)+1]))return;
      const g=E('g',{tabindex:0,role:'button','aria-label':(t==='G'?'Galatasaray':'Lille')+' şematik oyuncu '+(i+1)+'; rolünü göster'});
      E('circle',{cx,cy,r:2.65,fill:t==='G'?'#F2A33A':'#DFE8ED',stroke:'#0A1018','stroke-width':'.55'},g);
@@ -559,6 +583,7 @@ const EV = {"lil_loss":[[29.1,2.4,"Maxima Adeagan Goffi",1],[41.6,13.9,"Ngalayel
    root.querySelectorAll('[data-scenario]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.scenario===key)));
  }
  root.querySelector('.hpa-scenario-controls').addEventListener('click',ev=>{const b=ev.target.closest('button[data-scenario]');if(b&&root.contains(b))renderScenario(b.dataset.scenario);});
+ root.querySelector('#hpa-zone-controls').addEventListener('click',ev=>{const b=ev.target.closest('button[data-zone]');if(b&&root.contains(b))setZone(b.dataset.zone);});
  root.querySelector('#hpa-corridor-controls').addEventListener('click',ev=>{const b=ev.target.closest('button[data-corridor]');if(b&&root.contains(b))setCorridor(b.dataset.corridor);});
  root.querySelector('#hpa-scenario-prev').addEventListener('click',()=>nextScenario(-1));
  root.querySelector('#hpa-scenario-next').addEventListener('click',()=>nextScenario(1));
