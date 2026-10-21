@@ -112,3 +112,17 @@ test('three pitch length zones and five corridors intersect independently',()=>{
  assert.match(src,/selectedZone!=='all'&&\(cx</);
  assert.match(src,/id="hpa-spatial-readout"/);
 });
+
+test('multidimensional evidence atlas separates three zones from five corridors and event halves',()=>{
+ assert.match(src,/id="hpa-evidence-atlas"/);
+ assert.match(src,/id="hpa-atlas-map"/);
+ assert.match(src,/data-atlas-zone="2"/);
+ assert.match(src,/data-atlas-corridor="4"/);
+ assert.match(src,/data-atlas-phase="2"/);
+ assert.match(src,/data-atlas-event="gal"/);
+ assert.match(src,/const atlasZoneBounds=\[0,35,70,105\]/);
+ assert.match(src,/const atlasCorridorBounds=\[0,13\.6,27\.2,40\.8,54\.4,68\]/);
+ assert.match(src,/function renderAtlas\(/);
+ assert.match(src,/id="hpa-atlas-count"/);
+ assert.match(src,/olay dosyalarında dakika damgası olmadığından/);
+});
