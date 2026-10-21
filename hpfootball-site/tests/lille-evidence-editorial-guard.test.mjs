@@ -43,3 +43,9 @@ test('pitch phase selector uses original three event series with keyboard button
  assert.match(src,/EV\.gal_rec\.filter/);
  assert.match(src,/aria-live="polite"/);
 });
+
+test('press comparison bars reverse PPDA so longer indicates stronger pressure',()=>{
+ assert.match(src,/const scale=v=>r\.k==='ppda'/);
+ assert.match(src,/width:\$\{scale\(r\.v\)/);
+ assert.match(src,/left:\$\{scale\(med\)/);
+});
