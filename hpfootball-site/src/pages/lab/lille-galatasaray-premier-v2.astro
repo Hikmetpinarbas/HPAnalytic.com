@@ -1,0 +1,44 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import dataset from '../../data/lille-premier-v2-observations.json';
+export const prerender=true;
+const matches=dataset.matches;
+const esc=(n)=>String(n);
+const pass=(m)=>m.counts['Passes accurate'];
+const incorrect=(m)=>m.counts['Inaccurate passes'];
+const progressive=(m)=>m.counts['Progressive passes accurate'];
+const maxPass=Math.max(...matches.map(pass));
+const sourceUrl=(id)=>'https://drive.google.com/file/d/'+id+'/view';
+---
+<BaseLayout title="Lille – Galatasaray | Premier V2 kanıt laboratuvarı" description="Lille ve Galatasaray'ın rakip bağımlı olay profili: kaynaklı, doğrulanabilir dört maçlık CSV ön analizi." club="galatasaray">
+<main class="p2">
+  <div class="wrap">
+    <p class="eyebrow">HPANALYTIC / PREMIER V2 · EVIDENCE LAB</p>
+    <h1>Lille × Galatasaray <span>Oyun, rakibe göre nasıl değişiyor?</span></h1>
+    <p class="deck">Dört gerçek maçın olay kayıtlarına dayalı ilk analitik okuma. Aynı takımın farklı rakibe karşı nereden pas ürettiğini, ne kadar ilerleyebildiğini ve hangi soruları henüz cevaplayamadığımızı karşılaştırıyoruz.</p>
+    <div class="notice" role="note"><strong>CSV-only · PROVISIONAL</strong> — Bu ön analiz henüz altı dosya ailesiyle kanonikleştirilmedi. Sayılar olay etiketi gözlemleridir; topa sahip olma, pres mesafesi veya takım niyeti değildir. Yayın kabulü verilmedi.</div>
+    <section aria-labelledby="pass-h">
+      <p class="eyebrow">01 / Karşılaştırmalı olay sayımı</p><h2 id="pass-h">Topun dolaşım hacmi aynı kalıyor mu?</h2>
+      <p>Her çubuk, hedef takımın ilgili maçtaki “Passes accurate” CSV etiketini sayar. Maç içindeki topa sahip olma süresi ve rakip etkisi için düzeltme yapılmadı.</p>
+      <div class="plot" role="img" aria-label="Takım ve maç karşılaştırma grafikleri">
+      {matches.map(m=><div class="barrow"><div class="barname">{m.key.replaceAll('_',' · ')}</div><div class="track"><div class="fill" style={`width:${(pass(m)/maxPass*100).toFixed(2)}%`}></div></div><strong>{pass(m)}</strong></div>)}
+      </div>
+      <p class="small">Kaynakta “isabetli progresif pas” ayrı, örtüşen bir etiket; toplam paslara eklenmez.</p>
+    </section>
+    <section aria-labelledby="zone-h">
+      <p class="eyebrow">02 / Konum profili</p><h2 id="zone-h">İsabetli pas etiketleri hangi x bölgesinde başlıyor?</h2>
+      <p>Her maç için üç sabit x bandı: 0–35, 35–70, 70 ve üstü. Bu, doğrulanmış hücum yönü veya saha üçüncüsü tanımı değildir; kaynak koordinatının doğrudan bölünmesidir.</p>
+      <div class="zones">{matches.map(m=><article class="zonebox"><h3>{m.key.replaceAll('_',' · ')}</h3><div class="zonegrid" role="img" aria-label={`${m.key}: ${m.pass_start_x_bins.map(z=>z.count).join(', ')}`}>{m.pass_start_x_bins.map((b,i)=><div class={'z z'+i}><strong>{b.count}</strong><span>x {b.range}</span></div>)}</div><p class="small">Payda: {pass(m)} isabetli pas etiketi</p></article>)}</div>
+    </section>
+    <section aria-labelledby="succ-h">
+      <p class="eyebrow">03 / Başarılı ve başarısız eylem</p><h2 id="succ-h">Pas profilinde başarısızlık nasıl değişiyor?</h2>
+      <p>Yalnızca Passes accurate ve Inaccurate passes etiketleri için sınırlı karşılaştırma. Diğer pas kategorileriyle örtüşme çözümlenmediğinden resmî pas isabet yüzdesi değildir.</p>
+      <div class="summary">{matches.map(m=><article><h3>{m.key.replaceAll('_',' · ')}</h3><p><strong>{pass(m)}</strong> isabetli etiket · <strong>{incorrect(m)}</strong> isabetsiz etiket</p><p><strong>{progressive(m)}</strong> progresif isabetli etiket (alt küme olabilir)</p></article>)}</div>
+    </section>
+    <section aria-labelledby="limits-h"><p class="eyebrow">VERI SINIRI / AUDIT</p><h2 id="limits-h">Veri sınırı ve araştırma soruları</h2><p>Bu verilerden pres mesafesi, gerçek oyuncu koşuları, pas alıcısı veya gözlenmeyen saha yerleşimi çıkarılmadı. Lille'in Brest ve Arsenal; Galatasaray'ın Sporting ve Barcelona karşısındaki farkları rakip gücü, skor durumu, tempo ve oyun süresi etkilerini birlikte taşıyor.</p><p>Sonraki kabul kapısı: CSV/XML oyuncu, takım ve kaleci katmanlarının eşleştirilmesi; XLSX tüm maçlar/lig/Avrupa referans kontrolleri; koordinat yönü ve gerçek tarayıcı testi.</p><details><summary>Kaynak dosyalarını ve örneklem büyüklüğünü göster</summary><ul>{matches.map(m=><li>{m.key}: {m.source.rows} satır — <a href={sourceUrl(m.source.drive_id)} target="_blank" rel="noopener noreferrer">Google Drive CSV kaynağı</a></li>)}</ul></details></section>
+  </div>
+</main>
+<style>
+.p2{background:#0a111b;color:#eef3f7;min-height:100vh;padding:clamp(3rem,7vw,7rem) 1.1rem;font-family:inherit}.wrap{max-width:1100px;margin:auto}.eyebrow{font:700 .74rem/1.4 monospace;letter-spacing:.15em;color:#a0c4c6;text-transform:uppercase}h1{font-size:clamp(2.4rem,7vw,5.8rem);letter-spacing:-.06em;line-height:1.06;max-width:1000px;margin:.75rem 0}h1 span{display:block;color:#f2bd4f}h2{font-size:clamp(1.5rem,3vw,2.3rem);letter-spacing:-.03em}h3{font-size:1rem}p{line-height:1.7;color:#c4d1de;max-width:850px}.deck{font-size:clamp(1rem,2vw,1.3rem)}.notice{border-left:4px solid #f2bd4f;padding:1.1rem 1.3rem;background:#162131;line-height:1.6;margin:2rem 0 3rem}section{margin:4rem 0;border-top:1px solid #324255;padding-top:2rem}.plot,.zonebox,.summary article{background:#111e2e;border:1px solid #314354;border-radius:12px;padding:1.1rem}.barrow{display:grid;grid-template-columns:minmax(145px,220px) 1fr 55px;align-items:center;gap:14px;margin:17px 0}.barname{font-size:.9rem}.track{background:#2b3645;height:24px;border-radius:3px;overflow:hidden}.fill{height:100%;background:linear-gradient(90deg,#c5a35b,#f6d26a)}.small{font-size:.79rem;color:#a8bac8}.zones{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}.zonegrid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:3px;margin:1rem 0}.z{min-height:90px;display:flex;flex-direction:column;justify-content:center;align-items:center;background:#224052}.z1{background:#305b69}.z2{background:#3e7482}.z strong{font-size:1.6rem}.z span{font-size:.72rem}.summary{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:15px}.summary strong{color:#f2bd4f}a{color:#f2bd4f}details{margin:2rem 0;padding:1rem;border:1px solid #314354}summary{cursor:pointer}li{margin:.8rem 0}@media(max-width:700px){.barrow{grid-template-columns:1fr 46px;gap:6px}.barname{grid-column:1/-1}.zones,.summary{grid-template-columns:1fr}.z{min-height:76px}.p2{padding:2.5rem .7rem}}@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}}
+</style>
+</BaseLayout>
