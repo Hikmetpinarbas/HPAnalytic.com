@@ -1,0 +1,27 @@
+name: Premier 69 Verify (no deploy)
+on:
+  push:
+    branches:
+      - editorial/lille-galatasaray-premier-evidence-20261021
+  workflow_dispatch:
+permissions:
+  contents: read
+jobs:
+  qa:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    defaults:
+      run:
+        working-directory: hpfootball-site
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: hpfootball-site/package-lock.json
+      - run: npm ci --no-audit --no-fund
+      - run: node --test tests/lille-premier-embedded.test.mjs
+      - run: npm test
+      - run: npm run check
+      - run: npm run build

@@ -1,0 +1,69 @@
+{
+  "status": "USER_SUPPLIED_PENDING_SHEET_RECONCILIATION",
+  "sample": "two UCL matches per team",
+  "source_sheet": "https://docs.google.com/spreadsheets/d/13ojWneJfjI_POQRLPnqeEGRILHyLGfCS/edit",
+  "teams": [
+    {
+      "id": "LIL",
+      "shots": 10,
+      "onTarget": 4,
+      "xG": 1.28,
+      "xGA": 3.57,
+      "netXG": -2.29,
+      "losses": 122,
+      "ownHalfLosses": 41,
+      "recoveries": 85,
+      "ppda": 14.73
+    },
+    {
+      "id": "GS",
+      "shots": 12,
+      "onTarget": 6,
+      "xG": 1.87,
+      "xGA": 3.88,
+      "netXG": -2.01,
+      "losses": 122,
+      "ownHalfLosses": 22,
+      "recoveries": 81,
+      "ppda": 8.09
+    }
+  ],
+  "fixtures": [
+    {
+      "id": "LIL–Betis",
+      "team": "LIL",
+      "shots": 6,
+      "xG": 1.06,
+      "xGA": 1.56,
+      "ppda": 11.62,
+      "ownHalfLosses": 14
+    },
+    {
+      "id": "LIL–Arsenal",
+      "team": "LIL",
+      "shots": 4,
+      "xG": 0.22,
+      "xGA": 2.01,
+      "ppda": 17.84,
+      "ownHalfLosses": 27
+    },
+    {
+      "id": "GS–Sporting",
+      "team": "GS",
+      "shots": 9,
+      "xG": 1.55,
+      "xGA": 1.32,
+      "ppda": 5.1,
+      "ownHalfLosses": 7
+    },
+    {
+      "id": "GS–Barcelona",
+      "team": "GS",
+      "shots": 3,
+      "xG": 0.32,
+      "xGA": 2.56,
+      "ppda": 11.08,
+      "ownHalfLosses": 15
+    }
+  ]
+}

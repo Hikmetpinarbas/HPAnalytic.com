@@ -1,0 +1,11 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import { readFileSync } from 'node:fs';
+const read = p=>readFileSync(new URL('../'+p,import.meta.url),'utf8');
+const article=read('src/pages/mac/lille-galatasaray-2026-10-21.astro');
+const chart=read('src/components/LillePremierEightCharts.astro');
+const points=JSON.parse(read('src/data/lille-premier-v2-event-points.json'));
+const ag=JSON.parse(read('src/data/lille-premier-v2-aggregates.json'));
+test('eight SVG modules embedded in existing author article',()=>{assert.match(article,/import LillePremierEightCharts/);assert.match(article,/<LillePremierEightCharts \/>/);for(let n=1;n<=8;n++)assert.match(chart,new RegExp('data-viz="'+n+'"'));assert.match(chart,/viewBox="0 0 105 68"/);assert.match(chart,/data-team-filter/);});
+test('coordinates are sourced from two original event files, no synthetic points',()=>{assert.deepEqual(points.matches.map(m=>m.points.filter(p=>p.kind==='Lost balls'||p.kind==='Ball losses').length),[54,57]);assert.deepEqual(points.matches.map(m=>m.points.filter(p=>p.kind==='Ball recoveries').length),[36,30]);for(const m of points.matches)for(const p of m.points){assert.ok(Number.isFinite(p.x)&&p.x>=0&&p.x<=105);assert.ok(Number.isFinite(p.y)&&p.y>=0&&p.y<=68);assert.ok(p.source_id);} });
+test('aggregate uses independent two-match team samples',()=>{assert.equal(ag.teams.length,2);assert.equal(ag.fixtures.length,4);for(const t of ag.teams){assert.equal(t.shots,ag.fixtures.filter(m=>m.team===t.id).reduce((s,m)=>s+m.shots,0)); assert.equal(t.xG,Math.round(ag.fixtures.filter(m=>m.team===t.id).reduce((s,m)=>s+m.xG,0)*100)/100);}});
