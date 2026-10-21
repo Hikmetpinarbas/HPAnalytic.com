@@ -5,11 +5,13 @@ import { getCollection } from 'astro:content';
 import { isPublicEditorialItem } from '../lib/site-editorial-status.mjs';
 import { SECTION_LABELS } from '../lib/site-surfaces.mjs';
 import { featuredMatch } from '../data/match-previews.mjs';
+import { featuredPremier } from '../data/premier-features.mjs';
 export const prerender = true;
 
 const monographs = (await getCollection('monographs', isPublic)).sort((a, b) => +b.data.date - +a.data.date);
 const articles = (await getCollection('articles', isPublic)).filter((entry) => isPublicEditorialItem(entry.data)).sort((a, b) => +b.data.date - +a.data.date);
 const match = featuredMatch();
+const premier = featuredPremier();
 const dateTr = (d: Date) => d.toLocaleDateString('tr-TR', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' });
 const steps = [
   { key: 'yapi', label: 'Yapı', text: 'Önce oyunun iskeleti: alan, zaman, rol ve rakip. Skor bu yapının en son katmanıdır.' },
@@ -18,6 +20,43 @@ const steps = [
 ];
 ---
 <BaseLayout title="HPAnalytic — Hikmet Pınarbaş Futbol Analizi" description="Hikmet Pınarbaş'tan kanıt, mekanizma ve bağlam temelli bağımsız futbol analizi.">
+
+<section id="premier-feature" class="hpa-premier" aria-labelledby="premier-title" data-club="galatasaray">
+  <div class="hpa-premier__stars" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+  <div class="hpa-premier__inner">
+    <div class="hpa-premier__overline"><span>HPANALYTIC / PREMIER</span><span>BAŞ ANALİZ · EDITOR'S PICK</span></div>
+    {premier && <>
+      <p class="hpa-premier__eyebrow">UEFA ŞAMPİYONLAR LİGİ · HPANALYTIC PREMIER</p>
+      <h2 id="premier-title"><span class="hpa-premier__foreign">LOSC Lille</span><span class="hpa-premier__versus"> karşısında </span><span class="hpa-premier__turkish">Galatasaray</span></h2>
+      <p>{premier.description}</p>
+      <p class="hpa-premier__meta">Stade Pierre-Mauroy · 21 Ekim 2026 · 19.45 TSİ</p>
+      <a class="hpa-premier__link" href={premier.href}>PREMIER DOSYASINI KEŞFET <span aria-hidden="true">↗</span></a>
+    </>}
+  </div>
+</section>
+<style>
+.hpa-premier{position:relative;isolation:isolate;overflow:hidden;background:linear-gradient(124deg,#120707 0%,#350B16 48%,#711523 78%,#8B451C 100%);color:#F6F1E8;border-block:1px solid #F2B705}
+.hpa-premier::before{content:"";position:absolute;inset:0;z-index:-1;background:repeating-linear-gradient(90deg,transparent 0,transparent calc(33.333% - 1px),rgba(255,221,162,.12) 33.333%)}
+.hpa-premier__stars{position:absolute;right:-8%;top:-24%;width:min(72vw,750px);aspect-ratio:1;z-index:-1;pointer-events:none;opacity:.27;animation:hpa-star-rotation 45s linear infinite}
+.hpa-premier__stars i{position:absolute;width:20%;aspect-ratio:1;border:1.5px solid rgba(255,232,180,.7);clip-path:polygon(50% 0%,61% 36%,98% 36%,68% 58%,79% 95%,50% 73%,21% 95%,32% 58%,2% 36%,39% 36%);background:linear-gradient(145deg,rgba(255,202,83,.14),rgba(255,255,255,.04))}
+.hpa-premier__stars i:nth-child(1){top:10%;left:37%;transform:scale(1.45)}
+.hpa-premier__stars i:nth-child(2){top:33%;left:4%;transform:rotate(38deg)}
+.hpa-premier__stars i:nth-child(3){top:33%;right:4%;transform:rotate(-38deg)}
+.hpa-premier__stars i:nth-child(4){bottom:9%;left:19%;transform:rotate(16deg)}
+.hpa-premier__stars i:nth-child(5){bottom:9%;right:19%;transform:rotate(-16deg)}
+@keyframes hpa-star-rotation{to{transform:rotate(360deg)}}
+@media (prefers-reduced-motion: reduce){.hpa-premier__stars{animation:none}}
+.hpa-premier__inner{width:min(1200px,calc(100% - 36px));margin:auto;padding:clamp(36px,6vw,78px) 0}
+.hpa-premier__overline{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;border-bottom:1px solid rgba(255,255,255,.28);padding-bottom:13px;font-size:.72rem;font-weight:700;letter-spacing:.15em;color:#FFD24D}
+.hpa-premier__eyebrow{color:#F9CB7B;font-size:.78rem;letter-spacing:.1em;margin-top:24px}
+.hpa-premier h2{font-size:clamp(2rem,5vw,4.5rem);line-height:1.08;max-width:900px;margin:13px 0 20px;letter-spacing:-.045em}
+.hpa-premier__inner>p:not(.hpa-premier__eyebrow){max-width:650px;color:#D5DEE2;line-height:1.65}
+.hpa-premier__link{display:inline-flex;gap:18px;align-items:center;margin-top:24px;color:#2A0705;background:#F2B705;text-decoration:none;padding:15px 20px;min-height:48px;font-weight:800;font-size:.82rem;letter-spacing:.05em;border-radius:4px}
+.hpa-premier__link:focus-visible{outline:3px solid #FFF;outline-offset:4px}
+.hpa-premier__foreign{color:#F8F8FA}.hpa-premier__turkish{color:#FFD24D}.hpa-premier__versus{font:400 .36em var(--reading,serif);color:#DBD1CA;white-space:nowrap;vertical-align:middle;letter-spacing:0}
+.hpa-premier__meta{font-size:.8rem;letter-spacing:.04em;color:#E2CFCB;margin-top:14px}
+@media(max-width:520px){.hpa-premier h2{font-size:clamp(2.1rem,9vw,3.3rem)}.hpa-premier__versus{display:block;margin:10px 0;font-size:.36em}.hpa-premier__stars{right:-45%;top:0;width:130vw;opacity:.18}}
+</style>
 
 <section class="home-hero" aria-labelledby="hero-title">
   <canvas class="home-hero__canvas" aria-hidden="true" data-threads></canvas>

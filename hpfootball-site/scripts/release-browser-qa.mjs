@@ -52,5 +52,27 @@ assert.ok(await menuPage.locator('#mobile-nav-panel').isVisible(),'mobile menu p
 await menuPage.keyboard.press('Escape');
 assert.equal(await menuButton.getAttribute('aria-expanded'),'false','Escape fails to close mobile menu');
 await menuContext.close();
+// Dedicated Lille–Galatasaray article evidence: static render and actual interactions.
+for (const [suffix, viewport] of [['mobile',{width:390,height:844}],['desktop',{width:1440,height:900}]]) {
+ const context=await browser.newContext({viewport,reducedMotion:'reduce'});
+ const page=await context.newPage();
+ await page.goto(base+'/mac/lille-galatasaray-2026-10-21/',{waitUntil:'networkidle'});
+ assert.ok(await page.locator('#hpa-evidence-atlas').isVisible(),'article atlas missing');
+ assert.ok(await page.locator('#hpa-scenario-next').isVisible(),'article carousel missing');
+ await page.screenshot({path:`${out}/lille-article-${suffix}-full.png`,fullPage:true});
+ await page.locator('#hpa-evidence-atlas').screenshot({path:`${out}/lille-atlas-${suffix}-before.png`});
+ await page.locator('[data-atlas-event="ars"]').click();
+ await page.locator('[data-atlas-zone="2"]').click();
+ assert.equal(await page.locator('[data-atlas-zone="2"]').getAttribute('aria-pressed'),'true','zone selection failed');
+ await page.locator('#hpa-evidence-atlas').screenshot({path:`${out}/lille-atlas-${suffix}-selected.png`});
+ const prior=await page.locator('#hpa-scenario-counter').innerText();
+ await page.locator('#hpa-scenario-next').click();
+ const after=await page.locator('#hpa-scenario-counter').innerText();
+ assert.notEqual(after,prior,'scenario carousel did not advance');
+ await page.locator('#hpa-scenario-counter').screenshot({path:`${out}/lille-carousel-${suffix}-advanced.png`});
+ await page.locator('#ticker-pause').click();
+ assert.equal(await page.locator('#ticker-pause').getAttribute('aria-pressed'),'true','ticker did not pause');
+ await context.close();
+}
 await browser.close();
 console.log('BROWSER_QA_PASS');
