@@ -427,7 +427,7 @@ const el = (tag, attrs={}, parent) => { const n=document.createElementNS(NS,tag)
  }
  t.innerHTML=cards.map(c=>cardHtml(c)).join('')+cards.map(c=>cardHtml(c,true)).join('');
  staticBox.innerHTML='<h3>36 takımlı metrik karşılaştırması</h3><ul>'+cards.map(c=>'<li data-sentiment="'+c.sentiment+'">'+c.team+' · '+c.label+' · '+c.number+' · '+c.rank+'/'+c.den+'. sıra</li>').join('')+'</ul>'+
- '<p>Karşılaştırma yalnızca mevcut SportsBase özetindeki metrikleri kapsar. Eşitliklerde aynı sıradaki takımlar veri sırasıyla gösterilir; sıralamanın kesin eşitlik çözümü değildir. Oyuncu bazında doğrulanmış etki sıralaması bulunmadığından bireysel pozitif/negatif oyuncu listeleri bu bantta sunulmaz.</p>';
+ '<p>Karşılaştırma yalnızca mevcut SportsBase özetindeki metrikleri kapsar. Eşitliklerde aynı sıradaki takımlar veri sırasıyla gösterilir; sıralamanın kesin eşitlik çözümü değildir. oyuncu bazında doğrulanmış etki sıralaması bulunmadığından bireysel pozitif/negatif oyuncu listeleri bu bantta sunulmaz.</p>';
  pause.addEventListener('click',()=>{const pressed=pause.getAttribute('aria-pressed')==='true';pause.setAttribute('aria-pressed',String(!pressed));pause.textContent=pressed?'Durdur':'Devam et';t.classList.toggle('is-paused',!pressed);});
 })();
 
