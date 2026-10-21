@@ -25,16 +25,10 @@ const steps = [
   <div class="hpa-premier__inner">
     <div class="hpa-premier__overline"><span>HPANALYTIC / PREMIER</span><span>BAŞ ANALİZ · EDITOR'S PICK</span></div>
     {premier && <>
-      <div class="hpa-premier__matchup" aria-label="Galatasaray ve Lille takım monogramları">
-        <div class="hpa-premier__club" tabindex="0" aria-label="Galatasaray: 36 takım karşılaştırması">
-          <img src="/brand/premier-galatasaray-monogram.svg" alt="Galatasaray için geçici tipografik monogram" width="104" height="104" loading="eager" decoding="async"/>
-          <strong>GALATASARAY</strong><span class="hpa-premier__hover">36 takımlık analiz · veri atlası</span>
-        </div>
+      <div class="hpa-premier__matchup" aria-label="Galatasaray ve LOSC Lille karşılaşması">
+        <div class="hpa-premier__club"><strong>GALATASARAY</strong><span>Türkiye · Sarı–Kırmızı</span></div>
         <span class="hpa-premier__versus" aria-hidden="true">×</span>
-        <div class="hpa-premier__club" tabindex="0" aria-label="LOSC Lille: baskı ve top kaybı analizi">
-          <img src="/brand/premier-lille-monogram.svg" alt="LOSC Lille için geçici tipografik monogram" width="104" height="104" loading="eager" decoding="async"/>
-          <strong>LOSC LILLE</strong><span class="hpa-premier__hover">Pres eşleşmesi · bölgesel riskler</span>
-        </div>
+        <div class="hpa-premier__club"><strong>LOSC LILLE</strong><span>Fransa · Kırmızı–Lacivert</span></div>
       </div>
       <p class="hpa-premier__eyebrow">{premier.category} · {premier.team}</p>
       <h2 id="premier-title">{premier.title}</h2>
@@ -55,13 +49,13 @@ const steps = [
 .hpa-premier__link:focus-visible{outline:3px solid #FFF;outline-offset:4px}
 .hpa-premier__matchup{display:flex;align-items:center;justify-content:flex-start;gap:clamp(12px,3vw,42px);padding:28px 0 6px;max-width:610px}
 .hpa-premier__club{display:flex;flex-direction:column;align-items:center;gap:8px;min-width:0;flex:1;border:1px solid rgba(255,210,77,.23);border-radius:12px;padding:12px 8px;transition:transform .22s,border-color .22s;background:rgba(17,4,8,.35)}
-.hpa-premier__club img{width:clamp(76px,12vw,104px);height:104px;object-fit:contain}
+
 .hpa-premier__club strong{font-size:.76rem;letter-spacing:.09em}
-.hpa-premier__hover{font-size:.72rem;color:#F9CF82;text-align:center}
+
 .hpa-premier__club:hover,.hpa-premier__club:focus-visible{transform:translateY(-5px);border-color:#FFD24D;outline:2px solid transparent}
 .hpa-premier__versus{color:#FFD24D;font-size:2rem}
 @media(prefers-reduced-motion:reduce){.hpa-premier__club{transition:none}.hpa-premier__club:hover,.hpa-premier__club:focus-visible{transform:none}}
-@media(max-width:520px){.hpa-premier__club img{height:78px}.hpa-premier__club strong{font-size:.63rem}.hpa-premier__hover{font-size:.65rem}}
+@media(max-width:520px){.hpa-premier__club strong{font-size:.63rem}}
 </style>
 
 <section class="home-hero" aria-labelledby="hero-title">
