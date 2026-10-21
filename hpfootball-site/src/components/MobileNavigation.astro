@@ -1,32 +1,18 @@
 ---
-interface NavigationItem {
-  href: string;
-  label: string;
-  current?: 'page' | 'true';
-}
-
-interface Props {
-  navigation?: NavigationItem[];
-}
-
+interface NavigationItem { href: string; label: string; text?: string; current?: 'page' | 'true'; }
+interface Props { navigation?: NavigationItem[]; }
 const { navigation = [] } = Astro.props as Props;
 ---
 
 <div class="mobile-navigation" data-mobile-nav>
-  <button
-    class="mobile-nav-trigger"
-    type="button"
-    aria-expanded="false"
-    aria-controls="mobile-nav-panel"
-
-  >
-    <span>MENU</span>
+  <button class="mobile-nav-trigger" type="button" aria-expanded="false" aria-controls="mobile-nav-panel">
+    <span>MENÜ</span>
     <span class="mobile-nav-trigger-mark" aria-hidden="true"></span>
   </button>
 
   <nav id="mobile-nav-panel" class="mobile-nav-panel" aria-label="Mobil ana menü" hidden>
-    {navigation.map((item) => (
-      <a href={item.href} aria-current={item.current}>{item.label}</a>
+    {navigation.map((item, index) => (
+      <a href={item.href} aria-current={item.current}><span class="mobile-nav-index">{String(index + 1).padStart(2, '0')}</span><b>{item.label}</b>{item.text && <small>{item.text}</small>}</a>
     ))}
   </nav>
 </div>
@@ -47,6 +33,7 @@ const { navigation = [] } = Astro.props as Props;
     const setOpen = (open: boolean) => {
       trigger.setAttribute('aria-expanded', String(open));
       panel.hidden = !open;
+      document.documentElement.style.overflow = open ? 'hidden' : '';
     };
     const dispatch = (event: string) => {
       if (!isOpen()) return;

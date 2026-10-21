@@ -1,0 +1,92 @@
+[
+  {
+    "id": "00-founder-authority",
+    "title": "Hikmet Pınarbaş · Founding Authority",
+    "tag": "EVIDENCE BEFORE CONFIDENCE",
+    "svg": "/assets/visuals/hpa_founder_authority_seal.svg",
+    "desc": "EVENT ⊂ ZFGV doktrini, Popperian yanlışlama ve Caravaggio tenebrizmiyle spatiotemporal karar mimarisi.",
+    "accent": "#E5A93C",
+    "isFounder": true
+  },
+  {
+    "id": "g01-halkin-metrikleri",
+    "badge": "EPİSTEMOLOJİ",
+    "title": "Halkın Metrikleri: xG, xT ve EPV Neyi Anlatır, Neyi Gizler?",
+    "summary": "Ekrandaki her sayı bir futbol gerçeği değildir; model varsayımıdır. Markov tehdit modelleri ve olay verisi körlüğü.",
+    "route": "/monographs/halkin-metrikleri.html",
+    "visual_asset": "/assets/visuals/hpa_tactical_cycle_atlas.svg",
+    "reading_time": "7 dk"
+  },
+  {
+    "id": "g02-kadin-biyomekanik",
+    "badge": "BİYOMEKANİK & KİNETİK",
+    "title": "Kadın Sporlarında Kinetik Zekâ ve Biyomekanik Asimetri",
+    "summary": "17 derecelik Q açısının yarattığı rotasyonel tork, 40 milisaniyelik plant phase şoku ve erken hamstring kalkanı.",
+    "route": "/monographs/q-angle-spatial-intelligence.html",
+    "visual_asset": "/assets/visuals/hpa_qangle_spatial_atlas.svg",
+    "reading_time": "8 dk"
+  },
+  {
+    "id": "g03-taktiksel-dongu",
+    "badge": "TAKTİKSEL DÖNGÜ",
+    "title": "On Yılda Bir Çöken Kaleler: 2000'ler, 2010'lar ve 2020'lerin Taktiksel Döngüsü",
+    "summary": "Hoca dehası değil, alan-zaman boşluklarının matematiksel tükenişi. 4-4-2'den 3-2-4-1 hibrit beş koridoruna evrim.",
+    "route": "/monographs/03-on-yilda-bir-coken-kaleler.html",
+    "visual_asset": "/assets/visuals/hpa_tactical_cycle_atlas.svg",
+    "reading_time": "9 dk"
+  },
+  {
+    "id": "g04-hibrit-roller",
+    "badge": "ROL MİMARİSİ",
+    "title": "Laboratuvarın İcat Ettiği Roller: Ters Bekten Mezzala'ya Yeni Mevkiler",
+    "summary": "Mevkilerin ölümü ve uzamsal hacim. Inverted Fullback dinlenme savunması ve Raumdeuter kör nokta baskını.",
+    "route": "/monographs/04-hic-var-olmayan-mevkiler.html",
+    "visual_asset": "/assets/visuals/hpa_hybrid_roles_atlas.svg",
+    "reading_time": "6 dk"
+  },
+  {
+    "id": "g05-harald-bohr",
+    "badge": "BİYOGRAFİK STRATEJİ",
+    "title": "Çizgiden Zirveye: Futbol Karar Zekâsının Sivil Hayattaki Karşılığı",
+    "summary": "Olimpiyat gümüş madalyalı bir futbolcudan Fourier analizi dehasına: Harald Bohr'un saha içi karar geometrisi.",
+    "route": "/monographs/05-sahadan-hayata-siradisi-biyografi.html",
+    "visual_asset": "/assets/visuals/hpa_tactical_cycle_atlas.svg",
+    "reading_time": "8 dk"
+  },
+  {
+    "id": "g06-bilanconun-iki-yuzu",
+    "badge": "FUTBOL EKONOMİSİ",
+    "title": "Bilançonun İki Yüzü: Süreç Madenciliği Yapanlar vs. Borç Batağındaki Devler",
+    "summary": "Brighton ve Benfica'nın algoritmik oyuncu ikamesi vs. 30 yaş üstü kontratların yarattığı amortisman uçurumu.",
+    "route": "/monographs/06-bilanconun-iki-yuzu.html",
+    "visual_asset": "/assets/visuals/hpa_financial_balance_atlas.svg",
+    "reading_time": "7 dk"
+  },
+  {
+    "id": "g07-kemik-yorgunlugu",
+    "badge": "FİZYOLOJİ & YÜK",
+    "title": "Kemik Yorgunluğu: 20 Yaşında 100 Maçı Aşanların Biyolojik Sınırı",
+    "summary": "Pedri, Yamal ve Bellingham sendromu. Epifiz plakları kapanmadan yüklenen aşırı maç temposu ve hücresel tükeniş.",
+    "route": "/monographs/07-kemik-yorgunlugu-biyolojik-sinir.html",
+    "visual_asset": "/assets/visuals/hpa_qangle_spatial_atlas.svg",
+    "reading_time": "8 dk"
+  },
+  {
+    "id": "g08-kulubenin-golgesi",
+    "badge": "ZİHİNSEL DİRENÇ",
+    "title": "Kulübenin Gölgesi: Bir Ömrü İkinci Kaleci Olarak Bitirmek",
+    "summary": "90 dakika ısınan ama sahaya giremeyen eldivenin mental anatomisi. Görünmez liderlik ve taktik rehberlik.",
+    "route": "/monographs/08-kulubenin-golgesi-ikinci-kaleci.html",
+    "visual_asset": "/assets/visuals/hpa_hybrid_roles_atlas.svg",
+    "reading_time": "6 dk"
+  },
+  {
+    "id": "g00-kurucu-kart",
+    "badge": "METODOLOJİK OTORİTE",
+    "title": "HİKMET PINARBAŞ — BAĞIMSIZ KARAR DESTEK VE SPATİOTEMPORAL METODOLOJİ",
+    "summary": "TV yorumculuğunun ve yüzeysel istatistiklerin ötesinde; oyunun uzay-zaman geometrisini, Markov tehdit modellerini ve karar mekanizmalarını araştıran bağımsız bir futbol laboratuvarı. Menajerlik, oyuncu ticareti veya komisyonculuk yapılmaz; kulüplere, teknik heyetlere ve araştırmacılara salt bilimsel kanıt ve karar desteği sunulur. EVENT ⊂ ZFGV · İddia kanıtın bittiği yerde durur.",
+    "route": "/about",
+    "visual_asset": "/assets/visuals/hpa_founder_authority_seal.svg",
+    "reading_time": "Kurumsal"
+  }
+]

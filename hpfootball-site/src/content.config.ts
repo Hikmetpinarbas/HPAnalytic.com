@@ -59,4 +59,25 @@ const visuals=defineCollection({
     claimCeiling:z.string(),featured:z.boolean().default(false),draft:z.boolean().default(false),...editorialFields,
   })
 });
-export const collections={articles,research,visuals};
+const monographs=defineCollection({
+  loader:glob({pattern:'**/*.{md,mdx}',base:'./src/content/monographs'}),
+  schema:z.object({
+    title:z.string(),
+    description:z.string(),
+    subtitle:z.string().optional(),
+    author:z.string().optional(),
+    category:z.string().optional(),
+    readingTime:z.string().optional(),
+    heroImage:z.string().optional(),
+    evidenceLevel:z.string().optional(),
+    date:z.coerce.date(),
+    draft:z.boolean().default(true),
+    claimCeiling:z.string(),
+    methodology:z.enum(['Mekânsal Performans Çözümlemesi','Stokastik Süreç Modellemesi','Karar Destek Laboratuvarı']),
+    driveFileId:z.string().optional(),
+    provenance:z.string(),
+    sourceRefs:z.array(z.object({title:z.string(),locator:z.string()})).default([]),
+    visualAssets:z.array(z.object({visual_id:z.string(),src:z.string(),caption:z.string(),rights_status:z.string()})).default([]),
+  })
+});
+export const collections={articles,research,visuals,monographs};

@@ -1,0 +1,1506 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1330 1000" role="img" aria-labelledby="ttl dsc">
+<title id="ttl">Galatasaray Gençlerbirliği 12 katmanlı olay atlası</title>
+<desc id="dsc">SportsBase oyuncu olaylarının mekânsal dağılımı. Topun hareket rotası, pas alıcısı ve hücum yönü iddia edilmez.</desc>
+<g id="layer-01-page"><rect width="1330" height="1000" fill="#F5F1E8"/></g>
+<g id="layer-02-editorial"><text x="45" y="57" fill="#234338" font-size="19" font-weight="700" font-family="Arial,sans-serif">HPANALYTIC / OLAY ATLASI</text><text x="45" y="105" fill="#181D19" font-size="34" font-weight="700" font-family="Arial,sans-serif">Gençlerbirliği — Galatasaray</text><text x="45" y="137" fill="#4E5650" font-size="15" font-weight="400" font-family="Arial,sans-serif">17.10.2026 · gerçek kaynak koordinatları · hareket güzergâhları gösterilmez</text></g>
+<g id="layer-03-field-surface"><rect x="35" y="165" width="1080" height="710" fill="#FFFEFB" stroke="#DDD5C5"/></g>
+<g id="layer-04-field-markings" fill="none" stroke="#B9BBB2" stroke-width="1.5">
+<rect x="50" y="180" width="1050" height="680"/><line x1="575" x2="575" y1="180" y2="860"/><circle cx="575" cy="520" r="91.5"/><rect x="50" y="318.4" width="165" height="403.2"/><rect x="935" y="318.4" width="165" height="403.2"/><rect x="50" y="428.4" width="55" height="183.2"/><rect x="1045" y="428.4" width="55" height="183.2"/></g>
+<g id="layer-05-regional-grid" fill="none" stroke="#DDD5C5" stroke-dasharray="4 6">
+<line x1="260" x2="260" y1="180" y2="860"/>
+<line x1="470" x2="470" y1="180" y2="860"/>
+<line x1="680" x2="680" y1="180" y2="860"/>
+<line x1="890" x2="890" y1="180" y2="860"/>
+<line x1="50" x2="1100" y1="406.66666666666663" y2="406.66666666666663"/>
+<line x1="50" x2="1100" y1="633.3333333333333" y2="633.3333333333333"/>
+</g>
+<g id="layer-06-density" fill="#206A97">
+<rect x="150" y="180" width="20" height="20" opacity="0.056"/>
+<rect x="170" y="180" width="20" height="20" opacity="0.061"/>
+<rect x="190" y="180" width="20" height="20" opacity="0.059"/>
+<rect x="210" y="180" width="20" height="20" opacity="0.056"/>
+<rect x="230" y="180" width="20" height="20" opacity="0.054"/>
+<rect x="250" y="180" width="20" height="20" opacity="0.053"/>
+<rect x="370" y="180" width="20" height="20" opacity="0.051"/>
+<rect x="390" y="180" width="20" height="20" opacity="0.055"/>
+<rect x="410" y="180" width="20" height="20" opacity="0.056"/>
+<rect x="430" y="180" width="20" height="20" opacity="0.057"/>
+<rect x="450" y="180" width="20" height="20" opacity="0.055"/>
+<rect x="470" y="180" width="20" height="20" opacity="0.054"/>
+<rect x="490" y="180" width="20" height="20" opacity="0.059"/>
+<rect x="510" y="180" width="20" height="20" opacity="0.072"/>
+<rect x="530" y="180" width="20" height="20" opacity="0.098"/>
+<rect x="550" y="180" width="20" height="20" opacity="0.141"/>
+<rect x="570" y="180" width="20" height="20" opacity="0.194"/>
+<rect x="590" y="180" width="20" height="20" opacity="0.227"/>
+<rect x="610" y="180" width="20" height="20" opacity="0.218"/>
+<rect x="630" y="180" width="20" height="20" opacity="0.182"/>
+<rect x="650" y="180" width="20" height="20" opacity="0.146"/>
+<rect x="670" y="180" width="20" height="20" opacity="0.121"/>
+<rect x="690" y="180" width="20" height="20" opacity="0.104"/>
+<rect x="710" y="180" width="20" height="20" opacity="0.089"/>
+<rect x="730" y="180" width="20" height="20" opacity="0.078"/>
+<rect x="750" y="180" width="20" height="20" opacity="0.073"/>
+<rect x="770" y="180" width="20" height="20" opacity="0.072"/>
+<rect x="790" y="180" width="20" height="20" opacity="0.070"/>
+<rect x="810" y="180" width="20" height="20" opacity="0.061"/>
+<rect x="970" y="180" width="20" height="20" opacity="0.053"/>
+<rect x="990" y="180" width="20" height="20" opacity="0.092"/>
+<rect x="1010" y="180" width="20" height="20" opacity="0.130"/>
+<rect x="1030" y="180" width="20" height="20" opacity="0.160"/>
+<rect x="1050" y="180" width="20" height="20" opacity="0.201"/>
+<rect x="1070" y="180" width="20" height="20" opacity="0.264"/>
+<rect x="1090" y="180" width="20" height="20" opacity="0.319"/>
+<rect x="130" y="200" width="20" height="20" opacity="0.056"/>
+<rect x="150" y="200" width="20" height="20" opacity="0.062"/>
+<rect x="170" y="200" width="20" height="20" opacity="0.065"/>
+<rect x="190" y="200" width="20" height="20" opacity="0.065"/>
+<rect x="210" y="200" width="20" height="20" opacity="0.069"/>
+<rect x="230" y="200" width="20" height="20" opacity="0.079"/>
+<rect x="250" y="200" width="20" height="20" opacity="0.086"/>
+<rect x="270" y="200" width="20" height="20" opacity="0.080"/>
+<rect x="290" y="200" width="20" height="20" opacity="0.068"/>
+<rect x="310" y="200" width="20" height="20" opacity="0.059"/>
+<rect x="330" y="200" width="20" height="20" opacity="0.057"/>
+<rect x="350" y="200" width="20" height="20" opacity="0.061"/>
+<rect x="370" y="200" width="20" height="20" opacity="0.066"/>
+<rect x="390" y="200" width="20" height="20" opacity="0.071"/>
+<rect x="410" y="200" width="20" height="20" opacity="0.075"/>
+<rect x="430" y="200" width="20" height="20" opacity="0.077"/>
+<rect x="450" y="200" width="20" height="20" opacity="0.073"/>
+<rect x="470" y="200" width="20" height="20" opacity="0.068"/>
+<rect x="490" y="200" width="20" height="20" opacity="0.068"/>
+<rect x="510" y="200" width="20" height="20" opacity="0.075"/>
+<rect x="530" y="200" width="20" height="20" opacity="0.091"/>
+<rect x="550" y="200" width="20" height="20" opacity="0.122"/>
+<rect x="570" y="200" width="20" height="20" opacity="0.163"/>
+<rect x="590" y="200" width="20" height="20" opacity="0.193"/>
+<rect x="610" y="200" width="20" height="20" opacity="0.195"/>
+<rect x="630" y="200" width="20" height="20" opacity="0.176"/>
+<rect x="650" y="200" width="20" height="20" opacity="0.153"/>
+<rect x="670" y="200" width="20" height="20" opacity="0.133"/>
+<rect x="690" y="200" width="20" height="20" opacity="0.117"/>
+<rect x="710" y="200" width="20" height="20" opacity="0.104"/>
+<rect x="730" y="200" width="20" height="20" opacity="0.092"/>
+<rect x="750" y="200" width="20" height="20" opacity="0.085"/>
+<rect x="770" y="200" width="20" height="20" opacity="0.081"/>
+<rect x="790" y="200" width="20" height="20" opacity="0.076"/>
+<rect x="810" y="200" width="20" height="20" opacity="0.066"/>
+<rect x="830" y="200" width="20" height="20" opacity="0.054"/>
+<rect x="990" y="200" width="20" height="20" opacity="0.080"/>
+<rect x="1010" y="200" width="20" height="20" opacity="0.111"/>
+<rect x="1030" y="200" width="20" height="20" opacity="0.137"/>
+<rect x="1050" y="200" width="20" height="20" opacity="0.169"/>
+<rect x="1070" y="200" width="20" height="20" opacity="0.216"/>
+<rect x="1090" y="200" width="20" height="20" opacity="0.254"/>
+<rect x="110" y="220" width="20" height="20" opacity="0.053"/>
+<rect x="130" y="220" width="20" height="20" opacity="0.059"/>
+<rect x="150" y="220" width="20" height="20" opacity="0.063"/>
+<rect x="170" y="220" width="20" height="20" opacity="0.065"/>
+<rect x="190" y="220" width="20" height="20" opacity="0.070"/>
+<rect x="210" y="220" width="20" height="20" opacity="0.086"/>
+<rect x="230" y="220" width="20" height="20" opacity="0.112"/>
+<rect x="250" y="220" width="20" height="20" opacity="0.130"/>
+<rect x="270" y="220" width="20" height="20" opacity="0.123"/>
+<rect x="290" y="220" width="20" height="20" opacity="0.101"/>
+<rect x="310" y="220" width="20" height="20" opacity="0.082"/>
+<rect x="330" y="220" width="20" height="20" opacity="0.074"/>
+<rect x="350" y="220" width="20" height="20" opacity="0.075"/>
+<rect x="370" y="220" width="20" height="20" opacity="0.080"/>
+<rect x="390" y="220" width="20" height="20" opacity="0.088"/>
+<rect x="410" y="220" width="20" height="20" opacity="0.095"/>
+<rect x="430" y="220" width="20" height="20" opacity="0.098"/>
+<rect x="450" y="220" width="20" height="20" opacity="0.092"/>
+<rect x="470" y="220" width="20" height="20" opacity="0.081"/>
+<rect x="490" y="220" width="20" height="20" opacity="0.073"/>
+<rect x="510" y="220" width="20" height="20" opacity="0.072"/>
+<rect x="530" y="220" width="20" height="20" opacity="0.077"/>
+<rect x="550" y="220" width="20" height="20" opacity="0.092"/>
+<rect x="570" y="220" width="20" height="20" opacity="0.118"/>
+<rect x="590" y="220" width="20" height="20" opacity="0.144"/>
+<rect x="610" y="220" width="20" height="20" opacity="0.159"/>
+<rect x="630" y="220" width="20" height="20" opacity="0.161"/>
+<rect x="650" y="220" width="20" height="20" opacity="0.153"/>
+<rect x="670" y="220" width="20" height="20" opacity="0.142"/>
+<rect x="690" y="220" width="20" height="20" opacity="0.130"/>
+<rect x="710" y="220" width="20" height="20" opacity="0.119"/>
+<rect x="730" y="220" width="20" height="20" opacity="0.108"/>
+<rect x="750" y="220" width="20" height="20" opacity="0.097"/>
+<rect x="770" y="220" width="20" height="20" opacity="0.089"/>
+<rect x="790" y="220" width="20" height="20" opacity="0.080"/>
+<rect x="810" y="220" width="20" height="20" opacity="0.070"/>
+<rect x="830" y="220" width="20" height="20" opacity="0.059"/>
+<rect x="850" y="220" width="20" height="20" opacity="0.052"/>
+<rect x="990" y="220" width="20" height="20" opacity="0.066"/>
+<rect x="1010" y="220" width="20" height="20" opacity="0.089"/>
+<rect x="1030" y="220" width="20" height="20" opacity="0.108"/>
+<rect x="1050" y="220" width="20" height="20" opacity="0.128"/>
+<rect x="1070" y="220" width="20" height="20" opacity="0.151"/>
+<rect x="1090" y="220" width="20" height="20" opacity="0.168"/>
+<rect x="150" y="240" width="20" height="20" opacity="0.054"/>
+<rect x="170" y="240" width="20" height="20" opacity="0.056"/>
+<rect x="190" y="240" width="20" height="20" opacity="0.065"/>
+<rect x="210" y="240" width="20" height="20" opacity="0.091"/>
+<rect x="230" y="240" width="20" height="20" opacity="0.130"/>
+<rect x="250" y="240" width="20" height="20" opacity="0.156"/>
+<rect x="270" y="240" width="20" height="20" opacity="0.149"/>
+<rect x="290" y="240" width="20" height="20" opacity="0.121"/>
+<rect x="310" y="240" width="20" height="20" opacity="0.095"/>
+<rect x="330" y="240" width="20" height="20" opacity="0.081"/>
+<rect x="350" y="240" width="20" height="20" opacity="0.077"/>
+<rect x="370" y="240" width="20" height="20" opacity="0.080"/>
+<rect x="390" y="240" width="20" height="20" opacity="0.089"/>
+<rect x="410" y="240" width="20" height="20" opacity="0.100"/>
+<rect x="430" y="240" width="20" height="20" opacity="0.105"/>
+<rect x="450" y="240" width="20" height="20" opacity="0.097"/>
+<rect x="470" y="240" width="20" height="20" opacity="0.081"/>
+<rect x="490" y="240" width="20" height="20" opacity="0.068"/>
+<rect x="510" y="240" width="20" height="20" opacity="0.061"/>
+<rect x="530" y="240" width="20" height="20" opacity="0.059"/>
+<rect x="550" y="240" width="20" height="20" opacity="0.064"/>
+<rect x="570" y="240" width="20" height="20" opacity="0.078"/>
+<rect x="590" y="240" width="20" height="20" opacity="0.099"/>
+<rect x="610" y="240" width="20" height="20" opacity="0.120"/>
+<rect x="630" y="240" width="20" height="20" opacity="0.134"/>
+<rect x="650" y="240" width="20" height="20" opacity="0.137"/>
+<rect x="670" y="240" width="20" height="20" opacity="0.133"/>
+<rect x="690" y="240" width="20" height="20" opacity="0.127"/>
+<rect x="710" y="240" width="20" height="20" opacity="0.121"/>
+<rect x="730" y="240" width="20" height="20" opacity="0.110"/>
+<rect x="750" y="240" width="20" height="20" opacity="0.098"/>
+<rect x="770" y="240" width="20" height="20" opacity="0.086"/>
+<rect x="790" y="240" width="20" height="20" opacity="0.076"/>
+<rect x="810" y="240" width="20" height="20" opacity="0.066"/>
+<rect x="830" y="240" width="20" height="20" opacity="0.057"/>
+<rect x="850" y="240" width="20" height="20" opacity="0.054"/>
+<rect x="870" y="240" width="20" height="20" opacity="0.052"/>
+<rect x="990" y="240" width="20" height="20" opacity="0.059"/>
+<rect x="1010" y="240" width="20" height="20" opacity="0.075"/>
+<rect x="1030" y="240" width="20" height="20" opacity="0.087"/>
+<rect x="1050" y="240" width="20" height="20" opacity="0.094"/>
+<rect x="1070" y="240" width="20" height="20" opacity="0.098"/>
+<rect x="1090" y="240" width="20" height="20" opacity="0.099"/>
+<rect x="190" y="260" width="20" height="20" opacity="0.051"/>
+<rect x="210" y="260" width="20" height="20" opacity="0.080"/>
+<rect x="230" y="260" width="20" height="20" opacity="0.121"/>
+<rect x="250" y="260" width="20" height="20" opacity="0.149"/>
+<rect x="270" y="260" width="20" height="20" opacity="0.147"/>
+<rect x="290" y="260" width="20" height="20" opacity="0.123"/>
+<rect x="310" y="260" width="20" height="20" opacity="0.098"/>
+<rect x="330" y="260" width="20" height="20" opacity="0.081"/>
+<rect x="350" y="260" width="20" height="20" opacity="0.072"/>
+<rect x="370" y="260" width="20" height="20" opacity="0.071"/>
+<rect x="390" y="260" width="20" height="20" opacity="0.079"/>
+<rect x="410" y="260" width="20" height="20" opacity="0.091"/>
+<rect x="430" y="260" width="20" height="20" opacity="0.096"/>
+<rect x="450" y="260" width="20" height="20" opacity="0.088"/>
+<rect x="470" y="260" width="20" height="20" opacity="0.073"/>
+<rect x="490" y="260" width="20" height="20" opacity="0.060"/>
+<rect x="510" y="260" width="20" height="20" opacity="0.051"/>
+<rect x="570" y="260" width="20" height="20" opacity="0.053"/>
+<rect x="590" y="260" width="20" height="20" opacity="0.069"/>
+<rect x="610" y="260" width="20" height="20" opacity="0.087"/>
+<rect x="630" y="260" width="20" height="20" opacity="0.100"/>
+<rect x="650" y="260" width="20" height="20" opacity="0.106"/>
+<rect x="670" y="260" width="20" height="20" opacity="0.108"/>
+<rect x="690" y="260" width="20" height="20" opacity="0.108"/>
+<rect x="710" y="260" width="20" height="20" opacity="0.105"/>
+<rect x="730" y="260" width="20" height="20" opacity="0.096"/>
+<rect x="750" y="260" width="20" height="20" opacity="0.083"/>
+<rect x="770" y="260" width="20" height="20" opacity="0.072"/>
+<rect x="790" y="260" width="20" height="20" opacity="0.063"/>
+<rect x="810" y="260" width="20" height="20" opacity="0.056"/>
+<rect x="870" y="260" width="20" height="20" opacity="0.052"/>
+<rect x="890" y="260" width="20" height="20" opacity="0.052"/>
+<rect x="990" y="260" width="20" height="20" opacity="0.056"/>
+<rect x="1010" y="260" width="20" height="20" opacity="0.066"/>
+<rect x="1030" y="260" width="20" height="20" opacity="0.072"/>
+<rect x="1050" y="260" width="20" height="20" opacity="0.070"/>
+<rect x="1070" y="260" width="20" height="20" opacity="0.063"/>
+<rect x="1090" y="260" width="20" height="20" opacity="0.056"/>
+<rect x="210" y="280" width="20" height="20" opacity="0.062"/>
+<rect x="230" y="280" width="20" height="20" opacity="0.098"/>
+<rect x="250" y="280" width="20" height="20" opacity="0.126"/>
+<rect x="270" y="280" width="20" height="20" opacity="0.132"/>
+<rect x="290" y="280" width="20" height="20" opacity="0.121"/>
+<rect x="310" y="280" width="20" height="20" opacity="0.105"/>
+<rect x="330" y="280" width="20" height="20" opacity="0.088"/>
+<rect x="350" y="280" width="20" height="20" opacity="0.074"/>
+<rect x="370" y="280" width="20" height="20" opacity="0.066"/>
+<rect x="390" y="280" width="20" height="20" opacity="0.068"/>
+<rect x="410" y="280" width="20" height="20" opacity="0.077"/>
+<rect x="430" y="280" width="20" height="20" opacity="0.083"/>
+<rect x="450" y="280" width="20" height="20" opacity="0.079"/>
+<rect x="470" y="280" width="20" height="20" opacity="0.071"/>
+<rect x="490" y="280" width="20" height="20" opacity="0.064"/>
+<rect x="510" y="280" width="20" height="20" opacity="0.057"/>
+<rect x="590" y="280" width="20" height="20" opacity="0.057"/>
+<rect x="610" y="280" width="20" height="20" opacity="0.067"/>
+<rect x="630" y="280" width="20" height="20" opacity="0.073"/>
+<rect x="650" y="280" width="20" height="20" opacity="0.076"/>
+<rect x="670" y="280" width="20" height="20" opacity="0.079"/>
+<rect x="690" y="280" width="20" height="20" opacity="0.081"/>
+<rect x="710" y="280" width="20" height="20" opacity="0.080"/>
+<rect x="730" y="280" width="20" height="20" opacity="0.073"/>
+<rect x="750" y="280" width="20" height="20" opacity="0.062"/>
+<rect x="770" y="280" width="20" height="20" opacity="0.055"/>
+<rect x="790" y="280" width="20" height="20" opacity="0.053"/>
+<rect x="870" y="280" width="20" height="20" opacity="0.052"/>
+<rect x="890" y="280" width="20" height="20" opacity="0.053"/>
+<rect x="1010" y="280" width="20" height="20" opacity="0.056"/>
+<rect x="1030" y="280" width="20" height="20" opacity="0.057"/>
+<rect x="230" y="300" width="20" height="20" opacity="0.082"/>
+<rect x="250" y="300" width="20" height="20" opacity="0.111"/>
+<rect x="270" y="300" width="20" height="20" opacity="0.127"/>
+<rect x="290" y="300" width="20" height="20" opacity="0.127"/>
+<rect x="310" y="300" width="20" height="20" opacity="0.119"/>
+<rect x="330" y="300" width="20" height="20" opacity="0.104"/>
+<rect x="350" y="300" width="20" height="20" opacity="0.084"/>
+<rect x="370" y="300" width="20" height="20" opacity="0.069"/>
+<rect x="390" y="300" width="20" height="20" opacity="0.065"/>
+<rect x="410" y="300" width="20" height="20" opacity="0.069"/>
+<rect x="430" y="300" width="20" height="20" opacity="0.075"/>
+<rect x="450" y="300" width="20" height="20" opacity="0.081"/>
+<rect x="470" y="300" width="20" height="20" opacity="0.088"/>
+<rect x="490" y="300" width="20" height="20" opacity="0.091"/>
+<rect x="510" y="300" width="20" height="20" opacity="0.085"/>
+<rect x="530" y="300" width="20" height="20" opacity="0.070"/>
+<rect x="550" y="300" width="20" height="20" opacity="0.058"/>
+<rect x="570" y="300" width="20" height="20" opacity="0.056"/>
+<rect x="590" y="300" width="20" height="20" opacity="0.062"/>
+<rect x="610" y="300" width="20" height="20" opacity="0.065"/>
+<rect x="630" y="300" width="20" height="20" opacity="0.065"/>
+<rect x="650" y="300" width="20" height="20" opacity="0.062"/>
+<rect x="670" y="300" width="20" height="20" opacity="0.061"/>
+<rect x="690" y="300" width="20" height="20" opacity="0.061"/>
+<rect x="710" y="300" width="20" height="20" opacity="0.059"/>
+<rect x="730" y="300" width="20" height="20" opacity="0.053"/>
+<rect x="790" y="300" width="20" height="20" opacity="0.055"/>
+<rect x="810" y="300" width="20" height="20" opacity="0.058"/>
+<rect x="830" y="300" width="20" height="20" opacity="0.057"/>
+<rect x="850" y="300" width="20" height="20" opacity="0.055"/>
+<rect x="870" y="300" width="20" height="20" opacity="0.056"/>
+<rect x="890" y="300" width="20" height="20" opacity="0.055"/>
+<rect x="230" y="320" width="20" height="20" opacity="0.081"/>
+<rect x="250" y="320" width="20" height="20" opacity="0.112"/>
+<rect x="270" y="320" width="20" height="20" opacity="0.133"/>
+<rect x="290" y="320" width="20" height="20" opacity="0.139"/>
+<rect x="310" y="320" width="20" height="20" opacity="0.133"/>
+<rect x="330" y="320" width="20" height="20" opacity="0.118"/>
+<rect x="350" y="320" width="20" height="20" opacity="0.098"/>
+<rect x="370" y="320" width="20" height="20" opacity="0.081"/>
+<rect x="390" y="320" width="20" height="20" opacity="0.072"/>
+<rect x="410" y="320" width="20" height="20" opacity="0.072"/>
+<rect x="430" y="320" width="20" height="20" opacity="0.079"/>
+<rect x="450" y="320" width="20" height="20" opacity="0.097"/>
+<rect x="470" y="320" width="20" height="20" opacity="0.122"/>
+<rect x="490" y="320" width="20" height="20" opacity="0.137"/>
+<rect x="510" y="320" width="20" height="20" opacity="0.128"/>
+<rect x="530" y="320" width="20" height="20" opacity="0.102"/>
+<rect x="550" y="320" width="20" height="20" opacity="0.081"/>
+<rect x="570" y="320" width="20" height="20" opacity="0.076"/>
+<rect x="590" y="320" width="20" height="20" opacity="0.081"/>
+<rect x="610" y="320" width="20" height="20" opacity="0.084"/>
+<rect x="630" y="320" width="20" height="20" opacity="0.080"/>
+<rect x="650" y="320" width="20" height="20" opacity="0.072"/>
+<rect x="670" y="320" width="20" height="20" opacity="0.064"/>
+<rect x="690" y="320" width="20" height="20" opacity="0.057"/>
+<rect x="770" y="320" width="20" height="20" opacity="0.054"/>
+<rect x="790" y="320" width="20" height="20" opacity="0.070"/>
+<rect x="810" y="320" width="20" height="20" opacity="0.080"/>
+<rect x="830" y="320" width="20" height="20" opacity="0.078"/>
+<rect x="850" y="320" width="20" height="20" opacity="0.072"/>
+<rect x="870" y="320" width="20" height="20" opacity="0.066"/>
+<rect x="890" y="320" width="20" height="20" opacity="0.061"/>
+<rect x="910" y="320" width="20" height="20" opacity="0.052"/>
+<rect x="210" y="340" width="20" height="20" opacity="0.054"/>
+<rect x="230" y="340" width="20" height="20" opacity="0.086"/>
+<rect x="250" y="340" width="20" height="20" opacity="0.119"/>
+<rect x="270" y="340" width="20" height="20" opacity="0.139"/>
+<rect x="290" y="340" width="20" height="20" opacity="0.143"/>
+<rect x="310" y="340" width="20" height="20" opacity="0.136"/>
+<rect x="330" y="340" width="20" height="20" opacity="0.123"/>
+<rect x="350" y="340" width="20" height="20" opacity="0.108"/>
+<rect x="370" y="340" width="20" height="20" opacity="0.096"/>
+<rect x="390" y="340" width="20" height="20" opacity="0.089"/>
+<rect x="410" y="340" width="20" height="20" opacity="0.086"/>
+<rect x="430" y="340" width="20" height="20" opacity="0.095"/>
+<rect x="450" y="340" width="20" height="20" opacity="0.124"/>
+<rect x="470" y="340" width="20" height="20" opacity="0.164"/>
+<rect x="490" y="340" width="20" height="20" opacity="0.185"/>
+<rect x="510" y="340" width="20" height="20" opacity="0.171"/>
+<rect x="530" y="340" width="20" height="20" opacity="0.134"/>
+<rect x="550" y="340" width="20" height="20" opacity="0.106"/>
+<rect x="570" y="340" width="20" height="20" opacity="0.101"/>
+<rect x="590" y="340" width="20" height="20" opacity="0.111"/>
+<rect x="610" y="340" width="20" height="20" opacity="0.117"/>
+<rect x="630" y="340" width="20" height="20" opacity="0.112"/>
+<rect x="650" y="340" width="20" height="20" opacity="0.099"/>
+<rect x="670" y="340" width="20" height="20" opacity="0.084"/>
+<rect x="690" y="340" width="20" height="20" opacity="0.068"/>
+<rect x="710" y="340" width="20" height="20" opacity="0.054"/>
+<rect x="770" y="340" width="20" height="20" opacity="0.065"/>
+<rect x="790" y="340" width="20" height="20" opacity="0.088"/>
+<rect x="810" y="340" width="20" height="20" opacity="0.103"/>
+<rect x="830" y="340" width="20" height="20" opacity="0.102"/>
+<rect x="850" y="340" width="20" height="20" opacity="0.091"/>
+<rect x="870" y="340" width="20" height="20" opacity="0.080"/>
+<rect x="890" y="340" width="20" height="20" opacity="0.070"/>
+<rect x="910" y="340" width="20" height="20" opacity="0.058"/>
+<rect x="210" y="360" width="20" height="20" opacity="0.058"/>
+<rect x="230" y="360" width="20" height="20" opacity="0.091"/>
+<rect x="250" y="360" width="20" height="20" opacity="0.121"/>
+<rect x="270" y="360" width="20" height="20" opacity="0.136"/>
+<rect x="290" y="360" width="20" height="20" opacity="0.135"/>
+<rect x="310" y="360" width="20" height="20" opacity="0.127"/>
+<rect x="330" y="360" width="20" height="20" opacity="0.119"/>
+<rect x="350" y="360" width="20" height="20" opacity="0.115"/>
+<rect x="370" y="360" width="20" height="20" opacity="0.115"/>
+<rect x="390" y="360" width="20" height="20" opacity="0.114"/>
+<rect x="410" y="360" width="20" height="20" opacity="0.112"/>
+<rect x="430" y="360" width="20" height="20" opacity="0.120"/>
+<rect x="450" y="360" width="20" height="20" opacity="0.151"/>
+<rect x="470" y="360" width="20" height="20" opacity="0.195"/>
+<rect x="490" y="360" width="20" height="20" opacity="0.219"/>
+<rect x="510" y="360" width="20" height="20" opacity="0.200"/>
+<rect x="530" y="360" width="20" height="20" opacity="0.157"/>
+<rect x="550" y="360" width="20" height="20" opacity="0.125"/>
+<rect x="570" y="360" width="20" height="20" opacity="0.120"/>
+<rect x="590" y="360" width="20" height="20" opacity="0.134"/>
+<rect x="610" y="360" width="20" height="20" opacity="0.145"/>
+<rect x="630" y="360" width="20" height="20" opacity="0.142"/>
+<rect x="650" y="360" width="20" height="20" opacity="0.128"/>
+<rect x="670" y="360" width="20" height="20" opacity="0.106"/>
+<rect x="690" y="360" width="20" height="20" opacity="0.083"/>
+<rect x="710" y="360" width="20" height="20" opacity="0.063"/>
+<rect x="730" y="360" width="20" height="20" opacity="0.052"/>
+<rect x="750" y="360" width="20" height="20" opacity="0.055"/>
+<rect x="770" y="360" width="20" height="20" opacity="0.073"/>
+<rect x="790" y="360" width="20" height="20" opacity="0.098"/>
+<rect x="810" y="360" width="20" height="20" opacity="0.115"/>
+<rect x="830" y="360" width="20" height="20" opacity="0.114"/>
+<rect x="850" y="360" width="20" height="20" opacity="0.104"/>
+<rect x="870" y="360" width="20" height="20" opacity="0.092"/>
+<rect x="890" y="360" width="20" height="20" opacity="0.080"/>
+<rect x="910" y="360" width="20" height="20" opacity="0.066"/>
+<rect x="930" y="360" width="20" height="20" opacity="0.054"/>
+<rect x="210" y="380" width="20" height="20" opacity="0.063"/>
+<rect x="230" y="380" width="20" height="20" opacity="0.093"/>
+<rect x="250" y="380" width="20" height="20" opacity="0.116"/>
+<rect x="270" y="380" width="20" height="20" opacity="0.124"/>
+<rect x="290" y="380" width="20" height="20" opacity="0.118"/>
+<rect x="310" y="380" width="20" height="20" opacity="0.110"/>
+<rect x="330" y="380" width="20" height="20" opacity="0.109"/>
+<rect x="350" y="380" width="20" height="20" opacity="0.119"/>
+<rect x="370" y="380" width="20" height="20" opacity="0.134"/>
+<rect x="390" y="380" width="20" height="20" opacity="0.143"/>
+<rect x="410" y="380" width="20" height="20" opacity="0.141"/>
+<rect x="430" y="380" width="20" height="20" opacity="0.142"/>
+<rect x="450" y="380" width="20" height="20" opacity="0.163"/>
+<rect x="470" y="380" width="20" height="20" opacity="0.200"/>
+<rect x="490" y="380" width="20" height="20" opacity="0.221"/>
+<rect x="510" y="380" width="20" height="20" opacity="0.204"/>
+<rect x="530" y="380" width="20" height="20" opacity="0.162"/>
+<rect x="550" y="380" width="20" height="20" opacity="0.129"/>
+<rect x="570" y="380" width="20" height="20" opacity="0.123"/>
+<rect x="590" y="380" width="20" height="20" opacity="0.135"/>
+<rect x="610" y="380" width="20" height="20" opacity="0.147"/>
+<rect x="630" y="380" width="20" height="20" opacity="0.148"/>
+<rect x="650" y="380" width="20" height="20" opacity="0.135"/>
+<rect x="670" y="380" width="20" height="20" opacity="0.114"/>
+<rect x="690" y="380" width="20" height="20" opacity="0.089"/>
+<rect x="710" y="380" width="20" height="20" opacity="0.067"/>
+<rect x="730" y="380" width="20" height="20" opacity="0.055"/>
+<rect x="750" y="380" width="20" height="20" opacity="0.057"/>
+<rect x="770" y="380" width="20" height="20" opacity="0.073"/>
+<rect x="790" y="380" width="20" height="20" opacity="0.095"/>
+<rect x="810" y="380" width="20" height="20" opacity="0.109"/>
+<rect x="830" y="380" width="20" height="20" opacity="0.110"/>
+<rect x="850" y="380" width="20" height="20" opacity="0.103"/>
+<rect x="870" y="380" width="20" height="20" opacity="0.093"/>
+<rect x="890" y="380" width="20" height="20" opacity="0.083"/>
+<rect x="910" y="380" width="20" height="20" opacity="0.071"/>
+<rect x="930" y="380" width="20" height="20" opacity="0.058"/>
+<rect x="210" y="400" width="20" height="20" opacity="0.071"/>
+<rect x="230" y="400" width="20" height="20" opacity="0.095"/>
+<rect x="250" y="400" width="20" height="20" opacity="0.110"/>
+<rect x="270" y="400" width="20" height="20" opacity="0.110"/>
+<rect x="290" y="400" width="20" height="20" opacity="0.100"/>
+<rect x="310" y="400" width="20" height="20" opacity="0.092"/>
+<rect x="330" y="400" width="20" height="20" opacity="0.096"/>
+<rect x="350" y="400" width="20" height="20" opacity="0.116"/>
+<rect x="370" y="400" width="20" height="20" opacity="0.143"/>
+<rect x="390" y="400" width="20" height="20" opacity="0.158"/>
+<rect x="410" y="400" width="20" height="20" opacity="0.155"/>
+<rect x="430" y="400" width="20" height="20" opacity="0.145"/>
+<rect x="450" y="400" width="20" height="20" opacity="0.151"/>
+<rect x="470" y="400" width="20" height="20" opacity="0.173"/>
+<rect x="490" y="400" width="20" height="20" opacity="0.190"/>
+<rect x="510" y="400" width="20" height="20" opacity="0.181"/>
+<rect x="530" y="400" width="20" height="20" opacity="0.151"/>
+<rect x="550" y="400" width="20" height="20" opacity="0.122"/>
+<rect x="570" y="400" width="20" height="20" opacity="0.113"/>
+<rect x="590" y="400" width="20" height="20" opacity="0.119"/>
+<rect x="610" y="400" width="20" height="20" opacity="0.126"/>
+<rect x="630" y="400" width="20" height="20" opacity="0.126"/>
+<rect x="650" y="400" width="20" height="20" opacity="0.117"/>
+<rect x="670" y="400" width="20" height="20" opacity="0.100"/>
+<rect x="690" y="400" width="20" height="20" opacity="0.079"/>
+<rect x="710" y="400" width="20" height="20" opacity="0.061"/>
+<rect x="750" y="400" width="20" height="20" opacity="0.052"/>
+<rect x="770" y="400" width="20" height="20" opacity="0.064"/>
+<rect x="790" y="400" width="20" height="20" opacity="0.079"/>
+<rect x="810" y="400" width="20" height="20" opacity="0.090"/>
+<rect x="830" y="400" width="20" height="20" opacity="0.093"/>
+<rect x="850" y="400" width="20" height="20" opacity="0.090"/>
+<rect x="870" y="400" width="20" height="20" opacity="0.083"/>
+<rect x="890" y="400" width="20" height="20" opacity="0.075"/>
+<rect x="910" y="400" width="20" height="20" opacity="0.064"/>
+<rect x="930" y="400" width="20" height="20" opacity="0.053"/>
+<rect x="190" y="420" width="20" height="20" opacity="0.065"/>
+<rect x="210" y="420" width="20" height="20" opacity="0.083"/>
+<rect x="230" y="420" width="20" height="20" opacity="0.098"/>
+<rect x="250" y="420" width="20" height="20" opacity="0.104"/>
+<rect x="270" y="420" width="20" height="20" opacity="0.099"/>
+<rect x="290" y="420" width="20" height="20" opacity="0.087"/>
+<rect x="310" y="420" width="20" height="20" opacity="0.077"/>
+<rect x="330" y="420" width="20" height="20" opacity="0.081"/>
+<rect x="350" y="420" width="20" height="20" opacity="0.102"/>
+<rect x="370" y="420" width="20" height="20" opacity="0.130"/>
+<rect x="390" y="420" width="20" height="20" opacity="0.145"/>
+<rect x="410" y="420" width="20" height="20" opacity="0.139"/>
+<rect x="430" y="420" width="20" height="20" opacity="0.123"/>
+<rect x="450" y="420" width="20" height="20" opacity="0.117"/>
+<rect x="470" y="420" width="20" height="20" opacity="0.129"/>
+<rect x="490" y="420" width="20" height="20" opacity="0.146"/>
+<rect x="510" y="420" width="20" height="20" opacity="0.150"/>
+<rect x="530" y="420" width="20" height="20" opacity="0.135"/>
+<rect x="550" y="420" width="20" height="20" opacity="0.116"/>
+<rect x="570" y="420" width="20" height="20" opacity="0.108"/>
+<rect x="590" y="420" width="20" height="20" opacity="0.106"/>
+<rect x="610" y="420" width="20" height="20" opacity="0.103"/>
+<rect x="630" y="420" width="20" height="20" opacity="0.096"/>
+<rect x="650" y="420" width="20" height="20" opacity="0.086"/>
+<rect x="670" y="420" width="20" height="20" opacity="0.073"/>
+<rect x="690" y="420" width="20" height="20" opacity="0.058"/>
+<rect x="790" y="420" width="20" height="20" opacity="0.058"/>
+<rect x="810" y="420" width="20" height="20" opacity="0.066"/>
+<rect x="830" y="420" width="20" height="20" opacity="0.070"/>
+<rect x="850" y="420" width="20" height="20" opacity="0.070"/>
+<rect x="870" y="420" width="20" height="20" opacity="0.065"/>
+<rect x="890" y="420" width="20" height="20" opacity="0.057"/>
+<rect x="90" y="440" width="20" height="20" opacity="0.053"/>
+<rect x="110" y="440" width="20" height="20" opacity="0.059"/>
+<rect x="130" y="440" width="20" height="20" opacity="0.060"/>
+<rect x="150" y="440" width="20" height="20" opacity="0.062"/>
+<rect x="170" y="440" width="20" height="20" opacity="0.072"/>
+<rect x="190" y="440" width="20" height="20" opacity="0.086"/>
+<rect x="210" y="440" width="20" height="20" opacity="0.098"/>
+<rect x="230" y="440" width="20" height="20" opacity="0.103"/>
+<rect x="250" y="440" width="20" height="20" opacity="0.099"/>
+<rect x="270" y="440" width="20" height="20" opacity="0.090"/>
+<rect x="290" y="440" width="20" height="20" opacity="0.078"/>
+<rect x="310" y="440" width="20" height="20" opacity="0.068"/>
+<rect x="330" y="440" width="20" height="20" opacity="0.068"/>
+<rect x="350" y="440" width="20" height="20" opacity="0.081"/>
+<rect x="370" y="440" width="20" height="20" opacity="0.101"/>
+<rect x="390" y="440" width="20" height="20" opacity="0.110"/>
+<rect x="410" y="440" width="20" height="20" opacity="0.103"/>
+<rect x="430" y="440" width="20" height="20" opacity="0.087"/>
+<rect x="450" y="440" width="20" height="20" opacity="0.080"/>
+<rect x="470" y="440" width="20" height="20" opacity="0.091"/>
+<rect x="490" y="440" width="20" height="20" opacity="0.114"/>
+<rect x="510" y="440" width="20" height="20" opacity="0.129"/>
+<rect x="530" y="440" width="20" height="20" opacity="0.128"/>
+<rect x="550" y="440" width="20" height="20" opacity="0.119"/>
+<rect x="570" y="440" width="20" height="20" opacity="0.115"/>
+<rect x="590" y="440" width="20" height="20" opacity="0.108"/>
+<rect x="610" y="440" width="20" height="20" opacity="0.094"/>
+<rect x="630" y="440" width="20" height="20" opacity="0.074"/>
+<rect x="650" y="440" width="20" height="20" opacity="0.058"/>
+<rect x="70" y="460" width="20" height="20" opacity="0.064"/>
+<rect x="90" y="460" width="20" height="20" opacity="0.082"/>
+<rect x="110" y="460" width="20" height="20" opacity="0.089"/>
+<rect x="130" y="460" width="20" height="20" opacity="0.087"/>
+<rect x="150" y="460" width="20" height="20" opacity="0.087"/>
+<rect x="170" y="460" width="20" height="20" opacity="0.097"/>
+<rect x="190" y="460" width="20" height="20" opacity="0.111"/>
+<rect x="210" y="460" width="20" height="20" opacity="0.116"/>
+<rect x="230" y="460" width="20" height="20" opacity="0.109"/>
+<rect x="250" y="460" width="20" height="20" opacity="0.097"/>
+<rect x="270" y="460" width="20" height="20" opacity="0.086"/>
+<rect x="290" y="460" width="20" height="20" opacity="0.076"/>
+<rect x="310" y="460" width="20" height="20" opacity="0.065"/>
+<rect x="330" y="460" width="20" height="20" opacity="0.060"/>
+<rect x="350" y="460" width="20" height="20" opacity="0.064"/>
+<rect x="370" y="460" width="20" height="20" opacity="0.073"/>
+<rect x="390" y="460" width="20" height="20" opacity="0.076"/>
+<rect x="410" y="460" width="20" height="20" opacity="0.069"/>
+<rect x="430" y="460" width="20" height="20" opacity="0.058"/>
+<rect x="450" y="460" width="20" height="20" opacity="0.057"/>
+<rect x="470" y="460" width="20" height="20" opacity="0.072"/>
+<rect x="490" y="460" width="20" height="20" opacity="0.099"/>
+<rect x="510" y="460" width="20" height="20" opacity="0.120"/>
+<rect x="530" y="460" width="20" height="20" opacity="0.125"/>
+<rect x="550" y="460" width="20" height="20" opacity="0.122"/>
+<rect x="570" y="460" width="20" height="20" opacity="0.121"/>
+<rect x="590" y="460" width="20" height="20" opacity="0.112"/>
+<rect x="610" y="460" width="20" height="20" opacity="0.090"/>
+<rect x="630" y="460" width="20" height="20" opacity="0.062"/>
+<rect x="50" y="480" width="20" height="20" opacity="0.061"/>
+<rect x="70" y="480" width="20" height="20" opacity="0.082"/>
+<rect x="90" y="480" width="20" height="20" opacity="0.104"/>
+<rect x="110" y="480" width="20" height="20" opacity="0.110"/>
+<rect x="130" y="480" width="20" height="20" opacity="0.105"/>
+<rect x="150" y="480" width="20" height="20" opacity="0.107"/>
+<rect x="170" y="480" width="20" height="20" opacity="0.121"/>
+<rect x="190" y="480" width="20" height="20" opacity="0.136"/>
+<rect x="210" y="480" width="20" height="20" opacity="0.134"/>
+<rect x="230" y="480" width="20" height="20" opacity="0.117"/>
+<rect x="250" y="480" width="20" height="20" opacity="0.098"/>
+<rect x="270" y="480" width="20" height="20" opacity="0.087"/>
+<rect x="290" y="480" width="20" height="20" opacity="0.079"/>
+<rect x="310" y="480" width="20" height="20" opacity="0.069"/>
+<rect x="330" y="480" width="20" height="20" opacity="0.059"/>
+<rect x="350" y="480" width="20" height="20" opacity="0.056"/>
+<rect x="370" y="480" width="20" height="20" opacity="0.056"/>
+<rect x="390" y="480" width="20" height="20" opacity="0.055"/>
+<rect x="470" y="480" width="20" height="20" opacity="0.067"/>
+<rect x="490" y="480" width="20" height="20" opacity="0.093"/>
+<rect x="510" y="480" width="20" height="20" opacity="0.113"/>
+<rect x="530" y="480" width="20" height="20" opacity="0.117"/>
+<rect x="550" y="480" width="20" height="20" opacity="0.115"/>
+<rect x="570" y="480" width="20" height="20" opacity="0.114"/>
+<rect x="590" y="480" width="20" height="20" opacity="0.106"/>
+<rect x="610" y="480" width="20" height="20" opacity="0.083"/>
+<rect x="630" y="480" width="20" height="20" opacity="0.055"/>
+<rect x="1010" y="480" width="20" height="20" opacity="0.057"/>
+<rect x="1030" y="480" width="20" height="20" opacity="0.057"/>
+<rect x="50" y="500" width="20" height="20" opacity="0.063"/>
+<rect x="70" y="500" width="20" height="20" opacity="0.084"/>
+<rect x="90" y="500" width="20" height="20" opacity="0.105"/>
+<rect x="110" y="500" width="20" height="20" opacity="0.109"/>
+<rect x="130" y="500" width="20" height="20" opacity="0.105"/>
+<rect x="150" y="500" width="20" height="20" opacity="0.111"/>
+<rect x="170" y="500" width="20" height="20" opacity="0.131"/>
+<rect x="190" y="500" width="20" height="20" opacity="0.147"/>
+<rect x="210" y="500" width="20" height="20" opacity="0.140"/>
+<rect x="230" y="500" width="20" height="20" opacity="0.118"/>
+<rect x="250" y="500" width="20" height="20" opacity="0.097"/>
+<rect x="270" y="500" width="20" height="20" opacity="0.087"/>
+<rect x="290" y="500" width="20" height="20" opacity="0.081"/>
+<rect x="310" y="500" width="20" height="20" opacity="0.071"/>
+<rect x="330" y="500" width="20" height="20" opacity="0.059"/>
+<rect x="470" y="500" width="20" height="20" opacity="0.067"/>
+<rect x="490" y="500" width="20" height="20" opacity="0.091"/>
+<rect x="510" y="500" width="20" height="20" opacity="0.107"/>
+<rect x="530" y="500" width="20" height="20" opacity="0.108"/>
+<rect x="550" y="500" width="20" height="20" opacity="0.103"/>
+<rect x="570" y="500" width="20" height="20" opacity="0.100"/>
+<rect x="590" y="500" width="20" height="20" opacity="0.093"/>
+<rect x="610" y="500" width="20" height="20" opacity="0.075"/>
+<rect x="630" y="500" width="20" height="20" opacity="0.052"/>
+<rect x="990" y="500" width="20" height="20" opacity="0.060"/>
+<rect x="1010" y="500" width="20" height="20" opacity="0.074"/>
+<rect x="1030" y="500" width="20" height="20" opacity="0.073"/>
+<rect x="1050" y="500" width="20" height="20" opacity="0.057"/>
+<rect x="50" y="520" width="20" height="20" opacity="0.053"/>
+<rect x="70" y="520" width="20" height="20" opacity="0.070"/>
+<rect x="90" y="520" width="20" height="20" opacity="0.086"/>
+<rect x="110" y="520" width="20" height="20" opacity="0.089"/>
+<rect x="130" y="520" width="20" height="20" opacity="0.088"/>
+<rect x="150" y="520" width="20" height="20" opacity="0.098"/>
+<rect x="170" y="520" width="20" height="20" opacity="0.119"/>
+<rect x="190" y="520" width="20" height="20" opacity="0.133"/>
+<rect x="210" y="520" width="20" height="20" opacity="0.126"/>
+<rect x="230" y="520" width="20" height="20" opacity="0.107"/>
+<rect x="250" y="520" width="20" height="20" opacity="0.091"/>
+<rect x="270" y="520" width="20" height="20" opacity="0.084"/>
+<rect x="290" y="520" width="20" height="20" opacity="0.078"/>
+<rect x="310" y="520" width="20" height="20" opacity="0.066"/>
+<rect x="330" y="520" width="20" height="20" opacity="0.053"/>
+<rect x="450" y="520" width="20" height="20" opacity="0.052"/>
+<rect x="470" y="520" width="20" height="20" opacity="0.070"/>
+<rect x="490" y="520" width="20" height="20" opacity="0.093"/>
+<rect x="510" y="520" width="20" height="20" opacity="0.108"/>
+<rect x="530" y="520" width="20" height="20" opacity="0.108"/>
+<rect x="550" y="520" width="20" height="20" opacity="0.099"/>
+<rect x="570" y="520" width="20" height="20" opacity="0.093"/>
+<rect x="590" y="520" width="20" height="20" opacity="0.087"/>
+<rect x="610" y="520" width="20" height="20" opacity="0.075"/>
+<rect x="630" y="520" width="20" height="20" opacity="0.057"/>
+<rect x="990" y="520" width="20" height="20" opacity="0.064"/>
+<rect x="1010" y="520" width="20" height="20" opacity="0.080"/>
+<rect x="1030" y="520" width="20" height="20" opacity="0.079"/>
+<rect x="1050" y="520" width="20" height="20" opacity="0.063"/>
+<rect x="70" y="540" width="20" height="20" opacity="0.054"/>
+<rect x="90" y="540" width="20" height="20" opacity="0.064"/>
+<rect x="110" y="540" width="20" height="20" opacity="0.066"/>
+<rect x="130" y="540" width="20" height="20" opacity="0.068"/>
+<rect x="150" y="540" width="20" height="20" opacity="0.078"/>
+<rect x="170" y="540" width="20" height="20" opacity="0.095"/>
+<rect x="190" y="540" width="20" height="20" opacity="0.103"/>
+<rect x="210" y="540" width="20" height="20" opacity="0.099"/>
+<rect x="230" y="540" width="20" height="20" opacity="0.090"/>
+<rect x="250" y="540" width="20" height="20" opacity="0.086"/>
+<rect x="270" y="540" width="20" height="20" opacity="0.084"/>
+<rect x="290" y="540" width="20" height="20" opacity="0.077"/>
+<rect x="310" y="540" width="20" height="20" opacity="0.063"/>
+<rect x="450" y="540" width="20" height="20" opacity="0.052"/>
+<rect x="470" y="540" width="20" height="20" opacity="0.073"/>
+<rect x="490" y="540" width="20" height="20" opacity="0.098"/>
+<rect x="510" y="540" width="20" height="20" opacity="0.116"/>
+<rect x="530" y="540" width="20" height="20" opacity="0.117"/>
+<rect x="550" y="540" width="20" height="20" opacity="0.106"/>
+<rect x="570" y="540" width="20" height="20" opacity="0.098"/>
+<rect x="590" y="540" width="20" height="20" opacity="0.094"/>
+<rect x="610" y="540" width="20" height="20" opacity="0.088"/>
+<rect x="630" y="540" width="20" height="20" opacity="0.074"/>
+<rect x="650" y="540" width="20" height="20" opacity="0.058"/>
+<rect x="990" y="540" width="20" height="20" opacity="0.061"/>
+<rect x="1010" y="540" width="20" height="20" opacity="0.077"/>
+<rect x="1030" y="540" width="20" height="20" opacity="0.079"/>
+<rect x="1050" y="540" width="20" height="20" opacity="0.064"/>
+<rect x="90" y="560" width="20" height="20" opacity="0.055"/>
+<rect x="110" y="560" width="20" height="20" opacity="0.056"/>
+<rect x="130" y="560" width="20" height="20" opacity="0.059"/>
+<rect x="150" y="560" width="20" height="20" opacity="0.068"/>
+<rect x="170" y="560" width="20" height="20" opacity="0.078"/>
+<rect x="190" y="560" width="20" height="20" opacity="0.081"/>
+<rect x="210" y="560" width="20" height="20" opacity="0.079"/>
+<rect x="230" y="560" width="20" height="20" opacity="0.082"/>
+<rect x="250" y="560" width="20" height="20" opacity="0.093"/>
+<rect x="270" y="560" width="20" height="20" opacity="0.101"/>
+<rect x="290" y="560" width="20" height="20" opacity="0.094"/>
+<rect x="310" y="560" width="20" height="20" opacity="0.076"/>
+<rect x="330" y="560" width="20" height="20" opacity="0.058"/>
+<rect x="450" y="560" width="20" height="20" opacity="0.054"/>
+<rect x="470" y="560" width="20" height="20" opacity="0.076"/>
+<rect x="490" y="560" width="20" height="20" opacity="0.104"/>
+<rect x="510" y="560" width="20" height="20" opacity="0.125"/>
+<rect x="530" y="560" width="20" height="20" opacity="0.129"/>
+<rect x="550" y="560" width="20" height="20" opacity="0.119"/>
+<rect x="570" y="560" width="20" height="20" opacity="0.114"/>
+<rect x="590" y="560" width="20" height="20" opacity="0.116"/>
+<rect x="610" y="560" width="20" height="20" opacity="0.116"/>
+<rect x="630" y="560" width="20" height="20" opacity="0.103"/>
+<rect x="650" y="560" width="20" height="20" opacity="0.086"/>
+<rect x="670" y="560" width="20" height="20" opacity="0.074"/>
+<rect x="690" y="560" width="20" height="20" opacity="0.072"/>
+<rect x="710" y="560" width="20" height="20" opacity="0.076"/>
+<rect x="730" y="560" width="20" height="20" opacity="0.079"/>
+<rect x="750" y="560" width="20" height="20" opacity="0.075"/>
+<rect x="770" y="560" width="20" height="20" opacity="0.066"/>
+<rect x="790" y="560" width="20" height="20" opacity="0.059"/>
+<rect x="810" y="560" width="20" height="20" opacity="0.055"/>
+<rect x="990" y="560" width="20" height="20" opacity="0.058"/>
+<rect x="1010" y="560" width="20" height="20" opacity="0.073"/>
+<rect x="1030" y="560" width="20" height="20" opacity="0.075"/>
+<rect x="1050" y="560" width="20" height="20" opacity="0.061"/>
+<rect x="50" y="580" width="20" height="20" opacity="0.052"/>
+<rect x="70" y="580" width="20" height="20" opacity="0.056"/>
+<rect x="90" y="580" width="20" height="20" opacity="0.058"/>
+<rect x="110" y="580" width="20" height="20" opacity="0.058"/>
+<rect x="130" y="580" width="20" height="20" opacity="0.061"/>
+<rect x="150" y="580" width="20" height="20" opacity="0.069"/>
+<rect x="170" y="580" width="20" height="20" opacity="0.076"/>
+<rect x="190" y="580" width="20" height="20" opacity="0.076"/>
+<rect x="210" y="580" width="20" height="20" opacity="0.076"/>
+<rect x="230" y="580" width="20" height="20" opacity="0.089"/>
+<rect x="250" y="580" width="20" height="20" opacity="0.113"/>
+<rect x="270" y="580" width="20" height="20" opacity="0.133"/>
+<rect x="290" y="580" width="20" height="20" opacity="0.133"/>
+<rect x="310" y="580" width="20" height="20" opacity="0.114"/>
+<rect x="330" y="580" width="20" height="20" opacity="0.089"/>
+<rect x="350" y="580" width="20" height="20" opacity="0.069"/>
+<rect x="370" y="580" width="20" height="20" opacity="0.054"/>
+<rect x="450" y="580" width="20" height="20" opacity="0.060"/>
+<rect x="470" y="580" width="20" height="20" opacity="0.079"/>
+<rect x="490" y="580" width="20" height="20" opacity="0.104"/>
+<rect x="510" y="580" width="20" height="20" opacity="0.125"/>
+<rect x="530" y="580" width="20" height="20" opacity="0.132"/>
+<rect x="550" y="580" width="20" height="20" opacity="0.130"/>
+<rect x="570" y="580" width="20" height="20" opacity="0.135"/>
+<rect x="590" y="580" width="20" height="20" opacity="0.150"/>
+<rect x="610" y="580" width="20" height="20" opacity="0.157"/>
+<rect x="630" y="580" width="20" height="20" opacity="0.144"/>
+<rect x="650" y="580" width="20" height="20" opacity="0.121"/>
+<rect x="670" y="580" width="20" height="20" opacity="0.105"/>
+<rect x="690" y="580" width="20" height="20" opacity="0.103"/>
+<rect x="710" y="580" width="20" height="20" opacity="0.108"/>
+<rect x="730" y="580" width="20" height="20" opacity="0.110"/>
+<rect x="750" y="580" width="20" height="20" opacity="0.101"/>
+<rect x="770" y="580" width="20" height="20" opacity="0.088"/>
+<rect x="790" y="580" width="20" height="20" opacity="0.078"/>
+<rect x="810" y="580" width="20" height="20" opacity="0.075"/>
+<rect x="830" y="580" width="20" height="20" opacity="0.072"/>
+<rect x="850" y="580" width="20" height="20" opacity="0.065"/>
+<rect x="870" y="580" width="20" height="20" opacity="0.055"/>
+<rect x="990" y="580" width="20" height="20" opacity="0.057"/>
+<rect x="1010" y="580" width="20" height="20" opacity="0.068"/>
+<rect x="1030" y="580" width="20" height="20" opacity="0.069"/>
+<rect x="1050" y="580" width="20" height="20" opacity="0.056"/>
+<rect x="50" y="600" width="20" height="20" opacity="0.055"/>
+<rect x="70" y="600" width="20" height="20" opacity="0.058"/>
+<rect x="90" y="600" width="20" height="20" opacity="0.060"/>
+<rect x="110" y="600" width="20" height="20" opacity="0.061"/>
+<rect x="130" y="600" width="20" height="20" opacity="0.064"/>
+<rect x="150" y="600" width="20" height="20" opacity="0.073"/>
+<rect x="170" y="600" width="20" height="20" opacity="0.081"/>
+<rect x="190" y="600" width="20" height="20" opacity="0.083"/>
+<rect x="210" y="600" width="20" height="20" opacity="0.086"/>
+<rect x="230" y="600" width="20" height="20" opacity="0.104"/>
+<rect x="250" y="600" width="20" height="20" opacity="0.138"/>
+<rect x="270" y="600" width="20" height="20" opacity="0.171"/>
+<rect x="290" y="600" width="20" height="20" opacity="0.182"/>
+<rect x="310" y="600" width="20" height="20" opacity="0.165"/>
+<rect x="330" y="600" width="20" height="20" opacity="0.132"/>
+<rect x="350" y="600" width="20" height="20" opacity="0.101"/>
+<rect x="370" y="600" width="20" height="20" opacity="0.078"/>
+<rect x="390" y="600" width="20" height="20" opacity="0.064"/>
+<rect x="410" y="600" width="20" height="20" opacity="0.059"/>
+<rect x="430" y="600" width="20" height="20" opacity="0.060"/>
+<rect x="450" y="600" width="20" height="20" opacity="0.065"/>
+<rect x="470" y="600" width="20" height="20" opacity="0.078"/>
+<rect x="490" y="600" width="20" height="20" opacity="0.096"/>
+<rect x="510" y="600" width="20" height="20" opacity="0.113"/>
+<rect x="530" y="600" width="20" height="20" opacity="0.125"/>
+<rect x="550" y="600" width="20" height="20" opacity="0.134"/>
+<rect x="570" y="600" width="20" height="20" opacity="0.154"/>
+<rect x="590" y="600" width="20" height="20" opacity="0.183"/>
+<rect x="610" y="600" width="20" height="20" opacity="0.199"/>
+<rect x="630" y="600" width="20" height="20" opacity="0.185"/>
+<rect x="650" y="600" width="20" height="20" opacity="0.156"/>
+<rect x="670" y="600" width="20" height="20" opacity="0.135"/>
+<rect x="690" y="600" width="20" height="20" opacity="0.129"/>
+<rect x="710" y="600" width="20" height="20" opacity="0.131"/>
+<rect x="730" y="600" width="20" height="20" opacity="0.130"/>
+<rect x="750" y="600" width="20" height="20" opacity="0.117"/>
+<rect x="770" y="600" width="20" height="20" opacity="0.100"/>
+<rect x="790" y="600" width="20" height="20" opacity="0.091"/>
+<rect x="810" y="600" width="20" height="20" opacity="0.092"/>
+<rect x="830" y="600" width="20" height="20" opacity="0.096"/>
+<rect x="850" y="600" width="20" height="20" opacity="0.094"/>
+<rect x="870" y="600" width="20" height="20" opacity="0.081"/>
+<rect x="890" y="600" width="20" height="20" opacity="0.065"/>
+<rect x="910" y="600" width="20" height="20" opacity="0.053"/>
+<rect x="990" y="600" width="20" height="20" opacity="0.054"/>
+<rect x="1010" y="600" width="20" height="20" opacity="0.060"/>
+<rect x="1030" y="600" width="20" height="20" opacity="0.059"/>
+<rect x="90" y="620" width="20" height="20" opacity="0.053"/>
+<rect x="110" y="620" width="20" height="20" opacity="0.057"/>
+<rect x="130" y="620" width="20" height="20" opacity="0.062"/>
+<rect x="150" y="620" width="20" height="20" opacity="0.071"/>
+<rect x="170" y="620" width="20" height="20" opacity="0.081"/>
+<rect x="190" y="620" width="20" height="20" opacity="0.087"/>
+<rect x="210" y="620" width="20" height="20" opacity="0.096"/>
+<rect x="230" y="620" width="20" height="20" opacity="0.119"/>
+<rect x="250" y="620" width="20" height="20" opacity="0.158"/>
+<rect x="270" y="620" width="20" height="20" opacity="0.198"/>
+<rect x="290" y="620" width="20" height="20" opacity="0.216"/>
+<rect x="310" y="620" width="20" height="20" opacity="0.200"/>
+<rect x="330" y="620" width="20" height="20" opacity="0.162"/>
+<rect x="350" y="620" width="20" height="20" opacity="0.123"/>
+<rect x="370" y="620" width="20" height="20" opacity="0.095"/>
+<rect x="390" y="620" width="20" height="20" opacity="0.079"/>
+<rect x="410" y="620" width="20" height="20" opacity="0.071"/>
+<rect x="430" y="620" width="20" height="20" opacity="0.067"/>
+<rect x="450" y="620" width="20" height="20" opacity="0.067"/>
+<rect x="470" y="620" width="20" height="20" opacity="0.071"/>
+<rect x="490" y="620" width="20" height="20" opacity="0.083"/>
+<rect x="510" y="620" width="20" height="20" opacity="0.098"/>
+<rect x="530" y="620" width="20" height="20" opacity="0.113"/>
+<rect x="550" y="620" width="20" height="20" opacity="0.132"/>
+<rect x="570" y="620" width="20" height="20" opacity="0.163"/>
+<rect x="590" y="620" width="20" height="20" opacity="0.202"/>
+<rect x="610" y="620" width="20" height="20" opacity="0.223"/>
+<rect x="630" y="620" width="20" height="20" opacity="0.211"/>
+<rect x="650" y="620" width="20" height="20" opacity="0.181"/>
+<rect x="670" y="620" width="20" height="20" opacity="0.155"/>
+<rect x="690" y="620" width="20" height="20" opacity="0.142"/>
+<rect x="710" y="620" width="20" height="20" opacity="0.137"/>
+<rect x="730" y="620" width="20" height="20" opacity="0.131"/>
+<rect x="750" y="620" width="20" height="20" opacity="0.117"/>
+<rect x="770" y="620" width="20" height="20" opacity="0.102"/>
+<rect x="790" y="620" width="20" height="20" opacity="0.095"/>
+<rect x="810" y="620" width="20" height="20" opacity="0.102"/>
+<rect x="830" y="620" width="20" height="20" opacity="0.116"/>
+<rect x="850" y="620" width="20" height="20" opacity="0.120"/>
+<rect x="870" y="620" width="20" height="20" opacity="0.107"/>
+<rect x="890" y="620" width="20" height="20" opacity="0.083"/>
+<rect x="910" y="620" width="20" height="20" opacity="0.062"/>
+<rect x="130" y="640" width="20" height="20" opacity="0.057"/>
+<rect x="150" y="640" width="20" height="20" opacity="0.064"/>
+<rect x="170" y="640" width="20" height="20" opacity="0.072"/>
+<rect x="190" y="640" width="20" height="20" opacity="0.081"/>
+<rect x="210" y="640" width="20" height="20" opacity="0.096"/>
+<rect x="230" y="640" width="20" height="20" opacity="0.123"/>
+<rect x="250" y="640" width="20" height="20" opacity="0.160"/>
+<rect x="270" y="640" width="20" height="20" opacity="0.197"/>
+<rect x="290" y="640" width="20" height="20" opacity="0.213"/>
+<rect x="310" y="640" width="20" height="20" opacity="0.195"/>
+<rect x="330" y="640" width="20" height="20" opacity="0.157"/>
+<rect x="350" y="640" width="20" height="20" opacity="0.119"/>
+<rect x="370" y="640" width="20" height="20" opacity="0.094"/>
+<rect x="390" y="640" width="20" height="20" opacity="0.081"/>
+<rect x="410" y="640" width="20" height="20" opacity="0.074"/>
+<rect x="430" y="640" width="20" height="20" opacity="0.069"/>
+<rect x="450" y="640" width="20" height="20" opacity="0.064"/>
+<rect x="470" y="640" width="20" height="20" opacity="0.065"/>
+<rect x="490" y="640" width="20" height="20" opacity="0.073"/>
+<rect x="510" y="640" width="20" height="20" opacity="0.088"/>
+<rect x="530" y="640" width="20" height="20" opacity="0.106"/>
+<rect x="550" y="640" width="20" height="20" opacity="0.127"/>
+<rect x="570" y="640" width="20" height="20" opacity="0.160"/>
+<rect x="590" y="640" width="20" height="20" opacity="0.197"/>
+<rect x="610" y="640" width="20" height="20" opacity="0.218"/>
+<rect x="630" y="640" width="20" height="20" opacity="0.211"/>
+<rect x="650" y="640" width="20" height="20" opacity="0.188"/>
+<rect x="670" y="640" width="20" height="20" opacity="0.164"/>
+<rect x="690" y="640" width="20" height="20" opacity="0.145"/>
+<rect x="710" y="640" width="20" height="20" opacity="0.131"/>
+<rect x="730" y="640" width="20" height="20" opacity="0.118"/>
+<rect x="750" y="640" width="20" height="20" opacity="0.106"/>
+<rect x="770" y="640" width="20" height="20" opacity="0.095"/>
+<rect x="790" y="640" width="20" height="20" opacity="0.093"/>
+<rect x="810" y="640" width="20" height="20" opacity="0.104"/>
+<rect x="830" y="640" width="20" height="20" opacity="0.122"/>
+<rect x="850" y="640" width="20" height="20" opacity="0.131"/>
+<rect x="870" y="640" width="20" height="20" opacity="0.119"/>
+<rect x="890" y="640" width="20" height="20" opacity="0.092"/>
+<rect x="910" y="640" width="20" height="20" opacity="0.066"/>
+<rect x="150" y="660" width="20" height="20" opacity="0.055"/>
+<rect x="170" y="660" width="20" height="20" opacity="0.060"/>
+<rect x="190" y="660" width="20" height="20" opacity="0.068"/>
+<rect x="210" y="660" width="20" height="20" opacity="0.085"/>
+<rect x="230" y="660" width="20" height="20" opacity="0.110"/>
+<rect x="250" y="660" width="20" height="20" opacity="0.141"/>
+<rect x="270" y="660" width="20" height="20" opacity="0.167"/>
+<rect x="290" y="660" width="20" height="20" opacity="0.175"/>
+<rect x="310" y="660" width="20" height="20" opacity="0.155"/>
+<rect x="330" y="660" width="20" height="20" opacity="0.122"/>
+<rect x="350" y="660" width="20" height="20" opacity="0.093"/>
+<rect x="370" y="660" width="20" height="20" opacity="0.078"/>
+<rect x="390" y="660" width="20" height="20" opacity="0.072"/>
+<rect x="410" y="660" width="20" height="20" opacity="0.071"/>
+<rect x="430" y="660" width="20" height="20" opacity="0.067"/>
+<rect x="450" y="660" width="20" height="20" opacity="0.062"/>
+<rect x="470" y="660" width="20" height="20" opacity="0.062"/>
+<rect x="490" y="660" width="20" height="20" opacity="0.072"/>
+<rect x="510" y="660" width="20" height="20" opacity="0.086"/>
+<rect x="530" y="660" width="20" height="20" opacity="0.101"/>
+<rect x="550" y="660" width="20" height="20" opacity="0.120"/>
+<rect x="570" y="660" width="20" height="20" opacity="0.146"/>
+<rect x="590" y="660" width="20" height="20" opacity="0.175"/>
+<rect x="610" y="660" width="20" height="20" opacity="0.191"/>
+<rect x="630" y="660" width="20" height="20" opacity="0.188"/>
+<rect x="650" y="660" width="20" height="20" opacity="0.175"/>
+<rect x="670" y="660" width="20" height="20" opacity="0.156"/>
+<rect x="690" y="660" width="20" height="20" opacity="0.136"/>
+<rect x="710" y="660" width="20" height="20" opacity="0.116"/>
+<rect x="730" y="660" width="20" height="20" opacity="0.100"/>
+<rect x="750" y="660" width="20" height="20" opacity="0.089"/>
+<rect x="770" y="660" width="20" height="20" opacity="0.084"/>
+<rect x="790" y="660" width="20" height="20" opacity="0.085"/>
+<rect x="810" y="660" width="20" height="20" opacity="0.095"/>
+<rect x="830" y="660" width="20" height="20" opacity="0.112"/>
+<rect x="850" y="660" width="20" height="20" opacity="0.123"/>
+<rect x="870" y="660" width="20" height="20" opacity="0.116"/>
+<rect x="890" y="660" width="20" height="20" opacity="0.093"/>
+<rect x="910" y="660" width="20" height="20" opacity="0.068"/>
+<rect x="190" y="680" width="20" height="20" opacity="0.052"/>
+<rect x="210" y="680" width="20" height="20" opacity="0.065"/>
+<rect x="230" y="680" width="20" height="20" opacity="0.086"/>
+<rect x="250" y="680" width="20" height="20" opacity="0.108"/>
+<rect x="270" y="680" width="20" height="20" opacity="0.124"/>
+<rect x="290" y="680" width="20" height="20" opacity="0.125"/>
+<rect x="310" y="680" width="20" height="20" opacity="0.109"/>
+<rect x="330" y="680" width="20" height="20" opacity="0.084"/>
+<rect x="350" y="680" width="20" height="20" opacity="0.066"/>
+<rect x="370" y="680" width="20" height="20" opacity="0.060"/>
+<rect x="390" y="680" width="20" height="20" opacity="0.064"/>
+<rect x="410" y="680" width="20" height="20" opacity="0.069"/>
+<rect x="430" y="680" width="20" height="20" opacity="0.069"/>
+<rect x="450" y="680" width="20" height="20" opacity="0.066"/>
+<rect x="470" y="680" width="20" height="20" opacity="0.068"/>
+<rect x="490" y="680" width="20" height="20" opacity="0.077"/>
+<rect x="510" y="680" width="20" height="20" opacity="0.087"/>
+<rect x="530" y="680" width="20" height="20" opacity="0.096"/>
+<rect x="550" y="680" width="20" height="20" opacity="0.107"/>
+<rect x="570" y="680" width="20" height="20" opacity="0.125"/>
+<rect x="590" y="680" width="20" height="20" opacity="0.144"/>
+<rect x="610" y="680" width="20" height="20" opacity="0.155"/>
+<rect x="630" y="680" width="20" height="20" opacity="0.154"/>
+<rect x="650" y="680" width="20" height="20" opacity="0.148"/>
+<rect x="670" y="680" width="20" height="20" opacity="0.138"/>
+<rect x="690" y="680" width="20" height="20" opacity="0.121"/>
+<rect x="710" y="680" width="20" height="20" opacity="0.101"/>
+<rect x="730" y="680" width="20" height="20" opacity="0.084"/>
+<rect x="750" y="680" width="20" height="20" opacity="0.074"/>
+<rect x="770" y="680" width="20" height="20" opacity="0.072"/>
+<rect x="790" y="680" width="20" height="20" opacity="0.076"/>
+<rect x="810" y="680" width="20" height="20" opacity="0.084"/>
+<rect x="830" y="680" width="20" height="20" opacity="0.096"/>
+<rect x="850" y="680" width="20" height="20" opacity="0.106"/>
+<rect x="870" y="680" width="20" height="20" opacity="0.105"/>
+<rect x="890" y="680" width="20" height="20" opacity="0.090"/>
+<rect x="910" y="680" width="20" height="20" opacity="0.070"/>
+<rect x="930" y="680" width="20" height="20" opacity="0.052"/>
+<rect x="230" y="700" width="20" height="20" opacity="0.062"/>
+<rect x="250" y="700" width="20" height="20" opacity="0.079"/>
+<rect x="270" y="700" width="20" height="20" opacity="0.090"/>
+<rect x="290" y="700" width="20" height="20" opacity="0.090"/>
+<rect x="310" y="700" width="20" height="20" opacity="0.079"/>
+<rect x="330" y="700" width="20" height="20" opacity="0.063"/>
+<rect x="350" y="700" width="20" height="20" opacity="0.053"/>
+<rect x="370" y="700" width="20" height="20" opacity="0.055"/>
+<rect x="390" y="700" width="20" height="20" opacity="0.067"/>
+<rect x="410" y="700" width="20" height="20" opacity="0.079"/>
+<rect x="430" y="700" width="20" height="20" opacity="0.083"/>
+<rect x="450" y="700" width="20" height="20" opacity="0.083"/>
+<rect x="470" y="700" width="20" height="20" opacity="0.084"/>
+<rect x="490" y="700" width="20" height="20" opacity="0.088"/>
+<rect x="510" y="700" width="20" height="20" opacity="0.090"/>
+<rect x="530" y="700" width="20" height="20" opacity="0.088"/>
+<rect x="550" y="700" width="20" height="20" opacity="0.088"/>
+<rect x="570" y="700" width="20" height="20" opacity="0.097"/>
+<rect x="590" y="700" width="20" height="20" opacity="0.110"/>
+<rect x="610" y="700" width="20" height="20" opacity="0.118"/>
+<rect x="630" y="700" width="20" height="20" opacity="0.120"/>
+<rect x="650" y="700" width="20" height="20" opacity="0.121"/>
+<rect x="670" y="700" width="20" height="20" opacity="0.120"/>
+<rect x="690" y="700" width="20" height="20" opacity="0.112"/>
+<rect x="710" y="700" width="20" height="20" opacity="0.096"/>
+<rect x="730" y="700" width="20" height="20" opacity="0.079"/>
+<rect x="750" y="700" width="20" height="20" opacity="0.070"/>
+<rect x="770" y="700" width="20" height="20" opacity="0.069"/>
+<rect x="790" y="700" width="20" height="20" opacity="0.075"/>
+<rect x="810" y="700" width="20" height="20" opacity="0.082"/>
+<rect x="830" y="700" width="20" height="20" opacity="0.090"/>
+<rect x="850" y="700" width="20" height="20" opacity="0.096"/>
+<rect x="870" y="700" width="20" height="20" opacity="0.096"/>
+<rect x="890" y="700" width="20" height="20" opacity="0.088"/>
+<rect x="910" y="700" width="20" height="20" opacity="0.072"/>
+<rect x="930" y="700" width="20" height="20" opacity="0.053"/>
+<rect x="130" y="720" width="20" height="20" opacity="0.053"/>
+<rect x="250" y="720" width="20" height="20" opacity="0.060"/>
+<rect x="270" y="720" width="20" height="20" opacity="0.071"/>
+<rect x="290" y="720" width="20" height="20" opacity="0.073"/>
+<rect x="310" y="720" width="20" height="20" opacity="0.069"/>
+<rect x="330" y="720" width="20" height="20" opacity="0.061"/>
+<rect x="350" y="720" width="20" height="20" opacity="0.057"/>
+<rect x="370" y="720" width="20" height="20" opacity="0.063"/>
+<rect x="390" y="720" width="20" height="20" opacity="0.080"/>
+<rect x="410" y="720" width="20" height="20" opacity="0.099"/>
+<rect x="430" y="720" width="20" height="20" opacity="0.110"/>
+<rect x="450" y="720" width="20" height="20" opacity="0.112"/>
+<rect x="470" y="720" width="20" height="20" opacity="0.108"/>
+<rect x="490" y="720" width="20" height="20" opacity="0.101"/>
+<rect x="510" y="720" width="20" height="20" opacity="0.090"/>
+<rect x="530" y="720" width="20" height="20" opacity="0.077"/>
+<rect x="550" y="720" width="20" height="20" opacity="0.069"/>
+<rect x="570" y="720" width="20" height="20" opacity="0.072"/>
+<rect x="590" y="720" width="20" height="20" opacity="0.082"/>
+<rect x="610" y="720" width="20" height="20" opacity="0.092"/>
+<rect x="630" y="720" width="20" height="20" opacity="0.099"/>
+<rect x="650" y="720" width="20" height="20" opacity="0.108"/>
+<rect x="670" y="720" width="20" height="20" opacity="0.116"/>
+<rect x="690" y="720" width="20" height="20" opacity="0.117"/>
+<rect x="710" y="720" width="20" height="20" opacity="0.108"/>
+<rect x="730" y="720" width="20" height="20" opacity="0.092"/>
+<rect x="750" y="720" width="20" height="20" opacity="0.082"/>
+<rect x="770" y="720" width="20" height="20" opacity="0.081"/>
+<rect x="790" y="720" width="20" height="20" opacity="0.087"/>
+<rect x="810" y="720" width="20" height="20" opacity="0.093"/>
+<rect x="830" y="720" width="20" height="20" opacity="0.096"/>
+<rect x="850" y="720" width="20" height="20" opacity="0.097"/>
+<rect x="870" y="720" width="20" height="20" opacity="0.096"/>
+<rect x="890" y="720" width="20" height="20" opacity="0.089"/>
+<rect x="910" y="720" width="20" height="20" opacity="0.075"/>
+<rect x="930" y="720" width="20" height="20" opacity="0.055"/>
+<rect x="130" y="740" width="20" height="20" opacity="0.056"/>
+<rect x="250" y="740" width="20" height="20" opacity="0.051"/>
+<rect x="270" y="740" width="20" height="20" opacity="0.062"/>
+<rect x="290" y="740" width="20" height="20" opacity="0.068"/>
+<rect x="310" y="740" width="20" height="20" opacity="0.069"/>
+<rect x="330" y="740" width="20" height="20" opacity="0.069"/>
+<rect x="350" y="740" width="20" height="20" opacity="0.070"/>
+<rect x="370" y="740" width="20" height="20" opacity="0.079"/>
+<rect x="390" y="740" width="20" height="20" opacity="0.099"/>
+<rect x="410" y="740" width="20" height="20" opacity="0.124"/>
+<rect x="430" y="740" width="20" height="20" opacity="0.143"/>
+<rect x="450" y="740" width="20" height="20" opacity="0.147"/>
+<rect x="470" y="740" width="20" height="20" opacity="0.134"/>
+<rect x="490" y="740" width="20" height="20" opacity="0.112"/>
+<rect x="510" y="740" width="20" height="20" opacity="0.088"/>
+<rect x="530" y="740" width="20" height="20" opacity="0.067"/>
+<rect x="550" y="740" width="20" height="20" opacity="0.057"/>
+<rect x="570" y="740" width="20" height="20" opacity="0.061"/>
+<rect x="590" y="740" width="20" height="20" opacity="0.075"/>
+<rect x="610" y="740" width="20" height="20" opacity="0.090"/>
+<rect x="630" y="740" width="20" height="20" opacity="0.104"/>
+<rect x="650" y="740" width="20" height="20" opacity="0.117"/>
+<rect x="670" y="740" width="20" height="20" opacity="0.131"/>
+<rect x="690" y="740" width="20" height="20" opacity="0.139"/>
+<rect x="710" y="740" width="20" height="20" opacity="0.134"/>
+<rect x="730" y="740" width="20" height="20" opacity="0.120"/>
+<rect x="750" y="740" width="20" height="20" opacity="0.109"/>
+<rect x="770" y="740" width="20" height="20" opacity="0.106"/>
+<rect x="790" y="740" width="20" height="20" opacity="0.110"/>
+<rect x="810" y="740" width="20" height="20" opacity="0.113"/>
+<rect x="830" y="740" width="20" height="20" opacity="0.113"/>
+<rect x="850" y="740" width="20" height="20" opacity="0.110"/>
+<rect x="870" y="740" width="20" height="20" opacity="0.104"/>
+<rect x="890" y="740" width="20" height="20" opacity="0.096"/>
+<rect x="910" y="740" width="20" height="20" opacity="0.081"/>
+<rect x="930" y="740" width="20" height="20" opacity="0.060"/>
+<rect x="130" y="760" width="20" height="20" opacity="0.051"/>
+<rect x="270" y="760" width="20" height="20" opacity="0.056"/>
+<rect x="290" y="760" width="20" height="20" opacity="0.063"/>
+<rect x="310" y="760" width="20" height="20" opacity="0.070"/>
+<rect x="330" y="760" width="20" height="20" opacity="0.077"/>
+<rect x="350" y="760" width="20" height="20" opacity="0.085"/>
+<rect x="370" y="760" width="20" height="20" opacity="0.096"/>
+<rect x="390" y="760" width="20" height="20" opacity="0.116"/>
+<rect x="410" y="760" width="20" height="20" opacity="0.145"/>
+<rect x="430" y="760" width="20" height="20" opacity="0.171"/>
+<rect x="450" y="760" width="20" height="20" opacity="0.177"/>
+<rect x="470" y="760" width="20" height="20" opacity="0.155"/>
+<rect x="490" y="760" width="20" height="20" opacity="0.119"/>
+<rect x="510" y="760" width="20" height="20" opacity="0.085"/>
+<rect x="530" y="760" width="20" height="20" opacity="0.064"/>
+<rect x="550" y="760" width="20" height="20" opacity="0.059"/>
+<rect x="570" y="760" width="20" height="20" opacity="0.072"/>
+<rect x="590" y="760" width="20" height="20" opacity="0.094"/>
+<rect x="610" y="760" width="20" height="20" opacity="0.116"/>
+<rect x="630" y="760" width="20" height="20" opacity="0.132"/>
+<rect x="650" y="760" width="20" height="20" opacity="0.146"/>
+<rect x="670" y="760" width="20" height="20" opacity="0.160"/>
+<rect x="690" y="760" width="20" height="20" opacity="0.167"/>
+<rect x="710" y="760" width="20" height="20" opacity="0.164"/>
+<rect x="730" y="760" width="20" height="20" opacity="0.152"/>
+<rect x="750" y="760" width="20" height="20" opacity="0.140"/>
+<rect x="770" y="760" width="20" height="20" opacity="0.133"/>
+<rect x="790" y="760" width="20" height="20" opacity="0.132"/>
+<rect x="810" y="760" width="20" height="20" opacity="0.132"/>
+<rect x="830" y="760" width="20" height="20" opacity="0.129"/>
+<rect x="850" y="760" width="20" height="20" opacity="0.122"/>
+<rect x="870" y="760" width="20" height="20" opacity="0.113"/>
+<rect x="890" y="760" width="20" height="20" opacity="0.103"/>
+<rect x="910" y="760" width="20" height="20" opacity="0.087"/>
+<rect x="930" y="760" width="20" height="20" opacity="0.064"/>
+<rect x="290" y="780" width="20" height="20" opacity="0.057"/>
+<rect x="310" y="780" width="20" height="20" opacity="0.067"/>
+<rect x="330" y="780" width="20" height="20" opacity="0.082"/>
+<rect x="350" y="780" width="20" height="20" opacity="0.098"/>
+<rect x="370" y="780" width="20" height="20" opacity="0.112"/>
+<rect x="390" y="780" width="20" height="20" opacity="0.131"/>
+<rect x="410" y="780" width="20" height="20" opacity="0.157"/>
+<rect x="430" y="780" width="20" height="20" opacity="0.182"/>
+<rect x="450" y="780" width="20" height="20" opacity="0.186"/>
+<rect x="470" y="780" width="20" height="20" opacity="0.160"/>
+<rect x="490" y="780" width="20" height="20" opacity="0.120"/>
+<rect x="510" y="780" width="20" height="20" opacity="0.086"/>
+<rect x="530" y="780" width="20" height="20" opacity="0.071"/>
+<rect x="550" y="780" width="20" height="20" opacity="0.075"/>
+<rect x="570" y="780" width="20" height="20" opacity="0.096"/>
+<rect x="590" y="780" width="20" height="20" opacity="0.125"/>
+<rect x="610" y="780" width="20" height="20" opacity="0.150"/>
+<rect x="630" y="780" width="20" height="20" opacity="0.167"/>
+<rect x="650" y="780" width="20" height="20" opacity="0.178"/>
+<rect x="670" y="780" width="20" height="20" opacity="0.186"/>
+<rect x="690" y="780" width="20" height="20" opacity="0.189"/>
+<rect x="710" y="780" width="20" height="20" opacity="0.183"/>
+<rect x="730" y="780" width="20" height="20" opacity="0.170"/>
+<rect x="750" y="780" width="20" height="20" opacity="0.156"/>
+<rect x="770" y="780" width="20" height="20" opacity="0.146"/>
+<rect x="790" y="780" width="20" height="20" opacity="0.139"/>
+<rect x="810" y="780" width="20" height="20" opacity="0.135"/>
+<rect x="830" y="780" width="20" height="20" opacity="0.129"/>
+<rect x="850" y="780" width="20" height="20" opacity="0.121"/>
+<rect x="870" y="780" width="20" height="20" opacity="0.109"/>
+<rect x="890" y="780" width="20" height="20" opacity="0.097"/>
+<rect x="910" y="780" width="20" height="20" opacity="0.082"/>
+<rect x="930" y="780" width="20" height="20" opacity="0.062"/>
+<rect x="1050" y="780" width="20" height="20" opacity="0.055"/>
+<rect x="1070" y="780" width="20" height="20" opacity="0.064"/>
+<rect x="1090" y="780" width="20" height="20" opacity="0.071"/>
+<rect x="310" y="800" width="20" height="20" opacity="0.064"/>
+<rect x="330" y="800" width="20" height="20" opacity="0.089"/>
+<rect x="350" y="800" width="20" height="20" opacity="0.115"/>
+<rect x="370" y="800" width="20" height="20" opacity="0.134"/>
+<rect x="390" y="800" width="20" height="20" opacity="0.146"/>
+<rect x="410" y="800" width="20" height="20" opacity="0.159"/>
+<rect x="430" y="800" width="20" height="20" opacity="0.170"/>
+<rect x="450" y="800" width="20" height="20" opacity="0.165"/>
+<rect x="470" y="800" width="20" height="20" opacity="0.140"/>
+<rect x="490" y="800" width="20" height="20" opacity="0.108"/>
+<rect x="510" y="800" width="20" height="20" opacity="0.085"/>
+<rect x="530" y="800" width="20" height="20" opacity="0.079"/>
+<rect x="550" y="800" width="20" height="20" opacity="0.089"/>
+<rect x="570" y="800" width="20" height="20" opacity="0.112"/>
+<rect x="590" y="800" width="20" height="20" opacity="0.141"/>
+<rect x="610" y="800" width="20" height="20" opacity="0.166"/>
+<rect x="630" y="800" width="20" height="20" opacity="0.181"/>
+<rect x="650" y="800" width="20" height="20" opacity="0.192"/>
+<rect x="670" y="800" width="20" height="20" opacity="0.200"/>
+<rect x="690" y="800" width="20" height="20" opacity="0.200"/>
+<rect x="710" y="800" width="20" height="20" opacity="0.187"/>
+<rect x="730" y="800" width="20" height="20" opacity="0.166"/>
+<rect x="750" y="800" width="20" height="20" opacity="0.146"/>
+<rect x="770" y="800" width="20" height="20" opacity="0.131"/>
+<rect x="790" y="800" width="20" height="20" opacity="0.119"/>
+<rect x="810" y="800" width="20" height="20" opacity="0.113"/>
+<rect x="830" y="800" width="20" height="20" opacity="0.107"/>
+<rect x="850" y="800" width="20" height="20" opacity="0.098"/>
+<rect x="870" y="800" width="20" height="20" opacity="0.087"/>
+<rect x="890" y="800" width="20" height="20" opacity="0.076"/>
+<rect x="910" y="800" width="20" height="20" opacity="0.064"/>
+<rect x="1010" y="800" width="20" height="20" opacity="0.053"/>
+<rect x="1030" y="800" width="20" height="20" opacity="0.067"/>
+<rect x="1050" y="800" width="20" height="20" opacity="0.089"/>
+<rect x="1070" y="800" width="20" height="20" opacity="0.118"/>
+<rect x="1090" y="800" width="20" height="20" opacity="0.142"/>
+<rect x="310" y="820" width="20" height="20" opacity="0.066"/>
+<rect x="330" y="820" width="20" height="20" opacity="0.103"/>
+<rect x="350" y="820" width="20" height="20" opacity="0.142"/>
+<rect x="370" y="820" width="20" height="20" opacity="0.165"/>
+<rect x="390" y="820" width="20" height="20" opacity="0.167"/>
+<rect x="410" y="820" width="20" height="20" opacity="0.157"/>
+<rect x="430" y="820" width="20" height="20" opacity="0.143"/>
+<rect x="450" y="820" width="20" height="20" opacity="0.126"/>
+<rect x="470" y="820" width="20" height="20" opacity="0.104"/>
+<rect x="490" y="820" width="20" height="20" opacity="0.085"/>
+<rect x="510" y="820" width="20" height="20" opacity="0.077"/>
+<rect x="530" y="820" width="20" height="20" opacity="0.080"/>
+<rect x="550" y="820" width="20" height="20" opacity="0.091"/>
+<rect x="570" y="820" width="20" height="20" opacity="0.108"/>
+<rect x="590" y="820" width="20" height="20" opacity="0.131"/>
+<rect x="610" y="820" width="20" height="20" opacity="0.151"/>
+<rect x="630" y="820" width="20" height="20" opacity="0.167"/>
+<rect x="650" y="820" width="20" height="20" opacity="0.184"/>
+<rect x="670" y="820" width="20" height="20" opacity="0.201"/>
+<rect x="690" y="820" width="20" height="20" opacity="0.204"/>
+<rect x="710" y="820" width="20" height="20" opacity="0.182"/>
+<rect x="730" y="820" width="20" height="20" opacity="0.148"/>
+<rect x="750" y="820" width="20" height="20" opacity="0.118"/>
+<rect x="770" y="820" width="20" height="20" opacity="0.097"/>
+<rect x="790" y="820" width="20" height="20" opacity="0.083"/>
+<rect x="810" y="820" width="20" height="20" opacity="0.076"/>
+<rect x="830" y="820" width="20" height="20" opacity="0.072"/>
+<rect x="850" y="820" width="20" height="20" opacity="0.065"/>
+<rect x="870" y="820" width="20" height="20" opacity="0.056"/>
+<rect x="990" y="820" width="20" height="20" opacity="0.061"/>
+<rect x="1010" y="820" width="20" height="20" opacity="0.078"/>
+<rect x="1030" y="820" width="20" height="20" opacity="0.099"/>
+<rect x="1050" y="820" width="20" height="20" opacity="0.137"/>
+<rect x="1070" y="820" width="20" height="20" opacity="0.194"/>
+<rect x="1090" y="820" width="20" height="20" opacity="0.241"/>
+<rect x="310" y="840" width="20" height="20" opacity="0.070"/>
+<rect x="330" y="840" width="20" height="20" opacity="0.116"/>
+<rect x="350" y="840" width="20" height="20" opacity="0.165"/>
+<rect x="370" y="840" width="20" height="20" opacity="0.191"/>
+<rect x="390" y="840" width="20" height="20" opacity="0.184"/>
+<rect x="410" y="840" width="20" height="20" opacity="0.156"/>
+<rect x="430" y="840" width="20" height="20" opacity="0.124"/>
+<rect x="450" y="840" width="20" height="20" opacity="0.096"/>
+<rect x="470" y="840" width="20" height="20" opacity="0.075"/>
+<rect x="490" y="840" width="20" height="20" opacity="0.066"/>
+<rect x="510" y="840" width="20" height="20" opacity="0.068"/>
+<rect x="530" y="840" width="20" height="20" opacity="0.076"/>
+<rect x="550" y="840" width="20" height="20" opacity="0.085"/>
+<rect x="570" y="840" width="20" height="20" opacity="0.097"/>
+<rect x="590" y="840" width="20" height="20" opacity="0.113"/>
+<rect x="610" y="840" width="20" height="20" opacity="0.130"/>
+<rect x="630" y="840" width="20" height="20" opacity="0.147"/>
+<rect x="650" y="840" width="20" height="20" opacity="0.171"/>
+<rect x="670" y="840" width="20" height="20" opacity="0.198"/>
+<rect x="690" y="840" width="20" height="20" opacity="0.206"/>
+<rect x="710" y="840" width="20" height="20" opacity="0.179"/>
+<rect x="730" y="840" width="20" height="20" opacity="0.133"/>
+<rect x="750" y="840" width="20" height="20" opacity="0.094"/>
+<rect x="770" y="840" width="20" height="20" opacity="0.069"/>
+<rect x="790" y="840" width="20" height="20" opacity="0.055"/>
+<rect x="970" y="840" width="20" height="20" opacity="0.054"/>
+<rect x="990" y="840" width="20" height="20" opacity="0.077"/>
+<rect x="1010" y="840" width="20" height="20" opacity="0.099"/>
+<rect x="1030" y="840" width="20" height="20" opacity="0.125"/>
+<rect x="1050" y="840" width="20" height="20" opacity="0.175"/>
+<rect x="1070" y="840" width="20" height="20" opacity="0.254"/>
+<rect x="1090" y="840" width="20" height="20" opacity="0.320"/>
+</g>
+<g id="layer-07-gs-regains" fill="#206A97" stroke="#FFFEFB" stroke-width=".7">
+<circle cx="308.10" cy="316.20" r="5"><title>7. Roland Sallai (1282353) - Ball recoveries / Ball recoveries / 164.17</title></circle>
+<circle cx="500.30" cy="757.60" r="5"><title>42. Abdülkerim Bardakcı (126526) - Ball recoveries / Ball recoveries / 469.17</title></circle>
+<circle cx="269.80" cy="418.50" r="5"><title>6. Davinson Sánchez (1647732) - Ball recoveries / Ball recoveries / 707.17</title></circle>
+<circle cx="230.60" cy="524.20" r="5"><title>6. Davinson Sánchez (1647732) - Ball recoveries / Ball recoveries / 998.17</title></circle>
+<circle cx="146.60" cy="610.70" r="5"><title>42. Abdülkerim Bardakcı (126526) - Ball recoveries / Ball recoveries / 1011.17</title></circle>
+<circle cx="123.30" cy="504.00" r="5"><title>6. Davinson Sánchez (1647732) - Ball recoveries / Ball recoveries / 1072.17</title></circle>
+<circle cx="146.60" cy="746.50" r="5"><title>8. Gabriel Sara (533884) - Ball recoveries / Ball recoveries / 1102.17</title></circle>
+<circle cx="209.10" cy="684.10" r="5"><title>6. Davinson Sánchez (1647732) - Ball recoveries / Ball recoveries / 1130.17</title></circle>
+<circle cx="265.10" cy="294.80" r="5"><title>6. Davinson Sánchez (1647732) - Ball recoveries / Ball recoveries / 1484.17</title></circle>
+<circle cx="542.30" cy="679.10" r="5"><title>42. Abdülkerim Bardakcı (126526) - Ball recoveries / Ball recoveries / 1531.17</title></circle>
+<circle cx="448.10" cy="635.80" r="5"><title>8. Gabriel Sara (533884) - Ball recoveries / Ball recoveries / 1663.17</title></circle>
+<circle cx="270.70" cy="344.10" r="5"><title>7. Roland Sallai (1282353) - Ball recoveries / Ball recoveries / 1735.17</title></circle>
+<circle cx="72.90" cy="618.50" r="5"><title>8. Gabriel Sara (533884) - Ball recoveries / Ball recoveries / 1790.17</title></circle>
+<circle cx="480.70" cy="632.60" r="5"><title>45. Victor Osimhen (1093704) - Ball recoveries / Ball recoveries / 1850.17</title></circle>
+<circle cx="515.30" cy="526.90" r="5"><title>7. Roland Sallai (1282353) - Ball recoveries / Ball recoveries / 1943.17</title></circle>
+<circle cx="331.40" cy="606.40" r="5"><title>8. Gabriel Sara (533884) - Ball recoveries / Ball recoveries / 2038.17</title></circle>
+<circle cx="609.50" cy="318.70" r="5"><title>7. Roland Sallai (1282353) - Ball recoveries / Ball recoveries / 2097.17</title></circle>
+<circle cx="544.20" cy="599.40" r="5"><title>8. Gabriel Sara (533884) - Ball recoveries / Ball recoveries / 2389.17</title></circle>
+<circle cx="243.70" cy="473.60" r="5"><title>42. Abdülkerim Bardakcı (126526) - Ball recoveries / Ball recoveries / 2669.17</title></circle>
+<circle cx="596.50" cy="382.10" r="5"><title>10. Leroy Sané (1291402) - Ball recoveries / Ball recoveries / 2700.17</title></circle>
+<circle cx="265.10" cy="246.50" r="5"><title>7. Roland Sallai (1282353) - Ball recoveries / Ball recoveries / 2885.09</title></circle>
+<circle cx="610.50" cy="791.70" r="5"><title>42. Abdülkerim Bardakcı (126526) - Ball recoveries / Ball recoveries / 2990.09</title></circle>
+<circle cx="485.40" cy="735.40" r="5"><title>8. Gabriel Sara (533884) - Ball recoveries / Ball recoveries / 3033.09</title></circle>
+<circle cx="511.50" cy="399.40" r="5"><title>7. Roland Sallai (1282353) - Ball recoveries / Ball recoveries / 3043.09</title></circle>
+<circle cx="499.40" cy="387.30" r="5"><title>6. Davinson Sánchez (1647732) - Ball recoveries / Ball recoveries / 3065.09</title></circle>
+<circle cx="160.60" cy="536.20" r="5"><title>42. Abdülkerim Bardakcı (126526) - Ball recoveries / Ball recoveries / 3264.09</title></circle>
+<circle cx="490.10" cy="351.10" r="5"><title>7. Roland Sallai (1282353) - Ball recoveries / Ball recoveries / 3420.09</title></circle>
+<circle cx="280.10" cy="573.40" r="5"><title>6. Davinson Sánchez (1647732) - Ball recoveries / Ball recoveries / 3444.09</title></circle>
+<circle cx="231.50" cy="349.10" r="5"><title>10. Leroy Sané (1291402) - Ball recoveries / Ball recoveries / 3576.09</title></circle>
+<circle cx="297.80" cy="657.90" r="5"><title>42. Abdülkerim Bardakcı (126526) - Ball recoveries / Ball recoveries / 3696.09</title></circle>
+<circle cx="287.50" cy="595.60" r="5"><title>6. Davinson Sánchez (1647732) - Ball recoveries / Ball recoveries / 3841.09</title></circle>
+<circle cx="603.00" cy="362.20" r="5"><title>7. Roland Sallai (1282353) - Ball recoveries / Ball recoveries / 3911.09</title></circle>
+<circle cx="179.30" cy="680.10" r="5"><title>42. Abdülkerim Bardakcı (126526) - Ball recoveries / Ball recoveries / 4088.09</title></circle>
+<circle cx="198.50" cy="212.70" r="5"><title>99. Mario Lemina (834205) - Ball recoveries / Ball recoveries / 4186.09</title></circle>
+<circle cx="497.10" cy="385.20" r="5"><title>6. Davinson Sánchez (1647732) - Ball recoveries / Ball recoveries / 4368.09</title></circle>
+<circle cx="610.90" cy="722.50" r="5"><title>42. Abdülkerim Bardakcı (126526) - Ball recoveries / Ball recoveries / 4488.09</title></circle>
+<circle cx="620.50" cy="585.70" r="5"><title>6. Davinson Sánchez (1647732) - Ball recoveries / Ball recoveries / 4729.09</title></circle>
+<circle cx="150.60" cy="565.40" r="5"><title>6. Davinson Sánchez (1647732) - Ball recoveries / Ball recoveries / 4997.09</title></circle>
+<circle cx="680.00" cy="387.00" r="5"><title>7. Roland Sallai (1282353) - Ball recoveries / Ball recoveries / 5025.09</title></circle>
+<circle cx="391.20" cy="414.70" r="5"><title>42. Abdülkerim Bardakcı (126526) - Ball recoveries / Ball recoveries / 5123.09</title></circle>
+<circle cx="505.00" cy="234.50" r="5"><title>7. Roland Sallai (1282353) - Ball recoveries / Ball recoveries / 5141.09</title></circle>
+<circle cx="450.80" cy="223.40" r="5"><title>6. Davinson Sánchez (1647732) - Ball recoveries / Ball recoveries / 5269.09</title></circle>
+<circle cx="418.40" cy="735.50" r="5"><title>42. Abdülkerim Bardakcı (126526) - Ball recoveries / Ball recoveries / 5311.09</title></circle>
+<circle cx="407.90" cy="637.50" r="5"><title>83. Aleksei Batrakov (137204) - Ball recoveries / Ball recoveries / 5433.09</title></circle>
+<circle cx="318.60" cy="795.50" r="5"><title>21. Deniz Gul (1649400) - Ball recoveries / Ball recoveries / 5649.09</title></circle>
+<circle cx="733.40" cy="600.10" r="5"><title>99. Mario Lemina (834205) - Ball recoveries / Ball recoveries / 5718.09</title></circle>
+<circle cx="95.50" cy="544.60" r="5"><title>42. Abdülkerim Bardakcı (126526) - Ball recoveries / Ball recoveries / 5795.09</title></circle>
+</g>
+<g id="layer-08-gb-regains" fill="#BE7A37" stroke="#FFFEFB" stroke-width=".7">
+<circle cx="123.30" cy="482.40" r="5"><title>2. Thalisson (1450317) - Ball recoveries / Ball recoveries / 154.17</title></circle>
+<circle cx="649.70" cy="351.60" r="5"><title>42. Ousmane Diabate (1708892) - Ball recoveries / Ball recoveries / 183.17</title></circle>
+<circle cx="753.30" cy="287.50" r="5"><title>83. Rafael Luís (537313) - Ball recoveries / Ball recoveries / 277.17</title></circle>
+<circle cx="230.60" cy="493.70" r="5"><title>6. Dimitrios Goutas (546451) - Ball recoveries / Ball recoveries / 462.17</title></circle>
+<circle cx="94.30" cy="454.50" r="5"><title>48. Salih Uçan (1490704) - Ball recoveries / Ball recoveries / 551.17</title></circle>
+<circle cx="122.30" cy="539.00" r="5"><title>6. Dimitrios Goutas (546451) - Ball recoveries / Ball recoveries / 765.17</title></circle>
+<circle cx="84.10" cy="227.10" r="5"><title>88. Fıratcan Üzüm (1498896) - Ball recoveries / Ball recoveries / 979.17</title></circle>
+<circle cx="734.60" cy="260.30" r="5"><title>88. Fıratcan Üzüm (1498896) - Ball recoveries / Ball recoveries / 1003.17</title></circle>
+<circle cx="723.40" cy="578.20" r="5"><title>42. Ousmane Diabate (1708892) - Ball recoveries / Ball recoveries / 1021.17</title></circle>
+<circle cx="292.20" cy="806.60" r="5"><title>2. Thalisson (1450317) - Ball recoveries / Ball recoveries / 1138.17</title></circle>
+<circle cx="709.40" cy="500.70" r="5"><title>7. Tiago Gouveia (76470) - Ball recoveries / Ball recoveries / 1677.17</title></circle>
+<circle cx="388.30" cy="371.20" r="5"><title>9. Pedro Mendes (853204) - Ball recoveries / Ball recoveries / 1778.17</title></circle>
+<circle cx="610.50" cy="388.30" r="5"><title>42. Ousmane Diabate (1708892) - Ball recoveries / Ball recoveries / 1833.17</title></circle>
+<circle cx="315.50" cy="245.50" r="5"><title>90. Metehan Baltacı (120302) - Ball recoveries / Ball recoveries / 1879.17</title></circle>
+<circle cx="449.00" cy="774.60" r="5"><title>10. Franco Tongya (1467427) - Ball recoveries / Ball recoveries / 2481.17</title></circle>
+<circle cx="513.40" cy="654.90" r="5"><title>42. Ousmane Diabate (1708892) - Ball recoveries / Ball recoveries / 2758.17</title></circle>
+<circle cx="232.50" cy="389.10" r="5"><title>42. Ousmane Diabate (1708892) - Ball recoveries / Ball recoveries / 2981.09</title></circle>
+<circle cx="305.30" cy="408.20" r="5"><title>6. Dimitrios Goutas (546451) - Ball recoveries / Ball recoveries / 3038.09</title></circle>
+<circle cx="559.10" cy="823.70" r="5"><title>2. Thalisson (1450317) - Ball recoveries / Ball recoveries / 3059.09</title></circle>
+<circle cx="713.10" cy="372.00" r="5"><title>90. Metehan Baltacı (120302) - Ball recoveries / Ball recoveries / 3269.09</title></circle>
+<circle cx="493.80" cy="778.50" r="5"><title>83. Rafael Luís (537313) - Ball recoveries / Ball recoveries / 3334.09</title></circle>
+<circle cx="652.50" cy="526.90" r="5"><title>42. Ousmane Diabate (1708892) - Ball recoveries / Ball recoveries / 3409.09</title></circle>
+<circle cx="600.20" cy="323.70" r="5"><title>88. Fıratcan Üzüm (1498896) - Ball recoveries / Ball recoveries / 3439.09</title></circle>
+<circle cx="712.20" cy="745.30" r="5"><title>2. Thalisson (1450317) - Ball recoveries / Ball recoveries / 3451.09</title></circle>
+<circle cx="346.30" cy="442.40" r="5"><title>90. Metehan Baltacı (120302) - Ball recoveries / Ball recoveries / 3555.09</title></circle>
+<circle cx="384.60" cy="820.70" r="5"><title>2. Thalisson (1450317) - Ball recoveries / Ball recoveries / 3586.09</title></circle>
+<circle cx="268.90" cy="279.40" r="5"><title>88. Fıratcan Üzüm (1498896) - Ball recoveries / Ball recoveries / 3676.09</title></circle>
+<circle cx="322.10" cy="758.30" r="5"><title>2. Thalisson (1450317) - Ball recoveries / Ball recoveries / 3906.09</title></circle>
+<circle cx="677.70" cy="805.60" r="5"><title>2. Thalisson (1450317) - Ball recoveries / Ball recoveries / 3941.09</title></circle>
+<circle cx="145.70" cy="744.20" r="5"><title>6. Dimitrios Goutas (546451) - Ball recoveries / Ball recoveries / 4033.09</title></circle>
+<circle cx="127.00" cy="432.40" r="5"><title>42. Ousmane Diabate (1708892) - Ball recoveries / Ball recoveries / 4067.09</title></circle>
+<circle cx="1021.10" cy="230.10" r="5"><title>7. Tiago Gouveia (76470) - Ball recoveries / Ball recoveries / 4094.09</title></circle>
+<circle cx="126.60" cy="526.00" r="5"><title>90. Metehan Baltacı (120302) - Ball recoveries / Ball recoveries / 4175.09</title></circle>
+<circle cx="270.50" cy="371.10" r="5"><title>35. Oğulcan Ülgün (1492836) - Ball recoveries / Ball recoveries / 4483.09</title></circle>
+<circle cx="229.40" cy="522.70" r="5"><title>35. Oğulcan Ülgün (1492836) - Ball recoveries / Ball recoveries / 4503.09</title></circle>
+<circle cx="967.00" cy="695.50" r="5"><title>35. Oğulcan Ülgün (1492836) - Ball recoveries / Ball recoveries / 4606.09</title></circle>
+<circle cx="308.10" cy="521.70" r="5"><title>90. Metehan Baltacı (120302) - Ball recoveries / Ball recoveries / 5018.09</title></circle>
+<circle cx="127.00" cy="498.60" r="5"><title>90. Metehan Baltacı (120302) - Ball recoveries / Ball recoveries / 5053.09</title></circle>
+<circle cx="409.60" cy="689.00" r="5"><title>2. Thalisson (1450317) - Ball recoveries / Ball recoveries / 5136.09</title></circle>
+<circle cx="201.40" cy="629.90" r="5"><title>6. Dimitrios Goutas (546451) - Ball recoveries / Ball recoveries / 5293.09</title></circle>
+<circle cx="476.10" cy="682.60" r="5"><title>42. Ousmane Diabate (1708892) - Ball recoveries / Ball recoveries / 5336.09</title></circle>
+<circle cx="183.00" cy="512.50" r="5"><title>6. Dimitrios Goutas (546451) - Ball recoveries / Ball recoveries / 5400.09</title></circle>
+<circle cx="442.90" cy="405.80" r="5"><title>90. Metehan Baltacı (120302) - Ball recoveries / Ball recoveries / 5834.09</title></circle>
+</g>
+<g id="layer-09-gs-losses" fill="#234338" stroke="#FFFEFB" stroke-width=".7">
+<circle cx="1026.70" cy="557.60" r="3.5"><title>8. Gabriel Sara (533884) - Lost balls / Lost balls / 152.17</title></circle>
+<circle cx="500.30" cy="688.40" r="3.5"><title>8. Gabriel Sara (533884) - Lost balls / Lost balls / 181.17</title></circle>
+<circle cx="1100.00" cy="526.20" r="3.5"><title>7. Roland Sallai (1282353) - Lost balls / Lost balls / 234.17</title></circle>
+<circle cx="396.70" cy="752.50" r="3.5"><title>53. Barış Alper Yılmaz (1589859) - Lost balls / Lost balls / 276.17</title></circle>
+<circle cx="984.70" cy="525.20" r="3.5"><title>83. Aleksei Batrakov (137204) - Lost balls / Lost balls / 461.17</title></circle>
+<circle cx="1055.70" cy="585.50" r="3.5"><title>8. Gabriel Sara (533884) - Lost balls / Lost balls / 550.17</title></circle>
+<circle cx="516.20" cy="721.40" r="3.5"><title>17. Eren Elmalı (424686) - Lost balls / Lost balls / 604.17</title></circle>
+<circle cx="1027.70" cy="501.00" r="3.5"><title>83. Aleksei Batrakov (137204) - Lost balls / Lost balls / 764.17</title></circle>
+<circle cx="719.70" cy="769.60" r="3.5"><title>99. Mario Lemina (834205) - Lost balls / Lost balls / 956.17</title></circle>
+<circle cx="1065.90" cy="812.90" r="3.5"><title>8. Gabriel Sara (533884) - Lost balls / Lost balls / 979.17</title></circle>
+<circle cx="415.40" cy="779.70" r="3.5"><title>53. Barış Alper Yılmaz (1589859) - Lost balls / Lost balls / 1003.17</title></circle>
+<circle cx="426.60" cy="461.80" r="3.5"><title>99. Mario Lemina (834205) - Lost balls / Lost balls / 1020.17</title></circle>
+<circle cx="424.70" cy="860.00" r="3.5"><title>17. Eren Elmalı (424686) - Lost balls / Lost balls / 1104.17</title></circle>
+<circle cx="857.80" cy="233.40" r="3.5"><title>10. Leroy Sané (1291402) - Lost balls / Lost balls / 1138.17</title></circle>
+<circle cx="1023.90" cy="292.80" r="3.5"><title>83. Aleksei Batrakov (137204) - Lost balls / Lost balls / 1370.17</title></circle>
+<circle cx="875.50" cy="431.60" r="3.5"><title>45. Victor Osimhen (1093704) - Lost balls / Lost balls / 1434.17</title></circle>
+<circle cx="687.00" cy="388.30" r="3.5"><title>45. Victor Osimhen (1093704) - Lost balls / Lost balls / 1485.17</title></circle>
+<circle cx="151.30" cy="682.10" r="3.5"><title>17. Eren Elmalı (424686) - Lost balls / Lost balls / 1535.17</title></circle>
+<circle cx="1071.50" cy="762.60" r="3.5"><title>53. Barış Alper Yılmaz (1589859) - Lost balls / Lost balls / 1620.17</title></circle>
+<circle cx="440.60" cy="539.30" r="3.5"><title>99. Mario Lemina (834205) - Lost balls / Lost balls / 1677.17</title></circle>
+<circle cx="761.70" cy="668.80" r="3.5"><title>10. Leroy Sané (1291402) - Lost balls / Lost balls / 1778.17</title></circle>
+<circle cx="539.50" cy="651.70" r="3.5"><title>83. Aleksei Batrakov (137204) - Lost balls / Lost balls / 1832.17</title></circle>
+<circle cx="834.50" cy="794.50" r="3.5"><title>53. Barış Alper Yılmaz (1589859) - Lost balls / Lost balls / 1879.17</title></circle>
+<circle cx="929.70" cy="519.90" r="3.5"><title>10. Leroy Sané (1291402) - Lost balls / Lost balls / 1960.17</title></circle>
+<circle cx="764.50" cy="180.00" r="3.5"><title>10. Leroy Sané (1291402) - Lost balls / Lost balls / 2098.17</title></circle>
+<circle cx="343.50" cy="860.00" r="3.5"><title>99. Mario Lemina (834205) - Lost balls / Lost balls / 2399.17</title></circle>
+<circle cx="701.00" cy="265.40" r="3.5"><title>83. Aleksei Batrakov (137204) - Lost balls / Lost balls / 2480.17</title></circle>
+<circle cx="1068.70" cy="483.70" r="3.5"><title>53. Barış Alper Yılmaz (1589859) - Lost balls / Lost balls / 2584.17</title></circle>
+<circle cx="1057.50" cy="521.90" r="3.5"><title>8. Gabriel Sara (533884) - Lost balls / Lost balls / 2656.17</title></circle>
+<circle cx="647.80" cy="860.00" r="3.5"><title>6. Davinson Sánchez (1647732) - Lost balls / Lost balls / 2679.17</title></circle>
+<circle cx="636.60" cy="385.10" r="3.5"><title>42. Abdülkerim Bardakcı (126526) - Lost balls / Lost balls / 2758.17</title></circle>
+<circle cx="917.50" cy="650.90" r="3.5"><title>53. Barış Alper Yılmaz (1589859) - Lost balls / Lost balls / 2980.09</title></circle>
+<circle cx="1100.00" cy="663.00" r="3.5"><title>10. Leroy Sané (1291402) - Lost balls / Lost balls / 3004.09</title></circle>
+<circle cx="844.70" cy="631.80" r="3.5"><title>6. Davinson Sánchez (1647732) - Lost balls / Lost balls / 3035.09</title></circle>
+<circle cx="493.80" cy="356.10" r="3.5"><title>10. Leroy Sané (1291402) - Lost balls / Lost balls / 3056.09</title></circle>
+<circle cx="594.60" cy="219.30" r="3.5"><title>10. Leroy Sané (1291402) - Lost balls / Lost balls / 3235.09</title></circle>
+<circle cx="436.90" cy="668.00" r="3.5"><title>83. Aleksei Batrakov (137204) - Lost balls / Lost balls / 3267.09</title></circle>
+<circle cx="656.20" cy="261.50" r="3.5"><title>8. Gabriel Sara (533884) - Lost balls / Lost balls / 3334.09</title></circle>
+<circle cx="497.50" cy="513.10" r="3.5"><title>83. Aleksei Batrakov (137204) - Lost balls / Lost balls / 3409.09</title></circle>
+<circle cx="549.80" cy="716.30" r="3.5"><title>53. Barış Alper Yılmaz (1589859) - Lost balls / Lost balls / 3438.09</title></circle>
+<circle cx="437.80" cy="294.70" r="3.5"><title>10. Leroy Sané (1291402) - Lost balls / Lost balls / 3451.09</title></circle>
+<circle cx="803.70" cy="597.60" r="3.5"><title>8. Gabriel Sara (533884) - Lost balls / Lost balls / 3555.09</title></circle>
+<circle cx="765.40" cy="219.30" r="3.5"><title>6. Davinson Sánchez (1647732) - Lost balls / Lost balls / 3578.09</title></circle>
+<circle cx="881.10" cy="760.60" r="3.5"><title>8. Gabriel Sara (533884) - Lost balls / Lost balls / 3676.09</title></circle>
+<circle cx="1039.80" cy="524.10" r="3.5"><title>42. Abdülkerim Bardakcı (126526) - Lost balls / Lost balls / 3761.09</title></circle>
+<circle cx="628.20" cy="860.00" r="3.5"><title>45. Victor Osimhen (1093704) - Lost balls / Lost balls / 3844.09</title></circle>
+<circle cx="827.90" cy="281.70" r="3.5"><title>45. Victor Osimhen (1093704) - Lost balls / Lost balls / 3903.09</title></circle>
+<circle cx="472.30" cy="234.40" r="3.5"><title>7. Roland Sallai (1282353) - Lost balls / Lost balls / 3939.09</title></circle>
+<circle cx="1004.30" cy="295.80" r="3.5"><title>45. Victor Osimhen (1093704) - Lost balls / Lost balls / 4033.09</title></circle>
+<circle cx="1023.00" cy="607.60" r="3.5"><title>83. Aleksei Batrakov (137204) - Lost balls / Lost balls / 4065.09</title></circle>
+<circle cx="128.90" cy="809.90" r="3.5"><title>17. Eren Elmalı (424686) - Lost balls / Lost balls / 4093.09</title></circle>
+<circle cx="1023.40" cy="514.00" r="3.5"><title>83. Aleksei Batrakov (137204) - Lost balls / Lost balls / 4175.09</title></circle>
+<circle cx="773.60" cy="500.70" r="3.5"><title>83. Aleksei Batrakov (137204) - Lost balls / Lost balls / 4200.09</title></circle>
+<circle cx="522.50" cy="804.80" r="3.5"><title>27. Rafael Leão (1621614) - Lost balls / Lost balls / 4402.09</title></circle>
+<circle cx="596.90" cy="818.60" r="3.5"><title>4. Ismail Jakobs (673189) - Lost balls / Lost balls / 4433.09</title></circle>
+<circle cx="879.50" cy="668.90" r="3.5"><title>27. Rafael Leão (1621614) - Lost balls / Lost balls / 4483.09</title></circle>
+<circle cx="920.60" cy="517.30" r="3.5"><title>11. Yunus Akgün (27735) - Lost balls / Lost balls / 4503.09</title></circle>
+<circle cx="1026.50" cy="210.50" r="3.5"><title>11. Yunus Akgün (27735) - Lost balls / Lost balls / 4547.09</title></circle>
+<circle cx="187.40" cy="234.50" r="3.5"><title>20. İlkay Gündoğan (567726) - Lost balls / Lost balls / 4604.09</title></circle>
+<circle cx="958.20" cy="674.50" r="3.5"><title>11. Yunus Akgün (27735) - Lost balls / Lost balls / 4707.09</title></circle>
+<circle cx="1000.20" cy="860.00" r="3.5"><title>6. Davinson Sánchez (1647732) - Lost balls / Lost balls / 4737.09</title></circle>
+<circle cx="774.50" cy="643.00" r="3.5"><title>21. Deniz Gul (1649400) - Lost balls / Lost balls / 4889.09</title></circle>
+<circle cx="841.90" cy="518.30" r="3.5"><title>45. Victor Osimhen (1093704) - Lost balls / Lost balls / 5018.09</title></circle>
+<circle cx="1023.00" cy="541.40" r="3.5"><title>7. Roland Sallai (1282353) - Lost balls / Lost balls / 5051.09</title></circle>
+<circle cx="812.10" cy="180.00" r="3.5"><title>6. Davinson Sánchez (1647732) - Lost balls / Lost balls / 5102.09</title></circle>
+<circle cx="740.40" cy="351.00" r="3.5"><title>45. Victor Osimhen (1093704) - Lost balls / Lost balls / 5134.09</title></circle>
+<circle cx="1037.90" cy="594.00" r="3.5"><title>83. Aleksei Batrakov (137204) - Lost balls / Lost balls / 5246.09</title></circle>
+<circle cx="948.60" cy="410.10" r="3.5"><title>45. Victor Osimhen (1093704) - Lost balls / Lost balls / 5293.09</title></circle>
+<circle cx="673.90" cy="357.40" r="3.5"><title>7. Roland Sallai (1282353) - Lost balls / Lost balls / 5336.09</title></circle>
+<circle cx="967.00" cy="527.50" r="3.5"><title>99. Mario Lemina (834205) - Lost balls / Lost balls / 5400.09</title></circle>
+<circle cx="1062.40" cy="829.70" r="3.5"><title>21. Deniz Gul (1649400) - Lost balls / Lost balls / 5710.09</title></circle>
+<circle cx="1052.80" cy="544.60" r="3.5"><title>4. Ismail Jakobs (673189) - Lost balls / Lost balls / 5771.09</title></circle>
+</g>
+<g id="layer-10-gb-losses" fill="#AA414D" stroke="#FFFEFB" stroke-width=".7">
+<circle cx="841.90" cy="723.80" r="3.5"><title>10. Franco Tongya (1467427) - Lost balls / Lost balls / 164.17</title></circle>
+<circle cx="649.70" cy="282.40" r="3.5"><title>88. Fıratcan Üzüm (1498896) - Lost balls / Lost balls / 466.17</title></circle>
+<circle cx="1026.70" cy="860.00" r="3.5"><title>6. Dimitrios Goutas (546451) - Lost balls / Lost balls / 802.17</title></circle>
+<circle cx="926.90" cy="517.80" r="3.5"><title>9. Pedro Mendes (853204) - Lost balls / Lost balls / 997.17</title></circle>
+<circle cx="1003.40" cy="429.30" r="3.5"><title>90. Metehan Baltacı (120302) - Lost balls / Lost balls / 1010.17</title></circle>
+<circle cx="1026.70" cy="536.00" r="3.5"><title>7. Tiago Gouveia (76470) - Lost balls / Lost balls / 1070.17</title></circle>
+<circle cx="1003.40" cy="293.50" r="3.5"><title>42. Ousmane Diabate (1708892) - Lost balls / Lost balls / 1102.17</title></circle>
+<circle cx="940.90" cy="355.90" r="3.5"><title>9. Pedro Mendes (853204) - Lost balls / Lost balls / 1129.17</title></circle>
+<circle cx="460.20" cy="180.00" r="3.5"><title>48. Salih Uçan (1490704) - Lost balls / Lost balls / 1222.17</title></circle>
+<circle cx="676.70" cy="760.30" r="3.5"><title>9. Pedro Mendes (853204) - Lost balls / Lost balls / 1398.17</title></circle>
+<circle cx="884.90" cy="745.20" r="3.5"><title>10. Franco Tongya (1467427) - Lost balls / Lost balls / 1484.17</title></circle>
+<circle cx="701.90" cy="404.20" r="3.5"><title>83. Rafael Luís (537313) - Lost balls / Lost balls / 1663.17</title></circle>
+<circle cx="879.30" cy="695.90" r="3.5"><title>83. Rafael Luís (537313) - Lost balls / Lost balls / 1734.17</title></circle>
+<circle cx="731.80" cy="218.30" r="3.5"><title>9. Pedro Mendes (853204) - Lost balls / Lost balls / 1785.17</title></circle>
+<circle cx="669.30" cy="407.40" r="3.5"><title>6. Dimitrios Goutas (546451) - Lost balls / Lost balls / 1850.17</title></circle>
+<circle cx="634.70" cy="513.10" r="3.5"><title>10. Franco Tongya (1467427) - Lost balls / Lost balls / 1940.17</title></circle>
+<circle cx="859.70" cy="735.40" r="3.5"><title>9. Pedro Mendes (853204) - Lost balls / Lost balls / 2013.17</title></circle>
+<circle cx="605.80" cy="440.60" r="3.5"><title>2. Thalisson (1450317) - Lost balls / Lost balls / 2388.17</title></circle>
+<circle cx="882.10" cy="615.70" r="3.5"><title>6. Dimitrios Goutas (546451) - Lost balls / Lost balls / 2486.17</title></circle>
+<circle cx="1024.90" cy="555.30" r="3.5"><title>7. Tiago Gouveia (76470) - Lost balls / Lost balls / 2642.17</title></circle>
+<circle cx="906.30" cy="566.40" r="3.5"><title>7. Tiago Gouveia (76470) - Lost balls / Lost balls / 2669.17</title></circle>
+<circle cx="553.50" cy="657.90" r="3.5"><title>42. Ousmane Diabate (1708892) - Lost balls / Lost balls / 2699.17</title></circle>
+<circle cx="821.40" cy="562.40" r="3.5"><title>83. Rafael Luís (537313) - Lost balls / Lost balls / 2764.17</title></circle>
+<circle cx="884.90" cy="793.50" r="3.5"><title>6. Dimitrios Goutas (546451) - Lost balls / Lost balls / 2884.09</title></circle>
+<circle cx="539.50" cy="248.30" r="3.5"><title>48. Salih Uçan (1490704) - Lost balls / Lost balls / 2988.09</title></circle>
+<circle cx="664.60" cy="304.60" r="3.5"><title>9. Pedro Mendes (853204) - Lost balls / Lost balls / 3033.09</title></circle>
+<circle cx="638.50" cy="640.60" r="3.5"><title>42. Ousmane Diabate (1708892) - Lost balls / Lost balls / 3039.09</title></circle>
+<circle cx="650.60" cy="652.70" r="3.5"><title>9. Pedro Mendes (853204) - Lost balls / Lost balls / 3065.09</title></circle>
+<circle cx="989.40" cy="503.80" r="3.5"><title>88. Fıratcan Üzüm (1498896) - Lost balls / Lost balls / 3263.09</title></circle>
+<circle cx="659.90" cy="688.90" r="3.5"><title>42. Ousmane Diabate (1708892) - Lost balls / Lost balls / 3418.09</title></circle>
+<circle cx="869.90" cy="466.60" r="3.5"><title>9. Pedro Mendes (853204) - Lost balls / Lost balls / 3444.09</title></circle>
+<circle cx="696.30" cy="180.00" r="3.5"><title>88. Fıratcan Üzüm (1498896) - Lost balls / Lost balls / 3513.09</title></circle>
+<circle cx="918.50" cy="690.90" r="3.5"><title>10. Franco Tongya (1467427) - Lost balls / Lost balls / 3576.09</title></circle>
+<circle cx="901.70" cy="392.10" r="3.5"><title>88. Fıratcan Üzüm (1498896) - Lost balls / Lost balls / 3600.09</title></circle>
+<circle cx="852.20" cy="382.10" r="3.5"><title>83. Rafael Luís (537313) - Lost balls / Lost balls / 3695.09</title></circle>
+<circle cx="862.50" cy="444.40" r="3.5"><title>9. Pedro Mendes (853204) - Lost balls / Lost balls / 3839.09</title></circle>
+<circle cx="970.70" cy="359.90" r="3.5"><title>7. Tiago Gouveia (76470) - Lost balls / Lost balls / 4086.09</title></circle>
+<circle cx="951.50" cy="827.30" r="3.5"><title>7. Tiago Gouveia (76470) - Lost balls / Lost balls / 4186.09</title></circle>
+<circle cx="652.90" cy="654.80" r="3.5"><title>9. Pedro Mendes (853204) - Lost balls / Lost balls / 4368.09</title></circle>
+<circle cx="539.10" cy="317.50" r="3.5"><title>83. Rafael Luís (537313) - Lost balls / Lost balls / 4488.09</title></circle>
+<circle cx="760.50" cy="666.90" r="3.5"><title>10. Franco Tongya (1467427) - Lost balls / Lost balls / 4513.09</title></circle>
+<circle cx="529.50" cy="454.30" r="3.5"><title>88. Fıratcan Üzüm (1498896) - Lost balls / Lost balls / 4727.09</title></circle>
+<circle cx="841.00" cy="415.50" r="3.5"><title>83. Rafael Luís (537313) - Lost balls / Lost balls / 4779.09</title></circle>
+<circle cx="850.60" cy="220.40" r="3.5"><title>6. Dimitrios Goutas (546451) - Lost balls / Lost balls / 4867.09</title></circle>
+<circle cx="999.40" cy="474.60" r="3.5"><title>88. Fıratcan Üzüm (1498896) - Lost balls / Lost balls / 4995.09</title></circle>
+<circle cx="470.00" cy="653.00" r="3.5"><title>9. Pedro Mendes (853204) - Lost balls / Lost balls / 5025.09</title></circle>
+<circle cx="826.10" cy="531.90" r="3.5"><title>10. Franco Tongya (1467427) - Lost balls / Lost balls / 5121.09</title></circle>
+<circle cx="645.00" cy="805.50" r="3.5"><title>9. Pedro Mendes (853204) - Lost balls / Lost balls / 5141.09</title></circle>
+<circle cx="904.90" cy="517.10" r="3.5"><title>42. Ousmane Diabate (1708892) - Lost balls / Lost balls / 5188.09</title></circle>
+<circle cx="699.20" cy="816.60" r="3.5"><title>35. Oğulcan Ülgün (1492836) - Lost balls / Lost balls / 5264.09</title></circle>
+<circle cx="731.60" cy="304.50" r="3.5"><title>52. Goktug Erdem (424102) - Lost balls / Lost balls / 5310.09</title></circle>
+<circle cx="589.00" cy="805.50" r="3.5"><title>42. Ousmane Diabate (1708892) - Lost balls / Lost balls / 5339.09</title></circle>
+<circle cx="742.10" cy="402.50" r="3.5"><title>88. Fıratcan Üzüm (1498896) - Lost balls / Lost balls / 5433.09</title></circle>
+<circle cx="831.40" cy="244.50" r="3.5"><title>52. Goktug Erdem (424102) - Lost balls / Lost balls / 5647.09</title></circle>
+<circle cx="416.60" cy="439.90" r="3.5"><title>52. Goktug Erdem (424102) - Lost balls / Lost balls / 5718.09</title></circle>
+<circle cx="1049.20" cy="522.20" r="3.5"><title>45. Prince Martor Jr. (1697299) - Lost balls / Lost balls / 5794.09</title></circle>
+<circle cx="682.60" cy="286.50" r="3.5"><title>45. Prince Martor Jr. (1697299) - Lost balls / Lost balls / 5836.09</title></circle>
+</g>
+<g id="layer-11-shots" fill="none" stroke-width="3">
+<circle cx="911.90" cy="698.50" r="9" stroke="#181D19"><title>8. Gabriel Sara (533884) - Shots on target / Shots on target / 65.17</title></circle>
+<circle cx="1045.40" cy="597.40" r="9" stroke="#181D19"><title>45. Victor Osimhen (1093704) - Shots on target / Shots on target / 2292.17</title></circle>
+<circle cx="922.20" cy="617.50" r="6" stroke="#181D19"><title>8. Gabriel Sara (533884) - Shots off target / Shots off target / 2319.17</title></circle>
+<circle cx="845.70" cy="437.40" r="6" stroke="#181D19"><title>8. Gabriel Sara (533884) - Shots off target / Shots off target / 2541.17</title></circle>
+<circle cx="1033.30" cy="541.00" r="6" stroke="#181D19"><title>10. Leroy Sané (1291402) - Shots off target / Shots off target / 2708.17</title></circle>
+<circle cx="990.30" cy="634.80" r="9" stroke="#181D19"><title>7. Roland Sallai (1282353) - Shots on target / Shots on target / 3119.09</title></circle>
+<circle cx="917.50" cy="540.20" r="6" stroke="#181D19"><title>53. Barış Alper Yılmaz (1589859) - Shots off target / Shots off target / 3627.09</title></circle>
+<circle cx="1024.90" cy="515.10" r="9" stroke="#181D19"><title>45. Victor Osimhen (1093704) - Shots on target / Shots on target / 3744.09</title></circle>
+<circle cx="995.00" cy="355.60" r="6" stroke="#181D19"><title>45. Victor Osimhen (1093704) - Shots off target / Shots off target / 4325.09</title></circle>
+<circle cx="1028.20" cy="519.20" r="6" stroke="#181D19"><title>42. Abdülkerim Bardakcı (126526) - Shots off target / Shots off target / 4833.09</title></circle>
+<circle cx="901.40" cy="619.00" r="6" stroke="#181D19"><title>83. Aleksei Batrakov (137204) - Shots off target / Shots off target / 4934.09</title></circle>
+<circle cx="1033.50" cy="566.30" r="6" stroke="#181D19"><title>45. Victor Osimhen (1093704) - Shots off target / Shots off target / 5164.09</title></circle>
+<circle cx="1035.10" cy="591.30" r="6" stroke="#BE7A37"><title>6. Dimitrios Goutas (546451) - Shots off target / Shots off target / 367.17</title></circle>
+<circle cx="764.50" cy="434.30" r="9" stroke="#BE7A37"><title>42. Ousmane Diabate (1708892) - Shots on target / Shots on target / 1580.17</title></circle>
+<circle cx="1044.50" cy="416.50" r="9" stroke="#BE7A37"><title>48. Salih Uçan (1490704) - Shots on target / Shots on target / 2147.17</title></circle>
+<circle cx="1029.50" cy="517.10" r="6" stroke="#BE7A37"><title>2. Thalisson (1450317) - Shots off target / Shots off target / 2192.17</title></circle>
+<circle cx="1038.90" cy="528.20" r="6" stroke="#BE7A37"><title>48. Salih Uçan (1490704) - Shots off target / Shots off target / 2440.17</title></circle>
+<circle cx="937.10" cy="407.20" r="9" stroke="#BE7A37"><title>7. Tiago Gouveia (76470) - Shots on target / Shots on target / 3227.09</title></circle>
+<circle cx="1001.50" cy="507.80" r="6" stroke="#BE7A37"><title>7. Tiago Gouveia (76470) - Shots off target / Shots off target / 3277.09</title></circle>
+<circle cx="1069.70" cy="463.60" r="6" stroke="#BE7A37"><title>90. Metehan Baltacı (120302) - Shots off target / Shots off target / 3386.09</title></circle>
+<circle cx="865.30" cy="662.80" r="9" stroke="#BE7A37"><title>48. Salih Uçan (1490704) - Shots on target / Shots on target / 3456.09</title></circle>
+<circle cx="986.60" cy="682.90" r="6" stroke="#BE7A37"><title>9. Pedro Mendes (853204) - Shots off target / Shots off target / 3876.09</title></circle>
+<circle cx="1029.50" cy="515.90" r="6" stroke="#BE7A37"><title>6. Dimitrios Goutas (546451) - Shots off target / Shots off target / 3985.09</title></circle>
+<circle cx="891.40" cy="438.40" r="6" stroke="#BE7A37"><title>48. Salih Uçan (1490704) - Shots off target / Shots off target / 4099.09</title></circle>
+<circle cx="967.00" cy="695.50" r="9" stroke="#BE7A37"><title>35. Oğulcan Ülgün (1492836) - Shots on target / Shots on target / 4606.09</title></circle>
+<circle cx="959.10" cy="522.20" r="6" stroke="#BE7A37"><title>2. Thalisson (1450317) - Shots off target / Shots off target / 5811.09</title></circle>
+</g>
+<g id="layer-12-evidence-and-legend">
+<text x="1130" y="198" fill="#234338" font-size="17" font-weight="700" font-family="Arial,sans-serif">OLAYLAR</text>
+<circle cx="1140" cy="235" r="5" fill="#206A97"/>
+<text x="1154" y="240" fill="#181D19" font-size="13" font-weight="400" font-family="Arial,sans-serif">GS top kazanımı</text>
+<circle cx="1140" cy="278" r="5" fill="#BE7A37"/>
+<text x="1154" y="283" fill="#181D19" font-size="13" font-weight="400" font-family="Arial,sans-serif">GB top kazanımı</text>
+<circle cx="1140" cy="321" r="5" fill="#234338"/>
+<text x="1154" y="326" fill="#181D19" font-size="13" font-weight="400" font-family="Arial,sans-serif">GS top kaybı</text>
+<circle cx="1140" cy="364" r="5" fill="#AA414D"/>
+<text x="1154" y="369" fill="#181D19" font-size="13" font-weight="400" font-family="Arial,sans-serif">GB top kaybı</text>
+<circle cx="1140" cy="407" r="5" fill="#181D19"/>
+<text x="1154" y="412" fill="#181D19" font-size="13" font-weight="400" font-family="Arial,sans-serif">GS şut</text>
+<text x="1130" y="492" fill="#234338" font-size="14" font-weight="700" font-family="Arial,sans-serif">NetworkX</text>
+<text x="1130" y="520" fill="#181D19" font-size="13" font-weight="400" font-family="Arial,sans-serif">30 aktör etiketi</text>
+<text x="1130" y="550" fill="#AA414D" font-size="12" font-weight="400" font-family="Arial,sans-serif">Pas ağı değildir</text>
+<text x="45" y="917" fill="#181D19" font-size="16" font-weight="400" font-family="Arial,sans-serif">GS: 1959 oyuncu etiketi  ·  GB: 1197 oyuncu etiketi</text>
+<text x="45" y="948" fill="#4E5650" font-size="13" font-weight="400" font-family="Arial,sans-serif">Kaynak: SportsBase Players CSV  |  SciPy Gaussian olay yoğunluğu  |  NetworkX aktör kümesi</text>
+<text x="45" y="973" fill="#4E5650" font-size="12" font-weight="400" font-family="Arial,sans-serif">Koordinatların hücum yönü normalize edilmedi. Noktalar olay başlangıcıdır; topun fiziksel güzergâhı değildir.</text>
+</g>
+</svg>

@@ -1,0 +1,76 @@
+---
+import HeroPitchFigure from "./HeroPitchFigure.astro";
+interface Metric { label:string; value:string; emphasis?:boolean }
+interface GoalEvidence { verified:boolean; goalId:string; cells:number[]; xG:number; xGOT:number; source:string; shotCell?:number }
+interface Props { kicker?:string; headline?:string; atlasSrc?:string; metrics?:Metric[]; evidenceStatus?:string; goal?:GoalEvidence }
+const {
+  kicker='MAÇ ATLASI · SÜPER LİG',
+  headline='Gençlerbirliği – Galatasaray: Maç atlası',
+  atlasSrc='/figures/live-match-gs.svg',
+  metrics=[],
+  evidenceStatus='MODEL METRİKLERİ DOĞRULANMADI',
+  goal
+}=Astro.props;
+const validGoal = goal?.verified === true && typeof goal.goalId === 'string' && goal.goalId.length > 0
+  && typeof goal.source === 'string' && goal.source.length > 0
+  && Number.isFinite(goal.xG) && Number.isFinite(goal.xGOT)
+  && goal.xG >= 0 && goal.xG <= 1 && goal.xGOT >= 0 && goal.xGOT <= 1
+  && Array.isArray(goal.cells) && goal.cells.length > 0
+  && goal.cells.every(c => Number.isInteger(c) && c >= 0 && c < 192)
+  && (goal.shotCell === undefined || (Number.isInteger(goal.shotCell) && goal.shotCell >= 0 && goal.shotCell < 192));
+const verifiedGoal = validGoal ? goal : undefined;
+const gridCells = Array.from({length:192},(_,i)=>i);
+const highlights = new Set(verifiedGoal?.cells ?? []);
+const shotCell = verifiedGoal?.shotCell;
+const cellX = (cell:number) => (cell % 16) * (1050/16);
+const cellY = (cell:number) => Math.floor(cell/16) * (680/12);
+---
+<section class="master-stage" aria-label="Manşet Kartografisi">
+  <header class="stage-header"><span class="stage-kicker">{kicker}</span><h1 class="stage-headline">Oyunu sonuçtan önce oku.</h1><p class="stage-subheadline">{headline}</p></header>
+  <div class="editorial-byline"><span>ANALİZ &amp; METODOLOJİ:</span> <strong>HİKMET PINARBAŞ</strong></div>
+  <a href="/visual-lab" class="action-primary" aria-label="Canlı Maç Laboratuvarını İncele">Canlı Taktik Atlasını Aç</a>
+  <div class="stage-grid hero-entry">
+    <figure class="atlas-frame">
+      <div class="svg-viewport">
+        <HeroPitchFigure />
+        <svg class="xt-goal-overlay" viewBox="0 0 1050 680" aria-hidden="true" focusable="false">
+          <g id="L04b_hidden_xt_goal_accumulation" opacity="0">
+            {gridCells.map(c => <rect x={cellX(c)} y={cellY(c)} width={1050/16} height={680/12} fill="#C3A469" fill-opacity={highlights.has(c) ? '0.18' : '0'} />)}
+            {shotCell !== undefined && <circle cx={cellX(shotCell)+1050/32} cy={cellY(shotCell)+680/24} r="8" fill="none" stroke="#234338" stroke-width="2" />}
+          </g>
+        </svg>
+      </div>
+      <figcaption class="claim-ceiling"><strong>İddia sınırı:</strong> Gösterilen geometriler ve veri türleri SVG kaynak künyesine tabidir; tracking veya nedensel baskı çıkarımı değildir.</figcaption>
+    </figure>
+    <aside class="metric-card" aria-label="Kartografik kanıt sicili">
+      <div class="metric-card-header"><span class="card-title">KARTOGRAFİK SİCİL</span><span class="metric-badge">REFERANS SAHA · 105 × 68 m</span></div>
+      <div class="scale-ruler" aria-hidden="true"><div class="ruler-line"><span class="ruler-tick tick-start"></span><span class="ruler-tick tick-mid"></span><span class="ruler-tick tick-end"></span></div><span class="ruler-label">Ölçek şematik · kaynak SVG kendi viewBox oranını kullanır</span></div>
+      {verifiedGoal && <div class="goal-inspection">
+        <button type="button" class="goal-inspection-trigger" aria-label={`Gol sekansını aydınlat: ${verifiedGoal.goalId}`}>Gol sekansını göster</button>
+        <div class="goal-inspection-values">
+          <span>xG: {verifiedGoal.xG.toFixed(3)}</span>
+          <span>xGOT: {verifiedGoal.xGOT.toFixed(3)}</span>
+          <strong>Bitiricilik verimi: {(verifiedGoal.xGOT-verifiedGoal.xG).toFixed(3)}</strong>
+          <small>Kaynak: {verifiedGoal.source} · model çıktısı</small>
+        </div>
+      </div>}
+      <div class="metric-rows">{metrics.length ? metrics.map(m=><div class="metric-row"><span class="metric-label">{m.label}</span><span class:list={['metric-value',{gold:m.emphasis}]}>{m.value}</span></div>) : <div class="metric-row"><span class="metric-label">DOĞRULAMA</span><span class="metric-value">{evidenceStatus}</span><p class="metric-description">xT, faz sayısı, özvektör merkeziliği ve baskı endeksi kaynak doğrulaması olmadan yayımlanmaz.</p></div>}</div>
+      <div class="metric-footer"><span class="verification-dot" aria-hidden="true"></span><span>SPORTSBASE · KANIT SINIRI AKTİF</span></div>
+    </aside>
+  </div>
+</section>
+<style>
+  .svg-viewport{position:relative}.xt-goal-overlay{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}.xt-goal-overlay g{opacity:0;transition:opacity .2s ease}
+  .xt-goal-overlay #L04b_hidden_xt_goal_accumulation rect[fill-opacity="0.18"]{fill:rgba(195,164,105,.22);fill-opacity:1;stroke:rgba(195,164,105,.65);stroke-width:.75px}
+  .master-stage:has(.goal-inspection-trigger:is(:hover,:focus-visible,:active)) .xt-goal-overlay g{opacity:1}
+  .goal-inspection{display:grid;gap:9px}.goal-inspection-trigger{border:1px solid #8EA58B;background:#F5F1E8;color:#234338;padding:9px 12px;cursor:pointer;font:600 11px var(--mono,monospace)}.goal-inspection-trigger:focus-visible{outline:2px solid #234338;outline-offset:3px}.goal-inspection-values{display:grid;gap:5px;font:11px var(--mono,monospace);color:#4A554E}.goal-inspection-values strong{color:#234338}.goal-inspection-values small{font-size:9px}
+  @media(prefers-reduced-motion:reduce){.xt-goal-overlay g{transition:none}}
+  .editorial-byline{font:10px var(--mono,monospace);color:#4A554E;margin-bottom:12px}.editorial-byline strong{color:#234338}.action-primary{display:inline-block;padding:10px 16px;margin-bottom:18px;background:#234338;color:#FFFEFB;text-decoration:none;font:600 12px var(--sans,Archivo,sans-serif)}.action-primary:focus-visible{outline:2px solid #C3A469;outline-offset:3px}
+  .master-stage{padding:32px 0 48px;border-bottom:.5px solid rgba(142,165,139,.25)}
+  .stage-subheadline{font:400 16px/1.5 var(--serif,Newsreader,Georgia,serif);color:var(--ink-secondary,#4A554E);margin:8px 0 0}
+  .stage-header{margin-bottom:24px}.stage-kicker{font:10.5px var(--mono,monospace);letter-spacing:.18em;color:#4A554E;display:block;margin-bottom:8px}.stage-headline{font:500 clamp(2rem,3.8vw,3.2rem)/1.15 var(--serif,Newsreader,Georgia,serif);letter-spacing:-.025em;color:#181D19;max-width:980px}
+  .stage-grid{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:24px;align-items:stretch}.atlas-frame{margin:0;background:#FFFEFB;border:.5px solid rgba(35,67,56,.14);border-radius:4px;padding:16px;min-width:0;display:flex;flex-direction:column;justify-content:space-between}
+  .svg-viewport{width:100%;aspect-ratio:1050/680;overflow:hidden;background:#F5F1E8;border-radius:2px}.atlas-object{width:100%;height:100%;display:block}.claim-ceiling{margin-top:14px;font:italic 11.5px/1.5 var(--serif,Georgia,serif);color:var(--ink-muted,#5E655F);border-top:.5px solid rgba(35,67,56,.08);padding-top:10px}.claim-ceiling strong{font:600 10px var(--mono,monospace)}
+  .metric-card{background:#FFFEFB;border:.5px solid rgba(35,67,56,.14);border-radius:4px;padding:20px;display:flex;flex-direction:column;justify-content:space-between;gap:18px}.metric-card-header{display:flex;justify-content:space-between;gap:10px;align-items:center;border-bottom:.5px solid rgba(35,67,56,.1);padding-bottom:12px}.card-title{font:600 9.5px var(--mono,monospace);letter-spacing:.15em;color:#234338}.metric-badge{font:8.5px var(--mono,monospace);color:#4A554E;text-align:right}.scale-ruler{margin:4px 0;max-width:220px}.ruler-line{height:6px;border-bottom:1px solid #234338;position:relative;margin-bottom:6px}.ruler-tick{position:absolute;width:1px;height:6px;background:#234338;bottom:0}.tick-start{left:0}.tick-mid{left:50%;height:4px}.tick-end{right:0}.ruler-label{font:8px var(--mono,monospace);color:#8EA58B}.metric-rows{display:flex;flex-direction:column;gap:14px}.metric-row{display:flex;flex-direction:column;gap:4px}.metric-label{font:9px var(--mono,monospace);letter-spacing:.05em;color:#4A554E}.metric-value{font:600 15px var(--sans,Archivo,sans-serif);color:#181D19}.metric-value.gold{color:#234338;border-left:2px solid #C3A469;padding-left:6px}.metric-description{font:12px/1.5 var(--sans,Archivo,sans-serif);color:#4A554E}.metric-footer{display:flex;align-items:center;gap:6px;padding-top:16px;border-top:.5px solid rgba(35,67,56,.08);font:8px var(--mono,monospace);letter-spacing:.1em;color:#4A554E}.verification-dot{width:5px;height:5px;background:#C3A469;border-radius:50%}
+  @media(max-width:1023px){.stage-grid{grid-template-columns:1fr}.metric-card{max-width:480px;margin:0 auto;width:100%;box-sizing:border-box}}
+</style>

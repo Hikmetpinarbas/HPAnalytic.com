@@ -230,7 +230,7 @@ export function discoverInput({ candidates = [], existing = [], failures = [] } 
 // Copy-ready brief for the OPERATOR path (any capable assistant).
 export function operatorBrief(step, input, profile) {
   return [
-    '=== HPANALYTIC EDITORIAL STUDIO — OPERATOR BRIEF ===',
+    '=== HPAnalytic EDITORIAL STUDIO — OPERATOR BRIEF ===',
     `STEP: ${step.toUpperCase()}`,
     systemPrompt(ROLES[step], profile),
     '--- TASK ---',

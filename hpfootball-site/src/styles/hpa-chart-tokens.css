@@ -1,0 +1,13 @@
+/* Unified chart tokens. Consumed by SVG dashboards without rasterizing charts. */
+:root {
+ --hpa-chart-ink:#E8ECEE;
+ --hpa-chart-subtle:#A9B9C4;
+ --hpa-chart-field:#122634;
+ --hpa-chart-grid:#8DA1AC;
+ --hpa-chart-accent:#F2A33A;
+ --hpa-chart-focus:#FFCB6A;
+ --hpa-chart-warning:#EDB85F;
+ --hpa-chart-radius:12px;
+ --hpa-chart-motion:220ms;
+}
+@media(prefers-reduced-motion:reduce){:root{--hpa-chart-motion:0ms}}

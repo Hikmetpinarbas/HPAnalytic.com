@@ -1,18 +1,17 @@
 ---
-interface Props { withWordmark?: boolean; }
-const { withWordmark = true } = Astro.props as Props;
+// Brand lockup: HP monogram (Bodoni Moda ligature lit from the upper right,
+// approved by Hikmet Pınarbaş on 2026-10-20) + typographic wordmark.
+interface Props {
+  class?: string;
+  variant?: 'header' | 'footer' | 'default';
+  showSubtitle?: boolean;
+  height?: number | string;
+  withWordmark?: boolean;
+}
+const { class: className = '', variant = 'default', showSubtitle = true } = Astro.props as Props;
 ---
-<a href="/" class="brand">
-  <span class="hp-mark" aria-hidden="true">
-    <svg viewBox="0 0 52 52" focusable="false">
-      <path class="hp-frame" d="M7 7v38M7 26h17M24 7v38M32 7v38M32 7h7c8 0 8 15 0 15h-7"/>
-      <path class="hp-break" d="M13 38 42 14"/>
-    </svg>
-  </span>
-  {withWordmark && (
-    <span class="brand-word">
-      <b>HPANALYTIC</b>
-      <small>HİKMET PINARBAŞ · EVIDENCE MADE VISIBLE.</small>
-    </span>
-  )}
+<a href="/" class:list={['brand', 'hp-wordmark', className, `hp-wordmark--${variant}`]} aria-label="HPAnalytic ana sayfa" data-testid="brand-logo">
+  <img class="hp-wordmark__mark" src="/brand/hp-mark.svg" alt="" width="36" height="36" decoding="async" />
+  <span class="hp-wordmark__name"><span class="hp-wordmark__hp">HP</span>Analytic</span>
+  {showSubtitle && <span class="hp-wordmark__tag">Football Intelligence</span>}
 </a>

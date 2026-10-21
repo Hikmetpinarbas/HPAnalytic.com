@@ -9,16 +9,16 @@ const logo=readFileSync(new URL('../src/components/Logo.astro', import.meta.url)
 
 test('homepage above fold carries identity, discovery action and real featured analysis',()=>{
   assert.match(home,/HPANALYTIC/);
-  assert.match(home,/HİKMET PINARBAŞ/);
-  assert.match(home,/class="action-primary" href=\{primaryCta\.href\}/);
+  assert.match(readFileSync(new URL('../src/components/HeroCartography.astro', import.meta.url),'utf8'),/HİKMET PINARBAŞ/);
+  assert.match(readFileSync(new URL("../src/components/HeroCartography.astro",import.meta.url),"utf8"),/href="\/visual-lab" class="action-primary"/);
   assert.match(home,/featuredStory/);
   assert.match(home,/class="featured-analysis"/);
   assert.match(home,/\/articles\/\$\{featuredStory\.id\}/);
 });
 test('global header exposes HPAnalytic product identity without duplicating navigation truth',()=>{
   assert.match(layout,/<Logo\s*\/>/);
-  assert.match(logo,/HPANALYTIC/);
-  assert.equal((layout.match(/navigation\.map\(/g)||[]).length,1);
+  assert.match(logo,/hp-wordmark__name/);
+  assert.match(layout,/<EditorialHeader navigation=\{editorialNavigation\}/);
 });
 test('above-fold system has explicit responsive hero and featured transition',()=>{
   assert.match(css,/\.hero-actions\{/);

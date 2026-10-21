@@ -1,4 +1,0 @@
-import test from 'node:test';import assert from 'node:assert/strict';import {readFileSync} from 'node:fs';
-const layout=readFileSync(new URL('../src/layouts/BaseLayout.astro',import.meta.url),'utf8');const css=readFileSync(new URL('../src/styles/global.css',import.meta.url),'utf8');
-test('publication masthead clearly identifies the editorial publication without breaking navigation',()=>{assert.match(layout,/class="publication-masthead"/);assert.match(layout,/BAĞIMSIZ FUTBOL YAYINI/);assert.match(layout,/class="site-header"/);assert.match(layout,/aria-label="Ana menü"/)});
-test('headings are distinguished from prose and masthead scales on mobile',()=>{assert.match(css,/\.publication-masthead\{/);assert.match(css,/\.featured-story h2/);assert.match(css,/@media\(max-width:700px\)\{\.publication-masthead/)});

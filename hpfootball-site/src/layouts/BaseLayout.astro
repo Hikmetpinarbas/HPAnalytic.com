@@ -6,8 +6,10 @@ import { getCollection } from 'astro:content';
 import { buildVisibleNavigation, buildUtilityNavigation, currentState, SECTION_ROUTES } from '../lib/site-surfaces.mjs';
 import MobileNavigation from '../components/MobileNavigation.astro';
 import Logo from '../components/Logo.astro';
+import EditorialHeader from '../components/EditorialHeader.astro';
 import NavigationIcon from '../components/NavigationIcon.astro';
 import { canonicalPath } from '../lib/canonical-path.mjs';
+import { MOBILE_MENU } from '../lib/site-menu.mjs';
 
 interface Props {
   title?: string;
@@ -16,6 +18,7 @@ interface Props {
   ogType?: 'website' | 'article';
   publishedTime?: Date;
   noindex?: boolean;
+  club?: 'fenerbahce' | 'galatasaray' | 'besiktas' | 'trabzonspor';
 }
 
 const SITE_NAME = 'HPAnalytic';
@@ -26,6 +29,7 @@ const {
   ogType = 'website',
   publishedTime,
   noindex = false,
+  club,
 } = Astro.props as Props;
 
 const articles = (await getCollection('articles', isPublic)).filter((entry) => isPublicEditorialItem(entry.data));
@@ -40,7 +44,7 @@ for (const article of articles) {
 
 const pathname = Astro.url.pathname;
 const sectionRoute = section ? SECTION_ROUTES[section as keyof typeof SECTION_ROUTES] : undefined;
-const withCurrent = (items: { href: string; label: string }[]) =>
+const withCurrent = <T extends { href: string; label: string }>(items: T[]) =>
   items.map((item) => ({
     ...item,
     current: (currentState(item.href, pathname) ?? (item.href === sectionRoute ? 'true' : undefined)) as 'page' | 'true' | undefined,
@@ -53,6 +57,9 @@ const navigation = withCurrent(buildVisibleNavigation({
 }));
 const utility = withCurrent(buildUtilityNavigation({ articleCount: articles.length }));
 const archiveLink = utility.find((item) => item.href === '/archive');
+const NAV_ITEMS = MOBILE_MENU.map((item) => ({ label: item.label, href: item.href, text: item.text }));
+const editorialNavigation = withCurrent(NAV_ITEMS);
+
 const searchLink = utility.find((item) => item.href === '/search');
 const canonical = new URL(canonicalPath(pathname), Astro.site ?? Astro.url).href;
 ---
@@ -85,13 +92,16 @@ const canonical = new URL(canonicalPath(pathname), Astro.site ?? Astro.url).href
 <meta property="og:url" content={canonical}/>
 <meta property="og:locale" content="tr_TR"/>
 {publishedTime && <meta property="article:published_time" content={publishedTime.toISOString()}/>}
-<meta property="og:image" content={new URL("/social-card.png", Astro.site ?? Astro.url).href}/>
+<meta property="og:image" content={new URL("/social-card.png?v=20261020", Astro.site ?? Astro.url).href}/>
 <meta property="og:image:width" content="1200"/>
 <meta property="og:image:height" content="630"/>
 <meta property="og:image:alt" content="HPAnalytic — Evidence Made Visible"/>
 <meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:image" content={new URL("/social-card.png", Astro.site ?? Astro.url).href}/>
-<meta name="theme-color" content="#F5F1E8"/>
+<meta name="twitter:image" content={new URL("/social-card.png?v=20261020", Astro.site ?? Astro.url).href}/>
+<meta name="theme-color" content={club === 'fenerbahce' ? '#06112A' : '#08090B'}/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,500&family=Inter:wght@400;500;600;700&family=Inter+Tight:wght@600;700;800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=IBM+Plex+Mono:wght@400;500&display=swap"/>
 <meta name="application-name" content="HPAnalytic"/>
 <meta name="mobile-web-app-capable" content="yes"/>
 <meta name="apple-mobile-web-app-capable" content="yes"/>
@@ -109,47 +119,33 @@ if ('serviceWorker' in navigator) {
 }
 </script>
 </head>
-<body>
+<body data-club={club}>
 <a class="skip-link" href="#main-content">İçeriğe geç</a>
-<div class="grain" aria-hidden="true"></div>
-<div class="publication-masthead" aria-label="Yayın kimliği"><span>HP / HİKMET PINARBAŞ</span><span>BAĞIMSIZ FUTBOL YAYINI <i aria-hidden="true">·</i> ANALİZ / ARAŞTIRMA / KÜLTÜR</span></div>
-<header class="site-header">
-  <Logo />
-  <nav class="desktop-nav" aria-label="Ana menü">
-    {navigation.map(item=><a class="nav-link" href={item.href} aria-current={item.current}><NavigationIcon href={item.href}/><span>{item.label}</span></a>)}
-  </nav>
+<EditorialHeader navigation={editorialNavigation}>
   <div class="header-actions">
-    {searchLink && (
-      <a class="icon-link" href={searchLink.href} aria-current={searchLink.current} aria-label="Ara">
-        <svg viewBox="0 0 20 20" aria-hidden="true" focusable="false"><circle cx="8.5" cy="8.5" r="5.5" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M12.5 12.5 17 17" stroke="currentColor" stroke-width="1.6"/></svg>
-        <span class="icon-link-text">ARA</span>
-      </a>
-    )}
-    <MobileNavigation navigation={archiveLink ? [...navigation, archiveLink] : navigation} />
+    <MobileNavigation navigation={editorialNavigation} />
   </div>
-</header>
+</EditorialHeader>
 <main id="main-content" tabindex="-1"><slot/></main>
 <footer class="site-footer">
   <div class="footer-grid">
-    <div><Logo /><p class="footer-statement">Skoru değil, skoru üreten mekanizmayı okuruz. Kanıtın taşıyabildiğinden güçlü konuşmayız.</p></div>
-    <nav class="footer-nav" aria-label="Site bölümleri"><h2>BÖLÜMLER</h2><ul>{[...navigation].map(item=><li><a href={item.href}>{item.label}</a></li>)}</ul></nav>
-    {utility.length > 0 && (<nav class="footer-nav" aria-label="Site araçları"><h2>ARAÇLAR</h2><ul>{utility.map(item=><li><a href={item.href}>{item.label}</a></li>)}</ul></nav>)}
+    <div><Logo variant="footer" /><p class="footer-statement">Skoru değil, skoru üreten mekanizmayı okuruz. Kanıtın taşıyabildiğinden güçlü konuşmayız.</p></div>
+    <nav class="footer-nav" aria-label="Site bölümleri"><h2>Bölümler</h2><ul>{navigation.map(item=><li><a href={item.href}>{item.label}</a></li>)}</ul></nav>
+    {utility.length > 0 && (<nav class="footer-nav" aria-label="Site araçları"><h2>Araçlar</h2><ul>{utility.map(item=><li><a href={item.href}>{item.label}</a></li>)}<li><a href="/reading-list">OKUMA LİSTESİ</a></li></ul></nav>)}
   </div>
   <div class="footer-base"><span>© {new Date().getFullYear()} Hikmet Pınarbaş · HPAnalytic</span><span>Güvenden önce kanıt.</span></div>
 </footer>
 <script is:inline>
-/* HPAnalytic motion: finite, one-shot effects. No polling and no background loops. */
+/* HPAnalytic motion: one-shot reveals. Content is visible at rest; this only adds an entrance. */
 (() => {
-  if (!('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
-  const targets = document.querySelectorAll('.featured-analysis,.research-spotlight,.scouting-spotlight,.mechanism-card,.section-heading');
+  const targets = document.querySelectorAll('.reveal');
+  const show = (el) => el.classList.add('is-in');
+  if (!('IntersectionObserver' in window) || window.matchMedia('(prefers-reduced-motion: reduce)').matches) { targets.forEach(show); return; }
   const observer = new IntersectionObserver((entries, self) => {
-    for (const entry of entries) {
-      if (!entry.isIntersecting) continue;
-      entry.target.classList.add('hp-motion-observed');
-      self.unobserve(entry.target);
-    }
-  }, { rootMargin: '0px 0px -32px 0px', threshold: 0.06 });
-  for (const el of targets) observer.observe(el);
+    for (const entry of entries) { if (!entry.isIntersecting) continue; show(entry.target); self.unobserve(entry.target); }
+  }, { rootMargin: '0px 0px -24px 0px', threshold: 0.04 });
+  targets.forEach((el) => observer.observe(el));
+  window.setTimeout(() => targets.forEach(show), 2500);
 })();
 </script>
 </body>

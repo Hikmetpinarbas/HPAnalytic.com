@@ -1,0 +1,5 @@
+import test from 'node:test';import assert from 'node:assert/strict';import{readFileSync}from'node:fs';
+const read=p=>readFileSync(new URL('../'+p,import.meta.url),'utf8');
+test('HPA monogram uses vector stems and original sigil contract',()=>{const l=read('src/components/Logo.astro');assert.match(l,/class="hpa-monogram-sigil/);assert.match(l,/data-testid="brand-logo-sigil"/);assert.match(l,/HIKMET PINARBAŞ FOOTBALL LAB/);assert.doesNotMatch(l,/<circle cx="50" cy="50" r="46"/);});
+
+test('single terminal hero supplies three accessible snap cards with bounded geometry',()=>{const home=read('src/pages/index.astro');const hero=read('src/components/SkillCornerTerminalHero.astro');assert.match(home,/<SkillCornerTerminalHero \/>/);assert.doesNotMatch(home,/<HeroCartography\s*\/>|<InteractiveHeroRail\s*\/>/);assert.match(hero,/scroll-snap-type:x mandatory/);assert.equal((hero.match(/class="card-item"/g)||[]).length,3);assert.match(hero,/Optik Takip Verisi Değildir/);assert.match(hero,/prefers-reduced-motion:reduce/);});

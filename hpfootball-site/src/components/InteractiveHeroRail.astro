@@ -1,0 +1,72 @@
+---
+import HeroPitchFigure from './HeroPitchFigure.astro';
+---
+<section class="interactive-hero-rail" data-interactive-hero-rail aria-label="İnteraktif futbol araştırma modülü">
+  <div class="interactive-hero-rail__header">
+    <span class="interactive-hero-rail__eyebrow">HPANALYTIC / INTERACTIVE RESEARCH</span>
+    <div class="interactive-hero-rail__tabs" role="tablist" aria-label="Araştırma alanları">
+      <button type="button" role="tab" id="hpa-rail-tab-0" aria-controls="hpa-rail-panel-0" aria-selected="true" tabindex="0" data-rail-tab="0">01 · SAHA ATLASI</button>
+      <button type="button" role="tab" id="hpa-rail-tab-1" aria-controls="hpa-rail-panel-1" aria-selected="false" tabindex="-1" data-rail-tab="1">02 · KARAR MEKANİZMASI</button>
+      <button type="button" role="tab" id="hpa-rail-tab-2" aria-controls="hpa-rail-panel-2" aria-selected="false" tabindex="-1" data-rail-tab="2">03 · EPİSTEMİK SINIR</button>
+    </div>
+  </div>
+  <div class="interactive-hero-rail__track" data-rail-track aria-label="Yatay kaydırılabilir araştırma panelleri" tabindex="0">
+    <article id="hpa-rail-panel-0" role="tabpanel" aria-labelledby="hpa-rail-tab-0" data-rail-panel="0" class="interactive-hero-rail__panel">
+      <div class="interactive-hero-rail__copy"><span class="interactive-hero-rail__index">01 / TACTICAL GEOMETRY</span><h2>Canlı Taktik Atlası</h2><p>2D saha geometrisi ve beş koridor. Bu çizim temsili bir atlas katmanıdır; GS–GBR karşılaşmasına ait doğrulanmış hareket, tracking veya aksiyon kaydı değildir.</p></div>
+      <div class="interactive-hero-rail__pitch"><HeroPitchFigure /></div>
+    </article>
+    <article id="hpa-rail-panel-1" role="tabpanel" aria-labelledby="hpa-rail-tab-1" data-rail-panel="1" class="interactive-hero-rail__panel">
+      <div class="interactive-hero-rail__copy"><span class="interactive-hero-rail__index">02 / G01 MONOGRAFİ</span><h2>Bakıyorlar Ama Görmüyorlar</h2><p>Olay verisindeki algı körlüğü: boş alan, baskı ve karar alternatifleri hangi veri eksikleri nedeniyle görünmez kalıyor?</p><a href="/monographs/g01-bakiyorlar-ama-gormuyorlar">G01 MONOGRAFİSİ →</a></div>
+      <div class="interactive-hero-rail__diagram" aria-label="Şematik karar alanı"><svg viewBox="0 0 460 260" role="img" aria-label="Üç alternatif ve görünmeyen baskı bölgesi; ölçülmüş maç verisi değildir"><rect x="1" y="1" width="458" height="258" rx="6" fill="#0E1317" stroke="#24303A"/><path d="M50 130H410 M230 28V232" stroke="#24303A" stroke-dasharray="4 9"/><circle cx="112" cy="130" r="10" fill="#D4AF37"/><circle cx="326" cy="66" r="9" fill="#00E676"/><circle cx="326" cy="196" r="9" fill="#9BA8B3"/><path d="M125 130Q206 34 314 66 M125 130Q206 220 314 196" fill="none" stroke="#D4AF37" stroke-width="2" stroke-dasharray="7 6"/><ellipse cx="232" cy="130" rx="60" ry="100" fill="#00E676" fill-opacity=".06" stroke="#00E676" stroke-dasharray="4 7"/><text x="24" y="245" fill="#9BA8B3" font-size="11">KAVRAMSAL ŞEMA · AMPİRİK VERİ DEĞİLDİR</text></svg></div>
+    </article>
+    <article id="hpa-rail-panel-2" role="tabpanel" aria-labelledby="hpa-rail-tab-2" data-rail-panel="2" class="interactive-hero-rail__panel">
+      <div class="interactive-hero-rail__copy"><span class="interactive-hero-rail__index">03 / EVIDENCE BOUNDARY</span><h2>Karar Destek Sözleşmesi</h2><p>Event ⊂ ZFGV yalnızca kavramsal bir kapsam ilişkisini temsil eder; olay verisi tek başına oyuncu görüş alanını, baskı geometrisini veya nedensel etkiyi ispatlamaz.</p><a href="/research/">METODOLOJİYİ İNCELE →</a></div>
+      <div class="interactive-hero-rail__equation" aria-label="Olay verisi daha geniş gözlem çerçevesinin bir alt kümesidir"><strong>EVENT <span>⊂</span> ZFGV</strong><small>Gözlem ≠ nedensellik · Kanıt sınırı korunur</small></div>
+    </article>
+  </div>
+  <div class="interactive-hero-rail__foot"><span>PARMAĞINIZLA KAYDIRIN →</span><div class="interactive-hero-rail__dots" aria-label="Panel ilerleme durumu"><button type="button" data-rail-dot="0" aria-label="Birinci panel" aria-current="true"></button><button type="button" data-rail-dot="1" aria-label="İkinci panel"></button><button type="button" data-rail-dot="2" aria-label="Üçüncü panel"></button></div></div>
+</section>
+<style>
+.interactive-hero-rail{background:#07090B;padding:clamp(22px,4vw,56px) clamp(14px,3vw,50px);color:#F3F5F7}
+.interactive-hero-rail__eyebrow,.interactive-hero-rail__index,.interactive-hero-rail__foot{font:600 12px/1.6 "IBM Plex Mono",monospace;letter-spacing:.09em;color:#9BA8B3}
+.interactive-hero-rail__header{display:grid;gap:18px;margin-bottom:20px}
+.interactive-hero-rail__tabs{display:flex;gap:8px;overflow-x:auto;padding-bottom:6px}
+.interactive-hero-rail__tabs button{flex:0 0 auto;min-height:44px;border:1px solid #24303A;background:#141B20;color:#A0AEC0;padding:9px 14px;font:600 12px "IBM Plex Mono",monospace;cursor:pointer}
+.interactive-hero-rail__tabs button[aria-selected="true"]{border-color:#00E676;color:#F3F5F7;background:#18302A}
+.interactive-hero-rail__track{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;overscroll-behavior-inline:contain;scrollbar-width:thin;scrollbar-color:#D4AF37 #07090B;-webkit-overflow-scrolling:touch}
+.interactive-hero-rail__panel{scroll-snap-align:start;scroll-snap-stop:always;flex:0 0 100%;min-width:0;min-height:350px;background:#141B20;border:1px solid #24303A;padding:clamp(18px,3vw,36px);display:grid;grid-template-columns:minmax(0,.78fr) minmax(0,1.22fr);gap:clamp(16px,3vw,40px);align-items:center}
+.interactive-hero-rail__panel h2{font:400 clamp(28px,4vw,48px)/1.08 Newsreader,Georgia,serif;color:#F3F5F7;margin:12px 0}
+.interactive-hero-rail__panel p{line-height:1.65;color:#A0AEC0}.interactive-hero-rail__panel a{color:#00E676;display:inline-block;margin-top:20px;text-underline-offset:5px}
+.interactive-hero-rail__pitch,.interactive-hero-rail__diagram{min-width:0;overflow:hidden}.interactive-hero-rail__pitch :global(.hp-p0-figure){max-width:100%;margin:0}.interactive-hero-rail__diagram svg{width:100%;height:auto}
+.interactive-hero-rail__equation{display:grid;place-items:center;gap:15px;min-height:220px;background:#0E1317;border:1px solid #24303A;text-align:center;padding:20px}
+.interactive-hero-rail__equation strong{font:500 clamp(24px,4vw,50px) Newsreader,Georgia,serif;color:#F3F5F7}.interactive-hero-rail__equation strong span{color:#00E676}.interactive-hero-rail__equation small{color:#A0AEC0}
+.interactive-hero-rail__foot{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-top:16px}.interactive-hero-rail__dots{display:flex;gap:10px}
+.interactive-hero-rail__dots button{width:12px;height:12px;border-radius:50%;border:1px solid #9BA8B3;background:transparent;cursor:pointer}.interactive-hero-rail__dots button[aria-current=true]{background:#00E676;border-color:#00E676}
+.interactive-hero-rail button:focus-visible,.interactive-hero-rail a:focus-visible{outline:2px solid #00E676;outline-offset:3px}
+@media(max-width:760px){.interactive-hero-rail__panel{grid-template-columns:1fr;min-height:420px}.interactive-hero-rail__track{scroll-padding-left:0}.interactive-hero-rail__tabs button{font-size:11px}}
+@media(prefers-reduced-motion:reduce){.interactive-hero-rail__track{scroll-behavior:auto}}
+</style>
+<script>
+  const rail=document.querySelector<HTMLElement>('[data-interactive-hero-rail]');
+  if(rail){
+    const track=rail.querySelector<HTMLElement>('[data-rail-track]');
+    const tabs=Array.from(rail.querySelectorAll<HTMLButtonElement>('[data-rail-tab]'));
+    const dots=Array.from(rail.querySelectorAll<HTMLButtonElement>('[data-rail-dot]'));
+    if(track){
+      const setActive=(index:number)=>{
+        tabs.forEach((tab,i)=>{const active=i===index;tab.setAttribute('aria-selected',String(active));tab.tabIndex=active?0:-1});
+        dots.forEach((dot,i)=>{if(i===index)dot.setAttribute('aria-current','true');else dot.removeAttribute('aria-current')});
+      };
+      const goTo=(i:number,focus=false)=>{
+        const panel=track.querySelector<HTMLElement>(`[data-rail-panel="${i}"]`);
+        if(!panel)return;
+        track.scrollTo({left:panel.offsetLeft-track.offsetLeft,behavior:window.matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'});
+        setActive(i);if(focus)tabs[i]?.focus();
+      };
+      tabs.forEach((tab,i)=>{tab.addEventListener('click',()=>goTo(i));tab.addEventListener('keydown',event=>{if(!['ArrowLeft','ArrowRight','Home','End'].includes(event.key))return;event.preventDefault();const next=event.key==='Home'?0:event.key==='End'?tabs.length-1:event.key==='ArrowRight'?(i+1)%tabs.length:(i+tabs.length-1)%tabs.length;goTo(next,true)})});
+      dots.forEach((dot,i)=>dot.addEventListener('click',()=>goTo(i)));
+      let scheduled=false;
+      track.addEventListener('scroll',()=>{if(scheduled)return;scheduled=true;requestAnimationFrame(()=>{scheduled=false;const width=track.clientWidth||1;setActive(Math.max(0,Math.min(tabs.length-1,Math.round(track.scrollLeft/width))))})},{passive:true});
+    }
+  }
+</script>

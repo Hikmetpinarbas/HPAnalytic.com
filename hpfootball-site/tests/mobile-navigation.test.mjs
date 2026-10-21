@@ -14,7 +14,9 @@ test('desktop and mobile share one computed navigation truth', async () => {
   const component = await source(componentUrl);
   assert.equal((layout.match(/buildVisibleNavigation\(/g) || []).length, 1);
   assert.match(layout, /<MobileNavigation navigation=\{/);
-  assert.match(layout, /navigation\.map\(item=>/);
+  assert.match(layout, /const NAV_ITEMS =/);
+  assert.match(layout, /<EditorialHeader navigation=\{editorialNavigation\}/);
+  assert.match(layout, /<MobileNavigation navigation=\{editorialNavigation\}/);
   assert.match(component, /navigation\.map/);
   assert.doesNotMatch(component, /href="\/(analysis|scouting|visual-lab|research|culture|about)"/);
 });

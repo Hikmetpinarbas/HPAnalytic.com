@@ -1,0 +1,4 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {readFileSync} from 'node:fs';
+const layout=readFileSync(new URL('../src/layouts/BaseLayout.astro',import.meta.url),'utf8');const header=readFileSync(new URL('../src/components/EditorialHeader.astro',import.meta.url),'utf8');const css=readFileSync(new URL('../src/styles/global.css',import.meta.url),'utf8');
+test('editorial masthead has a single publication identity and accessible navigation',()=>{assert.match(layout,/<EditorialHeader navigation=\{editorialNavigation\}/);assert.doesNotMatch(layout,/class="publication-masthead"/);assert.match(header,/EST\. 2026/);assert.match(header,/aria-label="Ana Navigasyon"/)});
+test('headings are distinguished from prose and masthead scales on mobile',()=>{assert.match(css,/\.publication-masthead\{/);assert.match(css,/\.featured-story h2/);assert.match(css,/@media\(max-width:700px\)\{\.publication-masthead/)});
