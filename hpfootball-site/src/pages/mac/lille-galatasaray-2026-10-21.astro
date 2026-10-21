@@ -170,6 +170,43 @@ export const prerender = true;
   </div>
 </section>
 
+<section class="block band" aria-labelledby="match-mechanism-title">
+  <div class="wrap">
+    <div class="head col">
+      <p class="eyebrow">Yeni analiz · mekânsal eşleşme</p>
+      <h2 id="match-mechanism-title">Baskının miktarı değil, kazanımın yeri</h2>
+      <p class="lede">Lille'in Arsenal'e karşı yaşadığı kayıplar ile rakiplerinin ileri bölgede kazandıkları toplar aynı olay değildir. Üç ayrı kaydın mekânsal dağılımı bir soru doğuruyor: Galatasaray topu kazanabiliyor mu, yoksa <em>kaleye yeterince yakın</em> kazanabiliyor mu?</p>
+    </div>
+    <div class="hp-mechanism">
+      <div class="hp-mechanism__item">
+        <div class="hp-mechanism__meta"><strong>Lille · kendi yarısında kayıp</strong><span>Arsenal karşısında</span></div>
+        <p><strong>14 / 26</strong> kayıp, kendi kalesine 35 metreden yakın</p>
+        <div class="hp-mechanism__track" role="img" aria-label="26 kendi yarı kaybının 14'ü kaleye 35 metreden yakın"><span style="width:53.85%;background:var(--sla)"></span></div>
+        <small>%54 · Lille'in kayıp kayıtları içindeki bölgesel oran</small>
+      </div>
+      <div class="hp-mechanism__item">
+        <div class="hp-mechanism__meta"><strong>Arsenal · rakip yarıda kazanım</strong><span>Lille karşısında</span></div>
+        <p><strong>11 / 19</strong> kazanım, Lille kalesine 35 metreden yakın</p>
+        <div class="hp-mechanism__track" role="img" aria-label="19 rakip yarı kazanımının 11'i kaleye 35 metreden yakın"><span style="width:57.89%;background:var(--chalk-2)"></span></div>
+        <small>%58 · Arsenal'in kazanım kayıtları içindeki bölgesel oran</small>
+      </div>
+      <div class="hp-mechanism__item">
+        <div class="hp-mechanism__meta"><strong>Galatasaray · rakip yarıda kazanım</strong><span>Barcelona karşısında</span></div>
+        <p><strong>1 / 8</strong> kazanım, Barcelona kalesine 35 metreden yakın</p>
+        <div class="hp-mechanism__track" role="img" aria-label="8 rakip yarı kazanımının 1'i kaleye 35 metreden yakın"><span style="width:12.5%;background:var(--fen)"></span></div>
+        <small>%13 · Galatasaray'ın kazanım kayıtları içindeki bölgesel oran</small>
+      </div>
+    </div>
+    <div class="hp-mechanism__reading">
+      <h3>Bu eşleşmede hangi sorular belirleyici?</h3>
+      <details><summary>Galatasaray için fırsat nerede?</summary><p>Lille'in Arsenal maçındaki 26 kendi yarı kaybının 14'ü kalesine 35 metreden yakındı. Bu, Galatasaray'ın aynı bölgeye baskı taşıması için incelenmesi gereken bir zafiyet işaretidir; Lille'in her rakibe karşı aynı sıklıkta kayıp yapacağını kanıtlamaz.</p></details>
+      <details><summary>Veri Galatasaray'ın bunu başardığını gösteriyor mu?</summary><p>Barcelona karşısında Galatasaray'ın sekiz rakip yarı kazanımından yalnız biri kaleye 35 metreden yakındı. Arsenal'in Lille'e karşı 11/19 oranını doğrudan Galatasaray'a aktaramayız. İki maçın rakipleri, akışları ve örneklemleri farklı.</p></details>
+      <details><summary>Maçta hipotezi nasıl sınayacağız?</summary><p>İlk 15 dakikada Lille'in ilk pas hattına uygulanan baskıyı; top kazanımlarının kaleye uzaklığını; bu kazanımlardan sonraki ilk iki aksiyonu ve şuta dönüşen dizileri ayrı ayrı izleyeceğiz. Salt kazanım adedi değil, kazanımın konumu ve devamı önemlidir.</p></details>
+    </div>
+    <div class="claim"><span class="ev der">TÜRETİLMİŞ</span><span>Pay ve paydalar aşağıdaki olay haritasında açıklanan üç ayrı maç verisinden alınmıştır. Yüzdeler yalnız kendi örneklemi içindeki bölge paylarıdır; rakip gücüne göre düzeltilmiş pres başarısı, nedensellik veya maç tahmini değildir. 35 m sınırı saha koordinatlarından türetilmiş bölgesel eşiktir; tam olay izleri yayın kalite kontrolünde ayrıca doğrulanmalıdır.</span></div>
+  </div>
+</section>
+
 <section class="block">
   <div class="wrap">
     <div class="head col">
@@ -663,5 +700,23 @@ section.block{padding-block:clamp(44px,7vw,88px);border-bottom:1px solid var(--l
 .mp .hpc-fig svg{font-family:var(--ui)}
 .mp .hpc-table td{white-space:nowrap}
 
+
+/* Lille–Galatasaray: evidence-linked tactical mechanism panel */
+.mp .hp-mechanism{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:22px 0}
+.mp .hp-mechanism__item{min-width:0;padding:20px;border:1px solid var(--line);border-radius:8px;background:var(--fig)}
+.mp .hp-mechanism__meta{display:flex;flex-direction:column;gap:5px;font:500 .85rem/1.45 var(--ui);color:var(--chalk)}
+.mp .hp-mechanism__meta span{color:var(--mute)}
+.mp .hp-mechanism__item p{margin:16px 0 12px;font:400 .94rem/1.5 var(--ui);color:var(--chalk)}
+.mp .hp-mechanism__item p strong{font:700 1.6rem/1 var(--ui)}
+.mp .hp-mechanism__track{height:11px;border:1px solid var(--line-2);background:rgba(255,255,255,.12);overflow:hidden;border-radius:6px}
+.mp .hp-mechanism__track span{display:block;height:100%}
+.mp .hp-mechanism__item small{display:block;margin-top:10px;font:400 .78rem/1.5 var(--ui);color:var(--chalk-2)}
+.mp .hp-mechanism__reading{margin:10px 0 22px;max-width:900px}
+.mp .hp-mechanism__reading h3{font:600 1.1rem/1.4 var(--ui);margin:0 0 12px}
+.mp .hp-mechanism__reading details{border-top:1px solid var(--line);padding:12px 0}
+.mp .hp-mechanism__reading details:last-child{border-bottom:1px solid var(--line)}
+.mp .hp-mechanism__reading summary{cursor:pointer;min-height:44px;font:600 .95rem/1.5 var(--ui);color:var(--chalk)}
+.mp .hp-mechanism__reading details p{margin:8px 0 12px;color:var(--chalk-2);font:400 .91rem/1.65 var(--ui)}
+@media(max-width:820px){.mp .hp-mechanism{grid-template-columns:1fr}}
 </style>
 </BaseLayout>
