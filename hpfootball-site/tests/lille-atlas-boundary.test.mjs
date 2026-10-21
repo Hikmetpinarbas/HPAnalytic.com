@@ -9,7 +9,7 @@ test('atlas uses inclusive end boundary, consistent with published within-35 cou
 });
 
 test('real 26 Lille and 19 Arsenal events agree with inclusive-35 editorial counting',()=>{
- const match=src.match(/const EV\\s*=\\s*(\\{[^\\n]+\\});/);
+ const match=src.match(/const EV\s*=\s*(\{[^\n]+\});/);
  assert.ok(match,'event records present');
  const events=JSON.parse(match[1]);
  assert.equal(events.lil_loss.length,26);
