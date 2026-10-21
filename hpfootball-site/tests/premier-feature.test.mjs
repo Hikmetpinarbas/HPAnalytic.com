@@ -36,13 +36,11 @@ test('CTA accessible name retains visible label',()=>{
  assert.match(home,/PREMIER DOSYASINI KEŞFET/);
 });
 
-test('home side is Lille, away side Galatasaray and orbital background obeys reduced motion',()=>{
- const first=home.indexOf('<strong>LOSC LILLE</strong>');
- const second=home.indexOf('<strong>GALATASARAY</strong>');
- assert.ok(first>0&&second>first,'home Lille must appear before away Galatasaray');
- assert.match(home,/Ev sahibi · Lille/);
- assert.match(home,/Konuk · Galatasaray/);
- assert.match(home,/hpa-premier__orbit/);
+test('single Lille-white Galatasaray-yellow headline with local rotating star scene',()=>{
+ assert.match(home,/<span class="hpa-premier__foreign">LOSC Lille<\/span>/);
+ assert.match(home,/<span class="hpa-premier__turkish">Galatasaray<\/span>/);
+ assert.doesNotMatch(home,/Ev sahibi · Lille|Konuk · Galatasaray|hpa-premier__matchup/);
+ assert.match(home,/hpa-premier__stars/);
  assert.match(home,/@media\s*\(prefers-reduced-motion:\s*reduce\)/);
  assert.doesNotMatch(home,/football-logos\.cc|seeklogo\.com/);
 });
