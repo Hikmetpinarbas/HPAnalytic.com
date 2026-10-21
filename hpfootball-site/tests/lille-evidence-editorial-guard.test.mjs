@@ -67,3 +67,16 @@ test('unreconciled linked totals are not embedded as factual metadata',()=>{
  assert.equal(chart.net.gs.passes,204);
  assert.equal(chart.net.lil.passes,329);
 });
+
+test('scenario lab offers three distinct match hypotheses and falsification cues',()=>{
+ assert.match(src,/id="hpa-scenario-lab"/);
+ for(const id of ['press','trap','release']) assert.match(src,new RegExp('data-scenario="'+id+'"'));
+ assert.match(src,/id="hpa-scenario-svg"/);
+ assert.match(src,/id="hpa-scenario-reading"/);
+ assert.match(src,/function renderScenario\(/);
+ assert.match(src,/aria-live="polite"/);
+});
+test('editorial spatial prose stays grammatically correct and in schematic units',()=>{
+ assert.doesNotMatch(src,/içindedı/);
+ assert.doesNotMatch(src,/35 m sınırı/);
+});
