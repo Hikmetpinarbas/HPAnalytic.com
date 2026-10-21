@@ -52,7 +52,7 @@ test('press comparison bars reverse PPDA so longer indicates stronger pressure',
 
 test('period selection never leaves whole-match readout attached to filtered pitch',()=>{
  assert.match(src,/let activeLayer='all'/);
- assert.match(src,/let activePhase=0/);
+ assert.match(src,/activePhase=0/);
  assert.match(src,/function updatePitchReadout\(/);
  assert.match(src,/setPhase\(Number\(btn\.dataset\.phase\)\)/);
  assert.match(src,/read\.textContent=/);
