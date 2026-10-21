@@ -57,3 +57,13 @@ test('period selection never leaves whole-match readout attached to filtered pit
  assert.match(src,/setPhase\(Number\(btn\.dataset\.phase\)\)/);
  assert.match(src,/read\.textContent=/);
 });
+
+test('unreconciled linked totals are not embedded as factual metadata',()=>{
+ const data=src.match(/<script type="application\/json" id="hpc-data" is:inline>([\s\S]*?)<\/script>/);
+ assert.ok(data);
+ const chart=JSON.parse(data[1]);
+ assert.equal(chart.net.gs.linked,null);
+ assert.equal(chart.net.lil.linked,null);
+ assert.equal(chart.net.gs.passes,204);
+ assert.equal(chart.net.lil.passes,329);
+});
