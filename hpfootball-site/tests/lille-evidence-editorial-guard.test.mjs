@@ -12,3 +12,9 @@ test('estimated networks do not advertise unreconciled linked totals',()=>{
  assert.doesNotMatch(src,/329.unun 266.sı/);
  assert.match(src,/pas alıcısı/);
 });
+
+test('spatial panel uses schematic units, not physical metres',()=>{
+ const panel=src.split('id="match-mechanism-title"')[1].split('</section>')[0];
+ assert.doesNotMatch(panel,/35 metreden/);
+ assert.match(panel,/35 birim/);
+});
