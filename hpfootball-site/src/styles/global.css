@@ -77,16 +77,33 @@
   color-scheme: dark;
 }
 
-/* Club pages in European competition take the club's colours (see docs/COLOUR_POLICY.md). */
-[data-club="fenerbahce"] {
+/* Club pages in European competition take the club's colours (see docs/COMPETITION_PALETTE.md). */
+[data-palette="club"][data-club="fenerbahce"] {
+  --club-primary: #FFD31A; --club-secondary: #071C53;
   --bg: #06112A; --bg-2: #0A1A3D; --panel: #0F2350; --panel-2: #132B5E;
   --line: #1B3366; --line-2: #2A4A8A;
   --ink: #F5F3EA; --ink-2: #DCE3F0; --muted: #AEBBD6;
   --amber: #FFD31A; --amber-2: #FFE266; --amber-ink: #071233; --amber-glow: rgba(255, 211, 26, .2); --focus: #FFE680;
 }
-[data-club="galatasaray"] { --amber: #F2B705; --amber-2: #FFD24D; --amber-ink: #2A0705; --line-2: #4A2A2A; --panel: #1A0D0D; --bg: #120707; --bg-2: #170909; }
-[data-club="besiktas"] { --amber: #F2F2F2; --amber-2: #FFFFFF; --amber-ink: #050505; --bg: #050505; --bg-2: #0B0B0B; --panel: #121212; }
-[data-club="trabzonspor"] { --amber: #7FB3E8; --amber-2: #A9CDF2; --amber-ink: #2A0712; --bg: #12060C; --bg-2: #180A11; --panel: #22101A; --line-2: #4A2335; }
+[data-palette="club"][data-club="galatasaray"] { --club-primary: #F2B705; --club-secondary: #B91C28; --amber: #F2B705; --amber-2: #FFD24D; --amber-ink: #2A0705; --line-2: #4A2A2A; --panel: #1A0D0D; --bg: #120707; --bg-2: #170909; }
+[data-palette="club"][data-club="besiktas"] { --club-primary: #FFFFFF; --club-secondary: #080808; --amber: #F2F2F2; --amber-2: #FFFFFF; --amber-ink: #050505; --bg: #050505; --bg-2: #0B0B0B; --panel: #121212; }
+[data-palette="club"][data-club="trabzonspor"] { --club-primary: #7D1838; --club-secondary: #7FB3E8; --amber: #7FB3E8; --amber-2: #A9CDF2; --amber-ink: #2A0712; --bg: #12060C; --bg-2: #180A11; --panel: #22101A; --line-2: #4A2335; }
+
+/* National side, international competition: Turkish red and white. */
+[data-palette="club"][data-club="turkiye"] {
+  --club-primary: #D9162A; --club-secondary: #FFFFFF;
+  --bg: #29070A; --bg-2: #35090E; --panel: #451015; --panel-2: #54151B;
+  --line: #77313A; --line-2: #96515A;
+  --ink: #FFFFFF; --ink-2: #F8E8E8; --muted: #E0BABC;
+  --amber: #FFFFFF; --amber-2: #FFF2F2; --amber-ink: #A51121;
+  --amber-glow: rgba(255,255,255,.18); --focus: #FFFFFF;
+}
+
+/* Dual club colours are confined to international/European editorial surfaces. */
+body[data-palette="club"] .site-header {
+  border-top: 3px solid transparent;
+  border-image: linear-gradient(90deg, var(--club-primary) 50%, var(--club-secondary) 50%) 1;
+}
 
 /* ---------- base ---------- */
 *, *::before, *::after { box-sizing: border-box; }
@@ -127,7 +144,7 @@ main:focus { outline: none; }
 
 /* ---------- header ---------- */
 .site-header { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 50; border-bottom: 1px solid var(--line); background: #0B0D10; }
-[data-club="fenerbahce"] .site-header, body[data-club="fenerbahce"] .site-header { background: #071433; }
+[data-palette="club"][data-club="fenerbahce"] .site-header, body[data-palette="club"][data-club="fenerbahce"] .site-header { background: #071433; }
 /* no backdrop-filter: it would become the containing block of the fixed mobile sheet */
 .site-header__inner { max-width: var(--wide); margin-inline: auto; padding-left: var(--gutter); padding-right: var(--gutter-r); min-height: var(--header-h); display: flex; flex-wrap: wrap; align-items: center; gap: 4px 16px; }
 .site-header__brand { flex: none; min-width: 0; }
