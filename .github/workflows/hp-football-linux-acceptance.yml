@@ -68,12 +68,13 @@ jobs:
           node scripts/release-browser-qa.mjs
 
       - name: Upload browser QA evidence
-        if: always()
+        if: github.event_name == 'workflow_dispatch'
         uses: actions/upload-artifact@v4
         with:
           name: release-pack-01-browser-qa
           path: hpfootball-site/qa-artifacts/
           if-no-files-found: error
+          retention-days: 1
 
       - name: Private Studio must not reach production
         run: |
