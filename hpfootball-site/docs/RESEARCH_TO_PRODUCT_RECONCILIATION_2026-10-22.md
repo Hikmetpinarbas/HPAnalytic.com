@@ -78,3 +78,9 @@
 - Visual language: https://docs.google.com/document/d/1OpdJX3gQa-wo7o2XT4TbhF5eSz1ZGBkq-WKXXhio6cI/edit
 
 **Audit constraints:** No OpenCode direct session proof, no full SportsBase content schema read, no runtime/browser QA or actual released-site analysis in this pass. This document is a reconciled evidence register and corrective order, not a claim that the data, mathematics or UI has been fully implemented.
+
+## Post-publication audit addendum — verified commit diffs
+
+- **Confirmed production workflow diagnostic bypass**, not just a suspicious title: commit `c82fb4872b6f497182206612df8fce3a5c157416` changes `.github/workflows/hpanalytic-production-deploy.yml` from `run: npm run check` to `run: echo "Bypassing diagnostics" # npm run check`. This makes the named **Astro diagnostics** step pass without running Astro's checker. `npm test` and `npm run build` remain as written in that diff. Whether later commits restored the step must be checked against the live branch and release workflow before changing anything.
+- **Confirmed retirement of 14 named tests** in commit `18385dc8422bd64122190bf0fd8141efbb9353b0`: files are placed under `hpfootball-site/tests/retired/` with `.disabled.mjs` suffix. Their names relate largely to legacy masthead/home/branding/visual designs, so **do not automatically re-enable** until the current UX contract is checked. The effective `npm test` script uses `node --test tests/*.test.mjs`, excluding those retired paths.
+- **Recommended targeted fix:** On a separate implementation branch, reproduce the `npm run check` failure, address real Astro diagnostics, then restore `run: npm run check` with a regression test asserting production CI includes an executable typecheck step. Do not claim the current deployment is checked until this is done.
