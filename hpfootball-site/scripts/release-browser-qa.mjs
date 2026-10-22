@@ -81,5 +81,21 @@ for (const [suffix, viewport] of [['mobile',{width:390,height:844}],['desktop',{
  assert.equal(await page.locator('#ticker-pause').getAttribute('aria-pressed'),'true','ticker did not pause');
  await context.close();
 }
+
+for (const viewport of [{width:390,height:844},{width:1440,height:900}]) {
+ const context=await browser.newContext({viewport,reducedMotion:'reduce'});
+ const page=await context.newPage();
+ await page.goto(base+'/mac/besiktas-crystal-palace-2026-10-22/',{waitUntil:'domcontentloaded'});
+ const frame=page.frameLocator('#hpa-interactive-frame');
+ await frame.locator('[data-view="pitch"]').waitFor({state:'visible',timeout:20000});
+ await frame.locator('#main svg').count().catch(()=>0);
+ await frame.locator('[data-view="radar"]').click();
+ assert.equal(await frame.locator('[data-view="radar"]').getAttribute('aria-pressed'),'true','Premier radar tab failed');
+ await frame.locator('[data-view="pitch"]').click();
+ assert.equal(await frame.locator('[data-view="pitch"]').getAttribute('aria-pressed'),'true','Premier pitch tab failed');
+ assert.ok(await page.getByText('Beşiktaş oyunu nerede kuruyor?').count(),'Premier article prose missing');
+ await page.screenshot({path:`${out}/besiktas-interactive-${viewport.width}.png`,fullPage:false});
+ await context.close();
+}
 await browser.close();
 console.log('BROWSER_QA_PASS');
