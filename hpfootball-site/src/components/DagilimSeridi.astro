@@ -1,0 +1,183 @@
+---
+/**
+ * Dağılım şeridi — lig içinde bir takımın nerede durduğunu gösteren seçilebilir grafik.
+ * Her takım bir nokta. Odaklanılan takım vurgulanır. Gösterge seçicisiyle metrik değişir.
+ * Tüm şeritler sunucuda üretilir; tarayıcıdaki iş yalnızca görünürlük değiştirmek.
+ */
+import { LEAGUES } from '../data/league-distributions.mjs';
+
+export interface Props {
+  league: 'sl' | 'pl';
+  focus: string;
+  metrics: string[];
+  title?: string;
+  note?: string;
+  id?: string;
+}
+
+const { league, focus, metrics, title, note, id = 'ds' } = Astro.props;
+const L = LEAGUES[league];
+if (!L) throw new Error(`Bilinmeyen lig: ${league}`);
+
+const W = 640, PAD_L = 26, PAD_R = 26, R = 5.4, ROW = 12.6, BASE_Y = 118;
+const fmt = (v: number, unit: string) =>
+  unit === '%' ? `%${v.toFixed(1).replace('.', ',')}` : v.toFixed(2).replace('.', ',');
+
+const strips = metrics.map((key) => {
+  const m = L.metrics[key];
+  if (!m) throw new Error(`${league} liginde gösterge yok: ${key}`);
+  const rows = Object.entries(m.values).map(([team, v]) => ({ team, v: v as number }));
+  if (!rows.some((r) => r.team === focus)) throw new Error(`${focus} ${league} liginde yok`);
+
+  const vs = rows.map((r) => r.v);
+  const lo = Math.min(...vs), hi = Math.max(...vs);
+  const span = (hi - lo) || 1;
+  const d0 = lo - span * 0.07, d1 = hi + span * 0.07;
+  const X = (v: number) => PAD_L + ((v - d0) / (d1 - d0)) * (W - PAD_L - PAD_R);
+
+  // sirala -> cakisanlari yukari istifle
+  const placed: { x: number; row: number; rad: number }[] = [];
+  const order = [...rows].sort((a, b) => a.v - b.v);
+  const seed = order.filter((r) => r.team === focus).concat(order.filter((r) => r.team !== focus));
+  const dots = seed.map((r) => {
+    const x = X(r.v);
+    const me = r.team === focus;
+    const rad = me ? R + 4.4 : R;
+    let row = 0;
+    while (placed.some((p) => p.row === row && Math.abs(p.x - x) < p.rad + rad + 1.6)) row++;
+    placed.push({ x, row, rad });
+    return { ...r, x, y: BASE_Y - row * ROW, me };
+  });
+
+  const low = m.rankBy === 'low';
+  const sorted = [...rows].sort((a, b) => (low ? a.v - b.v : b.v - a.v));
+  const rank = sorted.findIndex((r) => r.team === focus) + 1;
+  const mid = [...vs].sort((a, b) => a - b);
+  const median = mid.length % 2 ? mid[(mid.length - 1) / 2] : (mid[mid.length / 2 - 1] + mid[mid.length / 2]) / 2;
+  const me = dots.find((d) => d.me)!;
+  const top = Math.min(...dots.map((d) => d.y));
+  const labelY = Math.min(top - 24, me.y - 24);
+  const labelAnchor = me.x < 56 ? 'start' : me.x > W - 56 ? 'end' : 'middle';
+  const labelX = labelAnchor === 'start' ? PAD_L - 10 : labelAnchor === 'end' ? W - PAD_R + 10 : me.x;
+  const viewY = Math.round(labelY - 24);
+
+  return {
+    key, label: m.label, unit: m.unit, desc: m.desc,
+    poleLow: m.poleLow, poleHigh: m.poleHigh,
+    rankWord: low ? 'en düşük' : 'en yüksek',
+    dots, rank, total: rows.length, me,
+    medianX: X(median), medianV: median,
+    loX: X(lo), hiX: X(hi), lo, hi, top,
+    labelY, labelX, labelAnchor, viewY, height: Math.round(BASE_Y + 54 - viewY),
+  };
+});
+---
+
+<figure class="ds" id={id} data-ds>
+  {title && <figcaption class="ds-title">{title}</figcaption>}
+
+  {strips.length > 1 && (
+    <div class="ds-pills" role="tablist" aria-label="Gösterge seçimi">
+      {strips.map((s, i) => (
+        <button type="button" role="tab" data-ds-pill={s.key}
+          aria-selected={i === 0 ? 'true' : 'false'} aria-controls={`${id}-${s.key}`}>{s.label}</button>
+      ))}
+    </div>
+  )}
+
+  {strips.map((s, i) => (
+    <div class="ds-panel" id={`${id}-${s.key}`} data-ds-panel={s.key} hidden={i !== 0}>
+      <svg viewBox={`0 ${s.viewY} ${W} ${s.height}`} class="ds-svg" role="img"
+        aria-label={`${s.label}: ${focus} ${fmt(s.me.v, s.unit)}, ${L.name} içinde ${s.total} takımdan ${s.rank}. ${s.rankWord} değer`}>
+        <line x1={PAD_L - 10} y1={BASE_Y + 16} x2={W - PAD_R + 10} y2={BASE_Y + 16} class="ds-axis" />
+        <line x1={s.medianX} y1={BASE_Y + 22} x2={s.medianX} y2={s.top - 12} class="ds-median" />
+        <text x={s.medianX} y={BASE_Y + 34} text-anchor="middle" class="ds-ax">lig ortası</text>
+
+        <text x={PAD_L - 10} y={BASE_Y + 34} class="ds-ax">{fmt(s.lo, s.unit)}</text>
+        <text x={W - PAD_R + 10} y={BASE_Y + 34} text-anchor="end" class="ds-ax">{fmt(s.hi, s.unit)}</text>
+
+        {s.dots.filter((d) => !d.me).map((d) => (
+          <circle cx={d.x} cy={d.y} r={R} class="ds-dot"><title>{d.team} · {fmt(d.v, s.unit)}</title></circle>
+        ))}
+
+        <line x1={s.me.x} y1={s.me.y - 9} x2={s.me.x} y2={s.labelY + 6} class="ds-stem" />
+        <circle cx={s.me.x} cy={s.me.y} r={R + 3.4} class="ds-halo" />
+        <circle cx={s.me.x} cy={s.me.y} r={R + 0.8} class="ds-me"><title>{focus} · {fmt(s.me.v, s.unit)}</title></circle>
+        <text x={s.labelX} y={s.labelY} text-anchor={s.labelAnchor} class="ds-val">{fmt(s.me.v, s.unit)}</text>
+        <text x={s.labelX} y={s.labelY - 13} text-anchor={s.labelAnchor} class="ds-name">{focus.toUpperCase()}</text>
+
+        <text x={PAD_L - 10} y={BASE_Y + 48} class="ds-ax ds-dir">← {s.poleLow}</text>
+        <text x={W - PAD_R + 10} y={BASE_Y + 48} text-anchor="end" class="ds-ax ds-dir">{s.poleHigh} →</text>
+      </svg>
+
+      <p class="ds-read">
+        <strong>{L.name}'de {s.total} takım içinde {s.rank === 1 ? `${s.rankWord} değer` : `${s.rank}. ${s.rankWord} değer`}.</strong> {s.desc}
+      </p>
+    </div>
+  ))}
+
+  {note && <p class="ds-note">{note}</p>}
+</figure>
+
+<style>
+.ds { margin: 30px 0 34px; padding: 0; }
+.ds-title {
+  font: 600 .72rem/1.3 var(--mono, monospace); letter-spacing: .14em; text-transform: uppercase;
+  color: var(--muted); margin: 0 0 14px;
+}
+.ds-pills {
+  display: flex; gap: 8px; overflow-x: auto; scrollbar-width: none;
+  margin: 0 0 6px; padding-bottom: 4px; -webkit-overflow-scrolling: touch;
+}
+.ds-pills::-webkit-scrollbar { display: none; }
+.ds-pills button {
+  flex: 0 0 auto; min-height: 38px; padding: 8px 14px; cursor: pointer;
+  font: 600 .82rem/1.2 var(--ui, inherit); white-space: nowrap;
+  color: var(--ink-2); background: transparent;
+  border: 1.5px solid var(--line-2); border-radius: 999px;
+  transition: color .14s, background .14s, border-color .14s;
+}
+.ds-pills button:hover { color: var(--ink); border-color: var(--amber); }
+.ds-pills button[aria-selected='true'] { color: var(--amber-ink); background: var(--amber); border-color: var(--amber); }
+.ds-pills button:focus-visible { outline: 2px solid var(--focus, var(--amber)); outline-offset: 2px; }
+.ds-svg { display: block; width: 100%; max-width: 640px; height: auto; margin: 4px 0 0; overflow: visible; }
+.ds-axis { stroke: var(--line-2); stroke-width: 1; }
+.ds-median { stroke: var(--line-2); stroke-width: 1; stroke-dasharray: 2 4; }
+.ds-dot { fill: none; stroke: var(--muted); stroke-width: 1.5; opacity: .62; }
+.ds-stem { stroke: var(--amber); stroke-width: 1.4; opacity: .5; }
+.ds-halo { fill: var(--amber); opacity: .16; }
+.ds-me { fill: var(--amber); }
+.ds-ax { font: 400 9.5px/1 var(--mono, monospace); fill: var(--muted); letter-spacing: .07em; }
+.ds-dir { letter-spacing: .1em; }
+.ds-val { font: 700 15px/1 var(--mono, monospace); fill: var(--ink); }
+.ds-name { font: 600 8.5px/1 var(--mono, monospace); fill: var(--amber); letter-spacing: .13em; }
+.ds-read { font: 400 .88rem/1.65 var(--reading, inherit); color: var(--ink-2); max-width: 62ch; margin: 14px 0 0; }
+.ds-read strong { color: var(--ink); font-weight: 600; }
+.ds-note { font: 400 .8rem/1.6 var(--reading, inherit); color: var(--muted); max-width: 62ch; margin: 10px 0 0; }
+@media (prefers-reduced-motion: reduce) { .ds-pills button { transition: none; } }
+</style>
+
+<script>
+  document.querySelectorAll('[data-ds]').forEach((fig) => {
+    const pills = fig.querySelectorAll('[data-ds-pill]');
+    if (!pills.length) return;
+    pills.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        const key = btn.getAttribute('data-ds-pill');
+        pills.forEach((b) => b.setAttribute('aria-selected', String(b === btn)));
+        fig.querySelectorAll('[data-ds-panel]').forEach((p) => {
+          p.hidden = p.getAttribute('data-ds-panel') !== key;
+        });
+      });
+      btn.addEventListener('keydown', (e) => {
+        const ks = [...pills];
+        const i = ks.indexOf(btn);
+        const n = e.key === 'ArrowRight' ? i + 1 : e.key === 'ArrowLeft' ? i - 1 : -1;
+        if (n < 0 || n >= ks.length) return;
+        e.preventDefault();
+        ks[n].focus();
+        ks[n].click();
+      });
+    });
+  });
+</script>

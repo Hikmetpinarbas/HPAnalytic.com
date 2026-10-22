@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import DagilimSeridi from '../../components/DagilimSeridi.astro';
 import '../../styles/match-page.css';
 export const prerender = true;
 ---
@@ -84,6 +85,11 @@ export const prerender = true;
     </div>
     <p>Galatasaray bu maçı oyun üstünlüğüyle kazanmadı. Verimle kazandı. Dokuz şuttan dört gol çıkaran bir gece her hafta tekrarlanmaz ve tekrarlanmasını beklemek de doğru olmaz.</p>
     <p>Ama bir şey tekrarlanabilir: geriye düştükten sonra oyunu bırakmamak ve öne geçtikten sonra geri çekilmemek. Bu maçta ikisi de oldu.</p>
+    <p>Bir not daha: Galatasaray'ın normali bu maçtaki gibi değil. Süper Lig'de topla en çok oynayan, rakibine en az pas attıran takım onlar. Yani Lille'de yaptıkları şey — topu bırakıp verimle kazanmak — alıştıkları iş değil, yapabildikleri ikinci iş.</p>
+    <DagilimSeridi league="sl" focus="Galatasaray" id="ds-gs"
+      title="Galatasaray · Süper Lig içindeki yeri"
+      metrics={['topla_oynama','baski','pozisyonel_sut','kontra_sut','xg_payi']}
+      note="Her nokta bir Süper Lig takımı. Bu veriler lig sezonunu özetler; yukarıdaki maçın kendisini değil." />
     <p class="mono" style="color:var(--chalk-2);margin-top:2rem">Maç önü dosyası: <a href="/mac/lille-galatasaray-2026-10-21">Lille – Galatasaray</a> · Veri: SportsBase</p>
   </div>
 </section>

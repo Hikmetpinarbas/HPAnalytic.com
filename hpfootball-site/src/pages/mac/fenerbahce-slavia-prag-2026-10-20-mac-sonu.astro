@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import DagilimSeridi from '../../components/DagilimSeridi.astro';
 import '../../styles/match-page.css';
 export const prerender = true;
 ---
@@ -86,6 +87,11 @@ export const prerender = true;
     </div>
     <p>Fenerbahçe Şampiyonlar Ligi lig aşamasında üç maç oynadı: Roma ile 1-1, Aston Villa deplasmanında 0-6, Slavia Prag ile 2-2. Üç maçta <strong>iki puan</strong>, üç atılan gol, dokuz yenen gol.</p>
     <p>Bu üç maçın yalnızca birinde öne geçtiler. O maç da buydu. Yani "her gol sonrası aynı şey oluyor" demek için elimizde yeterli Avrupa maçı yok. Ama öne geçtikleri tek maçta olan şey, yukarıdaki üç dakikaydı.</p>
+    <p>Ligdeki tablo bu soruyu daha da keskinleştiriyor. Fenerbahçe Süper Lig'de üretim tarafında ligin en iyileri arasında; sorun üretememek değil, ürettiğini öne geçtikten sonra sürdürememek.</p>
+    <DagilimSeridi league="sl" focus="Fenerbahçe" id="ds-fb"
+      title="Fenerbahçe · Süper Lig içindeki yeri"
+      metrics={['xg_payi','baski','pozisyonel_sut','kontra_sut','topla_oynama']}
+      note="Her nokta bir Süper Lig takımı. Bu veriler lig sezonunu özetler; yukarıdaki maçın kendisini değil." />
     <p class="mono" style="color:var(--chalk-2);margin-top:2rem">Maç önü dosyası: <a href="/mac/fenerbahce-slavia-prag-2026-10-20">Fenerbahçe – Slavia Prag</a> · Veri: SportsBase</p>
   </div>
 </section>

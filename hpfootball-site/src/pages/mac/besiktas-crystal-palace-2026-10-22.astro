@@ -3,6 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import '../../styles/match-page.css';
 import matchSurfaceHTML from '../../../public/match-surfaces/besiktas-crystal-palace-interactive.html?raw';
 import { serializeJsonLd } from '../../lib/json-ld.mjs';
+import DagilimSeridi from '../../components/DagilimSeridi.astro';
 export const prerender = true;
 const FIG = '/figures/besiktas-crystal-palace';
 
@@ -90,11 +91,15 @@ const FIG = '/figures/besiktas-crystal-palace';
     </div>
     <p>Palace'ın duran toptan şut üretme oranı yüzde 42 görünüyor. Ama bu oran sadece 50 duran toptan hesaplandı. Az gözlem demek, belirsizlik demek. Gerçek değer yüzde 31 ile 47 arasında bir yerde ve Premier Lig ortalaması olan yüzde 35 tam da bu aralığın içinde.</p>
     <p>Dürüst okuma şu: iyi olabilir, ama elimizdeki veri bunu lig ortalamasından ayırmaya yetmiyor. Üstelik maç başına sadece 3,1 korner kazanıyorlar; ligde en az korner kullanan takım.</p>
-    <figure class="hpc-figure">
-      <img src={`${FIG}/02-lig-ici-yer.svg`} width="440" height="392" loading="lazy" decoding="async"
-        alt="İki takımın sekiz göstergede kendi ligleri içindeki sıraları"/>
-      <figcaption>Her gösterge takımın kendi ligindeki on sekiz ya da yirmi takımın içine yerleştirildi. 0 ligin en altı, 100 ligin en üstü.</figcaption>
-    </figure>
+    <DagilimSeridi league="sl" focus="Beşiktaş" id="ds-bjk"
+      title="Beşiktaş · Süper Lig içindeki yeri"
+      metrics={['baski','topla_oynama','pozisyonel_sut','merkez_sut','bloklanan']}
+      note="Her nokta bir Süper Lig takımı. Göstergeyi değiştirmek için yukarıdaki başlıklara dokunun." />
+
+    <DagilimSeridi league="pl" focus="Crystal Palace" id="ds-cp"
+      title="Crystal Palace · Premier Lig içindeki yeri"
+      metrics={['pozisyonel_sut','ikili','duran_sut','orta','uzun_pas']}
+      note="Her nokta bir Premier Lig takımı. İki takım kendi ligi içinde ölçüldü; doğrudan birbirleriyle değil." />
   </div>
 </section>
 
