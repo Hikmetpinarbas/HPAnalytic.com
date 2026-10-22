@@ -67,13 +67,18 @@ jobs:
           node scripts/public-dist-signatures.mjs dist
           node scripts/release-browser-qa.mjs
 
+      - name: Verify browser QA evidence
+        run: |
+          test -d qa-artifacts
+          find qa-artifacts -type f | grep -q . || { echo "Browser QA evidence missing" >&2; exit 1; }
+
       - name: Upload browser QA evidence
-        if: github.event_name == 'workflow_dispatch'
+        if: ${{ (success() || failure()) && (github.event_name == 'pull_request' || github.event_name == 'workflow_dispatch') }}
         uses: actions/upload-artifact@v4
         with:
           name: release-pack-01-browser-qa
           path: hpfootball-site/qa-artifacts/
-          if-no-files-found: error
+          if-no-files-found: warn
           retention-days: 1
 
       - name: Private Studio must not reach production
