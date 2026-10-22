@@ -8,7 +8,7 @@ const original = read('public/match-surfaces/besiktas-crystal-palace-interactive
 
 test('published Beşiktaş article embeds its interactive editorial surface, not just static figures', () => {
   assert.match(page, /id="hpa-interactive-frame"/);
-  assert.match(page, /src="\/match-surfaces\/besiktas-crystal-palace-interactive\.html"/);
+  assert.match(page, /srcdoc=\{matchSurfaceHTML\}/);
   assert.match(page, /ResizeObserver/);
   assert.match(page, /Etkileşimli maç yüzeyini ayrı sayfada aç/);
   assert.match(page, /01-sut-donusum\.svg/);
