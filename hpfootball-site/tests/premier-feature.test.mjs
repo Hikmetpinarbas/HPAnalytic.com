@@ -37,8 +37,8 @@ test('CTA accessible name retains visible label',()=>{
 });
 
 test('approved premier uses data-bound team headline with local rotating star scene',()=>{
- assert.match(home,/<span class="hpa-premier__foreign">{premier.away/);
- assert.match(home,/<span class="hpa-premier__turkish">{premier.home/);
+ assert.match(home,/premier.club === 'galatasaray' \? 'hpa-premier__foreign' : 'hpa-premier__turkish'/);
+ assert.match(home,/premier.club === 'galatasaray' \? 'hpa-premier__turkish' : 'hpa-premier__foreign'/);
  assert.doesNotMatch(home,/Ev sahibi · Lille|Konuk · Galatasaray|hpa-premier__matchup/);
  assert.match(home,/hpa-premier__stars/);
  assert.match(home,/data-club={premier\?\.club/);
