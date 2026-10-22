@@ -91,19 +91,19 @@ test('match pages satisfy their declared visual contract and evidence rules', ()
     const page = read(`src/pages/mac/${m.slug}.astro`);
     // Visual contracts are selected by declared renderer capability, not by match slug.
     if (page.includes('data-visual-contract="editorial-svg-v1"')) {
-      const figures = [...page.matchAll(/<figure class="hpc-figure">([\\s\\S]*?)<\\/figure>/g)];
+      const figures = [...page.matchAll(/<figure class="hpc-figure">([\s\S]*?)<\/figure>/g)];
       assert.ok(figures.length >= 1, `${m.slug}: editorial SVG requires figures`);
       const sources = new Set();
       for (const [, figure] of figures) {
-        const src = figure.match(/<img\\s+src=\\{\x60\\$\\{FIG\\}\\/([^\x60]+)\x60\\}/)?.[1];
-        assert.ok(src && /^[a-zA-Z0-9_-]+\\.svg$/.test(src), `${m.slug}: SVG source must be static and local`);
+        const src = figure.match(/<img\s+src=\{`\$\{FIG\}\/([^`]+)`\}/)?.[1];
+        assert.ok(src && /^[a-zA-Z0-9_-]+\.svg$/.test(src), `${m.slug}: SVG source must be static and local`);
         assert.ok(!sources.has(src), `${m.slug}: duplicate SVG ${src}`);
         sources.add(src);
         const dir = page.match(/const FIG = '\/figures\/([a-zA-Z0-9_/-]+)'/)?.[1];
         assert.ok(dir, `${m.slug}: missing local SVG directory`);
         assert.ok(existsSync(new URL(`../public/figures/${dir}/${src}`, import.meta.url)), `${m.slug}: missing ${src}`);
-        assert.match(figure, /\\balt="[^"]+"/, `${m.slug}: missing descriptive alt`);
-        assert.match(figure, /<figcaption>[\\s\\S]*?[^\\s<][\\s\\S]*?<\\/figcaption>/, `${m.slug}: missing explanatory caption`);
+        assert.match(figure, /\balt="[^"]+"/, `${m.slug}: missing descriptive alt`);
+        assert.match(figure, /<figcaption>[\s\S]*?[^\s<][\s\S]*?<\/figcaption>/, `${m.slug}: missing explanatory caption`);
       }
       assert.match(page, /Veri: SportsBase/, `${m.slug}: evidence source required`);
       continue;
