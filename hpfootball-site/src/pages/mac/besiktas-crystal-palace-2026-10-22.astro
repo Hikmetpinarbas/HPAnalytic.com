@@ -1,10 +1,10 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { readFileSync } from 'node:fs';
+import matchSurfaceHTML from '../../../public/match-surfaces/besiktas-crystal-palace-interactive.html?raw';
 import { serializeJsonLd } from '../../lib/json-ld.mjs';
 export const prerender = true;
 const FIG = '/figures/besiktas-crystal-palace';
-const matchSurfaceHTML = readFileSync(new URL('../../../public/match-surfaces/besiktas-crystal-palace-interactive.html', import.meta.url), 'utf8');
+
 ---
 <BaseLayout
   title="Beşiktaş - Crystal Palace: Kristal köşk nasıl yıkılır?"
