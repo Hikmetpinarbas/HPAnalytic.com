@@ -105,6 +105,7 @@ test('match pages satisfy their declared visual contract and evidence rules', ()
         assert.match(figure, /\balt="[^"]+"/, `${m.slug}: missing descriptive alt`);
         assert.match(figure, /<figcaption>[\s\S]*?[^\s<][\s\S]*?<\/figcaption>/, `${m.slug}: missing explanatory caption`);
       }
+      assert.match(page, /<details class="hpc-det"><summary>Kaynaklar/, `${m.slug}: expandable evidence disclosure required`);
       assert.match(page, /Veri: SportsBase/, `${m.slug}: evidence source required`);
       continue;
     }
