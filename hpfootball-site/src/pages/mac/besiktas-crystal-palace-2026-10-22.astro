@@ -1,8 +1,10 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import { readFileSync } from 'node:fs';
 import { serializeJsonLd } from '../../lib/json-ld.mjs';
 export const prerender = true;
 const FIG = '/figures/besiktas-crystal-palace';
+const matchSurfaceHTML = readFileSync(new URL('../../../public/match-surfaces/besiktas-crystal-palace-interactive.html', import.meta.url), 'utf8');
 ---
 <BaseLayout
   title="Beşiktaş - Crystal Palace: Kristal köşk nasıl yıkılır?"
@@ -15,7 +17,7 @@ const FIG = '/figures/besiktas-crystal-palace';
 
 <section class="hpa-interactive-match" aria-label="Etkileşimli Beşiktaş Crystal Palace maç analizi">
   <iframe id="hpa-interactive-frame" title="Beşiktaş ve Crystal Palace: beş görünümlü etkileşimli maç yüzeyi"
-    src="/match-surfaces/besiktas-crystal-palace-interactive.html"
+    srcdoc={matchSurfaceHTML}
     loading="eager" referrerpolicy="same-origin"></iframe>
   <p class="hpa-interactive-fallback"><a href="/match-surfaces/besiktas-crystal-palace-interactive.html">Etkileşimli maç yüzeyini ayrı sayfada aç ↗</a></p>
 </section>
