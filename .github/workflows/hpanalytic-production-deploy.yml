@@ -43,7 +43,7 @@ jobs:
         run: npm test
 
       - name: Astro diagnostics
-        run: echo "Bypassing diagnostics" # npm run check
+        run: npm run check
 
       - name: Production build
         run: npm run build
