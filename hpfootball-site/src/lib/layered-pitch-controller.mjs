@@ -13,7 +13,9 @@ export function mountLayeredPitch(root){
     const [startMinute,endMinute]=time.value.split(':').map(Number);
     const visible=new Set(selectEvents(catalog,{side,type,startMinute,endMinute}).map(e=>e.id));
     for(const el of items){
-      const shown=visible.has(el.dataset.id) || (el.dataset.family==='players' && type==='all' && visible.has(el.dataset.id));
+      const shown=el.dataset.family==='players'
+        ? (side==='both'||side===el.dataset.team) && Number(el.dataset.minute)>=startMinute && Number(el.dataset.minute)<=endMinute
+        : visible.has(el.dataset.id);
       el.hidden=!shown;
       el.style.display=shown?'':'none';
       el.style.opacity=String(focusOpacity({family:el.dataset.family,selected,team:el.dataset.team,side,contextOpacity:Number(dim.value)/100}));
