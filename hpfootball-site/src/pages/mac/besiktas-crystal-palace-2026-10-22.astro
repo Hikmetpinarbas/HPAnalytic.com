@@ -13,30 +13,31 @@ const FIG = '/figures/besiktas-crystal-palace';
   club="besiktas">
 <div class="mp" data-visual-contract="editorial-svg-v1">
 
-<section class="hero hpa-match-premier">
-  <canvas id="eurocanvas" aria-hidden="true"></canvas>
-  <div class="wrap">
-    <p class="eyebrow">HPANALYTIC / PREMIER · UEFA Avrupa Ligi · Lig aşaması 3. hafta · Tüpraş Stadı, İstanbul</p>
-    <h1 class="versus hpa-match-title" aria-label="Beşiktaş karşısında Crystal Palace">
-      <span class="hpa-match-home">Beşiktaş</span>
-      <span class="hpa-match-v">karşısında</span>
-      <span class="hpa-match-away" lang="en">Crystal Palace</span>
-    </h1>
-    <p class="mono" style="color:var(--chalk-2)">Hikmet Pınarbaş · <time datetime="2026-10-22">22 Ekim 2026</time> · Maç: 22 Ekim 2026 · 22.00 TSİ</p>
-    <p class="thesis">Bu maçta topun kimde olacağı belli. Beşiktaş topu alacak, Crystal Palace almak istemeyecek. <em>Asıl soru şu: Beşiktaş topu alacak, peki onunla ne yapacak?</em></p>
-    <div class="meta">
-      <div><span class="mono">Avrupa Ligi puanı</span><b class="num">6 · 3</b></div>
-      <div><span class="mono">Topla oynama (lig)</span><b class="num">%61 · %43</b></div>
-      <div><span class="mono">Hakem</span><b>Danny Makkelie</b></div>
-      <div><span class="mono">Başlama</span><b>22.00 TSİ</b></div>
-    </div>
-    <div class="count" id="count" aria-live="polite">
-      <span class="mono" style="width:100%">Başlama vuruşuna</span>
-      <span class="n num" id="cd-h">--</span><span class="u">saat</span>
-      <span class="n num" id="cd-m">--</span><span class="u">dakika</span>
-    </div>
-  </div>
+<section class="hpa-interactive-match" aria-label="Etkileşimli Beşiktaş Crystal Palace maç analizi">
+  <iframe id="hpa-interactive-frame" title="Beşiktaş ve Crystal Palace: beş görünümlü etkileşimli maç yüzeyi"
+    src="/match-surfaces/besiktas-crystal-palace-interactive.html"
+    loading="eager" referrerpolicy="same-origin"></iframe>
+  <p class="hpa-interactive-fallback"><a href="/match-surfaces/besiktas-crystal-palace-interactive.html">Etkileşimli maç yüzeyini ayrı sayfada aç ↗</a></p>
 </section>
+<script is:inline>
+(() => {
+  const frame = document.getElementById('hpa-interactive-frame');
+  if (!frame) return;
+  frame.addEventListener('load', () => {
+    try {
+      const doc = frame.contentDocument;
+      if (!doc) return;
+      const resize = () => {
+        const h = Math.max(doc.documentElement.scrollHeight, doc.body?.scrollHeight || 0);
+        if (h > 0) frame.style.height = `${h + 8}px`;
+      };
+      resize();
+      if ('ResizeObserver' in window) new ResizeObserver(resize).observe(doc.body);
+      doc.fonts?.ready.then(resize);
+    } catch { /* standalone surface link remains accessible */ }
+  });
+})();
+</script>
 
 <section class="block">
   <div class="wrap">
@@ -190,6 +191,9 @@ const FIG = '/figures/besiktas-crystal-palace';
 })}/>
 
 <style>
+.hpa-interactive-match{width:min(100%,960px);margin:0 auto 2rem;padding:0 8px}
+#hpa-interactive-frame{display:block;width:100%;height:1200px;border:0;background:#0A0A0B}
+.hpa-interactive-fallback{font-size:.75rem;text-align:right;margin:.35rem 0 0}
 .hero.hpa-match-premier{position:relative;isolation:isolate;overflow:hidden}
 #eurocanvas{position:absolute;inset:0;width:100%;height:100%;display:block;z-index:-1;opacity:.85}
 .hpc-figure{margin:2rem 0;max-width:560px}
