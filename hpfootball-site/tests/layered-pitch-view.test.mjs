@@ -16,7 +16,10 @@ test('pitch view includes persistent SVG pitch and accessible controls',()=>{
   assert.match(view,/data-context-opacity/);
 });
 test('view separates home and opponent glyphs from passes and outcomes',()=>{
-  for(const layer of ['players','relationships','actions','outcomes']) assert.match(view,new RegExp('data-family="'+layer+'"'));
+  assert.match(view,/data-family="players"/);
+  assert.match(view,/data-family=\{family\(event\)\}/);
+  assert.match(view,/event\.type==='pass'\?'relationships'/);
+  assert.match(view,/event\.type==='outcome'\?'outcomes'/);
   assert.match(view,/data-team=\{event.team\}/);
   assert.match(view,/data-minute=\{event.minute\}/);
 });
