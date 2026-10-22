@@ -50,8 +50,12 @@ jobs:
 
       - name: Install browser QA runtime
         run: |
-          npm install --no-save --no-package-lock playwright@1.56.1
-          npx playwright install --with-deps chromium
+          # Isolate browser tooling: npm install in the application tree re-resolves
+          # optional transitive dependencies and fails on @volar/typescript ETARGET.
+          npm install --prefix "$RUNNER_TEMP/hpa-browser-qa" --no-save --no-package-lock playwright@1.56.1
+          ln -s "$RUNNER_TEMP/hpa-browser-qa/node_modules/playwright" node_modules/playwright
+          ln -s "$RUNNER_TEMP/hpa-browser-qa/node_modules/playwright-core" node_modules/playwright-core
+          "$RUNNER_TEMP/hpa-browser-qa/node_modules/.bin/playwright" install --with-deps chromium
 
       - name: Physical browser QA
         run: |

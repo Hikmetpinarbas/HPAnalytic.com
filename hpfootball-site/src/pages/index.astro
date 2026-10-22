@@ -12,6 +12,10 @@ const monographs = (await getCollection('monographs', isPublic)).sort((a, b) => 
 const articles = (await getCollection('articles', isPublic)).filter((entry) => isPublicEditorialItem(entry.data)).sort((a, b) => +b.data.date - +a.data.date);
 const match = featuredMatch();
 const premier = featuredPremier();
+const premierTeams = premier ? {
+  first: premier.home ?? (premier.club === 'galatasaray' ? 'LOSC Lille' : ''),
+  second: premier.away ?? (premier.club === 'galatasaray' ? 'Galatasaray' : ''),
+} : null;
 const dateTr = (d: Date) => d.toLocaleDateString('tr-TR', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' });
 const steps = [
   { key: 'yapi', label: 'Yapı', text: 'Önce oyunun iskeleti: alan, zaman, rol ve rakip. Skor bu yapının en son katmanıdır.' },
@@ -27,7 +31,7 @@ const steps = [
     <div class="hpa-premier__overline"><span>HPANALYTIC / PREMIER</span><span>BAŞ ANALİZ · EDITOR'S PICK</span></div>
     {premier && <>
       <p class="hpa-premier__eyebrow">{premier.competition ?? 'UEFA ŞAMPİYONLAR LİGİ · HPANALYTIC PREMIER'}</p>
-      <h2 id="premier-title"><span class="hpa-premier__turkish">{premier.home ?? 'LOSC Lille'}</span><span class="hpa-premier__versus"> karşısında </span><span class="hpa-premier__foreign">{premier.away ?? 'Galatasaray'}</span></h2>
+      <h2 id="premier-title"><span class:list={[premier.club === 'galatasaray' ? 'hpa-premier__foreign' : 'hpa-premier__turkish']}>{premierTeams?.first}</span><span class="hpa-premier__versus"> karşısında </span><span class:list={[premier.club === 'galatasaray' ? 'hpa-premier__turkish' : 'hpa-premier__foreign']}>{premierTeams?.second}</span></h2>
       <p>{premier.description}</p>
       <p class="hpa-premier__meta">{premier.venue ?? 'Stade Pierre-Mauroy · 21 Ekim 2026 · 19.45 TSİ'}</p>
       <a class="hpa-premier__link" href={premier.href}>PREMIER DOSYASINI KEŞFET <span aria-hidden="true">↗</span></a>

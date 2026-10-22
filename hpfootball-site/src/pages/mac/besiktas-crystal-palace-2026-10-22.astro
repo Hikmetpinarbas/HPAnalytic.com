@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import { serializeJsonLd } from '../../lib/json-ld.mjs';
 export const prerender = true;
 const FIG = '/figures/besiktas-crystal-palace';
 ---
@@ -10,7 +11,7 @@ const FIG = '/figures/besiktas-crystal-palace';
   image="/images/besiktas-crystal-palace-kapak.png"
   publishedTime={new Date('2026-10-22T17:15:00Z')}
   club="besiktas">
-<div class="mp">
+<div class="mp" data-visual-contract="editorial-svg-v1">
 
 <section class="hero hpa-match-premier">
   <canvas id="eurocanvas" aria-hidden="true"></canvas>
@@ -157,13 +158,14 @@ const FIG = '/figures/besiktas-crystal-palace';
     <p><strong>1. Beşiktaş'ın kaç şutu bloklanıyor.</strong> Maç başına ortalaması 5. Bu sayı büyüyorsa, skor 0-0 bile olsa Beşiktaş doğru yerden vuramıyor demektir.</p>
     <p><strong>2. Merkez açılıyor mu.</strong> Beşiktaş'ın en verimli yeri orası, Palace'ın en iyi olduğu şey de orada mücadele etmek. İlk yarım saatte merkezden kaç şut çıktığına bakın.</p>
     <p><strong>3. Uzun top kime düşüyor.</strong> Palace kaleciden uzun gidiyorsa, o topu kim alıyor? Beşiktaş alıyorsa maç tek kale olur. Palace alıyorsa maç uzar — ve uzayan maç Palace'ın istediği maçtır.</p>
+    <details class="hpc-det"><summary>Kaynaklar ve kanıt sınırı</summary><p>Veri: SportsBase · Beşiktaş Süper Lig 8 maç, Crystal Palace Premier Lig 7 maç. Olay verisi oyuncu konumu, görüş alanı veya niyeti doğrudan ölçmez. Çıkarımlar bağlama ve örneklem büyüklüğüne bağlıdır.</p></details>
     <p class="mono" style="color:var(--chalk-2);margin-top:2rem">Veri: SportsBase · Bir önceki Avrupa dosyası: <a href="/mac/lille-galatasaray-2026-10-21">Lille – Galatasaray</a></p>
   </div>
 </section>
 
 </div>
 
-<script type="application/ld+json" set:html={JSON.stringify({
+<script type="application/ld+json" set:html={serializeJsonLd({
   "@context":"https://schema.org","@type":"SportsArticle",
   "headline":"Kristal köşk nasıl yıkılır? Beşiktaş - Crystal Palace maç önü",
   "description":"Beşiktaş - Crystal Palace maç önü: Palace'ın en sık pas zinciri geriye gidiyor, Beşiktaş şutlarının üçte birini bloklatıyor. Veriyle beş taktiksel çatışma.",
@@ -180,7 +182,7 @@ const FIG = '/figures/besiktas-crystal-palace';
     "superEvent":{"@type":"SportsOrganization","name":"UEFA Avrupa Ligi"},
     "homeTeam":{"@type":"SportsTeam","name":"Beşiktaş JK"},"awayTeam":{"@type":"SportsTeam","name":"Crystal Palace FC"}}
 })}/>
-<script type="application/ld+json" set:html={JSON.stringify({
+<script type="application/ld+json" set:html={serializeJsonLd({
   "@context":"https://schema.org","@type":"FAQPage","mainEntity":[
    {"@type":"Question","name":"Beşiktaş Crystal Palace maçı ne zaman?","acceptedAnswer":{"@type":"Answer","text":"22 Ekim 2026 Perşembe, saat 22.00, Tüpraş Stadı. UEFA Avrupa Ligi lig aşaması üçüncü hafta."}},
    {"@type":"Question","name":"Crystal Palace nasıl bir takım?","acceptedAnswer":{"@type":"Answer","text":"Savunurken Premier Lig'in en iyilerinden: ikili mücadelelerin yüzde 57'sini kazanıyorlar. Topla oynarken ise ligin en az pozisyon üreten takımı; kurulu düzen ataklarının yalnızca yüzde 9,6'sı şutla bitiyor."}},
