@@ -29,11 +29,12 @@ const { navigation = [] } = Astro.props as Props;
 
     if (!(trigger instanceof HTMLButtonElement) || !(panel instanceof HTMLElement)) continue;
 
+    const previousOverflow = document.documentElement.style.overflow;
     const isOpen = () => trigger.getAttribute('aria-expanded') === 'true';
     const setOpen = (open: boolean) => {
       trigger.setAttribute('aria-expanded', String(open));
       panel.hidden = !open;
-      document.documentElement.style.overflow = open ? 'hidden' : '';
+      document.documentElement.style.overflow = open ? 'hidden' : previousOverflow;
     };
     const dispatch = (event: string) => {
       if (!isOpen()) return;

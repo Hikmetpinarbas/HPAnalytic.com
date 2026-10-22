@@ -74,3 +74,9 @@ test('skip link targets the main landmark', async () => {
   assert.match(layout, /<a class="skip-link" href="#main-content">/);
   assert.match(layout, /<main id="main-content" tabindex="-1">/);
 });
+
+test('closing mobile disclosure restores the pre-existing document overflow value', async () => {
+  const component = await source(componentUrl);
+  assert.match(component, /const previousOverflow = document\.documentElement\.style\.overflow/);
+  assert.match(component, /document\.documentElement\.style\.overflow = open \? 'hidden' : previousOverflow/);
+});
