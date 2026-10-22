@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import DagilimSeridi from '../../components/DagilimSeridi.astro';
+import TurnuvaHeader from '../../components/TurnuvaHeader.astro';
 import '../../styles/match-page.css';
 export const prerender = true;
 ---
@@ -9,6 +10,18 @@ export const prerender = true;
   description="Fenerbahçe on bir dakikada 2-0 öne geçti, üç dakika sonra gol yedi ve 90+1'de beraberliği kabul etti. Gol attıktan sonra oyundan elini çekmenin ölçülebilir hâli."
   ogType="article" publishedTime={new Date('2026-10-22T19:00:00Z')} club="fenerbahce">
 <div class="mp">
+
+<div class="wrap">
+  <TurnuvaHeader
+    turnuva="ucl"
+    etiket="Lig aşaması · 3. hafta"
+    ev="Fenerbahçe" dep="Slavia Prag"
+    skor={[2, 2]}
+    stat="Şükrü Saracoğlu"
+    tarihYazi="20 Ekim 2026"
+    durum="MAÇ SONU"
+  />
+</div>
 
 <section class="hero hpa-match-premier">
   <div class="wrap">

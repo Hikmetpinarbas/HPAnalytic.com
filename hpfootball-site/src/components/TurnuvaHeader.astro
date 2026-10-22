@@ -1,0 +1,211 @@
+---
+/**
+ * Turnuvaya göre hareketli maç başlığı. Her maç yazısında standart.
+ * Hareket canvas ile; prefers-reduced-motion'da tek kare çizilir, döngü hiç başlamaz.
+ * Turnuva işaretleri soyut — hiçbir kurumsal logo veya amblem kullanılmaz.
+ */
+export interface Props {
+  turnuva: 'ucl' | 'uel' | 'uecl' | 'superlig';
+  etiket?: string;          // "Lig aşaması · 3. hafta"
+  ev: string;
+  dep: string;
+  skor?: [number, number];  // maç sonu
+  tarihSaat?: string;       // ISO — maç önü geri sayımı
+  stat?: string;
+  tarihYazi?: string;
+  durum?: string;           // "MAÇ SONU" / "MAÇ ÖNÜ"
+}
+
+const { turnuva, etiket, ev, dep, skor, tarihSaat, stat, tarihYazi, durum } = Astro.props;
+
+const ADI = {
+  ucl: 'UEFA Şampiyonlar Ligi',
+  uel: 'UEFA Avrupa Ligi',
+  uecl: 'UEFA Konferans Ligi',
+  superlig: 'Trendyol Süper Lig',
+}[turnuva];
+
+// turnuva başına hareket imzası: [zemin, ışık, ikincil, parçacık türü]
+const MOTIF = {
+  ucl:      { bg: '#05070F', a: '#9FB6FF', b: '#2B3A7A', kind: 'yildiz' },
+  uel:      { bg: '#120A02', a: '#FF9A2E', b: '#6B3A08', kind: 'akis'   },
+  uecl:     { bg: '#031012', a: '#3FD6C0', b: '#0A4A47', kind: 'akis'   },
+  superlig: { bg: '#0D0507', a: '#E8465E', b: '#5A1322', kind: 'seritler'},
+}[turnuva];
+---
+
+<section class="th" data-th data-motif={MOTIF.kind}
+  data-bg={MOTIF.bg} data-a={MOTIF.a} data-b={MOTIF.b}
+  data-kick={tarihSaat ?? ''} aria-label={`${ev} - ${dep}, ${ADI}`}>
+  <canvas class="th-c" aria-hidden="true"></canvas>
+  <div class="th-in">
+    <p class="th-komp">
+      <span class="th-dot" aria-hidden="true"></span>{ADI}{etiket && <span class="th-sep"> · </span>}{etiket}
+    </p>
+
+    <div class="th-mac">
+      <span class="th-tk th-ev">{ev}</span>
+      {skor
+        ? <span class="th-skor">{skor[0]}<i>–</i>{skor[1]}</span>
+        : <span class="th-vs" aria-hidden="true">–</span>}
+      <span class="th-tk th-dep">{dep}</span>
+    </div>
+
+    <p class="th-alt">
+      {durum && <b>{durum}</b>}
+      {stat}{stat && tarihYazi ? ' · ' : ''}{tarihYazi}
+    </p>
+
+    {tarihSaat && !skor && (
+      <p class="th-geri" data-th-geri hidden>
+        <span data-th-val>—</span><span class="th-geri-lbl">başlamasına</span>
+      </p>
+    )}
+  </div>
+</section>
+
+<style>
+.th {
+  position: relative; overflow: hidden; isolation: isolate;
+  border-radius: 14px; margin: 0 0 clamp(28px, 5vw, 46px);
+  min-height: clamp(190px, 34vw, 280px);
+  display: flex; align-items: flex-end;
+}
+.th-c { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 0; display: block; }
+.th::after {
+  content: ''; position: absolute; inset: 0; z-index: 1; pointer-events: none;
+  background: linear-gradient(180deg, transparent 18%, rgba(0,0,0,.52) 72%, rgba(0,0,0,.78) 100%);
+}
+.th-in { position: relative; z-index: 2; padding: clamp(18px, 3.4vw, 30px); width: 100%; }
+.th-komp {
+  display: flex; align-items: center; gap: 7px; margin: 0 0 10px;
+  font: 600 .66rem/1.3 var(--mono, monospace); letter-spacing: .17em; text-transform: uppercase;
+  color: rgba(255,255,255,.78);
+}
+.th-dot { width: 6px; height: 6px; border-radius: 50%; background: currentColor; opacity: .9; }
+.th-sep { opacity: .5; }
+.th-mac {
+  display: flex; align-items: baseline; gap: clamp(10px, 2.4vw, 20px); flex-wrap: wrap;
+  font-family: var(--display, Georgia, serif); color: #fff;
+}
+.th-tk { font-weight: 600; font-size: clamp(1.3rem, 4.2vw, 2.35rem); line-height: 1.05; letter-spacing: -.015em; }
+.th-skor {
+  font: 700 clamp(1.5rem, 5vw, 2.6rem)/1 var(--mono, monospace);
+  letter-spacing: -.02em; color: #fff; white-space: nowrap;
+}
+.th-skor i { font-style: normal; opacity: .42; margin: 0 .16em; }
+.th-vs { font: 400 clamp(1.1rem,3vw,1.7rem)/1 var(--mono, monospace); opacity: .45; }
+.th-alt {
+  margin: 12px 0 0; font: 400 .78rem/1.5 var(--mono, monospace);
+  letter-spacing: .05em; color: rgba(255,255,255,.62);
+}
+.th-alt b {
+  display: inline-block; margin-right: 10px; padding: 3px 8px; border-radius: 4px;
+  background: rgba(255,255,255,.14); color: #fff; font-weight: 600;
+  font-size: .7rem; letter-spacing: .12em;
+}
+.th-geri { margin: 8px 0 0; font: 600 .82rem/1.4 var(--mono, monospace); color: #fff; letter-spacing: .04em; }
+.th-geri-lbl { opacity: .6; font-weight: 400; margin-left: 8px; }
+@media (prefers-reduced-motion: reduce) { .th-c { opacity: .85; } }
+</style>
+
+<script>
+  type Motif = 'yildiz' | 'akis' | 'seritler';
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  document.querySelectorAll<HTMLElement>('[data-th]').forEach((root) => {
+    const cv = root.querySelector<HTMLCanvasElement>('.th-c');
+    if (!cv) return;
+    const ctx = cv.getContext('2d');
+    if (!ctx) return;
+    const kind = (root.dataset.motif || 'akis') as Motif;
+    const BG = root.dataset.bg || '#07080C';
+    const A = root.dataset.a || '#9FB6FF';
+    const B = root.dataset.b || '#2B3A7A';
+
+    let w = 0, h = 0, dpr = 1, raf = 0, t = 0, canlı = false;
+    type P = { x: number; y: number; r: number; v: number; o: number };
+    let ps: P[] = [];
+
+    const seed = () => {
+      const n = kind === 'yildiz' ? Math.round(w / 9) : Math.round(w / 16);
+      ps = Array.from({ length: Math.max(24, Math.min(170, n)) }, () => ({
+        x: Math.random() * w, y: Math.random() * h,
+        r: kind === 'yildiz' ? Math.random() * 1.7 + 0.4 : Math.random() * 2.4 + 0.6,
+        v: (Math.random() * 0.34 + 0.06) * (kind === 'seritler' ? 2.2 : 1),
+        o: Math.random() * 0.6 + 0.2,
+      }));
+    };
+
+    const size = () => {
+      const r = root.getBoundingClientRect();
+      dpr = Math.min(2, devicePixelRatio || 1);
+      w = Math.max(1, r.width); h = Math.max(1, r.height);
+      cv.width = Math.round(w * dpr); cv.height = Math.round(h * dpr);
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      seed();
+    };
+
+    const draw = () => {
+      ctx.fillStyle = BG; ctx.fillRect(0, 0, w, h);
+      const g = ctx.createRadialGradient(w * 0.74, h * 0.16, 0, w * 0.74, h * 0.16, Math.max(w, h) * 0.92);
+      g.addColorStop(0, B); g.addColorStop(1, 'rgba(0,0,0,0)');
+      ctx.globalAlpha = 0.5; ctx.fillStyle = g; ctx.fillRect(0, 0, w, h); ctx.globalAlpha = 1;
+
+      for (const p of ps) {
+        if (kind === 'seritler') {
+          ctx.globalAlpha = p.o * 0.5;
+          ctx.strokeStyle = A; ctx.lineWidth = p.r * 0.7;
+          ctx.beginPath(); ctx.moveTo(p.x, p.y); ctx.lineTo(p.x + 26, p.y - 13); ctx.stroke();
+        } else {
+          const tw = kind === 'yildiz' ? 0.55 + 0.45 * Math.sin(t * 0.0012 + p.x) : 1;
+          ctx.globalAlpha = p.o * tw * 0.85;
+          ctx.fillStyle = A;
+          ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2); ctx.fill();
+        }
+      }
+      ctx.globalAlpha = 1;
+    };
+
+    const step = (ts: number) => {
+      t = ts;
+      for (const p of ps) {
+        p.x += p.v; p.y -= p.v * 0.42;
+        if (p.x > w + 30) { p.x = -30; p.y = Math.random() * h; }
+        if (p.y < -20) { p.y = h + 20; p.x = Math.random() * w; }
+      }
+      draw();
+      raf = requestAnimationFrame(step);
+    };
+
+    size(); draw();
+    addEventListener('resize', () => { size(); if (!canlı) draw(); }, { passive: true });
+
+    if (!reduce) {
+      const io = new IntersectionObserver((es) => {
+        for (const e of es) {
+          if (e.isIntersecting && !canlı) { canlı = true; raf = requestAnimationFrame(step); }
+          else if (!e.isIntersecting && canlı) { canlı = false; cancelAnimationFrame(raf); }
+        }
+      }, { threshold: 0.02 });
+      io.observe(root);
+    }
+
+    // geri sayım (maç önü)
+    const kick = root.dataset.kick;
+    const box = root.querySelector<HTMLElement>('[data-th-geri]');
+    const val = root.querySelector<HTMLElement>('[data-th-val]');
+    if (kick && box && val) {
+      const target = new Date(kick).getTime();
+      const tick = () => {
+        const d = target - Date.now();
+        if (d <= 0) { box.hidden = true; return; }
+        const s = Math.floor(d / 1000), gun = Math.floor(s / 86400),
+          sa = Math.floor((s % 86400) / 3600), dk = Math.floor((s % 3600) / 60);
+        val.textContent = gun > 0 ? `${gun} gün ${sa} saat` : sa > 0 ? `${sa} saat ${dk} dakika` : `${dk} dakika`;
+        box.hidden = false;
+      };
+      tick(); setInterval(tick, 30000);
+    }
+  });
+</script>
