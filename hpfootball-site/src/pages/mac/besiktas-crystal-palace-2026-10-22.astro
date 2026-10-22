@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import { serializeJsonLd } from '../../lib/json-ld.mjs';
 export const prerender = true;
 const FIG = '/figures/besiktas-crystal-palace';
 ---
@@ -163,7 +164,7 @@ const FIG = '/figures/besiktas-crystal-palace';
 
 </div>
 
-<script type="application/ld+json" set:html={JSON.stringify({
+<script type="application/ld+json" set:html={serializeJsonLd({
   "@context":"https://schema.org","@type":"SportsArticle",
   "headline":"Kristal köşk nasıl yıkılır? Beşiktaş - Crystal Palace maç önü",
   "description":"Beşiktaş - Crystal Palace maç önü: Palace'ın en sık pas zinciri geriye gidiyor, Beşiktaş şutlarının üçte birini bloklatıyor. Veriyle beş taktiksel çatışma.",
@@ -180,7 +181,7 @@ const FIG = '/figures/besiktas-crystal-palace';
     "superEvent":{"@type":"SportsOrganization","name":"UEFA Avrupa Ligi"},
     "homeTeam":{"@type":"SportsTeam","name":"Beşiktaş JK"},"awayTeam":{"@type":"SportsTeam","name":"Crystal Palace FC"}}
 })}/>
-<script type="application/ld+json" set:html={JSON.stringify({
+<script type="application/ld+json" set:html={serializeJsonLd({
   "@context":"https://schema.org","@type":"FAQPage","mainEntity":[
    {"@type":"Question","name":"Beşiktaş Crystal Palace maçı ne zaman?","acceptedAnswer":{"@type":"Answer","text":"22 Ekim 2026 Perşembe, saat 22.00, Tüpraş Stadı. UEFA Avrupa Ligi lig aşaması üçüncü hafta."}},
    {"@type":"Question","name":"Crystal Palace nasıl bir takım?","acceptedAnswer":{"@type":"Answer","text":"Savunurken Premier Lig'in en iyilerinden: ikili mücadelelerin yüzde 57'sini kazanıyorlar. Topla oynarken ise ligin en az pozisyon üreten takımı; kurulu düzen ataklarının yalnızca yüzde 9,6'sı şutla bitiyor."}},
