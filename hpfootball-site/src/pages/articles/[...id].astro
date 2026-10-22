@@ -13,6 +13,7 @@ export const prerender = true;
 export async function getStaticPaths(){const items=(await getCollection('articles', isPublic)).filter(x=>isPublicEditorialItem(x.data));return items.map(a=>({params:{id:a.id},props:{a,all:items}}));}
 const {a,all}=Astro.props; const {Content}=await render(a); const {newer,older}=adjacentItems(all,a.id,(x:typeof a)=>x.data.date);
 const section=a.data.section; const sectionLabel=SECTION_LABELS[section as keyof typeof SECTION_LABELS]??displaySection(section); const sectionRoute=SECTION_ROUTES[section as keyof typeof SECTION_ROUTES];
+const minutes=a.data.readingMinutes??readingMinutes(a.body); const isoDate=a.data.date.toISOString().slice(0,10);
 const topics=a.data.topics??[]; const sourceRefs=a.data.sourceRefs??[]; const counterevidence=a.data.counterevidence??[];
 const publicArticleIds=new Set(all.map((entry:typeof a)=>entry.id));
 const nextQuestion=a.data.nextQuestion;
