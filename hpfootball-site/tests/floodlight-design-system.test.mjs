@@ -83,21 +83,29 @@ test('monograph surfaces read only public entries', () => {
   }
 });
 
-test('match pages carry the four data-bound charts and keep the evidence rules', () => {
+test('match pages satisfy their declared visual contract and evidence rules', () => {
   const js = read('public/js/hp-match-charts.js');
   assert.doesNotMatch(js, /marker-end|arrowhead/, 'no pass arrows without a verified receiver (HPA-LOZA K3)');
   assert.match(js, /stroke-dasharray/, 'team B is distinguished by stroke, not colour alone');
   for (const m of MATCH_PREVIEWS) {
     const page = read(`src/pages/mac/${m.slug}.astro`);
-    // The evidence-led four-SVG editorial uses a separate, explicit visual contract.
-    if (m.slug === 'besiktas-crystal-palace-2026-10-22') {
-      const figures = ['01-sut-donusum.svg', '02-lig-ici-yer.svg', '03-koridor.svg', '04-catisma.svg'];
-      for (const figure of figures) {
-        assert.ok(page.includes(figure), `${m.slug}: missing editorial figure ${figure}`);
-        assert.ok(existsSync(new URL(`../public/figures/besiktas-crystal-palace/${figure}`, import.meta.url)), `${m.slug}: missing SVG asset ${figure}`);
+    // Visual contracts are selected by declared renderer capability, not by match slug.
+    if (page.includes('data-visual-contract="editorial-svg-v1"')) {
+      const figures = [...page.matchAll(/<figure class="hpc-figure">([\\s\\S]*?)<\\/figure>/g)];
+      assert.ok(figures.length >= 1, `${m.slug}: editorial SVG requires figures`);
+      const sources = new Set();
+      for (const [, figure] of figures) {
+        const src = figure.match(/<img\\s+src=\\{\x60\\$\\{FIG\\}\\/([^\x60]+)\x60\\}/)?.[1];
+        assert.ok(src && /^[a-zA-Z0-9_-]+\\.svg$/.test(src), `${m.slug}: SVG source must be static and local`);
+        assert.ok(!sources.has(src), `${m.slug}: duplicate SVG ${src}`);
+        sources.add(src);
+        const dir = page.match(/const FIG = '\/figures\/([a-zA-Z0-9_/-]+)'/)?.[1];
+        assert.ok(dir, `${m.slug}: missing local SVG directory`);
+        assert.ok(existsSync(new URL(`../public/figures/${dir}/${src}`, import.meta.url)), `${m.slug}: missing ${src}`);
+        assert.match(figure, /\\balt="[^"]+"/, `${m.slug}: missing descriptive alt`);
+        assert.match(figure, /<figcaption>[\\s\\S]*?[^\\s<][\\s\\S]*?<\\/figcaption>/, `${m.slug}: missing explanatory caption`);
       }
-      assert.equal((page.match(/<figure class="hpc-figure">/g) ?? []).length, 4);
-      assert.equal((page.match(/<figcaption>/g) ?? []).length, 4);
+      assert.match(page, /Veri: SportsBase/, `${m.slug}: evidence source required`);
       continue;
     }
     for (const kind of ['teamradar', 'momentum', 'network', 'playerradar']) assert.match(page, new RegExp(`data-hpc="${kind}"`), `${m.slug}: ${kind}`);
