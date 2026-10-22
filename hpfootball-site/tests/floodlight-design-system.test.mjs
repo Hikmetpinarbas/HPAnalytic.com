@@ -89,6 +89,17 @@ test('match pages carry the four data-bound charts and keep the evidence rules',
   assert.match(js, /stroke-dasharray/, 'team B is distinguished by stroke, not colour alone');
   for (const m of MATCH_PREVIEWS) {
     const page = read(`src/pages/mac/${m.slug}.astro`);
+    // The evidence-led four-SVG editorial uses a separate, explicit visual contract.
+    if (m.slug === 'besiktas-crystal-palace-2026-10-22') {
+      const figures = ['01-sut-donusum.svg', '02-lig-ici-yer.svg', '03-koridor.svg', '04-catisma.svg'];
+      for (const figure of figures) {
+        assert.ok(page.includes(figure), `${m.slug}: missing editorial figure ${figure}`);
+        assert.ok(existsSync(new URL(`../public/figures/besiktas-crystal-palace/${figure}`, import.meta.url)), `${m.slug}: missing SVG asset ${figure}`);
+      }
+      assert.equal((page.match(/<figure class="hpc-figure">/g) ?? []).length, 4);
+      assert.equal((page.match(/<figcaption>/g) ?? []).length, 4);
+      continue;
+    }
     for (const kind of ['teamradar', 'momentum', 'network', 'playerradar']) assert.match(page, new RegExp(`data-hpc="${kind}"`), `${m.slug}: ${kind}`);
     assert.match(page, /id="hpc-data"/);
     assert.match(page, /<span class="ev hyp">TAHMİNİ<\/span>Veride pası alan oyuncu yok/, `${m.slug}: proxy network labelled`);
