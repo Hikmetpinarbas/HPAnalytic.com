@@ -12,6 +12,18 @@ export const PREMIER_FEATURES = [
     description:'36 takım arasında iki profil. Üç bölge, beş koridor, 15 mekânsal hücre ve karşılaştırmalı taktik hipotezler.',
     team:'Galatasaray × LOSC Lille',
     club:'galatasaray'
+  },
+  { slug:'besiktas-crystal-palace-2026-10-22', status:'published', premier:true, premier_order:2,
+    href:'/mac/besiktas-crystal-palace-2026-10-22/',
+    category:'PREMIER · MAÇ ANALİZİ',
+    title:'Kristal köşk nasıl yıkılır?',
+    description:'Beşiktaş topu alacak, Crystal Palace almak istemeyecek. Beş taktiksel çatışma, dört grafik ve maçta izlenecek üç şey.',
+    team:'Beşiktaş × Crystal Palace',
+    club:'besiktas',
+    competition:'UEFA AVRUPA LİGİ · HPANALYTIC PREMIER',
+    home:'Beşiktaş',
+    away:'Crystal Palace',
+    venue:'Tüpraş Stadı · 22 Ekim 2026 · 22.00 TSİ'
   }
 ];
 export function featuredPremier(now=Date.now(),items=PREMIER_FEATURES,registry=PUBLIC_MATCH_PREVIEWS){

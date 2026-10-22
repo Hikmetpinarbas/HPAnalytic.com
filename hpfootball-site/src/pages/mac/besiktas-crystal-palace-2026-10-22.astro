@@ -1,0 +1,241 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+export const prerender = true;
+const FIG = '/figures/besiktas-crystal-palace';
+---
+<BaseLayout
+  title="Beşiktaş - Crystal Palace: Kristal köşk nasıl yıkılır?"
+  description="Beşiktaş - Crystal Palace maç önü: Palace'ın en sık pas zinciri geriye gidiyor, Beşiktaş şutlarının üçte birini bloklatıyor. Veriyle beş taktiksel çatışma."
+  ogType="article"
+  image="/images/besiktas-crystal-palace-kapak.png"
+  publishedTime={new Date('2026-10-22T17:15:00Z')}
+  club="besiktas">
+<div class="mp">
+
+<section class="hero hpa-match-premier">
+  <canvas id="eurocanvas" aria-hidden="true"></canvas>
+  <div class="wrap">
+    <p class="eyebrow">HPANALYTIC / PREMIER · UEFA Avrupa Ligi · Lig aşaması 3. hafta · Tüpraş Stadı, İstanbul</p>
+    <h1 class="versus hpa-match-title" aria-label="Beşiktaş karşısında Crystal Palace">
+      <span class="hpa-match-home">Beşiktaş</span>
+      <span class="hpa-match-v">karşısında</span>
+      <span class="hpa-match-away" lang="en">Crystal Palace</span>
+    </h1>
+    <p class="mono" style="color:var(--chalk-2)">Hikmet Pınarbaş · <time datetime="2026-10-22">22 Ekim 2026</time> · Maç: 22 Ekim 2026 · 22.00 TSİ</p>
+    <p class="thesis">Bu maçta topun kimde olacağı belli. Beşiktaş topu alacak, Crystal Palace almak istemeyecek. <em>Asıl soru şu: Beşiktaş topu alacak, peki onunla ne yapacak?</em></p>
+    <div class="meta">
+      <div><span class="mono">Avrupa Ligi puanı</span><b class="num">6 · 3</b></div>
+      <div><span class="mono">Topla oynama (lig)</span><b class="num">%61 · %43</b></div>
+      <div><span class="mono">Hakem</span><b>Danny Makkelie</b></div>
+      <div><span class="mono">Başlama</span><b>22.00 TSİ</b></div>
+    </div>
+    <div class="count" id="count" aria-live="polite">
+      <span class="mono" style="width:100%">Başlama vuruşuna</span>
+      <span class="n num" id="cd-h">--</span><span class="u">saat</span>
+      <span class="n num" id="cd-m">--</span><span class="u">dakika</span>
+    </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <div class="head col">
+      <p class="eyebrow">Oyun kurma</p>
+      <h2>Beşiktaş oyunu nerede kuruyor?</h2>
+      <p class="lede">Beşiktaş ligde topu en çok elinde tutan takım. Her maçın yüzde 61'inde top onlarda. Ama asıl fark şurada: topu kaptırdıkları anda geri almaya koşuyorlar.</p>
+    </div>
+    <p>Rakip takım her dört-beş pasta bir Beşiktaşlı oyuncunun müdahalesiyle karşılaşıyor. Ligde bu kadar hızlı üstüne giden başka takım yok.</p>
+    <p>Sonucu şu: Beşiktaş kendi kalesine yakın bölgede maç başına sadece <strong>7,6 kez</strong> top kaybediyor. Lig ortalaması 12,9. Yani oyun hep rakip sahada geçiyor, tehlike Beşiktaş kalesine pek yaklaşmıyor.</p>
+    <p>Rakiplerinin Beşiktaş'a karşı ürettiği gol beklentisi maç başına 0,92. Bu ligin en düşük rakamı. Beşiktaş'ın kendi ürettiği ise 2,22.</p>
+    <div class="claim"><span class="ev der">TANIM</span><span><strong>Gol beklentisi nedir?</strong> Bir pozisyonun gole dönme ihtimalini ölçen sayı. 1,0 demek "bu pozisyonlardan ortalama bir gol çıkar" demek. Olay verisinin ne görüp ne göremediği için: <a href="/articles/event-only-boundary">maç olay verisi ne görür, ne göremez</a>.</span></div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <div class="head col">
+      <p class="eyebrow">Mekanizma</p>
+      <h2>Peki Beşiktaş'ın sorunu ne?</h2>
+      <p class="lede">Yaygın bir yanlış var: "Beşiktaş kalabalık savunmayı açamıyor" denir. Veri bunu doğrulamıyor.</p>
+    </div>
+    <p>Beşiktaş kurulu düzende hücum kurduğunda bunların yüzde 13'ü şutla bitiyor. Lig ortalaması yüzde 12. Yani savunmayı açıyorlar, hatta ortalamadan biraz daha iyi açıyorlar. Sorun bir adım sonrasında.</p>
+    <p><strong>Beşiktaş çektiği her üç şuttan birini rakip oyuncuya çarptırıyor.</strong> 136 şutun 42'si bloklandı. Lig ortalaması yüzde 25, Beşiktaş'ta yüzde 31. Altı şutu da direkten döndü.</p>
+    <p>Yani ceza sahasına giriyorlar. Pozisyona ulaşıyorlar. Sonra şutu kalabalığın içinden çekiyorlar ve top ayaklara çarpıyor. Trabzonspor maçı bunun en net örneğiydi: 18 şut, 8 isabet, ceza sahasına 43 pas. Gol yok. Maç 0-2.</p>
+    <figure class="hpc-figure">
+      <img src={`${FIG}/01-sut-donusum.svg`} width="440" height="340" loading="lazy" decoding="async"
+        alt="Beşiktaş ve Crystal Palace'ın kurulu düzen, kontra atak ve duran toptan şut üretme oranları, güven aralıklarıyla"/>
+      <figcaption>Nokta düzeltilmiş tahmini, çizgi belirsizlik aralığını gösterir. Aralık ne kadar darsa sayı o kadar sağlam.</figcaption>
+    </figure>
+    <p>Bir şey daha var ve bu çok konuşulmuyor. <strong>Beşiktaş bu sezon kontra ataktan hiç gol atmadı.</strong> 96 kontra atak, 27 şut, sıfır gol. Pozisyonu üretiyorlar. Bitiremiyorlar.</p>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <div class="head col">
+      <p class="eyebrow">Rakip profili</p>
+      <h2>Crystal Palace neyi iyi, neyi hiç yapamıyor?</h2>
+      <p class="lede">Palace'ı tek kelimeyle anlatmak yanlış olur. İki ayrı takım gibi oynuyorlar.</p>
+    </div>
+    <p><strong>Savunurken gerçekten iyiler.</strong> Premier Lig'de rakiple birebir mücadeleye girip topu kazanmada ligin en iyisi: yüzde 57. Maç başına 22 müdahale yapıyorlar, ligde bundan fazlasını yapan yok.</p>
+    <p><strong>Topla oynarken ise iş bitiyor.</strong> Kurulu düzende hücum kurduklarında bunların sadece <strong>yüzde 9,6'sı</strong> şutla bitiyor. Premier Lig'in en düşük rakamı; lig ortalaması yüzde 14,5. Ortalarına bakın: 53 orta denediler, sadece altısı arkadaşını buldu.</p>
+    <p>Brighton deplasmanında 5-0 kaybettiler. Ama o skoru üreten şey savunmanın dağılması değildi. O maçta 5 şut çekip 1'ini isabet ettirdiler. Hücum hiç var olmadı.</p>
+    <div class="head col">
+      <h3>Palace'ın duran topu gerçekten silah mı?</h3>
+    </div>
+    <p>Palace'ın duran toptan şut üretme oranı yüzde 42 görünüyor. Ama bu oran sadece 50 duran toptan hesaplandı. Az gözlem demek, belirsizlik demek. Gerçek değer yüzde 31 ile 47 arasında bir yerde ve Premier Lig ortalaması olan yüzde 35 tam da bu aralığın içinde.</p>
+    <p>Dürüst okuma şu: iyi olabilir, ama elimizdeki veri bunu lig ortalamasından ayırmaya yetmiyor. Üstelik maç başına sadece 3,1 korner kazanıyorlar; ligde en az korner kullanan takım.</p>
+    <figure class="hpc-figure">
+      <img src={`${FIG}/02-lig-ici-yer.svg`} width="440" height="392" loading="lazy" decoding="async"
+        alt="İki takımın sekiz göstergede kendi ligleri içindeki sıraları"/>
+      <figcaption>Her gösterge takımın kendi ligindeki on sekiz ya da yirmi takımın içine yerleştirildi. 0 ligin en altı, 100 ligin en üstü.</figcaption>
+    </figure>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <div class="head col">
+      <p class="eyebrow">Mekân</p>
+      <h2>Sahanın neresi konuşacak?</h2>
+      <p class="lede">Beşiktaş ataklarının yüzde 39'unu sol kanattan kuruyor. Merkezden sadece yüzde 27. Ama verim tam tersi.</p>
+    </div>
+    <p><strong>Merkezden gelen atakların yüzde 23'ü şutla bitiyor. Kanatlarda bu oran yüzde 12-13.</strong> Beşiktaş'ın merkez koridoru Süper Lig'in en verimli koridoru. Yani Beşiktaş kanattan giriyor, merkezden vuruyor.</p>
+    <p>İşte maçın teknik düğümü burada. Palace alçak blokta merkezi kapatan bir takım. Beşiktaş kanattaki topu merkeze çevirecek hamleyi bulabilecek mi?</p>
+    <figure class="hpc-figure">
+      <img src={`${FIG}/03-koridor.svg`} width="440" height="376" loading="lazy" decoding="async"
+        alt="Beşiktaş ve Crystal Palace'ın sol, merkez ve sağ koridordan atak hacimleri ile şuta dönüşme oranları"/>
+      <figcaption>Şerit genişliği atak payını, renk yoğunluğu şuta dönüşme oranını gösterir. Saha şemalarının nasıl okunduğu için: <a href="/visual-lab">görsel laboratuvar</a>.</figcaption>
+    </figure>
+    <p>Palace tarafında tablo bambaşka. Üç koridorun hacmi neredeyse eşit ve hiçbirinin verimi yüzde 17'yi geçmiyor. Bu bir denge işareti değil. Bir yön üretememe işareti.</p>
+    <div class="head col">
+      <h3>Top hangi yöne gidiyor?</h3>
+    </div>
+    <p>Son maçların pas zincirlerine baktık. Yani topun hangi bölgeden hangi bölgeye, oradan nereye gittiğine. Beşiktaş'ın en sık tekrarlayan rotaları <strong>ileri</strong> gidiyor: kendi sol bölgesinden orta sahaya, oradan hücum bölgesine.</p>
+    <p><strong>Palace'ın en sık tekrarlayan rotası ise geriye gidiyor.</strong> En çok tekrarlanan beş rotasından yalnızca biri topu ileri taşıyor. Bu, yüzde 9,6'lık o rakamın sahadaki karşılığı.</p>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <div class="head col">
+      <p class="eyebrow">Eşleşme</p>
+      <h2>Beş çatışma</h2>
+      <p class="lede">Diğer mekanizma incelemeleri: <a href="/analysis">analiz kütüphanesi</a>.</p>
+    </div>
+    <figure class="hpc-figure">
+      <img src={`${FIG}/04-catisma.svg`} width="440" height="382" loading="lazy" decoding="async"
+        alt="Beş taktiksel çatışmada iki takımın kendi ligindeki sıraları"/>
+      <figcaption>Çubuk uzunluğu kendi lig içindeki yüzdelik sırayı gösterir. Tek bir puana indirilmedi; her satır kendi göstergesini taşır.</figcaption>
+    </figure>
+    <p><strong>1. Beşiktaş'ın baskısı, Palace'ın çıkış yolu.</strong> Palace baskı altında uzun topa gidiyor. Ama uzun paslarının üçte ikisi rakibe gidiyor. Ligde bu konuda en kötü takım onlar.</p>
+    <p><strong>2. İkinci top.</strong> Uzun top havadan geldiğinde: Beşiktaş hava toplarının yüzde 56'sını kazanıyor, Palace yüzde 47'sini. Palace'ın kaçış planı, kendi en zayıf olduğu yere dayanıyor.</p>
+    <p><strong>3. Kurulu düzen.</strong> İyi hücum kuran bir takım ile çok iyi mücadele eden bir savunma. Beşiktaş'ın bloklanan şut sorunu tam burada büyüyor.</p>
+    <p><strong>4. Duran top.</strong> Beşiktaş maç başına 13,9 faul yapıyor. Palace'ın İstanbul'da üreteceği tehlikenin büyük kısmı muhtemelen buradan gelecek.</p>
+    <p><strong>5. Skor.</strong> Bu maçta erken gol normalden daha önemli. Sebebi aşağıda.</p>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <div class="head col">
+      <p class="eyebrow">Skor durumu</p>
+      <h2>Hangi skorda ne olur?</h2>
+    </div>
+    <p><strong>Beşiktaş öne geçerse:</strong> Palace mecburen hücum kurmak zorunda kalır. Yani Premier Lig'de en kötü yaptığı şeyi yapmak zorunda kalır.</p>
+    <p><strong>Palace öne geçerse:</strong> Beşiktaş bu sezon hiç gol atamadığı duruma düşer. Artık hiç açılmayacak bir savunmanın önünde kalır, kontradan gol atma alışkanlığı da yok.</p>
+    <p>Beşiktaş Avrupa'da bu sezon sekiz maçın yedisini kazandı. Marsilya'yı 4-1 yendi, Hoffenheim deplasmanından 3-2 döndü. Palace ise Lech Poznan'ı 4-0 yendi, Lyon'a 3-2 kaybetti. İki takımın niyeti ilk yarım saatte çarpışacak.</p>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <div class="head col">
+      <p class="eyebrow">Sonuç</p>
+      <h2>Maçta izlenecek üç şey</h2>
+    </div>
+    <p><strong>1. Beşiktaş'ın kaç şutu bloklanıyor.</strong> Maç başına ortalaması 5. Bu sayı büyüyorsa, skor 0-0 bile olsa Beşiktaş doğru yerden vuramıyor demektir.</p>
+    <p><strong>2. Merkez açılıyor mu.</strong> Beşiktaş'ın en verimli yeri orası, Palace'ın en iyi olduğu şey de orada mücadele etmek. İlk yarım saatte merkezden kaç şut çıktığına bakın.</p>
+    <p><strong>3. Uzun top kime düşüyor.</strong> Palace kaleciden uzun gidiyorsa, o topu kim alıyor? Beşiktaş alıyorsa maç tek kale olur. Palace alıyorsa maç uzar — ve uzayan maç Palace'ın istediği maçtır.</p>
+    <p class="mono" style="color:var(--chalk-2);margin-top:2rem">Veri: SportsBase · Bir önceki Avrupa dosyası: <a href="/mac/lille-galatasaray-2026-10-21">Lille – Galatasaray</a></p>
+  </div>
+</section>
+
+</div>
+
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context":"https://schema.org","@type":"SportsArticle",
+  "headline":"Kristal köşk nasıl yıkılır? Beşiktaş - Crystal Palace maç önü",
+  "description":"Beşiktaş - Crystal Palace maç önü: Palace'ın en sık pas zinciri geriye gidiyor, Beşiktaş şutlarının üçte birini bloklatıyor. Veriyle beş taktiksel çatışma.",
+  "inLanguage":"tr-TR","datePublished":"2026-10-22T20:15:00+03:00","dateModified":"2026-10-22T20:15:00+03:00",
+  "image":["https://www.hpanalytic.com/images/besiktas-crystal-palace-kapak.png"],
+  "articleSection":"Maç önü",
+  "keywords":"Beşiktaş Crystal Palace, Avrupa Ligi, maç önü analiz, taktik analiz",
+  "author":{"@type":"Person","name":"Hikmet Pınarbaş","url":"https://www.hpanalytic.com/about","jobTitle":"Futbol analisti"},
+  "publisher":{"@type":"Organization","name":"HPAnalytic","logo":{"@type":"ImageObject","url":"https://www.hpanalytic.com/brand/hp-mark.svg"}},
+  "mainEntityOfPage":{"@type":"WebPage","@id":"https://www.hpanalytic.com/mac/besiktas-crystal-palace-2026-10-22"},
+  "about":{"@type":"SportsEvent","name":"Beşiktaş – Crystal Palace","startDate":"2026-10-22T22:00:00+03:00",
+    "eventStatus":"https://schema.org/EventScheduled","sport":"Football",
+    "location":{"@type":"StadiumOrArena","name":"Tüpraş Stadı","address":{"@type":"PostalAddress","addressLocality":"İstanbul","addressCountry":"TR"}},
+    "superEvent":{"@type":"SportsOrganization","name":"UEFA Avrupa Ligi"},
+    "homeTeam":{"@type":"SportsTeam","name":"Beşiktaş JK"},"awayTeam":{"@type":"SportsTeam","name":"Crystal Palace FC"}}
+})}/>
+<script type="application/ld+json" set:html={JSON.stringify({
+  "@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+   {"@type":"Question","name":"Beşiktaş Crystal Palace maçı ne zaman?","acceptedAnswer":{"@type":"Answer","text":"22 Ekim 2026 Perşembe, saat 22.00, Tüpraş Stadı. UEFA Avrupa Ligi lig aşaması üçüncü hafta."}},
+   {"@type":"Question","name":"Crystal Palace nasıl bir takım?","acceptedAnswer":{"@type":"Answer","text":"Savunurken Premier Lig'in en iyilerinden: ikili mücadelelerin yüzde 57'sini kazanıyorlar. Topla oynarken ise ligin en az pozisyon üreten takımı; kurulu düzen ataklarının yalnızca yüzde 9,6'sı şutla bitiyor."}},
+   {"@type":"Question","name":"Beşiktaş'ın bu sezonki en büyük sorunu ne?","acceptedAnswer":{"@type":"Answer","text":"Pozisyon üretiyor ama bitiremiyor. Çektiği her üç şuttan biri rakip oyuncuya çarpıyor ve bu sezon kontra ataktan hiç gol atmadı."}}]
+})}/>
+
+<style>
+.hero.hpa-match-premier{position:relative;isolation:isolate;overflow:hidden}
+#eurocanvas{position:absolute;inset:0;width:100%;height:100%;display:block;z-index:-1;opacity:.85}
+.hpc-figure{margin:2rem 0;max-width:560px}
+.hpc-figure img{width:100%;height:auto;display:block;border:1px solid var(--line,#23262B)}
+.hpc-figure figcaption{font-size:.8rem;line-height:1.6;color:var(--chalk-2);margin-top:.6rem}
+</style>
+
+<script is:inline>
+(function(){
+  var KICK=new Date('2026-10-22T22:00:00+03:00');
+  function cd(){var ms=KICK-new Date();var h=document.getElementById('cd-h'),m=document.getElementById('cd-m');
+    if(!h||!m)return; if(ms<=0){h.textContent='00';m.textContent='00';return;}
+    var s=Math.floor(ms/1000);h.textContent=String(Math.floor(s/3600)).padStart(2,'0');
+    m.textContent=String(Math.floor(s%3600/60)).padStart(2,'0');}
+  cd(); setInterval(cd,30000);
+  var cv=document.getElementById('eurocanvas'); if(!cv) return;
+  var ctx=cv.getContext('2d'), w=0,h=0,t0=performance.now(),raf=null;
+  var reduce=window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+  var dust=[]; for(var i=0;i<60;i++)dust.push({x:Math.random(),y:Math.random(),r:Math.random()*0.9+0.2,s:Math.random()*0.4+0.1,o:Math.random()*0.35+0.1});
+  function size(){var r=cv.getBoundingClientRect(),d=Math.min(window.devicePixelRatio||1,2);
+    w=r.width;h=r.height;cv.width=w*d;cv.height=h*d;ctx.setTransform(d,0,0,d,0,0);}
+  function frame(now){
+    var e=(now-t0)/1000; ctx.clearRect(0,0,w,h);
+    var cx=w/2, cy=h*0.5, rx=Math.min(w*0.42,460), ry=rx*0.30;
+    var gr=ctx.createRadialGradient(cx,cy,0,cx,cy,rx*1.5);
+    gr.addColorStop(0,'rgba(242,240,236,0.05)');gr.addColorStop(1,'rgba(0,0,0,0)');
+    ctx.fillStyle=gr;ctx.fillRect(0,0,w,h);
+    var bx=((e*0.08)%1)*w*1.6-w*0.3, lg=ctx.createLinearGradient(bx-120,0,bx+120,h);
+    lg.addColorStop(0,'rgba(242,240,236,0)');lg.addColorStop(.5,'rgba(242,240,236,0.03)');lg.addColorStop(1,'rgba(242,240,236,0)');
+    ctx.fillStyle=lg;ctx.fillRect(0,0,w,h);
+    dust.forEach(function(d){var y=((d.y+e*d.s*0.02)%1);ctx.beginPath();ctx.arc(d.x*w,y*h,d.r,0,6.283);
+      ctx.fillStyle='rgba(242,240,236,'+d.o*0.5+')';ctx.fill();});
+    ctx.beginPath();ctx.ellipse(cx,cy,rx,ry,0,0,6.283);ctx.strokeStyle='rgba(242,240,236,0.09)';ctx.lineWidth=1;ctx.stroke();
+    var rot=e*0.09, N=36, HOME=4, AWAY=22;
+    function pos(i){var a=rot+(i/N)*6.283;return{x:cx+Math.cos(a)*rx,y:cy+Math.sin(a)*ry,d:(Math.sin(a)+1)/2};}
+    var A=pos(HOME),B=pos(AWAY),pulse=0.2+0.18*Math.sin(e*1.5);
+    ctx.beginPath();ctx.moveTo(A.x,A.y);ctx.quadraticCurveTo(cx,cy-ry*1.5,B.x,B.y);
+    ctx.strokeStyle='rgba(194,40,30,'+pulse+')';ctx.lineWidth=1.3;ctx.stroke();
+    for(var i=0;i<N;i++){var p=pos(i),lead=(i===HOME||i===AWAY),r=lead?(i===HOME?4.2:3.4):1.5+p.d*0.9;
+      ctx.beginPath();ctx.arc(p.x,p.y,r,0,6.283);
+      if(i===HOME){ctx.fillStyle='rgba(242,240,236,0.98)';ctx.shadowColor='rgba(242,240,236,0.9)';ctx.shadowBlur=14+6*Math.sin(e*2);}
+      else if(i===AWAY){ctx.fillStyle='rgba(140,145,153,0.95)';ctx.shadowColor='rgba(140,145,153,0.7)';ctx.shadowBlur=10;}
+      else{ctx.fillStyle='rgba(242,240,236,'+(0.10+p.d*0.22)+')';ctx.shadowBlur=0;}
+      ctx.fill();ctx.shadowBlur=0;}
+    raf=requestAnimationFrame(frame);
+  }
+  size(); window.addEventListener('resize',size);
+  if(reduce){frame(performance.now());cancelAnimationFrame(raf);} else raf=requestAnimationFrame(frame);
+})();
+</script>
+</BaseLayout>

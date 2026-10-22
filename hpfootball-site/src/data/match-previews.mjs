@@ -41,6 +41,26 @@ export const MATCH_PREVIEWS = [
     ],
     evidence: 'SportsBase turnuva ve kulüp verisi · 2 maç / takım',
   },
+  {
+    status: 'published',
+    slug: 'besiktas-crystal-palace-2026-10-22',
+    href: '/mac/besiktas-crystal-palace-2026-10-22',
+    kind: 'MAÇ ÖNÜ',
+    competition: 'UEFA Avrupa Ligi · Lig aşaması 3. hafta',
+    date: '2026-10-22',
+    kickoff: '2026-10-22T22:00:00+03:00',
+    home: 'Beşiktaş',
+    away: 'Crystal Palace',
+    club: 'besiktas',
+    title: 'Kristal köşk nasıl yıkılır?',
+    description: "Beşiktaş topu alacak, Crystal Palace almak istemeyecek. Palace'ın en sık tekrarlayan pas zinciri geriye gidiyor; Beşiktaş çektiği her üç şuttan birini rakip oyuncuya çarptırıyor.",
+    stats: [
+      { value: '96 · 27 · 0', label: 'Beşiktaş: kontra atak, şut, gol', note: 'bu sezon Süper Lig' },
+      { value: '%9,6', label: "Palace'ın kurulu düzenden şut oranı", note: 'Premier Lig\'in en düşüğü' },
+      { value: '%31', label: 'Beşiktaş\'ın bloklanan şut payı', note: 'lig ortalaması %25' },
+    ],
+    evidence: 'SportsBase lig ve olay verisi · 8 ve 7 maç',
+  },
 ];
 
 // The match page to feature at build time: the next kickoff still ahead, otherwise the most recent one.

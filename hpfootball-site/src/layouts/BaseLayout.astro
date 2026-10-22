@@ -19,6 +19,8 @@ interface Props {
   publishedTime?: Date;
   noindex?: boolean;
   club?: 'fenerbahce' | 'galatasaray' | 'besiktas' | 'trabzonspor';
+  image?: string;
+  imageAlt?: string;
 }
 
 const SITE_NAME = 'HPAnalytic';
@@ -30,7 +32,12 @@ const {
   publishedTime,
   noindex = false,
   club,
+  image,
+  imageAlt,
 } = Astro.props as Props;
+
+const socialImage = new URL(image ?? '/social-card.png?v=20261020', Astro.site ?? Astro.url).href;
+const socialImageAlt = imageAlt ?? (image ? title : 'HPAnalytic — Evidence Made Visible');
 
 const articles = (await getCollection('articles', isPublic)).filter((entry) => isPublicEditorialItem(entry.data));
 const research = (await getCollection('research', isPublic)).filter((entry) => isPublicEditorialItem(entry.data));
@@ -92,12 +99,12 @@ const canonical = new URL(canonicalPath(pathname), Astro.site ?? Astro.url).href
 <meta property="og:url" content={canonical}/>
 <meta property="og:locale" content="tr_TR"/>
 {publishedTime && <meta property="article:published_time" content={publishedTime.toISOString()}/>}
-<meta property="og:image" content={new URL("/social-card.png?v=20261020", Astro.site ?? Astro.url).href}/>
+<meta property="og:image" content={socialImage}/>
 <meta property="og:image:width" content="1200"/>
 <meta property="og:image:height" content="630"/>
-<meta property="og:image:alt" content="HPAnalytic — Evidence Made Visible"/>
+<meta property="og:image:alt" content={socialImageAlt}/>
 <meta name="twitter:card" content="summary_large_image"/>
-<meta name="twitter:image" content={new URL("/social-card.png?v=20261020", Astro.site ?? Astro.url).href}/>
+<meta name="twitter:image" content={socialImage}/>
 <meta name="theme-color" content={club === 'fenerbahce' ? '#06112A' : '#08090B'}/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
