@@ -3,19 +3,19 @@ import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import {featuredPremier,PREMIER_FEATURES} from '../src/data/premier-features.mjs';
 const home=readFileSync(new URL('../src/pages/index.astro',import.meta.url),'utf8');
-test('Lille–Galatasaray remains editorial premier independent of match kickoff',()=>{
+test('latest approved premier remains selected independent of match kickoff',()=>{
  const item=featuredPremier(new Date('2026-11-01T00:00:00Z').getTime());
- assert.equal(item.slug,'lille-galatasaray-2026-10-21');
+ assert.equal(item.slug,'besiktas-crystal-palace-2026-10-22');
  assert.equal(item.status,'published');
 });
 test('newer premier can supersede current selection without match date heuristics',()=>{
- const newer={slug:'approved-new-premier',status:'published',premier:true,premier_order:2,href:'/mac/new',category:'PREMIER',team:'Takım A × Takım B',title:'Yeni analiz',description:'Doğrulanmış açıklama',club:'galatasaray'};
+ const newer={slug:'approved-new-premier',status:'published',premier:true,premier_order:3,href:'/mac/new',category:'PREMIER',team:'Takım A × Takım B',title:'Yeni analiz',description:'Doğrulanmış açıklama',club:'galatasaray'};
  const item=featuredPremier(Date.now(),[...PREMIER_FEATURES,newer],[{slug:'lille-galatasaray-2026-10-21',status:'published'},{slug:'approved-new-premier',status:'published'}]);
  assert.equal(item.slug,'approved-new-premier');
 });
 test('draft premier is never public or promoted',()=>{
  const newer={slug:'draft-premier',status:'draft',premier:true,premier_order:20,href:'/draft'};
- assert.equal(featuredPremier(Date.now(),[...PREMIER_FEATURES,newer]).slug,'lille-galatasaray-2026-10-21');
+ assert.equal(featuredPremier(Date.now(),[...PREMIER_FEATURES,newer]).slug,'besiktas-crystal-palace-2026-10-22');
 });
 test('homepage features premier prominently before other editorial cards',()=>{
  assert.match(home,/featuredPremier\(/);
@@ -29,18 +29,19 @@ test('withdrawn match cannot remain promoted as premier',()=>{
 });
 test('incomplete higher order premier cannot displace complete feature',()=>{
  const incomplete={slug:'missing-copy',status:'published',premier:true,premier_order:999,href:'/missing'};
- assert.equal(featuredPremier(Date.now(),[...PREMIER_FEATURES,incomplete]).slug,'lille-galatasaray-2026-10-21');
+ assert.equal(featuredPremier(Date.now(),[...PREMIER_FEATURES,incomplete]).slug,'besiktas-crystal-palace-2026-10-22');
 });
 test('CTA accessible name retains visible label',()=>{
  assert.doesNotMatch(home,/aria-label={premier\.title \+ ' premier analizini oku'}/);
  assert.match(home,/PREMIER DOSYASINI KEŞFET/);
 });
 
-test('single Lille-white Galatasaray-yellow headline with local rotating star scene',()=>{
- assert.match(home,/<span class="hpa-premier__foreign">LOSC Lille<\/span>/);
- assert.match(home,/<span class="hpa-premier__turkish">Galatasaray<\/span>/);
+test('approved premier uses data-bound team headline with local rotating star scene',()=>{
+ assert.match(home,/<span class="hpa-premier__foreign">{premier.away/);
+ assert.match(home,/<span class="hpa-premier__turkish">{premier.home/);
  assert.doesNotMatch(home,/Ev sahibi · Lille|Konuk · Galatasaray|hpa-premier__matchup/);
  assert.match(home,/hpa-premier__stars/);
+ assert.match(home,/data-club={premier\?\.club/);
  assert.match(home,/@media\s*\(prefers-reduced-motion:\s*reduce\)/);
  assert.doesNotMatch(home,/football-logos\.cc|seeklogo\.com/);
 });
