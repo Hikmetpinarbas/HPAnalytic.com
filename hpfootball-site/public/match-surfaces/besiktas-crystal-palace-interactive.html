@@ -1,6 +1,6 @@
 <!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
 <title>Maç Yüzeyi</title>
-<meta name="claude:viewport-fit-sides" content="cover">
+
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,500;6..96,700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=IBM+Plex+Mono:wght@400;600&display=swap">
 <style>
 /* Tek yüzey, beş görünüm: saha · örüntü · karşılaştırma · radar · pizza. Altta sürüklenen zaman şeridi. */
@@ -218,7 +218,14 @@ function viewPitch(){
   }
   if(S.layer==='zones'){
     const nx=6,ny=4,cw=PX/nx,ch=PY/ny,cs=[];
-    d.grid.forEach((col,i)=>col.forEach((c,j)=>cs.push({i,j,...c})));
+    const counts=Array.from({length:nx},()=>Array.from({length:ny},()=>0));
+    evs.forEach(e=>{
+      if(!Number.isFinite(e.x)||!Number.isFinite(e.y))return;
+      const i=Math.max(0,Math.min(nx-1,Math.floor(e.x/cw)));
+      const j=Math.max(0,Math.min(ny-1,Math.floor(e.y/ch)));
+      counts[i][j]++;
+    });
+    counts.forEach((col,i)=>col.forEach((n,j)=>cs.push({i,j,n})));
     const mx=d3.max(cs,c=>c.n)||1;
     g.append('g').selectAll('rect').data(cs).join('rect')
       .attr('x',c=>c.i*cw+.4).attr('y',c=>c.j*ch+.4).attr('width',cw-.8).attr('height',ch-.8)
