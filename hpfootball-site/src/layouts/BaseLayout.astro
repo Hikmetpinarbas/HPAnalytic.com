@@ -10,6 +10,7 @@ import EditorialHeader from '../components/EditorialHeader.astro';
 import NavigationIcon from '../components/NavigationIcon.astro';
 import { canonicalPath } from '../lib/canonical-path.mjs';
 import { MOBILE_MENU } from '../lib/site-menu.mjs';
+import { resolveEditorialPalette } from '../lib/competition-palette.mjs';
 
 interface Props {
   title?: string;
@@ -18,7 +19,8 @@ interface Props {
   ogType?: 'website' | 'article';
   publishedTime?: Date;
   noindex?: boolean;
-  club?: 'fenerbahce' | 'galatasaray' | 'besiktas' | 'trabzonspor';
+  club?: 'fenerbahce' | 'galatasaray' | 'besiktas' | 'trabzonspor' | 'turkiye';
+  competitionScope?: 'europe' | 'international' | 'league';
 }
 
 const SITE_NAME = 'HPAnalytic';
@@ -30,7 +32,9 @@ const {
   publishedTime,
   noindex = false,
   club,
+  competitionScope = 'league',
 } = Astro.props as Props;
+const palette = resolveEditorialPalette({ club, competitionScope });
 
 const articles = (await getCollection('articles', isPublic)).filter((entry) => isPublicEditorialItem(entry.data));
 const research = (await getCollection('research', isPublic)).filter((entry) => isPublicEditorialItem(entry.data));
@@ -98,7 +102,7 @@ const canonical = new URL(canonicalPath(pathname), Astro.site ?? Astro.url).href
 <meta property="og:image:alt" content="HPAnalytic — Evidence Made Visible"/>
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content={new URL("/social-card.png?v=20261020", Astro.site ?? Astro.url).href}/>
-<meta name="theme-color" content={club === 'fenerbahce' ? '#06112A' : '#08090B'}/>
+<meta name="theme-color" content={palette.palette === 'club' && palette.club === 'fenerbahce' ? '#06112A' : '#08090B'}/>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,500&family=Inter:wght@400;500;600;700&family=Inter+Tight:wght@600;700;800&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;1,8..60,400&family=IBM+Plex+Mono:wght@400;500&display=swap"/>
@@ -119,7 +123,7 @@ if ('serviceWorker' in navigator) {
 }
 </script>
 </head>
-<body data-club={club}>
+<body data-club={palette.club} data-palette={palette.palette}>
 <a class="skip-link" href="#main-content">İçeriğe geç</a>
 <EditorialHeader navigation={editorialNavigation}>
   <div class="header-actions">
