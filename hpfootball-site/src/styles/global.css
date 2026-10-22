@@ -77,7 +77,7 @@
   color-scheme: dark;
 }
 
-/* Club pages in European competition take the club's colours (see docs/COLOUR_POLICY.md). */
+/* Club pages in European competition take the club's colours (see docs/COMPETITION_PALETTE.md). */
 [data-palette="club"][data-club="fenerbahce"] {
   --club-primary: #FFD31A; --club-secondary: #071C53;
   --bg: #06112A; --bg-2: #0A1A3D; --panel: #0F2350; --panel-2: #132B5E;

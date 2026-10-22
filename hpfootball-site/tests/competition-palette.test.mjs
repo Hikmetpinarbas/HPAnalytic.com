@@ -36,3 +36,7 @@ test('all five colour pairs exist in the shared CSS design tokens', async () => 
   }
   assert.match(css, /border-image: linear-gradient\(90deg, var\(--club-primary\) 50%, var\(--club-secondary\) 50%\) 1/);
 });
+
+test('international mode does not colour club pages', () => {
+  assert.deepEqual(resolveEditorialPalette({club: 'galatasaray', competitionScope: 'international'}), {palette: 'editorial', club: undefined});
+});

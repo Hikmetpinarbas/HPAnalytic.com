@@ -32,3 +32,7 @@ Milli takım örneği:
 Renkler mevcut site tasarımının işlevsel başlangıç tokenlarıdır, resmî marka renk kodlarının birebir temsili oldukları iddia edilmez. Grafikler semantik ölçüm ve kanıt renklerini yalnızca takım kimliği için değiştirmemeli; kırmızı kanıt ihlali işaretiyle karışmamalıdır.
 
 Mevcut açık Avrupa maç sayfaları iki renk moduna alınmıştır. Diğer editoryal içerik türleri aynı `BaseLayout` API'sini kullanabilir; dinamik CMS içeriğine yarışma etiketi bağlama işi ayrı kapsamdır.
+
+## Uluslararası eşleşme kuralı
+
+`international` yalnızca `turkiye` millî takım kimliğini etkinleştirir. Avrupa kulüp maçlarında `europe` kullanılır. Rakip kulübün renkleri değil, yazının odak takımı tercih edilir (örneğin Lille–Galatasaray incelemesinde Galatasaray).
