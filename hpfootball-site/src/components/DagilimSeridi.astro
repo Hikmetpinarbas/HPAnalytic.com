@@ -159,7 +159,7 @@ const strips = metrics.map((key) => {
 
 <script>
   document.querySelectorAll('[data-ds]').forEach((fig) => {
-    const pills = fig.querySelectorAll('[data-ds-pill]');
+    const pills = Array.from(fig.querySelectorAll<HTMLButtonElement>('[data-ds-pill]'));
     if (!pills.length) return;
     pills.forEach((btn) => {
       btn.addEventListener('click', () => {
@@ -169,14 +169,14 @@ const strips = metrics.map((key) => {
           p.hidden = p.getAttribute('data-ds-panel') !== key;
         });
       });
-      btn.addEventListener('keydown', (e: KeyboardEvent) => {
-        const ks = [...pills] as HTMLElement[];
-        const i = ks.indexOf(btn);
-        const n = e.key === 'ArrowRight' ? i + 1 : e.key === 'ArrowLeft' ? i - 1 : -1;
-        if (n < 0 || n >= ks.length) return;
-        e.preventDefault();
-        ks[n].focus();
-        ks[n].click();
+      btn.addEventListener('keydown', (e) => {
+        const evt = e as KeyboardEvent;
+        const i = pills.indexOf(btn);
+        const n = evt.key === 'ArrowRight' ? i + 1 : evt.key === 'ArrowLeft' ? i - 1 : -1;
+        if (n < 0 || n >= pills.length) return;
+        evt.preventDefault();
+        pills[n].focus();
+        pills[n].click();
       });
     });
   });
