@@ -9,8 +9,9 @@ const fromMiddleware = Object.fromEntries(
   [...middleware.matchAll(/'([A-Za-z-]+)':\s*(?:\n\s*)?"([^"]+)"|'([A-Za-z-]+)':\s*'([^']+)'/g)]
     .map((m) => [m[1] ?? m[3], m[2] ?? m[4]]),
 );
+const defaultSection = headersFile.split('\n').slice(headersFile.split('\n').findIndex(l => l.trim() === '/*') + 1).join('\n').split(/^\/[^\n]+$/m)[0];
 const fromStatic = Object.fromEntries(
-  headersFile.split('\n').filter((l) => /^\s+[A-Za-z-]+:/.test(l)).map((l) => {
+  defaultSection.split('\n').filter((l) => /^\s+[A-Za-z-]+:/.test(l)).map((l) => {
     const i = l.indexOf(':');
     return [l.slice(0, i).trim(), l.slice(i + 1).trim()];
   }),
