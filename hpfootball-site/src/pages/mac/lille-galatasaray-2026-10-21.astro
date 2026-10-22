@@ -588,7 +588,9 @@ const el = (tag, attrs={}, parent) => { const n=document.createElementNS(NS,tag)
     const all=vals(r.k), mx=Math.max(...all), s=all.slice().sort((a,b)=>a-b), med=(s[17]+s[18])/2;
     const scale=v=>r.k==='ppda' ? (mx-v)/mx*100 : v/mx*100;
     return `<div class="row"><span class="mono">${r.who} · <b class="num ${r.c}">${fmt(r.v,r.d)}</b> · ${r.note}</span>
-      <div class="pbar" role="img" aria-label="${r.who}: ${fmt(r.v,r.d)}, medyan ${fmt(med,r.d)}"><i style="width:${scale(r.v).toFixed(1)}%;background:var(--${r.c})"></i><em style="left:${scale(med).toFixed(1)}%"></em></div></div>`;
+      <div class="pbar" role="img" aria-label="${r.who}: ${fmt(r.v,r.d)}, medyan ${fmt(med,r.d)}"><i style="width:${scale(r.v).toFixed(1)}%;background:var(--${r.c})"></i><em style="left:${scale(med).toFixed(1)}%"></em></div><section class="block"><div class="wrap"><p class="eyebrow">Devamı</p>
+<p class="lede" style="margin-top:8px"><a href="/mac/lille-galatasaray-2026-10-21-mac-sonu">Maç sonu analizi: Yirmi dakikada devrilen maç &#8594;</a></p></div></section>
+</div>`;
   }).join('') + `<p class="mono" style="letter-spacing:.03em">Çubuk boyu: 36 takım dağılımı. PPDA çubuğu ters ölçeklidir: daha uzun = daha yoğun pres. İnce çizgi: medyan.</p>`;
 })();
 

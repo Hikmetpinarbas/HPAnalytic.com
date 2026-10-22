@@ -497,7 +497,9 @@ shotMap('shot-avl', TEAM.avl_shots, 'var(--fen)');
     const tot=v.l[0]+v.c[0]+v.r[0], c=t==='FEN'?'fen':'sla';
     const seg=(k,name,op)=>`<div style="flex:${v[k][0]} 1 0;background:var(--${c});color:var(--${c}-ink);opacity:${op}" title="${name}: ${v[k][0]} hücum, ${v[k][1]} şutla">${name} ${v[k][0]}·${v[k][1]}</div>`;
     return `<div class="row"><span class="mono ${c}">${t==='FEN'?'Fenerbahçe':'Slavia Prag'} · ${tot} hücum · kanat payı %${Math.round((v.l[0]+v.r[0])/tot*100)}</span>
-    <div class="stack">${seg('l','Sol',1)}${seg('c','Orta',.55)}${seg('r','Sağ',1)}</div></div>`;
+    <div class="stack">${seg('l','Sol',1)}${seg('c','Orta',.55)}${seg('r','Sağ',1)}</div><section class="block"><div class="wrap"><p class="eyebrow">Devamı</p>
+<p class="lede" style="margin-top:8px"><a href="/mac/fenerbahce-slavia-prag-2026-10-20-mac-sonu">Maç sonu analizi: Üç dakika &#8594;</a></p></div></section>
+</div>`;
   }).join('');
 })();
 
