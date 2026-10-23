@@ -2,6 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import DagilimSeridi from '../../components/DagilimSeridi.astro';
 import TurnuvaHeader from '../../components/TurnuvaHeader.astro';
+import matchSurfaceHTML from '../../../public/match-surfaces/fenerbahce-slavia-prag-interactive.html?raw';
 import '../../styles/match-page.css';
 export const prerender = true;
 ---
@@ -41,6 +42,32 @@ export const prerender = true;
     </div>
   </div>
 </section>
+
+<section class="hpa-interactive-match" aria-label="Etkileşimli Fenerbahçe Slavia Prag maç analizi">
+  <iframe id="hpa-interactive-frame" title="Fenerbahçe ve Slavia Prag: beş görünümlü etkileşimli maç yüzeyi"
+    srcdoc={matchSurfaceHTML}
+    loading="eager" referrerpolicy="same-origin"></iframe>
+  <p class="hpa-interactive-fallback"><a href="/match-surfaces/fenerbahce-slavia-prag-interactive.html">Etkileşimli maç yüzeyini ayrı sayfada aç ↗</a></p>
+</section>
+<script is:inline>
+(() => {
+  const frame = document.getElementById('hpa-interactive-frame');
+  if (!frame) return;
+  frame.addEventListener('load', () => {
+    try {
+      const doc = frame.contentDocument;
+      if (!doc) return;
+      const resize = () => {
+        const h = Math.max(doc.documentElement.scrollHeight, doc.body?.scrollHeight || 0);
+        if (h > 0) frame.style.height = `${h + 8}px`;
+      };
+      resize();
+      if ('ResizeObserver' in window) new ResizeObserver(resize).observe(doc.body);
+      doc.fonts?.ready.then(resize);
+    } catch { /* standalone surface link remains accessible */ }
+  });
+})();
+</script>
 
 <section class="block">
   <div class="wrap">
@@ -222,5 +249,8 @@ export const prerender = true;
 .rc-cap{font-family:var(--f-body);font-size:.82rem;line-height:1.6;color:var(--mute);max-width:62ch;margin:0 0 1.4em}
 .rc-wrap{margin:26px 0}
 .hero.hpa-match-premier{position:relative;isolation:isolate;overflow:hidden}
+.hpa-interactive-match{width:min(100%,960px);margin:0 auto 2rem;padding:0 8px}
+#hpa-interactive-frame{display:block;width:100%;height:1200px;border:0;background:#0A0A0B}
+.hpa-interactive-fallback{font-size:.75rem;text-align:right;margin:.35rem 0 0}
 </style>
 </BaseLayout>

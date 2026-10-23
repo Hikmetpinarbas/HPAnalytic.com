@@ -1,0 +1,573 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Maç Yüzeyi</title>
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bodoni+Moda:opsz,wght@6..96,500;6..96,700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=IBM+Plex+Mono:wght@400;600&display=swap">
+<style>
+/* Tek yüzey, beş görünüm: saha · örüntü · karşılaştırma · radar · pizza. Altta sürüklenen zaman şeridi. */
+:root{
+  --ink:#0A0A0B; --surface:#141417; --line:#2B2B30; --line-soft:#1E1E22;
+  --chalk:#F2F0EC; --ghost:#71757C; --ghost-dim:#43464B;
+  --blood:#C2281E; --gold:#C9A227;
+  --display:'Bodoni Moda',Didot,'Times New Roman',serif;
+  --body:'Source Serif 4',Georgia,serif;
+  --mono:'IBM Plex Mono',ui-monospace,Menlo,monospace;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{background:var(--ink);color:var(--chalk);font-family:var(--body);margin:0;
+  padding-left:max(16px,env(safe-area-inset-left,0px));
+  padding-right:max(16px,env(safe-area-inset-right,0px));
+  padding-block:22px 34px;-webkit-font-smoothing:antialiased}
+.wrap{max-width:880px;margin:0 auto;display:flex;flex-direction:column;gap:16px}
+.kicker{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.premier{font-family:var(--mono);font-size:9.5px;letter-spacing:.22em;color:var(--gold);
+  border:1px solid color-mix(in srgb,var(--gold) 40%,transparent);padding:3px 7px;text-transform:uppercase}
+.meta{font-family:var(--mono);font-size:10px;letter-spacing:.1em;color:var(--ghost);text-transform:uppercase}
+h1{font-family:var(--display);font-weight:700;font-size:clamp(28px,7vw,44px);line-height:1.04;
+  margin:0;text-wrap:balance;letter-spacing:-.01em}
+.standfirst{font-size:15px;line-height:1.55;color:#C9C6C0;margin:0;max-width:56ch}
+.tabs{display:flex;gap:0;border-bottom:1px solid var(--line);overflow-x:auto;scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tabs button{border:0;border-bottom:2px solid transparent;background:0;padding:9px 13px;white-space:nowrap}
+.tabs button[aria-pressed="true"]{background:0;color:var(--chalk);border-bottom-color:var(--chalk)}
+.rail{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+.rail-label{font-family:var(--mono);font-size:9.5px;letter-spacing:.16em;color:var(--ghost-dim);
+  text-transform:uppercase;margin-right:2px}
+button{font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;text-transform:uppercase;
+  background:transparent;color:var(--ghost);border:1px solid var(--line);padding:6px 10px;
+  cursor:pointer;transition:color .15s,border-color .15s,background .15s}
+button:hover{color:var(--chalk);border-color:var(--ghost)}
+button[aria-pressed="true"]{color:var(--ink);background:var(--chalk);border-color:var(--chalk)}
+button.team[aria-pressed="true"][data-team="slaviaprag"]{background:var(--ghost);border-color:var(--ghost);color:var(--ink)}
+button:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+.stage{background:var(--surface);border:1px solid var(--line-soft);padding:14px 14px 10px}
+.stage-head{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-bottom:10px;flex-wrap:wrap}
+.stage-title{font-family:var(--display);font-size:17px;font-weight:500}
+.stage-note{font-family:var(--mono);font-size:9.5px;color:var(--ghost);letter-spacing:.06em}
+svg{display:block;width:100%;height:auto;overflow:visible}
+.readout{display:grid;grid-template-columns:repeat(auto-fit,minmax(104px,1fr));gap:1px;background:var(--line-soft);margin-top:12px}
+.cell{background:var(--surface);padding:9px 10px}
+.cell b{display:block;font-family:var(--mono);font-size:18px;font-weight:600;
+  font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+.cell span{font-family:var(--mono);font-size:9px;letter-spacing:.12em;color:var(--ghost);text-transform:uppercase}
+.legend{display:flex;gap:14px;flex-wrap:wrap;font-family:var(--mono);font-size:9.5px;color:var(--ghost);
+  letter-spacing:.06em;margin-top:9px;align-items:center}
+.sw{display:inline-block;width:8px;height:8px;margin-right:5px;vertical-align:-1px}
+.hint{font-family:var(--mono);font-size:9.5px;color:var(--ghost-dim);letter-spacing:.06em}
+footer{font-family:var(--mono);font-size:10px;letter-spacing:.14em;color:var(--ghost);
+  text-transform:uppercase;border-top:1px solid var(--line-soft);padding-top:12px}
+
+.hero{position:relative;border:1px solid var(--line-soft);background:#070708;overflow:hidden;
+  aspect-ratio:1200/560;min-height:260px}
+.hero canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+.hero-inner{position:relative;height:100%;display:flex;flex-direction:column;justify-content:space-between;
+  padding:clamp(14px,3vw,26px)}
+.hero-top{display:flex;justify-content:space-between;align-items:flex-start;gap:10px;flex-wrap:wrap}
+.hero-comp{font-family:var(--mono);font-size:clamp(8.5px,1.6vw,10.5px);letter-spacing:.22em;
+  color:var(--ghost);text-transform:uppercase}
+.hero-count{font-family:var(--mono);font-size:clamp(8.5px,1.6vw,10.5px);letter-spacing:.14em;color:var(--gold)}
+.hero-mid{display:flex;align-items:center;justify-content:center;gap:clamp(10px,3vw,30px);text-align:center}
+.hero-team{font-family:var(--display);font-weight:700;font-size:clamp(20px,5.2vw,46px);line-height:1;
+  letter-spacing:-.01em}
+.hero-team.away{color:var(--ghost)}
+.hero-vs{font-family:var(--mono);font-size:clamp(9px,1.8vw,12px);letter-spacing:.2em;color:var(--blood)}
+.hero-bot{font-family:var(--mono);font-size:clamp(8.5px,1.6vw,10.5px);letter-spacing:.14em;
+  color:var(--ghost);text-transform:uppercase;text-align:center}
+@media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+</style>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+
+<div class="wrap">
+  <section class="hero" aria-label="Maç açılış görseli">
+    <canvas id="heroCanvas" aria-hidden="true"></canvas>
+    <div class="hero-inner">
+      <div class="hero-top">
+        <span class="hero-comp">UEFA Şampiyonlar Ligi · Lig aşaması · 3. hafta</span>
+        <span class="hero-count" id="heroCount">—</span>
+      </div>
+      <div class="hero-mid">
+        <span class="hero-team">Fenerbahçe</span>
+        <span class="hero-vs">VS</span>
+        <span class="hero-team away">Slavia Prag</span>
+      </div>
+      <div class="hero-bot">20 Ekim 2026 · Şükrü Saracoğlu, İstanbul</div>
+    </div>
+  </section>
+
+  <header style="display:flex;flex-direction:column;gap:12px">
+    <div class="kicker">
+      <span class="premier">Premier Yazı</span>
+      <span class="meta">UEFA Şampiyonlar Ligi · 3. Hafta</span>
+    </div>
+    <h1>Üç dakika kırk saniye</h1>
+    <p class="standfirst">Fenerbahçe iki gol attı, sonra üç dakika kırk saniye sustu, Slavia tam o anı buldu. Beş görünüm, tek yüzey:
+      katmanı, takımı, aksiyonu, sonucu ve dakika aralığını siz seçiyorsunuz.</p>
+  </header>
+
+  <nav class="tabs" id="tabs">
+    <button class="view" data-view="pitch" aria-pressed="true">Saha</button>
+    <button class="view" data-view="pattern" aria-pressed="false">Örüntü</button>
+    <button class="view" data-view="bars" aria-pressed="false">Karşılaştırma</button>
+    <button class="view" data-view="radar" aria-pressed="false">Radar</button>
+    <button class="view" data-view="pizza" aria-pressed="false">Pizza</button>
+  </nav>
+
+  <div class="rail" id="teamRail"><span class="rail-label">Takım</span>
+    <button class="team" data-team="fenerbahce" aria-pressed="true">Fenerbahçe</button>
+    <button class="team" data-team="slaviaprag" aria-pressed="false">Slavia Prag</button>
+  </div>
+  <div class="rail" id="layerRail"><span class="rail-label">Katman</span>
+    <button class="layer" data-layer="events" aria-pressed="true">Olay haritası</button>
+    <button class="layer" data-layer="density" aria-pressed="false">Yoğunluk</button>
+    <button class="layer" data-layer="zones" aria-pressed="false">Bölge ağırlığı</button>
+    <button class="layer" data-layer="network" aria-pressed="false">Pas akışı</button>
+  </div>
+  <div class="rail" id="kindRail"><span class="rail-label">Aksiyon</span>
+    <button class="kind" data-kind="all" aria-pressed="true">Hepsi</button>
+    <button class="kind" data-kind="pass" aria-pressed="false">Pas</button>
+    <button class="kind" data-kind="shot" aria-pressed="false">Şut</button>
+    <button class="kind" data-kind="duel" aria-pressed="false">İkili</button>
+    <button class="kind" data-kind="loss" aria-pressed="false">Kayıp</button>
+    <button class="kind" data-kind="recovery" aria-pressed="false">Kazanım</button>
+    <button class="kind" data-kind="carry" aria-pressed="false">Taşıma</button>
+  </div>
+  <div class="rail" id="outRail"><span class="rail-label">Sonuç</span>
+    <button class="out" data-out="all" aria-pressed="true">Hepsi</button>
+    <button class="out" data-out="1" aria-pressed="false">Başarılı</button>
+    <button class="out" data-out="0" aria-pressed="false">Başarısız</button>
+  </div>
+
+  <section class="stage">
+    <div class="stage-head">
+      <span class="stage-title" id="stageTitle">Olay haritası</span>
+      <span class="stage-note" id="stageNote">hücum yönü soldan sağa</span>
+    </div>
+    <svg id="main" role="img" aria-label="Seçili görünüm"></svg>
+    <div class="legend" id="legend"></div>
+    <div class="readout" id="readout"></div>
+  </section>
+
+  <section class="stage" id="momStage">
+    <div class="stage-head">
+      <span class="stage-title">Oyun üstünlüğü</span>
+      <span class="stage-note">şeridi sürükleyin · dakika aralığı sahayı filtreler</span>
+    </div>
+    <svg id="momentum" viewBox="0 0 700 180" role="img" aria-label="Dakika dilimlerine göre üstünlük"></svg>
+    <div class="legend">
+      <span><i class="sw" style="background:var(--chalk)"></i>isabetli şut</span>
+      <span><i class="sw" style="background:var(--blood)"></i>kendi yarısında kayıp</span>
+      <span><i class="sw" style="background:var(--ghost)"></i>rakibin isabetli şutu</span>
+      <span class="hint" id="windowLabel">0–96. dakika</span>
+    </div>
+  </section>
+
+  <footer>Veri · SportsBase</footer>
+</div>
+
+<script>
+const DATA={"fenerbahce":{"team":"Fenerbahçe","bands":[0,0,0],"events":[{"x":52.5,"y":34.0,"k":"pass","o":1,"m":0.0},{"x":28.1,"y":35.5,"k":"loss","o":-1,"m":0.03},{"x":27.8,"y":34.2,"k":"other","o":0,"m":0.17},{"x":58.5,"y":27.8,"k":"pass","o":1,"m":0.57},{"x":51.1,"y":51.0,"k":"pass","o":1,"m":0.6},{"x":48.0,"y":31.5,"k":"pass","o":1,"m":0.67},{"x":45.8,"y":48.6,"k":"pass","o":1,"m":0.75},{"x":29.0,"y":26.9,"k":"pass","o":1,"m":0.8},{"x":37.2,"y":25.3,"k":"pass","o":1,"m":0.87},{"x":48.5,"y":46.6,"k":"pass","o":-1,"m":0.92},{"x":69.7,"y":34.2,"k":"duel","o":1,"m":1.0},{"x":44.1,"y":40.8,"k":"pass","o":1,"m":1.07},{"x":13.2,"y":36.9,"k":"pass","o":1,"m":1.13},{"x":27.3,"y":4.7,"k":"carry","o":0,"m":1.17},{"x":28.6,"y":15.7,"k":"pass","o":1,"m":1.23},{"x":30.7,"y":47.6,"k":"pass","o":1,"m":1.28},{"x":37.6,"y":36.9,"k":"pass","o":1,"m":1.32},{"x":43.5,"y":16.8,"k":"pass","o":1,"m":1.42},{"x":61.2,"y":4.0,"k":"pass","o":1,"m":1.45},{"x":45.2,"y":5.2,"k":"pass","o":1,"m":1.48},{"x":40.7,"y":14.4,"k":"pass","o":1,"m":1.52},{"x":47.5,"y":34.8,"k":"pass","o":1,"m":1.62},{"x":55.6,"y":55.6,"k":"pass","o":1,"m":1.65},{"x":81.3,"y":38.3,"k":"duel","o":1,"m":1.67},{"x":83.0,"y":29.6,"k":"pass","o":-1,"m":1.72},{"x":24.2,"y":40.9,"k":"duel","o":-1,"m":1.73},{"x":77.7,"y":23.7,"k":"duel","o":1,"m":1.78},{"x":80.9,"y":21.6,"k":"pass","o":-1,"m":1.8},{"x":78.1,"y":23.2,"k":"pass","o":1,"m":1.85},{"x":87.2,"y":18.8,"k":"pass","o":1,"m":1.87},{"x":93.9,"y":12.4,"k":"pass","o":-1,"m":1.9},{"x":102.8,"y":12.3,"k":"pass","o":-1,"m":1.98},{"x":102.8,"y":12.3,"k":"other","o":0,"m":2.05},{"x":93.1,"y":6.5,"k":"pass","o":-1,"m":2.07},{"x":89.2,"y":0.0,"k":"pass","o":1,"m":2.15},{"x":82.2,"y":7.9,"k":"pass","o":1,"m":2.2},{"x":89.2,"y":0.0,"k":"other","o":0,"m":2.22},{"x":93.7,"y":7.5,"k":"pass","o":1,"m":2.28},{"x":9.4,"y":43.3,"k":"duel","o":-1,"m":2.32},{"x":11.3,"y":50.6,"k":"duel","o":-1,"m":2.33},{"x":40.6,"y":48.1,"k":"duel","o":1,"m":2.42},{"x":63.9,"y":22.6,"k":"duel","o":1,"m":2.45},{"x":71.3,"y":20.0,"k":"pass","o":1,"m":2.48},{"x":75.2,"y":13.4,"k":"pass","o":1,"m":2.5},{"x":82.2,"y":3.4,"k":"pass","o":1,"m":2.53},{"x":75.6,"y":8.1,"k":"pass","o":1,"m":2.57},{"x":55.6,"y":17.2,"k":"pass","o":1,"m":2.62},{"x":55.1,"y":29.1,"k":"pass","o":1,"m":2.65},{"x":48.5,"y":12.3,"k":"pass","o":1,"m":2.7},{"x":61.0,"y":6.3,"k":"pass","o":1,"m":2.73},{"x":71.8,"y":2.2,"k":"pass","o":1,"m":2.75},{"x":59.1,"y":6.8,"k":"pass","o":1,"m":2.78},{"x":41.7,"y":29.6,"k":"carry","o":0,"m":2.82},{"x":52.1,"y":33.0,"k":"pass","o":-1,"m":2.87},{"x":71.8,"y":40.6,"k":"duel","o":1,"m":2.95},{"x":61.2,"y":47.3,"k":"pass","o":1,"m":2.98},{"x":46.8,"y":45.4,"k":"pass","o":1,"m":3.03},{"x":49.6,"y":29.6,"k":"pass","o":1,"m":3.05},{"x":58.5,"y":2.5,"k":"pass","o":1,"m":3.1},{"x":64.0,"y":2.8,"k":"pass","o":1,"m":3.15},{"x":46.8,"y":6.8,"k":"carry","o":0,"m":3.18},{"x":67.5,"y":15.2,"k":"pass","o":1,"m":3.3},{"x":77.6,"y":3.0,"k":"pass","o":1,"m":3.38},{"x":62.9,"y":9.8,"k":"pass","o":1,"m":3.43},{"x":57.8,"y":31.9,"k":"pass","o":1,"m":3.55},{"x":65.3,"y":11.7,"k":"pass","o":1,"m":3.6},{"x":86.4,"y":10.0,"k":"duel","o":1,"m":3.67},{"x":82.2,"y":25.9,"k":"shot","o":0,"m":3.73},{"x":32.5,"y":39.3,"k":"pass","o":-1,"m":5.2},{"x":30.1,"y":2.9,"k":"recovery","o":1,"m":5.33},{"x":26.9,"y":7.3,"k":"pass","o":1,"m":5.35},{"x":41.3,"y":2.5,"k":"duel","o":1,"m":5.4},{"x":26.9,"y":7.3,"k":"other","o":0,"m":5.42},{"x":40.5,"y":3.0,"k":"pass","o":1,"m":5.58},{"x":40.5,"y":3.0,"k":"other","o":0,"m":5.65},{"x":45.9,"y":16.1,"k":"pass","o":1,"m":5.75},{"x":63.6,"y":4.4,"k":"pass","o":1,"m":5.8},{"x":65.6,"y":8.0,"k":"pass","o":1,"m":5.82},{"x":58.5,"y":4.3,"k":"pass","o":1,"m":5.83},{"x":56.5,"y":17.6,"k":"pass","o":1,"m":5.85},{"x":33.8,"y":42.0,"k":"pass","o":1,"m":5.92},{"x":27.0,"y":32.7,"k":"pass","o":1,"m":6.02},{"x":36.7,"y":33.2,"k":"pass","o":1,"m":6.05},{"x":22.1,"y":35.4,"k":"pass","o":1,"m":6.1},{"x":25.9,"y":5.8,"k":"pass","o":1,"m":6.17},{"x":36.3,"y":2.0,"k":"pass","o":-1,"m":6.18},{"x":28.6,"y":0.0,"k":"pass","o":1,"m":6.32},{"x":28.6,"y":0.0,"k":"other","o":0,"m":6.38},{"x":13.2,"y":20.0,"k":"pass","o":1,"m":6.42},{"x":40.4,"y":34.0,"k":"pass","o":1,"m":6.45},{"x":46.1,"y":51.5,"k":"duel","o":1,"m":6.5},{"x":51.8,"y":45.5,"k":"loss","o":-1,"m":6.55},{"x":69.3,"y":48.2,"k":"duel","o":1,"m":6.67},{"x":44.3,"y":19.1,"k":"duel","o":-1,"m":6.75},{"x":78.9,"y":44.3,"k":"duel","o":-1,"m":6.92},{"x":70.8,"y":63.5,"k":"duel","o":-1,"m":7.25},{"x":10.3,"y":27.4,"k":"duel","o":1,"m":7.35},{"x":2.9,"y":32.4,"k":"pass","o":1,"m":7.72},{"x":2.9,"y":32.4,"k":"other","o":0,"m":7.78},{"x":32.9,"y":33.8,"k":"duel","o":-1,"m":7.82},{"x":49.6,"y":30.1,"k":"pass","o":1,"m":7.87},{"x":53.5,"y":21.1,"k":"pass","o":1,"m":7.88},{"x":46.8,"y":3.8,"k":"pass","o":1,"m":7.95},{"x":38.7,"y":20.7,"k":"pass","o":1,"m":8.0},{"x":18.5,"y":33.9,"k":"pass","o":1,"m":8.1},{"x":36.3,"y":3.4,"k":"loss","o":-1,"m":8.17},{"x":62.4,"y":8.6,"k":"duel","o":1,"m":8.6},{"x":70.6,"y":2.6,"k":"duel","o":-1,"m":8.65},{"x":62.4,"y":8.6,"k":"other","o":0,"m":8.67},{"x":45.6,"y":5.6,"k":"duel","o":1,"m":9.05},{"x":46.8,"y":7.0,"k":"pass","o":1,"m":9.07},{"x":46.8,"y":7.0,"k":"other","o":0,"m":9.13},{"x":12.2,"y":36.2,"k":"pass","o":1,"m":9.18},{"x":19.8,"y":7.8,"k":"carry","o":0,"m":9.2},{"x":63.1,"y":18.3,"k":"pass","o":1,"m":9.42},{"x":93.6,"y":40.1,"k":"duel","o":-1,"m":9.47},{"x":67.2,"y":16.4,"k":"pass","o":-1,"m":10.05},{"x":56.0,"y":5.7,"k":"duel","o":1,"m":10.35},{"x":48.9,"y":30.4,"k":"duel","o":1,"m":10.45},{"x":55.9,"y":29.1,"k":"pass","o":1,"m":10.47},{"x":66.2,"y":17.1,"k":"pass","o":1,"m":10.5},{"x":48.9,"y":30.4,"k":"other","o":0,"m":10.52},{"x":68.2,"y":4.1,"k":"pass","o":1,"m":10.53},{"x":77.4,"y":11.2,"k":"pass","o":1,"m":10.55},{"x":87.9,"y":8.8,"k":"pass","o":1,"m":10.62},{"x":91.9,"y":26.9,"k":"shot","o":0,"m":10.63},{"x":39.7,"y":11.1,"k":"recovery","o":1,"m":11.95},{"x":30.2,"y":3.9,"k":"pass","o":1,"m":11.97},{"x":10.2,"y":28.8,"k":"pass","o":1,"m":12.03},{"x":23.3,"y":31.7,"k":"pass","o":1,"m":12.08},{"x":3.0,"y":29.0,"k":"pass","o":-1,"m":12.12},{"x":35.7,"y":0.0,"k":"pass","o":1,"m":12.35},{"x":50.6,"y":8.4,"k":"duel","o":1,"m":12.4},{"x":55.8,"y":63.6,"k":"duel","o":-1,"m":12.53},{"x":58.9,"y":65.7,"k":"duel","o":-1,"m":12.55},{"x":74.7,"y":4.1,"k":"pass","o":-1,"m":13.18},{"x":2.8,"y":40.0,"k":"pass","o":1,"m":13.98},{"x":1.8,"y":33.9,"k":"pass","o":1,"m":14.03},{"x":31.9,"y":33.9,"k":"duel","o":1,"m":14.07},{"x":24.1,"y":39.5,"k":"pass","o":1,"m":14.1},{"x":7.6,"y":32.7,"k":"pass","o":1,"m":14.2},{"x":20.6,"y":41.8,"k":"loss","o":-1,"m":14.22},{"x":91.8,"y":40.4,"k":"other","o":0,"m":14.32},{"x":80.7,"y":20.5,"k":"duel","o":1,"m":15.12},{"x":80.7,"y":20.5,"k":"shot","o":0,"m":16.15},{"x":80.7,"y":20.5,"k":"duel","o":-1,"m":16.22},{"x":94.4,"y":44.8,"k":"other","o":0,"m":16.23},{"x":54.5,"y":3.1,"k":"duel","o":1,"m":16.73},{"x":58.2,"y":4.6,"k":"pass","o":1,"m":16.75},{"x":46.0,"y":3.2,"k":"duel","o":1,"m":16.77},{"x":45.7,"y":3.1,"k":"pass","o":1,"m":16.78},{"x":36.9,"y":19.4,"k":"pass","o":1,"m":16.82},{"x":10.9,"y":32.3,"k":"pass","o":1,"m":16.87},{"x":34.3,"y":54.9,"k":"carry","o":0,"m":16.9},{"x":62.6,"y":61.4,"k":"pass","o":1,"m":16.97},{"x":33.6,"y":2.4,"k":"duel","o":-1,"m":17.0},{"x":76.3,"y":68.0,"k":"pass","o":1,"m":17.22},{"x":70.1,"y":57.6,"k":"pass","o":1,"m":17.28},{"x":79.5,"y":13.4,"k":"pass","o":-1,"m":17.37},{"x":78.8,"y":13.9,"k":"carry","o":0,"m":17.4},{"x":85.9,"y":3.7,"k":"duel","o":1,"m":17.43},{"x":102.8,"y":17.7,"k":"pass","o":-1,"m":17.52},{"x":105.0,"y":0.0,"k":"pass","o":-1,"m":18.03},{"x":81.7,"y":36.7,"k":"loss","o":-1,"m":18.1},{"x":87.8,"y":20.3,"k":"shot","o":0,"m":20.32},{"x":87.8,"y":20.3,"k":"other","o":0,"m":20.38},{"x":8.1,"y":45.2,"k":"duel","o":-1,"m":20.43},{"x":92.1,"y":0.0,"k":"pass","o":-1,"m":20.73},{"x":92.1,"y":0.0,"k":"other","o":0,"m":20.8},{"x":89.2,"y":20.5,"k":"duel","o":1,"m":20.82},{"x":89.7,"y":2.8,"k":"pass","o":1,"m":20.85},{"x":83.1,"y":2.6,"k":"pass","o":-1,"m":20.88},{"x":65.8,"y":18.5,"k":"duel","o":1,"m":20.97},{"x":23.4,"y":3.6,"k":"recovery","o":1,"m":21.1},{"x":76.7,"y":65.9,"k":"duel","o":-1,"m":21.17},{"x":33.0,"y":0.0,"k":"pass","o":1,"m":21.37},{"x":42.5,"y":21.1,"k":"duel","o":-1,"m":21.4},{"x":50.2,"y":29.7,"k":"duel","o":-1,"m":21.5},{"x":36.6,"y":11.7,"k":"recovery","o":1,"m":21.95},{"x":44.9,"y":12.5,"k":"pass","o":1,"m":21.97},{"x":57.3,"y":65.5,"k":"duel","o":-1,"m":22.02},{"x":38.7,"y":0.0,"k":"pass","o":1,"m":22.3},{"x":66.2,"y":2.4,"k":"duel","o":-1,"m":22.32},{"x":38.7,"y":0.0,"k":"other","o":0,"m":22.37},{"x":35.4,"y":16.6,"k":"duel","o":1,"m":22.38},{"x":35.7,"y":32.6,"k":"duel","o":1,"m":22.42},{"x":35.7,"y":32.6,"k":"other","o":0,"m":22.48},{"x":9.4,"y":33.6,"k":"pass","o":1,"m":22.53},{"x":13.2,"y":44.3,"k":"pass","o":1,"m":22.58},{"x":8.1,"y":29.0,"k":"pass","o":1,"m":22.63},{"x":19.3,"y":3.5,"k":"pass","o":1,"m":22.68},{"x":65.9,"y":63.9,"k":"duel","o":-1,"m":22.7},{"x":30.7,"y":2.6,"k":"duel","o":1,"m":22.73},{"x":50.6,"y":2.8,"k":"duel","o":-1,"m":22.77},{"x":23.2,"y":62.0,"k":"pass","o":1,"m":23.57},{"x":9.2,"y":44.3,"k":"pass","o":1,"m":23.63},{"x":14.1,"y":21.6,"k":"pass","o":1,"m":23.67},{"x":52.9,"y":34.0,"k":"duel","o":-1,"m":23.73},{"x":37.7,"y":68.0,"k":"pass","o":1,"m":24.42},{"x":46.5,"y":61.2,"k":"pass","o":1,"m":24.45},{"x":31.4,"y":63.8,"k":"pass","o":1,"m":24.5},{"x":9.5,"y":65.7,"k":"duel","o":-1,"m":24.67},{"x":23.7,"y":59.0,"k":"recovery","o":1,"m":24.87},{"x":43.3,"y":57.6,"k":"carry","o":0,"m":24.88},{"x":23.7,"y":59.0,"k":"other","o":0,"m":24.93},{"x":59.9,"y":62.8,"k":"duel","o":1,"m":24.97},{"x":76.0,"y":61.2,"k":"pass","o":1,"m":25.0},{"x":78.5,"y":46.6,"k":"pass","o":1,"m":25.05},{"x":79.3,"y":34.0,"k":"pass","o":1,"m":25.07},{"x":87.0,"y":19.9,"k":"duel","o":1,"m":25.15},{"x":90.8,"y":17.9,"k":"pass","o":1,"m":25.17},{"x":83.4,"y":32.8,"k":"other","o":0,"m":25.22},{"x":77.1,"y":48.2,"k":"duel","o":1,"m":25.63},{"x":75.9,"y":47.7,"k":"duel","o":1,"m":25.65},{"x":73.4,"y":29.8,"k":"pass","o":1,"m":25.68},{"x":77.1,"y":48.2,"k":"other","o":0,"m":25.7},{"x":80.8,"y":14.6,"k":"pass","o":1,"m":25.77},{"x":79.5,"y":14.6,"k":"pass","o":1,"m":25.78},{"x":86.0,"y":6.6,"k":"pass","o":1,"m":25.8},{"x":74.3,"y":6.4,"k":"pass","o":1,"m":25.85},{"x":61.8,"y":16.3,"k":"pass","o":1,"m":25.9},{"x":63.9,"y":9.7,"k":"pass","o":1,"m":25.93},{"x":55.8,"y":19.9,"k":"pass","o":1,"m":25.95},{"x":47.4,"y":44.1,"k":"pass","o":1,"m":26.0},{"x":60.9,"y":59.5,"k":"carry","o":0,"m":26.05},{"x":62.0,"y":59.8,"k":"duel","o":1,"m":26.08},{"x":72.5,"y":31.9,"k":"duel","o":1,"m":26.13},{"x":73.1,"y":30.6,"k":"pass","o":1,"m":26.75},{"x":80.0,"y":2.5,"k":"pass","o":1,"m":26.78},{"x":95.0,"y":36.7,"k":"duel","o":1,"m":26.8},{"x":94.8,"y":36.7,"k":"loss","o":-1,"m":26.82},{"x":55.6,"y":49.9,"k":"pass","o":-1,"m":27.25},{"x":44.4,"y":17.9,"k":"duel","o":-1,"m":27.32},{"x":69.7,"y":65.8,"k":"duel","o":1,"m":27.83},{"x":28.6,"y":7.1,"k":"duel","o":1,"m":28.13},{"x":29.5,"y":2.8,"k":"pass","o":1,"m":28.17},{"x":28.6,"y":7.1,"k":"other","o":0,"m":28.2},{"x":50.1,"y":6.9,"k":"pass","o":1,"m":28.22},{"x":58.8,"y":2.6,"k":"pass","o":1,"m":28.23},{"x":96.0,"y":5.4,"k":"pass","o":1,"m":28.35},{"x":84.4,"y":11.9,"k":"carry","o":0,"m":28.37},{"x":85.5,"y":16.1,"k":"duel","o":1,"m":28.38},{"x":84.6,"y":23.6,"k":"shot","o":0,"m":28.42},{"x":105.0,"y":0.0,"k":"pass","o":1,"m":28.85},{"x":90.5,"y":3.5,"k":"pass","o":1,"m":28.88},{"x":80.2,"y":14.9,"k":"loss","o":-1,"m":28.9},{"x":105.0,"y":0.0,"k":"other","o":0,"m":28.92},{"x":27.8,"y":43.8,"k":"duel","o":-1,"m":28.97},{"x":73.2,"y":26.0,"k":"other","o":0,"m":28.98},{"x":72.6,"y":23.4,"k":"other","o":0,"m":29.02},{"x":30.1,"y":18.3,"k":"duel","o":1,"m":29.73},{"x":24.5,"y":25.4,"k":"pass","o":1,"m":29.77},{"x":21.1,"y":21.8,"k":"loss","o":-1,"m":29.78},{"x":38.4,"y":57.5,"k":"duel","o":1,"m":29.88},{"x":57.5,"y":17.9,"k":"duel","o":-1,"m":29.97},{"x":10.4,"y":38.8,"k":"duel","o":1,"m":31.08},{"x":14.8,"y":53.1,"k":"duel","o":-1,"m":31.63},{"x":13.7,"y":10.1,"k":"duel","o":1,"m":31.85},{"x":6.1,"y":3.8,"k":"duel","o":1,"m":31.9},{"x":19.5,"y":21.6,"k":"other","o":0,"m":32.38},{"x":48.3,"y":48.7,"k":"recovery","o":1,"m":33.73},{"x":45.8,"y":51.9,"k":"pass","o":1,"m":33.78},{"x":48.3,"y":48.7,"k":"other","o":0,"m":33.8},{"x":36.8,"y":46.6,"k":"pass","o":1,"m":33.82},{"x":13.3,"y":37.4,"k":"loss","o":-1,"m":33.88},{"x":79.1,"y":3.2,"k":"duel","o":-1,"m":34.25},{"x":25.6,"y":57.5,"k":"duel","o":1,"m":34.27},{"x":22.8,"y":54.4,"k":"duel","o":1,"m":34.28},{"x":39.7,"y":45.3,"k":"duel","o":1,"m":34.3},{"x":40.9,"y":33.8,"k":"pass","o":-1,"m":34.33},{"x":22.8,"y":54.4,"k":"other","o":0,"m":34.35},{"x":71.8,"y":51.0,"k":"duel","o":1,"m":34.43},{"x":70.3,"y":49.2,"k":"pass","o":1,"m":34.5},{"x":82.0,"y":48.5,"k":"other","o":0,"m":34.55},{"x":13.4,"y":2.6,"k":"duel","o":1,"m":35.18},{"x":16.2,"y":4.5,"k":"pass","o":-1,"m":35.22},{"x":19.2,"y":4.5,"k":"pass","o":-1,"m":35.23},{"x":23.2,"y":12.6,"k":"pass","o":1,"m":35.5},{"x":3.2,"y":36.9,"k":"pass","o":1,"m":35.52},{"x":23.2,"y":12.6,"k":"other","o":0,"m":35.57},{"x":28.7,"y":47.9,"k":"pass","o":1,"m":35.58},{"x":60.4,"y":19.2,"k":"other","o":0,"m":35.63},{"x":49.3,"y":47.8,"k":"pass","o":1,"m":35.98},{"x":33.2,"y":20.7,"k":"pass","o":1,"m":36.0},{"x":40.2,"y":30.8,"k":"pass","o":1,"m":36.03},{"x":49.3,"y":47.8,"k":"other","o":0,"m":36.05},{"x":44.3,"y":3.2,"k":"loss","o":-1,"m":36.1},{"x":42.4,"y":49.6,"k":"duel","o":-1,"m":36.13},{"x":56.2,"y":18.8,"k":"duel","o":1,"m":36.17},{"x":41.5,"y":45.3,"k":"recovery","o":1,"m":36.27},{"x":35.7,"y":31.1,"k":"pass","o":1,"m":36.28},{"x":28.1,"y":43.4,"k":"pass","o":1,"m":36.33},{"x":34.3,"y":41.1,"k":"pass","o":1,"m":36.35},{"x":13.5,"y":31.2,"k":"pass","o":1,"m":36.42},{"x":21.1,"y":3.8,"k":"duel","o":1,"m":36.47},{"x":45.3,"y":3.9,"k":"pass","o":1,"m":36.5},{"x":51.6,"y":12.2,"k":"pass","o":1,"m":36.55},{"x":58.6,"y":11.2,"k":"pass","o":1,"m":36.58},{"x":67.8,"y":4.4,"k":"pass","o":1,"m":36.62},{"x":64.7,"y":11.9,"k":"pass","o":1,"m":36.65},{"x":69.0,"y":27.4,"k":"pass","o":1,"m":36.68},{"x":93.2,"y":25.1,"k":"duel","o":-1,"m":36.73},{"x":37.7,"y":34.1,"k":"duel","o":1,"m":37.25},{"x":41.3,"y":25.5,"k":"pass","o":1,"m":37.27},{"x":65.8,"y":33.2,"k":"duel","o":1,"m":37.33},{"x":56.1,"y":31.7,"k":"pass","o":1,"m":37.35},{"x":65.7,"y":40.5,"k":"loss","o":-1,"m":37.4},{"x":103.8,"y":16.8,"k":"duel","o":1,"m":38.28},{"x":4.9,"y":33.1,"k":"loss","o":-1,"m":38.53},{"x":32.5,"y":65.2,"k":"duel","o":-1,"m":39.15},{"x":35.8,"y":62.1,"k":"duel","o":-1,"m":39.18},{"x":47.4,"y":14.5,"k":"duel","o":1,"m":39.72},{"x":43.9,"y":17.0,"k":"pass","o":1,"m":39.77},{"x":54.8,"y":15.0,"k":"other","o":0,"m":39.8},{"x":14.4,"y":30.1,"k":"pass","o":1,"m":39.85},{"x":28.2,"y":13.9,"k":"pass","o":1,"m":39.93},{"x":13.0,"y":29.6,"k":"pass","o":1,"m":40.07},{"x":21.0,"y":4.8,"k":"pass","o":1,"m":40.12},{"x":50.0,"y":17.5,"k":"pass","o":1,"m":40.13},{"x":43.8,"y":27.7,"k":"duel","o":-1,"m":40.17},{"x":60.3,"y":21.3,"k":"duel","o":-1,"m":40.25},{"x":43.0,"y":63.8,"k":"duel","o":1,"m":40.52},{"x":68.6,"y":4.6,"k":"duel","o":1,"m":40.7},{"x":77.2,"y":8.1,"k":"duel","o":-1,"m":40.92},{"x":17.6,"y":60.6,"k":"duel","o":1,"m":41.02},{"x":5.4,"y":55.3,"k":"pass","o":1,"m":41.08},{"x":2.2,"y":38.0,"k":"loss","o":-1,"m":41.1},{"x":54.8,"y":68.0,"k":"pass","o":1,"m":41.43},{"x":34.5,"y":55.6,"k":"pass","o":1,"m":41.5},{"x":15.8,"y":38.1,"k":"pass","o":1,"m":41.58},{"x":34.8,"y":12.4,"k":"pass","o":1,"m":41.77},{"x":43.9,"y":18.1,"k":"pass","o":1,"m":41.83},{"x":31.2,"y":18.9,"k":"pass","o":1,"m":41.85},{"x":30.4,"y":45.8,"k":"carry","o":0,"m":41.9},{"x":46.7,"y":47.8,"k":"pass","o":1,"m":41.98},{"x":42.4,"y":51.2,"k":"pass","o":1,"m":42.02},{"x":35.4,"y":46.2,"k":"pass","o":1,"m":42.05},{"x":35.7,"y":19.4,"k":"pass","o":1,"m":42.1},{"x":55.3,"y":7.5,"k":"pass","o":1,"m":42.18},{"x":63.3,"y":27.6,"k":"pass","o":1,"m":42.25},{"x":67.5,"y":40.8,"k":"duel","o":-1,"m":42.27},{"x":42.6,"y":65.1,"k":"duel","o":-1,"m":42.57},{"x":28.4,"y":0.0,"k":"pass","o":1,"m":42.92},{"x":35.1,"y":9.3,"k":"pass","o":1,"m":42.95},{"x":28.4,"y":0.0,"k":"other","o":0,"m":42.98},{"x":39.2,"y":55.8,"k":"carry","o":0,"m":43.03},{"x":95.7,"y":56.2,"k":"pass","o":1,"m":43.12},{"x":97.6,"y":23.1,"k":"shot","o":0,"m":43.18},{"x":12.7,"y":32.9,"k":"recovery","o":1,"m":44.05},{"x":31.4,"y":64.4,"k":"duel","o":1,"m":44.45},{"x":28.4,"y":64.9,"k":"pass","o":1,"m":44.47},{"x":33.2,"y":50.8,"k":"pass","o":1,"m":44.5},{"x":47.8,"y":36.0,"k":"duel","o":-1,"m":44.55},{"x":84.3,"y":48.2,"k":"duel","o":-1,"m":44.67},{"x":24.1,"y":10.4,"k":"duel","o":1,"m":45.05},{"x":2.9,"y":36.3,"k":"pass","o":1,"m":45.63},{"x":2.9,"y":36.3,"k":"other","o":0,"m":45.7},{"x":73.1,"y":36.0,"k":"pass","o":1,"m":45.72},{"x":80.5,"y":47.0,"k":"loss","o":-1,"m":45.77},{"x":71.4,"y":65.0,"k":"duel","o":1,"m":46.17},{"x":87.9,"y":64.9,"k":"carry","o":0,"m":46.18},{"x":71.4,"y":65.0,"k":"other","o":0,"m":46.23},{"x":99.8,"y":59.4,"k":"duel","o":-1,"m":46.25},{"x":69.7,"y":68.0,"k":"pass","o":1,"m":46.78},{"x":63.0,"y":62.3,"k":"pass","o":1,"m":46.82},{"x":69.7,"y":68.0,"k":"other","o":0,"m":46.85},{"x":43.0,"y":62.9,"k":"pass","o":1,"m":46.88},{"x":17.8,"y":41.8,"k":"pass","o":1,"m":46.93},{"x":32.5,"y":16.4,"k":"pass","o":1,"m":47.07},{"x":43.8,"y":3.7,"k":"pass","o":1,"m":47.1},{"x":48.0,"y":9.7,"k":"pass","o":1,"m":47.13},{"x":37.4,"y":14.5,"k":"pass","o":1,"m":47.18},{"x":35.6,"y":3.8,"k":"pass","o":1,"m":47.22},{"x":49.0,"y":8.0,"k":"duel","o":-1,"m":47.25},{"x":71.9,"y":53.0,"k":"duel","o":-1,"m":47.97},{"x":33.2,"y":14.7,"k":"other","o":0,"m":47.98},{"x":32.3,"y":8.5,"k":"recovery","o":1,"m":50.18},{"x":79.3,"y":26.6,"k":"loss","o":-1,"m":50.28},{"x":79.3,"y":26.6,"k":"other","o":0,"m":50.35},{"x":61.8,"y":26.4,"k":"recovery","o":1,"m":50.52},{"x":79.1,"y":20.7,"k":"pass","o":1,"m":50.57},{"x":61.8,"y":26.4,"k":"other","o":0,"m":50.58},{"x":96.0,"y":10.1,"k":"loss","o":-1,"m":50.68},{"x":68.9,"y":10.0,"k":"duel","o":1,"m":50.8},{"x":61.8,"y":4.2,"k":"pass","o":1,"m":50.83},{"x":44.3,"y":13.7,"k":"pass","o":1,"m":50.88},{"x":61.8,"y":4.2,"k":"other","o":0,"m":50.9},{"x":49.4,"y":21.3,"k":"pass","o":1,"m":50.95},{"x":51.3,"y":41.7,"k":"pass","o":1,"m":51.0},{"x":68.4,"y":64.4,"k":"pass","o":1,"m":51.08},{"x":48.4,"y":58.2,"k":"pass","o":1,"m":51.13},{"x":40.3,"y":35.1,"k":"pass","o":1,"m":51.17},{"x":48.0,"y":48.1,"k":"pass","o":1,"m":51.22},{"x":62.5,"y":62.8,"k":"pass","o":1,"m":51.25},{"x":69.8,"y":65.7,"k":"pass","o":1,"m":51.3},{"x":42.4,"y":63.3,"k":"pass","o":1,"m":51.33},{"x":38.3,"y":54.0,"k":"pass","o":1,"m":51.37},{"x":14.2,"y":35.0,"k":"pass","o":1,"m":51.42},{"x":22.8,"y":5.8,"k":"pass","o":1,"m":51.55},{"x":7.5,"y":22.0,"k":"pass","o":1,"m":51.6},{"x":42.3,"y":44.2,"k":"duel","o":1,"m":51.67},{"x":49.4,"y":46.3,"k":"pass","o":1,"m":51.7},{"x":58.4,"y":34.3,"k":"pass","o":1,"m":51.75},{"x":75.9,"y":16.0,"k":"pass","o":1,"m":51.85},{"x":80.7,"y":21.1,"k":"pass","o":1,"m":51.93},{"x":101.9,"y":21.0,"k":"pass","o":-1,"m":51.97},{"x":102.7,"y":30.2,"k":"duel","o":-1,"m":52.0},{"x":69.5,"y":7.0,"k":"duel","o":1,"m":52.23},{"x":32.9,"y":62.4,"k":"other","o":0,"m":52.25},{"x":19.6,"y":20.8,"k":"recovery","o":1,"m":52.57},{"x":19.6,"y":20.8,"k":"other","o":0,"m":52.63},{"x":30.5,"y":36.3,"k":"pass","o":1,"m":52.67},{"x":42.6,"y":64.0,"k":"carry","o":0,"m":52.72},{"x":45.9,"y":63.4,"k":"duel","o":1,"m":52.73},{"x":82.3,"y":46.2,"k":"duel","o":-1,"m":52.85},{"x":49.1,"y":48.0,"k":"recovery","o":1,"m":52.97},{"x":43.8,"y":48.1,"k":"duel","o":1,"m":53.0},{"x":57.2,"y":21.5,"k":"other","o":0,"m":53.02},{"x":49.1,"y":48.0,"k":"other","o":0,"m":53.03},{"x":47.2,"y":48.8,"k":"pass","o":1,"m":53.17},{"x":39.2,"y":45.2,"k":"duel","o":-1,"m":53.32},{"x":85.8,"y":13.2,"k":"duel","o":-1,"m":53.4},{"x":2.6,"y":35.0,"k":"pass","o":1,"m":54.2},{"x":2.6,"y":35.0,"k":"other","o":0,"m":54.27},{"x":79.4,"y":39.1,"k":"duel","o":-1,"m":54.28},{"x":57.6,"y":16.4,"k":"duel","o":1,"m":54.37},{"x":45.9,"y":18.9,"k":"pass","o":1,"m":54.45},{"x":47.9,"y":15.3,"k":"other","o":0,"m":54.48},{"x":50.2,"y":6.2,"k":"duel","o":1,"m":54.5},{"x":56.4,"y":61.1,"k":"other","o":0,"m":54.52},{"x":43.9,"y":12.7,"k":"pass","o":1,"m":54.72},{"x":39.4,"y":49.2,"k":"pass","o":1,"m":54.77},{"x":43.9,"y":12.7,"k":"other","o":0,"m":54.78},{"x":47.9,"y":59.9,"k":"pass","o":1,"m":54.82},{"x":38.2,"y":47.7,"k":"pass","o":1,"m":54.88},{"x":13.8,"y":36.7,"k":"pass","o":1,"m":54.97},{"x":58.2,"y":17.0,"k":"duel","o":-1,"m":55.03},{"x":39.6,"y":20.9,"k":"loss","o":-1,"m":55.07},{"x":57.6,"y":48.3,"k":"duel","o":-1,"m":55.08},{"x":39.8,"y":24.4,"k":"recovery","o":1,"m":55.12},{"x":32.2,"y":4.5,"k":"pass","o":1,"m":55.18},{"x":32.2,"y":4.5,"k":"other","o":0,"m":55.25},{"x":97.8,"y":9.4,"k":"pass","o":-1,"m":55.27},{"x":84.9,"y":8.6,"k":"duel","o":1,"m":55.35},{"x":102.9,"y":10.3,"k":"duel","o":-1,"m":55.4},{"x":10.3,"y":30.4,"k":"recovery","o":1,"m":56.37},{"x":13.9,"y":31.2,"k":"pass","o":1,"m":56.4},{"x":13.9,"y":31.2,"k":"other","o":0,"m":56.47},{"x":34.8,"y":55.6,"k":"pass","o":1,"m":56.5},{"x":26.4,"y":45.5,"k":"pass","o":1,"m":56.55},{"x":11.6,"y":36.9,"k":"pass","o":1,"m":56.62},{"x":33.0,"y":25.5,"k":"duel","o":-1,"m":56.68},{"x":50.5,"y":40.0,"k":"pass","o":1,"m":56.75},{"x":57.9,"y":34.4,"k":"duel","o":1,"m":56.77},{"x":47.1,"y":33.6,"k":"other","o":0,"m":56.78},{"x":57.5,"y":35.7,"k":"pass","o":1,"m":57.2},{"x":59.9,"y":47.6,"k":"pass","o":1,"m":57.22},{"x":48.5,"y":53.2,"k":"pass","o":1,"m":57.25},{"x":57.5,"y":35.7,"k":"other","o":0,"m":57.27},{"x":62.1,"y":64.6,"k":"pass","o":1,"m":57.3},{"x":68.6,"y":54.0,"k":"pass","o":-1,"m":57.33},{"x":67.7,"y":55.5,"k":"pass","o":1,"m":57.35},{"x":32.3,"y":63.4,"k":"pass","o":1,"m":57.42},{"x":21.9,"y":51.9,"k":"pass","o":1,"m":57.45},{"x":25.1,"y":14.9,"k":"duel","o":-1,"m":57.53},{"x":76.0,"y":64.7,"k":"duel","o":1,"m":57.58},{"x":75.1,"y":64.7,"k":"pass","o":1,"m":57.6},{"x":80.8,"y":60.1,"k":"pass","o":1,"m":57.62},{"x":73.6,"y":56.6,"k":"pass","o":1,"m":57.65},{"x":78.2,"y":62.5,"k":"pass","o":1,"m":57.68},{"x":69.8,"y":49.1,"k":"pass","o":1,"m":57.73},{"x":78.0,"y":54.9,"k":"pass","o":1,"m":57.75},{"x":84.9,"y":43.6,"k":"loss","o":-1,"m":57.78},{"x":47.5,"y":61.0,"k":"duel","o":1,"m":57.92},{"x":61.4,"y":66.6,"k":"pass","o":1,"m":58.63},{"x":62.0,"y":58.4,"k":"loss","o":-1,"m":58.67},{"x":61.4,"y":66.6,"k":"other","o":0,"m":58.7},{"x":42.9,"y":44.2,"k":"duel","o":-1,"m":58.75},{"x":78.2,"y":31.0,"k":"duel","o":-1,"m":58.85},{"x":25.9,"y":44.4,"k":"duel","o":1,"m":58.9},{"x":33.1,"y":57.3,"k":"duel","o":1,"m":58.95},{"x":72.4,"y":8.0,"k":"other","o":0,"m":58.97},{"x":22.9,"y":14.3,"k":"pass","o":1,"m":59.32},{"x":26.6,"y":54.7,"k":"other","o":0,"m":59.38},{"x":33.6,"y":4.3,"k":"pass","o":1,"m":59.42},{"x":47.3,"y":20.8,"k":"pass","o":1,"m":59.45},{"x":14.3,"y":37.8,"k":"pass","o":1,"m":59.62},{"x":67.4,"y":34.8,"k":"duel","o":-1,"m":59.65},{"x":10.8,"y":4.9,"k":"duel","o":1,"m":59.83},{"x":10.1,"y":25.1,"k":"duel","o":1,"m":60.25},{"x":11.9,"y":44.6,"k":"loss","o":-1,"m":60.53},{"x":25.6,"y":0.0,"k":"pass","o":1,"m":62.28},{"x":32.7,"y":4.8,"k":"duel","o":-1,"m":62.3},{"x":67.5,"y":2.5,"k":"duel","o":-1,"m":62.62},{"x":33.9,"y":68.0,"k":"pass","o":1,"m":62.83},{"x":66.6,"y":64.4,"k":"duel","o":1,"m":62.9},{"x":86.7,"y":64.0,"k":"pass","o":1,"m":62.95},{"x":94.8,"y":32.6,"k":"shot","o":0,"m":62.98},{"x":101.9,"y":11.7,"k":"pass","o":1,"m":63.1},{"x":93.6,"y":25.0,"k":"other","o":0,"m":63.12},{"x":5.3,"y":63.0,"k":"duel","o":1,"m":63.87},{"x":83.0,"y":60.1,"k":"duel","o":-1,"m":64.57},{"x":14.3,"y":21.3,"k":"recovery","o":1,"m":64.62},{"x":14.4,"y":12.0,"k":"duel","o":1,"m":64.67},{"x":21.7,"y":14.8,"k":"pass","o":1,"m":64.77},{"x":20.7,"y":7.5,"k":"pass","o":1,"m":64.82},{"x":31.6,"y":3.6,"k":"duel","o":-1,"m":64.83},{"x":79.4,"y":61.6,"k":"duel","o":-1,"m":64.85},{"x":98.7,"y":56.9,"k":"duel","o":1,"m":64.93},{"x":13.5,"y":31.6,"k":"recovery","o":1,"m":65.65},{"x":25.3,"y":44.7,"k":"pass","o":1,"m":65.67},{"x":32.7,"y":22.2,"k":"carry","o":0,"m":65.7},{"x":13.5,"y":31.6,"k":"other","o":0,"m":65.72},{"x":58.8,"y":21.1,"k":"pass","o":1,"m":65.78},{"x":55.5,"y":37.4,"k":"loss","o":-1,"m":65.82},{"x":22.1,"y":30.6,"k":"duel","o":1,"m":66.68},{"x":17.6,"y":34.5,"k":"pass","o":-1,"m":66.7},{"x":4.6,"y":38.1,"k":"pass","o":1,"m":67.65},{"x":2.6,"y":51.7,"k":"pass","o":1,"m":67.67},{"x":5.8,"y":63.2,"k":"pass","o":-1,"m":67.72},{"x":94.9,"y":30.6,"k":"duel","o":-1,"m":68.0},{"x":3.0,"y":37.8,"k":"pass","o":1,"m":68.4},{"x":3.0,"y":37.8,"k":"other","o":0,"m":68.47},{"x":71.7,"y":36.7,"k":"duel","o":-1,"m":68.48},{"x":45.6,"y":35.0,"k":"duel","o":-1,"m":68.55},{"x":41.0,"y":44.8,"k":"duel","o":1,"m":68.63},{"x":5.9,"y":48.6,"k":"recovery","o":1,"m":68.72},{"x":1.9,"y":48.4,"k":"duel","o":1,"m":68.92},{"x":2.1,"y":35.0,"k":"pass","o":-1,"m":69.28},{"x":2.1,"y":35.0,"k":"other","o":0,"m":69.35},{"x":62.3,"y":44.5,"k":"pass","o":1,"m":69.4},{"x":71.7,"y":49.4,"k":"pass","o":1,"m":69.42},{"x":81.4,"y":46.7,"k":"pass","o":1,"m":69.43},{"x":93.3,"y":53.0,"k":"pass","o":1,"m":69.48},{"x":94.1,"y":45.3,"k":"pass","o":-1,"m":69.53},{"x":105.0,"y":68.0,"k":"pass","o":1,"m":70.0},{"x":91.3,"y":60.3,"k":"pass","o":1,"m":70.05},{"x":97.5,"y":61.3,"k":"pass","o":1,"m":70.07},{"x":90.6,"y":60.8,"k":"pass","o":-1,"m":70.08},{"x":88.6,"y":44.6,"k":"pass","o":1,"m":70.15},{"x":11.9,"y":35.5,"k":"duel","o":-1,"m":70.18},{"x":97.4,"y":30.8,"k":"other","o":0,"m":70.22},{"x":70.3,"y":20.2,"k":"recovery","o":1,"m":70.67},{"x":77.9,"y":26.9,"k":"pass","o":1,"m":70.7},{"x":83.9,"y":41.1,"k":"pass","o":1,"m":70.72},{"x":88.8,"y":31.8,"k":"duel","o":-1,"m":70.73},{"x":77.9,"y":26.9,"k":"other","o":0,"m":70.77},{"x":27.9,"y":54.4,"k":"duel","o":1,"m":70.9},{"x":20.4,"y":65.7,"k":"duel","o":1,"m":70.98},{"x":43.5,"y":66.6,"k":"duel","o":1,"m":71.07},{"x":63.2,"y":0.5,"k":"other","o":0,"m":71.08},{"x":45.1,"y":59.4,"k":"pass","o":1,"m":71.57},{"x":32.8,"y":49.2,"k":"pass","o":1,"m":71.63},{"x":43.9,"y":23.8,"k":"pass","o":1,"m":71.85},{"x":50.4,"y":21.5,"k":"pass","o":1,"m":71.87},{"x":28.1,"y":37.1,"k":"pass","o":1,"m":72.03},{"x":79.1,"y":48.4,"k":"duel","o":-1,"m":72.08},{"x":33.2,"y":0.0,"k":"pass","o":-1,"m":72.7},{"x":35.9,"y":6.8,"k":"duel","o":1,"m":72.77},{"x":37.9,"y":10.3,"k":"pass","o":1,"m":72.78},{"x":41.3,"y":19.8,"k":"pass","o":1,"m":72.8},{"x":48.3,"y":20.3,"k":"pass","o":1,"m":72.82},{"x":58.3,"y":59.6,"k":"carry","o":0,"m":72.88},{"x":78.4,"y":61.5,"k":"loss","o":-1,"m":72.97},{"x":47.6,"y":48.9,"k":"pass","o":1,"m":73.47},{"x":48.8,"y":33.8,"k":"duel","o":-1,"m":73.52},{"x":40.0,"y":16.8,"k":"duel","o":1,"m":73.67},{"x":39.5,"y":35.0,"k":"pass","o":1,"m":74.08},{"x":40.2,"y":19.7,"k":"pass","o":1,"m":74.12},{"x":46.2,"y":8.4,"k":"pass","o":1,"m":74.15},{"x":34.4,"y":19.7,"k":"pass","o":1,"m":74.18},{"x":33.2,"y":43.5,"k":"pass","o":1,"m":74.23},{"x":30.2,"y":17.1,"k":"pass","o":1,"m":74.28},{"x":34.9,"y":4.4,"k":"pass","o":1,"m":74.32},{"x":37.5,"y":14.7,"k":"pass","o":1,"m":74.4},{"x":23.9,"y":18.4,"k":"pass","o":1,"m":74.45},{"x":13.3,"y":29.4,"k":"pass","o":1,"m":74.55},{"x":72.6,"y":19.2,"k":"duel","o":-1,"m":74.62},{"x":32.6,"y":25.8,"k":"duel","o":-1,"m":74.65},{"x":41.7,"y":28.9,"k":"duel","o":-1,"m":74.68},{"x":87.5,"y":44.4,"k":"duel","o":-1,"m":75.43},{"x":40.5,"y":12.5,"k":"duel","o":1,"m":76.72},{"x":50.6,"y":15.4,"k":"pass","o":1,"m":76.77},{"x":57.5,"y":31.5,"k":"pass","o":1,"m":76.8},{"x":44.9,"y":14.3,"k":"other","o":0,"m":76.82},{"x":49.9,"y":33.9,"k":"pass","o":1,"m":76.93},{"x":36.6,"y":27.4,"k":"pass","o":1,"m":76.97},{"x":41.9,"y":44.4,"k":"pass","o":1,"m":77.0},{"x":46.3,"y":14.9,"k":"pass","o":1,"m":77.08},{"x":24.9,"y":21.9,"k":"pass","o":1,"m":77.13},{"x":33.7,"y":49.8,"k":"pass","o":1,"m":77.22},{"x":36.8,"y":23.7,"k":"pass","o":1,"m":77.27},{"x":37.9,"y":49.9,"k":"loss","o":-1,"m":77.35},{"x":21.0,"y":29.5,"k":"recovery","o":1,"m":77.78},{"x":31.2,"y":32.9,"k":"pass","o":1,"m":77.82},{"x":21.0,"y":29.5,"k":"other","o":0,"m":77.85},{"x":49.1,"y":38.9,"k":"duel","o":1,"m":77.87},{"x":36.6,"y":34.7,"k":"pass","o":1,"m":77.88},{"x":28.0,"y":30.6,"k":"pass","o":1,"m":77.95},{"x":25.0,"y":47.7,"k":"pass","o":1,"m":77.98},{"x":38.4,"y":64.9,"k":"pass","o":1,"m":78.05},{"x":43.1,"y":50.0,"k":"pass","o":1,"m":78.1},{"x":33.0,"y":34.3,"k":"pass","o":1,"m":78.2},{"x":49.9,"y":31.3,"k":"pass","o":1,"m":78.28},{"x":48.8,"y":21.0,"k":"pass","o":1,"m":78.3},{"x":60.4,"y":5.0,"k":"carry","o":0,"m":78.33},{"x":58.7,"y":8.6,"k":"duel","o":1,"m":78.35},{"x":87.0,"y":11.0,"k":"pass","o":1,"m":78.47},{"x":75.2,"y":16.0,"k":"pass","o":1,"m":78.52},{"x":69.0,"y":24.3,"k":"pass","o":1,"m":78.55},{"x":90.0,"y":8.6,"k":"pass","o":1,"m":78.63},{"x":98.7,"y":15.5,"k":"pass","o":1,"m":78.67},{"x":90.9,"y":11.3,"k":"pass","o":-1,"m":78.7},{"x":101.7,"y":0.0,"k":"pass","o":1,"m":78.97},{"x":90.9,"y":7.6,"k":"pass","o":1,"m":78.98},{"x":95.6,"y":5.7,"k":"pass","o":1,"m":79.02},{"x":75.3,"y":9.6,"k":"pass","o":1,"m":79.03},{"x":61.1,"y":26.9,"k":"pass","o":1,"m":79.08},{"x":59.0,"y":14.7,"k":"pass","o":1,"m":79.15},{"x":56.4,"y":37.1,"k":"carry","o":0,"m":79.18},{"x":64.1,"y":50.7,"k":"pass","o":1,"m":79.25},{"x":58.5,"y":23.1,"k":"pass","o":-1,"m":79.3},{"x":73.3,"y":19.4,"k":"pass","o":1,"m":79.37},{"x":58.8,"y":20.8,"k":"pass","o":1,"m":79.43},{"x":49.0,"y":48.5,"k":"pass","o":1,"m":79.5},{"x":61.7,"y":65.0,"k":"duel","o":1,"m":79.55},{"x":94.9,"y":61.7,"k":"loss","o":-1,"m":79.62},{"x":11.4,"y":33.9,"k":"recovery","o":1,"m":80.32},{"x":31.0,"y":52.1,"k":"duel","o":1,"m":80.37},{"x":11.4,"y":33.9,"k":"other","o":0,"m":80.38},{"x":29.1,"y":53.4,"k":"pass","o":1,"m":80.42},{"x":24.6,"y":54.2,"k":"pass","o":1,"m":80.43},{"x":29.8,"y":43.2,"k":"carry","o":0,"m":80.47},{"x":36.4,"y":51.4,"k":"pass","o":1,"m":80.52},{"x":50.5,"y":64.2,"k":"carry","o":0,"m":80.55},{"x":76.7,"y":54.4,"k":"duel","o":1,"m":80.63},{"x":76.9,"y":47.8,"k":"pass","o":1,"m":80.67},{"x":75.3,"y":35.7,"k":"pass","o":1,"m":80.68},{"x":71.5,"y":42.8,"k":"pass","o":1,"m":80.73},{"x":71.0,"y":15.2,"k":"pass","o":1,"m":80.78},{"x":81.5,"y":11.8,"k":"pass","o":1,"m":80.87},{"x":78.8,"y":16.6,"k":"pass","o":1,"m":80.9},{"x":80.4,"y":8.6,"k":"pass","o":1,"m":80.93},{"x":60.1,"y":15.0,"k":"pass","o":1,"m":81.0},{"x":69.6,"y":17.4,"k":"carry","o":0,"m":81.02},{"x":57.3,"y":14.6,"k":"other","o":0,"m":81.05},{"x":80.8,"y":23.7,"k":"shot","o":0,"m":81.08},{"x":96.9,"y":24.0,"k":"other","o":0,"m":81.12},{"x":102.3,"y":38.9,"k":"other","o":0,"m":82.33},{"x":57.8,"y":57.9,"k":"duel","o":1,"m":82.98},{"x":67.3,"y":49.7,"k":"pass","o":1,"m":83.03},{"x":64.5,"y":50.0,"k":"pass","o":1,"m":83.05},{"x":80.8,"y":60.9,"k":"pass","o":1,"m":83.13},{"x":77.7,"y":65.5,"k":"pass","o":1,"m":83.2},{"x":64.3,"y":63.0,"k":"pass","o":1,"m":83.25},{"x":48.6,"y":58.0,"k":"pass","o":1,"m":83.27},{"x":48.7,"y":32.1,"k":"pass","o":1,"m":83.33},{"x":55.4,"y":10.4,"k":"pass","o":1,"m":83.37},{"x":69.6,"y":8.6,"k":"pass","o":-1,"m":83.4},{"x":71.3,"y":23.2,"k":"pass","o":1,"m":83.47},{"x":76.5,"y":30.6,"k":"pass","o":1,"m":83.48},{"x":72.2,"y":36.8,"k":"pass","o":1,"m":83.52},{"x":77.0,"y":55.1,"k":"duel","o":-1,"m":83.58},{"x":49.2,"y":46.1,"k":"recovery","o":1,"m":83.72},{"x":43.0,"y":42.9,"k":"pass","o":1,"m":83.73},{"x":54.3,"y":61.4,"k":"pass","o":1,"m":83.75},{"x":42.4,"y":47.5,"k":"pass","o":1,"m":83.78},{"x":45.9,"y":32.8,"k":"carry","o":0,"m":83.8},{"x":66.4,"y":23.0,"k":"pass","o":1,"m":83.87},{"x":76.4,"y":2.8,"k":"pass","o":1,"m":83.95},{"x":57.6,"y":8.4,"k":"pass","o":1,"m":84.0},{"x":46.5,"y":21.0,"k":"pass","o":1,"m":84.02},{"x":48.7,"y":35.8,"k":"pass","o":1,"m":84.07},{"x":56.7,"y":20.9,"k":"pass","o":1,"m":84.17},{"x":93.4,"y":24.4,"k":"pass","o":-1,"m":84.23},{"x":91.4,"y":38.6,"k":"duel","o":1,"m":84.28},{"x":91.5,"y":45.1,"k":"other","o":0,"m":84.32},{"x":49.4,"y":64.4,"k":"pass","o":1,"m":84.97},{"x":58.4,"y":60.2,"k":"pass","o":1,"m":85.02},{"x":49.4,"y":64.4,"k":"other","o":0,"m":85.03},{"x":56.4,"y":63.4,"k":"pass","o":1,"m":85.05},{"x":45.7,"y":62.2,"k":"duel","o":1,"m":85.08},{"x":50.6,"y":60.3,"k":"pass","o":1,"m":85.12},{"x":64.5,"y":43.8,"k":"loss","o":-1,"m":85.15},{"x":28.6,"y":14.2,"k":"pass","o":-1,"m":86.07},{"x":40.8,"y":52.9,"k":"recovery","o":1,"m":86.5},{"x":47.0,"y":64.6,"k":"loss","o":-1,"m":86.53},{"x":58.0,"y":19.3,"k":"duel","o":1,"m":86.92},{"x":58.0,"y":19.3,"k":"other","o":0,"m":86.98},{"x":71.6,"y":3.4,"k":"duel","o":-1,"m":87.0},{"x":67.9,"y":4.0,"k":"duel","o":1,"m":87.03},{"x":64.9,"y":15.8,"k":"pass","o":1,"m":87.05},{"x":57.0,"y":21.9,"k":"loss","o":-1,"m":87.1},{"x":53.1,"y":19.8,"k":"duel","o":-1,"m":87.12},{"x":54.8,"y":21.5,"k":"other","o":0,"m":87.15},{"x":0.7,"y":33.6,"k":"recovery","o":1,"m":87.82},{"x":14.2,"y":35.8,"k":"loss","o":-1,"m":87.95},{"x":10.4,"y":39.0,"k":"duel","o":1,"m":88.35},{"x":94.6,"y":28.9,"k":"other","o":0,"m":88.37},{"x":11.7,"y":30.4,"k":"pass","o":1,"m":89.05},{"x":11.7,"y":30.4,"k":"other","o":0,"m":89.12},{"x":77.2,"y":36.2,"k":"duel","o":1,"m":89.13},{"x":67.6,"y":15.3,"k":"duel","o":-1,"m":89.25},{"x":99.0,"y":33.0,"k":"duel","o":-1,"m":89.38},{"x":52.5,"y":34.0,"k":"pass","o":1,"m":90.55},{"x":38.9,"y":29.4,"k":"pass","o":1,"m":90.58},{"x":52.5,"y":34.0,"k":"other","o":0,"m":90.62},{"x":57.4,"y":17.5,"k":"pass","o":1,"m":90.65},{"x":74.0,"y":5.8,"k":"duel","o":1,"m":90.68},{"x":93.6,"y":17.6,"k":"pass","o":1,"m":90.77},{"x":87.5,"y":32.4,"k":"other","o":0,"m":90.8},{"x":47.9,"y":44.5,"k":"duel","o":1,"m":91.28},{"x":43.4,"y":42.1,"k":"pass","o":1,"m":91.38},{"x":59.1,"y":14.5,"k":"pass","o":1,"m":91.42},{"x":43.4,"y":42.1,"k":"other","o":0,"m":91.45},{"x":70.8,"y":3.7,"k":"pass","o":1,"m":91.48},{"x":97.8,"y":47.7,"k":"duel","o":-1,"m":91.53},{"x":64.7,"y":19.9,"k":"duel","o":-1,"m":91.97},{"x":66.8,"y":4.0,"k":"duel","o":-1,"m":92.0},{"x":37.1,"y":65.3,"k":"other","o":0,"m":92.02},{"x":27.0,"y":60.8,"k":"duel","o":1,"m":92.72}],"profile":[{"k":"Topla oynama","v":443,"p":48.1,"u":""},{"k":"Baskı yoğunluğu","v":34,"p":45.9,"u":""},{"k":"Kurulu düzenden şut","v":6,"p":54.5,"u":""},{"k":"Kontradan şut","v":4,"p":66.7,"u":""},{"k":"Duran toptan şut","v":1,"p":25.0,"u":""},{"k":"Merkezden şut","v":3,"p":60.0,"u":""},{"k":"Hava topu","v":16,"p":57.1,"u":""},{"k":"Savunma ikilisi","v":101,"p":56.1,"u":""},{"k":"Şutu bloklanmama","v":12,"p":57.1,"u":""},{"k":"Uzun pas isabeti","v":20,"p":55.6,"u":""},{"k":"Orta isabeti","v":3,"p":60.0,"u":""},{"k":"Maçın xG payı","v":1.66,"p":48.1,"u":""},{"k":"Koridor dağılımı","v":116,"p":52.0,"u":""}],"momentum":[18.0,11.0,12.0,17.0,15.0,29.0],"marks":[{"m":0.0,"t":"loss"},{"m":3.7,"t":"sot"},{"m":10.6,"t":"sot"},{"m":14.2,"t":"loss"},{"m":24.7,"t":"loss"},{"m":28.4,"t":"sot"},{"m":29.8,"t":"loss"},{"m":33.9,"t":"loss"},{"m":38.5,"t":"loss"},{"m":41.1,"t":"loss"},{"m":43.2,"t":"sot"},{"m":60.5,"t":"loss"},{"m":62.3,"t":"loss"},{"m":63.0,"t":"sot"},{"m":64.8,"t":"loss"},{"m":87.9,"t":"loss"}],"net":{"nodes":[{"z":4,"n":153,"x":51.9,"y":31.8},{"z":2,"n":78,"x":24.3,"y":28.4},{"z":3,"n":148,"x":37.6,"y":31.2},{"z":5,"n":112,"x":67.1,"y":30.4},{"z":1,"n":73,"x":9.0,"y":34.6},{"z":6,"n":100,"x":81.2,"y":29.7},{"z":7,"n":57,"x":96.6,"y":26.6}],"links":[{"s":4,"t":2,"n":4},{"s":2,"t":3,"n":27},{"s":3,"t":4,"n":41},{"s":4,"t":5,"n":27},{"s":5,"t":3,"n":17},{"s":3,"t":1,"n":12},{"s":1,"t":2,"n":15},{"s":3,"t":5,"n":13},{"s":5,"t":4,"n":20},{"s":4,"t":3,"n":36},{"s":4,"t":6,"n":9},{"s":6,"t":2,"n":5},{"s":2,"t":6,"n":4},{"s":6,"t":7,"n":15},{"s":7,"t":6,"n":10},{"s":1,"t":3,"n":10},{"s":5,"t":6,"n":23},{"s":6,"t":4,"n":6},{"s":6,"t":5,"n":18},{"s":3,"t":2,"n":21},{"s":2,"t":1,"n":10},{"s":3,"t":6,"n":6},{"s":4,"t":1,"n":3},{"s":2,"t":5,"n":5},{"s":5,"t":7,"n":8},{"s":6,"t":1,"n":3},{"s":1,"t":7,"n":4},{"s":1,"t":4,"n":4},{"s":2,"t":4,"n":5},{"s":1,"t":5,"n":5}]},"patterns":{"top":[{"pts":[[52.6,29.9],[51.0,34.0],[51.1,31.8]],"n":27,"shot":0},{"pts":[[80.3,29.6],[81.2,25.0],[82.4,19.9]],"n":16,"shot":0},{"pts":[[36.5,24.5],[40.2,25.5],[49.6,29.4]],"n":16,"shot":0},{"pts":[[36.6,25.6],[36.2,25.2],[36.1,22.3]],"n":15,"shot":0},{"pts":[[51.8,30.8],[53.7,29.1],[65.7,30.0]],"n":15,"shot":0}],"nseq":570}},"slaviaprag":{"team":"Slavia Prag","bands":[0,0,0],"events":[{"x":27.8,"y":34.2,"k":"recovery","o":1,"m":0.1},{"x":24.8,"y":35.1,"k":"loss","o":-1,"m":0.12},{"x":21.8,"y":42.8,"k":"pass","o":1,"m":0.97},{"x":76.7,"y":34.3,"k":"duel","o":-1,"m":1.0},{"x":81.3,"y":38.3,"k":"duel","o":-1,"m":1.67},{"x":24.2,"y":40.9,"k":"duel","o":1,"m":1.73},{"x":77.7,"y":23.7,"k":"duel","o":-1,"m":1.78},{"x":18.9,"y":44.6,"k":"pass","o":-1,"m":1.83},{"x":9.4,"y":43.3,"k":"duel","o":1,"m":2.32},{"x":11.3,"y":50.6,"k":"duel","o":1,"m":2.33},{"x":8.8,"y":53.0,"k":"pass","o":1,"m":2.35},{"x":32.9,"y":48.4,"k":"pass","o":1,"m":2.38},{"x":40.6,"y":48.1,"k":"duel","o":-1,"m":2.42},{"x":63.9,"y":22.6,"k":"duel","o":-1,"m":2.45},{"x":23.8,"y":23.3,"k":"pass","o":1,"m":2.92},{"x":30.4,"y":26.9,"k":"pass","o":1,"m":2.93},{"x":71.8,"y":40.6,"k":"duel","o":-1,"m":2.95},{"x":86.4,"y":10.0,"k":"duel","o":-1,"m":3.67},{"x":52.9,"y":35.3,"k":"pass","o":1,"m":5.13},{"x":70.7,"y":36.3,"k":"pass","o":-1,"m":5.18},{"x":52.9,"y":35.3,"k":"other","o":0,"m":5.2},{"x":48.1,"y":51.6,"k":"pass","o":1,"m":5.27},{"x":59.5,"y":63.5,"k":"pass","o":1,"m":5.3},{"x":69.3,"y":64.3,"k":"loss","o":-1,"m":5.33},{"x":41.3,"y":2.5,"k":"duel","o":-1,"m":5.4},{"x":46.1,"y":51.5,"k":"duel","o":-1,"m":6.5},{"x":19.9,"y":22.0,"k":"recovery","o":1,"m":6.58},{"x":20.1,"y":20.6,"k":"pass","o":1,"m":6.62},{"x":69.3,"y":48.2,"k":"duel","o":-1,"m":6.67},{"x":20.1,"y":20.6,"k":"other","o":0,"m":6.68},{"x":34.2,"y":11.7,"k":"pass","o":1,"m":6.72},{"x":42.2,"y":15.5,"k":"pass","o":1,"m":6.73},{"x":44.3,"y":19.1,"k":"duel","o":1,"m":6.75},{"x":76.7,"y":34.3,"k":"pass","o":1,"m":6.83},{"x":90.8,"y":47.1,"k":"shot","o":0,"m":6.88},{"x":78.9,"y":44.3,"k":"duel","o":1,"m":6.92},{"x":78.0,"y":52.2,"k":"pass","o":-1,"m":6.98},{"x":73.6,"y":37.2,"k":"pass","o":1,"m":7.05},{"x":71.3,"y":22.6,"k":"pass","o":1,"m":7.08},{"x":79.6,"y":24.2,"k":"pass","o":1,"m":7.1},{"x":76.6,"y":39.4,"k":"pass","o":1,"m":7.17},{"x":68.8,"y":48.0,"k":"pass","o":1,"m":7.2},{"x":70.8,"y":63.5,"k":"duel","o":1,"m":7.25},{"x":83.2,"y":62.3,"k":"pass","o":1,"m":7.27},{"x":94.3,"y":53.0,"k":"pass","o":-1,"m":7.3},{"x":94.7,"y":40.6,"k":"duel","o":-1,"m":7.35},{"x":32.9,"y":33.8,"k":"duel","o":1,"m":7.82},{"x":12.5,"y":68.0,"k":"pass","o":1,"m":8.5},{"x":21.8,"y":64.8,"k":"pass","o":1,"m":8.53},{"x":13.5,"y":64.6,"k":"pass","o":1,"m":8.55},{"x":42.6,"y":59.4,"k":"duel","o":-1,"m":8.6},{"x":34.4,"y":65.3,"k":"duel","o":1,"m":8.65},{"x":33.7,"y":68.0,"k":"pass","o":1,"m":9.0},{"x":59.4,"y":62.4,"k":"duel","o":-1,"m":9.05},{"x":33.7,"y":68.0,"k":"other","o":0,"m":9.07},{"x":11.4,"y":27.9,"k":"duel","o":1,"m":9.47},{"x":5.7,"y":29.8,"k":"pass","o":1,"m":9.73},{"x":12.2,"y":49.8,"k":"pass","o":1,"m":9.77},{"x":5.7,"y":29.8,"k":"other","o":0,"m":9.8},{"x":29.8,"y":65.5,"k":"pass","o":1,"m":9.83},{"x":31.6,"y":59.8,"k":"pass","o":1,"m":9.9},{"x":9.1,"y":61.1,"k":"pass","o":1,"m":9.97},{"x":4.1,"y":51.1,"k":"pass","o":-1,"m":10.0},{"x":27.0,"y":59.4,"k":"pass","o":1,"m":10.07},{"x":32.5,"y":65.9,"k":"pass","o":-1,"m":10.1},{"x":31.8,"y":68.0,"k":"pass","o":1,"m":10.3},{"x":56.0,"y":5.7,"k":"duel","o":-1,"m":10.35},{"x":31.8,"y":68.0,"k":"other","o":0,"m":10.37},{"x":33.2,"y":38.9,"k":"pass","o":1,"m":10.38},{"x":56.1,"y":37.6,"k":"duel","o":-1,"m":10.45},{"x":26.5,"y":66.2,"k":"loss","o":-1,"m":11.87},{"x":50.6,"y":8.4,"k":"duel","o":-1,"m":12.4},{"x":46.5,"y":65.8,"k":"recovery","o":1,"m":12.43},{"x":41.3,"y":52.4,"k":"pass","o":1,"m":12.45},{"x":46.4,"y":52.9,"k":"pass","o":1,"m":12.48},{"x":39.9,"y":63.9,"k":"carry","o":0,"m":12.5},{"x":55.8,"y":63.6,"k":"duel","o":1,"m":12.53},{"x":58.9,"y":65.7,"k":"duel","o":1,"m":12.55},{"x":57.8,"y":65.4,"k":"pass","o":1,"m":12.97},{"x":40.8,"y":55.5,"k":"pass","o":1,"m":13.0},{"x":28.1,"y":35.9,"k":"pass","o":1,"m":13.03},{"x":25.4,"y":24.7,"k":"pass","o":1,"m":13.07},{"x":11.9,"y":36.0,"k":"pass","o":1,"m":13.1},{"x":15.3,"y":61.3,"k":"pass","o":-1,"m":13.15},{"x":12.2,"y":51.1,"k":"pass","o":1,"m":13.22},{"x":2.3,"y":33.2,"k":"pass","o":1,"m":13.27},{"x":18.8,"y":6.0,"k":"pass","o":1,"m":13.32},{"x":42.9,"y":16.2,"k":"pass","o":1,"m":13.35},{"x":80.2,"y":65.8,"k":"pass","o":-1,"m":13.48},{"x":99.2,"y":53.5,"k":"loss","o":-1,"m":13.55},{"x":31.9,"y":33.9,"k":"duel","o":-1,"m":14.07},{"x":91.8,"y":40.4,"k":"shot","o":0,"m":14.25},{"x":91.8,"y":40.4,"k":"other","o":0,"m":14.32},{"x":80.7,"y":20.5,"k":"duel","o":-1,"m":15.12},{"x":10.6,"y":23.2,"k":"duel","o":1,"m":16.22},{"x":94.4,"y":44.8,"k":"other","o":0,"m":16.23},{"x":10.2,"y":24.2,"k":"pass","o":1,"m":16.55},{"x":13.0,"y":17.2,"k":"pass","o":1,"m":16.58},{"x":5.6,"y":32.2,"k":"pass","o":1,"m":16.62},{"x":8.9,"y":59.1,"k":"pass","o":1,"m":16.67},{"x":18.1,"y":65.3,"k":"pass","o":1,"m":16.68},{"x":50.5,"y":64.9,"k":"duel","o":-1,"m":16.73},{"x":46.0,"y":3.2,"k":"duel","o":-1,"m":16.77},{"x":33.6,"y":2.4,"k":"duel","o":1,"m":17.0},{"x":85.9,"y":3.7,"k":"duel","o":-1,"m":17.43},{"x":16.6,"y":35.8,"k":"pass","o":-1,"m":18.08},{"x":13.4,"y":45.6,"k":"recovery","o":1,"m":20.32},{"x":8.1,"y":45.2,"k":"duel","o":1,"m":20.43},{"x":8.8,"y":44.4,"k":"recovery","o":1,"m":20.45},{"x":89.2,"y":20.5,"k":"duel","o":-1,"m":20.82},{"x":65.8,"y":18.5,"k":"duel","o":-1,"m":20.97},{"x":42.6,"y":43.4,"k":"recovery","o":1,"m":21.0},{"x":50.1,"y":55.7,"k":"loss","o":-1,"m":21.05},{"x":42.6,"y":43.4,"k":"other","o":0,"m":21.07},{"x":76.7,"y":65.9,"k":"duel","o":1,"m":21.17},{"x":62.5,"y":47.0,"k":"duel","o":1,"m":21.4},{"x":64.0,"y":36.0,"k":"pass","o":1,"m":21.45},{"x":50.2,"y":29.7,"k":"duel","o":1,"m":21.5},{"x":59.5,"y":23.1,"k":"pass","o":1,"m":21.53},{"x":36.8,"y":25.4,"k":"pass","o":1,"m":21.58},{"x":11.0,"y":27.8,"k":"pass","o":1,"m":21.65},{"x":19.0,"y":4.9,"k":"pass","o":1,"m":21.68},{"x":8.1,"y":25.4,"k":"pass","o":1,"m":21.75},{"x":11.1,"y":59.1,"k":"carry","o":0,"m":21.78},{"x":30.8,"y":62.1,"k":"pass","o":1,"m":21.83},{"x":33.3,"y":66.0,"k":"carry","o":0,"m":21.85},{"x":49.0,"y":65.1,"k":"loss","o":-1,"m":21.9},{"x":57.3,"y":65.5,"k":"duel","o":1,"m":22.02},{"x":38.9,"y":65.6,"k":"duel","o":1,"m":22.32},{"x":44.3,"y":55.9,"k":"pass","o":1,"m":22.33},{"x":50.9,"y":55.8,"k":"pass","o":1,"m":22.35},{"x":69.7,"y":51.4,"k":"duel","o":-1,"m":22.38},{"x":35.7,"y":32.6,"k":"duel","o":-1,"m":22.42},{"x":65.9,"y":63.9,"k":"duel","o":1,"m":22.7},{"x":30.7,"y":2.6,"k":"duel","o":-1,"m":22.73},{"x":54.4,"y":65.2,"k":"duel","o":1,"m":22.77},{"x":43.3,"y":63.9,"k":"pass","o":1,"m":22.8},{"x":18.4,"y":49.3,"k":"pass","o":1,"m":22.87},{"x":25.8,"y":26.2,"k":"pass","o":1,"m":22.97},{"x":32.4,"y":34.6,"k":"pass","o":1,"m":23.0},{"x":30.4,"y":3.7,"k":"pass","o":1,"m":23.05},{"x":31.3,"y":14.2,"k":"pass","o":1,"m":23.08},{"x":39.5,"y":31.1,"k":"pass","o":1,"m":23.12},{"x":65.5,"y":24.8,"k":"pass","o":-1,"m":23.18},{"x":87.8,"y":6.2,"k":"loss","o":-1,"m":23.22},{"x":52.1,"y":34.0,"k":"duel","o":1,"m":23.73},{"x":37.6,"y":27.1,"k":"pass","o":1,"m":23.77},{"x":35.4,"y":52.0,"k":"pass","o":1,"m":23.82},{"x":37.6,"y":27.1,"k":"other","o":0,"m":23.83},{"x":46.0,"y":64.0,"k":"pass","o":1,"m":23.88},{"x":62.2,"y":59.0,"k":"pass","o":1,"m":23.93},{"x":58.4,"y":64.4,"k":"pass","o":1,"m":23.97},{"x":39.3,"y":59.2,"k":"pass","o":1,"m":24.02},{"x":43.0,"y":23.0,"k":"pass","o":1,"m":24.08},{"x":45.5,"y":7.7,"k":"pass","o":1,"m":24.15},{"x":38.9,"y":21.5,"k":"carry","o":0,"m":24.17},{"x":54.8,"y":18.9,"k":"loss","o":-1,"m":24.23},{"x":95.5,"y":2.3,"k":"duel","o":1,"m":24.67},{"x":99.8,"y":0.0,"k":"pass","o":1,"m":24.75},{"x":86.8,"y":9.0,"k":"pass","o":1,"m":24.78},{"x":83.0,"y":13.8,"k":"pass","o":1,"m":24.8},{"x":99.8,"y":0.0,"k":"other","o":0,"m":24.82},{"x":79.5,"y":3.5,"k":"pass","o":1,"m":24.83},{"x":84.2,"y":2.0,"k":"loss","o":-1,"m":24.85},{"x":59.9,"y":62.8,"k":"duel","o":-1,"m":24.97},{"x":87.0,"y":19.9,"k":"duel","o":-1,"m":25.15},{"x":77.1,"y":48.2,"k":"duel","o":-1,"m":25.63},{"x":72.5,"y":38.8,"k":"duel","o":-1,"m":25.65},{"x":62.0,"y":59.8,"k":"duel","o":-1,"m":26.08},{"x":72.5,"y":31.9,"k":"duel","o":-1,"m":26.13},{"x":95.0,"y":36.7,"k":"duel","o":-1,"m":26.8},{"x":2.5,"y":42.0,"k":"pass","o":1,"m":27.12},{"x":3.0,"y":31.1,"k":"pass","o":1,"m":27.17},{"x":2.5,"y":42.0,"k":"other","o":0,"m":27.18},{"x":10.2,"y":7.5,"k":"pass","o":-1,"m":27.22},{"x":48.0,"y":18.0,"k":"pass","o":-1,"m":27.28},{"x":44.4,"y":17.9,"k":"duel","o":1,"m":27.32},{"x":40.2,"y":20.9,"k":"pass","o":1,"m":27.62},{"x":46.2,"y":6.9,"k":"pass","o":1,"m":27.65},{"x":29.8,"y":18.6,"k":"pass","o":1,"m":27.68},{"x":16.5,"y":28.1,"k":"pass","o":1,"m":27.75},{"x":21.7,"y":3.2,"k":"pass","o":1,"m":27.8},{"x":35.4,"y":2.2,"k":"duel","o":-1,"m":27.83},{"x":38.1,"y":19.9,"k":"recovery","o":1,"m":27.87},{"x":58.5,"y":33.6,"k":"pass","o":1,"m":27.93},{"x":71.8,"y":53.6,"k":"pass","o":1,"m":28.0},{"x":80.0,"y":64.9,"k":"pass","o":1,"m":28.05},{"x":82.5,"y":58.5,"k":"pass","o":-1,"m":28.07},{"x":81.7,"y":57.2,"k":"duel","o":-1,"m":28.13},{"x":85.5,"y":16.1,"k":"duel","o":-1,"m":28.38},{"x":10.8,"y":50.2,"k":"recovery","o":1,"m":28.92},{"x":12.4,"y":51.8,"k":"pass","o":1,"m":28.93},{"x":27.8,"y":43.8,"k":"duel","o":1,"m":28.97},{"x":73.2,"y":26.0,"k":"other","o":0,"m":28.98},{"x":72.6,"y":23.4,"k":"other","o":0,"m":29.02},{"x":37.7,"y":47.7,"k":"pass","o":1,"m":29.33},{"x":36.7,"y":23.6,"k":"pass","o":1,"m":29.35},{"x":37.7,"y":47.7,"k":"other","o":0,"m":29.4},{"x":59.3,"y":16.9,"k":"pass","o":1,"m":29.43},{"x":57.3,"y":21.5,"k":"pass","o":1,"m":29.48},{"x":66.2,"y":21.5,"k":"pass","o":1,"m":29.52},{"x":48.0,"y":18.1,"k":"pass","o":1,"m":29.55},{"x":29.8,"y":34.7,"k":"pass","o":1,"m":29.58},{"x":41.0,"y":53.9,"k":"pass","o":1,"m":29.63},{"x":59.4,"y":65.2,"k":"pass","o":1,"m":29.7},{"x":74.9,"y":49.7,"k":"duel","o":-1,"m":29.73},{"x":56.9,"y":17.1,"k":"recovery","o":1,"m":29.83},{"x":38.4,"y":57.5,"k":"duel","o":-1,"m":29.88},{"x":56.9,"y":17.1,"k":"other","o":0,"m":29.9},{"x":57.5,"y":17.9,"k":"duel","o":1,"m":29.97},{"x":65.6,"y":14.1,"k":"carry","o":0,"m":29.98},{"x":80.6,"y":16.2,"k":"pass","o":1,"m":30.05},{"x":96.1,"y":8.7,"k":"pass","o":-1,"m":30.08},{"x":94.8,"y":63.2,"k":"pass","o":1,"m":30.22},{"x":94.8,"y":48.4,"k":"carry","o":0,"m":30.23},{"x":97.6,"y":58.6,"k":"pass","o":-1,"m":30.28},{"x":105.0,"y":68.0,"k":"pass","o":1,"m":31.03},{"x":10.4,"y":38.8,"k":"duel","o":-1,"m":31.08},{"x":105.0,"y":68.0,"k":"other","o":0,"m":31.1},{"x":77.6,"y":37.0,"k":"pass","o":1,"m":31.13},{"x":61.6,"y":39.5,"k":"pass","o":1,"m":31.17},{"x":78.4,"y":34.3,"k":"other","o":0,"m":31.18},{"x":38.4,"y":34.9,"k":"pass","o":1,"m":31.28},{"x":46.7,"y":10.2,"k":"pass","o":1,"m":31.35},{"x":34.7,"y":17.8,"k":"pass","o":1,"m":31.38},{"x":35.6,"y":28.5,"k":"pass","o":1,"m":31.43},{"x":35.5,"y":12.2,"k":"pass","o":1,"m":31.5},{"x":24.6,"y":23.9,"k":"pass","o":1,"m":31.55},{"x":13.2,"y":35.3,"k":"pass","o":1,"m":31.58},{"x":14.8,"y":53.1,"k":"duel","o":1,"m":31.63},{"x":30.4,"y":54.7,"k":"pass","o":1,"m":31.7},{"x":33.8,"y":64.5,"k":"pass","o":1,"m":31.75},{"x":71.7,"y":66.0,"k":"pass","o":1,"m":31.8},{"x":13.7,"y":10.1,"k":"duel","o":-1,"m":31.85},{"x":6.1,"y":3.8,"k":"duel","o":-1,"m":31.9},{"x":95.5,"y":68.0,"k":"pass","o":-1,"m":32.32},{"x":82.3,"y":47.3,"k":"shot","o":0,"m":32.38},{"x":85.5,"y":46.4,"k":"shot","o":0,"m":33.4},{"x":85.5,"y":46.4,"k":"other","o":0,"m":33.47},{"x":63.7,"y":68.0,"k":"pass","o":1,"m":33.57},{"x":31.1,"y":43.4,"k":"pass","o":1,"m":33.63},{"x":40.4,"y":8.0,"k":"pass","o":1,"m":33.7},{"x":62.0,"y":8.7,"k":"loss","o":-1,"m":33.73},{"x":68.0,"y":0.0,"k":"pass","o":1,"m":34.2},{"x":79.1,"y":3.2,"k":"duel","o":1,"m":34.25},{"x":79.5,"y":10.5,"k":"duel","o":-1,"m":34.27},{"x":22.8,"y":54.4,"k":"duel","o":-1,"m":34.28},{"x":39.7,"y":45.3,"k":"duel","o":-1,"m":34.3},{"x":37.6,"y":22.6,"k":"pass","o":-1,"m":34.38},{"x":71.8,"y":51.0,"k":"duel","o":-1,"m":34.43},{"x":2.2,"y":30.9,"k":"pass","o":1,"m":34.77},{"x":2.2,"y":30.9,"k":"other","o":0,"m":34.83},{"x":19.9,"y":47.2,"k":"pass","o":1,"m":34.85},{"x":33.8,"y":51.6,"k":"carry","o":0,"m":34.88},{"x":47.3,"y":54.3,"k":"pass","o":1,"m":34.93},{"x":73.1,"y":66.0,"k":"pass","o":1,"m":35.02},{"x":13.4,"y":2.6,"k":"duel","o":-1,"m":35.18},{"x":82.7,"y":62.9,"k":"other","o":0,"m":35.25},{"x":60.4,"y":19.2,"k":"other","o":0,"m":35.63},{"x":41.2,"y":65.4,"k":"recovery","o":1,"m":36.1},{"x":42.4,"y":49.6,"k":"duel","o":1,"m":36.13},{"x":56.2,"y":18.8,"k":"duel","o":-1,"m":36.17},{"x":49.4,"y":55.5,"k":"pass","o":1,"m":36.18},{"x":42.4,"y":49.6,"k":"other","o":0,"m":36.2},{"x":51.6,"y":43.8,"k":"pass","o":1,"m":36.22},{"x":58.5,"y":22.4,"k":"loss","o":-1,"m":36.25},{"x":21.1,"y":3.8,"k":"duel","o":-1,"m":36.47},{"x":11.8,"y":42.9,"k":"duel","o":1,"m":36.73},{"x":2.3,"y":40.9,"k":"pass","o":1,"m":37.15},{"x":8.0,"y":29.7,"k":"pass","o":1,"m":37.17},{"x":46.1,"y":45.1,"k":"pass","o":1,"m":37.22},{"x":67.3,"y":33.9,"k":"shot","o":0,"m":37.25},{"x":65.8,"y":33.2,"k":"duel","o":-1,"m":37.33},{"x":13.8,"y":27.1,"k":"recovery","o":1,"m":37.43},{"x":14.3,"y":25.7,"k":"pass","o":1,"m":37.47},{"x":26.8,"y":9.5,"k":"carry","o":0,"m":37.52},{"x":14.3,"y":25.7,"k":"other","o":0,"m":37.53},{"x":60.0,"y":10.1,"k":"pass","o":1,"m":37.6},{"x":70.1,"y":5.6,"k":"pass","o":1,"m":37.63},{"x":75.0,"y":7.4,"k":"pass","o":1,"m":37.68},{"x":104.9,"y":18.9,"k":"pass","o":-1,"m":37.75},{"x":105.0,"y":0.0,"k":"pass","o":-1,"m":38.15},{"x":96.7,"y":15.8,"k":"pass","o":1,"m":38.22},{"x":95.7,"y":4.9,"k":"pass","o":1,"m":38.25},{"x":103.8,"y":16.8,"k":"duel","o":-1,"m":38.28},{"x":35.4,"y":68.0,"k":"pass","o":1,"m":38.68},{"x":14.2,"y":44.7,"k":"pass","o":1,"m":38.75},{"x":29.0,"y":29.3,"k":"pass","o":1,"m":38.83},{"x":29.0,"y":9.7,"k":"pass","o":1,"m":38.92},{"x":11.2,"y":29.1,"k":"pass","o":1,"m":38.98},{"x":17.1,"y":63.7,"k":"carry","o":0,"m":39.0},{"x":31.3,"y":63.8,"k":"pass","o":1,"m":39.07},{"x":32.5,"y":65.2,"k":"duel","o":1,"m":39.15},{"x":35.8,"y":62.1,"k":"duel","o":1,"m":39.18},{"x":32.3,"y":64.1,"k":"pass","o":1,"m":39.45},{"x":24.9,"y":47.4,"k":"pass","o":1,"m":39.5},{"x":32.3,"y":64.1,"k":"other","o":0,"m":39.52},{"x":35.2,"y":54.6,"k":"pass","o":1,"m":39.55},{"x":29.7,"y":32.9,"k":"pass","o":1,"m":39.6},{"x":28.4,"y":54.2,"k":"pass","o":1,"m":39.63},{"x":32.4,"y":65.0,"k":"pass","o":1,"m":39.68},{"x":57.6,"y":53.5,"k":"duel","o":-1,"m":39.72},{"x":61.2,"y":40.3,"k":"duel","o":1,"m":40.17},{"x":58.2,"y":33.7,"k":"pass","o":-1,"m":40.2},{"x":60.3,"y":21.3,"k":"duel","o":1,"m":40.25},{"x":63.6,"y":11.0,"k":"pass","o":-1,"m":40.27},{"x":46.8,"y":0.0,"k":"pass","o":1,"m":40.45},{"x":49.9,"y":14.9,"k":"pass","o":1,"m":40.5},{"x":46.8,"y":0.0,"k":"duel","o":-1,"m":40.52},{"x":55.7,"y":0.0,"k":"pass","o":1,"m":40.65},{"x":68.6,"y":4.6,"k":"duel","o":-1,"m":40.7},{"x":55.7,"y":0.0,"k":"other","o":0,"m":40.72},{"x":75.8,"y":0.0,"k":"pass","o":1,"m":40.85},{"x":77.2,"y":8.1,"k":"duel","o":1,"m":40.92},{"x":78.1,"y":4.0,"k":"pass","o":1,"m":40.95},{"x":83.2,"y":1.7,"k":"pass","o":1,"m":40.98},{"x":87.4,"y":7.4,"k":"duel","o":-1,"m":41.02},{"x":47.4,"y":16.7,"k":"recovery","o":1,"m":41.18},{"x":33.9,"y":6.1,"k":"loss","o":-1,"m":41.23},{"x":37.5,"y":27.2,"k":"duel","o":1,"m":42.27},{"x":37.5,"y":27.2,"k":"other","o":0,"m":42.33},{"x":12.8,"y":21.3,"k":"pass","o":1,"m":42.35},{"x":33.4,"y":48.7,"k":"pass","o":1,"m":42.47},{"x":44.1,"y":49.3,"k":"pass","o":1,"m":42.52},{"x":37.1,"y":53.8,"k":"pass","o":1,"m":42.53},{"x":42.6,"y":65.1,"k":"duel","o":1,"m":42.57},{"x":49.0,"y":65.1,"k":"pass","o":1,"m":42.62},{"x":66.5,"y":61.8,"k":"loss","o":-1,"m":42.67},{"x":11.5,"y":31.7,"k":"pass","o":1,"m":43.35},{"x":11.5,"y":31.7,"k":"other","o":0,"m":43.42},{"x":19.3,"y":43.7,"k":"pass","o":1,"m":43.5},{"x":26.9,"y":6.8,"k":"pass","o":1,"m":43.6},{"x":29.2,"y":15.4,"k":"pass","o":1,"m":43.62},{"x":20.6,"y":6.5,"k":"pass","o":1,"m":43.63},{"x":26.2,"y":7.0,"k":"pass","o":1,"m":43.68},{"x":34.6,"y":5.9,"k":"pass","o":1,"m":43.72},{"x":32.5,"y":21.7,"k":"pass","o":1,"m":43.75},{"x":49.6,"y":64.1,"k":"pass","o":1,"m":43.82},{"x":69.4,"y":55.9,"k":"pass","o":1,"m":43.87},{"x":78.0,"y":63.8,"k":"pass","o":1,"m":43.92},{"x":90.8,"y":64.7,"k":"pass","o":1,"m":43.97},{"x":91.3,"y":51.2,"k":"shot","o":0,"m":44.03},{"x":55.1,"y":45.6,"k":"pass","o":1,"m":44.13},{"x":61.2,"y":45.9,"k":"other","o":0,"m":44.15},{"x":56.1,"y":25.2,"k":"carry","o":0,"m":44.17},{"x":72.4,"y":18.6,"k":"pass","o":1,"m":44.23},{"x":66.5,"y":7.7,"k":"pass","o":1,"m":44.33},{"x":65.1,"y":9.7,"k":"pass","o":1,"m":44.37},{"x":71.0,"y":4.7,"k":"pass","o":1,"m":44.4},{"x":73.6,"y":3.6,"k":"duel","o":-1,"m":44.45},{"x":57.2,"y":32.0,"k":"duel","o":1,"m":44.55},{"x":71.6,"y":35.3,"k":"pass","o":1,"m":44.6},{"x":84.3,"y":48.2,"k":"duel","o":1,"m":44.67},{"x":84.5,"y":47.7,"k":"other","o":0,"m":45.55},{"x":84.5,"y":47.7,"k":"other","o":0,"m":45.62},{"x":33.4,"y":34.6,"k":"pass","o":1,"m":45.0},{"x":24.1,"y":10.4,"k":"duel","o":-1,"m":45.05},{"x":85.1,"y":68.0,"k":"pass","o":1,"m":45.25},{"x":81.8,"y":46.8,"k":"pass","o":1,"m":45.28},{"x":84.6,"y":46.5,"k":"pass","o":1,"m":45.32},{"x":93.6,"y":48.1,"k":"other","o":0,"m":45.33},{"x":1.8,"y":35.4,"k":"pass","o":1,"m":46.0},{"x":10.3,"y":40.0,"k":"pass","o":1,"m":46.05},{"x":1.6,"y":30.1,"k":"pass","o":1,"m":46.1},{"x":14.1,"y":1.6,"k":"pass","o":1,"m":46.15},{"x":33.6,"y":3.0,"k":"duel","o":-1,"m":46.17},{"x":99.8,"y":59.4,"k":"duel","o":1,"m":46.25},{"x":2.1,"y":33.4,"k":"pass","o":1,"m":46.48},{"x":37.8,"y":2.1,"k":"loss","o":-1,"m":46.53},{"x":56.0,"y":60.0,"k":"duel","o":1,"m":47.25},{"x":64.6,"y":60.0,"k":"pass","o":-1,"m":47.3},{"x":63.8,"y":68.0,"k":"pass","o":1,"m":47.43},{"x":63.8,"y":68.0,"k":"other","o":0,"m":47.5},{"x":42.2,"y":54.6,"k":"pass","o":1,"m":47.53},{"x":40.7,"y":16.4,"k":"pass","o":1,"m":47.63},{"x":36.9,"y":5.4,"k":"pass","o":1,"m":47.68},{"x":13.4,"y":20.9,"k":"pass","o":1,"m":47.75},{"x":28.1,"y":50.0,"k":"pass","o":1,"m":47.8},{"x":36.1,"y":64.4,"k":"carry","o":0,"m":47.83},{"x":61.2,"y":62.3,"k":"pass","o":-1,"m":47.88},{"x":71.9,"y":53.0,"k":"duel","o":1,"m":47.97},{"x":33.2,"y":14.7,"k":"other","o":0,"m":47.98},{"x":70.9,"y":55.6,"k":"pass","o":1,"m":50.08},{"x":72.4,"y":54.0,"k":"pass","o":1,"m":50.1},{"x":79.3,"y":61.4,"k":"loss","o":-1,"m":50.13},{"x":70.9,"y":55.6,"k":"other","o":0,"m":50.15},{"x":17.3,"y":46.6,"k":"recovery","o":1,"m":50.3},{"x":14.3,"y":39.8,"k":"pass","o":1,"m":50.32},{"x":45.9,"y":61.6,"k":"pass","o":1,"m":50.43},{"x":39.1,"y":51.9,"k":"loss","o":-1,"m":50.48},{"x":10.2,"y":49.1,"k":"recovery","o":1,"m":50.7},{"x":13.8,"y":50.4,"k":"pass","o":1,"m":50.72},{"x":22.6,"y":47.4,"k":"pass","o":1,"m":50.75},{"x":12.2,"y":43.8,"k":"pass","o":1,"m":50.77},{"x":36.1,"y":58.0,"k":"duel","o":-1,"m":50.8},{"x":42.3,"y":44.2,"k":"duel","o":-1,"m":51.67},{"x":2.3,"y":37.8,"k":"duel","o":1,"m":52.0},{"x":12.9,"y":34.9,"k":"pass","o":1,"m":52.08},{"x":33.8,"y":65.8,"k":"pass","o":1,"m":52.18},{"x":69.5,"y":7.0,"k":"duel","o":-1,"m":52.23},{"x":32.9,"y":62.4,"k":"other","o":0,"m":52.25},{"x":31.1,"y":52.5,"k":"loss","o":-1,"m":52.5},{"x":45.9,"y":63.4,"k":"duel","o":-1,"m":52.73},{"x":22.7,"y":21.8,"k":"duel","o":1,"m":52.85},{"x":40.5,"y":18.7,"k":"pass","o":1,"m":52.93},{"x":46.4,"y":25.4,"k":"loss","o":-1,"m":52.95},{"x":43.8,"y":48.1,"k":"duel","o":-1,"m":53.0},{"x":57.2,"y":21.5,"k":"other","o":0,"m":53.02},{"x":65.8,"y":22.8,"k":"duel","o":1,"m":53.32},{"x":65.6,"y":18.9,"k":"pass","o":1,"m":53.37},{"x":65.8,"y":22.8,"k":"other","o":0,"m":53.38},{"x":85.8,"y":13.2,"k":"duel","o":1,"m":53.4},{"x":103.3,"y":16.7,"k":"pass","o":-1,"m":53.45},{"x":85.2,"y":49.7,"k":"pass","o":1,"m":53.53},{"x":87.1,"y":33.8,"k":"other","o":0,"m":53.57},{"x":25.6,"y":28.9,"k":"duel","o":1,"m":54.28},{"x":32.0,"y":32.1,"k":"carry","o":0,"m":54.3},{"x":47.4,"y":51.5,"k":"duel","o":-1,"m":54.37},{"x":50.2,"y":6.2,"k":"duel","o":-1,"m":54.5},{"x":56.4,"y":61.1,"k":"other","o":0,"m":54.52},{"x":46.8,"y":51.0,"k":"duel","o":1,"m":55.03},{"x":57.6,"y":48.3,"k":"duel","o":1,"m":55.08},{"x":58.7,"y":44.0,"k":"pass","o":1,"m":55.1},{"x":62.7,"y":44.0,"k":"loss","o":-1,"m":55.12},{"x":3.3,"y":50.6,"k":"pass","o":1,"m":55.32},{"x":84.9,"y":8.6,"k":"duel","o":-1,"m":55.35},{"x":102.9,"y":10.3,"k":"duel","o":1,"m":55.4},{"x":2.4,"y":34.7,"k":"pass","o":1,"m":55.68},{"x":7.7,"y":40.0,"k":"pass","o":1,"m":55.75},{"x":7.8,"y":16.9,"k":"pass","o":1,"m":55.78},{"x":24.4,"y":3.1,"k":"pass","o":1,"m":55.88},{"x":11.2,"y":25.1,"k":"pass","o":1,"m":55.93},{"x":13.6,"y":45.3,"k":"pass","o":1,"m":55.97},{"x":31.0,"y":62.6,"k":"pass","o":1,"m":56.05},{"x":37.7,"y":55.8,"k":"pass","o":1,"m":56.1},{"x":31.9,"y":47.7,"k":"pass","o":1,"m":56.13},{"x":37.5,"y":43.2,"k":"pass","o":1,"m":56.17},{"x":29.4,"y":46.6,"k":"carry","o":0,"m":56.2},{"x":41.0,"y":46.8,"k":"pass","o":1,"m":56.25},{"x":54.0,"y":61.5,"k":"loss","o":-1,"m":56.3},{"x":33.0,"y":25.5,"k":"duel","o":1,"m":56.68},{"x":44.3,"y":24.3,"k":"pass","o":-1,"m":56.7},{"x":57.9,"y":34.4,"k":"duel","o":-1,"m":56.77},{"x":47.1,"y":33.6,"k":"other","o":0,"m":56.78},{"x":25.1,"y":14.9,"k":"duel","o":1,"m":57.53},{"x":76.0,"y":64.7,"k":"duel","o":-1,"m":57.58},{"x":23.2,"y":28.6,"k":"recovery","o":1,"m":57.8},{"x":34.8,"y":40.6,"k":"carry","o":0,"m":57.82},{"x":39.9,"y":56.0,"k":"pass","o":1,"m":57.88},{"x":47.5,"y":61.0,"k":"duel","o":-1,"m":57.92},{"x":42.5,"y":34.5,"k":"recovery","o":1,"m":58.72},{"x":42.9,"y":44.2,"k":"duel","o":1,"m":58.75},{"x":42.5,"y":34.5,"k":"other","o":0,"m":58.78},{"x":58.0,"y":37.1,"k":"pass","o":1,"m":58.8},{"x":77.8,"y":36.0,"k":"duel","o":1,"m":58.85},{"x":79.1,"y":23.6,"k":"duel","o":-1,"m":58.9},{"x":33.1,"y":57.3,"k":"duel","o":-1,"m":58.95},{"x":71.8,"y":10.6,"k":"other","o":0,"m":58.97},{"x":37.6,"y":33.2,"k":"duel","o":1,"m":59.65},{"x":51.1,"y":33.9,"k":"carry","o":0,"m":59.67},{"x":37.6,"y":33.2,"k":"other","o":0,"m":59.72},{"x":58.5,"y":49.6,"k":"pass","o":1,"m":59.77},{"x":78.1,"y":53.7,"k":"pass","o":1,"m":59.78},{"x":77.8,"y":65.5,"k":"pass","o":1,"m":59.82},{"x":10.8,"y":4.9,"k":"duel","o":-1,"m":59.83},{"x":91.7,"y":68.0,"k":"pass","o":1,"m":60.22},{"x":10.1,"y":25.1,"k":"duel","o":-1,"m":60.25},{"x":85.5,"y":38.3,"k":"shot","o":0,"m":60.28},{"x":64.0,"y":20.3,"k":"pass","o":1,"m":60.35},{"x":74.4,"y":16.5,"k":"pass","o":1,"m":60.37},{"x":86.1,"y":2.3,"k":"pass","o":1,"m":60.42},{"x":104.0,"y":15.9,"k":"pass","o":1,"m":60.47},{"x":99.0,"y":28.3,"k":"shot","o":0,"m":60.48},{"x":91.4,"y":0.0,"k":"pass","o":1,"m":60.92},{"x":97.7,"y":11.6,"k":"pass","o":1,"m":60.97},{"x":100.4,"y":6.4,"k":"loss","o":-1,"m":60.98},{"x":72.3,"y":63.2,"k":"duel","o":1,"m":62.3},{"x":72.9,"y":54.0,"k":"pass","o":1,"m":62.35},{"x":76.8,"y":53.0,"k":"pass","o":1,"m":62.38},{"x":71.2,"y":57.6,"k":"pass","o":1,"m":62.4},{"x":72.5,"y":58.3,"k":"other","o":0,"m":62.42},{"x":72.9,"y":53.5,"k":"pass","o":1,"m":62.43},{"x":56.6,"y":57.1,"k":"pass","o":1,"m":62.48},{"x":46.6,"y":5.6,"k":"pass","o":1,"m":62.53},{"x":64.0,"y":2.6,"k":"loss","o":-1,"m":62.58},{"x":67.5,"y":2.5,"k":"duel","o":1,"m":62.62},{"x":66.6,"y":64.4,"k":"duel","o":-1,"m":62.9},{"x":3.1,"y":38.6,"k":"recovery","o":1,"m":63.02},{"x":3.5,"y":30.7,"k":"pass","o":1,"m":63.38},{"x":4.5,"y":17.9,"k":"pass","o":1,"m":63.42},{"x":8.4,"y":2.1,"k":"pass","o":1,"m":63.45},{"x":23.4,"y":4.2,"k":"pass","o":1,"m":63.5},{"x":45.8,"y":3.1,"k":"pass","o":1,"m":63.57},{"x":68.9,"y":4.5,"k":"pass","o":1,"m":63.6},{"x":87.0,"y":11.0,"k":"pass","o":-1,"m":63.65},{"x":83.8,"y":3.4,"k":"pass","o":1,"m":63.72},{"x":85.4,"y":5.0,"k":"pass","o":1,"m":63.75},{"x":5.3,"y":63.0,"k":"duel","o":-1,"m":63.87},{"x":96.6,"y":0.0,"k":"pass","o":-1,"m":64.3},{"x":96.6,"y":0.0,"k":"other","o":0,"m":64.37},{"x":78.4,"y":14.8,"k":"pass","o":1,"m":64.38},{"x":61.4,"y":23.6,"k":"pass","o":1,"m":64.42},{"x":78.4,"y":14.8,"k":"other","o":0,"m":64.45},{"x":42.7,"y":25.2,"k":"pass","o":1,"m":64.52},{"x":83.0,"y":60.1,"k":"duel","o":1,"m":64.57},{"x":14.4,"y":12.0,"k":"duel","o":-1,"m":64.67},{"x":74.8,"y":63.0,"k":"duel","o":1,"m":64.83},{"x":79.4,"y":61.6,"k":"duel","o":1,"m":64.85},{"x":85.1,"y":61.1,"k":"pass","o":1,"m":64.87},{"x":74.8,"y":63.0,"k":"other","o":0,"m":64.9},{"x":98.7,"y":56.9,"k":"duel","o":-1,"m":64.93},{"x":105.0,"y":68.0,"k":"pass","o":1,"m":65.58},{"x":90.8,"y":22.6,"k":"loss","o":-1,"m":65.63},{"x":105.0,"y":68.0,"k":"other","o":0,"m":65.65},{"x":31.6,"y":16.1,"k":"recovery","o":1,"m":65.88},{"x":27.5,"y":16.9,"k":"pass","o":1,"m":65.9},{"x":8.4,"y":28.9,"k":"pass","o":1,"m":65.95},{"x":27.5,"y":16.9,"k":"other","o":0,"m":65.97},{"x":37.6,"y":20.0,"k":"pass","o":1,"m":66.08},{"x":35.9,"y":37.1,"k":"pass","o":1,"m":66.13},{"x":55.8,"y":64.1,"k":"pass","o":1,"m":66.22},{"x":39.5,"y":61.5,"k":"pass","o":1,"m":66.25},{"x":34.5,"y":42.4,"k":"pass","o":1,"m":66.3},{"x":45.5,"y":17.5,"k":"pass","o":1,"m":66.37},{"x":42.2,"y":45.7,"k":"pass","o":1,"m":66.45},{"x":47.0,"y":61.2,"k":"pass","o":1,"m":66.52},{"x":41.7,"y":50.4,"k":"pass","o":1,"m":66.58},{"x":83.9,"y":57.0,"k":"pass","o":1,"m":66.65},{"x":22.1,"y":30.6,"k":"duel","o":-1,"m":66.68},{"x":76.7,"y":39.7,"k":"pass","o":1,"m":66.75},{"x":77.6,"y":57.2,"k":"pass","o":1,"m":66.78},{"x":95.3,"y":55.4,"k":"pass","o":1,"m":66.87},{"x":98.2,"y":45.5,"k":"pass","o":1,"m":66.88},{"x":90.8,"y":44.0,"k":"shot","o":0,"m":66.9},{"x":105.0,"y":68.0,"k":"pass","o":-1,"m":67.45},{"x":75.2,"y":21.2,"k":"pass","o":1,"m":67.52},{"x":78.0,"y":3.3,"k":"pass","o":1,"m":67.57},{"x":99.0,"y":15.5,"k":"pass","o":-1,"m":67.63},{"x":81.4,"y":2.5,"k":"carry","o":0,"m":67.75},{"x":97.4,"y":4.8,"k":"pass","o":1,"m":67.82},{"x":94.6,"y":2.6,"k":"pass","o":1,"m":67.85},{"x":85.5,"y":3.8,"k":"pass","o":1,"m":67.87},{"x":85.4,"y":9.2,"k":"carry","o":0,"m":67.88},{"x":102.0,"y":4.7,"k":"pass","o":1,"m":67.95},{"x":94.0,"y":1.4,"k":"pass","o":1,"m":67.98},{"x":94.9,"y":30.6,"k":"duel","o":1,"m":68.0},{"x":91.6,"y":23.4,"k":"pass","o":1,"m":68.03},{"x":89.5,"y":23.9,"k":"other","o":0,"m":68.05},{"x":33.3,"y":31.3,"k":"duel","o":1,"m":68.48},{"x":45.6,"y":35.0,"k":"duel","o":1,"m":68.55},{"x":41.0,"y":44.8,"k":"duel","o":-1,"m":68.63},{"x":64.2,"y":21.2,"k":"pass","o":1,"m":68.67},{"x":81.5,"y":14.1,"k":"pass","o":-1,"m":68.7},{"x":87.5,"y":0.0,"k":"pass","o":1,"m":68.82},{"x":79.7,"y":4.8,"k":"pass","o":1,"m":68.85},{"x":92.0,"y":2.6,"k":"pass","o":1,"m":68.87},{"x":87.5,"y":0.0,"k":"other","o":0,"m":68.88},{"x":103.1,"y":19.6,"k":"duel","o":-1,"m":68.92},{"x":29.6,"y":46.7,"k":"pass","o":-1,"m":69.37},{"x":11.6,"y":29.5,"k":"pass","o":-1,"m":70.13},{"x":11.9,"y":35.5,"k":"duel","o":1,"m":70.18},{"x":29.5,"y":51.0,"k":"loss","o":-1,"m":70.62},{"x":16.2,"y":36.2,"k":"duel","o":1,"m":70.73},{"x":16.6,"y":35.1,"k":"pass","o":1,"m":70.75},{"x":31.0,"y":22.7,"k":"pass","o":1,"m":70.77},{"x":57.0,"y":3.6,"k":"carry","o":0,"m":70.82},{"x":77.1,"y":13.6,"k":"duel","o":-1,"m":70.9},{"x":20.4,"y":65.7,"k":"duel","o":-1,"m":70.98},{"x":43.5,"y":66.6,"k":"duel","o":-1,"m":71.07},{"x":63.2,"y":0.5,"k":"other","o":0,"m":71.08},{"x":25.9,"y":19.6,"k":"duel","o":1,"m":72.08},{"x":39.2,"y":44.0,"k":"pass","o":1,"m":72.15},{"x":45.9,"y":64.4,"k":"carry","o":0,"m":72.18},{"x":57.8,"y":64.7,"k":"pass","o":1,"m":72.25},{"x":57.3,"y":49.4,"k":"pass","o":1,"m":72.27},{"x":47.6,"y":48.3,"k":"pass","o":1,"m":72.3},{"x":44.3,"y":63.4,"k":"pass","o":1,"m":72.35},{"x":59.6,"y":55.9,"k":"pass","o":1,"m":72.37},{"x":61.2,"y":55.0,"k":"loss","o":-1,"m":72.38},{"x":65.5,"y":62.8,"k":"pass","o":-1,"m":72.73},{"x":35.9,"y":6.8,"k":"duel","o":-1,"m":72.77},{"x":23.3,"y":8.3,"k":"recovery","o":1,"m":72.97},{"x":3.3,"y":24.1,"k":"other","o":0,"m":73.08},{"x":12.4,"y":27.0,"k":"pass","o":1,"m":73.13},{"x":27.4,"y":58.2,"k":"pass","o":1,"m":73.25},{"x":37.5,"y":64.6,"k":"pass","o":1,"m":73.3},{"x":36.1,"y":43.5,"k":"pass","o":-1,"m":73.38},{"x":48.8,"y":33.8,"k":"duel","o":1,"m":73.52},{"x":47.9,"y":40.2,"k":"pass","o":1,"m":73.57},{"x":63.8,"y":61.6,"k":"pass","o":1,"m":73.62},{"x":40.0,"y":16.8,"k":"duel","o":-1,"m":73.67},{"x":32.4,"y":48.8,"k":"duel","o":1,"m":74.62},{"x":32.6,"y":25.8,"k":"duel","o":1,"m":74.65},{"x":41.7,"y":28.9,"k":"duel","o":1,"m":74.68},{"x":45.2,"y":5.3,"k":"pass","o":1,"m":74.73},{"x":42.0,"y":5.8,"k":"pass","o":1,"m":74.78},{"x":42.2,"y":18.8,"k":"pass","o":1,"m":74.85},{"x":46.0,"y":3.4,"k":"pass","o":1,"m":74.9},{"x":44.2,"y":20.9,"k":"pass","o":1,"m":74.95},{"x":42.8,"y":50.7,"k":"carry","o":0,"m":75.0},{"x":62.8,"y":50.7,"k":"pass","o":1,"m":75.07},{"x":61.5,"y":42.8,"k":"pass","o":1,"m":75.1},{"x":55.6,"y":21.8,"k":"pass","o":1,"m":75.15},{"x":50.4,"y":39.1,"k":"pass","o":1,"m":75.2},{"x":63.4,"y":53.9,"k":"pass","o":1,"m":75.23},{"x":65.8,"y":61.7,"k":"pass","o":1,"m":75.28},{"x":64.6,"y":48.7,"k":"pass","o":1,"m":75.35},{"x":85.8,"y":57.3,"k":"pass","o":1,"m":75.42},{"x":87.5,"y":44.4,"k":"duel","o":1,"m":75.43},{"x":79.3,"y":48.7,"k":"pass","o":1,"m":75.47},{"x":75.2,"y":31.7,"k":"pass","o":1,"m":75.48},{"x":79.1,"y":41.1,"k":"pass","o":1,"m":75.5},{"x":86.9,"y":8.6,"k":"pass","o":-1,"m":75.57},{"x":105.0,"y":0.0,"k":"pass","o":-1,"m":76.08},{"x":76.6,"y":41.2,"k":"pass","o":-1,"m":76.13},{"x":105.0,"y":0.0,"k":"other","o":0,"m":76.15},{"x":63.6,"y":46.7,"k":"pass","o":1,"m":76.18},{"x":63.6,"y":46.7,"k":"other","o":0,"m":76.25},{"x":32.5,"y":30.8,"k":"pass","o":1,"m":76.28},{"x":52.9,"y":4.1,"k":"pass","o":1,"m":76.33},{"x":64.4,"y":11.3,"k":"pass","o":1,"m":76.4},{"x":63.4,"y":5.0,"k":"pass","o":1,"m":76.47},{"x":63.9,"y":13.6,"k":"pass","o":1,"m":76.5},{"x":47.7,"y":2.0,"k":"pass","o":1,"m":76.55},{"x":48.1,"y":33.4,"k":"pass","o":1,"m":76.63},{"x":55.1,"y":59.6,"k":"pass","o":1,"m":76.68},{"x":64.5,"y":55.5,"k":"duel","o":-1,"m":76.72},{"x":13.7,"y":6.5,"k":"recovery","o":1,"m":77.45},{"x":6.1,"y":31.6,"k":"pass","o":1,"m":77.5},{"x":13.7,"y":6.5,"k":"other","o":0,"m":77.52},{"x":16.9,"y":36.1,"k":"pass","o":1,"m":77.55},{"x":7.6,"y":50.6,"k":"pass","o":1,"m":77.58},{"x":23.0,"y":64.3,"k":"pass","o":1,"m":77.62},{"x":41.0,"y":57.0,"k":"pass","o":1,"m":77.65},{"x":49.0,"y":62.1,"k":"pass","o":1,"m":77.68},{"x":42.4,"y":54.4,"k":"loss","o":-1,"m":77.73},{"x":49.1,"y":38.9,"k":"duel","o":-1,"m":77.87},{"x":58.7,"y":8.6,"k":"duel","o":-1,"m":78.35},{"x":61.7,"y":65.0,"k":"duel","o":-1,"m":79.55},{"x":1.6,"y":32.0,"k":"pass","o":1,"m":79.87},{"x":9.6,"y":42.4,"k":"pass","o":1,"m":79.9},{"x":23.7,"y":42.6,"k":"pass","o":1,"m":79.92},{"x":1.6,"y":32.0,"k":"other","o":0,"m":79.93},{"x":27.8,"y":33.0,"k":"pass","o":1,"m":80.02},{"x":32.2,"y":59.1,"k":"pass","o":1,"m":80.13},{"x":50.1,"y":65.2,"k":"pass","o":1,"m":80.17},{"x":62.0,"y":52.7,"k":"pass","o":1,"m":80.2},{"x":77.5,"y":34.3,"k":"pass","o":1,"m":80.23},{"x":88.8,"y":21.2,"k":"shot","o":0,"m":80.28},{"x":31.0,"y":52.1,"k":"duel","o":-1,"m":80.37},{"x":76.7,"y":54.4,"k":"duel","o":-1,"m":80.63},{"x":2.5,"y":30.3,"k":"pass","o":1,"m":81.82},{"x":28.6,"y":42.9,"k":"pass","o":1,"m":81.93},{"x":40.9,"y":58.0,"k":"pass","o":1,"m":82.0},{"x":24.1,"y":46.2,"k":"pass","o":1,"m":82.02},{"x":27.0,"y":56.1,"k":"pass","o":1,"m":82.05},{"x":18.1,"y":44.9,"k":"pass","o":1,"m":82.08},{"x":14.3,"y":30.7,"k":"pass","o":1,"m":82.13},{"x":27.9,"y":6.2,"k":"pass","o":1,"m":82.2},{"x":3.0,"y":45.6,"k":"pass","o":1,"m":82.28},{"x":102.3,"y":38.9,"k":"other","o":0,"m":82.33},{"x":4.7,"y":26.4,"k":"pass","o":1,"m":82.63},{"x":19.4,"y":44.6,"k":"pass","o":1,"m":82.67},{"x":30.1,"y":63.5,"k":"pass","o":1,"m":82.72},{"x":25.8,"y":61.3,"k":"pass","o":1,"m":82.75},{"x":12.3,"y":56.2,"k":"pass","o":1,"m":82.8},{"x":24.8,"y":22.0,"k":"pass","o":1,"m":82.88},{"x":38.7,"y":19.6,"k":"pass","o":1,"m":82.92},{"x":39.4,"y":4.1,"k":"pass","o":1,"m":82.95},{"x":47.2,"y":10.1,"k":"duel","o":-1,"m":82.98},{"x":27.0,"y":41.1,"k":"pass","o":-1,"m":83.43},{"x":28.0,"y":12.9,"k":"duel","o":1,"m":83.58},{"x":36.3,"y":12.7,"k":"carry","o":0,"m":83.6},{"x":46.7,"y":4.5,"k":"pass","o":1,"m":83.67},{"x":59.0,"y":21.6,"k":"loss","o":-1,"m":83.7},{"x":91.4,"y":38.6,"k":"duel","o":-1,"m":84.28},{"x":45.7,"y":62.2,"k":"duel","o":-1,"m":85.08},{"x":25.7,"y":10.0,"k":"recovery","o":1,"m":85.18},{"x":9.7,"y":28.8,"k":"pass","o":1,"m":85.23},{"x":25.7,"y":10.0,"k":"other","o":0,"m":85.25},{"x":23.6,"y":44.5,"k":"pass","o":1,"m":85.3},{"x":33.8,"y":41.8,"k":"pass","o":1,"m":85.32},{"x":25.2,"y":44.0,"k":"pass","o":1,"m":85.33},{"x":32.9,"y":31.4,"k":"pass","o":1,"m":85.4},{"x":48.6,"y":34.0,"k":"pass","o":1,"m":85.42},{"x":38.3,"y":31.0,"k":"pass","o":1,"m":85.47},{"x":48.9,"y":6.5,"k":"pass","o":1,"m":85.55},{"x":36.4,"y":22.6,"k":"pass","o":1,"m":85.62},{"x":43.0,"y":48.5,"k":"pass","o":1,"m":85.72},{"x":38.1,"y":29.9,"k":"pass","o":1,"m":85.77},{"x":55.2,"y":11.5,"k":"pass","o":1,"m":85.87},{"x":56.8,"y":34.5,"k":"pass","o":1,"m":85.93},{"x":64.1,"y":43.3,"k":"pass","o":1,"m":85.97},{"x":65.3,"y":53.5,"k":"pass","o":1,"m":86.0},{"x":78.8,"y":55.2,"k":"pass","o":-1,"m":86.03},{"x":34.6,"y":24.4,"k":"pass","o":1,"m":86.15},{"x":56.1,"y":11.8,"k":"pass","o":1,"m":86.3},{"x":64.3,"y":4.1,"k":"pass","o":1,"m":86.35},{"x":69.5,"y":24.1,"k":"pass","o":-1,"m":86.42},{"x":60.3,"y":17.9,"k":"pass","o":1,"m":86.45},{"x":56.6,"y":19.1,"k":"loss","o":-1,"m":86.48},{"x":39.5,"y":0.0,"k":"pass","o":1,"m":86.67},{"x":31.2,"y":13.7,"k":"pass","o":1,"m":86.73},{"x":34.0,"y":40.5,"k":"pass","o":1,"m":86.78},{"x":34.0,"y":52.6,"k":"pass","o":1,"m":86.83},{"x":44.5,"y":46.7,"k":"pass","o":1,"m":86.87},{"x":46.3,"y":47.1,"k":"duel","o":-1,"m":86.92},{"x":71.6,"y":3.4,"k":"duel","o":1,"m":87.0},{"x":69.5,"y":4.1,"k":"duel","o":-1,"m":87.03},{"x":51.9,"y":48.2,"k":"duel","o":1,"m":87.12},{"x":55.3,"y":21.6,"k":"other","o":0,"m":87.15},{"x":56.3,"y":47.5,"k":"pass","o":1,"m":87.53},{"x":62.1,"y":62.8,"k":"pass","o":1,"m":87.58},{"x":56.3,"y":47.5,"k":"other","o":0,"m":87.6},{"x":70.4,"y":55.4,"k":"pass","o":1,"m":87.67},{"x":73.0,"y":46.2,"k":"pass","o":1,"m":87.72},{"x":83.6,"y":23.3,"k":"shot","o":0,"m":87.78},{"x":26.7,"y":30.6,"k":"recovery","o":1,"m":88.03},{"x":24.7,"y":30.7,"k":"pass","o":1,"m":88.05},{"x":37.0,"y":46.0,"k":"pass","o":1,"m":88.12},{"x":68.0,"y":58.2,"k":"pass","o":1,"m":88.22},{"x":68.8,"y":50.8,"k":"pass","o":1,"m":88.27},{"x":80.6,"y":41.9,"k":"pass","o":-1,"m":88.33},{"x":94.6,"y":28.9,"k":"duel","o":-1,"m":88.35},{"x":94.6,"y":28.9,"k":"other","o":0,"m":88.37},{"x":77.2,"y":36.2,"k":"duel","o":-1,"m":89.13},{"x":19.2,"y":26.0,"k":"recovery","o":1,"m":89.15},{"x":30.8,"y":20.6,"k":"pass","o":1,"m":89.18},{"x":38.7,"y":11.3,"k":"pass","o":1,"m":89.2},{"x":19.2,"y":26.0,"k":"other","o":0,"m":89.22},{"x":67.6,"y":15.3,"k":"duel","o":1,"m":89.25},{"x":72.4,"y":17.3,"k":"pass","o":1,"m":89.3},{"x":73.0,"y":23.1,"k":"pass","o":1,"m":89.32},{"x":89.0,"y":5.4,"k":"pass","o":1,"m":89.37},{"x":99.0,"y":33.0,"k":"duel","o":1,"m":89.38},{"x":99.9,"y":32.7,"k":"shot","o":0,"m":89.4},{"x":74.0,"y":5.8,"k":"duel","o":-1,"m":90.68},{"x":3.9,"y":30.0,"k":"pass","o":1,"m":91.2},{"x":3.9,"y":30.0,"k":"other","o":0,"m":91.27},{"x":57.1,"y":23.4,"k":"duel","o":-1,"m":91.28},{"x":7.2,"y":20.3,"k":"duel","o":1,"m":91.53},{"x":3.9,"y":28.8,"k":"pass","o":1,"m":91.92},{"x":64.7,"y":19.9,"k":"duel","o":1,"m":91.97},{"x":3.9,"y":28.8,"k":"other","o":0,"m":91.98},{"x":66.8,"y":4.0,"k":"duel","o":1,"m":92.0},{"x":37.1,"y":65.3,"k":"other","o":0,"m":92.02},{"x":67.9,"y":2.6,"k":"pass","o":1,"m":92.63},{"x":67.9,"y":2.6,"k":"other","o":0,"m":92.7},{"x":27.0,"y":60.8,"k":"duel","o":-1,"m":92.72},{"x":68.7,"y":14.5,"k":"pass","o":1,"m":92.73}],"profile":[{"k":"Topla oynama","v":478,"p":51.9,"u":""},{"k":"Baskı yoğunluğu","v":40,"p":54.1,"u":""},{"k":"Kurulu düzenden şut","v":5,"p":45.5,"u":""},{"k":"Kontradan şut","v":2,"p":33.3,"u":""},{"k":"Duran toptan şut","v":3,"p":75.0,"u":""},{"k":"Merkezden şut","v":2,"p":40.0,"u":""},{"k":"Hava topu","v":12,"p":42.9,"u":""},{"k":"Savunma ikilisi","v":79,"p":43.9,"u":""},{"k":"Şutu bloklanmama","v":9,"p":42.9,"u":""},{"k":"Uzun pas isabeti","v":16,"p":44.4,"u":""},{"k":"Orta isabeti","v":2,"p":40.0,"u":""},{"k":"Maçın xG payı","v":1.79,"p":51.9,"u":""},{"k":"Koridor dağılımı","v":107,"p":48.0,"u":""}],"momentum":[9.0,7.0,29.0,8.0,35.0,15.0],"marks":[{"m":0.1,"t":"loss"},{"m":11.9,"t":"loss"},{"m":14.2,"t":"sot"},{"m":41.2,"t":"loss"},{"m":46.2,"t":"loss"},{"m":52.5,"t":"loss"},{"m":60.5,"t":"sot"},{"m":70.6,"t":"loss"},{"m":80.3,"t":"sot"},{"m":87.8,"t":"sot"},{"m":89.4,"t":"sot"}],"net":{"nodes":[{"z":2,"n":88,"x":23.9,"y":33.6},{"z":6,"n":97,"x":81.7,"y":31.6},{"z":1,"n":99,"x":8.8,"y":33.9},{"z":3,"n":166,"x":37.1,"y":39.2},{"z":5,"n":118,"x":67.4,"y":35.3},{"z":4,"n":120,"x":52.3,"y":36.5},{"z":7,"n":62,"x":97.6,"y":30.9}],"links":[{"s":2,"t":6,"n":5},{"s":6,"t":2,"n":8},{"s":1,"t":3,"n":10},{"s":3,"t":5,"n":14},{"s":2,"t":3,"n":34},{"s":4,"t":5,"n":33},{"s":5,"t":4,"n":16},{"s":5,"t":3,"n":13},{"s":4,"t":2,"n":6},{"s":2,"t":5,"n":4},{"s":5,"t":2,"n":3},{"s":3,"t":6,"n":6},{"s":6,"t":7,"n":19},{"s":7,"t":6,"n":13},{"s":6,"t":5,"n":12},{"s":5,"t":6,"n":23},{"s":1,"t":2,"n":28},{"s":2,"t":1,"n":19},{"s":3,"t":4,"n":55},{"s":4,"t":3,"n":32},{"s":3,"t":1,"n":7},{"s":3,"t":2,"n":13},{"s":1,"t":7,"n":3},{"s":7,"t":1,"n":7},{"s":4,"t":6,"n":5},{"s":1,"t":4,"n":4},{"s":6,"t":3,"n":5},{"s":5,"t":1,"n":8},{"s":1,"t":6,"n":3},{"s":1,"t":5,"n":4},{"s":6,"t":1,"n":3}]},"patterns":{"top":[{"pts":[[36.9,42.2],[38.6,38.4],[50.9,34.6]],"n":24,"shot":0},{"pts":[[35.6,37.0],[36.3,37.5],[37.6,38.2]],"n":19,"shot":0},{"pts":[[37.9,37.1],[49.3,33.8],[39.7,42.5]],"n":18,"shot":0},{"pts":[[7.9,37.8],[9.1,32.8],[23.3,38.0]],"n":14,"shot":0},{"pts":[[7.7,31.4],[7.0,35.2],[8.3,28.8]],"n":13,"shot":0}],"nseq":601}}};
+const PX=105,PY=68;
+const C={chalk:'#F2F0EC',ghost:'#71757C',ghostDim:'#43464B',blood:'#C2281E',line:'#2B2B30',gold:'#C9A227',surface:'#141417'};
+const TEAMS={fenerbahce:{name:'Fenerbahçe',ink:C.chalk,match:'Ev sahibi · 20 Ekim',lig:'Süper Lig'},
+             slaviaprag:{name:'Slavia Prag',ink:C.ghost,match:'Deplasman · 20 Ekim',lig:'Chance Liga'}};
+const LT={events:'Olay haritası',density:'Yoğunluk',zones:'Bölge ağırlığı',network:'Pas akışı'};
+let S={view:'pitch',team:'fenerbahce',layer:'events',kind:'all',out:'all',t0:0,t1:200};
+let anim=null;
+const reduce=window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+const svg=d3.select('#main'), mom=d3.select('#momentum');
+const $=s=>document.querySelector(s);
+
+function pitchBase(g,bands){
+  if(bands) [0,35,70].forEach((x,i)=>g.append('rect').attr('x',x).attr('y',0).attr('width',35).attr('height',PY)
+    .attr('fill',bands).attr('opacity',[0.018,0.032,0.05][i]));
+  g.append('rect').attr('width',PX).attr('height',PY).attr('fill','none').attr('stroke',C.line).attr('stroke-width',.35);
+  [35,70].forEach(x=>g.append('line').attr('x1',x).attr('x2',x).attr('y2',PY)
+    .attr('stroke',C.line).attr('stroke-width',.25).attr('stroke-dasharray','1.4 1.6'));
+  g.append('line').attr('x1',52.5).attr('x2',52.5).attr('y2',PY).attr('stroke',C.line).attr('stroke-width',.35);
+  g.append('circle').attr('cx',52.5).attr('cy',34).attr('r',9.15).attr('fill','none').attr('stroke',C.line).attr('stroke-width',.35);
+  [[0,16.5],[88.5,16.5]].forEach(([x,w])=>g.append('rect').attr('x',x).attr('y',13.84).attr('width',w).attr('height',40.32)
+    .attr('fill','none').attr('stroke',C.line).attr('stroke-width',.35));
+  [[0,5.5],[99.5,5.5]].forEach(([x,w])=>g.append('rect').attr('x',x).attr('y',24.84).attr('width',w).attr('height',18.32)
+    .attr('fill','none').attr('stroke',C.line).attr('stroke-width',.25));
+  ['0–35 m','35–70 m','70–105 m'].forEach((t,i)=>g.append('text').attr('x',i*35+17.5).attr('y',-1.2)
+    .attr('text-anchor','middle').attr('font-family','var(--mono)').attr('font-size',2.3)
+    .attr('letter-spacing','.14').attr('fill',C.ghostDim).text(t));
+  g.append('path').attr('d','M 96 73.5 L 103 73.5 M 101.4 72.2 L 103 73.5 L 101.4 74.8')
+    .attr('fill','none').attr('stroke',C.ghostDim).attr('stroke-width',.4);
+}
+function filtered(){
+  return DATA[S.team].events.filter(e=>(S.kind==='all'||e.k===S.kind)&&
+    (S.out==='all'||String(e.o)===S.out)&&e.m>=S.t0&&e.m<=S.t1);
+}
+function lg(items){d3.select('#legend').html(items.map(([c,t])=>`<span><i class="sw" style="background:${c}"></i>${t}</span>`).join(''));}
+function cells(items){d3.select('#readout').html(items.map(([b,s])=>`<div class="cell"><b>${b}</b><span>${s}</span></div>`).join(''));}
+function stopAnim(){if(anim){cancelAnimationFrame(anim);anim=null;}}
+
+/* ---------------- SAHA ---------------- */
+function viewPitch(){
+  const d=DATA[S.team],ink=TEAMS[S.team].ink,evs=filtered();
+  svg.attr('viewBox','-3 -3 111 80');
+  const g=svg.append('g'); pitchBase(g,ink);
+  if(S.layer==='density'&&evs.length>4){
+    [[evs.filter(e=>e.o===1),ink],[evs.filter(e=>e.o===0),C.blood]].forEach(([set,col])=>{
+      if(set.length<5)return;
+      const ct=d3.contourDensity().x(e=>e.x).y(e=>e.y).size([PX,PY]).cellSize(2).bandwidth(4.6).thresholds(9)(set);
+      const mx=d3.max(ct,c=>c.value)||1;
+      g.append('g').selectAll('path').data(ct).join('path').attr('d',d3.geoPath())
+        .attr('fill',col).attr('opacity',c=>.045+.5*(c.value/mx));});
+  }
+  if(S.layer==='zones'){
+    const nx=6,ny=4,cw=PX/nx,ch=PY/ny,cs=[];
+    const counts=Array.from({length:nx},()=>Array.from({length:ny},()=>0));
+    evs.forEach(e=>{
+      if(!Number.isFinite(e.x)||!Number.isFinite(e.y))return;
+      const i=Math.max(0,Math.min(nx-1,Math.floor(e.x/cw)));
+      const j=Math.max(0,Math.min(ny-1,Math.floor(e.y/ch)));
+      counts[i][j]++;
+    });
+    counts.forEach((col,i)=>col.forEach((n,j)=>cs.push({i,j,n})));
+    const mx=d3.max(cs,c=>c.n)||1;
+    g.append('g').selectAll('rect').data(cs).join('rect')
+      .attr('x',c=>c.i*cw+.4).attr('y',c=>c.j*ch+.4).attr('width',cw-.8).attr('height',ch-.8)
+      .attr('fill',ink).attr('opacity',c=>.05+.62*(c.n/mx));
+    g.append('g').selectAll('text').data(cs.filter(c=>c.n>=12)).join('text')
+      .attr('x',c=>c.i*cw+cw/2).attr('y',c=>c.j*ch+ch/2+1).attr('text-anchor','middle')
+      .attr('font-family','var(--mono)').attr('font-size',2.9).attr('font-weight',600)
+      .attr('fill',c=>(c.n/mx)>.52?C.ink||'#0A0A0B':ink).text(c=>c.n);
+  }
+  if(S.layer==='network') drawNetwork(g,d,ink,false);
+  if(S.layer==='events'){
+    g.append('g').selectAll('circle').data(evs).join('circle')
+      .attr('cx',e=>e.x).attr('cy',e=>e.y).attr('r',e=>e.k==='shot'?1.5:.62)
+      .attr('fill',e=>e.o===0?C.blood:(e.o===1?ink:C.ghostDim))
+      .attr('opacity',e=>e.k==='shot'?.95:.5)
+      .attr('stroke',e=>e.k==='shot'?C.surface:'none').attr('stroke-width',.3);
+  }
+  const n=evs.length,ok=evs.filter(e=>e.o===1).length,bad=evs.filter(e=>e.o===0).length;
+  cells([[n,'Seçili olay'],[(n?Math.round(ok/(ok+bad||1)*100):0)+'%','Başarı'],
+    [(n?Math.round(evs.filter(e=>e.x>70).length/n*100):0)+'%','70–105 m'],
+    [(n?Math.round(evs.filter(e=>e.x<35).length/n*100):0)+'%','0–35 m']]);
+  lg({events:[[ink,'başarılı'],[C.blood,'başarısız'],[C.ghostDim,'nötr']],
+      density:[[ink,'başarılı yoğunluk'],[C.blood,'başarısız yoğunluk']],
+      zones:[[ink,'bölgedeki olay sayısı']],
+      network:[[ink,'bölgeler arası top akışı · kalınlık = sıklık (oyuncu kimliği yok)']]}[S.layer]);
+  $('#stageTitle').textContent=LT[S.layer];
+  $('#stageNote').textContent=TEAMS[S.team].name+' · '+TEAMS[S.team].match;
+}
+function drawNetwork(g,d,ink,dim){
+  const nodes=new Map(d.net.nodes.map(n=>[n.z,n]));
+  const mxL=d3.max(d.net.links,l=>l.n)||1,mxN=d3.max(d.net.nodes,n=>n.n)||1;
+  g.append('g').attr('class','links').selectAll('path')
+    .data(d.net.links.filter(l=>nodes.has(l.s)&&nodes.has(l.t))).join('path')
+    .attr('d',l=>{const a=nodes.get(l.s),b=nodes.get(l.t);
+      return `M${a.x},${a.y} Q${(a.x+b.x)/2},${(a.y+b.y)/2-(b.x-a.x)*.14} ${b.x},${b.y}`;})
+    .attr('fill','none').attr('stroke',ink).attr('stroke-width',l=>.25+2.1*(l.n/mxL))
+    .attr('opacity',l=>(dim?.07:.12)+(dim?.1:.5)*(l.n/mxL));
+  g.append('g').selectAll('circle').data(d.net.nodes).join('circle')
+    .attr('cx',n=>n.x).attr('cy',n=>n.y).attr('r',n=>1.4+3.6*Math.sqrt(n.n/mxN))
+    .attr('fill',C.surface).attr('stroke',ink).attr('stroke-width',.5).attr('opacity',dim?.5:1);
+  if(!dim) g.append('g').selectAll('text').data(d.net.nodes.filter(n=>n.n>=14)).join('text')
+    .attr('x',n=>n.x).attr('y',n=>n.y+1).attr('text-anchor','middle')
+    .attr('font-family','var(--mono)').attr('font-size',2.5).attr('fill',ink).text(n=>n.n);
+}
+
+/* ---------------- ÖRÜNTÜ (hareketli) ---------------- */
+function viewPattern(){
+  const d=DATA[S.team],ink=TEAMS[S.team].ink;
+  svg.attr('viewBox','-3 -3 111 80');
+  const g=svg.append('g'); pitchBase(g,ink);
+  drawNetwork(g,d,ink,true);
+  const tops=d.patterns.top.slice(0,5);
+  const paths=g.append('g');
+  const nodeSel=[];
+  tops.forEach((t,i)=>{
+    const p=t.pts, dd=`M${p[0][0]},${p[0][1]} Q${(p[0][0]+p[1][0])/2},${(p[0][1]+p[1][1])/2-(p[1][0]-p[0][0])*.16} ${p[1][0]},${p[1][1]} Q${(p[1][0]+p[2][0])/2},${(p[1][1]+p[2][1])/2-(p[2][0]-p[1][0])*.16} ${p[2][0]},${p[2][1]}`;
+    const col=t.shot>0?C.gold:ink;
+    const el=paths.append('path').attr('d',dd).attr('fill','none').attr('stroke',col)
+      .attr('stroke-width',.5+1.3*(t.n/tops[0].n)).attr('opacity',.55)
+      .attr('stroke-linecap','round');
+    paths.append('text').attr('x',p[2][0]).attr('y',p[2][1]-2.6).attr('text-anchor','middle')
+      .attr('font-family','var(--mono)').attr('font-size',2.6).attr('font-weight',600)
+      .attr('fill',col).text('×'+t.n);
+    nodeSel.push({node:el.node(),col});
+  });
+  const dots=paths.append('g').selectAll('circle').data(nodeSel).join('circle')
+    .attr('r',1.15).attr('fill',d2=>d2.col).attr('opacity',.95);
+  if(reduce){
+    dots.each(function(d2){const L=d2.node.getTotalLength(),pt=d2.node.getPointAtLength(L*.6);
+      d3.select(this).attr('cx',pt.x).attr('cy',pt.y);});
+  }else{
+    const t0=performance.now();
+    const tick=now=>{
+      const el=(now-t0)/1000;
+      dots.each(function(d2,i){
+        const L=d2.node.getTotalLength();
+        const f=((el*.42)+i*0.17)%1.25;
+        const g2=d3.select(this);
+        if(f>1){g2.attr('opacity',0);return;}
+        const pt=d2.node.getPointAtLength(L*f);
+        g2.attr('cx',pt.x).attr('cy',pt.y).attr('opacity',.25+.75*Math.sin(f*Math.PI));
+      });
+      anim=requestAnimationFrame(tick);
+    };
+    anim=requestAnimationFrame(tick);
+  }
+  const fw=d.patterns.top.filter(t=>t.pts[2][0]>t.pts[0][0]).length;
+  cells([[d.patterns.nseq,'Pas sekansı'],[d.patterns.top[0].n,'En sık zincir'],
+    [fw+'/'+d.patterns.top.length,'İleri giden zincir'],
+    [d.patterns.top.filter(t=>t.shot>0).length,'Şutla biten']]);
+  lg([[ink,'tekrarlayan bölge rotası'],[C.gold,'şutla biten rota'],[C.ghostDim,'tüm hareket akışı']]);
+  $('#stageTitle').textContent='Tekrarlayan rotalar';
+  $('#stageNote').textContent=TEAMS[S.team].name+' · '+TEAMS[S.team].match;
+}
+
+/* ---------------- KARŞILAŞTIRMA ---------------- */
+function viewBars(){
+  const A=DATA.fenerbahce.profile,B=DATA.slaviaprag.profile;
+  const W=700,rowH=30,H=A.length*rowH+56;
+  svg.attr('viewBox',`0 0 ${W} ${H}`);
+  const g=svg.append('g'),mid=W/2,maxw=mid-108;
+  g.append('text').attr('x',mid-104).attr('y',16).attr('text-anchor','end')
+    .attr('font-family','var(--mono)').attr('font-size',10).attr('letter-spacing','.1em').attr('fill',C.chalk).text('FENERBAHÇE');
+  g.append('text').attr('x',mid+104).attr('y',16).attr('font-family','var(--mono)')
+    .attr('font-size',10).attr('letter-spacing','.1em').attr('fill',C.ghost).text('SLAVIA PRAG');
+  A.forEach((a,i)=>{
+    const b=B[i],y=40+i*rowH;
+    g.append('text').attr('x',mid).attr('y',y+4).attr('text-anchor','middle')
+      .attr('font-family','var(--body)').attr('font-size',11.5).attr('fill',C.chalk).text(a.k);
+    g.append('rect').attr('x',mid-104-(a.p/100)*maxw).attr('y',y+8).attr('width',(a.p/100)*maxw)
+      .attr('height',8).attr('fill',C.chalk);
+    g.append('rect').attr('x',mid+104).attr('y',y+8).attr('width',(b.p/100)*maxw).attr('height',8).attr('fill',C.ghost);
+    g.append('text').attr('x',mid-100).attr('y',y+16).attr('text-anchor','end')
+      .attr('font-family','var(--mono)').attr('font-size',10.5).attr('font-weight',600)
+      .attr('fill',C.chalk).text(a.v+a.u);
+    g.append('text').attr('x',mid+100).attr('y',y+16).attr('font-family','var(--mono)')
+      .attr('font-size',10.5).attr('font-weight',600).attr('fill',C.ghost).text(b.v+b.u);
+  });
+  cells([['13','Gösterge'],['13 / 13','Gösterge · FB / SLA'],['1','Maç'],['%'+Math.round(A.reduce((s,a,i)=>s+(a.p>B[i].p?1:0),0)/A.length*100),'FB üstün']]);
+  lg([[C.chalk,'Fenerbahçe'],[C.ghost,'Slavia Prag'],
+      [C.ghostDim,'çubuk = bu maçtaki karşılaştırmalı pay · sayı = ham değer']]);
+  $('#stageTitle').textContent='Karşılaştırma';
+  $('#stageNote').textContent='her gösterge bu maç içinde karşılaştırmalı';
+}
+
+/* ---------------- RADAR ---------------- */
+function viewRadar(){
+  const keys=['Topla oynama','Baskı yoğunluğu','Kurulu düzenden şut','Kontradan şut',
+              'Duran toptan şut','Merkezden şut','Hava topu','Savunma ikilisi'];
+  const pick=(arr,k)=>arr.find(x=>x.k===k);
+  const W=700,H=460,cx=W/2,cy=H/2-6,R=150;
+  svg.attr('viewBox',`0 0 ${W} ${H}`);
+  const g=svg.append('g');
+  const ang=i=>(i/keys.length)*2*Math.PI-Math.PI/2;
+  [25,50,75,100].forEach(r=>{
+    g.append('polygon').attr('points',keys.map((_,i)=>
+      [cx+Math.cos(ang(i))*R*r/100,cy+Math.sin(ang(i))*R*r/100].join(',')).join(' '))
+      .attr('fill','none').attr('stroke',r===100?C.line:'#1E1E22').attr('stroke-width',r===100?1:.7);
+  });
+  keys.forEach((k,i)=>{
+    g.append('line').attr('x1',cx).attr('y1',cy)
+      .attr('x2',cx+Math.cos(ang(i))*R).attr('y2',cy+Math.sin(ang(i))*R)
+      .attr('stroke','#1E1E22').attr('stroke-width',.7);
+    const lx=cx+Math.cos(ang(i))*(R+26),ly=cy+Math.sin(ang(i))*(R+26);
+    g.append('text').attr('x',lx).attr('y',ly+3)
+      .attr('text-anchor',Math.abs(Math.cos(ang(i)))<.3?'middle':(Math.cos(ang(i))>0?'start':'end'))
+      .attr('font-family','var(--body)').attr('font-size',11.5).attr('fill',C.chalk).text(k);
+  });
+  [['slaviaprag',C.ghost],['fenerbahce',C.chalk]].forEach(([t,col])=>{
+    const pr=DATA[t].profile;
+    const pts=keys.map((k,i)=>{const p=pick(pr,k).p;
+      return [cx+Math.cos(ang(i))*R*p/100,cy+Math.sin(ang(i))*R*p/100];});
+    g.append('polygon').attr('points',pts.map(p=>p.join(',')).join(' '))
+      .attr('fill',col).attr('fill-opacity',t==='fenerbahce'?.14:.1)
+      .attr('stroke',col).attr('stroke-width',1.8);
+    g.selectAll(null).data(pts).join('circle').attr('cx',p=>p[0]).attr('cy',p=>p[1]).attr('r',3)
+      .attr('fill',C.surface).attr('stroke',col).attr('stroke-width',1.5);
+  });
+  const A=DATA.fenerbahce.profile,B=DATA.slaviaprag.profile;
+  const avg=a=>Math.round(keys.reduce((s,k)=>s+pick(a,k).p,0)/keys.length);
+  cells([[avg(A),'FB ortalama pay'],[avg(B),'SLA ortalama pay'],
+    [keys.length,'Eksen'],[Math.max(...keys.map(k=>Math.abs(pick(A,k).p-pick(B,k).p))),'En büyük fark']]);
+  lg([[C.chalk,'Fenerbahçe'],[C.ghost,'Slavia Prag'],[C.ghostDim,'halkalar: 25 · 50 · 75 · 100 (pay)']]);
+  $('#stageTitle').textContent='Radar';
+  $('#stageNote').textContent='sekiz eksen · bu maç içinde karşılaştırmalı pay';
+}
+
+/* ---------------- PIZZA ---------------- */
+function viewPizza(){
+  const pr=DATA[S.team].profile,ink=TEAMS[S.team].ink;
+  const groups={'Topla oynama':0,'Baskı yoğunluğu':0,'Kurulu düzenden şut':1,'Kontradan şut':1,
+    'Duran toptan şut':1,'Merkezden şut':1,'Şutu bloklanmama':1,'Uzun pas isabeti':0,
+    'Orta isabeti':1,'Hava topu':2,'Savunma ikilisi':2,'Maçın xG payı':2,'Koridor dağılımı':0};
+  const GC=[C.ghost,ink,C.blood];
+  const GN=['Oyun kurma','Hücum üretimi','Mücadele ve denge'];
+  const W=700,H=470,cx=W/2,cy=H/2-4,R0=36,R=168,n=pr.length;
+  svg.attr('viewBox',`0 0 ${W} ${H}`);
+  const g=svg.append('g');
+  const a0=i=>(i/n)*2*Math.PI-Math.PI/2, aw=(2*Math.PI)/n;
+  [25,50,75,100].forEach(r=>g.append('circle').attr('cx',cx).attr('cy',cy)
+    .attr('r',R0+(R-R0)*r/100).attr('fill','none').attr('stroke',r===100?C.line:'#1E1E22').attr('stroke-width',r===100?1:.7));
+  const arc=d3.arc();
+  pr.forEach((d,i)=>{
+    const col=GC[groups[d.k]??0];
+    g.append('path').attr('transform',`translate(${cx},${cy})`)
+      .attr('d',arc({innerRadius:R0,outerRadius:R0+(R-R0)*d.p/100,
+        startAngle:a0(i)+Math.PI/2+.012,endAngle:a0(i)+aw+Math.PI/2-.012}))
+      .attr('fill',col).attr('fill-opacity',.78).attr('stroke',C.surface).attr('stroke-width',1);
+    const mid=a0(i)+aw/2, lr=R+30;
+    const lx=cx+Math.cos(mid)*lr, ly=cy+Math.sin(mid)*lr;
+    g.append('text').attr('x',lx).attr('y',ly+3)
+      .attr('text-anchor',Math.abs(Math.cos(mid))<.25?'middle':(Math.cos(mid)>0?'start':'end'))
+      .attr('font-family','var(--body)').attr('font-size',10.5).attr('fill',C.chalk).text(d.k);
+    const vr=R0+(R-R0)*d.p/100-13;
+    if(d.p>22) g.append('text').attr('x',cx+Math.cos(mid)*vr).attr('y',cy+Math.sin(mid)*vr+3)
+      .attr('text-anchor','middle').attr('font-family','var(--mono)').attr('font-size',10)
+      .attr('font-weight',600).attr('fill',groups[d.k]===1?'#0A0A0B':C.chalk).text(d.p);
+  });
+  g.append('text').attr('x',cx).attr('y',cy-2).attr('text-anchor','middle')
+    .attr('font-family','var(--display)').attr('font-size',14).attr('fill',C.chalk).text(TEAMS[S.team].name);
+  g.append('text').attr('x',cx).attr('y',cy+12).attr('text-anchor','middle')
+    .attr('font-family','var(--mono)').attr('font-size',8.5).attr('letter-spacing','.1em')
+    .attr('fill',C.ghost).text(TEAMS[S.team].lig.toUpperCase());
+  const hi=pr.reduce((a,b)=>a.p>b.p?a:b), lo=pr.reduce((a,b)=>a.p<b.p?a:b);
+  cells([[hi.p,'En güçlü: '+hi.k],[lo.p,'En zayıf: '+lo.k],
+    [Math.round(pr.reduce((s,d)=>s+d.p,0)/pr.length),'Ortalama pay'],[pr.length,'Dilim']]);
+  lg(GN.map((t,i)=>[GC[i],t]));
+  $('#stageTitle').textContent='Pizza';
+  $('#stageNote').textContent='dilim uzunluğu = bu maçtaki karşılaştırmalı pay';
+}
+
+/* ---------------- MOMENTUM ---------------- */
+const MW=700,MH=180,ml=46,mr=16,mt=16,mb=34;
+function renderMomentum(){
+  mom.selectAll('*').remove();
+  const d=DATA[S.team],ink=TEAMS[S.team].ink;
+  const labels=['0–15','15–30','30–45','45–60','60–75','75–90+'];
+  const x=d3.scaleLinear().domain([0,90]).range([ml,MW-mr]);
+  const ext=d3.max(d.momentum,v=>Math.abs(v))||1;
+  const y=d3.scaleLinear().domain([-ext*1.15,ext*1.15]).range([MH-mb,mt]);
+  const pts=d.momentum.map((v,i)=>({m:i*15+7.5,v}));
+  const g=mom.append('g');
+  labels.forEach((l,i)=>{
+    g.append('line').attr('x1',x(i*15)).attr('x2',x(i*15)).attr('y1',mt).attr('y2',MH-mb).attr('stroke','#1E1E22');
+    g.append('text').attr('x',x(i*15+7.5)).attr('y',MH-16).attr('text-anchor','middle')
+      .attr('font-family','var(--mono)').attr('font-size',10).attr('fill',C.ghostDim).text(l);});
+  g.append('line').attr('x1',ml).attr('x2',MW-mr).attr('y1',y(0)).attr('y2',y(0)).attr('stroke',C.ghost);
+  g.append('path').datum(pts).attr('d',d3.area().x(p=>x(p.m)).y0(y(0)).y1(p=>y(p.v)).curve(d3.curveMonotoneX))
+    .attr('fill',ink).attr('opacity',.16);
+  g.append('path').datum(pts).attr('d',d3.line().x(p=>x(p.m)).y(p=>y(p.v)).curve(d3.curveMonotoneX))
+    .attr('fill','none').attr('stroke',ink).attr('stroke-width',1.6);
+  g.selectAll('.pt').data(pts).join('circle').attr('cx',p=>x(p.m)).attr('cy',p=>y(p.v)).attr('r',3)
+    .attr('fill',C.surface).attr('stroke',ink).attr('stroke-width',1.4);
+  g.selectAll('.vl').data(pts).join('text').attr('x',p=>x(p.m)).attr('y',p=>y(p.v)+(p.v>=0?-9:15))
+    .attr('text-anchor','middle').attr('font-family','var(--mono)').attr('font-size',10)
+    .attr('font-weight',600).attr('fill',ink).text(p=>(p.v>0?'+':'')+p.v);
+  const mk={sot:C.chalk,loss:C.blood,opp_sot:C.ghost};
+  g.selectAll('.mk').data(d.marks.filter(m=>m.m<=92)).join('rect')
+    .attr('x',m=>x(m.m)-1).attr('y',m=>m.t==='loss'?MH-mb+3:mt-9)
+    .attr('width',2).attr('height',6).attr('fill',m=>mk[m.t]).attr('opacity',.8);
+  g.append('text').attr('x',ml-8).attr('y',y(0)+4).attr('text-anchor','end')
+    .attr('font-family','var(--mono)').attr('font-size',10).attr('fill',C.ghostDim).text('denge');
+  const brush=d3.brushX().extent([[ml,mt-12],[MW-mr,MH-mb+12]]).on('brush end',ev=>{
+    if(!ev.selection){S.t0=0;S.t1=200;$('#windowLabel').textContent='0–96. dakika';}
+    else{const [a,b]=ev.selection.map(x.invert);S.t0=a;S.t1=b;
+      $('#windowLabel').textContent=`${Math.round(a)}–${Math.round(b)}. dakika`;}
+    if(S.view==='pitch') render();});
+  const bg=g.append('g').call(brush);
+  bg.selectAll('.selection').attr('fill',C.gold).attr('fill-opacity',.1).attr('stroke',C.gold).attr('stroke-opacity',.5);
+  bg.selectAll('.handle').attr('fill',C.gold).attr('fill-opacity',.35);
+}
+
+function render(){
+  stopAnim(); svg.selectAll('*').remove();
+  const perTeam=['pitch','pattern','pizza'].includes(S.view);
+  $('#teamRail').hidden=S.view==='bars'||S.view==='radar';
+  ['layerRail','kindRail','outRail'].forEach(id=>$('#'+id).hidden=S.view!=='pitch');
+  $('#momStage').hidden=!['pitch','pattern'].includes(S.view);
+  ({pitch:viewPitch,pattern:viewPattern,bars:viewBars,radar:viewRadar,pizza:viewPizza})[S.view]();
+}
+d3.selectAll('button').on('click',function(){
+  const cls=this.className.split(' ')[0];
+  const key={view:'view',team:'team',layer:'layer',kind:'kind',out:'out'}[cls];
+  d3.selectAll('button.'+cls).attr('aria-pressed','false');
+  d3.select(this).attr('aria-pressed','true');
+  S[key]=this.dataset[key];
+  if(cls==='team') renderMomentum();
+  render();
+});
+renderMomentum(); render();
+
+/* ---------------- AÇILIŞ GÖRSELİ ---------------- */
+(function(){
+  const cv=document.getElementById('heroCanvas'), ctx=cv.getContext('2d');
+  const KICK=new Date('2026-10-22T22:00:00+03:00');
+  const N=36, HOME=4, AWAY=22;           // lig aşamasındaki 36 takım
+  let w=0,h=0,dpr=1,t0=performance.now(),raf=null;
+  const dust=Array.from({length:70},()=>({x:Math.random(),y:Math.random(),
+    r:Math.random()*0.9+0.2,s:Math.random()*0.4+0.1,o:Math.random()*0.4+0.1}));
+  function size(){
+    const r=cv.getBoundingClientRect(); dpr=Math.min(window.devicePixelRatio||1,2);
+    w=r.width; h=r.height; cv.width=w*dpr; cv.height=h*dpr;
+    ctx.setTransform(dpr,0,0,dpr,0,0);
+  }
+  function frame(now){
+    const e=(now-t0)/1000;
+    ctx.clearRect(0,0,w,h);
+    const cx=w/2, cy=h*0.52, rx=Math.min(w*0.40,420), ry=rx*0.30;
+    // zemin parıltısı
+    const gr=ctx.createRadialGradient(cx,cy,0,cx,cy,rx*1.5);
+    gr.addColorStop(0,'rgba(242,240,236,0.055)'); gr.addColorStop(1,'rgba(0,0,0,0)');
+    ctx.fillStyle=gr; ctx.fillRect(0,0,w,h);
+    // projektör taraması
+    const sw=((e*0.08)%1), bx=sw*w*1.6-w*0.3;
+    const lg=ctx.createLinearGradient(bx-120,0,bx+120,h);
+    lg.addColorStop(0,'rgba(242,240,236,0)'); lg.addColorStop(.5,'rgba(242,240,236,0.035)');
+    lg.addColorStop(1,'rgba(242,240,236,0)');
+    ctx.fillStyle=lg; ctx.fillRect(0,0,w,h);
+    // toz
+    dust.forEach(d=>{const y=((d.y+e*d.s*0.02)%1);
+      ctx.beginPath(); ctx.arc(d.x*w,y*h,d.r,0,6.283);
+      ctx.fillStyle='rgba(242,240,236,'+d.o*0.5+')'; ctx.fill();});
+    // yörünge
+    ctx.beginPath(); ctx.ellipse(cx,cy,rx,ry,0,0,6.283);
+    ctx.strokeStyle='rgba(242,240,236,0.10)'; ctx.lineWidth=1; ctx.stroke();
+    ctx.beginPath(); ctx.ellipse(cx,cy,rx*0.70,ry*0.70,0,0,6.283);
+    ctx.strokeStyle='rgba(242,240,236,0.05)'; ctx.lineWidth=1; ctx.stroke();
+    const rot=e*0.09, pos=i=>{const a=rot+(i/N)*6.283;
+      return {x:cx+Math.cos(a)*rx, y:cy+Math.sin(a)*ry, d:(Math.sin(a)+1)/2};};
+    const A=pos(HOME), B=pos(AWAY);
+    // iki takım arasındaki bağ
+    const pulse=0.22+0.2*Math.sin(e*1.5);
+    ctx.beginPath(); ctx.moveTo(A.x,A.y);
+    ctx.quadraticCurveTo(cx,cy-ry*1.5,B.x,B.y);
+    ctx.strokeStyle='rgba(194,40,30,'+pulse+')'; ctx.lineWidth=1.3; ctx.stroke();
+    // 36 nokta
+    for(let i=0;i<N;i++){
+      const p=pos(i), lead=(i===HOME||i===AWAY);
+      const r=lead?(i===HOME?4.2:3.4):1.5+p.d*0.9;
+      ctx.beginPath(); ctx.arc(p.x,p.y,r,0,6.283);
+      if(i===HOME){ctx.fillStyle='rgba(242,240,236,0.98)';
+        ctx.shadowColor='rgba(242,240,236,0.9)';ctx.shadowBlur=14+6*Math.sin(e*2);}
+      else if(i===AWAY){ctx.fillStyle='rgba(140,145,153,0.95)';
+        ctx.shadowColor='rgba(140,145,153,0.7)';ctx.shadowBlur=10;}
+      else {ctx.fillStyle='rgba(242,240,236,'+(0.10+p.d*0.22)+')';ctx.shadowBlur=0;}
+      ctx.fill(); ctx.shadowBlur=0;
+    }
+    raf=requestAnimationFrame(frame);
+  }
+  function tick(){
+    const ms=KICK-new Date();
+    const el=document.getElementById('heroCount');
+    if(ms<=0){el.textContent='MAÇ BAŞLADI';return;}
+    const s=Math.floor(ms/1000), hh=Math.floor(s/3600), mm=Math.floor(s%3600/60), ss=s%60;
+    el.textContent='BAŞLAMASINA '+String(hh).padStart(2,'0')+':'+String(mm).padStart(2,'0')+':'+String(ss).padStart(2,'0');
+  }
+  size(); tick(); setInterval(tick,1000);
+  new ResizeObserver(size).observe(cv);
+  if(reduce){ frame(performance.now()); cancelAnimationFrame(raf); }
+  else raf=requestAnimationFrame(frame);
+})();
+
+</script>
+
+</body></html>
