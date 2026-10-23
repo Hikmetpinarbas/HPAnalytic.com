@@ -102,7 +102,7 @@ const { mode = "sequence" } = Astro.props;
       buttons.forEach(b => { b.classList.remove("active"); b.setAttribute("aria-selected", "false"); });
       btn.classList.add("active");
       btn.setAttribute("aria-selected", "true");
-      const d = GOAL_DATA[btn.getAttribute("data-goal")];
+      const gid = btn.getAttribute("data-goal"); const d = gid ? (GOAL_DATA as Record<string, any>)[gid] : null;
       if (d && vectorLayer) {
         vectorLayer.innerHTML = d.svg;
         if (seqDuration) seqDuration.textContent = d.duration;
