@@ -159,7 +159,7 @@ const strips = metrics.map((key) => {
 
 <script>
   document.querySelectorAll('[data-ds]').forEach((fig) => {
-    const pills = Array.from(fig.querySelectorAll<HTMLButtonElement>('[data-ds-pill]'));
+    const pills = Array.from(fig.querySelectorAll('[data-ds-pill]')) as HTMLButtonElement[];
     if (!pills.length) return;
     pills.forEach((btn) => {
       btn.addEventListener('click', () => {

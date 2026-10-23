@@ -1,30 +1,56 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro';
-import DagilimSeridi from '../../components/DagilimSeridi.astro';
-import '../../styles/match-page.css';
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import GalatasarayLilleInteractiveSurface from "../../components/GalatasarayLilleInteractiveSurface.astro";
+import "../../styles/match-page.css";
 export const prerender = true;
 ---
-<BaseLayout
-  title="Lille - Galatasaray 2-4: Yirmi dakikada devrilen maç"
-  description="Galatasaray Lille deplasmanında 1-2 geriye düştü, yirmi dakikada üç gol buldu ve 4-2 kazandı. Az şutla çok gol: maçı çeviren mekanizma, dakika dakika."
-  ogType="article" publishedTime={new Date('2026-10-22T19:00:00Z')} club="galatasaray">
-<div class="mp">
 
-<section class="hero hpa-match-premier">
+<BaseLayout
+  title="LOSC Lille 2–4 Galatasaray: 20 Dakikalık Kırılma ve İnfaz Mekaniği — HPAnalytic"
+  description="Lille deplasmanında 20 dakikada maçı çeviren mekanizma. 9 şutta 4 gol, 62 yerleşik hücuma karşı 14 kontra ve +2,42 xG sapmasıyla Pierre-Mauroy zaferinin taktik kartografisi."
+  ogType="article"
+  publishedTime={new Date("2026-10-22T21:00:00Z")}
+  club="galatasaray">
+
+<div class="mp hpfa-masterpiece">
+
+<section class="hero hpa-match-premier gs-theme">
   <div class="wrap">
-    <p class="eyebrow">HPANALYTIC / PREMIER · MAÇ SONU · UEFA Şampiyonlar Ligi · 3. hafta · Stade Pierre-Mauroy</p>
-    <h1 class="versus hpa-match-title" aria-label="Lille 2 Galatasaray 4">
+    <p class="eyebrow">HPANALYTIC / PREMIER · TAKTİK KARTOGRAFİ · UEFA ŞAMPİYONLAR LİGİ 3. HAFTA</p>
+    <h1 class="versus hpa-match-title" aria-label="LOSC Lille 2 Galatasaray 4">
       <span class="hpa-match-home" lang="fr">LOSC Lille 2</span>
       <span class="hpa-match-v">—</span>
       <span class="hpa-match-away">Galatasaray 4</span>
     </h1>
-    <p class="mono" style="color:var(--chalk-2)">Hikmet Pınarbaş · <time datetime="2026-10-22">22 Ekim 2026</time></p>
-    <p class="thesis">Birinci dakikada öne geçtiler. Otuz dokuzuncu dakikada 1-2 geriye düştüler. Sonra yirmi dakika içinde üç gol buldular. <em>Ve bütün bunları, maç boyunca rakibinden daha az şut çekerek yaptılar.</em></p>
-    <div class="meta">
-      <div><span class="mono">Skor</span><b class="num">2 · 4</b></div>
-      <div><span class="mono">Şut</span><b class="num">13 · 9</b></div>
-      <div><span class="mono">İsabet</span><b class="num">5 · 4</b></div>
-      <div><span class="mono">Golü çeviren aralık</span><b class="num">43' – 63'</b></div>
+    <p class="mono meta-line">
+      Hikmet Pınarbaş · <time datetime="2026-10-22">22 Ekim 2026</time> · Stade Pierre-Mauroy
+    </p>
+    
+    <p class="thesis">
+      Dokuz şuta karşılık on üç şut bir savunma aczi değil; <em>yapısal bir iktisat dersidir</em>. Lille sahayı bedenlerle satın almaya çalıştı, Galatasaray ise bu yerleşimin faturasını geçiş anlarında kesti. <strong>EVENT ⊂ ZFGV</strong> doktriniyle Pierre-Mauroy zaferinin anatomisi.
+    </p>
+
+    <div class="meta telemetry-grid">
+      <div><span class="mono">Skor / xG</span><b class="num"><span class="sla">2 (1,36)</span> · <span class="fen">4 (1,58)</span></b></div>
+      <div><span class="mono">Fırsat Etiketi</span><b class="num">9 · 9</b></div>
+      <div><span class="mono">Şut / İsabet</span><b class="num">13 (5) · 9 (4)</b></div>
+      <div><span class="mono">Kırılma Penceresi</span><b class="num highlight">43' — 63' (+3 Gol)</b></div>
+    </div>
+  </div>
+</section>
+
+<section class="block epistemic-boundary">
+  <div class="wrap">
+    <div class="boundary-card">
+      <div class="b-header">
+        <span class="mono badge">EPISTEMIC BOUNDARY & CLAIM CEILINGS</span>
+        <span class="mono rule">HPFA PROTOKOLÜ V1.2</span>
+      </div>
+      <p class="b-text">Bu analizde doğrulanmış olaylar ile taktiksel modelleme sınırları net biçimde ayrılmıştır:</p>
+      <ul class="b-list mono">
+        <li><strong>Doğrulanmış Olaylar:</strong> 3 zaman bloğu, 9 vs 9 fırsat etiketleri, Lille'in 67 kaybının 21'inin (%31,34) kendi yarı sahasında olması ve 4 golün pas dizilimleri.</li>
+        <li><strong>Bilinmeyen (UNKNOWN):</strong> Topun oyunda kaldığı net süre, tracking verisi olmaksızın proaktif rest-defense derinliği ve doğrudan kayıp → şut nedensellik zinciri kanıtlanamaz; analitik dürüstlük gereği UNKNOWN bırakılmıştır.</li>
+      </ul>
     </div>
   </div>
 </section>
@@ -32,15 +58,44 @@ export const prerender = true;
 <section class="block">
   <div class="wrap">
     <div class="head col">
-      <p class="eyebrow">Gece</p>
-      <h2>Yirmi dakikada devrilen maç</h2>
-      <p class="lede">Avrupa gecelerinde bir maçı çevirmek nadirdir. Deplasmanda, geriye düşmüşken, yirmi dakikaya üç gol sığdırarak çevirmek daha da nadirdir.</p>
+      <p class="eyebrow">I. Giriş ve Gerilim Hattı</p>
+      <h2>Top Hakimiyeti Yanılsaması ve Sahaya İnen Teşhis</h2>
+      <p class="lede">Maç önü analizimizdeki ana hipotez sahada sınandı: Lille kendi sahasında Avrupa'nın en çok top kaybeden takımıydı; sınav ise Galatasaray'ın bu kayıpları ne ölçüde vergilendireceğiydi.</p>
     </div>
-    <p>Galatasaray maça topun ilk dokunuşlarıyla başladı ve <strong>birinci dakikada</strong> öne geçti. Yedinci dakikada Lille eşitledi. Otuz dokuzuncu dakikada Lille öne geçti. İlk devre bitmeden Galatasaray tekrar eşitledi.</p>
-    <p>Asıl kırılma ikinci devrede geldi. Elli dördüncü dakikada Lille kendi kalesine attı. Altmış üçüncü dakikada Galatasaray dördüncü golü buldu. Kırk üçüncü dakikayla altmış üçüncü dakika arasında skor <strong>1-2'den 4-2'ye</strong> döndü.</p>
-    <div class="rc-wrap">
-      <svg viewBox="0 0 440 140" class="rc" role="img" aria-label="Gol zaman çizelgesi"><line x1="86" y1="70" x2="424" y2="70" stroke="currentColor" opacity=".22"/><line x1="138.9" y1="66" x2="138.9" y2="74" stroke="currentColor" opacity=".16"/><line x1="191.7" y1="66" x2="191.7" y2="74" stroke="currentColor" opacity=".16"/><line x1="244.6" y1="66" x2="244.6" y2="74" stroke="currentColor" opacity=".16"/><line x1="297.5" y1="66" x2="297.5" y2="74" stroke="currentColor" opacity=".16"/><line x1="350.3" y1="66" x2="350.3" y2="74" stroke="currentColor" opacity=".16"/><line x1="403.2" y1="66" x2="403.2" y2="74" stroke="currentColor" opacity=".16"/><line x1="244.6" y1="22" x2="244.6" y2="118" stroke="currentColor" opacity=".13" stroke-dasharray="2 3"/><text x="2" y="42" class="rc-ax">LILLE</text><text x="2" y="104" class="rc-ax">GALATASARAY</text><line x1="89.9" y1="70" x2="89.9" y2="102" stroke="var(--amber)" stroke-width="1.6"/><circle cx="89.9" cy="102" r="4.5" fill="var(--amber)"/><text x="89.9" y="117" text-anchor="middle" class="rc-val">0-1</text><text x="89.9" y="128" text-anchor="middle" class="rc-ax">1'</text><line x1="110.3" y1="70" x2="110.3" y2="38" stroke="var(--chalk-2)" stroke-width="1.6"/><circle cx="110.3" cy="38" r="4.5" fill="var(--chalk-2)"/><text x="110.3" y="27" text-anchor="middle" class="rc-val">1-1</text><text x="110.3" y="16" text-anchor="middle" class="rc-ax">7'</text><line x1="222.8" y1="70" x2="222.8" y2="38" stroke="var(--chalk-2)" stroke-width="1.6"/><circle cx="222.8" cy="38" r="4.5" fill="var(--chalk-2)"/><text x="222.8" y="27" text-anchor="middle" class="rc-val">2-1</text><text x="222.8" y="16" text-anchor="middle" class="rc-ax">39'</text><line x1="237.9" y1="70" x2="237.9" y2="102" stroke="var(--amber)" stroke-width="1.6"/><circle cx="237.9" cy="102" r="4.5" fill="var(--amber)"/><text x="237.9" y="117" text-anchor="middle" class="rc-val">2-2</text><text x="237.9" y="128" text-anchor="middle" class="rc-ax">43'</text><line x1="276.0" y1="70" x2="276.0" y2="102" stroke="var(--amber)" stroke-width="1.6"/><circle cx="276.0" cy="102" r="4.5" fill="var(--amber)"/><text x="276.0" y="117" text-anchor="middle" class="rc-val">2-3</text><text x="276.0" y="128" text-anchor="middle" class="rc-ax">54'</text><text x="276.0" y="138" text-anchor="middle" class="rc-ax">k.k.</text><line x1="306.3" y1="70" x2="306.3" y2="102" stroke="var(--amber)" stroke-width="1.6"/><circle cx="306.3" cy="102" r="4.5" fill="var(--amber)"/><text x="306.3" y="117" text-anchor="middle" class="rc-val">2-4</text><text x="306.3" y="128" text-anchor="middle" class="rc-ax">62'</text></svg>
-      <p class="rc-cap">Golün geldiği dakikalar ve o anki skor. Üstte Lille, altta Galatasaray. "k.k." kendi kalesine atılan golü gösterir.</p>
+    
+    <p>
+      Lille, A bloğunda (01'–39') dakikada 5,90 pas sıklığı ve %88,84 isabet oranıyla oyuna hükmettiğini varsayıyordu. Ancak bu topla oynama derin penetrasyon üretmeyen bir çevre dolaşımıydı. Galatasaray 1. dakikada Yunus ile öne geçtikten sonra reaktif bir savunma fazına çekildi (ilk 5 dakikada %70 pas isabeti, 4 top kaybı). 39. dakikada Lille 2-1 öne geçtiğinde Galatasaray'ın ilk kayıtlı pasına kadar geçen 77 saniye krizin fotoğrafıydı. Ancak bu kriz, risk parametresinin dikey hatlara çevrileceğinin habercisiydi.
+    </p>
+
+    <div class="data-rail-table">
+      <div class="d-row d-head mono">
+        <div>ZAMAN BLOĞU</div>
+        <div>LILLE PAS (DAK/İSABET)</div>
+        <div>GS PAS (DAK/İSABET)</div>
+        <div>LILLE KAYIP TEMPOSU</div>
+        <div>TAKTİK FAZ</div>
+      </div>
+      <div class="d-row mono">
+        <div>01' — 39' (A)</div>
+        <div>5,90 / %88,8</div>
+        <div>3,41 / %76,2</div>
+        <div>0,64 kayıp/dk</div>
+        <div>Lille Çevre Pası vs GS Reaktif</div>
+      </div>
+      <div class="d-row mono highlight-row">
+        <div>43' — 63' (B)</div>
+        <div>4,95 / %81,4</div>
+        <div>5,60 / %78,1</div>
+        <div><strong>92 sn'de 1 kayıp</strong></div>
+        <div>GS Dikey Fırtına (3 Gol)</div>
+      </div>
+      <div class="d-row mono">
+        <div>64' — 90+' (C)</div>
+        <div>6,09 / %89,9</div>
+        <div>2,88 / %71,0</div>
+        <div>0,85 kayıp/dk</div>
+        <div>Lille Kısıtlı Alan vs GS Kompakt Blok</div>
+      </div>
     </div>
   </div>
 </section>
@@ -48,15 +103,30 @@ export const prerender = true;
 <section class="block">
   <div class="wrap">
     <div class="head col">
-      <p class="eyebrow">Mekanizma</p>
-      <h2>Az vurdu, çok buldu</h2>
-      <p class="lede">Bu maçta Galatasaray oyuna hâkim olmadı. Rakibinden az şut çekti, rakibinden az pozisyona girdi. Ama attığı her şut rakibinden daha çok işe yaradı.</p>
+      <p class="eyebrow">II. İnteraktif Kartografi</p>
+      <h2>Dört Golün Dört Ayrı Mekanizması</h2>
+      <p class="lede">Galatasaray'ın dört golü tek bir şablona dayanmadı; geçiş anlarında açılan farklı yarıkları cezalandırdı.</p>
     </div>
-    <p>Lille doksan altı dakikada <strong>13 şut</strong> çekti, beşini isabet ettirdi, iki gol attı. Galatasaray <strong>9 şut</strong> çekti, dördünü isabet ettirdi ve üç gol attı; dördüncü gol Lille'in kendi kalesinden geldi.</p>
-    <p>Şutu gole çevirme oranı bu kadar yüksek olduğunda, oyunun geri kalanını kaybetmek maçı kaybetmek anlamına gelmiyor. Galatasaray tam olarak bunu yaptı.</p>
-    <div class="rc-wrap">
-      <svg viewBox="0 0 440 318" class="rc" role="img" aria-label="Şut haritası"><text x="22" y="21" class="rc-ax">LOSC LILLE &#183; 13 ŞUT · 5 İSABET</text><rect x="22" y="30" width="396" height="116" fill="none" stroke="currentColor" opacity=".22"/><rect x="292" y="53.5" width="126" height="68.9" fill="none" stroke="currentColor" opacity=".16"/><rect x="376" y="72.3" width="42" height="31.3" fill="none" stroke="currentColor" opacity=".12"/><path d="M418,68.3 L424,68.3 L424,107.7 L418,107.7" fill="none" stroke="currentColor" opacity=".4"/><circle cx="366.7" cy="105.4" r="5" fill="var(--chalk-2)" stroke="var(--chalk-2)" stroke-width="1"><title>7. dakika · isabetli</title></circle><circle cx="356.9" cy="97.6" r="5" fill="var(--chalk-2)" stroke="var(--chalk-2)" stroke-width="1"><title>24. dakika · isabetli</title></circle><circle cx="332.8" cy="76.9" r="4" fill="none" stroke="var(--chalk-2)" stroke-width="1.4" opacity=".6"><title>32. dakika</title></circle><circle cx="313.9" cy="84.2" r="4" fill="none" stroke="var(--chalk-2)" stroke-width="1.4" opacity=".6"><title>32. dakika</title></circle><circle cx="222.6" cy="88.0" r="5" fill="var(--chalk-2)" stroke="var(--chalk-2)" stroke-width="1"><title>38. dakika · isabetli</title></circle><circle cx="319.2" cy="66.8" r="5" fill="var(--chalk-2)" stroke="var(--chalk-2)" stroke-width="1"><title>39. dakika · isabetli</title></circle><circle cx="359.2" cy="94.8" r="5" fill="var(--chalk-2)" stroke="var(--chalk-2)" stroke-width="1"><title>39. dakika · isabetli</title></circle><circle cx="227.2" cy="111.7" r="4" fill="none" stroke="var(--chalk-2)" stroke-width="1.4" opacity=".6"><title>51. dakika</title></circle><circle cx="236.2" cy="102.0" r="4" fill="none" stroke="var(--chalk-2)" stroke-width="1.4" opacity=".6"><title>72. dakika</title></circle><circle cx="218.1" cy="92.3" r="4" fill="none" stroke="var(--chalk-2)" stroke-width="1.4" opacity=".6"><title>72. dakika</title></circle><circle cx="352.4" cy="103.0" r="4" fill="none" stroke="var(--chalk-2)" stroke-width="1.4" opacity=".6"><title>84. dakika</title></circle><circle cx="274.7" cy="111.9" r="4" fill="none" stroke="var(--chalk-2)" stroke-width="1.4" opacity=".6"><title>90. dakika</title></circle><circle cx="333.5" cy="118.2" r="4" fill="none" stroke="var(--chalk-2)" stroke-width="1.4" opacity=".6"><title>96. dakika</title></circle><text x="22" y="169" class="rc-ax">GALATASARAY &#183; 9 ŞUT · 4 İSABET</text><rect x="22" y="178" width="396" height="116" fill="none" stroke="currentColor" opacity=".22"/><rect x="292" y="201.5" width="126" height="68.9" fill="none" stroke="currentColor" opacity=".16"/><rect x="376" y="220.3" width="42" height="31.3" fill="none" stroke="currentColor" opacity=".12"/><path d="M418,216.3 L424,216.3 L424,255.7 L418,255.7" fill="none" stroke="currentColor" opacity=".4"/><circle cx="364.4" cy="238.4" r="5" fill="var(--amber)" stroke="var(--amber)" stroke-width="1"><title>1. dakika · isabetli</title></circle><circle cx="366.0" cy="239.2" r="4" fill="none" stroke="var(--amber)" stroke-width="1.4" opacity=".6"><title>14. dakika</title></circle><circle cx="356.1" cy="210.2" r="4" fill="none" stroke="var(--amber)" stroke-width="1.4" opacity=".6"><title>19. dakika</title></circle><circle cx="395.4" cy="216.4" r="4" fill="none" stroke="var(--amber)" stroke-width="1.4" opacity=".6"><title>37. dakika</title></circle><circle cx="383.3" cy="232.1" r="5" fill="var(--amber)" stroke="var(--amber)" stroke-width="1"><title>43. dakika · isabetli</title></circle><circle cx="387.1" cy="248.8" r="4" fill="none" stroke="var(--amber)" stroke-width="1.4" opacity=".6"><title>46. dakika</title></circle><circle cx="299.6" cy="229.2" r="5" fill="var(--amber)" stroke="var(--amber)" stroke-width="1"><title>62. dakika · isabetli</title></circle><circle cx="335.8" cy="248.3" r="4" fill="none" stroke="var(--amber)" stroke-width="1.4" opacity=".6"><title>66. dakika</title></circle><circle cx="246.8" cy="254.1" r="5" fill="var(--amber)" stroke="var(--amber)" stroke-width="1"><title>78. dakika · isabetli</title></circle><g transform="translate(22,312)"><circle cx="4" cy="-4" r="4.6" fill="var(--chalk-2)"/><text x="14" y="-1" class="rc-ax">isabetli</text><circle cx="74" cy="-4" r="4" fill="none" stroke="var(--chalk-2)" stroke-width="1.4" opacity=".6"/><text x="84" y="-1" class="rc-ax">isabetsiz</text><text x="168" y="-1" class="rc-ax">kale sağda · yalnızca hücum yarısı</text></g></svg>
-      <p class="rc-cap">İki takımın şutlarının geldiği noktalar. Lille'in şutları sayıca fazla ama ceza sahası dışına daha çok yayılmış durumda.</p>
+
+    <GalatasarayLilleInteractiveSurface />
+
+    <div class="tactical-notes">
+      <div class="t-col">
+        <h4 class="mono">01' YUNUS · DİNAMİK ÜSTÜNLÜK</h4>
+        <p>Jakobs'un sol koridor pası ve Barış Alper'in taşımasıyla başlayan atak; yerleşmeye çalışan savunmanın hız açığını değerlendirdi.</p>
+      </div>
+      <div class="t-col">
+        <h4 class="mono">43' BATRAKOV · BİLİŞSEL ÇÖKÜŞ</h4>
+        <p>Sallai'nin taşıması ve rakip savunma hatası etiketiyle kesişen pozisyon. Kendi yarı sahasındaki 21 kayıptan biri doğrudan golle cezalandırıldı.</p>
+      </div>
+      <div class="t-col">
+        <h4 class="mono">54' BENTALEB (KK) · ALAN BASKISI</h4>
+        <p>Sara'nın ceza sahasına pas şiddeti savunmayı ters müdahaleye zorladı. Ceza sahası önü baskısı neticeyi getirdi.</p>
+      </div>
+      <div class="t-col">
+        <h4 class="mono">62' OSİMHEN · REST-DEFENSE İNFAZI</h4>
+        <p>Abdülkerim'in top kazanımı, Batrakov dikey pası ve Barış Alper servisiyle dengesiz yakalanan savunma arkası düşürüldü.</p>
+      </div>
     </div>
   </div>
 </section>
@@ -64,42 +134,100 @@ export const prerender = true;
 <section class="block">
   <div class="wrap">
     <div class="head col">
-      <p class="eyebrow">Sondaki dayanıklılık</p>
-      <h2>Son yarım saati nasıl götürdüler?</h2>
-      <p class="lede">Dördüncü gol altmış üçüncü dakikada geldi. Geriye otuz üç dakika kalmıştı ve Lille'in kaybedecek bir şeyi yoktu.</p>
+      <p class="eyebrow">III. Yirmi Dakikalık Fırtına</p>
+      <h2>Rest-Defense Decay: Aşırı Yüklemenin Ağır Maliyeti</h2>
+      <p class="lede">Lille hücumda aşırı yığılma (over-overload) yaparken arkasını tamamen unuttu.</p>
     </div>
-    <p>O otuz üç dakikada Lille <strong>5 şut</strong> çekti ve hiçbirini isabet ettiremedi. Galatasaray ise aynı bölümde rakip yarı sahada <strong>7 kez</strong> top kazandı; Lille'in kendi hücum yarısındaki kazanımı 2'de kaldı.</p>
-    <p>Yani Galatasaray geri çekilip savunma yapmadı. Topu rakibin sahasında geri aldı ve altı kontra atak çıkardı. Maçı kapatma biçimi, maçı çevirme biçiminin devamıydı.</p>
-    <div class="rc-wrap">
-      <svg viewBox="0 0 440 150" class="rc" role="img" aria-label="Ceza sahası olayları"><rect x="40.0" y="58.6" width="23.7" height="41.4" fill="var(--chalk-2)" opacity="0.55"/><text x="51.8" y="54.6" text-anchor="middle" class="rc-val">13</text><rect x="66.7" y="49.0" width="23.7" height="51.0" fill="var(--amber)" opacity="1"/><text x="78.5" y="45.0" text-anchor="middle" class="rc-val">16</text><text x="66.7" y="118" text-anchor="middle" class="rc-ax">0–15</text><rect x="105.3" y="71.3" width="23.7" height="28.7" fill="var(--chalk-2)" opacity="0.55"/><text x="117.2" y="67.3" text-anchor="middle" class="rc-val">9</text><rect x="132.0" y="71.3" width="23.7" height="28.7" fill="var(--amber)" opacity="1"/><text x="143.8" y="67.3" text-anchor="middle" class="rc-val">9</text><text x="132.0" y="118" text-anchor="middle" class="rc-ax">15–30</text><rect x="170.7" y="14.0" width="23.7" height="86.0" fill="var(--chalk-2)" opacity="0.55"/><text x="182.5" y="10.0" text-anchor="middle" class="rc-val">27</text><rect x="197.3" y="36.3" width="23.7" height="63.7" fill="var(--amber)" opacity="1"/><text x="209.2" y="32.3" text-anchor="middle" class="rc-val">20</text><text x="197.3" y="118" text-anchor="middle" class="rc-ax">30–45</text><rect x="236.0" y="77.7" width="23.7" height="22.3" fill="var(--chalk-2)" opacity="0.55"/><text x="247.8" y="73.7" text-anchor="middle" class="rc-val">7</text><rect x="262.7" y="29.9" width="23.7" height="70.1" fill="var(--amber)" opacity="1"/><text x="274.5" y="25.9" text-anchor="middle" class="rc-val">22</text><text x="262.7" y="118" text-anchor="middle" class="rc-ax">45–60</text><rect x="301.3" y="68.1" width="23.7" height="31.9" fill="var(--chalk-2)" opacity="0.55"/><text x="313.2" y="64.1" text-anchor="middle" class="rc-val">10</text><rect x="328.0" y="45.9" width="23.7" height="54.1" fill="var(--amber)" opacity="1"/><text x="339.8" y="41.9" text-anchor="middle" class="rc-val">17</text><text x="328.0" y="118" text-anchor="middle" class="rc-ax">60–75</text><rect x="366.7" y="55.4" width="23.7" height="44.6" fill="var(--chalk-2)" opacity="0.55"/><text x="378.5" y="51.4" text-anchor="middle" class="rc-val">14</text><rect x="393.3" y="87.3" width="23.7" height="12.7" fill="var(--amber)" opacity="1"/><text x="405.2" y="83.3" text-anchor="middle" class="rc-val">4</text><text x="393.3" y="118" text-anchor="middle" class="rc-ax">75+</text><line x1="34" y1="100" x2="426" y2="100" stroke="currentColor" opacity=".25"/><rect x="34" y="133" width="9" height="9" fill="var(--chalk-2)" opacity="0.55"/><text x="48" y="141" class="rc-ax">Lille</text><rect x="138" y="133" width="9" height="9" fill="var(--amber)" opacity="1"/><text x="152" y="141" class="rc-ax">Galatasaray</text></svg>
-      <p class="rc-cap">On beşer dakikalık dilimlerde ceza sahası içindeki olay sayısı. Galatasaray'ın en yoğun bölümü 45–60 dakika aralığı; maçı çeviren aralık da orası.</p>
-    </div>
-  </div>
-</section>
 
-<section class="block">
-  <div class="wrap">
-    <div class="head col">
-      <p class="eyebrow">Sonuç</p>
-      <h2>Bu geceden kalan</h2>
+    <p>
+      Lille 2-1 öne geçtiğinde topa sahip olma temposunu sürdürmeyi seçti. Ancak hücum uzadıkça geçiş emniyeti aşındı (rest-defense decay). 43'–63' arasında <strong>Lille her 92 saniyede bir top kaybetti.</strong> Galatasaray ise pas sıklığını 5,60 pas/dk'ya çıkarıp 15 isabetsiz dikey pas deneme riskini aldı. Bu bir savrulma değil; gevşeyen savunma arkasını sürekli koşturmanın bilinçli bedeliydi.
+    </p>
+
+    <div class="quote-card">
+      <blockquote>
+        "Galatasaray maçı duygusal patlamayla değil; topa sahip olma risk parametrelerini radikal biçimde değiştirerek çevirdi."
+      </blockquote>
     </div>
-    <p>Galatasaray bu maçı oyun üstünlüğüyle kazanmadı. Verimle kazandı. Dokuz şuttan dört gol çıkaran bir gece her hafta tekrarlanmaz ve tekrarlanmasını beklemek de doğru olmaz.</p>
-    <p>Ama bir şey tekrarlanabilir: geriye düştükten sonra oyunu bırakmamak ve öne geçtikten sonra geri çekilmemek. Bu maçta ikisi de oldu.</p>
-    <p>Bir not daha: Galatasaray'ın normali bu maçtaki gibi değil. Süper Lig'de topla en çok oynayan, rakibine en az pas attıran takım onlar. Yani Lille'de yaptıkları şey — topu bırakıp verimle kazanmak — alıştıkları iş değil, yapabildikleri ikinci iş.</p>
-    <DagilimSeridi league="sl" focus="Galatasaray" id="ds-gs"
-      title="Galatasaray · Süper Lig içindeki yeri"
-      metrics={['topla_oynama','baski','pozisyonel_sut','kontra_sut','xg_payi']}
-      note="Her nokta bir Süper Lig takımı. Bu veriler lig sezonunu özetler; yukarıdaki maçın kendisini değil." />
-    <p class="mono" style="color:var(--chalk-2);margin-top:2rem">Maç önü dosyası: <a href="/mac/lille-galatasaray-2026-10-21">Lille – Galatasaray</a> · Veri: SportsBase</p>
+
+    <div class="matrix-card">
+      <h3 class="mono m-title">HPFA KARAR SINIFLANDIRMASI</h3>
+      <div class="m-grid">
+        <div class="m-cell">
+          <span class="m-tag active">AKTİF</span>
+          <p><strong>Lille:</strong> 62 yerleşik hücumla oyunu dikte etme ısrarı.<br><strong>Galatasaray:</strong> B bloğunda 15 dikey pasla rakip arkasını test eden riskli dayatma.</p>
+        </div>
+        <div class="m-cell">
+          <span class="m-tag reactive">REAKTİF</span>
+          <p><strong>Galatasaray:</strong> 1'deki golden sonra ilk 5 dakikadaki geri çekilme ve 39'daki gol sonrası 77 saniyelik pas gecikmesi.<br><strong>Lille:</strong> 2-2'den sonra 92 saniyede bir top kaybına sürüklenen savunma çözülmesi.</p>
+        </div>
+        <div class="m-cell">
+          <span class="m-tag unknown">PROAKTİF</span>
+          <p><strong>Bilinmeyen (UNKNOWN):</strong> İki hamle sonrasını sezip hatları kilitleyen rest-defense yerleşimi, tracking verisi olmadan kanıtlanamaz.</p>
+        </div>
+      </div>
+    </div>
+
+    <p class="conclusion-text">
+      Fırsat etiketleri 9'a 9 eşitti. xG tablosu 1,58'e 1,36 gösteriyordu. 2–4'lük skor bir şans değil; Lille'in düşük netlikli (shot clarity) kalabalık önü şutlarına karşılık, Galatasaray'ın önü açık, yüksek netlikli geçiş infazlarının sonucudur.
+    </p>
   </div>
 </section>
 
 </div>
-<style is:global>
-.rc{width:100%;max-width:520px;height:auto;display:block;margin:22px 0 6px;color:var(--chalk)}
-.rc-ax{font-family:var(--f-mono);font-size:8.5px;fill:var(--mute);letter-spacing:.06em}
-.rc-val{font-family:var(--f-mono);font-size:9.5px;font-weight:600;fill:var(--chalk)}
-.rc-cap{font-family:var(--f-body);font-size:.82rem;line-height:1.6;color:var(--mute);max-width:62ch;margin:0 0 1.4em}
-.rc-wrap{margin:26px 0}
-</style>
 </BaseLayout>
+
+<style>
+:root {
+  --ink: #0A0A0B;
+  --surface: #121216;
+  --surface-border: #23252B;
+  --gold-amber: #E8A020;
+  --crimson-blood: #A6192E;
+  --chalk: #F2F0EC;
+  --ghost: #71757C;
+  --mono: ui-monospace, Menlo, monospace;
+  --serif: "Source Serif 4", Georgia, serif;
+}
+.hpfa-masterpiece { background: var(--ink); color: var(--chalk); font-family: var(--serif); line-height: 1.7; }
+.hpa-match-premier.gs-theme { border-bottom: 1px solid var(--surface-border); padding: 48px 0 36px; background: radial-gradient(circle at 50% 20%, rgba(166, 25, 46, 0.12) 0%, rgba(10, 10, 11, 0) 70%); }
+.eyebrow { font-family: var(--mono); font-size: 10.5px; letter-spacing: .2em; color: var(--gold-amber); text-transform: uppercase; margin-bottom: 12px; }
+.versus { font-size: clamp(28px, 6vw, 48px); font-weight: 700; margin: 0 0 12px; display: flex; gap: 12px; align-items: baseline; flex-wrap: wrap; }
+.hpa-match-home { color: var(--chalk); } .hpa-match-away { color: var(--gold-amber); } .hpa-match-v { color: var(--ghost); }
+.meta-line { color: var(--ghost); font-size: 12px; margin-bottom: 24px; }
+.thesis { font-size: 17px; line-height: 1.6; max-width: 64ch; color: #D1D5DB; margin-bottom: 28px; }
+.thesis strong { color: var(--gold-amber); } .thesis em { color: var(--chalk); text-decoration: underline; text-decoration-color: var(--crimson-blood); font-style: normal; }
+.telemetry-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 16px; padding: 18px; background: var(--surface); border: 1px solid var(--surface-border); border-radius: 6px; }
+.telemetry-grid div { display: flex; flex-direction: column; gap: 4px; }
+.telemetry-grid span { font-size: 9.5px; color: var(--ghost); letter-spacing: .12em; text-transform: uppercase; }
+.telemetry-grid b { font-size: 16px; font-family: var(--mono); }
+.telemetry-grid b.highlight { color: var(--gold-amber); }
+.telemetry-grid .fen { color: var(--gold-amber); } .telemetry-grid .sla { color: var(--chalk); }
+.epistemic-boundary { padding: 24px 0 12px; }
+.boundary-card { background: #0E0F12; border-left: 3px solid var(--gold-amber); border-right: 1px solid var(--surface-border); border-top: 1px solid var(--surface-border); border-bottom: 1px solid var(--surface-border); padding: 16px 20px; border-radius: 0 6px 6px 0; }
+.b-header { display: flex; justify-content: space-between; margin-bottom: 8px; }
+.b-header .badge { font-size: 10px; color: var(--gold-amber); letter-spacing: .15em; font-weight: 600; }
+.b-header .rule { font-size: 9.5px; color: var(--ghost); }
+.b-text { font-size: 13.5px; color: #9CA3AF; margin-bottom: 8px; }
+.b-list { font-size: 11.5px; color: #D1D5DB; padding-left: 18px; margin: 0; line-height: 1.6; }
+.data-rail-table { background: var(--surface); border: 1px solid var(--surface-border); border-radius: 6px; overflow-x: auto; margin: 28px 0; }
+.d-row { display: grid; grid-template-columns: 140px 180px 180px 160px 1fr; padding: 12px 16px; font-size: 11.5px; border-bottom: 1px solid var(--surface-border); min-width: 780px; }
+.d-row:last-child { border-bottom: none; }
+.d-head { background: #16181F; color: var(--ghost); font-size: 9.5px; letter-spacing: .12em; }
+.highlight-row { background: rgba(232, 160, 32, 0.06); color: var(--gold-amber); }
+.tactical-notes { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin-top: 20px; }
+.t-col { background: var(--surface); border: 1px solid var(--surface-border); padding: 16px; border-radius: 6px; }
+.t-col h4 { font-size: 11px; color: var(--gold-amber); margin: 0 0 8px; letter-spacing: .08em; }
+.t-col p { font-size: 13px; color: #9CA3AF; margin: 0; line-height: 1.55; }
+.quote-card { border-left: 2px solid var(--crimson-blood); padding-left: 20px; margin: 32px 0; }
+.quote-card blockquote { font-size: 17px; font-style: italic; color: var(--chalk); margin: 0; line-height: 1.6; }
+.matrix-card { background: var(--surface); border: 1px solid var(--surface-border); border-radius: 6px; padding: 22px; margin: 28px 0; }
+.m-title { font-size: 11.5px; color: var(--gold-amber); letter-spacing: .15em; margin: 0 0 16px; }
+.m-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; }
+.m-cell { background: #0B0B0E; border: 1px solid #1E2026; padding: 16px; border-radius: 4px; }
+.m-cell p { font-size: 12.5px; color: #9CA3AF; margin: 8px 0 0; line-height: 1.5; }
+.m-tag { font-family: var(--mono); font-size: 9.5px; letter-spacing: .15em; padding: 3px 7px; border-radius: 3px; display: inline-block; }
+.m-tag.active { background: rgba(232, 160, 32, 0.15); color: var(--gold-amber); border: 1px solid rgba(232, 160, 32, 0.4); }
+.m-tag.reactive { background: rgba(166, 25, 46, 0.15); color: #EF4444; border: 1px solid rgba(166, 25, 46, 0.4); }
+.m-tag.unknown { background: rgba(113, 117, 124, 0.15); color: var(--ghost); border: 1px solid var(--surface-border); }
+.conclusion-text { font-size: 15.5px; color: #D1D5DB; margin-top: 24px; line-height: 1.7; }
+</style>
