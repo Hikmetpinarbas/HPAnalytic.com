@@ -1,6 +1,7 @@
 ---
 import { isPublic } from '../lib/public-content.mjs';
 import BaseLayout from '../layouts/BaseLayout.astro';
+import EditorialCarousel from '../components/EditorialCarousel.astro';
 import { getCollection } from 'astro:content';
 import { isPublicEditorialItem } from '../lib/site-editorial-status.mjs';
 import { SECTION_LABELS } from '../lib/site-surfaces.mjs';
@@ -128,29 +129,16 @@ const steps = [
 </section>
 
 {monographs.length > 0 && (
-<section class="rail-section" aria-labelledby="mono-title">
-  <div class="rail-head">
-    <div>
-      <p class="kicker">Araştırma · Monografiler</p>
-      <h2 id="mono-title">Uzun soluklu okumalar</h2>
-      <p>Futbolun görünmeyen tarafına tek bir soruyla giren araştırmalar. Her biri kendi iddia sınırıyla.</p>
-    </div>
-    <div class="rail-controls" data-rail-controls="mono-rail">
-      <button type="button" data-dir="-1" aria-label="Önceki monografiler"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M10 3L5 8l5 5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></button>
-      <button type="button" data-dir="1" aria-label="Sonraki monografiler"><svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3l5 5-5 5" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></button>
-    </div>
-  </div>
-  <div class="rail" id="mono-rail" tabindex="0" role="region" aria-label="Monografiler, yatay kaydırılabilir">
-    {monographs.map((m) => (
-      <article class="rail-card">
-        <div class="rail-card__meta"><span>{m.data.category ?? 'Monografi'}</span><span>{m.data.readingTime}</span></div>
-        <h3><a href={`/monographs/${m.id}`}>{m.data.title}</a></h3>
-        <p>{m.data.subtitle ?? m.data.description}</p>
-        <div class="rail-card__foot"><span>OKU</span><span aria-hidden="true">→</span></div>
-      </article>
-    ))}
-  </div>
-</section>
+  <EditorialCarousel
+    title="Uzun soluklu okumalar"
+    label="Yayımlanmış monografiler"
+    items={monographs.map((m) => ({
+      title: m.data.title,
+      href: `/monographs/${m.id}`,
+      eyebrow: m.data.category ?? 'Monografi',
+      description: m.data.subtitle ?? m.data.description,
+    }))}
+  />
 )}
 
 {articles.length > 0 && (
