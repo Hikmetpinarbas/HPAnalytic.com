@@ -5,17 +5,13 @@ import { getCollection } from 'astro:content';
 import { isPublicEditorialItem } from '../lib/site-editorial-status.mjs';
 import { SECTION_LABELS } from '../lib/site-surfaces.mjs';
 import { featuredMatch } from '../data/match-previews.mjs';
-import { featuredPremier } from '../data/premier-features.mjs';
+import { premierCarousel } from '../data/premier-features.mjs';
 export const prerender = true;
 
 const monographs = (await getCollection('monographs', isPublic)).sort((a, b) => +b.data.date - +a.data.date);
 const articles = (await getCollection('articles', isPublic)).filter((entry) => isPublicEditorialItem(entry.data)).sort((a, b) => +b.data.date - +a.data.date);
 const match = featuredMatch();
-const premier = featuredPremier();
-const premierTeams = premier ? {
-  first: premier.home ?? (premier.club === 'galatasaray' ? 'LOSC Lille' : ''),
-  second: premier.away ?? (premier.club === 'galatasaray' ? 'Galatasaray' : ''),
-} : null;
+const premierSlides = premierCarousel();
 const dateTr = (d: Date) => d.toLocaleDateString('tr-TR', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' });
 const steps = [
   { key: 'yapi', label: 'Yapı', text: 'Önce oyunun iskeleti: alan, zaman, rol ve rakip. Skor bu yapının en son katmanıdır.' },
@@ -25,20 +21,50 @@ const steps = [
 ---
 <BaseLayout title="HPAnalytic — Hikmet Pınarbaş Futbol Analizi" description="Hikmet Pınarbaş'tan kanıt, mekanizma ve bağlam temelli bağımsız futbol analizi.">
 
-<section id="premier-feature" class="hpa-premier" aria-labelledby="premier-title" data-club={premier?.club ?? "galatasaray"}>
-  <div class="hpa-premier__stars" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
-  <div class="hpa-premier__inner">
-    <div class="hpa-premier__overline"><span>HPANALYTIC / PREMIER</span><span>BAŞ ANALİZ · EDITOR'S PICK</span></div>
-    {premier && <>
-      <p class="hpa-premier__eyebrow">{premier.competition ?? 'UEFA ŞAMPİYONLAR LİGİ · HPANALYTIC PREMIER'}</p>
-      <h2 id="premier-title"><span class:list={[premier.club === 'galatasaray' ? 'hpa-premier__foreign' : 'hpa-premier__turkish']}>{premierTeams?.first}</span><span class="hpa-premier__versus"> karşısında </span><span class:list={[premier.club === 'galatasaray' ? 'hpa-premier__turkish' : 'hpa-premier__foreign']}>{premierTeams?.second}</span></h2>
-      <p>{premier.description}</p>
-      <p class="hpa-premier__meta">{premier.venue ?? 'Stade Pierre-Mauroy · 21 Ekim 2026 · 19.45 TSİ'}</p>
-      <a class="hpa-premier__link" href={premier.href}>PREMIER DOSYASINI KEŞFET <span aria-hidden="true">↗</span></a>
-    </>}
+<section id="premier-feature" class="hpa-premier-carousel" aria-label="HPAnalytic Premier · öne çıkan maç dosyaları">
+  <div class="hpa-premier-carousel__tabs" role="tablist" aria-label="Premier dosyaları">
+    {premierSlides.map((p, i) => (
+      <button type="button" role="tab" id={`premier-tab-${i}`} aria-controls={`premier-panel-${i}`} aria-selected={i === 0 ? 'true' : 'false'} tabindex={i === 0 ? 0 : -1} data-premier-tab={i}>{String(i + 1).padStart(2, '0')} · {p.category.replace('PREMIER · ', '')}</button>
+    ))}
+  </div>
+  <div class="hpa-premier-carousel__track" data-premier-track aria-label="Yatay kaydırılabilir premier dosyaları" tabindex="0">
+    {premierSlides.map((p, i) => (
+      <article id={`premier-panel-${i}`} role="tabpanel" aria-labelledby={`premier-tab-${i}`} data-premier-panel={i} class="hpa-premier" data-club={p.club}>
+        <div class="hpa-premier__stars" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
+        <div class="hpa-premier__inner">
+          <div class="hpa-premier__overline"><span>HPANALYTIC / PREMIER</span><span>{p.category.includes('MAÇ SONU') ? 'MAÇ SONU · DAKİKA DAKİKA' : "BAŞ ANALİZ · EDITOR'S PICK"}</span></div>
+          <p class="hpa-premier__eyebrow">{p.competition ?? 'UEFA ŞAMPİYONLAR LİGİ · HPANALYTIC PREMIER'}</p>
+          <h2 id={`premier-title-${i}`}><span class:list={[p.turkishSide === 'home' ? 'hpa-premier__turkish' : 'hpa-premier__foreign']}>{p.home}</span><span class="hpa-premier__versus"> karşısında </span><span class:list={[p.turkishSide === 'away' ? 'hpa-premier__turkish' : 'hpa-premier__foreign']}>{p.away}</span></h2>
+          <p>{p.description}</p>
+          <p class="hpa-premier__meta">{p.venue ?? 'Stade Pierre-Mauroy · 21 Ekim 2026 · 19.45 TSİ'}</p>
+          <a class="hpa-premier__link" href={p.href}>PREMIER DOSYASINI KEŞFET <span aria-hidden="true">↗</span></a>
+        </div>
+      </article>
+    ))}
+  </div>
+  <div class="hpa-premier-carousel__foot">
+    <span>PARMAĞINIZLA KAYDIRIN →</span>
+    <div class="hpa-premier-carousel__dots" aria-label="İlerleme durumu">
+      {premierSlides.map((_, i) => <button type="button" data-premier-dot={i} aria-label={`${i + 1}. dosya`} aria-current={i === 0 ? 'true' : undefined}></button>)}
+    </div>
   </div>
 </section>
 <style>
+.hpa-premier-carousel{position:relative;background:#07090B}
+.hpa-premier-carousel__tabs{display:flex;gap:8px;overflow-x:auto;padding:14px clamp(14px,3vw,34px) 0;background:#07090B;scrollbar-width:none}
+.hpa-premier-carousel__tabs::-webkit-scrollbar{display:none}
+.hpa-premier-carousel__tabs button{flex:0 0 auto;min-height:40px;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.04);color:#A0AEC0;padding:8px 14px;font:600 11px "IBM Plex Mono",monospace;letter-spacing:.07em;cursor:pointer;white-space:nowrap}
+.hpa-premier-carousel__tabs button[aria-selected="true"]{border-color:#F2B705;color:#F6F1E8}
+.hpa-premier-carousel__track{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;overscroll-behavior-inline:contain;scrollbar-width:none}
+.hpa-premier-carousel__track::-webkit-scrollbar{display:none}
+.hpa-premier-carousel__track .hpa-premier{flex:0 0 100%;min-width:0;scroll-snap-align:start;scroll-snap-stop:always}
+.hpa-premier-carousel__foot{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:10px clamp(14px,3vw,34px) 14px;background:#07090B;font:600 11px "IBM Plex Mono",monospace;letter-spacing:.08em;color:#9BA8B3}
+.hpa-premier-carousel__dots{display:flex;gap:8px}
+.hpa-premier-carousel__dots button{width:10px;height:10px;border-radius:50%;border:1px solid #9BA8B3;background:transparent;cursor:pointer;padding:0}
+.hpa-premier-carousel__dots button[aria-current="true"]{background:#F2B705;border-color:#F2B705}
+.hpa-premier-carousel button:focus-visible{outline:2px solid #F2B705;outline-offset:2px}
+@media(max-width:560px){.hpa-premier-carousel__foot span:first-child{display:none}}
+@media(prefers-reduced-motion:reduce){.hpa-premier-carousel__track{scroll-behavior:auto}}
 .hpa-premier{position:relative;isolation:isolate;overflow:hidden;background:linear-gradient(124deg,#120707 0%,#350B16 48%,#711523 78%,#8B451C 100%);color:#F6F1E8;border-block:1px solid #F2B705}
 .hpa-premier::before{content:"";position:absolute;inset:0;z-index:-1;background:repeating-linear-gradient(90deg,transparent 0,transparent calc(33.333% - 1px),rgba(255,221,162,.12) 33.333%)}
 .hpa-premier[data-club="besiktas"]{background:linear-gradient(124deg,#07070A 0%,#101014 44%,#191920 74%,#2B2B33 100%);border-block-color:#F2F0EC}
@@ -47,6 +73,14 @@ const steps = [
 .hpa-premier[data-club="besiktas"] .hpa-premier__foreign{color:#8A8F98}
 .hpa-premier[data-club="besiktas"] .hpa-premier__meta{color:#B9B6B0}
 .hpa-premier[data-club="besiktas"] .hpa-premier__stars{opacity:.16}
+.hpa-premier[data-club="fenerbahce"]{background:linear-gradient(124deg,#030814 0%,#06112A 42%,#0F2350 74%,#132B5E 100%);border-block-color:#FFD31A}
+.hpa-premier[data-club="fenerbahce"]::before{background:repeating-linear-gradient(90deg,transparent 0,transparent calc(33.333% - 1px),rgba(255,211,26,.1) 33.333%)}
+.hpa-premier[data-club="fenerbahce"] .hpa-premier__turkish{color:#FFD31A}
+.hpa-premier[data-club="fenerbahce"] .hpa-premier__foreign{color:#DCE3F0}
+.hpa-premier[data-club="fenerbahce"] .hpa-premier__meta{color:#AEBBD6}
+.hpa-premier[data-club="fenerbahce"] .hpa-premier__eyebrow{color:#FFE266}
+.hpa-premier[data-club="fenerbahce"] .hpa-premier__link{background:#FFD31A;color:#071233}
+.hpa-premier[data-club="fenerbahce"] .hpa-premier__stars{opacity:.18}
 .hpa-premier__stars{position:absolute;right:-8%;top:-24%;width:min(72vw,750px);aspect-ratio:1;z-index:-1;pointer-events:none;opacity:.27;animation:hpa-star-rotation 45s linear infinite}
 .hpa-premier__stars i{position:absolute;width:20%;aspect-ratio:1;border:1.5px solid rgba(255,232,180,.7);clip-path:polygon(50% 0%,61% 36%,98% 36%,68% 58%,79% 95%,50% 73%,21% 95%,32% 58%,2% 36%,39% 36%);background:linear-gradient(145deg,rgba(255,202,83,.14),rgba(255,255,255,.04))}
 .hpa-premier__stars i:nth-child(1){top:10%;left:37%;transform:scale(1.45)}
@@ -223,6 +257,47 @@ const steps = [
     if (!reduce) timer = window.setInterval(() => { if (!touched && !document.hidden) select(index + 1); }, 5200);
     root.addEventListener('pointerenter', () => { touched = true; });
     select(0);
+  }
+
+  // Premier carousel: tabs + swipeable track + dots stay in sync, same pattern as the interactive hero rail.
+  const premierRail = document.getElementById('premier-feature');
+  if (premierRail) {
+    const premierTrack = premierRail.querySelector<HTMLElement>('[data-premier-track]');
+    const premierTabs = Array.from(premierRail.querySelectorAll<HTMLButtonElement>('[data-premier-tab]'));
+    const premierDots = Array.from(premierRail.querySelectorAll<HTMLButtonElement>('[data-premier-dot]'));
+    if (premierTrack && premierTabs.length > 1) {
+      const setPremierActive = (index: number) => {
+        premierTabs.forEach((tab, i) => { const active = i === index; tab.setAttribute('aria-selected', String(active)); tab.tabIndex = active ? 0 : -1; });
+        premierDots.forEach((dot, i) => { if (i === index) dot.setAttribute('aria-current', 'true'); else dot.removeAttribute('aria-current'); });
+      };
+      const goToPremier = (i: number, focus = false) => {
+        const panel = premierTrack.querySelector<HTMLElement>(`[data-premier-panel="${i}"]`);
+        if (!panel) return;
+        premierTrack.scrollTo({ left: panel.offsetLeft - premierTrack.offsetLeft, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth' });
+        setPremierActive(i);
+        if (focus) premierTabs[i]?.focus();
+      };
+      premierTabs.forEach((tab, i) => {
+        tab.addEventListener('click', () => goToPremier(i));
+        tab.addEventListener('keydown', (event) => {
+          if (!['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) return;
+          event.preventDefault();
+          const next = event.key === 'Home' ? 0 : event.key === 'End' ? premierTabs.length - 1 : event.key === 'ArrowRight' ? (i + 1) % premierTabs.length : (i + premierTabs.length - 1) % premierTabs.length;
+          goToPremier(next, true);
+        });
+      });
+      premierDots.forEach((dot, i) => dot.addEventListener('click', () => goToPremier(i)));
+      let premierScheduled = false;
+      premierTrack.addEventListener('scroll', () => {
+        if (premierScheduled) return;
+        premierScheduled = true;
+        requestAnimationFrame(() => {
+          premierScheduled = false;
+          const width = premierTrack.clientWidth || 1;
+          setPremierActive(Math.max(0, Math.min(premierTabs.length - 1, Math.round(premierTrack.scrollLeft / width))));
+        });
+      }, { passive: true });
+    }
   }
 
   // Rail controls
