@@ -1,0 +1,115 @@
+---
+interface Props {
+  mode?: string;
+}
+const { mode = "sequence" } = Astro.props;
+---
+
+<div class="hpa-surface-container" data-mode={mode}>
+  <div class="surface-header">
+    <div class="surface-badge">HPFA TACTICAL LAB · ZFGV CARTOGRAPHY</div>
+    <div class="surface-tabs" role="tablist">
+      <button class="tab-btn active" data-goal="1" role="tab" aria-selected="true">01' Yunus</button>
+      <button class="tab-btn" data-goal="2" role="tab" aria-selected="false">43' Batrakov</button>
+      <button class="tab-btn" data-goal="3" role="tab" aria-selected="false">54' Bentaleb (KK)</button>
+      <button class="tab-btn" data-goal="4" role="tab" aria-selected="false">62' Osimhen</button>
+    </div>
+  </div>
+
+  <div class="pitch-wrap">
+    <svg viewBox="0 0 105 68" class="tactical-pitch" aria-label="Taktik Saha Görünümü">
+      <rect x="0" y="0" width="105" height="68" fill="#0C0D10" stroke="#23252B" stroke-width="0.6"/>
+      <line x1="52.5" y1="0" x2="52.5" y2="68" stroke="#23252B" stroke-width="0.5"/>
+      <circle cx="52.5" cy="34" r="9.15" fill="none" stroke="#23252B" stroke-width="0.5"/>
+      <circle cx="52.5" cy="34" r="0.6" fill="#71757C"/>
+      <rect x="0" y="13.84" width="16.5" height="40.32" fill="none" stroke="#23252B" stroke-width="0.5"/>
+      <rect x="88.5" y="13.84" width="16.5" height="40.32" fill="none" stroke="#23252B" stroke-width="0.5"/>
+      <rect x="0" y="24.84" width="5.5" height="18.32" fill="none" stroke="#23252B" stroke-width="0.5"/>
+      <rect x="99.5" y="24.84" width="5.5" height="18.32" fill="none" stroke="#23252B" stroke-width="0.5"/>
+
+      <g id="vector-layer">
+        <path d="M 28 58 L 56 60" stroke="#E8A020" stroke-width="1.2" stroke-dasharray="2 1" />
+        <path d="M 56 60 Q 75 52 86 42" stroke="#A6192E" stroke-width="1.6" fill="none" />
+        <path d="M 86 42 L 102 36" stroke="#F2F0EC" stroke-width="1.4" />
+        <circle cx="28" cy="58" r="1.5" fill="#E8A020" />
+        <circle cx="56" cy="60" r="1.6" fill="#A6192E" />
+        <circle cx="86" cy="42" r="1.8" fill="#F2F0EC" />
+        <text x="28" y="63" fill="#E8A020" font-size="2.6" font-family="monospace">Jakobs (Pas)</text>
+        <text x="56" y="65" fill="#A6192E" font-size="2.6" font-family="monospace">B.A.Y (Taşıma)</text>
+        <text x="83" y="38" fill="#F2F0EC" font-size="2.8" font-family="monospace" font-weight="bold">Yunus (Bitiriş)</text>
+      </g>
+    </svg>
+  </div>
+
+  <div class="sequence-telemetry">
+    <div class="telemetry-cell">
+      <span class="lbl">SEKANS SÜRESİ</span>
+      <span class="val" id="seq-duration">8.4s</span>
+    </div>
+    <div class="telemetry-cell">
+      <span class="lbl">DİKEY İLERLEME (DIRECTNESS)</span>
+      <span class="val" id="seq-directness">%84.2</span>
+    </div>
+    <div class="telemetry-cell">
+      <span class="lbl">FAZ GEÇİŞİ</span>
+      <span class="val" id="seq-phase">Hücum Geçişi → Klinik İnfaz</span>
+    </div>
+    <div class="telemetry-cell">
+      <span class="lbl">ANA TETİKLEYİCİ</span>
+      <span class="val" id="seq-trigger">Lille Sağ Blok Gecikmesi</span>
+    </div>
+  </div>
+</div>
+
+<style>
+.hpa-surface-container {
+  background: #101114;
+  border: 1px solid #23252B;
+  border-radius: 8px;
+  padding: 18px;
+  margin: 28px 0;
+  box-shadow: 0 16px 36px rgba(0,0,0,0.45);
+}
+.surface-header { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px; margin-bottom: 14px; }
+.surface-badge { font-family: ui-monospace, Menlo, monospace; font-size: 10px; letter-spacing: .16em; color: #E8A020; text-transform: uppercase; }
+.surface-tabs { display: flex; gap: 6px; flex-wrap: wrap; }
+.tab-btn { background: #17181D; border: 1px solid #282A30; color: #8C9099; font-family: ui-monospace, Menlo, monospace; font-size: 11px; padding: 5px 11px; border-radius: 4px; cursor: pointer; transition: all 0.2s ease; }
+.tab-btn:hover { color: #F2F0EC; border-color: #E8A020; }
+.tab-btn.active { background: #201D1A; color: #E8A020; border-color: #E8A020; font-weight: 600; }
+.pitch-wrap { width: 100%; aspect-ratio: 105 / 68; background: #08080A; border-radius: 6px; overflow: hidden; border: 1px solid #1E2026; }
+.tactical-pitch { width: 100%; height: 100%; display: block; }
+.sequence-telemetry { display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 10px; margin-top: 14px; padding-top: 12px; border-top: 1px solid #1E2026; }
+.telemetry-cell { display: flex; flex-direction: column; gap: 3px; }
+.telemetry-cell .lbl { font-family: ui-monospace, Menlo, monospace; font-size: 9px; letter-spacing: .12em; color: #6A6E78; text-transform: uppercase; }
+.telemetry-cell .val { font-family: ui-monospace, Menlo, monospace; font-size: 13px; color: #F2F0EC; font-weight: 600; }
+</style>
+
+<script>
+  const GOAL_DATA = {
+    1: { duration: "8.4s", directness: "%84.2", phase: "Hücum Geçişi → Klinik İnfaz", trigger: "Lille Sağ Blok Gecikmesi", svg: `<path d="M 28 58 L 56 60" stroke="#E8A020" stroke-width="1.2" stroke-dasharray="2 1" /><path d="M 56 60 Q 75 52 86 42" stroke="#A6192E" stroke-width="1.6" fill="none" /><path d="M 86 42 L 102 36" stroke="#F2F0EC" stroke-width="1.4" /><circle cx="28" cy="58" r="1.5" fill="#E8A020" /><circle cx="56" cy="60" r="1.6" fill="#A6192E" /><circle cx="86" cy="42" r="1.8" fill="#F2F0EC" /><text x="28" y="63" fill="#E8A020" font-size="2.6" font-family="monospace">Jakobs (Pas)</text><text x="56" y="65" fill="#A6192E" font-size="2.6" font-family="monospace">B.A.Y (Taşıma)</text><text x="83" y="38" fill="#F2F0EC" font-size="2.8" font-family="monospace" font-weight="bold">Yunus (Bitiriş)</text>` },
+    2: { duration: "6.1s", directness: "%91.5", phase: "Yüksek Baskı Cezası → Hata Zorlama", trigger: "Lille 1. Bölge Karar Felci", svg: `<path d="M 68 18 L 82 26" stroke="#E8A020" stroke-width="1.4" /><path d="M 82 26 L 94 32" stroke="#F2F0EC" stroke-width="1.4" /><circle cx="68" cy="18" r="1.5" fill="#E8A020" /><circle cx="82" cy="26" r="1.5" fill="#A6192E" /><circle cx="94" cy="32" r="1.8" fill="#F2F0EC" /><text x="62" y="15" fill="#E8A020" font-size="2.6" font-family="monospace">Sallai (Taşıma)</text><text x="76" y="23" fill="#A6192E" font-size="2.6" font-family="monospace">Savunma Hatası</text><text x="88" y="38" fill="#F2F0EC" font-size="2.8" font-family="monospace" font-weight="bold">Batrakov (Gol)</text>` },
+    3: { duration: "4.7s", directness: "%78.0", phase: "Ceza Sahası Aşırı Yükleme", trigger: "Sara Ceza Sahası Pas Şiddeti", svg: `<path d="M 72 48 L 92 36" stroke="#E8A020" stroke-width="1.4" stroke-dasharray="2 1" /><path d="M 92 36 L 102 34" stroke="#A6192E" stroke-width="1.6" /><circle cx="72" cy="48" r="1.5" fill="#E8A020" /><circle cx="92" cy="36" r="1.6" fill="#A6192E" /><text x="66" y="53" fill="#E8A020" font-size="2.6" font-family="monospace">Sara (İç Pas)</text><text x="84" y="32" fill="#A6192E" font-size="2.8" font-family="monospace" font-weight="bold">Bentaleb (KK)</text>` },
+    4: { duration: "9.8s", directness: "%88.6", phase: "Rest-Defense Top Kazanımı → Hızlı Akın", trigger: "Abdülkerim Kademesi & Barış Koridoru", svg: `<path d="M 34 22 L 52 32" stroke="#E8A020" stroke-width="1.3" /><path d="M 52 32 L 78 18" stroke="#E8A020" stroke-width="1.3" /><path d="M 78 18 L 95 31" stroke="#F2F0EC" stroke-width="1.6" /><circle cx="34" cy="22" r="1.5" fill="#E8A020" /><circle cx="52" cy="32" r="1.5" fill="#A6192E" /><circle cx="78" cy="18" r="1.5" fill="#E8A020" /><circle cx="95" cy="31" r="1.8" fill="#F2F0EC" /><text x="24" y="20" fill="#E8A020" font-size="2.6" font-family="monospace">Abdülkerim (Kazanım)</text><text x="48" y="38" fill="#A6192E" font-size="2.6" font-family="monospace">Batrakov (Dağıtım)</text><text x="74" y="14" fill="#E8A020" font-size="2.6" font-family="monospace">B.A.Y (Asist)</text><text x="88" y="36" fill="#F2F0EC" font-size="2.8" font-family="monospace" font-weight="bold">Osimhen (İnfaz)</text>` }
+  };
+  const buttons = document.querySelectorAll(".tab-btn");
+  const vectorLayer = document.getElementById("vector-layer");
+  const seqDuration = document.getElementById("seq-duration");
+  const seqDirectness = document.getElementById("seq-directness");
+  const seqPhase = document.getElementById("seq-phase");
+  const seqTrigger = document.getElementById("seq-trigger");
+  buttons.forEach(btn => {
+    btn.addEventListener("click", () => {
+      buttons.forEach(b => { b.classList.remove("active"); b.setAttribute("aria-selected", "false"); });
+      btn.classList.add("active");
+      btn.setAttribute("aria-selected", "true");
+      const gid = btn.getAttribute("data-goal"); const d = gid ? (GOAL_DATA as Record<string, any>)[gid] : null;
+      if (d && vectorLayer) {
+        vectorLayer.innerHTML = d.svg;
+        if (seqDuration) seqDuration.textContent = d.duration;
+        if (seqDirectness) seqDirectness.textContent = d.directness;
+        if (seqPhase) seqPhase.textContent = d.phase;
+        if (seqTrigger) seqTrigger.textContent = d.trigger;
+      }
+    });
+  });
+</script>

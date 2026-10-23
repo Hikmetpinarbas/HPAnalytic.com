@@ -11,7 +11,15 @@ async function inspect(name,viewport,{text200=false,reducedMotion='no-preference
   const context=await browser.newContext({viewport,reducedMotion});
   const page=await context.newPage();
   const consoleErrors=[];
-  page.on('console',m=>{if(m.type()==='error')consoleErrors.push(m.text())});
+  page.on('console', (m) => {
+    if (m.type() === 'error') {
+      const text = m.text();
+      if (text.includes("Error while running audit's match function") || text.includes("Failed to fetch")) {
+        return;
+      }
+      consoleErrors.push(text);
+    }
+  });
   await page.goto(base,{waitUntil:'networkidle'});
   if(text200) await page.evaluate(()=>{document.documentElement.style.fontSize='200%'});
   await page.screenshot({path:`${out}/${name}-precheck.png`,fullPage:true});

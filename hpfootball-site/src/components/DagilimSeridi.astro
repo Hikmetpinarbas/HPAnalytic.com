@@ -24,7 +24,7 @@ const fmt = (v: number, unit: string) =>
   unit === '%' ? `%${v.toFixed(1).replace('.', ',')}` : v.toFixed(2).replace('.', ',');
 
 const strips = metrics.map((key) => {
-  const m = L.metrics[key];
+  const m = (L.metrics as Record<string, any>)[key];
   if (!m) throw new Error(`${league} liginde gösterge yok: ${key}`);
   const rows = Object.entries(m.values).map(([team, v]) => ({ team, v: v as number }));
   if (!rows.some((r) => r.team === focus)) throw new Error(`${focus} ${league} liginde yok`);
@@ -159,24 +159,24 @@ const strips = metrics.map((key) => {
 
 <script>
   document.querySelectorAll('[data-ds]').forEach((fig) => {
-    const pills = fig.querySelectorAll('[data-ds-pill]');
+    const pills = Array.from(fig.querySelectorAll('[data-ds-pill]')) as HTMLButtonElement[];
     if (!pills.length) return;
     pills.forEach((btn) => {
       btn.addEventListener('click', () => {
         const key = btn.getAttribute('data-ds-pill');
         pills.forEach((b) => b.setAttribute('aria-selected', String(b === btn)));
-        fig.querySelectorAll('[data-ds-panel]').forEach((p) => {
+        fig.querySelectorAll<HTMLElement>('[data-ds-panel]').forEach((p) => {
           p.hidden = p.getAttribute('data-ds-panel') !== key;
         });
       });
       btn.addEventListener('keydown', (e) => {
-        const ks = [...pills];
-        const i = ks.indexOf(btn);
-        const n = e.key === 'ArrowRight' ? i + 1 : e.key === 'ArrowLeft' ? i - 1 : -1;
-        if (n < 0 || n >= ks.length) return;
-        e.preventDefault();
-        ks[n].focus();
-        ks[n].click();
+        const evt = e as KeyboardEvent;
+        const i = pills.indexOf(btn);
+        const n = evt.key === 'ArrowRight' ? i + 1 : evt.key === 'ArrowLeft' ? i - 1 : -1;
+        if (n < 0 || n >= pills.length) return;
+        evt.preventDefault();
+        pills[n].focus();
+        pills[n].click();
       });
     });
   });
