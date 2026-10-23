@@ -74,6 +74,9 @@ footer{font-family:var(--mono);font-size:10px;letter-spacing:.14em;color:var(--g
 .hero-bot{font-family:var(--mono);font-size:clamp(8.5px,1.6vw,10.5px);letter-spacing:.14em;
   color:var(--ghost);text-transform:uppercase;text-align:center}
 @media (prefers-reduced-motion:reduce){*{transition:none!important;animation:none!important}}
+body.locked-view .hero{display:none}
+body.locked-view{padding-block:10px 18px}
+body.locked-view #tabs{display:none}
 </style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
 
@@ -495,6 +498,30 @@ d3.selectAll('button').on('click',function(){
   if(cls==='team') renderMomentum();
   render();
 });
+
+// Tek bir görünüme kilitli, yazının ilgili bölümüne gömülü mini-yüzey modu.
+// #view=pitch gibi bir hash verilirse: o görünüme sabitlenir, görünüm sekmeleri gizlenir.
+(() => {
+  const params = new URLSearchParams(location.hash.replace(/^#/, ''));
+  const lockedView = params.get('view');
+  const validViews = ['pitch', 'pattern', 'bars', 'radar', 'pizza'];
+  if (lockedView && validViews.includes(lockedView)) {
+    S.view = lockedView;
+    d3.selectAll('button.view').each(function () {
+      d3.select(this).attr('aria-pressed', String(this.dataset.view === lockedView));
+    });
+    $('#tabs').hidden = true;
+    document.body.classList.add('locked-view');
+    const lockedTeam = params.get('team');
+    const teamButtons = document.querySelectorAll('button.team');
+    const validTeams = Array.from(teamButtons).map(b => b.dataset.team);
+    if (lockedTeam && validTeams.includes(lockedTeam)) {
+      S.team = lockedTeam;
+      teamButtons.forEach(b => d3.select(b).attr('aria-pressed', String(b.dataset.team === lockedTeam)));
+    }
+  }
+})();
+
 renderMomentum(); render();
 
 /* ---------------- AÇILIŞ GÖRSELİ ---------------- */

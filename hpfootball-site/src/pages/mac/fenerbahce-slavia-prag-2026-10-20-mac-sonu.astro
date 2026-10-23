@@ -3,7 +3,6 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import DagilimSeridi from '../../components/DagilimSeridi.astro';
 import TurnuvaHeader from '../../components/TurnuvaHeader.astro';
 import ShareCard from '../../components/ShareCard.astro';
-import matchSurfaceHTML from '../../../public/match-surfaces/fenerbahce-slavia-prag-interactive.html?raw';
 import '../../styles/match-page.css';
 export const prerender = true;
 ---
@@ -51,29 +50,24 @@ export const prerender = true;
   </div>
 </section>
 
-<section class="hpa-interactive-match" aria-label="Etkileşimli Fenerbahçe Slavia Prag maç analizi">
-  <iframe id="hpa-interactive-frame" title="Fenerbahçe ve Slavia Prag: beş görünümlü etkileşimli maç yüzeyi"
-    srcdoc={matchSurfaceHTML}
-    loading="eager" referrerpolicy="same-origin"></iframe>
-  <p class="hpa-interactive-fallback"><a href="/match-surfaces/fenerbahce-slavia-prag-interactive.html">Etkileşimli maç yüzeyini ayrı sayfada aç ↗</a></p>
-</section>
 <script is:inline>
 (() => {
-  const frame = document.getElementById('hpa-interactive-frame');
-  if (!frame) return;
-  frame.addEventListener('load', () => {
-    try {
-      const doc = frame.contentDocument;
-      if (!doc) return;
-      const resize = () => {
-        const h = Math.max(doc.documentElement.scrollHeight, doc.body?.scrollHeight || 0);
-        if (h > 0) frame.style.height = `${h + 8}px`;
-      };
-      resize();
-      if ('ResizeObserver' in window) new ResizeObserver(resize).observe(doc.body);
-      doc.fonts?.ready.then(resize);
-    } catch { /* standalone surface link remains accessible */ }
-  });
+  const wire = (frame) => {
+    frame.addEventListener('load', () => {
+      try {
+        const doc = frame.contentDocument;
+        if (!doc) return;
+        const resize = () => {
+          const h = Math.max(doc.documentElement.scrollHeight, doc.body?.scrollHeight || 0);
+          if (h > 0) frame.style.height = `${h + 8}px`;
+        };
+        resize();
+        if ('ResizeObserver' in window) new ResizeObserver(resize).observe(doc.body);
+        doc.fonts?.ready.then(resize);
+      } catch { /* standalone surface link remains accessible */ }
+    });
+  };
+  document.querySelectorAll('.hpa-locked-surface iframe').forEach(wire);
 })();
 </script>
 
@@ -84,8 +78,8 @@ export const prerender = true;
       <h2>Bu maçta ne ölçebiliyoruz, ne ölçemiyoruz</h2>
       <p class="lede">SportsBase protokolü her maça aynı titizlikle uygulanır; ama her maçın kaynak verisi aynı derinlikte gelmez.</p>
     </div>
-    <p>Bu maçın olay kaydı <strong>takım granülerliğinde</strong> — Lille-Galatasaray dosyasının aksine, kim pas attı, kim topu kaybetti, kim şutu çekti bilgisi oyuncu adıyla etiketlenmemiş. Bu yüzden bu yazıda gol zincirlerini oyuncu oyuncu anlatmıyoruz; anlattığımız, zamanı, sahadaki konumu ve olay türünü saniyesi saniyesine veren takım-seviyesi mekanizma. Ayrıca bu maç için bağımsız bir kaleci dosyası (xG çapraz doğrulaması) ve oyuncu dakika/değişiklik verisi de mevcut değil — bu iki eksiklik ilgili bölümlerde ayrıca belirtiliyor.</p>
-    <p>Buna karşılık zaman çapası, skor durumu, dört faz, geçişler ve mesafe-bazlı şut modeli — Lille-Galatasaray'da kullanılanla aynı yöntem, aynı titizlikle bu maça da uygulandı.</p>
+    <p>Bu maçın olay kaydı <strong>takım granülerliğinde</strong> — kim pas attı, kim topu kaybetti, kim şutu çekti bilgisi oyuncu adıyla etiketlenmemiş. Bu yüzden bu yazıda gol zincirlerini oyuncu oyuncu anlatmıyoruz; anlattığımız, zamanı, sahadaki konumu ve olay türünü saniyesi saniyesine veren takım-seviyesi mekanizma. Ayrıca bu maç için bağımsız bir kaleci dosyası (xG çapraz doğrulaması) ve oyuncu dakika/değişiklik verisi de mevcut değil — bu iki eksiklik ilgili bölümlerde ayrıca belirtiliyor.</p>
+    <p>Buna karşılık zaman çapası, skor durumu, dört faz, geçişler ve mesafe-bazlı şut modeli — SportsBase protokolünün standart yöntemiyle, aynı titizlikle bu maça da uygulandı.</p>
   </div>
 </section>
 
@@ -93,12 +87,12 @@ export const prerender = true;
   <div class="wrap">
     <div class="head col">
       <p class="eyebrow">Gece</p>
-      <h2>Dört gol, bir düzeltme</h2>
-      <p class="lede">Bu sayfanın önceki sürümü Slavia'nın golünü 14. dakika gösteriyordu. Zaman çapası yeniden kontrol edildi.</p>
+      <h2>Dört gol, bir pencere</h2>
+      <p class="lede">Zaman çapası, devre arası düşülmüş gerçek oyun dakikası ve "taban+1" gösterim kuralıyla (football-minute convention) hesaplandı.</p>
     </div>
     <p><strong>4' — Fenerbahçe:</strong> Şut doğrudan isabetli ve gole gidiyor; kayıtlarda "Chances" ve "Shots on target" etiketleri aynı ana düşüyor.</p>
     <p><strong>11' — Fenerbahçe, ikinci gol:</strong> Yine isabetli şuttan doğrudan gol. İki gol arası yedi dakika.</p>
-    <p><strong>15' — Slavia Prag:</strong> Devre arası dosya saatinden düşülmüş gerçek oyun dakikası ve "taban+1" gösterim kuralıyla (football-minute convention) doğru değer <strong>15'</strong>, önceki yayımda görünen 14' değil. Gol, rakip yarı sahada top kazanımıyla <em>aynı olayda</em> geliyor — kayıtlarda "Ball recoveries in opponent's half", "Chances", "Shots", "Shots on target" ve "Goals" tek bir event satırında birleşiyor: kazan, vur, gol — tek hamle, tek saniye.</p>
+    <p><strong>15' — Slavia Prag:</strong> Gol, rakip yarı sahada top kazanımıyla <em>aynı olayda</em> geliyor — kayıtlarda "Ball recoveries in opponent's half", "Chances", "Shots", "Shots on target" ve "Goals" tek bir event satırında birleşiyor: kazan, vur, gol — tek hamle, tek saniye.</p>
     <p><strong>90' — Slavia Prag, beraberlik:</strong> Maçın bitimine saniyeler kala, 2-1'in 76 dakika sürmesinin ardından.</p>
     <div class="rc-wrap">
       <svg viewBox="0 0 440 140" class="rc" role="img" aria-label="Gol zaman çizelgesi"><line x1="86" y1="70" x2="424" y2="70" stroke="currentColor" opacity=".22"/><line x1="139.8" y1="66" x2="139.8" y2="74" stroke="currentColor" opacity=".16"/><line x1="193.7" y1="66" x2="193.7" y2="74" stroke="currentColor" opacity=".16"/><line x1="247.5" y1="66" x2="247.5" y2="74" stroke="currentColor" opacity=".16"/><line x1="301.4" y1="66" x2="301.4" y2="74" stroke="currentColor" opacity=".16"/><line x1="355.2" y1="66" x2="355.2" y2="74" stroke="currentColor" opacity=".16"/><line x1="409.0" y1="66" x2="409.0" y2="74" stroke="currentColor" opacity=".16"/><line x1="247.5" y1="22" x2="247.5" y2="118" stroke="currentColor" opacity=".13" stroke-dasharray="2 3"/><text x="2" y="42" class="rc-ax">FENERBAHÇE</text><text x="2" y="104" class="rc-ax">SLAVIA PRAG</text><line x1="99.4" y1="70" x2="99.4" y2="38" stroke="var(--amber)" stroke-width="1.6"/><circle cx="99.4" cy="38" r="4.5" fill="var(--amber)"/><text x="99.4" y="27" text-anchor="middle" class="rc-val">1-0</text><text x="99.4" y="16" text-anchor="middle" class="rc-ax">4'</text><line x1="124.2" y1="70" x2="124.2" y2="38" stroke="var(--amber)" stroke-width="1.6"/><circle cx="124.2" cy="38" r="4.5" fill="var(--amber)"/><text x="124.2" y="27" text-anchor="middle" class="rc-val">2-0</text><text x="124.2" y="16" text-anchor="middle" class="rc-ax">11'</text><line x1="137.1" y1="70" x2="137.1" y2="102" stroke="var(--chalk-2)" stroke-width="1.6"/><circle cx="137.1" cy="102" r="4.5" fill="var(--chalk-2)"/><text x="137.1" y="117" text-anchor="middle" class="rc-val">2-1</text><text x="137.1" y="128" text-anchor="middle" class="rc-ax">15'</text><line x1="406.9" y1="70" x2="406.9" y2="102" stroke="var(--chalk-2)" stroke-width="1.6"/><circle cx="406.9" cy="102" r="4.5" fill="var(--chalk-2)"/><text x="406.9" y="117" text-anchor="middle" class="rc-val">2-2</text><text x="406.9" y="128" text-anchor="middle" class="rc-ax">90'</text></svg>
@@ -118,6 +112,10 @@ export const prerender = true;
     <p>Aynı pencerede Slavia'nın ürettiği yirmi iki olay, tek ama belirleyici bir örüntü çiziyor: 12.5. dakikada bir kontratak başlıyor (etiket: "Counterattacks"), 12.5-13.5 arası çalım ve ikili mücadele kazanımlarıyla ilerliyor, 13.27 ve 13.35'te iki ilerletici pas topu rakip yarı sahaya taşıyor, 13.55'te bir orta (isabetsiz) deniyor, 14.07'de Fenerbahçe bir mücadeleyi kaybediyor ve 14.25'te — hepsi aynı olay satırında — Slavia rakip yarı sahada topu kazanıyor, şutu çekiyor ve golü buluyor.</p>
     <p>Bu, "Fenerbahçe iki gol attıktan sonra kendi sahasına çekildi" anlatısını kısmen doğruluyor (üretim durdu) ama mekanizma daha spesifik: durma, Slavia'nın net, tek-hamleli bir kontratağıyla aynı ana denk geldi. Bunun bir karar mı (bilinçli derin savunma) yoksa oyunun o anki akışının sonucu mu olduğunu olay verisi tek başına ayıramıyor — ikisi de gözlemsel olarak aynı imzayı bırakır.</p>
     <p class="mono" style="color:var(--mute);font-size:.82rem">Not: Oyuncu kimliği etiketlenmediği için bu zincirin hangi Slavia oyuncusu tarafından taşındığı, kimin orta çektiği, kimin bitirdiği bu veriden çıkarılamıyor. Yukarıdaki anlatı yalnızca olay türü ve zaman damgasına dayanır.</p>
+    <div class="hpa-locked-surface" aria-label="Fenerbahçe - Slavia Prag saha olay haritası">
+      <iframe title="Fenerbahçe - Slavia Prag saha olay haritası" src="/match-surfaces/fenerbahce-slavia-prag-interactive.html#view=pitch" loading="lazy" referrerpolicy="same-origin"></iframe>
+      <p class="hpa-locked-surface__cap">Saha üzerinde olay haritası — takım ve zaman penceresi değiştirilebilir. <a href="/match-surfaces/fenerbahce-slavia-prag-interactive.html">Tüm görünümleriyle ayrı sayfada aç ↗</a></p>
+    </div>
   </div>
 </section>
 
@@ -131,6 +129,10 @@ export const prerender = true;
     <p>Fenerbahçe 443 pas denedi, 376'ü isabetli (%85). Slavia 478 pas denedi, 410'i isabetli (%86) — hacim ve isabet oranında Slavia hafifçe önde, iki puanlık fark skor tablosunu yansıtmıyor.</p>
     <p>Şut sayısı neredeyse eşit: Fenerbahçe 14, Slavia 15; isabetli şut ikisinde de 5. İkili mücadele kazanımında Fenerbahçe önde (101/180 — %56, Slavia 79/180 — %44), hava topunda da aynı yönde (FB 16/28, Slavia 12/28).</p>
     <p>Atak başına ortalama süre ve aksiyon sayısı da birbirine yakın: Fenerbahçe 74 atak, ortalama 27 saniye, 5.4 aksiyon; Slavia 78 atak, 24 saniye, 5.1 aksiyon. <strong>Bu bir baskın-mağlup profili değil, iki eşit takımın karşılaşması — sonucu ayıran skor anları, hacim değil.</strong></p>
+    <div class="hpa-locked-surface" aria-label="Fenerbahçe - Slavia Prag karşılaştırma">
+      <iframe title="Fenerbahçe - Slavia Prag karşılaştırma grafiği" src="/match-surfaces/fenerbahce-slavia-prag-interactive.html#view=bars" loading="lazy" referrerpolicy="same-origin"></iframe>
+      <p class="hpa-locked-surface__cap">İki takımın bağımsız profili, yan yana.</p>
+    </div>
   </div>
 </section>
 
@@ -170,6 +172,10 @@ export const prerender = true;
     </div>
     <p>Fenerbahçe 125 kez topu kazandı, bunların 49'i rakip yarı sahada. Kazanım sonrası sekiz saniye içinde 7 kez şut çekti (%5.6). Slavia 103 kazanımın 39'ini rakip yarıda yaptı, 3 şuta çevirdi (%2.9) — ama bu azınlık içindeki tek şut, yukarıda anlatılan 15. dakika golüydü.</p>
     <p>Savunma tarafında: Fenerbahçe 61 kez topu kaybetti, bunun sonrasında rakibe sekiz saniye içinde izin verdiği şut sayısı yalnızca 1. Slavia 57 kayıptan sonra 0 şut yedi — <strong>sıfır.</strong> Geçiş savunması iki takımda da sağlam; maçın açık alanı geçiş anlarında değil, kurulu düzen ve o tek kontratak zincirinde kapandı.</p>
+    <div class="hpa-locked-surface" aria-label="Fenerbahçe - Slavia Prag yoğunluk örüntüsü">
+      <iframe title="Fenerbahçe - Slavia Prag yoğunluk örüntüsü" src="/match-surfaces/fenerbahce-slavia-prag-interactive.html#view=pattern" loading="lazy" referrerpolicy="same-origin"></iframe>
+      <p class="hpa-locked-surface__cap">Olay yoğunluğunun sahadaki örüntüsü, takıma göre.</p>
+    </div>
   </div>
 </section>
 
@@ -186,6 +192,10 @@ export const prerender = true;
     </div>
     <p>Fenerbahçe olaylarının %27'i proaktif, %56'i aktif, %17'i reaktif. Slavia %25 / %57 / %18 — iki profil de birbirinden en fazla iki-üç puan ayrılıyor. Hücum geçişinde (top kazanıp sekiz saniyede şut) Fenerbahçe 125 kazanımdan 7 şut üretti (%5.6), Slavia 103 kazanımdan 3 (%2.9) — burada da fark marjinal.</p>
     <p class="mono" style="color:var(--mute);font-size:.82rem">Not: Oyuncu granülerliği olmadığı için bu faz dağılımı yalnızca takım toplamında hesaplanabildi; hangi oyuncunun hangi fazda daha proaktif olduğu bu veri setinden çıkarılamıyor.</p>
+    <div class="hpa-locked-surface" aria-label="Fenerbahçe - Slavia Prag radar karşılaştırması">
+      <iframe title="Fenerbahçe - Slavia Prag radar karşılaştırması" src="/match-surfaces/fenerbahce-slavia-prag-interactive.html#view=radar" loading="lazy" referrerpolicy="same-origin"></iframe>
+      <p class="hpa-locked-surface__cap">Faz dağılımının radar görünümü.</p>
+    </div>
   </div>
 </section>
 
@@ -201,7 +211,11 @@ export const prerender = true;
       <p class="rc-cap">Yalnızca hücum yarısı gösteriliyor, kale sağda. Dolu nokta isabetli şut, boş nokta isabetsiz/bloklanmış.</p>
     </div>
     <p>Fenerbahçe 2 yakın mesafe, 6 orta mesafe, 6 uzak mesafe şutu çekti. Slavia 2 / 7 / 6. İki takım da şutlarının çoğunluğunu orta-uzak mesafeden çekti — yakın mesafe (kale önü, ~11 metre içi) şut sayısı her iki takımda da yalnızca 2.</p>
-    <p class="mono" style="color:var(--mute);font-size:.82rem">Not: Bölge sınırları (yakın &lt;11m, orta 11-20m, uzak &gt;20m kaleye öklid mesafesi) ve dönüşüm oranları (yakın ~%32, orta ~%13, uzak ~%4) genel yayımlanmış referans değerleridir, bu maçın kendi ölçümü değil. Lille-Galatasaray dosyasındaki bağımsız kaleci-xG çapraz doğrulamasının eşdeğeri burada mevcut değil.</p>
+    <div class="hpa-locked-surface" aria-label="Fenerbahçe - Slavia Prag şut dağılımı (pizza)">
+      <iframe title="Fenerbahçe - Slavia Prag şut dağılımı" src="/match-surfaces/fenerbahce-slavia-prag-interactive.html#view=pizza" loading="lazy" referrerpolicy="same-origin"></iframe>
+      <p class="hpa-locked-surface__cap">Oyun kurma, hücum üretimi ve mücadele-denge eksenlerinde takım profili.</p>
+    </div>
+    <p class="mono" style="color:var(--mute);font-size:.82rem">Not: Bölge sınırları (yakın &lt;11m, orta 11-20m, uzak &gt;20m kaleye öklid mesafesi) ve dönüşüm oranları (yakın ~%32, orta ~%13, uzak ~%4) genel yayımlanmış referans değerleridir, bu maçın kendi ölçümü değil. Bağımsız bir kaleci-xG çapraz doğrulaması bu maç için mevcut değil.</p>
   </div>
 </section>
 
@@ -216,8 +230,8 @@ export const prerender = true;
       <svg viewBox="0 0 440 118" class="rc" role="img" aria-label="Maçın şut-xG simülasyonu"><rect x="18.0" y="14" width="141.3" height="34" fill="var(--amber)" opacity="0.9"/><text x="88.6" y="62" text-anchor="middle" class="rc-val">35%</text><text x="88.6" y="73" text-anchor="middle" class="rc-ax" font-size="7">FENERBAHÇE KAZANIR</text><rect x="159.3" y="14" width="97.7" height="34" fill="currentColor" opacity="0.14"/><text x="208.1" y="62" text-anchor="middle" class="rc-val">24%</text><text x="208.1" y="73" text-anchor="middle" class="rc-ax" font-size="7">BERABERE</text><rect x="257.0" y="14" width="165.0" height="34" fill="var(--chalk-2)" opacity="0.9"/><text x="339.5" y="62" text-anchor="middle" class="rc-val">41%</text><text x="339.5" y="73" text-anchor="middle" class="rc-ax" font-size="7">SLAVIA KAZANIR</text><rect x="18" y="14" width="404" height="34" fill="none" stroke="currentColor" opacity=".22"/><text x="18" y="8" class="rc-ax">Model (mesafe bazlı kaba xG): FB 1.66 — SLA 1.79 beklenen gol</text><text x="18" y="114" class="rc-ax">Gerçekleşen skor Fenerbahce 2 – SK Slavia Prague 2: model altında olasılık %9.0</text></svg>
       <p class="rc-cap">Mesafe-bazlı şut modelinin öngördüğü sonuç olasılıkları ve gerçekleşen skorun bu model altındaki olasılığı.</p>
     </div>
-    <p>Bu dağılımın altında: Slavia galibiyeti %40.8 · berabere %24.2 · Fenerbahçe galibiyeti %35.0. En olası skorlar: 1-1 (%10.1) · 1-2 (%10.0) · 2-1 (%9.1) · 2-2 (%9.0) · 1-3 (%5.7). Gerçekleşen skor 2-2, modelin beşinci en olası sonucu — dramatik bir sapma değil, model altında <strong>makul</strong> bir sonuç.</p>
-    <p>Bu, Lille-Galatasaray'daki tablonun tam tersi: orada gerçekleşen skorun model altındaki olasılığı %1,1 idi (aşırı sapma, savunma hatalarıyla açıklanan bir gece). Burada model ve gerçeklik örtüşüyor — iki golü de verimli pozisyonlardan atan, iki golü de yemeden önce savunması kırılan bir takımın hikâyesi, şans değil mesafe ve zamanlamanın bir sonucu.</p>
+    <p>Bu dağılımın altında: Slavia galibiyeti %40.8 · berabere %24.2 · Fenerbahçe galibiyeti %35.0. En olası skorlar: 1-1 (%10.1) · 1-2 (%10.0) · 2-1 (%9.1) · 2-2 (%9.0) · 1-3 (%5.7). Gerçekleşen skor 2-2, modelin dördüncü en olası sonucu — dramatik bir sapma değil, model altında <strong>makul</strong> bir sonuç.</p>
+    <p>Model ve gerçeklik burada örtüşüyor — iki golü de verimli pozisyonlardan atan, iki golü de yemeden önce savunması kırılan bir takımın hikâyesi, şans değil mesafe ve zamanlamanın bir sonucu.</p>
     <p class="mono" style="color:var(--mute);font-size:.82rem">Not: Bu simülasyon tek bir mesafe-xG modelidir; kaleci performansı, şutun ayak/kafa türü ve baskı altında olup olmadığı gibi değişkenler dahil değildir.</p>
   </div>
 </section>
@@ -244,7 +258,7 @@ export const prerender = true;
       <h2>Bu geceden kalan</h2>
     </div>
     <p>Fenerbahçe bu maçı hacimle kaybetmedi — bağımsız profil neredeyse birebir eşit iki takım gösteriyor. Kaybettiği şey, 217 saniyelik tek bir pencere: iki golü attıktan sonra üretimin tamamen durduğu, Slavia'nın da tam o pencerede net, tek-hamleli bir kontratak bulduğu an. Geri kalan seksen yedi dakika önde oynarken Fenerbahçe'nin şut üretimi makul kaldı; drought istisnaydı, kural değil.</p>
-    <p>Simülasyon da aynı yöne işaret ediyor: 2-2 bu maçın modelinin reddettiği bir sonuç değil, beşinci en olası senaryosu. Yani ortada açıklanması gereken bir "şans eseri berabere kalma" yok — iki eşit takımın, birinin üç dakika kırk saniyeliğine durduğu ve rakibinin tam o anı değerlendirdiği, sıradan ama kayıtlı bir maç var.</p>
+    <p>Simülasyon da aynı yöne işaret ediyor: 2-2 bu maçın modelinin reddettiği bir sonuç değil, dördüncü en olası senaryosu. Yani ortada açıklanması gereken bir "şans eseri berabere kalma" yok — iki eşit takımın, birinin üç dakika kırk saniyeliğine durduğu ve rakibinin tam o anı değerlendirdiği, sıradan ama kayıtlı bir maç var.</p>
     <p class="mono" style="color:var(--chalk-2);margin-top:2rem">Maç önü dosyası: <a href="/mac/fenerbahce-slavia-prag-2026-10-20">Fenerbahçe – Slavia Prag</a> · Veri: SportsBase</p>
   </div>
 </section>
@@ -257,8 +271,9 @@ export const prerender = true;
 .rc-cap{font-family:var(--f-body);font-size:.82rem;line-height:1.6;color:var(--mute);max-width:62ch;margin:0 0 1.4em}
 .rc-wrap{margin:26px 0}
 .hero.hpa-match-premier{position:relative;isolation:isolate;overflow:hidden}
-.hpa-interactive-match{width:min(100%,960px);margin:0 auto 2rem;padding:0 8px}
-#hpa-interactive-frame{display:block;width:100%;height:1200px;border:0;background:#0A0A0B}
-.hpa-interactive-fallback{font-size:.75rem;text-align:right;margin:.35rem 0 0}
+.hpa-locked-surface{margin:28px 0;width:100%}
+.hpa-locked-surface iframe{display:block;width:100%;min-height:420px;border:0;border-radius:8px;background:#060D1F}
+.hpa-locked-surface__cap{font-family:var(--f-body);font-size:.82rem;line-height:1.6;color:var(--mute);margin:.5rem 0 0}
+.hpa-locked-surface__cap a{color:inherit}
 </style>
 </BaseLayout>

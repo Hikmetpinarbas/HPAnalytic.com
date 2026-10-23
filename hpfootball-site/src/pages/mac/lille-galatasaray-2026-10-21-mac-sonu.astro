@@ -3,7 +3,6 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import DagilimSeridi from '../../components/DagilimSeridi.astro';
 import TurnuvaHeader from '../../components/TurnuvaHeader.astro';
 import ShareCard from '../../components/ShareCard.astro';
-import matchSurfaceHTML from '../../../public/match-surfaces/lille-galatasaray-interactive.html?raw';
 import '../../styles/match-page.css';
 export const prerender = true;
 ---
@@ -51,29 +50,24 @@ export const prerender = true;
   </div>
 </section>
 
-<section class="hpa-interactive-match" aria-label="Etkileşimli Lille Galatasaray maç analizi">
-  <iframe id="hpa-interactive-frame" title="LOSC Lille ve Galatasaray: beş görünümlü etkileşimli maç yüzeyi"
-    srcdoc={matchSurfaceHTML}
-    loading="eager" referrerpolicy="same-origin"></iframe>
-  <p class="hpa-interactive-fallback"><a href="/match-surfaces/lille-galatasaray-interactive.html">Etkileşimli maç yüzeyini ayrı sayfada aç ↗</a></p>
-</section>
 <script is:inline>
 (() => {
-  const frame = document.getElementById('hpa-interactive-frame');
-  if (!frame) return;
-  frame.addEventListener('load', () => {
-    try {
-      const doc = frame.contentDocument;
-      if (!doc) return;
-      const resize = () => {
-        const h = Math.max(doc.documentElement.scrollHeight, doc.body?.scrollHeight || 0);
-        if (h > 0) frame.style.height = `${h + 8}px`;
-      };
-      resize();
-      if ('ResizeObserver' in window) new ResizeObserver(resize).observe(doc.body);
-      doc.fonts?.ready.then(resize);
-    } catch { /* standalone surface link remains accessible */ }
-  });
+  const wire = (frame) => {
+    frame.addEventListener('load', () => {
+      try {
+        const doc = frame.contentDocument;
+        if (!doc) return;
+        const resize = () => {
+          const h = Math.max(doc.documentElement.scrollHeight, doc.body?.scrollHeight || 0);
+          if (h > 0) frame.style.height = `${h + 8}px`;
+        };
+        resize();
+        if ('ResizeObserver' in window) new ResizeObserver(resize).observe(doc.body);
+        doc.fonts?.ready.then(resize);
+      } catch { /* standalone surface link remains accessible */ }
+    });
+  };
+  document.querySelectorAll('.hpa-locked-surface iframe').forEach(wire);
 })();
 </script>
 
@@ -95,6 +89,10 @@ export const prerender = true;
       <svg viewBox="0 0 440 140" class="rc" role="img" aria-label="Gol zaman çizelgesi"><line x1="86" y1="70" x2="424" y2="70" stroke="currentColor" opacity=".22"/><line x1="139.1" y1="66" x2="139.1" y2="74" stroke="currentColor" opacity=".16"/><line x1="192.2" y1="66" x2="192.2" y2="74" stroke="currentColor" opacity=".16"/><line x1="245.4" y1="66" x2="245.4" y2="74" stroke="currentColor" opacity=".16"/><line x1="298.5" y1="66" x2="298.5" y2="74" stroke="currentColor" opacity=".16"/><line x1="351.6" y1="66" x2="351.6" y2="74" stroke="currentColor" opacity=".16"/><line x1="404.7" y1="66" x2="404.7" y2="74" stroke="currentColor" opacity=".16"/><line x1="245.4" y1="22" x2="245.4" y2="118" stroke="currentColor" opacity=".13" stroke-dasharray="2 3"/><text x="2" y="42" class="rc-ax">LILLE</text><text x="2" y="104" class="rc-ax">GALATASARAY</text><line x1="89.5" y1="70" x2="89.5" y2="102" stroke="var(--amber)" stroke-width="1.6"/><circle cx="89.5" cy="102" r="4.5" fill="var(--amber)"/><text x="89.5" y="117" text-anchor="middle" class="rc-val">0-1</text><text x="89.5" y="128" text-anchor="middle" class="rc-ax">1'</text><line x1="110.3" y1="70" x2="110.3" y2="38" stroke="var(--chalk-2)" stroke-width="1.6"/><circle cx="110.3" cy="38" r="4.5" fill="var(--chalk-2)"/><text x="110.3" y="27" text-anchor="middle" class="rc-val">1-1</text><text x="110.3" y="16" text-anchor="middle" class="rc-ax">7'</text><line x1="223.3" y1="70" x2="223.3" y2="38" stroke="var(--chalk-2)" stroke-width="1.6"/><circle cx="223.3" cy="38" r="4.5" fill="var(--chalk-2)"/><text x="223.3" y="27" text-anchor="middle" class="rc-val">2-1</text><text x="223.3" y="16" text-anchor="middle" class="rc-ax">39'</text><line x1="238.4" y1="70" x2="238.4" y2="102" stroke="var(--amber)" stroke-width="1.6"/><circle cx="238.4" cy="102" r="4.5" fill="var(--amber)"/><text x="238.4" y="117" text-anchor="middle" class="rc-val">2-2</text><text x="238.4" y="128" text-anchor="middle" class="rc-ax">44'</text><line x1="268.3" y1="70" x2="268.3" y2="102" stroke="var(--amber)" stroke-width="1.6"/><circle cx="268.3" cy="102" r="4.5" fill="var(--amber)"/><text x="268.3" y="117" text-anchor="middle" class="rc-val">2-3</text><text x="268.3" y="128" text-anchor="middle" class="rc-ax">52'</text><text x="268.3" y="138" text-anchor="middle" class="rc-ax">k.k.</text><line x1="298.7" y1="70" x2="298.7" y2="102" stroke="var(--amber)" stroke-width="1.6"/><circle cx="298.7" cy="102" r="4.5" fill="var(--amber)"/><text x="298.7" y="117" text-anchor="middle" class="rc-val">2-4</text><text x="298.7" y="128" text-anchor="middle" class="rc-ax">61'</text></svg>
       <p class="rc-cap">Golün geldiği dakikalar ve o anki skor — devre arası düşülerek, çapa olaylarından (ilk/ikinci devre başlangıcı, devre arası, maç sonu) yeniden hesaplanmış saat. Üstte Lille, altta Galatasaray. "k.k." kendi kalesine atılan golü gösterir.</p>
     </div>
+    <div class="hpa-locked-surface" aria-label="Lille - Galatasaray saha olay haritası">
+      <iframe title="Lille - Galatasaray saha olay haritası" src="/match-surfaces/lille-galatasaray-interactive.html#view=pitch" loading="lazy" referrerpolicy="same-origin"></iframe>
+      <p class="hpa-locked-surface__cap">Saha üzerinde olay haritası — takım ve zaman penceresi değiştirilebilir. <a href="/match-surfaces/lille-galatasaray-interactive.html">Tüm görünümleriyle ayrı sayfada aç ↗</a></p>
+    </div>
   </div>
 </section>
 
@@ -109,6 +107,10 @@ export const prerender = true;
     <p><strong>Galatasaray:</strong> 461 pas (%83 isabet), 194 ileri pas (%69), 111 ilerletici pas (%64 başarı), 9 şut/4 isabet. Top kazanımlarının <strong>%33'ü</strong> (15/46) rakip yarı sahada; top kayıplarının sadece <strong>%18'i</strong> (12/68) kendi yarı sahasında.</p>
     <p>İkili mücadelede Lille daha üstün (142 ikilinin %53'ü), ama havada tam ters: 40 hava topunun yalnızca %38'i Lille'de, %63'ü Galatasaray'da kalıyor — aynı hacimde, net bir asimetri.</p>
     <p>Bağımsız okuma şunu gösteriyor: Lille topla daha çok vakit geçirdi, ama Galatasaray topu kaybettiğinde daha güvenli bir bölgede kaybetti, kazandığında daha ileride kazandı. Bu, "kim oyuna hâkimdi" sorusuna hacimle değil, hacmin nerede biriktiğiyle cevap veriyor.</p>
+    <div class="hpa-locked-surface" aria-label="Lille - Galatasaray karşılaştırma">
+      <iframe title="Lille - Galatasaray karşılaştırma grafiği" src="/match-surfaces/lille-galatasaray-interactive.html#view=bars" loading="lazy" referrerpolicy="same-origin"></iframe>
+      <p class="hpa-locked-surface__cap">İki takımın bağımsız profili, yan yana.</p>
+    </div>
   </div>
 </section>
 
@@ -121,7 +123,7 @@ export const prerender = true;
     </div>
     <p>Sıralama şöyle: Galatasaray 0-1 önde (1'–7', 6 dakika) · berabere 1-1 (7'–39', 32 dakika) · Lille 1-2 önde (39'–44', 5 dakika) · berabere 2-2 (44'–52', 8 dakika) · Galatasaray 3-2 önde (52'–61', 9 dakika) · Galatasaray 4-2 önde (61'–96', 35 dakika). Toplamda Galatasaray <strong>~48 dakika</strong> önde oynadı; Lille'in önde olduğu pencere beş dakikayı geçmedi.</p>
     <p>Galatasaray öndeyken ikili mücadele kazanma oranı %51'e, hava topu kazanma oranı %70'e, müdahale başarı oranı %63'e çıkıyor; 40 hücumun 11'i doğrudan rakip yarı sahada kazanılan toplarla başlıyor. Yani önde olduğu dakikalarda geri çekilip oynamadı — sahayı yüksekten savundu.</p>
-    <p>Bu, bir önceki çalışma taslağının açık bıraktığı soruya cevap: Lille'in toplam hücum (74) ve şut (13) sayısının Galatasaray'dan (79 hücum, 9 şut) fazla <em>olmasının</em> büyük kısmı, Lille'in maçın yarısını skor arayarak geçirmiş olmasıyla açıklanıyor — bu bir "kontrolü kaybetme" kanıtı değil, bir skor durumu etkisi.</p>
+    <p>Lille'in toplam hücum (74) ve şut (13) sayısının Galatasaray'dan (79 hücum, 9 şut) fazla <em>olmasının</em> büyük kısmı, Lille'in maçın yarısını skor arayarak geçirmiş olmasıyla açıklanıyor — bu bir "kontrolü kaybetme" kanıtı değil, bir skor durumu etkisi.</p>
     <div class="rc-wrap">
       <svg viewBox="0 0 440 150" class="rc" role="img" aria-label="Onbeş dakikalık dilimlerde hücum sayısı"><rect x="40.0" y="55.0" width="23.7" height="45.0" fill="var(--chalk-2)" opacity="0.55"/><text x="51.8" y="51.0" text-anchor="middle" class="rc-val">11</text><rect x="66.7" y="42.7" width="23.7" height="57.3" fill="var(--amber)" opacity="1"/><text x="78.5" y="38.7" text-anchor="middle" class="rc-val">14</text><text x="66.7" y="118" text-anchor="middle" class="rc-ax">0-15</text><rect x="105.3" y="59.0" width="23.7" height="41.0" fill="var(--chalk-2)" opacity="0.55"/><text x="117.2" y="55.0" text-anchor="middle" class="rc-val">10</text><rect x="132.0" y="63.1" width="23.7" height="36.9" fill="var(--amber)" opacity="1"/><text x="143.8" y="59.1" text-anchor="middle" class="rc-val">9</text><text x="132.0" y="118" text-anchor="middle" class="rc-ax">15-30</text><rect x="170.7" y="67.2" width="23.7" height="32.8" fill="var(--chalk-2)" opacity="0.55"/><text x="182.5" y="63.2" text-anchor="middle" class="rc-val">8</text><rect x="197.3" y="50.9" width="23.7" height="49.1" fill="var(--amber)" opacity="1"/><text x="209.2" y="46.9" text-anchor="middle" class="rc-val">12</text><text x="197.3" y="118" text-anchor="middle" class="rc-ax">30-45</text><rect x="236.0" y="42.7" width="23.7" height="57.3" fill="var(--chalk-2)" opacity="0.55"/><text x="247.8" y="38.7" text-anchor="middle" class="rc-val">14</text><rect x="262.7" y="38.6" width="23.7" height="61.4" fill="var(--amber)" opacity="1"/><text x="274.5" y="34.6" text-anchor="middle" class="rc-val">15</text><text x="262.7" y="118" text-anchor="middle" class="rc-ax">45-60</text><rect x="301.3" y="59.0" width="23.7" height="41.0" fill="var(--chalk-2)" opacity="0.55"/><text x="313.2" y="55.0" text-anchor="middle" class="rc-val">10</text><rect x="328.0" y="50.9" width="23.7" height="49.1" fill="var(--amber)" opacity="1"/><text x="339.8" y="46.9" text-anchor="middle" class="rc-val">12</text><text x="328.0" y="118" text-anchor="middle" class="rc-ax">60-75</text><rect x="366.7" y="14.0" width="23.7" height="86.0" fill="var(--chalk-2)" opacity="0.55"/><text x="378.5" y="10.0" text-anchor="middle" class="rc-val">21</text><rect x="393.3" y="30.4" width="23.7" height="69.6" fill="var(--amber)" opacity="1"/><text x="405.2" y="26.4" text-anchor="middle" class="rc-val">17</text><text x="393.3" y="118" text-anchor="middle" class="rc-ax">75-90</text><line x1="34" y1="100" x2="426" y2="100" stroke="currentColor" opacity=".25"/><rect x="34" y="133" width="9" height="9" fill="var(--chalk-2)" opacity="0.55"/><text x="48" y="141" class="rc-ax">Lille</text><rect x="138" y="133" width="9" height="9" fill="var(--amber)" opacity="1"/><text x="152" y="141" class="rc-ax">Galatasaray</text></svg>
       <p class="rc-cap">On beşer dakikalık dilimlerde hücum sayısı. Lille'in en yoğun dilimi maçın son on beş dakikası — altmış dördüncü dakikadaki üçlü değişiklikle ve iki gol gerideyken oynanan bir son çırpınışla örtüşüyor.</p>
@@ -149,6 +151,10 @@ export const prerender = true;
     </div>
     <p>Galatasaray 100 top kazanımının 39'unu (%39) rakip yarı sahada yaptı, bunların 3'ü sekiz saniye içinde şuta gitti. Lille 110 kazanımın 34'ünü (%31) rakip yarı sahada yaptı, 4'ü şuta gitti — iki takımın kazanım-sonrası şut üretme oranı birbirine yakın (%3-4).</p>
     <p>Asıl fark savunma tarafında: Galatasaray kendi 71 top kaybının hiçbirinde sekiz saniye içinde rakibe şut yedirmedi. Lille 72 kayıptan birinde (Galatasaray'ın 1. golü) hemen şut yedi. Küçük bir sayı, ama doksan altı dakikada sıfırla bir arasındaki fark, geçiş anlarında kimin daha az risk aldığını gösteriyor.</p>
+    <div class="hpa-locked-surface" aria-label="Lille - Galatasaray yoğunluk örüntüsü">
+      <iframe title="Lille - Galatasaray yoğunluk örüntüsü" src="/match-surfaces/lille-galatasaray-interactive.html#view=pattern" loading="lazy" referrerpolicy="same-origin"></iframe>
+      <p class="hpa-locked-surface__cap">Olay yoğunluğunun sahadaki örüntüsü, takıma göre.</p>
+    </div>
   </div>
 </section>
 
@@ -166,6 +172,10 @@ export const prerender = true;
       <p class="rc-cap">Olay etiketlerinin reaktif/aktif/proaktif dağılımı. Üçüncü satır (Galatasaray · geride) küçük örneklemli bir alt küme — eğilim olarak okunmalı, kanun olarak değil.</p>
     </div>
     <p>Dört fazın ham tablosu: Galatasaray topsuzken 100 kazanımın 39'u rakip yarıda, rakibe 13 şut yedirdi (Lille'in tüm şutları); savunma geçişinde (71 kayıp) sıfır şut yedi. Lille topsuzken 110 kazanımın 34'ü rakip yarıda, rakibe 9 şut yedirdi; savunma geçişinde (72 kayıp) bir şut yedi, 13 top geri kazandı. <strong>Ne yapıldı:</strong> Galatasaray geride kalınca etkinliğini düşürmedi. <strong>Ne yapılmalı:</strong> Bu eğilimin kalıcı bir örüntü mü yoksa bu geceye özgü bir tepki mi olduğu, benzer skor durumundaki başka maçlarla sınanmalı.</p>
+    <div class="hpa-locked-surface" aria-label="Lille - Galatasaray radar karşılaştırması">
+      <iframe title="Lille - Galatasaray radar karşılaştırması" src="/match-surfaces/lille-galatasaray-interactive.html#view=radar" loading="lazy" referrerpolicy="same-origin"></iframe>
+      <p class="hpa-locked-surface__cap">Faz dağılımının radar görünümü.</p>
+    </div>
   </div>
 </section>
 
@@ -181,6 +191,10 @@ export const prerender = true;
     <div class="rc-wrap">
       <svg viewBox="0 0 440 318" class="rc" role="img" aria-label="Şut haritası"><text x="22" y="21" class="rc-ax">LOSC LILLE &#183; 13 ŞUT · 5 İSABET</text><rect x="22" y="30" width="396" height="116" fill="none" stroke="currentColor" opacity=".22"/><rect x="292" y="53.5" width="126" height="68.9" fill="none" stroke="currentColor" opacity=".16"/><rect x="376" y="72.3" width="42" height="31.3" fill="none" stroke="currentColor" opacity=".12"/><path d="M418,68.3 L424,68.3 L424,107.7 L418,107.7" fill="none" stroke="currentColor" opacity=".4"/><circle cx="366.7" cy="105.4" r="5" fill="var(--chalk-2)" stroke="var(--chalk-2)" stroke-width="1"><title>7. dakika · isabetli</title></circle><circle cx="357.2" cy="97.6" r="5" fill="var(--chalk-2)" stroke="var(--chalk-2)" stroke-width="1"><title>24. dakika · isabetli</title></circle><circle cx="332.5" cy="76.9" r="4" fill="none" stroke="var(--chalk-2)" stroke-width="1.4" opacity=".6"><title>32. dakika</title></circle><circle cx="314.1" cy="84.2" r="4" fill="none" stroke="var(--chalk-2)" stroke-width="1.4" opacity=".6"><title>32. dakika</title></circle><circle cx="222.9" cy="88.1" r="5" fill="var(--chalk-2)" stroke="var(--chalk-2)" stroke-width="1"><title>38. dakika · isabetli</title></circle><circle cx="319.2" cy="66.8" r="5" fill="var(--chalk-2)" stroke="var(--chalk-2)" stroke-width="1"><title>39. dakika · isabetli</title></circle><circle cx="359.1" cy="94.8" r="5" fill="var(--chalk-2)" stroke="var(--chalk-2)" stroke-width="1"><title>39. dakika · isabetli</title></circle><circle cx="227.3" cy="111.7" r="4" fill="none" stroke="var(--chalk-2)" stroke-width="1.4" opacity=".6"><title>49. dakika</title></circle><circle cx="236.1" cy="101.9" r="4" fill="none" stroke="var(--chalk-2)" stroke-width="1.4" opacity=".6"><title>70. dakika</title></circle><circle cx="218.4" cy="92.3" r="4" fill="none" stroke="var(--chalk-2)" stroke-width="1.4" opacity=".6"><title>71. dakika</title></circle><circle cx="352.1" cy="103.0" r="4" fill="none" stroke="var(--chalk-2)" stroke-width="1.4" opacity=".6"><title>82. dakika</title></circle><circle cx="274.8" cy="111.9" r="4" fill="none" stroke="var(--chalk-2)" stroke-width="1.4" opacity=".6"><title>88. dakika</title></circle><circle cx="333.7" cy="118.2" r="4" fill="none" stroke="var(--chalk-2)" stroke-width="1.4" opacity=".6"><title>94. dakika</title></circle><text x="22" y="169" class="rc-ax">GALATASARAY &#183; 9 ŞUT · 4 İSABET</text><rect x="22" y="178" width="396" height="116" fill="none" stroke="currentColor" opacity=".22"/><rect x="292" y="201.5" width="126" height="68.9" fill="none" stroke="currentColor" opacity=".16"/><rect x="376" y="220.3" width="42" height="31.3" fill="none" stroke="currentColor" opacity=".12"/><path d="M418,216.3 L424,216.3 L424,255.7 L418,255.7" fill="none" stroke="currentColor" opacity=".4"/><circle cx="364.4" cy="238.5" r="5" fill="var(--amber)" stroke="var(--amber)" stroke-width="1"><title>1. dakika · isabetli</title></circle><circle cx="366.0" cy="239.2" r="4" fill="none" stroke="var(--amber)" stroke-width="1.4" opacity=".6"><title>15. dakika</title></circle><circle cx="356.5" cy="210.2" r="4" fill="none" stroke="var(--amber)" stroke-width="1.4" opacity=".6"><title>20. dakika</title></circle><circle cx="395.2" cy="216.3" r="4" fill="none" stroke="var(--amber)" stroke-width="1.4" opacity=".6"><title>37. dakika</title></circle><circle cx="383.2" cy="232.1" r="5" fill="var(--amber)" stroke="var(--amber)" stroke-width="1"><title>44. dakika · isabetli</title></circle><circle cx="386.9" cy="248.8" r="4" fill="none" stroke="var(--amber)" stroke-width="1.4" opacity=".6"><title>46. dakika</title></circle><circle cx="299.5" cy="229.1" r="5" fill="var(--amber)" stroke="var(--amber)" stroke-width="1"><title>61. dakika · isabetli</title></circle><circle cx="335.6" cy="248.2" r="4" fill="none" stroke="var(--amber)" stroke-width="1.4" opacity=".6"><title>64. dakika</title></circle><circle cx="246.9" cy="254.1" r="5" fill="var(--amber)" stroke="var(--amber)" stroke-width="1"><title>76. dakika · isabetli</title></circle><g transform="translate(22,312)"><circle cx="4" cy="-4" r="4.6" fill="var(--chalk-2)"/><text x="14" y="-1" class="rc-ax">isabetli</text><circle cx="74" cy="-4" r="4" fill="none" stroke="var(--chalk-2)" stroke-width="1.4" opacity=".6"/><text x="84" y="-1" class="rc-ax">isabetsiz</text><text x="168" y="-1" class="rc-ax">kale sağda · yalnızca hücum yarısı</text></g></svg>
       <p class="rc-cap">İki takımın şutlarının geldiği noktalar, devre arası düşülerek yeniden hesaplanmış dakikalarla. Lille'in şutları sayıca fazla ama ceza sahası dışına daha çok yayılmış durumda.</p>
+    </div>
+    <div class="hpa-locked-surface" aria-label="Lille - Galatasaray şut dağılımı (pizza)">
+      <iframe title="Lille - Galatasaray şut dağılımı" src="/match-surfaces/lille-galatasaray-interactive.html#view=pizza" loading="lazy" referrerpolicy="same-origin"></iframe>
+      <p class="hpa-locked-surface__cap">Oyun kurma, hücum üretimi ve mücadele-denge eksenlerinde takım profili.</p>
     </div>
   </div>
 </section>
@@ -239,8 +253,9 @@ export const prerender = true;
 .rc-val{font-family:var(--f-mono);font-size:9.5px;font-weight:600;fill:var(--chalk)}
 .rc-cap{font-family:var(--f-body);font-size:.82rem;line-height:1.6;color:var(--mute);max-width:62ch;margin:0 0 1.4em}
 .rc-wrap{margin:26px 0}
-.hpa-interactive-match{width:min(100%,960px);margin:0 auto 2rem;padding:0 8px}
-#hpa-interactive-frame{display:block;width:100%;height:1200px;border:0;background:#0A0A0B}
-.hpa-interactive-fallback{font-size:.75rem;text-align:right;margin:.35rem 0 0}
+.hpa-locked-surface{margin:28px 0;width:100%}
+.hpa-locked-surface iframe{display:block;width:100%;min-height:420px;border:0;border-radius:8px;background:#120707}
+.hpa-locked-surface__cap{font-family:var(--f-body);font-size:.82rem;line-height:1.6;color:var(--mute);margin:.5rem 0 0}
+.hpa-locked-surface__cap a{color:inherit}
 </style>
 </BaseLayout>
