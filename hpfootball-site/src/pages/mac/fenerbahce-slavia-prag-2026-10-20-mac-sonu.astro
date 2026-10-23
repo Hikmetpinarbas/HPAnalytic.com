@@ -6,10 +6,10 @@ import '../../styles/match-page.css';
 export const prerender = true;
 ---
 <BaseLayout
-  title="Fenerbahçe - Slavia Prag 2-2: Üç dakika"
-  description="Fenerbahçe on bir dakikada 2-0 öne geçti, üç dakika sonra gol yedi ve 90+1'de beraberliği kabul etti. Gol attıktan sonra oyundan elini çekmenin ölçülebilir hâli."
+  title="Fenerbahçe - Slavia Prag 2-2: Üç dakika kırk saniye"
+  description="Fenerbahçe 11. dakikada 2-0 öne geçti, üç dakika kırk saniye sonra gol yedi ve 90. dakikada beraberliği kabul etti. SportsBase derin analiz protokolüyle olay olay, dakika dakika."
   ogType="article" publishedTime={new Date('2026-10-22T19:00:00Z')} club="fenerbahce">
-<div class="mp">
+<div class="mp" data-visual-contract="editorial-svg-v1">
 
 <div class="wrap">
   <TurnuvaHeader
@@ -31,14 +31,26 @@ export const prerender = true;
       <span class="hpa-match-v">—</span>
       <span class="hpa-match-away" lang="cs">Slavia Prag 2</span>
     </h1>
-    <p class="mono" style="color:var(--chalk-2)">Hikmet Pınarbaş · <time datetime="2026-10-22">22 Ekim 2026</time></p>
-    <p class="thesis">Dördüncü dakikada gol. On birinci dakikada gol. On dördüncü dakikada yenen gol. <em>Arada geçen üç dakikada Fenerbahçe tek bir şut çekmedi ve rakip ceza sahasına tek bir kez bile giremedi.</em></p>
+    <p class="mono" style="color:var(--chalk-2)">Hikmet Pınarbaş · <time datetime="2026-10-23">23 Ekim 2026</time></p>
+    <p class="thesis">Dördüncü dakikada gol. On birinci dakikada gol. On beşinci dakikada yenen gol. <em>Arada geçen üç dakika kırk saniyede Fenerbahçe tek bir şut çekmedi, rakip ceza sahasına tek bir kez girmedi.</em></p>
     <div class="meta">
       <div><span class="mono">Skor</span><b class="num">2 · 2</b></div>
       <div><span class="mono">Şut</span><b class="num">14 · 15</b></div>
       <div><span class="mono">2-0 oldu</span><b class="num">11'</b></div>
-      <div><span class="mono">2-1 oldu</span><b class="num">14'</b></div>
+      <div><span class="mono">2-1 oldu</span><b class="num">15'</b></div>
     </div>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <div class="head col">
+      <p class="eyebrow">Veri notu</p>
+      <h2>Bu maçta ne ölçebiliyoruz, ne ölçemiyoruz</h2>
+      <p class="lede">SportsBase protokolü her maça aynı titizlikle uygulanır; ama her maçın kaynak verisi aynı derinlikte gelmez.</p>
+    </div>
+    <p>Bu maçın olay kaydı <strong>takım granülerliğinde</strong> — Lille-Galatasaray dosyasının aksine, kim pas attı, kim topu kaybetti, kim şutu çekti bilgisi oyuncu adıyla etiketlenmemiş. Bu yüzden bu yazıda gol zincirlerini oyuncu oyuncu anlatmıyoruz; anlattığımız, zamanı, sahadaki konumu ve olay türünü saniyesi saniyesine veren takım-seviyesi mekanizma. Ayrıca bu maç için bağımsız bir kaleci dosyası (xG çapraz doğrulaması) ve oyuncu dakika/değişiklik verisi de mevcut değil — bu iki eksiklik ilgili bölümlerde ayrıca belirtiliyor.</p>
+    <p>Buna karşılık zaman çapası, skor durumu, dört faz, geçişler ve mesafe-bazlı şut modeli — Lille-Galatasaray'da kullanılanla aynı yöntem, aynı titizlikle bu maça da uygulandı.</p>
   </div>
 </section>
 
@@ -46,14 +58,16 @@ export const prerender = true;
   <div class="wrap">
     <div class="head col">
       <p class="eyebrow">Gece</p>
-      <h2>Üç dakika</h2>
-      <p class="lede">Bir futbol maçında en tehlikeli an, çoğu zaman gol yediğiniz an değildir. Gol attığınız andır.</p>
+      <h2>Dört gol, bir düzeltme</h2>
+      <p class="lede">Bu sayfanın önceki sürümü Slavia'nın golünü 14. dakika gösteriyordu. Zaman çapası yeniden kontrol edildi.</p>
     </div>
-    <p>Fenerbahçe maça mükemmel başladı. Dördüncü dakikada öne geçti. On birinci dakikada farkı ikiye çıkardı. Kadıköy'de on bir dakikada 2-0.</p>
-    <p>Sonra üç dakika geçti ve skor 2-1 oldu.</p>
+    <p><strong>4' — Fenerbahçe:</strong> Şut doğrudan isabetli ve gole gidiyor; kayıtlarda "Chances" ve "Shots on target" etiketleri aynı ana düşüyor.</p>
+    <p><strong>11' — Fenerbahçe, ikinci gol:</strong> Yine isabetli şuttan doğrudan gol. İki gol arası yedi dakika.</p>
+    <p><strong>15' — Slavia Prag:</strong> Devre arası dosya saatinden düşülmüş gerçek oyun dakikası ve "taban+1" gösterim kuralıyla (football-minute convention) doğru değer <strong>15'</strong>, önceki yayımda görünen 14' değil. Gol, rakip yarı sahada top kazanımıyla <em>aynı olayda</em> geliyor — kayıtlarda "Ball recoveries in opponent's half", "Chances", "Shots", "Shots on target" ve "Goals" tek bir event satırında birleşiyor: kazan, vur, gol — tek hamle, tek saniye.</p>
+    <p><strong>90' — Slavia Prag, beraberlik:</strong> Maçın bitimine saniyeler kala, 2-1'in 76 dakika sürmesinin ardından.</p>
     <div class="rc-wrap">
-      <svg viewBox="0 0 440 140" class="rc" role="img" aria-label="Gol zaman çizelgesi"><line x1="86" y1="70" x2="424" y2="70" stroke="currentColor" opacity=".22"/><line x1="139.6" y1="66" x2="139.6" y2="74" stroke="currentColor" opacity=".16"/><line x1="193.2" y1="66" x2="193.2" y2="74" stroke="currentColor" opacity=".16"/><line x1="246.8" y1="66" x2="246.8" y2="74" stroke="currentColor" opacity=".16"/><line x1="300.4" y1="66" x2="300.4" y2="74" stroke="currentColor" opacity=".16"/><line x1="354.0" y1="66" x2="354.0" y2="74" stroke="currentColor" opacity=".16"/><line x1="407.6" y1="66" x2="407.6" y2="74" stroke="currentColor" opacity=".16"/><line x1="246.8" y1="22" x2="246.8" y2="118" stroke="currentColor" opacity=".13" stroke-dasharray="2 3"/><text x="2" y="42" class="rc-ax">FENERBAHÇE</text><text x="2" y="104" class="rc-ax">SLAVIA</text><line x1="99.6" y1="70" x2="99.6" y2="38" stroke="var(--amber)" stroke-width="1.6"/><circle cx="99.6" cy="38" r="4.5" fill="var(--amber)"/><text x="99.6" y="27" text-anchor="middle" class="rc-val">1-0</text><text x="99.6" y="16" text-anchor="middle" class="rc-ax">4'</text><line x1="124.2" y1="70" x2="124.2" y2="38" stroke="var(--amber)" stroke-width="1.6"/><circle cx="124.2" cy="38" r="4.5" fill="var(--amber)"/><text x="124.2" y="27" text-anchor="middle" class="rc-val">2-0</text><text x="124.2" y="16" text-anchor="middle" class="rc-ax">11'</text><line x1="137.1" y1="70" x2="137.1" y2="102" stroke="var(--chalk-2)" stroke-width="1.6"/><circle cx="137.1" cy="102" r="4.5" fill="var(--chalk-2)"/><text x="137.1" y="117" text-anchor="middle" class="rc-val">2-1</text><text x="137.1" y="128" text-anchor="middle" class="rc-ax">14'</text><line x1="410.8" y1="70" x2="410.8" y2="102" stroke="var(--chalk-2)" stroke-width="1.6"/><circle cx="410.8" cy="102" r="4.5" fill="var(--chalk-2)"/><text x="410.8" y="117" text-anchor="middle" class="rc-val">2-2</text><text x="410.8" y="128" text-anchor="middle" class="rc-ax">91'</text></svg>
-      <p class="rc-cap">Gollerin dakikaları ve o anki skor. Üstte Fenerbahçe, altta Slavia Prag.</p>
+      <svg viewBox="0 0 440 140" class="rc" role="img" aria-label="Gol zaman çizelgesi"><line x1="86" y1="70" x2="424" y2="70" stroke="currentColor" opacity=".22"/><line x1="139.8" y1="66" x2="139.8" y2="74" stroke="currentColor" opacity=".16"/><line x1="193.7" y1="66" x2="193.7" y2="74" stroke="currentColor" opacity=".16"/><line x1="247.5" y1="66" x2="247.5" y2="74" stroke="currentColor" opacity=".16"/><line x1="301.4" y1="66" x2="301.4" y2="74" stroke="currentColor" opacity=".16"/><line x1="355.2" y1="66" x2="355.2" y2="74" stroke="currentColor" opacity=".16"/><line x1="409.0" y1="66" x2="409.0" y2="74" stroke="currentColor" opacity=".16"/><line x1="247.5" y1="22" x2="247.5" y2="118" stroke="currentColor" opacity=".13" stroke-dasharray="2 3"/><text x="2" y="42" class="rc-ax">FENERBAHÇE</text><text x="2" y="104" class="rc-ax">SLAVIA PRAG</text><line x1="99.4" y1="70" x2="99.4" y2="38" stroke="var(--amber)" stroke-width="1.6"/><circle cx="99.4" cy="38" r="4.5" fill="var(--amber)"/><text x="99.4" y="27" text-anchor="middle" class="rc-val">1-0</text><text x="99.4" y="16" text-anchor="middle" class="rc-ax">4'</text><line x1="124.2" y1="70" x2="124.2" y2="38" stroke="var(--amber)" stroke-width="1.6"/><circle cx="124.2" cy="38" r="4.5" fill="var(--amber)"/><text x="124.2" y="27" text-anchor="middle" class="rc-val">2-0</text><text x="124.2" y="16" text-anchor="middle" class="rc-ax">11'</text><line x1="137.1" y1="70" x2="137.1" y2="102" stroke="var(--chalk-2)" stroke-width="1.6"/><circle cx="137.1" cy="102" r="4.5" fill="var(--chalk-2)"/><text x="137.1" y="117" text-anchor="middle" class="rc-val">2-1</text><text x="137.1" y="128" text-anchor="middle" class="rc-ax">15'</text><line x1="406.9" y1="70" x2="406.9" y2="102" stroke="var(--chalk-2)" stroke-width="1.6"/><circle cx="406.9" cy="102" r="4.5" fill="var(--chalk-2)"/><text x="406.9" y="117" text-anchor="middle" class="rc-val">2-2</text><text x="406.9" y="128" text-anchor="middle" class="rc-ax">90'</text></svg>
+      <p class="rc-cap">Gollerin dakikaları ve o anki skor. Üstte Fenerbahçe, altta Slavia Prag. Dakika gösterimi devre arası düşülmüş gerçek oyun saatinden, taban+1 kuralıyla hesaplandı.</p>
     </div>
   </div>
 </section>
@@ -61,34 +75,115 @@ export const prerender = true;
 <section class="block">
   <div class="wrap">
     <div class="head col">
-      <p class="eyebrow">Ölçüm</p>
-      <h2>O üç dakikada ne oldu?</h2>
-      <p class="lede">Bu sorunun cevabı tahmin değil. Olay olay sayılabiliyor.</p>
+      <p class="eyebrow">Mekanizma</p>
+      <h2>Üç dakika kırk saniyede ne oldu?</h2>
+      <p class="lede">Bu sorunun cevabı tahmin değil. Olay olay sayılabiliyor — ve bu maçta olay kaydı granüler olmasa da zaman damgası santimetrik.</p>
     </div>
-    <p>On birinci dakikayla on dördüncü dakika arasında <strong>Fenerbahçe sıfır şut çekti.</strong> Rakip ceza sahasında sıfır olayı var. İleri yönde tutturduğu pas sayısı dört.</p>
-    <p>Aynı üç dakikada <strong>Slavia Prag rakip ceza sahasında on bir olay üretti</strong> ve bir şut çekti. O şut gole gitti.</p>
-    <p>İki gol attıktan sonra Fenerbahçe topu rakibe bıraktı ve kendi sahasına çekildi. Bunu yapmaya karar verdiler mi, yoksa oyun onları oraya mı itti — veri bunu söylemiyor. Söylediği şey şu: <strong>öne geçtikten sonra üretim tamamen durdu.</strong></p>
+    <p>Fenerbahçe'nin 2. golüyle Slavia'nın golü arasında geçen süre <strong>217 saniye — 3 dakika 37 saniye.</strong> Bu pencerede Fenerbahçe'nin ürettiği: <strong>sıfır şut, sıfır ceza sahası pasını, dört isabetli ileri pas.</strong> On altı olay — önceki iki golü atan takım için düşük bir hacim.</p>
+    <p>Aynı pencerede Slavia'nın ürettiği yirmi iki olay, tek ama belirleyici bir örüntü çiziyor: 12.5. dakikada bir kontratak başlıyor (etiket: "Counterattacks"), 12.5-13.5 arası çalım ve ikili mücadele kazanımlarıyla ilerliyor, 13.27 ve 13.35'te iki ilerletici pas topu rakip yarı sahaya taşıyor, 13.55'te bir orta (isabetsiz) deniyor, 14.07'de Fenerbahçe bir mücadeleyi kaybediyor ve 14.25'te — hepsi aynı olay satırında — Slavia rakip yarı sahada topu kazanıyor, şutu çekiyor ve golü buluyor.</p>
+    <p>Bu, "Fenerbahçe iki gol attıktan sonra kendi sahasına çekildi" anlatısını kısmen doğruluyor (üretim durdu) ama mekanizma daha spesifik: durma, Slavia'nın net, tek-hamleli bir kontratağıyla aynı ana denk geldi. Bunun bir karar mı (bilinçli derin savunma) yoksa oyunun o anki akışının sonucu mu olduğunu olay verisi tek başına ayıramıyor — ikisi de gözlemsel olarak aynı imzayı bırakır.</p>
+    <p class="mono" style="color:var(--mute);font-size:.82rem">Not: Oyuncu kimliği etiketlenmediği için bu zincirin hangi Slavia oyuncusu tarafından taşındığı, kimin orta çektiği, kimin bitirdiği bu veriden çıkarılamıyor. Yukarıdaki anlatı yalnızca olay türü ve zaman damgasına dayanır.</p>
   </div>
 </section>
 
 <section class="block">
   <div class="wrap">
     <div class="head col">
-      <p class="eyebrow">Maçın geri kalanı</p>
-      <h2>Yetmiş yedi dakika önde</h2>
-      <p class="lede">On dördüncü dakikadan sonra Fenerbahçe maçın yetmiş yedi dakikasını 2-1 önde oynadı. Bu süre boyunca üçüncü golü bulamadı.</p>
+      <p class="eyebrow">Bağımsız profil</p>
+      <h2>Rakamlar sanılandan daha dengeli</h2>
+      <p class="lede">İki takımı birbirinden habersiz sayıp ayrı ayrı ölçünce tablo, skorun verdiği "FB üstünlüğü" izlenimini desteklemiyor.</p>
     </div>
-    <p>Şut sayısı kötü değildi: maç boyunca 14 şut, Slavia'nın 15'ine karşı. Ama şutun gelmediği bölüm dikkat çekici. <strong>Kırk beşinci ve altmışıncı dakikalar arasında Fenerbahçe tek bir şut çekmedi.</strong> Slavia aynı aralıkta üç şut çekti.</p>
+    <p>Fenerbahçe 443 pas denedi, 376'ü isabetli (%85). Slavia 478 pas denedi, 410'i isabetli (%86) — hacim ve isabet oranında Slavia hafifçe önde, iki puanlık fark skor tablosunu yansıtmıyor.</p>
+    <p>Şut sayısı neredeyse eşit: Fenerbahçe 14, Slavia 15; isabetli şut ikisinde de 5. İkili mücadele kazanımında Fenerbahçe önde (101/180 — %56, Slavia 79/180 — %44), hava topunda da aynı yönde (FB 16/28, Slavia 12/28).</p>
+    <p>Atak başına ortalama süre ve aksiyon sayısı da birbirine yakın: Fenerbahçe 74 atak, ortalama 27 saniye, 5.4 aksiyon; Slavia 78 atak, 24 saniye, 5.1 aksiyon. <strong>Bu bir baskın-mağlup profili değil, iki eşit takımın karşılaşması — sonucu ayıran skor anları, hacim değil.</strong></p>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <div class="head col">
+      <p class="eyebrow">Zaman dilimi</p>
+      <h2>Şut üretimi on beşer dakikalık dilimlerde</h2>
+      <p class="lede">Sayılar drought'un (11'-15' arası üretim durması) tek izole an olmadığını, maç boyunca tekrarlayan bir dalgalanma olduğunu gösteriyor.</p>
+    </div>
     <div class="rc-wrap">
-      <svg viewBox="0 0 440 150" class="rc" role="img" aria-label="Şut"><rect x="40.0" y="57.0" width="23.7" height="43.0" fill="var(--amber)" opacity="1"/><text x="51.8" y="53.0" text-anchor="middle" class="rc-val">2</text><rect x="66.7" y="57.0" width="23.7" height="43.0" fill="var(--chalk-2)" opacity="0.55"/><text x="78.5" y="53.0" text-anchor="middle" class="rc-val">2</text><text x="66.7" y="118" text-anchor="middle" class="rc-ax">0–15</text><rect x="105.3" y="14.0" width="23.7" height="86.0" fill="var(--amber)" opacity="1"/><text x="117.2" y="10.0" text-anchor="middle" class="rc-val">4</text><rect x="132.0" y="100.0" width="23.7" height="0.0" fill="var(--chalk-2)" opacity="0.55"/><text x="132.0" y="118" text-anchor="middle" class="rc-ax">15–30</text><rect x="170.7" y="57.0" width="23.7" height="43.0" fill="var(--amber)" opacity="1"/><text x="182.5" y="53.0" text-anchor="middle" class="rc-val">2</text><rect x="197.3" y="35.5" width="23.7" height="64.5" fill="var(--chalk-2)" opacity="0.55"/><text x="209.2" y="31.5" text-anchor="middle" class="rc-val">3</text><text x="197.3" y="118" text-anchor="middle" class="rc-ax">30–45</text><rect x="236.0" y="100.0" width="23.7" height="0.0" fill="var(--amber)" opacity="1"/><rect x="262.7" y="35.5" width="23.7" height="64.5" fill="var(--chalk-2)" opacity="0.55"/><text x="274.5" y="31.5" text-anchor="middle" class="rc-val">3</text><text x="262.7" y="118" text-anchor="middle" class="rc-ax">45–60</text><rect x="301.3" y="35.5" width="23.7" height="64.5" fill="var(--amber)" opacity="1"/><text x="313.2" y="31.5" text-anchor="middle" class="rc-val">3</text><rect x="328.0" y="14.0" width="23.7" height="86.0" fill="var(--chalk-2)" opacity="0.55"/><text x="339.8" y="10.0" text-anchor="middle" class="rc-val">4</text><text x="328.0" y="118" text-anchor="middle" class="rc-ax">60–75</text><rect x="366.7" y="35.5" width="23.7" height="64.5" fill="var(--amber)" opacity="1"/><text x="378.5" y="31.5" text-anchor="middle" class="rc-val">3</text><rect x="393.3" y="35.5" width="23.7" height="64.5" fill="var(--chalk-2)" opacity="0.55"/><text x="405.2" y="31.5" text-anchor="middle" class="rc-val">3</text><text x="393.3" y="118" text-anchor="middle" class="rc-ax">75+</text><line x1="34" y1="100" x2="426" y2="100" stroke="currentColor" opacity=".25"/><rect x="34" y="133" width="9" height="9" fill="var(--amber)" opacity="1"/><text x="48" y="141" class="rc-ax">Fenerbahçe</text><rect x="138" y="133" width="9" height="9" fill="var(--chalk-2)" opacity="0.55"/><text x="152" y="141" class="rc-ax">Slavia</text></svg>
-      <p class="rc-cap">On beşer dakikalık dilimlerde şut sayısı. İkinci devrenin ilk çeyreğinde Fenerbahçe sıfırda.</p>
+      <svg viewBox="0 0 440 150" class="rc" role="img" aria-label="15 dakikalık şut dilimleri"><rect x="40.0" y="57.0" width="23.7" height="43.0" fill="var(--amber)" opacity="1"/><text x="51.8" y="53.0" text-anchor="middle" class="rc-val">2</text><rect x="66.7" y="57.0" width="23.7" height="43.0" fill="var(--chalk-2)" opacity="0.75"/><text x="78.5" y="53.0" text-anchor="middle" class="rc-val">2</text><text x="66.7" y="118" text-anchor="middle" class="rc-ax">0-15+</text><rect x="105.3" y="14.0" width="23.7" height="86.0" fill="var(--amber)" opacity="1"/><text x="117.2" y="10.0" text-anchor="middle" class="rc-val">4</text><rect x="132.0" y="100.0" width="23.7" height="0.0" fill="var(--chalk-2)" opacity="0.75"/><text x="132.0" y="118" text-anchor="middle" class="rc-ax">15-30+</text><rect x="170.7" y="57.0" width="23.7" height="43.0" fill="var(--amber)" opacity="1"/><text x="182.5" y="53.0" text-anchor="middle" class="rc-val">2</text><rect x="197.3" y="35.5" width="23.7" height="64.5" fill="var(--chalk-2)" opacity="0.75"/><text x="209.2" y="31.5" text-anchor="middle" class="rc-val">3</text><text x="197.3" y="118" text-anchor="middle" class="rc-ax">30-45+</text><rect x="236.0" y="100.0" width="23.7" height="0.0" fill="var(--amber)" opacity="1"/><rect x="262.7" y="35.5" width="23.7" height="64.5" fill="var(--chalk-2)" opacity="0.75"/><text x="274.5" y="31.5" text-anchor="middle" class="rc-val">3</text><text x="262.7" y="118" text-anchor="middle" class="rc-ax">45-60+</text><rect x="301.3" y="35.5" width="23.7" height="64.5" fill="var(--amber)" opacity="1"/><text x="313.2" y="31.5" text-anchor="middle" class="rc-val">3</text><rect x="328.0" y="14.0" width="23.7" height="86.0" fill="var(--chalk-2)" opacity="0.75"/><text x="339.8" y="10.0" text-anchor="middle" class="rc-val">4</text><text x="328.0" y="118" text-anchor="middle" class="rc-ax">60-75+</text><rect x="366.7" y="35.5" width="23.7" height="64.5" fill="var(--amber)" opacity="1"/><text x="378.5" y="31.5" text-anchor="middle" class="rc-val">3</text><rect x="393.3" y="35.5" width="23.7" height="64.5" fill="var(--chalk-2)" opacity="0.75"/><text x="405.2" y="31.5" text-anchor="middle" class="rc-val">3</text><text x="393.3" y="118" text-anchor="middle" class="rc-ax">75-90+</text><line x1="34" y1="100" x2="426" y2="100" stroke="currentColor" opacity=".25"/><rect x="34" y="133" width="9" height="9" fill="var(--amber)"/><text x="48" y="141" class="rc-ax">FENERBAHÇE</text><rect x="152" y="133" width="9" height="9" fill="var(--chalk-2)" opacity=".75"/><text x="166" y="141" class="rc-ax">SLAVIA PRAG</text></svg>
+      <p class="rc-cap">On beşer dakikalık dilimlerde şut sayısı. 45-60 diliminde Fenerbahçe sıfırda; 15-30 diliminde Slavia sıfırda — iki takım da farklı çeyreklerde tamamen sessiz kalıyor.</p>
     </div>
-    <p>Ceza sahası içindeki olaylara bakınca tablo biraz yumuşuyor: Fenerbahçe son yarım saatte yeniden yüklendi. Ama bu kez de Slavia'nın baskısı artmıştı.</p>
+    <p>Fenerbahçe'nin en üretken dilimi 15-30 arası (4 şut) — ironik biçimde drought'un hemen ardından gelen dilim, yani üretim durdu ama tamamen de bitmedi. En sessiz dilimi 45-60 (0 şut). Slavia'nın en üretken dilimi 60-75 (4 şut), en sessizi 15-30 (0 şut) — tam da Fenerbahçe'nin kontratağa yakaladığı dilimde Slavia'nın kendisi sessiz.</p>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <div class="head col">
+      <p class="eyebrow">Skor durumu</p>
+      <h2>Seksen yedi dakika önde</h2>
+      <p class="lede">Fenerbahçe maçın hiçbir anında geride oynamadı — ilk golden (4') son düdüğe kadar ya önde ya berabereydi.</p>
+    </div>
+    <p>Toplam 87.1 dakika önde, 7.4 dakika berabere oynadı (maçın geneli ~94 dakika). Önde oynadığı sürede attığı şut sayısı 13 — maç geneline oranlandığında düşük değil (toplam 14 şutun 13'i önde geçen sürede). Yani "önde kalınca bütünüyle durdu" iddiası maçın tamamı için aşırı genelleme; asıl durma, yukarıda saniyesi saniyesine anlatılan üç dakika kırk saniyelik pencereye özgü.</p>
+    <p>Atak başına süre de önde oynarken kısalıyor: berabereyken 46 saniye, öndeyken 25 saniye — klasik "sonucu koru" refleksi, ama şut hacmini bütünüyle sıfırlamıyor.</p>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <div class="head col">
+      <p class="eyebrow">Geçişler</p>
+      <h2>Kazanımdan şuta, kayıptan golüne</h2>
+      <p class="lede">Top kazanımı sonrası sekiz saniyelik pencerede ne oluyor, top kaybı sonrası rakip ne buluyor.</p>
+    </div>
+    <p>Fenerbahçe 125 kez topu kazandı, bunların 49'i rakip yarı sahada. Kazanım sonrası sekiz saniye içinde 7 kez şut çekti (%5.6). Slavia 103 kazanımın 39'ini rakip yarıda yaptı, 3 şuta çevirdi (%2.9) — ama bu azınlık içindeki tek şut, yukarıda anlatılan 15. dakika golüydü.</p>
+    <p>Savunma tarafında: Fenerbahçe 61 kez topu kaybetti, bunun sonrasında rakibe sekiz saniye içinde izin verdiği şut sayısı yalnızca 1. Slavia 57 kayıptan sonra 0 şut yedi — <strong>sıfır.</strong> Geçiş savunması iki takımda da sağlam; maçın açık alanı geçiş anlarında değil, kurulu düzen ve o tek kontratak zincirinde kapandı.</p>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <div class="head col">
+      <p class="eyebrow">Dört faz</p>
+      <h2>Reaktif, aktif, proaktif</h2>
+      <p class="lede">Her olayı dört faza (topta, topsuz, hücum geçişi, savunma geçişi) ve üç davranış sınıfına (reaktif/aktif/proaktif) ayırınca iki takım da neredeyse aynı profili çiziyor.</p>
+    </div>
     <div class="rc-wrap">
-      <svg viewBox="0 0 440 150" class="rc" role="img" aria-label="Ceza sahası olayları"><rect x="40.0" y="70.1" width="23.7" height="29.9" fill="var(--amber)" opacity="1"/><text x="51.8" y="66.1" text-anchor="middle" class="rc-val">8</text><rect x="66.7" y="21.5" width="23.7" height="78.5" fill="var(--chalk-2)" opacity="0.55"/><text x="78.5" y="17.5" text-anchor="middle" class="rc-val">21</text><text x="66.7" y="118" text-anchor="middle" class="rc-ax">0–15</text><rect x="105.3" y="36.4" width="23.7" height="63.6" fill="var(--amber)" opacity="1"/><text x="117.2" y="32.4" text-anchor="middle" class="rc-val">17</text><rect x="132.0" y="81.3" width="23.7" height="18.7" fill="var(--chalk-2)" opacity="0.55"/><text x="143.8" y="77.3" text-anchor="middle" class="rc-val">5</text><text x="132.0" y="118" text-anchor="middle" class="rc-ax">15–30</text><rect x="170.7" y="73.8" width="23.7" height="26.2" fill="var(--amber)" opacity="1"/><text x="182.5" y="69.8" text-anchor="middle" class="rc-val">7</text><rect x="197.3" y="58.9" width="23.7" height="41.1" fill="var(--chalk-2)" opacity="0.55"/><text x="209.2" y="54.9" text-anchor="middle" class="rc-val">11</text><text x="197.3" y="118" text-anchor="middle" class="rc-ax">30–45</text><rect x="236.0" y="81.3" width="23.7" height="18.7" fill="var(--amber)" opacity="1"/><text x="247.8" y="77.3" text-anchor="middle" class="rc-val">5</text><rect x="262.7" y="77.6" width="23.7" height="22.4" fill="var(--chalk-2)" opacity="0.55"/><text x="274.5" y="73.6" text-anchor="middle" class="rc-val">6</text><text x="262.7" y="118" text-anchor="middle" class="rc-ax">45–60</text><rect x="301.3" y="36.4" width="23.7" height="63.6" fill="var(--amber)" opacity="1"/><text x="313.2" y="32.4" text-anchor="middle" class="rc-val">17</text><rect x="328.0" y="14.0" width="23.7" height="86.0" fill="var(--chalk-2)" opacity="0.55"/><text x="339.8" y="10.0" text-anchor="middle" class="rc-val">23</text><text x="328.0" y="118" text-anchor="middle" class="rc-ax">60–75</text><rect x="366.7" y="29.0" width="23.7" height="71.0" fill="var(--amber)" opacity="1"/><text x="378.5" y="25.0" text-anchor="middle" class="rc-val">19</text><rect x="393.3" y="58.9" width="23.7" height="41.1" fill="var(--chalk-2)" opacity="0.55"/><text x="405.2" y="54.9" text-anchor="middle" class="rc-val">11</text><text x="393.3" y="118" text-anchor="middle" class="rc-ax">75+</text><line x1="34" y1="100" x2="426" y2="100" stroke="currentColor" opacity=".25"/><rect x="34" y="133" width="9" height="9" fill="var(--amber)" opacity="1"/><text x="48" y="141" class="rc-ax">Fenerbahçe</text><rect x="138" y="133" width="9" height="9" fill="var(--chalk-2)" opacity="0.55"/><text x="152" y="141" class="rc-ax">Slavia</text></svg>
-      <p class="rc-cap">Rakip ceza sahası içindeki olay sayısı. İki takım da son bölümde yükseliyor; beraberlik golü bu baskının içinden çıktı.</p>
+      <svg viewBox="0 0 440 120" class="rc" role="img" aria-label="Reaktif aktif proaktif dağılımı"><text x="18" y="10" class="rc-ax">FENERBAHÇE</text><rect x="18" y="14" width="110.7" height="22" fill="var(--amber)" opacity=".9"/><rect x="128.7" y="14" width="225.8" height="22" fill="currentColor" opacity=".3"/><rect x="354.5" y="14" width="67.5" height="22" fill="currentColor" opacity=".12"/><text x="73.3" y="29" text-anchor="middle" class="rc-val" font-size="8">27%</text><text x="241.6" y="29" text-anchor="middle" class="rc-val" font-size="8">56%</text><text x="388.3" y="29" text-anchor="middle" class="rc-val" font-size="8">17%</text><text x="18" y="56" class="rc-ax">SLAVIA PRAG</text><rect x="18" y="60" width="101.0" height="22" fill="var(--amber)" opacity=".9"/><rect x="119.0" y="60" width="229.9" height="22" fill="currentColor" opacity=".3"/><rect x="348.9" y="60" width="73.1" height="22" fill="currentColor" opacity=".12"/><text x="68.5" y="75" text-anchor="middle" class="rc-val" font-size="8">25%</text><text x="233.9" y="75" text-anchor="middle" class="rc-val" font-size="8">57%</text><text x="385.4" y="75" text-anchor="middle" class="rc-val" font-size="8">18%</text><g transform="translate(18,112)"><rect width="9" height="9" fill="var(--amber)" opacity=".9"/><text x="14" y="8" class="rc-ax">proaktif</text><rect x="90" width="9" height="9" fill="currentColor" opacity=".3"/><text x="104" y="8" class="rc-ax">aktif</text><rect x="170" width="9" height="9" fill="currentColor" opacity=".12"/><text x="184" y="8" class="rc-ax">reaktif</text></g></svg>
+      <p class="rc-cap">Tüm olayların proaktif (ilerletici/yaratıcı), aktif (mücadele/karar) ve reaktif (savunma refleksi) sınıflara dağılımı.</p>
     </div>
-    <p>Doksanıncı dakika geçtikten sonra Slavia eşitledi. Fenerbahçe sahadan iki puan kaybederek ayrıldı.</p>
+    <p>Fenerbahçe olaylarının %27'i proaktif, %56'i aktif, %17'i reaktif. Slavia %25 / %57 / %18 — iki profil de birbirinden en fazla iki-üç puan ayrılıyor. Hücum geçişinde (top kazanıp sekiz saniyede şut) Fenerbahçe 125 kazanımdan 7 şut üretti (%5.6), Slavia 103 kazanımdan 3 (%2.9) — burada da fark marjinal.</p>
+    <p class="mono" style="color:var(--mute);font-size:.82rem">Not: Oyuncu granülerliği olmadığı için bu faz dağılımı yalnızca takım toplamında hesaplanabildi; hangi oyuncunun hangi fazda daha proaktif olduğu bu veri setinden çıkarılamıyor.</p>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <div class="head col">
+      <p class="eyebrow">Şut kalitesi</p>
+      <h2>Mesafe haritası: nereden vuruldu</h2>
+      <p class="lede">Bu maç için bağımsız bir kaleci-xG dosyası yok; aşağıdaki bölge sayımları doğrudan şut olaylarının x,y koordinatından, kaleye mesafe üzerinden hesaplandı.</p>
+    </div>
+    <div class="rc-wrap">
+      <svg viewBox="0 0 440 318" class="rc" role="img" aria-label="Şut haritası"><text x="22" y="21" class="rc-ax">FENERBAHÇE &#183; 14 ŞUT · 5 İSABET</text><rect x="22" y="30" width="396" height="116" fill="none" stroke="currentColor" opacity=".22"/><rect x="292" y="53.5" width="126" height="68.9" fill="none" stroke="currentColor" opacity=".16"/><rect x="376" y="72.3" width="42" height="31.3" fill="none" stroke="currentColor" opacity=".12"/><path d="M418,68.3 L424,68.3 L424,107.7 L418,107.7" fill="none" stroke="currentColor" opacity=".4"/><circle cx="246.4" cy="74.1" r="5" fill="var(--amber)" stroke="var(--amber)" stroke-width="1"><title>4. dakika · isabetli</title></circle><circle cx="319.0" cy="75.8" r="5" fill="var(--amber)" stroke="var(--amber)" stroke-width="1"><title>11. dakika · isabetli</title></circle><circle cx="234.6" cy="65.0" r="4" fill="none" stroke="var(--amber)" stroke-width="1.4" opacity=".6"><title>17. dakika</title></circle><circle cx="288.0" cy="64.6" r="4" fill="none" stroke="var(--amber)" stroke-width="1.4" opacity=".6"><title>21. dakika</title></circle><circle cx="255.0" cy="85.9" r="4" fill="none" stroke="var(--amber)" stroke-width="1.4" opacity=".6"><title>26. dakika</title></circle><circle cx="264.2" cy="70.3" r="5" fill="var(--amber)" stroke="var(--amber)" stroke-width="1"><title>29. dakika · isabetli</title></circle><circle cx="244.4" cy="112.7" r="4" fill="none" stroke="var(--amber)" stroke-width="1.4" opacity=".6"><title>35. dakika</title></circle><circle cx="361.9" cy="69.4" r="5" fill="var(--amber)" stroke="var(--amber)" stroke-width="1"><title>44. dakika · isabetli</title></circle><circle cx="340.8" cy="85.7" r="5" fill="var(--amber)" stroke="var(--amber)" stroke-width="1"><title>63. dakika · isabetli</title></circle><circle cx="332.2" cy="72.6" r="4" fill="none" stroke="var(--amber)" stroke-width="1.4" opacity=".6"><title>64. dakika</title></circle><circle cx="360.6" cy="82.6" r="4" fill="none" stroke="var(--amber)" stroke-width="1.4" opacity=".6"><title>71. dakika</title></circle><circle cx="356.6" cy="70.9" r="4" fill="none" stroke="var(--amber)" stroke-width="1.4" opacity=".6"><title>82. dakika</title></circle><circle cx="316.3" cy="107.0" r="4" fill="none" stroke="var(--amber)" stroke-width="1.4" opacity=".6"><title>85. dakika</title></circle><circle cx="286.0" cy="85.3" r="4" fill="none" stroke="var(--amber)" stroke-width="1.4" opacity=".6"><title>91. dakika</title></circle><text x="22" y="169" class="rc-ax">SLAVIA PRAG &#183; 15 ŞUT · 5 İSABET</text><rect x="22" y="178" width="396" height="116" fill="none" stroke="currentColor" opacity=".22"/><rect x="292" y="201.5" width="126" height="68.9" fill="none" stroke="currentColor" opacity=".16"/><rect x="376" y="220.3" width="42" height="31.3" fill="none" stroke="currentColor" opacity=".12"/><path d="M418,216.3 L424,216.3 L424,255.7 L418,255.7" fill="none" stroke="currentColor" opacity=".4"/><circle cx="311.0" cy="258.4" r="4" fill="none" stroke="var(--chalk-2)" stroke-width="1.4" opacity=".6"><title>7. dakika</title></circle><circle cx="318.4" cy="247.0" r="5" fill="var(--chalk-2)" stroke="var(--chalk-2)" stroke-width="1"><title>15. dakika · isabetli</title></circle><circle cx="247.1" cy="258.7" r="4" fill="none" stroke="var(--chalk-2)" stroke-width="1.4" opacity=".6"><title>33. dakika</title></circle><circle cx="270.8" cy="257.2" r="4" fill="none" stroke="var(--chalk-2)" stroke-width="1.4" opacity=".6"><title>34. dakika</title></circle><circle cx="315.0" cy="265.3" r="4" fill="none" stroke="var(--chalk-2)" stroke-width="1.4" opacity=".6"><title>45. dakika</title></circle><circle cx="263.5" cy="259.4" r="4" fill="none" stroke="var(--chalk-2)" stroke-width="1.4" opacity=".6"><title>46. dakika</title></circle><circle cx="332.2" cy="260.0" r="4" fill="none" stroke="var(--chalk-2)" stroke-width="1.4" opacity=".6"><title>46. dakika</title></circle><circle cx="282.7" cy="235.7" r="4" fill="none" stroke="var(--chalk-2)" stroke-width="1.4" opacity=".6"><title>54. dakika</title></circle><circle cx="270.8" cy="243.4" r="4" fill="none" stroke="var(--chalk-2)" stroke-width="1.4" opacity=".6"><title>61. dakika</title></circle><circle cx="373.1" cy="226.2" r="5" fill="var(--chalk-2)" stroke="var(--chalk-2)" stroke-width="1"><title>61. dakika · isabetli</title></circle><circle cx="311.0" cy="253.1" r="4" fill="none" stroke="var(--chalk-2)" stroke-width="1.4" opacity=".6"><title>67. dakika</title></circle><circle cx="301.2" cy="218.7" r="4" fill="none" stroke="var(--chalk-2)" stroke-width="1.4" opacity=".6"><title>69. dakika</title></circle><circle cx="295.9" cy="214.1" r="5" fill="var(--chalk-2)" stroke="var(--chalk-2)" stroke-width="1"><title>81. dakika · isabetli</title></circle><circle cx="256.3" cy="217.8" r="5" fill="var(--chalk-2)" stroke="var(--chalk-2)" stroke-width="1"><title>88. dakika · isabetli</title></circle><circle cx="379.7" cy="233.9" r="5" fill="var(--chalk-2)" stroke="var(--chalk-2)" stroke-width="1"><title>90. dakika · isabetli</title></circle><g transform="translate(22,312)"><circle cx="4" cy="-4" r="4.6" fill="var(--amber)"/><text x="14" y="-1" class="rc-ax">isabetli</text><circle cx="74" cy="-4" r="4" fill="none" stroke="var(--amber)" stroke-width="1.4" opacity=".6"/><text x="84" y="-1" class="rc-ax">isabetsiz</text><text x="168" y="-1" class="rc-ax">kale sağda · yalnızca hücum yarısı</text></g></svg>
+      <p class="rc-cap">Yalnızca hücum yarısı gösteriliyor, kale sağda. Dolu nokta isabetli şut, boş nokta isabetsiz/bloklanmış.</p>
+    </div>
+    <p>Fenerbahçe 2 yakın mesafe, 6 orta mesafe, 6 uzak mesafe şutu çekti. Slavia 2 / 7 / 6. İki takım da şutlarının çoğunluğunu orta-uzak mesafeden çekti — yakın mesafe (kale önü, ~11 metre içi) şut sayısı her iki takımda da yalnızca 2.</p>
+    <p class="mono" style="color:var(--mute);font-size:.82rem">Not: Bölge sınırları (yakın &lt;11m, orta 11-20m, uzak &gt;20m kaleye öklid mesafesi) ve dönüşüm oranları (yakın ~%32, orta ~%13, uzak ~%4) genel yayımlanmış referans değerleridir, bu maçın kendi ölçümü değil. Lille-Galatasaray dosyasındaki bağımsız kaleci-xG çapraz doğrulamasının eşdeğeri burada mevcut değil.</p>
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <div class="head col">
+      <p class="eyebrow">Simülasyon</p>
+      <h2>Ne olmalıydı, ne oldu?</h2>
+      <p class="lede">Mesafe-bazlı kaba modelde Fenerbahçe'nin 14 şutu 1.66, Slavia'nın 15 şutu 1.79 beklenen gole karşılık geliyor.</p>
+    </div>
+    <div class="rc-wrap">
+      <svg viewBox="0 0 440 118" class="rc" role="img" aria-label="Maçın şut-xG simülasyonu"><rect x="18.0" y="14" width="141.3" height="34" fill="var(--amber)" opacity="0.9"/><text x="88.6" y="62" text-anchor="middle" class="rc-val">35%</text><text x="88.6" y="73" text-anchor="middle" class="rc-ax" font-size="7">FENERBAHÇE KAZANIR</text><rect x="159.3" y="14" width="97.7" height="34" fill="currentColor" opacity="0.14"/><text x="208.1" y="62" text-anchor="middle" class="rc-val">24%</text><text x="208.1" y="73" text-anchor="middle" class="rc-ax" font-size="7">BERABERE</text><rect x="257.0" y="14" width="165.0" height="34" fill="var(--chalk-2)" opacity="0.9"/><text x="339.5" y="62" text-anchor="middle" class="rc-val">41%</text><text x="339.5" y="73" text-anchor="middle" class="rc-ax" font-size="7">SLAVIA KAZANIR</text><rect x="18" y="14" width="404" height="34" fill="none" stroke="currentColor" opacity=".22"/><text x="18" y="8" class="rc-ax">Model (mesafe bazlı kaba xG): FB 1.66 — SLA 1.79 beklenen gol</text><text x="18" y="114" class="rc-ax">Gerçekleşen skor Fenerbahce 2 – SK Slavia Prague 2: model altında olasılık %9.0</text></svg>
+      <p class="rc-cap">Mesafe-bazlı şut modelinin öngördüğü sonuç olasılıkları ve gerçekleşen skorun bu model altındaki olasılığı.</p>
+    </div>
+    <p>Bu dağılımın altında: Slavia galibiyeti %40.8 · berabere %24.2 · Fenerbahçe galibiyeti %35.0. En olası skorlar: 1-1 (%10.1) · 1-2 (%10.0) · 2-1 (%9.1) · 2-2 (%9.0) · 1-3 (%5.7). Gerçekleşen skor 2-2, modelin beşinci en olası sonucu — dramatik bir sapma değil, model altında <strong>makul</strong> bir sonuç.</p>
+    <p>Bu, Lille-Galatasaray'daki tablonun tam tersi: orada gerçekleşen skorun model altındaki olasılığı %1,1 idi (aşırı sapma, savunma hatalarıyla açıklanan bir gece). Burada model ve gerçeklik örtüşüyor — iki golü de verimli pozisyonlardan atan, iki golü de yemeden önce savunması kırılan bir takımın hikâyesi, şans değil mesafe ve zamanlamanın bir sonucu.</p>
+    <p class="mono" style="color:var(--mute);font-size:.82rem">Not: Bu simülasyon tek bir mesafe-xG modelidir; kaleci performansı, şutun ayak/kafa türü ve baskı altında olup olmadığı gibi değişkenler dahil değildir.</p>
   </div>
 </section>
 
@@ -99,12 +194,22 @@ export const prerender = true;
       <h2>Avrupa'daki tablo</h2>
     </div>
     <p>Fenerbahçe Şampiyonlar Ligi lig aşamasında üç maç oynadı: Roma ile 1-1, Aston Villa deplasmanında 0-6, Slavia Prag ile 2-2. Üç maçta <strong>iki puan</strong>, üç atılan gol, dokuz yenen gol.</p>
-    <p>Bu üç maçın yalnızca birinde öne geçtiler. O maç da buydu. Yani "her gol sonrası aynı şey oluyor" demek için elimizde yeterli Avrupa maçı yok. Ama öne geçtikleri tek maçta olan şey, yukarıdaki üç dakikaydı.</p>
-    <p>Ligdeki tablo bu soruyu daha da keskinleştiriyor. Fenerbahçe Süper Lig'de üretim tarafında ligin en iyileri arasında; sorun üretememek değil, ürettiğini öne geçtikten sonra sürdürememek.</p>
+    <p>Bu üç maçın yalnızca birinde öne geçtiler — o maç da buydu. Yani "her gol sonrası aynı şey oluyor" demek için elimizde yeterli Avrupa maçı yok; tek veri noktasından genelleme yapmak metodolojik bir hata olur. Ama öne geçtikleri tek maçta olan şey, yukarıda saniyesi saniyesine anlatılan üç dakika kırk saniyeydi.</p>
     <DagilimSeridi league="sl" focus="Fenerbahçe" id="ds-fb"
       title="Fenerbahçe · Süper Lig içindeki yeri"
       metrics={['xg_payi','baski','pozisyonel_sut','kontra_sut','topla_oynama']}
       note="Her nokta bir Süper Lig takımı. Bu veriler lig sezonunu özetler; yukarıdaki maçın kendisini değil." />
+  </div>
+</section>
+
+<section class="block">
+  <div class="wrap">
+    <div class="head col">
+      <p class="eyebrow">Sonuç</p>
+      <h2>Bu geceden kalan</h2>
+    </div>
+    <p>Fenerbahçe bu maçı hacimle kaybetmedi — bağımsız profil neredeyse birebir eşit iki takım gösteriyor. Kaybettiği şey, 217 saniyelik tek bir pencere: iki golü attıktan sonra üretimin tamamen durduğu, Slavia'nın da tam o pencerede net, tek-hamleli bir kontratak bulduğu an. Geri kalan seksen yedi dakika önde oynarken Fenerbahçe'nin şut üretimi makul kaldı; drought istisnaydı, kural değil.</p>
+    <p>Simülasyon da aynı yöne işaret ediyor: 2-2 bu maçın modelinin reddettiği bir sonuç değil, beşinci en olası senaryosu. Yani ortada açıklanması gereken bir "şans eseri berabere kalma" yok — iki eşit takımın, birinin üç dakika kırk saniyeliğine durduğu ve rakibinin tam o anı değerlendirdiği, sıradan ama kayıtlı bir maç var.</p>
     <p class="mono" style="color:var(--chalk-2);margin-top:2rem">Maç önü dosyası: <a href="/mac/fenerbahce-slavia-prag-2026-10-20">Fenerbahçe – Slavia Prag</a> · Veri: SportsBase</p>
   </div>
 </section>
@@ -116,5 +221,6 @@ export const prerender = true;
 .rc-val{font-family:var(--f-mono);font-size:9.5px;font-weight:600;fill:var(--chalk)}
 .rc-cap{font-family:var(--f-body);font-size:.82rem;line-height:1.6;color:var(--mute);max-width:62ch;margin:0 0 1.4em}
 .rc-wrap{margin:26px 0}
+.hero.hpa-match-premier{position:relative;isolation:isolate;overflow:hidden}
 </style>
 </BaseLayout>
