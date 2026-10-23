@@ -2,6 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import DagilimSeridi from '../../components/DagilimSeridi.astro';
 import TurnuvaHeader from '../../components/TurnuvaHeader.astro';
+import ShareCard from '../../components/ShareCard.astro';
 import matchSurfaceHTML from '../../../public/match-surfaces/fenerbahce-slavia-prag-interactive.html?raw';
 import '../../styles/match-page.css';
 export const prerender = true;
@@ -9,7 +10,9 @@ export const prerender = true;
 <BaseLayout
   title="Fenerbahçe - Slavia Prag 2-2: Üç dakika kırk saniye"
   description="Fenerbahçe 11. dakikada 2-0 öne geçti, üç dakika kırk saniye sonra gol yedi ve 90. dakikada beraberliği kabul etti. SportsBase derin analiz protokolüyle olay olay, dakika dakika."
-  ogType="article" publishedTime={new Date('2026-10-22T19:00:00Z')} club="fenerbahce">
+  ogType="article" publishedTime={new Date('2026-10-22T19:00:00Z')} club="fenerbahce"
+  image="/og/fenerbahce-slavia-prag-2026-10-20-mac-sonu-1200x630.jpg"
+  imageAlt="Fenerbahçe 2-2 Slavia Prag maç sonu · HPAnalytic Premier">
 <div class="mp" data-visual-contract="editorial-svg-v1">
 
 <div class="wrap">
@@ -40,6 +43,11 @@ export const prerender = true;
       <div><span class="mono">2-0 oldu</span><b class="num">11'</b></div>
       <div><span class="mono">2-1 oldu</span><b class="num">15'</b></div>
     </div>
+    <ShareCard
+      text="Fenerbahçe 2-2 Slavia Prag: 11. dakikada 2-0 öndeydiler, üç dakika kırk saniye sonra her şey değişti."
+      storyImage="/og/fenerbahce-slavia-prag-2026-10-20-mac-sonu-1080x1920.jpg"
+      storyImageAlt="Fenerbahçe 2-2 Slavia Prag maç sonu hikaye görseli"
+    />
   </div>
 </section>
 

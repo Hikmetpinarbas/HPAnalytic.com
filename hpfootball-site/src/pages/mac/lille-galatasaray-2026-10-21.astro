@@ -1,9 +1,10 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import LillePremierEightCharts from '../../components/LillePremierEightCharts.astro';
+import ShareCard from '../../components/ShareCard.astro';
 export const prerender = true;
 ---
-<BaseLayout title="Lille – Galatasaray maç önü — HPAnalytic" description="Lille 10 şutla son sırada; Galatasaray ve Bodø/Glimt 12'şer şutla bir üst basamağı paylaşıyor. 36 takımlık dağılım, Lille'in lig ve Avrupa xG farkı, pres eşleşmesi ve izlenecek beş soru." ogType="article" publishedTime={new Date('2026-10-20T00:00:00Z')} club="galatasaray">
+<BaseLayout title="Lille – Galatasaray maç önü — HPAnalytic" description="Lille 10 şutla son sırada; Galatasaray ve Bodø/Glimt 12'şer şutla bir üst basamağı paylaşıyor. 36 takımlık dağılım, Lille'in lig ve Avrupa xG farkı, pres eşleşmesi ve izlenecek beş soru." ogType="article" publishedTime={new Date('2026-10-20T00:00:00Z')} club="galatasaray" image="/og/lille-galatasaray-2026-10-21-1200x630.jpg" imageAlt="Lille – Galatasaray maç önü · HPAnalytic Premier">
 <div class="mp">
 <section class="hero hpa-match-premier">
   <div class="hpa-match-stars" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
@@ -28,6 +29,11 @@ export const prerender = true;
       <span class="n num" id="cd-h">--</span><span class="u">saat</span>
       <span class="n num" id="cd-m">--</span><span class="u">dakika</span>
     </div>
+    <ShareCard
+      text="Turnuvanın en az şut atan iki takımı karşı karşıya: Lille – Galatasaray."
+      storyImage="/og/lille-galatasaray-2026-10-21-1080x1920.jpg"
+      storyImageAlt="Lille – Galatasaray maç önü hikaye görseli"
+    />
   </div>
 </section>
 

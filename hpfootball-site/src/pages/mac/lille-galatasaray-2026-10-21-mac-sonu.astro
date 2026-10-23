@@ -2,6 +2,7 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import DagilimSeridi from '../../components/DagilimSeridi.astro';
 import TurnuvaHeader from '../../components/TurnuvaHeader.astro';
+import ShareCard from '../../components/ShareCard.astro';
 import matchSurfaceHTML from '../../../public/match-surfaces/lille-galatasaray-interactive.html?raw';
 import '../../styles/match-page.css';
 export const prerender = true;
@@ -9,7 +10,9 @@ export const prerender = true;
 <BaseLayout
   title="Lille - Galatasaray 2-4: Yirmi dakikada devrilen maç"
   description="Galatasaray Lille deplasmanında 1-2 geriye düştü, yirmi dakikada üç gol buldu ve 4-2 kazandı. Az şutla çok gol: maçı çeviren mekanizma, dakika dakika."
-  ogType="article" publishedTime={new Date('2026-10-22T19:00:00Z')} club="galatasaray">
+  ogType="article" publishedTime={new Date('2026-10-22T19:00:00Z')} club="galatasaray"
+  image="/og/lille-galatasaray-2026-10-21-mac-sonu-1200x630.jpg"
+  imageAlt="Lille 2-4 Galatasaray maç sonu · HPAnalytic Premier">
 <div class="mp">
 
 <div class="wrap">
@@ -40,6 +43,11 @@ export const prerender = true;
       <div><span class="mono">İsabet</span><b class="num">5 · 4</b></div>
       <div><span class="mono">Golü çeviren aralık</span><b class="num">43' – 61'</b></div>
     </div>
+    <ShareCard
+      text="Lille 2-4 Galatasaray: deplasmanda 1-2 geriye düştüler, sonra yirmi dakikada üç gol buldular."
+      storyImage="/og/lille-galatasaray-2026-10-21-mac-sonu-1080x1920.jpg"
+      storyImageAlt="Lille 2-4 Galatasaray maç sonu hikaye görseli"
+    />
   </div>
 </section>
 

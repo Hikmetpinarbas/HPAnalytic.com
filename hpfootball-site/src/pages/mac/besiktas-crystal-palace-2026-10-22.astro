@@ -4,6 +4,7 @@ import '../../styles/match-page.css';
 import matchSurfaceHTML from '../../../public/match-surfaces/besiktas-crystal-palace-interactive.html?raw';
 import { serializeJsonLd } from '../../lib/json-ld.mjs';
 import DagilimSeridi from '../../components/DagilimSeridi.astro';
+import ShareCard from '../../components/ShareCard.astro';
 export const prerender = true;
 const FIG = '/figures/besiktas-crystal-palace';
 
@@ -12,7 +13,8 @@ const FIG = '/figures/besiktas-crystal-palace';
   title="Beşiktaş - Crystal Palace: Kristal köşk nasıl yıkılır?"
   description="Beşiktaş - Crystal Palace maç önü: Palace'ın en sık pas zinciri geriye gidiyor, Beşiktaş şutlarının üçte birini bloklatıyor. Veriyle beş taktiksel çatışma."
   ogType="article"
-  image="/images/besiktas-crystal-palace-kapak.png"
+  image="/og/besiktas-crystal-palace-2026-10-22-1200x630.jpg"
+  imageAlt="Beşiktaş – Crystal Palace maç önü · HPAnalytic Premier"
   publishedTime={new Date('2026-10-22T17:15:00Z')}
   club="besiktas">
 <div class="mp" data-visual-contract="editorial-svg-v1">
@@ -42,6 +44,14 @@ const FIG = '/figures/besiktas-crystal-palace';
   });
 })();
 </script>
+
+<div class="wrap">
+  <ShareCard
+    text="Beşiktaş topu alacak, Crystal Palace almak istemeyecek: Kristal köşk nasıl yıkılır?"
+    storyImage="/og/besiktas-crystal-palace-2026-10-22-1080x1920.jpg"
+    storyImageAlt="Beşiktaş – Crystal Palace maç önü hikaye görseli"
+  />
+</div>
 
 <section class="block">
   <div class="wrap">

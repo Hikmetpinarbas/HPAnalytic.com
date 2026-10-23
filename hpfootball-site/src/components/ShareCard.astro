@@ -1,0 +1,38 @@
+---
+// Standard per-match share row: link-preview (og:image, wired via BaseLayout's `image` prop)
+// plus a compact action row for the platforms that don't read og:image — Instagram and TikTok
+// need a downloadable image, not a link card, so this gives readers that file directly.
+interface Props {
+  text: string;
+  storyImage: string;
+  storyImageAlt: string;
+}
+const { text, storyImage, storyImageAlt } = Astro.props;
+const canonical = new URL(Astro.url.pathname, Astro.site ?? Astro.url).href;
+const waText = encodeURIComponent(`${text} ${canonical}`);
+const twText = encodeURIComponent(text);
+const twUrl = encodeURIComponent(canonical);
+---
+<div class="hpa-share" aria-label="Paylaş">
+  <p class="hpa-share__label">Paylaş</p>
+  <div class="hpa-share__row">
+    <a class="hpa-share__btn" href={`https://wa.me/?text=${waText}`} target="_blank" rel="noopener noreferrer">
+      WhatsApp
+    </a>
+    <a class="hpa-share__btn" href={`https://twitter.com/intent/tweet?text=${twText}&url=${twUrl}`} target="_blank" rel="noopener noreferrer">
+      X (Twitter)
+    </a>
+    <a class="hpa-share__btn hpa-share__btn--story" href={storyImage} download aria-label={`${storyImageAlt} — hikaye görselini indir`}>
+      Hikaye görseli <span class="hpa-share__hint">Instagram · TikTok</span>
+    </a>
+  </div>
+</div>
+<style>
+.hpa-share{display:grid;gap:10px;padding:16px 0 4px;border-top:1px solid var(--line);margin-top:22px}
+.hpa-share__label{font:600 var(--t-label)/1.4 var(--ui);letter-spacing:var(--track);color:var(--amber);margin:0}
+.hpa-share__row{display:flex;flex-wrap:wrap;gap:10px}
+.hpa-share__btn{display:inline-flex;align-items:center;gap:6px;min-height:var(--tap);padding:0 16px;border:1px solid var(--line-2);border-radius:var(--radius);color:var(--ink);text-decoration:none;font:600 .82rem/1 var(--ui)}
+.hpa-share__btn:hover{border-color:var(--amber);color:var(--amber)}
+.hpa-share__btn--story{background:var(--amber);color:var(--amber-ink);border-color:var(--amber)}
+.hpa-share__hint{font-weight:500;opacity:.75;font-size:.76em}
+</style>

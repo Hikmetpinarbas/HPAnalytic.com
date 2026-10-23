@@ -1,8 +1,9 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import ShareCard from '../../components/ShareCard.astro';
 export const prerender = true;
 ---
-<BaseLayout title="Fenerbahçe – Slavia Prag maç önü — HPAnalytic" description="Ligin en yoğun ikinci presi, rakip yarıda en az top kazanan takımlardan biriyle karşılaşıyor. Kazanım, kayıp, şut ve kontratak haritalarıyla maç önü dosyası." ogType="article" publishedTime={new Date('2026-10-20T00:00:00Z')} club="fenerbahce">
+<BaseLayout title="Fenerbahçe – Slavia Prag maç önü — HPAnalytic" description="Ligin en yoğun ikinci presi, rakip yarıda en az top kazanan takımlardan biriyle karşılaşıyor. Kazanım, kayıp, şut ve kontratak haritalarıyla maç önü dosyası." ogType="article" publishedTime={new Date('2026-10-20T00:00:00Z')} club="fenerbahce" image="/og/fenerbahce-slavia-prag-2026-10-20-1200x630.jpg" imageAlt="Fenerbahçe – Slavia Prag maç önü · HPAnalytic Premier">
 <div class="mp">
 <section class="hero">
   <div class="wrap">
@@ -25,6 +26,11 @@ export const prerender = true;
       <span class="n num" id="cd-h">--</span><span class="u">saat</span>
       <span class="n num" id="cd-m">--</span><span class="u">dakika</span>
     </div>
+    <ShareCard
+      text="Ligin en yoğun ikinci presi, rakip yarıda en az top kazanan takımlardan biriyle karşılaşıyor: Fenerbahçe – Slavia Prag."
+      storyImage="/og/fenerbahce-slavia-prag-2026-10-20-1080x1920.jpg"
+      storyImageAlt="Fenerbahçe – Slavia Prag maç önü hikaye görseli"
+    />
   </div>
 </section>
 
