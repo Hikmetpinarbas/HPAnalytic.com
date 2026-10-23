@@ -1,0 +1,95 @@
+---
+import {normalizeEvent,projectPoint} from '../lib/layered-pitch.mjs';
+
+/** Events are real provider-sourced entries; no demo match events are fabricated. */
+interface Props {
+  events?: Array<Record<string,any>>;
+  title?: string;
+  sourceLabel?: string;
+}
+const {events=[],title='Katmanlı saha analizi',sourceLabel='Veri kaynağı belirtilmedi'}=Astro.props;
+const normalized=events.map(normalizeEvent);
+const playerEntries=normalized.filter(event=>event.type==='player');
+const actions=normalized.filter(event=>event.type!=='player');
+const withEnds=actions.filter(event=>event.endX!==undefined && event.endY!==undefined);
+const family=(event:any)=>event.type==='pass'?'relationships':event.type==='outcome'?'outcomes':'actions';
+const pos=(event:any)=>projectPoint(event,105,68);
+---
+<section class="layered-pitch" data-layered-pitch aria-label={title}>
+  <header class="layered-pitch__heading">
+    <div><h2>{title}</h2><p class="layered-pitch__source">Kaynak: {sourceLabel}</p></div>
+    <span class="layered-pitch__count" aria-live="polite"><strong data-visible-count>0</strong> işaret</span>
+  </header>
+  <div class="layered-pitch__toolbar" role="group" aria-label="Saha görselleştirme filtreleri">
+    <label>Katman odağı
+      <select data-layer-focus aria-label="Katman odağı">
+        <option value="players">Oyuncular</option>
+        <option value="relationships" selected>İlişkiler</option>
+        <option value="actions">Eylemler</option>
+        <option value="outcomes">Sonuçlar</option>
+      </select>
+    </label>
+    <label>Taraf
+      <select data-team-filter>
+        <option value="both">İki takım</option><option value="home">Biz</option><option value="away">Rakip</option>
+      </select>
+    </label>
+    <label>Eylem
+      <select data-event-filter>
+        <option value="all">Tümü</option><option value="pass">Pas</option><option value="dribble">Dripling</option>
+        <option value="shot">Şut</option><option value="recovery">Top kazanımı</option><option value="pressure">Pres</option>
+        <option value="outcome">Sonuç</option>
+      </select>
+    </label>
+    <label>Periyot
+      <select data-time-filter>
+        <option value="0:150">Tüm maç</option><option value="0:45">İlk devre</option>
+        <option value="46:150">İkinci devre</option>
+      </select>
+    </label>
+    <label>Arka plan katmanları <span class="layered-pitch__slider"><input aria-label="Diğer katmanların görünürlüğü" data-context-opacity type="range" min="0" max="60" value="20" step="5"/> %</span></label>
+  </div>
+  <div class="layered-pitch__surface">
+    <svg viewBox="0 0 105 68" role="img" aria-label="105 × 68 metre yatay futbol sahası; filtrelenebilir oyuncu ve olay katmanları" preserveAspectRatio="xMidYMid meet">
+      <rect width="105" height="68" fill="#164b3a"/>
+      <path d="M0 0H105V68H0Z M52.5 0V68 M0 13.84H16.5V54.16H0 M105 13.84H88.5V54.16H105 M0 24.84H5.5V43.16H0 M105 24.84H99.5V43.16H105" fill="none" stroke="#e4f4e8" stroke-width=".3"/>
+      <circle cx="52.5" cy="34" r="9.15" fill="none" stroke="#e4f4e8" stroke-width=".3"/>
+      <circle cx="52.5" cy="34" r=".4" fill="#e4f4e8"/>
+      <circle cx="11" cy="34" r=".4" fill="#e4f4e8"/><circle cx="94" cy="34" r=".4" fill="#e4f4e8"/>
+      {playerEntries.map((event)=>(
+        <g data-family="players" data-team={event.team} data-minute={event.minute} data-id={event.id} data-type={event.type}>
+          <circle cx={pos(event).x} cy={pos(event).y} r="1.65" fill={event.team==='home'?'#ffd166':'#f18da0'} stroke="#152321" stroke-width=".45"/>
+          <title>{event.team==='home'?'Biz':'Rakip'}: oyuncu konumu, {event.minute}. dakika</title>
+        </g>
+      ))}
+      {withEnds.map((event)=>(
+        <g data-family={family(event)} data-team={event.team} data-minute={event.minute} data-id={event.id} data-type={event.type}>
+          <line x1={event.x} y1={event.y} x2={event.endX} y2={event.endY}
+            stroke={event.team==='home'?'#ffd166':'#f18da0'} stroke-width=".7" stroke-linecap="round"/>
+          <circle cx={event.endX} cy={event.endY} r=".8" fill={event.team==='home'?'#ffd166':'#f18da0'}/>
+          <title>{event.type}, {event.minute}. dakika</title>
+        </g>
+      ))}
+      {actions.filter(event=>event.endX===undefined).map(event=>(
+        <g data-family={family(event)} data-team={event.team} data-minute={event.minute} data-id={event.id} data-type={event.type}>
+          <circle cx={event.x} cy={event.y} r="1.25" fill={event.team==='home'?'#ffd166':'#f18da0'} stroke="#0e3028" stroke-width=".35"/>
+          <title>{event.type}, {event.minute}. dakika</title>
+        </g>
+      ))}
+    </svg>
+  </div>
+  <p class="layered-pitch__note">Saha şeması verinin gösterdiği olayları çizer; eşzamanlı oyuncu hareketi veya eksik sonuç verisi üretilmez.</p>
+  {normalized.length===0 && <p class="layered-pitch__empty">Henüz saha olayı bağlanmadı. Kaynağı doğrulanmış veri yüklendiğinde katmanlar görünecek.</p>}
+</section>
+<script>
+  import {mountLayeredPitch} from '../lib/layered-pitch-controller.mjs';
+  document.querySelectorAll('[data-layered-pitch]').forEach(root=>mountLayeredPitch(root));
+</script>
+<style>
+.layered-pitch{background:var(--surface,#121d20);color:var(--ink,#f2eee6);border:1px solid #657275;border-radius:12px;padding:clamp(12px,3vw,24px)}
+.layered-pitch__heading{display:flex;justify-content:space-between;align-items:start;gap:12px}.layered-pitch__heading h2{margin:0;font-size:clamp(1.1rem,2vw,1.5rem)}.layered-pitch__source,.layered-pitch__note,.layered-pitch__empty{font-size:.85rem;line-height:1.5;color:var(--ink-2,#c1c9c5)}.layered-pitch__source{margin:5px 0}.layered-pitch__count{white-space:nowrap;font-size:.75rem}
+.layered-pitch__toolbar{display:flex;flex-wrap:wrap;gap:10px;margin:14px 0}.layered-pitch__toolbar label{display:flex;flex-direction:column;gap:4px;flex:1 1 130px;font-size:.75rem}.layered-pitch__toolbar select{min-height:44px;width:100%;border-radius:5px;background:#243a39;color:#fff;border:1px solid #879996;padding:7px}.layered-pitch__slider{display:flex;align-items:center;min-height:44px}.layered-pitch__slider input{width:100%;accent-color:#ffd166}.layered-pitch :focus-visible{outline:3px solid #ffd166;outline-offset:3px}
+.layered-pitch__surface{background:#164b3a;border-radius:4px;overflow:hidden}.layered-pitch__surface svg{display:block;width:100%;height:auto;aspect-ratio:105/68}
+@media(max-width:520px){.layered-pitch__toolbar label{flex-basis:calc(50% - 8px)}.layered-pitch__count{font-size:.68rem}}
+@media(prefers-reduced-motion:reduce){.layered-pitch *{transition:none!important;animation:none!important}}
+</style>
