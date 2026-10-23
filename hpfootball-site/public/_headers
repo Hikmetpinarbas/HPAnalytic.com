@@ -9,6 +9,44 @@
   Content-Security-Policy: default-src 'self'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'
 
 # Original match surface is embedded only on this same-origin editorial page.
+# Cloudflare merges header blocks for overlapping paths rather than replacing them, so the
+# inherited CSP from "/*" must be explicitly unset here too — otherwise both the global
+# frame-ancestors 'none' and this block's frame-ancestors 'self' are sent together, and the
+# browser intersects them back down to 'none', silently blocking the embed anyway.
+# Cloudflare's Workers static-assets layer also 307-redirects "/foo.html" to the extensionless
+# "/foo" by default (html_handling: auto-trailing-slash) *before* this file's rules are matched
+# against the final response, so both the ".html" path and its extensionless twin need the
+# same override — otherwise the browser loads the extensionless document under the strict
+# default policy and still refuses to render inside the iframe.
 /match-surfaces/besiktas-crystal-palace-interactive.html
   ! X-Frame-Options
+  ! Content-Security-Policy
+  Content-Security-Policy: default-src 'self'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; connect-src 'self'; frame-ancestors 'self'; base-uri 'self'; form-action 'self'
+
+/match-surfaces/besiktas-crystal-palace-interactive
+  ! X-Frame-Options
+  ! Content-Security-Policy
+  Content-Security-Policy: default-src 'self'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; connect-src 'self'; frame-ancestors 'self'; base-uri 'self'; form-action 'self'
+
+# Same scoped framing allowance for the other locked-view match surfaces distributed
+# through their mac-sonu articles via <iframe>. Each needs both the ".html" and extensionless
+# path for the reason noted above.
+/match-surfaces/fenerbahce-slavia-prag-interactive.html
+  ! X-Frame-Options
+  ! Content-Security-Policy
+  Content-Security-Policy: default-src 'self'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; connect-src 'self'; frame-ancestors 'self'; base-uri 'self'; form-action 'self'
+
+/match-surfaces/fenerbahce-slavia-prag-interactive
+  ! X-Frame-Options
+  ! Content-Security-Policy
+  Content-Security-Policy: default-src 'self'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; connect-src 'self'; frame-ancestors 'self'; base-uri 'self'; form-action 'self'
+
+/match-surfaces/lille-galatasaray-interactive.html
+  ! X-Frame-Options
+  ! Content-Security-Policy
+  Content-Security-Policy: default-src 'self'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; connect-src 'self'; frame-ancestors 'self'; base-uri 'self'; form-action 'self'
+
+/match-surfaces/lille-galatasaray-interactive
+  ! X-Frame-Options
+  ! Content-Security-Policy
   Content-Security-Policy: default-src 'self'; img-src 'self' data: https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com data:; script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com; connect-src 'self'; frame-ancestors 'self'; base-uri 'self'; form-action 'self'

@@ -84,7 +84,6 @@
   --chalk:var(--ink); --chalk-2:var(--ink-2); --mute:var(--muted);
   --fen:var(--amber); --fen-ink:var(--amber-ink); --sla:#EEF1F5; --sla-ink:#0B0D10; --sage:var(--amber);
   --f-display:var(--display); --f-body:var(--reading); --f-mono:var(--mono);
-  --grey:#6E3D47; --gs-red:#A90432;
   background:var(--night); color:var(--chalk); font:400 1.0625rem/1.6 var(--f-body);
 }
 
@@ -105,8 +104,8 @@ a{color:var(--chalk);text-decoration-color:var(--sage);text-underline-offset:3px
 
 .mp /* hero */
 .hero{padding-block:clamp(36px,7vw,84px) 28px;position:relative;overflow:hidden;border-bottom:0}
-.mp .hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:6px;background:linear-gradient(90deg,var(--fen) 0 50%,var(--gs-red) 50% 100%)}
-.mp .hero::before{content:"";position:absolute;inset:-30% -10% auto;height:120%;background:radial-gradient(ellipse 55% 60% at 15% 25%,color-mix(in srgb,var(--fen) 22%,transparent),transparent 70%),radial-gradient(ellipse 60% 50% at 92% 0%,color-mix(in srgb,var(--gs-red) 55%,transparent),transparent 70%);pointer-events:none;animation:flood 9s ease-in-out infinite alternate}
+.mp .hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:6px;background:var(--fen)}
+.mp .hero::before{content:"";position:absolute;inset:-30% -10% auto;height:120%;background:radial-gradient(ellipse 70% 60% at 50% 20%,color-mix(in srgb,var(--fen) 20%,transparent),transparent 70%);pointer-events:none;animation:flood 9s ease-in-out infinite alternate}
 @keyframes flood{to{transform:translateY(4%) scale(1.04)}}
 .mp .hero .wrap{position:relative;display:grid;gap:22px;grid-template-columns:minmax(0,1fr)}
 .mp .hero .wrap>*{min-width:0}
