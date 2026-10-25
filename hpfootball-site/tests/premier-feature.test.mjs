@@ -7,6 +7,7 @@ const home=readFileSync(new URL('../src/pages/index.astro',import.meta.url),'utf
 test('premier carousel carries all three approved pieces, newest editorial priority first',()=>{
  const slugs=premierCarousel().map(x=>x.slug);
  assert.deepEqual(slugs,[
+  'galatasaray-fenerbahce-2026-10-26',
   'lille-galatasaray-2026-10-21-mac-sonu',
   'fenerbahce-slavia-prag-2026-10-20-mac-sonu',
   'besiktas-crystal-palace-2026-10-22',
@@ -14,7 +15,7 @@ test('premier carousel carries all three approved pieces, newest editorial prior
 });
 test('featuredPremier returns the carousel leader',()=>{
  const item=featuredPremier();
- assert.equal(item.slug,'lille-galatasaray-2026-10-21-mac-sonu');
+ assert.equal(item.slug,'galatasaray-fenerbahce-2026-10-26');
  assert.equal(item.status,'published');
 });
 test('superseded preview is excluded from the carousel but kept for history',()=>{
@@ -29,7 +30,7 @@ test('newer premier can supersede current leadership without match date heuristi
 });
 test('draft premier is never public or promoted',()=>{
  const newer={slug:'draft-premier',status:'draft',premier:true,premier_order:20,href:'/draft'};
- assert.equal(featuredPremier(Date.now(),[...PREMIER_FEATURES,newer]).slug,'lille-galatasaray-2026-10-21-mac-sonu');
+ assert.equal(featuredPremier(Date.now(),[...PREMIER_FEATURES,newer]).slug,'galatasaray-fenerbahce-2026-10-26');
 });
 test('homepage features the premier carousel prominently before other editorial cards',()=>{
  assert.match(home,/premierCarousel\(\)/);
@@ -38,12 +39,12 @@ test('homepage features the premier carousel prominently before other editorial 
 });
 
 test('withdrawn match cannot remain promoted as premier',()=>{
- const registry=[{slug:'lille-galatasaray-2026-10-21-mac-sonu',status:'draft'},{slug:'fenerbahce-slavia-prag-2026-10-20-mac-sonu',status:'draft'},{slug:'besiktas-crystal-palace-2026-10-22',status:'draft'}];
+ const registry=[{slug:'galatasaray-fenerbahce-2026-10-26',status:'draft'},{slug:'lille-galatasaray-2026-10-21-mac-sonu',status:'draft'},{slug:'fenerbahce-slavia-prag-2026-10-20-mac-sonu',status:'draft'},{slug:'besiktas-crystal-palace-2026-10-22',status:'draft'}];
  assert.equal(featuredPremier(Date.now(),PREMIER_FEATURES,registry),null);
 });
 test('incomplete higher order premier cannot displace complete features',()=>{
  const incomplete={slug:'missing-copy',status:'published',premier:true,premier_order:999,href:'/missing'};
- assert.equal(featuredPremier(Date.now(),[...PREMIER_FEATURES,incomplete]).slug,'lille-galatasaray-2026-10-21-mac-sonu');
+ assert.equal(featuredPremier(Date.now(),[...PREMIER_FEATURES,incomplete]).slug,'galatasaray-fenerbahce-2026-10-26');
 });
 test('CTA accessible name retains visible label',()=>{
  assert.doesNotMatch(home,/aria-label={premier\.title \+ ' premier analizini oku'}/);
