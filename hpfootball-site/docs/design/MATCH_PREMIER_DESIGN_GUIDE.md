@@ -33,14 +33,14 @@ Kural: bir sayfada iki takım rengi + altın + magma. Başka renk yok.
 
 ## 4. Grafik dili
 
-| Plaka | Yöntem | Kanıt etiketi |
+| Plaka | Yöntem | Not |
 |---|---|---|
-| Nabız | üç dakikalık çift yönlü çubuk, üst ev sahibi / alt konuk | TÜREV |
-| Atlas | 12×8 hücre, magma, iki panelde ortak ölçek, kendi hücum yönü, halka = şut, yıldız = gol | KAYIT · TÜREV |
-| Top kazanımı yoğunluğu | 8 m Gauss çekirdek yoğunluğu (KDE), zamanla birikir, halka = o anki olay, sayaç, kaydırıcı | KAYIT · TÜREV |
-| Akış | ortalama yer değiştirme alanı, akış çizgileri (Pass-Flow yaklaşımı) | VEKİL |
+| Nabız | üç dakikalık çift yönlü çubuk, üst ev sahibi / alt konuk | |
+| Atlas | 12×8 hücre, magma, iki panelde ortak ölçek, kendi hücum yönü, halka = şut, yıldız = gol | |
+| Top kazanımı yoğunluğu | 8 m Gauss çekirdek yoğunluğu (KDE), zamanla birikir, halka = o anki olay, sayaç, kaydırıcı | |
+| Akış | ortalama yer değiştirme alanı, akış çizgileri (Pass-Flow yaklaşımı) | |
 
-Kurallar: ortak ölçek yoksa panel kıyaslanmaz; hücre sayısı görünür; yoğunluk tahmini kayıtta olmayan alan bilgisi eklemez ve bunu okuma satırında söyler; her plakanın alt satırında kanıt etiketi ve kaynak bulunur.
+Kurallar: ortak ölçek yoksa panel kıyaslanmaz; hücre sayısı görünür; yoğunluk tahmini kayıtta olmayan alan bilgisi eklemez ve bunu okuma satırında söyler; her plakanın alt satırında kaynak bulunur. Sayfada KAYIT/TÜREV/HİPOTEZ gibi etiket kullanılmaz.
 
 ## 5. Atıflar
 
@@ -53,7 +53,7 @@ Kurallar: ortak ölçek yoksa panel kıyaslanmaz; hücre sayısı görünür; yo
 
 1. Metin hiçbir kırılımda grafiğin üstüne binmiyor (1366 ve 390 px).
 2. Şerit hâlinde grafik okunur kalıyor (goller, şut işaretleri, kartlar).
-3. Her görselin kanıt etiketi var; ortak ölçek ve hücre boyutu belirtilmiş.
+3. Her görselin kaynak satırı var; ortak ölçek ve hücre boyutu belirtilmiş.
 4. İki takım rengi dışında renk yok; magma yalnız yoğunlukta.
 5. Konsol hatası yok; `npm test` ve `npm run build` geçiyor.
 6. Yasaklı sözcük ve onaylanmamış olay yok; her dakika-düzeyinde olay kayda dayanıyor.
