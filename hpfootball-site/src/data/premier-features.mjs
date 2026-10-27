@@ -7,7 +7,20 @@ import { PUBLIC_MATCH_PREVIEWS } from './match-previews.mjs';
  * simply joins/leads the rail; the match schedule never silently changes this editorial slot.
  */
 export const PREMIER_FEATURES = [
-  { slug:'galatasaray-fenerbahce-2026-10-26', status:'published', premier:true, premier_order:5,
+  { slug:'galatasaray-fenerbahce-2026-10-26-mac-sonu', status:'published', premier:true, premier_order:6,
+    href:'/mac/galatasaray-fenerbahce-2026-10-26-mac-sonu/',
+    category:'PREMIER · MAÇ SONU',
+    title:'Aynı kenar, tek yön',
+    description:'Galatasaray, Fenerbahçe\'nin baskı silahını ondan önce çekti. Derbi aynı kenarda tek yöne aktı ve Fenerbahçe o kenardan yalnız bir kez geçebildi.',
+    team:'Galatasaray × Fenerbahçe',
+    club:'derbi',
+    turkishSide:'home',
+    competition:'SÜPER LİG 9. HAFTA · HPANALYTIC PREMIER · MAÇ SONU',
+    home:'Galatasaray',
+    away:'Fenerbahçe',
+    venue:'RAMS Park · 26 Ekim 2026 · Maç sonu: 2-1'
+  },
+  { slug:'galatasaray-fenerbahce-2026-10-26', status:'published', premier:false, premier_order:5,
     href:'/mac/galatasaray-fenerbahce-2026-10-26/',
     category:'PREMIER · MAÇ ÖNÜ',
     title:'Aynı kenar, iki yön',
@@ -19,6 +32,7 @@ export const PREMIER_FEATURES = [
     home:'Galatasaray',
     away:'Fenerbahçe',
     venue:'RAMS Park · 26 Ekim 2026 · 21.30 TSİ'
+    // premier:false — superseded by its own maç sonu dosyası above.
   },
   { slug:'lille-galatasaray-2026-10-21', status:'published', premier:false, premier_order:1,
     href:'/mac/lille-galatasaray-2026-10-21/',
@@ -75,6 +89,7 @@ export const PREMIER_FEATURES = [
 // suite for the hpc-widget article template these pieces don't use). This is the minimal,
 // separate approval list the premier carousel checks instead, so a slug can't self-approve.
 const PUBLISHED_MATCH_RESULTS = [
+  { slug:'galatasaray-fenerbahce-2026-10-26-mac-sonu', status:'published' },
   { slug:'galatasaray-fenerbahce-2026-10-26', status:'published' },
   { slug:'fenerbahce-slavia-prag-2026-10-20-mac-sonu', status:'published' },
   { slug:'lille-galatasaray-2026-10-21-mac-sonu', status:'published' },
