@@ -57,3 +57,8 @@ Kurallar: ortak ölçek yoksa panel kıyaslanmaz; hücre sayısı görünür; yo
 4. İki takım rengi dışında renk yok; magma yalnız yoğunlukta.
 5. Konsol hatası yok; `npm test` ve `npm run build` geçiyor.
 6. Yasaklı sözcük ve onaylanmamış olay yok; her dakika-düzeyinde olay kayda dayanıyor.
+
+## 7. Kalıcı dock ve metrik adımları
+
+- Dock, makalenin tamamı boyunca sabit kalır (`.dock-anchor` + `.sticky` doğrudan `main.flow` çocuğu). 02. bölümden itibaren pencere vurgusu kapanır.
+- Metrik adımları `.fx` bloğuyla biçim, hesap ve sonuç satırlarını gösterir. Formül, hesap ve sonuç aynı bloktadır; her sayı veriden türetilir.

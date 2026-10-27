@@ -205,20 +205,25 @@ svg .hit{cursor:pointer}
 @media (max-width:560px){.score{flex-wrap:wrap;row-gap:4px}.score .t{flex-basis:100%;order:-1}.score .t.fb{order:5}}
 
 /* scrollytelling v2: the dock shrinks into a strip as you scroll; text flows below it and never over the chart */
-.scrolly{position:relative;width:min(1180px,100%);margin:20px auto 0}
-.scrolly .sticky{position:sticky;top:0;z-index:5;pointer-events:none}
-.scrolly .sticky .plate{--k:0;margin:0 auto;pointer-events:auto;background-color:#0E0B09;box-shadow:0 22px 30px -20px rgba(0,0,0,.95)}
-.scrolly .plate .pl-h{padding-top:calc(20px - 12px*var(--k));padding-bottom:calc(6px - 4px*var(--k))}
-.scrolly .plate .pl-h h3{font-size:calc(clamp(24px,3.2vw,36px) - 9px*var(--k))}
-.scrolly .plate .pl-h p{overflow:hidden;max-height:calc(3.4em*(1 - var(--k)*5));opacity:calc(1 - var(--k)*5);margin-top:calc(6px*(1 - var(--k)*5))}
-.scrolly .plate .opt{opacity:calc(1 - var(--k)*6)}
-.scrolly .plate .readout{overflow:hidden;min-height:0;max-height:calc(8em*(1 - var(--k)*3));opacity:calc(1 - var(--k)*3);padding-top:calc(10px*(1 - var(--k)*3));margin-top:calc(2px*(1 - var(--k)*3))}
-.scrolly .plate .pl-f{overflow:hidden;max-height:calc(5em*(1 - var(--k)*4));opacity:calc(1 - var(--k)*4);padding-top:calc(8px*(1 - var(--k)*4));padding-bottom:calc(10px*(1 - var(--k)*4))}
-.scrolly .steps{position:relative;z-index:1;padding:5vh 0 26vh}
-.step{width:min(60ch,calc(100% - 32px));margin:0 auto 34vh;padding:2px 0 2px 20px;border-left:1px solid rgba(217,164,65,.3);color:#E8DCC0;background:none;font:400 19px/1.62 var(--f-body);opacity:.34;transition:opacity .35s,border-color .35s;cursor:pointer}
+.dock-anchor{height:0}
+.sticky{position:sticky;top:0;z-index:20;pointer-events:none;width:min(1180px,100%);margin:20px auto 0}
+.sticky .plate{--k:0;margin:0 auto;pointer-events:auto;background-color:#0E0B09;box-shadow:0 22px 30px -20px rgba(0,0,0,.95)}
+.sticky .plate .pl-h{padding-top:calc(20px - 12px*var(--k));padding-bottom:calc(6px - 4px*var(--k))}
+.sticky .plate .pl-h h3{font-size:calc(clamp(24px,3.2vw,36px) - 9px*var(--k))}
+.sticky .plate .pl-h p{overflow:hidden;max-height:calc(3.4em*(1 - var(--k)*5));opacity:calc(1 - var(--k)*5);margin-top:calc(6px*(1 - var(--k)*5))}
+.sticky .plate .opt{opacity:calc(1 - var(--k)*6)}
+.sticky .plate .readout{overflow:hidden;min-height:0;max-height:calc(8em*(1 - var(--k)*3));opacity:calc(1 - var(--k)*3);padding-top:calc(10px*(1 - var(--k)*3));margin-top:calc(2px*(1 - var(--k)*3))}
+.sticky .plate .pl-f{overflow:hidden;max-height:calc(5em*(1 - var(--k)*4));opacity:calc(1 - var(--k)*4);padding-top:calc(8px*(1 - var(--k)*4));padding-bottom:calc(10px*(1 - var(--k)*4))}
+.steps{position:relative;z-index:1;width:100%;padding:5vh 0 8vh}
+.step{width:min(60ch,calc(100% - 32px));margin:0 auto 14vh;padding:2px 0 2px 20px;border-left:1px solid rgba(217,164,65,.3);color:#E8DCC0;background:none;font:400 19px/1.62 var(--f-body);opacity:.34;transition:opacity .35s,border-color .35s;cursor:pointer}
 .step:last-child{margin-bottom:6vh}
 .step.on{opacity:1;border-left-color:var(--acc)}
 .step p{margin:0}
+.step p+p{margin-top:12px}
+.fx{font:500 14.5px/1.75 var(--f-ui);color:#F3D99A;letter-spacing:.01em;padding:10px 0 2px;border-top:1px solid rgba(217,164,65,.22)}
+.fx span{display:block;font-variant-numeric:tabular-nums}
+.fx b{color:#FFF3D6;font-weight:700}
+.fx i{font-style:normal;color:#B9B2A2}
 .step strong{font-weight:680;color:#FFF3D6}
 @media (max-width:560px){.step{font-size:18px}}
 @media (prefers-reduced-motion:reduce){.step{transition:none}}
@@ -315,22 +320,25 @@ svg .hit{cursor:pointer}
 <!-- 01 -->
 <section class="sec" id="s1"><div class="sec-h"><span class="n zt">01</span><h2 class="zt">Maçın nabzı</h2></div></section>
 
-<div class="scrolly">
-  <div class="sticky">
+<div class="dock-anchor"></div>
+<div class="sticky">
     <figure class="plate" id="pulse" data-chart="pulse" data-title="Maçın nabzı" data-src="SportsBase"></figure>
   </div>
   <div class="steps">
     <div class="step" data-win=""><p><strong>Bütün maç.</strong> Üstte Galatasaray, altta Fenerbahçe; son üçüncü bölgedeki topla aksiyonlar. Üst yarı dolu, alt yarı büyük ölçüde boş. İstisna: ikinci yarının başındaki kısa bölüm.</p></div>
+    <div class="step" data-win=""><p><strong>Metrik 1 · Bölge denetimi (BD).</strong> Son üçüncü bölgedeki topla aksiyonların iki takım arasındaki paylaşımı. Sıfır eşitlik, +1 tek takımın sahipliği. Galatasaray 195, Fenerbahçe 90 aksiyon yaptı; ceza sahası içinde 51’e 10.</p><p class="fx"><span>BD = (A<sub>G</sub> − A<sub>F</sub>) / (A<sub>G</sub> + A<sub>F</sub>)</span><span>Son üçüncü: (195 − 90) / (195 + 90) = <b>+0,37</b></span><span>Ceza sahası: (51 − 10) / (51 + 10) = <b>+0,67</b></span></p><p>Bölgeyi daralttıkça oran sertleşiyor. Fark ortada değil, kalenin önünde açılıyor.</p></div>
     <div class="step" data-win="1:0-15"><p><strong>İlk çeyrek saat.</strong> Maç önünde burayı işaretlemiştik: Fenerbahçe’nin rakip yarıda top kazanma alışkanlığı ve Galatasaray’ın kayıp sonrası ilk tepkisi. Çarpışma tek taraflı bitti. Fenerbahçe son üçüncü bölgeye topla giremedi, rakip yarıda bir kez bile top kazanamadı.</p></div>
+    <div class="step" data-win=""><p><strong>Metrik 2 · Alan kazanç dengesi (AKD).</strong> Baskının iki yüzü: rakip yarıda kazandığın top eksi kendi yarında kaybettiğin top. Birincisi hücumun yakıtı, ikincisi savunmanın açığı. Galatasaray rakip yarıda 11 top kazandı, kendi yarısında 3 top kaybetti. Fenerbahçe’de bu sayılar 1 ve 16.</p><p class="fx"><span>AKD = K<sub>rakip yarı</sub> − Y<sub>kendi yarı</sub></span><span>Galatasaray: 11 − 3 = <b>+8</b></span><span>Fenerbahçe: 1 − 16 = <b>−15</b></span><span>Fark: <b>23 top</b></span></p><p>Kazanımların ortalama yüksekliği aynı yöne bakıyor: kendi kalesinden Galatasaray’da 40 m, Fenerbahçe’de 30 m.</p></div>
     <div class="step" data-win="1:26.5-29.5"><p><strong>29. dakika, 1–0.</strong> Gol baskıdan değil, kurulu oyundan doğdu. Osimhen son üçüncü bölgenin girişine geri geldi, topu Barış Alper’e verdi; Barış Alper’in pası üç saniye sonra onu ceza sahasında buldu.</p></div>
     <div class="step" data-win="1:41.5-47.8"><p><strong>44. dakika, 2–0.</strong> Taç atışı. Jakobs topu uzun taçla ceza sahasına gönderdi; ilk hava topunu Fenerbahçe kazandı ama top ceza sahası yayına düştü, Sánchez oradan geri çevirdi, Osimhen kale önünde bitirdi. SportsBase iki golde de Archie Brown adına gole yol açan hata yazıyor; ama bir savunmacının hatası, rakibin onu ne sıklıkla savunmak zorunda bıraktığını anlatmaz.</p></div>
+    <div class="step" data-win=""><p><strong>Metrik 3 · Zincir verimi (Z).</strong> Bir sahiplik şuta üç halkadan geçer: topa sahip olmak, rakip yarıya girmek, girişi şuta çevirmek. Aynı oran bir takımın hücumunu ölçer, aynı anda rakibin savunmasının ne kadarını geçirdiğini de.</p><p class="fx"><span>Z = (G / S) × (Ş / G) = Ş / S</span><span>Galatasaray: 71/101 × 20/71 = 0,70 × 0,28 = <b>0,20</b></span><span>Fenerbahçe: 41/92 × 4/41 = 0,45 × 0,10 = <b>0,04</b></span><span><i>S sahiplik, G rakip yarıya giriş, Ş şut (duran toplar dahil)</i></span></p><p>İlk halkada fark orta: 0,70’e karşı 0,45. Kopuş ikinci halkada. Fenerbahçe girişlerinin yüzde 10’unu şuta çevirebildi, Galatasaray yüzde 28’ini. Galatasaray’ın savunması girişi geçirmedi, Fenerbahçe’ninki geçirdi.</p></div>
     <div class="step" data-win="2:45-55.5"><p><strong>İkinci yarının ilk on dakikası.</strong> Maçın tek dönemi: Fenerbahçe son üçüncü bölgede Galatasaray’dan fazla top kullandı. Bu, değişikliklerden önce geldi. Soyunma odasında bir şey değişti; olay kaydı ne olduğunu söylemiyor.</p></div>
     <div class="step" data-win="2:54-58"><p><strong>Yaklaşık 55. dakika, çift değişiklik.</strong> Greenwood ve Levent Mercan çıktı, Kerem Aktürkoğlu ve Kojo Oppong girdi. Hemen ardından Fenerbahçe’nin baskısı söndü, ağırlık yeniden Galatasaray’a geçti.</p></div>
     <div class="step" data-win="2:60.5-62.5"><p><strong>62. dakika, 2–1.</strong> Kenar bu kez ters yönde açıldı. Yunus Akgün sağ çizgide topu kontrol edemedi, Archie Brown aynı çizgide aldı. Guendouzi ve Kanté ileri taşıdı, Kerem sol taraftan ceza sahasına gönderdi, Oğuz Aydın’ın pasından İrfan Can vurdu. Kazanımdan gole on üç saniye.</p></div>
     <div class="step" data-win="2:62-80.2"><p><strong>Golden sonra.</strong> Gol Fenerbahçe’ye ikinci bir nefes vermedi. Galatasaray ileri bölgeye yeniden yerleşti; Torreira iki şutla maçın şut başına en yüksek beklenen gol ortalamasını yakaladı. İkisi de dışarı gitti.</p></div>
+    <div class="step" data-win=""><p><strong>Metrik 4 · Üstünlük ayrıştırması (ÜA).</strong> Bütün oranlar tek denklemde toplanır. Beklenen gol oranının logaritması, halka oranlarının logaritmalarının toplamına eşittir; bu bir tahmin değil, cebirsel eşitlik. Üstünlüğün hangi halkadan geldiği payına bakılarak okunur.</p><p class="fx"><span>ln(xG<sub>G</sub> / xG<sub>F</sub>) = ln(s<sub>G</sub>/s<sub>F</sub>) + ln(g<sub>G</sub>/g<sub>F</sub>) + ln(ş<sub>G</sub>/ş<sub>F</sub>) + ln(k<sub>G</sub>/k<sub>F</sub>)</span><span><i>s = S, g = G/S, ş = Ş/G, k = xG/Ş (şut kalitesi)</i></span><span>sahiplik: <b>+0,09</b> <i>(%6,7)</i></span><span>giriş oranı: <b>+0,46</b> <i>(%32,6)</i></span><span>giriş başına şut: <b>+1,06</b> <i>(%75,9)</i></span><span>şut kalitesi: <b>−0,21</b> <i>(−%15,2)</i></span><span>toplam: <b>+1,40</b> → e<sup>1,40</sup> = 4,0 kat (2,71 / 0,67)</span></p><p>Üstünlüğün dörtte üçü tek halkadan geliyor: giriş başına şut. Orada hücum ile savunmayı ayıramazsınız; Galatasaray’ın üretimi ile Fenerbahçe’nin geçirgenliği aynı sayıda buluşuyor. Şut kalitesi ise Fenerbahçe lehine: şut başına 0,17’ye karşı 0,14 xG. Fenerbahçe az şut çekti, çektiği şutlar daha iyiydi. Bitiricilik sorunu bu veride yok; bitirecek durum yoktu.</p><p>Skor ile beklenen gol ters yönde: Galatasaray −0,71, Fenerbahçe +0,33. Skor, üstünlüğü olduğundan küçük gösterdi.</p></div>
     <div class="step" data-win="2:80.2-99"><p><strong>Son bölüm.</strong> Galatasaray dört değişiklikle kapattı, Fenerbahçe topu daha çok taşıdı. Son düdükten sonraki arbedede iki kırmızı kart çıktı: Abdülkerim Bardakcı ve Archie Brown. Skor değişmedi.</p></div>
   </div>
-</div>
 
 <!-- 02 -->
 <section class="sec" id="s2"><div class="sec-h"><span class="n zt">02</span><h2 class="zt">Silahı önce çeken</h2></div></section>
@@ -611,11 +619,11 @@ draw(ctx){
 onOption(ctx){ctx.redraw()}};
 
 function initScrolly(){
-  const steps=$$('.step[data-win]'),ctx=CTX.pulse,sc=$('.scrolly'),dock=sc&&$('.sticky',sc);
+  const steps=$$('.step[data-win]'),ctx=CTX.pulse,sc=$('.dock-anchor'),dock=$('.sticky');
   if(!steps.length||!ctx||!dock)return;
   const fig=ctx.fig;let full=0,strip=0,lastK=-1,tick=0;
   const apply=k=>{const q=Math.round(k*30)/30;fig.style.setProperty('--k',k.toFixed(3));if(q!==lastK){lastK=q;ctx.k=q;ctx.redraw()}};
-  const update=()=>{tick=0;const r=sc.getBoundingClientRect(),span=Math.max(1,full-strip);apply(clamp(-r.top,0,span)/span)};
+  const update=()=>{tick=0;const r=sc.getBoundingClientRect(),span=Math.max(1,full-strip);apply(clamp(-(r.top+20),0,span)/span)};
   const measure=()=>{dock.style.height='';lastK=-1;apply(0);full=fig.offsetHeight;dock.style.height=full+'px';lastK=-1;apply(1);strip=fig.offsetHeight;lastK=-1;update()};
   const req=()=>{if(!tick)tick=requestAnimationFrame(update)};
   window.addEventListener('scroll',req,{passive:true});
@@ -624,9 +632,11 @@ function initScrolly(){
   if(document.fonts&&document.fonts.ready)document.fonts.ready.then(measure);
   measure();
   const set=el=>{steps.forEach(s=>s.classList.toggle('on',s===el));ctx.state.win=el.dataset.win||'';ctx.redraw()};
+  const clear=()=>{if(ctx.state.win){steps.forEach(s=>s.classList.remove('on'));ctx.state.win='';ctx.redraw()}};
   if(!('IntersectionObserver' in window))return;
   const io=new IntersectionObserver(es=>{es.filter(e=>e.isIntersecting).forEach(e=>set(e.target))},{rootMargin:'-42% 0px -42% 0px'});
   steps.forEach(s=>io.observe(s));
+  new IntersectionObserver(es=>{if(es.some(e=>e.isIntersecting))clear()},{rootMargin:'-42% 0px -42% 0px'}).observe($('#s2'));
   steps.forEach(s=>s.addEventListener('click',()=>set(s)));
 }
 
