@@ -1,14 +1,18 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import EndnoteLinks from '../../components/editorial/EndnoteLinks.astro';
 import OriginalChart from '../../components/preserved-derby/OriginalChart.astro';
 import OriginalRuntime from '../../components/preserved-derby/OriginalRuntime.astro';
 import GoalChronology from '../../components/GoalChronology.astro';
 import {serializeJsonLd} from '../../lib/json-ld.mjs';
 import editorial from '../../data/derby-editorial-continuity.json';
+import evidence from '../../../public/mac/galatasaray-fenerbahce-2026-10-26-mac-sonu/evidence.json';
+import {actorName,actionLabel} from '../../lib/derby-labels.mjs';
 import visualData from '../../data/preserved-derby-data.json';
 import '../../styles/experience-tokens.css';
 import '../../styles/editorial-continuity.css';
 import '../../styles/match-editorial-v4.css';
+import '../../styles/editorial-p0.css';
 export const prerender = true;
 const {title,standfirst}=editorial;
 const wordCount=editorial.sections.flatMap(section=>section.paragraphs).join(' ').split(/\s+/).length;
@@ -34,10 +38,11 @@ const schema={'@context':'https://schema.org','@type':'Article',headline:title,d
 {section.id==='pressure-context'&&<aside class="continuity-paper"><p>11–1</p><h3>Rakip yarı sahada top kazanımı</h3><p>Mevcut kaynak paketinin takım toplamı. Kazanımın yeri ile sonraki hücumun imkânları birlikte okunur.</p></aside>}
 </section>)}
 
-<section class="continuity-method" id="source-notes"><h2>Kaynak ve yöntem</h2><p>Veri: SportsBase, 26 Ekim 2026 derbi dosyası. Grafiklerin veri dizileri, KDE hesabı ve mevcut sayısal sonuçları korunmuştur. Zaman akışı otomatik başlamaz; oynat düğmesi ve sürgüyle kontrol edilir.</p><p>Gol anlatımında pas alıcısı veya kesintisiz top yolu üretilmez. Oyuncu kayıtlarıyla takım toplamları, yarı örneklemleriyle maç toplamları aynı kapsamdaymış gibi birleştirilmez.</p><details><summary>Grafiklerin kayıt kapsamı</summary><p>Takım istatistiğinde toplam 24 şut vardır: Galatasaray 20, Fenerbahçe 4. Korunan grafik veri dizisinde 22 konum kaydı bulunur. Takım toplamı ve konum kayıtları farklı kapsamlardır; bütün şutların konumu varmış gibi gösterilmez. Kazanım grafikleri 42 Galatasaray ve 24 Fenerbahçe kaydına dayanır.</p></details><p class="continuity-status">Araştırma ve kaynak kontrolü: 28 Ekim 2026. Yazar: Hikmet Pınarbaş.</p></section>
+<section class="continuity-method editorial-endnotes" id="source-notes"><h2>Kaynaklar ve yöntem</h2><details><summary>Veri kapsamını ve grafik yöntemlerini incele</summary><p>Kaynak: SportsBase, 26 Ekim 2026 maç dosyası. Takım toplamında 24 şut (20–4), konum dizisinde 22 kayıt bulunur; konumu eksik şutlar sahaya eklenmez. Kazanım dizisi 42 Galatasaray, 24 Fenerbahçe kaydı içerir.</p>{Object.entries(notes).map(([key,note])=><section id={'method-'+key}><h3>{key==='pulse'?'Maçın nabzı':key==='kde'?'Top kazanımı yoğunluğu':key==='field'?'Bölgesel kayıtlar':key==='atlas'?'Topla aksiyon haritası':key==='phases'?'Maç evreleri':'Beklenen gol'}</h3><p>{note.method} {note.limit}</p></section>)}<p>Oyuncu ve takım kayıt aileleri ayrı değerlendirilir. Yarı örneklemleri maç toplamıyla birleştirilmez. Ceza sahasına giriş ile ceza sahası aksiyonu farklı ölçülerdir; tek bir giriş birden çok aksiyon içerebilir. PPDA, ilgili ölçüm alanındaki rakip pasları ve savunma aksiyonları arasındaki orandır; tek başına baskı başarısını veya oyuncu eşleşmelerini vermez. Grafikteki zamandaşlık nedensellik kanıtı değildir. Yoğunluk, saha kontrolü veya oyuncu konumu değildir. xG, sağlayıcının toplamıdır; şut başına model değeri bulunmadığından tekil noktalara dağıtılmaz.</p></details><details><summary>Üç golün olay kayıtları ve konumların kaynağı</summary><p>Numaralı noktalar kaynak görsel paketinin goal_seqs dizisindeki olay konumlarıdır. Olay türleri ve gole göre zaman farkları evidence.json kayıtlarıyla karşılaştırılır. Noktalar pas alıcısını, topun izlediği yolu veya oyuncu koşusunu göstermez. İkinci yarının saat referansları farklıdır: görsel paket ikinci yarıyı 45. dakikadan, kanıt dosyası ise ilk yarının 47,75 dakikasını içeren birikimli süreden okur. Aradaki 2,75 dakika ilk yarının uzatmasıdır. Gole göre saniye farkları değişmez.</p>{evidence.goals.map((g,i)=><section><h3>{i+1}. gol · tam olay dökümü</h3><ol>{g.action_chronology.map(r=><li><b>{r.offset_to_goal_s===0?'Gol':r.offset_to_goal_s+' sn'} · {actorName(r.actor)}</b> — {r.action_labels.map(actionLabel).join(' · ')}<small class="p0-source-id">{r.event_key} · kaynak: {r.source_ids.join(', ')}</small></li>)}</ol></section>)}<a href="/mac/galatasaray-fenerbahce-2026-10-26-mac-sonu/evidence.json">Olay kanıt dosyası (JSON)</a></details><p>Yazar: Hikmet Pınarbaş · Kaynak kontrolü: 28 Ekim 2026.</p></section>
 
 </article>
 <OriginalRuntime/>
+<EndnoteLinks/>
 </BaseLayout>
 
 <script>

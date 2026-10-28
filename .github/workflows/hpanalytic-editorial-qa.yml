@@ -1,0 +1,63 @@
+name: HPAnalytic two-article editorial QA
+on:
+  push:
+    branches: [codex/editorial-p0-20261028]
+permissions:
+  contents: read
+concurrency:
+  group: editorial-qa-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  editorial-qa:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    defaults:
+      run:
+        working-directory: hpfootball-site
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: hpfootball-site/package-lock.json
+      - run: npm ci --no-audit --no-fund
+      - run: npm test
+      - run: npm run check
+      - name: Build the exact previously deployed baseline
+        run: |
+          git worktree add --detach "$RUNNER_TEMP/hpa-editorial-before" 4900f6e0f1be89265e97c6fb4b8c9691282c9fc1
+          ln -s "$GITHUB_WORKSPACE/hpfootball-site/node_modules" "$RUNNER_TEMP/hpa-editorial-before/hpfootball-site/node_modules"
+          cd "$RUNNER_TEMP/hpa-editorial-before/hpfootball-site"
+          npm run build
+      - name: Build corrected source
+        run: npm run build
+      - name: Install isolated browser and measurement tools
+        run: |
+          npm install --prefix "$RUNNER_TEMP/hpa-editorial-tools" --no-save --no-package-lock playwright@1.56.1 axe-core@4.10.3 lighthouse@13.6.0
+          ln -s "$RUNNER_TEMP/hpa-editorial-tools/node_modules/playwright" node_modules/playwright
+          ln -s "$RUNNER_TEMP/hpa-editorial-tools/node_modules/playwright-core" node_modules/playwright-core
+          "$RUNNER_TEMP/hpa-editorial-tools/node_modules/.bin/playwright" install --with-deps chromium
+      - name: Eight-width production browser gate and paired performance runs
+        run: |
+          python3 -m http.server 4322 --bind 127.0.0.1 --directory dist/client > /tmp/hpa-after.log 2>&1 &
+          HPA_AFTER_PID=$!
+          python3 -m http.server 4323 --bind 127.0.0.1 --directory "$RUNNER_TEMP/hpa-editorial-before/hpfootball-site/dist/client" > /tmp/hpa-before.log 2>&1 &
+          HPA_BEFORE_PID=$!
+          trap 'kill $HPA_AFTER_PID $HPA_BEFORE_PID 2>/dev/null || true' EXIT
+          for i in $(seq 1 30); do
+            if curl -fsS http://127.0.0.1:4322/portraits/vosse-de-boode/ >/dev/null; then break; fi
+            sleep 1
+          done
+          HPA_RELEASE_BASE=http://127.0.0.1:4322 HPA_BROWSER_ENGINE=playwright HPA_AXE_PATH="$RUNNER_TEMP/hpa-editorial-tools/node_modules/axe-core/axe.min.js" node scripts/two-article-browser-qa.cjs
+          export CHROME_PATH="$(node -p "require('playwright').chromium.executablePath()")"
+          HPA_LH_BIN="$RUNNER_TEMP/hpa-editorial-tools/node_modules/.bin/lighthouse" node scripts/editorial-p0-paired-performance.cjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: editorial-p0-production-qa
+          path: hpfootball-site/qa-artifacts/
+          retention-days: 7
+          if-no-files-found: error

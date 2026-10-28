@@ -1,0 +1,19 @@
+# Vosse de Boode — image research, 28 October 2026
+
+No third-party portrait has been approved for republication. No photograph was copied into public assets. The new cover uses original nonfigurative geometry, not a synthetic likeness. The prominent MIT Sloan link takes readers to the verified person. This is a real remaining photo-rights blocker, not a completed photo essay.
+
+| Candidate / identity evidence | Original image | Rights / credit | Decision |
+| --- | --- | --- | --- |
+| [MIT Sloan official named speaker profile](https://www.sloansportsconference.com/people/vosse-de-boode), named Ajax sports scientist | https://cdn.prod.website-files.com/68d6be744d7efccc2207f571/690d43fef93a6a1c07b4d4aa_5f6b848344ac67bf39ee6d82_Boode_de-Vosse-300x300.jpeg | Page says Copyright MIT Sloan Sports Analytics Conference, All Rights Reserved. Photographer unspecified. URL suggests 300×300, actual dimensions not independently confirmed. | Permission required from conference / underlying photographer; do not download into publication assets. Suitable headshot if rights cleared, likely insufficient for wide hero. |
+| [FC Barcelona official 2018 speaker profile](https://www.fcbarcelona.com/en/card/762723/vosse-de-boode), named Head of Science Ajax | https://www.fcbarcelona.com/photo-resources/fcbarcelona/photo/2018/06/27/d52a5cd3-0aba-4698-8c0c-b56587b62428/54523301.jpg?height=750&width=1200 | [Legal notice](https://www.fcbarcelona.com/en/legal-notices), intellectual property section: private non-profit use only; express authorisation for reproduction. Rights FC Barcelona or acquired third-party rights; photographer not identified. Render request 1200×750, original not verified. | Explicit permission needed. No public copy or hotlink. |
+| [Training Ground Guru, departure article](https://trainingground.guru/de-boode-leaves-ajax-after-13-years-to-join-auscycling/) | Article contains named subject; original full-resolution image / photographer not verified in this pass | No open reuse licence established. | Permission needed; no crop, screenshot or derivative. |
+| [AusCycling official appointment](https://auscycling.org.au/news/auscycling-welcomes-four-new-staff-to-evolved-performance-senior-leadership-team) | Hero is a corporate banner, not a verified Vosse portrait | [Copyright statement](https://auscycling.org.au/copyright-statement), sections 1, 2, 5 restrict reuse and protect photographs. | Useful primary appointment evidence; not a portrait donor. |
+| Personal LinkedIn https://nl.linkedin.com/in/vosse-de-boode-69244430 and Bluesky https://bsky.app/profile/vossedeboode.bsky.social | Public profile candidates, original portrait rights unverified | Platform visibility is not a republication licence. | Not used. |
+
+The official MIT page offers a conference YouTube embed (video l36ndmh_hLM). It is a video option, not a licence to extract still photographs. No third-party player, cookie or autoplay added. No permission messages sent. Any approved photo needs original file, written permission scope (web/social/crops/toning), credit, and actual dimensions before ImageCredit/PhotoEssay is implemented. Those unused abstractions are deliberately not shipped.
+
+Searches for a Creative Commons portrait did not establish a licensed candidate. Wikimedia / Codeberg access failures are not evidence of absence. Do not identify unrelated photographs credited to a photographer named Vosse de Boode as portraits of this subject.
+
+## Draft permission scope (not sent)
+
+A rights-holder request should identify the exact image above, the independent Turkish portrait URL, desired website/OG/social use, mobile crops and any monochrome treatment, territory and duration, agreed credit, and the underlying photographer’s authority. Written permission and a high-resolution original are required before the file enters public assets. No assumption of endorsement or permission is made, and nobody has been contacted on the user’s behalf.

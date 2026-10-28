@@ -1,0 +1,30 @@
+[
+  {
+    "url": "https://gitlab.com/api/v4/projects/10527273/repository/files/LICENSE/raw?ref=master",
+    "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+    "bytes": 35149,
+    "classification": "GPL",
+    "reviewed": true
+  },
+  {
+    "url": "https://gitlab.com/api/v4/projects/10527273/repository/files/README.org/raw?ref=master",
+    "sha256": "1c79fcefbc29586b2cdd9e465def18921383955599f6c17a1de184a0e02e45d0",
+    "bytes": 542,
+    "classification": "other / README",
+    "reviewed": true
+  },
+  {
+    "url": "https://codeberg.org/api/v1/repos/domsa/annotatoin-tool-football-field/contents/LICENSE",
+    "sha256": "12be39659dc3c6bf8b7af64a2d7b989b67a7ac3cf4b6405202a910ff029196ff",
+    "bytes": 1062,
+    "classification": "MIT",
+    "reviewed": true
+  },
+  {
+    "url": "https://codeberg.org/api/v1/repos/domsa/annotatoin-tool-football-field/contents/README.md",
+    "sha256": "deac4d2a655aeb2542eccb7c6ff04f3e8f8ed8099c28271a316b9f1f3d945d64",
+    "bytes": 94,
+    "classification": "other / README",
+    "reviewed": true
+  }
+]

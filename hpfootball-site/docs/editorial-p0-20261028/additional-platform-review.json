@@ -1,0 +1,130 @@
+[
+  {
+    "url": "https://gitlab.com/api/v4/projects/10527273?license=true",
+    "status": 200,
+    "metadata": {
+      "html_url": null,
+      "web_url": "https://gitlab.com/jasonmm/greatest-football-team",
+      "license": {
+        "key": "gpl-3.0+",
+        "name": "GNU General Public License v3.0 or later",
+        "nickname": null,
+        "html_url": "https://www.gnu.org/licenses/gpl-3.0-standalone.html",
+        "source_url": null
+      },
+      "last_activity_at": "2026-10-02T18:16:42.231Z",
+      "updated_at": null,
+      "pushed_at": null,
+      "description": "A simple visualization of data used to speculate about the greatest sport teams of all time.\r\n\r\nhttps://jasonmm.gitlab.io/greatest-football-team/",
+      "archived": null,
+      "default_branch": "master"
+    }
+  },
+  {
+    "url": "https://gitlab.com/api/v4/projects/10527273/repository/tree?per_page=20",
+    "status": 200,
+    "metadata": [
+      {
+        "name": "docs",
+        "path": "docs",
+        "type": "tree"
+      },
+      {
+        "name": "resources",
+        "path": "resources",
+        "type": "tree"
+      },
+      {
+        "name": "src",
+        "path": "src",
+        "type": "tree"
+      },
+      {
+        "name": ".gitignore",
+        "path": ".gitignore",
+        "type": "blob"
+      },
+      {
+        "name": ".gitlab-ci.yml",
+        "path": ".gitlab-ci.yml",
+        "type": "blob"
+      },
+      {
+        "name": "AGENTS.md",
+        "path": "AGENTS.md",
+        "type": "blob"
+      },
+      {
+        "name": "LICENSE",
+        "path": "LICENSE",
+        "type": "blob"
+      },
+      {
+        "name": "README.org",
+        "path": "README.org",
+        "type": "blob"
+      },
+      {
+        "name": "deps.edn",
+        "path": "deps.edn",
+        "type": "blob"
+      },
+      {
+        "name": "package-lock.json",
+        "path": "package-lock.json",
+        "type": "blob"
+      },
+      {
+        "name": "package.json",
+        "path": "package.json",
+        "type": "blob"
+      },
+      {
+        "name": "project.clj",
+        "path": "project.clj",
+        "type": "blob"
+      },
+      {
+        "name": "shadow-cljs.edn",
+        "path": "shadow-cljs.edn",
+        "type": "blob"
+      }
+    ]
+  },
+  {
+    "url": "https://codeberg.org/api/v1/repos/domsa/annotatoin-tool-football-field",
+    "status": 200,
+    "metadata": {
+      "html_url": "https://codeberg.org/domsa/annotatoin-tool-football-field",
+      "web_url": null,
+      "license": null,
+      "last_activity_at": null,
+      "updated_at": "2026-05-16T13:02:22+02:00",
+      "pushed_at": null,
+      "description": "Annotation tool to annotate keypoints for a football field. ",
+      "archived": false,
+      "default_branch": "main"
+    }
+  },
+  {
+    "url": "https://codeberg.org/api/v1/repos/domsa/annotatoin-tool-football-field/contents",
+    "status": 200,
+    "metadata": [
+      {
+        "name": ".gitignore",
+        "path": ".gitignore",
+        "type": "file"
+      },
+      {
+        "name": "LICENSE",
+        "path": "LICENSE",
+        "type": "file"
+      },
+      {
+        "name": "README.md",
+        "path": "README.md",
+        "type": "file"
+      }
+    ]
+  }
+]

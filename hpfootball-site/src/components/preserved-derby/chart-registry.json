@@ -9,7 +9,7 @@
   },
   {
     "chart": "kde",
-    "attributes": " class=\"plate\" id=\"kde\"  data-title=\"Top kazanımları: ışık nereye yığıldı?\" data-src=\"SportsBase\""
+    "attributes": " class=\"plate\" id=\"kde\"  data-title=\"Top kazanımlarının konumu\" data-src=\"SportsBase\""
   },
   {
     "chart": "field",

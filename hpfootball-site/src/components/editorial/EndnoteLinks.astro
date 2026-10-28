@@ -1,0 +1,5 @@
+<script>
+const reveal=(hash:string)=>{if(!hash)return;const target=document.getElementById(decodeURIComponent(hash.slice(1)));if(!target)return;for(let parent:HTMLElement|null=target;parent;parent=parent.parentElement)if(parent instanceof HTMLDetailsElement)parent.open=true;};
+document.addEventListener('click',event=>{const link=(event.target as Element)?.closest<HTMLAnchorElement>('a[href^="#"]');if(link)reveal(link.hash);});
+window.addEventListener('hashchange',()=>reveal(location.hash));reveal(location.hash);
+</script>

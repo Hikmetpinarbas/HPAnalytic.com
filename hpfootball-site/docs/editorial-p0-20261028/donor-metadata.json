@@ -1,0 +1,130 @@
+[
+  {
+    "full_name": "eddwebster/football_analytics",
+    "html_url": "https://github.com/eddwebster/football_analytics",
+    "pushed_at": "2025-10-09T10:51:47Z",
+    "archived": false,
+    "license": null,
+    "default_branch": "master"
+  },
+  {
+    "full_name": "harshkrishna17/Football-Data-Visualizations",
+    "html_url": "https://github.com/harshkrishna17/Football-Data-Visualizations",
+    "pushed_at": "2022-01-23T11:57:37Z",
+    "archived": false,
+    "license": null,
+    "default_branch": "main"
+  },
+  {
+    "full_name": "hudl/open-data",
+    "html_url": "https://github.com/hudl/open-data",
+    "pushed_at": "2026-10-27T17:17:10Z",
+    "archived": false,
+    "license": {
+      "key": "other",
+      "name": "Other",
+      "spdx_id": "NOASSERTION",
+      "url": null,
+      "node_id": "MDc6TGljZW5zZTA="
+    },
+    "default_branch": "master"
+  },
+  {
+    "full_name": "andrewRowlinson/mplsoccer",
+    "html_url": "https://github.com/andrewRowlinson/mplsoccer",
+    "pushed_at": "2026-10-27T06:07:00Z",
+    "archived": false,
+    "license": {
+      "key": "mit",
+      "name": "MIT License",
+      "spdx_id": "MIT",
+      "url": "https://api.github.com/licenses/mit",
+      "node_id": "MDc6TGljZW5zZTEz"
+    },
+    "default_branch": "main"
+  },
+  {
+    "full_name": "PySport/kloppy",
+    "html_url": "https://github.com/PySport/kloppy",
+    "pushed_at": "2026-10-24T07:25:55Z",
+    "archived": false,
+    "license": {
+      "key": "bsd-3-clause",
+      "name": "BSD 3-Clause \"New\" or \"Revised\" License",
+      "spdx_id": "BSD-3-Clause",
+      "url": "https://api.github.com/licenses/bsd-3-clause",
+      "node_id": "MDc6TGljZW5zZTU="
+    },
+    "default_branch": "master"
+  },
+  {
+    "full_name": "ML-KULeuven/socceraction",
+    "html_url": "https://github.com/ML-KULeuven/socceraction",
+    "pushed_at": "2026-10-18T17:03:57Z",
+    "archived": false,
+    "license": {
+      "key": "mit",
+      "name": "MIT License",
+      "spdx_id": "MIT",
+      "url": "https://api.github.com/licenses/mit",
+      "node_id": "MDc6TGljZW5zZTEz"
+    },
+    "default_branch": "master"
+  },
+  {
+    "full_name": "d3/d3",
+    "html_url": "https://github.com/d3/d3",
+    "pushed_at": "2026-10-21T22:24:11Z",
+    "archived": false,
+    "license": {
+      "key": "isc",
+      "name": "ISC License",
+      "spdx_id": "ISC",
+      "url": "https://api.github.com/licenses/isc",
+      "node_id": "MDc6TGljZW5zZTEw"
+    },
+    "default_branch": "main"
+  },
+  {
+    "full_name": "russellsamora/scrollama",
+    "html_url": "https://github.com/russellsamora/scrollama",
+    "pushed_at": "2025-11-13T14:13:24Z",
+    "archived": false,
+    "license": {
+      "key": "mit",
+      "name": "MIT License",
+      "spdx_id": "MIT",
+      "url": "https://api.github.com/licenses/mit",
+      "node_id": "MDc6TGljZW5zZTEz"
+    },
+    "default_branch": "main"
+  },
+  {
+    "full_name": "apache/echarts",
+    "html_url": "https://github.com/apache/echarts",
+    "pushed_at": "2026-10-13T09:27:20Z",
+    "archived": false,
+    "license": {
+      "key": "apache-2.0",
+      "name": "Apache License 2.0",
+      "spdx_id": "Apache-2.0",
+      "url": "https://api.github.com/licenses/apache-2.0",
+      "node_id": "MDc6TGljZW5zZTI="
+    },
+    "default_branch": "master"
+  },
+  {
+    "full_name": "vega/vega-lite",
+    "html_url": "https://github.com/vega/vega-lite",
+    "pushed_at": "2026-10-28T01:16:15Z",
+    "archived": false,
+    "license": {
+      "key": "bsd-3-clause",
+      "name": "BSD 3-Clause \"New\" or \"Revised\" License",
+      "spdx_id": "BSD-3-Clause",
+      "url": "https://api.github.com/licenses/bsd-3-clause",
+      "node_id": "MDc6TGljZW5zZTU="
+    },
+    "default_branch": "main"
+  }
+]

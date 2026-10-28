@@ -6,96 +6,83 @@
     {
       "id": "evidence-story",
       "number": "01",
-      "title": "Sonuç yakın, oyunun imkânları farklı",
+      "title": "Skor bir farkı, oyun başka bir farkı anlatıyor",
       "paragraphs": [
-        "Bir derbiyi tek gollük farkla kaybetmek, iki takımın birbirine yakın bir oyun ürettiği anlamına gelmez. Galatasaray’ın 20 şutuna Fenerbahçe dört şutla karşılık verdi. Beklenen gol toplamı 2,71–0,67; rakip ceza sahasındaki aksiyon sayısı 51–10. Sonuç, Galatasaray’ın üstünlüğünü bir gole indiriyor. Oyunun üretim tarafında ise fark daha geniş.",
-        "Bu sayılar bitmiş hücumların muhasebesi. Asıl soru, o hücumların hangi şartlarda kurulabildiği. Topu kazandıktan sonra rakip kaleye ne kadar yol kalıyordu? Bir takım yeniden hücum edebilmek için ne kadar geriye dönmek zorundaydı? Rakip ceza sahasına ulaşmak bir istisna mıydı, tekrar edilebilen bir durum mu?",
-        "Galatasaray’ın üstünlüğü, bu soruların birkaçında aynı anda ortaya çıkıyor. Fenerbahçe açısından sorun da tek bir kötü son pasın veya kaçan bir şutun ötesine geçiyor: takım, bitirişi tartışacak kadar sık bitiriş noktasına ulaşamadı. Dört şutluk toplam, önce bu erişim meselesini açıklamayı gerektiriyor.",
-        "Maçın nabzı grafiği bu nedenle bir süs değil. Son üçüncü bölgedeki aksiyonların zaman içindeki dağılımını, skor ve personel değişikliklerinin yanına koyuyor. Grafikte bir yükseliş gördüğümüzde, onu hemen bir taktik kararın kanıtı saymak yerine, oyunun hangi bölümünde ve hangi skor koşulunda oluştuğunu sorarak okumak gerekiyor."
+        "2–1, son bölümde tek bir pozisyonun maçı değiştirebileceği bir skordu. Fakat bu yakınlık, iki takımın aynı maçı oynadığı anlamına gelmiyordu. Galatasaray 20 şut üretirken Fenerbahçe dörtte kaldı; sağlayıcının beklenen gol toplamı 2,71’e karşı 0,67’ydi. Sonuç dar, üretim aralığı genişti.",
+        "Bu farkın nerede oluştuğunu görmek için tabeladan ceza sahasına bakmak gerekiyor. Galatasaray’ın 51 ceza sahası aksiyonuna karşı Fenerbahçe’nin 10 aksiyonu vardı. Ev sahibi yalnız daha çok denemiyor; hücumu, rakibin savunmak zorunda olduğu alana daha sık taşıyordu.",
+        "Maçın sorusu bu yüzden “Kim daha çok top tuttu?” değil. Galatasaray hücumu nasıl yeniden başlatabildi; Fenerbahçe aynı sürekliliği neden kuramadı?"
       ],
       "chart": "pulse"
     },
     {
       "id": "winning-place",
       "number": "02",
-      "title": "Baskının değeri, kazanımın adresinde",
+      "title": "Topu kazanmak kadar, nerede kazandığın da önemli",
       "paragraphs": [
-        "Top kazanımını yalnızca toplam sayısıyla okumak, iki farklı futbol durumunu birbirine yaklaştırabilir. Kendi kalesine yakın bir kazanımdan sonra takımın önce baskıdan çıkması, genişliği ve bağlantıları yeniden kurması gerekir. Rakip yarı sahadaki kazanımda ise aynı mesafe zaten kat edilmiş, rakibin yerleşimi henüz tamamlanmamış olabilir. Bu bir garanti değil; hücuma başlama koşullarındaki farktır.",
-        "Derbideki ayrım bu başlangıç şartlarında belirginleşiyor. Kaynak grafikte Galatasaray için 42, Fenerbahçe için 24 top kazanım kaydı var. Rakip yarı sahadaki kazanımlar ise 11–1. Fenerbahçe’nin kazandığı topların neredeyse tamamı kendi yarı sahasında. Kazanımlarının ardından hücuma dönmek için daha uzun bir problemi çözmesi gerekiyordu.",
-        "Yoğunluk haritasındaki ışığı, bir takımın sürekli bulunduğu alan gibi okumamak gerekir. Bu bir oyuncu yerleşimi veya savunma çizgisi haritası değil; kayıttaki kazanım noktalarının yumuşatılmış yoğunluğu. Yine de topun hangi bölgelerde geri alındığını görünür kılıyor. İki panelin ortak ölçeği de bu kıyası anlamlı tutuyor.",
-        "Buradan Fenerbahçe’nin geride kalmayı baştan seçtiği sonucuna doğrudan atlayamayız. Niyet ile ortaya çıkan durum farklı şeylerdir. Ama ortaya çıkan durum açık: rakip yarı sahada yeniden hücum başlatabilecek kazanımlar, Galatasaray’ın lehine çok daha sık kayda girdi. Bu da şut farkının öncesinde incelenmesi gereken bir üstünlük."
+        "Galatasaray’ın üstünlüğü, hücum bittiğinde de tamamen kaybolmadı. Kaynak dizisindeki 42 top kazanımının 11’i rakip yarı sahadaydı. Fenerbahçe’de 24 kazanımın yalnız biri bu bölgede gerçekleşti.",
+        "İleri kazanım, yeni hücumun başlangıç noktasını değiştirir: topu yeniden rakip kaleye taşımak için aşılması gereken mesafe kısalır. Galatasaray’ın üretim hacmini yalnız ilk hücumla değil, oyunu rakip yarıda yeniden kurabilmesiyle okumak gerekir.",
+        "Haritadaki parlaklık bu kazanımların nerede kümelendiğini gösteriyor. Görüntü bir baskı koşusunu kanıtlamıyor; hücumun ardından topun hangi adreslerde yeniden kazanıldığını görünür kılıyor."
       ],
       "chart": "kde"
     },
     {
       "id": "pressure-context",
       "number": "03",
-      "title": "Baskının iki yüzü: rakibi durdurmak, kendin çıkabilmek",
+      "title": "Fenerbahçe’nin çıkışını daraltan döngü",
       "paragraphs": [
-        "Bir takımın baskısını, rakibin topunu kaç kez aldığı kadar kendi topunu nerede kaybettiğiyle birlikte düşünmek gerekir. Aksi hâlde hücumda öne yerleşmenin getirdiği risk görünmez kalır. Derbinin takım tablosunda kendi yarı sahasındaki top kayıpları Galatasaray için üç, Fenerbahçe için 16.",
-        "Bu iki sayı, rakip yarı sahadaki 11–1 kazanım farkının yanına konduğunda daha anlamlı. Bir tarafta rakibin yarısında yeniden topa erişebilme, diğer tarafta kendi yarısında hücumu kaybetme sıklığı var. Bunlar birbirinin bire bir eşleşen kayıtları değildir; aynı olayı iki kez sayıp yeni bir üstünlük skoru üretmiyoruz. Birlikte, iki takımın topa sahip olmaya hangi koşullarda başlayıp hangi koşullarda son verdiğini sorgulatıyorlar.",
-        "PPDA değerleri de aynı tartışmaya bir katman ekliyor: Galatasaray 4,25, Fenerbahçe 7,73. Düşük değer, ilgili ölçüm alanında rakip paslarının savunma aksiyonlarıyla daha sık karşılaşmasına işaret eder. Ancak tek başına baskının başarılı olduğunu, topun kaç oyuncuyla sıkıştırıldığını veya ilk baskı hattının nasıl kurulduğunu anlatmaz.",
-        "Bu yüzden burada belirleyici olan tek bir göstergeye yüksek anlam yüklemek değil. Müdahale sıklığı, kazanımın adresi ve kendi yarı sahasındaki kayıplar birlikte okunduğunda Galatasaray’ın üstünlüğüne ilişkin daha tutarlı bir resim oluşuyor. Baskının oyuncu eşleşmeleri ve yönlendirme tetikleri ise bu resmin görüntüyle tamamlanması gereken tarafı."
+        "Galatasaray’ın kendi yarı sahasındaki üç top kaybına karşı Fenerbahçe’nin 16 kaybı vardı. Bir tarafta rakip yarıda yeniden kazanılan toplar, diğer tarafta henüz çıkış tamamlanmadan kaybedilenler: maçın iki yönü aynı baskı döngüsünde buluşuyordu.",
+        "PPDA değerleri de bu resimle uyumluydu: Galatasaray 4,25, Fenerbahçe 7,73. Bu ölçü tek başına baskının niteliğini açıklamaz. Ancak kazanımın yeri ve tehlikeli bölgede yapılan kayıplarla birlikte okunduğunda, Galatasaray’ın rakibinin rahat ilerlemesine daha az alan bıraktığını destekler."
       ],
       "chart": "field"
     },
     {
       "id": "shot-atlas",
       "number": "04",
-      "title": "Topa sahip olmak ile kalenin önüne varmak",
+      "title": "Topa sahip olmak, kaleye yerleşebilmek",
       "paragraphs": [
-        "Topa sahip olma oranı Galatasaray lehine yüzde 59–41. Fakat yüzde 41 ile oynayan bir takımın hücumda etkisiz kalması zorunlu değil. Daha kısa dizilerle, daha az pasla ve daha doğrudan yollarla da rakip kaleye gidilebilir. Fenerbahçe’nin performansını açıklarken düşük topa sahip olmayı kendi başına neden saymak bu yüzden yetersiz.",
-        "Fark, rakip ceza sahasına erişimde büyüyor. Kaynak takım tablosunda ceza sahasına girişler 24–5, ceza sahasındaki aksiyonlar 51–10. Giriş ile aksiyon aynı ölçü değil: bir girişin devamında birden fazla kontrol, pas veya şut kayda girebilir. İki göstergeyi birbirinin yerine kullanmadan da Galatasaray’ın tekrar sıklığının çok daha yüksek olduğunu görüyoruz.",
-        "Bu ayrım, 488–316 pas toplamını da doğru yere koyuyor. Fazla pasın kendisi bir üstünlük belgesi değil. Önemli olan, topun hangi bölgelerde ve hangi devam imkânlarıyla kullanıldığı. Galatasaray’ın pas hacmi, ceza sahasına erişim ve bitiriş sayısıyla aynı yönde ilerliyor. Fenerbahçe’nin daha kısa oynaması ise bu maçın toplamında benzer bir erişim karşılığı üretmedi.",
-        "Mevcut saha grafiğindeki katmanlar bu soruya farklı açılardan yaklaşmak için korunuyor. Top kazanımı, şut ve topla aksiyon yoğunluğu aynı şeyin farklı renkleri değil. Her katman, hücumun başka bir aşamasını gösteriyor; birinde görülen kümeyi diğerinin sonucu gibi kabul etmeden aralarındaki ilişkiyi kurmak gerekiyor."
+        "Galatasaray’ın yüzde 59’luk topa sahipliği, Fenerbahçe’nin yüzde 41’ine karşı yalnız bir süre farkı değildi. 488–316 pas ve 24–5 ceza sahası girişi, dolaşımın hangi tarafta daha sık son bölgeye ulaştığını gösteriyordu.",
+        "İki haritayı aynı ölçekte okuyun: parlaklık farkı, o alandaki kayıtlı aksiyon hacminin farkı. Galatasaray’ın ceza sahası çevresindeki birikimiyle Fenerbahçe’nin daha seyrek son bölge teması yan yana görünüyor. Bu, oyuncuların sahada nerede beklediğinin değil, topa nerede müdahil olduklarının haritası."
       ],
       "chart": "atlas"
     },
     {
       "id": "goals",
       "number": "05",
-      "title": "Aynı golcü, farklı hazırlıklar",
+      "title": "Üç gol, üç farklı son bağlantı",
       "paragraphs": [
-        "Osimhen’in iki golü, iki golün de aynı mekanizmanın tekrarı olduğu anlamına gelmez. İlk golün yakın çevresinde Osimhen’in isabetli pas kaydı ve Barış Alper Yılmaz’ın asist, kilit pas ve progresif pas etiketleri bulunuyor. Skor tabelasında bitiren oyuncu tek başına öne çıkıyor; hazırlık katkısı ise başka bir oyuncunun kaydında görünüyor.",
-        "İkinci golün çevresinde Jakobs, Davinson Sánchez ve Osimhen için duran top hücumuna katılım kayıtları var. Sánchez asist, Osimhen gol etiketi taşıyor. Son dokunuş aynı oyuncudan geliyor, fakat onu hazırlayan katkının aktörleri ve olayın bağlamı değişiyor. Gol sayısını oyuncu üretiminin bütün açıklaması hâline getirmemek için bu ayrım önemli.",
-        "Fenerbahçe’nin golünde ise Archie Brown’un top kazanımının bulunduğu kısa pencere öne çıkıyor. Gol kaydından 13 saniye önceki kazanımı; Guendouzi ve Kanté’nin pasları, Kerem’in taşıma ve ceza sahasına pas kaydı, Oğuz Aydın’ın asist etiketi ve İrfan Can Kahveci’nin bitirişi izliyor.",
-        "Bu pencere Fenerbahçe’nin tehdit üretebildiğini gösteriyor. Aynı zamanda bir maç okumasında tek iyi örnek ile tekrar edilebilir üretimi ayırmanın neden gerekli olduğunu da hatırlatıyor. Bir golü açıklayan etkili bir olay dizisi, dört şutluk maç toplamının yerini tutmuyor.",
-        "Gol çevresindeki kayıtlar kronolojik olarak sunuluyor. Pas alıcısı doğrulanmadığında aralarına tamamlanmış bir pas zinciri çizilmiyor. Bu sınır, oyuncuların kayda geçen katkısını küçültmez; o katkıya kaynağın söylemediği bir bağlantı eklememeyi sağlar."
+        "İlk golün son üç saniyesinde Osimhen’in pası, Barış Alper Yılmaz’ın asist kaydı ve Osimhen’in bitirişi var. Galatasaray’ın final aksiyonunda iki oyuncunun yeniden devreye girmesi görünür; savunmacıların aradaki koşu ve yerleşimleri ise bu olay dosyasında yok.",
+        "İkinci gol aynı sonun tekrarı değil. Jakobs’un ceza sahasına pası, duran top hücumuna katılım kayıtları ve Sánchez’in asistini Osimhen’in bitirişi izliyor. Burada ayrıştırılması gereken mekanizma, duran top çevresindeki ikinci bağlantı ve son dokunuş.",
+        "Fenerbahçe’nin golü daha uzun bir ilerleme penceresi açıyor. Brown’ın kazanımından 13 saniye sonra gol geliyor. Arada Guendouzi ve Kanté’nin pasları, Kerem’in taşıması ve ceza sahasına pası, Oğuz’un asisti var. Ev sahibinin sürekliliğine karşı, konuk ekibin daha kısa bir pencerede ürettiği cevap bu.",
+        "Aşağıdaki numaralar doğrulanmış olay yerlerini gösterir. Bir noktaya veya olay satırına dokunarak karşılığını bulun; noktalar arasına doğrulanmamış pas yolları çizilmedi."
       ]
     },
     {
       "id": "second-half",
       "number": "06",
-      "title": "Fenerbahçe’nin reaksiyonu, ilk yarıyı geriye dönük düzeltmiyor",
+      "title": "İkinci yarıda cevap var, eşitlik yok",
       "paragraphs": [
-        "Fenerbahçe’nin ikinci yarısına, ilk yarının devamıymış gibi bakmak da maçı düzleştirir. Oyuncu olaylarından üretilen aynı yarı karşılaştırmasında isabetli pas kayıtları 81’den 127’ye, progresif isabetli paslar 12’den 17’ye çıkıyor. İlk yarıda olmayan isabetli şutlar ikinci yarıda üçe ulaşıyor.",
-        "Galatasaray’ın aynı oyuncu-kayıt ailesindeki isabetli şutları ise altıdan ikiye iniyor. Bu farklılaşma, ilk yarının üretim dağılımını maçın her dakikasına yayamayacağımızı gösteriyor. Skorun değişmesi, öndeki takımın risk tercihi ve gerideki takımın hücuma ayırdığı imkânlar birlikte değerlendirilmek zorunda.",
-        "Ancak bu tablodan, devre arasında hangi taktik müdahalenin yapıldığını veya hangi oyuncunun rolünün nasıl değiştiğini tek başına çıkaramayız. Elde olan şey, ikinci yarıda Fenerbahçe’nin kayıtlı üretiminin artması. Nedenini açıklamak için ilk pas seçeneklerine, bağlantı oyuncularına ve rakibin savunma davranışına görüntü üzerinden dönmek gerekir.",
-        "Reaksiyonun varlığı, ilk yarıdaki sorunu ortadan kaldırmıyor. Maçın toplamı yine 20–4 şut ve 51–10 ceza sahası aksiyonu. Fenerbahçe ikinci yarıda bir cevap üretebildi; bu cevap, maçın tamamına yayılabilen dengeli bir hücum performansına dönüşmedi."
+        "Fenerbahçe’nin ikinci yarısı ilk yarısının aynısı değildi. Aynı oyuncu kayıt ailesinde isabetli paslar 81’den 127’ye, progresif paslar 12’den 17’ye yükseldi. İsabetli şutlar sıfırdan üçe çıkarken Galatasaray’ın sayısı altıdan ikiye geriledi.",
+        "Bu değişim konuk ekibin oyuna bir cevap üretebildiğini gösteriyor. Fakat ikinci yarıdaki iyileşme, maçın bütününde oluşmuş üretim farkını silmiyor. Evreleri ayrı okumak, skoru belirleyen üstünlükle oyunun sonradan değişen ritmini aynı anda görebilmeyi sağlıyor."
       ],
       "chart": "phases"
     },
     {
       "id": "quality-volume",
       "number": "07",
-      "title": "Şut kalitesi, hacim farkını nasıl okumalı?",
+      "title": "Fark, tek bir kusursuz şuttan gelmedi",
       "paragraphs": [
-        "Beklenen gol toplamını şut sayısına böldüğümüzde Galatasaray için yaklaşık 0,14, Fenerbahçe için yaklaşık 0,17 elde ediyoruz. Fenerbahçe’nin dört şutluk küçük örnekleminde şut başına ortalamanın daha yüksek olması, Galatasaray’ın üstünlüğünü yalnızca daha kaliteli tekil fırsatlara bağlamamızı engelliyor.",
-        "Asıl fark, o bitirişlere ne kadar sık ulaşılabildiğinde. Galatasaray toplam xG’sini daha büyük bir şut hacmiyle kuruyor. Fenerbahçe’nin az sayıdaki şutu içinde daha değerli fırsatların bulunması, toplam üretimdeki açığı kapatmıyor. Bir takımın şut ortalaması ile bütün maç boyunca tehdit üretebilmesi aynı değerlendirme değil.",
-        "Oyuncu xG katkıları grafiği bu nedenle korunuyor: üretimin kimlerde toplandığını, gol ile beklenen golün aynı sütunda nasıl farklı şeyler anlattığını görünür kılıyor. Buradaki değerler oyuncu toplamlarıdır. Kaynakta her şuta ait doğrulanmış bir model değeri bulunmadığında takım veya oyuncu xG’sini şut noktalarına dağıtmıyoruz.",
-        "Tek maçta gol ile xG arasındaki farktan kalıcı bitiricilik hükmü çıkarmak da erken olur. Bu derbinin daha güçlü ve doğrudan sonucu, Galatasaray’ın hücumu tekrar tekrar sonlandırabilmesi; Fenerbahçe’nin ise bu sonlandırma sıklığını yakalayamaması."
+        "Galatasaray’ın üstünlüğünü yalnız bitiriciliğe bağlamak, hücumun tekrar sayısını gözden kaçırır. Şut başına ortalama sağlayıcı xG’si yaklaşık 0,14’e karşı 0,17’ydi. Fenerbahçe’nin yalnız dört şutluk örneklemi bu ortalamayı kırılgan kılıyor.",
+        "Belirleyici ayrım, her Galatasaray şutunun daha değerli olması değildi. Galatasaray aynı rakip kaleyi çok daha fazla kez sınayabildi. Oyuncu toplamlarını gösteren grafik, bu üretimin kimlerde toplandığını açıyor; tek tek şutların kalitesini ölçmüyor."
       ],
       "chart": "xg"
     },
     {
       "id": "turnovers",
       "number": "08",
-      "title": "Derbiden sonraya taşınacak soru",
+      "title": "Derbinin bıraktığı ders",
       "paragraphs": [
-        "Galatasaray açısından değerli olan, üretim üstünlüğünün farklı aşamalarda aynı yöne bakması. Rakip yarı sahasında topa yeniden ulaşmak, kendi yarısında daha az kaybetmek, ceza sahasına daha sık girmek ve daha fazla şut çekmek. İki gol, bu geniş resmin sonucu; resmin tamamı değil.",
-        "Fenerbahçe açısından ise iki ayrı inceleme gerekiyor. İlki, oyunun başlangıcında rakibin yarısında neden bu kadar az top kazanıldığı ve kendi yarısında neden bu kadar çok kayıp verildiği. İkincisi, ikinci yarıda görülen reaksiyonun hangi şartlarda ortaya çıktığı. Birini diğerinin yerine koymak, hem ilk yarıdaki sorunu hem ikinci yarıdaki cevabı eksik anlatır.",
-        "Bir sonraki rakip ve skor koşulu değiştiğinde Galatasaray aynı erişim sıklığını koruyabilecek mi? Fenerbahçe hücumunu daha erken ve daha sık rakip ceza sahasına taşıyabilecek mi? Bu soruların cevabı, derbinin skorunu tekrar etmekten daha öğretici olacak.",
-        "Bu maç için hüküm ise değişmiyor: Galatasaray, skorun gösterdiğinden daha geniş bir üretim üstünlüğü kurdu. Fenerbahçe’nin ikinci yarıdaki cevabı kayda değerdi; maçın toplamındaki erişim ve hacim açığını kapatmaya yetmedi."
+        "Galatasaray bu derbiyi yalnız hücum ederken kazanmadı. Hücumun ardından topu nerede geri alabildiği, Fenerbahçe’nin nerede yeniden başlamak zorunda kaldığı ve topun ceza sahasına kaç kez döndüğü, aynı üstünlüğün farklı yüzleriydi.",
+        "Fenerbahçe’nin golü ve ikinci yarıdaki ilerlemesi gerçek bir karşılık verdi. Ama tek bir hızlı ilerleme, rakibin maç boyunca ürettiği sürekliliğin yerini tutmadı. Tabeladaki bir gollük farkın arkasında, hücumu tekrar kurabilen bir takımla çıkışlarını birleştirmekte zorlanan bir takım vardı."
       ]
     }
   ]

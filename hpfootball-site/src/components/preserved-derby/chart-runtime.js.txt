@@ -219,25 +219,32 @@ const MAGMA=[[0,[6,5,14]],[.16,[38,16,86]],[.36,[112,31,129]],[.56,[190,55,112]]
 function magma(v){v=clamp(v,0,1);for(let i=1;i<MAGMA.length;i++){if(v<=MAGMA[i][0]){const a=MAGMA[i-1],b=MAGMA[i],f=(v-a[0])/(b[0]-a[0]);return a[1].map((c,q)=>Math.round(c+(b[1][q]-c)*f))}}return MAGMA[MAGMA.length-1][1]}
 const SLATE='rgba(158,172,190,.55)';
 const own=(team,x,y)=>team==='GS'?[x,y]:[105-x,68-y];
-CHARTS.atlas={state:{win:'all'},
+CHARTS.atlas={state:{win:'all',panel:'GS'},
+mount(ctx){
+ const bar=document.createElement('div');bar.className='p0-team-switch';bar.setAttribute('role','group');bar.setAttribute('aria-label','Aksiyon haritasında gösterilen takım');
+ bar.innerHTML='<button type="button" data-team="GS" aria-pressed="true">Galatasaray</button><button type="button" data-team="FB" aria-pressed="false">Fenerbahçe</button>';
+ ctx.stage.parentNode.insertBefore(bar,ctx.stage);ctx.teamBar=bar;
+ bar.addEventListener('click',e=>{const b=e.target.closest('[data-team]');if(!b)return;ctx.state.panel=b.dataset.team;ctx.redraw()});
+},
 groups:[{id:'win',label:'Zaman',opts:Object.keys(WINS).map(k=>[k,WINS[k][0]])}],
 draw(ctx){
   const w=ctx.w,st=ctx.state,wide=w>=760,narrow=w<560,ok=WINS[st.win][1],gap=18,padX=narrow?10:18;
-  const pw=wide?Math.floor((w-gap-padX*2)/2):w-padX*2,s=pw/105,ph=68*s,head=36,blk=head+ph+26,H=(wide?1:2)*blk+(wide?0:8)+46;
-  const svg=mkSvg(ctx,H);aria(svg,'Topla aksiyonun 12 x 8 haritası; iki takım, kendi hücum yönünde; şutlar ve goller işaretli');
+  const pw=wide?Math.floor((w-gap-padX*2)/2):w-padX*2,s=pw/105,ph=68*s,head=narrow?54:36,blk=head+ph+26,H=blk+(narrow?84:46);
+  if(ctx.teamBar){ctx.teamBar.hidden=wide;ctx.teamBar.querySelectorAll('[data-team]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.team===st.panel)))}
+  const svg=mkSvg(ctx,H);aria(svg,'Topla aksiyonun 12 x 8 haritası; iki takım, kendi hücum yönünde; şutlar ve goller işaretli');svg.setAttribute('role','group');
   const NX=12,NY=8,G={GS:Array.from({length:NY},()=>Array(NX).fill(0)),FB:Array.from({length:NY},()=>Array(NX).fill(0))},n={GS:0,FB:0},ft={GS:0,FB:0};
   D.acts.forEach(a=>{const t=a[0]?'FB':'GS';if(!ok(a[1],a[2]))return;const [ox,oy]=own(t,a[3],a[4]);G[t][Math.min(NY-1,Math.floor((68-oy)/68*NY))][Math.min(NX-1,Math.floor(ox/105*NX))]++;n[t]++;if(ox>=70)ft[t]++});
   const mx=Math.max(1,...G.GS.flat(),...G.FB.flat());
   const defs=S('defs',{},svg),lg=S('linearGradient',{id:'mg',x1:0,x2:1,y1:0,y2:0},defs);for(let i=0;i<=10;i++){const c=magma(i/10);S('stop',{offset:(i*10)+'%','stop-color':'rgb('+c.join(',')+')'},lg)}
   const cw=pw/NX,ch=ph/NY,sh={GS:0,FB:0};
-  ['GS','FB'].forEach((t,p)=>{
-    const x0=wide?padX+p*(pw+gap):padX,y0=(wide?0:p*(blk+8))+head;
+  (wide?['GS','FB']:[st.panel]).forEach((t,p)=>{
+    const x0=wide?padX+p*(pw+gap):padX,y0=head;
     T(svg,x0,y0-12,TEAM[t].name.toUpperCase(),{'font-size':20,style:'fill:'+TEAM[t].col+';font-weight:800;letter-spacing:.07em;font-family:var(--f-disp)'});
-    T(svg,x0+pw,y0-12,n[t]+' topla aksiyon',{'font-size':12,'text-anchor':'end',style:'fill:#B9B2A2'});
-    for(let j=0;j<NY;j++)for(let i=0;i<NX;i++){const v=G[t][j][i],c=magma(Math.sqrt(v/mx)),g=S('g',{class:'hit'},svg);
+    T(svg,narrow?x0:x0+pw,narrow?y0-30:y0-12,n[t]+' topla aksiyon',{'font-size':12,'text-anchor':narrow?'start':'end',style:'fill:#B9B2A2'});
+    for(let j=0;j<NY;j++)for(let i=0;i<NX;i++){const v=G[t][j][i],c=magma(Math.sqrt(v/mx)),g=S('g',{class:'hit',tabindex:i===0&&j===0?0:-1,role:'button','aria-pressed':'false','data-cell-team':t,'data-cell-index':j*NX+i,'aria-label':TEAM[t].name+', '+(i+1)+'. sütun '+(j+1)+'. sıra: '+v+' aksiyon'},svg);
       S('rect',{x:x0+i*cw+.6,y:y0+j*ch+.6,width:cw-1.2,height:ch-1.2,fill:'rgb('+c.join(',')+')'},g);
       if(v&&cw>=34)T(g,x0+i*cw+cw/2,y0+j*ch+ch/2+4,v,{'font-size':10.5,'text-anchor':'middle',style:'fill:'+((c[0]+c[1]+c[2])/3>120?'#1A0F1F':'#F3EAD8')+';opacity:.8'});
-      hover(g,()=>ctx.say('<b>'+TEAM[t].name+'</b>, bu hücrede <b>'+v+'</b> topla aksiyon (kendi hücum yönünde '+fmt(i*105/NX,0)+'–'+fmt((i+1)*105/NX,0)+' m). <span class="tg">'+WINS[st.win][0]+'</span>'))}
+      hover(g,()=>{svg.querySelectorAll('[data-zone-selected]').forEach(n=>{n.removeAttribute('data-zone-selected');n.setAttribute('aria-pressed','false');n.querySelector('rect')?.setAttribute('stroke','none')});svg.querySelectorAll('[data-cell-index="'+(j*NX+i)+'"]').forEach(cell=>{cell.setAttribute('data-zone-selected','true');cell.setAttribute('aria-pressed','true');cell.querySelector('rect').setAttribute('stroke','#F3EBDD');cell.querySelector('rect').setAttribute('stroke-width','2')});ctx.say((i+1)+'. sütun / '+(j+1)+'. sıra: <b>Galatasaray '+G.GS[j][i]+'</b> · <b>Fenerbahçe '+G.FB[j][i]+'</b> aksiyon. Kendi hücum yönünde '+fmt(i*105/NX,0)+'–'+fmt((i+1)*105/NX,0)+' m. <span class="tg">'+WINS[st.win][0]+'</span>')});g.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();g.dispatchEvent(new MouseEvent('click'))}const delta={ArrowLeft:-1,ArrowRight:1,ArrowUp:-NX,ArrowDown:NX}[e.key];if(delta){e.preventDefault();const index=clamp(j*NX+i+delta,0,NX*NY-1);const next=svg.querySelector('[data-cell-team="'+t+'"][data-cell-index="'+index+'"]');if(next){svg.querySelectorAll('[data-cell-team="'+t+'"]').forEach(n=>n.setAttribute('tabindex','-1'));next.setAttribute('tabindex','0');next.focus()}}})}
     const P=pitch(svg,x0,y0,pw,SLATE);
     T(svg,x0,y0+ph+16,'saldırı yönü →',{'font-size':11,style:'fill:#8F9AAA'});
     SHOTS.filter(q=>q.team===t&&ok(q.half,q.min)).forEach(q=>{const [ox,oy]=own(t,q.gx,q.gy),[cx,cy]=P.P(ox,oy),r=narrow?4.4:5.6,g=S('g',{class:'hit',tabindex:0,role:'img','aria-label':lastName(q.player)+' şut '+q.res},svg);
@@ -246,12 +253,13 @@ draw(ctx){
       S('circle',{cx:cx,cy:cy,r:12,fill:'transparent'},g);
       hover(g,()=>ctx.say('<b>'+lastName(q.player)+'</b> · '+TEAM[t].name+' · '+minLabel(q.min,q.half)+' · '+(q.fk?'serbest vuruş · ':'')+q.res+'.'))});
     sh[t]=n[t]?ft[t]/n[t]:0});
-  const ly=H-18,lx=padX;S('rect',{x:lx,y:ly-8,width:150,height:9,fill:'url(#mg)',stroke:SLATE,'stroke-width':.8},svg);
+  ['GS','FB'].forEach(t=>{sh[t]=n[t]?ft[t]/n[t]:0});
+  const ly=narrow?H-58:H-18,lx=padX;S('rect',{x:lx,y:ly-8,width:150,height:9,fill:'url(#mg)',stroke:SLATE,'stroke-width':.8},svg);
   T(svg,lx,ly+12,'az',{'font-size':11,style:'fill:#8F9AAA'});T(svg,lx+150,ly+12,mx+' aksiyon',{'font-size':11,'text-anchor':'end',style:'fill:#8F9AAA'});
-  const mxl=lx+176;S('circle',{cx:mxl+6,cy:ly-3,r:5,fill:'none',stroke:'#F3EAD8','stroke-width':1.3},svg);T(svg,mxl+16,ly,'şut',{'font-size':11.5});
-  S('circle',{cx:mxl+66,cy:ly-3,r:5,fill:'none',stroke:'#F3EAD8','stroke-width':2},svg);S('circle',{cx:mxl+66,cy:ly-3,r:1.6,fill:'#F3EAD8'},svg);T(svg,mxl+76,ly,'isabetli',{'font-size':11.5});
-  star(svg,mxl+146,ly-3,8,{fill:COL.gold,stroke:'#0D0B09','stroke-width':1});T(svg,mxl+158,ly,'gol',{'font-size':11.5});
-  ctx.say('Her takım kendi hücum yönünde, soldan sağa. Hücre rengi topla aksiyon sayısı; iki panel aynı ölçeği kullanır, yani parlaklık farkı hacim farkıdır. Son üçüncü bölgenin payı: Galatasaray <b>'+pct(sh.GS,0)+'</b>, Fenerbahçe <b>'+pct(sh.FB,0)+'</b>. Şutlar yalnız konumu kayıtta olanlar. <span class="tg">'+WINS[st.win][0]+'</span>')},
+  const mxl=narrow?lx:lx+176;const legendY=narrow?ly+40:ly;S('circle',{cx:mxl+6,cy:legendY-3,r:5,fill:'none',stroke:'#F3EAD8','stroke-width':1.3},svg);T(svg,mxl+16,legendY,'şut',{'font-size':11.5});
+  S('circle',{cx:mxl+66,cy:legendY-3,r:5,fill:'none',stroke:'#F3EAD8','stroke-width':2},svg);S('circle',{cx:mxl+66,cy:legendY-3,r:1.6,fill:'#F3EAD8'},svg);T(svg,mxl+76,legendY,'isabetli',{'font-size':11.5});
+  star(svg,mxl+146,legendY-3,8,{fill:COL.gold,stroke:'#0D0B09','stroke-width':1});T(svg,mxl+158,legendY,'gol',{'font-size':11.5});
+  ctx.say('Son üçüncü bölgedeki aksiyon payı: <b>Galatasaray '+pct(sh.GS,0)+'</b> · <b>Fenerbahçe '+pct(sh.FB,0)+'</b>. İki takım ortak ölçekte. Ayrıntı için bir hücre seçin.')},
 onOption(ctx){ctx.redraw()}};
 
 /* ---------- 2b. top kazanımı yoğunluğu: zamanla büyüyen çekirdek yoğunluğu (KDE), olay sayacıyla ---------- */
@@ -279,14 +287,19 @@ mount(ctx){
   ctx.t=TT;ctx.playing=false;ctx.btn=bar.querySelector('.kplay');ctx.scrub=bar.querySelector('.kscrub');ctx.clock=bar.querySelector('.kclock');
   ctx.btn.addEventListener('click',()=>{if(ctx.playing){ctx.playing=false;ctx.btn.textContent='Oynat';return}if(ctx.t>=TT-1e-6)ctx.t=0;ctx.playing=true;ctx.btn.textContent='Duraklat';ctx.last=0;kdeLoop(ctx)});
   ctx.scrub.addEventListener('input',()=>{ctx.playing=false;ctx.btn.textContent='Oynat';ctx.t=ctx.scrub.value/1000*TT;kdeRender(ctx)});
+  const tabs=document.createElement('div');tabs.className='p0-team-switch';tabs.dataset.kdeSwitch='';tabs.setAttribute('role','group');tabs.setAttribute('aria-label','Yoğunluk haritasında gösterilen takım');
+  ['GS','FB'].forEach(t=>{const b=document.createElement('button');b.type='button';b.dataset.kdeTeam=t;b.textContent=TEAM[t].name;b.addEventListener('click',()=>{ctx.selectedTeam=t;ctx.redraw()});tabs.appendChild(b)});
+  ctx.stage.parentNode.insertBefore(tabs,ctx.stage);ctx.teamBar=tabs;
   /* Reader-initiated playback; no automatic start. */},
 draw(ctx){
   const w=ctx.w,wide=w>=760,gap=16,pad=clamp(w*.02,8,20),pw=wide?Math.floor((w-gap-pad*2)/2):w-pad*2,ph=Math.round(pw*68/105);
-  ctx.stage.innerHTML='';const wrap=document.createElement('div');wrap.className='kwrap';ctx.stage.appendChild(wrap);
+  ctx.stage.innerHTML='';
+  ctx.teamBar.hidden=wide;ctx.teamBar.querySelectorAll('[data-kde-team]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.kdeTeam===(ctx.selectedTeam||'GS'))));
+  const wrap=document.createElement('div');wrap.className='kwrap';ctx.stage.appendChild(wrap);
   ctx.ev={};ctx.panels=[];ctx.buf=new Float32Array(KCW*KCH);
   ['GS','FB'].forEach(t=>{
     ctx.ev[t]=D.recov.filter(r=>r.team===t).map(r=>({te:tx(r.min,r.half),x:r.x,y:r.y}));
-    const box=document.createElement('div');box.style.cssText='width:'+pw+'px;flex:none';
+    const box=document.createElement('div');box.dataset.panelTeam=t;box.hidden=!wide&&t!==(ctx.selectedTeam||'GS');box.style.cssText='width:'+pw+'px;flex:none';
     const hd=document.createElement('div');hd.className='khd';hd.innerHTML='<span style="color:'+TEAM[t].col+'">'+TEAM[t].name.toUpperCase()+'</span><span class="kn"></span>';box.appendChild(hd);
     const cvw=document.createElement('div');cvw.style.cssText='position:relative;height:'+ph+'px;background:#08060C;border:0';box.appendChild(cvw);
     const dpr=Math.min(2,window.devicePixelRatio||1),cv=document.createElement('canvas');cv.width=Math.round(pw*dpr);cv.height=Math.round(ph*dpr);cv.style.cssText='position:absolute;left:0;top:0;width:'+pw+'px;height:'+ph+'px';cvw.appendChild(cv);
@@ -297,7 +310,7 @@ draw(ctx){
     ctx.panels.push({t:t,cv:cv,off:off,rings:rings,n:hd.querySelector('.kn'),s:pw/105})});
   const fin=new Float32Array(KCW*KCH);ctx.kmax=1e-6;['GS','FB'].forEach(t=>{kdeField(ctx.ev[t],TT+1,fin);for(let q=0;q<fin.length;q++)if(fin[q]>ctx.kmax)ctx.kmax=fin[q]});
   const opp={GS:ctx.ev.GS.filter(e=>e.x>=52.5).length,FB:ctx.ev.FB.filter(e=>e.x>=52.5).length};
-  ctx.say('<b>Galatasaray</b>: '+ctx.ev.GS.length+' top kazanımı, <b>'+opp.GS+'</b> tanesi rakip yarı sahada · <b>Fenerbahçe</b>: '+ctx.ev.FB.length+', <b>'+opp.FB+'</b> tanesi rakip yarı sahada. Parlaklık, 8 m çekirdekli yoğunluk tahmini; iki panel ortak ölçekte. Halka, o an gerçekleşen kazanım. Yoğunluk, kayıttaki noktalardan yumuşatılarak üretilir; kayıtta olmayan bir alan bilgisi eklemez.');
+  ctx.say('<b>Galatasaray</b>: '+ctx.ev.GS.length+' kazanım · '+opp.GS+' rakip yarıda. <b>Fenerbahçe</b>: '+ctx.ev.FB.length+' kazanım · '+opp.FB+' rakip yarıda. İki panel ortak yoğunluk ölçeğinde.');
   kdeRender(ctx)}};
 
 CHARTS.field={state:{layer:'recov',who:'both',win:'all'},
@@ -612,7 +625,7 @@ function drawFlowFrame(ctx,tms){
 function boot(){
   const figures=$$('figure.plate[data-chart]');
   const mountOnce=fig=>{if(fig.dataset.hpaMounted)return;fig.dataset.hpaMounted='true';mountPlate(fig);document.dispatchEvent(new CustomEvent('hpa:chart-mounted',{detail:{chart:fig.dataset.chart}}));};
-  if('IntersectionObserver' in window){const io=new IntersectionObserver(entries=>{for(const e of entries)if(e.isIntersecting){mountOnce(e.target);io.unobserve(e.target)}},{rootMargin:'500px 0px'});figures.forEach(fig=>io.observe(fig));}
+  if('IntersectionObserver' in window){const io=new IntersectionObserver(entries=>{for(const e of entries)if(e.isIntersecting){mountOnce(e.target);io.unobserve(e.target)}},{rootMargin:'120px 0px'});figures.forEach(fig=>io.observe(fig));}
   else figures.forEach(mountOnce);
   window.addEventListener('beforeprint',()=>figures.forEach(mountOnce));
   initScrolly();alignZones();

@@ -1,0 +1,129 @@
+[
+  {
+    "repo": "eddwebster/football_analytics",
+    "license": {
+      "status": "not available",
+      "error": "gh: Not Found (HTTP 404)\n"
+    },
+    "readme": {
+      "path": "README.md",
+      "url": "https://github.com/eddwebster/football_analytics/blob/master/README.md",
+      "sha": "97d7229dfdc15af47325091ffc14b136cdb0ce4f"
+    }
+  },
+  {
+    "repo": "harshkrishna17/Football-Data-Visualizations",
+    "license": {
+      "status": "not available",
+      "error": "gh: Not Found (HTTP 404)\n"
+    },
+    "readme": {
+      "path": "README.md",
+      "url": "https://github.com/harshkrishna17/Football-Data-Visualizations/blob/main/README.md",
+      "sha": "7aba1910018318b3ebd6f77ecc494e9ba9be3ef3"
+    }
+  },
+  {
+    "repo": "hudl/open-data",
+    "license": {
+      "status": "not available",
+      "error": "gh: Not Found (HTTP 404)\n"
+    },
+    "readme": {
+      "path": "README.md",
+      "url": "https://github.com/hudl/open-data/blob/master/README.md",
+      "sha": "6b55bd017eb520c99948958f56a410f716ca1b40"
+    }
+  },
+  {
+    "repo": "andrewRowlinson/mplsoccer",
+    "license": {
+      "path": "LICENSE",
+      "url": "https://github.com/andrewRowlinson/mplsoccer/blob/main/LICENSE",
+      "sha": "b70600110fd3699fbfba1b4be7d7a2887d752c25"
+    },
+    "readme": {
+      "path": "README.md",
+      "url": "https://github.com/andrewRowlinson/mplsoccer/blob/main/README.md",
+      "sha": "792d270a5576e27f9fe57419373a4de8a660cae0"
+    }
+  },
+  {
+    "repo": "PySport/kloppy",
+    "license": {
+      "path": "LICENSE",
+      "url": "https://github.com/PySport/kloppy/blob/master/LICENSE",
+      "sha": "1e342743dc719be172ef4dc464af5d7f1deffdaf"
+    },
+    "readme": {
+      "path": "README.md",
+      "url": "https://github.com/PySport/kloppy/blob/master/README.md",
+      "sha": "e0b4c30852677c667cf71f275cfe7fc629a5b63f"
+    }
+  },
+  {
+    "repo": "ML-KULeuven/socceraction",
+    "license": {
+      "path": "LICENSE.rst",
+      "url": "https://github.com/ML-KULeuven/socceraction/blob/master/LICENSE.rst",
+      "sha": "2e16be54af8d09e18b16961b4131eeaa57a41749"
+    },
+    "readme": {
+      "path": "README.md",
+      "url": "https://github.com/ML-KULeuven/socceraction/blob/master/README.md",
+      "sha": "2efac2c0d9f0bac0ee5fe19b7fcf673049f1989b"
+    }
+  },
+  {
+    "repo": "d3/d3",
+    "license": {
+      "path": "LICENSE",
+      "url": "https://github.com/d3/d3/blob/main/LICENSE",
+      "sha": "3594fffaf63c7a0dddc35ff82b781e224230bea1"
+    },
+    "readme": {
+      "path": "README.md",
+      "url": "https://github.com/d3/d3/blob/main/README.md",
+      "sha": "cf409a546f5af0b535d2413069ba4bb5ee238592"
+    }
+  },
+  {
+    "repo": "russellsamora/scrollama",
+    "license": {
+      "path": "LICENSE",
+      "url": "https://github.com/russellsamora/scrollama/blob/main/LICENSE",
+      "sha": "91fba417bc98e2dd011018374b3767c51ad2b023"
+    },
+    "readme": {
+      "path": "README.md",
+      "url": "https://github.com/russellsamora/scrollama/blob/main/README.md",
+      "sha": "fd1743296484b2b2a8a71e217529bcf47274a156"
+    }
+  },
+  {
+    "repo": "apache/echarts",
+    "license": {
+      "path": "LICENSE",
+      "url": "https://github.com/apache/echarts/blob/master/LICENSE",
+      "sha": "c633765305b658c2b42837d2b72071d73c0379c5"
+    },
+    "readme": {
+      "path": "README.md",
+      "url": "https://github.com/apache/echarts/blob/master/README.md",
+      "sha": "35164a15e30832259d8a0728adccfca7252d3f92"
+    }
+  },
+  {
+    "repo": "vega/vega-lite",
+    "license": {
+      "path": "LICENSE",
+      "url": "https://github.com/vega/vega-lite/blob/main/LICENSE",
+      "sha": "850162439caa666a0761260bc6b7ecbc25a6dbf3"
+    },
+    "readme": {
+      "path": "README.md",
+      "url": "https://github.com/vega/vega-lite/blob/main/README.md",
+      "sha": "71db9bab05b2a8ebbccf84da2d7085453d5f62bf"
+    }
+  }
+]

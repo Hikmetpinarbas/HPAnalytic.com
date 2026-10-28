@@ -1,82 +1,55 @@
 {
   "blocks": [
     {
-      "title": "Giriş",
+      "title": "Laboratuvardan çıkmak",
       "paragraphs": [
-        "Amsterdam&#x27;da Ajax&#x27;ın De Toekomst tesislerinde bir futbol sahasının içine yerleştirilmiş biyomekanik laboratuvarı vardı. Üç boyutlu hareket kameraları, kuvvet platformları, yüksek hızlı görüntüleme ve kas etkinliğini ölçen sistemler: Bir spor bilimci için son derece güçlü bir altyapı. Fakat Vosse de Boode&#x27;un karşılaştığı temel sorun cihazların yetersizliği değildi. Bu cihazlarla <strong>futbola hangi soruların sorulacağını</strong> bulmak gerekiyordu.",
-        "2011&#x27;de Ajax&#x27;a gelen de Boode&#x27;a başlangıçta altı aylık bir çalışma önerildi. Önce örnek uygulamalar hazırladı. Sonra laboratuvardan çıkıp antrenman sahasına yöneldi; antrenörleri ve futbolcuları izlemeye başladı. Daha sonra bu deneyimini anlatırken, başlangıçta gereğinden karmaşık bir noktadan yola çıktıklarını kabul edecekti. Soruyu tersine çevirmişti: Bilimin neler ölçebildiğinden önce, futbolun hangi bilgiye ihtiyaç duyduğunu anlamak.",
-        "Bu küçük yön değişikliği, onun meslek hayatındaki büyük fikri özetliyor. Veri, yalnızca toplandığı veya analiz edildiği için değerli değildir. Bir futbolcunun, antrenörün ya da sağlık çalışanının vereceği kararı daha iyi hale getirebildiğinde işe yarar."
+        "Ajax’ın De Toekomst tesislerinde güçlü bir biyomekanik laboratuvarı vardı: hareket kameraları, kuvvet platformları, yüksek hızlı görüntüleme. Vosse de Boode’un önündeki mesele daha fazla ölçüm yapmak değildi. Futbolun hangi sorusunu ölçmeye değer bulacaktı?",
+        "2011’de Ajax’a geldiğinde başlangıçta altı aylık bir çalışma önerildi. Örnek uygulamalar hazırladı; sonra laboratuvardan çıkıp antrenörleri ve oyuncuları izlemeye başladı. Kendi anlatımında belirleyici değişim buydu: Bilimin ne yapabildiğinden önce, sahanın neye ihtiyaç duyduğunu anlamak. <a href=\"#source-1\" class=\"portrait-ref\">[1]</a>",
+        "Onun meslek hayatını bir cihaz, bir model ya da tek bir buluşla özetlemek zor. Daha kalıcı fikir, araştırmanın yönüyle ilgili: Veri, ancak bir insanın kararını değiştirebildiğinde futbola geri döner."
       ]
     },
     {
-      "title": "Sahaya gelmeden önce",
+      "title": "Hazır cevaplarla gelmeyen bilim insanı",
       "paragraphs": [
-        "De Boode&#x27;un futbola uzanan yolu, klasik bir futbol kariyeri değildi. Fizyoterapi eğitiminin ardından insan hareket bilimleri, biyomekanik ve fizyoloji üzerine çalıştı. Michigan State University&#x27;deki McPhail Equine Performance Center&#x27;da at hareketlerinin biyomekaniğiyle ilgilendi. Tenis, beyzbol ve ragbi gibi başka sporlarla da ilişkili bir çalışma geçmişi vardı.",
-        "Bu farklı disiplinleri, futbol hakkında önceden edinilmiş hazır cevaplardan çok bir araştırma yaklaşımı birleştiriyordu: Bir hareketin sonucunu kaydetmek başka, o sonucu doğuran kuvvetleri, zamanlamayı ve koordinasyonu anlamak başkaydı.",
-        "Ekim 2011&#x27;de Ajax&#x27;a spor bilimci olarak katıldı. Beş yıl sonra spor bilimi ve analitik çalışmalarının liderliğine, 2023&#x27;te futbol analitiği yöneticiliğine geçti. Ajax&#x27;taki yaklaşık on üç buçuk yıllık deneyimi boyunca genç oyunculardan profesyonel takıma uzanan farklı karar alanlarında çalıştı.",
-        "Çocukluğuna, aile hayatına veya ilk mesleki tercihinin iç dünyasına ilişkin kamuya açık bilgiler bu kadar sağlam değil. Bu nedenle onun hikâyesine doğrulanmamış bir çocukluk sahnesi ya da sonradan yakıştırılmış bir mücadele anlatısı eklemek, portreyi zenginleştirmek değil, güvenilirliğini zedelemek olur."
+        "Fizyoterapi ve insan hareket bilimlerinden gelen de Boode, futbolun dışında da çalışmıştı. Michigan State University’de at hareketlerinin biyomekaniğiyle ilgilendi; tenis, beyzbol ve ragbiyle ilişkili deneyimler edindi. Sporlar değişiyordu, hareketi oluşturan mekanizmayı arama alışkanlığı kalıyordu. <a href=\"#source-1\" class=\"portrait-ref\">[1, 7]</a>",
+        "Ekim 2011’de katıldığı Ajax’ta 2016’da spor bilimi ve analitik çalışmalarının liderliğine, 2023’te futbol analitiği yöneticiliğine geçti. Bu yolculuğun zorluğu yalnız daha iyi ölçmek değildi: Bilginin antrenörün çalışma gününe nereden gireceğini bulmak gerekiyordu. <a href=\"#source-5\" class=\"portrait-ref\">[5–7]</a>"
       ]
     },
     {
-      "title": "Bir testle geleceği görmek",
+      "title": "Tek testin çözemediği futbol",
       "paragraphs": [
-        "2025&#x27;te NRC&#x27;ye verdiği röportajın gazetenin kamuya açık tanıtımında de Boode, futbolun kendisinden beklediği ilk büyük sorulardan birini hatırlatıyordu: Hangi genç oyuncunun A takıma çıkacağını gösterecek tek bir test bulunamaz mıydı?",
-        "Böyle bir testin olmadığını söylüyordu. Çeşitli işaretler daha iyi karar alınmasına yardımcı olabilirdi; fakat bir oyuncunun geleceğini belirleyen tek ve kesin bir gösterge yoktu. Futbolcu gelişimi, birçok etkenin zaman içinde birbirini etkilediği bir süreçti. Onun yaklaşımında analiz, belirsizliği ortadan kaldırmıyor; belirsizlik altında daha iyi düşünmeye yardımcı oluyordu.",
-        "Aynı röportaj tanıtımında daha somut bir örnek veriyordu. Analitik sistem, bir futbolcunun antrenman yükünü veya dinlenme aralarını ayrıntılı biçimde hesaplayabilir. Ancak sahada 11&#x27;e 11 oynatmak için 22 futbolcu gerekir. Sol bekin bireysel optimumuna göre antrenmandan iki dakika önce ayrılması, takımın kolektif organizasyonuyla çelişebilir.",
-        "Futbolun laboratuvardan farkı buydu: <strong>En iyi bireysel cevap, her zaman uygulanabilir takım kararı değildir.</strong> De Boode&#x27;un çalıştığı problem, yalnızca doğru ölçümü bulmak değil, o ölçümün kullanım bağlamını anlamaktı."
+        "NRC röportajının kamuya açık tanıtımında hatırlattığı beklenti, futbolun bilime sorduğu büyük soruydu: Hangi genç oyuncunun A takıma çıkacağını söyleyecek tek bir test bulunamaz mıydı? De Boode’un cevabı böyle bir kesinliği vaat etmiyordu. <a href=\"#source-3\" class=\"portrait-ref\">[3, 4]</a>",
+        "Bireysel olarak hesaplanan en iyi çözüm de takımın içinde değişebilir. Bir oyuncunun dinlenme aralığını kusursuz hesaplasanız bile, 11’e 11 antrenman için sahada 22 kişi gerekir. Analiz burada belirsizliği ortadan kaldıran bir otorite değil; birbiriyle çatışan ihtiyaçları daha iyi tartmanın aracıdır."
       ]
     },
     {
-      "title": "Kurtarışın görünmeyen yarısı",
+      "title": "Kurtarış, elden önce başlıyor",
       "paragraphs": [
-        "De Boode&#x27;un ortak yazarı olduğu kaleci araştırmaları, bu yaklaşımın bilimsel karşılığını gösterir. Bir kalecinin sağa uzanmasını düşünelim. Televizyon görüntüsünde gözümüz genellikle topa uzanan kola ve bedenin uçuşuna gider. Oysa hareketi başlatan kuvvetin önemli bir bölümü, sıçrama yönünün karşısındaki bacaktan gelir.",
-        "On elit kaleciyle yürütülen 2019 araştırması, farklı yüksekliklerdeki kurtarışlarda bu karşı bacağın hareketin hızını oluşturmadaki rolünü inceledi. Yedi kaleciyi ele alan sonraki eklem kinetiği çalışması, kalça, diz ve ayak bileğinde üretilen güç ve momentlerin sıçrama sırasında nasıl devreye girdiğini araştırdı. İki çalışma da refleksi tek başına açıklayıcı bir sözcük olmaktan çıkarıp, hareketin mekanik bileşenlerine bakmayı mümkün kıldı.",
-        "Daha sonra 11 kaleci üzerinde yürütülen 12 haftalık bir antrenman müdahalesinde yatay kütle merkezi hızında ortalama <strong>0,82 m/s</strong>, karşı bacağın güç üretiminde <strong>523 watt</strong> artış raporlandı. Araştırmacılar bu gelişimi belirli bir penaltı senaryosuna uyarlayarak tek yönde yaklaşık 21 santimetre, iki tarafın toplam kapsamasında yaklaşık <strong>42 santimetre</strong> ek erişime karşılık gelen bir hesaplama yaptı.",
-        "Bu sayı etkileyici. Ama <strong>gerçek maçlarda 42 santimetre daha fazla topa yetişildiği ölçülmedi</strong>. Sonuç, kontrollü koşullardan türetilmiş bir erişim tahminiydi. De Boode&#x27;un katkısını değerlendirirken önemli olan abartılı bir başarı vaadi değil, kurtarışın hangi bileşenlerinin antrenmanla değiştirilebileceğine ilişkin test edilebilir bir mekanizma sunulması.",
-        "Bilimin kendi cevabını sorgulaması da bu hikâyenin parçası. 2019&#x27;daki başlangıç duruşu araştırması, incelenen on elit kalecide daha geniş bir hazırlık pozisyonunun dalış süresi açısından avantaj sağlayabildiğini göstermişti. Ancak 2024&#x27;te beş kadın kaleciyle yapılan konferans çalışmasında, geniş duruşun dalış süresini iyileştirdiğine dair anlamlı bir sonuç bulunmadı. Örneklemler küçük ve koşullar farklıydı; birini diğerinin kesin çürütülmesi gibi sunmak yanlış olur. İkisi birlikte, teknik önerinin her oyuncuda yeniden sınanması gerektiğini hatırlatır."
+        "Bir kaleci sağa uzandığında gözümüz topa yaklaşan ele gider. De Boode’un ortak yazarı olduğu araştırmalar başka bir yere, sıçrama yönünün karşısındaki bacağa bakıyor. Hareketin görünen sonunu değil, onu üreten itişi anlamaya çalışıyorlar.",
+        "11 kaleciyle yapılan 12 haftalık müdahalede yatay kütle merkezi hızında ortalama <strong>0,82 m/s</strong>, karşı bacağın güç üretiminde <strong>523 watt</strong> artış raporlandı. Bu sonuçlar, antrenmanda üzerinde çalışılabilecek bir mekanizmayı görünür kılıyor. <a href=\"#source-8\" class=\"portrait-ref\">[8–11]</a>",
+        "Çalışmada hesaplanan toplam 42 santimetrelik ek kapsama ise gerçek maçta ölçülmüş bir kurtarış mesafesi değil, belirli bir penaltı senaryosunun model sonucuydu. Değerli olan “daha çok top kurtarır” vaadi değil; hangi hareket bileşeninin, hangi koşullarda değişebildiğini sınayabilmek."
       ]
     },
     {
-      "title": "Gözün yönü, ayağın vuruşu",
+      "title": "Vuruştan önce aranan bilgi",
       "paragraphs": [
-        "De Boode&#x27;un ortak yazarı olduğu başka bir araştırma, serbest vuruş kullanan genç futbolcuların <strong>nereye ve ne kadar süre baktığını</strong> ölçtü. 14 oyuncunun toplam 220 denemesindeki göz izleme kayıtlarında başarılı vuruşlardan önce hedefe yönelen bakışın ortalaması 886 milisaniye, başarısız denemelerde ise 488 milisaniyeydi. Topa yönelik bakış süresinde de farklılıklar görüldü.",
-        "Buradaki futbol sorusu basittir: Şutun kalitesi yalnızca ayağın topa temas ettiği ana mı bağlıdır, yoksa vuruşu hazırlayan görsel davranışın da payı var mıdır?",
-        "Deneyin sınırı ise en az bulgusu kadar önemlidir. Beş maketli baraj kullanılan kontrollü düzende <strong>kaleci yoktu</strong>. Sonuçlar, gerçek maçta rakibin hareketi, baskı, yorgunluk veya skor koşulları altında aynı etkinin ortaya çıkacağını ispatlamaz. Üstelik bakış süresiyle başarılı vuruş arasındaki ilişki, tek başına belirli bir bakış süresinin başarıya neden olduğunu göstermez.",
-        "Bu tür çalışmaların değeri reçete vermekten önce yeni bir antrenman sorusu açmalarındadır: Oyuncunun gözleri, kararın hangi aşamasında hangi bilgiyi arıyor?"
+        "Başka bir ortak çalışma, serbest vuruşta gözün ne yaptığını soruyordu. 14 oyuncunun 220 denemesinde hedefe sabit bakış süresi, isabetli vuruşlardan önce ortalama 886 milisaniye; isabetsizlerden önce 488 milisaniyeydi. <a href=\"#source-12\" class=\"portrait-ref\">[12]</a>",
+        "Bu fark bir antrenman reçetesi değil, yeni bir soru açıyor: Oyuncu, ayağı topa değmeden önce hangi bilgiyi arıyor? Deneyde beş maketli baraj vardı, kaleci yoktu. Grup ortalamalarındaki ilişkiyi gerçek maçta başarı garantisine çevirmek mümkün değil."
       ]
     },
     {
-      "title": "Sakatlığı tahmin etmek, kaderi yazmak değil",
+      "title": "Oyuncu, kendi bilgisinin kullanıcısı",
       "paragraphs": [
-        "De Boode&#x27;un içinde bulunduğu araştırma çizgisi sakatlık riski alanına da uzandı. Ayak bileği üzerine 2018 tarihli, takip verisi içeren çalışmada 190 erkek futbolcudan elde edilen verilerle ilk lateral ayak bileği burkulmasıyla ilişkili risk göstergeleri incelendi; ilk burkulma yaşayan oyuncu sayısı 45&#x27;ti.",
-        "Böyle bir araştırma, bütün sakatlıkları önceden bildiren bir alarm sistemi değildir. Belirli bir popülasyonda belirli ölçümlerin riskle ilişkisini gösterir. Bireysel sakatlık tahmini, oyuncunun geçmişi, maruziyeti ve sağlık değerlendirmesi olmadan yapılamaz.",
-        "Kaleci hareketi, serbest vuruşta bakış ve ayak bileği sakatlığı birbirinden uzak başlıklar gibi görünebilir. Ortak yanları şudur: Performansı ortaya çıkaran süreçleri açığa çıkarmaya çalışırlar. Fakat bu bulguları tek başına de Boode&#x27;un keşfi olarak yazmak da doğru değildir. Söz konusu çalışmalar, birlikte çalışan araştırmacıların ortak ürünleridir."
+        "Ajax’ın Player Portal uygulamasını 2023’te anlatırken, oyuncuların telefonlarından hazır oluş anketlerini, maç verilerini ve video kesitlerini görebildiğini söylüyordu. Futbolcu artık yalnız hakkında rapor yazılan kişi değil; kendi performans bilgisinin doğrudan kullanıcısıydı. <a href=\"#source-2\" class=\"portrait-ref\">[2]</a>",
+        "De Boode, oyuncunun verisine erişebilmesini ve kimlerle paylaşılacağı konusunda söz sahibi olmasını da savunuyordu. Bu, yürürlükteki bütün hukuk sistemlerini tarif eden bir kural değil, onun dile getirdiği yönetişim ilkesi. Laboratuvarda insandan çıkan ölçümün yeniden insana dönmesi, araştırma anlayışının kurumsal karşılığıydı.",
+        "Bu portrede kadın bir araştırmacının ağırlığı, temsili bir başarı öyküsünden değil, yaptığı işin ayrıntılarından geliyor. Erkek oyuncularla yürütülen küçük örneklemli çalışmaların bütün futbolcular adına konuşmasına da izin vermemek gerekiyor. 2024’te beş kadın kaleciyle yapılan konferans çalışmasının farklı sonucu, bu soruyu açık tutuyor. <a href=\"#source-14\" class=\"portrait-ref\">[14]</a>"
       ]
     },
     {
-      "title": "Oyuncu kendi verisine baktığında",
+      "title": "Saha değişir, soru kalır",
       "paragraphs": [
-        "Ajax&#x27;taki çalışmaların en doğrudan kurumsal karşılıklarından biri <strong>Player Portal</strong> oldu. De Boode&#x27;un 2023&#x27;te anlattığı sisteme göre oyuncular telefonlarından kendi hazır oluş anketlerini, maç verilerini ve video kesitlerini görebiliyordu.",
-        "Bu, teknik bir uygulamadan fazlasıydı. Geleneksel modelde veri çoğunlukla kulüp içinde toplanır, analist tarafından işlenir ve oyuncuya seçilmiş parçaları aktarılır. Player Portal&#x27;da futbolcu yalnızca hakkında rapor yazılan kişi değil, kendi performans bilgisini doğrudan inceleyebilen bir kullanıcı haline geliyordu.",
-        "De Boode&#x27;un daha ileri giden görüşü ise verinin sahipliğine ilişkindi. Oyuncunun kendisiyle ilgili verilere erişebilmesini, bunların kimlerle paylaşılacağı üzerinde söz sahibi olmasını savunuyordu. Bunu yerleşmiş ve tartışmasız bir hukuki kural olarak değil, onun dile getirdiği etik ve yönetişim ilkesi olarak okumak gerekir. Spor verilerinde erişim, saklama, üçüncü taraf kullanımı ve mahremiyet meseleleri hâlâ tartışmalıdır.",
-        "Burada araştırmacının iki dünyası birleşir: Hareket laboratuvarında insan bedeninden ölçüm üretmek; kulüp içinde o ölçümü yine insana geri vermek. Futbolcunun kendi verisini anlayabilmesi, araştırmanın sahaya taşınmasının başka bir biçimidir."
-      ]
-    },
-    {
-      "title": "Ajax'tan çıkarken",
-      "paragraphs": [
-        "Matematikçi David Sumpter, Ajax&#x27;ta gördüğü araştırma ortamını anlatırken temel sorulara dönme cesaretini ve de Boode&#x27;un yönettiği ekibin çalışmalarını öne çıkarmıştı. Serbest vuruş, penaltı, hareket ve antrenman davranışlarını inceleyen bu grubun farkı, hazır bir metriği kullanmaktan önce oyunun ne olduğunu anlamaya çalışmasıydı.",
-        "AusCycling, 3 Nisan 2025 tarihli resmî duyurusunda de Boode’u yeni oluşturulan <strong>Veri ve İçgörü Direktörü</strong> görevine getirdiğini açıkladı. Training Ground Guru’nun 13 Mayıs 2025 tarihli haberi, yaklaşık on üç buçuk yıllık Ajax döneminin ardından bu kurum değişikliğini aktardı. Kurumun açıklaması, rolün farklı performans disiplinlerinden gelen bilgileri birleştirmeyi amaçladığını belirtiyordu. De Boode ise kendi açıklamasında yeni görevini Los Angeles 2028 Olimpiyat döngüsüyle ilişkilendirdi. Bu geçişin arkasına doğrulanmamış bir Ajax çatışması veya kişisel kırılma hikâyesi yerleştirmek için kanıt yok.",
-        "Futboldan bisiklete geçiş ilk bakışta bir kopuş gibi görünebilir. Oysa araştırma sorusu tanıdıktır: Çok sayıda ölçümün bulunduğu bir spor ortamında, hangi bilgi kimin kararını nasıl iyileştirecek? Bisiklette güç üretimini watt cinsinden ölçmek görece kolay olabilir; fakat doğru veriyi doğru kişinin, doğru zamanda kullanması yine ayrı bir iştir."
-      ]
-    },
-    {
-      "title": "Geride kalan asıl fikir",
-      "paragraphs": [
-        "Vosse de Boode&#x27;un futbol üzerindeki etkisini bir gol, bir kupa veya tek bir algoritma üzerinden ölçemeyiz. Ajax&#x27;ın elde ettiği bütün başarıları ona veya bilimsel ekibine atfetmek de yanlış olur. Kamuya açık kaynaklar, araştırma altyapısının kurulmasına, spor bilimi çalışmalarına ve verinin oyuncularla paylaşılmasına yaptığı katkıları gösteriyor; bu katkıların kulüp sonuçlarına nedensel etkisini tek başına ölçmüyor.",
-        "Onun mesleki hikâyesini güçlü yapan başka bir şey var. Laboratuvarın teknik imkânlarından etkilenmekle yetinmedi. Sahaya çıktı, antrenörün sorusunu dinledi, basitleştirdi, ölçtü ve bulguyu yeniden futbolun gündelik gerçekliğine taşıdı. Bazen bir kalecinin karşı bacağındaki kuvvete baktı. Bazen serbest vuruş öncesindeki birkaç yüz milisaniyeye. Bazen oyuncunun kendi telefonundan hangi veriye eriştiğine.",
-        "Bütün bunlar aynı düşüncenin farklı yüzleri: <strong>İyi futbol analitiği, insanı verinin arkasında kaybetmeyen analitiktir.</strong>",
-        "Ve belki de onun futbola bıraktığı en kalıcı soru, herhangi bir metriğin formülünden daha değerlidir: <em>Bunu ölçebiliyoruz; peki futbolun gerçekten işine yarıyor mu?</em>"
+        "AusCycling, 3 Nisan 2025’te de Boode’u yeni Veri ve İçgörü Direktörü olarak duyurdu. Yaklaşık on üç buçuk yıllık Ajax döneminin ardından, araştırma sorusu başka bir spor ortamına taşındı: Farklı disiplinlerde toplanan bilgiyi ortak bir performans kararına nasıl dönüştürürüz? <a href=\"#source-5\" class=\"portrait-ref\">[5, 6]</a>",
+        "Futbolda da bisiklette de daha fazla veri toplanabilir. Daha zor olan, hangi bilginin kimin işine yarayacağını bulmak. De Boode’un hikâyesini ilginç kılan, laboratuvarın büyüklüğünden çok, kapısının hangi yöne açıldığı."
       ]
     }
   ],
@@ -138,5 +111,5 @@
       "url": "https://commons.nmu.edu/isbs/vol42/iss1/123/"
     }
   ],
-  "preface": "Ajax'ın araştırma laboratuvarına girip antrenman sahasına çıkan, kalecilerin hareketini ölçerken futbolcuların kendi verileri üzerindeki söz hakkını da savunan bir bilim insanının hikâyesi."
+  "preface": ""
 }

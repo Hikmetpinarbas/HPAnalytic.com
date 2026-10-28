@@ -23,5 +23,5 @@ test('unlicensed Vosse photographs are not shipped',()=>{
 test('only approved editorial pages become indexable and discoverable',()=>{
  for(const file of ['src/pages/mac/galatasaray-fenerbahce-2026-10-26-mac-sonu.astro','src/pages/portraits/vosse-de-boode.astro'])assert.doesNotMatch(read(file),/noindex=\{true\}/);
  const map=read('src/pages/sitemap-0.xml.ts');for(const route of scope.allowedPages)assert.ok(map.includes(route.replace(/\/$/,'')));
- const body=JSON.parse(read('src/components/vosse/article.json'));assert.equal(body.blocks.flatMap(b=>b.paragraphs).length,34);assert.ok(body.blocks.flatMap(b=>b.paragraphs).some(p=>p.includes('3 Nisan 2025')&&p.includes('13 Mayıs 2025')));
+ const body=JSON.parse(read('src/components/vosse/article.json'));assert.equal(body.sources.length,14);assert.deepEqual(body.sources,JSON.parse(read('docs/editorial-p0-20261028/vosse-before.json')).sources);assert.ok(body.blocks.flatMap(b=>b.paragraphs).some(p=>p.includes('3 Nisan 2025')));assert.ok(read('src/pages/portraits/vosse-de-boode.astro').includes('13 Mayıs 2025'));
 });
