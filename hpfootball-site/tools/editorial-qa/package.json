@@ -1,0 +1,13 @@
+{
+  "name": "hpanalytic-editorial-qa-tools",
+  "version": "1.0.0",
+  "private": true,
+  "dependencies": {
+    "playwright": "1.56.1",
+    "axe-core": "4.10.3",
+    "lighthouse": "13.6.0"
+  },
+  "overrides": {
+    "@sentry/node": "11.9.0"
+  }
+}

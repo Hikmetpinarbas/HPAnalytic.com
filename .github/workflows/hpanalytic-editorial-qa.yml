@@ -36,7 +36,9 @@ jobs:
         run: npm run build
       - name: Install isolated browser and measurement tools
         run: |
-          npm install --prefix "$RUNNER_TEMP/hpa-editorial-tools" --no-save --no-package-lock playwright@1.56.1 axe-core@4.10.3 lighthouse@13.6.0
+          mkdir -p "$RUNNER_TEMP/hpa-editorial-tools"
+          cp tools/editorial-qa/package.json tools/editorial-qa/package-lock.json "$RUNNER_TEMP/hpa-editorial-tools/"
+          npm ci --prefix "$RUNNER_TEMP/hpa-editorial-tools" --ignore-scripts --no-audit --no-fund
           ln -s "$RUNNER_TEMP/hpa-editorial-tools/node_modules/playwright" node_modules/playwright
           ln -s "$RUNNER_TEMP/hpa-editorial-tools/node_modules/playwright-core" node_modules/playwright-core
           "$RUNNER_TEMP/hpa-editorial-tools/node_modules/.bin/playwright" install --with-deps chromium
