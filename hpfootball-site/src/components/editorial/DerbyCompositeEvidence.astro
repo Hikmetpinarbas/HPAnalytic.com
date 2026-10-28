@@ -1,0 +1,27 @@
+---
+import derby from '../../data/preserved-derby-data.json';
+import {createDerbyMetrics} from '../../lib/derby-composite-metrics.mjs';
+const m=createDerbyMetrics(derby.team);
+const percent=(x:number|null)=>x===null?'—':new Intl.NumberFormat('tr-TR',{style:'percent',maximumFractionDigits:1}).format(x);
+const axes=[{id:'halfToFinalThird',name:'Son üçte bire erişim',denominator:'Rakip yarı sahaya giriş başına son üçte bir girişi'},
+{id:'highRecoveryShare',name:'İleri alan kazanım payı',denominator:'Toplam top kazanımı içinde rakip yarı saha payı'},
+{id:'boxActionShare',name:'Ceza sahası aksiyon payı',denominator:'Tüm takım aksiyonları içinde rakip ceza sahası payı'}] as const;
+---
+<figure class="derby-composite" aria-labelledby="composite-title">
+<figcaption><span class="derby-composite__eyebrow">SPORTSBASE / OYUNUN MEKANİK PROFİLİ</span><h3 id="composite-title">Skoru değil, sahaya erişim zincirini okuyun.</h3><p>Üç bağımsız takım toplamından hesaplanan oranların geometrik ortalaması. Olaylar arasında doğrudan nedensel geçiş veya sekans dönüşüm olasılığı göstermez.</p></figcaption>
+<div class="derby-composite__axes">{axes.map(axis=><div class="derby-composite__axis"><div class="derby-composite__label"><strong>{axis.name}</strong><small>{axis.denominator}</small></div><div class="derby-composite__compare"><div><span>GS</span><meter min="0" max="1" value={m.GS[axis.id]??0}></meter><b>{percent(m.GS[axis.id])}</b></div><div><span>FB</span><meter min="0" max="1" value={m.FB[axis.id]??0}></meter><b>{percent(m.FB[axis.id])}</b></div></div></div>)}</div>
+<div class="derby-composite__index"><span>Geometrik profil endeksi</span><strong>GS {percent(m.GS.composite)} <em>/</em> FB {percent(m.FB.composite)}</strong></div>
+<details><summary>Hesap yöntemi ve sınırlılıklar</summary><p>A = son üçte bir girişleri / rakip yarı sahaya girişler; B = rakip yarı sahada kazanımlar / tüm kazanımlar; C = rakip ceza sahası aksiyonları / tüm aksiyonlar. Endeks = (A × B × C)^(1/3). Oranlar farklı olay kümelerine dayanır; bunlar gerçek pas zincirini veya gol olasılığını hesaplamaz. Sıfır paydada endeks üretilmez. Kaynak: SportsBase maç takım XLSX katmanı, 26 Ekim 2026; <a href="#source-notes">yöntem ve kaynak</a>.</p></details>
+</figure>
+<style>
+.derby-composite{margin:clamp(24px,5vw,64px) 0;padding:clamp(18px,3vw,36px);background:#13171a;border-top:1px solid #c9a56b;border-bottom:1px solid #42484a;color:#eee9df}
+.derby-composite__eyebrow{font:600 11px/1.5 system-ui;letter-spacing:.15em;color:#d6b37a}
+.derby-composite h3{font:400 clamp(28px,4vw,44px)/1.12 Georgia,serif;margin:12px 0}
+.derby-composite figcaption>p{max-width:60ch;font:400 15px/1.65 system-ui;color:#bdc2c5}
+.derby-composite__axis{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.6fr);gap:20px;padding:20px 0;border-bottom:1px solid #3d4449}
+.derby-composite__label strong{display:block;font:600 15px/1.5 system-ui}.derby-composite__label small{display:block;color:#abb2b8;font:400 12px/1.6 system-ui}
+.derby-composite__compare{display:grid;gap:9px}.derby-composite__compare>div{display:grid;grid-template-columns:24px 1fr 60px;align-items:center;gap:10px;font:600 12px system-ui}.derby-composite__compare meter{display:block;width:100%;height:11px;accent-color:#c5a06b}.derby-composite__compare b{text-align:right;font-variant-numeric:tabular-nums}
+.derby-composite__index{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;padding-top:20px}.derby-composite__index span{font:500 12px system-ui;color:#bdc2c5}.derby-composite__index strong{font:400 clamp(24px,3vw,36px) Georgia,serif}.derby-composite__index em{color:#8e989d;font-style:normal}
+.derby-composite details{margin-top:16px;font:400 12px/1.65 system-ui;color:#b9c0c5}.derby-composite summary{cursor:pointer;min-height:44px;align-content:center}.derby-composite a{color:#d6b37a}
+@media(max-width:620px){.derby-composite__axis{grid-template-columns:1fr;gap:10px}.derby-composite__index{display:grid}.derby-composite__compare>div{grid-template-columns:20px 1fr 58px}}
+</style>
