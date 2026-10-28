@@ -6,7 +6,7 @@ import article from '../../components/vosse/article.json';
 import '../../styles/portrait-p0.css';
 export const prerender=true;
 const wordCount=article.blocks.flatMap(b=>b.paragraphs).join(' ').split(/\s+/).length;
-const photoReview=import.meta.env.DEV && process.env.HPA_PHOTO_REVIEW==='1';
+const photoReview=import.meta.env.DEV && import.meta.env.HPA_PHOTO_REVIEW==='1';
 ---
 <BaseLayout systemFonts title="Vosse de Boode — Laboratuvarın kapısı sahaya açılır | HPAnalytic" description="Ajax’tan AusCycling’e: Vosse de Boode’un hareketi anlamak, doğru soruyu sormak ve bilgiyi oyuncuya geri vermek üzerine bilimsel portresi." ogType="article" image="/editorial/20261028/vosse-portrait-p0.png" imageAlt="Vosse de Boode — HPAnalytic bilimsel portre">
 <script slot="head" type="application/ld+json" set:html={serializeJsonLd({'@context':'https://schema.org','@type':'Article',headline:'Vosse de Boode — Laboratuvarın kapısı sahaya açılır',datePublished:'2026-10-28',dateModified:'2026-10-28',inLanguage:'tr',author:{'@type':'Person',name:'Hikmet Pınarbaş'},publisher:{'@type':'Organization',name:'HPAnalytic'},image:'https://www.hpanalytic.com/editorial/20261028/vosse-portrait-p0.png',mainEntityOfPage:'https://www.hpanalytic.com/portraits/vosse-de-boode/'})}/>
