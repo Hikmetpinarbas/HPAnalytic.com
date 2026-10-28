@@ -1,7 +1,7 @@
 name: HPAnalytic two-article editorial QA
 on:
   push:
-    branches: [codex/editorial-p0-20261028]
+    branches: [codex/editorial-p0-20261028, codex/editorial-motion-v2-20261028]
 permissions:
   contents: read
 concurrency:
@@ -28,7 +28,7 @@ jobs:
       - run: npm run check
       - name: Build the exact previously deployed baseline
         run: |
-          git worktree add --detach "$RUNNER_TEMP/hpa-editorial-before" 4900f6e0f1be89265e97c6fb4b8c9691282c9fc1
+          git worktree add --detach "$RUNNER_TEMP/hpa-editorial-before" e79bee5665c7e6a4ed1183e2a808c9b46342015c
           ln -s "$GITHUB_WORKSPACE/hpfootball-site/node_modules" "$RUNNER_TEMP/hpa-editorial-before/hpfootball-site/node_modules"
           cd "$RUNNER_TEMP/hpa-editorial-before/hpfootball-site"
           npm run build

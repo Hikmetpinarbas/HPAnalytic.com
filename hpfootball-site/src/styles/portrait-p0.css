@@ -20,3 +20,7 @@
 @media(prefers-reduced-motion:reduce){.portrait-editorial *{scroll-behavior:auto!important;animation:none!important;transition:none!important}}
 .portrait-ref{font:400 12px/1.6 Arial,sans-serif;color:var(--portrait-gold);text-decoration:none;white-space:nowrap;vertical-align:super}
 .portrait-study-controls button{position:relative;isolation:isolate;background:transparent;border:0}.portrait-study-controls button::before{content:'';position:absolute;inset:7px 0;border:1px solid var(--portrait-line);background:#161a20;z-index:-1}.portrait-study-controls button[aria-pressed=true]::before{border-color:var(--portrait-gold);background:#242520}
+
+.portrait-cover-aside:has(.portrait-photo){display:block;padding:0;align-self:start}.portrait-photo{margin:0;width:100%}.portrait-photo img{display:block;width:100%;height:auto;aspect-ratio:4/5;object-fit:cover;object-position:right center}.portrait-photo figcaption{font:400 11px/1.7 Arial,sans-serif;color:#b9c0c9;margin-top:12px}.portrait-photo a{color:#e7bc70;text-underline-offset:3px}.portrait-cover-grid:has(.portrait-photo){grid-template-columns:1fr 1fr;gap:clamp(32px,6vw,96px)}@media(max-width:760px){.portrait-cover-grid:has(.portrait-photo){grid-template-columns:1fr}.portrait-cover-aside:has(.portrait-photo){order:-1;border:0;margin:0 0 24px}.portrait-photo img{max-height:480px}}
+
+@media(max-width:760px){.portrait-cover-grid:has(.portrait-photo) .portrait-kicker{display:none}.portrait-cover-grid:has(.portrait-photo) h1{font-size:58px}}

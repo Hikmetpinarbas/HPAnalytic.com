@@ -1,0 +1,14 @@
+{
+  "modelSource": "https://karun.in/blog/data/open_xt_12x8_v1.json",
+  "modelSha256": "5d8e9aaa1da23bbb39a6c6ffdd5b96d175e01c800064c5a1cc19e228c9875a7f",
+  "rows": 8,
+  "columns": 12,
+  "use": "Published numerical model parameters; model surface is not this match total. No third-party software or chart copied.",
+  "flowCopiedFrom": "src/data/preserved-derby-data.json/flow",
+  "vectors": {
+    "GS": 398,
+    "FB": 229
+  },
+  "sourceDataModified": false,
+  "coordinateConvention": "Existing flow vectors already use own attacking direction and top-left screen coordinates; no second vertical inversion is applied."
+}
