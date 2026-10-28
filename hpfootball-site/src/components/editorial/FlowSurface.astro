@@ -1,0 +1,16 @@
+---
+import model from '../../data/flow-model-v2.json';
+import manifest from './flow-surface-assets.json';
+import '../../styles/editorial-motion-v2.css';
+---
+<figure class="flow-surface" id="threat-flow" data-flow-surface data-src={manifest.url}>
+<figcaption><p class="p0-eyebrow">xGRID / AKIŞ LABORATUVARI</p><h2>Topun yönü.<br/><em>Alanın değeri.</em></h2><p>Maçın olay akışını, ortak xT model yüzeyinin üzerinde incele.</p></figcaption>
+<div class="flow-toolbar"><div role="group" aria-label="Akış takımı seç"><button type="button" data-flow-team="GS" aria-pressed="true">Galatasaray</button><button type="button" data-flow-team="FB" aria-pressed="false">Fenerbahçe</button></div><button type="button" data-flow-play disabled aria-pressed="false" aria-label="Akış çizgilerini hareketlendir"><span aria-hidden="true" data-flow-icon>▶</span><span data-flow-label>Akışı oynat</span></button></div>
+<div class="flow-canvas-wrap"><canvas width="1050" height="680" tabindex="0" role="group" aria-roledescription="Etkileşimli xT sahası" aria-label="xT model hücreleri ve olaylardan türetilen akış. Ok tuşlarıyla hücre seçin." aria-describedby="flow-readout"></canvas><span class="flow-axis">Hücum yönü →</span></div>
+<div class="flow-legend"><span>Düşük xT</span><i aria-hidden="true"></i><span>Yüksek xT</span></div><p class="flow-readout" id="flow-readout" aria-live="polite">Bir hücreye dokun veya klavyedeki oklarla incele.</p>
+<p class="film-caption">xT: Karun Singh’in yayımlanmış 12×8 modeli. Akış: ardışık maç olaylarından türetilir; ölçülmüş pas rotası değildir. <a href="#method-flow">Yöntem ↗</a></p>
+<details class="flow-values"><summary>Model değerleri ve erişilebilir tablo</summary><div tabindex="0" role="region" aria-label="xT model yüzeyi tablosu"><table><caption>Genel model yüzeyi; bu maç için hesaplanmış takım xT toplamı değildir.</caption><thead><tr><th scope="col">Hücre</th><th scope="col">xT</th></tr></thead><tbody data-flow-values>{model.flatMap((row,j)=>row.map((value,i)=><tr><th scope="row">{i+1}. sütun / {j+1}. sıra</th><td>{value.toFixed(4)}</td></tr>))}</tbody></table></div></details>
+</figure>
+<script>
+import '../../lib/flow-surface';
+</script>

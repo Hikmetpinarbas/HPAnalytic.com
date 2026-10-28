@@ -1,29 +1,31 @@
 ---
+import model from '../../data/flow-model-v2.json';
 import data from '../../data/preserved-derby-data.json';
-const titles=['Son bağlantı: Barış Alper → bitiriş','Duran topun ardından ikinci bağlantı','Kazanımdan bitirişe: 13 saniye'];
-const descriptions=['Osimhen’in pası ile bitirişinin arasındaki asist kaydı.','Jakobs, Sánchez ve Osimhen’in farklı görevleri.','Kazanım, iki pas, taşıma, ceza sahasına pas ve asist.'];
-// The verified event taxonomy establishes a box pass, not the restart subtype.
-const eventLabel=(event:{lab:string},goal:number,step:number)=>goal===1&&step===0?'Ceza sahasına pas':event.lab;
+import '../../styles/editorial-motion-v2.css';
+const titles=['Son pasın açtığı kapı','İkinci bağlantı, aynı bitirici','Bir kazanımdan gole: 13 saniye'];
+const descriptions=['Osimhen → Barış Alper → Osimhen. Üç kayıt, son bağlantının anatomisi.','Jakobs’un ceza sahası pası, Sánchez’in asisti ve Osimhen’in bitirişi.','Archie Brown’un kazanımından İrfan Can Kahveci’nin bitirişine.'];
 const sequences=data.goal_seqs.map((g,i)=>({...g,seq:g.seq.slice(i===0?-3:i===1?-3:1)}));
+const point=(event:{x:number;y:number},team:string)=>({x:team==='FB'?105-event.x:event.x,y:team==='FB'?event.y:68-event.y});
+const label=(event:{lab:string},goal:number,step:number)=>goal===1&&step===0?'Ceza sahasına pas':event.lab;
 ---
-<div class="goal-anatomy">
-{sequences.map((g,i)=><section class="goal-sequence" data-goal-sequence aria-labelledby={'goal-mechanism-'+i}>
-<header><p class="p0-eyebrow">{i===0?'1–0':i===1?'2–0':'2–1'} / GOLÜN MEKANİK ANATOMİSİ</p><h3 id={'goal-mechanism-'+i}>{titles[i]}</h3><p>{descriptions[i]}</p></header>
-<div class="goal-sequence__scene"><svg viewBox="-4 -5 113 80" role="group" aria-label={(i+1)+'. gol: kayıtlı olay noktaları; çizilmiş pas yolu yok'}>
-<g class="sequence-pitch" fill="none" stroke="currentColor" stroke-width=".35"><path d="M0 0H105V68H0ZM52.5 0V68M0 13.84H16.5V54.16H0M105 13.84H88.5V54.16H105M0 24.84H5.5V43.16H0M105 24.84H99.5V43.16H105"/><circle cx="52.5" cy="34" r="9.15"/><circle cx="11" cy="34" r=".4"/><circle cx="94" cy="34" r=".4"/></g>
-{g.seq.map((event,j)=><g class="sequence-point" data-sequence-point={j} tabindex="0" role="button" aria-label={`${j+1}. ${event.player}: ${eventLabel(event,i,j)}`} aria-pressed={j===0?'true':'false'} transform={`translate(${event.x},${68-event.y})`}><circle r="4.8" fill="transparent"/><circle class="sequence-marker" r="2.7"/><text text-anchor="middle" dominant-baseline="central" font-size="2.8">{j+1}</text></g>)}
-<text x="0" y="75" fill="currentColor" font-size="2.7">{i===2?'← Fenerbahçe hücum yönü':'Galatasaray hücum yönü →'} · Noktalar olay yeridir; top yolu değildir.</text></svg>
-<ol class="sequence-actions">{g.seq.map((event,j)=><li><button type="button" data-sequence-select={j} aria-pressed={j===0?'true':'false'}><span class="sequence-number">{j+1}</span><span><b>{event.player}</b><small>{eventLabel(event,i,j)}</small></span><span class="sequence-time">{Math.round(event.t-g.seq[g.seq.length-1].t)===0?'Gol':Math.round(event.t-g.seq[g.seq.length-1].t)+' sn'}</span></button></li>)}</ol></div><div class="sequence-step-controls" role="group" aria-label={(i+1)+'. golün olayları'}><button type="button" data-sequence-prev aria-label="Önceki olay" disabled>←</button><span data-sequence-counter role="status">1 / {g.seq.length}</span><button type="button" data-sequence-next aria-label="Sonraki olay">→</button></div>
-<p class="evidence-caption">SportsBase · Numaralı olay konumları. Pas alıcıları ve oyuncu koşuları doğrulanmadı. <a href="#source-notes">Kaynak kaydı ↗</a></p>
-
+<div class="goal-film" data-goal-film aria-label="Üç golü ardışık izleme"><p class="film-intro">Üç gol, tek akış. Oynat düğmesine basın; bir gol tamamlandığında sonraki pozisyon açılır. Çizilen ara yollar, ölçülmüş top yörüngeleri değildir.</p>
+<div class="film-tabs" role="tablist" aria-label="Gol sekansı seç"><span>GOL DOSYASI</span>{sequences.map((g,i)=><button type="button" role="tab" id={'film-tab-'+i} aria-controls={'film-panel-'+i} aria-selected={i===0?'true':'false'} tabindex={i===0?0:-1} data-film-tab={i}>{['1–0','2–0','2–1'][i]}<small>{i===2?'Fenerbahçe':'Galatasaray'}</small></button>)}</div>
+{sequences.map((g,i)=><section class="goal-sequence film-panel" id={'film-panel-'+i} role="tabpanel" aria-labelledby={'film-tab-'+i} data-goal-sequence data-film-panel={i} data-duration={g.seq.at(-1)!.t-g.seq[0].t} hidden={i!==0}>
+<header><p class="p0-eyebrow">{['1–0','2–0','2–1'][i]} / {Math.floor(g.goal.min)+1}′</p><h3>{titles[i]}</h3><p>{descriptions[i]}</p></header>
+<div class="film-stage"><svg viewBox="-3 -3 111 74" class="film-pitch" role="group" aria-label="Kayıtlı gol olaylarının hareketli şeması; ara çizgiler ölçülmüş pas güzergâhı değildir">
+<defs><filter id={'film-glow-'+i}><feGaussianBlur stdDeviation="1.2"/></filter><marker id={'film-arrow-'+i} viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4" markerHeight="4" orient="auto"><path d="M0 0L10 5L0 10Z" fill="currentColor"/></marker></defs>
+<g aria-hidden="true" pointer-events="none">{model.map((row,j)=>row.map((v,i)=><rect x={i*105/12} y={j*68/8} width={105/12-.2} height={68/8-.2} fill="#b68a3d" opacity={.02+.2*Math.sqrt(v/.258)}/>))}</g>
+<g class="film-field" fill="none" stroke-width=".25"><path d="M0 0H105V68H0ZM52.5 0V68M0 13.84H16.5V54.16H0M105 13.84H88.5V54.16H105M0 24.84H5.5V43.16H0M105 24.84H99.5V43.16H105"/><circle cx="52.5" cy="34" r="9.15"/><path d="M105 30H107V38H105"/></g>
+<g class="film-route" fill="none">{g.seq.slice(1).map((event,j)=>{const a=point(g.seq[j],g.goal.team),b=point(event,g.goal.team);return <g><path d={`M${a.x} ${a.y}L${b.x} ${b.y}`} class="film-connection" stroke-dasharray="1.2 1.2"/><path d={`M${a.x} ${a.y}L${b.x} ${b.y}`} pathLength="1" data-film-link={j} class="film-trail" stroke-dasharray="0 1"/></g>})}</g>
+{g.seq.map((event,j)=>{const p=point(event,g.goal.team);return <g class="film-node" data-film-node={j} data-time={event.t-g.seq[0].t} data-x={p.x} data-y={p.y} data-actor={event.player} data-action={label(event,i,j)} tabindex={j===0?0:-1} role="button" aria-label={`${j+1}. ${event.player}: ${label(event,i,j)}`} aria-pressed={j===0?'true':'false'} transform={`translate(${p.x},${p.y})`}><circle r="4.4" fill="transparent"/><circle class="film-node-ring" r="2"/><text text-anchor="middle" dominant-baseline="central">{j+1}</text></g>})}
+<circle class="film-ball-glow" data-film-glow r="2.6" filter={`url(#film-glow-${i})`}/><circle class="film-ball" data-film-ball r="1.15"/>
+</svg><span class="film-direction">Hücum yönü →</span></div>
+<div class="film-transport"><button type="button" class="film-icon-button" data-film-play aria-label="Gol sekansını oynat" aria-pressed="false"><span aria-hidden="true" data-film-play-icon>▶</span></button><button type="button" class="film-icon-button film-step" data-film-prev aria-label="Önceki aksiyon">‹</button><input type="range" min="0" max={g.seq.at(-1)!.t-g.seq[0].t} step="0.01" value="0" data-film-scrub aria-label="Gol sekansında zaman seç"/><button type="button" class="film-icon-button film-step" data-film-next aria-label="Sonraki aksiyon">›</button><button type="button" class="film-icon-button film-speed" data-film-speed aria-label="Oynatma hızı: iki kat">2×</button></div>
+<div class="film-readout"><div><strong data-film-actor>{g.seq[0].player}</strong><span data-film-action>{label(g.seq[0],i,0)}</span></div><output data-film-clock aria-live="off">{g.seq[0].t-g.seq.at(-1)!.t} sn</output></div>
+<p class="film-caption">SportsBase · Kayıtlı olaylar arasında şematik geçiş. <a href="#source-notes">Kaynak ve çizim notu ↗</a></p>
+<details class="film-records"><summary>Olay dökümü · {g.seq.length} kayıt</summary><ol>{g.seq.map((event,j)=><li><button type="button" data-film-jump={j}><time>{event.t-g.seq.at(-1)!.t} sn</time><span>{event.player} <small>{label(event,i,j)}</small></span></button></li>)}</ol></details>
 </section>)}
 </div>
 <script>
-for(const root of document.querySelectorAll<HTMLElement>('[data-goal-sequence]')){
- const track=root.querySelector<HTMLElement>('.sequence-actions')!,buttons=[...root.querySelectorAll<HTMLButtonElement>('[data-sequence-select]')];let current=0;
- const prev=root.querySelector<HTMLButtonElement>('[data-sequence-prev]')!,next=root.querySelector<HTMLButtonElement>('[data-sequence-next]')!,counter=root.querySelector<HTMLElement>('[data-sequence-counter]')!;
- const select=(value:number,scroll=true)=>{current=Math.max(0,Math.min(buttons.length-1,value));for(const point of root.querySelectorAll<HTMLElement>('[data-sequence-point]'))point.setAttribute('aria-pressed',String(Number(point.dataset.sequencePoint)===current));buttons.forEach((button,i)=>button.setAttribute('aria-pressed',String(i===current)));prev.disabled=current===0;next.disabled=current===buttons.length-1;counter.textContent=(current+1)+' / '+buttons.length;if(scroll&&getComputedStyle(track).display==='flex')track.scrollTo({left:current*track.clientWidth,behavior:'instant'});};
- root.querySelectorAll<HTMLElement>('[data-sequence-select],[data-sequence-point]').forEach(el=>{const value=Number(el.dataset.sequenceSelect??el.dataset.sequencePoint);el.addEventListener('click',()=>select(value));if(el.hasAttribute('data-sequence-point'))el.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();select(value);}});});
- prev.addEventListener('click',()=>select(current-1));next.addEventListener('click',()=>select(current+1));track.addEventListener('scroll',()=>{if(getComputedStyle(track).display==='flex'){const value=Math.round(track.scrollLeft/track.clientWidth);if(value!==current)select(value,false)}},{passive:true});
-}
+import '../../lib/goal-film';
 </script>
