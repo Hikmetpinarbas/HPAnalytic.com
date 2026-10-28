@@ -53,3 +53,5 @@
 @media(max-width:759px){.sequence-point text{font-size:4.6px}.sequence-point .sequence-marker{r:3.6px}}
 
 .editorial-continuity figure.plate:not([data-hpa-mounted]){min-height:420px;display:grid;place-items:center}.chart-load-note{padding:24px;font:400 14px/1.6 Arial,sans-serif;color:#b9c0c9}
+
+.editorial-continuity .preserved-visuals{--f-ui:Arial,"Helvetica Neue",sans-serif}
