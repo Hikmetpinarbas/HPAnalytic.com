@@ -4,6 +4,7 @@ const SURFACES = [
   { href: '/visual-lab', label: 'GÖRSEL KANIT', kind: 'collection', key: 'visualCount' },
   { href: '/research', label: 'ARAŞTIRMA', kind: 'collection', key: 'researchCount' },
   { href: '/culture', label: 'KÜLTÜR', kind: 'article', key: 'culture' },
+  { href: '/ince-isler', label: 'İNCE İŞLER', kind: 'always', key: 'inceIsler' },
   { href: '/about', label: 'HİKMET', kind: 'always', key: 'about' },
 ];
 

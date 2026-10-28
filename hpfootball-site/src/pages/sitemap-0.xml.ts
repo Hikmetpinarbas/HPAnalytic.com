@@ -7,7 +7,7 @@ import { canonicalPath } from '../lib/canonical-path.mjs';
 export const prerender = true;
 
 // '/research' and '/scouting' are always-visible method pages in navigation and on the homepage.
-const STATIC_ROUTES = ['/', '/archive', '/about', '/research', '/scouting', '/mac/galatasaray-fenerbahce-2026-10-26-mac-sonu', '/portraits/vosse-de-boode'];
+const STATIC_ROUTES = ['/', '/archive', '/about', '/research', '/scouting', '/mac/galatasaray-fenerbahce-2026-10-26-mac-sonu', '/portraits/vosse-de-boode', '/ince-isler'];
 
 const esc = (value: string) => value.replace(/[&<>"']/g, (char) => ({ '&':'&amp;', '<':'&lt;', '>':'&gt;', '"':'&quot;', "'":'&apos;' }[char] ?? char));
 

@@ -1,0 +1,14 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+export const prerender = true;
+---
+<BaseLayout title="İnce İşler — HPAnalytic" description="Oyunun görünmeyen emeğini anlatan portreler: bilim, kültür, fikirler ve insanlar." image="/editorial/20261028/vosse-og.png">
+<main class="ince-page">
+<header class="ince-head"><p>HPANALYTIC / EDİTORYAL SERİ</p><h1>İnce <em>İşler.</em></h1><p>Oyunu değiştiren yalnızca sahada görünenler değildir. Soruyu soranları, bilgiyi üretenleri, emeği görünür kılanları anlatıyoruz.</p><small>Portreler · Bilim · Kültür · İnsan</small></header>
+<section class="ince-story"><a href="/portraits/vosse-de-boode/"><img src="/editorial/20261028/vosse-person-portrait.webp" width="1200" height="900" alt="Vosse de Boode portresi"/></a><div><p>01 / BİLİMDEN OYUNA</p><h2>Vosse de Boode: Laboratuvarın kapısı sahaya açılır.</h2><p>Bir kalecinin itişinden oyuncunun kendi verisine erişmesine: bilim ve oyunun içinde insanı unutmayan bir araştırmacının hikâyesi.</p><a href="/portraits/vosse-de-boode/">Portreyi oku ↗</a></div></section>
+<footer><p>İnce İşler, oyunun insanlarını ve düşüncelerini odağına alan editoryal seridir. Yayımlanmamış dosyalar yayımlanmış gibi gösterilmez.</p></footer>
+</main>
+</BaseLayout>
+<style>
+.ince-page{background:#111014;color:#f5eadc;min-height:85vh}.ince-head{max-width:1150px;margin:auto;padding:clamp(40px,7vw,100px) clamp(18px,5vw,60px)}.ince-head>p:first-child,.ince-story>div>p:first-child{color:#eab252;letter-spacing:.17em;font:700 12px Arial,sans-serif}.ince-head h1{font:500 clamp(60px,13vw,145px)/1 Georgia,serif;margin:24px 0;color:#f5eadc}.ince-head em{color:#eab252}.ince-head>p:nth-of-type(2){max-width:38ch;font:400 clamp(19px,2.2vw,27px)/1.6 Georgia,serif}.ince-head small{color:#c9b7aa}.ince-story{max-width:1150px;margin:auto;display:grid;grid-template-columns:1fr 1.2fr;border-block:1px solid #665144}.ince-story img{display:block;width:100%;height:100%;max-height:530px;object-fit:cover}.ince-story>div{padding:clamp(20px,5vw,65px);align-content:center}.ince-story h2{font:400 clamp(30px,4vw,58px)/1.15 Georgia,serif;color:#f5eadc}.ince-story>div>p:nth-of-type(2){font:400 16px/1.7 Arial,sans-serif;color:#dfd3c8}.ince-story>div>a{display:inline-flex;align-items:center;min-height:44px;color:#eab252;margin-top:20px}.ince-page footer{max-width:750px;margin:auto;padding:35px 20px 65px;color:#c6b9b0;line-height:1.7}.ince-page a:focus-visible{outline:2px solid #eab252;outline-offset:4px}@media(max-width:640px){.ince-story{grid-template-columns:1fr}.ince-story img{height:280px}.ince-head h1{font-size:clamp(58px,13vw,85px)}}
+</style>

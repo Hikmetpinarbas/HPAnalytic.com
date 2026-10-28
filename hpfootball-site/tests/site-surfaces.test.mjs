@@ -8,7 +8,7 @@ test('hides surfaces that have no real content', () => {
     researchCount: 0,
     visualCount: 0,
   });
-  assert.deepEqual(nav.map(x => x.href), ['/analysis', '/culture', '/about']);
+  assert.deepEqual(nav.map(x => x.href), ['/analysis', '/culture', '/ince-isler', '/about']);
 });
 
 test('reveals a surface automatically when real content exists', () => {
@@ -23,6 +23,7 @@ test('reveals a surface automatically when real content exists', () => {
     '/visual-lab',
     '/research',
     '/culture',
+    '/ince-isler',
     '/about',
   ]);
 });
@@ -33,7 +34,7 @@ test('about remains available even when editorial collections are empty', () => 
     researchCount: 0,
     visualCount: 0,
   });
-  assert.deepEqual(nav.map(x => x.href), ['/about']);
+  assert.deepEqual(nav.map(x => x.href), ['/ince-isler', '/about']);
 });
 
 import { buildUtilityNavigation, currentState } from '../src/lib/site-surfaces.mjs';

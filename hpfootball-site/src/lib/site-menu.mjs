@@ -25,6 +25,7 @@ export const SITE_MENU = [
       { label: 'Arşiv', href: '/archive', text: 'Bütün yazılar, yıl ve aya göre.' },
     ],
   },
+  { label: 'İNCE İŞLER', href: '/ince-isler', intro: { title: 'Oyunun görünmeyen emeği', text: 'İnsanlar, bilim ve fikirler.' }, items: [{ label: 'Vosse de Boode', href: '/portraits/vosse-de-boode/', text: 'Bilimin sahayla buluştuğu yer.' }] },
   { label: 'HAKKIMDA', href: '/about' },
 ];
 
@@ -34,5 +35,6 @@ export const MOBILE_MENU = [
   { label: 'Scouting', href: '/scouting', text: 'Karar destek yüzeyi' },
   { label: 'Yöntem', href: '/research', text: 'Kanıtın nasıl kabul edildiği' },
   { label: 'Arşiv', href: '/archive', text: 'Bütün yazılar' },
+  { label: 'İnce İşler', href: '/ince-isler', text: 'Portreler ve araştırma hikâyeleri' },
   { label: 'Hakkımda', href: '/about', text: 'Hikmet Pınarbaş ve ilkeler' },
 ];
