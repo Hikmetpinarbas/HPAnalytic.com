@@ -16,9 +16,14 @@ test('KDE and pitch calculations remain byte-identical',()=>{
  for(const [a,b]of [['function kdeField(','function kdeRender('],['function kdeRender(','function kdeLoop('],['function pitch(','/* ===== cover:']])assert.equal(cut(now,a,b),cut(old,a,b));
 });
 test('existing site shell, colors and active brand remain untouched',()=>{for(const [file,expected]of Object.entries(scope.unchangedShellFingerprints)){if(file==='src/layouts/BaseLayout.astro'){const baseline=read(file).replace(/\n\{systemFonts && <style is:inline>body\{[^}]+\}<\/style>\}/,'').replace('  systemFonts?: boolean;\n','').replace('  systemFonts = false,\n','').replace('{!systemFonts && <>\n','').replace('\n</>}\n<meta name="application-name"','\n<meta name="application-name"');assert.equal(createHash('sha256').update(baseline).digest('hex'),expected,file+' (only optional font loading may differ)');assert.ok(read(file).includes('systemFonts = false'));}else assert.equal(hash(file),expected,file);};assert.equal(scope.siteRedesignShipped,false);assert.equal(scope.logoChanged,false);});
-test('unlicensed Vosse photographs are not shipped',()=>{
- assert.equal(scope.photosShipped,false);assert.equal(existsSync(new URL('../public/vosse',import.meta.url)),false);
- assert.doesNotMatch(read('src/pages/portraits/vosse-de-boode.astro'),/portrait[^"]*\.(?:jpg|webp)|ajax-\d+\.webp/);
+test('only the publisher-selected Vosse photo files are shipped with attribution',()=>{
+ assert.equal(scope.photosShipped,true);
+ assert.equal(existsSync(new URL('../public/vosse',import.meta.url)),false);
+ const page=read('src/pages/portraits/vosse-de-boode.astro');
+ for(const path of scope.vosseApprovedPhotoPaths){assert.ok(existsSync(new URL('../public'+path,import.meta.url)),path);assert.ok(page.includes(path),path);}
+ assert.match(page,/Lars van den Brink/);
+ assert.match(page,/Training Ground Guru/);
+ assert.doesNotMatch(page,/ajax-\d+\.webp/);
 });
 test('only approved editorial pages become indexable and discoverable',()=>{
  for(const file of ['src/pages/mac/galatasaray-fenerbahce-2026-10-26-mac-sonu.astro','src/pages/portraits/vosse-de-boode.astro'])assert.doesNotMatch(read(file),/noindex=\{true\}/);
