@@ -1,5 +1,6 @@
 import { defineConfig } from 'astro/config';
 import cloudflare from '@astrojs/cloudflare';
+import publicArchiveBoundary from './src/integrations/public-archive-boundary.mjs';
 import editorialStudio from './src/studio/integration.mjs';
 // `site` drives canonical and Open Graph URLs only; it does not deploy anything.
 // Sessions and Cloudflare Images are unused: `session:false` (top-level Astro
@@ -10,5 +11,6 @@ export default defineConfig({
   session:false,
   adapter:cloudflare({ imageService:'passthrough',prerenderEnvironment:process.env.HPA_PRERENDER_RUNTIME==='node'?'node':'workerd' }),
   site:'https://www.hpanalytic.com',
-  integrations:[editorialStudio()],
+  integrations:[editorialStudio(),publicArchiveBoundary()],
 });
+

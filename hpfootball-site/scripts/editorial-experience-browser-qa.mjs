@@ -11,7 +11,7 @@ async function routes(dir, prefix='') {
   for(const entry of await readdir(dir,{withFileTypes:true})) {
     const relative=path.posix.join(prefix,entry.name);
     if(entry.isDirectory()) result.push(...await routes(path.join(dir,entry.name),relative));
-    else if(entry.name.endsWith('.html') && !relative.startsWith('control/') && relative!=='404.html') result.push('/'+relative.replace(/index\.html$/,'').replace(/\.html$/,''));
+    else if(entry.name==='index.html' && !relative.startsWith('control/')) result.push('/'+relative.replace(/index\.html$/,'').replace(/\.html$/,''));
   }
   return result;
 }
@@ -27,7 +27,7 @@ try {
    const errors=[];
    page.on('pageerror',error=>errors.push(error.message));
    try {
-    const response=await page.goto(origin+route,{waitUntil:'networkidle'});
+    const response=await page.goto(origin+route,{waitUntil:'networkidle',timeout:20000});
     assert.equal(response.status(),200,route);
     await page.evaluate(()=>document.fonts.ready);
     assert.equal(await page.locator('main h1').count(),1,'Expected one page heading');
@@ -71,6 +71,8 @@ try {
     assert.deepEqual(errors,[],'Browser errors');
     checks.push({route,width,status:'passed'});
    } catch(error) { failures.push({route,width,error:error.message}); }
+   console.log(JSON.stringify({route,width,status:failures.some(x=>x.route===route&&x.width===width)?'failed':'passed'}));
+   await writeFile(`${output}/report.json`,JSON.stringify({checks,failures},null,2));
    await page.close();
   }
   await context.close();

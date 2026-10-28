@@ -5,7 +5,16 @@ const cases=[
  ['/robots.txt',200],
  ['/sitemap-index.xml',200],
  ['/control/content',404],
- ['/studio/editorial',404]
+ ['/studio/editorial',404],
+ ['/monographs/01-halkin-metrikleri.html',404],
+ ['/monographs/03-on-yilda-bir-coken-kaleler.html',404],
+ ['/monographs/04-hic-var-olmayan-mevkiler.html',404],
+ ['/monographs/05-sahadan-hayata-siradisi-biyografi.html',404],
+ ['/monographs/06-bilanconun-iki-yuzu.html',404],
+ ['/monographs/07-kemik-yorgunlugu-biyolojik-sinir.html',404],
+ ['/monographs/08-kulubenin-golgesi-ikinci-kaleci.html',404],
+ ['/monographs/cies-super-lig-migration.html',404],
+ ['/monographs/q-angle-spatial-intelligence.html',404]
 ];
 const results=[];
 for(const [path,expected] of cases){

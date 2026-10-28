@@ -59,3 +59,9 @@ Unfinished scope: reference sites blocked or queued out still need visual inspec
 The first candidate passed tests, Astro diagnostics, production build and the two articles at eight widths, but failed the unchanged paired mobile gate: Derby median 97 versus baseline 100 (LCP 2101 ms versus 1501 ms). The previous development source had already measured 98 on a faster runner. The recovery splits cover/discovery CSS from shared reader CSS and narrows original chart prefetch from 600 to 200 pixels; this must be measured again. No Lighthouse threshold changes.
 
 The full Linux gate also discovered obsolete agent viewport metadata in the existing 1.4 MB static derby preview. Removing that metadata fixes the source of the signature failure. Twelve embedded WOFF2 fonts are extracted byte for byte into content-addressed files, reducing HTML by 599775 bytes. A regression test reverses the transformation and checks the exact original Git blob SHA, covering every other byte of HTML, data and calculation code.
+
+## Draft archive boundary and page coverage
+
+All nine historical Markdown sources are still drafts, but their raw legacy HTML copies were in public/ and could bypass that gate. A build hook now excludes those emitted copies while preserving the source files. Worker acceptance checks all nine exact HTML URLs return 404. This does not validate or rewrite their editorial claims.
+
+Whole-page browser acceptance enumerates Astro's directory-format index.html pages. Embedded chart documents and raw legacy article source assets are not independent application pages; their actual interactions remain covered through the existing article/iframe browser gate. Every tested page and failure is logged incrementally. A separate three-run mobile Lighthouse suite measures the homepage, old Lille preview and admitted reading article; it does not reuse previous acceptance scores.
