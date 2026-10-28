@@ -1,6 +1,6 @@
 import {existsSync,readFileSync} from 'node:fs';
-for(const name of ['derby-before-2','derby-after-2','vosse-after-2']) {
- const file=`qa-artifacts/paired-performance/${name}.json`;
+for(const name of ['derby-before-2','derby-after-2','vosse-after-2','match-preview-2']) {
+ const file=`qa-artifacts/${name==='match-preview-2'?'general-performance':'paired-performance'}/${name}.json`;
  if(!existsSync(file)) continue;
  const d=JSON.parse(readFileSync(file,'utf8'));
  const audits=d.audits;

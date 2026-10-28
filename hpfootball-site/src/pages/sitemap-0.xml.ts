@@ -2,6 +2,8 @@ import type { APIRoute } from 'astro';
 import { getCollection } from 'astro:content';
 import { isPublic } from '../lib/public-content.mjs';
 import { isPublicEditorialItem } from '../lib/site-editorial-status.mjs';
+import { PUBLIC_MATCH_PREVIEWS } from '../data/match-previews.mjs';
+import { premierCarousel } from '../data/premier-features.mjs';
 import { canonicalPath } from '../lib/canonical-path.mjs';
 
 export const prerender = true;
@@ -17,15 +19,17 @@ export const GET: APIRoute = async ({ site }) => {
   const visuals = (await getCollection('visuals', isPublic)).filter((entry) => isPublicEditorialItem(entry.data));
   const activeSections = new Set(articles.map((entry) => entry.data.section));
   const visibleRoutes = [
-    ...(activeSections.has('analysis') ? ['/analysis'] : []),
+    ...((activeSections.has('analysis') || PUBLIC_MATCH_PREVIEWS.length > 0) ? ['/analysis'] : []),
     ...(activeSections.has('culture') ? ['/culture'] : []),
     ...(visuals.length ? ['/visual-lab'] : []),
   ];
   const urls = [
     ...[...STATIC_ROUTES, ...visibleRoutes].map((pathname) => new URL(canonicalPath(pathname), base).href),
+    ...premierCarousel().map((entry) => new URL(canonicalPath(entry.href), base).href),
+    ...PUBLIC_MATCH_PREVIEWS.map((entry) => new URL(canonicalPath(entry.href), base).href),
     ...articles.map((entry) => new URL(canonicalPath('/articles/' + entry.id), base).href),
   ];
-  const body = urls.map((url) => `<url><loc>${esc(url)}</loc></url>`).join('');
+  const body = [...new Set(urls)].map((url) => `<url><loc>${esc(url)}</loc></url>`).join('');
   return new Response(
     `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">${body}</urlset>\n`,
     { headers: { 'Content-Type': 'application/xml; charset=utf-8' } },

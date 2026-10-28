@@ -18,7 +18,7 @@ async function routes(dir, prefix='') {
 const pages=await routes('dist/client');
 assert.ok(pages.includes('/'),'Prerendered homepage is missing');
 const browser=await chromium.launch({headless:true});
-const failures=[], checks=[];
+const failures=[], checks=[], accessibility=[];
 try {
  for(const width of widths) {
   const context=await browser.newContext({viewport:{width,height:900},reducedMotion:'reduce',hasTouch:width<768,isMobile:width<768});
@@ -34,6 +34,8 @@ try {
     assert.equal(await page.locator('h1').count(),1,'Expected one page heading');
     assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),'Page overflows horizontally');
     if(route==='/') {
+     const sitemap=await (await fetch(origin+'/sitemap-0.xml')).text();
+     for(const href of await page.locator('.lead-story h2 a').evaluateAll(links=>links.map(a=>new URL(a.href).pathname))) assert.ok(sitemap.includes('https://www.hpanalytic.com'+href),`Featured article missing from sitemap: ${href}`);
      const tabs=page.locator('[data-story-tab]');
      assert.ok(await tabs.count()>1);
      stage='carousel-next';
@@ -55,8 +57,14 @@ try {
       const client=await context.newCDPSession(page);
       const top=Math.max(80,rect.y),bottom=Math.min(850,rect.y+rect.height);
       assert.ok(bottom>top,'Touch scroll surface is outside the viewport');
-      await client.send('Input.synthesizeScrollGesture',{x:Math.round(rect.x+rect.width*.8),y:Math.round((top+bottom)/2),xDistance:-Math.round(rect.width*.8),yDistance:0,gestureSourceType:'touch',speed:800});
-      await page.waitForFunction(()=>document.querySelector('[data-story-track]').scrollLeft>0);
+      const x=Math.round(rect.x+rect.width*.85),y=Math.round((top+bottom)/2);
+      await client.send('Input.dispatchTouchEvent',{type:'touchStart',touchPoints:[{x,y}]});
+      for(let step=1;step<=10;step++) {
+       await client.send('Input.dispatchTouchEvent',{type:'touchMove',touchPoints:[{x:Math.round(x-rect.width*.7*step/10),y}]});
+       await new Promise(resolve=>setTimeout(resolve,20));
+      }
+      await client.send('Input.dispatchTouchEvent',{type:'touchEnd',touchPoints:[]});
+      await page.waitForFunction(()=>document.querySelector('[data-story-track]').scrollLeft>0,{},{timeout:5000});
       await client.detach();
      }
      stage='navigation-disclosure';
@@ -77,13 +85,25 @@ try {
       assert.equal(await toggle.getAttribute('aria-expanded'),'true','Keyboard must disclose navigation');
       await page.keyboard.press('Escape');
      }
+     if([390,1440].includes(width)) {
+      stage='homepage-accessibility';
+      assert.ok(process.env.HPA_AXE_PATH,'axe-core path must be configured');
+      await page.addScriptTag({path:process.env.HPA_AXE_PATH});
+      const violations=await page.evaluate(async()=>{const result=await window.axe.run(document,{runOnly:{type:'tag',values:['wcag2a','wcag2aa','wcag21aa','wcag22aa']}});return result.violations.map(v=>({id:v.id,impact:v.impact,targets:v.nodes.map(n=>n.target)}));});
+      accessibility.push({route,width,violations});
+      assert.deepEqual(violations,[],'Homepage accessibility violations');
+     }
      await page.screenshot({path:`${output}/home-${width}.png`,fullPage:true});
+    }
+    if(route==='/mac/galatasaray-fenerbahce-2026-10-26-mac-sonu/' && [390,1440].includes(width)) {
+     const use=page.locator('.film-panel:not([hidden]) use[href="#goal-film-model-grid"]');
+     if(await use.count()) {const bounds=await use.evaluate(el=>{const b=el.getBBox();return {width:b.width,height:b.height};});assert.ok(bounds.width>100&&bounds.height>67,'Shared xT grid must render at pitch scale');}
     }
     assert.deepEqual(errors,[],'Browser errors');
     checks.push({route,width,status:'passed'});
    } catch(error) { failures.push({route,width,stage,error:error.message}); }
    console.log(JSON.stringify({route,width,status:failures.some(x=>x.route===route&&x.width===width)?'failed':'passed'}));
-   await writeFile(`${output}/report.json`,JSON.stringify({checks,failures},null,2));
+   await writeFile(`${output}/report.json`,JSON.stringify({checks,failures,accessibility},null,2));
    await page.close();
   }
   await context.close();
@@ -96,7 +116,7 @@ try {
  await nojs.close();
 } finally {
  await browser.close();
- await writeFile(`${output}/report.json`,JSON.stringify({checks,failures},null,2));
+ await writeFile(`${output}/report.json`,JSON.stringify({checks,failures,accessibility},null,2));
 }
 assert.equal(failures.length,0,JSON.stringify(failures,null,2));
 console.log(`${checks.length} viewport/page checks passed; no-JS links checked.`);

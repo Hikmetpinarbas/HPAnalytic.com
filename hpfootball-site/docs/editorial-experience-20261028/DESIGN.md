@@ -65,3 +65,11 @@ The full Linux gate also discovered obsolete agent viewport metadata in the exis
 All nine historical Markdown sources are still drafts, but their raw legacy HTML copies were in public/ and could bypass that gate. A build hook now excludes those emitted copies while preserving the source files. Worker acceptance checks all nine exact HTML URLs return 404. This does not validate or rewrite their editorial claims.
 
 Whole-page browser acceptance enumerates Astro's directory-format index.html pages. Embedded chart documents and raw legacy article source assets are not independent application pages; their actual interactions remain covered through the existing article/iframe browser gate. Every tested page and failure is logged incrementally. A separate three-run mobile Lighthouse suite measures the homepage, old Lille preview and admitted reading article; it does not reuse previous acceptance scores.
+
+## Final payload and discovery fixes
+
+The three goal films now reference one shared SVG model grid instead of emitting the same 96 background cells three times. Model values and recorded event coordinates are unchanged. Browser acceptance checks the reused grid's actual pitch-size bounding box.
+
+The sitemap now includes the existing admitted premier and match-preview registries, includes the analysis library when public match files exist, and removes duplicate canonical URLs. Homepage acceptance verifies that every promoted lead story appears in the sitemap. New home accessibility scans run at 390 and 1440 pixels with the same WCAG tag set used by the article gate.
+
+The first general-route measurements were homepage 100, reading 97, and Lille preview 62 (median mobile performance; LCP ~6.2 seconds). The preview now uses the already-established BaseLayout system-font option to remove its remote font dependency chain. That route must be re-measured rather than inheriting the earlier report's score of 87. Native touch acceptance uses a real touch-start/move/end sequence inside the visible scroll surface.

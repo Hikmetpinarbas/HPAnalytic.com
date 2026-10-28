@@ -67,7 +67,7 @@ jobs:
             if curl -fsS http://127.0.0.1:4322/ >/dev/null; then break; fi
             sleep 1
           done
-          HPA_RELEASE_BASE=http://127.0.0.1:4322 node scripts/editorial-experience-browser-qa.mjs
+          HPA_RELEASE_BASE=http://127.0.0.1:4322 HPA_AXE_PATH="$RUNNER_TEMP/hpa-editorial-tools/node_modules/axe-core/axe.min.js" node scripts/editorial-experience-browser-qa.mjs
       - name: Measure homepage, match preview and reading performance
         if: ${{ !cancelled() && steps.corrected_build.outcome == 'success' && github.ref == 'refs/heads/codex/editorial-experience-20261028' }}
         run: |
