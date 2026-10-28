@@ -1,0 +1,21 @@
+---
+interface Props { title: string; label?: string; variant?: 'pitch' | 'research' | 'culture'; compact?: boolean; }
+const { title, label = 'HPANALYTIC', variant = 'pitch', compact = false } = Astro.props;
+---
+<div class:list={['editorial-cover', `editorial-cover--${variant}`, { 'editorial-cover--compact': compact }]} aria-hidden="true">
+  <span class="editorial-cover__label">{label}</span>
+  <svg class="editorial-cover__geometry" viewBox="0 0 600 440" fill="none" focusable="false">
+    {variant === 'pitch' ? <>
+      <rect x="54" y="72" width="492" height="296" rx="2"/><path d="M300 72v296M54 140h80v160H54M546 140h-80v160h80"/>
+      <circle cx="300" cy="220" r="52"/><circle cx="300" cy="220" r="3"/>
+      <path class="editorial-cover__trace" d="M116 310C180 310 165 190 260 190S370 285 480 125"/>
+    </> : variant === 'research' ? <>
+      <circle cx="300" cy="220" r="148"/><circle cx="300" cy="220" r="104"/><circle cx="300" cy="220" r="52"/>
+      <path d="M70 220h460M300 35v370M145 65l310 310M145 375L455 65"/>
+    </> : <>
+      <path d="M100 355V100l200-36 200 36v255l-200 36zM300 64v327M100 155l200-36 200 36M100 210l200-36 200 36M100 265l200-36 200 36"/>
+    </>}
+  </svg>
+  <span class="editorial-cover__title">{title}</span>
+  <span class="editorial-cover__signature">HP / {variant === 'pitch' ? 'OYUN' : variant === 'research' ? 'ARAŞTIRMA' : 'KÜLTÜR'} <span>↗</span></span>
+</div>

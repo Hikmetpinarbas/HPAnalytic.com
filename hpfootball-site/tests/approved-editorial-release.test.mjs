@@ -15,7 +15,21 @@ test('KDE and pitch calculations remain byte-identical',()=>{
  const cut=(s,a,b)=>{const i=s.indexOf(a);assert.ok(i>=0);const j=s.indexOf(b,i+a.length);assert.ok(j>i);return s.slice(i,j);};
  for(const [a,b]of [['function kdeField(','function kdeRender('],['function kdeRender(','function kdeLoop('],['function pitch(','/* ===== cover:']])assert.equal(cut(now,a,b),cut(old,a,b));
 });
-test('existing site shell, colors and active brand remain untouched',()=>{for(const [file,expected]of Object.entries(scope.unchangedShellFingerprints)){if(file==='src/layouts/BaseLayout.astro'){const baseline=read(file).replace(/\n\{systemFonts && <style is:inline>body\{[^}]+\}<\/style>\}/,'').replace('  systemFonts?: boolean;\n','').replace('  systemFonts = false,\n','').replace('{!systemFonts && <>\n','').replace('\n</>}\n<meta name="application-name"','\n<meta name="application-name"');assert.equal(createHash('sha256').update(baseline).digest('hex'),expected,file+' (only optional font loading may differ)');assert.ok(read(file).includes('systemFonts = false'));}else assert.equal(hash(file),expected,file);};assert.equal(scope.siteRedesignShipped,false);assert.equal(scope.logoChanged,false);});
+// The owner authorized a general design candidate after the two-article release.
+// Keep that release's scope record immutable; test its deployment boundary, logo and palette.
+test('design candidate preserves the approved brand and cannot auto-deploy to production',()=>{
+ for(const [file,expected] of Object.entries(scope.unchangedShellFingerprints)) {
+  if(file.includes('Logo.astro')) assert.equal(hash(file),expected,file);
+ }
+ const css=read('src/styles/global.css');
+ for(const token of ['--bg: #08090B','--amber: #F2A33A','--context: #6E9BF0','--ink: #F2EEE6']) assert.ok(css.includes(token),token);
+ const deploy=read('../.github/workflows/hpanalytic-production-deploy.yml');
+ assert.match(deploy,/workflow_dispatch:/);
+ assert.match(deploy,/inputs.confirm_production_deploy == true/);
+ assert.doesNotMatch(deploy,/on:\s*\n\s*push:/);
+ assert.equal(scope.siteRedesignShipped,false);
+ assert.equal(scope.logoChanged,false);
+});
 test('unlicensed Vosse photographs are not shipped',()=>{
  assert.equal(scope.photosShipped,false);assert.equal(existsSync(new URL('../public/vosse',import.meta.url)),false);
  assert.doesNotMatch(read('src/pages/portraits/vosse-de-boode.astro'),/portrait[^"]*\.(?:jpg|webp)|ajax-\d+\.webp/);

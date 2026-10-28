@@ -1,7 +1,7 @@
 name: HPAnalytic two-article editorial QA
 on:
   push:
-    branches: [codex/editorial-p0-20261028, codex/editorial-motion-v2-20261028]
+    branches: [codex/editorial-p0-20261028, codex/editorial-motion-v2-20261028, codex/editorial-experience-20261028]
 permissions:
   contents: read
 concurrency:
@@ -56,6 +56,17 @@ jobs:
           HPA_RELEASE_BASE=http://127.0.0.1:4322 HPA_BROWSER_ENGINE=playwright HPA_AXE_PATH="$RUNNER_TEMP/hpa-editorial-tools/node_modules/axe-core/axe.min.js" node scripts/two-article-browser-qa.cjs
           export CHROME_PATH="$(node -p "require('playwright').chromium.executablePath()")"
           HPA_LH_BIN="$RUNNER_TEMP/hpa-editorial-tools/node_modules/.bin/lighthouse" node scripts/editorial-p0-paired-performance.cjs
+      - name: Whole-site editorial experience browser acceptance
+        if: github.ref == 'refs/heads/codex/editorial-experience-20261028'
+        run: |
+          python3 -m http.server 4322 --bind 127.0.0.1 --directory dist/client > /tmp/hpa-design.log 2>&1 &
+          HPA_DESIGN_PID=$!
+          trap 'kill $HPA_DESIGN_PID 2>/dev/null || true' EXIT
+          for i in $(seq 1 30); do
+            if curl -fsS http://127.0.0.1:4322/ >/dev/null; then break; fi
+            sleep 1
+          done
+          HPA_RELEASE_BASE=http://127.0.0.1:4322 node scripts/editorial-experience-browser-qa.mjs
       - uses: actions/upload-artifact@v4
         if: always()
         with:

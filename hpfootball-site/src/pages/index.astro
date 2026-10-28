@@ -4,147 +4,18 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import { getCollection } from 'astro:content';
 import { isPublicEditorialItem } from '../lib/site-editorial-status.mjs';
 import { SECTION_LABELS } from '../lib/site-surfaces.mjs';
-import { featuredMatch } from '../data/match-previews.mjs';
-import { premierCarousel } from '../data/premier-features.mjs';
+import EditorialFront from '../components/EditorialFront.astro';
+import EditorialCover from '../components/EditorialCover.astro';
 export const prerender = true;
 
 const monographs = (await getCollection('monographs', isPublic)).sort((a, b) => +b.data.date - +a.data.date);
 const articles = (await getCollection('articles', isPublic)).filter((entry) => isPublicEditorialItem(entry.data)).sort((a, b) => +b.data.date - +a.data.date);
-const match = featuredMatch();
-const premierSlides = premierCarousel();
 const dateTr = (d: Date) => d.toLocaleDateString('tr-TR', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' });
-const steps = [
-  { key: 'yapi', label: 'Yapı', text: 'Önce oyunun iskeleti: alan, zaman, rol ve rakip. Skor bu yapının en son katmanıdır.' },
-  { key: 'iliski', label: 'İlişki', text: 'Sonra bağlar: hangi aksiyon hangisini doğurdu, hangi kayıp hangi fırsatı açtı.' },
-  { key: 'karar', label: 'Karar', text: 'En son hüküm, ama kanıtın taşıyabildiği kadar. Bilmediğimizi bilmiyoruz diye yazarız.' },
-];
+
 ---
 <BaseLayout title="HPAnalytic — Hikmet Pınarbaş Futbol Analizi" description="Hikmet Pınarbaş'tan kanıt, mekanizma ve bağlam temelli bağımsız futbol analizi.">
 
-<section id="premier-feature" class="hpa-premier-carousel" aria-label="HPAnalytic Premier · öne çıkan maç dosyaları">
-  <div class="hpa-premier-carousel__tabs" role="tablist" aria-label="Premier dosyaları">
-    {premierSlides.map((p, i) => (
-      <button type="button" role="tab" id={`premier-tab-${i}`} aria-controls={`premier-panel-${i}`} aria-selected={i === 0 ? 'true' : 'false'} tabindex={i === 0 ? 0 : -1} data-premier-tab={i}>{String(i + 1).padStart(2, '0')} · {p.category.replace('PREMIER · ', '')}</button>
-    ))}
-  </div>
-  <div class="hpa-premier-carousel__track" data-premier-track aria-label="Yatay kaydırılabilir premier dosyaları" tabindex="0">
-    {premierSlides.map((p, i) => (
-      <article id={`premier-panel-${i}`} role="tabpanel" aria-labelledby={`premier-tab-${i}`} data-premier-panel={i} class="hpa-premier" data-club={p.club}>
-        <div class="hpa-premier__stars" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></div>
-        <div class="hpa-premier__inner">
-          <div class="hpa-premier__overline"><span>HPANALYTIC / PREMIER</span><span>{p.category.includes('MAÇ SONU') ? 'MAÇ SONU · DAKİKA DAKİKA' : "BAŞ ANALİZ · EDITOR'S PICK"}</span></div>
-          <p class="hpa-premier__eyebrow">{p.competition ?? 'UEFA ŞAMPİYONLAR LİGİ · HPANALYTIC PREMIER'}</p>
-          <h2 id={`premier-title-${i}`}><span class:list={[p.turkishSide === 'home' ? 'hpa-premier__turkish' : 'hpa-premier__foreign']}>{p.home}</span><span class="hpa-premier__versus"> karşısında </span><span class:list={[p.turkishSide === 'away' ? 'hpa-premier__turkish' : 'hpa-premier__foreign']}>{p.away}</span></h2>
-          <p>{p.description}</p>
-          <p class="hpa-premier__meta">{p.venue ?? 'Stade Pierre-Mauroy · 21 Ekim 2026 · 19.45 TSİ'}</p>
-          <a class="hpa-premier__link" href={p.href}>PREMIER DOSYASINI KEŞFET <span aria-hidden="true">↗</span></a>
-        </div>
-      </article>
-    ))}
-  </div>
-  <div class="hpa-premier-carousel__foot">
-    <span>PARMAĞINIZLA KAYDIRIN →</span>
-    <div class="hpa-premier-carousel__dots" aria-label="İlerleme durumu">
-      {premierSlides.map((_, i) => <button type="button" data-premier-dot={i} aria-label={`${i + 1}. dosya`} aria-current={i === 0 ? 'true' : undefined}></button>)}
-    </div>
-  </div>
-</section>
-<style>
-.hpa-premier-carousel{position:relative;background:#07090B}
-.hpa-premier-carousel__tabs{display:flex;gap:8px;overflow-x:auto;padding:14px clamp(14px,3vw,34px) 0;background:#07090B;scrollbar-width:none}
-.hpa-premier-carousel__tabs::-webkit-scrollbar{display:none}
-.hpa-premier-carousel__tabs button{flex:0 0 auto;min-height:40px;border:1px solid rgba(255,255,255,.18);background:rgba(255,255,255,.04);color:#A0AEC0;padding:8px 14px;font:600 11px "IBM Plex Mono",monospace;letter-spacing:.07em;cursor:pointer;white-space:nowrap}
-.hpa-premier-carousel__tabs button[aria-selected="true"]{border-color:#F2B705;color:#F6F1E8}
-.hpa-premier-carousel__track{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scroll-behavior:smooth;overscroll-behavior-inline:contain;scrollbar-width:none}
-.hpa-premier-carousel__track::-webkit-scrollbar{display:none}
-.hpa-premier-carousel__track .hpa-premier{flex:0 0 100%;min-width:0;scroll-snap-align:start;scroll-snap-stop:always}
-.hpa-premier-carousel__foot{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:10px clamp(14px,3vw,34px) 14px;background:#07090B;font:600 11px "IBM Plex Mono",monospace;letter-spacing:.08em;color:#9BA8B3}
-.hpa-premier-carousel__dots{display:flex;gap:8px}
-.hpa-premier-carousel__dots button{width:10px;height:10px;border-radius:50%;border:1px solid #9BA8B3;background:transparent;cursor:pointer;padding:0}
-.hpa-premier-carousel__dots button[aria-current="true"]{background:#F2B705;border-color:#F2B705}
-.hpa-premier-carousel button:focus-visible{outline:2px solid #F2B705;outline-offset:2px}
-@media(max-width:560px){.hpa-premier-carousel__foot span:first-child{display:none}}
-@media(prefers-reduced-motion:reduce){.hpa-premier-carousel__track{scroll-behavior:auto}}
-.hpa-premier{position:relative;isolation:isolate;overflow:hidden;background:linear-gradient(124deg,#120707 0%,#350B16 48%,#711523 78%,#8B451C 100%);color:#F6F1E8;border-block:1px solid #F2B705}
-.hpa-premier::before{content:"";position:absolute;inset:0;z-index:-1;background:repeating-linear-gradient(90deg,transparent 0,transparent calc(33.333% - 1px),rgba(255,221,162,.12) 33.333%)}
-.hpa-premier[data-club="besiktas"]{background:linear-gradient(124deg,#07070A 0%,#101014 44%,#191920 74%,#2B2B33 100%);border-block-color:#F2F0EC}
-.hpa-premier[data-club="besiktas"]::before{background:repeating-linear-gradient(90deg,transparent 0,transparent calc(33.333% - 1px),rgba(242,240,236,.10) 33.333%)}
-.hpa-premier[data-club="besiktas"] .hpa-premier__turkish{color:#FFFFFF}
-.hpa-premier[data-club="besiktas"] .hpa-premier__foreign{color:#8A8F98}
-.hpa-premier[data-club="besiktas"] .hpa-premier__meta{color:#B9B6B0}
-.hpa-premier[data-club="besiktas"] .hpa-premier__stars{opacity:.16}
-.hpa-premier[data-club="fenerbahce"]{background:linear-gradient(124deg,#030814 0%,#06112A 42%,#0F2350 74%,#132B5E 100%);border-block-color:#FFD31A}
-.hpa-premier[data-club="fenerbahce"]::before{background:repeating-linear-gradient(90deg,transparent 0,transparent calc(33.333% - 1px),rgba(255,211,26,.1) 33.333%)}
-.hpa-premier[data-club="fenerbahce"] .hpa-premier__turkish{color:#FFD31A}
-.hpa-premier[data-club="fenerbahce"] .hpa-premier__foreign{color:#DCE3F0}
-.hpa-premier[data-club="fenerbahce"] .hpa-premier__meta{color:#AEBBD6}
-.hpa-premier[data-club="fenerbahce"] .hpa-premier__eyebrow{color:#D9B36A}
-.hpa-premier[data-club="fenerbahce"] .hpa-premier__link{background:#FFD31A;color:#071233}
-.hpa-premier[data-club="fenerbahce"] .hpa-premier__stars{opacity:.18}
-.hpa-premier[data-club="derbi"]{background:radial-gradient(70% 90% at 78% 0%,rgba(196,146,72,.20),transparent 70%),linear-gradient(124deg,#0D0B09 0%,#16110C 55%,#0A0908 100%);border-block-color:#B98A45}
-.hpa-premier[data-club="derbi"]::after{content:"";position:absolute;inset:0 0 auto 0;height:6px;background:linear-gradient(90deg,transparent 0%,#8A6530 30%,#D9B36A 55%,#8A6530 80%,transparent 100%)}
-.hpa-premier[data-club="derbi"]::before{background:repeating-linear-gradient(90deg,transparent 0,transparent calc(33.333% - 1px),rgba(255,221,162,.10) 33.333%)}
-.hpa-premier[data-club="derbi"] .hpa-premier__turkish{color:#E9DCBD}
-.hpa-premier[data-club="derbi"] .hpa-premier__foreign{color:#5DAFAA}
-.hpa-premier[data-club="derbi"] .hpa-premier__eyebrow{color:#D9B36A}
-.hpa-premier[data-club="derbi"] .hpa-premier__stars{opacity:.3}
-.hpa-premier__stars{position:absolute;right:-8%;top:-24%;width:min(72vw,750px);aspect-ratio:1;z-index:-1;pointer-events:none;opacity:.27;animation:hpa-star-rotation 45s linear infinite}
-.hpa-premier__stars i{position:absolute;width:20%;aspect-ratio:1;border:1.5px solid rgba(255,232,180,.7);clip-path:polygon(50% 0%,61% 36%,98% 36%,68% 58%,79% 95%,50% 73%,21% 95%,32% 58%,2% 36%,39% 36%);background:linear-gradient(145deg,rgba(255,202,83,.14),rgba(255,255,255,.04))}
-.hpa-premier__stars i:nth-child(1){top:10%;left:37%;transform:scale(1.45)}
-.hpa-premier__stars i:nth-child(2){top:33%;left:4%;transform:rotate(38deg)}
-.hpa-premier__stars i:nth-child(3){top:33%;right:4%;transform:rotate(-38deg)}
-.hpa-premier__stars i:nth-child(4){bottom:9%;left:19%;transform:rotate(16deg)}
-.hpa-premier__stars i:nth-child(5){bottom:9%;right:19%;transform:rotate(-16deg)}
-@keyframes hpa-star-rotation{to{transform:rotate(360deg)}}
-@media (prefers-reduced-motion: reduce){.hpa-premier__stars{animation:none}}
-.hpa-premier__inner{width:min(1200px,calc(100% - 36px));margin:auto;padding:clamp(36px,6vw,78px) 0}
-.hpa-premier__overline{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;border-bottom:1px solid rgba(255,255,255,.28);padding-bottom:13px;font-size:.72rem;font-weight:700;letter-spacing:.15em;color:#FFD24D}
-.hpa-premier__eyebrow{color:#F9CB7B;font-size:.78rem;letter-spacing:.1em;margin-top:24px}
-.hpa-premier h2{font-size:clamp(2rem,5vw,4.5rem);line-height:1.08;max-width:900px;margin:13px 0 20px;letter-spacing:-.045em}
-.hpa-premier__inner>p:not(.hpa-premier__eyebrow){max-width:650px;color:#D5DEE2;line-height:1.65}
-.hpa-premier__link{display:inline-flex;gap:18px;align-items:center;margin-top:24px;color:#2A0705;background:#F2B705;text-decoration:none;padding:15px 20px;min-height:48px;font-weight:800;font-size:.82rem;letter-spacing:.05em;border-radius:4px}
-.hpa-premier__link:focus-visible{outline:3px solid #FFF;outline-offset:4px}
-.hpa-premier__foreign{color:#F8F8FA}.hpa-premier__turkish{color:#FFD24D}.hpa-premier__versus{font:400 .36em var(--reading,serif);color:#DBD1CA;white-space:nowrap;vertical-align:middle;letter-spacing:0}
-.hpa-premier__meta{font-size:.8rem;letter-spacing:.04em;color:#E2CFCB;margin-top:14px}
-@media(max-width:520px){.hpa-premier h2{font-size:clamp(2.1rem,9vw,3.3rem)}.hpa-premier__versus{display:block;margin:10px 0;font-size:.36em}.hpa-premier__stars{right:-45%;top:0;width:130vw;opacity:.18}}
-</style>
-
-<section class="home-hero" aria-labelledby="hero-title">
-  <canvas class="home-hero__canvas" aria-hidden="true" data-threads></canvas>
-  <div class="home-hero__inner">
-    <p class="kicker">HPANALYTIC · FUTBOL · ARAŞTIRMA · SCOUTING</p>
-    <h1 id="hero-title">Oyunu sonuçtan <em>önce</em> oku.</h1>
-    <p class="home-hero__sub">Skoru değil, skoru üreten mekanizmayı okuyan bağımsız futbol analizi. Her iddia kendi kanıt sınıfını ve sınırını taşır.</p>
-    <div class="home-hero__actions">
-      {match && <a class="button button-primary" href={match.href}>Bu haftanın dosyası <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M2 8h11M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a>}
-    </div>
-    <div class="steps" data-steps>
-      <div class="steps__rail"><span class="steps__bar" aria-hidden="true"></span>
-      <ol class="steps__track" role="tablist" aria-label="Okuma sırası">
-        {steps.map((s, i) => <li role="presentation"><button type="button" role="tab" id={`step-${s.key}`} aria-controls={`panel-${s.key}`} aria-selected={i === 0 ? 'true' : 'false'} tabindex={i === 0 ? 0 : -1}>{s.label}</button></li>)}
-      </ol></div>
-      {steps.map((s, i) => <p class="steps__panel" role="tabpanel" id={`panel-${s.key}`} aria-labelledby={`step-${s.key}`} hidden={i !== 0}>{s.text}</p>)}
-    </div>
-  </div>
-</section>
-
-{match && (
-<section class="feature-band" data-club={match.club} aria-labelledby="feature-title">
-  <div class="feature-band__inner">
-    <div class="feature-band__copy reveal">
-      <p class="kicker">{match.kind} · {match.competition}</p>
-      <h2 id="feature-title"><span>{match.home}</span><span style="color:var(--ink-2)">– {match.away}</span></h2>
-      <p class="lead">{match.description}</p>
-      <div class="feature-band__meta"><span>{new Date(match.kickoff).toLocaleString("tr-TR",{day:"numeric",month:"long",hour:"2-digit",minute:"2-digit",timeZone:"Europe/Istanbul"})} TSİ</span><span>{match.evidence}</span></div>
-      <div class="button-row"><a class="button button-primary" href={match.href}>Dosyayı aç <svg viewBox="0 0 16 16" aria-hidden="true" focusable="false"><path d="M2 8h11M9 4l4 4-4 4" fill="none" stroke="currentColor" stroke-width="1.6"/></svg></a></div>
-    </div>
-    <div class="feature-panel reveal" aria-label="Dosyadan üç sayı">
-      {match.stats.map((st) => <div class="stat-pair"><span>{st.label}</span><b>{st.value}</b><small>{st.note}</small></div>)}
-    </div>
-  </div>
-</section>
-)}
-
+<EditorialFront />
 
 <section class="rail-section" id="mac-sonu-rail" aria-labelledby="mac-sonu-title">
   <div class="rail-head">
@@ -188,7 +59,7 @@ const steps = [
   </div>
   <div class="rail" id="mono-rail" tabindex="0" role="region" aria-label="Monografiler, yatay kaydırılabilir">
     {monographs.map((m) => (
-      <article class="rail-card">
+      <article class="rail-card"><EditorialCover title={m.data.title} label={m.data.category ?? 'Monografi'} variant="research" compact />
         <div class="rail-card__meta"><span>{m.data.category ?? 'Monografi'}</span><span>{m.data.readingTime}</span></div>
         <h3><a href={`/monographs/${m.id}`}>{m.data.title}</a></h3>
         <p>{m.data.subtitle ?? m.data.description}</p>
@@ -212,7 +83,7 @@ const steps = [
   <div class="bento">
     {articles.slice(0, 4).map((a, i) => (
       <article class:list={['tile', 'reveal', i === 0 ? 'tile--wide' : i === 1 ? 'tile--narrow' : 'tile--half']}>
-        <div class="card-meta"><span class="section-name">{SECTION_LABELS[a.data.section as keyof typeof SECTION_LABELS] ?? a.data.section}</span><time datetime={a.data.date.toISOString().slice(0, 10)}>{dateTr(a.data.date)}</time></div>
+        <EditorialCover title={a.data.title} label={SECTION_LABELS[a.data.section as keyof typeof SECTION_LABELS] ?? a.data.section} compact /><div class="card-meta"><span class="section-name">{SECTION_LABELS[a.data.section as keyof typeof SECTION_LABELS] ?? a.data.section}</span><time datetime={a.data.date.toISOString().slice(0, 10)}>{dateTr(a.data.date)}</time></div>
         <h3><a href={`/articles/${a.id}`}>{a.data.title}</a></h3>
         <p>{a.data.description}</p>
       </article>
@@ -244,125 +115,21 @@ const steps = [
 </section>
 
 <script>
-  // Steps carousel: Yapı → İlişki → Karar. Auto-advances only while the hero is visible and untouched.
-  const root = document.querySelector<HTMLElement>('[data-steps]');
-  if (root) {
-    const tabs = [...root.querySelectorAll<HTMLButtonElement>('[role="tab"]')];
-    const panels = [...root.querySelectorAll<HTMLElement>('[role="tabpanel"]')];
-    const bar = root.querySelector<HTMLElement>('.steps__bar');
-    let index = 0; let timer: number | undefined; let touched = false;
-    const select = (i: number, focus = false) => {
-      index = (i + tabs.length) % tabs.length;
-      tabs.forEach((t, k) => { t.setAttribute('aria-selected', String(k === index)); t.tabIndex = k === index ? 0 : -1; });
-      panels.forEach((p, k) => { p.hidden = k !== index; });
-      if (bar) bar.style.width = `${(index * 2 + 1) / (tabs.length * 2) * 100}%`;
-      if (focus) tabs[index].focus();
-    };
-    tabs.forEach((t, k) => {
-      t.addEventListener('click', () => { touched = true; select(k); });
-      t.addEventListener('keydown', (e) => {
-        if (e.key === 'ArrowRight') { touched = true; select(index + 1, true); }
-        if (e.key === 'ArrowLeft') { touched = true; select(index - 1, true); }
-      });
-    });
-    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (!reduce) timer = window.setInterval(() => { if (!touched && !document.hidden) select(index + 1); }, 5200);
-    root.addEventListener('pointerenter', () => { touched = true; });
-    select(0);
-  }
-
-  // Premier carousel: tabs + swipeable track + dots stay in sync, same pattern as the interactive hero rail.
-  const premierRail = document.getElementById('premier-feature');
-  if (premierRail) {
-    const premierTrack = premierRail.querySelector<HTMLElement>('[data-premier-track]');
-    const premierTabs = Array.from(premierRail.querySelectorAll<HTMLButtonElement>('[data-premier-tab]'));
-    const premierDots = Array.from(premierRail.querySelectorAll<HTMLButtonElement>('[data-premier-dot]'));
-    if (premierTrack && premierTabs.length > 1) {
-      const setPremierActive = (index: number) => {
-        premierTabs.forEach((tab, i) => { const active = i === index; tab.setAttribute('aria-selected', String(active)); tab.tabIndex = active ? 0 : -1; });
-        premierDots.forEach((dot, i) => { if (i === index) dot.setAttribute('aria-current', 'true'); else dot.removeAttribute('aria-current'); });
-      };
-      const goToPremier = (i: number, focus = false) => {
-        const panel = premierTrack.querySelector<HTMLElement>(`[data-premier-panel="${i}"]`);
-        if (!panel) return;
-        premierTrack.scrollTo({ left: panel.offsetLeft - premierTrack.offsetLeft, behavior: window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 'instant' : 'smooth' });
-        setPremierActive(i);
-        if (focus) premierTabs[i]?.focus();
-      };
-      premierTabs.forEach((tab, i) => {
-        tab.addEventListener('click', () => goToPremier(i));
-        tab.addEventListener('keydown', (event) => {
-          if (!['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) return;
-          event.preventDefault();
-          const next = event.key === 'Home' ? 0 : event.key === 'End' ? premierTabs.length - 1 : event.key === 'ArrowRight' ? (i + 1) % premierTabs.length : (i + premierTabs.length - 1) % premierTabs.length;
-          goToPremier(next, true);
-        });
-      });
-      premierDots.forEach((dot, i) => dot.addEventListener('click', () => goToPremier(i)));
-      let premierScheduled = false;
-      premierTrack.addEventListener('scroll', () => {
-        if (premierScheduled) return;
-        premierScheduled = true;
-        requestAnimationFrame(() => {
-          premierScheduled = false;
-          const width = premierTrack.clientWidth || 1;
-          setPremierActive(Math.max(0, Math.min(premierTabs.length - 1, Math.round(premierTrack.scrollLeft / width))));
-        });
-      }, { passive: true });
-    }
-  }
-
-  // Rail controls
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)');
   document.querySelectorAll<HTMLElement>('[data-rail-controls]').forEach((controls) => {
     const rail = document.getElementById(controls.dataset.railControls || '');
     if (!rail) return;
-    const [prev, next] = controls.querySelectorAll<HTMLButtonElement>('button');
+    const buttons = [...controls.querySelectorAll<HTMLButtonElement>('button')];
     const update = () => {
-      prev.disabled = rail.scrollLeft < 8;
-      next.disabled = rail.scrollLeft + rail.clientWidth >= rail.scrollWidth - 8;
+      if (buttons[0]) buttons[0].disabled = rail.scrollLeft < 8;
+      if (buttons[1]) buttons[1].disabled = rail.scrollLeft + rail.clientWidth >= rail.scrollWidth - 8;
     };
-    controls.querySelectorAll<HTMLButtonElement>('button').forEach((b) => b.addEventListener('click', () => {
-      const card = rail.querySelector<HTMLElement>('.rail-card');
-      const step = card ? card.offsetWidth + 14 : rail.clientWidth * .8;
-      rail.scrollBy({ left: Number(b.dataset.dir) * step, behavior: 'smooth' });
+    buttons.forEach(button => button.addEventListener('click', () => {
+      rail.scrollBy({ left: Number(button.dataset.dir) * rail.clientWidth * .85, behavior: reduced.matches ? 'instant' : 'smooth' });
     }));
     rail.addEventListener('scroll', update, { passive: true });
+    new ResizeObserver(update).observe(rail);
     update();
   });
-
-  // Hero threads: decorative light lines drifting across the field. Not data.
-  const canvas = document.querySelector<HTMLCanvasElement>('[data-threads]');
-  if (canvas && canvas.getContext) {
-    const ctx = canvas.getContext('2d')!;
-    const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const amber = getComputedStyle(document.documentElement).getPropertyValue('--amber').trim() || '#F2A33A';
-    let w = 0, h = 0, dpr = 1, raf = 0, t0 = performance.now();
-    const nodes = Array.from({ length: 26 }, (_, i) => ({ x: Math.random(), y: .25 + Math.random() * .7, vx: (Math.random() - .5) * .00006, vy: (Math.random() - .5) * .00004, hot: i % 5 === 0 }));
-    const size = () => { dpr = Math.min(2, window.devicePixelRatio || 1); w = canvas.clientWidth; h = canvas.clientHeight; canvas.width = w * dpr; canvas.height = h * dpr; ctx.setTransform(dpr, 0, 0, dpr, 0, 0); };
-    const draw = (now: number) => {
-      const dt = Math.min(48, now - t0); t0 = now;
-      ctx.clearRect(0, 0, w, h);
-      // long floodlight streaks
-      for (let k = 0; k < 5; k++) {
-        const phase = now * .00005 + k * 1.3;
-        ctx.beginPath();
-        for (let x = -20; x <= w + 20; x += 24) {
-          const y = h * (.62 + k * .07) + Math.sin(x * .004 + phase) * h * .06 - x * .12;
-          x === -20 ? ctx.moveTo(x, y) : ctx.lineTo(x, y);
-        }
-        ctx.strokeStyle = `rgba(242,163,58,${.05 + k * .025})`; ctx.lineWidth = 1; ctx.stroke();
-      }
-      for (const n of nodes) { n.x += n.vx * dt; n.y += n.vy * dt; if (n.x < 0 || n.x > 1) n.vx *= -1; if (n.y < .2 || n.y > 1) n.vy *= -1; }
-      for (let i = 0; i < nodes.length; i++) for (let j = i + 1; j < nodes.length; j++) {
-        const a = nodes[i], b = nodes[j]; const dx = (a.x - b.x) * w, dy = (a.y - b.y) * h; const d = Math.hypot(dx, dy);
-        if (d < 170) { ctx.strokeStyle = (a.hot || b.hot) ? `rgba(242,163,58,${.32 * (1 - d / 170)})` : `rgba(242,238,230,${.09 * (1 - d / 170)})`; ctx.beginPath(); ctx.moveTo(a.x * w, a.y * h); ctx.lineTo(b.x * w, b.y * h); ctx.stroke(); }
-      }
-      for (const n of nodes) { ctx.beginPath(); ctx.arc(n.x * w, n.y * h, n.hot ? 2.2 : 1.2, 0, Math.PI * 2); ctx.fillStyle = n.hot ? amber : 'rgba(242,238,230,.5)'; ctx.fill(); }
-      if (!reduce) raf = requestAnimationFrame(draw);
-    };
-    size(); draw(performance.now());
-    window.addEventListener('resize', () => { size(); if (reduce) draw(performance.now()); });
-    document.addEventListener('visibilitychange', () => { if (document.hidden) cancelAnimationFrame(raf); else if (!reduce) raf = requestAnimationFrame(draw); });
-  }
 </script>
 </BaseLayout>

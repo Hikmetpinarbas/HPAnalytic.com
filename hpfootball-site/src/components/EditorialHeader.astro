@@ -1,5 +1,6 @@
 ---
 import Logo from './Logo.astro';
+import NavigationIcon from './NavigationIcon.astro';
 import { SITE_MENU } from '../lib/site-menu.mjs';
 import { featuredMatch } from '../data/match-previews.mjs';
 interface Props { navigation?: {label:string;href:string;current?:string}[] }
@@ -24,7 +25,7 @@ const latest = featuredMatch();
             <a class="mainnav__link mainnav__fallback" href={group.href}>{group.label}</a>
             <div class="megamenu" id={`megamenu-${i}`} hidden>
               <div class="megamenu__intro"><b>{group.intro.title}</b><span>{group.intro.text}</span></div>
-              {group.items.map((item) => <a href={item.href} aria-current={isCurrent(item.href) ? 'page' : undefined}><b>{item.label}</b><small>{item.text}</small></a>)}
+              {group.items.map((item) => <a href={item.href} aria-current={isCurrent(item.href) ? 'page' : undefined}><b><span class="menu-label"><NavigationIcon href={item.href}/>{item.label}</span></b><small>{item.text}</small></a>)}
             </div>
           </li>
         ) : (

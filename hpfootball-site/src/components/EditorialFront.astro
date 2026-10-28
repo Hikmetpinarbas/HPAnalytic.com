@@ -1,0 +1,23 @@
+---
+import EditorialCover from './EditorialCover.astro';
+import { premierCarousel } from '../data/premier-features.mjs';
+const stories = premierCarousel();
+---
+<section class="editorial-front" aria-labelledby="front-title">
+  <header class="editorial-front__masthead"><p>BAĞIMSIZ FUTBOL YAYINI</p><span>Hikmet Pınarbaş</span></header>
+  <div class="editorial-front__heading"><h1 id="front-title">Oyunun <em>iç yüzü.</em></h1><p>Skorun ötesinde.<br/>Sahada olanın, veride kalanının peşinde.</p></div>
+  <div class="story-carousel" data-story-carousel aria-label="Editörün seçtiği maç dosyaları">
+    <div class="story-carousel__track" data-story-track tabindex="0" role="region" aria-label="Dosyalar; yatay kaydırın">
+      {stories.map((story, i) => <article class="lead-story" data-story-panel id={`story-panel-${i}`} role="tabpanel" aria-labelledby={`story-tab-${i}`}>
+        <div class="lead-story__copy"><p class="kicker">{story.category.replace('PREMIER · ', '')} <span> / {String(i + 1).padStart(2, '0')}</span></p><h2><a href={story.href}>{story.title}</a></h2><p class="lead-story__description">{story.description}</p><p class="lead-story__venue">{story.venue}</p><a class="editorial-link" href={story.href}>Dosyayı oku <span aria-hidden="true">↗</span></a></div>
+        <a class="lead-story__cover" href={story.href} aria-label={`${story.title} — dosyayı aç`} tabindex="-1"><EditorialCover title={story.team} label={story.competition ?? story.category}/></a>
+      </article>)}
+    </div>
+    <div class="story-carousel__controls"><div class="story-carousel__tabs" role="tablist" aria-label="Öne çıkan dosyalar">{stories.map((story, i) => <button type="button" role="tab" id={`story-tab-${i}`} aria-controls={`story-panel-${i}`} aria-selected={i === 0 ? 'true' : 'false'} tabindex={i === 0 ? 0 : -1} data-story-tab={i}><span>{String(i + 1).padStart(2, '0')}</span> {story.team}</button>)}</div><div class="story-carousel__arrows"><span data-story-count aria-live="off">01 / {String(stories.length).padStart(2, '0')}</span><button type="button" data-story-prev aria-label="Önceki dosya">←</button><button type="button" data-story-next aria-label="Sonraki dosya">→</button></div></div>
+  </div>
+  <nav class="editorial-front__sections" aria-label="Okumaya buradan başlayın"><a href="/analysis"><span>01</span> Maç & analiz <b aria-hidden="true">↗</b></a><a href="/research"><span>02</span> Araştırma <b aria-hidden="true">↗</b></a><a href="/scouting"><span>03</span> Scouting <b aria-hidden="true">↗</b></a><a href="/culture"><span>04</span> Oyun kültürü <b aria-hidden="true">↗</b></a></nav>
+</section>
+<script>
+  import { initEditorialCarousel } from '../lib/editorial-carousel';
+  document.querySelectorAll<HTMLElement>('[data-story-carousel]').forEach(initEditorialCarousel);
+</script>

@@ -2,6 +2,9 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFileSync} from 'node:fs';
 import {featuredPremier,premierCarousel,PREMIER_FEATURES} from '../src/data/premier-features.mjs';
+const front=readFileSync(new URL('../src/components/EditorialFront.astro',import.meta.url),'utf8');
+const carousel=readFileSync(new URL('../src/lib/editorial-carousel.ts',import.meta.url),'utf8');
+const css=readFileSync(new URL('../src/styles/global.css',import.meta.url),'utf8');
 const home=readFileSync(new URL('../src/pages/index.astro',import.meta.url),'utf8');
 
 test('premier carousel carries all three approved pieces, newest editorial priority first',()=>{
@@ -32,10 +35,10 @@ test('draft premier is never public or promoted',()=>{
  const newer={slug:'draft-premier',status:'draft',premier:true,premier_order:20,href:'/draft'};
  assert.equal(featuredPremier(Date.now(),[...PREMIER_FEATURES,newer]).slug,'galatasaray-fenerbahce-2026-10-26-mac-sonu');
 });
-test('homepage features the premier carousel prominently before other editorial cards',()=>{
- assert.match(home,/premierCarousel\(\)/);
- assert.match(home,/id="premier-feature"/);
- assert.match(home,/PREMIER/);
+test('homepage promotes the admitted premier collection before secondary rails',()=>{
+ assert.ok(home.indexOf('<EditorialFront />') < home.indexOf('id="mac-sonu-rail"'));
+ assert.match(front,/premierCarousel\(\)/);
+ assert.match(front,/href={story.href}/);
 });
 
 test('withdrawn match cannot remain promoted as premier',()=>{
@@ -46,27 +49,28 @@ test('incomplete higher order premier cannot displace complete features',()=>{
  const incomplete={slug:'missing-copy',status:'published',premier:true,premier_order:999,href:'/missing'};
  assert.equal(featuredPremier(Date.now(),[...PREMIER_FEATURES,incomplete]).slug,'galatasaray-fenerbahce-2026-10-26-mac-sonu');
 });
-test('CTA accessible name retains visible label',()=>{
- assert.doesNotMatch(home,/aria-label={premier\.title \+ ' premier analizini oku'}/);
- assert.match(home,/PREMIER DOSYASINI KEŞFET/);
+test('story links expose the actual headline and a visible reading label',()=>{
+ assert.match(front,/<h2><a href={story.href}>{story.title}<\/a><\/h2>/);
+ assert.match(front,/Dosyayı oku/);
+ assert.doesNotMatch(front,/aria-label={story.title}/);
 });
 
-test('each carousel slide uses a data-bound club theme with its own rotating star scene, keyed off turkishSide',()=>{
- assert.match(home,/p\.turkishSide === 'home' \? 'hpa-premier__turkish' : 'hpa-premier__foreign'/);
- assert.match(home,/p\.turkishSide === 'away' \? 'hpa-premier__turkish' : 'hpa-premier__foreign'/);
- assert.doesNotMatch(home,/Ev sahibi · Lille|Konuk · Galatasaray|hpa-premier__matchup/);
- assert.match(home,/hpa-premier__stars/);
- assert.match(home,/data-club={p\.club}/);
- assert.match(home,/@media\s*\(prefers-reduced-motion:\s*reduce\)/);
- assert.doesNotMatch(home,/football-logos\.cc|seeklogo\.com/);
+test('decorative cover art never substitutes fabricated match measurements',()=>{
+ const cover=readFileSync(new URL('../src/components/EditorialCover.astro',import.meta.url),'utf8');
+ assert.match(cover,/aria-hidden="true"/);
+ assert.doesNotMatch(cover,/Math.random|xG|xT|setInterval/);
+ assert.doesNotMatch(front,/football-logos\.cc|seeklogo\.com|setInterval|requestAnimationFrame/);
 });
 
-test('premier carousel is keyboard- and swipe-accessible like the other home rails',()=>{
- assert.match(home,/role="tablist" aria-label="Premier dosyaları"/);
- assert.match(home,/role="tabpanel"/);
- assert.match(home,/data-premier-track/);
- assert.match(home,/data-premier-dot/);
- assert.match(home,/scroll-snap-type:x mandatory/);
+test('carousel retains keyboard, swipe and reduced motion paths after extraction',()=>{
+ assert.match(front,/role="tablist"/);
+ assert.match(front,/role="tabpanel"/);
+ assert.match(front,/aria-controls={`story-panel-/);
+ assert.match(front,/data-story-track/);
+ for(const key of ['ArrowLeft','ArrowRight','Home','End']) assert.ok(carousel.includes(key));
+ assert.match(carousel,/prefers-reduced-motion: reduce/);
+ assert.match(carousel,/panel.inert = i !== active/);
+ assert.match(css,/scroll-snap-type:x mandatory/);
 });
 
 test('actual match article uses the same Lille-white Galatasaray-yellow editorial masthead',()=>{

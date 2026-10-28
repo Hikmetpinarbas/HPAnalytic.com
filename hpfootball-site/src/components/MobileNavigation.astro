@@ -1,4 +1,5 @@
 ---
+import NavigationIcon from './NavigationIcon.astro';
 interface NavigationItem { href: string; label: string; text?: string; current?: 'page' | 'true'; }
 interface Props { navigation?: NavigationItem[]; }
 const { navigation = [] } = Astro.props as Props;
@@ -12,7 +13,7 @@ const { navigation = [] } = Astro.props as Props;
 
   <nav id="mobile-nav-panel" class="mobile-nav-panel" aria-label="Mobil ana menü" hidden>
     {navigation.map((item, index) => (
-      <a href={item.href} aria-current={item.current}><span class="mobile-nav-index">{String(index + 1).padStart(2, '0')}</span><b>{item.label}</b>{item.text && <small>{item.text}</small>}</a>
+      <a href={item.href} aria-current={item.current}><span class="mobile-nav-index">{String(index + 1).padStart(2, '0')}</span><b><span class="menu-label"><NavigationIcon href={item.href}/>{item.label}</span></b>{item.text && <small>{item.text}</small>}</a>
     ))}
   </nav>
 </div>
