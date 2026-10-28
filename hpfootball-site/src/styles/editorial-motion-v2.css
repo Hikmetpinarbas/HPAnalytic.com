@@ -9,3 +9,11 @@
 .match-editorial .film-icon-button,.match-editorial .film-icon-button:hover,.match-editorial .film-icon-button:focus{background:transparent!important;border:0!important;box-shadow:none!important;color:#e7bc70!important}
 
 .goal-film .film-intro{margin:0 0 12px;font:400 13px/1.5 system-ui,sans-serif;color:#c1c6c8;max-width:72ch}
+
+/* Article-wide visual language. Keep component metrics intact; harmonise surfaces. */
+.editorial-continuity{--article-bg:#0e0e10;--article-surface:#17191c;--article-ink:#f3ebdd;--article-rule:#3e4145;--article-accent:#b68a3d;background:var(--article-bg);color:var(--article-ink)}
+.editorial-continuity .continuity-chapter,.editorial-continuity .continuity-cover,.editorial-continuity .continuity-method,.editorial-continuity .continuity-contents{background:var(--article-bg);color:var(--article-ink);border-color:var(--article-rule)}
+.editorial-continuity .derby-composite,.editorial-continuity .flow-surface,.editorial-continuity .goal-film,.editorial-continuity .preserved-visuals .plate{background:var(--article-surface);color:var(--article-ink);border-color:var(--article-rule);box-shadow:none}
+.editorial-continuity .derby-composite__axis,.editorial-continuity .flow-surface svg,.editorial-continuity .film-stage{border-color:var(--article-rule)}
+.editorial-continuity .derby-composite__eyebrow,.editorial-continuity .p0-eyebrow{color:var(--article-accent)}
+.editorial-continuity .continuity-reading,.editorial-continuity .continuity-chapter h2,.editorial-continuity .derby-composite h3{color:var(--article-ink)}
