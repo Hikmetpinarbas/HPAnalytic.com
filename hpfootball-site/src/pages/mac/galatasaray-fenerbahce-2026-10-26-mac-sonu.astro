@@ -1,0 +1,47 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import OriginalChart from '../../components/preserved-derby/OriginalChart.astro';
+import OriginalRuntime from '../../components/preserved-derby/OriginalRuntime.astro';
+import GoalChronology from '../../components/GoalChronology.astro';
+import {serializeJsonLd} from '../../lib/json-ld.mjs';
+import editorial from '../../data/derby-editorial-continuity.json';
+import visualData from '../../data/preserved-derby-data.json';
+import '../../styles/experience-tokens.css';
+import '../../styles/editorial-continuity.css';
+import '../../styles/match-editorial-v4.css';
+export const prerender = true;
+const {title,standfirst}=editorial;
+const wordCount=editorial.sections.flatMap(section=>section.paragraphs).join(' ').split(/\s+/).length;
+const notes:Record<string,{scope?:string;method:string;limit:string}>={
+ pulse:{method:'Mevcut üç dakikalık aksiyon dilimleri ve olay işaretleri korunur.',limit:'Aksiyon yoğunluğu, topa sahiplik veya baskı başarısı değildir.'},
+ kde:{method:'8 m bant genişliği; 70 × 46 hesap ızgarası; iki panelde ortak yoğunluk ölçeği.',limit:'Yoğunluk gözlenen kazanım noktalarının yumuşatılmasıdır; tracking veya saha kontrolü ölçümü değildir.'},
+ field:{method:'Kaynak sürümün takım, zaman ve katman filtreleri korunur.',limit:'Her katman farklı bir kayıt ailesini gösterir; sayılar birbirine eklenmez.'},
+ atlas:{method:'Mevcut saha ızgarası, renk skalası ve kayıt kapsamı korunur.',limit:'Bir alandaki olay sıklığı, oyuncuların o alanda geçirdiği süre değildir.'},
+ phases:{method:'Kaynak sürümün evre sınırları; ilgili ölçüler on dakikaya oranlanır.',limit:'Yarı karşılaştırması oyuncu kayıt ailesindedir; kaleci içeren maç toplamıyla birleştirilmez.'},
+ xg:{method:'Oyuncu toplamları, kaynak sürümdeki xG değerleri ve şut sayıları korunur.',limit:'Şut başına model değeri değildir; takım toplamı noktalara dağıtılmaz.'}
+};
+const path='/mac/galatasaray-fenerbahce-2026-10-26-mac-sonu/';
+const schema={'@context':'https://schema.org','@type':'Article',headline:title,description:standfirst,datePublished:'2026-10-27',dateModified:'2026-10-28',image:new URL('/editorial/20261028/derby-og.png',Astro.site).href,publisher:{'@type':'Organization',name:'HPAnalytic'},inLanguage:'tr',author:{'@type':'Person',name:'Hikmet Pınarbaş'},mainEntityOfPage:new URL(path,Astro.site).href};
+---
+<BaseLayout title={title+' — HPAnalytic'} description={standfirst} section="analysis" ogType="article" image="/editorial/20261028/derby-og.png" imageAlt="Galatasaray 2–1 Fenerbahçe: 20–4 şut ve 2,71–0,67 sağlayıcı xG">
+<script slot="head" type="application/ld+json" set:html={serializeJsonLd(schema)}/>
+<article class="editorial-continuity" data-experience="continuity">
+<header class="continuity-cover"><div class="continuity-cover__line"><span>MAÇ SONU / GALATASARAY × FENERBAHÇE</span><span>26 EKİM 2026 · RAMS PARK</span></div><div class="continuity-cover__grid"><div><p class="kicker">HPANALYTIC / DERBİ DOSYASI</p><h1>{title}</h1><p class="continuity-standfirst">{standfirst}</p><p class="continuity-byline">Hikmet Pınarbaş <span>{Math.ceil(wordCount/200)} dk okuma</span></p></div><aside class="continuity-score" aria-label="Maç sonucu Galatasaray 2 Fenerbahçe 1"><p>MAÇ SONU</p><b>2 <span>—</span> 1</b><div><span>Galatasaray</span><span>Fenerbahçe</span></div><p class="continuity-status">Kaynaklı maç analizi</p></aside></div><div class="continuity-keyfacts"><div><b>20–4</b><span>Şut</span></div><div><b>2,71–0,67</b><span>Sağlayıcı xG</span></div><div><b>51–10</b><span>Ceza sahası aksiyonu</span></div></div></header>
+
+<div class="continuity-share"><a href="#source-notes">Kaynak ve yöntem ↓</a><button type="button" data-article-share>Bağlantıyı paylaş ↗</button><span role="status" data-share-status></span></div><nav class="continuity-contents" aria-label="Yazı içindekiler">{editorial.sections.map(section=><a href={'#'+section.id}><span>{section.number}</span>{section.title}</a>)}</nav>
+{editorial.sections.map(section=><section class="continuity-chapter" id={section.id} aria-labelledby={'heading-'+section.id}><header><span class="continuity-chapter__number">{section.number}</span><h2 id={'heading-'+section.id}>{section.title}</h2></header><div class="continuity-reading">{section.paragraphs.map((paragraph,i)=><p class:list={{'continuity-opening':section.number==='01'&&i===0}}>{paragraph}</p>)}</div>{'chart' in section&&section.chart&&<OriginalChart chart={section.chart} {...notes[section.chart]}/>}
+{section.id==='goals'&&<div class="match-editorial"><GoalChronology/></div>}
+{section.id==='pressure-context'&&<aside class="continuity-paper"><p>11–1</p><h3>Rakip yarı sahada top kazanımı</h3><p>Mevcut kaynak paketinin takım toplamı. Kazanımın yeri ile sonraki hücumun imkânları birlikte okunur.</p></aside>}
+</section>)}
+
+<section class="continuity-method" id="source-notes"><h2>Kaynak ve yöntem</h2><p>Veri: SportsBase, 26 Ekim 2026 derbi dosyası. Grafiklerin veri dizileri, KDE hesabı ve mevcut sayısal sonuçları korunmuştur. Zaman akışı otomatik başlamaz; oynat düğmesi ve sürgüyle kontrol edilir.</p><p>Gol anlatımında pas alıcısı veya kesintisiz top yolu üretilmez. Oyuncu kayıtlarıyla takım toplamları, yarı örneklemleriyle maç toplamları aynı kapsamdaymış gibi birleştirilmez.</p><details><summary>Grafiklerin kayıt kapsamı</summary><p>Takım istatistiğinde toplam 24 şut vardır: Galatasaray 20, Fenerbahçe 4. Korunan grafik veri dizisinde 22 konum kaydı bulunur. Takım toplamı ve konum kayıtları farklı kapsamlardır; bütün şutların konumu varmış gibi gösterilmez. Kazanım grafikleri 42 Galatasaray ve 24 Fenerbahçe kaydına dayanır.</p></details><p class="continuity-status">Araştırma ve kaynak kontrolü: 28 Ekim 2026. Yazar: Hikmet Pınarbaş.</p></section>
+
+</article>
+<OriginalRuntime/>
+</BaseLayout>
+
+<script>
+const button=document.querySelector<HTMLButtonElement>('[data-article-share]');
+button?.addEventListener('click',async()=>{const url='https://www.hpanalytic.com/mac/galatasaray-fenerbahce-2026-10-26-mac-sonu/';const status=document.querySelector('[data-share-status]');try{if(navigator.share)await navigator.share({title:document.title,url});else await navigator.clipboard.writeText(url);if(status)status.textContent='Paylaşım bağlantısı hazır.';}catch(e){if(status)status.textContent=e instanceof DOMException&&e.name==='AbortError'?'Paylaşım kapatıldı.':url;}});
+</script>
+<style>.continuity-share{display:flex;gap:20px;flex-wrap:wrap;align-items:center;max-width:1440px;margin:auto;padding:20px var(--layout-gutter)}.continuity-share a,.continuity-share button{min-height:44px;display:inline-flex;align-items:center;padding:10px 16px;color:#F3EBDD;background:#1A1D22;border:1px solid #5C6675;font:inherit}.continuity-share :focus-visible{outline:3px solid #69b5e5;outline-offset:4px}</style>

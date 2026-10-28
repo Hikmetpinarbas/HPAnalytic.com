@@ -1,0 +1,17 @@
+---
+const milestones = [
+ ['Öncesi','Hareketi anlamak','Fizyoterapi → insan hareket bilimleri','Biyomekanik ve fizyoloji. Michigan State University, McPhail Equine Performance Center’da at hareketlerinin biyomekaniği. Bu eğitim ve araştırma dönemlerinin tarihleri kaynakta kesinleştirilmiyor.'],
+ ['2011','Bir soruyla başlayan iş','Ajax · Ekim 2011','De Toekomst’ta spor bilimci olarak başlangıç. İlk çalışma önerisi altı aylıktı. Cihazların yapabildiklerinden, antrenörün ihtiyaç duyduğu sorulara geçiş.'],
+ ['2016','Bilim ve analitik','Ajax · liderlik','Spor bilimi ve analitik çalışmalarının liderliği. Genç oyunculardan profesyonel takıma kadar uzanan bir araştırma ortamı.'],
+ ['2023','Bilgiyi geri vermek','Ajax · futbol analitiği','Futbol analitiği yöneticiliği. Player Portal üzerine kamuya açık anlatım: hazır oluş, maç verisi ve video kesitlerine oyuncunun erişimi.'],
+ ['2025','Aynı merak, yeni spor','AusCycling · Veri ve İçgörü Direktörü','3 Nisan 2025 resmî görev duyurusu; 13 Mayıs tarihli haberde Ajax’tan ayrılış. Duyuru tarihi, fiilî işe başlama günü olarak yorumlanmıyor. Hedef bağlamı: Los Angeles 2028 Olimpiyat döngüsü.']
+];
+---
+<div class="v-carousel v-career" data-carousel aria-label="Kariyer zaman çizelgesi">
+ <div class="v-module-head"><span class="v-label">CAREER / BİR MERAKIN İZİ</span><div class="v-arrows"><button data-prev aria-label="Önceki kariyer kartı">←</button><button data-next aria-label="Sonraki kariyer kartı">→</button></div></div>
+ <div class="v-rail" tabindex="0" aria-label="Yatay kariyer kartları; ok tuşlarıyla gezinin">
+ {milestones.map(([year,title,place,context],i)=><button class="v-career-card" data-career={i} aria-pressed={i===0} aria-controls="career-context"><span class="v-year">{year}</span><span class="v-career-dot" aria-hidden="true"></span><strong>{title}</strong><span>{place}</span><small>{context}</small></button>)}
+ </div>
+ <p class="v-context" id="career-context" aria-live="polite">{milestones[0][3]}</p>
+ <p class="v-caption">Eğitim tarihleri kesinleştirilmedi. Kariyer kayıtları: <a href="#source-1">[1]</a>, <a href="#source-5">[5]</a>, <a href="#source-6">[6]</a>, <a href="#source-7">[7]</a>.</p>
+</div>

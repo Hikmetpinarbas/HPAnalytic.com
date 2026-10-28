@@ -1,0 +1,8 @@
+---
+import article from './article.json';
+interface Props { block: number; }
+const {block} = Astro.props;
+---
+<div class="v-prose" data-source-block={block}>
+  {article.blocks[block].paragraphs.map(p => <p set:html={p} />)}
+</div>

@@ -1,0 +1,870 @@
+{
+  "shots": [
+    {
+      "event_key": "player|302",
+      "team": "Galatasaray",
+      "player": "victor osimhen",
+      "half": "1",
+      "elapsed_s": 731.0,
+      "coord": [
+        98.18,
+        40.71
+      ],
+      "source_ids": [
+        "302"
+      ]
+    },
+    {
+      "event_key": "player|391",
+      "team": "Galatasaray",
+      "player": "barıs alper yılmaz",
+      "half": "1",
+      "elapsed_s": 854.0,
+      "coord": [
+        99.22,
+        46.81
+      ],
+      "source_ids": [
+        "391",
+        "392"
+      ]
+    },
+    {
+      "event_key": "player|480",
+      "team": "Galatasaray",
+      "player": "barıs alper yılmaz",
+      "half": "1",
+      "elapsed_s": 978.0,
+      "coord": [
+        92.05,
+        37.76
+      ],
+      "source_ids": [
+        "480",
+        "481"
+      ]
+    },
+    {
+      "event_key": "player|789",
+      "team": "Galatasaray",
+      "player": "victor osimhen",
+      "half": "1",
+      "elapsed_s": 1689.0,
+      "coord": [
+        92.58,
+        29.76
+      ],
+      "source_ids": [
+        "789",
+        "790",
+        "792"
+      ]
+    },
+    {
+      "event_key": "player|1025",
+      "team": "Galatasaray",
+      "player": "victor osimhen",
+      "half": "1",
+      "elapsed_s": 2039.0,
+      "coord": [
+        95.29,
+        28.56
+      ],
+      "source_ids": [
+        "1025",
+        "1026"
+      ]
+    },
+    {
+      "event_key": "player|1140",
+      "team": "Galatasaray",
+      "player": "victor osimhen",
+      "half": "1",
+      "elapsed_s": 2270.0,
+      "coord": [
+        96.08,
+        24.12
+      ],
+      "source_ids": [
+        "1140",
+        "1142"
+      ]
+    },
+    {
+      "event_key": "player|1303",
+      "team": "Galatasaray",
+      "player": "victor osimhen",
+      "half": "1",
+      "elapsed_s": 2595.0,
+      "coord": [
+        97.74,
+        40.34
+      ],
+      "source_ids": [
+        "1303",
+        "1304",
+        "1306"
+      ]
+    },
+    {
+      "event_key": "player|1343",
+      "team": "Galatasaray",
+      "player": "aleksei batrakov",
+      "half": "1",
+      "elapsed_s": 2807.0,
+      "coord": [
+        92.4,
+        43.76
+      ],
+      "source_ids": [
+        "1343",
+        "1346"
+      ]
+    },
+    {
+      "event_key": "player|1582",
+      "team": "Fenerbahce",
+      "player": "romelu lukaku",
+      "half": "2",
+      "elapsed_s": 3216.0,
+      "coord": [
+        97.3,
+        26.34
+      ],
+      "source_ids": [
+        "1582",
+        "1583"
+      ]
+    },
+    {
+      "event_key": "player|1703",
+      "team": "Galatasaray",
+      "player": "barıs alper yılmaz",
+      "half": "2",
+      "elapsed_s": 3428.0,
+      "coord": [
+        90.39,
+        35.47
+      ],
+      "source_ids": [
+        "1703"
+      ]
+    },
+    {
+      "event_key": "player|1940",
+      "team": "Fenerbahce",
+      "player": "irfan can kahveci",
+      "half": "2",
+      "elapsed_s": 3860.0,
+      "coord": [
+        93.62,
+        31.79
+      ],
+      "source_ids": [
+        "1940",
+        "1941",
+        "1943"
+      ]
+    },
+    {
+      "event_key": "player|2141",
+      "team": "Galatasaray",
+      "player": "lucas torreira",
+      "half": "2",
+      "elapsed_s": 4340.0,
+      "coord": [
+        87.41,
+        26.87
+      ],
+      "source_ids": [
+        "2141"
+      ]
+    },
+    {
+      "event_key": "player|2174",
+      "team": "Galatasaray",
+      "player": "lucas torreira",
+      "half": "2",
+      "elapsed_s": 4454.0,
+      "coord": [
+        100.01,
+        37.13
+      ],
+      "source_ids": [
+        "2174",
+        "2176"
+      ]
+    },
+    {
+      "event_key": "player|2306",
+      "team": "Galatasaray",
+      "player": "rafael leao",
+      "half": "2",
+      "elapsed_s": 4606.0,
+      "coord": [
+        83.74,
+        49.33
+      ],
+      "source_ids": [
+        "2306"
+      ]
+    },
+    {
+      "event_key": "player|2316",
+      "team": "Galatasaray",
+      "player": "ismail jakobs",
+      "half": "2",
+      "elapsed_s": 4646.0,
+      "coord": [
+        80.41,
+        39.99
+      ],
+      "source_ids": [
+        "2316"
+      ]
+    },
+    {
+      "event_key": "player|2484",
+      "team": "Galatasaray",
+      "player": "victor osimhen",
+      "half": "2",
+      "elapsed_s": 4910.0,
+      "coord": [
+        93.28,
+        21.65
+      ],
+      "source_ids": [
+        "2484"
+      ]
+    },
+    {
+      "event_key": "player|2665",
+      "team": "Galatasaray",
+      "player": "rafael leao",
+      "half": "2",
+      "elapsed_s": 5362.0,
+      "coord": [
+        92.75,
+        44.57
+      ],
+      "source_ids": [
+        "2665",
+        "2667"
+      ]
+    },
+    {
+      "event_key": "player|2737",
+      "team": "Fenerbahce",
+      "player": "milan skriniar",
+      "half": "2",
+      "elapsed_s": 5512.0,
+      "coord": [
+        97.74,
+        32.12
+      ],
+      "source_ids": [
+        "2737",
+        "2739"
+      ]
+    },
+    {
+      "event_key": "player|2786",
+      "team": "Galatasaray",
+      "player": "leroy sane",
+      "half": "2",
+      "elapsed_s": 5601.0,
+      "coord": [
+        78.22,
+        29.23
+      ],
+      "source_ids": [
+        "2786"
+      ]
+    },
+    {
+      "event_key": "player|2844",
+      "team": "Fenerbahce",
+      "player": "kerem akturkoglu",
+      "half": "2",
+      "elapsed_s": 5808.0,
+      "coord": [
+        86.89,
+        48.48
+      ],
+      "source_ids": [
+        "2844",
+        "2845"
+      ]
+    }
+  ],
+  "missingLocations": 4,
+  "goals": [
+    {
+      "event_key": "player|789",
+      "goal_type": "GOAL",
+      "team": "Galatasaray",
+      "scorer": "45. Victor Osimhen (1093704)",
+      "half": "1",
+      "raw_start_s": 1693.49,
+      "elapsed_s": 1689.0,
+      "source_event_keys": [
+        "player|784",
+        "player|785",
+        "player|789"
+      ],
+      "source_ids": {
+        "player|784": [
+          "784"
+        ],
+        "player|785": [
+          "785",
+          "786",
+          "787",
+          "788"
+        ],
+        "player|789": [
+          "789",
+          "790",
+          "792"
+        ]
+      },
+      "mechanism_tags": [
+        "progressive_pass",
+        "assist",
+        "goal"
+      ],
+      "preceding_opposition_events": [
+        "player|791"
+      ],
+      "action_chronology": [
+        {
+          "event_key": "player|784",
+          "actor": "45. Victor Osimhen (1093704)",
+          "offset_to_goal_s": -3.0,
+          "action_labels": [
+            "Passes accurate"
+          ],
+          "source_ids": [
+            "784"
+          ]
+        },
+        {
+          "event_key": "player|785",
+          "actor": "53. Barış Alper Yılmaz (1589859)",
+          "offset_to_goal_s": -1.0,
+          "action_labels": [
+            "Assists",
+            "Chances created",
+            "Key passes accurate",
+            "Progressive passes accurate"
+          ],
+          "source_ids": [
+            "785",
+            "786",
+            "787",
+            "788"
+          ]
+        },
+        {
+          "event_key": "player|789",
+          "actor": "45. Victor Osimhen (1093704)",
+          "offset_to_goal_s": 0.0,
+          "action_labels": [
+            "Chances",
+            "Goals",
+            "Shots on target"
+          ],
+          "source_ids": [
+            "789",
+            "790",
+            "792"
+          ]
+        }
+      ],
+      "confirmed_pass_recipients": false,
+      "continuous_possession_proven": false
+    },
+    {
+      "event_key": "player|1303",
+      "goal_type": "GOAL",
+      "team": "Galatasaray",
+      "scorer": "45. Victor Osimhen (1093704)",
+      "half": "1",
+      "raw_start_s": 2599.49,
+      "elapsed_s": 2595.0,
+      "source_event_keys": [
+        "player|1289",
+        "player|1291",
+        "player|1293",
+        "player|1294",
+        "player|1295",
+        "player|1299",
+        "player|1303"
+      ],
+      "source_ids": {
+        "player|1289": [
+          "1289",
+          "1290"
+        ],
+        "player|1291": [
+          "1291",
+          "1292"
+        ],
+        "player|1293": [
+          "1293",
+          "1296"
+        ],
+        "player|1294": [
+          "1294",
+          "1297"
+        ],
+        "player|1295": [
+          "1295",
+          "1298"
+        ],
+        "player|1299": [
+          "1299",
+          "1300",
+          "1301",
+          "1302"
+        ],
+        "player|1303": [
+          "1303",
+          "1304",
+          "1306"
+        ]
+      },
+      "mechanism_tags": [
+        "progressive_pass",
+        "assist",
+        "goal"
+      ],
+      "preceding_opposition_events": [
+        "player|1305"
+      ],
+      "action_chronology": [
+        {
+          "event_key": "player|1289",
+          "actor": "4. Ismail Jakobs (673189)",
+          "offset_to_goal_s": -5.0,
+          "action_labels": [
+            "Passes accurate",
+            "Passes into the penalty box accurate"
+          ],
+          "source_ids": [
+            "1289",
+            "1290"
+          ]
+        },
+        {
+          "event_key": "player|1291",
+          "actor": "45. Victor Osimhen (1093704)",
+          "offset_to_goal_s": -3.0,
+          "action_labels": [
+            "Aerial challenges lost",
+            "Challenges unsuccessful"
+          ],
+          "source_ids": [
+            "1291",
+            "1292"
+          ]
+        },
+        {
+          "event_key": "player|1293",
+          "actor": "4. Ismail Jakobs (673189)",
+          "offset_to_goal_s": -1.0,
+          "action_labels": [
+            "Involvement in set-piece attacks",
+            "Involvement in set-piece attacks with shots"
+          ],
+          "source_ids": [
+            "1293",
+            "1296"
+          ]
+        },
+        {
+          "event_key": "player|1294",
+          "actor": "6. Davinson Sánchez (1647732)",
+          "offset_to_goal_s": -1.0,
+          "action_labels": [
+            "Involvement in set-piece attacks",
+            "Involvement in set-piece attacks with shots"
+          ],
+          "source_ids": [
+            "1294",
+            "1297"
+          ]
+        },
+        {
+          "event_key": "player|1295",
+          "actor": "45. Victor Osimhen (1093704)",
+          "offset_to_goal_s": -1.0,
+          "action_labels": [
+            "Involvement in set-piece attacks",
+            "Involvement in set-piece attacks with shots"
+          ],
+          "source_ids": [
+            "1295",
+            "1298"
+          ]
+        },
+        {
+          "event_key": "player|1299",
+          "actor": "6. Davinson Sánchez (1647732)",
+          "offset_to_goal_s": -1.0,
+          "action_labels": [
+            "Assists",
+            "Chances created",
+            "Key passes accurate",
+            "Progressive passes accurate"
+          ],
+          "source_ids": [
+            "1299",
+            "1300",
+            "1301",
+            "1302"
+          ]
+        },
+        {
+          "event_key": "player|1303",
+          "actor": "45. Victor Osimhen (1093704)",
+          "offset_to_goal_s": 0.0,
+          "action_labels": [
+            "Chances",
+            "Goals",
+            "Shots on target"
+          ],
+          "source_ids": [
+            "1303",
+            "1304",
+            "1306"
+          ]
+        }
+      ],
+      "confirmed_pass_recipients": false,
+      "continuous_possession_proven": false
+    },
+    {
+      "event_key": "player|1940",
+      "goal_type": "GOAL",
+      "team": "Fenerbahce",
+      "scorer": "17. İrfan Can Kahveci (242846)",
+      "half": "2",
+      "raw_start_s": 3888.85,
+      "elapsed_s": 3860.0,
+      "source_event_keys": [
+        "player|1918",
+        "player|1920",
+        "player|1922",
+        "player|1923",
+        "player|1924",
+        "player|1925",
+        "player|1926",
+        "player|1927",
+        "player|1928",
+        "player|1935",
+        "player|1936",
+        "player|1938",
+        "player|1940"
+      ],
+      "source_ids": {
+        "player|1918": [
+          "1918",
+          "1919"
+        ],
+        "player|1920": [
+          "1920",
+          "1921"
+        ],
+        "player|1922": [
+          "1922"
+        ],
+        "player|1923": [
+          "1923",
+          "1929"
+        ],
+        "player|1924": [
+          "1924",
+          "1930"
+        ],
+        "player|1925": [
+          "1925",
+          "1931"
+        ],
+        "player|1926": [
+          "1926",
+          "1932"
+        ],
+        "player|1927": [
+          "1927",
+          "1933"
+        ],
+        "player|1928": [
+          "1928",
+          "1934"
+        ],
+        "player|1935": [
+          "1935"
+        ],
+        "player|1936": [
+          "1936",
+          "1937"
+        ],
+        "player|1938": [
+          "1938",
+          "1939"
+        ],
+        "player|1940": [
+          "1940",
+          "1941",
+          "1943"
+        ]
+      },
+      "mechanism_tags": [
+        "ball_recovery",
+        "carry",
+        "assist",
+        "goal"
+      ],
+      "preceding_opposition_events": [
+        "player|1915",
+        "player|1916",
+        "player|1942"
+      ],
+      "action_chronology": [
+        {
+          "event_key": "player|1918",
+          "actor": "3. Archie Brown (212977)",
+          "offset_to_goal_s": -13.0,
+          "action_labels": [
+            "Ball recoveries",
+            "Passes accurate"
+          ],
+          "source_ids": [
+            "1918",
+            "1919"
+          ]
+        },
+        {
+          "event_key": "player|1920",
+          "actor": "6. Mattéo Guendouzi (562671)",
+          "offset_to_goal_s": -11.0,
+          "action_labels": [
+            "Passes accurate",
+            "Passes forward accurate"
+          ],
+          "source_ids": [
+            "1920",
+            "1921"
+          ]
+        },
+        {
+          "event_key": "player|1922",
+          "actor": "91. Ngolo Kante (717612)",
+          "offset_to_goal_s": -9.0,
+          "action_labels": [
+            "Passes accurate"
+          ],
+          "source_ids": [
+            "1922"
+          ]
+        },
+        {
+          "event_key": "player|1923",
+          "actor": "3. Archie Brown (212977)",
+          "offset_to_goal_s": -9.0,
+          "action_labels": [
+            "Involvement in counterattacks",
+            "Involvement in counterattacks with shots"
+          ],
+          "source_ids": [
+            "1923",
+            "1929"
+          ]
+        },
+        {
+          "event_key": "player|1924",
+          "actor": "6. Mattéo Guendouzi (562671)",
+          "offset_to_goal_s": -9.0,
+          "action_labels": [
+            "Involvement in counterattacks",
+            "Involvement in counterattacks with shots"
+          ],
+          "source_ids": [
+            "1924",
+            "1930"
+          ]
+        },
+        {
+          "event_key": "player|1925",
+          "actor": "7. Kerem Akturkoglu (737292)",
+          "offset_to_goal_s": -9.0,
+          "action_labels": [
+            "Involvement in counterattacks",
+            "Involvement in counterattacks with shots"
+          ],
+          "source_ids": [
+            "1925",
+            "1931"
+          ]
+        },
+        {
+          "event_key": "player|1926",
+          "actor": "17. İrfan Can Kahveci (242846)",
+          "offset_to_goal_s": -9.0,
+          "action_labels": [
+            "Involvement in counterattacks",
+            "Involvement in counterattacks with shots"
+          ],
+          "source_ids": [
+            "1926",
+            "1932"
+          ]
+        },
+        {
+          "event_key": "player|1927",
+          "actor": "70. Oğuz Aydın (102796)",
+          "offset_to_goal_s": -9.0,
+          "action_labels": [
+            "Involvement in counterattacks",
+            "Involvement in counterattacks with shots"
+          ],
+          "source_ids": [
+            "1927",
+            "1933"
+          ]
+        },
+        {
+          "event_key": "player|1928",
+          "actor": "91. Ngolo Kante (717612)",
+          "offset_to_goal_s": -9.0,
+          "action_labels": [
+            "Involvement in counterattacks",
+            "Involvement in counterattacks with shots"
+          ],
+          "source_ids": [
+            "1928",
+            "1934"
+          ]
+        },
+        {
+          "event_key": "player|1935",
+          "actor": "7. Kerem Akturkoglu (737292)",
+          "offset_to_goal_s": -8.0,
+          "action_labels": [
+            "Carry"
+          ],
+          "source_ids": [
+            "1935"
+          ]
+        },
+        {
+          "event_key": "player|1936",
+          "actor": "7. Kerem Akturkoglu (737292)",
+          "offset_to_goal_s": -5.0,
+          "action_labels": [
+            "Passes accurate",
+            "Passes into the penalty box accurate"
+          ],
+          "source_ids": [
+            "1936",
+            "1937"
+          ]
+        },
+        {
+          "event_key": "player|1938",
+          "actor": "70. Oğuz Aydın (102796)",
+          "offset_to_goal_s": -2.0,
+          "action_labels": [
+            "Assists",
+            "Chances created"
+          ],
+          "source_ids": [
+            "1938",
+            "1939"
+          ]
+        },
+        {
+          "event_key": "player|1940",
+          "actor": "17. İrfan Can Kahveci (242846)",
+          "offset_to_goal_s": 0.0,
+          "action_labels": [
+            "Chances",
+            "Goals",
+            "Shots on target"
+          ],
+          "source_ids": [
+            "1940",
+            "1941",
+            "1943"
+          ]
+        }
+      ],
+      "confirmed_pass_recipients": false,
+      "continuous_possession_proven": false
+    }
+  ],
+  "publicationReady": false,
+  "coordinates": {
+    "schema": "hpa.coordinate_perspective.v1",
+    "pairs_checked": 28,
+    "mirrored": 28,
+    "nonmirrored": 0,
+    "missing_coordinates": 0,
+    "exceptions": [],
+    "pitch_dimensions": [
+      105,
+      68
+    ],
+    "orientation": "already_attack_normalized_no_automatic_rotation",
+    "mirror_pair_check_only": true,
+    "absolute_physical_orientation_confirmed": false
+  },
+  "sources": {
+    "schema": "hpanalytic.sources.v1",
+    "match": "gs-fb-derby-20261026",
+    "source": "/home/userland/HP_WORKSPACE/DERBY_GS_FB_20261026",
+    "files": [
+      {
+        "name": "Galatasaray 2-1 Fenerbahce 26.10.2026, Full match (1).csv",
+        "size": 23266,
+        "sha256": "109d794bc8bb3ca16f5fede8076aaf4d83faae935b273ac9a85ce7d638b93aa2"
+      },
+      {
+        "name": "Galatasaray 2-1 Fenerbahce 26.10.2026, Full match (1).xml",
+        "size": 121964,
+        "sha256": "0e04af3e329b1d8c1d56b4618d3305abf0913a5c6e47f729d03acb53735c68a7"
+      },
+      {
+        "name": "Galatasaray 2-1 Fenerbahce 26.10.2026, Full match (2).csv",
+        "size": 335232,
+        "sha256": "ba514f37bee153ca3efa78964a299c69cf7a203248782fbe0aed189dde661a8e"
+      },
+      {
+        "name": "Galatasaray 2-1 Fenerbahce 26.10.2026, Full match (2).xml",
+        "size": 1755643,
+        "sha256": "cf853c848ea71bc53d18fc42b6f244afe10e74bee22d339417ac773df0f52ea4"
+      },
+      {
+        "name": "Galatasaray 2-1 Fenerbahce 26.10.2026, Full match.csv",
+        "size": 376553,
+        "sha256": "c1f19450aff6a20363281eadb4ea9e161b9c1a50370d5b56305b542b55db1a15"
+      },
+      {
+        "name": "Galatasaray 2-1 Fenerbahce 26.10.2026, Full match.xml",
+        "size": 1808503,
+        "sha256": "573123a7d4d64ecf4140cfc09b2366c7c29cae3a011cb020ef1f460588095fc4"
+      },
+      {
+        "name": "Galatasaray 2-1 Fenerbahce, Turkey. Süper Lig, 26.10.2026 (1).xlsx",
+        "size": 8927,
+        "sha256": "549b7d52ffd2f46525efe935d41a53df12265690fa8751b9ce68e21eaac752cd"
+      },
+      {
+        "name": "Galatasaray 2-1 Fenerbahce, Turkey. Süper Lig, 26.10.2026.xlsx",
+        "size": 22920,
+        "sha256": "8cc73f6fdf65f00a6e4445b9af2aa22c600ba89a1e384de6c6172ce64e1b39cf"
+      }
+    ]
+  }
+}

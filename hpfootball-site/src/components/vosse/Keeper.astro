@@ -1,0 +1,27 @@
+---
+const layers=[['stance','Başlangıç duruşu'],['push','Karşı bacak'],['com','Kütle merkezi'],['velocity','Yatay hız'],['joints','Eklem gücü']];
+---
+<div class="v-keeper v-science" data-keeper>
+ <div class="v-module-head"><span class="v-label">HAREKET ATLASI / 01</span><span class="v-caption">Temsili biyomekanik animasyon</span></div>
+ <div class="v-keeper-stage">
+ <svg viewBox="0 0 800 460" role="img" aria-labelledby="keeper-title keeper-desc">
+  <title id="keeper-title">Kaleci dalışının dört kavramsal fazı</title><desc id="keeper-desc">Başlangıç, karşı bacak itişi, yatay ilerleme ve uzanış. Pozlar gerçek hareket kaydından üretilmedi. Oklar kuvvet veya hız büyüklüğü ölçmez.</desc>
+  <defs><pattern id="keeper-grid" width="50" height="50" patternUnits="userSpaceOnUse"><path d="M50 0H0V50" fill="none" stroke="currentColor" stroke-opacity=".07"/></pattern><marker id="v-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="5" markerHeight="5" orient="auto-start-reverse"><path d="M0 0L10 5L0 10" fill="var(--blue)"/></marker></defs>
+  <rect width="800" height="460" fill="url(#keeper-grid)"/><path d="M55 385H750M95 395V65H710V395M95 85H710" fill="none" stroke="var(--line-strong)" stroke-width="1.5"/>
+  <path d="M55 385H750" stroke="var(--ink-2)" stroke-width="2"/>
+  <g class="v-layer" data-layer="stance"><path d="M180 385H310M180 373V397M310 373V397" stroke="var(--blue)" fill="none" stroke-dasharray="4 5"/><text x="180" y="425" class="v-svg-label">HAZIRLIK ALANI</text></g>
+  <g id="keeper-body"><path id="keeper-rear-leg" class="v-body-limb" d="M250 270L215 325L185 380"/><path id="keeper-front-leg" class="v-body-limb" d="M250 270L290 325L310 380"/><path id="keeper-torso" d="M248 184L250 270" stroke="var(--gold)" stroke-width="47" stroke-linecap="round"/><path id="keeper-arms" d="M248 205L200 240L178 210M248 205L300 235L324 205" class="v-body-limb v-arm"/><path id="keeper-shorts" d="M230 271L250 278L272 272" stroke="var(--ink-2)" stroke-width="29" fill="none"/><circle id="keeper-head" cx="247" cy="149" r="23" fill="var(--ink)"/><circle id="keeper-glove-a" cx="178" cy="210" r="12" fill="var(--ink)"/><circle id="keeper-glove-b" cx="324" cy="205" r="12" fill="var(--ink)"/></g>
+  <g class="v-layer" data-layer="push"><path d="M185 379L243 298" stroke="var(--blue)" stroke-width="3" marker-end="url(#v-arrow)"/><circle cx="185" cy="379" r="16" fill="none" stroke="var(--blue)"/><text x="75" y="345" class="v-svg-label">KARŞI BACAK</text></g>
+  <g class="v-layer" data-layer="com"><path d="M250 252Q410 160 625 185" fill="none" stroke="var(--blue)" stroke-dasharray="6 8"/><circle id="keeper-com" cx="250" cy="252" r="8" fill="var(--bg)" stroke="var(--blue)" stroke-width="2"/><text x="430" y="38" class="v-svg-label">KÜTLE MERKEZİ · TEMSİLİ İZ</text></g>
+  <g class="v-layer" data-layer="velocity"><path d="M450 335H640" stroke="var(--blue)" stroke-width="2" marker-end="url(#v-arrow)"/><text x="450" y="365" class="v-svg-label">YATAY İLERLEME</text></g>
+  <g class="v-layer" data-layer="joints"><circle class="v-joint" id="joint-hip" cx="250" cy="270" r="11"/><circle class="v-joint" id="joint-knee" cx="215" cy="325" r="9"/><circle class="v-joint" id="joint-ankle" cx="185" cy="380" r="8"/></g>
+ </svg>
+ <span class="v-phase-readout" aria-live="polite">01 / Başlangıç</span>
+ </div>
+ <p class="v-mobile-science-key">Mavi: açıklayıcı hareket katmanları. Kesikli iz: temsili kütle merkezi yolu. Aşağıdaki düğmelerle katmanları inceleyin.</p>
+ <div class="v-phase-buttons" role="group" aria-label="Dalış fazını seçin">{['Başlangıç','İtiş','Yatay ilerleme','Uzanış'].map((s,i)=><button data-phase={i} aria-pressed={i===0}><span>0{i+1}</span>{s}</button>)}</div>
+ <label class="v-scrub">Hareketi incele <input type="range" min="0" max="100" value="0" aria-label="Temsili kaleci hareketi ilerlemesi"/></label>
+ <div class="v-layer-controls" role="group" aria-label="Biyomekanik katmanlar">{layers.map(([id,label])=><button data-layer-toggle={id} aria-pressed="true">{label}<span aria-hidden="true"> +</span></button>)}</div>
+ <p class="v-context" id="keeper-context" aria-live="polite">Dalış, elin topa uzanmasından önce başlar. Hazırlık duruşu hareketin üretileceği koşulları belirler.</p>
+ <p class="v-boundary">Gerçek motion-capture rekonstrüksiyonu değildir. Pozlar, iz ve oklar kavramsaldır; ölçekli ölçüm içermez. <strong>42 cm, maçta ölçülmüş bir erişim artışı değil, belirli bir penaltı senaryosundan türetilen iki taraflı toplam kapsama tahminidir.</strong></p>
+</div>

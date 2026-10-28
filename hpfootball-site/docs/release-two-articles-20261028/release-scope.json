@@ -1,0 +1,17 @@
+{
+  "dataSha256": "987ad04c87e43aa6ed6db3d91fa2c18e63d289b1097b2effaf54dc35707be0fd",
+  "photosShipped": false,
+  "allowedPages": [
+    "/mac/galatasaray-fenerbahce-2026-10-26-mac-sonu/",
+    "/portraits/vosse-de-boode/"
+  ],
+  "baseCommit": "4a352ec838280cfd425b9aa01e33f87a5f593fc9",
+  "siteRedesignShipped": false,
+  "logoChanged": false,
+  "unchangedShellFingerprints": {
+    "src/layouts/BaseLayout.astro": "c7935bc19432663d5cf2fb33786cc1c6f1071a69b3d423e3aa4e3b22fc18b666",
+    "src/styles/global.css": "00b1e8fac3823f5ca533a1592873011c8b30ba5fb0cddb58c20538fdbe5e3e60",
+    "src/components/Logo.astro": "c5815862c040406b65a2bd88349f7e5793a5aa36ea54cdc2b3e2027c92476c0b",
+    "public/favicon.svg": "deef6dc933e9006e753d12c22aff0758cdac09719ebb36a5e2981db96446fb31"
+  }
+}

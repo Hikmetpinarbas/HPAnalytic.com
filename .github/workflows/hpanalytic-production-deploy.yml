@@ -52,7 +52,7 @@ jobs:
         run: |
           # Isolate browser tooling: npm install in the application tree re-resolves
           # optional transitive dependencies and fails on @volar/typescript ETARGET.
-          npm install --prefix "$RUNNER_TEMP/hpa-browser-qa" --no-save --no-package-lock playwright@1.56.1
+          npm install --prefix "$RUNNER_TEMP/hpa-browser-qa" --no-save --no-package-lock playwright@1.56.1 axe-core@4.10.3
           ln -s "$RUNNER_TEMP/hpa-browser-qa/node_modules/playwright" node_modules/playwright
           ln -s "$RUNNER_TEMP/hpa-browser-qa/node_modules/playwright-core" node_modules/playwright-core
           "$RUNNER_TEMP/hpa-browser-qa/node_modules/.bin/playwright" install --with-deps chromium
@@ -68,6 +68,17 @@ jobs:
           done
           curl -fsS http://127.0.0.1:4321/ >/dev/null || { cat /tmp/hpanalytic-astro.log; exit 1; }
           node scripts/release-browser-qa.mjs
+
+      - name: Verify both approved articles from production output
+        run: |
+          python3 -m http.server 4322 --bind 127.0.0.1 --directory dist/client > /tmp/hpanalytic-approved-static.log 2>&1 &
+          HPA_APPROVED_QA_PID=$!
+          trap 'kill $HPA_APPROVED_QA_PID 2>/dev/null || true' EXIT
+          for i in $(seq 1 20); do
+            if curl -fsS http://127.0.0.1:4322/portraits/vosse-de-boode/ >/dev/null; then break; fi
+            sleep 1
+          done
+          HPA_RELEASE_BASE=http://127.0.0.1:4322 HPA_BROWSER_ENGINE=playwright HPA_AXE_PATH="$RUNNER_TEMP/hpa-browser-qa/node_modules/axe-core/axe.min.js" node scripts/two-article-browser-qa.cjs
 
       - name: Upload browser QA evidence
         if: success()

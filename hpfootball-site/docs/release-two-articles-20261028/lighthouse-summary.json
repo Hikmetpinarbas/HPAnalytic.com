@@ -1,0 +1,14 @@
+{
+  "categories": {
+    "performance": 83,
+    "accessibility": 100,
+    "best-practices": 100,
+    "seo": 100
+  },
+  "metrics": {
+    "largest-contentful-paint": "3.3\u00a0s",
+    "total-blocking-time": "160\u00a0ms",
+    "cumulative-layout-shift": "0.034"
+  },
+  "environment": "Local production HTML; Lighthouse mobile simulation; Python server without compression; not field CWV"
+}

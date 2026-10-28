@@ -1,0 +1,26 @@
+[
+  {
+    "family": "barlowcondensed",
+    "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/barlowcondensed/OFL.txt",
+    "silOFL": true,
+    "note": "Family license verified; original embedded font version provenance retained in SHA manifest"
+  },
+  {
+    "family": "newsreader",
+    "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/newsreader/OFL.txt",
+    "silOFL": true,
+    "note": "Family license verified; original embedded font version provenance retained in SHA manifest"
+  },
+  {
+    "family": "cormorantgaramond",
+    "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/cormorantgaramond/OFL.txt",
+    "silOFL": true,
+    "note": "Family license verified; original embedded font version provenance retained in SHA manifest"
+  },
+  {
+    "family": "inter",
+    "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/inter/OFL.txt",
+    "silOFL": true,
+    "note": "Family license verified; original embedded font version provenance retained in SHA manifest"
+  }
+]

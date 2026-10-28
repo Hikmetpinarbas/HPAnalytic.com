@@ -1,0 +1,21 @@
+<div class="v-gaze v-science" data-gaze>
+ <div class="v-module-head"><span class="v-label">BAKIŞ ATLASI / 02</span><span class="v-caption">Kavramsal deney şeması</span></div>
+ <svg viewBox="0 0 800 440" role="img" aria-labelledby="gaze-title gaze-desc">
+ <title id="gaze-title">Vuruştan önce hedefe ve topa bakış</title><desc id="gaze-desc">Beş maketli baraj, hedef bölgesi ve kalecisiz deney. Kesikli çizgi yalnızca bakılan nesneyi işaretler; bireysel göz izleme verisi değildir.</desc>
+ <defs><pattern id="pitch-lines" width="80" height="80" patternUnits="userSpaceOnUse"><path d="M0 0H80" stroke="currentColor" stroke-opacity=".06"/></pattern></defs>
+ <path d="M60 405L210 130H675L780 405Z" fill="url(#pitch-lines)" stroke="var(--line-strong)"/>
+ <path d="M170 300L255 175H640L705 300ZM290 405Q430 305 575 405M275 130V45H615V130M275 45L295 25H635V110L615 130M295 25V110H635" fill="none" stroke="var(--ink-2)" stroke-opacity=".65"/>
+ <path d="M295 45H615M295 67H615M295 90H615M320 25V130M360 25V130M400 25V130M440 25V130M480 25V130M520 25V130M560 25V130M600 25V130" fill="none" stroke="var(--ink-2)" stroke-opacity=".10"/>
+ <rect id="gaze-target" x="540" y="49" width="65" height="65" fill="var(--gold)" fill-opacity=".22" stroke="var(--gold)"/>
+ <g fill="var(--muted)">{[370,405,440,475,510].map(x=><g><circle cx={x} cy="184" r="8"/><path d={`M${x} 196V233M${x-9} 215H${x+9}M${x} 233L${x-7} 252M${x} 233L${x+7} 252`} fill="none" stroke="var(--muted)" stroke-width="7" stroke-linecap="round"/></g>)}</g>
+ <g stroke="var(--ink)" stroke-width="10" stroke-linecap="round" fill="none"><path d="M225 303L239 348L218 389M239 348L271 378M230 316L195 341M230 316L258 332"/></g><circle cx="221" cy="282" r="15" fill="var(--gold)"/>
+ <circle id="gaze-ball" cx="300" cy="379" r="9" fill="var(--ink)"/><path id="gaze-focus" d="M229 280L570 80" stroke="var(--gold)" stroke-width="2" fill="none" stroke-dasharray="5 8"/>
+ <text x="540" y="152" class="v-svg-label">HEDEF ALANI</text><text x="385" y="283" class="v-svg-label">5 MAKET</text><text x="80" y="65" class="v-svg-label">KALECİ YOK</text>
+ </svg>
+ <p class="v-mobile-science-key">Hedef alanı · 5 maketli baraj · kaleci yok.<br/>Kesikli çizgi yalnızca kavramsal bakış odağını gösterir.</p>
+ <div class="v-gaze-control"><div role="group" aria-label="Bakılan nesne"><button data-focus="target" aria-pressed="true">Hedefe bakış</button><button data-focus="ball" aria-pressed="false">Topa bakış</button></div><div role="group" aria-label="Deneme sonucu"><button data-outcome="hit" aria-pressed="true">İsabetli</button><button data-outcome="miss" aria-pressed="false">İsabetsiz</button></div></div>
+ <div class="v-gaze-result"><span class="v-gaze-number">886 <small>ms</small></span><div><strong class="v-gaze-result-label">Hedefe bakış · isabetli denemeler</strong><p>Toplu ortalama süre. <span class="v-gaze-other">İsabetsiz: 488 ms.</span></p><div class="v-duration-track"><span></span></div><span class="v-caption">0–1000 ms · karşılaştırma ölçeği</span></div></div>
+ <p class="v-context" id="gaze-context" aria-live="polite">Hedefe sabit bakışın ortalama süresi: isabetli denemelerde 886 ms, isabetsizlerde 488 ms.</p>
+ <details><summary>Ortalama süreleri tablo olarak oku</summary><table><caption>Schaper ve çalışma arkadaşları · ortalama süre (ms)</caption><thead><tr><th scope="col">Odak</th><th scope="col">İsabetli</th><th scope="col">İsabetsiz</th></tr></thead><tbody><tr><th scope="row">Hedef</th><td>886</td><td>488</td></tr><tr><th scope="row">Top</th><td>627</td><td>513</td></tr></tbody></table></details>
+ <p class="v-boundary"><strong>14 oyuncu · 220 deneme · kaleci yok.</strong> Başarı, hedef alana isabettir. Ortalama süreler bireysel bakış sırası veya tek bir denemenin zaman çizelgesi değildir. Kesikli çizgi kavramsal odaktır; gaze path değildir. İlişki, nedensellik göstermez. <a href="https://doi.org/10.1177/1747954120943067">Araştırma DOI ↗</a></p>
+</div>

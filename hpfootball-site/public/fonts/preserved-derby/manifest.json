@@ -1,0 +1,78 @@
+{
+  "fonts": [
+    {
+      "file": "215a93c696f44203.woff2",
+      "sha256": "215a93c696f442034a46fbb382958f753fda60e30490683aeea6b235fcbb2b66",
+      "bytes": 22308,
+      "source": "unchanged embedded font bytes from archived original derby HTML"
+    },
+    {
+      "file": "aef7edf54f79a532.woff2",
+      "sha256": "aef7edf54f79a5329fbca9c065b56dcec3852c680d58cf89a9ef2db6940ca4b3",
+      "bytes": 14516,
+      "source": "unchanged embedded font bytes from archived original derby HTML"
+    },
+    {
+      "file": "2515494e8cc2ca07.woff2",
+      "sha256": "2515494e8cc2ca07c86ea78766cfa104b796aa6ed5d66821c01d51dbb0b52bce",
+      "bytes": 22464,
+      "source": "unchanged embedded font bytes from archived original derby HTML"
+    },
+    {
+      "file": "22539b785b3cbcee.woff2",
+      "sha256": "22539b785b3cbcee08e0722ff37fa16a18e71e4482d9078f7da79da1258e7614",
+      "bytes": 14548,
+      "source": "unchanged embedded font bytes from archived original derby HTML"
+    },
+    {
+      "file": "62981321d9a3cc7a.woff2",
+      "sha256": "62981321d9a3cc7a61a73792729043703fd6112da86e8ec848bb57f088578757",
+      "bytes": 58084,
+      "source": "unchanged embedded font bytes from archived original derby HTML"
+    },
+    {
+      "file": "ac6fa9ed533278f4.woff2",
+      "sha256": "ac6fa9ed533278f4c8fd3ae44a1fc78c7df736040237ab86fc1160d020af0af2",
+      "bytes": 36244,
+      "source": "unchanged embedded font bytes from archived original derby HTML"
+    },
+    {
+      "file": "48bc8861b9b2ca93.woff2",
+      "sha256": "48bc8861b9b2ca9300747cad4fd6a3b4ac3028d364df00bd1b72097baa75e509",
+      "bytes": 64520,
+      "source": "unchanged embedded font bytes from archived original derby HTML"
+    },
+    {
+      "file": "d8c263970d52e0b9.woff2",
+      "sha256": "d8c263970d52e0b94b3d5d4250d5962fe39f8f3b6fa9ad13b406d73ff3f4b036",
+      "bytes": 39684,
+      "source": "unchanged embedded font bytes from archived original derby HTML"
+    },
+    {
+      "file": "4fb55a7a6d564d42.woff2",
+      "sha256": "4fb55a7a6d564d428061fe12c82c896264bcc8b7f0b52840bf88e0db5b91256f",
+      "bytes": 23924,
+      "source": "unchanged embedded font bytes from archived original derby HTML"
+    },
+    {
+      "file": "e4078de1cff9d0f5.woff2",
+      "sha256": "e4078de1cff9d0f515515d83cc4ecb8a1ddbaaa86b580bfbcee403d17980b1ed",
+      "bytes": 20388,
+      "source": "unchanged embedded font bytes from archived original derby HTML"
+    },
+    {
+      "file": "3100e775e8616cd2.woff2",
+      "sha256": "3100e775e8616cd2611beecfa23a4263d7037586789b43f035236a2e6fbd4c62",
+      "bytes": 48256,
+      "source": "unchanged embedded font bytes from archived original derby HTML"
+    },
+    {
+      "file": "34b9c504cab7a73e.woff2",
+      "sha256": "34b9c504cab7a73e37b746343a449132e56cf7b5481af2cb81dc74dcff25c956",
+      "bytes": 85068,
+      "source": "unchanged embedded font bytes from archived original derby HTML"
+    }
+  ],
+  "fontBytesChanged": false,
+  "calculationChanged": false
+}

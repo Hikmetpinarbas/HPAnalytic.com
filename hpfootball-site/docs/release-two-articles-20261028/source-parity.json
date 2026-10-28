@@ -1,0 +1,9 @@
+{
+  "dataEqualToDeployedSourceCommit": "4a352ec838280cfd425b9aa01e33f87a5f593fc9",
+  "calculationFingerprints": {
+    "function kdeField(": "b149934a887a2cdbe6781b88528ca1627346e3b49dc23ab5023ba0ed5d16f82e",
+    "function kdeRender(": "1efe7f82e99631744eac246cacf4276b4293c721b6da2f10dcbc6cb42a6dc215",
+    "function pitch(": "e5cbbc0ca0a4c2cf4a29b7600f61e20330bffa2b3fbff85cc06ba05c8753af83"
+  },
+  "lifecycleOnly": "IntersectionObserver defers original chart mounting; calculations and dataset unchanged"
+}

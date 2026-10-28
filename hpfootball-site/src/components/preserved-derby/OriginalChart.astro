@@ -1,0 +1,15 @@
+---
+import registry from './chart-registry.json';
+import data from '../../data/preserved-derby-data.json';
+import '../../styles/preserved-derby-visuals.css';
+interface Props {chart:string;scope?:string;method?:string;limit?:string}
+const {chart,scope='26 Ekim 2026 · Galatasaray–Fenerbahçe',method='Mevcut grafiğin veri kümesi ve hesap yöntemi korunmuştur.',limit='Olay kayıtları oyuncu tracking verisi değildir.'}=Astro.props;
+const entry=registry.find(item=>item.chart===chart);
+if(!entry)throw new Error('Unknown preserved chart: '+chart);
+const title=entry.attributes.match(/data-title="([^"]+)"/)?.[1]||chart;
+const id=entry.attributes.match(/id="([^"]+)"/)?.[1]||chart;
+const table=chart==='kde'||chart==='field'?data.recov:null;
+---
+<div class="preserved-visuals" data-theme="dark"><figure class="plate" id={id} data-chart={chart} data-title={title} data-sub={scope} data-src="SportsBase"></figure><div class="preserved-caption" id={chart==='kde'?'preserved-kde-scope':undefined}><dl><dt>Açıklama</dt><dd>{title}</dd><dt>Kaynak</dt><dd>SportsBase · mevcut maç dosyası</dd><dt>Kapsam</dt><dd>{scope}</dd><dt>Yöntem</dt><dd>{method}</dd><dt>Okuma notu</dt><dd>{limit}</dd></dl></div>
+{table&&<details><summary>Kazanım kayıtlarını tablo olarak incele</summary><div class="preserved-data-table" tabindex="0" role="region" aria-label="Kaynak sürümün top kazanımı kayıtları"><table><caption>Mevcut grafikteki 42 Galatasaray ve 24 Fenerbahçe kazanım kaydı. Kaynak x/y koordinatları korunmuştur.</caption><thead><tr><th scope="col">Oyuncu</th><th scope="col">Takım</th><th scope="col">Yarı</th><th scope="col">Kaynak zamanı</th><th scope="col">x</th><th scope="col">y</th></tr></thead><tbody>{table.map(row=><tr><th scope="row">{row.player}</th><td>{row.team==='GS'?'Galatasaray':'Fenerbahçe'}</td><td>{row.half}</td><td>{row.min}</td><td>{row.x}</td><td>{row.y}</td></tr>)}</tbody></table></div></details>}
+<noscript><p>Hareketli grafik JavaScript ile çalışır. Kaynak bilgileri ve varsa veri tablosu JavaScript olmadan okunabilir.</p></noscript></div>

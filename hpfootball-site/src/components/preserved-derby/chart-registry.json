@@ -1,0 +1,42 @@
+[
+  {
+    "chart": "pulse",
+    "attributes": " class=\"plate\" id=\"pulse\"  data-title=\"Maçın nabzı\" data-src=\"SportsBase\""
+  },
+  {
+    "chart": "atlas",
+    "attributes": " class=\"plate\" id=\"atlas\"  data-hk=\"1\" data-title=\"Topla aksiyonun haritası\" data-src=\"SportsBase\""
+  },
+  {
+    "chart": "kde",
+    "attributes": " class=\"plate\" id=\"kde\"  data-title=\"Top kazanımları: ışık nereye yığıldı?\" data-src=\"SportsBase\""
+  },
+  {
+    "chart": "field",
+    "attributes": " class=\"plate\" id=\"field\"  data-title=\"Saha: kim, topu nerede aldı?\" data-src=\"SportsBase\""
+  },
+  {
+    "chart": "bee",
+    "attributes": " class=\"plate\" id=\"bee\"  data-title=\"Bu gece sezonun neresinde?\" data-src=\"SportsBase\""
+  },
+  {
+    "chart": "flank",
+    "attributes": " class=\"plate\" id=\"flank\"  data-title=\"Aynı kenar, tek yön\" data-src=\"SportsBase\""
+  },
+  {
+    "chart": "goals",
+    "attributes": " class=\"plate\" id=\"goals\"  data-title=\"Üç gol, kayıttaki yolu\" data-src=\"SportsBase\""
+  },
+  {
+    "chart": "xg",
+    "attributes": " class=\"plate\" id=\"xgp\"  data-title=\"Beklenen gol kimden geldi?\" data-src=\"SportsBase\""
+  },
+  {
+    "chart": "phases",
+    "attributes": " class=\"plate\" id=\"phases\"  data-title=\"Yedi evre\" data-src=\"SportsBase\""
+  },
+  {
+    "chart": "model",
+    "attributes": " class=\"plate\" id=\"model\"  data-title=\"Maç önü modeli ve gerçekleşen\" data-src=\"SportsBase\""
+  }
+]

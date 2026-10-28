@@ -1,0 +1,16 @@
+---
+const studies = [
+ {name:'Bir kurtarışın mekaniği',question:'Dalış hızını hangi bacak üretir?',sample:'10 elit kaleci · farklı yüksekliklerde dalışlar',finding:'Sıçrama yönünün karşısındaki bacağın hareket hızına katkısı incelendi.',limit:'Kontrollü hareket analizi; maçtaki kurtarış başarısı ölçümü değil.',doi:'10.1080/02640414.2018.1499413'},
+ {name:'Eklemden harekete',question:'Kalça, diz ve ayak bileği nasıl katkı verir?',sample:'7 kaleci · eklem kinetiği',finding:'Dalış sırasında eklemlerin güç ve moment üretimi birlikte ele alındı.',limit:'Küçük örneklem; bir ekleme indirgenmiş evrensel teknik reçetesi değil.',doi:'10.3389/fspor.2020.00013'},
+ {name:'Çalıştırılabilir bir mekanizma',question:'Hedefli antrenman hareketi değiştirebilir mi?',sample:'11 kaleci · 12 haftalık müdahale',finding:'Yatay kütle merkezi hızında ortalama +0,82 m/s; karşı bacak gücünde +523 W raporlandı.',limit:'42 cm, iki yönün toplam kapsamasına ilişkin senaryo hesabı. Maçta ölçülmüş erişim kazanımı değil.',doi:'10.1080/14763141.2022.2099966'},
+ {name:'Başlangıç duruşu',question:'Daha geniş duruş her zaman daha iyi mi?',sample:'10 elit kaleci · 2019',finding:'İncelenen örneklemde geniş hazırlık duruşu dalış süresi avantajı sağlayabildi.',limit:'2024 konferans çalışmasındaki 5 kadın kalecide anlamlı iyileşme bulunmadı. Koşullar ve örneklemler farklı; kesin çürütme değil.',doi:'10.3389/fspor.2019.00015'},
+ {name:'Bakışın hazırladığı vuruş',question:'Vuruştan önce göz hangi bilgiyi arar?',sample:'14 genç oyuncu · toplam 220 deneme',finding:'Hedefe bakış: isabetli 886 ms, isabetsiz 488 ms. Topa bakış: 627 ve 513 ms.',limit:'Beş maketli baraj, kalecisiz deney. Hedefe isabet ile süre arasındaki ilişki nedensellik kanıtı değil.',doi:'10.1177/1747954120943067'},
+ {name:'Risk, kader değildir',question:'Hangi ölçümler ilk ayak bileği burkulmasıyla ilişkilidir?',sample:'190 erkek futbolcu · 45 ilk lateral burkulma',finding:'Takip verisinde belirli risk göstergeleri incelendi.',limit:'Her oyuncunun sakatlığını önceden bildiren bir alarm veya bireysel tıbbi karar aracı değil.',doi:'10.1177/0363546518808027'}
+];
+---
+<div class="v-carousel v-research" data-carousel>
+ <div class="v-module-head"><div><span class="v-label">RESEARCH / KANIT DEFTERİ</span><h3>Bir bulgu. Bir sınır.</h3></div><div class="v-arrows"><button data-prev aria-label="Önceki araştırma">←</button><button data-next aria-label="Sonraki araştırma">→</button></div></div>
+ <div class="v-rail" tabindex="0" aria-label="Araştırma kartları; ok tuşlarıyla gezinin">
+ {studies.map((s,i)=><article class="v-research-card"><span class="v-label">ARAŞTIRMA / 0{i+1}</span><h4>{s.name}</h4><dl><dt>Soru</dt><dd>{s.question}</dd><dt>Örneklem</dt><dd>{s.sample}</dd><dt>Bulgu</dt><dd>{s.finding}</dd><dt>Kanıt sınırı</dt><dd class="v-card-limit">{s.limit}</dd></dl><a href={`https://doi.org/${s.doi}`}>DOI · {s.doi} ↗</a>{i===3&&<a href="https://commons.nmu.edu/isbs/vol42/iss1/123/">Kadın kaleci çalışması · ISBS 2024 ↗</a>}</article>)}
+ </div><p class="v-caption">Bu çalışmalar ortak araştırma ürünleridir; de Boode’un tek başına keşifleri olarak sunulmaz. Tüm kartlara yatay kaydırma veya oklarla erişebilirsiniz.</p>
+</div>

@@ -8,7 +8,7 @@ import editorialStudio from './src/studio/integration.mjs';
 export default defineConfig({
   output:'server',
   session:false,
-  adapter:cloudflare({ imageService:'passthrough' }),
+  adapter:cloudflare({ imageService:'passthrough',prerenderEnvironment:process.env.HPA_PRERENDER_RUNTIME==='node'?'node':'workerd' }),
   site:'https://www.hpanalytic.com',
   integrations:[editorialStudio()],
 });
