@@ -51,3 +51,5 @@
 /* Give the 12×8 touch grid sufficient room at 360px; prose keeps its reading gutter. */
 @media(max-width:759px){.editorial-continuity .continuity-chapter>.preserved-visuals{margin-inline:calc(8px - var(--r-gutter,32px))}}
 @media(max-width:759px){.sequence-point text{font-size:4.6px}.sequence-point .sequence-marker{r:3.6px}}
+
+.editorial-continuity figure.plate:not([data-hpa-mounted]){min-height:420px;display:grid;place-items:center}.chart-load-note{padding:24px;font:400 14px/1.6 Arial,sans-serif;color:#b9c0c9}

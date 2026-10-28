@@ -1,6 +1,14 @@
 ---
 import assets from './runtime-assets.json';
 ---
-<!-- Original classic scripts retain their shared lexical scope and execution order. -->
-<script is:inline defer src={assets.data.url}></script>
-<script is:inline defer src={assets.runtime.url}></script>
+<script is:inline define:vars={{dataUrl:assets.data.url,runtimeUrl:assets.runtime.url}}>
+(()=>{
+ let loading;
+ const append=url=>new Promise((resolve,reject)=>{const script=document.createElement('script');script.src=url;script.async=false;script.onload=resolve;script.onerror=reject;document.body.append(script)});
+ const load=()=>loading||(loading=append(dataUrl).then(()=>append(runtimeUrl)).catch(()=>{document.querySelectorAll('figure.plate:not([data-hpa-mounted])').forEach(fig=>{const note=fig.querySelector('.chart-load-note');if(note)note.textContent='Grafik yüklenemedi. Kaynak ve veri tabloları okunabilir; yeniden denemek için sayfayı yenileyin.';});}));
+ const figures=document.querySelectorAll('figure.plate[data-chart]');
+ if('IntersectionObserver' in window){const observer=new IntersectionObserver(entries=>{if(entries.some(entry=>entry.isIntersecting)){observer.disconnect();load();}},{rootMargin:'600px 0px'});figures.forEach(fig=>observer.observe(fig));}
+ else requestAnimationFrame(()=>requestAnimationFrame(load));
+ window.addEventListener('beforeprint',load,{once:true});
+})();
+</script>
