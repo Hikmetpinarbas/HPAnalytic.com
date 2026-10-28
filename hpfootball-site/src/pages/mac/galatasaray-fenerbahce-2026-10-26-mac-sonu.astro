@@ -3,6 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import EndnoteLinks from '../../components/editorial/EndnoteLinks.astro';
 import OriginalChart from '../../components/preserved-derby/OriginalChart.astro';
 import FlowSurface from '../../components/editorial/FlowSurface.astro';
+import DerbyCompositeEvidence from '../../components/editorial/DerbyCompositeEvidence.astro';
 import OriginalRuntime from '../../components/preserved-derby/OriginalRuntime.astro';
 import GoalChronology from '../../components/GoalChronology.astro';
 import {serializeJsonLd} from '../../lib/json-ld.mjs';
@@ -36,6 +37,7 @@ const schema={'@context':'https://schema.org','@type':'Article',headline:title,d
 <div class="continuity-share"><a href="#source-notes">Kaynak ve yöntem ↓</a><button type="button" data-article-share>Bağlantıyı paylaş ↗</button><span role="status" data-share-status></span></div><nav class="continuity-contents" aria-label="Yazı içindekiler">{editorial.sections.map(section=><a href={'#'+section.id}><span>{section.number}</span>{section.title}</a>)}</nav>
 {editorial.sections.map(section=><section class="continuity-chapter" id={section.id} aria-labelledby={'heading-'+section.id}><header><span class="continuity-chapter__number">{section.number}</span><h2 id={'heading-'+section.id}>{section.title}</h2></header><div class="continuity-reading">{section.paragraphs.map((paragraph,i)=><p class:list={{'continuity-opening':section.number==='01'&&i===0}}>{paragraph}</p>)}</div>{'chart' in section&&section.chart&&<OriginalChart chart={section.chart} {...notes[section.chart]}/>}
 {section.id==='evidence-story'&&<FlowSurface/>}
+{section.id==='pressure-context'&&<DerbyCompositeEvidence/>}
 {section.id==='goals'&&<div class="match-editorial"><GoalChronology/></div>}
 
 </section>)}
