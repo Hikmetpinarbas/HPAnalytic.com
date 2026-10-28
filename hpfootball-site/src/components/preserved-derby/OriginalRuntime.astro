@@ -1,6 +1,6 @@
 ---
-import sourceData from './source-data.js.txt?raw';
-import runtime from './chart-runtime.js.txt?raw';
+import assets from './runtime-assets.json';
 ---
-<script is:inline set:html={sourceData}/>
-<script is:inline set:html={runtime}/>
+<!-- Original classic scripts retain their shared lexical scope and execution order. -->
+<script is:inline defer src={assets.data.url}></script>
+<script is:inline defer src={assets.runtime.url}></script>

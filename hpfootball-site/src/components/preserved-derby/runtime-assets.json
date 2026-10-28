@@ -1,0 +1,12 @@
+{
+  "data": {
+    "url": "/js/preserved-derby/data-987ad04c87e43aa6ed6d.js",
+    "sha256": "987ad04c87e43aa6ed6db3d91fa2c18e63d289b1097b2effaf54dc35707be0fd",
+    "bytes": 169639
+  },
+  "runtime": {
+    "url": "/js/preserved-derby/runtime-bb9a7fa2eaec689450ce.js",
+    "sha256": "bb9a7fa2eaec689450ce68cfae2c1ec8398816d3799606842921c83eb00bfe87",
+    "bytes": 68267
+  }
+}

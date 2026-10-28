@@ -1,0 +1,19 @@
+{
+  "unitPass": 366,
+  "unitSkip": 16,
+  "unitFail": 0,
+  "build": true,
+  "typeErrors": 0,
+  "browserWidths": 12,
+  "kdeCounts": [
+    "42 / 42 kazan\u0131m",
+    "24 / 24 kazan\u0131m"
+  ],
+  "gaze": {
+    "ball": "627 ms",
+    "miss": "513 ms"
+  },
+  "errors": [],
+  "axeViolations": 0,
+  "scope": "Only approved derby delivery; article bodies and site-wide design unchanged"
+}

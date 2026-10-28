@@ -1,0 +1,14 @@
+{
+  "base": "499ad996646eba8a271366fa56764fbf69bb60d4",
+  "allowedPublication": "Only already approved derby runtime delivery; Vosse remains present and unchanged.",
+  "globalDesignIncluded": false,
+  "activeLogoChanged": false,
+  "sourceEnginesIdentical": true,
+  "filesCopied": [
+    "scripts/cache-original-runtime.mjs",
+    "src/components/preserved-derby/OriginalRuntime.astro",
+    "src/components/preserved-derby/runtime-assets.json",
+    "public/js/preserved-derby/data-987ad04c87e43aa6ed6d.js",
+    "public/js/preserved-derby/runtime-bb9a7fa2eaec689450ce.js"
+  ]
+}
