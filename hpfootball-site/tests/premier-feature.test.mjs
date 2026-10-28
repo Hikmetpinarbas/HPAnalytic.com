@@ -4,7 +4,7 @@ import {readFileSync} from 'node:fs';
 import {featuredPremier,premierCarousel,PREMIER_FEATURES} from '../src/data/premier-features.mjs';
 const front=readFileSync(new URL('../src/components/EditorialFront.astro',import.meta.url),'utf8');
 const carousel=readFileSync(new URL('../src/lib/editorial-carousel.ts',import.meta.url),'utf8');
-const css=readFileSync(new URL('../src/styles/global.css',import.meta.url),'utf8');
+const css=readFileSync(new URL('../src/styles/editorial-experience.css',import.meta.url),'utf8');
 const home=readFileSync(new URL('../src/pages/index.astro',import.meta.url),'utf8');
 
 test('premier carousel carries all three approved pieces, newest editorial priority first',()=>{

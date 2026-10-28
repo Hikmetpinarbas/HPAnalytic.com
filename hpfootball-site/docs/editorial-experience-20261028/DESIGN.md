@@ -22,17 +22,17 @@ The patterns below are adaptation targets, not assertions of exact inspected CSS
 | Financial Times | https://www.ft.com/ | Dense but ordered editorial index; clear section hierarchy | Text and branding retrieved |
 | The Times | https://www.thetimes.com/ | Restrained masthead and legible editorial reading | Text and branding retrieved |
 | NYT Upshot | https://www.nytimes.com/section/upshot | A question followed by an evidence-led explanation | Fetch blocked; adaptation proposed |
-| Reuters Graphics | https://www.reuters.com/graphics/ | Chart and explanatory caption as a single reading unit | Fetch timed out; adaptation proposed |
-| Guardian Football | https://www.theguardian.com/football | Distinct lead story and compact secondary reading | Capture queued out; adaptation proposed |
-| Bloomberg Graphics | https://www.bloomberg.com/graphics | Narrative sections and disciplined chart annotations | Capture queued out; adaptation proposed |
-| Our World in Data | https://ourworldindata.org/ | Visible sources and context near the visualization | Capture queued out; adaptation proposed |
-| The Economist | https://www.economist.com/ | Quiet typography and concise cover-led collections | Capture queued out; adaptation proposed |
-| Opta Analyst | https://theanalyst.com/ | Football data stories and useful match discovery | Capture queued out; adaptation proposed |
-| Hudl StatsBomb | https://statsbomb.com/ | Precise field diagrams and analytical detail | Capture queued out; adaptation proposed |
-| Twenty First Group | https://www.twentyfirstgroup.com/ | Research authority and clear decision framing | Capture queued out; adaptation proposed |
+| Reuters Graphics | https://www.reuters.com/graphics/ | Chart and explanatory caption as a single reading unit | Text and branding retrieved on retry; motion unverified |
+| Guardian Football | https://www.theguardian.com/football | Distinct lead story and compact secondary reading | Text and branding retrieved on retry; motion unverified |
+| Bloomberg Graphics | https://www.bloomberg.com/graphics | Narrative sections and disciplined chart annotations | Text and branding retrieved on retry; motion unverified |
+| Our World in Data | https://ourworldindata.org/ | Visible sources and context near the visualization | Text and branding retrieved on retry; motion unverified |
+| The Economist | https://www.economist.com/ | Quiet typography and concise cover-led collections | Retrieval failed; adaptation proposed |
+| Opta Analyst | https://theanalyst.com/ | Football data stories and useful match discovery | Text and branding retrieved on retry; motion unverified |
+| Hudl StatsBomb | https://statsbomb.com/ | Precise field diagrams and analytical detail | Text and branding retrieved on retry; motion unverified |
+| Twenty First Group | https://www.twentyfirstgroup.com/ | Research authority and clear decision framing | Text and branding retrieved on retry; motion unverified |
 | American Soccer Analysis | https://www.americansocceranalysis.com/ | Independent research identity and accessible archive | Text and branding retrieved |
-| Observable | https://observablehq.com/ | Direct manipulation and legible chart controls | Capture queued out; adaptation proposed |
-| Awwwards | https://www.awwwards.com/ | Intentional hover and navigation transitions | Capture queued out; adaptation proposed |
+| Observable | https://observablehq.com/ | Direct manipulation and legible chart controls | Text and branding retrieved on retry; motion unverified |
+| Awwwards | https://www.awwwards.com/ | Intentional hover and navigation transitions | Text and branding retrieved on retry; motion unverified |
 | Pentagram | https://www.pentagram.com/ | Project-cover composition and varied editorial scale | Text and branding retrieved |
 
 ## Components and behavior
@@ -44,7 +44,7 @@ The patterns below are adaptation targets, not assertions of exact inspected CSS
 - Covers carry across the article library, monograph rail and analysis collections. Existing per-article figures stay in place.
 - Navigation keeps disclosure semantics, existing Escape/outside-close behavior and fallback links; visual treatment adds restrained amber rules and spacious mobile rows.
 - Hover transforms apply only to fine pointers. Keyboard focus has its own visible treatment. Minimum text size remains 12px and interaction targets 44px.
-- Site-wide CSS remains in global.css, the repository's single owner; no extra stylesheet download is introduced.
+- Shared shell CSS remains in global.css. Cover and discovery CSS is imported by EditorialCover so article readers do not download unused homepage rules.
 
 ## Acceptance
 
@@ -53,3 +53,9 @@ Validate the full repository tests and Astro diagnostics, production build, eigh
 Local environment constraints observed: no UserLAnd workspace, terminal proxy unreachable, Astro dependencies absent, and Chromium blocked by sandbox socket permissions. Remote GitHub Actions must supply the full-build and actual-browser evidence. Do not report this candidate as complete until that evidence exists.
 
 Unfinished scope: reference sites blocked or queued out still need visual inspection; photo rights for Vosse remain unresolved; article-specific scrollytelling and all-page final acceptance require further work. The nine historical archive articles and the Conte–Mendilibar–İsmail Kartal article are not validated by this design work.
+
+## Recovery after first CI
+
+The first candidate passed tests, Astro diagnostics, production build and the two articles at eight widths, but failed the unchanged paired mobile gate: Derby median 97 versus baseline 100 (LCP 2101 ms versus 1501 ms). The previous development source had already measured 98 on a faster runner. The recovery splits cover/discovery CSS from shared reader CSS and narrows original chart prefetch from 600 to 200 pixels; this must be measured again. No Lighthouse threshold changes.
+
+The full Linux gate also discovered obsolete agent viewport metadata in the existing 1.4 MB static derby preview. Removing that metadata fixes the source of the signature failure. Twelve embedded WOFF2 fonts are extracted byte for byte into content-addressed files, reducing HTML by 599775 bytes. A regression test reverses the transformation and checks the exact original Git blob SHA, covering every other byte of HTML, data and calculation code.

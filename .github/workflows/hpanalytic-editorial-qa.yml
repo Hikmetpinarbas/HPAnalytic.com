@@ -33,6 +33,7 @@ jobs:
           cd "$RUNNER_TEMP/hpa-editorial-before/hpfootball-site"
           npm run build
       - name: Build corrected source
+        id: corrected_build
         run: npm run build
       - name: Install isolated browser and measurement tools
         run: |
@@ -57,7 +58,7 @@ jobs:
           export CHROME_PATH="$(node -p "require('playwright').chromium.executablePath()")"
           HPA_LH_BIN="$RUNNER_TEMP/hpa-editorial-tools/node_modules/.bin/lighthouse" node scripts/editorial-p0-paired-performance.cjs
       - name: Whole-site editorial experience browser acceptance
-        if: github.ref == 'refs/heads/codex/editorial-experience-20261028'
+        if: ${{ !cancelled() && steps.corrected_build.outcome == 'success' && github.ref == 'refs/heads/codex/editorial-experience-20261028' }}
         run: |
           python3 -m http.server 4322 --bind 127.0.0.1 --directory dist/client > /tmp/hpa-design.log 2>&1 &
           HPA_DESIGN_PID=$!
@@ -67,6 +68,9 @@ jobs:
             sleep 1
           done
           HPA_RELEASE_BASE=http://127.0.0.1:4322 node scripts/editorial-experience-browser-qa.mjs
+      - name: Print performance and whole-site diagnostics
+        if: always()
+        run: node scripts/editorial-performance-diagnostics.mjs
       - uses: actions/upload-artifact@v4
         if: always()
         with:
