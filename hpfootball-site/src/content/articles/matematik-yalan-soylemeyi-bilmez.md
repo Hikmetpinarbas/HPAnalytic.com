@@ -1,6 +1,6 @@
 ---
 title: "Matematik Yalan Söylemeyi Bilmez"
-description: "Sayılar taraf tutmaz. Peki xG, pas yüzdesi ve olasılıklarla neden birbirine zıt hikâyeler anlatıyoruz? Tukey, Box ve Goodhart eşliğinde futbol verisini okuma kılavuzu."
+description: "Sayılar taraf tutmaz. Peki xG ve pas yüzdesi neden farklı hikâyelere dönüşür? Tukey, Box ve Goodhart ile matematik, istatistik ve yorumun sınırları."
 date: 2026-10-29
 section: analysis
 evidenceClass: EDITORIAL
