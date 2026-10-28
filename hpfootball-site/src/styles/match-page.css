@@ -334,3 +334,5 @@ section.block{padding-block:clamp(44px,7vw,88px);border-bottom:1px solid var(--l
 .mp .hpc-figure{margin:30px 0;max-width:580px}
 .mp .hpc-figure img{width:100%;height:auto;display:block;border:1px solid var(--line)}
 .mp .hpc-figure figcaption{font-family:var(--f-body);font-size:.82rem;line-height:1.6;color:var(--mute);margin-top:.7rem;max-width:62ch}
+
+.match-page-head { padding-block:clamp(28px,5vw,64px); margin-inline:auto; gap:20px; }

@@ -25,18 +25,21 @@ try {
   for(const route of pages) {
    const page=await context.newPage();
    const errors=[];
+   let stage='navigation';
    page.on('pageerror',error=>errors.push(error.message));
    try {
     const response=await page.goto(origin+route,{waitUntil:'networkidle',timeout:20000});
     assert.equal(response.status(),200,route);
     await page.evaluate(()=>document.fonts.ready);
-    assert.equal(await page.locator('main h1').count(),1,'Expected one page heading');
+    assert.equal(await page.locator('h1').count(),1,'Expected one page heading');
     assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth+1),'Page overflows horizontally');
     if(route==='/') {
      const tabs=page.locator('[data-story-tab]');
      assert.ok(await tabs.count()>1);
+     stage='carousel-next';
      await page.locator('[data-story-next]').click();
      await page.waitForFunction(()=>document.querySelectorAll('[data-story-tab]')[1]?.getAttribute('aria-selected')==='true');
+     stage='carousel-keyboard';
      await tabs.nth(1).focus();
      await page.keyboard.press('End');
      assert.equal(await tabs.last().getAttribute('aria-selected'),'true');
@@ -45,13 +48,18 @@ try {
      assert.equal(await tabs.first().getAttribute('aria-selected'),'true');
      assert.equal(await page.locator('[data-story-panel]:not([inert])').count(),1);
      if(width<768) {
+      stage='carousel-touch';
       const track=page.locator('[data-story-track]');
+      await track.scrollIntoViewIfNeeded();
       const rect=await track.boundingBox();
       const client=await context.newCDPSession(page);
-      await client.send('Input.synthesizeScrollGesture',{x:Math.round(rect.x+rect.width*.8),y:Math.round(rect.y+Math.min(rect.height/2,200)),xDistance:-Math.round(rect.width*.8),yDistance:0,gestureSourceType:'touch',speed:800});
+      const top=Math.max(80,rect.y),bottom=Math.min(850,rect.y+rect.height);
+      assert.ok(bottom>top,'Touch scroll surface is outside the viewport');
+      await client.send('Input.synthesizeScrollGesture',{x:Math.round(rect.x+rect.width*.8),y:Math.round((top+bottom)/2),xDistance:-Math.round(rect.width*.8),yDistance:0,gestureSourceType:'touch',speed:800});
       await page.waitForFunction(()=>document.querySelector('[data-story-track]').scrollLeft>0);
       await client.detach();
      }
+     stage='navigation-disclosure';
      const trigger=page.locator('.mobile-nav-trigger');
      if(await trigger.isVisible()) {
       await trigger.click();
@@ -61,16 +69,19 @@ try {
       assert.equal(await trigger.evaluate(el=>el===document.activeElement),true);
      } else {
       const toggle=page.locator('.mainnav__toggle').first();
-      await toggle.click();
-      assert.equal(await toggle.getAttribute('aria-expanded'),'true');
+      await toggle.hover();
+      assert.equal(await toggle.getAttribute('aria-expanded'),'true','Desktop hover must disclose navigation');
       await page.keyboard.press('Escape');
       assert.equal(await toggle.getAttribute('aria-expanded'),'false');
+      await page.keyboard.press('Enter');
+      assert.equal(await toggle.getAttribute('aria-expanded'),'true','Keyboard must disclose navigation');
+      await page.keyboard.press('Escape');
      }
      await page.screenshot({path:`${output}/home-${width}.png`,fullPage:true});
     }
     assert.deepEqual(errors,[],'Browser errors');
     checks.push({route,width,status:'passed'});
-   } catch(error) { failures.push({route,width,error:error.message}); }
+   } catch(error) { failures.push({route,width,stage,error:error.message}); }
    console.log(JSON.stringify({route,width,status:failures.some(x=>x.route===route&&x.width===width)?'failed':'passed'}));
    await writeFile(`${output}/report.json`,JSON.stringify({checks,failures},null,2));
    await page.close();
