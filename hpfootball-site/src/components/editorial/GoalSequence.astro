@@ -8,7 +8,7 @@ const sequences=data.goal_seqs.map((g,i)=>({...g,seq:g.seq.slice(i===0?-3:i===1?
 const point=(event:{x:number;y:number},team:string)=>({x:team==='FB'?105-event.x:event.x,y:team==='FB'?event.y:68-event.y});
 const label=(event:{lab:string},goal:number,step:number)=>goal===1&&step===0?'Ceza sahasına pas':event.lab;
 ---
-<div class="goal-film" data-goal-film>
+<div class="goal-film" data-goal-film aria-label="Üç golü ardışık izleme"><p class="film-intro">Üç gol, tek akış. Oynat düğmesine basın; bir gol tamamlandığında sonraki pozisyon açılır. Çizilen ara yollar, ölçülmüş top yörüngeleri değildir.</p>
 <div class="film-tabs" role="tablist" aria-label="Gol sekansı seç"><span>GOL DOSYASI</span>{sequences.map((g,i)=><button type="button" role="tab" id={'film-tab-'+i} aria-controls={'film-panel-'+i} aria-selected={i===0?'true':'false'} tabindex={i===0?0:-1} data-film-tab={i}>{['1–0','2–0','2–1'][i]}<small>{i===2?'Fenerbahçe':'Galatasaray'}</small></button>)}</div>
 {sequences.map((g,i)=><section class="goal-sequence film-panel" id={'film-panel-'+i} role="tabpanel" aria-labelledby={'film-tab-'+i} data-goal-sequence data-film-panel={i} data-duration={g.seq.at(-1)!.t-g.seq[0].t} hidden={i!==0}>
 <header><p class="p0-eyebrow">{['1–0','2–0','2–1'][i]} / {Math.floor(g.goal.min)+1}′</p><h3>{titles[i]}</h3><p>{descriptions[i]}</p></header>
