@@ -167,3 +167,31 @@
 ## Karar
 
 Güvenilir biçimde gözlenen menü modelleri Stripe/Linear/Framer/OWID; kamuya açık command yüzeyi Are.na; filtre aktif durumu Pudding; rafın tamamına geçiş Spotify; mobil büyük tipografi/kapak sunumu Pentagram. Diğer istenen grafik/scroll/mikro etkileşim mekanizmalarının çoğu kısa ana sayfa geçişinde doğrulanmadı. Bunlar prototipin bağımsız gereksinimleridir; referansta mevcutmuş gibi sunulmaz. İleri araştırmada gerçek uzun makaleler ve grafikli sayfalar ayrıca incelenmeli.
+
+## Ek geçiş — gerçek grafik ve makale davranışları
+
+Ham kayıt `research-browser-followup.json`. Bu ikinci geçiş ilk20ana sayfa tablosundaki **denenmedi** notlarını yalnızca aşağıdaki kapsamda genişletir; geri kalan boşluklar devam eder.
+
+### OWID: doğrudan grafik
+
+Kaynak: https://ourworldindata.org/grapher/life-expectancy . Gerçek pointer hover1900 yılına ait serilerle tooltip açtı. Line→Table tıklaması grafiği tabloya dönüştürdü ve adresi `?tab=table&time=latest` yaptı. End time kontrolünde üç ArrowLeft,2023'ü2020'ye ve adresi https://ourworldindata.org/grapher/life-expectancy?time=earliest..2020 biçimine değiştirdi. Tab chart/time kontrollerine ulaştı; öncesinde etiketsiz dörtSVG öğesi gözlendi, erişilebilirlik mükemmelmiş gibi sunulmaz.390px belge genişliği390 idi, yatay taşma yoktu; cookie bandı alt kaynak alanını kapatıyordu. Play/download/share/fullscreen denenmedi.
+
+**Uyarlama:** gerçek tablo/grafik eşdeğeri, klavyeyle değişen parametre, okunabilir tooltip ve paylaşılabilir durum. Prototipte filtre URL'si, chart tablo görünümü ve keyboard threshold bunun bağımsız uygulamasıdır. Orta durum/erişilebilirlik testi;96hücre için ek kütüphane yok.
+
+### Pudding: kaydırma sanılan mekanizma bir stepper çıktı
+
+Kaynak: https://pudding.cool/2026/10/kevin-bacon/ . Açık makale bir viewport yüksekliğinde kaldı; wheel eylemleri `scrollY=0` durumunu değiştirmedi. Next step iki kez kullanıldığında network görünümü yıldız alanına ve yeni açıklamaya geçti. Bu gözlem **page scrollytelling değildir**. Önceki adım, ok tuşları ve390px denenmedi.
+
+**Uyarlama:** kayıtları kontrollü adımlama ve aktif açıklamayı birlikte sunmak; makaleye gereksiz scroll hijack eklememek. Mevcut prototipin discrete olay oynatıcısı bu ihtiyaçla uyumlu. Düşük runtime, orta anlatı/durum bakımı.
+
+### Reuters: normal scroll, sabit grafik değil
+
+Kaynak: https://www.reuters.com/graphics/CHINA-ECONOMY/TRADE-OBJECTS/moparrmewva/ . Wheel ile scroll0→800→1600 ilerledi; hero çıktı, metin ve Artificial Intelligence başlıklı çizgi grafik bölümü göründü. Sabit kalan karton dokulu arka plandı; test aralığında pinned hero grafik yoktu. Mobil, klavye, Replay ve sonraki grafik kontrolleri denenmedi.
+
+**Uyarlama:** metin ve grafik bölümlerini doğal belge akışında tutmak; yalnızca bölüm menüsünü sticky yapmak. Grafik sticky diye kaynak göstermiyoruz. Düşük runtime, orta editoryal mizanpaj emeği.
+
+### Observable: erişilen örnek slider içermiyor
+
+Kaynaklar: https://observablehq.com/@observablehq/plot-gallery ve https://observablehq.com/@observablehq/plot-scatterplot/2 . Erişilebilir örnek640×400SVG scatterplot çizdi; açık input/select/slider bulunmadı. Bu örneğe canlı parametre varmış denemez. Hover, mobil ve diğer notebook'lar denenmedi.
+
+**Uyarlama:** SVG'nun küçük veri yüzeyleri için yeterliliği; slider gereksinimi kaynak örneğinden değil, kendi demonstrasyonumuzun kullanıcı ihtiyacından gelir. Düşük küçük-veri maliyeti; veri büyürse ayrıca profil gerekir.

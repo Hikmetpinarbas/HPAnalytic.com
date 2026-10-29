@@ -8,4 +8,4 @@ Kaynak ve çalıştırma: [prototype/README.md](../../prototype/README.md).
 - Etkileşimli analiz: [analysis.html](../../prototype/analysis.html)
 - Mobil navigasyon bütün ekranlarda;800px altında aynı veri kaynağından dialog+accordion.
 
-İlk izole, gezilebilir sürüm: https://raw.githack.com/Hikmetpinarbas/HPAnalytic.com/0c8a0a258991605bd6672e2d52f377bf06779f64/hpfootball-site/prototype/index.html . İlk açılışta hizmetin “Open the page” geçişi olabilir. Production adresi değildir; kullanıcı değerlendirmesi için geliştirme kaynağıdır. Son doğrulanmış commit ve QA bilgisi QA_REPORT.md'de.
+Doğrulanmış izole, gezilebilir sürüm: https://raw.githack.com/Hikmetpinarbas/HPAnalytic.com/6c72574f4c0a4fd78e7cc04e4e3e1a540ca1a340/hpfootball-site/prototype/index.html . İlk açılışta hizmetin “Open the page” geçişi olabilir. Production adresi değildir; kullanıcı değerlendirmesi için geliştirme kaynağıdır. Son doğrulanmış commit ve QA bilgisi QA_REPORT.md'de.

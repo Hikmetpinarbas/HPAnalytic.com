@@ -1,0 +1,171 @@
+{
+  "testedCommit": "6c72574f4c0a4fd78e7cc04e4e3e1a540ca1a340",
+  "base": "ef0b47db116e49618461dd9e26b3bb9384edf095",
+  "branch": "codex/interaction-prototype-20261029",
+  "workflow": {
+    "id": 40862642758,
+    "job": 123409456428,
+    "conclusion": "success",
+    "url": "https://github.com/Hikmetpinarbas/HPAnalytic.com/actions/runs/40862642758"
+  },
+  "tests": {
+    "existing": {
+      "total": 394,
+      "passed": 378,
+      "failed": 0,
+      "skipped": 16
+    },
+    "newStateContracts": {
+      "total": 8,
+      "passed": 8,
+      "failed": 0
+    },
+    "browser": {
+      "passed": 78,
+      "failed": 0,
+      "accessibility": 30,
+      "screenshots": 33
+    }
+  },
+  "astroCheck": {
+    "files": 283,
+    "errors": 0,
+    "warnings": 0
+  },
+  "productionBuild": "success; no deployment",
+  "performance": [
+    {
+      "page": "index",
+      "runs": [
+        {
+          "performance": 100,
+          "accessibility": 100,
+          "lcp": 1512.5765999999999,
+          "cls": 0,
+          "tbt": 0
+        },
+        {
+          "performance": 100,
+          "accessibility": 100,
+          "lcp": 1429.6959000000002,
+          "cls": 0,
+          "tbt": 0
+        },
+        {
+          "performance": 100,
+          "accessibility": 100,
+          "lcp": 1433.1639,
+          "cls": 0,
+          "tbt": 0
+        }
+      ],
+      "median": {
+        "performance": 100,
+        "accessibility": 100,
+        "lcp": 1433.1639,
+        "cls": 0,
+        "tbt": 0
+      }
+    },
+    {
+      "page": "article",
+      "runs": [
+        {
+          "performance": 100,
+          "accessibility": 100,
+          "lcp": 1432.4877,
+          "cls": 0,
+          "tbt": 0
+        },
+        {
+          "performance": 100,
+          "accessibility": 100,
+          "lcp": 1506.5686500000002,
+          "cls": 0,
+          "tbt": 0
+        },
+        {
+          "performance": 100,
+          "accessibility": 100,
+          "lcp": 1430.5293000000001,
+          "cls": 0,
+          "tbt": 0
+        }
+      ],
+      "median": {
+        "performance": 100,
+        "accessibility": 100,
+        "lcp": 1432.4877,
+        "cls": 0,
+        "tbt": 0
+      }
+    },
+    {
+      "page": "archive",
+      "runs": [
+        {
+          "performance": 100,
+          "accessibility": 100,
+          "lcp": 1428.2839,
+          "cls": 0,
+          "tbt": 0
+        },
+        {
+          "performance": 100,
+          "accessibility": 100,
+          "lcp": 1506.1024499999999,
+          "cls": 0,
+          "tbt": 0
+        },
+        {
+          "performance": 100,
+          "accessibility": 100,
+          "lcp": 1428.1988,
+          "cls": 0,
+          "tbt": 0
+        }
+      ],
+      "median": {
+        "performance": 100,
+        "accessibility": 100,
+        "lcp": 1428.2839,
+        "cls": 0,
+        "tbt": 0
+      }
+    },
+    {
+      "page": "analysis",
+      "runs": [
+        {
+          "performance": 100,
+          "accessibility": 100,
+          "lcp": 1504.7403,
+          "cls": 0,
+          "tbt": 0
+        },
+        {
+          "performance": 99,
+          "accessibility": 100,
+          "lcp": 1582.54215,
+          "cls": 0,
+          "tbt": 0
+        },
+        {
+          "performance": 100,
+          "accessibility": 100,
+          "lcp": 1429.9272,
+          "cls": 0,
+          "tbt": 0
+        }
+      ],
+      "median": {
+        "performance": 100,
+        "accessibility": 100,
+        "lcp": 1504.7403,
+        "cls": 0,
+        "tbt": 0
+      }
+    }
+  ],
+  "productionChanged": false
+}
