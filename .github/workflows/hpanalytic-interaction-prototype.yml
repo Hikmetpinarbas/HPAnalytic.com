@@ -1,0 +1,70 @@
+name: HPAnalytic isolated interaction prototype
+on:
+  push:
+    branches: [codex/interaction-prototype-20261029]
+    paths:
+      - 'hpfootball-site/prototype/**'
+      - 'hpfootball-site/src/**'
+      - 'hpfootball-site/package*.json'
+      - '.github/workflows/hpanalytic-interaction-prototype.yml'
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: interaction-prototype-${{ github.ref }}
+  cancel-in-progress: true
+jobs:
+  prototype-acceptance:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    defaults:
+      run:
+        working-directory: hpfootball-site
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: npm
+          cache-dependency-path: hpfootball-site/package-lock.json
+      - name: Existing application regression, types and production build (no deploy)
+        run: |
+          npm ci --no-audit --no-fund
+          npm test
+          npm run check
+          npm run build
+      - name: Build the isolated dependency-free prototype and test its state contracts
+        run: |
+          node prototype/build.mjs
+          node --test prototype/tests/state.test.mjs
+          git diff --exit-code -- prototype/index.html prototype/article.html prototype/archive.html prototype/analysis.html
+      - name: Install locked QA tools separately from application runtime
+        run: |
+          mkdir -p "$RUNNER_TEMP/hpa-interaction-tools"
+          cp tools/editorial-qa/package.json tools/editorial-qa/package-lock.json "$RUNNER_TEMP/hpa-interaction-tools/"
+          npm ci --prefix "$RUNNER_TEMP/hpa-interaction-tools" --ignore-scripts --no-audit --no-fund
+          "$RUNNER_TEMP/hpa-interaction-tools/node_modules/.bin/playwright" install --with-deps chromium
+      - name: Six-width real browser interaction and accessibility gate
+        run: |
+          node prototype/server.mjs > /tmp/hpa-prototype.log 2>&1 &
+          HPA_PROTOTYPE_PID=$!
+          trap 'kill $HPA_PROTOTYPE_PID 2>/dev/null || true' EXIT
+          for i in $(seq 1 20); do
+            if curl -fsS http://127.0.0.1:8099/ >/dev/null; then break; fi
+            sleep 1
+          done
+          HPA_PLAYWRIGHT_PATH="$RUNNER_TEMP/hpa-interaction-tools/node_modules/playwright" HPA_AXE_PATH="$RUNNER_TEMP/hpa-interaction-tools/node_modules/axe-core/axe.min.js" node prototype/tests/browser.mjs
+      - name: Mobile performance measurements (three runs, no threshold relaxation)
+        if: success()
+        run: |
+          node prototype/server.mjs > /tmp/hpa-prototype-perf.log 2>&1 &
+          HPA_PROTOTYPE_PID=$!
+          trap 'kill $HPA_PROTOTYPE_PID 2>/dev/null || true' EXIT
+          export CHROME_PATH="$(node -e "console.log(require(process.env.RUNNER_TEMP+'/hpa-interaction-tools/node_modules/playwright').chromium.executablePath())")"
+          HPA_LH_BIN="$RUNNER_TEMP/hpa-interaction-tools/node_modules/.bin/lighthouse" node prototype/tests/performance.mjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: interaction-prototype-review
+          path: hpfootball-site/prototype/qa/
+          retention-days: 7
