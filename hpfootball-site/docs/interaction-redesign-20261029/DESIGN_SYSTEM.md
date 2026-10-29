@@ -29,7 +29,7 @@ Kaynak `prototype/src/tokens.css`.
 - Boşluk: 4/8/12/16/24/32/48/64/96px. İçerik sınırı 1440px; okuma 66ch. Ortak breakpoint 520/800/1100/1600; QA 360/390/768/1024/1440/1920. Grafik, viewport değil kapsayıcı genişliğine uyar.
 - Kenarlar düz; yuvarlatma yalnızca nokta/oyuncu sembolünde. Kapaklar özgün dekoratif SVG; gerçek fotoğraf veya olay kanıtı gibi sunulmaz. Vosse gerçek fotoğrafı bu prototipte çözülmedi.
 - Animasyon 160/240ms, cubic-bezier(.2,.7,.3,1). Opacity/transform; temel gezinme native scroll. Reduced motion tüm transition/animation'ı kapatır ve saha autoplay yerine adımlamayı korur.
-- Hedefler en az44px; grafik hücreleri görsel yoğunluk nedeniyle daha küçük olabilir, klavye ve tablo eşdeğeri vardır. Tooltip bilgiye tek erişim yolu değildir.
+- Ana düğmeler ve form kontrol satırları en az44px; üstteki ikincil Seçkim bağlantısı 28px. Grafik hücreleri görsel yoğunluk nedeniyle daha küçük olabilir, klavye ve tablo eşdeğeri vardır. Tooltip bilgiye tek erişim yolu değildir.
 
 ## Teknik tercihler ve paket maliyeti
 

@@ -14,5 +14,5 @@ export function initFilters(){
  document.querySelectorAll('[data-view]').forEach(b=>b.addEventListener('click',()=>{state.view=b.dataset.view;render(true);}));
  document.querySelector('[data-active-filters]').addEventListener('click',ev=>{const b=ev.target.closest('button');if(!b)return;if(b.dataset.removeFacet)state[b.dataset.removeFacet]=state[b.dataset.removeFacet].filter(v=>v!==b.dataset.value);if(b.hasAttribute('data-remove-saved'))state.saved=false;if(b.hasAttribute('data-remove-query'))state.q='';render(true);document.querySelector('[data-filter-clear]').focus();});
  let timeout;query.addEventListener('input',()=>{clearTimeout(timeout);timeout=setTimeout(()=>{const pos=query.selectionStart;state.q=query.value;render(true);query.focus();if(query.type!=='search')query.setSelectionRange(pos,pos);},220);});
- window.addEventListener('popstate',()=>{state=parseFilters(location.search);render();});document.addEventListener('selectionchange',()=>{if(state.saved)render();});render();
+ window.addEventListener('popstate',()=>{state=parseFilters(location.search);render();});document.addEventListener('prototype:selectionchange',()=>{if(state.saved)render();});render();
 }

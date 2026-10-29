@@ -37,3 +37,7 @@ Rotalar: `/`, `/analysis`, `/research`, `/scouting`, `/culture`, `/archive`, `/s
 ## Mobil ve masaüstü değerlendirme sınırı
 
 Kaynak okuması hover/touch/klavye desteğinin niyetini gösterir; gerçek davranışı kanıtlamaz. Önceki sürümün 160 viewport kontrolü yeni prototipin kabulü değildir. Yeni prototip için 360/390/768/1024/1440/1920 ayrı tarayıcı testi, gerçek dokunma, focus ve overflow ölçümü planlandı. Canlı site gözlem sonuçları araştırma kanıtlarına eklenecek.
+
+## İçe aktarma kapsamının ek doğrulaması
+
+`rg` ile import kapsamı: TacticalCanvas visual-lab'de, TurnuvaHeader Fenerbahçe–Slavia ve Lille maç sonu sayfalarında kullanılıyor. Derby continuity+p0 katmanlarını birlikte alıyor; GoalSequence/FlowSurface motion-v2'yi alıyor. Alternatif SkillCornerTerminalHero/InteractiveHeroRail/HeroCartography ve layout/EditorialHeader için taranan Astro/MJS importlarında kullanım bulunmadı. Bu, silinmeleri için yeterli gerekçe değildir; kaynaklar korundu. Footer BaseLayout içinde tek ortak HTML bölümü, footer-grid ve içerik görünürlüğüne göre linkler içeriyor.

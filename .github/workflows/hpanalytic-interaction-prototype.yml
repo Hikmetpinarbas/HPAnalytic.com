@@ -53,7 +53,7 @@ jobs:
             if curl -fsS http://127.0.0.1:8099/ >/dev/null; then break; fi
             sleep 1
           done
-          HPA_PLAYWRIGHT_PATH="$RUNNER_TEMP/hpa-interaction-tools/node_modules/playwright" HPA_AXE_PATH="$RUNNER_TEMP/hpa-interaction-tools/node_modules/axe-core/axe.min.js" node prototype/tests/browser.mjs
+          HPA_INLINE_PREVIEW=1 HPA_PLAYWRIGHT_PATH="$RUNNER_TEMP/hpa-interaction-tools/node_modules/playwright" HPA_AXE_PATH="$RUNNER_TEMP/hpa-interaction-tools/node_modules/axe-core/axe.min.js" node prototype/tests/browser.mjs
       - name: Mobile performance measurements (three runs, no threshold relaxation)
         if: success()
         run: |
