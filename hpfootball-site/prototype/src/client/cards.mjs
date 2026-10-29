@@ -11,6 +11,6 @@ export function initCards(root=document){
   card.addEventListener('pointerenter',ev=>{if(ev.pointerType==='mouse'){clearTimeout(t);t=setTimeout(()=>set(true),180);}});
   card.addEventListener('pointerleave',ev=>{if(ev.pointerType==='mouse'){clearTimeout(t);if(!pinned&&!card.contains(document.activeElement))set(false);}});
   b.addEventListener('focus',()=>set(true));card.addEventListener('focusout',ev=>{if(!card.contains(ev.relatedTarget)&&!pinned)set(false);});
-  card.addEventListener('keydown',ev=>{if(ev.key==='Escape'){pinned=false;b.focus();set(false);}});
+  card.addEventListener('keydown',ev=>{if(ev.key==='Escape'){clearTimeout(t);pinned=false;b.focus();set(false);}});
  });updateSaved();
 }
