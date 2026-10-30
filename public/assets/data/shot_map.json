@@ -1,0 +1,919 @@
+[
+  {
+    "player": "Roland Sallai (1282353)",
+    "team": "GS",
+    "x": 77.88,
+    "y": 35.45,
+    "type": "Off Target"
+  },
+  {
+    "player": "Roland Sallai (1282353)",
+    "team": "GS",
+    "x": 77.88,
+    "y": 35.45,
+    "type": "Off Target"
+  },
+  {
+    "player": "Victor Osimhen (1093704)",
+    "team": "GS",
+    "x": 98.18,
+    "y": 40.71,
+    "type": "Off Target"
+  },
+  {
+    "player": "Victor Osimhen (1093704)",
+    "team": "GS",
+    "x": 102.02,
+    "y": 11.41,
+    "type": "Off Target"
+  },
+  {
+    "player": "Aleksei Batrakov (137204)",
+    "team": "GS",
+    "x": 102.02,
+    "y": 11.41,
+    "type": "Off Target"
+  },
+  {
+    "player": "Ismail Jakobs (673189)",
+    "team": "GS",
+    "x": 73.5,
+    "y": 15.39,
+    "type": "Off Target"
+  },
+  {
+    "player": "Davinson Sánchez (1647732)",
+    "team": "GS",
+    "x": 73.5,
+    "y": 15.39,
+    "type": "Off Target"
+  },
+  {
+    "player": "Lucas Torreira (1469956)",
+    "team": "GS",
+    "x": 73.5,
+    "y": 15.39,
+    "type": "Off Target"
+  },
+  {
+    "player": "Victor Osimhen (1093704)",
+    "team": "GS",
+    "x": 73.5,
+    "y": 15.39,
+    "type": "Off Target"
+  },
+  {
+    "player": "Barış Alper Yılmaz (1589859)",
+    "team": "GS",
+    "x": 73.5,
+    "y": 15.39,
+    "type": "Off Target"
+  },
+  {
+    "player": "Aleksei Batrakov (137204)",
+    "team": "GS",
+    "x": 73.5,
+    "y": 15.39,
+    "type": "Off Target"
+  },
+  {
+    "player": "Barış Alper Yılmaz (1589859)",
+    "team": "GS",
+    "x": 99.22,
+    "y": 46.81,
+    "type": "On Target"
+  },
+  {
+    "player": "Roland Sallai (1282353)",
+    "team": "GS",
+    "x": 20.91,
+    "y": 33.69,
+    "type": "Off Target"
+  },
+  {
+    "player": "Lucas Torreira (1469956)",
+    "team": "GS",
+    "x": 20.91,
+    "y": 33.69,
+    "type": "Off Target"
+  },
+  {
+    "player": "Abdülkerim Bardakcı (126526)",
+    "team": "GS",
+    "x": 20.91,
+    "y": 33.69,
+    "type": "Off Target"
+  },
+  {
+    "player": "Barış Alper Yılmaz (1589859)",
+    "team": "GS",
+    "x": 20.91,
+    "y": 33.69,
+    "type": "Off Target"
+  },
+  {
+    "player": "Aleksei Batrakov (137204)",
+    "team": "GS",
+    "x": 20.91,
+    "y": 33.69,
+    "type": "Off Target"
+  },
+  {
+    "player": "Mario Lemina (834205)",
+    "team": "GS",
+    "x": 20.91,
+    "y": 33.69,
+    "type": "Off Target"
+  },
+  {
+    "player": "Barış Alper Yılmaz (1589859)",
+    "team": "GS",
+    "x": 92.05,
+    "y": 37.76,
+    "type": "On Target"
+  },
+  {
+    "player": "Victor Osimhen (1093704)",
+    "team": "GS",
+    "x": 92.58,
+    "y": 29.76,
+    "type": "Goal"
+  },
+  {
+    "player": "Archie Brown (212977)",
+    "team": "FB",
+    "x": 12.42,
+    "y": 38.24,
+    "type": "Goal"
+  },
+  {
+    "player": "Victor Osimhen (1093704)",
+    "team": "GS",
+    "x": 92.58,
+    "y": 29.76,
+    "type": "On Target"
+  },
+  {
+    "player": "Victor Osimhen (1093704)",
+    "team": "GS",
+    "x": 76.74,
+    "y": 28.56,
+    "type": "Off Target"
+  },
+  {
+    "player": "Barış Alper Yılmaz (1589859)",
+    "team": "GS",
+    "x": 76.74,
+    "y": 28.56,
+    "type": "Off Target"
+  },
+  {
+    "player": "Ismail Jakobs (673189)",
+    "team": "GS",
+    "x": 30.01,
+    "y": 28.37,
+    "type": "Off Target"
+  },
+  {
+    "player": "Yunus Akgün (27735)",
+    "team": "GS",
+    "x": 30.01,
+    "y": 28.37,
+    "type": "Off Target"
+  },
+  {
+    "player": "Lucas Torreira (1469956)",
+    "team": "GS",
+    "x": 30.01,
+    "y": 28.37,
+    "type": "Off Target"
+  },
+  {
+    "player": "Victor Osimhen (1093704)",
+    "team": "GS",
+    "x": 30.01,
+    "y": 28.37,
+    "type": "Off Target"
+  },
+  {
+    "player": "Barış Alper Yılmaz (1589859)",
+    "team": "GS",
+    "x": 30.01,
+    "y": 28.37,
+    "type": "Off Target"
+  },
+  {
+    "player": "Mario Lemina (834205)",
+    "team": "GS",
+    "x": 30.01,
+    "y": 28.37,
+    "type": "Off Target"
+  },
+  {
+    "player": "Victor Osimhen (1093704)",
+    "team": "GS",
+    "x": 95.29,
+    "y": 28.56,
+    "type": "Off Target"
+  },
+  {
+    "player": "Davinson Sánchez (1647732)",
+    "team": "GS",
+    "x": 76.21,
+    "y": 22.46,
+    "type": "Off Target"
+  },
+  {
+    "player": "Roland Sallai (1282353)",
+    "team": "GS",
+    "x": 76.21,
+    "y": 22.46,
+    "type": "Off Target"
+  },
+  {
+    "player": "Victor Osimhen (1093704)",
+    "team": "GS",
+    "x": 76.21,
+    "y": 22.46,
+    "type": "Off Target"
+  },
+  {
+    "player": "Aleksei Batrakov (137204)",
+    "team": "GS",
+    "x": 76.21,
+    "y": 22.46,
+    "type": "Off Target"
+  },
+  {
+    "player": "Mario Lemina (834205)",
+    "team": "GS",
+    "x": 76.21,
+    "y": 22.46,
+    "type": "Off Target"
+  },
+  {
+    "player": "Victor Osimhen (1093704)",
+    "team": "GS",
+    "x": 96.08,
+    "y": 24.12,
+    "type": "On Target"
+  },
+  {
+    "player": "Ismail Jakobs (673189)",
+    "team": "GS",
+    "x": 95.55,
+    "y": 68.0,
+    "type": "Off Target"
+  },
+  {
+    "player": "Davinson Sánchez (1647732)",
+    "team": "GS",
+    "x": 95.55,
+    "y": 68.0,
+    "type": "Off Target"
+  },
+  {
+    "player": "Victor Osimhen (1093704)",
+    "team": "GS",
+    "x": 95.55,
+    "y": 68.0,
+    "type": "Off Target"
+  },
+  {
+    "player": "Victor Osimhen (1093704)",
+    "team": "GS",
+    "x": 97.74,
+    "y": 40.34,
+    "type": "Goal"
+  },
+  {
+    "player": "Archie Brown (212977)",
+    "team": "FB",
+    "x": 7.26,
+    "y": 27.66,
+    "type": "Goal"
+  },
+  {
+    "player": "Victor Osimhen (1093704)",
+    "team": "GS",
+    "x": 97.74,
+    "y": 40.34,
+    "type": "On Target"
+  },
+  {
+    "player": "Victor Osimhen (1093704)",
+    "team": "GS",
+    "x": 24.85,
+    "y": 13.17,
+    "type": "Off Target"
+  },
+  {
+    "player": "Barış Alper Yılmaz (1589859)",
+    "team": "GS",
+    "x": 24.85,
+    "y": 13.17,
+    "type": "Off Target"
+  },
+  {
+    "player": "Aleksei Batrakov (137204)",
+    "team": "GS",
+    "x": 24.85,
+    "y": 13.17,
+    "type": "Off Target"
+  },
+  {
+    "player": "Aleksei Batrakov (137204)",
+    "team": "GS",
+    "x": 92.4,
+    "y": 43.76,
+    "type": "On Target"
+  },
+  {
+    "player": "Yunus Akgün (27735)",
+    "team": "GS",
+    "x": 28.44,
+    "y": 52.89,
+    "type": "Off Target"
+  },
+  {
+    "player": "Abdülkerim Bardakcı (126526)",
+    "team": "GS",
+    "x": 28.44,
+    "y": 52.89,
+    "type": "Off Target"
+  },
+  {
+    "player": "Victor Osimhen (1093704)",
+    "team": "GS",
+    "x": 28.44,
+    "y": 52.89,
+    "type": "Off Target"
+  },
+  {
+    "player": "Aleksei Batrakov (137204)",
+    "team": "GS",
+    "x": 28.44,
+    "y": 52.89,
+    "type": "Off Target"
+  },
+  {
+    "player": "Romelu Lukaku (870035)",
+    "team": "FB",
+    "x": 82.42,
+    "y": 11.65,
+    "type": "Off Target"
+  },
+  {
+    "player": "Mason Greenwood (552833)",
+    "team": "FB",
+    "x": 82.42,
+    "y": 11.65,
+    "type": "Off Target"
+  },
+  {
+    "player": "Ngolo Kante (717612)",
+    "team": "FB",
+    "x": 82.42,
+    "y": 11.65,
+    "type": "Off Target"
+  },
+  {
+    "player": "Romelu Lukaku (870035)",
+    "team": "FB",
+    "x": 97.3,
+    "y": 26.34,
+    "type": "On Target"
+  },
+  {
+    "player": "Ismail Jakobs (673189)",
+    "team": "GS",
+    "x": 39.29,
+    "y": 56.08,
+    "type": "Off Target"
+  },
+  {
+    "player": "Roland Sallai (1282353)",
+    "team": "GS",
+    "x": 39.29,
+    "y": 56.08,
+    "type": "Off Target"
+  },
+  {
+    "player": "Yunus Akgün (27735)",
+    "team": "GS",
+    "x": 39.29,
+    "y": 56.08,
+    "type": "Off Target"
+  },
+  {
+    "player": "Lucas Torreira (1469956)",
+    "team": "GS",
+    "x": 39.29,
+    "y": 56.08,
+    "type": "Off Target"
+  },
+  {
+    "player": "Abdülkerim Bardakcı (126526)",
+    "team": "GS",
+    "x": 39.29,
+    "y": 56.08,
+    "type": "Off Target"
+  },
+  {
+    "player": "Victor Osimhen (1093704)",
+    "team": "GS",
+    "x": 39.29,
+    "y": 56.08,
+    "type": "Off Target"
+  },
+  {
+    "player": "Barış Alper Yılmaz (1589859)",
+    "team": "GS",
+    "x": 39.29,
+    "y": 56.08,
+    "type": "Off Target"
+  },
+  {
+    "player": "Aleksei Batrakov (137204)",
+    "team": "GS",
+    "x": 39.29,
+    "y": 56.08,
+    "type": "Off Target"
+  },
+  {
+    "player": "Mario Lemina (834205)",
+    "team": "GS",
+    "x": 39.29,
+    "y": 56.08,
+    "type": "Off Target"
+  },
+  {
+    "player": "Ismail Jakobs (673189)",
+    "team": "GS",
+    "x": 101.59,
+    "y": 40.09,
+    "type": "Off Target"
+  },
+  {
+    "player": "Barış Alper Yılmaz (1589859)",
+    "team": "GS",
+    "x": 90.39,
+    "y": 35.47,
+    "type": "Off Target"
+  },
+  {
+    "player": "Archie Brown (212977)",
+    "team": "FB",
+    "x": 41.65,
+    "y": 65.9,
+    "type": "Off Target"
+  },
+  {
+    "player": "Mattéo Guendouzi (562671)",
+    "team": "FB",
+    "x": 41.65,
+    "y": 65.9,
+    "type": "Off Target"
+  },
+  {
+    "player": "Kerem Akturkoglu (737292)",
+    "team": "FB",
+    "x": 41.65,
+    "y": 65.9,
+    "type": "Off Target"
+  },
+  {
+    "player": "İrfan Can Kahveci (242846)",
+    "team": "FB",
+    "x": 41.65,
+    "y": 65.9,
+    "type": "Off Target"
+  },
+  {
+    "player": "Oğuz Aydın (102796)",
+    "team": "FB",
+    "x": 41.65,
+    "y": 65.9,
+    "type": "Off Target"
+  },
+  {
+    "player": "Ngolo Kante (717612)",
+    "team": "FB",
+    "x": 41.65,
+    "y": 65.9,
+    "type": "Off Target"
+  },
+  {
+    "player": "İrfan Can Kahveci (242846)",
+    "team": "FB",
+    "x": 93.62,
+    "y": 31.79,
+    "type": "Goal"
+  },
+  {
+    "player": "Abdülkerim Bardakcı (126526)",
+    "team": "GS",
+    "x": 11.38,
+    "y": 36.21,
+    "type": "Goal"
+  },
+  {
+    "player": "İrfan Can Kahveci (242846)",
+    "team": "FB",
+    "x": 93.62,
+    "y": 31.79,
+    "type": "On Target"
+  },
+  {
+    "player": "Ismail Jakobs (673189)",
+    "team": "GS",
+    "x": 105.0,
+    "y": 0.0,
+    "type": "Off Target"
+  },
+  {
+    "player": "Davinson Sánchez (1647732)",
+    "team": "GS",
+    "x": 105.0,
+    "y": 0.0,
+    "type": "Off Target"
+  },
+  {
+    "player": "Yunus Akgün (27735)",
+    "team": "GS",
+    "x": 105.0,
+    "y": 0.0,
+    "type": "Off Target"
+  },
+  {
+    "player": "Rafael Leão (1621614)",
+    "team": "GS",
+    "x": 105.0,
+    "y": 0.0,
+    "type": "Off Target"
+  },
+  {
+    "player": "Victor Osimhen (1093704)",
+    "team": "GS",
+    "x": 105.0,
+    "y": 0.0,
+    "type": "Off Target"
+  },
+  {
+    "player": "Aleksei Batrakov (137204)",
+    "team": "GS",
+    "x": 105.0,
+    "y": 0.0,
+    "type": "Off Target"
+  },
+  {
+    "player": "Mario Lemina (834205)",
+    "team": "GS",
+    "x": 105.0,
+    "y": 0.0,
+    "type": "Off Target"
+  },
+  {
+    "player": "Ismail Jakobs (673189)",
+    "team": "GS",
+    "x": 21.96,
+    "y": 46.65,
+    "type": "Off Target"
+  },
+  {
+    "player": "Yunus Akgün (27735)",
+    "team": "GS",
+    "x": 21.96,
+    "y": 46.65,
+    "type": "Off Target"
+  },
+  {
+    "player": "Rafael Leão (1621614)",
+    "team": "GS",
+    "x": 21.96,
+    "y": 46.65,
+    "type": "Off Target"
+  },
+  {
+    "player": "Lucas Torreira (1469956)",
+    "team": "GS",
+    "x": 21.96,
+    "y": 46.65,
+    "type": "Off Target"
+  },
+  {
+    "player": "Lucas Torreira (1469956)",
+    "team": "GS",
+    "x": 87.41,
+    "y": 26.87,
+    "type": "Off Target"
+  },
+  {
+    "player": "Davinson Sánchez (1647732)",
+    "team": "GS",
+    "x": 105.0,
+    "y": 68.0,
+    "type": "Off Target"
+  },
+  {
+    "player": "Lucas Torreira (1469956)",
+    "team": "GS",
+    "x": 105.0,
+    "y": 68.0,
+    "type": "Off Target"
+  },
+  {
+    "player": "Aleksei Batrakov (137204)",
+    "team": "GS",
+    "x": 105.0,
+    "y": 68.0,
+    "type": "Off Target"
+  },
+  {
+    "player": "Lucas Torreira (1469956)",
+    "team": "GS",
+    "x": 100.01,
+    "y": 37.13,
+    "type": "Off Target"
+  },
+  {
+    "player": "Ismail Jakobs (673189)",
+    "team": "GS",
+    "x": 31.24,
+    "y": 43.41,
+    "type": "Off Target"
+  },
+  {
+    "player": "Yunus Akgün (27735)",
+    "team": "GS",
+    "x": 31.24,
+    "y": 43.41,
+    "type": "Off Target"
+  },
+  {
+    "player": "Rafael Leão (1621614)",
+    "team": "GS",
+    "x": 31.24,
+    "y": 43.41,
+    "type": "Off Target"
+  },
+  {
+    "player": "Lucas Torreira (1469956)",
+    "team": "GS",
+    "x": 31.24,
+    "y": 43.41,
+    "type": "Off Target"
+  },
+  {
+    "player": "Abdülkerim Bardakcı (126526)",
+    "team": "GS",
+    "x": 31.24,
+    "y": 43.41,
+    "type": "Off Target"
+  },
+  {
+    "player": "Aleksei Batrakov (137204)",
+    "team": "GS",
+    "x": 31.24,
+    "y": 43.41,
+    "type": "Off Target"
+  },
+  {
+    "player": "Mario Lemina (834205)",
+    "team": "GS",
+    "x": 31.24,
+    "y": 43.41,
+    "type": "Off Target"
+  },
+  {
+    "player": "Rafael Leão (1621614)",
+    "team": "GS",
+    "x": 83.74,
+    "y": 49.33,
+    "type": "On Target"
+  },
+  {
+    "player": "Ismail Jakobs (673189)",
+    "team": "GS",
+    "x": 105.0,
+    "y": 0.0,
+    "type": "Off Target"
+  },
+  {
+    "player": "Yunus Akgün (27735)",
+    "team": "GS",
+    "x": 105.0,
+    "y": 0.0,
+    "type": "Off Target"
+  },
+  {
+    "player": "Aleksei Batrakov (137204)",
+    "team": "GS",
+    "x": 105.0,
+    "y": 0.0,
+    "type": "Off Target"
+  },
+  {
+    "player": "Ismail Jakobs (673189)",
+    "team": "GS",
+    "x": 80.41,
+    "y": 39.99,
+    "type": "Off Target"
+  },
+  {
+    "player": "Ismail Jakobs (673189)",
+    "team": "GS",
+    "x": 4.72,
+    "y": 58.57,
+    "type": "Off Target"
+  },
+  {
+    "player": "Davinson Sánchez (1647732)",
+    "team": "GS",
+    "x": 4.72,
+    "y": 58.57,
+    "type": "Off Target"
+  },
+  {
+    "player": "Roland Sallai (1282353)",
+    "team": "GS",
+    "x": 4.72,
+    "y": 58.57,
+    "type": "Off Target"
+  },
+  {
+    "player": "Yunus Akgün (27735)",
+    "team": "GS",
+    "x": 4.72,
+    "y": 58.57,
+    "type": "Off Target"
+  },
+  {
+    "player": "Rafael Leão (1621614)",
+    "team": "GS",
+    "x": 4.72,
+    "y": 58.57,
+    "type": "Off Target"
+  },
+  {
+    "player": "Lucas Torreira (1469956)",
+    "team": "GS",
+    "x": 4.72,
+    "y": 58.57,
+    "type": "Off Target"
+  },
+  {
+    "player": "Victor Osimhen (1093704)",
+    "team": "GS",
+    "x": 4.72,
+    "y": 58.57,
+    "type": "Off Target"
+  },
+  {
+    "player": "Aleksei Batrakov (137204)",
+    "team": "GS",
+    "x": 4.72,
+    "y": 58.57,
+    "type": "Off Target"
+  },
+  {
+    "player": "Victor Osimhen (1093704)",
+    "team": "GS",
+    "x": 93.28,
+    "y": 21.65,
+    "type": "Off Target"
+  },
+  {
+    "player": "Roland Sallai (1282353)",
+    "team": "GS",
+    "x": 14.26,
+    "y": 30.34,
+    "type": "Off Target"
+  },
+  {
+    "player": "Gabriel Sara (533884)",
+    "team": "GS",
+    "x": 14.26,
+    "y": 30.34,
+    "type": "Off Target"
+  },
+  {
+    "player": "Leroy Sané (1291402)",
+    "team": "GS",
+    "x": 14.26,
+    "y": 30.34,
+    "type": "Off Target"
+  },
+  {
+    "player": "Rafael Leão (1621614)",
+    "team": "GS",
+    "x": 14.26,
+    "y": 30.34,
+    "type": "Off Target"
+  },
+  {
+    "player": "Lucas Torreira (1469956)",
+    "team": "GS",
+    "x": 14.26,
+    "y": 30.34,
+    "type": "Off Target"
+  },
+  {
+    "player": "Rafael Leão (1621614)",
+    "team": "GS",
+    "x": 92.75,
+    "y": 44.57,
+    "type": "Off Target"
+  },
+  {
+    "player": "Kerem Akturkoglu (737292)",
+    "team": "FB",
+    "x": 69.21,
+    "y": 21.95,
+    "type": "Off Target"
+  },
+  {
+    "player": "Mert Hakan Yandaş (1583965)",
+    "team": "FB",
+    "x": 69.21,
+    "y": 21.95,
+    "type": "Off Target"
+  },
+  {
+    "player": "Romelu Lukaku (870035)",
+    "team": "FB",
+    "x": 69.21,
+    "y": 21.95,
+    "type": "Off Target"
+  },
+  {
+    "player": "Kojo Oppong (1689432)",
+    "team": "FB",
+    "x": 69.21,
+    "y": 21.95,
+    "type": "Off Target"
+  },
+  {
+    "player": "Milan Skriniar (1369516)",
+    "team": "FB",
+    "x": 69.21,
+    "y": 21.95,
+    "type": "Off Target"
+  },
+  {
+    "player": "Milan Skriniar (1369516)",
+    "team": "FB",
+    "x": 97.74,
+    "y": 32.12,
+    "type": "On Target"
+  },
+  {
+    "player": "Gabriel Sara (533884)",
+    "team": "GS",
+    "x": 37.54,
+    "y": 0.0,
+    "type": "Off Target"
+  },
+  {
+    "player": "Leroy Sané (1291402)",
+    "team": "GS",
+    "x": 37.54,
+    "y": 0.0,
+    "type": "Off Target"
+  },
+  {
+    "player": "Wilfried Singo (1364358)",
+    "team": "GS",
+    "x": 37.54,
+    "y": 0.0,
+    "type": "Off Target"
+  },
+  {
+    "player": "Leroy Sané (1291402)",
+    "team": "GS",
+    "x": 78.22,
+    "y": 29.23,
+    "type": "On Target"
+  },
+  {
+    "player": "Kerem Akturkoglu (737292)",
+    "team": "FB",
+    "x": 86.89,
+    "y": 48.48,
+    "type": "Off Target"
+  },
+  {
+    "player": "Kerem Akturkoglu (737292)",
+    "team": "FB",
+    "x": 86.89,
+    "y": 48.48,
+    "type": "Off Target"
+  },
+  {
+    "player": "Kerem Akturkoglu (737292)",
+    "team": "FB",
+    "x": 86.89,
+    "y": 48.48,
+    "type": "Off Target"
+  }
+]

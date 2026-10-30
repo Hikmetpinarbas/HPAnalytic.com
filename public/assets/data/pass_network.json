@@ -1,0 +1,645 @@
+{
+  "nodes": [
+    {
+      "id": "Mattéo Guendouzi (562671)",
+      "team": "FB",
+      "x": 56.11,
+      "y": 35.36,
+      "is_main": true
+    },
+    {
+      "id": "Ederson (1293693)",
+      "team": "FB",
+      "x": 9.88,
+      "y": 34.07,
+      "is_main": true
+    },
+    {
+      "id": "Abdülkerim Bardakcı (126526)",
+      "team": "GS",
+      "x": 36.89,
+      "y": 53.3,
+      "is_main": true
+    },
+    {
+      "id": "Lucas Torreira (1469956)",
+      "team": "GS",
+      "x": 52.63,
+      "y": 26.9,
+      "is_main": true
+    },
+    {
+      "id": "Uğurcan Çakır (235597)",
+      "team": "GS",
+      "x": 17.54,
+      "y": 33.98,
+      "is_main": true
+    },
+    {
+      "id": "Roland Sallai (1282353)",
+      "team": "GS",
+      "x": 59.26,
+      "y": 10.27,
+      "is_main": true
+    },
+    {
+      "id": "Milan Skriniar (1369516)",
+      "team": "FB",
+      "x": 28.21,
+      "y": 16.04,
+      "is_main": true
+    },
+    {
+      "id": "Oğuz Aydın (102796)",
+      "team": "FB",
+      "x": 73.34,
+      "y": 47.03,
+      "is_main": true
+    },
+    {
+      "id": "Davinson Sánchez (1647732)",
+      "team": "GS",
+      "x": 46.77,
+      "y": 19.94,
+      "is_main": true
+    },
+    {
+      "id": "Levent Mercan (956983)",
+      "team": "FB",
+      "x": 48.23,
+      "y": 62.53,
+      "is_main": true
+    },
+    {
+      "id": "Aleksei Batrakov (137204)",
+      "team": "GS",
+      "x": 73.06,
+      "y": 30.68,
+      "is_main": true
+    },
+    {
+      "id": "Yunus Akgün (27735)",
+      "team": "GS",
+      "x": 68.31,
+      "y": 14.52,
+      "is_main": true
+    },
+    {
+      "id": "Mario Lemina (834205)",
+      "team": "GS",
+      "x": 53.35,
+      "y": 36.47,
+      "is_main": true
+    },
+    {
+      "id": "Ismail Jakobs (673189)",
+      "team": "GS",
+      "x": 59.82,
+      "y": 57.55,
+      "is_main": true
+    },
+    {
+      "id": "Nelson Semedo (232583)",
+      "team": "FB",
+      "x": 44.18,
+      "y": 8.43,
+      "is_main": true
+    },
+    {
+      "id": "Ngolo Kante (717612)",
+      "team": "FB",
+      "x": 67.02,
+      "y": 43.5,
+      "is_main": true
+    },
+    {
+      "id": "Archie Brown (212977)",
+      "team": "FB",
+      "x": 47.86,
+      "y": 56.56,
+      "is_main": true
+    },
+    {
+      "id": "Barış Alper Yılmaz (1589859)",
+      "team": "GS",
+      "x": 77.29,
+      "y": 46.96,
+      "is_main": true
+    },
+    {
+      "id": "İrfan Can Kahveci (242846)",
+      "team": "FB",
+      "x": 63.04,
+      "y": 28.25,
+      "is_main": true
+    },
+    {
+      "id": "Victor Osimhen (1093704)",
+      "team": "GS",
+      "x": 79.66,
+      "y": 35.72,
+      "is_main": true
+    },
+    {
+      "id": "Mason Greenwood (552833)",
+      "team": "FB",
+      "x": 68.92,
+      "y": 18.16,
+      "is_main": true
+    },
+    {
+      "id": "Romelu Lukaku (870035)",
+      "team": "FB",
+      "x": 58.54,
+      "y": 27.56,
+      "is_main": true
+    },
+    {
+      "id": "Kojo Oppong (1689432)",
+      "team": "FB",
+      "x": 41.84,
+      "y": 47.23,
+      "is_main": true
+    },
+    {
+      "id": "Kerem Akturkoglu (737292)",
+      "team": "FB",
+      "x": 78.45,
+      "y": 55.04,
+      "is_main": true
+    },
+    {
+      "id": "Rafael Leão (1621614)",
+      "team": "GS",
+      "x": 71.1,
+      "y": 48.17,
+      "is_main": true
+    },
+    {
+      "id": "Mert Hakan Yandaş (1583965)",
+      "team": "FB",
+      "x": 67.22,
+      "y": 28.16,
+      "is_main": false
+    },
+    {
+      "id": "Eren Elmalı (424686)",
+      "team": "GS",
+      "x": 44.25,
+      "y": 58.03,
+      "is_main": false
+    },
+    {
+      "id": "Gabriel Sara (533884)",
+      "team": "GS",
+      "x": 68.26,
+      "y": 35.5,
+      "is_main": false
+    },
+    {
+      "id": "Dorgeles Nene (385751)",
+      "team": "FB",
+      "x": 61.84,
+      "y": 16.52,
+      "is_main": false
+    },
+    {
+      "id": "Leroy Sané (1291402)",
+      "team": "GS",
+      "x": 67.72,
+      "y": 15.59,
+      "is_main": false
+    },
+    {
+      "id": "Wilfried Singo (1364358)",
+      "team": "GS",
+      "x": 55.0,
+      "y": 4.23,
+      "is_main": false
+    },
+    {
+      "id": "Vedat Muriqi (1019181)",
+      "team": "FB",
+      "x": 40.6,
+      "y": 35.02,
+      "is_main": false
+    }
+  ],
+  "links": [
+    {
+      "source": "Abdülkerim Bardakcı (126526)",
+      "target": "Lucas Torreira (1469956)",
+      "value": 2
+    },
+    {
+      "source": "Uğurcan Çakır (235597)",
+      "target": "Roland Sallai (1282353)",
+      "value": 5
+    },
+    {
+      "source": "Milan Skriniar (1369516)",
+      "target": "Oğuz Aydın (102796)",
+      "value": 3
+    },
+    {
+      "source": "Lucas Torreira (1469956)",
+      "target": "Davinson Sánchez (1647732)",
+      "value": 7
+    },
+    {
+      "source": "Davinson Sánchez (1647732)",
+      "target": "Roland Sallai (1282353)",
+      "value": 14
+    },
+    {
+      "source": "Aleksei Batrakov (137204)",
+      "target": "Uğurcan Çakır (235597)",
+      "value": 2
+    },
+    {
+      "source": "Yunus Akgün (27735)",
+      "target": "Mario Lemina (834205)",
+      "value": 5
+    },
+    {
+      "source": "Mario Lemina (834205)",
+      "target": "Roland Sallai (1282353)",
+      "value": 2
+    },
+    {
+      "source": "Roland Sallai (1282353)",
+      "target": "Yunus Akgün (27735)",
+      "value": 7
+    },
+    {
+      "source": "Uğurcan Çakır (235597)",
+      "target": "Abdülkerim Bardakcı (126526)",
+      "value": 3
+    },
+    {
+      "source": "Roland Sallai (1282353)",
+      "target": "Lucas Torreira (1469956)",
+      "value": 3
+    },
+    {
+      "source": "Lucas Torreira (1469956)",
+      "target": "Yunus Akgün (27735)",
+      "value": 3
+    },
+    {
+      "source": "Aleksei Batrakov (137204)",
+      "target": "Davinson Sánchez (1647732)",
+      "value": 2
+    },
+    {
+      "source": "Davinson Sánchez (1647732)",
+      "target": "Yunus Akgün (27735)",
+      "value": 4
+    },
+    {
+      "source": "Abdülkerim Bardakcı (126526)",
+      "target": "Aleksei Batrakov (137204)",
+      "value": 3
+    },
+    {
+      "source": "Davinson Sánchez (1647732)",
+      "target": "Lucas Torreira (1469956)",
+      "value": 6
+    },
+    {
+      "source": "Aleksei Batrakov (137204)",
+      "target": "Roland Sallai (1282353)",
+      "value": 5
+    },
+    {
+      "source": "Aleksei Batrakov (137204)",
+      "target": "Ismail Jakobs (673189)",
+      "value": 4
+    },
+    {
+      "source": "Lucas Torreira (1469956)",
+      "target": "Ismail Jakobs (673189)",
+      "value": 5
+    },
+    {
+      "source": "Mario Lemina (834205)",
+      "target": "Victor Osimhen (1093704)",
+      "value": 2
+    },
+    {
+      "source": "Lucas Torreira (1469956)",
+      "target": "Victor Osimhen (1093704)",
+      "value": 3
+    },
+    {
+      "source": "Nelson Semedo (232583)",
+      "target": "Oğuz Aydın (102796)",
+      "value": 5
+    },
+    {
+      "source": "İrfan Can Kahveci (242846)",
+      "target": "Mason Greenwood (552833)",
+      "value": 5
+    },
+    {
+      "source": "Abdülkerim Bardakcı (126526)",
+      "target": "Davinson Sánchez (1647732)",
+      "value": 3
+    },
+    {
+      "source": "Uğurcan Çakır (235597)",
+      "target": "Davinson Sánchez (1647732)",
+      "value": 4
+    },
+    {
+      "source": "Abdülkerim Bardakcı (126526)",
+      "target": "Yunus Akgün (27735)",
+      "value": 3
+    },
+    {
+      "source": "Uğurcan Çakır (235597)",
+      "target": "Yunus Akgün (27735)",
+      "value": 2
+    },
+    {
+      "source": "Roland Sallai (1282353)",
+      "target": "Abdülkerim Bardakcı (126526)",
+      "value": 7
+    },
+    {
+      "source": "Davinson Sánchez (1647732)",
+      "target": "Aleksei Batrakov (137204)",
+      "value": 2
+    },
+    {
+      "source": "Abdülkerim Bardakcı (126526)",
+      "target": "Uğurcan Çakır (235597)",
+      "value": 4
+    },
+    {
+      "source": "Aleksei Batrakov (137204)",
+      "target": "Lucas Torreira (1469956)",
+      "value": 3
+    },
+    {
+      "source": "Lucas Torreira (1469956)",
+      "target": "Uğurcan Çakır (235597)",
+      "value": 5
+    },
+    {
+      "source": "Yunus Akgün (27735)",
+      "target": "Uğurcan Çakır (235597)",
+      "value": 2
+    },
+    {
+      "source": "Ismail Jakobs (673189)",
+      "target": "Yunus Akgün (27735)",
+      "value": 4
+    },
+    {
+      "source": "Lucas Torreira (1469956)",
+      "target": "Barış Alper Yılmaz (1589859)",
+      "value": 3
+    },
+    {
+      "source": "Levent Mercan (956983)",
+      "target": "İrfan Can Kahveci (242846)",
+      "value": 3
+    },
+    {
+      "source": "Davinson Sánchez (1647732)",
+      "target": "Uğurcan Çakır (235597)",
+      "value": 4
+    },
+    {
+      "source": "Ismail Jakobs (673189)",
+      "target": "Davinson Sánchez (1647732)",
+      "value": 7
+    },
+    {
+      "source": "Abdülkerim Bardakcı (126526)",
+      "target": "Roland Sallai (1282353)",
+      "value": 5
+    },
+    {
+      "source": "Ngolo Kante (717612)",
+      "target": "Levent Mercan (956983)",
+      "value": 2
+    },
+    {
+      "source": "Oğuz Aydın (102796)",
+      "target": "Ngolo Kante (717612)",
+      "value": 2
+    },
+    {
+      "source": "Roland Sallai (1282353)",
+      "target": "Ismail Jakobs (673189)",
+      "value": 2
+    },
+    {
+      "source": "Mario Lemina (834205)",
+      "target": "Uğurcan Çakır (235597)",
+      "value": 3
+    },
+    {
+      "source": "Uğurcan Çakır (235597)",
+      "target": "Lucas Torreira (1469956)",
+      "value": 2
+    },
+    {
+      "source": "Lucas Torreira (1469956)",
+      "target": "Abdülkerim Bardakcı (126526)",
+      "value": 4
+    },
+    {
+      "source": "Ismail Jakobs (673189)",
+      "target": "Abdülkerim Bardakcı (126526)",
+      "value": 4
+    },
+    {
+      "source": "Abdülkerim Bardakcı (126526)",
+      "target": "Mario Lemina (834205)",
+      "value": 3
+    },
+    {
+      "source": "Mario Lemina (834205)",
+      "target": "Davinson Sánchez (1647732)",
+      "value": 4
+    },
+    {
+      "source": "Mario Lemina (834205)",
+      "target": "Yunus Akgün (27735)",
+      "value": 2
+    },
+    {
+      "source": "Yunus Akgün (27735)",
+      "target": "Barış Alper Yılmaz (1589859)",
+      "value": 4
+    },
+    {
+      "source": "Uğurcan Çakır (235597)",
+      "target": "Ismail Jakobs (673189)",
+      "value": 2
+    },
+    {
+      "source": "Mario Lemina (834205)",
+      "target": "Ismail Jakobs (673189)",
+      "value": 2
+    },
+    {
+      "source": "Davinson Sánchez (1647732)",
+      "target": "Abdülkerim Bardakcı (126526)",
+      "value": 2
+    },
+    {
+      "source": "Mario Lemina (834205)",
+      "target": "Abdülkerim Bardakcı (126526)",
+      "value": 2
+    },
+    {
+      "source": "Uğurcan Çakır (235597)",
+      "target": "Barış Alper Yılmaz (1589859)",
+      "value": 2
+    },
+    {
+      "source": "Lucas Torreira (1469956)",
+      "target": "Roland Sallai (1282353)",
+      "value": 7
+    },
+    {
+      "source": "Barış Alper Yılmaz (1589859)",
+      "target": "Lucas Torreira (1469956)",
+      "value": 2
+    },
+    {
+      "source": "Davinson Sánchez (1647732)",
+      "target": "Mario Lemina (834205)",
+      "value": 5
+    },
+    {
+      "source": "Abdülkerim Bardakcı (126526)",
+      "target": "Ismail Jakobs (673189)",
+      "value": 6
+    },
+    {
+      "source": "Victor Osimhen (1093704)",
+      "target": "Ismail Jakobs (673189)",
+      "value": 2
+    },
+    {
+      "source": "Roland Sallai (1282353)",
+      "target": "Uğurcan Çakır (235597)",
+      "value": 6
+    },
+    {
+      "source": "Archie Brown (212977)",
+      "target": "Ngolo Kante (717612)",
+      "value": 2
+    },
+    {
+      "source": "Roland Sallai (1282353)",
+      "target": "Davinson Sánchez (1647732)",
+      "value": 6
+    },
+    {
+      "source": "Davinson Sánchez (1647732)",
+      "target": "Victor Osimhen (1093704)",
+      "value": 7
+    },
+    {
+      "source": "Milan Skriniar (1369516)",
+      "target": "Levent Mercan (956983)",
+      "value": 2
+    },
+    {
+      "source": "Levent Mercan (956983)",
+      "target": "Mason Greenwood (552833)",
+      "value": 2
+    },
+    {
+      "source": "Levent Mercan (956983)",
+      "target": "Ngolo Kante (717612)",
+      "value": 2
+    },
+    {
+      "source": "Levent Mercan (956983)",
+      "target": "Nelson Semedo (232583)",
+      "value": 2
+    },
+    {
+      "source": "Ngolo Kante (717612)",
+      "target": "Mason Greenwood (552833)",
+      "value": 2
+    },
+    {
+      "source": "Yunus Akgün (27735)",
+      "target": "Roland Sallai (1282353)",
+      "value": 2
+    },
+    {
+      "source": "Yunus Akgün (27735)",
+      "target": "Abdülkerim Bardakcı (126526)",
+      "value": 3
+    },
+    {
+      "source": "Kojo Oppong (1689432)",
+      "target": "Kerem Akturkoglu (737292)",
+      "value": 3
+    },
+    {
+      "source": "Aleksei Batrakov (137204)",
+      "target": "Mario Lemina (834205)",
+      "value": 4
+    },
+    {
+      "source": "Ismail Jakobs (673189)",
+      "target": "Rafael Leão (1621614)",
+      "value": 3
+    },
+    {
+      "source": "Ederson (1293693)",
+      "target": "Archie Brown (212977)",
+      "value": 4
+    },
+    {
+      "source": "Nelson Semedo (232583)",
+      "target": "Archie Brown (212977)",
+      "value": 4
+    },
+    {
+      "source": "Milan Skriniar (1369516)",
+      "target": "Archie Brown (212977)",
+      "value": 2
+    },
+    {
+      "source": "Ederson (1293693)",
+      "target": "Nelson Semedo (232583)",
+      "value": 2
+    },
+    {
+      "source": "Abdülkerim Bardakcı (126526)",
+      "target": "Rafael Leão (1621614)",
+      "value": 3
+    },
+    {
+      "source": "Archie Brown (212977)",
+      "target": "Kojo Oppong (1689432)",
+      "value": 3
+    },
+    {
+      "source": "Mattéo Guendouzi (562671)",
+      "target": "Archie Brown (212977)",
+      "value": 3
+    },
+    {
+      "source": "Archie Brown (212977)",
+      "target": "Kerem Akturkoglu (737292)",
+      "value": 4
+    },
+    {
+      "source": "Nelson Semedo (232583)",
+      "target": "Mattéo Guendouzi (562671)",
+      "value": 3
+    }
+  ]
+}
