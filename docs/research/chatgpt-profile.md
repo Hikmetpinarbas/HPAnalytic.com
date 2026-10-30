@@ -1,0 +1,1 @@
+[ChatGPT cevabını buraya yapıştır]

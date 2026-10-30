@@ -1,4 +1,8 @@
 import './menu.js';
+import './superlig.js';
+import './standouts.js';
+import { initJersey } from './jersey.js';
+import { initLeagues } from './leagues.js';
 import { initPassNet } from '../charts/passnet.js';
 import { initShotMap } from '../charts/shotmap.js';
 import { initRadar } from '../charts/radar.js';
@@ -170,3 +174,26 @@ document.querySelectorAll('.lab-tab').forEach(tab => {
     if (t) t.classList.add('active');
   });
 });
+
+// Resmi lig tabloları
+
+
+// Efsane formalar
+
+
+// Hero saha + pas sekansı
+
+// === Güvenli boot: HMR sonrası da çalışır ===
+function bootAll() {
+  initLeagues('story-track', 'story-dots');
+  initJersey('jersey-deck');
+  initHeroPitch('hero-pitch-bg');
+}
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", bootAll);
+} else {
+  bootAll();
+}
+if (import.meta && import.meta.hot) {
+  import.meta.hot.accept(() => { bootAll(); });
+}

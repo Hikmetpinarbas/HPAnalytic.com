@@ -1,6 +1,7 @@
 <!doctype html>
 <html lang="tr">
-<head><style>html{background:#08090B}body{background:#08090B;color:#F4F2EC;margin:0}</style>
+<head><script>(function(){try{var t=localStorage.getItem('hpa-theme');if(!t)t=window.matchMedia('(prefers-color-scheme: light)').matches?'light':'dark';document.documentElement.setAttribute('data-theme',t);document.documentElement.style.colorScheme=t;}catch(e){}})();</script>
+<style>html{background:#08090B}body{background:#08090B;color:#F4F2EC;margin:0}html[data-theme="light"]{background:#F8F6F0}html[data-theme="light"] body{background:#F8F6F0;color:#0A0A0C}</style>
 <meta charset="utf-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
 <meta name="theme-color" content="#0A0A0C"/>
@@ -12,6 +13,7 @@
 <link rel="stylesheet" href="/src/css/base.css"/>
 </head>
 <body>
+<div class="ambient" aria-hidden="true"><span class="third"></span></div>
 
 <div id="preloader">
   <div class="pre-stage">
@@ -104,32 +106,47 @@
   <div class="nav-actions">
     <button class="cmd-btn" id="cmd-open" aria-label="Komut paleti"><span>ARA</span><kbd>⌘K</kbd></button>
     <button class="mobile-burger" id="mobile-burger" aria-label="Menü"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
-    <button class="theme-toggle" id="theme-toggle" aria-label="Tema"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button>
+    <button class="theme-toggle" id="theme-toggle" aria-label="Tema"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg></button><button class="lang-toggle" id="lang-toggle" aria-label="Dil"><span class="lang-current">TR</span><span class="lang-sep">/</span><span class="lang-other">EN</span></button>
     <div class="status">CANLI <span class="dot-divider">·</span> 26/27</div>
   </div>
 </header>
 
 <main>
   <section class="hero-diary">
-  
-    
-    <h1>
-      <span class="line"><span class="word">Skoru değil,</span></span>
-      <span class="line"><span class="word"><em>mekanizmayı</em></span></span>
-      <span class="line"><span class="word">okuyoruz.</span></span>
-    </h1>
-    <div class="hero-meta">
-      <span>Pas ağları · xG haritaları · Mekanizma raporları</span>
-      <span class="hero-scroll">Kaydır <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 1v10M1 6l5 5 5-5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+    <div class="hero-center">
+      <h1 class="hero-title" id="hero-title">
+        <span class="line"><span class="word w1">Skoru <em>değil,</em></span></span>
+        <span class="line"><span class="word w2"><em>mekanizmayı</em></span></span>
+        <span class="line"><span class="word w3">okuyoruz.</span></span>
+      </h1>
+      <div class="hero-meta">
+        <span>Pas ağları · xG haritaları · Mekanizma raporları</span>
+        <span class="hero-scroll">Kaydır <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M6 1v10M1 6l5 5 5-5" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+      </div>
     </div>
+
+    <div class="jersey-deck" id="jersey-deck"></div>
   </section>
+
+  <!-- ═══ AVRUPA STORY DECK ═══ -->
+  <section class="story-deck" id="story-deck">
+    <div class="story-head">
+      <span class="story-kicker">AVRUPA · BU HAFTA</span>
+      <span class="story-hint">Kaydır →</span>
+    </div>
+    <div class="story-track" id="story-track">
+      <div class="story-loading">Yükleniyor…</div>
+    </div>
+    <div class="story-dots" id="story-dots"></div>
+  </section>
+
 
   
   <!-- ═══ SÜPER LİG VİTRİN ═══ -->
   <section id="sl-vitrin" class="sl-vitrin">
     <div class="section-bar">
       <div>
-        <span class="kicker">01 · SÜPER LİG · SEZON 26/27</span>
+        <span class="kicker">02 · SÜPER LİG · SEZON 26/27</span>
         <h2 class="section-title-big">Ligin <em>genel</em> görünümü.</h2>
       </div>
       <span class="section-meta">20 takım · 325 oyuncu</span>
@@ -170,7 +187,7 @@
   <section id="standouts" class="standouts">
     <div class="section-bar">
       <div>
-        <span class="kicker">02 · FARK YARATANLAR</span>
+        <span class="kicker">03 · FARK YARATANLAR</span>
         <h2 class="section-title-big">Pozisyonunun <em>en iyisi</em>.</h2>
       </div>
       <span class="section-meta">Her gruptan bir isim</span>
@@ -182,7 +199,7 @@
   <section id="avrupa" class="avrupa">
     <div class="section-bar">
       <div>
-        <span class="kicker">03 · AVRUPA</span>
+        <span class="kicker">04 · AVRUPA</span>
         <h2 class="section-title-big">Kupaların <em>sahnesi</em>.</h2>
       </div>
       <span class="section-meta">UEFA verileri hazırlanıyor</span>
@@ -210,22 +227,6 @@
   </section>
 
   <!-- ═══ 5 BÜYÜK LİG (placeholder) ═══ -->
-  <section id="big-leagues" class="big-leagues">
-    <div class="section-bar">
-      <div>
-        <span class="kicker">04 · AVRUPA'NIN BEŞ BÜYÜĞÜ</span>
-        <h2 class="section-title-big">Liglerin <em>zirvesi</em>.</h2>
-      </div>
-    </div>
-    <div class="big-leagues-grid">
-      <div class="league-card"><span class="lg-flag">🏴󠁧󠁢󠁥󠁮󠁧󠁿</span><span class="lg-name">Premier League</span></div>
-      <div class="league-card"><span class="lg-flag">🇪🇸</span><span class="lg-name">La Liga</span></div>
-      <div class="league-card"><span class="lg-flag">🇮🇹</span><span class="lg-name">Serie A</span></div>
-      <div class="league-card"><span class="lg-flag">🇩🇪</span><span class="lg-name">Bundesliga</span></div>
-      <div class="league-card"><span class="lg-flag">🇫🇷</span><span class="lg-name">Ligue 1</span></div>
-    </div>
-  </section>
-
 <section class="featured" id="featured">
     <div class="featured-tag">Öne Çıkan</div>
     <a href="/yazi/mac-besiktas-crystal-palace-2026-10-22.html" class="featured-card">
@@ -241,6 +242,7 @@
   </section>
 
   <section class="latest" id="latest">
+    <div class="section-grid">
     <div class="section-bar">
       <h2>Son Yazılar</h2>
       <span>21 yazı</span>
@@ -259,9 +261,26 @@
       <div class="art-foot"><span>6 dk okuma</span><span class="art-cta">Oku →</span></div>
     </a>
     </div>
+    <aside class="section-aside">
+      <div class="aside-block">
+        <div class="aside-kicker">OKUMA SIRASI</div>
+        <h4>Nereden başlamalı?</h4>
+        <ul class="aside-list">
+          <li><a href="/yazi/articles-matematik-yalan-soylemeyi-bilmez.html">Matematik yalan söylemeyi bilmez</a></li>
+          <li><a href="/yazi/articles-valeriy-lobanovskyi-takimin-zekasini-tasarlamak.html">Lobanovskyi: takımın zekâsını tasarlamak</a></li>
+          <li><a href="/yazi/portraits-vosse-de-boode.html">Vosse de Boode: bilimin sahayla buluştuğu yer</a></li>
+        </ul>
+      </div>
+      <div class="aside-block">
+        <div class="aside-kicker">SON YAZI</div>
+        <h4>En yeni</h4>
+        <p class="aside-link"><a href="/yazi/mac-lille-galatasaray-2026-10-21.html">Lille — Galatasaray: oyun kurulumunu yükselte boğmak</a></p>
+        <div class="aside-meta">21.10.2026 · 9 dk</div>
+      </div>
+    </aside>
+    </div>
   </section>
-
-  <section class="categories" id="mac">
+<section class="categories" id="mac">
     <div class="section-bar"><h2>Maç Dosyaları</h2><a href="#" class="see-all">Tümü →</a></div>
     <div class="cat-grid">
 <a href="/yazi/mac-besiktas-crystal-palace-2026-10-22.html" class="art-card ">
