@@ -7,6 +7,7 @@ const TYPE_META = {
   'On Target':  { r: 7,  stroke: 1.5, label: 'İSABETLİ',  op: 0.95, shape: 'circle' },
   'Off Target': { r: 5.5,stroke: 1.5, label: 'İSABETSİZ', op: 0.7,  shape: 'x' },
   'Blocked':    { r: 5,  stroke: 1.2, label: 'BLOKE',     op: 0.55, shape: 'square' },
+  'Post':       { r: 7,  stroke: 2,   label: 'DİREK',     op: 0.9,  shape: 'diamond' },
 };
 
 let DATA = null;
@@ -112,7 +113,7 @@ export async function initShotMap(containerId, filtersId) {
     });
 
     // Sort: Goal en üstte
-    const order = { 'Off Target': 1, 'Blocked': 2, 'On Target': 3, 'Goal': 4 };
+    const order = { 'Off Target': 1, 'Blocked': 2, 'Post': 3, 'On Target': 4, 'Goal': 5 };
     pos.sort((a, b) => (order[a.type] || 0) - (order[b.type] || 0));
 
     // Data join
@@ -218,12 +219,13 @@ export async function initShotMap(containerId, filtersId) {
 
   // ── Stats bar ──
   function updateStats(filtered) {
-    const counts = { total: filtered.length, goals: 0, on: 0, off: 0, blocked: 0 };
+    const counts = { total: filtered.length, goals: 0, on: 0, off: 0, blocked: 0, post: 0 };
     filtered.forEach(s => {
       if (s.type === 'Goal') counts.goals++;
       else if (s.type === 'On Target') counts.on++;
       else if (s.type === 'Off Target') counts.off++;
       else if (s.type === 'Blocked') counts.blocked++;
+      else if (s.type === 'Post') counts.post++;
     });
     const statsEl = document.getElementById('shot-stats');
     if (statsEl) {
@@ -277,6 +279,7 @@ export async function initShotMap(containerId, filtersId) {
     <button class="type-chip" data-type="On Target" style="--c:#F4F2EC">İSABETLİ</button>
     <button class="type-chip" data-type="Off Target" style="--c:#7A7368">İSABETSİZ</button>
     <button class="type-chip" data-type="Blocked" style="--c:#FF6B35">BLOKE</button>
+    <button class="type-chip" data-type="Post" style="--c:#D4A548">DİREK</button>
   `;
   const typeBarWrap = document.createElement('div');
   typeBarWrap.className = 'shot-type-wrap';
