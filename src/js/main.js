@@ -1,3 +1,4 @@
+import './menu.js';
 import { initPassNet } from '../charts/passnet.js';
 import { initShotMap } from '../charts/shotmap.js';
 import { initRadar } from '../charts/radar.js';
@@ -26,7 +27,7 @@ async function runPreloader() {
   });
 }
 
-await runPreloader();
+// await runPreloader();
 
 const lenis = new Lenis({ duration: 1.15, easing: t => Math.min(1, 1.001 - Math.pow(2, -10 * t)), smoothWheel: true, smoothTouch: false });
 lenis.on('scroll', ScrollTrigger.update);

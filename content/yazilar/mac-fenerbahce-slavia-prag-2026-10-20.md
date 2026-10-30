@@ -16,8 +16,6 @@ Ligin en sert preslerinden biri, rakip yarıda top kazanmayı en az başaran tak
 
 Puan1 · 0Sıra (36 takım)28. · 31.HakemRicardo de BurgosYayınTRT 1Başlama vuruşuna--saat--dakikaPaylaş
 
-WhatsAppX (Twitter)Hikaye görseli Instagram · TikTokAvrupa karnesi · 2 maç / takım
-
 ## İki takım, dört maç
 
 Slavia Prag'ın iki Avrupa yenilgisi hücum üretimsizliği anlamına gelmiyor. Lens ve Sabah karşısında 31 şut ve 5,06 xG ile iki gol üretti. Fenerbahçe aynı iki maçlık dönemde 26 şut ve 2,73 xG üretti. Bu farkın tamamı oyuncu kalitesinden veya sistemden kaynaklanıyor demek mümkün değil; rakip güçleri ve şut kalitesi farklı.

@@ -16,82 +16,33 @@ excerpt: UEFA Avrupa Ligi · Lig aşaması · 3. hafta
 
 Maç Yüzeyi
 
-  
-    
-    
-      
         UEFA Avrupa Ligi · Lig aşaması · 3. hafta
         —
-      
-      
+
         Beşiktaş
         VS
         Crystal Palace
-      
+
       22 Ekim 2026 · 22.00 TSİ · Tüpraş Stadı, İstanbul
-    
-  
-
-  
-
-  
 
   Takım
-    
-    
-  
-  Katman
-    
-    
-    
-    
-  
-  Aksiyon
-    
-    
-    
-    
-    
-    
-    
-  
-  Sonuç
-    
-    
-    
-  
 
-  
-    
+  Katman
+
+  Aksiyon
+
+  Sonuç
+
       Olay haritası
       hücum yönü soldan sağa
-    
-    
-    
-    
-  
 
-  
-    
       Oyun üstünlüğü
       şeridi sürükleyin · dakika aralığı sahayı filtreler
-    
-    
-    
+
       isabetli şut
       kendi yarısında kayıp
       rakibin isabetli şutu
       0–96. dakika
-    
-  
-
-  
-
-" loading="eager" referrerpolicy="same-origin" data-astro-cid-ohiwmmfz>Etkileşimli maç yüzeyini ayrı sayfada aç ↗
-
-Paylaş
-
-WhatsAppX (Twitter)Hikaye görseli Instagram · TikTokOyun kurma
 
 ## Beşiktaş oyunu nerede kuruyor?
 

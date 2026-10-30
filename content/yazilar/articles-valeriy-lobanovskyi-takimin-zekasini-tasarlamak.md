@@ -63,17 +63,3 @@ Futbol, 2026’da Lobanovskyi’nin yaşadığı döneme göre çok daha fazla v
 Bugünkü antrenör için Lobanovskyi’den çıkarılabilecek en kalıcı ders, herkese aynı koşu testini yaptırmak değil; bir kulübün fikir üretme, ölçme, düzeltme ve yeniden öğretme kapasitesini tasarlamaktır. Aynı zamanda bu yaklaşımın insanî ve yaratıcı maliyetini gözden kaçırmamaktır.
 
 Futbolun asıl birimi yalnızca oyuncu değildir. Oyuncular arasındaki ilişki de değildir tek başına. Asıl birim, rakip değişirken kendini birlikte yeniden düzenleyebilen takım olabilir. Lobanovskyi’nin mirası, o ihtimali ciddiye almış olmasında yatıyor.
-
-## Kaynaklar ve atıf notları
-
-- UEFA, Lobanovskiy’s football philosophy, 2015’te yeniden yayımlanan 2001 röportajı: https://www.uefa.com/news/0221-0e90b643b36f-cbd92b4f0b2f-1000--lobanovskiy-s-football-philosophy/
-
-- Neil White, BBC Sport, Andriy Shevchenko and Valeriy Lobanovskyi: A collective quest for the European Cup, 12 Aralık 2023: https://www.bbc.co.uk/sport/football/67659564
-
-- UEFA, In profile: Valeriy Lobanovskiy, 31 Temmuz 2016: https://www.uefa.com/uefachampionsleague/news/0253-0d81cad2bd33-25a62e3a110f-1000--in-profile-valeriy-lobanovskiy/
-
-- Jonathan Wilson, The Guardian, How Valeriy Lobanovskyi’s appliance of science won hearts and trophies, 12 Mayıs 2011: https://www.theguardian.com/football/blog/2011/may/12/valeriy-lobanovskyi-dynamo-kyiv
-
-- Ukrainian Association of Football, Valeriy Lobanovskyi commemorative biography, 2023: https://uaf.ua/en/article/48230
-
-Editoryal sınır: Yöntem ve sahadaki ilişkiler hakkında bazı analitik açıklamalar tarihsel saha takip verisinden yeniden hesaplanmış bulgular değil, açıkça belirtilen yorumlardır. Doğrudan birebir alıntılar yerine atıflı dolaylı aktarım kullanılmıştır. Durum: Genişletilmiş editoryal taslak / canlı yayın onayı yok.

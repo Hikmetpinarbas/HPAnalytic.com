@@ -18,8 +18,6 @@ Puan0 · 0Atılan şut (2 maç)12 · 10HakemRade ObrenovičBaşlama19.45 TSİMa�
 
 Başlama vuruşuna--saat--dakikaPaylaş
 
-WhatsAppX (Twitter)Hikaye görseli Instagram · TikTokHPANALYTIC / PREMIER · MATEMATİKSEL EŞLEŞME
-
 ## Aynı 122 kayıp; aynı oyun değil
 
 İki takımın ilk iki Avrupa maçında toplam top kaybı eşit: Lille 122, Galatasaray 122. Ancak Lille'in kendi yarısındaki kaybı 41 (%33,6), Galatasaray'ın 22 (%18,0). Aradaki 15,6 yüzde puanlık fark, maç öncesinde sınanacak bir konum ve koşul sorusudur; doğrudan pres üstünlüğü hükmü değildir.

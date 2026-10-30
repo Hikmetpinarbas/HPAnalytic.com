@@ -41,29 +41,3 @@ AusCycling, 3 Nisan 2025’te de Boode’u yeni Veri ve İçgörü Direktörü o
 Futbolda da bisiklette de daha fazla veri toplanabilir. Daha zor olan, hangi bilginin kimin işine yarayacağını bulmak. De Boode’un hikâyesini ilginç kılan, laboratuvarın büyüklüğünden çok, kapısının hangi yöne açıldığı.
 
 Vosse de Boode’un katkısını onurlandırmak, ona bütün cevapları atfetmek değildir. Onun asıl başarısı, araştırmacı ile antrenörün birbirini dinleyebildiği, oyuncunun yalnızca ölçülen kişi değil bilgiye erişen bir özne olduğu çalışma biçimini görünür kılmaktır. Kalecinin itişi, vuruş öncesindeki bakış ya da bir oyuncunun hareketi üzerine sorulan yeni sorular, laboratuvarın sahaya hükmetmesini değil, sahaya karşı sorumluluk duymasını sağlar. Bu yüzden Vosse de Boode’un hikâyesi bir kariyer kronolojisinden daha değerlidir: Bilginin insanın eline geri verildiğinde anlam kazandığını, birlikte çalışan araştırmacıların, antrenörlerin ve oyuncuların oyunu daha iyi anlayabildiğini hatırlatır. Geride yalnız veriler değil; daha iyi soru sorma cesareti kalır.
-
-## Kaynaklar ve araştırma notları
-
-Kaynakça · 14 başvuru- Training Ground Guru — Ajax laboratuvarı ve de Boode'un saha yaklaşımı ↗
-- Training Ground Guru — Player Portal (2023) ↗
-- NRC — Röportajdan kamuya açık alıntılar (2025) ↗
-- NRC gazetecisi Steven Verseput — Röportaj arka planı ↗
-- Training Ground Guru — Ajax'tan AusCycling'e geçiş (2025) ↗
-- AusCycling — Resmî görev duyurusu ↗
-- MIT Sloan — Vosse de Boode biyografisi ↗
-- Kaleci antrenman müdahalesi — DOI 10.1080/14763141.2022.2099966 ↗
-- Kaleci hareket mekaniği — DOI 10.1080/02640414.2018.1499413 ↗
-- Kaleci eklem kinetiği — DOI 10.3389/fspor.2020.00013 ↗
-- Başlangıç duruşu — DOI 10.3389/fspor.2019.00015 ↗
-- Serbest vuruşta bakış — DOI 10.1177/1747954120943067 ↗
-- Ayak bileği risk araştırması — DOI 10.1177/0363546518808027 ↗
-- Kadın kalecilerde karşı bulgu — ISBS 2024 ↗
-Araştırmaların kapsamı ve sınırlarıAkademik çalışmalar ortak yazarlıdır. 2019 kaleci çalışmasında 10, eklem kinetiği çalışmasında 7 kaleci incelendi. 2022 müdahalesinin 42 cm kapsama hesabı bir penaltı senaryosunun modelidir; gerçek maçta gözlenen ek erişim değildir.
-
-2024 konferans çalışmasında 5 kadın kalecide geniş başlangıç duruşunun dalış süresini iyileştirdiğine ilişkin anlamlı sonuç bulunmadı. Küçük ve farklı örneklemler doğrudan çürütme iddiasına izin vermez. Ayak bileği araştırması 190 erkek futbolcuyu, 45 ilk burkulmayı kapsar; bireysel sakatlık tahmin sistemi değildir [13, 14].
-
-NRC aktarımı kamuya açık röportaj tanıtımlarıyla sınırlıdır; ücretli röportajın tamamı görülmedi. AusCycling’in görev duyurusu 3 Nisan 2025, Training Ground Guru’nun geçiş haberi 13 Mayıs 2025 tarihlidir. Çocukluk ve aile hayatına ilişkin doğrulanmamış anlatılar kullanılmadı.
-
-Fotoğraf ve görsel haklarıMIT Sloan, FC Barcelona ve diğer resmî profillerde gerçek fotoğraf adayları bulundu. Yeniden yayım lisansı doğrulanmadığından bu sayfaya kopyalanmadı. Yukarıdaki bağlantı, gerçek kişiyi gösteren resmî profile gider. Kapaktaki geometrik kompozisyon HPAnalytic’in özgün çalışmasıdır; bir insan portresi veya ölçüm kaydı değildir.
-
-Yazar: Hikmet Pınarbaş · Araştırma ve düzenleme: 28 Ekim 2026.
