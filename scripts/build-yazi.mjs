@@ -103,6 +103,42 @@ a{color:inherit;text-decoration:none}
 html{opacity:1;transition:opacity .22s cubic-bezier(.2,.9,.3,1)}html.page-leaving{opacity:0}@keyframes pageFadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}body{animation:pageFadeIn .4s cubic-bezier(.2,.9,.3,1)}
 `;
 
+
+function processBlocks(md) {
+  let out = md;
+  // Stat: :::stat VALUE|LABEL|SUB (satır içi, 1-N satır)
+  out = out.replace(/^:::stat\s+([^|\n]+)\|([^|\n]+)\|([^\n]+)$/gm, (m, val, label, sub) =>
+    `<div class="blk-stat-item"><div class="bs-val">${val.trim()}</div><div class="bs-label">${label.trim()}</div><div class="bs-sub">${sub.trim()}</div></div>`);
+  // Stat group: :::stats ... :::
+  out = out.replace(/:::stats\n([\s\S]*?)\n:::/g, (m, body) => `<div class="blk-stat">${body}</div>`);
+  // Quote
+  out = out.replace(/:::quote\n([\s\S]*?)\n:::/g, (m, body) => {
+    const lines = body.split('\n');
+    const citeIdx = lines.findIndex(l => l.startsWith('—') || l.startsWith('--'));
+    let txt = body, cite = '';
+    if (citeIdx >= 0) {
+      txt = lines.slice(0, citeIdx).join('\n');
+      cite = lines.slice(citeIdx).join(' ').replace(/^[—-]+\s*/, '');
+    }
+    return `<blockquote class="blk-quote">${txt}${cite ? `<cite>— ${cite}</cite>` : ''}</blockquote>`;
+  });
+  // Callout
+  out = out.replace(/:::note\s+([^\n]+)\n([\s\S]*?)\n:::/g, (m, title, body) =>
+    `<div class="blk-callout"><div class="bc-title">${title}</div><div class="bc-body">${body}</div></div>`);
+  out = out.replace(/:::warn\s+([^\n]+)\n([\s\S]*?)\n:::/g, (m, title, body) =>
+    `<div class="blk-callout warn"><div class="bc-title">${title}</div><div class="bc-body">${body}</div></div>`);
+  // Chart
+  out = out.replace(/:::chart\s+([^|]+)\|([^|]+)\|([^\n]+)\n([\s\S]*?)\n:::/g, (m, type, title, note, body) =>
+    `<div class="blk-chart"><div class="bc-head"><span class="bc-type">${type.trim()}</span><span class="bc-title">${title.trim()}</span></div><div class="bc-body">${body.trim()}</div><div class="bc-note">${note.trim()}</div></div>`);
+  // Image
+  out = out.replace(/:::image\s+([^|]+)\|([^|]+)\|([^\n]+)/g, (m, src, alt, cap) =>
+    `<figure class="blk-image"><img src="${src.trim()}" alt="${alt.trim()}" loading="lazy"><figcaption>${cap.trim()}</figcaption></figure>`);
+  // Compare
+  out = out.replace(/:::compare\s+([^|]+)\|([^|]+)\|([^|]+)\|([^|]+)\|([^\n]+)/g, (m, lA, vA, lB, vB, cap) =>
+    `<div class="blk-compare"><div class="c-col is-left"><div class="c-label">${lA.trim()}</div><div class="c-val">${vA.trim()}</div></div><div class="c-vs">vs</div><div class="c-col is-right"><div class="c-label">${lB.trim()}</div><div class="c-val">${vB.trim()}</div></div><div class="c-caption">${cap.trim()}</div></div>`);
+  return out;
+}
+
 function buildTOC(html) {
   const headings = [...html.matchAll(/<h([23])[^>]*>(.*?)<\/h\1>/g)];
   if (headings.length < 2) return { html, toc: '' };
@@ -187,7 +223,7 @@ for (const a of all) {
     related.push(...extra);
   }
   const relatedData = related.map(r => ({ slug: r.slug, title: r.title, typeLabel: TYPE_LABEL[r.type] || 'Yazı' }));
-  const bodyHtml = marked.parse(a.body);
+  const bodyHtml = marked.parse(processBlocks(a.body));
   const out = page({ title: a.title, bodyHtml, type: a.type, typeLabel, typeColor, date: a.date, read: a.read, excerpt: a.excerpt, source: a.source, related: relatedData });
   writeFileSync(resolve(OUT, a.slug + '.html'), out, 'utf-8');
   console.log('✓ ' + a.slug + ' · ' + out.length + ' bytes');
