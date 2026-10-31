@@ -222,7 +222,7 @@ for (const file of files) {
       else meta[k] = v;
     }
   });
-  all.push({ slug: meta.slug || file.replace('.md', ''), title: meta.title || '', type: meta.type || 'articles', excerpt: meta.excerpt || '', date: meta.date || '', read: meta.read ? Number(meta.read) : Math.ceil(m[2].split(' ').length / 200), source: meta.source || '', body: m[2].trim().replace(/^#\s+.*$/m, '').trim() });
+  all.push({ slug: meta.slug || file.replace('.md', ''), title: meta.title || '', type: meta.type || 'articles', excerpt: meta.excerpt || '', date: meta.date || '', read: meta.read ? Number(meta.read) : Math.ceil(m[2].split(' ').length / 200), source: meta.source || '', portrait, portrait_credit, body: m[2].trim().replace(/^#\s+.*$/m, '').trim() });
 }
 
 for (const a of all) {
@@ -235,7 +235,7 @@ for (const a of all) {
   }
   const relatedData = related.map(r => ({ slug: r.slug, title: r.title, typeLabel: TYPE_LABEL[r.type] || 'Yazı' }));
   const bodyHtml = marked.parse(processBlocks(a.body));
-  const out = page({ portrait, portrait_credit, title: a.title, bodyHtml, type: a.type, typeLabel, typeColor, date: a.date, read: a.read, excerpt: a.excerpt, source: a.source, related: relatedData });
+  const out = page({ portrait: a.portrait, portrait_credit: a.portrait_credit, title: a.title, bodyHtml, type: a.type, typeLabel, typeColor, date: a.date, read: a.read, excerpt: a.excerpt, source: a.source, related: relatedData });
   writeFileSync(resolve(OUT, a.slug + '.html'), out, 'utf-8');
   console.log('✓ ' + a.slug + ' · ' + out.length + ' bytes');
 }
