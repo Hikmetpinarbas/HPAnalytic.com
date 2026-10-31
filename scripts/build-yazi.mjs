@@ -153,9 +153,9 @@ function buildTOC(html) {
   return { html: newHtml, toc: tocItems };
 }
 
-function page({ title, bodyHtml, type, typeLabel, typeColor, date, read, excerpt, source, related }) {
+function page({ title, bodyHtml, type, typeLabel, typeColor, date, read, excerpt, source, related, portrait = '', portrait_credit = '' }) {
   const { html: articleHtml, toc } = buildTOC(bodyHtml);
-  return `<!doctype html><html lang="tr"><head><meta charset="utf-8"/><style>html{background:#08090B}body{background:#08090B;color:#F4F2EC;margin:0}</style><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/><meta name="theme-color" content="#08090B"/><title>${esc(title)} — HP//Analytic</title><meta name="description" content="${esc(excerpt || title)}"/><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;700&family=JetBrains+Mono:wght@400;500;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet"><style>${CSS}</style></head><body>
+  return `<!doctype html><html lang="tr"><head><meta charset="utf-8"/><style>html{background:#08090B}body{background:#08090B;color:#F4F2EC;margin:0}</style><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/><meta name="theme-color" content="#08090B"/><title>${esc(title)} — HP//Analytic</title><meta name="description" content="${esc(excerpt || title)}"/><meta property="og:title" content="${esc(title)}"/><meta property="og:description" content="${esc(excerpt || title)}"/><meta property="og:type" content="article"/><meta property="og:site_name" content="HPAnalytic"/>${portrait ? `<meta property="og:image" content="https://hpanalytic.com${portrait}"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:image" content="https://hpanalytic.com${portrait}"/>` : '<meta name="twitter:card" content="summary"/>'}<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;700&family=JetBrains+Mono:wght@400;500;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet"><style>${CSS}</style></head><body>
 <div class="progress-bar" id="progress"></div>
 <a href="/" class="back">← Ana sayfa</a>
 <section class="hero">
@@ -164,6 +164,7 @@ function page({ title, bodyHtml, type, typeLabel, typeColor, date, read, excerpt
     <span class="hero-date">${esc(date || '')}</span>
     ${read ? `<span class="hero-read">${read} dk okuma</span>` : ''}
   </div>
+  ${portrait ? `<figure class="hero-portrait"><img src="${portrait}" alt="${esc(title)}" loading="lazy"/>${portrait_credit ? `<figcaption>${esc(portrait_credit)}</figcaption>` : ''}</figure>` : ''}
   <h1>${esc(title)}</h1>
   ${excerpt ? `<p class="lede">${esc(excerpt)}</p>` : ''}
 </section>
@@ -210,9 +211,16 @@ for (const file of files) {
   const m = raw.match(/^---\n([\s\S]*?)\n---\n\n?([\s\S]*)$/);
   if (!m) { console.log('✗ ' + file); continue; }
   const meta = {};
+  let portrait = '', portrait_credit = '';
   m[1].split('\n').forEach(line => {
     const i = line.indexOf(':');
-    if (i > 0) meta[line.slice(0, i).trim()] = line.slice(i + 1).trim();
+    if (i > 0) {
+      const k = line.slice(0, i).trim();
+      const v = line.slice(i + 1).trim().replace(/^["']|["']$/g, '');
+      if (k === 'portrait') portrait = v;
+      else if (k === 'portrait_credit') portrait_credit = v;
+      else meta[k] = v;
+    }
   });
   all.push({ slug: meta.slug || file.replace('.md', ''), title: meta.title || '', type: meta.type || 'articles', excerpt: meta.excerpt || '', date: meta.date || '', read: meta.read ? Number(meta.read) : Math.ceil(m[2].split(' ').length / 200), source: meta.source || '', body: m[2].trim().replace(/^#\s+.*$/m, '').trim() });
 }
@@ -227,7 +235,7 @@ for (const a of all) {
   }
   const relatedData = related.map(r => ({ slug: r.slug, title: r.title, typeLabel: TYPE_LABEL[r.type] || 'Yazı' }));
   const bodyHtml = marked.parse(processBlocks(a.body));
-  const out = page({ title: a.title, bodyHtml, type: a.type, typeLabel, typeColor, date: a.date, read: a.read, excerpt: a.excerpt, source: a.source, related: relatedData });
+  const out = page({ portrait, portrait_credit, title: a.title, bodyHtml, type: a.type, typeLabel, typeColor, date: a.date, read: a.read, excerpt: a.excerpt, source: a.source, related: relatedData });
   writeFileSync(resolve(OUT, a.slug + '.html'), out, 'utf-8');
   console.log('✓ ' + a.slug + ' · ' + out.length + ' bytes');
 }
