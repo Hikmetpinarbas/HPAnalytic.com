@@ -1,12 +1,21 @@
-name: Deploy to Netlify
+name: Deploy to GitHub Pages
 
 on:
   push:
-    branches: [site-hp-standard-v2]
+    branches: [main]
   workflow_dispatch:
 
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
 jobs:
-  deploy:
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -15,16 +24,16 @@ jobs:
           node-version: 20
       - run: npm install --no-audit --no-fund
       - run: npm run build
-      - name: Deploy to Netlify
-        uses: nwtgck/actions-netlify@v3
+      - uses: actions/upload-pages-artifact@v3
         with:
-          publish-dir: ./dist
-          production-branch: site-hp-standard-v2
-          github-token: ${{ secrets.GITHUB_TOKEN }}
-          deploy-message: "Auto: ${{ github.event.head_commit.message }}"
-          enable-pull-request-comment: false
-          enable-commit-comment: false
-          production-deploy: true
-        env:
-          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+          path: ./dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
