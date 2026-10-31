@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800">
+  <rect width="1200" height="800" fill="#0a0a0c"/>
+  <pattern id="g1" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M40 0L0 0 0 40" fill="none" stroke="rgba(255,255,255,0.04)" stroke-width="1"/></pattern>
+  <rect width="1200" height="800" fill="url(#g1)"/>
+  <circle cx="900" cy="400" r="280" fill="none" stroke="rgba(255,60,60,0.15)" stroke-width="2"/>
+  <circle cx="900" cy="400" r="180" fill="none" stroke="rgba(255,60,60,0.25)" stroke-width="1.5"/>
+  <path d="M780 300 Q860 200 940 300 L920 500 Q860 560 800 500 Z" fill="none" stroke="#FF3C3C" stroke-width="3"/>
+  <text x="60" y="100" font-family="monospace" font-size="14" fill="#FF3C3C" letter-spacing="6">HPAnalytic · DÜNYA KUPASI</text>
+  <line x1="60" y1="120" x2="240" y2="120" stroke="#FF3C3C" stroke-width="2"/>
+  <text x="60" y="560" font-family="Georgia,serif" font-size="64" fill="#fff">2002</text>
+  <text x="60" y="630" font-family="Georgia,serif" font-size="44" fill="#fff" font-style="italic">Şans mı,</text>
+  <text x="60" y="690" font-family="Georgia,serif" font-size="44" fill="#FF3C3C" font-style="italic">Mekanizma mı?</text>
+  <text x="60" y="760" font-family="monospace" font-size="12" fill="#888" letter-spacing="4">VERİ: SPORTSBASE</text>
+</svg>

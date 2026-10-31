@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800">
+  <rect width="1200" height="800" fill="#0a0a0c"/>
+  <defs><radialGradient id="gl" cx="70%" cy="40%" r="50%"><stop offset="0%" stop-color="#3B82F6" stop-opacity="0.3"/><stop offset="100%" stop-color="#0a0a0c" stop-opacity="0"/></radialGradient></defs>
+  <rect width="1200" height="800" fill="url(#gl)"/>
+  <g transform="translate(900,400)" fill="none" stroke="#FFD700" stroke-width="3">
+    <polygon points="0,-250 60,-90 240,-90 95,20 150,190 0,90 -150,190 -95,20 -240,-90 -60,-90"/>
+  </g>
+  <text x="60" y="100" font-family="monospace" font-size="14" fill="#FFD700" letter-spacing="6">HPAnalytic · AVRUPA</text>
+  <line x1="60" y1="120" x2="240" y2="120" stroke="#3B82F6" stroke-width="2"/>
+  <text x="60" y="560" font-family="Georgia,serif" font-size="52" fill="#fff">Şampiyonlar Ligi</text>
+  <text x="60" y="630" font-family="Georgia,serif" font-size="40" fill="#fff" font-style="italic">Taktiksel</text>
+  <text x="60" y="690" font-family="Georgia,serif" font-size="40" fill="#FFD700" font-style="italic">Evrim</text>
+  <text x="60" y="760" font-family="monospace" font-size="12" fill="#888" letter-spacing="4">VERİ: SPORTSBASE</text>
+</svg>

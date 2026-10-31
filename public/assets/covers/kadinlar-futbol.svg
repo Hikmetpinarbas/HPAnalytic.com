@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800">
+  <rect width="1200" height="800" fill="#0a0a0c"/>
+  <defs><radialGradient id="gp" cx="80%" cy="30%" r="50%"><stop offset="0%" stop-color="#A855F7" stop-opacity="0.3"/><stop offset="100%" stop-color="#0a0a0c" stop-opacity="0"/></radialGradient></defs>
+  <rect width="1200" height="800" fill="url(#gp)"/>
+  <g stroke="#A855F7" stroke-width="2" fill="none" opacity="0.4">
+    <circle cx="900" cy="380" r="220"/>
+    <circle cx="900" cy="380" r="150"/>
+    <line x1="680" y1="380" x2="1120" y2="380"/>
+    <line x1="900" y1="160" x2="900" y2="600"/>
+  </g>
+  <circle cx="900" cy="380" r="60" fill="none" stroke="#EC4899" stroke-width="3"/>
+  <text x="60" y="100" font-family="monospace" font-size="14" fill="#A855F7" letter-spacing="6">HPAnalytic · KADINLAR</text>
+  <line x1="60" y1="120" x2="240" y2="120" stroke="#EC4899" stroke-width="2"/>
+  <text x="60" y="540" font-family="Georgia,serif" font-size="52" fill="#fff">Futbolu</text>
+  <text x="60" y="610" font-family="Georgia,serif" font-size="64" fill="#EC4899" font-style="italic">şekillendiren</text>
+  <text x="60" y="680" font-family="Georgia,serif" font-size="52" fill="#fff">kadınlar.</text>
+  <text x="60" y="760" font-family="monospace" font-size="12" fill="#888" letter-spacing="4">VERİ: SPORTSBASE</text>
+</svg>

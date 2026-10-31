@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800">
+  <rect width="1200" height="800" fill="#0a0a0c"/>
+  <defs><radialGradient id="gt" cx="75%" cy="35%" r="45%"><stop offset="0%" stop-color="#06B6D4" stop-opacity="0.25"/><stop offset="100%" stop-color="#0a0a0c" stop-opacity="0"/></radialGradient></defs>
+  <rect width="1200" height="800" fill="url(#gt)"/>
+  <circle cx="900" cy="380" r="200" fill="none" stroke="#06B6D4" stroke-width="2" opacity="0.4"/>
+  <circle cx="900" cy="380" r="140" fill="none" stroke="#FBBF24" stroke-width="2" opacity="0.5"/>
+  <circle cx="900" cy="380" r="80" fill="none" stroke="#06B6D4" stroke-width="3"/>
+  <path d="M820 380 Q900 280 980 380 Q900 480 820 380" fill="none" stroke="#FBBF24" stroke-width="2"/>
+  <text x="60" y="100" font-family="monospace" font-size="14" fill="#06B6D4" letter-spacing="6">HPAnalytic · VOLEYBOL</text>
+  <line x1="60" y1="120" x2="240" y2="120" stroke="#FBBF24" stroke-width="2"/>
+  <text x="60" y="540" font-family="Georgia,serif" font-size="52" fill="#fff">Filenin</text>
+  <text x="60" y="610" font-family="Georgia,serif" font-size="64" fill="#06B6D4" font-style="italic">Sultanları</text>
+  <text x="60" y="680" font-family="Georgia,serif" font-size="32" fill="#fff">Anatomi ve Mekanizma</text>
+  <text x="60" y="760" font-family="monospace" font-size="12" fill="#888" letter-spacing="4">VERİ: SPORTSBASE</text>
+</svg>

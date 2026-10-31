@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800">
+  <rect width="1200" height="800" fill="#0a0a0c"/>
+  <defs><radialGradient id="gb" cx="75%" cy="40%" r="50%"><stop offset="0%" stop-color="#3B82F6" stop-opacity="0.3"/><stop offset="100%" stop-color="#0a0a0c" stop-opacity="0"/></radialGradient></defs>
+  <rect width="1200" height="800" fill="url(#gb)"/>
+  <g stroke="#3B82F6" stroke-width="2" fill="none" opacity="0.35">
+    <path d="M750 500 L850 250 L950 350 L1050 200 L1100 400 L1000 550 Z"/>
+  </g>
+  <path d="M750 500 L850 250" stroke="#F97316" stroke-width="3"/>
+  <circle cx="850" cy="250" r="8" fill="#F97316"/>
+  <circle cx="750" cy="500" r="8" fill="#3B82F6"/>
+  <text x="60" y="100" font-family="monospace" font-size="14" fill="#F97316" letter-spacing="6">HPAnalytic · PREMIER LEAGUE</text>
+  <line x1="60" y1="120" x2="240" y2="120" stroke="#3B82F6" stroke-width="2"/>
+  <text x="60" y="540" font-family="Georgia,serif" font-size="72" fill="#fff">Leicester</text>
+  <text x="60" y="620" font-family="Georgia,serif" font-size="52" fill="#3B82F6" font-style="italic">Verinin İsyanı</text>
+  <text x="60" y="690" font-family="monospace" font-size="20" fill="#F97316" letter-spacing="3">2016 · 5000'de 1</text>
+  <text x="60" y="760" font-family="monospace" font-size="12" fill="#888" letter-spacing="4">VERİ: SPORTSBASE</text>
+</svg>
