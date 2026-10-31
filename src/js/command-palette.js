@@ -1,17 +1,17 @@
 export function initCommandPalette() {
   const items = [
-    { label: 'Ana Sayfa', url: '/', tag: 'sayfa' },
-    { label: 'Maç Dosyaları', url: '/mac-dosyalari', tag: 'sayfa' },
-    { label: 'Süper Lig', url: '/super-lig', tag: 'lig' },
-    { label: 'Top 5 Ligler', url: '/top-5', tag: 'lig' },
-    { label: 'Avrupa', url: '/avrupa', tag: 'lig' },
-    { label: 'Kadınlar', url: '/women', tag: 'sayfa' },
-    { label: 'Data Lab', url: '/lab', tag: 'sayfa' },
-    { label: 'Lille — Galatasaray', url: '/yazi/mac-lille-galatasaray-2026-10-21.html', tag: 'yazı' },
-    { label: '2002 Dünya Kupası', url: '/yazi/t-rk-futbolunun-2002-d-nya-kupas-ndaki-ba-ar-s-n-n-mekanizmas.html', tag: 'yazı' },
-    { label: 'Vosse de Boode', url: '/yazi/portraits-vosse-de-boode.html', tag: 'portre' },
-    { label: 'Matematik Yalan Söylemez', url: '/yazi/articles-matematik-yalan-soylemeyi-bilmez.html', tag: 'yazı' },
-    { label: 'Lobanovskyi', url: '/yazi/articles-valeriy-lobanovskyi-takimin-zekasini-tasarlamak.html', tag: 'yazı' }
+    { label: 'Ana Sayfa', url: '/HPAnalytic.com/', tag: 'sayfa' },
+    { label: 'Maç Dosyaları', url: '/HPAnalytic.com/mac-dosyalari', tag: 'sayfa' },
+    { label: 'Süper Lig', url: '/HPAnalytic.com/super-lig', tag: 'lig' },
+    { label: 'Top 5 Ligler', url: '/HPAnalytic.com/top-5', tag: 'lig' },
+    { label: 'Avrupa', url: '/HPAnalytic.com/avrupa', tag: 'lig' },
+    { label: 'Kadınlar', url: '/HPAnalytic.com/women', tag: 'sayfa' },
+    { label: 'Data Lab', url: '/HPAnalytic.com/lab', tag: 'sayfa' },
+    { label: 'Lille — Galatasaray', url: '/HPAnalytic.com/yazi/mac-lille-galatasaray-2026-10-21.html', tag: 'yazı' },
+    { label: '2002 Dünya Kupası', url: '/HPAnalytic.com/yazi/t-rk-futbolunun-2002-d-nya-kupas-ndaki-ba-ar-s-n-n-mekanizmas.html', tag: 'yazı' },
+    { label: 'Vosse de Boode', url: '/HPAnalytic.com/yazi/portraits-vosse-de-boode.html', tag: 'portre' },
+    { label: 'Matematik Yalan Söylemez', url: '/HPAnalytic.com/yazi/articles-matematik-yalan-soylemeyi-bilmez.html', tag: 'yazı' },
+    { label: 'Lobanovskyi', url: '/HPAnalytic.com/yazi/articles-valeriy-lobanovskyi-takimin-zekasini-tasarlamak.html', tag: 'yazı' }
   ];
 
   const overlay = document.createElement('div');

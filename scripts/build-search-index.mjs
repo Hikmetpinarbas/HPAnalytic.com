@@ -14,7 +14,7 @@ fs.readdirSync(dir).filter(f => f.endsWith('.md')).forEach(f => {
   items.push({
     title,
     slug,
-    url: `/yazi/${slug}.html`,
+    url: `/HPAnalytic.com/yazi/${slug}.html`,
     excerpt: excerpt.replace(/\*\*/g, '').replace(/\*/g, '')
   });
 });
