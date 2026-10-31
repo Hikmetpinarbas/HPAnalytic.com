@@ -1,8 +1,12 @@
 node_modules/
 dist/
+.vite/
+.netlify/
 *.log
 .DS_Store
-hpanalytic-old-*/
-
-# Local Netlify folder
-.netlify
+.env
+.env.local
+*.env.local
+__pycache__/
+*.pyc
+.venv/
