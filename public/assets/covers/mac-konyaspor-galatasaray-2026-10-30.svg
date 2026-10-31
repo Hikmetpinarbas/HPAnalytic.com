@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800">
+  <rect width="1200" height="800" fill="#0a0a0c"/>
+  <defs>
+    <radialGradient id="gk" cx="75%" cy="45%" r="55%">
+      <stop offset="0%" stop-color="#FF6B35" stop-opacity="0.28"/>
+      <stop offset="100%" stop-color="#0a0a0c" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="800" fill="url(#gk)"/>
+
+  <!-- Taktik faz göstergesi — 5 daire -->
+  <g stroke="#B4FF39" stroke-width="1.5" fill="none" opacity="0.35">
+    <circle cx="880" cy="400" r="240"/>
+    <circle cx="880" cy="400" r="180"/>
+    <circle cx="880" cy="400" r="120"/>
+    <circle cx="880" cy="400" r="60"/>
+    <!-- Pres haritası noktaları -->
+    <line x1="700" y1="400" x2="1060" y2="400"/>
+    <line x1="880" y1="220" x2="880" y2="580"/>
+  </g>
+
+  <!-- Yüzde 45 savunmada — vurgu -->
+  <g transform="translate(880,400)">
+    <path d="M 0,-240 A 240,240 0 0,1 0,240 L 0,180 A 180,180 0 0,0 0,-180 Z" fill="#FF6B35" opacity="0.35"/>
+    <text x="60" y="0" fill="#FF6B35" font-family="monospace" font-size="18" font-weight="700">%45</text>
+    <text x="60" y="20" fill="#888" font-family="monospace" font-size="11">SAVUNMADA</text>
+  </g>
+
+  <!-- Üst etiket -->
+  <text x="60" y="100" font-family="monospace" font-size="14" fill="#B4FF39" letter-spacing="6">HPAnalytic · MAÇ DOSYASI</text>
+  <line x1="60" y1="120" x2="240" y2="120" stroke="#FF6B35" stroke-width="2"/>
+
+  <!-- Skor -->
+  <text x="60" y="500" font-family="Georgia,serif" font-size="56" fill="#fff">Konyaspor 0 — 4</text>
+  <text x="60" y="570" font-family="Georgia,serif" font-size="64" fill="#FF6B35" font-style="italic">Galatasaray</text>
+
+  <!-- Alt bilgi -->
+  <text x="60" y="640" font-family="monospace" font-size="13" fill="#888" letter-spacing="3">SÜPER LİG · 30.10.2026</text>
+  <text x="60" y="680" font-family="monospace" font-size="11" fill="#666" letter-spacing="2">4 FAZ · PPDA 4.24 · 19 ŞUT · 1409 PAS</text>
+  <text x="60" y="760" font-family="monospace" font-size="12" fill="#888" letter-spacing="4">VERİ: SPORTSBASE</text>
+</svg>
