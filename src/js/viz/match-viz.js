@@ -7,7 +7,8 @@ import { PassFlowLayer } from './pass-flow.js';
 
 export async function initMatchViz() {
   const host = document.getElementById('match-viz');
-  if (!host || host.dataset.ready === '1') return;
+  if (!host || host.dataset.ready === '1' || window.__mvInit) return;
+  window.__mvInit = true;
   host.dataset.ready = '1';
 
   let passesData, shotsData;
@@ -121,6 +122,17 @@ export async function initMatchViz() {
     });
     if (btn.dataset.layer === 'flow') btn.classList.add('on');
   });
+
+  // Görünürlük kontrolü — viewport dışındayken dur
+  if (typeof IntersectionObserver !== 'undefined') {
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(en => {
+        if (en.isIntersecting) flow.start();
+        else if (flow.running) flow.destroy();
+      });
+    }, { threshold: 0.1 });
+    io.observe(host);
+  }
 
   // Zaman kaydırıcı
   const slider = document.getElementById('mv-time');

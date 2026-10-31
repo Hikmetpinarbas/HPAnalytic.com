@@ -42,18 +42,28 @@ export class PitchScene {
     this.el.appendChild(this.overlay);
 
     this.resize();
-    window.addEventListener('resize', () => this.resize());
+    // ResizeObserver — sadece kendi container'ı boyut değiştirdiğinde
+    if (typeof ResizeObserver !== 'undefined') {
+      this._ro = new ResizeObserver(() => this.resize());
+      this._ro.observe(this.el);
+    }
     this.drawBase();
   }
 
   resize() {
     const rect = this.el.getBoundingClientRect();
     const dpr = window.devicePixelRatio || 1;
-    this.canvas.width = rect.width * dpr;
-    this.canvas.height = rect.height * dpr;
+    const newW = Math.round(rect.width);
+    const newH = Math.round(rect.height);
+    // Eşik: 4px'ten az değişim canvas'ı sıfırlamasın
+    if (this.w && Math.abs(this.w - newW) < 4 && Math.abs(this.h - newH) < 4) {
+      return;
+    }
+    this.canvas.width = newW * dpr;
+    this.canvas.height = newH * dpr;
     this.ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
-    this.w = rect.width;
-    this.h = rect.height;
+    this.w = newW;
+    this.h = newH;
     this.drawBase();
   }
 

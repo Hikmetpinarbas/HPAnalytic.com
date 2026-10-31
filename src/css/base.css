@@ -6003,3 +6003,11 @@ body { cursor: none; }
   .mv-header { flex-direction: column; align-items: flex-start; }
   .mv-scene { aspect-ratio: 4/3; }
 }
+
+/* Match viz section — jersey'den tamamen izole */
+.mv-wrap-section {
+  contain: layout paint style;
+  isolation: isolate;
+  position: relative;
+  z-index: 1;
+}
