@@ -10,6 +10,7 @@ import './lig.js';
 import './oyuncular.js';
 import './kars.js';
 import { initJersey } from './jersey.js';
+import { initMatchViz } from './viz/match-viz.js';
 import Lenis from 'lenis';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -193,6 +194,7 @@ function bootAll() {
   initMatrixHero();
   
   initJersey('jersey-deck');
+  initMatchViz();
 }
 if (document.readyState === "loading") {
   document.addEventListener("DOMContentLoaded", bootAll);
