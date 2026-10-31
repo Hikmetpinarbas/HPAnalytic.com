@@ -1,0 +1,700 @@
+{
+  "match": "Konyaspor 0-4 Galatasaray",
+  "date": "2026-10-30",
+  "source": "SportsBase",
+  "analysis": {
+    "metadata": {
+      "match": "Konyaspor 0-4 Galatasaray",
+      "date": "2026-10-30",
+      "source": "SportsBase"
+    },
+    "derived": {
+      "total_actions": 2806,
+      "passes": {
+        "total": 1409,
+        "by_team": {
+          "home": 743,
+          "away": 666
+        }
+      },
+      "shots": {
+        "total": 19,
+        "by_team": {
+          "home": 13,
+          "away": 6
+        }
+      },
+      "goals": {
+        "total": 4,
+        "by_team": {
+          "home": 4
+        }
+      },
+      "losses": {
+        "total": 116,
+        "by_team": {
+          "home": 55,
+          "away": 61
+        }
+      },
+      "recoveries": {
+        "total": 80,
+        "by_team": {
+          "away": 41,
+          "home": 39
+        }
+      }
+    }
+  },
+  "four_phases": {
+    "team": "Galatasaray",
+    "total_active_seconds": 44427.0,
+    "phases": {
+      "build_up": {
+        "actions": 745,
+        "duration": 13374.0,
+        "players": {
+          "Lucas Torreira (1469956)": 44,
+          "Roland Sallai (1282353)": 70,
+          "Eren Elmalı (424686)": 64,
+          "Wilfried Singo (1364358)": 119,
+          "Gabriel Sara (533884)": 42,
+          "Rafael Leão (1621614)": 56,
+          "Yunus Akgün (27735)": 48,
+          "Victor Osimhen (1093704)": 21,
+          "Aleksei Batrakov (137204)": 39,
+          "Davinson Sánchez (1647732)": 78,
+          "Leroy Sané (1291402)": 28,
+          "Lesley Ugochukwu (1491826)": 30,
+          "İlkay Gündoğan (567726)": 34,
+          "Deniz Gul (1649400)": 11,
+          "Renato Nhaga (1682568)": 22,
+          "El Chadaille Bitshiabu (269727)": 39
+        },
+        "label": "Yerleşik Hücum (kendi yarı)",
+        "energy_pct": 30.1,
+        "epistemic": "VEKİL",
+        "note": "Enerji %, fazdaki süre oranıdır. Mesafe dağılımı değil.",
+        "top_players": [
+          [
+            "Wilfried Singo (1364358)",
+            119
+          ],
+          [
+            "Davinson Sánchez (1647732)",
+            78
+          ],
+          [
+            "Roland Sallai (1282353)",
+            70
+          ],
+          [
+            "Eren Elmalı (424686)",
+            64
+          ],
+          [
+            "Rafael Leão (1621614)",
+            56
+          ]
+        ]
+      },
+      "transition_attack": {
+        "actions": 91,
+        "duration": 1542.0,
+        "players": {
+          "Victor Osimhen (1093704)": 3,
+          "Aleksei Batrakov (137204)": 8,
+          "Rafael Leão (1621614)": 9,
+          "Gabriel Sara (533884)": 13,
+          "Lucas Torreira (1469956)": 8,
+          "Davinson Sánchez (1647732)": 2,
+          "Wilfried Singo (1364358)": 14,
+          "Yunus Akgün (27735)": 8,
+          "Deniz Gul (1649400)": 5,
+          "Leroy Sané (1291402)": 6,
+          "Renato Nhaga (1682568)": 1,
+          "Lesley Ugochukwu (1491826)": 4,
+          "El Chadaille Bitshiabu (269727)": 4,
+          "İlkay Gündoğan (567726)": 4,
+          "Roland Sallai (1282353)": 2
+        },
+        "label": "Geçiş Hücumu",
+        "energy_pct": 3.5,
+        "epistemic": "VEKİL",
+        "note": "Enerji %, fazdaki süre oranıdır. Mesafe dağılımı değil.",
+        "top_players": [
+          [
+            "Wilfried Singo (1364358)",
+            14
+          ],
+          [
+            "Gabriel Sara (533884)",
+            13
+          ],
+          [
+            "Rafael Leão (1621614)",
+            9
+          ],
+          [
+            "Aleksei Batrakov (137204)",
+            8
+          ],
+          [
+            "Lucas Torreira (1469956)",
+            8
+          ]
+        ]
+      },
+      "set_attack": {
+        "actions": 636,
+        "duration": 8651.0,
+        "players": {
+          "Gabriel Sara (533884)": 74,
+          "Rafael Leão (1621614)": 99,
+          "Eren Elmalı (424686)": 77,
+          "Yunus Akgün (27735)": 44,
+          "Aleksei Batrakov (137204)": 46,
+          "Lucas Torreira (1469956)": 17,
+          "Davinson Sánchez (1647732)": 17,
+          "Roland Sallai (1282353)": 50,
+          "Victor Osimhen (1093704)": 33,
+          "Wilfried Singo (1364358)": 46,
+          "Leroy Sané (1291402)": 46,
+          "Lesley Ugochukwu (1491826)": 18,
+          "İlkay Gündoğan (567726)": 33,
+          "Deniz Gul (1649400)": 16,
+          "Renato Nhaga (1682568)": 17,
+          "El Chadaille Bitshiabu (269727)": 3
+        },
+        "label": "Yerleşik Hücum (rakip yarı)",
+        "energy_pct": 19.5,
+        "epistemic": "VEKİL",
+        "note": "Enerji %, fazdaki süre oranıdır. Mesafe dağılımı değil.",
+        "top_players": [
+          [
+            "Rafael Leão (1621614)",
+            99
+          ],
+          [
+            "Eren Elmalı (424686)",
+            77
+          ],
+          [
+            "Gabriel Sara (533884)",
+            74
+          ],
+          [
+            "Roland Sallai (1282353)",
+            50
+          ],
+          [
+            "Aleksei Batrakov (137204)",
+            46
+          ]
+        ]
+      },
+      "set_defense": {
+        "actions": 1263,
+        "duration": 20061.0,
+        "players": {
+          "Yhoan Andzouana (71341)": 104,
+          "Marko Jevtovic (685586)": 133,
+          "Deniz Türüç (1488473)": 175,
+          "Arthur Masuaku (924374)": 126,
+          "Jean-Luc Dompé (367182)": 91,
+          "Chidozie Awaziem (299847)": 100,
+          "Rayyan Baniya (122394)": 105,
+          "Rajmund Tóth (1472631)": 57,
+          "Melih İbrahimoğlu (651836)": 124,
+          "Jackson Muleka (1012939)": 42,
+          "Mostafa Mohamed (3318)": 45,
+          "Enis Bardhi (126641)": 67,
+          "Uğurcan Yazğılı (1586922)": 59,
+          "Ebrima Colley (299217)": 22,
+          "Enis Destan (361528)": 13
+        },
+        "label": "Yerleşik Savunma",
+        "energy_pct": 45.2,
+        "epistemic": "VEKİL",
+        "note": "Enerji %, fazdaki süre oranıdır. Mesafe dağılımı değil.",
+        "top_players": [
+          [
+            "Deniz Türüç (1488473)",
+            175
+          ],
+          [
+            "Marko Jevtovic (685586)",
+            133
+          ],
+          [
+            "Arthur Masuaku (924374)",
+            126
+          ],
+          [
+            "Melih İbrahimoğlu (651836)",
+            124
+          ],
+          [
+            "Rayyan Baniya (122394)",
+            105
+          ]
+        ]
+      },
+      "transition_defense": {
+        "actions": 67,
+        "duration": 799.0,
+        "players": {
+          "Yhoan Andzouana (71341)": 1,
+          "Chidozie Awaziem (299847)": 5,
+          "Rajmund Tóth (1472631)": 5,
+          "Deniz Türüç (1488473)": 10,
+          "Rayyan Baniya (122394)": 9,
+          "Jackson Muleka (1012939)": 7,
+          "Marko Jevtovic (685586)": 7,
+          "Jean-Luc Dompé (367182)": 3,
+          "Melih İbrahimoğlu (651836)": 7,
+          "Arthur Masuaku (924374)": 3,
+          "Ebrima Colley (299217)": 5,
+          "Enis Bardhi (126641)": 4,
+          "Enis Destan (361528)": 1
+        },
+        "label": "Geçiş Savunması",
+        "energy_pct": 1.8,
+        "epistemic": "VEKİL",
+        "note": "Enerji %, fazdaki süre oranıdır. Mesafe dağılımı değil.",
+        "top_players": [
+          [
+            "Deniz Türüç (1488473)",
+            10
+          ],
+          [
+            "Rayyan Baniya (122394)",
+            9
+          ],
+          [
+            "Jackson Muleka (1012939)",
+            7
+          ],
+          [
+            "Marko Jevtovic (685586)",
+            7
+          ],
+          [
+            "Melih İbrahimoğlu (651836)",
+            7
+          ]
+        ]
+      }
+    },
+    "epistemic": "VEKİL",
+    "caveat": "Bu bir zaman-vekilidir. Gerçek enerji dağılımı için tracking data veya sprint mesafesi gerekir."
+  },
+  "pressure": {
+    "team": "Galatasaray",
+    "ppda": 4.24,
+    "ppda_1h": 3.72,
+    "ppda_2h": 4.87,
+    "opp_passes": 666,
+    "our_def_actions": 157,
+    "high_press_wins": 69,
+    "counter_press_attempts": 1,
+    "counter_press_wins": 1,
+    "counter_press_rate": 1.0,
+    "press_positions": [
+      {
+        "x": 83.8,
+        "y": 63.6,
+        "t": 6.4
+      },
+      {
+        "x": 83.8,
+        "y": 63.6,
+        "t": 6.4
+      },
+      {
+        "x": 66.3,
+        "y": 44.6,
+        "t": 204.4
+      },
+      {
+        "x": 97.2,
+        "y": 35.9,
+        "t": 679.4
+      },
+      {
+        "x": 97.2,
+        "y": 35.9,
+        "t": 679.4
+      },
+      {
+        "x": 61.1,
+        "y": 50.0,
+        "t": 838.4
+      },
+      {
+        "x": 61.1,
+        "y": 50.0,
+        "t": 838.4
+      },
+      {
+        "x": 65.4,
+        "y": 60.6,
+        "t": 859.4
+      },
+      {
+        "x": 65.4,
+        "y": 60.6,
+        "t": 859.4
+      },
+      {
+        "x": 96.8,
+        "y": 42.6,
+        "t": 1109.4
+      },
+      {
+        "x": 55.4,
+        "y": 23.8,
+        "t": 1159.4
+      },
+      {
+        "x": 57.0,
+        "y": 22.7,
+        "t": 1160.4
+      },
+      {
+        "x": 67.4,
+        "y": 17.6,
+        "t": 1330.4
+      },
+      {
+        "x": 96.7,
+        "y": 10.3,
+        "t": 1490.4
+      },
+      {
+        "x": 96.7,
+        "y": 10.3,
+        "t": 1490.4
+      },
+      {
+        "x": 88.7,
+        "y": 7.2,
+        "t": 1730.4
+      },
+      {
+        "x": 88.7,
+        "y": 7.2,
+        "t": 1730.4
+      },
+      {
+        "x": 100.8,
+        "y": 61.2,
+        "t": 1737.4
+      },
+      {
+        "x": 100.8,
+        "y": 61.2,
+        "t": 1737.4
+      },
+      {
+        "x": 64.0,
+        "y": 32.6,
+        "t": 1935.4
+      },
+      {
+        "x": 93.7,
+        "y": 45.4,
+        "t": 2049.4
+      },
+      {
+        "x": 93.7,
+        "y": 45.4,
+        "t": 2049.4
+      },
+      {
+        "x": 55.1,
+        "y": 45.6,
+        "t": 2070.4
+      },
+      {
+        "x": 55.1,
+        "y": 45.6,
+        "t": 2070.4
+      },
+      {
+        "x": 64.2,
+        "y": 47.4,
+        "t": 2073.4
+      },
+      {
+        "x": 98.6,
+        "y": 34.8,
+        "t": 2306.4
+      },
+      {
+        "x": 98.6,
+        "y": 34.8,
+        "t": 2306.4
+      },
+      {
+        "x": 72.0,
+        "y": 63.0,
+        "t": 2635.4
+      },
+      {
+        "x": 72.0,
+        "y": 63.0,
+        "t": 2635.4
+      },
+      {
+        "x": 55.4,
+        "y": 61.8,
+        "t": 2649.4
+      },
+      {
+        "x": 60.5,
+        "y": 61.5,
+        "t": 2650.4
+      },
+      {
+        "x": 90.6,
+        "y": 64.4,
+        "t": 2778.4
+      },
+      {
+        "x": 90.6,
+        "y": 64.4,
+        "t": 2778.4
+      },
+      {
+        "x": 96.9,
+        "y": 58.0,
+        "t": 2874.4
+      },
+      {
+        "x": 96.9,
+        "y": 58.0,
+        "t": 2874.4
+      },
+      {
+        "x": 98.7,
+        "y": 7.2,
+        "t": 2939.4
+      },
+      {
+        "x": 98.7,
+        "y": 7.2,
+        "t": 2939.4
+      },
+      {
+        "x": 93.7,
+        "y": 3.5,
+        "t": 2943.4
+      },
+      {
+        "x": 93.7,
+        "y": 3.5,
+        "t": 2943.4
+      },
+      {
+        "x": 79.7,
+        "y": 41.9,
+        "t": 3102.9
+      },
+      {
+        "x": 79.7,
+        "y": 41.9,
+        "t": 3102.9
+      },
+      {
+        "x": 81.5,
+        "y": 46.5,
+        "t": 3106.9
+      },
+      {
+        "x": 81.5,
+        "y": 46.5,
+        "t": 3106.9
+      },
+      {
+        "x": 87.0,
+        "y": 18.9,
+        "t": 3171.9
+      },
+      {
+        "x": 87.0,
+        "y": 18.9,
+        "t": 3171.9
+      },
+      {
+        "x": 70.9,
+        "y": 63.0,
+        "t": 3431.9
+      },
+      {
+        "x": 84.8,
+        "y": 7.0,
+        "t": 4056.9
+      },
+      {
+        "x": 96.9,
+        "y": 62.9,
+        "t": 4083.9
+      },
+      {
+        "x": 53.3,
+        "y": 62.6,
+        "t": 4281.9
+      },
+      {
+        "x": 53.3,
+        "y": 62.6,
+        "t": 4281.9
+      }
+    ],
+    "epistemic": "TÜREV",
+    "caveat": "PPDA standart tanımdır (rakip pas / defansif aksiyon). Karşı pres 5s penceresiyle sınırlıdır. Yüksek pres eşiği x>52.5 (kendi hücum yönünde)."
+  },
+  "player_radar": {
+    "team": "Galatasaray",
+    "players": {
+      "Gabriel Sara (533884)": {
+        "passes": 78.0,
+        "recoveries": 82.0,
+        "losses": 44.0,
+        "shots": 54.0,
+        "goals": 0.0,
+        "has_fitness": false
+      },
+      "Rafael Leão (1621614)": {
+        "passes": 76.0,
+        "recoveries": 62.0,
+        "losses": 100,
+        "shots": 100,
+        "goals": 100,
+        "has_fitness": false
+      },
+      "Lucas Torreira (1469956)": {
+        "passes": 44.0,
+        "recoveries": 100,
+        "losses": 29.0,
+        "shots": 22.0,
+        "goals": 0.0,
+        "has_fitness": false
+      },
+      "Roland Sallai (1282353)": {
+        "passes": 73.0,
+        "recoveries": 82.0,
+        "losses": 58.0,
+        "shots": 22.0,
+        "goals": 0.0,
+        "has_fitness": false
+      },
+      "Eren Elmalı (424686)": {
+        "passes": 73.0,
+        "recoveries": 82.0,
+        "losses": 73.0,
+        "shots": 43.0,
+        "goals": 0.0,
+        "has_fitness": false
+      },
+      "Wilfried Singo (1364358)": {
+        "passes": 97.0,
+        "recoveries": 100,
+        "losses": 73.0,
+        "shots": 43.0,
+        "goals": 0.0,
+        "has_fitness": false
+      },
+      "Victor Osimhen (1093704)": {
+        "passes": 7.0,
+        "recoveries": 0.0,
+        "losses": 87.0,
+        "shots": 97.0,
+        "goals": 100,
+        "has_fitness": false
+      },
+      "Aleksei Batrakov (137204)": {
+        "passes": 42.0,
+        "recoveries": 0.0,
+        "losses": 58.0,
+        "shots": 86.0,
+        "goals": 100,
+        "has_fitness": false
+      },
+      "Yunus Akgün (27735)": {
+        "passes": 62.0,
+        "recoveries": 21.0,
+        "losses": 44.0,
+        "shots": 86.0,
+        "goals": 100,
+        "has_fitness": false
+      },
+      "Davinson Sánchez (1647732)": {
+        "passes": 50.0,
+        "recoveries": 100,
+        "losses": 15.0,
+        "shots": 54.0,
+        "goals": 0.0,
+        "has_fitness": false
+      },
+      "Leroy Sané (1291402)": {
+        "passes": 44.0,
+        "recoveries": 0.0,
+        "losses": 73.0,
+        "shots": 32.0,
+        "goals": 0.0,
+        "has_fitness": false
+      },
+      "Lesley Ugochukwu (1491826)": {
+        "passes": 39.0,
+        "recoveries": 21.0,
+        "losses": 0.0,
+        "shots": 32.0,
+        "goals": 0.0,
+        "has_fitness": false
+      },
+      "İlkay Gündoğan (567726)": {
+        "passes": 51.0,
+        "recoveries": 0.0,
+        "losses": 44.0,
+        "shots": 22.0,
+        "goals": 0.0,
+        "has_fitness": false
+      },
+      "Renato Nhaga (1682568)": {
+        "passes": 21.0,
+        "recoveries": 0.0,
+        "losses": 29.0,
+        "shots": 32.0,
+        "goals": 0.0,
+        "has_fitness": false
+      },
+      "Deniz Gul (1649400)": {
+        "passes": 9.0,
+        "recoveries": 0.0,
+        "losses": 73.0,
+        "shots": 32.0,
+        "goals": 0.0,
+        "has_fitness": false
+      },
+      "El Chadaille Bitshiabu (269727)": {
+        "passes": 34.0,
+        "recoveries": 41.0,
+        "losses": 0.0,
+        "shots": 11.0,
+        "goals": 0.0,
+        "has_fitness": false
+      }
+    },
+    "league_avg": {
+      "passes": 28.25,
+      "recoveries": 2.4375,
+      "losses": 3.4375,
+      "shots": 4.625,
+      "goals": 0.25
+    },
+    "epistemic": "TÜREV",
+    "caveat": "Radar maç içi event data + sezonluk fitness birleşimidir. Lig ortalaması maçın kendi ortalamasıdır, gerçek lig ortalaması değil."
+  }
+}

@@ -1,0 +1,44 @@
+{
+  "metadata": {
+    "match": "Konyaspor 0-4 Galatasaray",
+    "date": "2026-10-30",
+    "source": "SportsBase"
+  },
+  "derived": {
+    "total_actions": 2806,
+    "passes": {
+      "total": 1409,
+      "by_team": {
+        "home": 743,
+        "away": 666
+      }
+    },
+    "shots": {
+      "total": 19,
+      "by_team": {
+        "home": 13,
+        "away": 6
+      }
+    },
+    "goals": {
+      "total": 4,
+      "by_team": {
+        "home": 4
+      }
+    },
+    "losses": {
+      "total": 116,
+      "by_team": {
+        "home": 55,
+        "away": 61
+      }
+    },
+    "recoveries": {
+      "total": 80,
+      "by_team": {
+        "away": 41,
+        "home": 39
+      }
+    }
+  }
+}

@@ -1,0 +1,142 @@
+{
+  "team": "Galatasaray",
+  "players": {
+    "Gabriel Sara (533884)": {
+      "passes": 78.0,
+      "recoveries": 82.0,
+      "losses": 44.0,
+      "shots": 54.0,
+      "goals": 0.0,
+      "has_fitness": false
+    },
+    "Rafael Leão (1621614)": {
+      "passes": 76.0,
+      "recoveries": 62.0,
+      "losses": 100,
+      "shots": 100,
+      "goals": 100,
+      "has_fitness": false
+    },
+    "Lucas Torreira (1469956)": {
+      "passes": 44.0,
+      "recoveries": 100,
+      "losses": 29.0,
+      "shots": 22.0,
+      "goals": 0.0,
+      "has_fitness": false
+    },
+    "Roland Sallai (1282353)": {
+      "passes": 73.0,
+      "recoveries": 82.0,
+      "losses": 58.0,
+      "shots": 22.0,
+      "goals": 0.0,
+      "has_fitness": false
+    },
+    "Eren Elmalı (424686)": {
+      "passes": 73.0,
+      "recoveries": 82.0,
+      "losses": 73.0,
+      "shots": 43.0,
+      "goals": 0.0,
+      "has_fitness": false
+    },
+    "Wilfried Singo (1364358)": {
+      "passes": 97.0,
+      "recoveries": 100,
+      "losses": 73.0,
+      "shots": 43.0,
+      "goals": 0.0,
+      "has_fitness": false
+    },
+    "Victor Osimhen (1093704)": {
+      "passes": 7.0,
+      "recoveries": 0.0,
+      "losses": 87.0,
+      "shots": 97.0,
+      "goals": 100,
+      "has_fitness": false
+    },
+    "Aleksei Batrakov (137204)": {
+      "passes": 42.0,
+      "recoveries": 0.0,
+      "losses": 58.0,
+      "shots": 86.0,
+      "goals": 100,
+      "has_fitness": false
+    },
+    "Yunus Akgün (27735)": {
+      "passes": 62.0,
+      "recoveries": 21.0,
+      "losses": 44.0,
+      "shots": 86.0,
+      "goals": 100,
+      "has_fitness": false
+    },
+    "Davinson Sánchez (1647732)": {
+      "passes": 50.0,
+      "recoveries": 100,
+      "losses": 15.0,
+      "shots": 54.0,
+      "goals": 0.0,
+      "has_fitness": false
+    },
+    "Leroy Sané (1291402)": {
+      "passes": 44.0,
+      "recoveries": 0.0,
+      "losses": 73.0,
+      "shots": 32.0,
+      "goals": 0.0,
+      "has_fitness": false
+    },
+    "Lesley Ugochukwu (1491826)": {
+      "passes": 39.0,
+      "recoveries": 21.0,
+      "losses": 0.0,
+      "shots": 32.0,
+      "goals": 0.0,
+      "has_fitness": false
+    },
+    "İlkay Gündoğan (567726)": {
+      "passes": 51.0,
+      "recoveries": 0.0,
+      "losses": 44.0,
+      "shots": 22.0,
+      "goals": 0.0,
+      "has_fitness": false
+    },
+    "Renato Nhaga (1682568)": {
+      "passes": 21.0,
+      "recoveries": 0.0,
+      "losses": 29.0,
+      "shots": 32.0,
+      "goals": 0.0,
+      "has_fitness": false
+    },
+    "Deniz Gul (1649400)": {
+      "passes": 9.0,
+      "recoveries": 0.0,
+      "losses": 73.0,
+      "shots": 32.0,
+      "goals": 0.0,
+      "has_fitness": false
+    },
+    "El Chadaille Bitshiabu (269727)": {
+      "passes": 34.0,
+      "recoveries": 41.0,
+      "losses": 0.0,
+      "shots": 11.0,
+      "goals": 0.0,
+      "has_fitness": false
+    }
+  },
+  "league_avg": {
+    "passes": 28.25,
+    "recoveries": 2.4375,
+    "losses": 3.4375,
+    "shots": 4.625,
+    "goals": 0.25
+  },
+  "epistemic": "TÜREV",
+  "caveat": "Radar maç içi event data + sezonluk fitness birleşimidir. Lig ortalaması maçın kendi ortalamasıdır, gerçek lig ortalaması değil."
+}
