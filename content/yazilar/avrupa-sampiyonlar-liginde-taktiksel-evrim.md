@@ -22,7 +22,7 @@ Bu bir devrim değildi. Bir birikimdi. Cruyff'un 1980'lerde attığı tohum, otu
 
 ## 2010'lar: Pressing ve geçiş
 
-Klopp ve Simeone iki farklı cevap verdi aynı soruya. Biri topu rakipten çalmayı, diğeri rakibi kendi yarısına çekmeyi seçti.
+Klopp ve Simeone aynı soruya iki farklı cevap verdi. Biri topu rakipten çalmayı, diğeri rakibi kendi yarısına çekmeyi seçti.
 
 İkisi de aynı mekanizmayı kullandı: rakibin karar verme süresini kısaltmak.
 
@@ -36,22 +36,3 @@ Yanlışsam ne görmeliyim? Taktiksel evrimin çizgisel olduğunu varsayıyorum.
 
 Veri: SportsBase
 
-## Pressing çeşitleri: aynı kelime, farklı mekanizma
-
-Pressing tek bir şey değil. Üç ayrı mekanizma var. Karşı pres, orta blok, yüksek hat.
-
-Karşı pres topu kaybettiğin an başlar. Beş saniye içinde geri kazanırsan rakip yerleşemedi. Yerleşemediği için pozisyon üretemedi.
-
-Orta blok rakibi kendi yarısına davet eder. Yüksek hat ise rakibi kendi kalesine sıkıştırır. Üçü aynı kelimeyle anılır ama aynı şey değildir.
-
-Yanlışsam ne görmeliyim? Pressing başarısını sadece kazanım sayısıyla ölçemeyiz. Kazanımdan sonraki üç saniyede ne yaptığına bakmak gerekir. O veri olmadan hüküm eksiktir.
-
-## Veri devrimi: xG bir hüküm değil
-
-xG, PPDA, kazanım haritaları, geçiş sayıları. Hepsi birer araç. Ama araçları karıştırırsan hüküm de karışır.
-
-PPDA düşükse yüksek press oynuyorsun. Ama PPDA düşükse ve rakibin sahasında kazandığın top azsa, press var ama verim yok. Bu bir tezat değil. Bir mekanizma.
-
-Veri çıktısı işarettir. Hüküm değil.
-
-Veri: SportsBase

@@ -5,7 +5,7 @@ title: Vosse de Boode: bilimin sahayla buluştuğu yer
 slug: portraits-vosse-de-boode
 type: portraits
 source: https://www.hpanalytic.com/portraits/vosse-de-boode
-excerpt: 2011’de Ajax’a geldiğinde başlangıçta altı aylık bir çalışma önerildi. Örnek uygulamalar hazırladı; sonra laboratuvardan çıkıp antrenörleri ve oyuncuları izlemeye başladı. Kendi an
+excerpt: 2011’de Ajax’a geldiğinde başlangıçta altı aylık bir çalışma önerildi. Örnek uygulamalar hazırladı; sonra laboratuvardan çıkıp antrenörleri ve oyuncuları izlemeye başladı.
 ---
 
 Ajax’ın De Toekomst tesislerinde güçlü bir biyomekanik laboratuvarı vardı: hareket kameraları, kuvvet platformları, yüksek hızlı görüntüleme. Vosse de Boode’un önündeki mesele daha fazla ölçüm yapmak değildi. Futbolun hangi sorusunu ölçmeye değer bulacaktı?

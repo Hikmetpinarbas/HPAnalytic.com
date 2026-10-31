@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800">
+  <rect width="1200" height="800" fill="#0a0a0c"/>
+  <defs><radialGradient id="g" cx="70%" cy="40%" r="50%"><stop offset="0%" stop-color="#FF6B35" stop-opacity="0.25"/><stop offset="100%" stop-color="#0a0a0c" stop-opacity="0"/></radialGradient></defs>
+  <rect width="1200" height="800" fill="url(#g)"/>
+  <g stroke="#B4FF39" stroke-width="2" fill="none" opacity="0.3"><circle cx="880" cy="380" r="200"/><circle cx="880" cy="380" r="130"/><line x1="880" y1="100" x2="880" y2="660"/></g>
+  <text x="60" y="100" font-family="monospace" font-size="14" fill="#B4FF39" letter-spacing="6">HPAnalytic · MAÇ DOSYASI</text>
+  <line x1="60" y1="120" x2="240" y2="120" stroke="#FF6B35" stroke-width="2"/>
+  <text x="60" y="540" font-family="Georgia,serif" font-size="64" fill="#fff">Lille 2 — 4</text>
+  <text x="60" y="610" font-family="Georgia,serif" font-size="64" fill="#FF6B35" font-style="italic">Galatasaray</text>
+  <text x="60" y="680" font-family="monospace" font-size="14" fill="#888" letter-spacing="3">UCL · 21.10.2026</text>
+  <text x="60" y="760" font-family="monospace" font-size="12" fill="#888" letter-spacing="4">VERİ: SPORTSBASE</text>
+</svg>

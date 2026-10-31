@@ -38,7 +38,7 @@ Bir takımın baskı yaptığını söylemek için koşu mesafesini göstermek y
 
 UEFA’nın biyografik değerlendirmesinde, Lobanovskyi’nin oyunculara yalnızca klasik hücumcu-savunmacı görevleri vermediği vurgulanır. Eski oyuncularının anlatımları da pozisyonlardan çok görev değişkenliğine işaret eder. İyi bir santrfor gerektiğinde baskının başlangıç noktası; kanat oyuncusu gerektiğinde iç koridorun pas istasyonu; orta saha oyuncusu ise üçüncü adam bağlantısı olabilirdi. Bunlar bugünün analitik sözlüğüyle yapılmış açıklamalardır, arşivdeki her pozisyon için ispatlanmış sekans kodları değildir.
 
-Bu nedenle tarihsel karşılaştırmada dikkatli olmalıyız: Bir maçın görüntüsünden iki koşunun eşzamanlılığını gösterebiliriz, ama soyut ‘kolektif zekâ’ puanı hesaplayamayız. Kollektif zekâ, saha içi ilişkiler hakkında kurulmuş açıklayıcı bir hipotezdir; modern bir istatistik kolonunun adı değildir.
+Bu nedenle tarihsel karşılaştırmada dikkatli olmalıyız: Bir maçın görüntüsünden iki koşunun eşzamanlılığını gösterebiliriz, ama soyut ‘kolektif zekâ’ puanı hesaplayamayız. Kolektif zekâ, saha içi ilişkiler hakkında kurulmuş açıklayıcı bir hipotezdir; modern bir istatistik kolonunun adı değildir.
 
 ### 1975 ve 1986: Aynı fikir, farklı oyuncular
 

@@ -28,7 +28,7 @@ Bir aritmetik eşitliğin taraftarı yoktur. Bir hesaplama sonucunun tuttuğu ku
 
 Bu anlamda, duygusal tarafgirlik söz konusu olduğunda insanın üstündedir. Matematik yalan söylemeyi bilmez; fakat matematiğin hangi soruya uygulandığını, hangi verilerle beslendiğini ve sonucun neye delil sayılacağını insanlar belirler.
 
-Bir şutun xG değeri 0,24 olarak hesaplanmışsa bu, o model ve girdi kümesi için bir olasılık tahminidir. “Gol olmalıydı”, “kazanan hak ettik” veya “forvet beceriksiz” cümleleri bu değerin kendisi değildir. Yorumun, karşılaştırmanın ve bazen de duygunun ürettiği başka cümlelerdir.
+Bir şutun xG değeri 0,24 olarak hesaplanmışsa bu, o model ve girdi kümesi için bir olasılık tahminidir. “Gol olmalıydı”, “kazanmayı hak ettik” veya “forvet beceriksiz” cümleleri bu değerin kendisi değildir. Yorumun, karşılaştırmanın ve bazen de duygunun ürettiği başka cümlelerdir.
 
 Üstelik hesaplanan değer de kutsal değildir. Şutun konumu yanlış kodlanmış olabilir. Model baskıyı, kalecinin yerini veya şutun geliş şeklini içermiyor olabilir. Farklı sağlayıcıların xG sonuçları bu nedenle ayrılabilir. Matematiğin tutarlılığı, ölçümün kusursuzluğu değildir.
 
@@ -109,8 +109,8 @@ GÖRSEL KANIT
 Karşı kanıt ve sınırlar ＋- Sayıların tarafsız olması, veri toplama süreçlerinin ve istatistiksel modellerin hatasız veya tarafsız olduğu anlamına gelmez.
 - İyi kalibre edilmiş bir model bile tekil bir maçta hangi sonucun gerçekleşeceğini kesin olarak söylemez.
 - Bir metrik doğru hesaplanmış olsa dahi ilgisiz bir soruya delil gösterilebilir.
-Kaynakları incele ＋- John W. Tukey, The Future of Data Analysis (1962), Annals of Mathematical StatisticsKaynak hakkı kayıtlı · İddia gücü kaynak ve bağlamla sınırlıdır
-- George E. P. Box ve Norman R. Draper, Empirical Model-Building and Response Surfaces (1987)Kaynak hakkı kayıtlı · İddia gücü kaynak ve bağlamla sınırlıdır
+Kaynakları incele ＋- John W. Tukey, The Future of Data Analysis (1962), Annals of Mathematical Statistics — Kaynak hakkı kayıtlı · İddia gücü kaynak ve bağlamla sınırlıdır
+- George E. P. Box ve Norman R. Draper, Empirical Model-Building and Response Surfaces (1987) — Kaynak hakkı kayıtlı · İddia gücü kaynak ve bağlamla sınırlıdır
 - Goodhart yasasının özgün ifadesi ve daha sonra popülerleşen Strathern yorumuKaynak hakkı kayıtlı · İddia gücü kaynak ve bağlamla sınırlıdır
 
 Veri: SportsBase

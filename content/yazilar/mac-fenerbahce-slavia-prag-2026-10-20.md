@@ -1,4 +1,9 @@
 ---
+cover: "/assets/covers/mac-fenerbahce-slavia-prag-2026-10-20.svg"
+match_type: "pre-match"
+match_date: "2026-10-20"
+match_result: "Fenerbahçe 2 — 2 Slavia Prag"
+match_opponent: "Slavia Prag (UCL)"
 title: Fenerbahçe — Slavia Prag: ilk pres hattını geçmek
 slug: mac-fenerbahce-slavia-prag-2026-10-20
 type: mac
@@ -14,7 +19,7 @@ Hikmet Pınarbaş · 20 Ekim 2026
 
 Ligin en sert preslerinden biri, rakip yarıda top kazanmayı en az başaran takımlardan biriyle karşılaşıyor. Maçın kilidi, Fenerbahçe'nin ilk pres hattını geçtikten sonra ne yaptığı.
 
-Puan1 · 0Sıra (36 takım)28. · 31.HakemRicardo de BurgosYayınTRT 1Başlama vuruşuna--saat--dakikaPaylaş
+Puan 1 · Sıra 0 (36 takım)28. · 31.HakemRicardo de BurgosYayınTRT 1Başlama vuruşuna--saat--dakikaPaylaş
 
 ## İki takım, dört maç
 
@@ -78,7 +83,7 @@ Kazanım ve kayıp · olay verisi
 
 ## Slavia'nın topu çaldığı yer, Fenerbahçe'nin topu verdiği yer
 
-Aynı sahada iki ayrı maç: Slavia'nın Sabah karşısında rakip yarıda kazandığı 13 top ve Fenerbahçe'nin Villa karşısında kendi yarısında kaybettiği 11 top. Fenerbahçe kayıpları Slavia'nın hücum yönüne çevrildi; yani sağa doğru Fenerbahçe kalesi.
+Aynı sahada iki ayrı maç: Slavia'nın Sabah karşısında rakip yarıda kazandığı 13 top ve Fenerbahçe'nin Villa karşısında kendi yarısında kaybettiği 11 top. Fenerbahçe'nin top kayıpları Slavia'nın hücum yönüne, yani sağdaki Fenerbahçe kalesine doğru çevrildi.
 
 İkisi birlikteSlavia kazanımlarıFB kayıpları Slavia top kazanımı (rakip yarı) · Sabah maçı Fenerbahçe top kaybı (kendi yarı) · Villa maçı
 

@@ -1,4 +1,9 @@
 ---
+cover: "/assets/covers/mac-besiktas-crystal-palace-2026-10-22.svg"
+match_type: "pre-match"
+match_date: "2026-10-22"
+match_result: "Beşiktaş 2 — 2 Crystal Palace"
+match_opponent: "Crystal Palace"
 title: Kristal köşk nasıl yıkılır?
 slug: mac-besiktas-crystal-palace-2026-10-22
 type: mac
@@ -54,7 +59,7 @@ Sonucu şu: Beşiktaş kendi kalesine yakın bölgede maç başına sadece 7,6 k
 
 Rakiplerinin Beşiktaş'a karşı ürettiği gol beklentisi maç başına 0,92. Bu ligin en düşük rakamı. Beşiktaş'ın kendi ürettiği ise 2,22.
 
-TANIMGol beklentisi nedir? Bir pozisyonun gole dönme ihtimalini ölçen sayı. 1,0 demek "bu pozisyonlardan ortalama bir gol çıkar" demek. Olay verisinin ne görüp ne göremediği için: maç olay verisi ne görür, ne göremez.Mekanizma
+TANIM: Gol beklentisi nedir? Bir pozisyonun gole dönme ihtimalini ölçen sayı. 1,0 demek "bu pozisyonlardan ortalama bir gol çıkar" demek. Olay verisinin ne görüp ne göremediği için: maç olay verisi ne görür, ne göremez.Mekanizma
 
 ## Peki Beşiktaş'ın sorunu ne?
 
@@ -134,12 +139,12 @@ Sonuç
 
 ## Maçta izlenecek üç şey
 
-1. Beşiktaş'ın kaç şutu bloklanıyor. Maç başına ortalaması 5. Bu sayı büyüyorsa, skor 0-0 bile olsa Beşiktaş doğru yerden vuramıyor demektir.
+1. Beşiktaş'ın kaç şutu bloklanıyor? Maç başına ortalaması 5. Bu sayı büyüyorsa, skor 0-0 bile olsa Beşiktaş doğru yerden vuramıyor demektir.
 
-2. Merkez açılıyor mu. Beşiktaş'ın en verimli yeri orası, Palace'ın en iyi olduğu şey de orada mücadele etmek. İlk yarım saatte merkezden kaç şut çıktığına bakın.
+2. Merkez açılıyor mu? Beşiktaş'ın en verimli yeri orası, Palace'ın en iyi olduğu şey de orada mücadele etmek. İlk yarım saatte merkezden kaç şut çıktığına bakın.
 
-3. Uzun top kime düşüyor. Palace kaleciden uzun gidiyorsa, o topu kim alıyor? Beşiktaş alıyorsa maç tek kale olur. Palace alıyorsa maç uzar — ve uzayan maç Palace'ın istediği maçtır.
+3. Uzun top kime düşüyor? Palace kaleciden uzun gidiyorsa, o topu kim alıyor? Beşiktaş alıyorsa maç tek kale olur. Palace alıyorsa maç uzar — ve uzayan maç Palace'ın istediği maçtır.
 
-Kaynaklar ve kanıt sınırıVeri: SportsBase · Beşiktaş Süper Lig 8 maç, Crystal Palace Premier Lig 7 maç. Olay verisi oyuncu konumu, görüş alanı veya niyeti doğrudan ölçmez. Çıkarımlar bağlama ve örneklem büyüklüğüne bağlıdır.
+Kaynaklar ve kanıt sınırı — Veri: SportsBase · Beşiktaş Süper Lig 8 maç, Crystal Palace Premier Lig 7 maç. Olay verisi oyuncu konumu, görüş alanı veya niyeti doğrudan ölçmez. Çıkarımlar bağlama ve örneklem büyüklüğüne bağlıdır.
 
 Veri: SportsBase · Bir önceki Avrupa dosyası: Lille – Galatasaray

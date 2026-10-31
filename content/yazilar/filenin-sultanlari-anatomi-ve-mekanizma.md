@@ -74,7 +74,7 @@ Daha önemli soru şudur:
 
 Oyuncu fiziksel kapasitesini oyun içerisinde ne kadar verimli kullanabiliyor?
 
-Çünkü atletizm kapasiteyi belirler. Teknik ve zamanlama, o kapasitenin ne kadarının oyuna aktarılacağını.
+Çünkü atletizm kapasiteyi belirler. Teknik ve zamanlama, o kapasitenin ne kadarının oyuna aktarılacağını belirler.
 
 Vargas, Ebrar ve sistemin geometrisi
 
@@ -114,9 +114,9 @@ Başarının anatomisi
 
 Filenin Sultanları'nın başarısını yalnızca fiziksel özelliklere bağlamak yanlış.
 
-Yalnızca teknik direktöre bağlamak da.
+Yalnızca teknik direktöre bağlamak da yanlış.
 
-Yalnızca birkaç yıldız oyuncuya bağlamak da.
+Yalnızca birkaç yıldız oyuncuya bağlamak da yanlış.
 
 Türkiye'nin 2023'teki yükselişini anlamak için kulüp altyapılarından millî takım seviyesine uzanan gelişim sürecini ve sahadaki görev dağılımını birlikte değerlendirmek gerekir.
 

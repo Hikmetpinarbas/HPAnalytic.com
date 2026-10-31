@@ -1,5 +1,10 @@
 ---
-title: Lille — Galatasaray: oyun kurulumunu yükselte boğmak
+cover: "/assets/covers/mac-lille-galatasaray-2026-10-21.svg"
+match_type: "pre-match"
+match_date: "2026-10-21"
+match_result: "Lille 2 — 4 Galatasaray"
+match_opponent: "Lille (UCL)"
+title: Lille — Galatasaray: oyun kurulumunu yüksekte boğmak
 slug: mac-lille-galatasaray-2026-10-21
 type: mac
 source: https://www.hpanalytic.com/mac/lille-galatasaray-2026-10-21
@@ -14,7 +19,7 @@ Hikmet Pınarbaş · İlk yayın: 20 Ekim 2026 · Maç: 21 Ekim 2026 · 19.45 TS
 
 Lille 10 şutla son sırada; Galatasaray ve Bodø/Glimt 12'şer şutla bir üst basamağı paylaşıyor. Lille, Avrupa'da topu kendi yarısında en çok kaybeden ikinci takım. Eşleşmenin ana sorusu iki yönlü: Lille'in kendi yarısındaki kayıplarını Galatasaray ne ölçüde değerlendirebilir; Lille, Galatasaray'ın hücum üretimini ne ölçüde sınırlayabilir?
 
-Puan0 · 0Atılan şut (2 maç)12 · 10HakemRade ObrenovičBaşlama19.45 TSİMaç bilgisi: UEFA resmî maç sayfası · Galatasaray maç önü açıklaması. Yayın kanalı teyit edilmediği için belirtilmemiştir.
+Puan 0 · Atılan 0 şut (2 maç)12 · 10HakemRade ObrenovičBaşlama19.45 TSİMaç bilgisi: UEFA resmî maç sayfası · Galatasaray maç önü açıklaması. Yayın kanalı teyit edilmediği için belirtilmemiştir.
 
 Başlama vuruşuna--saat--dakikaPaylaş
 
@@ -274,7 +279,6 @@ Yalnız iki takım noktası: korelasyon veya pres gücü kanıtı değildir. Dü
 
 ### Maç bazlı performans matrisi
 
-MaçŞutxGxGAPPDAKendi yarısı kaybıLIL–Betis61.061.5611.6214LIL–Arsenal40.222.0117.8427GS–Sporting91.551.325.107GS–Barcelona30.322.5611.0815#8 · P0 · PREMIUM COMPARE
 
 ### İki maçlık profil panosu
 

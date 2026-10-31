@@ -31,7 +31,7 @@ Mekanizmanın yarısı sahada, yarısı antrenmanda. Sadece maç verisiyle mekan
 
 ## Medya okuryazarlığı
 
-Türk futbol medyası hâlâ skoru konuşuyor. Mekanizmayı konuşan az. Bu bir kültür problem.
+Türk futbol medyası hâlâ skoru konuşuyor. Mekanizmayı konuşan az. Bu bir kültür problemi.
 
 Veri devrimi, taraftarın dilini değiştirmedikçe tamamlanmaz.
 
@@ -45,7 +45,7 @@ Veri: SportsBase
 
 Büyük kulüplerin veri yatırımı görünür. Peki Anadolu takımları ne yapıyor?
 
-Birkaç kulüp basit xG ve PPDA kullanıyor. Çoğu hâlâ sezon sonu istatistikleriyle karar veriyor. Bu bir bütçe problem değil, bir kültür problem.
+Birkaç kulüp basit xG ve PPDA kullanıyor. Çoğu hâlâ sezon sonu istatistikleriyle karar veriyor. Bu bir bütçe problemi değil, bir kültür problemi.
 
 Futbolcu izlemek pahalı. Veri okumak ucuz. Ama okumayı bilmek gerek.
 
