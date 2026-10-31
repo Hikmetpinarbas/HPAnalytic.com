@@ -1,11 +1,15 @@
+import { initMatrixHero } from './matrix-hero.js';
+import { initTacticalShowcase } from "./tactical-showcase.js";
+import './live-marquee.js';
 import './menu.js';
-import './superlig.js';
-import './standouts.js';
+import './week-story.js';
+import './mechanism.js';
+import './explore.js';
+import './dl-teaser.js';
+import './lig.js';
+import './oyuncular.js';
+import './kars.js';
 import { initJersey } from './jersey.js';
-import { initLeagues } from './leagues.js';
-import { initPassNet } from '../charts/passnet.js';
-import { initShotMap } from '../charts/shotmap.js';
-import { initRadar } from '../charts/radar.js';
 import Lenis from 'lenis';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -142,26 +146,25 @@ initPalette();
 initSectionIndicator();
 initScrollProgress();
 
-ScrollTrigger.create({
-  trigger: '#radar-container',
-  start: 'top 90%',
-  once: true,
-  onEnter: () => initRadar('radar-container'),
-});
-
-ScrollTrigger.create({
-  trigger: '#shotmap-container',
-  start: 'top 90%',
-  once: true,
-  onEnter: () => initShotMap('shotmap-container', 'shot-filters'),
-});
-
-ScrollTrigger.create({
-  trigger: '#passnet-container',
-  start: 'top 90%',
-  once: true,
-  onEnter: () => initPassNet('passnet-container', 'passnet-filters'),
-});
+// ScrollTrigger.create({
+//   trigger: '#radar-container',
+//   start: 'top 90%',
+//   once: true,
+// });
+// 
+// ScrollTrigger.create({
+//   trigger: '#shotmap-container',
+//   start: 'top 90%',
+//   once: true,
+//   onEnter: () => initShotMap('shotmap-container', 'shot-filters'),
+// });
+// 
+// ScrollTrigger.create({
+//   trigger: '#passnet-container',
+//   start: 'top 90%',
+//   once: true,
+//   onEnter: () => initPassNet('passnet-container', 'passnet-filters'),
+// });
 
 console.log('✓ HP//Analytic v2.0 — 3 GRAFİK HAZIR');
 
@@ -185,9 +188,11 @@ document.querySelectorAll('.lab-tab').forEach(tab => {
 
 // === Güvenli boot: HMR sonrası da çalışır ===
 function bootAll() {
-  initLeagues('story-track', 'story-dots');
+  initTacticalShowcase();
+  initMatrixHero();
+  initMatrixHero();
+  
   initJersey('jersey-deck');
-  initHeroPitch('hero-pitch-bg');
 }
 if (document.readyState === "loading") {
   document.addEventListener("DOMContentLoaded", bootAll);
@@ -197,3 +202,20 @@ if (document.readyState === "loading") {
 if (import.meta && import.meta.hot) {
   import.meta.hot.accept(() => { bootAll(); });
 }
+// ── Akan Yazı (Marquee) Enjeksiyonu ──
+(function injectMarquee() {
+  const jerseySection = document.querySelector('.jersey-section');
+  if (jerseySection && !document.querySelector('.marquee-section')) {
+    const marqueeHTML = `
+      <section class="marquee-section">
+        <div class="marquee-track">
+          <span>PAS AĞLARI <span class="hl">·</span> XG HARİTALARI <span class="hl">·</span> MEKANİZMA RAPORLARI <span class="hl">·</span> ON-BALL VERİ <span class="hl">·</span> SPORTSBASE <span class="hl">·</span> </span>
+          <span>PAS AĞLARI <span class="hl">·</span> XG HARİTALARI <span class="hl">·</span> MEKANİZMA RAPORLARI <span class="hl">·</span> ON-BALL VERİ <span class="hl">·</span> SPORTSBASE <span class="hl">·</span> </span>
+        </div>
+      </section>
+    `;
+    jerseySection.insertAdjacentHTML('afterend', marqueeHTML);
+  }
+})();
+
+

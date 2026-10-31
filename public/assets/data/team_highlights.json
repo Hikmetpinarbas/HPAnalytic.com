@@ -1,0 +1,406 @@
+[
+  {
+    "team": "Alanyaspor",
+    "star": {
+      "name": "Florent Hadergjonaj",
+      "pos": "RWB",
+      "group": "FB",
+      "composite": 9.34,
+      "composite_pct": 97.4,
+      "minutes": 863,
+      "goals": 0.0,
+      "xg": 0.12,
+      "delta": -0.12
+    },
+    "rising": {
+      "name": "Arda Usluoglu",
+      "pos": "CF",
+      "age": 20,
+      "composite_pct": 52.4
+    },
+    "tags": [
+      "hücum üretimi sınırlı",
+      "pres yoğunluğu düşük"
+    ]
+  },
+  {
+    "team": "Amed SK",
+    "star": {
+      "name": "Dia Saba",
+      "pos": "CAM",
+      "group": "MF",
+      "composite": 13.04,
+      "composite_pct": 98.2,
+      "minutes": 804,
+      "goals": 5.0,
+      "xg": 2.48,
+      "delta": 2.52
+    },
+    "rising": null,
+    "tags": [
+      "hücum üretimi ligde üst çeyrekte",
+      "pres yoğunluğu düşük"
+    ]
+  },
+  {
+    "team": "Besiktas JK",
+    "star": {
+      "name": "Junior Olaitan",
+      "pos": "RCM",
+      "group": "MF",
+      "composite": 12.21,
+      "composite_pct": 94.6,
+      "minutes": 614,
+      "goals": 1.0,
+      "xg": 0.98,
+      "delta": 0.02
+    },
+    "rising": null,
+    "tags": [
+      "hücum üretimi ligde üst çeyrekte",
+      "ligin en yoğun pres takımlarından"
+    ]
+  },
+  {
+    "team": "Caykur Rizespor",
+    "star": {
+      "name": "Qazim Laçi",
+      "pos": "LCM",
+      "group": "MF",
+      "composite": 11.49,
+      "composite_pct": 87.5,
+      "minutes": 668,
+      "goals": 2.0,
+      "xg": 1.7,
+      "delta": 0.3
+    },
+    "rising": {
+      "name": "Zakaria Ariss",
+      "pos": "LB",
+      "age": 22,
+      "composite_pct": 46.2
+    },
+    "tags": [
+      "ligin en yoğun pres takımlarından",
+      "top hakimiyeti yüksek"
+    ]
+  },
+  {
+    "team": "Corum FK",
+    "star": {
+      "name": "Cengiz Ünder",
+      "pos": "RAM",
+      "group": "W",
+      "composite": 9.39,
+      "composite_pct": 93.8,
+      "minutes": 504,
+      "goals": 4.0,
+      "xg": 0.87,
+      "delta": 3.13
+    },
+    "rising": {
+      "name": "Andrei Borza",
+      "pos": "LB",
+      "age": 20,
+      "composite_pct": 10.3
+    },
+    "tags": [
+      "hücum üretimi sınırlı"
+    ]
+  },
+  {
+    "team": "Erzurumspor FK",
+    "star": {
+      "name": "Orhan Ovacıklı",
+      "pos": "RWB",
+      "group": "FB",
+      "composite": 5.37,
+      "composite_pct": 82.1,
+      "minutes": 787,
+      "goals": 0.0,
+      "xg": 0.27,
+      "delta": -0.27
+    },
+    "rising": null,
+    "tags": [
+      "hücum üretimi sınırlı",
+      "pres yoğunluğu düşük"
+    ]
+  },
+  {
+    "team": "Eyüpspor",
+    "star": {
+      "name": "Talha Ülvan",
+      "pos": "RB",
+      "group": "FB",
+      "composite": 5.13,
+      "composite_pct": 79.5,
+      "minutes": 722,
+      "goals": 0.0,
+      "xg": 0.28,
+      "delta": -0.28
+    },
+    "rising": {
+      "name": "Ahmed Abdullahi",
+      "pos": "CF",
+      "age": 22,
+      "composite_pct": 33.3
+    },
+    "tags": [
+      "hücum üretimi sınırlı",
+      "pres yoğunluğu düşük"
+    ]
+  },
+  {
+    "team": "Fenerbahce",
+    "star": {
+      "name": "Vedat Muriqi",
+      "pos": "CF",
+      "group": "FW",
+      "composite": 8.41,
+      "composite_pct": 95.2,
+      "minutes": 449,
+      "goals": 7.0,
+      "xg": 5.35,
+      "delta": 1.65
+    },
+    "rising": null,
+    "tags": [
+      "hücum üretimi ligde üst çeyrekte"
+    ]
+  },
+  {
+    "team": "Galatasaray",
+    "star": {
+      "name": "Ismail Jakobs",
+      "pos": "LB",
+      "group": "FB",
+      "composite": 6.07,
+      "composite_pct": 89.7,
+      "minutes": 607,
+      "goals": 0.0,
+      "xg": 0.4,
+      "delta": -0.4
+    },
+    "rising": {
+      "name": "Aleksei Batrakov",
+      "pos": "CAM",
+      "age": 21,
+      "composite_pct": 55.4
+    },
+    "tags": [
+      "hücum üretimi ligde üst çeyrekte",
+      "ligin en yoğun pres takımlarından"
+    ]
+  },
+  {
+    "team": "Gaziantep FK",
+    "star": {
+      "name": "Arda Kızıldağ",
+      "pos": "RCB",
+      "group": "CB",
+      "composite": 16.46,
+      "composite_pct": 92.5,
+      "minutes": 404,
+      "goals": 0.0,
+      "xg": 0.67,
+      "delta": -0.67
+    },
+    "rising": {
+      "name": "Victor Gidado",
+      "pos": "RCM",
+      "age": 22,
+      "composite_pct": 82.1
+    },
+    "tags": [
+      "kontra atak odaklı"
+    ]
+  },
+  {
+    "team": "Genclerbirligi Ankara",
+    "star": {
+      "name": "Oğulcan Ülgün",
+      "pos": "RCM",
+      "group": "MF",
+      "composite": 11.33,
+      "composite_pct": 85.7,
+      "minutes": 576,
+      "goals": 1.0,
+      "xg": 0.75,
+      "delta": 0.25
+    },
+    "rising": {
+      "name": "Ousmane Diabate",
+      "pos": "CDM",
+      "age": 19,
+      "composite_pct": 53.6
+    },
+    "tags": [
+      "hücum üretimi sınırlı",
+      "pres yoğunluğu düşük"
+    ]
+  },
+  {
+    "team": "Göztepe",
+    "star": {
+      "name": "Arda Kurtulan",
+      "pos": "RWB",
+      "group": "FB",
+      "composite": 8.15,
+      "composite_pct": 94.9,
+      "minutes": 872,
+      "goals": 1.0,
+      "xg": 0.61,
+      "delta": 0.39
+    },
+    "rising": {
+      "name": "Arda Kurtulan",
+      "pos": "RWB",
+      "age": 23,
+      "composite_pct": 94.9
+    },
+    "tags": [
+      "ligin en yoğun pres takımlarından",
+      "topsuz oyunu tercih ediyor"
+    ]
+  },
+  {
+    "team": "Kasimpasa",
+    "star": {
+      "name": "Kerem Demirbay",
+      "pos": "LCDM",
+      "group": "MF",
+      "composite": 11.31,
+      "composite_pct": 83.9,
+      "minutes": 696,
+      "goals": 0.0,
+      "xg": 0.72,
+      "delta": -0.72
+    },
+    "rising": {
+      "name": "Elson Mendes",
+      "pos": "CAM",
+      "age": 21,
+      "composite_pct": 76.8
+    },
+    "tags": [
+      "topsuz oyunu tercih ediyor",
+      "kontra atak odaklı"
+    ]
+  },
+  {
+    "team": "Kocaelispor",
+    "star": {
+      "name": "Emir Ortakaya",
+      "pos": "LCB",
+      "group": "CB",
+      "composite": 17.29,
+      "composite_pct": 97.5,
+      "minutes": 500,
+      "goals": 0.0,
+      "xg": 0.58,
+      "delta": -0.58
+    },
+    "rising": {
+      "name": "Emir Ortakaya",
+      "pos": "LCB",
+      "age": 22,
+      "composite_pct": 97.5
+    },
+    "tags": [
+      "dengeli profil"
+    ]
+  },
+  {
+    "team": "Konyaspor",
+    "star": {
+      "name": "Rayyan Baniya",
+      "pos": "RCB",
+      "group": "CB",
+      "composite": 16.17,
+      "composite_pct": 80.0,
+      "minutes": 589,
+      "goals": 0.0,
+      "xg": 0.23,
+      "delta": -0.23
+    },
+    "rising": {
+      "name": "Rajmund Tóth",
+      "pos": "CAM",
+      "age": 22,
+      "composite_pct": 5.4
+    },
+    "tags": [
+      "pozisyonel hücum"
+    ]
+  },
+  {
+    "team": "Samsunspor",
+    "star": {
+      "name": "Elliot Watt",
+      "pos": "CDM",
+      "group": "MF",
+      "composite": 11.69,
+      "composite_pct": 89.3,
+      "minutes": 521,
+      "goals": 0.0,
+      "xg": 0.2,
+      "delta": -0.2
+    },
+    "rising": {
+      "name": "Gabriele Guarino",
+      "pos": "LCB",
+      "age": 22,
+      "composite_pct": 57.5
+    },
+    "tags": [
+      "pozisyonel hücum"
+    ]
+  },
+  {
+    "team": "Trabzonspor",
+    "star": {
+      "name": "Mohamed Salah",
+      "pos": "RAM",
+      "group": "W",
+      "composite": 11.41,
+      "composite_pct": 96.9,
+      "minutes": 700,
+      "goals": 8.0,
+      "xg": 4.45,
+      "delta": 3.55
+    },
+    "rising": {
+      "name": "Chibuike Nwaiwu",
+      "pos": "RCB",
+      "age": 23,
+      "composite_pct": 85.0
+    },
+    "tags": [
+      "dengeli profil"
+    ]
+  },
+  {
+    "team": "İstanbul Başakşehir FK",
+    "star": {
+      "name": "Andreas Skov Olsen",
+      "pos": "RM",
+      "group": "W",
+      "composite": 5.67,
+      "composite_pct": 68.8,
+      "minutes": 687,
+      "goals": 1.0,
+      "xg": 1.45,
+      "delta": -0.45
+    },
+    "rising": {
+      "name": "Jakub Kaluzinski",
+      "pos": "LCDM",
+      "age": 23,
+      "composite_pct": 67.9
+    },
+    "tags": [
+      "pozisyonel hücum"
+    ]
+  }
+]

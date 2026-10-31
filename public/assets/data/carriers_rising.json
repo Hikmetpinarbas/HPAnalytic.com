@@ -1,0 +1,297 @@
+{
+  "top_carriers": [
+    {
+      "name": "Florent Hadergjonaj",
+      "team": "Alanyaspor",
+      "pos": "RWB",
+      "group": "FB",
+      "age": 32,
+      "minutes": 863,
+      "composite_pct": 97.4,
+      "team_avg": 39.2,
+      "lift": 58.2
+    },
+    {
+      "name": "Emir Ortakaya",
+      "team": "Kocaelispor",
+      "pos": "LCB",
+      "group": "CB",
+      "age": 22,
+      "minutes": 500,
+      "composite_pct": 97.5,
+      "team_avg": 39.8,
+      "lift": 57.7
+    },
+    {
+      "name": "Uğur Kaan Yıldız",
+      "team": "Kocaelispor",
+      "pos": "RB",
+      "group": "FB",
+      "age": 24,
+      "minutes": 557,
+      "composite_pct": 92.3,
+      "team_avg": 39.8,
+      "lift": 52.5
+    },
+    {
+      "name": "Mohamed Salah",
+      "team": "Trabzonspor",
+      "pos": "RAM",
+      "group": "W",
+      "age": 34,
+      "minutes": 700,
+      "composite_pct": 96.9,
+      "team_avg": 46.6,
+      "lift": 50.3
+    },
+    {
+      "name": "Orhan Ovacıklı",
+      "team": "Erzurumspor FK",
+      "pos": "RWB",
+      "group": "FB",
+      "age": 37,
+      "minutes": 787,
+      "composite_pct": 82.1,
+      "team_avg": 32.5,
+      "lift": 49.6
+    },
+    {
+      "name": "Elliot Watt",
+      "team": "Samsunspor",
+      "pos": "CDM",
+      "group": "MF",
+      "age": 26,
+      "minutes": 521,
+      "composite_pct": 89.3,
+      "team_avg": 43.7,
+      "lift": 45.6
+    },
+    {
+      "name": "Oğulcan Ülgün",
+      "team": "Genclerbirligi Ankara",
+      "pos": "RCM",
+      "group": "MF",
+      "age": 28,
+      "minutes": 576,
+      "composite_pct": 85.7,
+      "team_avg": 41.2,
+      "lift": 44.5
+    },
+    {
+      "name": "Rayyan Baniya",
+      "team": "Konyaspor",
+      "pos": "RCB",
+      "group": "CB",
+      "age": 27,
+      "minutes": 589,
+      "composite_pct": 80.0,
+      "team_avg": 36.9,
+      "lift": 43.1
+    },
+    {
+      "name": "Cengiz Ünder",
+      "team": "Corum FK",
+      "pos": "RAM",
+      "group": "W",
+      "age": 29,
+      "minutes": 504,
+      "composite_pct": 93.8,
+      "team_avg": 51.1,
+      "lift": 42.7
+    },
+    {
+      "name": "Miguel Cardoso",
+      "team": "Erzurumspor FK",
+      "pos": "LCAM",
+      "group": "W",
+      "age": 32,
+      "minutes": 430,
+      "composite_pct": 75.0,
+      "team_avg": 32.5,
+      "lift": 42.5
+    },
+    {
+      "name": "Arda Kızıldağ",
+      "team": "Gaziantep FK",
+      "pos": "RCB",
+      "group": "CB",
+      "age": 28,
+      "minutes": 404,
+      "composite_pct": 92.5,
+      "team_avg": 50.6,
+      "lift": 41.9
+    },
+    {
+      "name": "Talha Ülvan",
+      "team": "Eyüpspor",
+      "pos": "RB",
+      "group": "FB",
+      "age": 25,
+      "minutes": 722,
+      "composite_pct": 79.5,
+      "team_avg": 39.9,
+      "lift": 39.6
+    },
+    {
+      "name": "Alexandros Kyziridis",
+      "team": "Corum FK",
+      "pos": "LAM",
+      "group": "W",
+      "age": 26,
+      "minutes": 586,
+      "composite_pct": 90.6,
+      "team_avg": 51.1,
+      "lift": 39.5
+    },
+    {
+      "name": "Berkan Kutlu",
+      "team": "Kocaelispor",
+      "pos": "LCM",
+      "group": "MF",
+      "age": 28,
+      "minutes": 771,
+      "composite_pct": 78.6,
+      "team_avg": 39.8,
+      "lift": 38.8
+    },
+    {
+      "name": "Chibuike Nwaiwu",
+      "team": "Trabzonspor",
+      "pos": "RCB",
+      "group": "CB",
+      "age": 23,
+      "minutes": 772,
+      "composite_pct": 85.0,
+      "team_avg": 46.6,
+      "lift": 38.4
+    }
+  ],
+  "top_rising": [
+    {
+      "name": "Emir Ortakaya",
+      "team": "Kocaelispor",
+      "pos": "LCB",
+      "group": "CB",
+      "age": 22,
+      "minutes": 500,
+      "composite_pct": 97.5,
+      "goals": 0.0,
+      "xg": 0.58
+    },
+    {
+      "name": "Richard Akonnor",
+      "team": "Göztepe",
+      "pos": "LWB",
+      "group": "FB",
+      "age": 22,
+      "minutes": 646,
+      "composite_pct": 87.2,
+      "goals": 0.0,
+      "xg": 0.35
+    },
+    {
+      "name": "Victor Gidado",
+      "team": "Gaziantep FK",
+      "pos": "RCM",
+      "group": "MF",
+      "age": 22,
+      "minutes": 501,
+      "composite_pct": 82.1,
+      "goals": 0.0,
+      "xg": 0.35
+    },
+    {
+      "name": "Elson Mendes",
+      "team": "Kasimpasa",
+      "pos": "CAM",
+      "group": "MF",
+      "age": 21,
+      "minutes": 689,
+      "composite_pct": 76.8,
+      "goals": 0.0,
+      "xg": 0.87
+    }
+  ],
+  "team_rising": [
+    {
+      "team": "Kocaelispor",
+      "name": "Emir Ortakaya",
+      "pos": "LCB",
+      "age": 22,
+      "minutes": 500,
+      "composite_pct": 97.5
+    },
+    {
+      "team": "Göztepe",
+      "name": "Arda Kurtulan",
+      "pos": "RWB",
+      "age": 23,
+      "minutes": 872,
+      "composite_pct": 94.9
+    },
+    {
+      "team": "Trabzonspor",
+      "name": "Chibuike Nwaiwu",
+      "pos": "RCB",
+      "age": 23,
+      "minutes": 772,
+      "composite_pct": 85.0
+    },
+    {
+      "team": "Gaziantep FK",
+      "name": "Victor Gidado",
+      "pos": "RCM",
+      "age": 22,
+      "minutes": 501,
+      "composite_pct": 82.1
+    },
+    {
+      "team": "Kasimpasa",
+      "name": "Elson Mendes",
+      "pos": "CAM",
+      "age": 21,
+      "minutes": 689,
+      "composite_pct": 76.8
+    },
+    {
+      "team": "İstanbul Başakşehir FK",
+      "name": "Jakub Kaluzinski",
+      "pos": "LCDM",
+      "age": 23,
+      "minutes": 427,
+      "composite_pct": 67.9
+    },
+    {
+      "team": "Samsunspor",
+      "name": "Gabriele Guarino",
+      "pos": "LCB",
+      "age": 22,
+      "minutes": 659,
+      "composite_pct": 57.5
+    },
+    {
+      "team": "Galatasaray",
+      "name": "Aleksei Batrakov",
+      "pos": "CAM",
+      "age": 21,
+      "minutes": 430,
+      "composite_pct": 55.4
+    },
+    {
+      "team": "Genclerbirligi Ankara",
+      "name": "Ousmane Diabate",
+      "pos": "CDM",
+      "age": 19,
+      "minutes": 797,
+      "composite_pct": 53.6
+    },
+    {
+      "team": "Alanyaspor",
+      "name": "Arda Usluoglu",
+      "pos": "CF",
+      "age": 20,
+      "minutes": 454,
+      "composite_pct": 52.4
+    }
+  ]
+}

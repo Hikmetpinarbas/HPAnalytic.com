@@ -70,7 +70,8 @@ function startAuto(cards) {
 
 export function initJersey(deckId) {
   const deck = document.getElementById(deckId);
-  if (!deck || deck.dataset.ready === '1') return;
+  if (!deck) return;
+  deck.innerHTML = '';
 
   deck.innerHTML = JERSEYS.map((j, i) => `
     <div class="jersey-card${i === 0 ? ' on' : ''}" data-idx="${i}" role="button" tabindex="0">

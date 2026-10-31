@@ -30,13 +30,6 @@
   {
     "player": "Victor Osimhen (1093704)",
     "team": "GS",
-    "x": 92.58,
-    "y": 29.76,
-    "type": "On Target"
-  },
-  {
-    "player": "Victor Osimhen (1093704)",
-    "team": "GS",
     "x": 95.29,
     "y": 28.56,
     "type": "Off Target"
@@ -54,13 +47,6 @@
     "x": 97.74,
     "y": 40.34,
     "type": "Goal"
-  },
-  {
-    "player": "Victor Osimhen (1093704)",
-    "team": "GS",
-    "x": 97.74,
-    "y": 40.34,
-    "type": "On Target"
   },
   {
     "player": "Aleksei Batrakov (137204)",
@@ -96,13 +82,6 @@
     "x": 11.38,
     "y": 31.79,
     "type": "Goal"
-  },
-  {
-    "player": "İrfan Can Kahveci (242846)",
-    "team": "FB",
-    "x": 11.38,
-    "y": 31.79,
-    "type": "On Target"
   },
   {
     "player": "Lucas Torreira (1469956)",

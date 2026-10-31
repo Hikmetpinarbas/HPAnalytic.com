@@ -1,0 +1,107 @@
+[
+  {
+    "block": 0,
+    "range": "0-15",
+    "GS": {
+      "Pas": 279,
+      "İkili Mücadele": 59,
+      "Top Kaybı": 26,
+      "Top Kazanımı": 21,
+      "Taşıma": 3,
+      "Dribling": 6,
+      "Şut": 3
+    },
+    "LIL": {
+      "Top Kaybı": 32,
+      "Pas": 247,
+      "İkili Mücadele": 59,
+      "Top Kazanımı": 20,
+      "Taşıma": 7,
+      "Dribling": 6,
+      "Şut": 2
+    }
+  },
+  {
+    "block": 1,
+    "range": "15-30",
+    "GS": {
+      "Pas": 233,
+      "Taşıma": 6,
+      "Top Kaybı": 19,
+      "İkili Mücadele": 40,
+      "Dribling": 5,
+      "Şut": 3,
+      "Top Kazanımı": 17
+    },
+    "LIL": {
+      "Top Kazanımı": 16,
+      "Pas": 276,
+      "İkili Mücadele": 43,
+      "Dribling": 7,
+      "Top Kaybı": 24,
+      "Taşıma": 5,
+      "Şut": 1
+    }
+  },
+  {
+    "block": 2,
+    "range": "30-45",
+    "GS": {
+      "İkili Mücadele": 61,
+      "Pas": 174,
+      "Taşıma": 7,
+      "Top Kaybı": 23,
+      "Dribling": 6,
+      "Top Kazanımı": 16,
+      "Şut": 4
+    },
+    "LIL": {
+      "Pas": 266,
+      "İkili Mücadele": 63,
+      "Dribling": 6,
+      "Top Kaybı": 26,
+      "Taşıma": 5,
+      "Şut": 6,
+      "Top Kazanımı": 19
+    }
+  },
+  {
+    "block": 3,
+    "range": "45-60",
+    "GS": {
+      "Pas": 21,
+      "İkili Mücadele": 15,
+      "Şut": 1,
+      "Top Kazanımı": 5,
+      "Top Kaybı": 6,
+      "Dribling": 2
+    },
+    "LIL": {
+      "İkili Mücadele": 15,
+      "Top Kaybı": 6,
+      "Pas": 51,
+      "Taşıma": 3,
+      "Dribling": 5,
+      "Top Kazanımı": 5,
+      "Şut": 1
+    }
+  },
+  {
+    "block": 4,
+    "range": "60-75",
+    "GS": {},
+    "LIL": {}
+  },
+  {
+    "block": 5,
+    "range": "75-90",
+    "GS": {},
+    "LIL": {}
+  },
+  {
+    "block": 6,
+    "range": "90-105",
+    "GS": {},
+    "LIL": {}
+  }
+]

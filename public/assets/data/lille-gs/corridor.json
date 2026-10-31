@@ -1,0 +1,112 @@
+[
+  {
+    "corridor": "Sol kanat",
+    "GS": 276,
+    "LIL": 225,
+    "GS_actions": {
+      "Top Kaybı": 24,
+      "Pas": 149,
+      "İkili Mücadele": 20,
+      "Top Kazanımı": 8,
+      "Taşıma": 6,
+      "Dribling": 5
+    },
+    "LIL_actions": {
+      "Taşıma": 2,
+      "Pas": 133,
+      "İkili Mücadele": 20,
+      "Top Kaybı": 10,
+      "Top Kazanımı": 7,
+      "Dribling": 1
+    }
+  },
+  {
+    "corridor": "Sol iç",
+    "GS": 359,
+    "LIL": 390,
+    "GS_actions": {
+      "İkili Mücadele": 45,
+      "Top Kazanımı": 22,
+      "Pas": 141,
+      "Top Kaybı": 14,
+      "Taşıma": 4,
+      "Şut": 2,
+      "Dribling": 3
+    },
+    "LIL_actions": {
+      "İkili Mücadele": 45,
+      "Pas": 201,
+      "Top Kaybı": 20,
+      "Top Kazanımı": 15,
+      "Dribling": 6,
+      "Taşıma": 3,
+      "Şut": 1
+    }
+  },
+  {
+    "corridor": "Merkez",
+    "GS": 202,
+    "LIL": 249,
+    "GS_actions": {
+      "Şut": 7,
+      "Pas": 80,
+      "İkili Mücadele": 30,
+      "Top Kaybı": 4,
+      "Top Kazanımı": 6,
+      "Taşıma": 1
+    },
+    "LIL_actions": {
+      "Pas": 115,
+      "İkili Mücadele": 36,
+      "Dribling": 3,
+      "Şut": 5,
+      "Top Kaybı": 11,
+      "Top Kazanımı": 2,
+      "Taşıma": 2
+    }
+  },
+  {
+    "corridor": "Sağ iç",
+    "GS": 331,
+    "LIL": 456,
+    "GS_actions": {
+      "Pas": 168,
+      "Top Kazanımı": 17,
+      "İkili Mücadele": 38,
+      "Dribling": 1,
+      "Top Kaybı": 17,
+      "Şut": 2,
+      "Taşıma": 3
+    },
+    "LIL_actions": {
+      "Top Kaybı": 26,
+      "Pas": 199,
+      "Top Kazanımı": 16,
+      "İkili Mücadele": 37,
+      "Dribling": 8,
+      "Taşıma": 7,
+      "Şut": 4
+    }
+  },
+  {
+    "corridor": "Sağ kanat",
+    "GS": 324,
+    "LIL": 399,
+    "GS_actions": {
+      "İkili Mücadele": 42,
+      "Pas": 160,
+      "Taşıma": 2,
+      "Dribling": 10,
+      "Top Kaybı": 13,
+      "Top Kazanımı": 6
+    },
+    "LIL_actions": {
+      "İkili Mücadele": 42,
+      "Top Kazanımı": 20,
+      "Pas": 174,
+      "Top Kaybı": 16,
+      "Dribling": 6,
+      "Taşıma": 6
+    }
+  }
+]

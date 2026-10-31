@@ -88,7 +88,7 @@ if (burger && !document.querySelector('.mobile-drawer')) {
   drawer.className = 'mobile-drawer';
   drawer.innerHTML = `
     <div class="md-header">
-      <span class="md-brand">HP<span class="a">A</span>NALYTIC</span>
+      <span class="md-brand">HP<span class="a">A</span>NAL<span class="logo-y">Y</span>TIC</span>
       <button class="md-close" aria-label="Kapat">×</button>
     </div>
     <nav class="md-nav">
@@ -110,4 +110,22 @@ if (burger && !document.querySelector('.mobile-drawer')) {
   drawer.querySelectorAll('a').forEach(a => a.addEventListener('click', close));
   drawer.querySelector('.md-theme').addEventListener('click', toggleTheme);
   applyI18n(currentLang);
+}
+
+// ── Mobil Tam Ekran Menü ──
+const mobileBurger = document.getElementById('mobile-burger');
+const mobileMenu = document.getElementById('mobile-menu');
+if (mobileBurger && mobileMenu) {
+  mobileBurger.addEventListener('click', () => {
+    const isOpen = mobileMenu.classList.toggle('is-open');
+    document.body.classList.toggle('menu-open', isOpen);
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+  });
+  mobileMenu.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu.classList.remove('is-open');
+      document.body.classList.remove('menu-open');
+      document.body.style.overflow = '';
+    });
+  });
 }

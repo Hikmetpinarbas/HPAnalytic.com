@@ -1,0 +1,454 @@
+{
+  "kaynak_klasor": "/data/data/com.termux/files/home/pipeline/input/gs-fb-2026-10-26",
+  "dosyalar": [
+    {
+      "dosya": "MATCH_2026-10-26_Galatasaray_vs_Fenerbahce_XML_GOALKEEPERS.xml",
+      "tip": "XML",
+      "boyut_kb": 119.1,
+      "root": "file",
+      "element_sayilari": {
+        "label": 990,
+        "group": 990,
+        "text": 990,
+        "code": 200,
+        "instance": 198,
+        "ID": 198,
+        "start": 198,
+        "end": 198,
+        "row": 2,
+        "sort_order": 2
+      },
+      "attribute_sayilari": {},
+      "ornek_5": []
+    },
+    {
+      "dosya": "MATCH_2026-10-26_Galatasaray_vs_Fenerbahce_XML_PLAYERS.xml",
+      "tip": "XML",
+      "boyut_kb": 1766.1,
+      "root": "file",
+      "element_sayilari": {
+        "label": 14385,
+        "group": 14385,
+        "text": 14385,
+        "code": 2907,
+        "instance": 2877,
+        "ID": 2877,
+        "start": 2877,
+        "end": 2877,
+        "row": 30,
+        "sort_order": 30
+      },
+      "attribute_sayilari": {},
+      "ornek_5": []
+    },
+    {
+      "dosya": "MATCH_2026-10-26_Galatasaray_vs_Fenerbahce_XML_TEAMS.xml",
+      "tip": "XML",
+      "boyut_kb": 1714.5,
+      "root": "file",
+      "element_sayilari": {
+        "label": 13588,
+        "group": 13588,
+        "text": 13588,
+        "code": 3399,
+        "instance": 3397,
+        "ID": 3397,
+        "start": 3397,
+        "end": 3397,
+        "row": 2,
+        "sort_order": 2
+      },
+      "attribute_sayilari": {},
+      "ornek_5": []
+    },
+    {
+      "dosya": "MATCH_2026-10-26_Galatasaray_vs_Fenerbahce_CSV_GOALKEEPERS.csv",
+      "tip": "CSV",
+      "delimiter": ";",
+      "boyut_kb": 22.7,
+      "satir": 198,
+      "sutun_sayisi": 9,
+      "sutunlar": [
+        "ID",
+        "start",
+        "end",
+        "code",
+        "team",
+        "action",
+        "half",
+        "pos_x",
+        "pos_y"
+      ],
+      "kolon_istatistikleri": {
+        "ID": {
+          "dolu": 198,
+          "tekil": 198,
+          "ornek": [
+            "162",
+            "57",
+            "33"
+          ]
+        },
+        "start": {
+          "dolu": 198,
+          "tekil": 110,
+          "ornek": [
+            "956.49",
+            "4557.85",
+            "3305.85"
+          ]
+        },
+        "end": {
+          "dolu": 198,
+          "tekil": 111,
+          "ornek": [
+            "4380.85",
+            "5409.85",
+            "3031.85"
+          ]
+        },
+        "code": {
+          "dolu": 198,
+          "tekil": 41,
+          "ornek": [
+            "31. Ederson (1293693) - Goal kicks short (0-15 m)",
+            "1. Uğurcan Çakır (235597) - Inaccurate passes",
+            "31. Ederson (1293693) - Free-kick shots"
+          ]
+        },
+        "team": {
+          "dolu": 194,
+          "tekil": 2,
+          "ornek": [
+            "Fenerbahce (27041)",
+            "Galatasaray (29205)"
+          ]
+        },
+        "action": {
+          "dolu": 198,
+          "tekil": 24,
+          "ornek": [
+            "Supersaves",
+            "Shots on post / bar",
+            "Goal kicks long (40+ m)"
+          ]
+        },
+        "half": {
+          "dolu": 198,
+          "tekil": 2,
+          "ornek": [
+            "1",
+            "2"
+          ]
+        },
+        "pos_x": {
+          "dolu": 194,
+          "tekil": 96,
+          "ornek": [
+            "2.1",
+            "13.04",
+            "2.89"
+          ]
+        },
+        "pos_y": {
+          "dolu": 194,
+          "tekil": 98,
+          "ornek": [
+            "29.3",
+            "39.99",
+            "23.34"
+          ]
+        }
+      }
+    },
+    {
+      "dosya": "MATCH_2026-10-26_Galatasaray_vs_Fenerbahce_CSV_PLAYERS.csv",
+      "tip": "CSV",
+      "delimiter": ";",
+      "boyut_kb": 367.7,
+      "satir": 2877,
+      "sutun_sayisi": 9,
+      "sutunlar": [
+        "ID",
+        "start",
+        "end",
+        "code",
+        "team",
+        "action",
+        "half",
+        "pos_x",
+        "pos_y"
+      ],
+      "kolon_istatistikleri": {
+        "ID": {
+          "dolu": 2877,
+          "tekil": 2877,
+          "ornek": [
+            "2394",
+            "883",
+            "1450"
+          ]
+        },
+        "start": {
+          "dolu": 2877,
+          "tekil": 1046,
+          "ornek": [
+            "3872.85",
+            "4567.85",
+            "5030.85"
+          ]
+        },
+        "end": {
+          "dolu": 2877,
+          "tekil": 1051,
+          "ornek": [
+            "474.49",
+            "4567.85",
+            "1210.49"
+          ]
+        },
+        "code": {
+          "dolu": 2877,
+          "tekil": 733,
+          "ornek": [
+            "42. Abdülkerim Bardakcı (126526) - Progressive passes accurate",
+            "8. Gabriel Sara (533884) - Tackles unsuccessful",
+            "7. Roland Sallai (1282353) - Passes forward accurate"
+          ]
+        },
+        "team": {
+          "dolu": 2873,
+          "tekil": 2,
+          "ornek": [
+            "Fenerbahce (27041)",
+            "Galatasaray (29205)"
+          ]
+        },
+        "action": {
+          "dolu": 2877,
+          "tekil": 58,
+          "ornek": [
+            "Halftime",
+            "Challenges unsuccessful",
+            "YC"
+          ]
+        },
+        "half": {
+          "dolu": 2877,
+          "tekil": 2,
+          "ornek": [
+            "1",
+            "2"
+          ]
+        },
+        "pos_x": {
+          "dolu": 2873,
+          "tekil": 667,
+          "ornek": [
+            "2.1",
+            "65.8",
+            "54.69"
+          ]
+        },
+        "pos_y": {
+          "dolu": 2873,
+          "tekil": 844,
+          "ornek": [
+            "51.22",
+            "2.89",
+            "35.28"
+          ]
+        }
+      }
+    },
+    {
+      "dosya": "MATCH_2026-10-26_Galatasaray_vs_Fenerbahce_CSV_TEAMS.csv",
+      "tip": "CSV",
+      "delimiter": ";",
+      "boyut_kb": 327.4,
+      "satir": 3397,
+      "sutun_sayisi": 8,
+      "sutunlar": [
+        "ID",
+        "start",
+        "end",
+        "code",
+        "action",
+        "half",
+        "pos_x",
+        "pos_y"
+      ],
+      "kolon_istatistikleri": {
+        "ID": {
+          "dolu": 3397,
+          "tekil": 3397,
+          "ornek": [
+            "2394",
+            "883",
+            "1450"
+          ]
+        },
+        "start": {
+          "dolu": 3397,
+          "tekil": 1126,
+          "ornek": [
+            "3872.85",
+            "4567.85",
+            "5030.85"
+          ]
+        },
+        "end": {
+          "dolu": 3397,
+          "tekil": 1134,
+          "ornek": [
+            "474.49",
+            "4567.85",
+            "1210.49"
+          ]
+        },
+        "code": {
+          "dolu": 3397,
+          "tekil": 107,
+          "ornek": [
+            "Fenerbahce (27041) - Bad ball control",
+            "Galatasaray (29205) - Tackles unsuccessful",
+            "Galatasaray (29205) - Attacks from corners"
+          ]
+        },
+        "action": {
+          "dolu": 3397,
+          "tekil": 58,
+          "ornek": [
+            "Attacks from corners",
+            "Halftime",
+            "Challenges unsuccessful"
+          ]
+        },
+        "half": {
+          "dolu": 3397,
+          "tekil": 2,
+          "ornek": [
+            "1",
+            "2"
+          ]
+        },
+        "pos_x": {
+          "dolu": 3393,
+          "tekil": 690,
+          "ornek": [
+            "2.1",
+            "65.8",
+            "54.69"
+          ]
+        },
+        "pos_y": {
+          "dolu": 3393,
+          "tekil": 876,
+          "ornek": [
+            "29.3",
+            "51.22",
+            "2.89"
+          ]
+        }
+      }
+    },
+    {
+      "dosya": "MATCH_2026-10-26_Galatasaray_vs_Fenerbahce_XLSX_GOALKEEPERS.xlsx",
+      "tip": "XLSX",
+      "boyut_kb": 8.7,
+      "sheet_sayisi": 1,
+      "sheetler": [
+        {
+          "sheet": "Main statistics",
+          "satir": 2,
+          "sutun_sayisi": 109,
+          "ilk_15_sutun": [
+            "№",
+            "Player",
+            "Team",
+            "Index",
+            "Minutes played",
+            "Shots faced",
+            "Shots on target faced",
+            "Goals conceded",
+            "Shots saved",
+            "Shots saved, %",
+            "Supersaves",
+            "Opponent's crosses",
+            "Cross and pass interception attempts",
+            "Successful cross and pass interception attempts",
+            "Successful cross and pass interception attempts, %"
+          ],
+          "ornek_ilk_satir": {
+            "№": "31",
+            "Player": "Ederson",
+            "Team": "Fenerbahce",
+            "Index": "199",
+            "Minutes played": "98",
+            "Shots faced": "20",
+            "Shots on target faced": "8",
+            "Goals conceded": "2",
+            "Shots saved": "6",
+            "Shots saved, %": "0.75",
+            "Supersaves": "3",
+            "Opponent's crosses": "21",
+            "Cross and pass interception attempts": "1",
+            "Successful cross and pass interception attempts": "1"
+          }
+        }
+      ]
+    },
+    {
+      "dosya": "MATCH_2026-10-26_Galatasaray_vs_Fenerbahce_XLSX_PLAYERS.xlsx",
+      "tip": "XLSX",
+      "boyut_kb": 22.4,
+      "sheet_sayisi": 1,
+      "sheetler": [
+        {
+          "sheet": "Main statistics",
+          "satir": 30,
+          "sutun_sayisi": 131,
+          "ilk_15_sutun": [
+            "№",
+            "Player",
+            "Team",
+            "Index",
+            "Minutes played",
+            "Position",
+            "Goals",
+            "Assists",
+            "Mistakes leading to goals",
+            "Mistakes leading to chances",
+            "Chances",
+            "Chances successful",
+            "Chances successful, %",
+            "Chances created",
+            "Involvement in scoring attacks"
+          ],
+          "ornek_ilk_satir": {
+            "№": "45",
+            "Player": "Victor Osimhen",
+            "Team": "Galatasaray",
+            "Index": "236",
+            "Minutes played": "90",
+            "Position": "CF",
+            "Goals": "2",
+            "Assists": "-",
+            "Mistakes leading to goals": "-",
+            "Mistakes leading to chances": "-",
+            "Chances": "5",
+            "Chances successful": "2",
+            "Chances successful, %": "0.4",
+            "Chances created": "-"
+          }
+        }
+      ]
+    }
+  ],
+  "ozet": {
+    "toplam_dosya": 8,
+    "xml": 3,
+    "csv": 3,
+    "xlsx": 2
+  }
+}

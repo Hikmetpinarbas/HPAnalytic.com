@@ -1,10 +1,11 @@
 {
   "finishing_delta": [
     {
+      "_composite_raw": 11.41,
       "name": "Mohamed Salah",
       "team": "Trabzonspor",
       "position": "RAM",
-      "group": "OTHER",
+      "group": "W",
       "age": 34.0,
       "minutes": 700,
       "goals": 8.0,
@@ -28,13 +29,15 @@
       "net_impact_p90": 0.228,
       "involvement_p90": 2.32,
       "ball_security": 0.78,
-      "composite": 0
+      "composite": 11.41,
+      "composite_pct": 96.9
     },
     {
+      "_composite_raw": 9.39,
       "name": "Cengiz Ünder",
       "team": "Corum FK",
       "position": "RAM",
-      "group": "OTHER",
+      "group": "W",
       "age": 29.0,
       "minutes": 504,
       "goals": 4.0,
@@ -58,13 +61,15 @@
       "net_impact_p90": -0.127,
       "involvement_p90": 1.22,
       "ball_security": 0.832,
-      "composite": 0
+      "composite": 9.39,
+      "composite_pct": 93.8
     },
     {
+      "_composite_raw": 11.16,
       "name": "Berkan Kutlu",
       "team": "Kocaelispor",
       "position": "LCM",
-      "group": "OTHER",
+      "group": "MF",
       "age": 28.0,
       "minutes": 771,
       "goals": 4.0,
@@ -88,13 +93,15 @@
       "net_impact_p90": -0.082,
       "involvement_p90": 0.95,
       "ball_security": 0.878,
-      "composite": 0
+      "composite": 11.16,
+      "composite_pct": 78.6
     },
     {
+      "_composite_raw": 13.04,
       "name": "Dia Saba",
       "team": "Amed SK",
       "position": "CAM",
-      "group": "OTHER",
+      "group": "MF",
       "age": 33.0,
       "minutes": 804,
       "goals": 5.0,
@@ -118,13 +125,15 @@
       "net_impact_p90": 0.912,
       "involvement_p90": 1.38,
       "ball_security": 0.872,
-      "composite": 0
+      "composite": 13.04,
+      "composite_pct": 98.2
     },
     {
+      "_composite_raw": 10.34,
       "name": "Eldor Shomurodov",
       "team": "İstanbul Başakşehir FK",
       "position": "CAM",
-      "group": "OTHER",
+      "group": "MF",
       "age": 31.0,
       "minutes": 797,
       "goals": 7.0,
@@ -148,13 +157,15 @@
       "net_impact_p90": -0.359,
       "involvement_p90": 1.57,
       "ball_security": 0.681,
-      "composite": 0
+      "composite": 10.34,
+      "composite_pct": 60.7
     },
     {
+      "_composite_raw": 12.06,
       "name": "İrfan Can Kahveci",
       "team": "Fenerbahce",
       "position": "CAM",
-      "group": "OTHER",
+      "group": "MF",
       "age": 31.0,
       "minutes": 505,
       "goals": 3.0,
@@ -178,13 +189,15 @@
       "net_impact_p90": 1.11,
       "involvement_p90": 1.69,
       "ball_security": 0.809,
-      "composite": 0
+      "composite": 12.06,
+      "composite_pct": 92.9
     },
     {
+      "_composite_raw": 9.38,
       "name": "Alexandros Kyziridis",
       "team": "Corum FK",
       "position": "LAM",
-      "group": "OTHER",
+      "group": "W",
       "age": 26.0,
       "minutes": 586,
       "goals": 4.0,
@@ -208,9 +221,11 @@
       "net_impact_p90": -0.227,
       "involvement_p90": 2.01,
       "ball_security": 0.777,
-      "composite": 0
+      "composite": 9.38,
+      "composite_pct": 90.6
     },
     {
+      "_composite_raw": 5.44,
       "name": "Adrian Benedyczak",
       "team": "Kasimpasa",
       "position": "CF",
@@ -238,13 +253,15 @@
       "net_impact_p90": -0.206,
       "involvement_p90": 1.7,
       "ball_security": 0.574,
-      "composite": 5.44
+      "composite": 5.44,
+      "composite_pct": 81.0
     },
     {
+      "_composite_raw": 9.86,
       "name": "Marco Asensio",
       "team": "Fenerbahce",
       "position": "CAM",
-      "group": "OTHER",
+      "group": "MF",
       "age": 30.0,
       "minutes": 195,
       "goals": 2.0,
@@ -268,9 +285,11 @@
       "net_impact_p90": 0.757,
       "involvement_p90": 1.9,
       "ball_security": 0.936,
-      "composite": 0
+      "composite": 9.86,
+      "composite_pct": 0
     },
     {
+      "_composite_raw": 7.04,
       "name": "Gift Orban",
       "team": "Amed SK",
       "position": "CF",
@@ -298,15 +317,17 @@
       "net_impact_p90": 0.642,
       "involvement_p90": 2.26,
       "ball_security": 0.627,
-      "composite": 7.04
+      "composite": 7.04,
+      "composite_pct": 90.5
     }
   ],
   "xg_per_shot": [
     {
+      "_composite_raw": 7.49,
       "name": "Fousseni Diabate",
       "team": "Kasimpasa",
       "position": "CAM",
-      "group": "OTHER",
+      "group": "MF",
       "age": 31.0,
       "minutes": 192,
       "goals": 1.0,
@@ -330,9 +351,11 @@
       "net_impact_p90": 0.244,
       "involvement_p90": 1.11,
       "ball_security": 0.731,
-      "composite": 0
+      "composite": 7.49,
+      "composite_pct": 0
     },
     {
+      "_composite_raw": -0.25,
       "name": "Serdar Dursun",
       "team": "Gaziantep FK",
       "position": "CF",
@@ -360,13 +383,15 @@
       "net_impact_p90": 0.23,
       "involvement_p90": 1.42,
       "ball_security": 0.657,
-      "composite": -0.25
+      "composite": -0.25,
+      "composite_pct": 0
     },
     {
+      "_composite_raw": 2.87,
       "name": "Tanguy Coulibaly",
       "team": "Samsunspor",
       "position": "RAM",
-      "group": "OTHER",
+      "group": "W",
       "age": 25.0,
       "minutes": 282,
       "goals": 1.0,
@@ -390,9 +415,11 @@
       "net_impact_p90": -0.785,
       "involvement_p90": 1.44,
       "ball_security": 0.75,
-      "composite": 0
+      "composite": 2.87,
+      "composite_pct": 0
     },
     {
+      "_composite_raw": 1.26,
       "name": "Mbaye Diagne",
       "team": "Amed SK",
       "position": "CF",
@@ -420,9 +447,11 @@
       "net_impact_p90": 1.138,
       "involvement_p90": 1.57,
       "ball_security": 0.488,
-      "composite": 1.26
+      "composite": 1.26,
+      "composite_pct": 0
     },
     {
+      "_composite_raw": 16.46,
       "name": "Arda Kızıldağ",
       "team": "Gaziantep FK",
       "position": "RCB",
@@ -450,13 +479,15 @@
       "net_impact_p90": -0.374,
       "involvement_p90": 0.17,
       "ball_security": 0.956,
-      "composite": 16.46
+      "composite": 16.46,
+      "composite_pct": 92.5
     },
     {
+      "_composite_raw": 4.22,
       "name": "Juan",
       "team": "Göztepe",
       "position": "LCF",
-      "group": "OTHER",
+      "group": "FW",
       "age": 24.0,
       "minutes": 587,
       "goals": 6.0,
@@ -480,9 +511,11 @@
       "net_impact_p90": 0.357,
       "involvement_p90": 2.08,
       "ball_security": 0.476,
-      "composite": 0
+      "composite": 4.22,
+      "composite_pct": 71.4
     },
     {
+      "_composite_raw": 14.87,
       "name": "Malcom Bokele",
       "team": "Göztepe",
       "position": "LCB",
@@ -510,9 +543,11 @@
       "net_impact_p90": 0.158,
       "involvement_p90": 0.32,
       "ball_security": 0.929,
-      "composite": 14.87
+      "composite": 14.87,
+      "composite_pct": 47.5
     },
     {
+      "_composite_raw": -1.31,
       "name": "Marius Mouandilmadji",
       "team": "Samsunspor",
       "position": "CF",
@@ -540,9 +575,11 @@
       "net_impact_p90": 0.119,
       "involvement_p90": 1.39,
       "ball_security": 0.3,
-      "composite": -1.31
+      "composite": -1.31,
+      "composite_pct": 0
     },
     {
+      "_composite_raw": 4.48,
       "name": "Amir Murillo",
       "team": "Besiktas JK",
       "position": "RB",
@@ -570,9 +607,11 @@
       "net_impact_p90": 1.054,
       "involvement_p90": 0.7,
       "ball_security": 0.863,
-      "composite": 4.48
+      "composite": 4.48,
+      "composite_pct": 61.5
     },
     {
+      "_composite_raw": 17.29,
       "name": "Emir Ortakaya",
       "team": "Kocaelispor",
       "position": "LCB",
@@ -600,11 +639,13 @@
       "net_impact_p90": 0.299,
       "involvement_p90": 0.13,
       "ball_security": 0.925,
-      "composite": 17.29
+      "composite": 17.29,
+      "composite_pct": 97.5
     }
   ],
   "shot_quality": [
     {
+      "_composite_raw": -0.25,
       "name": "Serdar Dursun",
       "team": "Gaziantep FK",
       "position": "CF",
@@ -632,13 +673,15 @@
       "net_impact_p90": 0.23,
       "involvement_p90": 1.42,
       "ball_security": 0.657,
-      "composite": -0.25
+      "composite": -0.25,
+      "composite_pct": 0
     },
     {
+      "_composite_raw": 6.21,
       "name": "Markus Karlsbakk",
       "team": "Corum FK",
       "position": "RCM",
-      "group": "OTHER",
+      "group": "MF",
       "age": 26.0,
       "minutes": 246,
       "goals": 1.0,
@@ -662,13 +705,15 @@
       "net_impact_p90": -0.52,
       "involvement_p90": 0.49,
       "ball_security": 0.827,
-      "composite": 0
+      "composite": 6.21,
+      "composite_pct": 0
     },
     {
+      "_composite_raw": 3.43,
       "name": "Misjonne Juniffer Naigelino Hansen",
       "team": "Gaziantep FK",
       "position": "LAM",
-      "group": "OTHER",
+      "group": "W",
       "age": 24.0,
       "minutes": 130,
       "goals": 0.0,
@@ -692,13 +737,15 @@
       "net_impact_p90": -1.454,
       "involvement_p90": 0.23,
       "ball_security": 0.641,
-      "composite": 0
+      "composite": 3.43,
+      "composite_pct": 0
     },
     {
+      "_composite_raw": 4.22,
       "name": "Juan",
       "team": "Göztepe",
       "position": "LCF",
-      "group": "OTHER",
+      "group": "FW",
       "age": 24.0,
       "minutes": 587,
       "goals": 6.0,
@@ -722,13 +769,15 @@
       "net_impact_p90": 0.357,
       "involvement_p90": 2.08,
       "ball_security": 0.476,
-      "composite": 0
+      "composite": 4.22,
+      "composite_pct": 71.4
     },
     {
+      "_composite_raw": 7.49,
       "name": "Fousseni Diabate",
       "team": "Kasimpasa",
       "position": "CAM",
-      "group": "OTHER",
+      "group": "MF",
       "age": 31.0,
       "minutes": 192,
       "goals": 1.0,
@@ -752,9 +801,11 @@
       "net_impact_p90": 0.244,
       "involvement_p90": 1.11,
       "ball_security": 0.731,
-      "composite": 0
+      "composite": 7.49,
+      "composite_pct": 0
     },
     {
+      "_composite_raw": 2.44,
       "name": "Franculino",
       "team": "Trabzonspor",
       "position": "CF",
@@ -782,9 +833,11 @@
       "net_impact_p90": 0.593,
       "involvement_p90": 2.01,
       "ball_security": 0.552,
-      "composite": 2.44
+      "composite": 2.44,
+      "composite_pct": 0
     },
     {
+      "_composite_raw": 1.97,
       "name": "Ali Sowe",
       "team": "Caykur Rizespor",
       "position": "CF",
@@ -812,9 +865,11 @@
       "net_impact_p90": 0.178,
       "involvement_p90": 0.54,
       "ball_security": 0.667,
-      "composite": 1.97
+      "composite": 1.97,
+      "composite_pct": 57.1
     },
     {
+      "_composite_raw": 15.96,
       "name": "Milan Skriniar",
       "team": "Fenerbahce",
       "position": "RCB",
@@ -842,9 +897,11 @@
       "net_impact_p90": 0.807,
       "involvement_p90": 0.26,
       "ball_security": 0.962,
-      "composite": 15.96
+      "composite": 15.96,
+      "composite_pct": 75.0
     },
     {
+      "_composite_raw": 16.06,
       "name": "Modibo Sagnan",
       "team": "Caykur Rizespor",
       "position": "LCB",
@@ -872,9 +929,11 @@
       "net_impact_p90": 0.153,
       "involvement_p90": 0.15,
       "ball_security": 0.943,
-      "composite": 16.06
+      "composite": 16.06,
+      "composite_pct": 77.5
     },
     {
+      "_composite_raw": 1.26,
       "name": "Mbaye Diagne",
       "team": "Amed SK",
       "position": "CF",
@@ -902,15 +961,17 @@
       "net_impact_p90": 1.138,
       "involvement_p90": 1.57,
       "ball_security": 0.488,
-      "composite": 1.26
+      "composite": 1.26,
+      "composite_pct": 0
     }
   ],
   "creativity_p90": [
     {
+      "_composite_raw": 9.86,
       "name": "Marco Asensio",
       "team": "Fenerbahce",
       "position": "CAM",
-      "group": "OTHER",
+      "group": "MF",
       "age": 30.0,
       "minutes": 195,
       "goals": 2.0,
@@ -934,13 +995,15 @@
       "net_impact_p90": 0.757,
       "involvement_p90": 1.9,
       "ball_security": 0.936,
-      "composite": 0
+      "composite": 9.86,
+      "composite_pct": 0
     },
     {
+      "_composite_raw": 6.8,
       "name": "Kerem Akturkoglu",
       "team": "Fenerbahce",
       "position": "LAM",
-      "group": "OTHER",
+      "group": "W",
       "age": 28.0,
       "minutes": 431,
       "goals": 1.0,
@@ -964,13 +1027,15 @@
       "net_impact_p90": 0.929,
       "involvement_p90": 1.94,
       "ball_security": 0.683,
-      "composite": 0
+      "composite": 6.8,
+      "composite_pct": 84.4
     },
     {
+      "_composite_raw": 8.08,
       "name": "Oğuz Aydın",
       "team": "Fenerbahce",
       "position": "LAM",
-      "group": "OTHER",
+      "group": "W",
       "age": 26.0,
       "minutes": 477,
       "goals": 2.0,
@@ -994,13 +1059,15 @@
       "net_impact_p90": 0.623,
       "involvement_p90": 2.05,
       "ball_security": 0.819,
-      "composite": 0
+      "composite": 8.08,
+      "composite_pct": 87.5
     },
     {
+      "_composite_raw": 10.27,
       "name": "Aleksei Batrakov",
       "team": "Galatasaray",
       "position": "CAM",
-      "group": "OTHER",
+      "group": "MF",
       "age": 21.0,
       "minutes": 430,
       "goals": 0.0,
@@ -1024,13 +1091,15 @@
       "net_impact_p90": 1.107,
       "involvement_p90": 1.16,
       "ball_security": 0.898,
-      "composite": 0
+      "composite": 10.27,
+      "composite_pct": 55.4
     },
     {
+      "_composite_raw": 6.23,
       "name": "Aral Şimşir",
       "team": "Trabzonspor",
       "position": "LAM",
-      "group": "OTHER",
+      "group": "W",
       "age": 24.0,
       "minutes": 521,
       "goals": 0.0,
@@ -1054,13 +1123,15 @@
       "net_impact_p90": 0.019,
       "involvement_p90": 0.75,
       "ball_security": 0.743,
-      "composite": 0
+      "composite": 6.23,
+      "composite_pct": 71.9
     },
     {
+      "_composite_raw": 9.72,
       "name": "Emrecan Bulut",
       "team": "Caykur Rizespor",
       "position": "LAM",
-      "group": "OTHER",
+      "group": "W",
       "age": 23.0,
       "minutes": 326,
       "goals": 2.0,
@@ -1084,13 +1155,15 @@
       "net_impact_p90": -0.146,
       "involvement_p90": 1.53,
       "ball_security": 0.655,
-      "composite": 0
+      "composite": 9.72,
+      "composite_pct": 0
     },
     {
+      "_composite_raw": 4.44,
       "name": "Mason Greenwood",
       "team": "Fenerbahce",
       "position": "RAM",
-      "group": "OTHER",
+      "group": "W",
       "age": 25.0,
       "minutes": 684,
       "goals": 4.0,
@@ -1114,13 +1187,15 @@
       "net_impact_p90": 1.066,
       "involvement_p90": 1.99,
       "ball_security": 0.878,
-      "composite": 0
+      "composite": 4.44,
+      "composite_pct": 50.0
     },
     {
+      "_composite_raw": 10.94,
       "name": "Gabriel Sara",
       "team": "Galatasaray",
       "position": "LCDM",
-      "group": "OTHER",
+      "group": "MF",
       "age": 27.0,
       "minutes": 665,
       "goals": 2.0,
@@ -1144,9 +1219,11 @@
       "net_impact_p90": 1.257,
       "involvement_p90": 1.35,
       "ball_security": 0.872,
-      "composite": 0
+      "composite": 10.94,
+      "composite_pct": 73.2
     },
     {
+      "_composite_raw": 6.79,
       "name": "Ivan Brnić",
       "team": "İstanbul Başakşehir FK",
       "position": "LM",
@@ -1174,13 +1251,15 @@
       "net_impact_p90": -0.306,
       "involvement_p90": 1.07,
       "ball_security": 0.872,
-      "composite": 6.79
+      "composite": 6.79,
+      "composite_pct": 0
     },
     {
+      "_composite_raw": -2.3,
       "name": "Janderson",
       "team": "Göztepe",
       "position": "RCF",
-      "group": "OTHER",
+      "group": "FW",
       "age": 27.0,
       "minutes": 454,
       "goals": 0.0,
@@ -1204,11 +1283,13 @@
       "net_impact_p90": -0.216,
       "involvement_p90": 1.05,
       "ball_security": 0.432,
-      "composite": 0
+      "composite": -2.3,
+      "composite_pct": 23.8
     }
   ],
   "progressive_share": [
     {
+      "_composite_raw": 15.76,
       "name": "Taha Altıkardeş",
       "team": "Göztepe",
       "position": "RCB",
@@ -1236,9 +1317,11 @@
       "net_impact_p90": 0.163,
       "involvement_p90": 0.15,
       "ball_security": 0.893,
-      "composite": 15.76
+      "composite": 15.76,
+      "composite_pct": 67.5
     },
     {
+      "_composite_raw": 14.79,
       "name": "Allan Godói",
       "team": "Göztepe",
       "position": "CB",
@@ -1266,13 +1349,15 @@
       "net_impact_p90": 0.462,
       "involvement_p90": 0.07,
       "ball_security": 0.85,
-      "composite": 14.79
+      "composite": 14.79,
+      "composite_pct": 0
     },
     {
+      "_composite_raw": 13.67,
       "name": "Tobias Gulliksen",
       "team": "Kocaelispor",
       "position": "LCM",
-      "group": "OTHER",
+      "group": "MF",
       "age": 23.0,
       "minutes": 99,
       "goals": 0.0,
@@ -1296,9 +1381,11 @@
       "net_impact_p90": 0.264,
       "involvement_p90": 0.03,
       "ball_security": 0.744,
-      "composite": 0
+      "composite": 13.67,
+      "composite_pct": 0
     },
     {
+      "_composite_raw": 3.5,
       "name": "Ogün Bayrak",
       "team": "Göztepe",
       "position": "LWB",
@@ -1326,9 +1413,11 @@
       "net_impact_p90": 0.22,
       "involvement_p90": 0.06,
       "ball_security": 0.768,
-      "composite": 3.5
+      "composite": 3.5,
+      "composite_pct": 0
     },
     {
+      "_composite_raw": 19.39,
       "name": "Hamza Güreler",
       "team": "İstanbul Başakşehir FK",
       "position": "CB",
@@ -1356,13 +1445,15 @@
       "net_impact_p90": -1.129,
       "involvement_p90": 0.02,
       "ball_security": 0.907,
-      "composite": 19.39
+      "composite": 19.39,
+      "composite_pct": 0
     },
     {
+      "_composite_raw": 14.36,
       "name": "Enis Bardhi",
       "team": "Konyaspor",
       "position": "CAM",
-      "group": "OTHER",
+      "group": "MF",
       "age": 31.0,
       "minutes": 204,
       "goals": 0.0,
@@ -1386,9 +1477,11 @@
       "net_impact_p90": 0.816,
       "involvement_p90": 0.68,
       "ball_security": 0.809,
-      "composite": 0
+      "composite": 14.36,
+      "composite_pct": 0
     },
     {
+      "_composite_raw": 5.28,
       "name": "Yusuf Özdemir",
       "team": "Alanyaspor",
       "position": "LWB",
@@ -1416,9 +1509,11 @@
       "net_impact_p90": 0.57,
       "involvement_p90": 0.04,
       "ball_security": 0.938,
-      "composite": 5.28
+      "composite": 5.28,
+      "composite_pct": 0
     },
     {
+      "_composite_raw": 3.06,
       "name": "Amadou Cisse",
       "team": "Amed SK",
       "position": "RB",
@@ -1446,13 +1541,15 @@
       "net_impact_p90": 0.651,
       "involvement_p90": 0.0,
       "ball_security": 0.89,
-      "composite": 3.06
+      "composite": 3.06,
+      "composite_pct": 0
     },
     {
+      "_composite_raw": 12.38,
       "name": "Furkan Soyalp",
       "team": "Amed SK",
       "position": "LCDM",
-      "group": "OTHER",
+      "group": "MF",
       "age": 31.0,
       "minutes": 490,
       "goals": 1.0,
@@ -1476,13 +1573,15 @@
       "net_impact_p90": 0.65,
       "involvement_p90": 0.47,
       "ball_security": 0.869,
-      "composite": 0
+      "composite": 12.38,
+      "composite_pct": 96.4
     },
     {
+      "_composite_raw": 11.95,
       "name": "Salih Uçan",
       "team": "Genclerbirligi Ankara",
       "position": "RCM",
-      "group": "OTHER",
+      "group": "MF",
       "age": 32.0,
       "minutes": 275,
       "goals": 0.0,
@@ -1506,11 +1605,13 @@
       "net_impact_p90": -0.275,
       "involvement_p90": 0.36,
       "ball_security": 0.88,
-      "composite": 0
+      "composite": 11.95,
+      "composite_pct": 0
     }
   ],
   "net_impact_p90": [
     {
+      "_composite_raw": 6.17,
       "name": "Victor Osimhen",
       "team": "Galatasaray",
       "position": "CF",
@@ -1538,13 +1639,15 @@
       "net_impact_p90": 1.659,
       "involvement_p90": 3.52,
       "ball_security": 0.444,
-      "composite": 6.17
+      "composite": 6.17,
+      "composite_pct": 85.7
     },
     {
+      "_composite_raw": 5.23,
       "name": "Yunus Akgün",
       "team": "Galatasaray",
       "position": "RAM",
-      "group": "OTHER",
+      "group": "W",
       "age": 26.0,
       "minutes": 741,
       "goals": 1.0,
@@ -1568,9 +1671,11 @@
       "net_impact_p90": 1.502,
       "involvement_p90": 0.77,
       "ball_security": 0.867,
-      "composite": 0
+      "composite": 5.23,
+      "composite_pct": 62.5
     },
     {
+      "_composite_raw": 6.07,
       "name": "Ismail Jakobs",
       "team": "Galatasaray",
       "position": "LB",
@@ -1598,9 +1703,11 @@
       "net_impact_p90": 1.49,
       "involvement_p90": 0.56,
       "ball_security": 0.931,
-      "composite": 6.07
+      "composite": 6.07,
+      "composite_pct": 89.7
     },
     {
+      "_composite_raw": 4.31,
       "name": "Kassoum Ouattara",
       "team": "Besiktas JK",
       "position": "LB",
@@ -1628,9 +1735,11 @@
       "net_impact_p90": 1.488,
       "involvement_p90": 0.25,
       "ball_security": 0.906,
-      "composite": 4.31
+      "composite": 4.31,
+      "composite_pct": 0
     },
     {
+      "_composite_raw": 1.63,
       "name": "Hyeongyu Oh",
       "team": "Besiktas JK",
       "position": "CF",
@@ -1658,13 +1767,15 @@
       "net_impact_p90": 1.484,
       "involvement_p90": 1.4,
       "ball_security": 0.648,
-      "composite": 1.63
+      "composite": 1.63,
+      "composite_pct": 0
     },
     {
+      "_composite_raw": 7.79,
       "name": "Lucas Torreira",
       "team": "Galatasaray",
       "position": "RCDM",
-      "group": "OTHER",
+      "group": "MF",
       "age": 30.0,
       "minutes": 689,
       "goals": 1.0,
@@ -1688,13 +1799,15 @@
       "net_impact_p90": 1.415,
       "involvement_p90": 0.69,
       "ball_security": 0.945,
-      "composite": 0
+      "composite": 7.79,
+      "composite_pct": 12.5
     },
     {
+      "_composite_raw": 6.39,
       "name": "Deniz Gul",
       "team": "Galatasaray",
       "position": "CAM",
-      "group": "OTHER",
+      "group": "MF",
       "age": 22.0,
       "minutes": 241,
       "goals": 1.0,
@@ -1718,13 +1831,15 @@
       "net_impact_p90": 1.415,
       "involvement_p90": 0.96,
       "ball_security": 0.276,
-      "composite": 0
+      "composite": 6.39,
+      "composite_pct": 0
     },
     {
+      "_composite_raw": 4.25,
       "name": "Barış Alper Yılmaz",
       "team": "Galatasaray",
       "position": "LAM",
-      "group": "OTHER",
+      "group": "W",
       "age": 26.0,
       "minutes": 707,
       "goals": 1.0,
@@ -1748,9 +1863,11 @@
       "net_impact_p90": 1.396,
       "involvement_p90": 0.87,
       "ball_security": 0.765,
-      "composite": 0
+      "composite": 4.25,
+      "composite_pct": 43.8
     },
     {
+      "_composite_raw": 2.99,
       "name": "Mert Müldür",
       "team": "Fenerbahce",
       "position": "RB",
@@ -1778,13 +1895,15 @@
       "net_impact_p90": 1.373,
       "involvement_p90": 0.12,
       "ball_security": 0.92,
-      "composite": 2.99
+      "composite": 2.99,
+      "composite_pct": 0
     },
     {
+      "_composite_raw": 11.3,
       "name": "Gökhan Gül",
       "team": "Amed SK",
       "position": "RCDM",
-      "group": "OTHER",
+      "group": "MF",
       "age": 28.0,
       "minutes": 221,
       "goals": 1.0,
@@ -1808,15 +1927,17 @@
       "net_impact_p90": 1.34,
       "involvement_p90": 0.77,
       "ball_security": 0.85,
-      "composite": 0
+      "composite": 11.3,
+      "composite_pct": 0
     }
   ],
   "press_resistance": [
     {
+      "_composite_raw": 5.25,
       "name": "Melih Kabasakal",
       "team": "Trabzonspor",
       "position": "LCDM",
-      "group": "OTHER",
+      "group": "MF",
       "age": 30.0,
       "minutes": 404,
       "goals": 0.0,
@@ -1840,9 +1961,11 @@
       "net_impact_p90": 0.408,
       "involvement_p90": 0.01,
       "ball_security": 0.98,
-      "composite": 0
+      "composite": 5.25,
+      "composite_pct": 0.0
     },
     {
+      "_composite_raw": 16.34,
       "name": "Emmanuel Agbadou",
       "team": "Besiktas JK",
       "position": "RCB",
@@ -1870,9 +1993,11 @@
       "net_impact_p90": 1.004,
       "involvement_p90": 0.22,
       "ball_security": 0.97,
-      "composite": 16.34
+      "composite": 16.34,
+      "composite_pct": 85.0
     },
     {
+      "_composite_raw": 15.08,
       "name": "Siaka Bakayoko",
       "team": "Caykur Rizespor",
       "position": "RCB",
@@ -1900,9 +2025,11 @@
       "net_impact_p90": -0.133,
       "involvement_p90": 0.06,
       "ball_security": 0.986,
-      "composite": 15.08
+      "composite": 15.08,
+      "composite_pct": 0
     },
     {
+      "_composite_raw": 14.45,
       "name": "David Robert Bates",
       "team": "Amed SK",
       "position": "LCB",
@@ -1930,9 +2057,11 @@
       "net_impact_p90": 0.719,
       "involvement_p90": 0.1,
       "ball_security": 0.957,
-      "composite": 14.45
+      "composite": 14.45,
+      "composite_pct": 30.0
     },
     {
+      "_composite_raw": 15.96,
       "name": "Milan Skriniar",
       "team": "Fenerbahce",
       "position": "RCB",
@@ -1960,9 +2089,11 @@
       "net_impact_p90": 0.807,
       "involvement_p90": 0.26,
       "ball_security": 0.962,
-      "composite": 15.96
+      "composite": 15.96,
+      "composite_pct": 75.0
     },
     {
+      "_composite_raw": 15.1,
       "name": "Gabriele Guarino",
       "team": "Samsunspor",
       "position": "LCB",
@@ -1990,9 +2121,11 @@
       "net_impact_p90": -0.336,
       "involvement_p90": 0.1,
       "ball_security": 0.949,
-      "composite": 15.1
+      "composite": 15.1,
+      "composite_pct": 57.5
     },
     {
+      "_composite_raw": 17.9,
       "name": "Toni Borevković",
       "team": "Samsunspor",
       "position": "RCB",
@@ -2020,13 +2153,15 @@
       "net_impact_p90": -1.119,
       "involvement_p90": 0.0,
       "ball_security": 0.964,
-      "composite": 17.9
+      "composite": 17.9,
+      "composite_pct": 0
     },
     {
+      "_composite_raw": 8.95,
       "name": "Benjamin Bouchouari",
       "team": "Trabzonspor",
       "position": "LCDM",
-      "group": "OTHER",
+      "group": "MF",
       "age": 24.0,
       "minutes": 111,
       "goals": 0.0,
@@ -2050,13 +2185,15 @@
       "net_impact_p90": -0.349,
       "involvement_p90": 0.0,
       "ball_security": 0.972,
-      "composite": 0
+      "composite": 8.95,
+      "composite_pct": 0
     },
     {
+      "_composite_raw": 8.12,
       "name": "Umut Güneş",
       "team": "İstanbul Başakşehir FK",
       "position": "LCDM",
-      "group": "OTHER",
+      "group": "MF",
       "age": 26.0,
       "minutes": 560,
       "goals": 1.0,
@@ -2080,13 +2217,15 @@
       "net_impact_p90": -1.067,
       "involvement_p90": 0.22,
       "ball_security": 0.936,
-      "composite": 0
+      "composite": 8.12,
+      "composite_pct": 17.9
     },
     {
+      "_composite_raw": 10.71,
       "name": "Jakub Kaluzinski",
       "team": "İstanbul Başakşehir FK",
       "position": "LCDM",
-      "group": "OTHER",
+      "group": "MF",
       "age": 23.0,
       "minutes": 427,
       "goals": 0.0,
@@ -2110,11 +2249,13 @@
       "net_impact_p90": 0.253,
       "involvement_p90": 0.21,
       "ball_security": 0.942,
-      "composite": 0
+      "composite": 10.71,
+      "composite_pct": 67.9
     }
   ],
   "involvement_p90": [
     {
+      "_composite_raw": 6.17,
       "name": "Victor Osimhen",
       "team": "Galatasaray",
       "position": "CF",
@@ -2142,9 +2283,11 @@
       "net_impact_p90": 1.659,
       "involvement_p90": 3.52,
       "ball_security": 0.444,
-      "composite": 6.17
+      "composite": 6.17,
+      "composite_pct": 85.7
     },
     {
+      "_composite_raw": 8.41,
       "name": "Vedat Muriqi",
       "team": "Fenerbahce",
       "position": "CF",
@@ -2172,13 +2315,15 @@
       "net_impact_p90": 1.223,
       "involvement_p90": 2.85,
       "ball_security": 0.677,
-      "composite": 8.41
+      "composite": 8.41,
+      "composite_pct": 95.2
     },
     {
+      "_composite_raw": 11.41,
       "name": "Mohamed Salah",
       "team": "Trabzonspor",
       "position": "RAM",
-      "group": "OTHER",
+      "group": "W",
       "age": 34.0,
       "minutes": 700,
       "goals": 8.0,
@@ -2202,9 +2347,11 @@
       "net_impact_p90": 0.228,
       "involvement_p90": 2.32,
       "ball_security": 0.78,
-      "composite": 0
+      "composite": 11.41,
+      "composite_pct": 96.9
     },
     {
+      "_composite_raw": 7.04,
       "name": "Gift Orban",
       "team": "Amed SK",
       "position": "CF",
@@ -2232,13 +2379,15 @@
       "net_impact_p90": 0.642,
       "involvement_p90": 2.26,
       "ball_security": 0.627,
-      "composite": 7.04
+      "composite": 7.04,
+      "composite_pct": 90.5
     },
     {
+      "_composite_raw": 4.22,
       "name": "Juan",
       "team": "Göztepe",
       "position": "LCF",
-      "group": "OTHER",
+      "group": "FW",
       "age": 24.0,
       "minutes": 587,
       "goals": 6.0,
@@ -2262,13 +2411,15 @@
       "net_impact_p90": 0.357,
       "involvement_p90": 2.08,
       "ball_security": 0.476,
-      "composite": 0
+      "composite": 4.22,
+      "composite_pct": 71.4
     },
     {
+      "_composite_raw": 8.08,
       "name": "Oğuz Aydın",
       "team": "Fenerbahce",
       "position": "LAM",
-      "group": "OTHER",
+      "group": "W",
       "age": 26.0,
       "minutes": 477,
       "goals": 2.0,
@@ -2292,13 +2443,15 @@
       "net_impact_p90": 0.623,
       "involvement_p90": 2.05,
       "ball_security": 0.819,
-      "composite": 0
+      "composite": 8.08,
+      "composite_pct": 87.5
     },
     {
+      "_composite_raw": 9.38,
       "name": "Alexandros Kyziridis",
       "team": "Corum FK",
       "position": "LAM",
-      "group": "OTHER",
+      "group": "W",
       "age": 26.0,
       "minutes": 586,
       "goals": 4.0,
@@ -2322,9 +2475,11 @@
       "net_impact_p90": -0.227,
       "involvement_p90": 2.01,
       "ball_security": 0.777,
-      "composite": 0
+      "composite": 9.38,
+      "composite_pct": 90.6
     },
     {
+      "_composite_raw": 2.44,
       "name": "Franculino",
       "team": "Trabzonspor",
       "position": "CF",
@@ -2352,13 +2507,15 @@
       "net_impact_p90": 0.593,
       "involvement_p90": 2.01,
       "ball_security": 0.552,
-      "composite": 2.44
+      "composite": 2.44,
+      "composite_pct": 0
     },
     {
+      "_composite_raw": 4.44,
       "name": "Mason Greenwood",
       "team": "Fenerbahce",
       "position": "RAM",
-      "group": "OTHER",
+      "group": "W",
       "age": 25.0,
       "minutes": 684,
       "goals": 4.0,
@@ -2382,9 +2539,11 @@
       "net_impact_p90": 1.066,
       "involvement_p90": 1.99,
       "ball_security": 0.878,
-      "composite": 0
+      "composite": 4.44,
+      "composite_pct": 50.0
     },
     {
+      "_composite_raw": 4.37,
       "name": "Dušan Vlahović",
       "team": "Besiktas JK",
       "position": "CF",
@@ -2412,11 +2571,13 @@
       "net_impact_p90": 0.735,
       "involvement_p90": 1.98,
       "ball_security": 0.453,
-      "composite": 4.37
+      "composite": 4.37,
+      "composite_pct": 76.2
     }
   ],
   "ball_security": [
     {
+      "_composite_raw": 15.08,
       "name": "Siaka Bakayoko",
       "team": "Caykur Rizespor",
       "position": "RCB",
@@ -2444,13 +2605,15 @@
       "net_impact_p90": -0.133,
       "involvement_p90": 0.06,
       "ball_security": 0.986,
-      "composite": 15.08
+      "composite": 15.08,
+      "composite_pct": 0
     },
     {
+      "_composite_raw": 5.25,
       "name": "Melih Kabasakal",
       "team": "Trabzonspor",
       "position": "LCDM",
-      "group": "OTHER",
+      "group": "MF",
       "age": 30.0,
       "minutes": 404,
       "goals": 0.0,
@@ -2474,9 +2637,11 @@
       "net_impact_p90": 0.408,
       "involvement_p90": 0.01,
       "ball_security": 0.98,
-      "composite": 0
+      "composite": 5.25,
+      "composite_pct": 0.0
     },
     {
+      "_composite_raw": 14.21,
       "name": "Ousseynou Ba",
       "team": "İstanbul Başakşehir FK",
       "position": "LCB",
@@ -2504,13 +2669,15 @@
       "net_impact_p90": 0.049,
       "involvement_p90": 0.0,
       "ball_security": 0.976,
-      "composite": 14.21
+      "composite": 14.21,
+      "composite_pct": 0
     },
     {
+      "_composite_raw": 8.95,
       "name": "Benjamin Bouchouari",
       "team": "Trabzonspor",
       "position": "LCDM",
-      "group": "OTHER",
+      "group": "MF",
       "age": 24.0,
       "minutes": 111,
       "goals": 0.0,
@@ -2534,9 +2701,11 @@
       "net_impact_p90": -0.349,
       "involvement_p90": 0.0,
       "ball_security": 0.972,
-      "composite": 0
+      "composite": 8.95,
+      "composite_pct": 0
     },
     {
+      "_composite_raw": 15.31,
       "name": "Zak Jules",
       "team": "Eyüpspor",
       "position": "LCB",
@@ -2564,9 +2733,11 @@
       "net_impact_p90": -0.684,
       "involvement_p90": 0.38,
       "ball_security": 0.971,
-      "composite": 15.31
+      "composite": 15.31,
+      "composite_pct": 62.5
     },
     {
+      "_composite_raw": 15.05,
       "name": "Myenty Abena",
       "team": "Gaziantep FK",
       "position": "LCB",
@@ -2594,9 +2765,11 @@
       "net_impact_p90": -0.355,
       "involvement_p90": 0.17,
       "ball_security": 0.97,
-      "composite": 15.05
+      "composite": 15.05,
+      "composite_pct": 55.0
     },
     {
+      "_composite_raw": 16.34,
       "name": "Emmanuel Agbadou",
       "team": "Besiktas JK",
       "position": "RCB",
@@ -2624,9 +2797,11 @@
       "net_impact_p90": 1.004,
       "involvement_p90": 0.22,
       "ball_security": 0.97,
-      "composite": 16.34
+      "composite": 16.34,
+      "composite_pct": 85.0
     },
     {
+      "_composite_raw": 12.37,
       "name": "Serdar Saatçı",
       "team": "Corum FK",
       "position": "RCB",
@@ -2654,9 +2829,11 @@
       "net_impact_p90": 0.256,
       "involvement_p90": 0.0,
       "ball_security": 0.97,
-      "composite": 12.37
+      "composite": 12.37,
+      "composite_pct": 0
     },
     {
+      "_composite_raw": 13.2,
       "name": "Tayyip Talha Sanuç",
       "team": "Caykur Rizespor",
       "position": "RCB",
@@ -2684,9 +2861,11 @@
       "net_impact_p90": -1.566,
       "involvement_p90": 0.0,
       "ball_security": 0.97,
-      "composite": 13.2
+      "composite": 13.2,
+      "composite_pct": 0
     },
     {
+      "_composite_raw": 13.52,
       "name": "Strahinja Erakovic",
       "team": "Samsunspor",
       "position": "RCB",
@@ -2714,11 +2893,13 @@
       "net_impact_p90": -0.009,
       "involvement_p90": 0.09,
       "ball_security": 0.968,
-      "composite": 13.52
+      "composite": 13.52,
+      "composite_pct": 0
     }
   ],
   "composite": [
     {
+      "_composite_raw": 19.39,
       "name": "Hamza Güreler",
       "team": "İstanbul Başakşehir FK",
       "position": "CB",
@@ -2746,9 +2927,11 @@
       "net_impact_p90": -1.129,
       "involvement_p90": 0.02,
       "ball_security": 0.907,
-      "composite": 19.39
+      "composite": 19.39,
+      "composite_pct": 0
     },
     {
+      "_composite_raw": 18.08,
       "name": "Arda Şengül",
       "team": "Corum FK",
       "position": "LCB",
@@ -2776,9 +2959,11 @@
       "net_impact_p90": -0.691,
       "involvement_p90": 0.0,
       "ball_security": 0.9,
-      "composite": 18.08
+      "composite": 18.08,
+      "composite_pct": 0
     },
     {
+      "_composite_raw": 17.9,
       "name": "Toni Borevković",
       "team": "Samsunspor",
       "position": "RCB",
@@ -2806,9 +2991,11 @@
       "net_impact_p90": -1.119,
       "involvement_p90": 0.0,
       "ball_security": 0.964,
-      "composite": 17.9
+      "composite": 17.9,
+      "composite_pct": 0
     },
     {
+      "_composite_raw": 17.48,
       "name": "Žan Žužek",
       "team": "Genclerbirligi Ankara",
       "position": "LCB",
@@ -2836,9 +3023,11 @@
       "net_impact_p90": -0.128,
       "involvement_p90": 0.11,
       "ball_security": 0.936,
-      "composite": 17.48
+      "composite": 17.48,
+      "composite_pct": 0
     },
     {
+      "_composite_raw": 17.29,
       "name": "Emir Ortakaya",
       "team": "Kocaelispor",
       "position": "LCB",
@@ -2866,9 +3055,11 @@
       "net_impact_p90": 0.299,
       "involvement_p90": 0.13,
       "ball_security": 0.925,
-      "composite": 17.29
+      "composite": 17.29,
+      "composite_pct": 97.5
     },
     {
+      "_composite_raw": 16.88,
       "name": "Lumbardh Dellova",
       "team": "Amed SK",
       "position": "RCB",
@@ -2896,9 +3087,11 @@
       "net_impact_p90": 0.753,
       "involvement_p90": 0.19,
       "ball_security": 0.944,
-      "composite": 16.88
+      "composite": 16.88,
+      "composite_pct": 95.0
     },
     {
+      "_composite_raw": 16.72,
       "name": "Yunus Emre Çift",
       "team": "Samsunspor",
       "position": "RCB",
@@ -2926,9 +3119,11 @@
       "net_impact_p90": -0.293,
       "involvement_p90": 0.1,
       "ball_security": 0.943,
-      "composite": 16.72
+      "composite": 16.72,
+      "composite_pct": 0
     },
     {
+      "_composite_raw": 16.46,
       "name": "Arda Kızıldağ",
       "team": "Gaziantep FK",
       "position": "RCB",
@@ -2956,9 +3151,11 @@
       "net_impact_p90": -0.374,
       "involvement_p90": 0.17,
       "ball_security": 0.956,
-      "composite": 16.46
+      "composite": 16.46,
+      "composite_pct": 92.5
     },
     {
+      "_composite_raw": 16.46,
       "name": "Çağlar Söyüncü",
       "team": "Corum FK",
       "position": "CB",
@@ -2986,9 +3183,11 @@
       "net_impact_p90": 0.016,
       "involvement_p90": 0.0,
       "ball_security": 0.948,
-      "composite": 16.46
+      "composite": 16.46,
+      "composite_pct": 0
     },
     {
+      "_composite_raw": 16.42,
       "name": "Emirhan Topçu",
       "team": "Besiktas JK",
       "position": "LCB",
@@ -3016,11 +3215,13 @@
       "net_impact_p90": 0.882,
       "involvement_p90": 0.18,
       "ball_security": 0.965,
-      "composite": 16.42
+      "composite": 16.42,
+      "composite_pct": 90.0
     }
   ],
   "composite_FW": [
     {
+      "_composite_raw": 8.41,
       "name": "Vedat Muriqi",
       "team": "Fenerbahce",
       "position": "CF",
@@ -3048,9 +3249,11 @@
       "net_impact_p90": 1.223,
       "involvement_p90": 2.85,
       "ball_security": 0.677,
-      "composite": 8.41
+      "composite": 8.41,
+      "composite_pct": 95.2
     },
     {
+      "_composite_raw": 7.04,
       "name": "Gift Orban",
       "team": "Amed SK",
       "position": "CF",
@@ -3078,9 +3281,11 @@
       "net_impact_p90": 0.642,
       "involvement_p90": 2.26,
       "ball_security": 0.627,
-      "composite": 7.04
+      "composite": 7.04,
+      "composite_pct": 90.5
     },
     {
+      "_composite_raw": 6.17,
       "name": "Victor Osimhen",
       "team": "Galatasaray",
       "position": "CF",
@@ -3108,9 +3313,11 @@
       "net_impact_p90": 1.659,
       "involvement_p90": 3.52,
       "ball_security": 0.444,
-      "composite": 6.17
+      "composite": 6.17,
+      "composite_pct": 85.7
     },
     {
+      "_composite_raw": 5.44,
       "name": "Adrian Benedyczak",
       "team": "Kasimpasa",
       "position": "CF",
@@ -3138,9 +3345,11 @@
       "net_impact_p90": -0.206,
       "involvement_p90": 1.7,
       "ball_security": 0.574,
-      "composite": 5.44
+      "composite": 5.44,
+      "composite_pct": 81.0
     },
     {
+      "_composite_raw": 4.37,
       "name": "Dušan Vlahović",
       "team": "Besiktas JK",
       "position": "CF",
@@ -3168,9 +3377,43 @@
       "net_impact_p90": 0.735,
       "involvement_p90": 1.98,
       "ball_security": 0.453,
-      "composite": 4.37
+      "composite": 4.37,
+      "composite_pct": 76.2
     },
     {
+      "_composite_raw": 4.22,
+      "name": "Juan",
+      "team": "Göztepe",
+      "position": "LCF",
+      "group": "FW",
+      "age": 24.0,
+      "minutes": 587,
+      "goals": 6.0,
+      "assists": 1.0,
+      "shots": 16.0,
+      "xg": 5.3,
+      "xa": 1.29,
+      "nxg": 2.33,
+      "finishing_delta": 0.7,
+      "xg_per_shot": 0.331,
+      "clinical_ratio": 1.13,
+      "shot_quality": 0.248,
+      "creativity_p90": 0.8,
+      "progressive_share": 0.283,
+      "forward_orientation": 0.152,
+      "box_entry_rate": 0.081,
+      "final_third_ratio": 1.0,
+      "press_resistance": 0.59,
+      "defensive_actions_p90": 10.89,
+      "aerial_dominance": 0.28,
+      "net_impact_p90": 0.357,
+      "involvement_p90": 2.08,
+      "ball_security": 0.476,
+      "composite": 4.22,
+      "composite_pct": 71.4
+    },
+    {
+      "_composite_raw": 3.76,
       "name": "Talisca",
       "team": "Fenerbahce",
       "position": "CF",
@@ -3198,9 +3441,11 @@
       "net_impact_p90": 1.111,
       "involvement_p90": 1.55,
       "ball_security": 0.308,
-      "composite": 3.76
+      "composite": 3.76,
+      "composite_pct": 0
     },
     {
+      "_composite_raw": 2.44,
       "name": "Franculino",
       "team": "Trabzonspor",
       "position": "CF",
@@ -3228,9 +3473,11 @@
       "net_impact_p90": 0.593,
       "involvement_p90": 2.01,
       "ball_security": 0.552,
-      "composite": 2.44
+      "composite": 2.44,
+      "composite_pct": 0
     },
     {
+      "_composite_raw": 2.3,
       "name": "Paul Onuachu",
       "team": "Trabzonspor",
       "position": "CF",
@@ -3258,9 +3505,11 @@
       "net_impact_p90": -0.007,
       "involvement_p90": 0.68,
       "ball_security": 0.319,
-      "composite": 2.3
+      "composite": 2.3,
+      "composite_pct": 66.7
     },
     {
+      "_composite_raw": 2.27,
       "name": "Jesús Ramírez",
       "team": "Corum FK",
       "position": "CF",
@@ -3288,41 +3537,269 @@
       "net_impact_p90": -0.487,
       "involvement_p90": 1.01,
       "ball_security": 0.58,
-      "composite": 2.27
-    },
-    {
-      "name": "Ali Sowe",
-      "team": "Caykur Rizespor",
-      "position": "CF",
-      "group": "FW",
-      "age": 32.0,
-      "minutes": 730,
-      "goals": 2.0,
-      "assists": 0.0,
-      "shots": 8.0,
-      "xg": 1.81,
-      "xa": 0.59,
-      "nxg": 1.44,
-      "finishing_delta": 0.19,
-      "xg_per_shot": 0.226,
-      "clinical_ratio": 1.1,
-      "shot_quality": 0.198,
-      "creativity_p90": 0.11,
-      "progressive_share": 0.079,
-      "forward_orientation": 0.063,
-      "box_entry_rate": 0.008,
-      "final_third_ratio": 1.0,
-      "press_resistance": 0.8,
-      "defensive_actions_p90": 6.04,
-      "aerial_dominance": 0.2,
-      "net_impact_p90": 0.178,
-      "involvement_p90": 0.54,
-      "ball_security": 0.667,
-      "composite": 1.97
+      "composite": 2.27,
+      "composite_pct": 61.9
     }
   ],
   "composite_W": [
     {
+      "_composite_raw": 11.41,
+      "name": "Mohamed Salah",
+      "team": "Trabzonspor",
+      "position": "RAM",
+      "group": "W",
+      "age": 34.0,
+      "minutes": 700,
+      "goals": 8.0,
+      "assists": 3.0,
+      "shots": 24.0,
+      "xg": 4.45,
+      "xa": 2.56,
+      "nxg": 1.77,
+      "finishing_delta": 3.55,
+      "xg_per_shot": 0.185,
+      "clinical_ratio": 1.8,
+      "shot_quality": 0.1,
+      "creativity_p90": 1.54,
+      "progressive_share": 0.248,
+      "forward_orientation": 0.116,
+      "box_entry_rate": 0.158,
+      "final_third_ratio": 1.0,
+      "press_resistance": 0.61,
+      "defensive_actions_p90": 7.33,
+      "aerial_dominance": 0.29,
+      "net_impact_p90": 0.228,
+      "involvement_p90": 2.32,
+      "ball_security": 0.78,
+      "composite": 11.41,
+      "composite_pct": 96.9
+    },
+    {
+      "_composite_raw": 9.72,
+      "name": "Emrecan Bulut",
+      "team": "Caykur Rizespor",
+      "position": "LAM",
+      "group": "W",
+      "age": 23.0,
+      "minutes": 326,
+      "goals": 2.0,
+      "assists": 1.0,
+      "shots": 7.0,
+      "xg": 0.82,
+      "xa": 1.71,
+      "nxg": -0.53,
+      "finishing_delta": 1.18,
+      "xg_per_shot": 0.117,
+      "clinical_ratio": 2.44,
+      "shot_quality": 0.033,
+      "creativity_p90": 1.88,
+      "progressive_share": 0.204,
+      "forward_orientation": 0.065,
+      "box_entry_rate": 0.185,
+      "final_third_ratio": 1.0,
+      "press_resistance": 0.68,
+      "defensive_actions_p90": 17.39,
+      "aerial_dominance": 0.0,
+      "net_impact_p90": -0.146,
+      "involvement_p90": 1.53,
+      "ball_security": 0.655,
+      "composite": 9.72,
+      "composite_pct": 0
+    },
+    {
+      "_composite_raw": 9.39,
+      "name": "Cengiz Ünder",
+      "team": "Corum FK",
+      "position": "RAM",
+      "group": "W",
+      "age": 29.0,
+      "minutes": 504,
+      "goals": 4.0,
+      "assists": 1.0,
+      "shots": 14.0,
+      "xg": 0.87,
+      "xa": 0.96,
+      "nxg": -0.71,
+      "finishing_delta": 3.13,
+      "xg_per_shot": 0.062,
+      "clinical_ratio": 4.6,
+      "shot_quality": 0.036,
+      "creativity_p90": 0.71,
+      "progressive_share": 0.188,
+      "forward_orientation": 0.107,
+      "box_entry_rate": 0.132,
+      "final_third_ratio": 1.0,
+      "press_resistance": 0.72,
+      "defensive_actions_p90": 7.14,
+      "aerial_dominance": 0.0,
+      "net_impact_p90": -0.127,
+      "involvement_p90": 1.22,
+      "ball_security": 0.832,
+      "composite": 9.39,
+      "composite_pct": 93.8
+    },
+    {
+      "_composite_raw": 9.38,
+      "name": "Alexandros Kyziridis",
+      "team": "Corum FK",
+      "position": "LAM",
+      "group": "W",
+      "age": 26.0,
+      "minutes": 586,
+      "goals": 4.0,
+      "assists": 4.0,
+      "shots": 15.0,
+      "xg": 1.97,
+      "xa": 3.1,
+      "nxg": -1.48,
+      "finishing_delta": 2.03,
+      "xg_per_shot": 0.131,
+      "clinical_ratio": 2.03,
+      "shot_quality": 0.07,
+      "creativity_p90": 1.72,
+      "progressive_share": 0.153,
+      "forward_orientation": 0.055,
+      "box_entry_rate": 0.119,
+      "final_third_ratio": 1.0,
+      "press_resistance": 0.71,
+      "defensive_actions_p90": 8.45,
+      "aerial_dominance": 0.1,
+      "net_impact_p90": -0.227,
+      "involvement_p90": 2.01,
+      "ball_security": 0.777,
+      "composite": 9.38,
+      "composite_pct": 90.6
+    },
+    {
+      "_composite_raw": 8.08,
+      "name": "Oğuz Aydın",
+      "team": "Fenerbahce",
+      "position": "LAM",
+      "group": "W",
+      "age": 26.0,
+      "minutes": 477,
+      "goals": 2.0,
+      "assists": 4.0,
+      "shots": 12.0,
+      "xg": 1.56,
+      "xa": 3.28,
+      "nxg": 3.3,
+      "finishing_delta": 0.44,
+      "xg_per_shot": 0.13,
+      "clinical_ratio": 1.28,
+      "shot_quality": 0.076,
+      "creativity_p90": 2.0,
+      "progressive_share": 0.109,
+      "forward_orientation": 0.021,
+      "box_entry_rate": 0.143,
+      "final_third_ratio": 1.0,
+      "press_resistance": 0.72,
+      "defensive_actions_p90": 13.21,
+      "aerial_dominance": 0.46,
+      "net_impact_p90": 0.623,
+      "involvement_p90": 2.05,
+      "ball_security": 0.819,
+      "composite": 8.08,
+      "composite_pct": 87.5
+    },
+    {
+      "_composite_raw": 7.73,
+      "name": "Metehan Mimaroğlu",
+      "team": "Trabzonspor",
+      "position": "LAM",
+      "group": "W",
+      "age": 32.0,
+      "minutes": 116,
+      "goals": 0.0,
+      "assists": 1.0,
+      "shots": 2.0,
+      "xg": 0.13,
+      "xa": 0.58,
+      "nxg": -0.12,
+      "finishing_delta": -0.13,
+      "xg_per_shot": 0.065,
+      "clinical_ratio": 0.0,
+      "shot_quality": 0.065,
+      "creativity_p90": 1.54,
+      "progressive_share": 0.095,
+      "forward_orientation": 0.024,
+      "box_entry_rate": 0.19,
+      "final_third_ratio": 1.0,
+      "press_resistance": 0.85,
+      "defensive_actions_p90": 7.76,
+      "aerial_dominance": 0.5,
+      "net_impact_p90": -0.093,
+      "involvement_p90": 1.33,
+      "ball_security": 0.844,
+      "composite": 7.73,
+      "composite_pct": 0
+    },
+    {
+      "_composite_raw": 6.81,
+      "name": "Jean-Luc Dompé",
+      "team": "Konyaspor",
+      "position": "LAM",
+      "group": "W",
+      "age": 31.0,
+      "minutes": 166,
+      "goals": 0.0,
+      "assists": 0.0,
+      "shots": 3.0,
+      "xg": 0.17,
+      "xa": 0.63,
+      "nxg": 0.7,
+      "finishing_delta": -0.17,
+      "xg_per_shot": 0.057,
+      "clinical_ratio": 0.0,
+      "shot_quality": 0.0,
+      "creativity_p90": 0.78,
+      "progressive_share": 0.143,
+      "forward_orientation": 0.016,
+      "box_entry_rate": 0.27,
+      "final_third_ratio": 1.0,
+      "press_resistance": 0.72,
+      "defensive_actions_p90": 10.84,
+      "aerial_dominance": 0.67,
+      "net_impact_p90": 0.38,
+      "involvement_p90": 0.43,
+      "ball_security": 0.765,
+      "composite": 6.81,
+      "composite_pct": 0
+    },
+    {
+      "_composite_raw": 6.8,
+      "name": "Kerem Akturkoglu",
+      "team": "Fenerbahce",
+      "position": "LAM",
+      "group": "W",
+      "age": 28.0,
+      "minutes": 431,
+      "goals": 1.0,
+      "assists": 3.0,
+      "shots": 10.0,
+      "xg": 1.8,
+      "xa": 3.48,
+      "nxg": 4.45,
+      "finishing_delta": -0.8,
+      "xg_per_shot": 0.18,
+      "clinical_ratio": 0.56,
+      "shot_quality": 0.036,
+      "creativity_p90": 2.06,
+      "progressive_share": 0.114,
+      "forward_orientation": 0.043,
+      "box_entry_rate": 0.179,
+      "final_third_ratio": 1.0,
+      "press_resistance": 0.68,
+      "defensive_actions_p90": 11.28,
+      "aerial_dominance": 0.22,
+      "net_impact_p90": 0.929,
+      "involvement_p90": 1.94,
+      "ball_security": 0.683,
+      "composite": 6.8,
+      "composite_pct": 84.4
+    },
+    {
+      "_composite_raw": 6.79,
       "name": "Ivan Brnić",
       "team": "İstanbul Başakşehir FK",
       "position": "LM",
@@ -3350,192 +3827,367 @@
       "net_impact_p90": -0.306,
       "involvement_p90": 1.07,
       "ball_security": 0.872,
-      "composite": 6.79
+      "composite": 6.79,
+      "composite_pct": 0
     },
     {
-      "name": "Andreas Skov Olsen",
-      "team": "İstanbul Başakşehir FK",
-      "position": "RM",
+      "_composite_raw": 6.76,
+      "name": "Deian Sorescu",
+      "team": "Gaziantep FK",
+      "position": "RAM",
       "group": "W",
-      "age": 26.0,
-      "minutes": 687,
-      "goals": 1.0,
-      "assists": 2.0,
-      "shots": 16.0,
-      "xg": 1.45,
-      "xa": 2.89,
-      "nxg": 0.79,
-      "finishing_delta": -0.45,
-      "xg_per_shot": 0.091,
-      "clinical_ratio": 0.69,
-      "shot_quality": 0.034,
-      "creativity_p90": 1.66,
-      "progressive_share": 0.158,
-      "forward_orientation": 0.072,
-      "box_entry_rate": 0.165,
-      "final_third_ratio": 1.0,
-      "press_resistance": 0.6,
-      "defensive_actions_p90": 6.03,
-      "aerial_dominance": 0.13,
-      "net_impact_p90": 0.103,
-      "involvement_p90": 0.96,
-      "ball_security": 0.81,
-      "composite": 5.67
-    },
-    {
-      "name": "Rayan Lutin",
-      "team": "Amed SK",
-      "position": "RM",
-      "group": "W",
-      "age": 23.0,
-      "minutes": 130,
-      "goals": 0.0,
+      "age": 29.0,
+      "minutes": 800,
+      "goals": 2.0,
       "assists": 0.0,
-      "shots": 1.0,
-      "xg": 0.15,
-      "xa": 0.16,
-      "nxg": 0.54,
-      "finishing_delta": -0.15,
-      "xg_per_shot": 0.15,
-      "clinical_ratio": 0.0,
-      "shot_quality": 0.0,
-      "creativity_p90": 0.87,
-      "progressive_share": 0.237,
-      "forward_orientation": 0.153,
-      "box_entry_rate": 0.136,
-      "final_third_ratio": 1.0,
-      "press_resistance": 0.78,
-      "defensive_actions_p90": 21.46,
-      "aerial_dominance": 0.5,
-      "net_impact_p90": 0.374,
-      "involvement_p90": 0.21,
-      "ball_security": 0.769,
-      "composite": 5.37
-    },
-    {
-      "name": "Mete Kaan Demir",
-      "team": "Eyüpspor",
-      "position": "RM",
-      "group": "W",
-      "age": 28.0,
-      "minutes": 181,
-      "goals": 0.0,
-      "assists": 0.0,
-      "shots": 1.0,
-      "xg": 0.06,
-      "xa": 0.03,
-      "nxg": -0.57,
-      "finishing_delta": -0.06,
+      "shots": 22.0,
+      "xg": 1.32,
+      "xa": 3.22,
+      "nxg": -2.65,
+      "finishing_delta": 0.68,
       "xg_per_shot": 0.06,
-      "clinical_ratio": 0.0,
-      "shot_quality": 0.0,
-      "creativity_p90": 0.14,
-      "progressive_share": 0.114,
-      "forward_orientation": 0.025,
-      "box_entry_rate": 0.139,
-      "final_third_ratio": 1.0,
-      "press_resistance": 0.67,
-      "defensive_actions_p90": 13.43,
-      "aerial_dominance": 0.4,
-      "net_impact_p90": -0.283,
-      "involvement_p90": 0.04,
-      "ball_security": 0.768,
-      "composite": 3.39
-    },
-    {
-      "name": "Abbosbek Fayzullaev",
-      "team": "İstanbul Başakşehir FK",
-      "position": "LM",
-      "group": "W",
-      "age": 23.0,
-      "minutes": 341,
-      "goals": 0.0,
-      "assists": 1.0,
-      "shots": 9.0,
-      "xg": 0.82,
-      "xa": 0.3,
-      "nxg": -1.77,
-      "finishing_delta": -0.82,
-      "xg_per_shot": 0.091,
-      "clinical_ratio": 0.0,
-      "shot_quality": 0.04,
-      "creativity_p90": 0.87,
-      "progressive_share": 0.187,
-      "forward_orientation": 0.098,
-      "box_entry_rate": 0.081,
-      "final_third_ratio": 1.0,
-      "press_resistance": 0.72,
-      "defensive_actions_p90": 11.61,
-      "aerial_dominance": 0.57,
-      "net_impact_p90": -0.467,
-      "involvement_p90": 0.56,
-      "ball_security": 0.774,
-      "composite": 2.9
-    },
-    {
-      "name": "Bilal Boutobba",
-      "team": "Eyüpspor",
-      "position": "RM",
-      "group": "W",
-      "age": 28.0,
-      "minutes": 440,
-      "goals": 0.0,
-      "assists": 0.0,
-      "shots": 14.0,
-      "xg": 1.06,
-      "xa": 0.03,
-      "nxg": -5.09,
-      "finishing_delta": -1.06,
-      "xg_per_shot": 0.076,
-      "clinical_ratio": 0.0,
+      "clinical_ratio": 1.52,
       "shot_quality": 0.016,
-      "creativity_p90": 0.13,
-      "progressive_share": 0.135,
-      "forward_orientation": 0.049,
-      "box_entry_rate": 0.147,
+      "creativity_p90": 1.27,
+      "progressive_share": 0.153,
+      "forward_orientation": 0.053,
+      "box_entry_rate": 0.129,
       "final_third_ratio": 1.0,
-      "press_resistance": 0.72,
-      "defensive_actions_p90": 11.05,
-      "aerial_dominance": 0.55,
-      "net_impact_p90": -1.041,
-      "involvement_p90": 0.22,
-      "ball_security": 0.764,
-      "composite": 2.27
-    },
+      "press_resistance": 0.71,
+      "defensive_actions_p90": 9.9,
+      "aerial_dominance": 0.43,
+      "net_impact_p90": -0.298,
+      "involvement_p90": 0.74,
+      "ball_security": 0.794,
+      "composite": 6.76,
+      "composite_pct": 81.2
+    }
+  ],
+  "composite_MF": [
     {
-      "name": "Mame Thiam",
-      "team": "Corum FK",
-      "position": "RM",
-      "group": "W",
-      "age": 34.0,
-      "minutes": 147,
+      "_composite_raw": 14.36,
+      "name": "Enis Bardhi",
+      "team": "Konyaspor",
+      "position": "CAM",
+      "group": "MF",
+      "age": 31.0,
+      "minutes": 204,
       "goals": 0.0,
       "assists": 0.0,
       "shots": 2.0,
-      "xg": 0.25,
-      "xa": 0.0,
-      "nxg": -0.62,
-      "finishing_delta": -0.25,
-      "xg_per_shot": 0.125,
+      "xg": 0.41,
+      "xa": 1.12,
+      "nxg": 1.85,
+      "finishing_delta": -0.41,
+      "xg_per_shot": 0.205,
       "clinical_ratio": 0.0,
-      "shot_quality": 0.062,
-      "creativity_p90": 0.18,
-      "progressive_share": 0.074,
-      "forward_orientation": 0.111,
+      "shot_quality": 0.102,
+      "creativity_p90": 1.22,
+      "progressive_share": 0.328,
+      "forward_orientation": 0.18,
+      "box_entry_rate": 0.131,
+      "final_third_ratio": 1.0,
+      "press_resistance": 0.52,
+      "defensive_actions_p90": 6.18,
+      "aerial_dominance": 0.67,
+      "net_impact_p90": 0.816,
+      "involvement_p90": 0.68,
+      "ball_security": 0.809,
+      "composite": 14.36,
+      "composite_pct": 0
+    },
+    {
+      "_composite_raw": 13.67,
+      "name": "Tobias Gulliksen",
+      "team": "Kocaelispor",
+      "position": "LCM",
+      "group": "MF",
+      "age": 23.0,
+      "minutes": 99,
+      "goals": 0.0,
+      "assists": 0.0,
+      "shots": 0.0,
+      "xg": 0.0,
+      "xa": 0.03,
+      "nxg": 0.29,
+      "finishing_delta": 0.0,
+      "xg_per_shot": 0,
+      "clinical_ratio": 0,
+      "shot_quality": 0,
+      "creativity_p90": 0.48,
+      "progressive_share": 0.353,
+      "forward_orientation": 0.176,
+      "box_entry_rate": 0.088,
+      "final_third_ratio": 1.0,
+      "press_resistance": 0.49,
+      "defensive_actions_p90": 10.91,
+      "aerial_dominance": 0.67,
+      "net_impact_p90": 0.264,
+      "involvement_p90": 0.03,
+      "ball_security": 0.744,
+      "composite": 13.67,
+      "composite_pct": 0
+    },
+    {
+      "_composite_raw": 13.09,
+      "name": "Rafael Luís",
+      "team": "Genclerbirligi Ankara",
+      "position": "LCM",
+      "group": "MF",
+      "age": 21.0,
+      "minutes": 384,
+      "goals": 1.0,
+      "assists": 0.0,
+      "shots": 4.0,
+      "xg": 0.28,
+      "xa": 1.27,
+      "nxg": -3.44,
+      "finishing_delta": 0.72,
+      "xg_per_shot": 0.07,
+      "clinical_ratio": 3.57,
+      "shot_quality": 0.035,
+      "creativity_p90": 1.31,
+      "progressive_share": 0.233,
+      "forward_orientation": 0.206,
+      "box_entry_rate": 0.159,
+      "final_third_ratio": 1.0,
+      "press_resistance": 0.77,
+      "defensive_actions_p90": 10.31,
+      "aerial_dominance": 0.0,
+      "net_impact_p90": -0.806,
+      "involvement_p90": 0.6,
+      "ball_security": 0.867,
+      "composite": 13.09,
+      "composite_pct": 0
+    },
+    {
+      "_composite_raw": 13.04,
+      "name": "Dia Saba",
+      "team": "Amed SK",
+      "position": "CAM",
+      "group": "MF",
+      "age": 33.0,
+      "minutes": 804,
+      "goals": 5.0,
+      "assists": 1.0,
+      "shots": 27.0,
+      "xg": 2.48,
+      "xa": 3.81,
+      "nxg": 8.15,
+      "finishing_delta": 2.52,
+      "xg_per_shot": 0.092,
+      "clinical_ratio": 2.02,
+      "shot_quality": 0.034,
+      "creativity_p90": 1.43,
+      "progressive_share": 0.247,
+      "forward_orientation": 0.172,
+      "box_entry_rate": 0.184,
+      "final_third_ratio": 1.0,
+      "press_resistance": 0.76,
+      "defensive_actions_p90": 8.51,
+      "aerial_dominance": 0.33,
+      "net_impact_p90": 0.912,
+      "involvement_p90": 1.38,
+      "ball_security": 0.872,
+      "composite": 13.04,
+      "composite_pct": 98.2
+    },
+    {
+      "_composite_raw": 12.38,
+      "name": "Furkan Soyalp",
+      "team": "Amed SK",
+      "position": "LCDM",
+      "group": "MF",
+      "age": 31.0,
+      "minutes": 490,
+      "goals": 1.0,
+      "assists": 1.0,
+      "shots": 8.0,
+      "xg": 0.33,
+      "xa": 0.25,
+      "nxg": 3.54,
+      "finishing_delta": 0.67,
+      "xg_per_shot": 0.041,
+      "clinical_ratio": 3.03,
+      "shot_quality": 0.021,
+      "creativity_p90": 0.45,
+      "progressive_share": 0.302,
+      "forward_orientation": 0.161,
+      "box_entry_rate": 0.045,
+      "final_third_ratio": 1.0,
+      "press_resistance": 0.53,
+      "defensive_actions_p90": 20.57,
+      "aerial_dominance": 0.65,
+      "net_impact_p90": 0.65,
+      "involvement_p90": 0.47,
+      "ball_security": 0.869,
+      "composite": 12.38,
+      "composite_pct": 96.4
+    },
+    {
+      "_composite_raw": 12.21,
+      "name": "Junior Olaitan",
+      "team": "Besiktas JK",
+      "position": "RCM",
+      "group": "MF",
+      "age": 24.0,
+      "minutes": 614,
+      "goals": 1.0,
+      "assists": 2.0,
+      "shots": 11.0,
+      "xg": 0.98,
+      "xa": 3.49,
+      "nxg": 7.35,
+      "finishing_delta": 0.02,
+      "xg_per_shot": 0.089,
+      "clinical_ratio": 1.02,
+      "shot_quality": 0.049,
+      "creativity_p90": 1.35,
+      "progressive_share": 0.226,
+      "forward_orientation": 0.152,
       "box_entry_rate": 0.111,
       "final_third_ratio": 1.0,
-      "press_resistance": 0.43,
-      "defensive_actions_p90": 9.8,
-      "aerial_dominance": 0.62,
-      "net_impact_p90": -0.38,
-      "involvement_p90": 0.15,
-      "ball_security": 0.643,
-      "composite": 1.66
+      "press_resistance": 0.78,
+      "defensive_actions_p90": 10.7,
+      "aerial_dominance": 0.33,
+      "net_impact_p90": 1.077,
+      "involvement_p90": 1.09,
+      "ball_security": 0.883,
+      "composite": 12.21,
+      "composite_pct": 94.6
+    },
+    {
+      "_composite_raw": 12.06,
+      "name": "İrfan Can Kahveci",
+      "team": "Fenerbahce",
+      "position": "CAM",
+      "group": "MF",
+      "age": 31.0,
+      "minutes": 505,
+      "goals": 3.0,
+      "assists": 3.0,
+      "shots": 11.0,
+      "xg": 0.95,
+      "xa": 2.51,
+      "nxg": 6.23,
+      "finishing_delta": 2.05,
+      "xg_per_shot": 0.086,
+      "clinical_ratio": 3.16,
+      "shot_quality": 0.031,
+      "creativity_p90": 1.41,
+      "progressive_share": 0.244,
+      "forward_orientation": 0.113,
+      "box_entry_rate": 0.199,
+      "final_third_ratio": 1.0,
+      "press_resistance": 0.73,
+      "defensive_actions_p90": 13.72,
+      "aerial_dominance": 0.67,
+      "net_impact_p90": 1.11,
+      "involvement_p90": 1.69,
+      "ball_security": 0.809,
+      "composite": 12.06,
+      "composite_pct": 92.9
+    },
+    {
+      "_composite_raw": 11.99,
+      "name": "Efkan Bekiroğlu",
+      "team": "Göztepe",
+      "position": "CAM",
+      "group": "MF",
+      "age": 31.0,
+      "minutes": 246,
+      "goals": 2.0,
+      "assists": 0.0,
+      "shots": 6.0,
+      "xg": 1.17,
+      "xa": 1.99,
+      "nxg": -2.75,
+      "finishing_delta": 0.83,
+      "xg_per_shot": 0.195,
+      "clinical_ratio": 1.71,
+      "shot_quality": 0.13,
+      "creativity_p90": 1.31,
+      "progressive_share": 0.208,
+      "forward_orientation": 0.167,
+      "box_entry_rate": 0.222,
+      "final_third_ratio": 1.0,
+      "press_resistance": 0.7,
+      "defensive_actions_p90": 7.68,
+      "aerial_dominance": 0.43,
+      "net_impact_p90": -1.006,
+      "involvement_p90": 1.89,
+      "ball_security": 0.846,
+      "composite": 11.99,
+      "composite_pct": 0
+    },
+    {
+      "_composite_raw": 11.95,
+      "name": "Salih Uçan",
+      "team": "Genclerbirligi Ankara",
+      "position": "RCM",
+      "group": "MF",
+      "age": 32.0,
+      "minutes": 275,
+      "goals": 0.0,
+      "assists": 0.0,
+      "shots": 5.0,
+      "xg": 0.74,
+      "xa": 0.37,
+      "nxg": -0.84,
+      "finishing_delta": -0.74,
+      "xg_per_shot": 0.148,
+      "clinical_ratio": 0.0,
+      "shot_quality": 0.059,
+      "creativity_p90": 0.48,
+      "progressive_share": 0.299,
+      "forward_orientation": 0.126,
+      "box_entry_rate": 0.092,
+      "final_third_ratio": 1.0,
+      "press_resistance": 0.71,
+      "defensive_actions_p90": 17.67,
+      "aerial_dominance": 0.43,
+      "net_impact_p90": -0.275,
+      "involvement_p90": 0.36,
+      "ball_security": 0.88,
+      "composite": 11.95,
+      "composite_pct": 0
+    },
+    {
+      "_composite_raw": 11.69,
+      "name": "Mattéo Guendouzi",
+      "team": "Fenerbahce",
+      "position": "LCDM",
+      "group": "MF",
+      "age": 27.0,
+      "minutes": 809,
+      "goals": 1.0,
+      "assists": 0.0,
+      "shots": 7.0,
+      "xg": 1.1,
+      "xa": 2.19,
+      "nxg": 7.99,
+      "finishing_delta": -0.1,
+      "xg_per_shot": 0.157,
+      "clinical_ratio": 0.91,
+      "shot_quality": 0.067,
+      "creativity_p90": 1.11,
+      "progressive_share": 0.251,
+      "forward_orientation": 0.109,
+      "box_entry_rate": 0.054,
+      "final_third_ratio": 1.0,
+      "press_resistance": 0.76,
+      "defensive_actions_p90": 11.68,
+      "aerial_dominance": 0.5,
+      "net_impact_p90": 0.889,
+      "involvement_p90": 0.48,
+      "ball_security": 0.935,
+      "composite": 11.69,
+      "composite_pct": 89.3
     }
   ],
-  "composite_MF": [],
   "composite_FB": [
     {
+      "_composite_raw": 9.34,
       "name": "Florent Hadergjonaj",
       "team": "Alanyaspor",
       "position": "RWB",
@@ -3563,9 +4215,11 @@
       "net_impact_p90": -0.384,
       "involvement_p90": 0.66,
       "ball_security": 0.876,
-      "composite": 9.34
+      "composite": 9.34,
+      "composite_pct": 97.4
     },
     {
+      "_composite_raw": 8.15,
       "name": "Arda Kurtulan",
       "team": "Göztepe",
       "position": "RWB",
@@ -3593,9 +4247,11 @@
       "net_impact_p90": 0.185,
       "involvement_p90": 0.46,
       "ball_security": 0.822,
-      "composite": 8.15
+      "composite": 8.15,
+      "composite_pct": 94.9
     },
     {
+      "_composite_raw": 6.83,
       "name": "Levent Mercan",
       "team": "Fenerbahce",
       "position": "LB",
@@ -3623,9 +4279,11 @@
       "net_impact_p90": 0.658,
       "involvement_p90": 1.06,
       "ball_security": 0.911,
-      "composite": 6.83
+      "composite": 6.83,
+      "composite_pct": 0
     },
     {
+      "_composite_raw": 6.14,
       "name": "Uğur Kaan Yıldız",
       "team": "Kocaelispor",
       "position": "RB",
@@ -3653,9 +4311,11 @@
       "net_impact_p90": -0.123,
       "involvement_p90": 0.46,
       "ball_security": 0.902,
-      "composite": 6.14
+      "composite": 6.14,
+      "composite_pct": 92.3
     },
     {
+      "_composite_raw": 6.07,
       "name": "Ismail Jakobs",
       "team": "Galatasaray",
       "position": "LB",
@@ -3683,9 +4343,11 @@
       "net_impact_p90": 1.49,
       "involvement_p90": 0.56,
       "ball_security": 0.931,
-      "composite": 6.07
+      "composite": 6.07,
+      "composite_pct": 89.7
     },
     {
+      "_composite_raw": 5.73,
       "name": "Amin Cherni",
       "team": "Göztepe",
       "position": "LWB",
@@ -3713,9 +4375,11 @@
       "net_impact_p90": 0.201,
       "involvement_p90": 0.01,
       "ball_security": 0.884,
-      "composite": 5.73
+      "composite": 5.73,
+      "composite_pct": 0
     },
     {
+      "_composite_raw": 5.65,
       "name": "Richard Akonnor",
       "team": "Göztepe",
       "position": "LWB",
@@ -3743,9 +4407,11 @@
       "net_impact_p90": 0.228,
       "involvement_p90": 0.41,
       "ball_security": 0.853,
-      "composite": 5.65
+      "composite": 5.65,
+      "composite_pct": 87.2
     },
     {
+      "_composite_raw": 5.53,
       "name": "Roland Sallai",
       "team": "Galatasaray",
       "position": "RB",
@@ -3773,9 +4439,11 @@
       "net_impact_p90": 1.108,
       "involvement_p90": 0.4,
       "ball_security": 0.928,
-      "composite": 5.53
+      "composite": 5.53,
+      "composite_pct": 84.6
     },
     {
+      "_composite_raw": 5.37,
       "name": "Orhan Ovacıklı",
       "team": "Erzurumspor FK",
       "position": "RWB",
@@ -3803,9 +4471,11 @@
       "net_impact_p90": -0.707,
       "involvement_p90": 0.28,
       "ball_security": 0.874,
-      "composite": 5.37
+      "composite": 5.37,
+      "composite_pct": 82.1
     },
     {
+      "_composite_raw": 5.28,
       "name": "Yusuf Özdemir",
       "team": "Alanyaspor",
       "position": "LWB",
@@ -3833,11 +4503,13 @@
       "net_impact_p90": 0.57,
       "involvement_p90": 0.04,
       "ball_security": 0.938,
-      "composite": 5.28
+      "composite": 5.28,
+      "composite_pct": 0
     }
   ],
   "composite_CB": [
     {
+      "_composite_raw": 19.39,
       "name": "Hamza Güreler",
       "team": "İstanbul Başakşehir FK",
       "position": "CB",
@@ -3865,9 +4537,11 @@
       "net_impact_p90": -1.129,
       "involvement_p90": 0.02,
       "ball_security": 0.907,
-      "composite": 19.39
+      "composite": 19.39,
+      "composite_pct": 0
     },
     {
+      "_composite_raw": 18.08,
       "name": "Arda Şengül",
       "team": "Corum FK",
       "position": "LCB",
@@ -3895,9 +4569,11 @@
       "net_impact_p90": -0.691,
       "involvement_p90": 0.0,
       "ball_security": 0.9,
-      "composite": 18.08
+      "composite": 18.08,
+      "composite_pct": 0
     },
     {
+      "_composite_raw": 17.9,
       "name": "Toni Borevković",
       "team": "Samsunspor",
       "position": "RCB",
@@ -3925,9 +4601,11 @@
       "net_impact_p90": -1.119,
       "involvement_p90": 0.0,
       "ball_security": 0.964,
-      "composite": 17.9
+      "composite": 17.9,
+      "composite_pct": 0
     },
     {
+      "_composite_raw": 17.48,
       "name": "Žan Žužek",
       "team": "Genclerbirligi Ankara",
       "position": "LCB",
@@ -3955,9 +4633,11 @@
       "net_impact_p90": -0.128,
       "involvement_p90": 0.11,
       "ball_security": 0.936,
-      "composite": 17.48
+      "composite": 17.48,
+      "composite_pct": 0
     },
     {
+      "_composite_raw": 17.29,
       "name": "Emir Ortakaya",
       "team": "Kocaelispor",
       "position": "LCB",
@@ -3985,9 +4665,11 @@
       "net_impact_p90": 0.299,
       "involvement_p90": 0.13,
       "ball_security": 0.925,
-      "composite": 17.29
+      "composite": 17.29,
+      "composite_pct": 97.5
     },
     {
+      "_composite_raw": 16.88,
       "name": "Lumbardh Dellova",
       "team": "Amed SK",
       "position": "RCB",
@@ -4015,9 +4697,11 @@
       "net_impact_p90": 0.753,
       "involvement_p90": 0.19,
       "ball_security": 0.944,
-      "composite": 16.88
+      "composite": 16.88,
+      "composite_pct": 95.0
     },
     {
+      "_composite_raw": 16.72,
       "name": "Yunus Emre Çift",
       "team": "Samsunspor",
       "position": "RCB",
@@ -4045,9 +4729,11 @@
       "net_impact_p90": -0.293,
       "involvement_p90": 0.1,
       "ball_security": 0.943,
-      "composite": 16.72
+      "composite": 16.72,
+      "composite_pct": 0
     },
     {
+      "_composite_raw": 16.46,
       "name": "Arda Kızıldağ",
       "team": "Gaziantep FK",
       "position": "RCB",
@@ -4075,9 +4761,11 @@
       "net_impact_p90": -0.374,
       "involvement_p90": 0.17,
       "ball_security": 0.956,
-      "composite": 16.46
+      "composite": 16.46,
+      "composite_pct": 92.5
     },
     {
+      "_composite_raw": 16.46,
       "name": "Çağlar Söyüncü",
       "team": "Corum FK",
       "position": "CB",
@@ -4105,9 +4793,11 @@
       "net_impact_p90": 0.016,
       "involvement_p90": 0.0,
       "ball_security": 0.948,
-      "composite": 16.46
+      "composite": 16.46,
+      "composite_pct": 0
     },
     {
+      "_composite_raw": 16.42,
       "name": "Emirhan Topçu",
       "team": "Besiktas JK",
       "position": "LCB",
@@ -4135,7 +4825,8 @@
       "net_impact_p90": 0.882,
       "involvement_p90": 0.18,
       "ball_security": 0.965,
-      "composite": 16.42
+      "composite": 16.42,
+      "composite_pct": 90.0
     }
   ]
 }

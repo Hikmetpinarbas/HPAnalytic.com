@@ -1,0 +1,165 @@
+{
+  "GS": [
+    {
+      "minute": 1.1,
+      "xg": 0.22,
+      "is_goal": true,
+      "player": "Yunus Akgün",
+      "cumulative": 0.22
+    },
+    {
+      "minute": 1.1,
+      "xg": 0.22,
+      "is_goal": false,
+      "player": "Yunus Akgün",
+      "cumulative": 0.44
+    },
+    {
+      "minute": 14.1,
+      "xg": 0.13,
+      "is_goal": false,
+      "player": "Victor Osimhen",
+      "cumulative": 0.57
+    },
+    {
+      "minute": 15.1,
+      "xg": 0.13,
+      "is_goal": true,
+      "player": "Victor Osimhen",
+      "cumulative": 0.7
+    },
+    {
+      "minute": 15.1,
+      "xg": 0.13,
+      "is_goal": false,
+      "player": "Victor Osimhen",
+      "cumulative": 0.83
+    },
+    {
+      "minute": 19.3,
+      "xg": 0.13,
+      "is_goal": false,
+      "player": "Victor Osimhen",
+      "cumulative": 0.96
+    },
+    {
+      "minute": 30.5,
+      "xg": 0.02,
+      "is_goal": false,
+      "player": "Mario Lemina",
+      "cumulative": 0.98
+    },
+    {
+      "minute": 36.7,
+      "xg": 0.09,
+      "is_goal": false,
+      "player": "Barış Alper Yılmaz",
+      "cumulative": 1.07
+    },
+    {
+      "minute": 43.1,
+      "xg": 0.2,
+      "is_goal": true,
+      "player": "Aleksei Batrakov",
+      "cumulative": 1.27
+    },
+    {
+      "minute": 43.1,
+      "xg": 0.2,
+      "is_goal": false,
+      "player": "Aleksei Batrakov",
+      "cumulative": 1.47
+    },
+    {
+      "minute": 45.6,
+      "xg": 0.11,
+      "is_goal": false,
+      "player": "Abdülkerim Bardakcı",
+      "cumulative": 1.58
+    }
+  ],
+  "LIL": [
+    {
+      "minute": 6.5,
+      "xg": 0.02,
+      "is_goal": true,
+      "player": "Nabil Bentaleb",
+      "cumulative": 0.02
+    },
+    {
+      "minute": 6.9,
+      "xg": 0.118,
+      "is_goal": true,
+      "player": "Soriba Diaoune",
+      "cumulative": 0.14
+    },
+    {
+      "minute": 6.9,
+      "xg": 0.118,
+      "is_goal": false,
+      "player": "Soriba Diaoune",
+      "cumulative": 0.26
+    },
+    {
+      "minute": 23.5,
+      "xg": 0.118,
+      "is_goal": false,
+      "player": "Soriba Diaoune",
+      "cumulative": 0.37
+    },
+    {
+      "minute": 32.0,
+      "xg": 0.2,
+      "is_goal": false,
+      "player": "Hákon Arnar Haraldsson",
+      "cumulative": 0.57
+    },
+    {
+      "minute": 36.4,
+      "xg": 0.22,
+      "is_goal": false,
+      "player": "Maurits Kjaergaard",
+      "cumulative": 0.79
+    },
+    {
+      "minute": 37.9,
+      "xg": 0.14,
+      "is_goal": false,
+      "player": "Dilane Bakwa",
+      "cumulative": 0.93
+    },
+    {
+      "minute": 38.8,
+      "xg": 0.14,
+      "is_goal": false,
+      "player": "Dilane Bakwa",
+      "cumulative": 1.07
+    },
+    {
+      "minute": 38.8,
+      "xg": 0.118,
+      "is_goal": true,
+      "player": "Soriba Diaoune",
+      "cumulative": 1.19
+    },
+    {
+      "minute": 38.8,
+      "xg": 0.118,
+      "is_goal": false,
+      "player": "Soriba Diaoune",
+      "cumulative": 1.31
+    },
+    {
+      "minute": 48.0,
+      "xg": 0.02,
+      "is_goal": false,
+      "player": "Basar Onal",
+      "cumulative": 1.33
+    }
+  ],
+  "totals": {
+    "GS": 1.58,
+    "LIL": 1.33
+  },
+  "method": "XLSX oyuncu xG / oyuncu şut sayısı"
+}

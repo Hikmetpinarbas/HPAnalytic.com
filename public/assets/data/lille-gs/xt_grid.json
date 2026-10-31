@@ -1,0 +1,1400 @@
+{
+  "grid": {
+    "x": 10,
+    "y": 8
+  },
+  "cells": [
+    {
+      "row": 0,
+      "col": 0,
+      "cx": 5.2,
+      "cy": 4.2,
+      "prior": 0.012,
+      "events": 43,
+      "goals": 0,
+      "shots": 0,
+      "local": 0.305,
+      "xT": 0.01
+    },
+    {
+      "row": 0,
+      "col": 1,
+      "cx": 15.8,
+      "cy": 4.2,
+      "prior": 0.018,
+      "events": 29,
+      "goals": 0,
+      "shots": 0,
+      "local": 0.206,
+      "xT": 0.014
+    },
+    {
+      "row": 0,
+      "col": 2,
+      "cx": 26.2,
+      "cy": 4.2,
+      "prior": 0.026,
+      "events": 45,
+      "goals": 0,
+      "shots": 0,
+      "local": 0.319,
+      "xT": 0.022
+    },
+    {
+      "row": 0,
+      "col": 3,
+      "cx": 36.8,
+      "cy": 4.2,
+      "prior": 0.038,
+      "events": 131,
+      "goals": 0,
+      "shots": 0,
+      "local": 0.929,
+      "xT": 0.037
+    },
+    {
+      "row": 0,
+      "col": 4,
+      "cx": 47.2,
+      "cy": 4.2,
+      "prior": 0.055,
+      "events": 81,
+      "goals": 0,
+      "shots": 0,
+      "local": 0.574,
+      "xT": 0.049
+    },
+    {
+      "row": 0,
+      "col": 5,
+      "cx": 57.8,
+      "cy": 4.2,
+      "prior": 0.076,
+      "events": 46,
+      "goals": 0,
+      "shots": 0,
+      "local": 0.326,
+      "xT": 0.063
+    },
+    {
+      "row": 0,
+      "col": 6,
+      "cx": 68.2,
+      "cy": 4.2,
+      "prior": 0.098,
+      "events": 90,
+      "goals": 0,
+      "shots": 0,
+      "local": 0.638,
+      "xT": 0.089
+    },
+    {
+      "row": 0,
+      "col": 7,
+      "cx": 78.8,
+      "cy": 4.2,
+      "prior": 0.115,
+      "events": 38,
+      "goals": 0,
+      "shots": 0,
+      "local": 0.27,
+      "xT": 0.094
+    },
+    {
+      "row": 0,
+      "col": 8,
+      "cx": 89.2,
+      "cy": 4.2,
+      "prior": 0.115,
+      "events": 43,
+      "goals": 0,
+      "shots": 0,
+      "local": 0.305,
+      "xT": 0.095
+    },
+    {
+      "row": 0,
+      "col": 9,
+      "cx": 99.8,
+      "cy": 4.2,
+      "prior": 0.1,
+      "events": 12,
+      "goals": 0,
+      "shots": 0,
+      "local": 0.085,
+      "xT": 0.077
+    },
+    {
+      "row": 1,
+      "col": 0,
+      "cx": 5.2,
+      "cy": 12.8,
+      "prior": 0.013,
+      "events": 30,
+      "goals": 0,
+      "shots": 0,
+      "local": 0.213,
+      "xT": 0.01
+    },
+    {
+      "row": 1,
+      "col": 1,
+      "cx": 15.8,
+      "cy": 12.8,
+      "prior": 0.02,
+      "events": 30,
+      "goals": 0,
+      "shots": 1,
+      "local": 0.234,
+      "xT": 0.016
+    },
+    {
+      "row": 1,
+      "col": 2,
+      "cx": 26.2,
+      "cy": 12.8,
+      "prior": 0.03,
+      "events": 53,
+      "goals": 0,
+      "shots": 0,
+      "local": 0.376,
+      "xT": 0.025
+    },
+    {
+      "row": 1,
+      "col": 3,
+      "cx": 36.8,
+      "cy": 12.8,
+      "prior": 0.046,
+      "events": 44,
+      "goals": 0,
+      "shots": 0,
+      "local": 0.312,
+      "xT": 0.038
+    },
+    {
+      "row": 1,
+      "col": 4,
+      "cx": 47.2,
+      "cy": 12.8,
+      "prior": 0.067,
+      "events": 44,
+      "goals": 0,
+      "shots": 0,
+      "local": 0.312,
+      "xT": 0.055
+    },
+    {
+      "row": 1,
+      "col": 5,
+      "cx": 57.8,
+      "cy": 12.8,
+      "prior": 0.098,
+      "events": 32,
+      "goals": 0,
+      "shots": 0,
+      "local": 0.227,
+      "xT": 0.079
+    },
+    {
+      "row": 1,
+      "col": 6,
+      "cx": 68.2,
+      "cy": 12.8,
+      "prior": 0.136,
+      "events": 44,
+      "goals": 0,
+      "shots": 0,
+      "local": 0.312,
+      "xT": 0.113
+    },
+    {
+      "row": 1,
+      "col": 7,
+      "cx": 78.8,
+      "cy": 12.8,
+      "prior": 0.173,
+      "events": 26,
+      "goals": 0,
+      "shots": 0,
+      "local": 0.184,
+      "xT": 0.138
+    },
+    {
+      "row": 1,
+      "col": 8,
+      "cx": 89.2,
+      "cy": 12.8,
+      "prior": 0.183,
+      "events": 13,
+      "goals": 0,
+      "shots": 0,
+      "local": 0.092,
+      "xT": 0.141
+    },
+    {
+      "row": 1,
+      "col": 9,
+      "cx": 99.8,
+      "cy": 12.8,
+      "prior": 0.148,
+      "events": 38,
+      "goals": 0,
+      "shots": 0,
+      "local": 0.27,
+      "xT": 0.121
+    },
+    {
+      "row": 2,
+      "col": 0,
+      "cx": 5.2,
+      "cy": 21.2,
+      "prior": 0.014,
+      "events": 18,
+      "goals": 1,
+      "shots": 3,
+      "local": 0.262,
+      "xT": 0.011
+    },
+    {
+      "row": 2,
+      "col": 1,
+      "cx": 15.8,
+      "cy": 21.2,
+      "prior": 0.022,
+      "events": 36,
+      "goals": 0,
+      "shots": 0,
+      "local": 0.255,
+      "xT": 0.018
+    },
+    {
+      "row": 2,
+      "col": 2,
+      "cx": 26.2,
+      "cy": 21.2,
+      "prior": 0.034,
+      "events": 60,
+      "goals": 0,
+      "shots": 0,
+      "local": 0.426,
+      "xT": 0.029
+    },
+    {
+      "row": 2,
+      "col": 3,
+      "cx": 36.8,
+      "cy": 21.2,
+      "prior": 0.051,
+      "events": 51,
+      "goals": 0,
+      "shots": 0,
+      "local": 0.362,
+      "xT": 0.043
+    },
+    {
+      "row": 2,
+      "col": 4,
+      "cx": 47.2,
+      "cy": 21.2,
+      "prior": 0.078,
+      "events": 87,
+      "goals": 0,
+      "shots": 0,
+      "local": 0.617,
+      "xT": 0.071
+    },
+    {
+      "row": 2,
+      "col": 5,
+      "cx": 57.8,
+      "cy": 21.2,
+      "prior": 0.118,
+      "events": 74,
+      "goals": 0,
+      "shots": 0,
+      "local": 0.525,
+      "xT": 0.104
+    },
+    {
+      "row": 2,
+      "col": 6,
+      "cx": 68.2,
+      "cy": 21.2,
+      "prior": 0.175,
+      "events": 77,
+      "goals": 0,
+      "shots": 0,
+      "local": 0.546,
+      "xT": 0.155
+    },
+    {
+      "row": 2,
+      "col": 7,
+      "cx": 78.8,
+      "cy": 21.2,
+      "prior": 0.247,
+      "events": 79,
+      "goals": 0,
+      "shots": 0,
+      "local": 0.56,
+      "xT": 0.22
+    },
+    {
+      "row": 2,
+      "col": 8,
+      "cx": 89.2,
+      "cy": 21.2,
+      "prior": 0.303,
+      "events": 38,
+      "goals": 0,
+      "shots": 0,
+      "local": 0.27,
+      "xT": 0.248
+    },
+    {
+      "row": 2,
+      "col": 9,
+      "cx": 99.8,
+      "cy": 21.2,
+      "prior": 0.238,
+      "events": 17,
+      "goals": 0,
+      "shots": 2,
+      "local": 0.163,
+      "xT": 0.188
+    },
+    {
+      "row": 3,
+      "col": 0,
+      "cx": 5.2,
+      "cy": 29.8,
+      "prior": 0.015,
+      "events": 32,
+      "goals": 1,
+      "shots": 3,
+      "local": 0.362,
+      "xT": 0.013
+    },
+    {
+      "row": 3,
+      "col": 1,
+      "cx": 15.8,
+      "cy": 29.8,
+      "prior": 0.023,
+      "events": 16,
+      "goals": 0,
+      "shots": 0,
+      "local": 0.113,
+      "xT": 0.018
+    },
+    {
+      "row": 3,
+      "col": 2,
+      "cx": 26.2,
+      "cy": 29.8,
+      "prior": 0.035,
+      "events": 15,
+      "goals": 0,
+      "shots": 1,
+      "local": 0.128,
+      "xT": 0.027
+    },
+    {
+      "row": 3,
+      "col": 3,
+      "cx": 36.8,
+      "cy": 29.8,
+      "prior": 0.055,
+      "events": 19,
+      "goals": 0,
+      "shots": 0,
+      "local": 0.135,
+      "xT": 0.043
+    },
+    {
+      "row": 3,
+      "col": 4,
+      "cx": 47.2,
+      "cy": 29.8,
+      "prior": 0.085,
+      "events": 30,
+      "goals": 0,
+      "shots": 0,
+      "local": 0.213,
+      "xT": 0.068
+    },
+    {
+      "row": 3,
+      "col": 5,
+      "cx": 57.8,
+      "cy": 29.8,
+      "prior": 0.131,
+      "events": 34,
+      "goals": 0,
+      "shots": 0,
+      "local": 0.241,
+      "xT": 0.106
+    },
+    {
+      "row": 3,
+      "col": 6,
+      "cx": 68.2,
+      "cy": 29.8,
+      "prior": 0.202,
+      "events": 33,
+      "goals": 0,
+      "shots": 0,
+      "local": 0.234,
+      "xT": 0.163
+    },
+    {
+      "row": 3,
+      "col": 7,
+      "cx": 78.8,
+      "cy": 29.8,
+      "prior": 0.309,
+      "events": 47,
+      "goals": 0,
+      "shots": 0,
+      "local": 0.333,
+      "xT": 0.258
+    },
+    {
+      "row": 3,
+      "col": 8,
+      "cx": 89.2,
+      "cy": 29.8,
+      "prior": 0.46,
+      "events": 37,
+      "goals": 1,
+      "shots": 2,
+      "local": 0.376,
+      "xT": 0.388
+    },
+    {
+      "row": 3,
+      "col": 9,
+      "cx": 99.8,
+      "cy": 29.8,
+      "prior": 0.532,
+      "events": 33,
+      "goals": 2,
+      "shots": 3,
+      "local": 0.44,
+      "xT": 0.457
+    },
+    {
+      "row": 4,
+      "col": 0,
+      "cx": 5.2,
+      "cy": 38.2,
+      "prior": 0.015,
+      "events": 9,
+      "goals": 0,
+      "shots": 0,
+      "local": 0.064,
+      "xT": 0.011
+    },
+    {
+      "row": 4,
+      "col": 1,
+      "cx": 15.8,
+      "cy": 38.2,
+      "prior": 0.023,
+      "events": 23,
+      "goals": 0,
+      "shots": 1,
+      "local": 0.184,
+      "xT": 0.018
+    },
+    {
+      "row": 4,
+      "col": 2,
+      "cx": 26.2,
+      "cy": 38.2,
+      "prior": 0.035,
+      "events": 16,
+      "goals": 0,
+      "shots": 0,
+      "local": 0.113,
+      "xT": 0.027
+    },
+    {
+      "row": 4,
+      "col": 3,
+      "cx": 36.8,
+      "cy": 38.2,
+      "prior": 0.055,
+      "events": 18,
+      "goals": 0,
+      "shots": 0,
+      "local": 0.128,
+      "xT": 0.043
+    },
+    {
+      "row": 4,
+      "col": 4,
+      "cx": 47.2,
+      "cy": 38.2,
+      "prior": 0.085,
+      "events": 23,
+      "goals": 0,
+      "shots": 0,
+      "local": 0.163,
+      "xT": 0.067
+    },
+    {
+      "row": 4,
+      "col": 5,
+      "cx": 57.8,
+      "cy": 38.2,
+      "prior": 0.131,
+      "events": 96,
+      "goals": 0,
+      "shots": 0,
+      "local": 0.681,
+      "xT": 0.121
+    },
+    {
+      "row": 4,
+      "col": 6,
+      "cx": 68.2,
+      "cy": 38.2,
+      "prior": 0.202,
+      "events": 21,
+      "goals": 0,
+      "shots": 0,
+      "local": 0.149,
+      "xT": 0.159
+    },
+    {
+      "row": 4,
+      "col": 7,
+      "cx": 78.8,
+      "cy": 38.2,
+      "prior": 0.309,
+      "events": 55,
+      "goals": 0,
+      "shots": 0,
+      "local": 0.39,
+      "xT": 0.262
+    },
+    {
+      "row": 4,
+      "col": 8,
+      "cx": 89.2,
+      "cy": 38.2,
+      "prior": 0.46,
+      "events": 26,
+      "goals": 0,
+      "shots": 0,
+      "local": 0.184,
+      "xT": 0.366
+    },
+    {
+      "row": 4,
+      "col": 9,
+      "cx": 99.8,
+      "cy": 38.2,
+      "prior": 0.532,
+      "events": 23,
+      "goals": 1,
+      "shots": 4,
+      "local": 0.319,
+      "xT": 0.441
+    },
+    {
+      "row": 5,
+      "col": 0,
+      "cx": 5.2,
+      "cy": 46.8,
+      "prior": 0.014,
+      "events": 15,
+      "goals": 0,
+      "shots": 0,
+      "local": 0.106,
+      "xT": 0.011
+    },
+    {
+      "row": 5,
+      "col": 1,
+      "cx": 15.8,
+      "cy": 46.8,
+      "prior": 0.022,
+      "events": 29,
+      "goals": 0,
+      "shots": 1,
+      "local": 0.227,
+      "xT": 0.018
+    },
+    {
+      "row": 5,
+      "col": 2,
+      "cx": 26.2,
+      "cy": 46.8,
+      "prior": 0.034,
+      "events": 44,
+      "goals": 0,
+      "shots": 0,
+      "local": 0.312,
+      "xT": 0.028
+    },
+    {
+      "row": 5,
+      "col": 3,
+      "cx": 36.8,
+      "cy": 46.8,
+      "prior": 0.051,
+      "events": 36,
+      "goals": 0,
+      "shots": 0,
+      "local": 0.255,
+      "xT": 0.042
+    },
+    {
+      "row": 5,
+      "col": 4,
+      "cx": 47.2,
+      "cy": 46.8,
+      "prior": 0.078,
+      "events": 79,
+      "goals": 0,
+      "shots": 0,
+      "local": 0.56,
+      "xT": 0.069
+    },
+    {
+      "row": 5,
+      "col": 5,
+      "cx": 57.8,
+      "cy": 46.8,
+      "prior": 0.118,
+      "events": 95,
+      "goals": 0,
+      "shots": 0,
+      "local": 0.674,
+      "xT": 0.108
+    },
+    {
+      "row": 5,
+      "col": 6,
+      "cx": 68.2,
+      "cy": 46.8,
+      "prior": 0.175,
+      "events": 73,
+      "goals": 0,
+      "shots": 0,
+      "local": 0.518,
+      "xT": 0.154
+    },
+    {
+      "row": 5,
+      "col": 7,
+      "cx": 78.8,
+      "cy": 46.8,
+      "prior": 0.247,
+      "events": 103,
+      "goals": 0,
+      "shots": 1,
+      "local": 0.752,
+      "xT": 0.232
+    },
+    {
+      "row": 5,
+      "col": 8,
+      "cx": 89.2,
+      "cy": 46.8,
+      "prior": 0.303,
+      "events": 52,
+      "goals": 0,
+      "shots": 0,
+      "local": 0.369,
+      "xT": 0.255
+    },
+    {
+      "row": 5,
+      "col": 9,
+      "cx": 99.8,
+      "cy": 46.8,
+      "prior": 0.238,
+      "events": 10,
+      "goals": 0,
+      "shots": 0,
+      "local": 0.071,
+      "xT": 0.183
+    },
+    {
+      "row": 6,
+      "col": 0,
+      "cx": 5.2,
+      "cy": 55.2,
+      "prior": 0.013,
+      "events": 15,
+      "goals": 0,
+      "shots": 0,
+      "local": 0.106,
+      "xT": 0.01
+    },
+    {
+      "row": 6,
+      "col": 1,
+      "cx": 15.8,
+      "cy": 55.2,
+      "prior": 0.02,
+      "events": 17,
+      "goals": 0,
+      "shots": 0,
+      "local": 0.121,
+      "xT": 0.016
+    },
+    {
+      "row": 6,
+      "col": 2,
+      "cx": 26.2,
+      "cy": 55.2,
+      "prior": 0.03,
+      "events": 22,
+      "goals": 0,
+      "shots": 0,
+      "local": 0.156,
+      "xT": 0.024
+    },
+    {
+      "row": 6,
+      "col": 3,
+      "cx": 36.8,
+      "cy": 55.2,
+      "prior": 0.046,
+      "events": 24,
+      "goals": 0,
+      "shots": 0,
+      "local": 0.17,
+      "xT": 0.036
+    },
+    {
+      "row": 6,
+      "col": 4,
+      "cx": 47.2,
+      "cy": 55.2,
+      "prior": 0.067,
+      "events": 13,
+      "goals": 0,
+      "shots": 0,
+      "local": 0.092,
+      "xT": 0.052
+    },
+    {
+      "row": 6,
+      "col": 5,
+      "cx": 57.8,
+      "cy": 55.2,
+      "prior": 0.098,
+      "events": 32,
+      "goals": 0,
+      "shots": 0,
+      "local": 0.227,
+      "xT": 0.079
+    },
+    {
+      "row": 6,
+      "col": 6,
+      "cx": 68.2,
+      "cy": 55.2,
+      "prior": 0.136,
+      "events": 37,
+      "goals": 0,
+      "shots": 0,
+      "local": 0.262,
+      "xT": 0.111
+    },
+    {
+      "row": 6,
+      "col": 7,
+      "cx": 78.8,
+      "cy": 55.2,
+      "prior": 0.173,
+      "events": 36,
+      "goals": 0,
+      "shots": 0,
+      "local": 0.255,
+      "xT": 0.141
+    },
+    {
+      "row": 6,
+      "col": 8,
+      "cx": 89.2,
+      "cy": 55.2,
+      "prior": 0.183,
+      "events": 56,
+      "goals": 0,
+      "shots": 0,
+      "local": 0.397,
+      "xT": 0.155
+    },
+    {
+      "row": 6,
+      "col": 9,
+      "cx": 99.8,
+      "cy": 55.2,
+      "prior": 0.148,
+      "events": 21,
+      "goals": 0,
+      "shots": 0,
+      "local": 0.149,
+      "xT": 0.117
+    },
+    {
+      "row": 7,
+      "col": 0,
+      "cx": 5.2,
+      "cy": 63.8,
+      "prior": 0.012,
+      "events": 14,
+      "goals": 0,
+      "shots": 0,
+      "local": 0.099,
+      "xT": 0.009
+    },
+    {
+      "row": 7,
+      "col": 1,
+      "cx": 15.8,
+      "cy": 63.8,
+      "prior": 0.018,
+      "events": 11,
+      "goals": 0,
+      "shots": 0,
+      "local": 0.078,
+      "xT": 0.014
+    },
+    {
+      "row": 7,
+      "col": 2,
+      "cx": 26.2,
+      "cy": 63.8,
+      "prior": 0.026,
+      "events": 22,
+      "goals": 0,
+      "shots": 0,
+      "local": 0.156,
+      "xT": 0.021
+    },
+    {
+      "row": 7,
+      "col": 3,
+      "cx": 36.8,
+      "cy": 63.8,
+      "prior": 0.038,
+      "events": 42,
+      "goals": 0,
+      "shots": 0,
+      "local": 0.298,
+      "xT": 0.031
+    },
+    {
+      "row": 7,
+      "col": 4,
+      "cx": 47.2,
+      "cy": 63.8,
+      "prior": 0.055,
+      "events": 55,
+      "goals": 0,
+      "shots": 0,
+      "local": 0.39,
+      "xT": 0.047
+    },
+    {
+      "row": 7,
+      "col": 5,
+      "cx": 57.8,
+      "cy": 63.8,
+      "prior": 0.076,
+      "events": 37,
+      "goals": 0,
+      "shots": 0,
+      "local": 0.262,
+      "xT": 0.062
+    },
+    {
+      "row": 7,
+      "col": 6,
+      "cx": 68.2,
+      "cy": 63.8,
+      "prior": 0.098,
+      "events": 131,
+      "goals": 0,
+      "shots": 0,
+      "local": 0.929,
+      "xT": 0.096
+    },
+    {
+      "row": 7,
+      "col": 7,
+      "cx": 78.8,
+      "cy": 63.8,
+      "prior": 0.115,
+      "events": 47,
+      "goals": 0,
+      "shots": 0,
+      "local": 0.333,
+      "xT": 0.096
+    },
+    {
+      "row": 7,
+      "col": 8,
+      "cx": 89.2,
+      "cy": 63.8,
+      "prior": 0.115,
+      "events": 53,
+      "goals": 0,
+      "shots": 0,
+      "local": 0.376,
+      "xT": 0.097
+    },
+    {
+      "row": 7,
+      "col": 9,
+      "cx": 99.8,
+      "cy": 63.8,
+      "prior": 0.1,
+      "events": 32,
+      "goals": 0,
+      "shots": 0,
+      "local": 0.227,
+      "xT": 0.081
+    }
+  ],
+  "traces": [
+    {
+      "minute": 1.1,
+      "team": "GS",
+      "goal_x": 97.89,
+      "goal_y": 35.44,
+      "cells": [
+        {
+          "t": 56.94,
+          "action": "Carry",
+          "kind": "carry",
+          "row": 7,
+          "col": 5,
+          "xT": 0.062
+        },
+        {
+          "t": 56.94,
+          "action": "Challenges won",
+          "kind": "duel_win",
+          "row": 7,
+          "col": 5,
+          "xT": 0.062
+        },
+        {
+          "t": 56.94,
+          "action": "Dribbles successful",
+          "kind": "dribble",
+          "row": 7,
+          "col": 5,
+          "xT": 0.062
+        },
+        {
+          "t": 61.94,
+          "action": "Crosses inaccurate",
+          "kind": "other",
+          "row": 6,
+          "col": 8,
+          "xT": 0.155
+        },
+        {
+          "t": 61.94,
+          "action": "Inaccurate passes",
+          "kind": "pass_incomplete",
+          "row": 6,
+          "col": 8,
+          "xT": 0.155
+        },
+        {
+          "t": 61.94,
+          "action": "Incomplete key passes",
+          "kind": "other",
+          "row": 6,
+          "col": 8,
+          "xT": 0.155
+        },
+        {
+          "t": 61.94,
+          "action": "Incomplete passes into the box",
+          "kind": "other",
+          "row": 6,
+          "col": 8,
+          "xT": 0.155
+        },
+        {
+          "t": 63.94,
+          "action": "Goals",
+          "kind": "goal",
+          "row": 4,
+          "col": 9,
+          "xT": 0.441
+        }
+      ],
+      "peak_xT": 0.441
+    },
+    {
+      "minute": 6.5,
+      "team": "LIL",
+      "goal_x": 1.93,
+      "goal_y": 40.88,
+      "cells": [
+        {
+          "t": 373.94,
+          "action": "Passes accurate",
+          "kind": "pass",
+          "row": 2,
+          "col": 4,
+          "xT": 0.071
+        },
+        {
+          "t": 377.94,
+          "action": "Involvement in positional attacks",
+          "kind": "other",
+          "row": 2,
+          "col": 4,
+          "xT": 0.071
+        },
+        {
+          "t": 378.94,
+          "action": "Passes accurate",
+          "kind": "pass",
+          "row": 3,
+          "col": 4,
+          "xT": 0.068
+        },
+        {
+          "t": 382.94,
+          "action": "Passes accurate",
+          "kind": "pass",
+          "row": 1,
+          "col": 4,
+          "xT": 0.055
+        },
+        {
+          "t": 385.94,
+          "action": "Passes accurate",
+          "kind": "pass",
+          "row": 3,
+          "col": 2,
+          "xT": 0.027
+        },
+        {
+          "t": 388.0,
+          "action": "Mistakes leading to goals",
+          "kind": "other",
+          "row": 4,
+          "col": 0,
+          "xT": 0.011
+        },
+        {
+          "t": 388.0,
+          "action": "Own goals",
+          "kind": "goal",
+          "row": 4,
+          "col": 0,
+          "xT": 0.011
+        }
+      ],
+      "peak_xT": 0.071
+    },
+    {
+      "minute": 6.9,
+      "team": "LIL",
+      "goal_x": 98.2,
+      "goal_y": 44.18,
+      "cells": [
+        {
+          "t": 408.94,
+          "action": "Passes accurate",
+          "kind": "pass",
+          "row": 3,
+          "col": 2,
+          "xT": 0.027
+        },
+        {
+          "t": 408.94,
+          "action": "Passes forward accurate",
+          "kind": "pass_forward",
+          "row": 3,
+          "col": 2,
+          "xT": 0.027
+        },
+        {
+          "t": 409.94,
+          "action": "Carry",
+          "kind": "carry",
+          "row": 5,
+          "col": 3,
+          "xT": 0.042
+        },
+        {
+          "t": 412.94,
+          "action": "Progressive passes accurate",
+          "kind": "pass_prog",
+          "row": 5,
+          "col": 6,
+          "xT": 0.154
+        },
+        {
+          "t": 415.94,
+          "action": "Challenges won",
+          "kind": "duel_win",
+          "row": 4,
+          "col": 8,
+          "xT": 0.366
+        },
+        {
+          "t": 415.94,
+          "action": "Dribbles successful",
+          "kind": "dribble",
+          "row": 4,
+          "col": 8,
+          "xT": 0.366
+        },
+        {
+          "t": 415.94,
+          "action": "Dribbling in the final third successful",
+          "kind": "other",
+          "row": 4,
+          "col": 8,
+          "xT": 0.366
+        },
+        {
+          "t": 416.94,
+          "action": "Goals",
+          "kind": "goal",
+          "row": 5,
+          "col": 9,
+          "xT": 0.183
+        }
+      ],
+      "peak_xT": 0.366
+    },
+    {
+      "minute": 15.1,
+      "team": "GS",
+      "goal_x": 89.29,
+      "goal_y": 29.96,
+      "cells": [
+        {
+          "t": 897.0,
+          "action": "Involvement in counterattacks",
+          "kind": "other",
+          "row": 4,
+          "col": 1,
+          "xT": 0.018
+        },
+        {
+          "t": 897.0,
+          "action": "Involvement in counterattacks with shots",
+          "kind": "other",
+          "row": 4,
+          "col": 1,
+          "xT": 0.018
+        },
+        {
+          "t": 900.0,
+          "action": "Passes accurate",
+          "kind": "pass",
+          "row": 5,
+          "col": 5,
+          "xT": 0.108
+        },
+        {
+          "t": 900.0,
+          "action": "Passes forward accurate",
+          "kind": "pass_forward",
+          "row": 5,
+          "col": 5,
+          "xT": 0.108
+        },
+        {
+          "t": 900.0,
+          "action": "Progressive passes accurate",
+          "kind": "pass_prog",
+          "row": 5,
+          "col": 5,
+          "xT": 0.108
+        },
+        {
+          "t": 901.0,
+          "action": "Passes accurate",
+          "kind": "pass",
+          "row": 4,
+          "col": 7,
+          "xT": 0.262
+        },
+        {
+          "t": 901.0,
+          "action": "Passes forward accurate",
+          "kind": "pass_forward",
+          "row": 4,
+          "col": 7,
+          "xT": 0.262
+        },
+        {
+          "t": 904.0,
+          "action": "Goals",
+          "kind": "goal",
+          "row": 3,
+          "col": 8,
+          "xT": 0.388
+        }
+      ],
+      "peak_xT": 0.388
+    },
+    {
+      "minute": 38.8,
+      "team": "LIL",
+      "goal_x": 97.19,
+      "goal_y": 37.98,
+      "cells": [
+        {
+          "t": 2317.94,
+          "action": "Passes accurate",
+          "kind": "pass",
+          "row": 0,
+          "col": 4,
+          "xT": 0.049
+        },
+        {
+          "t": 2320.94,
+          "action": "Challenges unsuccessful",
+          "kind": "duel_loss",
+          "row": 6,
+          "col": 5,
+          "xT": 0.079
+        },
+        {
+          "t": 2321.94,
+          "action": "Challenges won",
+          "kind": "duel_win",
+          "row": 2,
+          "col": 4,
+          "xT": 0.071
+        },
+        {
+          "t": 2321.94,
+          "action": "Dribbles successful",
+          "kind": "dribble",
+          "row": 2,
+          "col": 4,
+          "xT": 0.071
+        },
+        {
+          "t": 2323.94,
+          "action": "Passes accurate",
+          "kind": "pass",
+          "row": 3,
+          "col": 4,
+          "xT": 0.068
+        },
+        {
+          "t": 2323.94,
+          "action": "Passes forward accurate",
+          "kind": "pass_forward",
+          "row": 3,
+          "col": 4,
+          "xT": 0.068
+        },
+        {
+          "t": 2323.94,
+          "action": "Progressive passes accurate",
+          "kind": "pass_prog",
+          "row": 3,
+          "col": 4,
+          "xT": 0.068
+        },
+        {
+          "t": 2330.94,
+          "action": "Goals",
+          "kind": "goal",
+          "row": 4,
+          "col": 9,
+          "xT": 0.441
+        }
+      ],
+      "peak_xT": 0.441
+    },
+    {
+      "minute": 43.1,
+      "team": "GS",
+      "goal_x": 100.38,
+      "goal_y": 31.72,
+      "cells": [
+        {
+          "t": 2577.94,
+          "action": "Passes forward accurate",
+          "kind": "pass_forward",
+          "row": 0,
+          "col": 6,
+          "xT": 0.089
+        },
+        {
+          "t": 2579.94,
+          "action": "Carry",
+          "kind": "carry",
+          "row": 0,
+          "col": 6,
+          "xT": 0.089
+        },
+        {
+          "t": 2579.94,
+          "action": "Challenges won",
+          "kind": "duel_win",
+          "row": 0,
+          "col": 6,
+          "xT": 0.089
+        },
+        {
+          "t": 2579.94,
+          "action": "Dribbles successful",
+          "kind": "dribble",
+          "row": 0,
+          "col": 6,
+          "xT": 0.089
+        },
+        {
+          "t": 2579.94,
+          "action": "Involvement in positional attacks",
+          "kind": "other",
+          "row": 2,
+          "col": 6,
+          "xT": 0.155
+        },
+        {
+          "t": 2584.94,
+          "action": "Crosses accurate",
+          "kind": "other",
+          "row": 1,
+          "col": 9,
+          "xT": 0.121
+        },
+        {
+          "t": 2584.94,
+          "action": "Passes accurate",
+          "kind": "pass",
+          "row": 1,
+          "col": 9,
+          "xT": 0.121
+        },
+        {
+          "t": 2585.94,
+          "action": "Goals",
+          "kind": "goal",
+          "row": 3,
+          "col": 9,
+          "xT": 0.457
+        }
+      ],
+      "peak_xT": 0.457
+    }
+  ]
+}

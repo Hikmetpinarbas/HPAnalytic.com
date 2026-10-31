@@ -131,6 +131,8 @@ function processBlocks(md) {
   out = out.replace(/:::chart\s+([^|]+)\|([^|]+)\|([^\n]+)\n([\s\S]*?)\n:::/g, (m, type, title, note, body) =>
     `<div class="blk-chart"><div class="bc-head"><span class="bc-type">${type.trim()}</span><span class="bc-title">${title.trim()}</span></div><div class="bc-body">${body.trim()}</div><div class="bc-note">${note.trim()}</div></div>`);
   // Image
+  out = out.replace(/:::visual\s*\[([^\]]+)\]\s*\|\s*([^|]+?)\s*\|\s*([^\n]+?)\s*\n:::?/g, (m, type, title, note) =>
+    `<figure class="blk-visual" data-visual="${type.trim()}"><figcaption class="bv-title">${title.trim()}</figcaption><div class="bv-body" data-visual-body="${type.trim()}"></div><div class="bv-note">${note.trim()}</div></figure>`);
   out = out.replace(/:::image\s+([^|]+)\|([^|]+)\|([^\n]+)/g, (m, src, alt, cap) =>
     `<figure class="blk-image"><img src="${src.trim()}" alt="${alt.trim()}" loading="lazy"><figcaption>${cap.trim()}</figcaption></figure>`);
   // Compare
@@ -197,6 +199,7 @@ if (tocLinks.length && headings.length) {
 </script>
 <script src="/page-transition.js" defer></script>
 <script src="/extras2.js" defer></script>
+<script type="module" src="/js/visuals.js"></script>
 </body></html>`;
 }
 

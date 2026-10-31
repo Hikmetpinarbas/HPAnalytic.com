@@ -18,6 +18,15 @@ Puan0 · 0Atılan şut (2 maç)12 · 10HakemRade ObrenovičBaşlama19.45 TSİMa�
 
 Başlama vuruşuna--saat--dakikaPaylaş
 
+:::visual[xg-flow] | xG akışı — 90 dakika | Kümülatif beklenen gol. GS 1.58 xG üretti, 4 gol attı. Lille 1.33 xG, 2 gol.
+:::
+
+:::visual[xt-grid] | Tehdit haritası — 10×8 grid | Galatasaray perspektifi. Her hücre bir xT değeri: 0.01 kendi kale, 0.44 rakip kale.
+:::
+
+:::visual[lgs-shot] | 17 şut, 6 gol | GS sağ kaleye, Lille sol kaleye. Yıldız = gol, ◇ = kendi kalesine.
+:::
+
 ## Aynı 122 kayıp; aynı oyun değil
 
 İki takımın ilk iki Avrupa maçında toplam top kaybı eşit: Lille 122, Galatasaray 122. Ancak Lille'in kendi yarısındaki kaybı 41 (%33,6), Galatasaray'ın 22 (%18,0). Aradaki 15,6 yüzde puanlık fark, maç öncesinde sınanacak bir konum ve koşul sorusudur; doğrudan pres üstünlüğü hükmü değildir.
@@ -78,6 +87,9 @@ TÜRETİLMİŞYüzdelikler SportsBase takım tablosundaki iki maçlık toplamlar
 
 Maçın nabzı · son üçte birdeki topla oyun farkı
 
+:::visual[lgs-rhythm] | Maçın nabzı — 15dk bloklar | Toplam aksiyon. Blok üstüne gel → pas/şut/kazanım dağılımı.
+:::
+
 ## Son üçte birde kim daha fazla aksiyon yaptı?
 
 Her üç dakikada iki takımın son üçte birdeki kaydedilmiş topla eylemleri arasındaki farkın hareketli ortalaması. Pozitif ve negatif değerler bu olayların sayısal farkını gösterir; topa sahip olma, pres şiddeti veya oyunun kontrolünü doğrudan ölçmez. Halkalar golleri işaretler.
@@ -126,6 +138,9 @@ Lille Avrupa'da topu kendi yarısında iki maçta 41 kez kaybetti; yarıdan fazl
 
 TÜRETİLMİŞKayıp ve kazanım sayıları iki ayrı rakibe karşı oluştu. Lille'in kayıp sayısının bir kısmı Arsenal'in pres gücünden gelebilir; Galatasaray aynı baskıyı kuramazsa bu sayı düşer.Yeni analiz · mekânsal eşleşme
 
+:::visual[lgs-zone] | Saha bölgeleri — 3 dilim | Savunma/orta/hücum yoğunluğu.
+:::
+
 ## Baskının miktarı değil, kazanımın yeri
 
 Lille'in Arsenal'e karşı yaşadığı kayıplar ile rakiplerinin ileri bölgede kazandıkları toplar aynı olay değildir. Üç ayrı kaydın mekânsal dağılımı bir soru doğuruyor: Galatasaray topu kazanabiliyor mu, yoksa kaleye yeterince yakın kazanabiliyor mu?
@@ -166,6 +181,9 @@ Galatasaray'ın ön hattı merkez pasını kapatırken ilk savunmacı topu alan 
 HİPOTEZBu çizimler maçta yaşanmış pozisyonlar değildir. Çıkış noktası Lille'in Arsenal maçındaki 27 resmî kendi yarı top kaybı ve haritada temsil edilen 26 olaydır; üç senaryonun başarısı maç başladığında ayrı ayrı test edilmelidir.
 
 VERİ ATLASI · 15 MEKÂNSAL HÜCRE
+
+:::visual[lgs-corridor] | Koridor dağılımı — 5 dilim | Kanat/merkez aksiyon dağılımı.
+:::
 
 ## Top nerede kaybediliyor, nerede kazanılıyor?
 

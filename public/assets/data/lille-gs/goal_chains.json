@@ -1,0 +1,254 @@
+[
+  {
+    "minute": 1.1,
+    "team": "GS",
+    "type": "Goal",
+    "x": 97.89,
+    "y": 35.44,
+    "before_10s": [
+      {
+        "t": 56.9,
+        "action": "Challenges won",
+        "x": 60.35,
+        "y": 63.45
+      },
+      {
+        "t": 56.9,
+        "action": "Dribbles successful",
+        "x": 60.35,
+        "y": 63.45
+      },
+      {
+        "t": 61.9,
+        "action": "Crosses inaccurate",
+        "x": 85.56,
+        "y": 52.37
+      },
+      {
+        "t": 61.9,
+        "action": "Inaccurate passes",
+        "x": 85.56,
+        "y": 52.37
+      },
+      {
+        "t": 61.9,
+        "action": "Incomplete key passes",
+        "x": 85.56,
+        "y": 52.37
+      },
+      {
+        "t": 61.9,
+        "action": "Incomplete passes into the box",
+        "x": 85.56,
+        "y": 52.37
+      }
+    ]
+  },
+  {
+    "minute": 6.5,
+    "team": "LIL",
+    "type": "Own Goal",
+    "x": 1.93,
+    "y": 40.88,
+    "before_10s": [
+      {
+        "t": 378.9,
+        "action": "Passes accurate",
+        "x": 48.3,
+        "y": 28.82
+      },
+      {
+        "t": 382.9,
+        "action": "Passes accurate",
+        "x": 43.01,
+        "y": 16.61
+      },
+      {
+        "t": 385.9,
+        "action": "Passes accurate",
+        "x": 28.06,
+        "y": 25.86
+      }
+    ]
+  },
+  {
+    "minute": 6.9,
+    "team": "LIL",
+    "type": "Goal",
+    "x": 98.2,
+    "y": 44.18,
+    "before_10s": [
+      {
+        "t": 412.9,
+        "action": "Chances created",
+        "x": 64.51,
+        "y": 44.18
+      },
+      {
+        "t": 412.9,
+        "action": "Key passes accurate",
+        "x": 64.51,
+        "y": 44.18
+      },
+      {
+        "t": 412.9,
+        "action": "Progressive passes accurate",
+        "x": 64.51,
+        "y": 44.18
+      },
+      {
+        "t": 415.9,
+        "action": "Challenges won",
+        "x": 92.32,
+        "y": 40.05
+      },
+      {
+        "t": 415.9,
+        "action": "Dribbles successful",
+        "x": 92.32,
+        "y": 40.05
+      },
+      {
+        "t": 415.9,
+        "action": "Dribbling in the final third successful",
+        "x": 92.32,
+        "y": 40.05
+      }
+    ]
+  },
+  {
+    "minute": 15.1,
+    "team": "GS",
+    "type": "Goal",
+    "x": 89.29,
+    "y": 29.96,
+    "before_10s": [
+      {
+        "t": 900.0,
+        "action": "Progressive passes accurate",
+        "x": 57.96,
+        "y": 47.47
+      },
+      {
+        "t": 901.0,
+        "action": "Passes accurate",
+        "x": 75.68,
+        "y": 40.91
+      },
+      {
+        "t": 901.0,
+        "action": "Passes forward accurate",
+        "x": 75.68,
+        "y": 40.91
+      },
+      {
+        "t": 903.0,
+        "action": "Assists",
+        "x": 86.52,
+        "y": 41.09
+      },
+      {
+        "t": 903.0,
+        "action": "Chances created",
+        "x": 86.52,
+        "y": 41.09
+      },
+      {
+        "t": 903.0,
+        "action": "Key passes accurate",
+        "x": 86.52,
+        "y": 41.09
+      }
+    ]
+  },
+  {
+    "minute": 38.8,
+    "team": "LIL",
+    "type": "Goal",
+    "x": 97.19,
+    "y": 37.98,
+    "before_10s": [
+      {
+        "t": 2323.9,
+        "action": "Passes forward accurate",
+        "x": 48.47,
+        "y": 27.84
+      },
+      {
+        "t": 2323.9,
+        "action": "Progressive passes accurate",
+        "x": 48.47,
+        "y": 27.84
+      },
+      {
+        "t": 2327.9,
+        "action": "Chances",
+        "x": 91.9,
+        "y": 21.55
+      },
+      {
+        "t": 2327.9,
+        "action": "Shots on target",
+        "x": 91.9,
+        "y": 21.55
+      },
+      {
+        "t": 2329.9,
+        "action": "Assists",
+        "x": 92.23,
+        "y": 34.84
+      },
+      {
+        "t": 2329.9,
+        "action": "Key passes accurate",
+        "x": 92.23,
+        "y": 34.84
+      }
+    ]
+  },
+  {
+    "minute": 43.1,
+    "team": "GS",
+    "type": "Goal",
+    "x": 100.38,
+    "y": 31.72,
+    "before_10s": [
+      {
+        "t": 2579.9,
+        "action": "Involvement in positional attacks with shots",
+        "x": 63.34,
+        "y": 18.52
+      },
+      {
+        "t": 2584.9,
+        "action": "Assists",
+        "x": 95.0,
+        "y": 10.44
+      },
+      {
+        "t": 2584.9,
+        "action": "Chances created",
+        "x": 95.0,
+        "y": 10.44
+      },
+      {
+        "t": 2584.9,
+        "action": "Crosses accurate",
+        "x": 95.0,
+        "y": 10.44
+      },
+      {
+        "t": 2584.9,
+        "action": "Key passes accurate",
+        "x": 95.0,
+        "y": 10.44
+      },
+      {
+        "t": 2584.9,
+        "action": "Passes accurate",
+        "x": 95.0,
+        "y": 10.44
+      }
+    ]
+  }
+]

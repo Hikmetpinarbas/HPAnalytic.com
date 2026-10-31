@@ -1,0 +1,333 @@
+{
+  "count": 10,
+  "filters": {
+    "season": "2026",
+    "limit": 10
+  },
+  "competition": {
+    "id": 2016,
+    "name": "Championship",
+    "code": "ELC",
+    "type": "LEAGUE",
+    "emblem": "https://crests.football-data.org/ELC.png"
+  },
+  "season": {
+    "id": 2509,
+    "startDate": "2026-08-14",
+    "endDate": "2027-05-01",
+    "currentMatchday": 13,
+    "winner": null
+  },
+  "scorers": [
+    {
+      "player": {
+        "id": 270684,
+        "name": "William Lankshear",
+        "firstName": "William",
+        "lastName": "Lankshear",
+        "dateOfBirth": "2005-04-20",
+        "nationality": "England",
+        "section": "Offence",
+        "position": null,
+        "shirtNumber": null,
+        "lastUpdated": "2025-04-23T09:42:40Z"
+      },
+      "team": {
+        "id": 343,
+        "name": "Middlesbrough FC",
+        "shortName": "Middlesbrough",
+        "tla": "MID",
+        "crest": "https://crests.football-data.org/343.png",
+        "address": "Riverside Stadium Middlesbrough TS3 6RS",
+        "website": "http://www.mfc.co.uk",
+        "founded": 1876,
+        "clubColors": "Red / White",
+        "venue": "Riverside Stadium",
+        "lastUpdated": "2022-02-19T08:58:41Z"
+      },
+      "playedMatches": 11,
+      "goals": 11,
+      "assists": null,
+      "penalties": null
+    },
+    {
+      "player": {
+        "id": 202863,
+        "name": "Andri Guðjohnsen",
+        "firstName": "Andri",
+        "lastName": "Guðjohnsen",
+        "dateOfBirth": "2002-01-29",
+        "nationality": "Iceland",
+        "section": "Offence",
+        "position": null,
+        "shirtNumber": null,
+        "lastUpdated": "2023-07-31T11:12:03Z"
+      },
+      "team": {
+        "id": 59,
+        "name": "Blackburn Rovers FC",
+        "shortName": "Blackburn",
+        "tla": "BLA",
+        "crest": "https://crests.football-data.org/59.png",
+        "address": "Ewood Park Blackburn BB2 4JF",
+        "website": "http://www.rovers.co.uk",
+        "founded": 1874,
+        "clubColors": "Blue / White",
+        "venue": "Ewood Park",
+        "lastUpdated": "2022-02-19T08:50:27Z"
+      },
+      "playedMatches": 10,
+      "goals": 8,
+      "assists": 1,
+      "penalties": null
+    },
+    {
+      "player": {
+        "id": 15958,
+        "name": "Cyle Larin",
+        "firstName": "Cyle",
+        "lastName": "Larin",
+        "dateOfBirth": "1995-04-17",
+        "nationality": "Canada",
+        "section": "Offence",
+        "position": null,
+        "shirtNumber": null,
+        "lastUpdated": "2026-06-01T11:00:54Z"
+      },
+      "team": {
+        "id": 340,
+        "name": "Southampton FC",
+        "shortName": "Southampton",
+        "tla": "SOU",
+        "crest": "https://crests.football-data.org/340.png",
+        "address": "Britannia Road Southampton SO14 5FP",
+        "website": "http://www.saintsfc.co.uk",
+        "founded": 1885,
+        "clubColors": "Red / White / Black",
+        "venue": "St. Mary's Stadium",
+        "lastUpdated": "2022-02-10T19:48:04Z"
+      },
+      "playedMatches": 11,
+      "goals": 7,
+      "assists": null,
+      "penalties": null
+    },
+    {
+      "player": {
+        "id": 152591,
+        "name": "Jack Moylan",
+        "firstName": "Jack",
+        "lastName": "Moylan",
+        "dateOfBirth": "2001-09-01",
+        "nationality": "Ireland",
+        "section": "Midfield",
+        "position": null,
+        "shirtNumber": null,
+        "lastUpdated": "2024-05-14T09:45:08Z"
+      },
+      "team": {
+        "id": 715,
+        "name": "Cardiff City FC",
+        "shortName": "Cardiff",
+        "tla": "CAR",
+        "crest": "https://crests.football-data.org/715.png",
+        "address": "Cardiff City Stadium, Leckwith Road Cardiff CF11 8AZ",
+        "website": "http://www.cardiffcityfc.co.uk",
+        "founded": 1899,
+        "clubColors": "Blue / White",
+        "venue": "Cardiff City Stadium",
+        "lastUpdated": "2022-02-19T08:59:02Z"
+      },
+      "playedMatches": 11,
+      "goals": 6,
+      "assists": 3,
+      "penalties": 1
+    },
+    {
+      "player": {
+        "id": 11414,
+        "name": "Jarrod Bowen",
+        "firstName": "Jarrod",
+        "lastName": "Bowen",
+        "dateOfBirth": "1996-01-01",
+        "nationality": "England",
+        "section": "Offence",
+        "position": null,
+        "shirtNumber": null,
+        "lastUpdated": "2026-07-15T09:33:22Z"
+      },
+      "team": {
+        "id": 563,
+        "name": "West Ham United FC",
+        "shortName": "West Ham",
+        "tla": "WHU",
+        "crest": "https://crests.football-data.org/563.png",
+        "address": "Queen Elizabeth Olympic Park, London London E20 2ST",
+        "website": "http://www.whufc.com",
+        "founded": 1895,
+        "clubColors": "Claret / Sky Blue",
+        "venue": "London Stadium",
+        "lastUpdated": "2022-02-19T08:09:25Z"
+      },
+      "playedMatches": 11,
+      "goals": 6,
+      "assists": 4,
+      "penalties": 1
+    },
+    {
+      "player": {
+        "id": 4350,
+        "name": "Kieffer Moore",
+        "firstName": "Kieffer",
+        "lastName": "Moore",
+        "dateOfBirth": "1992-08-08",
+        "nationality": "Wales",
+        "section": "Offence",
+        "position": null,
+        "shirtNumber": null,
+        "lastUpdated": "2026-07-15T09:33:22Z"
+      },
+      "team": {
+        "id": 404,
+        "name": "Wrexham AFC",
+        "shortName": "Wrexham",
+        "tla": "WRE",
+        "crest": "https://crests.football-data.org/404.png",
+        "address": "Racecourse Ground, Mold Road Wrexham LL11 2AH",
+        "website": "http://www.wrexhamafc.co.uk",
+        "founded": 1864,
+        "clubColors": "Red / White",
+        "venue": "Racecourse Ground",
+        "lastUpdated": "2023-09-18T10:13:25Z"
+      },
+      "playedMatches": 11,
+      "goals": 5,
+      "assists": 2,
+      "penalties": null
+    },
+    {
+      "player": {
+        "id": 272431,
+        "name": "Fer López",
+        "firstName": "Fernando",
+        "lastName": "López",
+        "dateOfBirth": "2004-05-24",
+        "nationality": "Spain",
+        "section": "Midfield",
+        "position": null,
+        "shirtNumber": null,
+        "lastUpdated": "2026-10-21T08:07:07Z"
+      },
+      "team": {
+        "id": 76,
+        "name": "Wolverhampton Wanderers FC",
+        "shortName": "Wolverhampton",
+        "tla": "WOL",
+        "crest": "https://crests.football-data.org/76.png",
+        "address": "Waterloo Road Wolverhampton WV1 4QR",
+        "website": "http://www.wolves.co.uk",
+        "founded": 1877,
+        "clubColors": "Black / Gold",
+        "venue": "Molineux Stadium",
+        "lastUpdated": "2024-07-29T17:16:22Z"
+      },
+      "playedMatches": 10,
+      "goals": 5,
+      "assists": 3,
+      "penalties": null
+    },
+    {
+      "player": {
+        "id": 141451,
+        "name": "Mohamed Toure",
+        "firstName": "Mohamed",
+        "lastName": "Touré",
+        "dateOfBirth": "2004-03-26",
+        "nationality": "Australia",
+        "section": "Offence",
+        "position": null,
+        "shirtNumber": 49,
+        "lastUpdated": "2024-08-04T23:09:45Z"
+      },
+      "team": {
+        "id": 68,
+        "name": "Norwich City FC",
+        "shortName": "Norwich",
+        "tla": "NOR",
+        "crest": "https://crests.football-data.org/68.png",
+        "address": "Carrow Road Norwich NR1 1JE",
+        "website": "http://www.canaries.co.uk",
+        "founded": 1902,
+        "clubColors": "Yellow / Green",
+        "venue": "Carrow Road",
+        "lastUpdated": "2022-03-23T08:28:03Z"
+      },
+      "playedMatches": 6,
+      "goals": 5,
+      "assists": null,
+      "penalties": null
+    },
+    {
+      "player": {
+        "id": 7789,
+        "name": "Konstantinos Mavropanos",
+        "firstName": "Konstantinos",
+        "lastName": "Mavropanos",
+        "dateOfBirth": "1997-12-11",
+        "nationality": "Greece",
+        "section": "Defence",
+        "position": null,
+        "shirtNumber": null,
+        "lastUpdated": "2026-07-15T09:33:22Z"
+      },
+      "team": {
+        "id": 563,
+        "name": "West Ham United FC",
+        "shortName": "West Ham",
+        "tla": "WHU",
+        "crest": "https://crests.football-data.org/563.png",
+        "address": "Queen Elizabeth Olympic Park, London London E20 2ST",
+        "website": "http://www.whufc.com",
+        "founded": 1895,
+        "clubColors": "Claret / Sky Blue",
+        "venue": "London Stadium",
+        "lastUpdated": "2022-02-19T08:09:25Z"
+      },
+      "playedMatches": 10,
+      "goals": 5,
+      "assists": null,
+      "penalties": null
+    },
+    {
+      "player": {
+        "id": 4223,
+        "name": "Patrick Bamford",
+        "firstName": "Patrick",
+        "lastName": "Bamford",
+        "dateOfBirth": "1993-09-05",
+        "nationality": "England",
+        "section": "Offence",
+        "position": null,
+        "shirtNumber": null,
+        "lastUpdated": "2026-07-15T09:33:22Z"
+      },
+      "team": {
+        "id": 356,
+        "name": "Sheffield United FC",
+        "shortName": "Sheffield Utd",
+        "tla": "SHE",
+        "crest": "https://crests.football-data.org/356.png",
+        "address": "Bramall Lane Sheffield, Yorkshire S2 4SU",
+        "website": "http://www.sufc.co.uk",
+        "founded": null,
+        "clubColors": "Red / White / Black",
+        "venue": "Bramall Lane",
+        "lastUpdated": "2024-07-29T17:17:53Z"
+      },
+      "playedMatches": 11,
+      "goals": 5,
+      "assists": 1,
+      "penalties": null
+    }
+  ]
+}
