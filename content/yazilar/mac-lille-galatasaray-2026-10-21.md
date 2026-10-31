@@ -67,7 +67,7 @@ Avrupa karnesi · 2 maç / takım
 
 İkisi de puansız. Galatasaray iki maçta 7 gol yedi; Lille Arsenal deplasmanında 90 dakikada yalnız 4 şut atabildi ve 0,22 xG üretti. Bu maç, iki takımın da "Avrupa'da tutunabilir miyiz" sorusuna verdiği ilk ciddi cevap olacak.
 
-MODELxG ve PPDA SportsBase model çıktısıdır. Galatasaray'ın maç bazlı SportsBase XLSX kayıtları da bulunuyor; karşılaştırma lig/Avrupa ve rakip farkı gözetilerek okunmalı. Lille'in maç satırları kulübün SportsBase dosyasından.36 takımlık lig aşaması · iki maç toplamı
+xG ve PPDA SportsBase model çıktısıdır. Galatasaray'ın maç bazlı SportsBase XLSX kayıtları da bulunuyor; karşılaştırma lig/Avrupa ve rakip farkı gözetilerek okunmalı. Lille'in maç satırları kulübün SportsBase dosyasından.36 takımlık lig aşaması · iki maç toplamı
 
 ## Herkesin arasında nerede duruyorlar?
 
@@ -83,7 +83,7 @@ Galatasaray Lille · dış çember 100. yüzdelik, kesikli halka medyan
 
 Hücredeki küçük sayı yüzdelik sırası. "Düşük iyi" eksenlerde ters çevrildi: radarda dışarısı her zaman lehine.
 
-TÜREVYüzdelikler SportsBase takım tablosundaki iki maçlık toplamlardan hesaplandı. Rakip gücü ve skor durumu düzeltilmedi; iki maçlık örneklemde sıra kolay değişir.
+Yüzdelikler SportsBase takım tablosundaki iki maçlık toplamlardan hesaplandı. Rakip gücü ve skor durumu düzeltilmedi; iki maçlık örneklemde sıra kolay değişir.
 
 Maçın nabzı · son üçte birdeki topla oyun farkı
 
@@ -94,7 +94,7 @@ Maçın nabzı · son üçte birdeki topla oyun farkı
 
 Her üç dakikada iki takımın son üçte birdeki kaydedilmiş topla eylemleri arasındaki farkın hareketli ortalaması. Pozitif ve negatif değerler bu olayların sayısal farkını gösterir; topa sahip olma, pres şiddeti veya oyunun kontrolünü doğrudan ölçmez. Halkalar golleri işaretler.
 
-TÜREVOlay dosyasından hesaplandı: son üçte birde (x > 70) topla yapılan benzersiz eylemler, üç dakikalık dilim, üç dilimlik kayan ortalama. Bu, son üçte birdeki topla eylem etkinliğinin dolaylı göstergesidir; pres şiddetini, topa sahip olma oranını veya gol beklentisini doğrudan ölçmez.
+Olay dosyasından hesaplandı: son üçte birde (x > 70) topla yapılan benzersiz eylemler, üç dakikalık dilim, üç dilimlik kayan ortalama. Bu, son üçte birdeki topla eylem etkinliğinin dolaylı göstergesidir; pres şiddetini, topa sahip olma oranını veya gol beklentisini doğrudan ölçmez.
 
 Top dolaşımı · son Avrupa maçı
 
@@ -102,7 +102,7 @@ Top dolaşımı · son Avrupa maçı
 
 Her daire bir oyuncu, bulunduğu yer o oyuncunun olaylarının orta noktası. Daire büyüdükçe isabetli pası artar; çizgi kalınlaştıkça iki oyuncu arasında top daha sık el değiştirir.
 
-ÇIKARIMVeride pası alan oyuncu yok. Bu nedenle ağ, isabetli pastan sonraki beş saniyelik takım arkadaşı temaslarından tahmini olarak türetildi. Galatasaray'da 204, Lille'de 329 isabetli pas etiketi bulunuyor. Tahmini bağlantıların kesin toplamı kaynak eşleştirmesine bağlı olduğu için burada sayısal sonuç olarak kullanılmaz. Bu yüzden yönlü pas oku çizilmez. Oyuncu konumları takip verisi değil, olay konumlarının ortancasıdır.
+Veride pası alan oyuncu yok. Bu nedenle ağ, isabetli pastan sonraki beş saniyelik takım arkadaşı temaslarından tahmini olarak türetildi. Galatasaray'da 204, Lille'de 329 isabetli pas etiketi bulunuyor. Tahmini bağlantıların kesin toplamı kaynak eşleştirmesine bağlı olduğu için burada sayısal sonuç olarak kullanılmaz. Bu yüzden yönlü pas oku çizilmez. Oyuncu konumları takip verisi değil, olay konumlarının ortancasıdır.
 
 Oyuncu profilleri · Şampiyonlar Ligi'nde aynı mevkiye göre
 
@@ -116,7 +116,7 @@ Bir mevki seç, sonra iki takımdan birer oyuncu. Radar, oyuncunun Şampiyonlar 
 
 3 · Lille
 
-MODELSportsBase oyuncu tablosu, Şampiyonlar Ligi lig aşaması iki hafta. Sayılar 90 dakikaya göre; en az 90 dakika oynayanlar kıyasa girdi. Bir oyuncu en fazla 193 dakika oynadı; bu küçük bir örneklem, profil kesin hüküm değildir.
+SportsBase oyuncu tablosu, Şampiyonlar Ligi lig aşaması iki hafta. Sayılar 90 dakikaya göre; en az 90 dakika oynayanlar kıyasa girdi. Bir oyuncu en fazla 193 dakika oynadı; bu küçük bir örneklem, profil kesin hüküm değildir.
 
 Lille'in iki yüzü · gol ve xG
 
@@ -130,13 +130,13 @@ Lille, Ligue 1'de son altı maçta 4 galibiyet, 1 beraberlik, 1 yenilgi aldı ve
 
 Her çubuk bir maç: üretilen ile verilen xG arasındaki fark. Yukarı Lille lehine, aşağı rakip lehine. Altı maçın yalnız ikisinde Lille rakibinden fazla xG üretti.
 
-HİPOTEZLigde xG'nin üzerinde sonuç almak kalıcı bir yetenek de olabilir, şans da. Altı maç bunu ayırmaya yetmez. Bu yüzden yalnız şunu söylüyoruz: Lille'in skor tablosu, oyununun ürettiğinden daha iyimser görünüyor.Eşleşmenin kilidi
+Ligde xG'nin üzerinde sonuç almak kalıcı bir yetenek de olabilir, şans da. Altı maç bunu ayırmaya yetmez. Bu yüzden yalnız şunu söylüyoruz: Lille'in skor tablosu, oyununun ürettiğinden daha iyimser görünüyor.Eşleşmenin kilidi
 
 ## Pres mi, sabır mı?
 
 Lille Avrupa'da topu kendi yarısında iki maçta 41 kez kaybetti; yarıdan fazlası Arsenal deplasmanında. Aynı maçta PPDA'sı 17,84 idi, bu örneklemde daha düşük pres yoğunluğuna işaret eder. Galatasaray'ın rakip yarıda top kazanımı (21) turnuva medyanında. Bu maçı belirleyecek soru, Galatasaray'ın baskıyı yükseltip bu kayıpları gerçek fırsata çevirip çeviremeyeceği.
 
-TÜREVKayıp ve kazanım sayıları iki ayrı rakibe karşı oluştu. Lille'in kayıp sayısının bir kısmı Arsenal'in pres gücünden gelebilir; Galatasaray aynı baskıyı kuramazsa bu sayı düşer.Yeni analiz · mekânsal eşleşme
+Kayıp ve kazanım sayıları iki ayrı rakibe karşı oluştu. Lille'in kayıp sayısının bir kısmı Arsenal'in pres gücünden gelebilir; Galatasaray aynı baskıyı kuramazsa bu sayı düşer.Yeni analiz · mekânsal eşleşme
 
 :::visual[lgs-zone] | Saha bölgeleri — 3 dilim | Savunma/orta/hücum yoğunluğu.
 :::
@@ -160,7 +160,7 @@ Veri Galatasaray'ın bunu başardığını gösteriyor mu?Barcelona karşısınd
 
 Maçta hipotezi nasıl sınayacağız?İlk 15 dakikada Lille'in ilk pas hattına uygulanan baskıyı; top kazanımlarının kaleye uzaklığını; bu kazanımlardan sonraki ilk iki aksiyonu ve şuta dönüşen dizileri ayrı ayrı izleyeceğiz. Salt kazanım adedi değil, kazanımın konumu ve devamı önemlidir.
 
-TÜREVPay ve paydalar aşağıdaki olay haritasında açıklanan üç ayrı maç verisinden alınmıştır. Yüzdeler yalnız kendi örneklemi içindeki bölge paylarıdır; rakip gücüne göre düzeltilmiş pres başarısı, nedensellik veya maç tahmini değildir. 35 birimlik eşik şematik koordinat karşılaştırmasıdır; fiziksel saha mesafesi veya doğrudan pres başarısı ölçüsü değildir.Taktik laboratuvarı · maç önü senaryoları
+Pay ve paydalar aşağıdaki olay haritasında açıklanan üç ayrı maç verisinden alınmıştır. Yüzdeler yalnız kendi örneklemi içindeki bölge paylarıdır; rakip gücüne göre düzeltilmiş pres başarısı, nedensellik veya maç tahmini değildir. 35 birimlik eşik şematik koordinat karşılaştırmasıdır; fiziksel saha mesafesi veya doğrudan pres başarısı ölçüsü değildir.Taktik laboratuvarı · maç önü senaryoları
 
 ## Kazanılan top nasıl fırsata dönüşür?
 
@@ -178,7 +178,7 @@ Hipotez ve sınama
 
 Galatasaray'ın ön hattı merkez pasını kapatırken ilk savunmacı topu alan oyuncuya yaklaşır.
 
-HİPOTEZBu çizimler maçta yaşanmış pozisyonlar değildir. Çıkış noktası Lille'in Arsenal maçındaki 27 resmî kendi yarı top kaybı ve haritada temsil edilen 26 olaydır; üç senaryonun başarısı maç başladığında ayrı ayrı test edilmelidir.
+Bu çizimler maçta yaşanmış pozisyonlar değildir. Çıkış noktası Lille'in Arsenal maçındaki 27 resmî kendi yarı top kaybı ve haritada temsil edilen 26 olaydır; üç senaryonun başarısı maç başladığında ayrı ayrı test edilmelidir.
 
 VERİ ATLASI · 15 MEKÂNSAL HÜCRE
 
@@ -205,7 +205,7 @@ Lille, Arsenal deplasmanında kendi yarısında 27 top kaybetti. Haritada göste
 
  Lille top kaybı (kendi yarı) · Arsenal maçı Arsenal top kazanımı (rakip yarı) Galatasaray top kazanımı (rakip yarı) · Barcelona maçı
 
-TÜREVÜç olay kümesi şematik saha üzerinde aynı karşılaştırma eksenine yerleştirildi; sağ uç Lille kalesini temsil eder. Galatasaray'ın kazanımları Barcelona'ya, Lille'in kayıpları Arsenal'e karşı oluştu; bu bir tahmin değil, karşılaştırma zemini.Şut haritaları · takım olay dosyası
+Üç olay kümesi şematik saha üzerinde aynı karşılaştırma eksenine yerleştirildi; sağ uç Lille kalesini temsil eder. Galatasaray'ın kazanımları Barcelona'ya, Lille'in kayıpları Arsenal'e karşı oluştu; bu bir tahmin değil, karşılaştırma zemini.Şut haritaları · takım olay dosyası
 
 ## Lille kaleyi bulamadı, Galatasaray kalesi korunamadı
 
@@ -241,15 +241,6 @@ KADROBu sürümde iki takımın sakat ve cezalı listesi doğrulanmadı. Güncel
 Yöntem notları ve sınırlar- Olay düzeyindeki haritalar tek maçtan: Lille için Arsenal deplasmanı, Galatasaray için Barcelona maçı. Sporting–Galatasaray ve Lille–Betis olay paketleri bu sürümde yok.
 - Takım başına iki Avrupa maçı var; rakip gücü ve skor durumu düzeltilmedi.
 - Lille'in lig sayıları farklı bir lig evreninden; Avrupa sayılarıyla doğrudan sıralanmadı.
-Belge künyesiSürümv1.0 · 20.10.2026YöntemTurnuva takım tablosundan iki maç toplamı ve 36 takım sıralaması; kulüp dosyasından maç satırlarıKanıt sınıflarıKAYIT · MODEL · TÜREV · HİPOTEZPREMIER / 08 VISUAL ANALYTICS
-
-## Sekiz grafik · kaynak ve örneklem ayrıştırılmıştır
-
-Saha görünümleri: yalnız Arsenal–Lille ve Galatasaray–Barcelona oyuncu CSV koordinatları. Metrik görünümleri: takım başına iki UCL maçından verilen aggregate sayılar. Farklı örneklemler birbirine eklenmedi.
-
-### Top kaybının gerçek konumu
-
-Tek maçlık nokta verisi. İşaretler doğrulanmış CSV kayıtlarından; yoğunluk çıkarımı veya pres iddiası yok.
 
 #2 · SAHA
 

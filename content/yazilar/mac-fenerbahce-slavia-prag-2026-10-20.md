@@ -20,7 +20,7 @@ Puan1 · 0Sıra (36 takım)28. · 31.HakemRicardo de BurgosYayınTRT 1Başlama v
 
 Slavia Prag'ın iki Avrupa yenilgisi hücum üretimsizliği anlamına gelmiyor. Lens ve Sabah karşısında 31 şut ve 5,06 xG ile iki gol üretti. Fenerbahçe aynı iki maçlık dönemde 26 şut ve 2,73 xG üretti. Bu farkın tamamı oyuncu kalitesinden veya sistemden kaynaklanıyor demek mümkün değil; rakip güçleri ve şut kalitesi farklı.
 
-MODELxG ve PPDA değerleri SportsBase model çıktısıdır. Başka sağlayıcıların aynı maçlar için xG'si farklı olabilir; örneğin Slavia–Lens maçında başka bir sağlayıcı ev sahibini öne gösteriyor. Bu sayfa tek kaynakta tutarlı kalmak için yalnız SportsBase kullanır.36 takımlık lig aşaması · iki maç toplamı
+xG ve PPDA değerleri SportsBase model çıktısıdır. Başka sağlayıcıların aynı maçlar için xG'si farklı olabilir; örneğin Slavia–Lens maçında başka bir sağlayıcı ev sahibini öne gösteriyor. Bu sayfa tek kaynakta tutarlı kalmak için yalnız SportsBase kullanır.36 takımlık lig aşaması · iki maç toplamı
 
 ## Herkesin arasında nerede duruyorlar?
 
@@ -38,7 +38,7 @@ Sekiz eksende iki takımın 36 takım arasındaki yeri. Dışarı doğru gidildi
 
 Hücredeki küçük sayı yüzdelik sırası. "Düşük iyi" eksenlerde ters çevrildi: radarda dışarısı her zaman lehine.
 
-TÜREVYüzdelikler SportsBase takım tablosundaki iki maçlık toplamlardan hesaplandı. Rakip gücü ve skor durumu düzeltilmedi; iki maçlık örneklemde sıra kolay değişir.
+Yüzdelikler SportsBase takım tablosundaki iki maçlık toplamlardan hesaplandı. Rakip gücü ve skor durumu düzeltilmedi; iki maçlık örneklemde sıra kolay değişir.
 
 Maçın nabzı · son üçte birdeki topla oyun farkı
 
@@ -48,7 +48,7 @@ Her üç dakikada iki takımın son üçte birdeki topla oyun sayısı farkı. Y
 
 Aston Villa 6–0 FenerbahçeSabah 2–0 Slavia Prag
 
-TÜREVOlay dosyasından hesaplandı: son üçte birde (x > 70) topla yapılan benzersiz eylemler, üç dakikalık dilim, üç dilimlik kayan ortalama. Bu bir baskı ölçüsüdür, gol beklentisi değildir.
+Olay dosyasından hesaplandı: son üçte birde (x > 70) topla yapılan benzersiz eylemler, üç dakikalık dilim, üç dilimlik kayan ortalama. Bu bir baskı ölçüsüdür, gol beklentisi değildir.
 
 Top dolaşımı · son Avrupa maçı
 
@@ -58,7 +58,7 @@ Her daire bir oyuncu, bulunduğu yer o oyuncunun olaylarının orta noktası. Da
 
 Fenerbahçe · Villa maçıSlavia · Sabah maçı
 
-ÇIKARIMVeride pası alan oyuncu yok. Bağlantı, isabetli pastan sonraki 5 saniyede topa dokunan ilk takım arkadaşıyla kuruldu; Fenerbahçe'nin 429 isabetli pasının 372'si, Slavia'nın 350'sinin 275'i bağlanabildi. Bu yüzden ok çizilmedi ve ağ tahmini sayılır. Konumlar takip verisi değil, olay konumlarının ortancası.
+Veride pası alan oyuncu yok. Bağlantı, isabetli pastan sonraki 5 saniyede topa dokunan ilk takım arkadaşıyla kuruldu; Fenerbahçe'nin 429 isabetli pasının 372'si, Slavia'nın 350'sinin 275'i bağlanabildi. Bu yüzden ok çizilmedi ve ağ tahmini sayılır. Konumlar takip verisi değil, olay konumlarının ortancası.
 
 Oyuncu profilleri · Şampiyonlar Ligi'nde aynı mevkiye göre
 
@@ -72,7 +72,7 @@ Bir mevki seç, sonra iki takımdan birer oyuncu. Radar, oyuncunun Şampiyonlar 
 
 3 · Slavia Prag
 
-MODELSportsBase oyuncu tablosu, Şampiyonlar Ligi lig aşaması iki hafta. Sayılar 90 dakikaya göre; en az 90 dakika oynayanlar kıyasa girdi. Bir oyuncu en fazla 194 dakika oynadı; bu küçük bir örneklem, profil kesin hüküm değildir.
+SportsBase oyuncu tablosu, Şampiyonlar Ligi lig aşaması iki hafta. Sayılar 90 dakikaya göre; en az 90 dakika oynayanlar kıyasa girdi. Bir oyuncu en fazla 194 dakika oynadı; bu küçük bir örneklem, profil kesin hüküm değildir.
 
 Kazanım ve kayıp · olay verisi
 
@@ -82,7 +82,7 @@ Aynı sahada iki ayrı maç: Slavia'nın Sabah karşısında rakip yarıda kazan
 
 İkisi birlikteSlavia kazanımlarıFB kayıpları Slavia top kazanımı (rakip yarı) · Sabah maçı Fenerbahçe top kaybı (kendi yarı) · Villa maçı
 
-TÜREVKoordinatların her takım için hücum yönüne normalize edildiği, dört takım-devrenin tüm şut konumlarıyla ve kendi/rakip yarı etiketlerinin %100 uyumuyla doğrulandı. Derinlik (kaleye uzaklık) güvenilir. Sol/sağ kanat ayrımı iki maç arasında doğrulanmadı; yan tarafı yorumlama. İki nokta grubu farklı rakiplere karşı oluştu; bu bir eşleşme tahmini değil, karşılaştırma zeminidir.Şut haritaları · olay verisi
+Koordinatların her takım için hücum yönüne normalize edildiği, dört takım-devrenin tüm şut konumlarıyla ve kendi/rakip yarı etiketlerinin %100 uyumuyla doğrulandı. Derinlik (kaleye uzaklık) güvenilir. Sol/sağ kanat ayrımı iki maç arasında doğrulanmadı; yan tarafı yorumlama. İki nokta grubu farklı rakiplere karşı oluştu; bu bir eşleşme tahmini değil, karşılaştırma zeminidir.Şut haritaları · olay verisi
 
 ## Üretim var, bitiricilik yok. Savunma ise delik.
 
@@ -96,7 +96,7 @@ Aston Villa karşısında Fenerbahçe 0–6 kaybederken yüzde 53 topa sahip old
 
 Villa → Fenerbahçe (11)Slavia → Sabah (18)
 
-KAYITKontratak sınıflandırması sağlayıcıya ait; nokta, kontratak etiketinin konumu. Kontratağın hangi top kaybından doğduğu bu dosyada eşleşmiş değil, bu yüzden "şu kayıp şu atağı doğurdu" denemez. Slavia'nın kontratakları farklı bir rakibe karşı; yan yana koymak bir kimlik karşılaştırması, maç tahmini değil.Gol ile xG arasındaki makas
+Kontratak sınıflandırması sağlayıcıya ait; nokta, kontratak etiketinin konumu. Kontratağın hangi top kaybından doğduğu bu dosyada eşleşmiş değil, bu yüzden "şu kayıp şu atağı doğurdu" denemez. Slavia'nın kontratakları farklı bir rakibe karşı; yan yana koymak bir kimlik karşılaştırması, maç tahmini değil.Gol ile xG arasındaki makas
 
 ## İki ayrı şanssızlık
 
@@ -139,6 +139,3 @@ Yöntem notları ve sınırlar- Gösterilen tablo rakamları SportsBase model ç
 - Fenerbahçe'nin 3–0'lık Alanyaspor maçında ikinci yarı rakibin şut üretimi artıyor. Skor, değişiklikler ve rakibin risk artışı kontrol edilmeden bu, Slavia'nın mutlaka kullanacağı yapısal zaaf gibi sunulmaz.
 - CSV ve XML aynı olayların iki biçimi; aynı satırlar iki kez sayılmadı. Olay kayıtlarındaki başlangıç–bitiş aralığı video kesit penceresi; topun gerçek hareket süresi değildir.
 - Video doğrulaması yapılmadı. Sakat ve cezalı durumu maç günü resmi listeyle kesinleştirilmeli.
-Belge künyesiSürümv1.0 · 20.10.2026YöntemTakım-maç tablosundan iki maç toplamı ve 36 takım sıralaması; olay dosyasından konum (normalize koordinat, 105×68)Kanıt sınıflarıKAYIT · MODEL · TÜREV · HİPOTEZSınırlar2 maç/takım; farklı rakipler; video doğrulaması yok; olay düzeyinde xG yok; yan (sol/sağ) yönü doğrulanmadı
-
-Veri: SportsBase
