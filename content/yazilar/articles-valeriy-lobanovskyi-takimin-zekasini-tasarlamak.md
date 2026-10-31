@@ -1,4 +1,6 @@
 ---
+portrait: "/assets/images/portraits/lobanovskyi-3.jpg"
+portrait_credit: "Fotoğraf: Valeriy Lobanovskyi (Wikimedia Commons, CC-BY / Public Domain)"
 title: Valeriy Lobanovskyi: bir takımın zekâsını tasarlamak
 slug: articles-valeriy-lobanovskyi-takimin-zekasini-tasarlamak
 type: articles

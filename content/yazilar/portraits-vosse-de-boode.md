@@ -1,4 +1,6 @@
 ---
+portrait: "/assets/images/portraits/vosse-2.jpg"
+portrait_credit: "Fotoğraf: Vosse de Boode (FC Barcelona / MIT Sloan / LinkedIn, basın kullanımı)"
 title: Vosse de Boode: bilimin sahayla buluştuğu yer
 slug: portraits-vosse-de-boode
 type: portraits
