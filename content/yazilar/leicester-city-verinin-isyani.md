@@ -157,3 +157,5 @@ Bir şampiyonluğu anlamak istiyorsanız kupaya değil, kupayı mümkün kılan 
 Kanıtın sınırı: Topa sahip olma oranı, sezon sonuçları, Kanté'nin müdahale ve pas arası sayıları ile Vardy ve Mahrez'in gol-asist verileri resmî kayıtlarla karşılaştırılabilir. Ancak hücumların ne kadarının savunma arkası koşulardan üretildiği, top kazanımından şuta kadar geçen süre ve beklenen gol farkı, veri sağlayıcısı ve yöntem tanımlanmadan kesinleştirilemez. 2016-17 düşüşü de tek bir nedene indirgenemez.
 
 Kaynaklar: Premier League resmî sezon kayıtları ve taktik değerlendirmeleri; Leicester City kulüp arşivi; FBref 2015-16 sezon verileri.
+
+Veri: SportsBase

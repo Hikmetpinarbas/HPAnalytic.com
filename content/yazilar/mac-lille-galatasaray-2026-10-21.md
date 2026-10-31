@@ -299,3 +299,5 @@ xG1.28xGA3.57PPDA14.73Kendi yarısında kayıp41/122Kazanım85
 ### GS
 
 xG1.87xGA3.88PPDA8.09Kendi yarısında kayıp22/122Kazanım81Veri kaynakları ve yöntemKaynak ve örneklem: UCL maç istatistikleri XLSX · takım başına iki maç. Aggregate sayılar kullanıcı tarafından sağlandı; kaynak satırıyla bağımsız mutabakat henüz PASS değil. Saha olayları Google Drive CSV oyuncu kayıtlarıdır. Hover: nokta/çubuk ayrıntısı; click: takım filtresi.
+
+Veri: SportsBase

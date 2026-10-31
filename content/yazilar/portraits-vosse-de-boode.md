@@ -41,3 +41,5 @@ AusCycling, 3 Nisan 2025’te de Boode’u yeni Veri ve İçgörü Direktörü o
 Futbolda da bisiklette de daha fazla veri toplanabilir. Daha zor olan, hangi bilginin kimin işine yarayacağını bulmak. De Boode’un hikâyesini ilginç kılan, laboratuvarın büyüklüğünden çok, kapısının hangi yöne açıldığı.
 
 Vosse de Boode’un katkısını onurlandırmak, ona bütün cevapları atfetmek değildir. Onun asıl başarısı, araştırmacı ile antrenörün birbirini dinleyebildiği, oyuncunun yalnızca ölçülen kişi değil bilgiye erişen bir özne olduğu çalışma biçimini görünür kılmaktır. Kalecinin itişi, vuruş öncesindeki bakış ya da bir oyuncunun hareketi üzerine sorulan yeni sorular, laboratuvarın sahaya hükmetmesini değil, sahaya karşı sorumluluk duymasını sağlar. Bu yüzden Vosse de Boode’un hikâyesi bir kariyer kronolojisinden daha değerlidir: Bilginin insanın eline geri verildiğinde anlam kazandığını, birlikte çalışan araştırmacıların, antrenörlerin ve oyuncuların oyunu daha iyi anlayabildiğini hatırlatır. Geride yalnız veriler değil; daha iyi soru sorma cesareti kalır.
+
+Veri: SportsBase

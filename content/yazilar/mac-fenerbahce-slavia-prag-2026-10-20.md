@@ -140,3 +140,5 @@ Yöntem notları ve sınırlar- Gösterilen tablo rakamları SportsBase model ç
 - CSV ve XML aynı olayların iki biçimi; aynı satırlar iki kez sayılmadı. Olay kayıtlarındaki başlangıç–bitiş aralığı video kesit penceresi; topun gerçek hareket süresi değildir.
 - Video doğrulaması yapılmadı. Sakat ve cezalı durumu maç günü resmi listeyle kesinleştirilmeli.
 Belge künyesiSürümv1.0 · 20.10.2026YöntemTakım-maç tablosundan iki maç toplamı ve 36 takım sıralaması; olay dosyasından konum (normalize koordinat, 105×68)Kanıt sınıflarıGÖZLENEN · MODEL · TÜRETİLMİŞ · HİPOTEZSınırlar2 maç/takım; farklı rakipler; video doğrulaması yok; olay düzeyinde xG yok; yan (sol/sağ) yönü doğrulanmadı
+
+Veri: SportsBase

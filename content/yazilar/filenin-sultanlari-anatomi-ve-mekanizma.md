@@ -135,3 +135,5 @@ Türkiye voleybolunun geleceği de bu sorunun cevabında saklı.
 Kanıtın sınırı: Altyapıdan millî takıma uzanan gelişim süreci tek bir nedensellik zinciri olarak doğrulanmış değildir. Sporcu seçim testlerinin uzun vadeli etkileri, reaksiyon süreleri, sıçrama mekanikleri ve rotasyona göre hücum verimliliği için karşılaştırmalı veriler gerekir. Kaynağı belirsiz performans yüzdeleri kullanılmamıştır.
 
 Kaynaklar: Volleyball World 2023 Milletler Ligi ve Avrupa Şampiyonası kayıtları; CEV turnuva raporları ve maç istatistikleri.
+
+Veri: SportsBase

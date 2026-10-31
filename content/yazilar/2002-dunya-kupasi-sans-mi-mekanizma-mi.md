@@ -95,3 +95,5 @@ Türkiye dünya üçüncüsü oldu çünkü bazı problemleri rakiplerinden daha
 Kanıtın sınırı: Maç sonuçları ve gol dağılımı doğrulanabilir. Ancak kaleci kurtarış sayıları, gol başlangıç bölgeleri, duran top payları ve oyuncuların sahada bulunma durumuna göre üretim farkları, karşılaştırılabilir olay verisi olmadan kesin hükme dönüştürülemez.
 
 Kaynaklar: FIFA 2002 Dünya Kupası kayıtları ve teknik raporu; RSSSF turnuva dökümü; FBref maç sonuçları.
+
+Veri: SportsBase

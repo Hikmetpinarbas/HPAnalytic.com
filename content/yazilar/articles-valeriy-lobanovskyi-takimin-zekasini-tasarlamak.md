@@ -63,3 +63,5 @@ Futbol, 2026’da Lobanovskyi’nin yaşadığı döneme göre çok daha fazla v
 Bugünkü antrenör için Lobanovskyi’den çıkarılabilecek en kalıcı ders, herkese aynı koşu testini yaptırmak değil; bir kulübün fikir üretme, ölçme, düzeltme ve yeniden öğretme kapasitesini tasarlamaktır. Aynı zamanda bu yaklaşımın insanî ve yaratıcı maliyetini gözden kaçırmamaktır.
 
 Futbolun asıl birimi yalnızca oyuncu değildir. Oyuncular arasındaki ilişki de değildir tek başına. Asıl birim, rakip değişirken kendini birlikte yeniden düzenleyebilen takım olabilir. Lobanovskyi’nin mirası, o ihtimali ciddiye almış olmasında yatıyor.
+
+Veri: SportsBase

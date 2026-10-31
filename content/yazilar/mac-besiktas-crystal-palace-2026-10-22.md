@@ -82,7 +82,7 @@ Brighton deplasmanında 5-0 kaybettiler. Ama o skoru üreten şey savunmanın da
 
 ### Palace'ın duran topu gerçekten silah mı?
 
-Palace'ın duran toptan şut üretme oranı yüzde 42 görünüyor. Ama bu oran sadece 50 duran toptan hesaplandı. Az gözlem demek, belirsizlik demek. Gerçek değer yüzde 31 ile 47 arasında bir yerde ve Premier Lig ortalaması olan yüzde 35 tam da bu aralığın içinde.
+Palace'ın duran toptan şut üretme oranı yüzde 42 görünüyor. Ama bu oran sadece 50 duran toptan hesaplandı. Az veri demek, belirsizlik demek. Gerçek değer yüzde 31 ile 47 arasında bir yerde ve Premier Lig ortalaması olan yüzde 35 tam da bu aralığın içinde.
 
 Dürüst okuma şu: iyi olabilir, ama elimizdeki veri bunu lig ortalamasından ayırmaya yetmiyor. Üstelik maç başına sadece 3,1 korner kazanıyorlar; ligde en az korner kullanan takım.
 

@@ -34,7 +34,7 @@ Yüksek hat, agresif pres, kanat üstünlüğü — bunlar evrensel problemler. 
 
 En büyük sınır burada. Kadın ligleri için kamera açısı, olay işaretleme ve oyuncu takibi erkek liglerinden geri. Bu bir kaynak dağılımı problemi.
 
-Mekanizmayı okumak için önce gözlemleyebilmek gerekir. Gözlem aracı yoksa, model de yok.
+Mekanizmayı okumak için önce görebilmek gerekir. İşaret aracı yoksa, model de yok.
 
 Bu verinin sınırı: kadın-erkek karşılaştırmalı xG, PPDA, yüksek yoğunluklu koşu mesafesi verileri henüz olgun değil. Söylediklerimiz olasılık, model çıktısı değil.
 

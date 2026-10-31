@@ -76,7 +76,7 @@ Bir metrik bazen güçlü bir karşı kanıttır. Bazen de yanlış tartışmaya
 
 İkisi de kendi bilgi kaynağını eleştiriden muaf tutar.
 
-Oysa sayıya saygı, onu sorgulamamak değil; hangi tanımdan, hangi örneklemden, hangi ölçümden ve hangi modelden geldiğini açıkça göstermektir. Gözleme saygı da onu mutlak doğru ilan etmek değil; yeniden izlemek, karşılaştırmak ve gerekirse yanlış çıktığını kabul etmektir.
+Oysa sayıya saygı, onu sorgulamamak değil; hangi tanımdan, hangi örneklemden, hangi ölçümden ve hangi modelden geldiğini açıkça göstermektir. Kanıta saygı da onu mutlak doğru ilan etmek değil; yeniden izlemek, karşılaştırmak ve gerekirse yanlış çıktığını kabul etmektir.
 
 Veriyi kutsamamak onu inkâr etmek değildir. Verinin sınırlı olduğunu kabul etmek, onu keyfî biçimde eğip bükme izni vermez.
 
@@ -112,3 +112,5 @@ Karşı kanıt ve sınırlar ＋- Sayıların tarafsız olması, veri toplama s�
 Kaynakları incele ＋- John W. Tukey, The Future of Data Analysis (1962), Annals of Mathematical StatisticsKaynak hakkı kayıtlı · İddia gücü kaynak ve bağlamla sınırlıdır
 - George E. P. Box ve Norman R. Draper, Empirical Model-Building and Response Surfaces (1987)Kaynak hakkı kayıtlı · İddia gücü kaynak ve bağlamla sınırlıdır
 - Goodhart yasasının özgün ifadesi ve daha sonra popülerleşen Strathern yorumuKaynak hakkı kayıtlı · İddia gücü kaynak ve bağlamla sınırlıdır
+
+Veri: SportsBase
