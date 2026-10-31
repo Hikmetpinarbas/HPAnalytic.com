@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<title>Visuals Test</title>
+<style>
+  body { background: #0a0a0c; color: #fff; font-family: monospace; padding: 20px; }
+  .card { border: 1px solid #333; margin: 20px 0; padding: 20px; }
+  h2 { color: #B4FF39; font-size: 14px; }
+  .error { color: #FF6B35; background: #2a0a0a; padding: 12px; }
+  .success { color: #B4FF39; }
+  pre { background: #111; padding: 10px; overflow: auto; font-size: 11px; max-height: 200px; }
+</style>
+</head>
+<body>
+<h1>HPAnalytic · Visuals Test</h1>
+<p>Her grafik için hata veya SVG render durumu aşağıda.</p>
+
+<div class="card">
+  <h2>1. xg-flow</h2>
+  <div data-visual-body="xg-flow"></div>
+</div>
+<div class="card">
+  <h2>2. xt-grid</h2>
+  <div data-visual-body="xt-grid"></div>
+</div>
+<div class="card">
+  <h2>3. lgs-shot</h2>
+  <div data-visual-body="lgs-shot"></div>
+</div>
+<div class="card">
+  <h2>4. lgs-rhythm</h2>
+  <div data-visual-body="lgs-rhythm"></div>
+</div>
+<div class="card">
+  <h2>5. lgs-zone</h2>
+  <div data-visual-body="lgs-zone"></div>
+</div>
+<div class="card">
+  <h2>6. lgs-corridor</h2>
+  <div data-visual-body="lgs-corridor"></div>
+</div>
+
+<div class="card">
+  <h2>Console Log</h2>
+  <pre id="log"></pre>
+</div>
+
+<script type="module">
+  const log = (msg, isErr) => {
+    const el = document.getElementById('log');
+    el.textContent += (isErr ? '❌ ' : '✓ ') + msg + '\n';
+    if (isErr) el.style.color = '#FF6B35';
+  };
+  window.addEventListener('error', (e) => log('HATA: ' + e.message + ' @ ' + (e.filename||'').split('/').pop() + ':' + e.lineno, true));
+  window.addEventListener('unhandledrejection', (e) => log('PROMISE: ' + (e.reason?.message || e.reason), true));
+
+  try {
+    await import('/js/visuals.js');
+    log('visuals.js yüklendi');
+    setTimeout(() => {
+      document.querySelectorAll('[data-visual-body]').forEach(el => {
+        const t = el.dataset.visualBody;
+        const hasSvg = el.querySelector('svg');
+        if (hasSvg) log(t + ': ✓ SVG üretildi');
+        else if (el.innerHTML.includes('Yüklenemedi')) log(t + ': ✗ Yüklenemedi', true);
+        else if (el.innerHTML.includes('Hata')) log(t + ': ✗ Render hatası', true);
+        else log(t + ': ? Boş (renderer yok veya fetch başarısız)', true);
+      });
+    }, 2000);
+  } catch (e) {
+    log('Import hatası: ' + e.message, true);
+  }
+</script>
+</body>
+</html>
