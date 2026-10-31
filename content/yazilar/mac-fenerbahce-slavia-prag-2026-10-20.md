@@ -38,7 +38,7 @@ Sekiz eksende iki takımın 36 takım arasındaki yeri. Dışarı doğru gidildi
 
 Hücredeki küçük sayı yüzdelik sırası. "Düşük iyi" eksenlerde ters çevrildi: radarda dışarısı her zaman lehine.
 
-TÜRETİLMİŞYüzdelikler SportsBase takım tablosundaki iki maçlık toplamlardan hesaplandı. Rakip gücü ve skor durumu düzeltilmedi; iki maçlık örneklemde sıra kolay değişir.
+TÜREVYüzdelikler SportsBase takım tablosundaki iki maçlık toplamlardan hesaplandı. Rakip gücü ve skor durumu düzeltilmedi; iki maçlık örneklemde sıra kolay değişir.
 
 Maçın nabzı · son üçte birdeki topla oyun farkı
 
@@ -48,7 +48,7 @@ Her üç dakikada iki takımın son üçte birdeki topla oyun sayısı farkı. Y
 
 Aston Villa 6–0 FenerbahçeSabah 2–0 Slavia Prag
 
-TÜRETİLMİŞOlay dosyasından hesaplandı: son üçte birde (x > 70) topla yapılan benzersiz eylemler, üç dakikalık dilim, üç dilimlik kayan ortalama. Bu bir baskı ölçüsüdür, gol beklentisi değildir.
+TÜREVOlay dosyasından hesaplandı: son üçte birde (x > 70) topla yapılan benzersiz eylemler, üç dakikalık dilim, üç dilimlik kayan ortalama. Bu bir baskı ölçüsüdür, gol beklentisi değildir.
 
 Top dolaşımı · son Avrupa maçı
 
@@ -58,7 +58,7 @@ Her daire bir oyuncu, bulunduğu yer o oyuncunun olaylarının orta noktası. Da
 
 Fenerbahçe · Villa maçıSlavia · Sabah maçı
 
-TAHMİNİVeride pası alan oyuncu yok. Bağlantı, isabetli pastan sonraki 5 saniyede topa dokunan ilk takım arkadaşıyla kuruldu; Fenerbahçe'nin 429 isabetli pasının 372'si, Slavia'nın 350'sinin 275'i bağlanabildi. Bu yüzden ok çizilmedi ve ağ tahmini sayılır. Konumlar takip verisi değil, olay konumlarının ortancası.
+ÇIKARIMVeride pası alan oyuncu yok. Bağlantı, isabetli pastan sonraki 5 saniyede topa dokunan ilk takım arkadaşıyla kuruldu; Fenerbahçe'nin 429 isabetli pasının 372'si, Slavia'nın 350'sinin 275'i bağlanabildi. Bu yüzden ok çizilmedi ve ağ tahmini sayılır. Konumlar takip verisi değil, olay konumlarının ortancası.
 
 Oyuncu profilleri · Şampiyonlar Ligi'nde aynı mevkiye göre
 
@@ -82,13 +82,13 @@ Aynı sahada iki ayrı maç: Slavia'nın Sabah karşısında rakip yarıda kazan
 
 İkisi birlikteSlavia kazanımlarıFB kayıpları Slavia top kazanımı (rakip yarı) · Sabah maçı Fenerbahçe top kaybı (kendi yarı) · Villa maçı
 
-TÜRETİLMİŞKoordinatların her takım için hücum yönüne normalize edildiği, dört takım-devrenin tüm şut konumlarıyla ve kendi/rakip yarı etiketlerinin %100 uyumuyla doğrulandı. Derinlik (kaleye uzaklık) güvenilir. Sol/sağ kanat ayrımı iki maç arasında doğrulanmadı; yan tarafı yorumlama. İki nokta grubu farklı rakiplere karşı oluştu; bu bir eşleşme tahmini değil, karşılaştırma zeminidir.Şut haritaları · olay verisi
+TÜREVKoordinatların her takım için hücum yönüne normalize edildiği, dört takım-devrenin tüm şut konumlarıyla ve kendi/rakip yarı etiketlerinin %100 uyumuyla doğrulandı. Derinlik (kaleye uzaklık) güvenilir. Sol/sağ kanat ayrımı iki maç arasında doğrulanmadı; yan tarafı yorumlama. İki nokta grubu farklı rakiplere karşı oluştu; bu bir eşleşme tahmini değil, karşılaştırma zeminidir.Şut haritaları · olay verisi
 
 ## Üretim var, bitiricilik yok. Savunma ise delik.
 
 Slavia'nın Avrupa toplam xG'si 5,06, gol sayısı iki. Sabah maçında 3,47 xG ile sıfır gol, sekiz isabetli şut üretti. Lukáš Provod'un oyuncu tablosunda 8 şut ve 2,39 xG ile bu yoğunlaşmanın önemli kısmını oluşturması dikkat çekiyor. Bunları kalıcı bir bitiricilik kusuru ya da tamamen onun üzerine kurulu bir oyun olarak yorumlamak için iki maç yetmez. Sağda Aston Villa'nın Fenerbahçe kalesine 20 şutu: 6 gol, hepsi ceza alanının içinden.
 
-SLAVIA → SABAH KALESİ16 şut · 8 isabet · 4 blok · 0 golVILLA → FENERBAHÇE KALESİ20 şut · 6 gol · 4 blok Gol İsabetli İsabetsiz BloklandıGÖZLENENŞutlar takım olay dosyasından alındı; oyuncu dosyasında bloklanan şutlar yok, takım dosyasında var. Böylece Slavia'nın 16 şutunun 16'sı da tabloyla birebir eşleşti. Olay düzeyinde xG yok, bu yüzden noktalar eşit boyutta.Kontratakların başladığı yer · takım olay dosyası
+SLAVIA → SABAH KALESİ16 şut · 8 isabet · 4 blok · 0 golVILLA → FENERBAHÇE KALESİ20 şut · 6 gol · 4 blok Gol İsabetli İsabetsiz BloklandıKAYITŞutlar takım olay dosyasından alındı; oyuncu dosyasında bloklanan şutlar yok, takım dosyasında var. Böylece Slavia'nın 16 şutunun 16'sı da tabloyla birebir eşleşti. Olay düzeyinde xG yok, bu yüzden noktalar eşit boyutta.Kontratakların başladığı yer · takım olay dosyası
 
 ## Fenerbahçe nerede cezalandırıldı?
 
@@ -96,7 +96,7 @@ Aston Villa karşısında Fenerbahçe 0–6 kaybederken yüzde 53 topa sahip old
 
 Villa → Fenerbahçe (11)Slavia → Sabah (18)
 
-GÖZLENENKontratak sınıflandırması sağlayıcıya ait; nokta, kontratak etiketinin konumu. Kontratağın hangi top kaybından doğduğu bu dosyada eşleşmiş değil, bu yüzden "şu kayıp şu atağı doğurdu" denemez. Slavia'nın kontratakları farklı bir rakibe karşı; yan yana koymak bir kimlik karşılaştırması, maç tahmini değil.Gol ile xG arasındaki makas
+KAYITKontratak sınıflandırması sağlayıcıya ait; nokta, kontratak etiketinin konumu. Kontratağın hangi top kaybından doğduğu bu dosyada eşleşmiş değil, bu yüzden "şu kayıp şu atağı doğurdu" denemez. Slavia'nın kontratakları farklı bir rakibe karşı; yan yana koymak bir kimlik karşılaştırması, maç tahmini değil.Gol ile xG arasındaki makas
 
 ## İki ayrı şanssızlık
 
@@ -139,6 +139,6 @@ Yöntem notları ve sınırlar- Gösterilen tablo rakamları SportsBase model ç
 - Fenerbahçe'nin 3–0'lık Alanyaspor maçında ikinci yarı rakibin şut üretimi artıyor. Skor, değişiklikler ve rakibin risk artışı kontrol edilmeden bu, Slavia'nın mutlaka kullanacağı yapısal zaaf gibi sunulmaz.
 - CSV ve XML aynı olayların iki biçimi; aynı satırlar iki kez sayılmadı. Olay kayıtlarındaki başlangıç–bitiş aralığı video kesit penceresi; topun gerçek hareket süresi değildir.
 - Video doğrulaması yapılmadı. Sakat ve cezalı durumu maç günü resmi listeyle kesinleştirilmeli.
-Belge künyesiSürümv1.0 · 20.10.2026YöntemTakım-maç tablosundan iki maç toplamı ve 36 takım sıralaması; olay dosyasından konum (normalize koordinat, 105×68)Kanıt sınıflarıGÖZLENEN · MODEL · TÜRETİLMİŞ · HİPOTEZSınırlar2 maç/takım; farklı rakipler; video doğrulaması yok; olay düzeyinde xG yok; yan (sol/sağ) yönü doğrulanmadı
+Belge künyesiSürümv1.0 · 20.10.2026YöntemTakım-maç tablosundan iki maç toplamı ve 36 takım sıralaması; olay dosyasından konum (normalize koordinat, 105×68)Kanıt sınıflarıKAYIT · MODEL · TÜREV · HİPOTEZSınırlar2 maç/takım; farklı rakipler; video doğrulaması yok; olay düzeyinde xG yok; yan (sol/sağ) yönü doğrulanmadı
 
 Veri: SportsBase
