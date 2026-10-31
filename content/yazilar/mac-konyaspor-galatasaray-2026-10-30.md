@@ -1,69 +1,95 @@
 ---
-title: Konyaspor 0-4 Galatasaray: deplasmanda dört fark
+title: Konyaspor 0-4 Galatasaray: yüzde 45 savunmada geçen bir galibiyet
 slug: mac-konyaspor-galatasaray-2026-10-30
 type: mac
 date: 2026-10-30
-read: 9
+read: 11
 source: https://www.hpanalytic.com/mac/konyaspor-galatasaray-2026-10-30
 cover: /assets/covers/mac-konyaspor-galatasaray-2026-10-30.svg
 match_type: post-match
 match_result: Konyaspor 0 — 4 Galatasaray
 match_opponent: Konyaspor (Süper Lig)
-excerpt: Dört gol bir sonuç. Dört golü üreten mekanizma ayrı bir hikaye. Konya deplasmanında topun nerede kazanıldığı, nereye taşındığı ve hangi bölgede bitirildiği.
+excerpt: Konyaspor 0-4 Galatasaray. Skor net. Ama Galatasaray zamanının yüzde 45'ini savunmada geçirdi. Bu bir çelişki değil. Bir mekanizma.
 ---
 
-Konyaspor 0-4 Galatasaray: deplasmanda dört fark
+Konyaspor 0-4 Galatasaray: yüzde 45 savunmada geçen bir galibiyet
 
-Skor 0-4. Dört gol. Bir sonuç. Ama sonuç tek başına mekanizmayı anlatmaz.
+Skoru okumak kolay. 0-4. Dört gol. Bir sonuç.
 
-Konya'da Galatasaray 116 kilometre koştu. Konyaspor 115. Fark bir kilometre. Skor farkı ise dört gol.
+Ama bu maçın hikayesi skorda değil. Zamanın nerede geçtiğinde.
 
-Skoru üreten şey koşu mesafesi değil. Koşunun nereye harcandığı.
+## Maçın yarısı savunmada
 
-## Nerede kazanıldı, nerede bitirildi
+Galatasaray bu maçta 1409 pas yaptı. Konyaspor'un 666 pasına karşı.
 
-Top 2806 olayın merkezinde. 533 pas. Bunların çoğu Konyaspor yarısında.
+Ama daha çarpıcı sayı şu: Galatasaray zamanının **yüzde 45'ini yerleşik savunmada** geçirdi. 1263 aksiyon savunma fazında.
 
-Galatasaray topu kendi yarısında tutmadı. Kazandığı yerde tuttu. Orta sahada kazandı, hızlı taşıdı, rakip yarıda bitirdi.
+Bu bir çelişki gibi görünüyor. 4-0 kazanan takım neden yarısını savunmada geçirsin?
 
-Konyaspor 115 kilometre koşarken topu kovaladı. Galatasaray 116 kilometre koşarken topu yönetti.
+Çelişki değil. Mekanizma.
 
-Aynı mesafe. Farklı anlam.
+## Verimliliğin ölçüsü şut değil
 
-## İlk yarı / ikinci yarı: yükün dönüşümü
+Galatasaray maç boyunca **19 şut** attı. 4'ü gol oldu. Yüzde 21 verimlilik.
 
-Konyaspor ilk yarıda 60 bin metre, ikinci yarıda 55 bin metre koştu. Beş kilometre düşüş. Galatasaray ise 60 bin → 55 bin. Aynı eğri.
+Konyaspor 6 şut attı. 0 gol.
 
-İki takım da aynı yorgunluk eğrisini çizdi. Ama biri skoru üretti, diğeri kovaladı.
+Türk futbolunun klasik okuması şöyle der: "Çok şut atan kazanır." Bu maç bunu reddediyor.
 
-Yüksek hızlı mesafe: Galatasaray 8.5 kilometre. Konyaspor 8.5 kilometre. Fark yine sıfıra yakın.
+Galatasaray çok şut atmadı. Doğru anda attı.
 
-Sprint: Galatasaray 1975 metre, Konyaspor 1945 metre. Fark 30 metre.
+Yanlışsam ne görmeliyim? Şut kalitesini (xG) şut sayısından ayırmam lazım. Elimizde bu maç için xG verisi yok. O yüzden "doğru anda attı" iddiası bir olasılık, kesin hüküm değil.
 
-Bu veri şunu söylüyor: koşu miktarı benzer. Koşu kalitesi farklı.
+## Pres düştü, skor arttı
 
-## Dört gol, üç hikaye
+En ilginç sayı PPDA'da. İlk yarı 3.72. İkinci yarı 4.87.
 
-İlk gol: top kazanıldı, üç pasla ceza sahasına girildi. Altı saniye.
+PPDA düştüğünde ne olur? Pres yoğunluğu düşer. Rakibe daha fazla pas yapma alanı verilir.
 
-İkinci gol: sağ kanattan taşındı, iç koridora aktarıldı, bitirildi. On bir saniye.
+Ama skor 0-0'dan 0-4'e gitti.
 
-Üçüncü ve dördüncü gol: tempoyu düşürmeyen bir takımın ürettiği fırsatlar. Konyaspor yorulurken Galatasaray aynı yoğunlukta kaldı.
+Bu şu demek: Galatasaray ilk yarıda yüksek presle topu zorla kazandı. İkinci yarıda presi düşürdü ama skoru artırdı.
 
-Dört gol aynı mekanizmanın ürünü değil. Ama dördünün de ortak noktası var: top rakip yarıda kazanıldı.
+Pres miktarı değil, pres kalitesi. Ya da daha doğrusu: pres zamanlaması.
 
-## Sınır cümlesi
+## 69 yüksek pres kazanımı
 
-Bu bir "mekanizma okuması" iddiasıdır, kesin bir hüküm değil. Konyaspor'un saha içi yerleşimini, oyuncu bazlı hatalarını ve maç içi değişiklikleri görmeden son söz söylenemez.
+Galatasaray Konyaspor yarısında 69 kez top kazandı. Bu sayı Türk liginde bir maç için yüksek.
 
-Elimizdeki veri: olay konumları, pas yönleri, şut yerleri. Bu veri bir olasılık haritası sunar, nedensellik kanıtı değil.
+Yüksek pres kazanımı demek, rakibi kendi yarısında boğmak demek.
 
-Yanlışsam ne görmeliyim? Konyaspor orta sahasında Galatasaray'ın top kaybı sayısını, ikinci toplarda kimin daha çok kazandığını, ve gol öncesi son üç pasın yönünü görmek gerekir. O veri olmadan bu yazı bir çerçeve, bir sonuç değil.
+Yanlışsam ne görmeliyim? 69 kazanımın kaçı gole dönüştü? Bu veri elimizde yok. Sadece kazanımın kendisini görüyoruz, sonrasını değil. Bir sınır.
+
+## Fazlar: sayılar ne söylüyor
+
+Galatasaray'ın zaman dağılımı:
+
+- Yerleşik savunma: yüzde 45.2
+- Yerleşik hücum (kendi yarı): yüzde 30.1
+- Yerleşik hücum (rakip yarı): yüzde 19.5
+- Geçiş hücumu: yüzde 3.5
+- Geçiş savunması: yüzde 1.8
+
+Bu dağılım bir hikaye anlatıyor. Galatasaray **kontra takımı değil**. Geçiş hücumu sadece yüzde 3.5.
+
+Galatasaray **sabır takımı**. Kendi yarısında kuruyor (yüzde 30), rakip yarıda sabırla arıyor (yüzde 19.5).
+
+Kontra değil, sabır. Skor değil, yapı.
+
+## Bu verinin sınırı
+
+Dört golün dördü de aynı mekanizmanın ürünü değil. Maç içinde değişen koşullar, Konyaspor'un yorgunluğu, oyuncu değişiklikleri bu sayıları değiştirebilir.
+
+Elimizdeki veri olay konumlarına dayanıyor. Oyuncuların anlık yerleşimini görmüyoruz. Bu bir çerçeve, tam bir resim değil.
+
+Ama çerçeve net: **Bir takım 4-0 kazanabilir ve yine de zamanının yarısını savunmada geçirebilir.** Bu bir çelişki değil. Bu bir strateji.
 
 ## Gelecek maçlara taşınacak soru
 
-Konyaspor maçı bir gösterge. Ama tek maç. Bir mekanizmanın doğrulanması için üç maç lazım.
+Bu maç bir gösterge. Ama tek maç. Bir mekanizmanın doğrulanması için üç maç lazım.
 
-Süper Lig'de Galatasaray aynı yoğunlukta kalabilecek mi? Sert deplasmanlarda aynı yükü taşıyabilecek mi? Bu soruların cevabı veride.
+Süper Lig'de Galatasaray her maçta yüzde 45 savunmada mı kalacak? Yoksa Konyaspor deplasmanı özel bir senaryo mu? Bu sorunun cevabı sonraki maçlarda.
+
+Biz burada bir maçı okuyoruz. Bir hükmü değil, bir olasılığı.
 
 Veri: SportsBase
