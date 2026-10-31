@@ -1,11 +1,11 @@
 export function initCommandPalette() {
   const items = [
     { label: 'Ana Sayfa', url: '/', tag: 'sayfa' },
-    { label: 'Maç Dosyaları', url: '/mac-dosyalari', tag: 'sayfa' },
-    { label: 'Süper Lig', url: '/super-lig', tag: 'lig' },
+    { label: 'Maç Dosyaları', url: '/yazi/mac-lille-galatasaray-2026-10-21.html', tag: 'sayfa' },
+    { label: 'Süper Lig', url: '/yazi/super-lig-turk-futbolunun-veri-devrimi.html', tag: 'lig' },
     { label: 'Top 5 Ligler', url: '/top-5', tag: 'lig' },
-    { label: 'Avrupa', url: '/avrupa', tag: 'lig' },
-    { label: 'Kadınlar', url: '/women', tag: 'sayfa' },
+    { label: 'Avrupa', url: '/yazi/avrupa-sampiyonlar-liginde-taktiksel-evrim.html', tag: 'lig' },
+    { label: 'Kadınlar', url: '/yazi/kadinlar-futbolun-anatomik-ve-taktiksel-evrimi.html', tag: 'sayfa' },
     { label: 'Data Lab', url: '/lab', tag: 'sayfa' },
     { label: 'Lille — Galatasaray', url: '/yazi/mac-lille-galatasaray-2026-10-21.html', tag: 'yazı' },
     { label: '2002 Dünya Kupası', url: '/yazi/t-rk-futbolunun-2002-d-nya-kupas-ndaki-ba-ar-s-n-n-mekanizmas.html', tag: 'yazı' },
