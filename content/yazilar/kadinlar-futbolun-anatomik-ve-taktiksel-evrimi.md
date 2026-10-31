@@ -41,3 +41,25 @@ Bu verinin sınırı: kadın-erkek karşılaştırmalı xG, PPDA, yüksek yoğun
 Kadın futbolu bir gelecek vaadi değil. Şu an bir gerçeklik. Mekanizmayı okumak için sabırlı bir veri kültürü gerekiyor.
 
 Veri: SportsBase
+
+## Sakatlık profili: bir geometri meselesi
+
+Ön çapraz bağ yaralanması kadın futbolcularda 2-8 kat daha sık. Bu bir tesadüf değil. Bir mekanizma.
+
+Kalça genişliği, Q açısı, hormonal döngü, kas aktivasyon paterni. Hepsi bu farkın bileşenleri. Biri tek başına açıklamaz.
+
+Antrenman protokolü bu farka göre kurulmalı. Aynı protokolü iki cinse uygulamak, farkı görmezden gelmektir.
+
+Yanlışsam ne görmeliyim? ÖÇB riski ile antrenman protokolü arasındaki nedensellik, randomize kontrollü çalışmalarla sınanmalı. Şu an elimizde korelasyon var, kesin neden yok.
+
+## Kadın futbolunda veri: erişim bir engel
+
+Kadın ligleri için kamera açısı, olay işaretleme, oyuncu takibi erkek liglerinden geri. Bu bir kaynak dağılımı problemi.
+
+Mekanizmayı okumak için önce görebilmek gerekir. Gözlem aracı yoksa model de yok.
+
+Bu verinin sınırı: kadın-erkek karşılaştırmalı xG, PPDA, yüksek yoğunluklu koşu verileri henüz olgun değil. Karşılaştırma her zaman aynı örneklemle yapılamıyor.
+
+Kadın futbolu bir gelecek vaadi değil. Şu an bir gerçeklik. Okumak için sabırlı bir veri kültürü gerekiyor.
+
+Veri: SportsBase

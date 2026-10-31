@@ -35,3 +35,23 @@ Yanlışsam ne görmeliyim? Taktiksel evrimin çizgisel olduğunu varsayıyorum.
 Şampiyonlar Ligi bir turnuva değil. Bir laboratuvar. Her sezon yeni bir hipotez, her final yeni bir test.
 
 Veri: SportsBase
+
+## Pressing çeşitleri: aynı kelime, farklı mekanizma
+
+Pressing tek bir şey değil. Üç ayrı mekanizma var. Karşı pres, orta blok, yüksek hat.
+
+Karşı pres topu kaybettiğin an başlar. Beş saniye içinde geri kazanırsan rakip yerleşemedi. Yerleşemediği için pozisyon üretemedi.
+
+Orta blok rakibi kendi yarısına davet eder. Yüksek hat ise rakibi kendi kalesine sıkıştırır. Üçü aynı kelimeyle anılır ama aynı şey değildir.
+
+Yanlışsam ne görmeliyim? Pressing başarısını sadece kazanım sayısıyla ölçemeyiz. Kazanımdan sonraki üç saniyede ne yaptığına bakmak gerekir. O veri olmadan hüküm eksiktir.
+
+## Veri devrimi: xG bir hüküm değil
+
+xG, PPDA, kazanım haritaları, geçiş sayıları. Hepsi birer araç. Ama araçları karıştırırsan hüküm de karışır.
+
+PPDA düşükse yüksek press oynuyorsun. Ama PPDA düşükse ve rakibin sahasında kazandığın top azsa, press var ama verim yok. Bu bir tezat değil. Bir mekanizma.
+
+Veri çıktısı işarettir. Hüküm değil.
+
+Veri: SportsBase

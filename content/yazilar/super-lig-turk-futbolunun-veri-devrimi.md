@@ -40,3 +40,25 @@ Yanlışsam ne görmeliyim? Bu devrimin ne kadar derin olduğunu söylemek için
 Süper Lig bir geçiş döneminde. Veriyi topladık. Şimdi anlamlandırma sırası.
 
 Veri: SportsBase
+
+## Anadolu takımları: veri kim için?
+
+Büyük kulüplerin veri yatırımı görünür. Peki Anadolu takımları ne yapıyor?
+
+Birkaç kulüp basit xG ve PPDA kullanıyor. Çoğu hâlâ sezon sonu istatistikleriyle karar veriyor. Bu bir bütçe problem değil, bir kültür problem.
+
+Futbolcu izlemek pahalı. Veri okumak ucuz. Ama okumayı bilmek gerek.
+
+Yanlışsam ne görmeliyim? Anadolu takımlarının veri kullanımını gösteren bağımsız bir araştırma yok elimde. Bu bir gözlem değil, bir hipotez. Veriyi bulduğumda güncellenecek.
+
+## Model çağı: nereden nereye?
+
+On yıl önce skoru konuşuyorduk. Beş yıl önce topa sahip olma oranını. Şimdi xG ve geçiş sayılarını.
+
+Yarın neyi konuşacağız? Muhtemelen mekân-zaman modellerini. Oyuncunun hangi saniyede hangi boşluğa koştuğunu.
+
+Ama şunu unutmayalım: her yeni metrik bir öncekini çürütmez. Onu bir katmana dönüştürür.
+
+Futbol bir sayı değil. Ama sayı okumayı öğrenen, futbolun perdesini kaldırır.
+
+Veri: SportsBase
