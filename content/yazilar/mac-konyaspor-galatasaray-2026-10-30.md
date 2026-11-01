@@ -1,95 +1,159 @@
 ---
-title: Konyaspor 0-4 Galatasaray: yüzde 45 savunmada geçen bir galibiyet
+title: "Konya 0-4 Galatasaray: Pres değil, geçiş verimliliği"
 slug: mac-konyaspor-galatasaray-2026-10-30
 type: mac
 date: 2026-10-30
-read: 11
+read: 12
 source: https://www.hpanalytic.com/mac/konyaspor-galatasaray-2026-10-30
-cover: /assets/covers/mac-konyaspor-galatasaray-2026-10-30.svg
 match_type: post-match
 match_result: Konyaspor 0 — 4 Galatasaray
 match_opponent: Konyaspor (Süper Lig)
-excerpt: Konyaspor 0-4 Galatasaray. Skor net. Ama Galatasaray zamanının yüzde 45'ini savunmada geçirdi. Bu bir çelişki değil. Bir mekanizma.
+excerpt: "4-0'lık skor 'boğucu hücum' hikayesi anlatır. Ham veri başka bir şey söylüyor. Galatasaray pozisyonel hücumla değil, geçiş verimliliğiyle kazandı."
 ---
 
-Konyaspor 0-4 Galatasaray: yüzde 45 savunmada geçen bir galibiyet
+Skoru okumak kolay. 0-4. Dört farklı golcü. Bir sonuç.
 
-Skoru okumak kolay. 0-4. Dört gol. Bir sonuç.
+Ama skorun altındaki mekanizma farklı.
 
-Ama bu maçın hikayesi skorda değil. Zamanın nerede geçtiğinde.
+4-0 kazanan takım rakibini 90 dakika boğmadı.
 
-## Maçın yarısı savunmada
+263 pozisyonel hücum katılımı var. Sıfır gol.
 
-Galatasaray bu maçta 1409 pas yaptı. Konyaspor'un 666 pasına karşı.
+Dört golün dördü de farklı mekanizmalardan geldi.
 
-Ama daha çarpıcı sayı şu: Galatasaray zamanının **yüzde 45'ini yerleşik savunmada** geçirdi. 1263 aksiyon savunma fazında.
+Bu bir "saha parsellenmesi" değil. Bu bir geçiş verimliliği.
 
-Bu bir çelişki gibi görünüyor. 4-0 kazanan takım neden yarısını savunmada geçirsin?
+:::visual[scoreboard:konya-gs] | Maç verisi | Konya-GS, 30.10.2026
+:::
 
-Çelişki değil. Mekanizma.
+## Gollerin anatomisi: 0 set hücum
 
-## Verimliliğin ölçüsü şut değil
+11. dakika. Osimhen.
 
-Galatasaray maç boyunca **19 şut** attı. 4'ü gol oldu. Yüzde 21 verimlilik.
+Sara'nın kendi yarısından (x=72) uzun pası. Awaziem'e karşı hava topu. Hücum penceresi dışı.
 
-Konyaspor 6 şut attı. 0 gol.
+27. dakika. Akgün.
 
-Türk futbolunun klasik okuması şöyle der: "Çok şut atan kazanır." Bu maç bunu reddediyor.
+Duran top penceresi. Batrakov'un asist katkısı. Yerleşik savunma dışı.
 
-Galatasaray çok şut atmadı. Doğru anda attı.
+48. dakika. Batrakov.
 
-Yanlışsam ne görmeliyim? Şut kalitesini (xG) şut sayısından ayırmam lazım. Elimizde bu maç için xG verisi yok. O yüzden "doğru anda attı" iddiası bir olasılık, kesin hüküm değil.
+Sara'nın kendi yarısından (x=29) asisti. Beş oyunculu kontra. Geçiş hücumu.
 
-## Pres düştü, skor arttı
+55. dakika. Leão.
 
-En ilginç sayı PPDA'da. İlk yarı 3.72. İkinci yarı 4.87.
+Penaltı. Hücum penceresi dışı.
 
-PPDA düştüğünde ne olur? Pres yoğunluğu düşer. Rakibe daha fazla pas yapma alanı verilir.
+Dört gol. Sıfır pozisyonel hücum.
 
-Ama skor 0-0'dan 0-4'e gitti.
+Devre 2-0. Final 4-0.
 
-Bu şu demek: Galatasaray ilk yarıda yüksek presle topu zorla kazandı. İkinci yarıda presi düşürdü ama skoru artırdı.
+"0-0'dan 0-4'e" hikayesi yanlış. Maç ilk yarıda koptu. Geri dönüş ihtimali 27. dakikada kapandı.
 
-Pres miktarı değil, pres kalitesi. Ya da daha doğrusu: pres zamanlaması.
+:::visual[event-anim:konya-gs] | Geçiş ve derinlik | Konya-GS
+:::
 
-## 69 yüksek pres kazanımı
+Bu maç "sabırla boğan" bir takımın değil. "Derinden kırıp geçen" bir takımın hikayesi.
 
-Galatasaray Konyaspor yarısında 69 kez top kazandı. Bu sayı Türk liginde bir maç için yüksek.
+## Pres efsanesi: 5 top kazanımı
 
-Yüksek pres kazanımı demek, rakibi kendi yarısında boğmak demek.
+Maç sonu raporlarında "boğucu ön alan presi" geçer.
 
-Yanlışsam ne görmeliyim? 69 kazanımın kaçı gole dönüştü? Bu veri elimizde yok. Sadece kazanımın kendisini görüyoruz, sonrasını değil. Bir sınır.
+Veri bunu doğrulamıyor.
 
-## Fazlar: sayılar ne söylüyor
+34 top kazanma aksiyonu var. 20'si kendi üçlüsünde. 13'ü orta üçlüde.
 
-Galatasaray'ın zaman dağılımı:
+Rakip son üçlüde kazanılan top: **1**.
 
-- Yerleşik savunma: yüzde 45.2
-- Yerleşik hücum (kendi yarı): yüzde 30.1
-- Yerleşik hücum (rakip yarı): yüzde 19.5
-- Geçiş hücumu: yüzde 3.5
-- Geçiş savunması: yüzde 1.8
+Rakip yarıda toplam kazanım: **5**. Konyaspor'un aynı bölgede 7 kazanımı var.
 
-Bu dağılım bir hikaye anlatıyor. Galatasaray **kontra takımı değil**. Geçiş hücumu sadece yüzde 3.5.
+Yani pres yüksek değil, düşük.
 
-Galatasaray **sabır takımı**. Kendi yarısında kuruyor (yüzde 30), rakip yarıda sabırla arıyor (yüzde 19.5).
+PPDA 4.24 ham bir sayı. 666 rakip pasının 267'si tekrar satırı. 157 defansif aksiyonun 42'si alt-etiket tekrarı.
 
-Kontra değil, sabır. Skor değil, yapı.
+Tekrarsız PPDA: 3.47. Bölge sınırlı PPDA: 4.75.
+
+İkinci yarı bölge sınırlı PPDA 3.77'den 6.17'ye çıkıyor. Bu bir pres başarısızlığı değil. Skor 4-0 ve 61. dakikada 5 değişiklik.
+
+Takım temas eşiğini düşürdü. Bilinçli.
+
+:::visual[phases:konya-gs] | Faz dağılımı | Konya-GS, V4 canonical
+:::
+
+Yanlışsam ne görmeliyim? Rakip yarıda 15+ top kazanımı. Veride 5 var. Farkı görürsem "pres" iddiasını yeniden değerlendiririm.
+
+## Merkez koridorda ayrışma
+
+Genel pas hacminde denge var. GS 444, Konya 398. %52.7 - 47.3.
+
+Hücum üçlüsündeki toplam pas dağılımı da denge: GS 107, Konya 86.
+
+Ayrışma tek bir yerde: merkez şerit.
+
+Orta üçlü merkez: 85-57. GS %60.
+
+Hücum üçlüsü merkez: Konya 7 pas. GS 24 pas.
+
+Konya hücum ederken tamamen kenarlara itildi. Merkez kapandı.
+
+Bu bir "saha parsellenmesi" değil. Bu bir koridor ablukası.
+
+Yanlışsam ne görmeliyim? Konya'nın merkezden hücum üçlüsüne 20+ pas sokması. Veride 7 var.
+
+## Çekirdek: 60 dakikada maçı kopan omurga
+
+**Gabriel Sara.** 42 pas (38 doğru). 2 asist. 3 şans yaratma. 3 top kazanım, üçü de y>50.
+
+Hücumda Leão (13) ve Batrakov (13) ile eşzamanlı etiketlendi. Bu bir "pas ağı" değil, aynı pencerede aksiyon alma sıklığı.
+
+**Lucas Torreira.** 25 pas (23 doğru). 1 top kaybı. 6 top kazanım, 5'i kendi yarıda (x=8, 14, 39, 42, 50).
+
+Torreira stoper önü dalgakıranı. Tek kayıpla oynadı.
+
+**Victor Osimhen.** 7 pas. 4 şut (3 isabet). 1 gol. 6 top kaybı, 5'i x≥77.
+
+Osimhen pas istasyonu değil. Stoper hattını yıpratan temas santrforu. Hava düellolarıyla savunma dengesini bozdu.
+
+:::visual[radar:konya-gs:Gabriel Sara] | Oyuncu profili | Sara, Konya-GS
+:::
+
+Yanlışsam ne görmeliyim? Sara'nın top kazanımlarının yarısından fazlasının y<50'de olması. Veride hepsi y>50.
+
+## Zaman akışı
+
+Aşağıdaki animasyon, 2802 doğrulanmış eventin saha üzerindeki akışını gösteriyor.
+
+Her nokta bir aksiyon. Renk takımı söylüyor. Zaman çubuğu maçı 30 saniyede akıtıyor.
+
+Turuncu = Konyaspor. Yeşil = Galatasaray.
+
+İlk yarıda Galatasaray'ın kendi yarısından çıkan aksiyon yoğunluğu görünür. İkinci yarıda Konyaspor yarısında birikim.
+
+:::visual[flow:konya-gs] | Saha içi zaman akışı | Konya-GS, 2802 event
+:::
 
 ## Bu verinin sınırı
 
-Dört golün dördü de aynı mekanizmanın ürünü değil. Maç içinde değişen koşullar, Konyaspor'un yorgunluğu, oyuncu değişiklikleri bu sayıları değiştirebilir.
+Topsuz koşu yok. Varış noktası yok. Pas alıcısı doğrulanmamış.
 
-Elimizdeki veri olay konumlarına dayanıyor. Oyuncuların anlık yerleşimini görmüyoruz. Bu bir çerçeve, tam bir resim değil.
+Fitness normları birimsiz. Radar tutarsız (Singo örneği: mesafe normu 17.3).
 
-Ama çerçeve net: **Bir takım 4-0 kazanabilir ve yine de zamanının yarısını savunmada geçirebilir.** Bu bir çelişki değil. Bu bir strateji.
+Verideki pas başlangıç noktaları var. Bitiş noktaları yok.
 
-## Gelecek maçlara taşınacak soru
+"Topu nereye taşıdı" sorusunun kesin cevabı yok. Sadece "nereden başladı" var.
 
-Bu maç bir gösterge. Ama tek maç. Bir mekanizmanın doğrulanması için üç maç lazım.
+Ama çerçeve net: Galatasaray bu maçı pozisyonel hücumla kazanmadı. Geçiş verimliliğiyle kazandı.
 
-Süper Lig'de Galatasaray her maçta yüzde 45 savunmada mı kalacak? Yoksa Konyaspor deplasmanı özel bir senaryo mu? Bu sorunun cevabı sonraki maçlarda.
+4-0'lık skor "boğucu hücum" değil, "keskin kırılma" hikayesi.
 
-Biz burada bir maçı okuyoruz. Bir hükmü değil, bir olasılığı.
+## Sonraki soru
 
-Veri: SportsBase
+Galatasaray her maçta bu kadar düşük presle mi oynayacak?
+
+Yoksa Konyaspor maçı "öne geçen takımın presi bıraktığı" özel bir senaryo mu?
+
+Sonraki maçlar cevap verecek.
+
+Biz burada bir maçı okuyoruz. Bir hükmü değil, bir mekanizmayı.
+
+Veri: SportsBase · V4 canonical + XLSX ground truth

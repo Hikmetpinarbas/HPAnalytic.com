@@ -1,4 +1,4 @@
-<!doctype html><html lang="tr"><head><meta charset="utf-8"/><style>html{background:#08090B}body{background:#08090B;color:#F4F2EC;margin:0}</style><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/><meta name="theme-color" content="#08090B"/><title>Konyaspor 0-4 Galatasaray: yüzde 45 savunmada geçen bir galibiyet — HP//Analytic</title><meta name="description" content="Konyaspor 0-4 Galatasaray. Skor net. Ama Galatasaray zamanının yüzde 45&#39;ini savunmada geçirdi. Bu bir çelişki değil. Bir mekanizma."/><meta property="og:title" content="Konyaspor 0-4 Galatasaray: yüzde 45 savunmada geçen bir galibiyet"/><meta property="og:description" content="Konyaspor 0-4 Galatasaray. Skor net. Ama Galatasaray zamanının yüzde 45&#39;ini savunmada geçirdi. Bu bir çelişki değil. Bir mekanizma."/><meta property="og:type" content="article"/><meta property="og:site_name" content="HPAnalytic"/><meta name="twitter:card" content="summary"/><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;700&family=JetBrains+Mono:wght@400;500;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet"><style>
+<!doctype html><html lang="tr"><head><meta charset="utf-8"/><style>html{background:#08090B}body{background:#08090B;color:#F4F2EC;margin:0}</style><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/><meta name="theme-color" content="#08090B"/><title>Konya 0-4 Galatasaray: Pres değil, geçiş verimliliği — HP//Analytic</title><meta name="description" content="4-0&#39;lık skor &#39;boğucu hücum&#39; hikayesi anlatır. Ham veri başka bir şey söylüyor. Galatasaray pozisyonel hücumla değil, geçiş verimliliğiyle kazandı."/><meta property="og:title" content="Konya 0-4 Galatasaray: Pres değil, geçiş verimliliği"/><meta property="og:description" content="4-0&#39;lık skor &#39;boğucu hücum&#39; hikayesi anlatır. Ham veri başka bir şey söylüyor. Galatasaray pozisyonel hücumla değil, geçiş verimliliğiyle kazandı."/><meta property="og:type" content="article"/><meta property="og:site_name" content="HPAnalytic"/><meta name="twitter:card" content="summary"/><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;700&family=JetBrains+Mono:wght@400;500;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet"><style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{--bg:#08090B;--bg-elev:#0D0E12;--ink:#F4F2EC;--ink-soft:#8A8A93;--ink-faint:#4A4A52;--line:#1B1B21;--line-bright:#2A2B33;--neon:#B4FF39;--orange:#FF6B35;--serif:'Newsreader',Georgia,serif;--mono:'JetBrains Mono',monospace;--sans:'Hanken Grotesk',system-ui,sans-serif}
 html{background:var(--bg);-webkit-font-smoothing:antialiased;scroll-behavior:smooth}
@@ -88,6 +88,168 @@ a{color:inherit;text-decoration:none}
 @media(min-width:768px){.site-footer{padding:32px 48px}}
 
 html{opacity:1;transition:opacity .22s cubic-bezier(.2,.9,.3,1)}html.page-leaving{opacity:0}@keyframes pageFadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}body{animation:pageFadeIn .4s cubic-bezier(.2,.9,.3,1)}
+/* hp-viz-embed-marker */
+/* HPAnalytic — Viz Görsel Dili (Rams + Scher) */
+
+[data-viz] {
+  margin: 3rem 0;
+  padding: 2rem 1rem;
+  position: relative;
+  min-height: 200px;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+
+[data-viz].viz-active {
+  opacity: 1;
+}
+
+[data-viz].viz-loading {
+  opacity: 1;
+}
+
+[data-viz].viz-loading::before {
+  content: 'VERİ YÜKLENİYOR';
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.3em;
+  color: #B4FF39;
+  animation: viz-pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes viz-pulse {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 1; }
+}
+
+/* Scher Tipografisi: Başlık = Görsel İmge */
+.viz-title {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid #1E211D;
+}
+
+.viz-title span {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(1.5rem, 5vw, 2.2rem);
+  font-weight: 400;
+  color: #EDEFEA;
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+
+.viz-title small {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.3em;
+  color: #FF6B35;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+/* Edge Case: Hata Toleransı (Hamilton) */
+.viz-error {
+  padding: 2rem;
+  text-align: center;
+  border: 1px dashed #FF3B3B;
+  color: #FF3B3B;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+}
+
+/* Responsive (Marcotte) */
+@media (max-width: 640px) {
+  [data-viz] { margin: 2rem 0; padding: 1.5rem 0.5rem; }
+  .viz-title { flex-direction: column; gap: 0.5rem; }
+}
+/* HPAnalytic — Viz Görsel Dili (Rams + Scher) */
+
+[data-viz] {
+  margin: 3rem 0;
+  padding: 2rem 1rem;
+  position: relative;
+  min-height: 200px;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+
+[data-viz].viz-active {
+  opacity: 1;
+}
+
+[data-viz].viz-loading {
+  opacity: 1;
+}
+
+[data-viz].viz-loading::before {
+  content: 'VERİ YÜKLENİYOR';
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.3em;
+  color: #B4FF39;
+  animation: viz-pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes viz-pulse {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 1; }
+}
+
+/* Scher Tipografisi: Başlık = Görsel İmge */
+.viz-title {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid #1E211D;
+}
+
+.viz-title span {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(1.5rem, 5vw, 2.2rem);
+  font-weight: 400;
+  color: #EDEFEA;
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+
+.viz-title small {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.3em;
+  color: #FF6B35;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+/* Edge Case: Hata Toleransı (Hamilton) */
+.viz-error {
+  padding: 2rem;
+  text-align: center;
+  border: 1px dashed #FF3B3B;
+  color: #FF3B3B;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+}
+
+/* Responsive (Marcotte) */
+@media (max-width: 640px) {
+  [data-viz] { margin: 2rem 0; padding: 1.5rem 0.5rem; }
+  .viz-title { flex-direction: column; gap: 0.5rem; }
+}
+
 </style></head><body>
 <div class="progress-bar" id="progress"></div>
 <a href="/" class="back">← Ana sayfa</a>
@@ -95,60 +257,99 @@ html{opacity:1;transition:opacity .22s cubic-bezier(.2,.9,.3,1)}html.page-leavin
   <div class="hero-top">
     <span class="type-badge" style="color:#B4FF39;border-color:#B4FF39">Maç Dosyası</span>
     <span class="hero-date">2026-10-30</span>
-    <span class="hero-read">11 dk okuma</span>
+    <span class="hero-read">12 dk okuma</span>
   </div>
   
-  <h1>Konyaspor 0-4 Galatasaray: yüzde 45 savunmada geçen bir galibiyet</h1>
-  <p class="lede">Konyaspor 0-4 Galatasaray. Skor net. Ama Galatasaray zamanının yüzde 45&#39;ini savunmada geçirdi. Bu bir çelişki değil. Bir mekanizma.</p>
+  <h1>Konya 0-4 Galatasaray: Pres değil, geçiş verimliliği</h1>
+  <p class="lede">4-0&#39;lık skor &#39;boğucu hücum&#39; hikayesi anlatır. Ham veri başka bir şey söylüyor. Galatasaray pozisyonel hücumla değil, geçiş verimliliğiyle kazandı.</p>
 </section>
 <div class="layout">
-  <aside class="toc"><div class="toc-label">İçindekiler</div><ol><li data-level="2"><a href="#h-maçın-yarısı-savunmada">Maçın yarısı savunmada</a></li><li data-level="2"><a href="#h-verimliliğin-ölçüsü-şut-değil">Verimliliğin ölçüsü şut değil</a></li><li data-level="2"><a href="#h-pres-düştü-skor-arttı">Pres düştü, skor arttı</a></li><li data-level="2"><a href="#h-69-yüksek-pres-kazanımı">69 yüksek pres kazanımı</a></li><li data-level="2"><a href="#h-fazlar-sayılar-ne-söylüyor">Fazlar: sayılar ne söylüyor</a></li><li data-level="2"><a href="#h-bu-verinin-sınırı">Bu verinin sınırı</a></li><li data-level="2"><a href="#h-gelecek-maçlara-taşınacak-soru">Gelecek maçlara taşınacak soru</a></li></ol></aside>
+  <aside class="toc"><div class="toc-label">İçindekiler</div><ol><li data-level="2"><a href="#h-gollerin-anatomisi-0-set-hücum">Gollerin anatomisi: 0 set hücum</a></li><li data-level="2"><a href="#h-pres-efsanesi-5-top-kazanımı">Pres efsanesi: 5 top kazanımı</a></li><li data-level="2"><a href="#h-merkez-koridorda-ayrışma">Merkez koridorda ayrışma</a></li><li data-level="2"><a href="#h-çekirdek-60-dakikada-maçı-kopan-omurga">Çekirdek: 60 dakikada maçı kopan omurga</a></li><li data-level="2"><a href="#h-zaman-akışı">Zaman akışı</a></li><li data-level="2"><a href="#h-bu-verinin-sınırı">Bu verinin sınırı</a></li><li data-level="2"><a href="#h-sonraki-soru">Sonraki soru</a></li></ol></aside>
   <article class="article">
-    <p>Konyaspor 0-4 Galatasaray: yüzde 45 savunmada geçen bir galibiyet</p>
-<p>Skoru okumak kolay. 0-4. Dört gol. Bir sonuç.</p>
-<p>Ama bu maçın hikayesi skorda değil. Zamanın nerede geçtiğinde.</p>
-<h2 id="h-maçın-yarısı-savunmada">Maçın yarısı savunmada</h2>
-<p>Galatasaray bu maçta 1409 pas yaptı. Konyaspor&#39;un 666 pasına karşı.</p>
-<p>Ama daha çarpıcı sayı şu: Galatasaray zamanının <strong>yüzde 45&#39;ini yerleşik savunmada</strong> geçirdi. 1263 aksiyon savunma fazında.</p>
-<p>Bu bir çelişki gibi görünüyor. 4-0 kazanan takım neden yarısını savunmada geçirsin?</p>
-<p>Çelişki değil. Mekanizma.</p>
-<h2 id="h-verimliliğin-ölçüsü-şut-değil">Verimliliğin ölçüsü şut değil</h2>
-<p>Galatasaray maç boyunca <strong>19 şut</strong> attı. 4&#39;ü gol oldu. Yüzde 21 verimlilik.</p>
-<p>Konyaspor 6 şut attı. 0 gol.</p>
-<p>Türk futbolunun klasik okuması şöyle der: &quot;Çok şut atan kazanır.&quot; Bu maç bunu reddediyor.</p>
-<p>Galatasaray çok şut atmadı. Doğru anda attı.</p>
-<p>Yanlışsam ne görmeliyim? Şut kalitesini (xG) şut sayısından ayırmam lazım. Elimizde bu maç için xG verisi yok. O yüzden &quot;doğru anda attı&quot; iddiası bir olasılık, kesin hüküm değil.</p>
-<h2 id="h-pres-düştü-skor-arttı">Pres düştü, skor arttı</h2>
-<p>En ilginç sayı PPDA&#39;da. İlk yarı 3.72. İkinci yarı 4.87.</p>
-<p>PPDA düştüğünde ne olur? Pres yoğunluğu düşer. Rakibe daha fazla pas yapma alanı verilir.</p>
-<p>Ama skor 0-0&#39;dan 0-4&#39;e gitti.</p>
-<p>Bu şu demek: Galatasaray ilk yarıda yüksek presle topu zorla kazandı. İkinci yarıda presi düşürdü ama skoru artırdı.</p>
-<p>Pres miktarı değil, pres kalitesi. Ya da daha doğrusu: pres zamanlaması.</p>
-<h2 id="h-69-yüksek-pres-kazanımı">69 yüksek pres kazanımı</h2>
-<p>Galatasaray Konyaspor yarısında 69 kez top kazandı. Bu sayı Türk liginde bir maç için yüksek.</p>
-<p>Yüksek pres kazanımı demek, rakibi kendi yarısında boğmak demek.</p>
-<p>Yanlışsam ne görmeliyim? 69 kazanımın kaçı gole dönüştü? Bu veri elimizde yok. Sadece kazanımın kendisini görüyoruz, sonrasını değil. Bir sınır.</p>
-<h2 id="h-fazlar-sayılar-ne-söylüyor">Fazlar: sayılar ne söylüyor</h2>
-<p>Galatasaray&#39;ın zaman dağılımı:</p>
-<ul>
-<li>Yerleşik savunma: yüzde 45.2</li>
-<li>Yerleşik hücum (kendi yarı): yüzde 30.1</li>
-<li>Yerleşik hücum (rakip yarı): yüzde 19.5</li>
-<li>Geçiş hücumu: yüzde 3.5</li>
-<li>Geçiş savunması: yüzde 1.8</li>
-</ul>
-<p>Bu dağılım bir hikaye anlatıyor. Galatasaray <strong>kontra takımı değil</strong>. Geçiş hücumu sadece yüzde 3.5.</p>
-<p>Galatasaray <strong>sabır takımı</strong>. Kendi yarısında kuruyor (yüzde 30), rakip yarıda sabırla arıyor (yüzde 19.5).</p>
-<p>Kontra değil, sabır. Skor değil, yapı.</p>
+    <p>Skoru okumak kolay. 0-4. Dört farklı golcü. Bir sonuç.</p>
+<p>Ama skorun altındaki mekanizma farklı.</p>
+<p>4-0 kazanan takım rakibini 90 dakika boğmadı.</p>
+<p>263 pozisyonel hücum katılımı var. Sıfır gol.</p>
+<p>Dört golün dördü de farklı mekanizmalardan geldi.</p>
+<p>Bu bir &quot;saha parsellenmesi&quot; değil. Bu bir geçiş verimliliği.</p>
+<figure class="blk-visual" data-visual="scoreboard:konya-gs"><figcaption class="bv-title">Maç verisi</figcaption><div class="bv-body" data-visual-body="scoreboard:konya-gs"></div><div class="bv-note">Konya-GS, 30.10.2026</div></figure>
+
+<h2 id="h-gollerin-anatomisi-0-set-hücum">Gollerin anatomisi: 0 set hücum</h2>
+<ol start="11">
+<li>dakika. Osimhen.</li>
+</ol>
+<p>Sara&#39;nın kendi yarısından (x=72) uzun pası. Awaziem&#39;e karşı hava topu. Hücum penceresi dışı.</p>
+<ol start="27">
+<li>dakika. Akgün.</li>
+</ol>
+<p>Duran top penceresi. Batrakov&#39;un asist katkısı. Yerleşik savunma dışı.</p>
+<ol start="48">
+<li>dakika. Batrakov.</li>
+</ol>
+<p>Sara&#39;nın kendi yarısından (x=29) asisti. Beş oyunculu kontra. Geçiş hücumu.</p>
+<ol start="55">
+<li>dakika. Leão.</li>
+</ol>
+<p>Penaltı. Hücum penceresi dışı.</p>
+<p>Dört gol. Sıfır pozisyonel hücum.</p>
+<p>Devre 2-0. Final 4-0.</p>
+<p>&quot;0-0&#39;dan 0-4&#39;e&quot; hikayesi yanlış. Maç ilk yarıda koptu. Geri dönüş ihtimali 27. dakikada kapandı.</p>
+<figure class="blk-visual" data-visual="event-anim:konya-gs"><figcaption class="bv-title">Geçiş ve derinlik</figcaption><div class="bv-body" data-visual-body="event-anim:konya-gs"></div><div class="bv-note">Konya-GS</div></figure>
+
+<p>Bu maç &quot;sabırla boğan&quot; bir takımın değil. &quot;Derinden kırıp geçen&quot; bir takımın hikayesi.</p>
+<h2 id="h-pres-efsanesi-5-top-kazanımı">Pres efsanesi: 5 top kazanımı</h2>
+<p>Maç sonu raporlarında &quot;boğucu ön alan presi&quot; geçer.</p>
+<p>Veri bunu doğrulamıyor.</p>
+<p>34 top kazanma aksiyonu var. 20&#39;si kendi üçlüsünde. 13&#39;ü orta üçlüde.</p>
+<p>Rakip son üçlüde kazanılan top: <strong>1</strong>.</p>
+<p>Rakip yarıda toplam kazanım: <strong>5</strong>. Konyaspor&#39;un aynı bölgede 7 kazanımı var.</p>
+<p>Yani pres yüksek değil, düşük.</p>
+<p>PPDA 4.24 ham bir sayı. 666 rakip pasının 267&#39;si tekrar satırı. 157 defansif aksiyonun 42&#39;si alt-etiket tekrarı.</p>
+<p>Tekrarsız PPDA: 3.47. Bölge sınırlı PPDA: 4.75.</p>
+<p>İkinci yarı bölge sınırlı PPDA 3.77&#39;den 6.17&#39;ye çıkıyor. Bu bir pres başarısızlığı değil. Skor 4-0 ve 61. dakikada 5 değişiklik.</p>
+<p>Takım temas eşiğini düşürdü. Bilinçli.</p>
+<figure class="blk-visual" data-visual="phases:konya-gs"><figcaption class="bv-title">Faz dağılımı</figcaption><div class="bv-body" data-visual-body="phases:konya-gs"></div><div class="bv-note">Konya-GS, V4 canonical</div></figure>
+
+<p>Yanlışsam ne görmeliyim? Rakip yarıda 15+ top kazanımı. Veride 5 var. Farkı görürsem &quot;pres&quot; iddiasını yeniden değerlendiririm.</p>
+<h2 id="h-merkez-koridorda-ayrışma">Merkez koridorda ayrışma</h2>
+<p>Genel pas hacminde denge var. GS 444, Konya 398. %52.7 - 47.3.</p>
+<p>Hücum üçlüsündeki toplam pas dağılımı da denge: GS 107, Konya 86.</p>
+<p>Ayrışma tek bir yerde: merkez şerit.</p>
+<p>Orta üçlü merkez: 85-57. GS %60.</p>
+<p>Hücum üçlüsü merkez: Konya 7 pas. GS 24 pas.</p>
+<p>Konya hücum ederken tamamen kenarlara itildi. Merkez kapandı.</p>
+<p>Bu bir &quot;saha parsellenmesi&quot; değil. Bu bir koridor ablukası.</p>
+<p>Yanlışsam ne görmeliyim? Konya&#39;nın merkezden hücum üçlüsüne 20+ pas sokması. Veride 7 var.</p>
+<h2 id="h-çekirdek-60-dakikada-maçı-kopan-omurga">Çekirdek: 60 dakikada maçı kopan omurga</h2>
+<p><strong>Gabriel Sara.</strong> 42 pas (38 doğru). 2 asist. 3 şans yaratma. 3 top kazanım, üçü de y&gt;50.</p>
+<p>Hücumda Leão (13) ve Batrakov (13) ile eşzamanlı etiketlendi. Bu bir &quot;pas ağı&quot; değil, aynı pencerede aksiyon alma sıklığı.</p>
+<p><strong>Lucas Torreira.</strong> 25 pas (23 doğru). 1 top kaybı. 6 top kazanım, 5&#39;i kendi yarıda (x=8, 14, 39, 42, 50).</p>
+<p>Torreira stoper önü dalgakıranı. Tek kayıpla oynadı.</p>
+<p><strong>Victor Osimhen.</strong> 7 pas. 4 şut (3 isabet). 1 gol. 6 top kaybı, 5&#39;i x≥77.</p>
+<p>Osimhen pas istasyonu değil. Stoper hattını yıpratan temas santrforu. Hava düellolarıyla savunma dengesini bozdu.</p>
+<figure class="blk-visual" data-visual="radar:konya-gs:Gabriel Sara"><figcaption class="bv-title">Oyuncu profili</figcaption><div class="bv-body" data-visual-body="radar:konya-gs:Gabriel Sara"></div><div class="bv-note">Sara, Konya-GS</div></figure>
+
+<p>Yanlışsam ne görmeliyim? Sara&#39;nın top kazanımlarının yarısından fazlasının y&lt;50&#39;de olması. Veride hepsi y&gt;50.</p>
+<h2 id="h-zaman-akışı">Zaman akışı</h2>
+<p>Aşağıdaki animasyon, 2802 doğrulanmış eventin saha üzerindeki akışını gösteriyor.</p>
+<p>Her nokta bir aksiyon. Renk takımı söylüyor. Zaman çubuğu maçı 30 saniyede akıtıyor.</p>
+<p>Turuncu = Konyaspor. Yeşil = Galatasaray.</p>
+<p>İlk yarıda Galatasaray&#39;ın kendi yarısından çıkan aksiyon yoğunluğu görünür. İkinci yarıda Konyaspor yarısında birikim.</p>
+<figure class="blk-visual" data-visual="flow:konya-gs"><figcaption class="bv-title">Saha içi zaman akışı</figcaption><div class="bv-body" data-visual-body="flow:konya-gs"></div><div class="bv-note">Konya-GS, 2802 event</div></figure>
+
 <h2 id="h-bu-verinin-sınırı">Bu verinin sınırı</h2>
-<p>Dört golün dördü de aynı mekanizmanın ürünü değil. Maç içinde değişen koşullar, Konyaspor&#39;un yorgunluğu, oyuncu değişiklikleri bu sayıları değiştirebilir.</p>
-<p>Elimizdeki veri olay konumlarına dayanıyor. Oyuncuların anlık yerleşimini görmüyoruz. Bu bir çerçeve, tam bir resim değil.</p>
-<p>Ama çerçeve net: <strong>Bir takım 4-0 kazanabilir ve yine de zamanının yarısını savunmada geçirebilir.</strong> Bu bir çelişki değil. Bu bir strateji.</p>
-<h2 id="h-gelecek-maçlara-taşınacak-soru">Gelecek maçlara taşınacak soru</h2>
-<p>Bu maç bir gösterge. Ama tek maç. Bir mekanizmanın doğrulanması için üç maç lazım.</p>
-<p>Süper Lig&#39;de Galatasaray her maçta yüzde 45 savunmada mı kalacak? Yoksa Konyaspor deplasmanı özel bir senaryo mu? Bu sorunun cevabı sonraki maçlarda.</p>
-<p>Biz burada bir maçı okuyoruz. Bir hükmü değil, bir olasılığı.</p>
-<p>Veri: SportsBase</p>
+<p>Topsuz koşu yok. Varış noktası yok. Pas alıcısı doğrulanmamış.</p>
+<p>Fitness normları birimsiz. Radar tutarsız (Singo örneği: mesafe normu 17.3).</p>
+<p>Verideki pas başlangıç noktaları var. Bitiş noktaları yok.</p>
+<p>&quot;Topu nereye taşıdı&quot; sorusunun kesin cevabı yok. Sadece &quot;nereden başladı&quot; var.</p>
+<p>Ama çerçeve net: Galatasaray bu maçı pozisyonel hücumla kazanmadı. Geçiş verimliliğiyle kazandı.</p>
+<p>4-0&#39;lık skor &quot;boğucu hücum&quot; değil, &quot;keskin kırılma&quot; hikayesi.</p>
+<h2 id="h-sonraki-soru">Sonraki soru</h2>
+<p>Galatasaray her maçta bu kadar düşük presle mi oynayacak?</p>
+<p>Yoksa Konyaspor maçı &quot;öne geçen takımın presi bıraktığı&quot; özel bir senaryo mu?</p>
+<p>Sonraki maçlar cevap verecek.</p>
+<p>Biz burada bir maçı okuyoruz. Bir hükmü değil, bir mekanizmayı.</p>
+<p>Veri: SportsBase · V4 canonical + XLSX ground truth</p>
 
     </article>
 </div>
@@ -178,5 +379,5 @@ if (tocLinks.length && headings.length) {
 </script>
 <script src="/page-transition.js" defer></script>
 <script src="/extras2.js" defer></script>
-<script type="module" src="/js/visuals.js"></script>
+<script type="module" src="/src/viz/embed.js"></script>
 </body></html>

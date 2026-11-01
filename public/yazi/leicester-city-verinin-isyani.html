@@ -88,6 +88,168 @@ a{color:inherit;text-decoration:none}
 @media(min-width:768px){.site-footer{padding:32px 48px}}
 
 html{opacity:1;transition:opacity .22s cubic-bezier(.2,.9,.3,1)}html.page-leaving{opacity:0}@keyframes pageFadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}body{animation:pageFadeIn .4s cubic-bezier(.2,.9,.3,1)}
+/* hp-viz-embed-marker */
+/* HPAnalytic — Viz Görsel Dili (Rams + Scher) */
+
+[data-viz] {
+  margin: 3rem 0;
+  padding: 2rem 1rem;
+  position: relative;
+  min-height: 200px;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+
+[data-viz].viz-active {
+  opacity: 1;
+}
+
+[data-viz].viz-loading {
+  opacity: 1;
+}
+
+[data-viz].viz-loading::before {
+  content: 'VERİ YÜKLENİYOR';
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.3em;
+  color: #B4FF39;
+  animation: viz-pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes viz-pulse {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 1; }
+}
+
+/* Scher Tipografisi: Başlık = Görsel İmge */
+.viz-title {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid #1E211D;
+}
+
+.viz-title span {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(1.5rem, 5vw, 2.2rem);
+  font-weight: 400;
+  color: #EDEFEA;
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+
+.viz-title small {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.3em;
+  color: #FF6B35;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+/* Edge Case: Hata Toleransı (Hamilton) */
+.viz-error {
+  padding: 2rem;
+  text-align: center;
+  border: 1px dashed #FF3B3B;
+  color: #FF3B3B;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+}
+
+/* Responsive (Marcotte) */
+@media (max-width: 640px) {
+  [data-viz] { margin: 2rem 0; padding: 1.5rem 0.5rem; }
+  .viz-title { flex-direction: column; gap: 0.5rem; }
+}
+/* HPAnalytic — Viz Görsel Dili (Rams + Scher) */
+
+[data-viz] {
+  margin: 3rem 0;
+  padding: 2rem 1rem;
+  position: relative;
+  min-height: 200px;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+
+[data-viz].viz-active {
+  opacity: 1;
+}
+
+[data-viz].viz-loading {
+  opacity: 1;
+}
+
+[data-viz].viz-loading::before {
+  content: 'VERİ YÜKLENİYOR';
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.3em;
+  color: #B4FF39;
+  animation: viz-pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes viz-pulse {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 1; }
+}
+
+/* Scher Tipografisi: Başlık = Görsel İmge */
+.viz-title {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid #1E211D;
+}
+
+.viz-title span {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(1.5rem, 5vw, 2.2rem);
+  font-weight: 400;
+  color: #EDEFEA;
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+
+.viz-title small {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.3em;
+  color: #FF6B35;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+/* Edge Case: Hata Toleransı (Hamilton) */
+.viz-error {
+  padding: 2rem;
+  text-align: center;
+  border: 1px dashed #FF3B3B;
+  color: #FF3B3B;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+}
+
+/* Responsive (Marcotte) */
+@media (max-width: 640px) {
+  [data-viz] { margin: 2rem 0; padding: 1.5rem 0.5rem; }
+  .viz-title { flex-direction: column; gap: 0.5rem; }
+}
+
 </style></head><body>
 <div class="progress-bar" id="progress"></div>
 <a href="/" class="back">← Ana sayfa</a>
@@ -211,5 +373,5 @@ if (tocLinks.length && headings.length) {
 </script>
 <script src="/page-transition.js" defer></script>
 <script src="/extras2.js" defer></script>
-<script type="module" src="/js/visuals.js"></script>
+<script type="module" src="/src/viz/embed.js"></script>
 </body></html>

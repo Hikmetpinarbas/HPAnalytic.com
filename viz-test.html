@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HPAnalytic Viz Test v3</title>
+  <link rel="stylesheet" href="/src/css/article.css">
+</head>
+<body>
+<article>
+  <h1>Sahanın Gövdesi</h1>
+  <p style="color:#8A8F86">Bu bir test yazısıdır. Görsel motorun canlı provası. Aşağıdaki grafikler metnin <strong>içine</strong> gömülmüş, metnin <strong>etrafına</strong> değil. "Gerçeğin çölüne hoş geldiniz."</p>
+
+  <h2>01 — Mekanizma: İzometrik Saha</h2>
+  <p>Konya-GS maçında Galatasaray'ın 5 fazdaki enerji dağılımını görüyoruz. Saha, ısı haritaları için zemin.</p>
+  <div id="pitch-container"></div>
+
+  <blockquote>Saha donmuş değil. Her pas, bir sonrakinin zeminini hazırlıyor.</blockquote>
+
+  <h2>02 — Oyuncu Radarı</h2>
+  <div id="radar-container" style="display:flex; justify-content:center;"></div>
+
+  <h2>03 — Beş Faz</h2>
+  <div id="phases-container"></div>
+</article>
+
+<script type="module">
+  import { gsap } from 'gsap';
+  import { applyTheme } from '/src/viz/theme.js';
+  import { applyBackground } from '/src/viz/background.js';
+  import { renderPitch } from '/src/viz/pitch.js';
+  import { renderRadar } from '/src/viz/radar.js';
+  import { renderPhases } from '/src/viz/phases.js';
+
+  window.gsap = gsap;
+  applyTheme();
+  applyBackground();
+
+  renderPitch(document.getElementById('pitch-container'));
+
+  (async () => {
+    try {
+      const res = await fetch('/assets/data/konya-gs/match_package.json');
+      const data = await res.json();
+      const players = data.player_radar.players;
+      const firstPlayerName = Object.keys(players)[0];
+      renderRadar(document.getElementById('radar-container'), players[firstPlayerName], firstPlayerName);
+      renderPhases(document.getElementById('phases-container'), data);
+    } catch (err) {
+      console.error('Veri hatası:', err);
+      document.body.insertAdjacentHTML('beforeend', `<p style="color:#FF3B3B">Hata: ${err.message}</p>`);
+    }
+  })();
+</script>
+</body>
+</html>

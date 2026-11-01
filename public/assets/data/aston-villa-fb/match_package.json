@@ -1,0 +1,403 @@
+{
+  "metadata": {
+    "match_id": "aston-villa-fb-2026-10-14",
+    "team": "Aston Villa",
+    "source": "V4 canonical + XLSX ground truth",
+    "shots_reconciled": true
+  },
+  "summary": {
+    "passes": {
+      "total": 902,
+      "by_team": {
+        "Aston Villa": 413,
+        "Fenerbahce": 489
+      },
+      "accurate_total": 798,
+      "accurate_by_team": {
+        "Aston Villa": 369,
+        "Fenerbahce": 429
+      }
+    },
+    "goals": {
+      "total": 6,
+      "by_team": {
+        "Aston Villa": 6,
+        "Fenerbahce": 0
+      }
+    },
+    "assists": {
+      "total": 4,
+      "by_team": {
+        "Aston Villa": 4,
+        "Fenerbahce": 0
+      }
+    },
+    "shots": {
+      "total": 34,
+      "by_team": {
+        "Aston Villa": 20,
+        "Fenerbahce": 14
+      },
+      "breakdown": {
+        "on_target": {
+          "Aston Villa": 13,
+          "Fenerbahce": 5
+        },
+        "off_target": {
+          "Aston Villa": 3,
+          "Fenerbahce": 2
+        },
+        "post_bar": {
+          "Aston Villa": 0,
+          "Fenerbahce": 1
+        },
+        "blocked": {
+          "Aston Villa": 4,
+          "Fenerbahce": 6
+        }
+      },
+      "canonical_check": {
+        "aston villa": 20,
+        "fenerbahce": 14
+      }
+    },
+    "_source": "XLSX ground truth"
+  },
+  "four_phases": {
+    "team": "Aston Villa",
+    "total_active_time": 11613.0,
+    "phases": {
+      "build_up": {
+        "actions": 363,
+        "duration": 4347.0,
+        "players": {
+          "Boubacar Kamara": 24,
+          "Matty Cash": 52,
+          "Victor Lindelof": 44,
+          "Pau Torres": 72,
+          "Ibrahim Mbaye": 16,
+          "Ross Barkley": 29,
+          "Johan Manzambi": 31,
+          "John Mcginn": 22,
+          "Aaron Wan-Bissaka": 27,
+          "Nicolas Jackson": 19,
+          "João Gomes": 10,
+          "Alysson": 8,
+          "Leon Goretzka": 5,
+          "Tammy Abraham": 2,
+          "Alejandro Garnacho": 2
+        },
+        "energy_pct": 37.4,
+        "epistemic": "VEKİL",
+        "note": "Enerji % = fazdaki süre oranı. Fiziksel mesafe için fitness verisi gerekir."
+      },
+      "transition_attack": {
+        "actions": 60,
+        "duration": 720.0,
+        "players": {
+          "Aaron Wan-Bissaka": 5,
+          "Victor Lindelof": 4,
+          "Matty Cash": 1,
+          "John Mcginn": 9,
+          "Boubacar Kamara": 7,
+          "Nicolas Jackson": 6,
+          "Ross Barkley": 7,
+          "Ibrahim Mbaye": 11,
+          "Johan Manzambi": 9,
+          "Pau Torres": 1
+        },
+        "energy_pct": 6.2,
+        "epistemic": "VEKİL",
+        "note": "Enerji % = fazdaki süre oranı. Fiziksel mesafe için fitness verisi gerekir."
+      },
+      "set_attack": {
+        "actions": 341,
+        "duration": 4086.0,
+        "players": {
+          "Boubacar Kamara": 33,
+          "Matty Cash": 33,
+          "John Mcginn": 39,
+          "Victor Lindelof": 9,
+          "Ross Barkley": 37,
+          "Aaron Wan-Bissaka": 25,
+          "Ibrahim Mbaye": 50,
+          "Johan Manzambi": 44,
+          "BLOCK_UNKNOWN": 4,
+          "Nicolas Jackson": 32,
+          "Pau Torres": 10,
+          "João Gomes": 4,
+          "Alejandro Garnacho": 9,
+          "Alysson": 6,
+          "Leon Goretzka": 5,
+          "Tammy Abraham": 1
+        },
+        "energy_pct": 35.2,
+        "epistemic": "VEKİL",
+        "note": "Enerji % = fazdaki süre oranı. Fiziksel mesafe için fitness verisi gerekir."
+      },
+      "set_defense": {
+        "actions": 205,
+        "duration": 2460.0,
+        "players": {
+          "İrfan Can Kahveci": 26,
+          "Ismail Yuksek": 35,
+          "Oğuz Aydın": 22,
+          "Vedat Muriqi": 13,
+          "Nelson Semedo": 24,
+          "Mason Greenwood": 12,
+          "Mattéo Guendouzi": 9,
+          "Archie Brown": 25,
+          "Nathan Ake": 12,
+          "Milan Skriniar": 20,
+          "Dorgeles Nene": 2,
+          "Romelu Lukaku": 3,
+          "Bartuğ Elmaz": 2
+        },
+        "energy_pct": 21.2,
+        "epistemic": "VEKİL",
+        "note": "Enerji % = fazdaki süre oranı. Fiziksel mesafe için fitness verisi gerekir."
+      },
+      "transition_defense": {
+        "actions": 0,
+        "duration": 0.0,
+        "players": {},
+        "energy_pct": 0.0,
+        "epistemic": "VEKİL",
+        "note": "Enerji % = fazdaki süre oranı. Fiziksel mesafe için fitness verisi gerekir."
+      }
+    }
+  },
+  "pressure": {
+    "team": "Aston Villa",
+    "ppda": 3.84,
+    "ppda_1h": 3.28,
+    "ppda_2h": 4.63,
+    "opp_passes": 806,
+    "our_def_actions": 210,
+    "high_press_wins": 116,
+    "counter_press_wins": 0,
+    "epistemic": "TÜREV",
+    "method": "PPDA = rakip pas / bizim defansif aksiyon. High press = x>=52.5 defansif aksiyon."
+  },
+  "player_radar": {
+    "players": {
+      "Boubacar Kamara": {
+        "passes": 41,
+        "shots": 0,
+        "losses": 0,
+        "recoveries": 2,
+        "key_passes": 0,
+        "_norm": {
+          "passes": 71.9,
+          "shots": 0.0,
+          "losses": 0.0,
+          "recoveries": 40.0,
+          "key_passes": 0.0,
+          "distance": null,
+          "sprints": null,
+          "max_speed": null
+        },
+        "_epistemic": "TÜREV"
+      },
+      "Matty Cash": {
+        "passes": 52,
+        "shots": 1,
+        "losses": 0,
+        "recoveries": 4,
+        "key_passes": 0,
+        "_norm": {
+          "passes": 91.2,
+          "shots": 25.0,
+          "losses": 0.0,
+          "recoveries": 80.0,
+          "key_passes": 0.0,
+          "distance": null,
+          "sprints": null,
+          "max_speed": null
+        },
+        "_epistemic": "TÜREV"
+      },
+      "Aaron Wan-Bissaka": {
+        "passes": 40,
+        "shots": 0,
+        "losses": 0,
+        "recoveries": 5,
+        "key_passes": 0,
+        "_norm": {
+          "passes": 70.2,
+          "shots": 0.0,
+          "losses": 0.0,
+          "recoveries": 100.0,
+          "key_passes": 0.0,
+          "distance": null,
+          "sprints": null,
+          "max_speed": null
+        },
+        "_epistemic": "TÜREV"
+      },
+      "Victor Lindelof": {
+        "passes": 45,
+        "shots": 0,
+        "losses": 0,
+        "recoveries": 2,
+        "key_passes": 1,
+        "_norm": {
+          "passes": 78.9,
+          "shots": 0.0,
+          "losses": 0.0,
+          "recoveries": 40.0,
+          "key_passes": 100.0,
+          "distance": null,
+          "sprints": null,
+          "max_speed": null
+        },
+        "_epistemic": "TÜREV"
+      },
+      "John Mcginn": {
+        "passes": 30,
+        "shots": 2,
+        "losses": 0,
+        "recoveries": 2,
+        "key_passes": 0,
+        "_norm": {
+          "passes": 52.6,
+          "shots": 50.0,
+          "losses": 0.0,
+          "recoveries": 40.0,
+          "key_passes": 0.0,
+          "distance": null,
+          "sprints": null,
+          "max_speed": null
+        },
+        "_epistemic": "TÜREV"
+      },
+      "Pau Torres": {
+        "passes": 57,
+        "shots": 1,
+        "losses": 0,
+        "recoveries": 4,
+        "key_passes": 1,
+        "_norm": {
+          "passes": 100.0,
+          "shots": 25.0,
+          "losses": 0.0,
+          "recoveries": 80.0,
+          "key_passes": 100.0,
+          "distance": null,
+          "sprints": null,
+          "max_speed": null
+        },
+        "_epistemic": "TÜREV"
+      },
+      "Ibrahim Mbaye": {
+        "passes": 36,
+        "shots": 3,
+        "losses": 0,
+        "recoveries": 2,
+        "key_passes": 0,
+        "_norm": {
+          "passes": 63.2,
+          "shots": 75.0,
+          "losses": 0.0,
+          "recoveries": 40.0,
+          "key_passes": 0.0,
+          "distance": null,
+          "sprints": null,
+          "max_speed": null
+        },
+        "_epistemic": "TÜREV"
+      },
+      "Ross Barkley": {
+        "passes": 46,
+        "shots": 3,
+        "losses": 0,
+        "recoveries": 4,
+        "key_passes": 0,
+        "_norm": {
+          "passes": 80.7,
+          "shots": 75.0,
+          "losses": 0.0,
+          "recoveries": 80.0,
+          "key_passes": 0.0,
+          "distance": null,
+          "sprints": null,
+          "max_speed": null
+        },
+        "_epistemic": "TÜREV"
+      },
+      "Johan Manzambi": {
+        "passes": 32,
+        "shots": 1,
+        "losses": 0,
+        "recoveries": 2,
+        "key_passes": 1,
+        "_norm": {
+          "passes": 56.1,
+          "shots": 25.0,
+          "losses": 0.0,
+          "recoveries": 40.0,
+          "key_passes": 100.0,
+          "distance": null,
+          "sprints": null,
+          "max_speed": null
+        },
+        "_epistemic": "TÜREV"
+      },
+      "Nicolas Jackson": {
+        "passes": 10,
+        "shots": 4,
+        "losses": 0,
+        "recoveries": 1,
+        "key_passes": 0,
+        "_norm": {
+          "passes": 17.5,
+          "shots": 100.0,
+          "losses": 0.0,
+          "recoveries": 20.0,
+          "key_passes": 0.0,
+          "distance": null,
+          "sprints": null,
+          "max_speed": null
+        },
+        "_epistemic": "TÜREV"
+      },
+      "João Gomes": {
+        "passes": 6,
+        "shots": 0,
+        "losses": 0,
+        "recoveries": 0,
+        "key_passes": 0,
+        "_norm": {
+          "passes": 10.5,
+          "shots": 0.0,
+          "losses": 0.0,
+          "recoveries": 0.0,
+          "key_passes": 0.0,
+          "distance": null,
+          "sprints": null,
+          "max_speed": null
+        },
+        "_epistemic": "TÜREV"
+      },
+      "Leon Goretzka": {
+        "passes": 7,
+        "shots": 0,
+        "losses": 0,
+        "recoveries": 1,
+        "key_passes": 0,
+        "_norm": {
+          "passes": 12.3,
+          "shots": 0.0,
+          "losses": 0.0,
+          "recoveries": 20.0,
+          "key_passes": 0.0,
+          "distance": null,
+          "sprints": null,
+          "max_speed": null
+        },
+        "_epistemic": "TÜREV"
+      }
+    },
+    "epistemic": "TÜREV (V4)"
+  }
+}

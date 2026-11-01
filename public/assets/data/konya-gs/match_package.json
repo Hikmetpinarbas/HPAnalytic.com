@@ -1,1024 +1,475 @@
 {
   "metadata": {
-    "match_id": "konya-gs-2026-10-30",
+    "match_id": "konyaspor-gs-2026-10-30",
     "team": "Galatasaray",
-    "source_files": {
-      "GK": "Konyaspor 0-4 Galatasaray 30.10.2026, Full match (1).csv",
-      "TM": "Konyaspor 0-4 Galatasaray 30.10.2026, Full match (2).csv",
-      "PL": "Konyaspor 0-4 Galatasaray 30.10.2026, Full match.csv"
-    },
-    "xlsx_used": "Konyaspor 0-4 Galatasaray, Turkey. Süper Lig, 30.10.2026.xlsx"
+    "source": "V4 canonical + XLSX ground truth",
+    "shots_reconciled": true
   },
   "summary": {
+    "passes": {
+      "total": 842,
+      "by_team": {
+        "Galatasaray": 444,
+        "Konyaspor": 398
+      },
+      "accurate_total": 733,
+      "accurate_by_team": {
+        "Galatasaray": 391,
+        "Konyaspor": 342
+      }
+    },
+    "goals": {
+      "total": 4,
+      "by_team": {
+        "Galatasaray": 4,
+        "Konyaspor": 0
+      }
+    },
+    "assists": {
+      "total": 3,
+      "by_team": {
+        "Galatasaray": 3,
+        "Konyaspor": 0
+      }
+    },
     "shots": {
       "total": 22,
       "by_team": {
         "Galatasaray": 14,
         "Konyaspor": 8
       },
-      "by_action": {
-        "Shots off target": 8,
-        "Shots on target": 5,
-        "Goals": 4,
-        "Shots on post / bar": 1,
-        "Free-kick shots": 1,
-        "Shots blocked": 3
+      "breakdown": {
+        "on_target": {
+          "Galatasaray": 8,
+          "Konyaspor": 1
+        },
+        "off_target": {
+          "Galatasaray": 5,
+          "Konyaspor": 4
+        },
+        "post_bar": {
+          "Galatasaray": 0,
+          "Konyaspor": 1
+        },
+        "blocked": {
+          "Galatasaray": 1,
+          "Konyaspor": 2
+        }
+      },
+      "canonical_check": {
+        "galatasaray": 14,
+        "konyaspor": 8
       }
     },
-    "blocked_shots": {
-      "total": 3,
-      "by_team": {
-        "Konyaspor": 2,
-        "Galatasaray": 1
-      }
-    },
-    "goals": {
-      "total": 4,
-      "by_team": {
-        "Galatasaray": 4
-      }
-    },
-    "passes": {
-      "total": 1409,
-      "by_team": {
-        "Galatasaray": 743,
-        "Konyaspor": 666
-      }
-    },
-    "losses": {
-      "total": 116
-    },
-    "recoveries": {
-      "total": 80
-    }
+    "_source": "XLSX ground truth"
   },
   "four_phases": {
     "team": "Galatasaray",
-    "total_active_seconds": 44427.0,
+    "total_active_time": 10746.0,
     "phases": {
       "build_up": {
-        "label": "Yerleşik Hücum (kendi yarı)",
-        "actions": 745,
-        "duration": 13374.0,
-        "energy_pct": 30.1,
-        "top_players": [
-          [
-            "Wilfried Singo",
-            119
-          ],
-          [
-            "Davinson Sánchez",
-            78
-          ],
-          [
-            "Roland Sallai",
-            70
-          ],
-          [
-            "Eren Elmalı",
-            64
-          ],
-          [
-            "Rafael Leão",
-            56
-          ]
-        ]
+        "actions": 360,
+        "duration": 4320.0,
+        "players": {
+          "Lucas Torreira": 25,
+          "Roland Sallai": 31,
+          "Eren Elmalı": 33,
+          "Wilfried Singo": 62,
+          "Gabriel Sara": 23,
+          "Rafael Leão": 27,
+          "Davinson Sánchez": 38,
+          "Aleksei Batrakov": 13,
+          "Yunus Akgün": 22,
+          "Victor Osimhen": 6,
+          "İlkay Gündoğan": 17,
+          "Leroy Sané": 13,
+          "Renato Nhaga": 12,
+          "Lesley Ugochukwu": 15,
+          "Deniz Gul": 7,
+          "El Chadaille Bitshiabu": 16
+        },
+        "energy_pct": 40.2,
+        "epistemic": "VEKİL",
+        "note": "Enerji % = fazdaki süre oranı. Fiziksel mesafe için fitness verisi gerekir."
       },
       "transition_attack": {
-        "label": "Geçiş Hücumu",
-        "actions": 91,
-        "duration": 1542.0,
-        "energy_pct": 3.5,
-        "top_players": [
-          [
-            "Wilfried Singo",
-            14
-          ],
-          [
-            "Gabriel Sara",
-            13
-          ],
-          [
-            "Rafael Leão",
-            9
-          ],
-          [
-            "Aleksei Batrakov",
-            8
-          ],
-          [
-            "Lucas Torreira",
-            8
-          ]
-        ]
+        "actions": 42,
+        "duration": 504.0,
+        "players": {
+          "Victor Osimhen": 2,
+          "Aleksei Batrakov": 3,
+          "Rafael Leão": 5,
+          "Gabriel Sara": 6,
+          "Davinson Sánchez": 2,
+          "Lucas Torreira": 4,
+          "Wilfried Singo": 5,
+          "Yunus Akgün": 3,
+          "Deniz Gul": 3,
+          "Leroy Sané": 2,
+          "Renato Nhaga": 1,
+          "Lesley Ugochukwu": 2,
+          "El Chadaille Bitshiabu": 2,
+          "İlkay Gündoğan": 2
+        },
+        "energy_pct": 4.7,
+        "epistemic": "VEKİL",
+        "note": "Enerji % = fazdaki süre oranı. Fiziksel mesafe için fitness verisi gerekir."
       },
       "set_attack": {
-        "label": "Yerleşik Hücum (rakip yarı)",
-        "actions": 636,
-        "duration": 8651.0,
-        "energy_pct": 19.5,
-        "top_players": [
-          [
-            "Rafael Leão",
-            99
-          ],
-          [
-            "Eren Elmalı",
-            77
-          ],
-          [
-            "Gabriel Sara",
-            74
-          ],
-          [
-            "Roland Sallai",
-            50
-          ],
-          [
-            "Aleksei Batrakov",
-            46
-          ]
-        ]
+        "actions": 334,
+        "duration": 4001.9999999999995,
+        "players": {
+          "Gabriel Sara": 36,
+          "Rafael Leão": 49,
+          "Eren Elmalı": 38,
+          "Yunus Akgün": 20,
+          "Aleksei Batrakov": 21,
+          "Lucas Torreira": 10,
+          "Roland Sallai": 23,
+          "Victor Osimhen": 20,
+          "Wilfried Singo": 28,
+          "Davinson Sánchez": 10,
+          "Leroy Sané": 22,
+          "Lesley Ugochukwu": 14,
+          "İlkay Gündoğan": 20,
+          "Renato Nhaga": 11,
+          "Deniz Gul": 11,
+          "BLOCK_UNKNOWN": 1
+        },
+        "energy_pct": 37.2,
+        "epistemic": "VEKİL",
+        "note": "Enerji % = fazdaki süre oranı. Fiziksel mesafe için fitness verisi gerekir."
       },
       "set_defense": {
-        "label": "Yerleşik Savunma",
-        "actions": 1200,
-        "duration": 19350.0,
-        "energy_pct": 43.6,
-        "top_players": [
-          [
-            "Deniz Türüç",
-            160
-          ],
-          [
-            "Marko Jevtovic",
-            133
-          ],
-          [
-            "Arthur Masuaku",
-            126
-          ],
-          [
-            "Melih İbrahimoğlu",
-            119
-          ],
-          [
-            "Rayyan Baniya",
-            107
-          ]
-        ]
+        "actions": 113,
+        "duration": 1356.0,
+        "players": {
+          "Yhoan Andzouana": 6,
+          "Chidozie Awaziem": 12,
+          "Rajmund Tóth": 9,
+          "Deniz Türüç": 11,
+          "Melih İbrahimoğlu": 9,
+          "Jean-Luc Dompé": 4,
+          "Arthur Masuaku": 9,
+          "Rayyan Baniya": 12,
+          "Jackson Muleka": 12,
+          "Marko Jevtovic": 8,
+          "Mostafa Mohamed": 11,
+          "Enis Bardhi": 3,
+          "Ebrima Colley": 4,
+          "Enis Destan": 3
+        },
+        "energy_pct": 12.6,
+        "epistemic": "VEKİL",
+        "note": "Enerji % = fazdaki süre oranı. Fiziksel mesafe için fitness verisi gerekir."
       },
       "transition_defense": {
-        "label": "Geçiş Savunması",
-        "actions": 130,
-        "duration": 1510.0,
-        "energy_pct": 3.4,
-        "top_players": [
-          [
-            "Deniz Türüç",
-            25
-          ],
-          [
-            "Jean-Luc Dompé",
-            20
-          ],
-          [
-            "Yhoan Andzouana",
-            14
-          ],
-          [
-            "Melih İbrahimoğlu",
-            12
-          ],
-          [
-            "Enis Bardhi",
-            9
-          ]
-        ]
+        "actions": 47,
+        "duration": 563.9999999999999,
+        "players": {
+          "Marko Jevtovic": 13,
+          "Rayyan Baniya": 5,
+          "Chidozie Awaziem": 9,
+          "Jean-Luc Dompé": 1,
+          "Yhoan Andzouana": 4,
+          "Arthur Masuaku": 2,
+          "Melih İbrahimoğlu": 4,
+          "Uğurcan Yazğılı": 3,
+          "Mostafa Mohamed": 2,
+          "Enis Bardhi": 3,
+          "Enis Destan": 1
+        },
+        "energy_pct": 5.2,
+        "epistemic": "VEKİL",
+        "note": "Enerji % = fazdaki süre oranı. Fiziksel mesafe için fitness verisi gerekir."
       }
-    },
-    "epistemic": "VEKİL",
-    "caveat": "Enerji %, fazdaki süre oranıdır. Gerçek mesafe dağılımı için tracking data gerekir."
+    }
   },
   "pressure": {
     "team": "Galatasaray",
-    "ppda": 4.24,
-    "ppda_1h": 3.72,
-    "ppda_2h": 4.87,
-    "opp_passes": 666,
+    "ppda": 2.54,
+    "ppda_1h": 2.27,
+    "ppda_2h": 2.87,
+    "opp_passes": 399,
     "our_def_actions": 157,
     "high_press_wins": 69,
-    "counter_press_attempts": 1,
     "counter_press_wins": 1,
-    "press_positions": [
-      {
-        "x": 83.8,
-        "y": 63.6,
-        "t": 6.4
-      },
-      {
-        "x": 83.8,
-        "y": 63.6,
-        "t": 6.4
-      },
-      {
-        "x": 66.3,
-        "y": 44.6,
-        "t": 204.4
-      },
-      {
-        "x": 97.2,
-        "y": 35.9,
-        "t": 679.4
-      },
-      {
-        "x": 97.2,
-        "y": 35.9,
-        "t": 679.4
-      },
-      {
-        "x": 61.1,
-        "y": 50.0,
-        "t": 838.4
-      },
-      {
-        "x": 61.1,
-        "y": 50.0,
-        "t": 838.4
-      },
-      {
-        "x": 65.4,
-        "y": 60.6,
-        "t": 859.4
-      },
-      {
-        "x": 65.4,
-        "y": 60.6,
-        "t": 859.4
-      },
-      {
-        "x": 96.8,
-        "y": 42.6,
-        "t": 1109.4
-      },
-      {
-        "x": 55.4,
-        "y": 23.8,
-        "t": 1159.4
-      },
-      {
-        "x": 57.0,
-        "y": 22.7,
-        "t": 1160.4
-      },
-      {
-        "x": 67.4,
-        "y": 17.6,
-        "t": 1330.4
-      },
-      {
-        "x": 96.7,
-        "y": 10.3,
-        "t": 1490.4
-      },
-      {
-        "x": 96.7,
-        "y": 10.3,
-        "t": 1490.4
-      },
-      {
-        "x": 88.7,
-        "y": 7.2,
-        "t": 1730.4
-      },
-      {
-        "x": 88.7,
-        "y": 7.2,
-        "t": 1730.4
-      },
-      {
-        "x": 100.8,
-        "y": 61.2,
-        "t": 1737.4
-      },
-      {
-        "x": 100.8,
-        "y": 61.2,
-        "t": 1737.4
-      },
-      {
-        "x": 64.0,
-        "y": 32.6,
-        "t": 1935.4
-      },
-      {
-        "x": 93.7,
-        "y": 45.4,
-        "t": 2049.4
-      },
-      {
-        "x": 93.7,
-        "y": 45.4,
-        "t": 2049.4
-      },
-      {
-        "x": 55.1,
-        "y": 45.6,
-        "t": 2070.4
-      },
-      {
-        "x": 55.1,
-        "y": 45.6,
-        "t": 2070.4
-      },
-      {
-        "x": 64.2,
-        "y": 47.4,
-        "t": 2073.4
-      },
-      {
-        "x": 98.6,
-        "y": 34.8,
-        "t": 2306.4
-      },
-      {
-        "x": 98.6,
-        "y": 34.8,
-        "t": 2306.4
-      },
-      {
-        "x": 72.0,
-        "y": 63.0,
-        "t": 2635.4
-      },
-      {
-        "x": 72.0,
-        "y": 63.0,
-        "t": 2635.4
-      },
-      {
-        "x": 55.4,
-        "y": 61.8,
-        "t": 2649.4
-      },
-      {
-        "x": 60.5,
-        "y": 61.5,
-        "t": 2650.4
-      },
-      {
-        "x": 90.6,
-        "y": 64.4,
-        "t": 2778.4
-      },
-      {
-        "x": 90.6,
-        "y": 64.4,
-        "t": 2778.4
-      },
-      {
-        "x": 96.9,
-        "y": 58.0,
-        "t": 2874.4
-      },
-      {
-        "x": 96.9,
-        "y": 58.0,
-        "t": 2874.4
-      },
-      {
-        "x": 98.7,
-        "y": 7.2,
-        "t": 2939.4
-      },
-      {
-        "x": 98.7,
-        "y": 7.2,
-        "t": 2939.4
-      },
-      {
-        "x": 93.7,
-        "y": 3.5,
-        "t": 2943.4
-      },
-      {
-        "x": 93.7,
-        "y": 3.5,
-        "t": 2943.4
-      },
-      {
-        "x": 79.7,
-        "y": 41.9,
-        "t": 3102.9
-      },
-      {
-        "x": 79.7,
-        "y": 41.9,
-        "t": 3102.9
-      },
-      {
-        "x": 81.5,
-        "y": 46.5,
-        "t": 3106.9
-      },
-      {
-        "x": 81.5,
-        "y": 46.5,
-        "t": 3106.9
-      },
-      {
-        "x": 87.0,
-        "y": 18.9,
-        "t": 3171.9
-      },
-      {
-        "x": 87.0,
-        "y": 18.9,
-        "t": 3171.9
-      },
-      {
-        "x": 70.9,
-        "y": 63.0,
-        "t": 3431.9
-      },
-      {
-        "x": 84.8,
-        "y": 7.0,
-        "t": 4056.9
-      },
-      {
-        "x": 96.9,
-        "y": 62.9,
-        "t": 4083.9
-      },
-      {
-        "x": 53.3,
-        "y": 62.6,
-        "t": 4281.9
-      },
-      {
-        "x": 53.3,
-        "y": 62.6,
-        "t": 4281.9
-      }
-    ],
     "epistemic": "TÜREV",
-    "caveat": "Yüksek pres = kendi hücum yönünde x>52.5 kazanım. Karşı pres 5s penceresi."
+    "method": "PPDA = rakip pas / bizim defansif aksiyon. High press = x>=52.5 defansif aksiyon."
   },
   "player_radar": {
-    "team": "Galatasaray",
     "players": {
       "Gabriel Sara": {
-        "passes": 44.0,
-        "key_passes": 3,
-        "recoveries": 4,
-        "losses": 3,
+        "passes": 44,
         "shots": 0,
-        "goals": 0,
-        "xg": 0,
-        "distance_m": 0,
-        "sprints": 0,
-        "max_speed": 0,
-        "metabolic": 0,
-        "season_minutes": 822,
-        "season_distance_km": 105.0,
-        "season_sprint_m": 1182,
-        "season_max_speed": 8.9,
-        "season_metabolic_w_kg": 11.0,
-        "season_kcal": 9919,
-        "per90_distance_km": 11.49,
-        "per90_sprint_m": 129,
-        "per90_hsr": 90.8,
-        "per90_sprints": 6.68
+        "losses": 3,
+        "recoveries": 3,
+        "key_passes": 1,
+        "_norm": {
+          "passes": 88.0,
+          "shots": 0.0,
+          "losses": 42.9,
+          "recoveries": 50.0,
+          "key_passes": 100.0,
+          "distance": 94.3,
+          "sprints": 50.9,
+          "max_speed": 96.7
+        },
+        "_epistemic": "TÜREV"
       },
       "Rafael Leão": {
-        "passes": 38.0,
-        "key_passes": 1,
-        "recoveries": 3,
+        "passes": 38,
+        "shots": 4,
         "losses": 7,
-        "shots": 4.0,
-        "goals": 1.0,
-        "xg": 1.2,
-        "distance_m": 0,
-        "sprints": 0,
-        "max_speed": 0,
-        "metabolic": 0,
-        "season_minutes": 470,
-        "season_distance_km": 47.4,
-        "season_sprint_m": 869,
-        "season_max_speed": 9.1,
-        "season_metabolic_w_kg": 9.0,
-        "season_kcal": 4611,
-        "per90_distance_km": 9.08,
-        "per90_sprint_m": 166,
-        "per90_hsr": 50.0,
-        "per90_sprints": 8.23
+        "recoveries": 3,
+        "key_passes": 0,
+        "_norm": {
+          "passes": 76.0,
+          "shots": 100.0,
+          "losses": 100.0,
+          "recoveries": 50.0,
+          "key_passes": 0.0,
+          "distance": 43.5,
+          "sprints": 37.3,
+          "max_speed": 98.9
+        },
+        "_epistemic": "TÜREV"
       },
       "Eren Elmalı": {
-        "passes": 47.0,
-        "key_passes": 1,
-        "recoveries": 4,
-        "losses": 5,
+        "passes": 47,
         "shots": 0,
-        "goals": 0,
-        "xg": 0,
-        "distance_m": 0,
-        "sprints": 0,
-        "max_speed": 0,
-        "metabolic": 0,
-        "season_minutes": 509,
-        "season_distance_km": 57.9,
-        "season_sprint_m": 1107,
-        "season_max_speed": 9.11,
-        "season_metabolic_w_kg": 10.0,
-        "season_kcal": 5562,
-        "per90_distance_km": 10.23,
-        "per90_sprint_m": 195,
-        "per90_hsr": 61.0,
-        "per90_sprints": 9.19
+        "losses": 4,
+        "recoveries": 4,
+        "key_passes": 0,
+        "_norm": {
+          "passes": 94.0,
+          "shots": 0.0,
+          "losses": 57.1,
+          "recoveries": 66.7,
+          "key_passes": 0.0,
+          "distance": 47.3,
+          "sprints": 39.1,
+          "max_speed": 99.0
+        },
+        "_epistemic": "TÜREV"
       },
       "Lucas Torreira": {
-        "passes": 25.0,
-        "key_passes": 0,
-        "recoveries": 7,
-        "losses": 2,
+        "passes": 25,
         "shots": 0,
-        "goals": 0,
-        "xg": 0,
-        "distance_m": 0,
-        "sprints": 0,
-        "max_speed": 0,
-        "metabolic": 0,
-        "season_minutes": 849,
-        "season_distance_km": 103.0,
-        "season_sprint_m": 634,
-        "season_max_speed": 8.85,
-        "season_metabolic_w_kg": 11.0,
-        "season_kcal": 9866,
-        "per90_distance_km": 10.92,
-        "per90_sprint_m": 67,
-        "per90_hsr": 60.5,
-        "per90_sprints": 3.82
+        "losses": 1,
+        "recoveries": 6,
+        "key_passes": 0,
+        "_norm": {
+          "passes": 50.0,
+          "shots": 0.0,
+          "losses": 14.3,
+          "recoveries": 100.0,
+          "key_passes": 0.0,
+          "distance": 92.7,
+          "sprints": 31.8,
+          "max_speed": 96.2
+        },
+        "_epistemic": "TÜREV"
       },
       "Roland Sallai": {
-        "passes": 41.0,
-        "key_passes": 1,
-        "recoveries": 4,
-        "losses": 4,
+        "passes": 41,
         "shots": 0,
-        "goals": 0,
-        "xg": 0,
-        "distance_m": 0,
-        "sprints": 0,
-        "max_speed": 0,
-        "metabolic": 0,
-        "season_minutes": 927,
-        "season_distance_km": 106.8,
-        "season_sprint_m": 2620,
-        "season_max_speed": 9.18,
-        "season_metabolic_w_kg": 10.0,
-        "season_kcal": 10355,
-        "per90_distance_km": 10.37,
-        "per90_sprint_m": 254,
-        "per90_hsr": 63.5,
-        "per90_sprints": 11.55
+        "losses": 3,
+        "recoveries": 4,
+        "key_passes": 0,
+        "_norm": {
+          "passes": 82.0,
+          "shots": 0.0,
+          "losses": 42.9,
+          "recoveries": 66.7,
+          "key_passes": 0.0,
+          "distance": 96.1,
+          "sprints": 100.0,
+          "max_speed": 99.8
+        },
+        "_epistemic": "TÜREV"
       },
       "Wilfried Singo": {
-        "passes": 50.0,
-        "key_passes": 0,
-        "recoveries": 8,
-        "losses": 5,
+        "passes": 50,
         "shots": 0,
-        "goals": 0,
-        "xg": 0,
-        "distance_m": 0,
-        "sprints": 0,
-        "max_speed": 0,
-        "metabolic": 0,
-        "season_minutes": 157,
-        "season_distance_km": 17.3,
-        "season_sprint_m": 261,
-        "season_max_speed": 8.48,
-        "season_metabolic_w_kg": 11.0,
-        "season_kcal": 1916,
-        "per90_distance_km": 9.9,
-        "per90_sprint_m": 149,
-        "per90_hsr": 39.6,
-        "per90_sprints": 8.03
+        "losses": 4,
+        "recoveries": 6,
+        "key_passes": 0,
+        "_norm": {
+          "passes": 100.0,
+          "shots": 0.0,
+          "losses": 57.1,
+          "recoveries": 100.0,
+          "key_passes": 0.0,
+          "distance": 17.3,
+          "sprints": 12.7,
+          "max_speed": 92.2
+        },
+        "_epistemic": "TÜREV"
       },
       "Victor Osimhen": {
-        "passes": 7.0,
-        "key_passes": 0,
-        "recoveries": 0,
+        "passes": 7,
+        "shots": 4,
         "losses": 6,
-        "shots": 4.0,
-        "goals": 1.0,
-        "xg": 0.39,
-        "distance_m": 0,
-        "sprints": 0,
-        "max_speed": 0,
-        "metabolic": 0,
-        "season_minutes": 597,
-        "season_distance_km": 59.7,
-        "season_sprint_m": 1055,
-        "season_max_speed": 8.97,
-        "season_metabolic_w_kg": 10.0,
-        "season_kcal": 6276,
-        "per90_distance_km": 8.99,
-        "per90_sprint_m": 159,
-        "per90_hsr": 53.4,
-        "per90_sprints": 8.29
+        "recoveries": 0,
+        "key_passes": 0,
+        "_norm": {
+          "passes": 14.0,
+          "shots": 100.0,
+          "losses": 85.7,
+          "recoveries": 0.0,
+          "key_passes": 0.0,
+          "distance": 59.8,
+          "sprints": 50.0,
+          "max_speed": 97.5
+        },
+        "_epistemic": "TÜREV"
       },
       "Aleksei Batrakov": {
-        "passes": 25.0,
-        "key_passes": 1,
+        "passes": 24,
+        "shots": 2,
+        "losses": 3,
         "recoveries": 0,
-        "losses": 4,
-        "shots": 2.0,
-        "goals": 1.0,
-        "xg": 0.17,
-        "distance_m": 0,
-        "sprints": 0,
-        "max_speed": 0,
-        "metabolic": 0,
-        "season_minutes": 568,
-        "season_distance_km": 74.5,
-        "season_sprint_m": 1290,
-        "season_max_speed": 9.12,
-        "season_metabolic_w_kg": 12.0,
-        "season_kcal": 7208,
-        "per90_distance_km": 11.8,
-        "per90_sprint_m": 204,
-        "per90_hsr": 92.7,
-        "per90_sprints": 10.93
+        "key_passes": 1,
+        "_norm": {
+          "passes": 48.0,
+          "shots": 50.0,
+          "losses": 42.9,
+          "recoveries": 0.0,
+          "key_passes": 100.0,
+          "distance": 66.1,
+          "sprints": 59.1,
+          "max_speed": 99.1
+        },
+        "_epistemic": "TÜREV"
       },
       "Yunus Akgün": {
-        "passes": 34.0,
-        "key_passes": 1,
-        "recoveries": 1,
+        "passes": 34,
+        "shots": 1,
         "losses": 3,
-        "shots": 1.0,
-        "goals": 1.0,
-        "xg": 0.02,
-        "distance_m": 0,
-        "sprints": 0,
-        "max_speed": 0,
-        "metabolic": 0,
-        "season_minutes": 900,
-        "season_distance_km": 100.7,
-        "season_sprint_m": 1954,
-        "season_max_speed": 9.2,
-        "season_metabolic_w_kg": 10.0,
-        "season_kcal": 9682,
-        "per90_distance_km": 10.07,
-        "per90_sprint_m": 195,
-        "per90_hsr": 64.6,
-        "per90_sprints": 10.0
+        "recoveries": 1,
+        "key_passes": 0,
+        "_norm": {
+          "passes": 68.0,
+          "shots": 25.0,
+          "losses": 42.9,
+          "recoveries": 16.7,
+          "key_passes": 0.0,
+          "distance": 91.1,
+          "sprints": 83.6,
+          "max_speed": 100.0
+        },
+        "_epistemic": "TÜREV"
       },
       "Davinson Sánchez": {
-        "passes": 28.0,
-        "key_passes": 0,
-        "recoveries": 5,
-        "losses": 1,
+        "passes": 28,
         "shots": 0,
-        "goals": 0,
-        "xg": 0,
-        "distance_m": 0,
-        "sprints": 0,
-        "max_speed": 0,
-        "metabolic": 0,
-        "season_minutes": 1026,
-        "season_distance_km": 110.0,
-        "season_sprint_m": 1399,
-        "season_max_speed": 9.15,
-        "season_metabolic_w_kg": 10.0,
-        "season_kcal": 10949,
-        "per90_distance_km": 9.65,
-        "per90_sprint_m": 122,
-        "per90_hsr": 59.3,
-        "per90_sprints": 6.14
+        "losses": 1,
+        "recoveries": 5,
+        "key_passes": 0,
+        "_norm": {
+          "passes": 56.0,
+          "shots": 0.0,
+          "losses": 14.3,
+          "recoveries": 83.3,
+          "key_passes": 0.0,
+          "distance": 100.0,
+          "sprints": 56.4,
+          "max_speed": 99.5
+        },
+        "_epistemic": "TÜREV"
       },
       "Leroy Sané": {
-        "passes": 23.0,
-        "key_passes": 2,
+        "passes": 23,
+        "shots": 0,
+        "losses": 4,
         "recoveries": 0,
-        "losses": 5,
-        "shots": 1.0,
-        "goals": 0,
-        "xg": 0.06,
-        "distance_m": 0,
-        "sprints": 0,
-        "max_speed": 0,
-        "metabolic": 0,
-        "season_minutes": 531,
-        "season_distance_km": 58.4,
-        "season_sprint_m": 1896,
-        "season_max_speed": 9.15,
-        "season_metabolic_w_kg": 10.0,
-        "season_kcal": 5539,
-        "per90_distance_km": 9.89,
-        "per90_sprint_m": 321,
-        "per90_hsr": 77.3,
-        "per90_sprints": 14.07
+        "key_passes": 1,
+        "_norm": {
+          "passes": 46.0,
+          "shots": 0.0,
+          "losses": 57.1,
+          "recoveries": 0.0,
+          "key_passes": 100.0,
+          "distance": 52.3,
+          "sprints": 70.0,
+          "max_speed": 99.5
+        },
+        "_epistemic": "TÜREV"
       },
       "Lesley Ugochukwu": {
-        "passes": 20.0,
-        "key_passes": 0,
-        "recoveries": 1,
-        "losses": 0,
+        "passes": 20,
         "shots": 0,
-        "goals": 0,
-        "xg": 0,
-        "distance_m": 0,
-        "sprints": 0,
-        "max_speed": 0,
-        "metabolic": 0,
-        "season_minutes": 110,
-        "season_distance_km": 13.7,
-        "season_sprint_m": 197,
-        "season_max_speed": 9.03,
-        "season_metabolic_w_kg": 11.0,
-        "season_kcal": 1385,
-        "per90_distance_km": 11.2,
-        "per90_sprint_m": 161,
-        "per90_hsr": 88.4,
-        "per90_sprints": 9.82
+        "losses": 0,
+        "recoveries": 1,
+        "key_passes": 0,
+        "_norm": {
+          "passes": 40.0,
+          "shots": 0.0,
+          "losses": 0.0,
+          "recoveries": 16.7,
+          "key_passes": 0.0,
+          "distance": 12.2,
+          "sprints": 10.0,
+          "max_speed": 98.2
+        },
+        "_epistemic": "TÜREV"
       },
       "İlkay Gündoğan": {
-        "passes": 30.0,
-        "key_passes": 1,
-        "recoveries": 0,
-        "losses": 3,
+        "passes": 30,
         "shots": 0,
-        "goals": 0,
-        "xg": 0,
-        "distance_m": 0,
-        "sprints": 0,
-        "max_speed": 0,
-        "metabolic": 0,
-        "season_minutes": 91,
-        "season_distance_km": 11.3,
-        "season_sprint_m": 18,
-        "season_max_speed": 7.84,
-        "season_metabolic_w_kg": 11.0,
-        "season_kcal": 1120,
-        "per90_distance_km": 11.2,
-        "per90_sprint_m": 17,
-        "per90_hsr": 73.2,
-        "per90_sprints": 1.98
+        "losses": 2,
+        "recoveries": 0,
+        "key_passes": 0,
+        "_norm": {
+          "passes": 60.0,
+          "shots": 0.0,
+          "losses": 28.6,
+          "recoveries": 0.0,
+          "key_passes": 0.0,
+          "distance": 10.0,
+          "sprints": 1.8,
+          "max_speed": 85.2
+        },
+        "_epistemic": "TÜREV"
       },
       "Renato Nhaga": {
-        "passes": 12.0,
-        "key_passes": 0,
+        "passes": 12,
+        "shots": 1,
+        "losses": 1,
         "recoveries": 0,
-        "losses": 2,
-        "shots": 1.0,
-        "goals": 0,
-        "xg": 0.03,
-        "distance_m": 0,
-        "sprints": 0,
-        "max_speed": 0,
-        "metabolic": 0,
-        "season_minutes": 65,
-        "season_distance_km": 9.2,
-        "season_sprint_m": 176,
-        "season_max_speed": 8.44,
-        "season_metabolic_w_kg": 13.0,
-        "season_kcal": 911,
-        "per90_distance_km": 12.67,
-        "per90_sprint_m": 243,
-        "per90_hsr": 101.1,
-        "per90_sprints": 11.08
+        "key_passes": 0,
+        "_norm": {
+          "passes": 24.0,
+          "shots": 25.0,
+          "losses": 14.3,
+          "recoveries": 0.0,
+          "key_passes": 0.0,
+          "distance": 7.6,
+          "sprints": 7.3,
+          "max_speed": 91.7
+        },
+        "_epistemic": "TÜREV"
       },
       "Deniz Gul": {
-        "passes": 4.0,
-        "key_passes": 0,
+        "passes": 4,
+        "shots": 1,
+        "losses": 4,
         "recoveries": 0,
-        "losses": 5,
-        "shots": 1.0,
-        "goals": 0,
-        "xg": 0.05,
-        "distance_m": 0,
-        "sprints": 0,
-        "max_speed": 0,
-        "metabolic": 0,
-        "season_minutes": 307,
-        "season_distance_km": 35.0,
-        "season_sprint_m": 370,
-        "season_max_speed": 8.83,
-        "season_metabolic_w_kg": 11.0,
-        "season_kcal": 3459,
-        "per90_distance_km": 10.25,
-        "per90_sprint_m": 108,
-        "per90_hsr": 66.8,
-        "per90_sprints": 6.45
-      },
-      "El Chadaille Bitshiabu": {
-        "passes": 16.0,
         "key_passes": 0,
-        "recoveries": 2,
-        "losses": 0,
-        "shots": 0,
-        "goals": 0,
-        "xg": 0,
-        "distance_m": 0,
-        "sprints": 0,
-        "max_speed": 0,
-        "metabolic": 0,
-        "season_minutes": 24,
-        "season_distance_km": 2.6,
-        "season_sprint_m": 31,
-        "season_max_speed": 7.69,
-        "season_metabolic_w_kg": 7.0,
-        "season_kcal": 255,
-        "per90_distance_km": 9.73,
-        "per90_sprint_m": 116,
-        "per90_hsr": 18.8,
-        "per90_sprints": 3.75
-      },
-      "Uğurcan Çakır": {
-        "season_minutes": 980,
-        "season_distance_km": 52.6,
-        "season_sprint_m": 0,
-        "season_max_speed": 5.11,
-        "season_metabolic_w_kg": 4.0,
-        "season_kcal": 4489,
-        "per90_distance_km": 4.83,
-        "per90_sprint_m": 0,
-        "per90_hsr": 0.0,
-        "per90_sprints": 0.0,
-        "passes": 0,
-        "key_passes": 0,
-        "recoveries": 0,
-        "losses": 0,
-        "shots": 0,
-        "goals": 0,
-        "xg": 0,
-        "distance_m": 0,
-        "sprints": 0,
-        "max_speed": 0
-      },
-      "Barış Alper Yılmaz": {
-        "season_minutes": 809,
-        "season_distance_km": 87.8,
-        "season_sprint_m": 1555,
-        "season_max_speed": 9.18,
-        "season_metabolic_w_kg": 10.0,
-        "season_kcal": 8657,
-        "per90_distance_km": 9.76,
-        "per90_sprint_m": 172,
-        "per90_hsr": 72.0,
-        "per90_sprints": 8.79,
-        "passes": 0,
-        "key_passes": 0,
-        "recoveries": 0,
-        "losses": 0,
-        "shots": 0,
-        "goals": 0,
-        "xg": 0,
-        "distance_m": 0,
-        "sprints": 0,
-        "max_speed": 0
-      },
-      "Abdülkerim Bardakcı": {
-        "season_minutes": 751,
-        "season_distance_km": 82.6,
-        "season_sprint_m": 1176,
-        "season_max_speed": 9.11,
-        "season_metabolic_w_kg": 10.0,
-        "season_kcal": 8042,
-        "per90_distance_km": 9.89,
-        "per90_sprint_m": 140,
-        "per90_hsr": 57.2,
-        "per90_sprints": 8.15,
-        "passes": 0,
-        "key_passes": 0,
-        "recoveries": 0,
-        "losses": 0,
-        "shots": 0,
-        "goals": 0,
-        "xg": 0,
-        "distance_m": 0,
-        "sprints": 0,
-        "max_speed": 0
-      },
-      "Ismail Jakobs": {
-        "season_minutes": 709,
-        "season_distance_km": 83.1,
-        "season_sprint_m": 2666,
-        "season_max_speed": 9.17,
-        "season_metabolic_w_kg": 10.0,
-        "season_kcal": 7997,
-        "per90_distance_km": 10.55,
-        "per90_sprint_m": 338,
-        "per90_hsr": 75.0,
-        "per90_sprints": 14.72,
-        "passes": 0,
-        "key_passes": 0,
-        "recoveries": 0,
-        "losses": 0,
-        "shots": 0,
-        "goals": 0,
-        "xg": 0,
-        "distance_m": 0,
-        "sprints": 0,
-        "max_speed": 0
-      },
-      "Mario Lemina": {
-        "season_minutes": 462,
-        "season_distance_km": 52.5,
-        "season_sprint_m": 622,
-        "season_max_speed": 8.85,
-        "season_metabolic_w_kg": 11.0,
-        "season_kcal": 5283,
-        "per90_distance_km": 10.22,
-        "per90_sprint_m": 121,
-        "per90_hsr": 62.5,
-        "per90_sprints": 6.62,
-        "passes": 0,
-        "key_passes": 0,
-        "recoveries": 0,
-        "losses": 0,
-        "shots": 0,
-        "goals": 0,
-        "xg": 0,
-        "distance_m": 0,
-        "sprints": 0,
-        "max_speed": 0
-      },
-      "Jankat Yılmaz": {
-        "season_minutes": 97,
-        "season_distance_km": 5.2,
-        "season_sprint_m": 0,
-        "season_max_speed": 3.05,
-        "season_metabolic_w_kg": 4.0,
-        "season_kcal": 439,
-        "per90_distance_km": 4.8,
-        "per90_sprint_m": 0,
-        "per90_hsr": 0.0,
-        "per90_sprints": 0.0,
-        "passes": 0,
-        "key_passes": 0,
-        "recoveries": 0,
-        "losses": 0,
-        "shots": 0,
-        "goals": 0,
-        "xg": 0,
-        "distance_m": 0,
-        "sprints": 0,
-        "max_speed": 0
-      },
-      "Kazımcan Karataş": {
-        "season_minutes": 45,
-        "season_distance_km": 5.8,
-        "season_sprint_m": 116,
-        "season_max_speed": 9.06,
-        "season_metabolic_w_kg": 11.0,
-        "season_kcal": 529,
-        "per90_distance_km": 11.69,
-        "per90_sprint_m": 232,
-        "per90_hsr": 96.0,
-        "per90_sprints": 12.0,
-        "passes": 0,
-        "key_passes": 0,
-        "recoveries": 0,
-        "losses": 0,
-        "shots": 0,
-        "goals": 0,
-        "xg": 0,
-        "distance_m": 0,
-        "sprints": 0,
-        "max_speed": 0
-      },
-      "Kaan Ayhan": {
-        "season_minutes": 9,
-        "season_distance_km": 1.0,
-        "season_sprint_m": 11,
-        "season_max_speed": 7.02,
-        "season_metabolic_w_kg": 12.0,
-        "season_kcal": 108,
-        "per90_distance_km": 10.0,
-        "per90_sprint_m": 110,
-        "per90_hsr": 100.0,
-        "per90_sprints": 10.0,
-        "passes": 0,
-        "key_passes": 0,
-        "recoveries": 0,
-        "losses": 0,
-        "shots": 0,
-        "goals": 0,
-        "xg": 0,
-        "distance_m": 0,
-        "sprints": 0,
-        "max_speed": 0
+        "_norm": {
+          "passes": 8.0,
+          "shots": 25.0,
+          "losses": 57.1,
+          "recoveries": 0.0,
+          "key_passes": 0.0,
+          "distance": 31.6,
+          "sprints": 19.1,
+          "max_speed": 96.0
+        },
+        "_epistemic": "TÜREV"
       }
     },
-    "epistemic": "TÜREV",
-    "caveat": "Radar PL events + XLSX shots/goals/xG. distance_m/sprints için Player fitness XLSX gerekli (henüz yok). Ham sayı, normalize yok."
-  },
-  "regression": {
-    "csv_shots": 22,
-    "xlsx_shots": 22,
-    "match": "✓"
+    "epistemic": "TÜREV (V4)"
   }
 }
