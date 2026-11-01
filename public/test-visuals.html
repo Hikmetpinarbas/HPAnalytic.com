@@ -56,7 +56,7 @@
   window.addEventListener('unhandledrejection', (e) => log('PROMISE: ' + (e.reason?.message || e.reason), true));
 
   try {
-    await import('/js/visuals.js');
+    await import('/js/visuals.js?v=' + Date.now());
     log('visuals.js yüklendi');
     setTimeout(() => {
       document.querySelectorAll('[data-visual-body]').forEach(el => {
