@@ -1,0 +1,669 @@
+{
+  "metadata": {
+    "match_id": "stats",
+    "team": "Galatasaray",
+    "source_files": {
+      "GK": "LOSC Lille 2-4 Galatasaray 21.10.2026, Full match (1).csv",
+      "TM": "LOSC Lille 2-4 Galatasaray 21.10.2026, Full match (2).csv",
+      "PL": "LOSC Lille 2-4 Galatasaray 21.10.2026, Full match.csv"
+    },
+    "xlsx_used": "LOSC Lille 2-4 Galatasaray, Europe. UEFA Champions League, 21.10.2026.xlsx"
+  },
+  "summary": {
+    "shots": {
+      "total": 22,
+      "by_team": {
+        "Galatasaray": 9,
+        "LOSC Lille": 13
+      },
+      "by_action": {
+        "Goals": 5,
+        "Shots off target": 7,
+        "Shots on target": 4,
+        "Shots blocked": 6
+      }
+    },
+    "blocked_shots": {
+      "total": 6,
+      "by_team": {
+        "LOSC Lille": 5,
+        "Galatasaray": 1
+      }
+    },
+    "goals": {
+      "total": 5,
+      "by_team": {
+        "Galatasaray": 3,
+        "LOSC Lille": 2
+      }
+    },
+    "passes": {
+      "total": 1614,
+      "by_team": {
+        "LOSC Lille": 873,
+        "Galatasaray": 741
+      }
+    },
+    "losses": {
+      "total": 162
+    },
+    "recoveries": {
+      "total": 119
+    }
+  },
+  "four_phases": {
+    "team": "Galatasaray",
+    "total_active_seconds": 51806.0,
+    "phases": {
+      "build_up": {
+        "label": "Yerleşik Hücum (kendi yarı)",
+        "actions": 746,
+        "duration": 11454.0,
+        "energy_pct": 22.1,
+        "top_players": [
+          [
+            "Davinson Sánchez",
+            136
+          ],
+          [
+            "Abdülkerim Bardakcı",
+            105
+          ],
+          [
+            "Roland Sallai",
+            92
+          ],
+          [
+            "Ismail Jakobs",
+            72
+          ],
+          [
+            "Lucas Torreira",
+            62
+          ]
+        ]
+      },
+      "transition_attack": {
+        "label": "Geçiş Hücumu",
+        "actions": 179,
+        "duration": 2638.0,
+        "energy_pct": 5.1,
+        "top_players": [
+          [
+            "Barış Alper Yılmaz",
+            26
+          ],
+          [
+            "Victor Osimhen",
+            21
+          ],
+          [
+            "Lucas Torreira",
+            21
+          ],
+          [
+            "Aleksei Batrakov",
+            21
+          ],
+          [
+            "Davinson Sánchez",
+            18
+          ]
+        ]
+      },
+      "set_attack": {
+        "label": "Yerleşik Hücum (rakip yarı)",
+        "actions": 617,
+        "duration": 8994.0,
+        "energy_pct": 17.4,
+        "top_players": [
+          [
+            "Ismail Jakobs",
+            96
+          ],
+          [
+            "Roland Sallai",
+            71
+          ],
+          [
+            "Barış Alper Yılmaz",
+            69
+          ],
+          [
+            "Yunus Akgün",
+            65
+          ],
+          [
+            "Abdülkerim Bardakcı",
+            54
+          ]
+        ]
+      },
+      "set_defense": {
+        "label": "Yerleşik Savunma",
+        "actions": 1607,
+        "duration": 26876.0,
+        "energy_pct": 51.9,
+        "top_players": [
+          [
+            "Alexsandro",
+            216
+          ],
+          [
+            "Nathan Ngoy",
+            176
+          ],
+          [
+            "Calvin Verdonk",
+            174
+          ],
+          [
+            "Nabil Bentaleb",
+            149
+          ],
+          [
+            "Maxima Goffi",
+            127
+          ]
+        ]
+      },
+      "transition_defense": {
+        "label": "Geçiş Savunması",
+        "actions": 159,
+        "duration": 1844.0,
+        "energy_pct": 3.6,
+        "top_players": [
+          [
+            "Dilane Bakwa",
+            25
+          ],
+          [
+            "Soriba Diaoune",
+            22
+          ],
+          [
+            "Maxima Goffi",
+            14
+          ],
+          [
+            "Hákon Arnar Haraldsson",
+            14
+          ],
+          [
+            "Calvin Verdonk",
+            14
+          ]
+        ]
+      }
+    },
+    "epistemic": "VEKİL",
+    "caveat": "Enerji %, fazdaki süre oranıdır. Gerçek mesafe dağılımı için tracking data gerekir."
+  },
+  "pressure": {
+    "team": "Galatasaray",
+    "ppda": 3.31,
+    "ppda_1h": 3.15,
+    "ppda_2h": 3.46,
+    "opp_passes": 873,
+    "our_def_actions": 264,
+    "high_press_wins": 124,
+    "counter_press_attempts": 5,
+    "counter_press_wins": 5,
+    "press_positions": [
+      {
+        "x": 58.0,
+        "y": 62.9,
+        "t": 21.9
+      },
+      {
+        "x": 58.0,
+        "y": 62.9,
+        "t": 21.9
+      },
+      {
+        "x": 60.4,
+        "y": 63.5,
+        "t": 56.9
+      },
+      {
+        "x": 91.6,
+        "y": 3.8,
+        "t": 164.9
+      },
+      {
+        "x": 54.4,
+        "y": 15.4,
+        "t": 238.9
+      },
+      {
+        "x": 54.4,
+        "y": 15.4,
+        "t": 238.9
+      },
+      {
+        "x": 54.4,
+        "y": 15.4,
+        "t": 238.9
+      },
+      {
+        "x": 54.4,
+        "y": 15.4,
+        "t": 238.9
+      },
+      {
+        "x": 74.2,
+        "y": 50.8,
+        "t": 271.9
+      },
+      {
+        "x": 74.2,
+        "y": 50.8,
+        "t": 271.9
+      },
+      {
+        "x": 83.5,
+        "y": 52.6,
+        "t": 274.9
+      },
+      {
+        "x": 67.9,
+        "y": 20.6,
+        "t": 307.9
+      },
+      {
+        "x": 67.9,
+        "y": 20.6,
+        "t": 307.9
+      },
+      {
+        "x": 96.3,
+        "y": 57.8,
+        "t": 359.9
+      },
+      {
+        "x": 93.1,
+        "y": 45.5,
+        "t": 363.9
+      },
+      {
+        "x": 93.1,
+        "y": 45.5,
+        "t": 363.9
+      },
+      {
+        "x": 84.9,
+        "y": 23.8,
+        "t": 538.9
+      },
+      {
+        "x": 63.2,
+        "y": 63.4,
+        "t": 642.9
+      },
+      {
+        "x": 80.3,
+        "y": 46.9,
+        "t": 723.9
+      },
+      {
+        "x": 80.3,
+        "y": 46.9,
+        "t": 723.9
+      },
+      {
+        "x": 64.6,
+        "y": 4.0,
+        "t": 749.9
+      },
+      {
+        "x": 59.3,
+        "y": 45.3,
+        "t": 776.9
+      },
+      {
+        "x": 59.3,
+        "y": 45.3,
+        "t": 776.9
+      },
+      {
+        "x": 93.6,
+        "y": 64.3,
+        "t": 831.9
+      },
+      {
+        "x": 93.6,
+        "y": 64.3,
+        "t": 831.9
+      },
+      {
+        "x": 98.1,
+        "y": 35.9,
+        "t": 844.9
+      },
+      {
+        "x": 98.1,
+        "y": 35.9,
+        "t": 844.9
+      },
+      {
+        "x": 56.1,
+        "y": 3.7,
+        "t": 1054.9
+      },
+      {
+        "x": 56.1,
+        "y": 3.7,
+        "t": 1054.9
+      },
+      {
+        "x": 58.5,
+        "y": 57.6,
+        "t": 1211.9
+      },
+      {
+        "x": 58.5,
+        "y": 57.6,
+        "t": 1211.9
+      },
+      {
+        "x": 66.5,
+        "y": 63.4,
+        "t": 1339.9
+      },
+      {
+        "x": 64.5,
+        "y": 60.8,
+        "t": 1383.9
+      },
+      {
+        "x": 64.5,
+        "y": 60.8,
+        "t": 1383.9
+      },
+      {
+        "x": 96.9,
+        "y": 39.6,
+        "t": 1409.9
+      },
+      {
+        "x": 96.9,
+        "y": 39.6,
+        "t": 1409.9
+      },
+      {
+        "x": 76.4,
+        "y": 47.5,
+        "t": 1566.9
+      },
+      {
+        "x": 76.4,
+        "y": 47.5,
+        "t": 1566.9
+      },
+      {
+        "x": 90.2,
+        "y": 61.8,
+        "t": 1736.9
+      },
+      {
+        "x": 90.2,
+        "y": 61.8,
+        "t": 1736.9
+      },
+      {
+        "x": 63.6,
+        "y": 61.3,
+        "t": 1743.9
+      },
+      {
+        "x": 63.6,
+        "y": 61.3,
+        "t": 1743.9
+      },
+      {
+        "x": 101.9,
+        "y": 49.5,
+        "t": 1808.9
+      },
+      {
+        "x": 101.9,
+        "y": 49.5,
+        "t": 1808.9
+      },
+      {
+        "x": 94.7,
+        "y": 14.3,
+        "t": 1823.9
+      },
+      {
+        "x": 93.9,
+        "y": 26.6,
+        "t": 1919.9
+      },
+      {
+        "x": 93.9,
+        "y": 26.6,
+        "t": 1919.9
+      },
+      {
+        "x": 82.1,
+        "y": 50.6,
+        "t": 2007.9
+      },
+      {
+        "x": 82.1,
+        "y": 50.6,
+        "t": 2007.9
+      },
+      {
+        "x": 82.1,
+        "y": 50.6,
+        "t": 2007.9
+      }
+    ],
+    "epistemic": "TÜREV",
+    "caveat": "Yüksek pres = kendi hücum yönünde x>52.5 kazanım. Karşı pres 5s penceresi."
+  },
+  "player_radar": {
+    "team": "Galatasaray",
+    "players": {
+      "Roland Sallai": {
+        "passes": 51.0,
+        "key_passes": 1,
+        "recoveries": 7,
+        "losses": 10,
+        "shots": 0,
+        "goals": 0,
+        "xg": 0,
+        "distance_m": 0,
+        "sprints": 0,
+        "max_speed": 0,
+        "metabolic": 0
+      },
+      "Victor Osimhen": {
+        "passes": 11.0,
+        "key_passes": 0,
+        "recoveries": 4,
+        "losses": 11,
+        "shots": 4.0,
+        "goals": 1.0,
+        "xg": 0.52,
+        "distance_m": 0,
+        "sprints": 0,
+        "max_speed": 0,
+        "metabolic": 0
+      },
+      "Gabriel Sara": {
+        "passes": 30.0,
+        "key_passes": 1,
+        "recoveries": 1,
+        "losses": 3,
+        "shots": 0,
+        "goals": 0,
+        "xg": 0,
+        "distance_m": 0,
+        "sprints": 0,
+        "max_speed": 0,
+        "metabolic": 0
+      },
+      "Barış Alper Yılmaz": {
+        "passes": 26.0,
+        "key_passes": 2,
+        "recoveries": 5,
+        "losses": 10,
+        "shots": 1.0,
+        "goals": 0,
+        "xg": 0.09,
+        "distance_m": 0,
+        "sprints": 0,
+        "max_speed": 0,
+        "metabolic": 0
+      },
+      "Yunus Akgün": {
+        "passes": 30.0,
+        "key_passes": 2,
+        "recoveries": 7,
+        "losses": 9,
+        "shots": 1.0,
+        "goals": 1.0,
+        "xg": 0.44,
+        "distance_m": 0,
+        "sprints": 0,
+        "max_speed": 0,
+        "metabolic": 0
+      },
+      "Davinson Sánchez": {
+        "passes": 70.0,
+        "key_passes": 0,
+        "recoveries": 9,
+        "losses": 5,
+        "shots": 0,
+        "goals": 0,
+        "xg": 0,
+        "distance_m": 0,
+        "sprints": 0,
+        "max_speed": 0,
+        "metabolic": 0
+      },
+      "Abdülkerim Bardakcı": {
+        "passes": 54.0,
+        "key_passes": 0,
+        "recoveries": 5,
+        "losses": 7,
+        "shots": 1.0,
+        "goals": 0,
+        "xg": 0.11,
+        "distance_m": 0,
+        "sprints": 0,
+        "max_speed": 0,
+        "metabolic": 0
+      },
+      "Ismail Jakobs": {
+        "passes": 48.0,
+        "key_passes": 2,
+        "recoveries": 5,
+        "losses": 2,
+        "shots": 0,
+        "goals": 0,
+        "xg": 0,
+        "distance_m": 0,
+        "sprints": 0,
+        "max_speed": 0,
+        "metabolic": 0
+      },
+      "Lucas Torreira": {
+        "passes": 49.0,
+        "key_passes": 0,
+        "recoveries": 4,
+        "losses": 2,
+        "shots": 0,
+        "goals": 0,
+        "xg": 0,
+        "distance_m": 0,
+        "sprints": 0,
+        "max_speed": 0,
+        "metabolic": 0
+      },
+      "Aleksei Batrakov": {
+        "passes": 34.0,
+        "key_passes": 1,
+        "recoveries": 2,
+        "losses": 4,
+        "shots": 1.0,
+        "goals": 1.0,
+        "xg": 0.4,
+        "distance_m": 0,
+        "sprints": 0,
+        "max_speed": 0,
+        "metabolic": 0
+      },
+      "Mario Lemina": {
+        "passes": 11.0,
+        "key_passes": 0,
+        "recoveries": 4,
+        "losses": 0,
+        "shots": 1.0,
+        "goals": 0,
+        "xg": 0.02,
+        "distance_m": 0,
+        "sprints": 0,
+        "max_speed": 0,
+        "metabolic": 0
+      },
+      "Eren Elmalı": {
+        "passes": 3.0,
+        "key_passes": 0,
+        "recoveries": 2,
+        "losses": 1,
+        "shots": 0,
+        "goals": 0,
+        "xg": 0,
+        "distance_m": 0,
+        "sprints": 0,
+        "max_speed": 0,
+        "metabolic": 0
+      },
+      "Leroy Sané": {
+        "passes": 3.0,
+        "key_passes": 0,
+        "recoveries": 4,
+        "losses": 5,
+        "shots": 0,
+        "goals": 0,
+        "xg": 0,
+        "distance_m": 0,
+        "sprints": 0,
+        "max_speed": 0,
+        "metabolic": 0
+      },
+      "Deniz Gul": {
+        "passes": 1.0,
+        "key_passes": 0,
+        "recoveries": 0,
+        "losses": 4,
+        "shots": 0,
+        "goals": 0,
+        "xg": 0,
+        "distance_m": 0,
+        "sprints": 0,
+        "max_speed": 0,
+        "metabolic": 0
+      },
+      "İlkay Gündoğan": {
+        "passes": 1.0,
+        "key_passes": 0,
+        "recoveries": 0,
+        "losses": 1,
+        "shots": 0,
+        "goals": 0,
+        "xg": 0,
+        "distance_m": 0,
+        "sprints": 0,
+        "max_speed": 0,
+        "metabolic": 0
+      }
+    },
+    "epistemic": "TÜREV",
+    "caveat": "Radar PL events + XLSX shots/goals/xG. distance_m/sprints için Player fitness XLSX gerekli (henüz yok). Ham sayı, normalize yok."
+  }
+}
