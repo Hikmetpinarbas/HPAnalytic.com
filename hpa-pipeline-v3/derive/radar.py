@@ -67,19 +67,26 @@ def normalize(stats, keys):
         out[player] = r
     return out
 
-def calculate(pl_events, team_name, xlsx_path=None):
+def calculate(pl_events, team_name, xlsx_path=None, fitness_json=None):
     ev = event_stats(pl_events, team_name)
     xl = xlsx_stats(xlsx_path, team_filter=team_name) if xlsx_path else {}
+    fit = {}
+    if fitness_json and os.path.exists(fitness_json):
+        with open(fitness_json) as f:
+            fit = json.load(f).get('players', {})
 
     merged = {}
     for p, st in ev.items():
         m = dict(st)
         if p in xl: m.update(xl[p])
+        if p in fit: m.update(fit[p])
         merged[p] = m
-    # XLSX'te olup PL'de olmayan oyuncular
     for p, st in xl.items():
         if p not in merged:
-            merged[p] = st
+            merged[p] = dict(st)
+    for p, st in fit.items():
+        if p not in merged:
+            merged[p] = dict(st)
 
     keys = ['passes', 'key_passes', 'recoveries', 'losses', 'shots', 'goals',
             'xg', 'distance_m', 'sprints', 'max_speed']
