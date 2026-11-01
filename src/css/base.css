@@ -6166,3 +6166,38 @@ body { cursor: none; }
   letter-spacing: 0.1em;
   max-width: 400px;
 }
+
+/* === lgs-corridor === */
+.lg-cor { padding: 8px 0; }
+.lg-cor-head {
+  display: flex; align-items: center; gap: 16px;
+  font-family: var(--mono); font-size: 10px;
+  letter-spacing: .12em; text-transform: uppercase;
+  margin-bottom: 16px; padding-bottom: 12px;
+  border-bottom: 1px solid var(--line);
+}
+.lg-cor-body { display: flex; flex-direction: column; gap: 10px; }
+.lg-cor-row {
+  display: grid; grid-template-columns: 100px 1fr 100px;
+  align-items: center; gap: 16px;
+}
+.lg-cor-lbl {
+  font-family: var(--mono); font-size: 10px;
+  letter-spacing: .12em; color: var(--ink-soft);
+  text-transform: uppercase;
+}
+.lg-cor-bar {
+  height: 8px; background: rgba(255,255,255,0.04);
+  border-radius: 1px; overflow: hidden;
+  display: flex;
+}
+.lg-cor-gs { background: #FF6B35; height: 100%; transition: width .3s; }
+.lg-cor-lil { background: #6B9FE8; height: 100%; transition: width .3s; }
+.lg-cor-vals {
+  display: flex; justify-content: space-between;
+  font-family: var(--mono); font-size: 11px;
+  letter-spacing: .06em;
+}
+@media (max-width: 640px) {
+  .lg-cor-row { grid-template-columns: 80px 1fr 80px; gap: 8px; }
+}
