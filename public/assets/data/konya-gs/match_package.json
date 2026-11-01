@@ -1,6 +1,6 @@
 {
   "metadata": {
-    "match_id": "stats",
+    "match_id": "konya-gs-2026-10-30",
     "team": "Galatasaray",
     "source_files": {
       "GK": "Konyaspor 0-4 Galatasaray 30.10.2026, Full match (1).csv",
@@ -1015,5 +1015,10 @@
     },
     "epistemic": "TÜREV",
     "caveat": "Radar PL events + XLSX shots/goals/xG. distance_m/sprints için Player fitness XLSX gerekli (henüz yok). Ham sayı, normalize yok."
+  },
+  "regression": {
+    "csv_shots": 22,
+    "xlsx_shots": 22,
+    "match": "✓"
   }
 }
