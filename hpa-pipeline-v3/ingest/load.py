@@ -1,6 +1,11 @@
 """
 HPAnalytic v3 · Match loader
 Şut dedup kuralı: PL birincil, TM sadece "Shots blocked" ekler (ayrı kategori)
+
+Düzeltme geçmişi:
+- Kök Neden A düzeltmesi: load_match artık iki ayrı dict döndürür:
+  events (koordinatlı, spatial analiz için) ve events_all (koordinat filtresi
+  olmadan, sayısal mutabakat için). Mevcut API'yi bozmaz.
 """
 import csv, re
 from pathlib import Path
@@ -17,6 +22,11 @@ SHOT_PRIO = {
     'Goals': 0, 'Shots on target': 1, 'Penalty shots': 1,
     'Shots on post / bar': 2, 'Free-kick shots': 2,
     'Shots off target': 3,
+}
+
+META_ACTIONS = {
+    'Start of the 1st half', 'Halftime', 'Start of the 2nd half',
+    'End of the match',
 }
 
 def parse_player(code):
@@ -52,6 +62,14 @@ def to_event(row, source):
     }
 
 def load_match(csv_dir):
+    """Maç CSV'lerini yükle.
+
+    Döndürür: (events, files_used)
+      events: koordinatlı olaylar (spatial analiz için)
+      files_used: {kind: filename}
+
+    Koordinatsız olaylar load_match_all() ile alınır.
+    """
     from glob import glob
     events = {'PL': [], 'GK': [], 'TM': []}
     files_used = {}
@@ -62,6 +80,26 @@ def load_match(csv_dir):
         for row in rows:
             ev = to_event(row, kind)
             if ev['x'] is not None and ev['team']:
+                events[kind].append(ev)
+    return events, files_used
+
+
+def load_match_all(csv_dir):
+    """Tüm olayları yükle — koordinat filtresi OLMADAN.
+
+    Sayısal mutabakat (reconciliation) için kullanılır.
+    Meta olaylar (Start/Halftime/End) hariç tutulur.
+    """
+    from glob import glob
+    events = {'PL': [], 'GK': [], 'TM': []}
+    files_used = {}
+    for f in sorted(glob(f"{csv_dir}/*.csv")):
+        kind, rows = classify_csv(f)
+        if not kind: continue
+        files_used[kind] = Path(f).name
+        for row in rows:
+            ev = to_event(row, kind)
+            if ev['team'] and ev['action'] not in META_ACTIONS:
                 events[kind].append(ev)
     return events, files_used
 
@@ -110,4 +148,31 @@ def summary(events):
         'passes': {'total': len(passes), 'by_team': dict(Counter(p['team'] for p in passes))},
         'losses': {'total': len(losses)},
         'recoveries': {'total': len(recoveries)},
+    }
+
+
+def summary_by_action(events):
+    """Her action tipini ayrı ayrı say (etiket örtüşmesini koru).
+
+    Kök Neden C düzeltmesi: summary() tüm pass etiketlerini tek bir
+    "passes" altında topluyordu. Bu fonksiyon her etiketi bağımsız sayar.
+    """
+    all_events = events.get('PL', []) + events.get('GK', []) + events.get('TM', [])
+
+    by_action = Counter(e['action'] for e in all_events)
+    by_team_action = defaultdict(lambda: defaultdict(int))
+    by_player_action = defaultdict(lambda: defaultdict(int))
+    by_source_action = defaultdict(lambda: defaultdict(int))
+
+    for e in all_events:
+        by_team_action[e['team']][e['action']] += 1
+        by_source_action[e['source']][e['action']] += 1
+        if e.get('player'):
+            by_player_action[e['player']][e['action']] += 1
+
+    return {
+        'by_action': dict(by_action),
+        'by_team_action': {t: dict(a) for t, a in by_team_action.items()},
+        'by_player_action': {p: dict(a) for p, a in by_player_action.items()},
+        'by_source_action': {s: dict(a) for s, a in by_source_action.items()},
     }
