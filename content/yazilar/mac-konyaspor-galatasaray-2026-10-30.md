@@ -1,159 +1,27 @@
 ---
-title: "Konya 0-4 Galatasaray: Pres değil, geçiş verimliliği"
+title: "Konya 0-4 Galatasaray: Pres Değil, Geçiş Verimliliği"
 slug: mac-konyaspor-galatasaray-2026-10-30
 type: mac
-date: 2026-10-30
-read: 12
-source: https://www.hpanalytic.com/mac/konyaspor-galatasaray-2026-10-30
-match_type: post-match
-match_result: Konyaspor 0 — 4 Galatasaray
-match_opponent: Konyaspor (Süper Lig)
-excerpt: "4-0'lık skor 'boğucu hücum' hikayesi anlatır. Ham veri başka bir şey söylüyor. Galatasaray pozisyonel hücumla değil, geçiş verimliliğiyle kazandı."
+author: "Hikmet Pınarbaş"
+excerpt: "Konyaspor'un yoğun presine rağmen, Galatasaray'ın dikey geçişlerdeki ve bitiricilikteki üstünlüğünü verilerle analiz ediyoruz."
 ---
 
-Skoru okumak kolay. 0-4. Dört farklı golcü. Bir sonuç.
+Galatasaray, Konya deplasmanından 0-4’lük net bir skorla dönerken, sahadaki oyunun karakterini belirleyen temel unsur "koşu kalitesi" ile "bitiricilik verimliliği" arasındaki fark oldu. Konyaspor’un fiziksel olarak oyuna ortak olma çabası, Galatasaray’ın dikey geçiş hızı ve xG kalitesi karşısında sonuçsuz kaldı.
 
-Ama skorun altındaki mekanizma farklı.
+### Dikey Geçişlerin Gücü: Sprint Analizi
 
-4-0 kazanan takım rakibini 90 dakika boğmadı.
+Maçın en dikkat çekici verisi, her iki takımın benzer toplam sprint mesafelerine (Galatasaray 1975m, Konyaspor 1945m) sahip olmasına rağmen, bu sprintlerin yönlerindeki dramatik farktı. Konyaspor, maç boyunca tam **1094 metre defansif (geri) sprint** atmak zorunda kaldı. Bu veri, ev sahibi ekibin Galatasaray’ın kontrataklarını durdurmak için sürekli kalesine doğru koştuğunu ve savunma yerleşiminde geç kaldığını kanıtlıyor.
 
-263 pozisyonel hücum katılımı var. Sıfır gol.
+Buna karşılık Galatasaray, **987 metre ileri sprint** ile hücumda ne kadar dikey ve delici bir oyun tercih ettiğini gösterdi. Sarı-kırmızılılar 444 pasla oyunu kontrol ederken, topu kazandığı anda doğrudan rakip kaleye yönelerek Konyaspor’un savunma dengesini bozdu.
 
-Dört golün dördü de farklı mekanizmalardan geldi.
+### Bitiricilikte Keskinlik: Osimhen ve Akgün
 
-Bu bir "saha parsellenmesi" değil. Bu bir geçiş verimliliği.
+Galatasaray’ın 14 şutta yakaladığı **1.92 xG (Gol Beklentisi)** değeri, üretilen pozisyonların kalitesini ortaya koyuyor. Maçın henüz başında, 11. dakikada sahneye çıkan Osimhen ve 27. dakikada farkı ikiye çıkaran Akgün, bitiricilik konusundaki verimlilikleriyle maçın senaryosunu erkenden belirlediler. Konyaspor’un 8 şutta 0.81 xG’de kalması, Galatasaray savunmasının rakibine net fırsat vermediğinin bir göstergesi oldu.
 
-:::visual[scoreboard:konya-gs] | Maç verisi | Konya-GS, 30.10.2026
-:::
+### Oyunun Kopma Noktası: Leão’nun Penaltısı
 
-## Gollerin anatomisi: 0 set hücum
+İkinci yarıda 54. dakikada Batrakov ile skoru 0-3’e getiren Galatasaray, oyun disiplininden kopmayan taraf oldu. 61. dakikada kazanılan penaltı vuruşunda topun başına geçen Rafael Leão, skoru 0-4 yaparak maçın fişini çekti. Bu penaltı, sadece bir gol değil, Galatasaray’ın maç boyu sürdürdüğü baskın oyunun "kazanılmış bir hakkı" ve Konyaspor direncinin tamamen kırıldığı "oyunun kopma noktası" olarak kayıtlara geçti.
 
-11. dakika. Osimhen.
+### Sonuç: Verimlilik Kazandı
 
-Sara'nın kendi yarısından (x=72) uzun pası. Awaziem'e karşı hava topu. Hücum penceresi dışı.
-
-27. dakika. Akgün.
-
-Duran top penceresi. Batrakov'un asist katkısı. Yerleşik savunma dışı.
-
-48. dakika. Batrakov.
-
-Sara'nın kendi yarısından (x=29) asisti. Beş oyunculu kontra. Geçiş hücumu.
-
-55. dakika. Leão.
-
-Penaltı. Hücum penceresi dışı.
-
-Dört gol. Sıfır pozisyonel hücum.
-
-Devre 2-0. Final 4-0.
-
-"0-0'dan 0-4'e" hikayesi yanlış. Maç ilk yarıda koptu. Geri dönüş ihtimali 27. dakikada kapandı.
-
-:::visual[event-anim:konya-gs] | Geçiş ve derinlik | Konya-GS
-:::
-
-Bu maç "sabırla boğan" bir takımın değil. "Derinden kırıp geçen" bir takımın hikayesi.
-
-## Pres efsanesi: 5 top kazanımı
-
-Maç sonu raporlarında "boğucu ön alan presi" geçer.
-
-Veri bunu doğrulamıyor.
-
-34 top kazanma aksiyonu var. 20'si kendi üçlüsünde. 13'ü orta üçlüde.
-
-Rakip son üçlüde kazanılan top: **1**.
-
-Rakip yarıda toplam kazanım: **5**. Konyaspor'un aynı bölgede 7 kazanımı var.
-
-Yani pres yüksek değil, düşük.
-
-PPDA 4.24 ham bir sayı. 666 rakip pasının 267'si tekrar satırı. 157 defansif aksiyonun 42'si alt-etiket tekrarı.
-
-Tekrarsız PPDA: 3.47. Bölge sınırlı PPDA: 4.75.
-
-İkinci yarı bölge sınırlı PPDA 3.77'den 6.17'ye çıkıyor. Bu bir pres başarısızlığı değil. Skor 4-0 ve 61. dakikada 5 değişiklik.
-
-Takım temas eşiğini düşürdü. Bilinçli.
-
-:::visual[phases:konya-gs] | Faz dağılımı | Konya-GS, V4 canonical
-:::
-
-Yanlışsam ne görmeliyim? Rakip yarıda 15+ top kazanımı. Veride 5 var. Farkı görürsem "pres" iddiasını yeniden değerlendiririm.
-
-## Merkez koridorda ayrışma
-
-Genel pas hacminde denge var. GS 444, Konya 398. %52.7 - 47.3.
-
-Hücum üçlüsündeki toplam pas dağılımı da denge: GS 107, Konya 86.
-
-Ayrışma tek bir yerde: merkez şerit.
-
-Orta üçlü merkez: 85-57. GS %60.
-
-Hücum üçlüsü merkez: Konya 7 pas. GS 24 pas.
-
-Konya hücum ederken tamamen kenarlara itildi. Merkez kapandı.
-
-Bu bir "saha parsellenmesi" değil. Bu bir koridor ablukası.
-
-Yanlışsam ne görmeliyim? Konya'nın merkezden hücum üçlüsüne 20+ pas sokması. Veride 7 var.
-
-## Çekirdek: 60 dakikada maçı kopan omurga
-
-**Gabriel Sara.** 42 pas (38 doğru). 2 asist. 3 şans yaratma. 3 top kazanım, üçü de y>50.
-
-Hücumda Leão (13) ve Batrakov (13) ile eşzamanlı etiketlendi. Bu bir "pas ağı" değil, aynı pencerede aksiyon alma sıklığı.
-
-**Lucas Torreira.** 25 pas (23 doğru). 1 top kaybı. 6 top kazanım, 5'i kendi yarıda (x=8, 14, 39, 42, 50).
-
-Torreira stoper önü dalgakıranı. Tek kayıpla oynadı.
-
-**Victor Osimhen.** 7 pas. 4 şut (3 isabet). 1 gol. 6 top kaybı, 5'i x≥77.
-
-Osimhen pas istasyonu değil. Stoper hattını yıpratan temas santrforu. Hava düellolarıyla savunma dengesini bozdu.
-
-:::visual[radar:konya-gs:Gabriel Sara] | Oyuncu profili | Sara, Konya-GS
-:::
-
-Yanlışsam ne görmeliyim? Sara'nın top kazanımlarının yarısından fazlasının y<50'de olması. Veride hepsi y>50.
-
-## Zaman akışı
-
-Aşağıdaki animasyon, 2802 doğrulanmış eventin saha üzerindeki akışını gösteriyor.
-
-Her nokta bir aksiyon. Renk takımı söylüyor. Zaman çubuğu maçı 30 saniyede akıtıyor.
-
-Turuncu = Konyaspor. Yeşil = Galatasaray.
-
-İlk yarıda Galatasaray'ın kendi yarısından çıkan aksiyon yoğunluğu görünür. İkinci yarıda Konyaspor yarısında birikim.
-
-:::visual[flow:konya-gs] | Saha içi zaman akışı | Konya-GS, 2802 event
-:::
-
-## Bu verinin sınırı
-
-Topsuz koşu yok. Varış noktası yok. Pas alıcısı doğrulanmamış.
-
-Fitness normları birimsiz. Radar tutarsız (Singo örneği: mesafe normu 17.3).
-
-Verideki pas başlangıç noktaları var. Bitiş noktaları yok.
-
-"Topu nereye taşıdı" sorusunun kesin cevabı yok. Sadece "nereden başladı" var.
-
-Ama çerçeve net: Galatasaray bu maçı pozisyonel hücumla kazanmadı. Geçiş verimliliğiyle kazandı.
-
-4-0'lık skor "boğucu hücum" değil, "keskin kırılma" hikayesi.
-
-## Sonraki soru
-
-Galatasaray her maçta bu kadar düşük presle mi oynayacak?
-
-Yoksa Konyaspor maçı "öne geçen takımın presi bıraktığı" özel bir senaryo mu?
-
-Sonraki maçlar cevap verecek.
-
-Biz burada bir maçı okuyoruz. Bir hükmü değil, bir mekanizmayı.
-
-Veri: SportsBase · V4 canonical + XLSX ground truth
+Konyaspor’un yüksek pres hacmi ve savunma hattını geri koşturma çabası, Galatasaray’ın 987 metrelik ileri yönlü sprint gücü ve 1.92’lik xG kalitesiyle birleşen bitiriciliği karşısında eridi. Galatasaray, 444 pasla domine ettiği oyunda, geçişleri en verimli şekilde kullanarak haftanın en net galibiyetlerinden birine imza attı.
