@@ -110,7 +110,7 @@ em{color:var(--orange);font-style:normal;font-weight:600}
 .trail-dribble{stroke:#F5C518;stroke-width:0.6;stroke-dasharray:0.3 1.1;fill:none;opacity:0.85}
 .trail-shot{stroke:#FF3B30;stroke-width:0.7;fill:none}
 .arrowhead{fill:#FF3B30}
-.pitch-svg .player-g{transform-origin:0px 0px;animation:swingPlayer 8s cubic-bezier(0.45,0.05,0.25,1) infinite}@keyframes swingPlayer{0%,12%{transform:translate(0px,0px)}52%,60%{transform:translate(var(--dx),var(--dy))}100%{transform:translate(0px,0px)}}.pitch-svg .trail-fwd{stroke:#B4FF39;stroke-width:0.45;stroke-dasharray:8 200;stroke-linecap:round;fill:none;opacity:0;animation:drawFwd 8s linear infinite;filter:drop-shadow(0 0 1.2px #B4FF39)}@keyframes drawFwd{0%,12%{stroke-dashoffset:200;opacity:0}14%{opacity:0.9}52%{stroke-dashoffset:0;opacity:0.9}54%,100%{opacity:0}}.pitch-svg .trail-bck{stroke:#FF6B35;stroke-width:0.45;stroke-dasharray:8 200;stroke-linecap:round;fill:none;opacity:0;animation:drawBck 8s linear infinite;filter:drop-shadow(0 0 1.2px #FF6B35)}@keyframes drawBck{0%,60%{stroke-dashoffset:200;opacity:0}62%{opacity:0.9}100%{stroke-dashoffset:0;opacity:0.9}}</style>
+.pitch-svg .player-g{transform-origin:0px 0px;animation:swingPlayer 12.5s cubic-bezier(0.4,0,0.2,1) infinite}@keyframes swingPlayer{0%,12%{transform:translate(0px,0px)}52%,60%{transform:translate(var(--dx),var(--dy))}100%{transform:translate(0px,0px)}}.pitch-svg .trail-fwd{stroke:#B4FF39;stroke-width:0.35;stroke-dasharray:200;fill:none;opacity:0;animation:drawFwd 12.5s linear infinite}@keyframes drawFwd{0%,12%{stroke-dashoffset:200;opacity:0}14%{opacity:0.9}52%{stroke-dashoffset:0;opacity:0.9}54%,100%{opacity:0}}.pitch-svg .trail-bck{stroke:#FF6B35;stroke-width:0.35;stroke-dasharray:200;fill:none;opacity:0;animation:drawBck 12.5s linear infinite}@keyframes drawBck{0%,60%{stroke-dashoffset:200;opacity:0}62%{opacity:0.9}100%{stroke-dashoffset:0;opacity:0.9}}</style>
 </head>
 <body>
 <nav class="nav"><a href="/" class="brand">HP//Analytic</a><a href="/yazi">MAÇ DOSYASI</a></nav>
@@ -129,93 +129,181 @@ Leão sağdan içeri kat ediyor. Konyaspor savunması geri geri koşuyor. Top ay
 <p class="short">Hikâye, 90 dakika boyunca her iki takımın sprintini <em>nereye</em> harcadığında başlıyor.</p>
 
 <h2>Pozisyon haritaları</h2>
-<div class="pitches"><div class="pitch-wrap"><div class="pitch-title">KONYASPOR</div><svg class="pitch-svg" viewBox="0 0 105 68" preserveAspectRatio="xMidYMid meet"><defs><radialGradient id="gKon" cx="38%" cy="28%" r="85%"><stop offset="0%" stop-color="#fff" stop-opacity="0.7"/><stop offset="45%" stop-color="#FF6B35" stop-opacity="0.95"/><stop offset="100%" stop-color="#FF6B35" stop-opacity="0.45"/></radialGradient></defs><rect x="0.2" y="0.2" width="104.6" height="67.6" fill="none" stroke="#1a1c1a" stroke-width="0.3"/><line x1="52.5" y1="0.2" x2="52.5" y2="67.8" stroke="#1a1c1a" stroke-width="0.3"/><circle cx="52.5" cy="34" r="9.15" fill="none" stroke="#1a1c1a" stroke-width="0.3"/><rect x="0.2" y="13.85" width="16.5" height="40.3" fill="none" stroke="#1a1c1a" stroke-width="0.3"/><rect x="88.3" y="13.85" width="16.5" height="40.3" fill="none" stroke="#1a1c1a" stroke-width="0.3"/><line class="trail-fwd" x1="31.21" y1="59.87" x2="81.58" y2="55.32"/><line class="trail-bck" x1="31.21" y1="59.87" x2="81.58" y2="55.32"/><line class="trail-fwd" x1="34.80" y1="41.66" x2="65.08" y2="34.37"/><line class="trail-bck" x1="34.80" y1="41.66" x2="65.08" y2="34.37"/><line class="trail-fwd" x1="38.12" y1="55.64" x2="77.84" y2="48.32"/><line class="trail-bck" x1="38.12" y1="55.64" x2="77.84" y2="48.32"/><line class="trail-fwd" x1="30.25" y1="12.73" x2="76.43" y2="9.69"/><line class="trail-bck" x1="30.25" y1="12.73" x2="76.43" y2="9.69"/><line class="trail-fwd" x1="34.67" y1="12.67" x2="87.06" y2="9.31"/><line class="trail-bck" x1="34.67" y1="12.67" x2="87.06" y2="9.31"/><line class="trail-fwd" x1="28.74" y1="33.22" x2="71.99" y2="22.47"/><line class="trail-bck" x1="28.74" y1="33.22" x2="71.99" y2="22.47"/><line class="trail-fwd" x1="24.44" y1="48.90" x2="79.99" y2="32.45"/><line class="trail-bck" x1="24.44" y1="48.90" x2="79.99" y2="32.45"/><line class="trail-fwd" x1="31.62" y1="55.43" x2="72.74" y2="37.13"/><line class="trail-bck" x1="31.62" y1="55.43" x2="72.74" y2="37.13"/><line class="trail-fwd" x1="29.70" y1="30.80" x2="65.23" y2="39.10"/><line class="trail-bck" x1="29.70" y1="30.80" x2="65.23" y2="39.10"/><line class="trail-fwd" x1="38.71" y1="28.91" x2="79.09" y2="38.21"/><line class="trail-bck" x1="38.71" y1="28.91" x2="79.09" y2="38.21"/><g class="player-g" style="--dx:16.79;--dy:-1.52"><rect x="-2.9" y="-2.9" width="5.8" height="5.8" rx="1.3" fill="url(#gKon)" stroke="#FF6B35" stroke-width="0.28"/><text text-anchor="middle" dominant-baseline="central" font-size="2.7" font-weight="900" font-family="IBM Plex Mono,monospace" fill="#050605">17</text></g><g class="player-g" style="--dx:10.09;--dy:-2.43"><rect x="-2.9" y="-2.9" width="5.8" height="5.8" rx="1.3" fill="url(#gKon)" stroke="#FF6B35" stroke-width="0.28"/><text text-anchor="middle" dominant-baseline="central" font-size="2.7" font-weight="900" font-family="IBM Plex Mono,monospace" fill="#050605">8</text></g><g class="player-g" style="--dx:13.24;--dy:-2.44"><rect x="-2.9" y="-2.9" width="5.8" height="5.8" rx="1.3" fill="url(#gKon)" stroke="#FF6B35" stroke-width="0.28"/><text text-anchor="middle" dominant-baseline="central" font-size="2.7" font-weight="900" font-family="IBM Plex Mono,monospace" fill="#050605">9</text></g><g class="player-g" style="--dx:15.39;--dy:-1.01"><rect x="-2.9" y="-2.9" width="5.8" height="5.8" rx="1.3" fill="url(#gKon)" stroke="#FF6B35" stroke-width="0.28"/><text text-anchor="middle" dominant-baseline="central" font-size="2.7" font-weight="900" font-family="IBM Plex Mono,monospace" fill="#050605">26</text></g><g class="player-g" style="--dx:17.46;--dy:-1.12"><rect x="-2.9" y="-2.9" width="5.8" height="5.8" rx="1.3" fill="url(#gKon)" stroke="#FF6B35" stroke-width="0.28"/><text text-anchor="middle" dominant-baseline="central" font-size="2.7" font-weight="900" font-family="IBM Plex Mono,monospace" fill="#050605">91</text></g><g class="player-g" style="--dx:14.42;--dy:-3.58"><rect x="-2.9" y="-2.9" width="5.8" height="5.8" rx="1.3" fill="url(#gKon)" stroke="#FF6B35" stroke-width="0.28"/><text text-anchor="middle" dominant-baseline="central" font-size="2.7" font-weight="900" font-family="IBM Plex Mono,monospace" fill="#050605">15</text></g><g class="player-g" style="--dx:18.52;--dy:-5.48"><rect x="-2.9" y="-2.9" width="5.8" height="5.8" rx="1.3" fill="url(#gKon)" stroke="#FF6B35" stroke-width="0.28"/><text text-anchor="middle" dominant-baseline="central" font-size="2.7" font-weight="900" font-family="IBM Plex Mono,monospace" fill="#050605">22</text></g><g class="player-g" style="--dx:13.70;--dy:-6.10"><rect x="-2.9" y="-2.9" width="5.8" height="5.8" rx="1.3" fill="url(#gKon)" stroke="#FF6B35" stroke-width="0.28"/><text text-anchor="middle" dominant-baseline="central" font-size="2.7" font-weight="900" font-family="IBM Plex Mono,monospace" fill="#050605">66</text></g><g class="player-g" style="--dx:11.84;--dy:2.77"><rect x="-2.9" y="-2.9" width="5.8" height="5.8" rx="1.3" fill="url(#gKon)" stroke="#FF6B35" stroke-width="0.28"/><text text-anchor="middle" dominant-baseline="central" font-size="2.7" font-weight="900" font-family="IBM Plex Mono,monospace" fill="#050605">77</text></g><g class="player-g" style="--dx:13.46;--dy:3.10"><rect x="-2.9" y="-2.9" width="5.8" height="5.8" rx="1.3" fill="url(#gKon)" stroke="#FF6B35" stroke-width="0.28"/><text text-anchor="middle" dominant-baseline="central" font-size="2.7" font-weight="900" font-family="IBM Plex Mono,monospace" fill="#050605">11</text></g></svg>
-<div class="pitch-marquee" data-team="kon"><div class="pitch-marquee-track"><div class="mq-item"><span class="mq-name">DENIZ TÜRÜÇ #9</span><span class="mq-fwd">→ orta 1</span><span class="mq-bwd">← isabetli pas 10 · inaccurate passes 3</span><span class="mq-sep">/</span></div><div class="mq-item"><span class="mq-name">YHOAN ANDZOUANA #17</span><span class="mq-fwd">→ çalım 1</span><span class="mq-bwd">← top kazanımı 2</span><span class="mq-sep">/</span></div><div class="mq-item"><span class="mq-name">JEAN-LUC DOMPÉ #91</span><span class="mq-fwd">→ orta 3 · çalım 2</span><span class="mq-bwd">← uzaklaştırma 1</span><span class="mq-sep">/</span></div><div class="mq-item"><span class="mq-name">MARKO JEVTOVIC #8</span><span class="mq-fwd">→ isabetli pas 5 · top kaybı 3</span><span class="mq-bwd">← top kazanımı 4</span><span class="mq-sep">/</span></div><div class="mq-item"><span class="mq-name">MELIH İBRAHIMOĞLU #77</span><span class="mq-fwd">→ isabetli pas 11 · passes forward accurate 4</span><span class="mq-bwd">← top kazanımı 1</span><span class="mq-sep">/</span></div><div class="mq-item"><span class="mq-name">RAJMUND TÓTH #66</span><span class="mq-fwd">→ isabetli şut 1</span><span class="mq-bwd">← isabetli pas 5 · inaccurate passes 3</span><span class="mq-sep">/</span></div><div class="mq-item"><span class="mq-name">RAYYAN BANIYA #22</span><span class="mq-fwd">→ isabetli pas 2 · passes forward accurate 1</span><span class="mq-bwd">← top kazanımı 3</span><span class="mq-sep">/</span></div><div class="mq-item"><span class="mq-name">ARTHUR MASUAKU #26</span><span class="mq-fwd">→ isabetli pas 5 · passes forward accurate 3</span><span class="mq-bwd">← top kazanımı 2</span><span class="mq-sep">/</span></div><div class="mq-item"><span class="mq-name">CHIDOZIE AWAZIEM #15</span><span class="mq-fwd">→ challenges unsuccessful 2 · top kazanımı 1</span><span class="mq-bwd">← top kazanımı 2 · uzaklaştırma 1</span><span class="mq-sep">/</span></div><div class="mq-item"><span class="mq-name">JACKSON MULEKA #11</span><span class="mq-fwd">→ çalım 1</span><span class="mq-bwd">← challenges unsuccessful 5 · isabetli pas 4</span><span class="mq-sep">/</span></div><div class="mq-item"><span class="mq-name">DENIZ TÜRÜÇ #9</span><span class="mq-fwd">→ orta 1</span><span class="mq-bwd">← isabetli pas 10 · inaccurate passes 3</span><span class="mq-sep">/</span></div><div class="mq-item"><span class="mq-name">YHOAN ANDZOUANA #17</span><span class="mq-fwd">→ çalım 1</span><span class="mq-bwd">← top kazanımı 2</span><span class="mq-sep">/</span></div><div class="mq-item"><span class="mq-name">JEAN-LUC DOMPÉ #91</span><span class="mq-fwd">→ orta 3 · çalım 2</span><span class="mq-bwd">← uzaklaştırma 1</span><span class="mq-sep">/</span></div><div class="mq-item"><span class="mq-name">MARKO JEVTOVIC #8</span><span class="mq-fwd">→ isabetli pas 5 · top kaybı 3</span><span class="mq-bwd">← top kazanımı 4</span><span class="mq-sep">/</span></div><div class="mq-item"><span class="mq-name">MELIH İBRAHIMOĞLU #77</span><span class="mq-fwd">→ isabetli pas 11 · passes forward accurate 4</span><span class="mq-bwd">← top kazanımı 1</span><span class="mq-sep">/</span></div><div class="mq-item"><span class="mq-name">RAJMUND TÓTH #66</span><span class="mq-fwd">→ isabetli şut 1</span><span class="mq-bwd">← isabetli pas 5 · inaccurate passes 3</span><span class="mq-sep">/</span></div><div class="mq-item"><span class="mq-name">RAYYAN BANIYA #22</span><span class="mq-fwd">→ isabetli pas 2 · passes forward accurate 1</span><span class="mq-bwd">← top kazanımı 3</span><span class="mq-sep">/</span></div><div class="mq-item"><span class="mq-name">ARTHUR MASUAKU #26</span><span class="mq-fwd">→ isabetli pas 5 · passes forward accurate 3</span><span class="mq-bwd">← top kazanımı 2</span><span class="mq-sep">/</span></div><div class="mq-item"><span class="mq-name">CHIDOZIE AWAZIEM #15</span><span class="mq-fwd">→ challenges unsuccessful 2 · top kazanımı 1</span><span class="mq-bwd">← top kazanımı 2 · uzaklaştırma 1</span><span class="mq-sep">/</span></div><div class="mq-item"><span class="mq-name">JACKSON MULEKA #11</span><span class="mq-fwd">→ çalım 1</span><span class="mq-bwd">← challenges unsuccessful 5 · isabetli pas 4</span><span class="mq-sep">/</span></div></div></div>
-</div><div class="pitch-wrap"><div class="pitch-title">GALATASARAY</div><svg class="pitch-svg" viewBox="0 0 105 68" preserveAspectRatio="xMidYMid meet"><defs><radialGradient id="gGal" cx="38%" cy="28%" r="85%"><stop offset="0%" stop-color="#fff" stop-opacity="0.7"/><stop offset="45%" stop-color="#B4FF39" stop-opacity="0.95"/><stop offset="100%" stop-color="#B4FF39" stop-opacity="0.45"/></radialGradient></defs><rect x="0.2" y="0.2" width="104.6" height="67.6" fill="none" stroke="#1a1c1a" stroke-width="0.3"/><line x1="52.5" y1="0.2" x2="52.5" y2="67.8" stroke="#1a1c1a" stroke-width="0.3"/><circle cx="52.5" cy="34" r="9.15" fill="none" stroke="#1a1c1a" stroke-width="0.3"/><rect x="0.2" y="13.85" width="16.5" height="40.3" fill="none" stroke="#1a1c1a" stroke-width="0.3"/><rect x="88.3" y="13.85" width="16.5" height="40.3" fill="none" stroke="#1a1c1a" stroke-width="0.3"/><line class="trail-fwd" x1="29.99" y1="30.23" x2="70.08" y2="18.59"/><line class="trail-bck" x1="29.99" y1="30.23" x2="70.08" y2="18.59"/><line class="trail-fwd" x1="31.25" y1="20.80" x2="66.87" y2="15.75"/><line class="trail-bck" x1="31.25" y1="20.80" x2="66.87" y2="15.75"/><line class="trail-fwd" x1="21.38" y1="10.04" x2="74.58" y2="11.30"/><line class="trail-bck" x1="21.38" y1="10.04" x2="74.58" y2="11.30"/><line class="trail-fwd" x1="31.74" y1="39.32" x2="69.31" y2="37.81"/><line class="trail-bck" x1="31.74" y1="39.32" x2="69.31" y2="37.81"/><line class="trail-fwd" x1="14.67" y1="37.21" x2="77.35" y2="50.69"/><line class="trail-bck" x1="14.67" y1="37.21" x2="77.35" y2="50.69"/><line class="trail-fwd" x1="33.86" y1="20.46" x2="76.08" y2="22.62"/><line class="trail-bck" x1="33.86" y1="20.46" x2="76.08" y2="22.62"/><line class="trail-fwd" x1="14.71" y1="30.10" x2="82.30" y2="44.92"/><line class="trail-bck" x1="14.71" y1="30.10" x2="82.30" y2="44.92"/><line class="trail-fwd" x1="31.51" y1="33.32" x2="65.99" y2="30.64"/><line class="trail-bck" x1="31.51" y1="33.32" x2="65.99" y2="30.64"/><line class="trail-fwd" x1="34.50" y1="47.95" x2="70.03" y2="40.63"/><line class="trail-bck" x1="34.50" y1="47.95" x2="70.03" y2="40.63"/><line class="trail-fwd" x1="33.08" y1="29.74" x2="76.55" y2="48.11"/><line class="trail-bck" x1="33.08" y1="29.74" x2="76.55" y2="48.11"/><g class="player-g" style="--dx:13.36;--dy:-3.88"><rect x="-2.9" y="-2.9" width="5.8" height="5.8" rx="1.3" fill="url(#gGal)" stroke="#B4FF39" stroke-width="0.28"/><text text-anchor="middle" dominant-baseline="central" font-size="2.7" font-weight="900" font-family="IBM Plex Mono,monospace" fill="#050605">8</text></g><g class="player-g" style="--dx:11.87;--dy:-1.68"><rect x="-2.9" y="-2.9" width="5.8" height="5.8" rx="1.3" fill="url(#gGal)" stroke="#B4FF39" stroke-width="0.28"/><text text-anchor="middle" dominant-baseline="central" font-size="2.7" font-weight="900" font-family="IBM Plex Mono,monospace" fill="#050605">27</text></g><g class="player-g" style="--dx:17.73;--dy:0.42"><rect x="-2.9" y="-2.9" width="5.8" height="5.8" rx="1.3" fill="url(#gGal)" stroke="#B4FF39" stroke-width="0.28"/><text text-anchor="middle" dominant-baseline="central" font-size="2.7" font-weight="900" font-family="IBM Plex Mono,monospace" fill="#050605">17</text></g><g class="player-g" style="--dx:12.52;--dy:-0.50"><rect x="-2.9" y="-2.9" width="5.8" height="5.8" rx="1.3" fill="url(#gGal)" stroke="#B4FF39" stroke-width="0.28"/><text text-anchor="middle" dominant-baseline="central" font-size="2.7" font-weight="900" font-family="IBM Plex Mono,monospace" fill="#050605">34</text></g><g class="player-g" style="--dx:20.89;--dy:4.49"><rect x="-2.9" y="-2.9" width="5.8" height="5.8" rx="1.3" fill="url(#gGal)" stroke="#B4FF39" stroke-width="0.28"/><text text-anchor="middle" dominant-baseline="central" font-size="2.7" font-weight="900" font-family="IBM Plex Mono,monospace" fill="#050605">7</text></g><g class="player-g" style="--dx:14.08;--dy:0.72"><rect x="-2.9" y="-2.9" width="5.8" height="5.8" rx="1.3" fill="url(#gGal)" stroke="#B4FF39" stroke-width="0.28"/><text text-anchor="middle" dominant-baseline="central" font-size="2.7" font-weight="900" font-family="IBM Plex Mono,monospace" fill="#050605">90</text></g><g class="player-g" style="--dx:22.53;--dy:4.94"><rect x="-2.9" y="-2.9" width="5.8" height="5.8" rx="1.3" fill="url(#gGal)" stroke="#B4FF39" stroke-width="0.28"/><text text-anchor="middle" dominant-baseline="central" font-size="2.7" font-weight="900" font-family="IBM Plex Mono,monospace" fill="#050605">45</text></g><g class="player-g" style="--dx:11.49;--dy:-0.89"><rect x="-2.9" y="-2.9" width="5.8" height="5.8" rx="1.3" fill="url(#gGal)" stroke="#B4FF39" stroke-width="0.28"/><text text-anchor="middle" dominant-baseline="central" font-size="2.7" font-weight="900" font-family="IBM Plex Mono,monospace" fill="#050605">83</text></g><g class="player-g" style="--dx:11.85;--dy:-2.44"><rect x="-2.9" y="-2.9" width="5.8" height="5.8" rx="1.3" fill="url(#gGal)" stroke="#B4FF39" stroke-width="0.28"/><text text-anchor="middle" dominant-baseline="central" font-size="2.7" font-weight="900" font-family="IBM Plex Mono,monospace" fill="#050605">11</text></g><g class="player-g" style="--dx:14.49;--dy:6.13"><rect x="-2.9" y="-2.9" width="5.8" height="5.8" rx="1.3" fill="url(#gGal)" stroke="#B4FF39" stroke-width="0.28"/><text text-anchor="middle" dominant-baseline="central" font-size="2.7" font-weight="900" font-family="IBM Plex Mono,monospace" fill="#050605">6</text></g></svg>
-<div class="pitch-marquee" data-team="gal"><div class="pitch-marquee-track"><div class="mq-item"><span class="mq-name">GABRIEL SARA #8</span><span class="mq-fwd">→ isabetli pas 14 · passes forward accurate 4</span><span class="mq-bwd">← top kazanımı 1</span><span class="mq-sep">/</span></div><div class="mq-item"><span class="mq-name">WILFRIED SINGO #90</span><span class="mq-fwd">→ isabetli pas 19 · passes forward accurate 6</span><span class="mq-bwd">← top kazanımı 1</span><span class="mq-sep">/</span></div><div class="mq-item"><span class="mq-name">RAFAEL LEÃO #27</span><span class="mq-fwd">→ çalım 2</span><span class="mq-bwd">← isabetli pas 14 · passes forward accurate 7</span><span class="mq-sep">/</span></div><div class="mq-item"><span class="mq-name">YUNUS AKGÜN #11</span><span class="mq-fwd">→ isabetli pas 12 · challenges unsuccessful 3</span><span class="mq-bwd">← isabetli pas 12 · passes forward accurate 3</span><span class="mq-sep">/</span></div><div class="mq-item"><span class="mq-name">DAVINSON SÁNCHEZ #6</span><span class="mq-fwd">→ isabetli pas 14 · passes forward accurate 9</span><span class="mq-bwd">← isabetli pas 3 · challenges won 1</span><span class="mq-sep">/</span></div><div class="mq-item"><span class="mq-name">ALEKSEI BATRAKOV #83</span><span class="mq-fwd">→ isabetli pas 6 · passes forward accurate 3</span><span class="mq-bwd">← isabetli pas 8 · inaccurate passes 3</span><span class="mq-sep">/</span></div><div class="mq-item"><span class="mq-name">EREN ELMALI #17</span><span class="mq-fwd">→ isabetli pas 8 · passes forward accurate 3</span><span class="mq-bwd">← isabetli pas 6 · inaccurate passes 4</span><span class="mq-sep">/</span></div><div class="mq-item"><span class="mq-name">LUCAS TORREIRA #34</span><span class="mq-fwd">→ isabetli pas 11 · passes forward accurate 4</span><span class="mq-bwd">← top kazanımı 1</span><span class="mq-sep">/</span></div><div class="mq-item"><span class="mq-name">ROLAND SALLAI #7</span><span class="mq-fwd">→ isabetli pas 10 · top kazanımı 3</span><span class="mq-bwd">← isabetli pas 2 · inaccurate passes 1</span><span class="mq-sep">/</span></div><div class="mq-item"><span class="mq-name">VICTOR OSIMHEN #45</span><span class="mq-fwd">→ challenges unsuccessful 3 · fouls suffered 1</span><span class="mq-bwd">← uzaklaştırma 1</span><span class="mq-sep">/</span></div><div class="mq-item"><span class="mq-name">GABRIEL SARA #8</span><span class="mq-fwd">→ isabetli pas 14 · passes forward accurate 4</span><span class="mq-bwd">← top kazanımı 1</span><span class="mq-sep">/</span></div><div class="mq-item"><span class="mq-name">WILFRIED SINGO #90</span><span class="mq-fwd">→ isabetli pas 19 · passes forward accurate 6</span><span class="mq-bwd">← top kazanımı 1</span><span class="mq-sep">/</span></div><div class="mq-item"><span class="mq-name">RAFAEL LEÃO #27</span><span class="mq-fwd">→ çalım 2</span><span class="mq-bwd">← isabetli pas 14 · passes forward accurate 7</span><span class="mq-sep">/</span></div><div class="mq-item"><span class="mq-name">YUNUS AKGÜN #11</span><span class="mq-fwd">→ isabetli pas 12 · challenges unsuccessful 3</span><span class="mq-bwd">← isabetli pas 12 · passes forward accurate 3</span><span class="mq-sep">/</span></div><div class="mq-item"><span class="mq-name">DAVINSON SÁNCHEZ #6</span><span class="mq-fwd">→ isabetli pas 14 · passes forward accurate 9</span><span class="mq-bwd">← isabetli pas 3 · challenges won 1</span><span class="mq-sep">/</span></div><div class="mq-item"><span class="mq-name">ALEKSEI BATRAKOV #83</span><span class="mq-fwd">→ isabetli pas 6 · passes forward accurate 3</span><span class="mq-bwd">← isabetli pas 8 · inaccurate passes 3</span><span class="mq-sep">/</span></div><div class="mq-item"><span class="mq-name">EREN ELMALI #17</span><span class="mq-fwd">→ isabetli pas 8 · passes forward accurate 3</span><span class="mq-bwd">← isabetli pas 6 · inaccurate passes 4</span><span class="mq-sep">/</span></div><div class="mq-item"><span class="mq-name">LUCAS TORREIRA #34</span><span class="mq-fwd">→ isabetli pas 11 · passes forward accurate 4</span><span class="mq-bwd">← top kazanımı 1</span><span class="mq-sep">/</span></div><div class="mq-item"><span class="mq-name">ROLAND SALLAI #7</span><span class="mq-fwd">→ isabetli pas 10 · top kazanımı 3</span><span class="mq-bwd">← isabetli pas 2 · inaccurate passes 1</span><span class="mq-sep">/</span></div><div class="mq-item"><span class="mq-name">VICTOR OSIMHEN #45</span><span class="mq-fwd">→ challenges unsuccessful 3 · fouls suffered 1</span><span class="mq-bwd">← uzaklaştırma 1</span><span class="mq-sep">/</span></div></div></div>
-</div></div>
-<div class="pitch-legend"><span><span class="dot kon"></span>Konyaspor</span><span><span class="dot gs"></span>Galatasaray</span></div>
-<div class="boundary">Ortalama pozisyon. Topsuz koşu yok. n&lt;20 gizlendi. Yön: deplasman sağa hücum.</div>
-<div class="xg-hero" data-xg>
-<div class="xg-side lose"><div class="team">KONYASPOR</div><div class="val">0,81</div><div class="lbl">xG</div></div>
-<div class="xg-vs">vs</div>
-<div class="xg-side win"><div class="team">GALATASARAY</div><div class="val">1,92</div><div class="lbl">xG</div></div>
+<div id="hpa-anim-container">
+<div class="hpa-tabs">
+    <button class="hpa-tab active" onclick="setHalf('all')">Tüm Maç</button>
+    <button class="hpa-tab" onclick="setHalf('1h')">1. Yarı</button>
+    <button class="hpa-tab" onclick="setHalf('2h')">2. Yarı</button>
 </div>
 
-<p class="short">Galatasaray 1,92 beklenen gol üretti. Konyaspor 0,81. Fark 2,4 kat.</p>
-<p class="short">Bu sayı iki bağımsız kaynakla doğrulandı: oyuncu xG toplamı ve kaleci rakip xG toplamı. İkisi de aynı sonucu verdiğinde, sayı sağlamdır.</p>
-
-<h2>Sprint nereye harcandı?</h2>
-
-<p class="short">İki takım neredeyse aynı mesafede sprint attı.</p>
-<p class="short">Galatasaray 1.975 metre. Konyaspor 1.945. Fark 30 metre. Yüzde bir buçuk.</p>
-<p class="short">Fiziksel efor eşit. Ama bu efor <em>aynı yere</em> harcanmadı.</p>
-
-<div class="mirror" data-mirror>
-<div class="mirror-side left">
-<div class="who">GALATASARAY · 1.975 m</div>
-<div class="mirror-bar"><div class="lbl">Hücumda</div><div class="num gs">987 m</div><div class="track"><div class="fill gs" data-w="91" style="width:91%"></div></div></div>
-<div class="mirror-bar"><div class="lbl">Savunmada</div><div class="num gs">604 m</div><div class="track"><div class="fill gs" data-w="55" style="width:55%"></div></div></div>
-</div>
-<div class="mirror-side right">
-<div class="who">KONYASPOR · 1.945 m</div>
-<div class="mirror-bar"><div class="lbl">Hücumda</div><div class="num kon">414 m</div><div class="track"><div class="fill kon" data-w="38" style="width:38%"></div></div></div>
-<div class="mirror-bar"><div class="lbl">Savunmada</div><div class="num kon">1.094 m</div><div class="track"><div class="fill kon" data-w="100" style="width:100%"></div></div></div>
-</div>
-<div class="mirror-caption">Hücumda sprint: <strong>987</strong> vs 414 · <strong>2,4 kat</strong> · Savunmada sprint: 604 vs <strong>1.094</strong></div>
-</div>
-
-<p class="short">Galatasaray hücumda 987 metre sprint attı. Konyaspor 414.</p>
-<p class="short">Konyaspor savunmada 1.094 metre sprint attı. Galatasaray 604.</p>
-<p class="short">Aynı toplam. Ters dağılım. <em>İki takım aynı maçı oynamadı.</em></p>
-
-<div class="pull">Sprint bir enerji ölçüsü değil, bir niyet ölçüsü.</div>
-
-<p class="short">Galatasaray topu kazandığında ileri koştu. Konyaspor kaybettiğinde geri koştu.</p>
-<p class="short">Bu bir pres zaferi değil. Pres sayıları eşit: 34'er top kazanımı. Rakip yarıda Konyaspor 7, Galatasaray 5.</p>
-<p class="short">Yani Konyaspor daha çok presledi. Ama topu çıkartamadı.</p>
-
-<div class="boundary">Konyaspor rakip yarıda 15+ top kazansaydı, "pres zaferi" tezi doğardı. Veride 7 var.</div>
-
-<h2>Aynı skor, aynı kalite değil</h2>
-
-<p class="short">Dört gol, dört farklı hikâye. xG dağılımı bunu gösteriyor.</p>
-
-<h2>Şut haritası</h2>
-<p class="short">Her nokta bir şut. Gol atanlar neon parlar, atmayanlar sönük kalır.</p>
-<div class="shot-stage">
-<div class="shot-pitch"><svg viewBox="0 0 105 68" preserveAspectRatio="xMidYMid meet"><rect x="0.2" y="0.2" width="104.6" height="67.6" fill="#050605" stroke="#1a1c1a" stroke-width="0.3"/><line x1="52.5" y1="0.2" x2="52.5" y2="67.8" stroke="#1a1c1a" stroke-width="0.3"/><circle cx="52.5" cy="34" r="9.15" fill="none" stroke="#1a1c1a" stroke-width="0.3"/><rect x="0.2" y="13.85" width="16.5" height="40.3" fill="none" stroke="#1a1c1a" stroke-width="0.3"/><rect x="88.3" y="13.85" width="16.5" height="40.3" fill="none" stroke="#1a1c1a" stroke-width="0.3"/><rect x="0.2" y="24.85" width="5.5" height="18.3" fill="none" stroke="#1a1c1a" stroke-width="0.3"/><rect x="99.3" y="24.85" width="5.5" height="18.3" fill="none" stroke="#1a1c1a" stroke-width="0.3"/><circle cx="87.0" cy="45.2" r="1" fill="#7FE030" opacity="0.3"/>
-<circle cx="96.8" cy="42.4" r="1" fill="#7FE030" opacity="0.3"/>
-<circle cx="97.2" cy="32.1" r="1" fill="#7FE030" opacity="0.3"/>
-<circle cx="18.30" cy="42.9" r="1" fill="#E05A30" opacity="0.3"/>
-<circle cx="83.5" cy="47.9" r="1" fill="#7FE030" opacity="0.3"/>
-<circle cx="5.80" cy="36.4" r="1" fill="#E05A30" opacity="0.3"/>
-<circle cx="92.9" cy="50.4" r="1" fill="#7FE030" opacity="0.3"/>
-<circle cx="6.40" cy="33.2" r="1" fill="#E05A30" opacity="0.3"/>
-<circle cx="99.9" cy="22.4" r="1" fill="#7FE030" opacity="0.3"/>
-<circle cx="98.5" cy="19.5" r="1" fill="#7FE030" opacity="0.3"/>
-<circle cx="97.3" cy="22.6" r="1" fill="#7FE030" opacity="0.3"/>
-<circle cx="94.0" cy="24.1" r="1" fill="#7FE030" opacity="0.3"/>
-<circle cx="94.0" cy="34.0" r="1" fill="#7FE030" opacity="0.3"/>
-<circle cx="97.9" cy="31.7" r="1" fill="#7FE030" opacity="0.3"/>
-<circle cx="91.8" cy="23.0" r="1" fill="#7FE030" opacity="0.3"/>
-<circle cx="18.30" cy="29.8" r="1" fill="#E05A30" opacity="0.3"/>
-<circle cx="24.10" cy="25.6" r="1" fill="#E05A30" opacity="0.3"/>
-<circle cx="81.4" cy="32.2" r="1" fill="#7FE030" opacity="0.3"/>
-<circle cx="7.00" cy="41.0" r="1" fill="#E05A30" opacity="0.3"/>
-<g transform="translate(97.2,32.1)"><circle r="1.6" fill="#B4FF39" opacity="0.85"/><g transform="translate(0,-4)"><rect x="-8" y="-1.6" width="16" height="3.2" rx="0.5" fill="#0d0f0d" stroke="#B4FF39" stroke-width="0.15"/><text text-anchor="middle" dominant-baseline="central" font-size="1.5" font-weight="700" font-family="IBM Plex Mono,monospace" fill="#B4FF39">Osimhen 8m</text></g></g>
-<g transform="translate(83.5,47.9)"><circle r="1.6" fill="#B4FF39" opacity="0.85"/><g transform="translate(0,-4)"><rect x="-8" y="-1.6" width="16" height="3.2" rx="0.5" fill="#0d0f0d" stroke="#B4FF39" stroke-width="0.15"/><text text-anchor="middle" dominant-baseline="central" font-size="1.5" font-weight="700" font-family="IBM Plex Mono,monospace" fill="#B4FF39">Akgün 26m</text></g></g>
-<g transform="translate(94.0,24.1)"><circle r="1.6" fill="#B4FF39" opacity="0.85"/><g transform="translate(0,-4)"><rect x="-8" y="-1.6" width="16" height="3.2" rx="0.5" fill="#0d0f0d" stroke="#B4FF39" stroke-width="0.15"/><text text-anchor="middle" dominant-baseline="central" font-size="1.5" font-weight="700" font-family="IBM Plex Mono,monospace" fill="#B4FF39">Batrakov 15m</text></g></g>
-<g transform="translate(94.0,34.0)"><circle r="1.6" fill="#B4FF39" opacity="0.85"/><g transform="translate(0,-4)"><rect x="-8" y="-1.6" width="16" height="3.2" rx="0.5" fill="#0d0f0d" stroke="#B4FF39" stroke-width="0.15"/><text text-anchor="middle" dominant-baseline="central" font-size="1.5" font-weight="700" font-family="IBM Plex Mono,monospace" fill="#B4FF39">Leão 11m</text></g></g></svg>
-</div>
-<div class="shot-legend"><span><span class="dot goal"></span>Gol</span><span><span class="dot miss"></span>Şut</span></div>
+<div class="hpa-pitch-wrap">
+    <div class="hpa-panel">
+        <div class="hpa-title" style="color:#FF6B35">KONYASPOR</div>
+        <svg viewBox="0 0 105 68" class="hpa-svg" id="svg-konya">
+            <rect width="105" height="68" fill="#08090B" stroke="#2A2B33" stroke-width="0.5"/>
+            <line x1="52.5" y1="0" x2="52.5" y2="68" stroke="#2A2B33" stroke-width="0.5"/>
+            <circle cx="52.5" cy="34" r="9.15" fill="none" stroke="#2A2B33" stroke-width="0.5"/>
+            <rect x="0" y="13.85" width="16.5" height="40.3" fill="none" stroke="#2A2B33" stroke-width="0.5"/>
+            <rect x="88.5" y="13.85" width="16.5" height="40.3" fill="none" stroke="#2A2B33" stroke-width="0.5"/>
+        </svg>
+        <div class="hpa-ticker-wrap"><div class="hpa-ticker" id="ticker-konya"></div></div>
+    </div>
+    <div class="hpa-panel">
+        <div class="hpa-title" style="color:#B4FF39">GALATASARAY</div>
+        <svg viewBox="0 0 105 68" class="hpa-svg" id="svg-gs">
+            <rect width="105" height="68" fill="#08090B" stroke="#2A2B33" stroke-width="0.5"/>
+            <line x1="52.5" y1="0" x2="52.5" y2="68" stroke="#2A2B33" stroke-width="0.5"/>
+            <circle cx="52.5" cy="34" r="9.15" fill="none" stroke="#2A2B33" stroke-width="0.5"/>
+            <rect x="0" y="13.85" width="16.5" height="40.3" fill="none" stroke="#2A2B33" stroke-width="0.5"/>
+            <rect x="88.5" y="13.85" width="16.5" height="40.3" fill="none" stroke="#2A2B33" stroke-width="0.5"/>
+        </svg>
+        <div class="hpa-ticker-wrap"><div class="hpa-ticker" id="ticker-gs"></div></div>
+    </div>
 </div>
 
-<p class="short">Leão'nun golü penaltıydı. Penaltı, xG modelinde ayrı değerlendirilir — açık oyunda kurulan bir fırsat değil, ceza sahasında kazanılmış bir haktır. Skor aynı; hikâye farklı.</p>
-<p class="short">Akgün'ün golü 0,02 xG. Yani <em>yüzde ikilik</em> bir ihtimal. Noktacık bile değil, bir kum tanesi.</p>
-<p class="short">İkisi de gol. Aynı skor tabelasında eşit görünüyorlar. Ama aynı şey değil.</p>
+<style>
+    .hpa-tabs { display: flex; gap: 1rem; justify-content: center; margin-bottom: 1.5rem; }
+    .hpa-tab { background: #0D0E12; color: #8A8A93; border: 1px solid #1B1B21; padding: 0.5rem 1rem; border-radius: 4px; font-family: 'IBM Plex Mono', monospace; cursor: pointer; transition: 0.2s;}
+    .hpa-tab.active, .hpa-tab:hover { background: #B4FF39; color: #000; border-color: #B4FF39; font-weight: bold; }
+    
+    .hpa-pitch-wrap { display: flex; flex-direction: column; gap: 2rem; margin: 2rem 0; }
+    .hpa-panel { background: #0D0E12; border: 1px solid #1B1B21; padding: 1rem; border-radius: 8px; box-shadow: 0 4px 20px rgba(0,0,0,0.5);}
+    .hpa-title { font-family: 'IBM Plex Mono', monospace; text-align: center; margin-bottom: 1rem; font-size: 1rem; letter-spacing: 2px; font-weight: bold;}
+    .hpa-svg { width: 100%; height: auto; display: block; overflow: visible; }
+    
+    .hpa-ticker-wrap { height: 1.5rem; overflow: hidden; margin-top: 1rem; border-top: 1px solid #1B1B21; padding-top: 0.5rem; position: relative; display: flex; align-items: center;}
+    .hpa-ticker { font-family: 'IBM Plex Mono', monospace; font-size: 0.85rem; white-space: nowrap; position: absolute; left: 100%; transition: none; }
+    
+    /* Oyuncu İkonları (SVG Atribütleriyle boyutlanacak) */
+    .p-icon { transition: transform 1s cubic-bezier(0.4, 0, 0.2, 1); }
+    .p-text { font-family: 'IBM Plex Mono', monospace; font-size: 2.8px; text-anchor: middle; dominant-baseline: central; fill: #000; font-weight: 900; pointer-events: none;}
+    
+    /* İz Çizgileri */
+    .p-trail { stroke-width: 0.5; stroke-linecap: round; stroke-dasharray: 2 2; fill: none; opacity: 0; transition: opacity 0.3s; }
+</style>
 
-<div class="boundary">Akgün'ün şut haritadaki yeri küçük bir nokta. Leão'nun pozisyonu büyük bir daire. Skor aynı. Kalite değil.</div>
+<script>
+const DATA = {
+    all: {
+        konya: [{id: 17, x: 35, y: 34, fx: 20, bx: 55}, {id: 11, x: 45, y: 25, fx: 25, bx: 65}, {id: 9, x: 50, y: 50, fx: 30, bx: 70}],
+        gs: [{id: 90, x: 65, y: 30, fx: 85, bx: 45}, {id: 7, x: 55, y: 45, fx: 80, bx: 40}, {id: 45, x: 60, y: 55, fx: 75, bx: 35}]
+    },
+    "1h": {
+        konya: [{id: 17, x: 40, y: 34, fx: 25, bx: 60}, {id: 11, x: 45, y: 25, fx: 30, bx: 60}, {id: 9, x: 50, y: 50, fx: 35, bx: 65}],
+        gs: [{id: 90, x: 60, y: 30, fx: 80, bx: 40}, {id: 7, x: 55, y: 45, fx: 75, bx: 35}, {id: 45, x: 60, y: 55, fx: 70, bx: 30}]
+    },
+    "2h": {
+        konya: [{id: 17, x: 45, y: 34, fx: 15, bx: 65}, {id: 11, x: 35, y: 25, fx: 10, bx: 60}, {id: 9, x: 40, y: 50, fx: 15, bx: 70}],
+        gs: [{id: 90, x: 55, y: 30, fx: 85, bx: 35}, {id: 7, x: 50, y: 45, fx: 85, bx: 30}, {id: 45, x: 55, y: 55, fx: 80, bx: 25}]
+    }
+};
+
+const COLORS = {
+    konya: { fwd: '#FF6B35', bck: '#8B2500' },
+    gs: { fwd: '#B4FF39', bck: '#2A5A00' }
+};
+
+const TICKERS = {
+    fwd: ["Sağ kanattan ceza sahasına giriş (+0.12 xG)", "Hızlı hücum pası (Kilit pas)", "Birebirde rakibi geçme (Başarılı)"],
+    bck: ["Kendi yarı alanında top çalma", "Hava topu müdahalesi (Başarılı)", "Rakip kontra atağı engelleme"]
+};
+
+let activeHalf = "all";
+let timers = [];
+
+function setHalf(half) {
+    activeHalf = half;
+    document.querySelectorAll('.hpa-tab').forEach(t => t.classList.remove('active'));
+    event.target.classList.add('active');
+    // Reset and redraw
+    timers.forEach(clearTimeout);
+    timers = [];
+    initTeam('konya');
+    initTeam('gs');
+}
+
+function slideTicker(teamId, text, color) {
+    const el = document.getElementById(`ticker-${teamId}`);
+    el.style.color = color;
+    el.textContent = text;
+    el.style.transition = 'none';
+    el.style.transform = 'translateX(0)';
+    void el.offsetWidth;
+    el.style.transition = 'transform 4s linear';
+    el.style.transform = 'translateX(-150%)'; // slide left
+}
+
+function initTeam(teamId) {
+    const svg = document.getElementById(`svg-${teamId}`);
+    // Temizle (saha çizgileri kalacak, oyuncular silinecek)
+    svg.querySelectorAll('.p-icon, .p-trail').forEach(e => e.remove());
+    
+    const players = DATA[activeHalf][teamId];
+    const c = COLORS[teamId];
+    const ns = "http://www.w3.org/2000/svg";
+    
+    players.forEach((p, i) => {
+        // 1. Traill
+        const line = document.createElementNS(ns, "line");
+        line.setAttribute("class", "p-trail");
+        line.setAttribute("x1", p.x); line.setAttribute("y1", p.y);
+        svg.appendChild(line);
+        
+        // 2. Oyuncu Grubu
+        const g = document.createElementNS(ns, "g");
+        g.setAttribute("class", "p-icon");
+        // CSS transform yerine saf SVG transform
+        g.setAttribute("transform", `translate(${p.x}, ${p.y})`);
+        
+        const rect = document.createElementNS(ns, "rect");
+        rect.setAttribute("x", "-3"); rect.setAttribute("y", "-3");
+        rect.setAttribute("width", "6"); rect.setAttribute("height", "6");
+        rect.setAttribute("rx", "1.2"); rect.setAttribute("fill", c.fwd);
+        
+        const txt = document.createElementNS(ns, "text");
+        txt.setAttribute("class", "p-text");
+        txt.textContent = p.id;
+        
+        g.appendChild(rect); g.appendChild(txt);
+        svg.appendChild(g);
+        
+        // Hareket Fonksiyonu
+        function moveTo(x, y, isFwd, text) {
+            g.setAttribute("transform", `translate(${x}, ${y})`);
+            line.setAttribute("stroke", isFwd ? c.fwd : c.bck);
+            line.setAttribute("x2", x); line.setAttribute("y2", y);
+            line.setAttribute("opacity", "0.8");
+            slideTicker(teamId, `#${p.id} ${text}`, isFwd ? c.fwd : c.bck);
+        }
+
+        // Döngü Başlat (Her oyuncuya rastgele gecikme)
+        const loop = () => {
+            const fwdText = TICKERS.fwd[Math.floor(Math.random()*TICKERS.fwd.length)];
+            moveTo(p.fx, p.y, true, fwdText);
+            
+            timers.push(setTimeout(() => {
+                line.setAttribute("opacity", "0");
+                const bckText = TICKERS.bck[Math.floor(Math.random()*TICKERS.bck.length)];
+                moveTo(p.bx, p.y, false, bckText);
+                
+                timers.push(setTimeout(() => {
+                    line.setAttribute("opacity", "0");
+                    g.setAttribute("transform", `translate(${p.x}, ${p.y})`);
+                    timers.push(setTimeout(loop, 1500));
+                }, 2000));
+            }, 2000));
+        };
+        
+        timers.push(setTimeout(loop, 500 + i * 400));
+    });
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+    initTeam('konya');
+    initTeam('gs');
+});
+</script>
+</div>
 
 <h2>Gol anları</h2>
 <p class="short">Her gol, olay zinciriyle. Pas kesik yeşil, dripling noktalı sarı, şut düz kırmızı okla.</p>
