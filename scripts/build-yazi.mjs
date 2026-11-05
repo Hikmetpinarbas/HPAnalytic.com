@@ -1,13 +1,10 @@
 import { readFileSync, readdirSync, writeFileSync, mkdirSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { marked } from 'marked';
-import * as esbuild from 'esbuild';
 
 const SRC = resolve('content/yazilar');
 const OUT = resolve('public/yazi');
 mkdirSync(OUT, { recursive: true });
-await esbuild.build({ entryPoints: ['src/viz/embed.js'], bundle: true, format: 'esm', outfile: 'public/assets/js/viz-embed.js', minify: true, target: 'es2020', logLevel: 'silent' });
-console.log('OK viz-embed.js bundle');
 
 const TYPE_LABEL = { mac: 'Maç Dosyası', metrik: 'Metrik', portre: 'Portre', scouting: 'Scouting', kultur: 'Kültür', articles: 'Analiz', portraits: 'Portre' };
 const TYPE_COLOR = { mac: '#B4FF39', metrik: '#D4A548', portre: '#FF6B35', scouting: '#6B9FE8', kultur: '#9B7BB8', articles: '#B4FF39', portraits: '#FF6B35' };
@@ -365,7 +362,7 @@ if (tocLinks.length && headings.length) {
 </script>
 <script src="/page-transition.js" defer></script>
 <script src="/extras2.js" defer></script>
-<script type="module" src="/assets/js/viz-embed.js"></script>
+<script type="module" src="/assets/js/article-viz.js"></script>
 <div id="viz-and-stars-container"></div>
 <!-- VIZ_SLOT -->
 <!-- STARS_SLOT -->
