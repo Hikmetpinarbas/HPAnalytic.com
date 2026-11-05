@@ -1,0 +1,2205 @@
+{
+  "nodes": {
+    "VfB Stuttgart|Bilal El Khannouss": {
+      "team": "VfB Stuttgart",
+      "name": "Bilal El Khannouss",
+      "x": 47.52,
+      "y": 36.0,
+      "passes": 72,
+      "minutes": 97,
+      "role": "starter",
+      "subbed_out_at": null,
+      "came_on_at": null,
+      "position": "CAM"
+    },
+    "VfB Stuttgart|Ramon Hendriks": {
+      "team": "VfB Stuttgart",
+      "name": "Ramon Hendriks",
+      "x": 63.36,
+      "y": 43.87,
+      "passes": 69,
+      "minutes": 97,
+      "role": "starter",
+      "subbed_out_at": null,
+      "came_on_at": null,
+      "position": "RCB"
+    },
+    "VfB Stuttgart|Ermedin Demirovic": {
+      "team": "VfB Stuttgart",
+      "name": "Ermedin Demirovic",
+      "x": 51.36,
+      "y": 30.79,
+      "passes": 10,
+      "minutes": 77,
+      "role": "starter",
+      "subbed_out_at": 78,
+      "came_on_at": null,
+      "position": "LCF"
+    },
+    "Galatasaray|Roland Sallai": {
+      "team": "Galatasaray",
+      "name": "Roland Sallai",
+      "x": 46.2,
+      "y": 19.72,
+      "passes": 41,
+      "minutes": 70,
+      "role": "starter",
+      "subbed_out_at": 71,
+      "came_on_at": null,
+      "position": "RB"
+    },
+    "VfB Stuttgart|Atakan Karazor": {
+      "team": "VfB Stuttgart",
+      "name": "Atakan Karazor",
+      "x": 61.89,
+      "y": 20.93,
+      "passes": 4,
+      "minutes": 17,
+      "role": "sub",
+      "subbed_out_at": null,
+      "came_on_at": 80,
+      "position": "LCDM"
+    },
+    "VfB Stuttgart|Maximilian Mittelstädt": {
+      "team": "VfB Stuttgart",
+      "name": "Maximilian Mittelstädt",
+      "x": 55.19,
+      "y": 19.65,
+      "passes": 104,
+      "minutes": 97,
+      "role": "starter",
+      "subbed_out_at": null,
+      "came_on_at": null,
+      "position": "LCB"
+    },
+    "Galatasaray|Davinson Sánchez": {
+      "team": "Galatasaray",
+      "name": "Davinson Sánchez",
+      "x": 43.0,
+      "y": 26.09,
+      "passes": 50,
+      "minutes": 97,
+      "role": "starter",
+      "subbed_out_at": null,
+      "came_on_at": null,
+      "position": "RCB"
+    },
+    "Galatasaray|Mario Lemina": {
+      "team": "Galatasaray",
+      "name": "Mario Lemina",
+      "x": 41.27,
+      "y": 40.68,
+      "passes": 49,
+      "minutes": 85,
+      "role": "starter",
+      "subbed_out_at": 86,
+      "came_on_at": null,
+      "position": "LCDM"
+    },
+    "Galatasaray|Lucas Torreira": {
+      "team": "Galatasaray",
+      "name": "Lucas Torreira",
+      "x": 48.62,
+      "y": 36.54,
+      "passes": 50,
+      "minutes": 97,
+      "role": "starter",
+      "subbed_out_at": null,
+      "came_on_at": null,
+      "position": "RCDM"
+    },
+    "Galatasaray|Yunus Akgün": {
+      "team": "Galatasaray",
+      "name": "Yunus Akgün",
+      "x": 61.16,
+      "y": 22.13,
+      "passes": 66,
+      "minutes": 97,
+      "role": "starter",
+      "subbed_out_at": null,
+      "came_on_at": null,
+      "position": "RAM"
+    },
+    "VfB Stuttgart|Chris Führich": {
+      "team": "VfB Stuttgart",
+      "name": "Chris Führich",
+      "x": 40.77,
+      "y": 20.23,
+      "passes": 46,
+      "minutes": 85,
+      "role": "starter",
+      "subbed_out_at": 85,
+      "came_on_at": null,
+      "position": "LWB"
+    },
+    "Galatasaray|Barış Alper Yılmaz": {
+      "team": "Galatasaray",
+      "name": "Barış Alper Yılmaz",
+      "x": 54.29,
+      "y": 36.29,
+      "passes": 24,
+      "minutes": 70,
+      "role": "starter",
+      "subbed_out_at": 71,
+      "came_on_at": null,
+      "position": "LAM"
+    },
+    "Galatasaray|Aleksei Batrakov": {
+      "team": "Galatasaray",
+      "name": "Aleksei Batrakov",
+      "x": 59.34,
+      "y": 36.77,
+      "passes": 52,
+      "minutes": 80,
+      "role": "starter",
+      "subbed_out_at": 80,
+      "came_on_at": null,
+      "position": "CAM"
+    },
+    "Galatasaray|Ismail Jakobs": {
+      "team": "Galatasaray",
+      "name": "Ismail Jakobs",
+      "x": 49.42,
+      "y": 53.74,
+      "passes": 48,
+      "minutes": 80,
+      "role": "starter",
+      "subbed_out_at": 80,
+      "came_on_at": null,
+      "position": "LB"
+    },
+    "VfB Stuttgart|Deniz Undav": {
+      "team": "VfB Stuttgart",
+      "name": "Deniz Undav",
+      "x": 48.01,
+      "y": 30.24,
+      "passes": 47,
+      "minutes": 97,
+      "role": "starter",
+      "subbed_out_at": null,
+      "came_on_at": null,
+      "position": "RCF"
+    },
+    "VfB Stuttgart|Jamie Leweling": {
+      "team": "VfB Stuttgart",
+      "name": "Jamie Leweling",
+      "x": 41.15,
+      "y": 51.13,
+      "passes": 15,
+      "minutes": 77,
+      "role": "starter",
+      "subbed_out_at": 78,
+      "came_on_at": null,
+      "position": "RWB"
+    },
+    "VfB Stuttgart|Jeff Chabot": {
+      "team": "VfB Stuttgart",
+      "name": "Jeff Chabot",
+      "x": 66.06,
+      "y": 31.28,
+      "passes": 52,
+      "minutes": 97,
+      "role": "starter",
+      "subbed_out_at": null,
+      "came_on_at": null,
+      "position": "CB"
+    },
+    "Galatasaray|Victor Osimhen": {
+      "team": "Galatasaray",
+      "name": "Victor Osimhen",
+      "x": 58.67,
+      "y": 34.86,
+      "passes": 20,
+      "minutes": 97,
+      "role": "starter",
+      "subbed_out_at": null,
+      "came_on_at": null,
+      "position": "CF"
+    },
+    "Galatasaray|Abdülkerim Bardakcı": {
+      "team": "Galatasaray",
+      "name": "Abdülkerim Bardakcı",
+      "x": 38.68,
+      "y": 44.63,
+      "passes": 64,
+      "minutes": 97,
+      "role": "starter",
+      "subbed_out_at": null,
+      "came_on_at": null,
+      "position": "LCB"
+    },
+    "VfB Stuttgart|Grischa Prömel": {
+      "team": "VfB Stuttgart",
+      "name": "Grischa Prömel",
+      "x": 51.86,
+      "y": 35.01,
+      "passes": 34,
+      "minutes": 77,
+      "role": "starter",
+      "subbed_out_at": 80,
+      "came_on_at": null,
+      "position": "LCDM"
+    },
+    "VfB Stuttgart|Yanik Spalt": {
+      "team": "VfB Stuttgart",
+      "name": "Yanik Spalt",
+      "x": 48.94,
+      "y": 37.05,
+      "passes": 39,
+      "minutes": 79,
+      "role": "starter",
+      "subbed_out_at": 78,
+      "came_on_at": null,
+      "position": "RCDM"
+    },
+    "Galatasaray|Rafael Leão": {
+      "team": "Galatasaray",
+      "name": "Rafael Leão",
+      "x": 56.96,
+      "y": 51.39,
+      "passes": 13,
+      "minutes": 26,
+      "role": "sub",
+      "subbed_out_at": null,
+      "came_on_at": 71,
+      "position": "LAM"
+    },
+    "Galatasaray|Wilfried Singo": {
+      "team": "Galatasaray",
+      "name": "Wilfried Singo",
+      "x": 53.97,
+      "y": 9.91,
+      "passes": 15,
+      "minutes": 26,
+      "role": "sub",
+      "subbed_out_at": null,
+      "came_on_at": 71,
+      "position": "RB"
+    },
+    "VfB Stuttgart|Dzenan Pejcinovic": {
+      "team": "VfB Stuttgart",
+      "name": "Dzenan Pejcinovic",
+      "x": 53.35,
+      "y": 37.23,
+      "passes": 8,
+      "minutes": 19,
+      "role": "sub",
+      "subbed_out_at": null,
+      "came_on_at": 78,
+      "position": "RCF"
+    },
+    "VfB Stuttgart|Nikolas Nartey": {
+      "team": "VfB Stuttgart",
+      "name": "Nikolas Nartey",
+      "x": 51.2,
+      "y": 30.14,
+      "passes": 11,
+      "minutes": 19,
+      "role": "sub",
+      "subbed_out_at": null,
+      "came_on_at": 78,
+      "position": "LCDM"
+    },
+    "VfB Stuttgart|Lorenz Assignon": {
+      "team": "VfB Stuttgart",
+      "name": "Lorenz Assignon",
+      "x": 49.63,
+      "y": 54.83,
+      "passes": 16,
+      "minutes": 19,
+      "role": "sub",
+      "subbed_out_at": null,
+      "came_on_at": 78,
+      "position": "RWB"
+    },
+    "Galatasaray|Eren Elmalı": {
+      "team": "Galatasaray",
+      "name": "Eren Elmalı",
+      "x": 40.43,
+      "y": 54.78,
+      "passes": 20,
+      "minutes": 17,
+      "role": "sub",
+      "subbed_out_at": null,
+      "came_on_at": 80,
+      "position": "LB"
+    },
+    "Galatasaray|Leroy Sané": {
+      "team": "Galatasaray",
+      "name": "Leroy Sané",
+      "x": 49.94,
+      "y": 21.93,
+      "passes": 7,
+      "minutes": 17,
+      "role": "sub",
+      "subbed_out_at": null,
+      "came_on_at": 80,
+      "position": "RAM"
+    },
+    "Galatasaray|Gabriel Sara": {
+      "team": "Galatasaray",
+      "name": "Gabriel Sara",
+      "x": 57.11,
+      "y": 42.08,
+      "passes": 3,
+      "minutes": 11,
+      "role": "sub",
+      "subbed_out_at": null,
+      "came_on_at": 86,
+      "position": "LCDM"
+    },
+    "VfB Stuttgart|Tiago Tomás": {
+      "team": "VfB Stuttgart",
+      "name": "Tiago Tomás",
+      "x": 47.91,
+      "y": 31.01,
+      "passes": 0,
+      "minutes": 12,
+      "role": "sub",
+      "subbed_out_at": null,
+      "came_on_at": 85,
+      "position": "LWB"
+    },
+    "Galatasaray|Uğurcan Çakır": {
+      "team": "Galatasaray",
+      "name": "Uğurcan Çakır",
+      "x": 5,
+      "y": 34,
+      "passes": 47,
+      "minutes": 97,
+      "role": "starter",
+      "subbed_out_at": null,
+      "came_on_at": null,
+      "position": "GK",
+      "is_gk": true
+    },
+    "VfB Stuttgart|Fabian Bredlow": {
+      "team": "VfB Stuttgart",
+      "name": "Fabian Bredlow",
+      "x": 5,
+      "y": 34,
+      "passes": 32,
+      "minutes": 97,
+      "role": "starter",
+      "subbed_out_at": null,
+      "came_on_at": null,
+      "position": "GK",
+      "is_gk": true
+    }
+  },
+  "edges": [
+    {
+      "from": "VfB Stuttgart|Jamie Leweling",
+      "to": "VfB Stuttgart|Ermedin Demirovic",
+      "weight": 6,
+      "correlation_pct": 48.1
+    },
+    {
+      "from": "VfB Stuttgart|Maximilian Mittelstädt",
+      "to": "VfB Stuttgart|Chris Führich",
+      "weight": 28,
+      "correlation_pct": 37.5
+    },
+    {
+      "from": "VfB Stuttgart|Ramon Hendriks",
+      "to": "VfB Stuttgart|Ermedin Demirovic",
+      "weight": 14,
+      "correlation_pct": 35.8
+    },
+    {
+      "from": "VfB Stuttgart|Grischa Prömel",
+      "to": "VfB Stuttgart|Ermedin Demirovic",
+      "weight": 7,
+      "correlation_pct": 32.6
+    },
+    {
+      "from": "Galatasaray|Eren Elmalı",
+      "to": "Galatasaray|Rafael Leão",
+      "weight": 5,
+      "correlation_pct": 31.4
+    },
+    {
+      "from": "VfB Stuttgart|Bilal El Khannouss",
+      "to": "VfB Stuttgart|Jamie Leweling",
+      "weight": 13,
+      "correlation_pct": 30.3
+    },
+    {
+      "from": "VfB Stuttgart|Grischa Prömel",
+      "to": "VfB Stuttgart|Jamie Leweling",
+      "weight": 7,
+      "correlation_pct": 29.4
+    },
+    {
+      "from": "VfB Stuttgart|Lorenz Assignon",
+      "to": "VfB Stuttgart|Dzenan Pejcinovic",
+      "weight": 3,
+      "correlation_pct": 26.9
+    },
+    {
+      "from": "VfB Stuttgart|Dzenan Pejcinovic",
+      "to": "VfB Stuttgart|Lorenz Assignon",
+      "weight": 3,
+      "correlation_pct": 26.9
+    },
+    {
+      "from": "VfB Stuttgart|Deniz Undav",
+      "to": "VfB Stuttgart|Chris Führich",
+      "weight": 12,
+      "correlation_pct": 26.3
+    },
+    {
+      "from": "Galatasaray|Abdülkerim Bardakcı",
+      "to": "Galatasaray|Ismail Jakobs",
+      "weight": 14,
+      "correlation_pct": 25.4
+    },
+    {
+      "from": "VfB Stuttgart|Jeff Chabot",
+      "to": "VfB Stuttgart|Chris Führich",
+      "weight": 12,
+      "correlation_pct": 25.0
+    },
+    {
+      "from": "Galatasaray|Mario Lemina",
+      "to": "Galatasaray|Aleksei Batrakov",
+      "weight": 12,
+      "correlation_pct": 24.3
+    },
+    {
+      "from": "VfB Stuttgart|Bilal El Khannouss",
+      "to": "VfB Stuttgart|Chris Führich",
+      "weight": 14,
+      "correlation_pct": 24.2
+    },
+    {
+      "from": "VfB Stuttgart|Ramon Hendriks",
+      "to": "VfB Stuttgart|Bilal El Khannouss",
+      "weight": 16,
+      "correlation_pct": 23.1
+    },
+    {
+      "from": "Galatasaray|Aleksei Batrakov",
+      "to": "Galatasaray|Victor Osimhen",
+      "weight": 8,
+      "correlation_pct": 23.0
+    },
+    {
+      "from": "Galatasaray|Davinson Sánchez",
+      "to": "Galatasaray|Yunus Akgün",
+      "weight": 13,
+      "correlation_pct": 22.9
+    },
+    {
+      "from": "Galatasaray|Yunus Akgün",
+      "to": "Galatasaray|Victor Osimhen",
+      "weight": 9,
+      "correlation_pct": 21.6
+    },
+    {
+      "from": "VfB Stuttgart|Yanik Spalt",
+      "to": "VfB Stuttgart|Nikolas Nartey",
+      "weight": 5,
+      "correlation_pct": 21.2
+    },
+    {
+      "from": "Galatasaray|Ismail Jakobs",
+      "to": "Galatasaray|Barış Alper Yılmaz",
+      "weight": 7,
+      "correlation_pct": 20.3
+    },
+    {
+      "from": "Galatasaray|Lucas Torreira",
+      "to": "Galatasaray|Aleksei Batrakov",
+      "weight": 10,
+      "correlation_pct": 20.2
+    },
+    {
+      "from": "VfB Stuttgart|Maximilian Mittelstädt",
+      "to": "VfB Stuttgart|Ermedin Demirovic",
+      "weight": 11,
+      "correlation_pct": 19.8
+    },
+    {
+      "from": "Galatasaray|Davinson Sánchez",
+      "to": "Galatasaray|Barış Alper Yılmaz",
+      "weight": 7,
+      "correlation_pct": 19.7
+    },
+    {
+      "from": "Galatasaray|Barış Alper Yılmaz",
+      "to": "Galatasaray|Aleksei Batrakov",
+      "weight": 7,
+      "correlation_pct": 19.2
+    },
+    {
+      "from": "VfB Stuttgart|Jeff Chabot",
+      "to": "VfB Stuttgart|Deniz Undav",
+      "weight": 9,
+      "correlation_pct": 18.8
+    },
+    {
+      "from": "Galatasaray|Ismail Jakobs",
+      "to": "Galatasaray|Aleksei Batrakov",
+      "weight": 9,
+      "correlation_pct": 18.6
+    },
+    {
+      "from": "Galatasaray|Roland Sallai",
+      "to": "Galatasaray|Davinson Sánchez",
+      "weight": 8,
+      "correlation_pct": 18.3
+    },
+    {
+      "from": "VfB Stuttgart|Chris Führich",
+      "to": "VfB Stuttgart|Maximilian Mittelstädt",
+      "weight": 13,
+      "correlation_pct": 17.8
+    },
+    {
+      "from": "Galatasaray|Barış Alper Yılmaz",
+      "to": "Galatasaray|Ismail Jakobs",
+      "weight": 6,
+      "correlation_pct": 17.6
+    },
+    {
+      "from": "VfB Stuttgart|Yanik Spalt",
+      "to": "VfB Stuttgart|Ermedin Demirovic",
+      "weight": 4,
+      "correlation_pct": 17.6
+    },
+    {
+      "from": "VfB Stuttgart|Chris Führich",
+      "to": "VfB Stuttgart|Jamie Leweling",
+      "weight": 5,
+      "correlation_pct": 17.5
+    },
+    {
+      "from": "VfB Stuttgart|Ramon Hendriks",
+      "to": "VfB Stuttgart|Lorenz Assignon",
+      "weight": 7,
+      "correlation_pct": 17.2
+    },
+    {
+      "from": "VfB Stuttgart|Yanik Spalt",
+      "to": "VfB Stuttgart|Bilal El Khannouss",
+      "weight": 9,
+      "correlation_pct": 16.8
+    },
+    {
+      "from": "VfB Stuttgart|Bilal El Khannouss",
+      "to": "VfB Stuttgart|Lorenz Assignon",
+      "weight": 7,
+      "correlation_pct": 16.7
+    },
+    {
+      "from": "Galatasaray|Yunus Akgün",
+      "to": "Galatasaray|Davinson Sánchez",
+      "weight": 9,
+      "correlation_pct": 16.1
+    },
+    {
+      "from": "VfB Stuttgart|Bilal El Khannouss",
+      "to": "VfB Stuttgart|Dzenan Pejcinovic",
+      "weight": 6,
+      "correlation_pct": 15.9
+    },
+    {
+      "from": "VfB Stuttgart|Deniz Undav",
+      "to": "VfB Stuttgart|Ermedin Demirovic",
+      "weight": 4,
+      "correlation_pct": 15.3
+    },
+    {
+      "from": "VfB Stuttgart|Ermedin Demirovic",
+      "to": "VfB Stuttgart|Deniz Undav",
+      "weight": 4,
+      "correlation_pct": 15.3
+    },
+    {
+      "from": "Galatasaray|Victor Osimhen",
+      "to": "Galatasaray|Barış Alper Yılmaz",
+      "weight": 3,
+      "correlation_pct": 15.2
+    },
+    {
+      "from": "Galatasaray|Barış Alper Yılmaz",
+      "to": "Galatasaray|Victor Osimhen",
+      "weight": 3,
+      "correlation_pct": 15.2
+    },
+    {
+      "from": "Galatasaray|Ismail Jakobs",
+      "to": "Galatasaray|Lucas Torreira",
+      "weight": 7,
+      "correlation_pct": 15.0
+    },
+    {
+      "from": "Galatasaray|Victor Osimhen",
+      "to": "Galatasaray|Yunus Akgün",
+      "weight": 6,
+      "correlation_pct": 14.8
+    },
+    {
+      "from": "Galatasaray|Abdülkerim Bardakcı",
+      "to": "Galatasaray|Mario Lemina",
+      "weight": 8,
+      "correlation_pct": 14.8
+    },
+    {
+      "from": "Galatasaray|Mario Lemina",
+      "to": "Galatasaray|Yunus Akgün",
+      "weight": 8,
+      "correlation_pct": 14.5
+    },
+    {
+      "from": "Galatasaray|Abdülkerim Bardakcı",
+      "to": "Galatasaray|Yunus Akgün",
+      "weight": 9,
+      "correlation_pct": 14.4
+    },
+    {
+      "from": "Galatasaray|Davinson Sánchez",
+      "to": "Galatasaray|Roland Sallai",
+      "weight": 6,
+      "correlation_pct": 14.0
+    },
+    {
+      "from": "Galatasaray|Roland Sallai",
+      "to": "Galatasaray|Yunus Akgün",
+      "weight": 7,
+      "correlation_pct": 13.8
+    },
+    {
+      "from": "VfB Stuttgart|Chris Führich",
+      "to": "VfB Stuttgart|Deniz Undav",
+      "weight": 6,
+      "correlation_pct": 13.7
+    },
+    {
+      "from": "VfB Stuttgart|Jamie Leweling",
+      "to": "VfB Stuttgart|Grischa Prömel",
+      "weight": 3,
+      "correlation_pct": 13.7
+    },
+    {
+      "from": "Galatasaray|Roland Sallai",
+      "to": "Galatasaray|Aleksei Batrakov",
+      "weight": 6,
+      "correlation_pct": 13.7
+    },
+    {
+      "from": "Galatasaray|Roland Sallai",
+      "to": "Galatasaray|Barış Alper Yılmaz",
+      "weight": 4,
+      "correlation_pct": 13.4
+    },
+    {
+      "from": "Galatasaray|Mario Lemina",
+      "to": "Galatasaray|Lucas Torreira",
+      "weight": 6,
+      "correlation_pct": 12.9
+    },
+    {
+      "from": "VfB Stuttgart|Maximilian Mittelstädt",
+      "to": "VfB Stuttgart|Bilal El Khannouss",
+      "weight": 11,
+      "correlation_pct": 12.9
+    },
+    {
+      "from": "Galatasaray|Aleksei Batrakov",
+      "to": "Galatasaray|Abdülkerim Bardakcı",
+      "weight": 7,
+      "correlation_pct": 12.7
+    },
+    {
+      "from": "VfB Stuttgart|Chris Führich",
+      "to": "VfB Stuttgart|Yanik Spalt",
+      "weight": 5,
+      "correlation_pct": 12.6
+    },
+    {
+      "from": "Galatasaray|Yunus Akgün",
+      "to": "Galatasaray|Aleksei Batrakov",
+      "weight": 7,
+      "correlation_pct": 12.5
+    },
+    {
+      "from": "VfB Stuttgart|Lorenz Assignon",
+      "to": "VfB Stuttgart|Bilal El Khannouss",
+      "weight": 5,
+      "correlation_pct": 12.2
+    },
+    {
+      "from": "VfB Stuttgart|Ermedin Demirovic",
+      "to": "VfB Stuttgart|Chris Führich",
+      "weight": 3,
+      "correlation_pct": 12.1
+    },
+    {
+      "from": "VfB Stuttgart|Chris Führich",
+      "to": "VfB Stuttgart|Ermedin Demirovic",
+      "weight": 3,
+      "correlation_pct": 12.1
+    },
+    {
+      "from": "VfB Stuttgart|Yanik Spalt",
+      "to": "VfB Stuttgart|Grischa Prömel",
+      "weight": 4,
+      "correlation_pct": 12.0
+    },
+    {
+      "from": "VfB Stuttgart|Grischa Prömel",
+      "to": "VfB Stuttgart|Yanik Spalt",
+      "weight": 4,
+      "correlation_pct": 12.0
+    },
+    {
+      "from": "Galatasaray|Lucas Torreira",
+      "to": "Galatasaray|Barış Alper Yılmaz",
+      "weight": 4,
+      "correlation_pct": 11.8
+    },
+    {
+      "from": "Galatasaray|Lucas Torreira",
+      "to": "Galatasaray|Roland Sallai",
+      "weight": 5,
+      "correlation_pct": 11.8
+    },
+    {
+      "from": "VfB Stuttgart|Jeff Chabot",
+      "to": "VfB Stuttgart|Yanik Spalt",
+      "weight": 5,
+      "correlation_pct": 11.8
+    },
+    {
+      "from": "Galatasaray|Aleksei Batrakov",
+      "to": "Galatasaray|Roland Sallai",
+      "weight": 5,
+      "correlation_pct": 11.6
+    },
+    {
+      "from": "Galatasaray|Aleksei Batrakov",
+      "to": "Galatasaray|Barış Alper Yılmaz",
+      "weight": 4,
+      "correlation_pct": 11.5
+    },
+    {
+      "from": "Galatasaray|Mario Lemina",
+      "to": "Galatasaray|Abdülkerim Bardakcı",
+      "weight": 6,
+      "correlation_pct": 11.3
+    },
+    {
+      "from": "Galatasaray|Davinson Sánchez",
+      "to": "Galatasaray|Abdülkerim Bardakcı",
+      "weight": 6,
+      "correlation_pct": 11.2
+    },
+    {
+      "from": "Galatasaray|Lucas Torreira",
+      "to": "Galatasaray|Abdülkerim Bardakcı",
+      "weight": 6,
+      "correlation_pct": 11.2
+    },
+    {
+      "from": "Galatasaray|Mario Lemina",
+      "to": "Galatasaray|Rafael Leão",
+      "weight": 3,
+      "correlation_pct": 10.9
+    },
+    {
+      "from": "Galatasaray|Aleksei Batrakov",
+      "to": "Galatasaray|Ismail Jakobs",
+      "weight": 5,
+      "correlation_pct": 10.8
+    },
+    {
+      "from": "VfB Stuttgart|Chris Führich",
+      "to": "VfB Stuttgart|Bilal El Khannouss",
+      "weight": 6,
+      "correlation_pct": 10.8
+    },
+    {
+      "from": "VfB Stuttgart|Maximilian Mittelstädt",
+      "to": "VfB Stuttgart|Jeff Chabot",
+      "weight": 8,
+      "correlation_pct": 10.8
+    },
+    {
+      "from": "Galatasaray|Yunus Akgün",
+      "to": "Galatasaray|Wilfried Singo",
+      "weight": 4,
+      "correlation_pct": 10.8
+    },
+    {
+      "from": "VfB Stuttgart|Maximilian Mittelstädt",
+      "to": "VfB Stuttgart|Grischa Prömel",
+      "weight": 7,
+      "correlation_pct": 10.7
+    },
+    {
+      "from": "VfB Stuttgart|Deniz Undav",
+      "to": "VfB Stuttgart|Bilal El Khannouss",
+      "weight": 6,
+      "correlation_pct": 10.7
+    },
+    {
+      "from": "Galatasaray|Aleksei Batrakov",
+      "to": "Galatasaray|Lucas Torreira",
+      "weight": 5,
+      "correlation_pct": 10.6
+    },
+    {
+      "from": "Galatasaray|Aleksei Batrakov",
+      "to": "Galatasaray|Rafael Leão",
+      "weight": 3,
+      "correlation_pct": 10.4
+    },
+    {
+      "from": "Galatasaray|Davinson Sánchez",
+      "to": "Galatasaray|Wilfried Singo",
+      "weight": 3,
+      "correlation_pct": 10.4
+    },
+    {
+      "from": "Galatasaray|Wilfried Singo",
+      "to": "Galatasaray|Lucas Torreira",
+      "weight": 3,
+      "correlation_pct": 10.4
+    },
+    {
+      "from": "VfB Stuttgart|Yanik Spalt",
+      "to": "VfB Stuttgart|Chris Führich",
+      "weight": 4,
+      "correlation_pct": 10.3
+    },
+    {
+      "from": "VfB Stuttgart|Lorenz Assignon",
+      "to": "VfB Stuttgart|Nikolas Nartey",
+      "weight": 1,
+      "correlation_pct": 10.3
+    },
+    {
+      "from": "VfB Stuttgart|Nikolas Nartey",
+      "to": "VfB Stuttgart|Lorenz Assignon",
+      "weight": 1,
+      "correlation_pct": 10.3
+    },
+    {
+      "from": "VfB Stuttgart|Jeff Chabot",
+      "to": "VfB Stuttgart|Jamie Leweling",
+      "weight": 3,
+      "correlation_pct": 10.1
+    },
+    {
+      "from": "Galatasaray|Ismail Jakobs",
+      "to": "Galatasaray|Victor Osimhen",
+      "weight": 3,
+      "correlation_pct": 10.0
+    },
+    {
+      "from": "Galatasaray|Lucas Torreira",
+      "to": "Galatasaray|Victor Osimhen",
+      "weight": 3,
+      "correlation_pct": 9.7
+    },
+    {
+      "from": "Galatasaray|Davinson Sánchez",
+      "to": "Galatasaray|Victor Osimhen",
+      "weight": 3,
+      "correlation_pct": 9.7
+    },
+    {
+      "from": "Galatasaray|Victor Osimhen",
+      "to": "Galatasaray|Davinson Sánchez",
+      "weight": 3,
+      "correlation_pct": 9.7
+    },
+    {
+      "from": "Galatasaray|Ismail Jakobs",
+      "to": "Galatasaray|Abdülkerim Bardakcı",
+      "weight": 5,
+      "correlation_pct": 9.6
+    },
+    {
+      "from": "Galatasaray|Victor Osimhen",
+      "to": "Galatasaray|Aleksei Batrakov",
+      "weight": 3,
+      "correlation_pct": 9.5
+    },
+    {
+      "from": "Galatasaray|Yunus Akgün",
+      "to": "Galatasaray|Lucas Torreira",
+      "weight": 5,
+      "correlation_pct": 9.3
+    },
+    {
+      "from": "Galatasaray|Abdülkerim Bardakcı",
+      "to": "Galatasaray|Aleksei Batrakov",
+      "weight": 5,
+      "correlation_pct": 9.3
+    },
+    {
+      "from": "VfB Stuttgart|Bilal El Khannouss",
+      "to": "VfB Stuttgart|Ramon Hendriks",
+      "weight": 6,
+      "correlation_pct": 9.1
+    },
+    {
+      "from": "Galatasaray|Mario Lemina",
+      "to": "Galatasaray|Ismail Jakobs",
+      "weight": 4,
+      "correlation_pct": 9.1
+    },
+    {
+      "from": "VfB Stuttgart|Bilal El Khannouss",
+      "to": "VfB Stuttgart|Deniz Undav",
+      "weight": 5,
+      "correlation_pct": 9.1
+    },
+    {
+      "from": "VfB Stuttgart|Maximilian Mittelstädt",
+      "to": "VfB Stuttgart|Yanik Spalt",
+      "weight": 6,
+      "correlation_pct": 9.0
+    },
+    {
+      "from": "VfB Stuttgart|Yanik Spalt",
+      "to": "VfB Stuttgart|Maximilian Mittelstädt",
+      "weight": 6,
+      "correlation_pct": 9.0
+    },
+    {
+      "from": "Galatasaray|Lucas Torreira",
+      "to": "Galatasaray|Davinson Sánchez",
+      "weight": 4,
+      "correlation_pct": 8.8
+    },
+    {
+      "from": "VfB Stuttgart|Dzenan Pejcinovic",
+      "to": "VfB Stuttgart|Deniz Undav",
+      "weight": 2,
+      "correlation_pct": 8.8
+    },
+    {
+      "from": "VfB Stuttgart|Grischa Prömel",
+      "to": "VfB Stuttgart|Ramon Hendriks",
+      "weight": 4,
+      "correlation_pct": 8.6
+    },
+    {
+      "from": "Galatasaray|Victor Osimhen",
+      "to": "Galatasaray|Rafael Leão",
+      "weight": 1,
+      "correlation_pct": 8.6
+    },
+    {
+      "from": "Galatasaray|Rafael Leão",
+      "to": "Galatasaray|Yunus Akgün",
+      "weight": 3,
+      "correlation_pct": 8.6
+    },
+    {
+      "from": "Galatasaray|Wilfried Singo",
+      "to": "Galatasaray|Abdülkerim Bardakcı",
+      "weight": 3,
+      "correlation_pct": 8.6
+    },
+    {
+      "from": "VfB Stuttgart|Dzenan Pejcinovic",
+      "to": "VfB Stuttgart|Bilal El Khannouss",
+      "weight": 3,
+      "correlation_pct": 8.5
+    },
+    {
+      "from": "VfB Stuttgart|Jeff Chabot",
+      "to": "VfB Stuttgart|Grischa Prömel",
+      "weight": 3,
+      "correlation_pct": 8.0
+    },
+    {
+      "from": "VfB Stuttgart|Yanik Spalt",
+      "to": "VfB Stuttgart|Deniz Undav",
+      "weight": 3,
+      "correlation_pct": 8.0
+    },
+    {
+      "from": "Galatasaray|Ismail Jakobs",
+      "to": "Galatasaray|Yunus Akgün",
+      "weight": 4,
+      "correlation_pct": 7.8
+    },
+    {
+      "from": "VfB Stuttgart|Deniz Undav",
+      "to": "VfB Stuttgart|Lorenz Assignon",
+      "weight": 2,
+      "correlation_pct": 7.7
+    },
+    {
+      "from": "Galatasaray|Rafael Leão",
+      "to": "Galatasaray|Davinson Sánchez",
+      "weight": 2,
+      "correlation_pct": 7.7
+    },
+    {
+      "from": "Galatasaray|Aleksei Batrakov",
+      "to": "Galatasaray|Yunus Akgün",
+      "weight": 4,
+      "correlation_pct": 7.5
+    },
+    {
+      "from": "Galatasaray|Wilfried Singo",
+      "to": "Galatasaray|Davinson Sánchez",
+      "weight": 2,
+      "correlation_pct": 7.5
+    },
+    {
+      "from": "Galatasaray|Lucas Torreira",
+      "to": "Galatasaray|Wilfried Singo",
+      "weight": 2,
+      "correlation_pct": 7.5
+    },
+    {
+      "from": "VfB Stuttgart|Maximilian Mittelstädt",
+      "to": "VfB Stuttgart|Deniz Undav",
+      "weight": 5,
+      "correlation_pct": 7.2
+    },
+    {
+      "from": "Galatasaray|Ismail Jakobs",
+      "to": "Galatasaray|Mario Lemina",
+      "weight": 3,
+      "correlation_pct": 7.1
+    },
+    {
+      "from": "Galatasaray|Victor Osimhen",
+      "to": "Galatasaray|Eren Elmalı",
+      "weight": 1,
+      "correlation_pct": 7.1
+    },
+    {
+      "from": "Galatasaray|Davinson Sánchez",
+      "to": "Galatasaray|Mario Lemina",
+      "weight": 3,
+      "correlation_pct": 6.9
+    },
+    {
+      "from": "VfB Stuttgart|Grischa Prömel",
+      "to": "VfB Stuttgart|Bilal El Khannouss",
+      "weight": 3,
+      "correlation_pct": 6.5
+    },
+    {
+      "from": "VfB Stuttgart|Grischa Prömel",
+      "to": "VfB Stuttgart|Maximilian Mittelstädt",
+      "weight": 4,
+      "correlation_pct": 6.4
+    },
+    {
+      "from": "VfB Stuttgart|Ramon Hendriks",
+      "to": "VfB Stuttgart|Yanik Spalt",
+      "weight": 3,
+      "correlation_pct": 6.4
+    },
+    {
+      "from": "Galatasaray|Rafael Leão",
+      "to": "Galatasaray|Abdülkerim Bardakcı",
+      "weight": 2,
+      "correlation_pct": 6.3
+    },
+    {
+      "from": "VfB Stuttgart|Ramon Hendriks",
+      "to": "VfB Stuttgart|Nikolas Nartey",
+      "weight": 2,
+      "correlation_pct": 6.1
+    },
+    {
+      "from": "Galatasaray|Abdülkerim Bardakcı",
+      "to": "Galatasaray|Lucas Torreira",
+      "weight": 3,
+      "correlation_pct": 6.0
+    },
+    {
+      "from": "VfB Stuttgart|Maximilian Mittelstädt",
+      "to": "VfB Stuttgart|Nikolas Nartey",
+      "weight": 3,
+      "correlation_pct": 6.0
+    },
+    {
+      "from": "VfB Stuttgart|Nikolas Nartey",
+      "to": "VfB Stuttgart|Bilal El Khannouss",
+      "weight": 2,
+      "correlation_pct": 5.9
+    },
+    {
+      "from": "VfB Stuttgart|Ramon Hendriks",
+      "to": "VfB Stuttgart|Jamie Leweling",
+      "weight": 2,
+      "correlation_pct": 5.8
+    },
+    {
+      "from": "VfB Stuttgart|Jeff Chabot",
+      "to": "VfB Stuttgart|Maximilian Mittelstädt",
+      "weight": 4,
+      "correlation_pct": 5.7
+    },
+    {
+      "from": "VfB Stuttgart|Grischa Prömel",
+      "to": "VfB Stuttgart|Jeff Chabot",
+      "weight": 2,
+      "correlation_pct": 5.7
+    },
+    {
+      "from": "VfB Stuttgart|Lorenz Assignon",
+      "to": "VfB Stuttgart|Ramon Hendriks",
+      "weight": 2,
+      "correlation_pct": 5.7
+    },
+    {
+      "from": "Galatasaray|Eren Elmalı",
+      "to": "Galatasaray|Yunus Akgün",
+      "weight": 2,
+      "correlation_pct": 5.7
+    },
+    {
+      "from": "VfB Stuttgart|Jamie Leweling",
+      "to": "VfB Stuttgart|Bilal El Khannouss",
+      "weight": 2,
+      "correlation_pct": 5.6
+    },
+    {
+      "from": "Galatasaray|Roland Sallai",
+      "to": "Galatasaray|Lucas Torreira",
+      "weight": 2,
+      "correlation_pct": 5.4
+    },
+    {
+      "from": "Galatasaray|Barış Alper Yılmaz",
+      "to": "Galatasaray|Yunus Akgün",
+      "weight": 2,
+      "correlation_pct": 5.4
+    },
+    {
+      "from": "Galatasaray|Mario Lemina",
+      "to": "Galatasaray|Roland Sallai",
+      "weight": 2,
+      "correlation_pct": 5.4
+    },
+    {
+      "from": "VfB Stuttgart|Yanik Spalt",
+      "to": "VfB Stuttgart|Jeff Chabot",
+      "weight": 2,
+      "correlation_pct": 5.4
+    },
+    {
+      "from": "VfB Stuttgart|Chris Führich",
+      "to": "VfB Stuttgart|Nikolas Nartey",
+      "weight": 1,
+      "correlation_pct": 5.1
+    },
+    {
+      "from": "Galatasaray|Davinson Sánchez",
+      "to": "Galatasaray|Ismail Jakobs",
+      "weight": 2,
+      "correlation_pct": 5.0
+    },
+    {
+      "from": "VfB Stuttgart|Nikolas Nartey",
+      "to": "VfB Stuttgart|Deniz Undav",
+      "weight": 1,
+      "correlation_pct": 5.0
+    },
+    {
+      "from": "VfB Stuttgart|Deniz Undav",
+      "to": "VfB Stuttgart|Nikolas Nartey",
+      "weight": 1,
+      "correlation_pct": 5.0
+    },
+    {
+      "from": "Galatasaray|Davinson Sánchez",
+      "to": "Galatasaray|Aleksei Batrakov",
+      "weight": 2,
+      "correlation_pct": 4.8
+    },
+    {
+      "from": "Galatasaray|Victor Osimhen",
+      "to": "Galatasaray|Roland Sallai",
+      "weight": 1,
+      "correlation_pct": 4.8
+    },
+    {
+      "from": "VfB Stuttgart|Ramon Hendriks",
+      "to": "VfB Stuttgart|Grischa Prömel",
+      "weight": 2,
+      "correlation_pct": 4.8
+    },
+    {
+      "from": "VfB Stuttgart|Jeff Chabot",
+      "to": "VfB Stuttgart|Dzenan Pejcinovic",
+      "weight": 1,
+      "correlation_pct": 4.8
+    },
+    {
+      "from": "VfB Stuttgart|Deniz Undav",
+      "to": "VfB Stuttgart|Jamie Leweling",
+      "weight": 1,
+      "correlation_pct": 4.7
+    },
+    {
+      "from": "Galatasaray|Rafael Leão",
+      "to": "Galatasaray|Mario Lemina",
+      "weight": 1,
+      "correlation_pct": 4.7
+    },
+    {
+      "from": "Galatasaray|Yunus Akgün",
+      "to": "Galatasaray|Roland Sallai",
+      "weight": 2,
+      "correlation_pct": 4.6
+    },
+    {
+      "from": "Galatasaray|Lucas Torreira",
+      "to": "Galatasaray|Rafael Leão",
+      "weight": 1,
+      "correlation_pct": 4.6
+    },
+    {
+      "from": "VfB Stuttgart|Nikolas Nartey",
+      "to": "VfB Stuttgart|Jeff Chabot",
+      "weight": 1,
+      "correlation_pct": 4.6
+    },
+    {
+      "from": "VfB Stuttgart|Deniz Undav",
+      "to": "VfB Stuttgart|Maximilian Mittelstädt",
+      "weight": 3,
+      "correlation_pct": 4.6
+    },
+    {
+      "from": "Galatasaray|Lucas Torreira",
+      "to": "Galatasaray|Yunus Akgün",
+      "weight": 2,
+      "correlation_pct": 4.2
+    },
+    {
+      "from": "Galatasaray|Eren Elmalı",
+      "to": "Galatasaray|Mario Lemina",
+      "weight": 1,
+      "correlation_pct": 4.2
+    },
+    {
+      "from": "VfB Stuttgart|Ramon Hendriks",
+      "to": "VfB Stuttgart|Jeff Chabot",
+      "weight": 2,
+      "correlation_pct": 4.1
+    },
+    {
+      "from": "VfB Stuttgart|Maximilian Mittelstädt",
+      "to": "VfB Stuttgart|Ramon Hendriks",
+      "weight": 3,
+      "correlation_pct": 4.0
+    },
+    {
+      "from": "VfB Stuttgart|Jeff Chabot",
+      "to": "VfB Stuttgart|Bilal El Khannouss",
+      "weight": 2,
+      "correlation_pct": 4.0
+    },
+    {
+      "from": "VfB Stuttgart|Bilal El Khannouss",
+      "to": "VfB Stuttgart|Maximilian Mittelstädt",
+      "weight": 3,
+      "correlation_pct": 3.9
+    },
+    {
+      "from": "VfB Stuttgart|Grischa Prömel",
+      "to": "VfB Stuttgart|Chris Führich",
+      "weight": 1,
+      "correlation_pct": 3.7
+    },
+    {
+      "from": "VfB Stuttgart|Chris Führich",
+      "to": "VfB Stuttgart|Grischa Prömel",
+      "weight": 1,
+      "correlation_pct": 3.7
+    },
+    {
+      "from": "VfB Stuttgart|Bilal El Khannouss",
+      "to": "VfB Stuttgart|Ermedin Demirovic",
+      "weight": 1,
+      "correlation_pct": 3.6
+    },
+    {
+      "from": "VfB Stuttgart|Ermedin Demirovic",
+      "to": "VfB Stuttgart|Bilal El Khannouss",
+      "weight": 1,
+      "correlation_pct": 3.6
+    },
+    {
+      "from": "Galatasaray|Wilfried Singo",
+      "to": "Galatasaray|Yunus Akgün",
+      "weight": 1,
+      "correlation_pct": 3.6
+    },
+    {
+      "from": "VfB Stuttgart|Jamie Leweling",
+      "to": "VfB Stuttgart|Ramon Hendriks",
+      "weight": 1,
+      "correlation_pct": 3.5
+    },
+    {
+      "from": "Galatasaray|Eren Elmalı",
+      "to": "Galatasaray|Abdülkerim Bardakcı",
+      "weight": 1,
+      "correlation_pct": 3.5
+    },
+    {
+      "from": "Galatasaray|Barış Alper Yılmaz",
+      "to": "Galatasaray|Abdülkerim Bardakcı",
+      "weight": 1,
+      "correlation_pct": 3.3
+    },
+    {
+      "from": "Galatasaray|Yunus Akgün",
+      "to": "Galatasaray|Barış Alper Yılmaz",
+      "weight": 1,
+      "correlation_pct": 3.3
+    },
+    {
+      "from": "Galatasaray|Lucas Torreira",
+      "to": "Galatasaray|Mario Lemina",
+      "weight": 1,
+      "correlation_pct": 3.0
+    },
+    {
+      "from": "Galatasaray|Mario Lemina",
+      "to": "Galatasaray|Davinson Sánchez",
+      "weight": 1,
+      "correlation_pct": 3.0
+    },
+    {
+      "from": "Galatasaray|Ismail Jakobs",
+      "to": "Galatasaray|Davinson Sánchez",
+      "weight": 1,
+      "correlation_pct": 3.0
+    },
+    {
+      "from": "Galatasaray|Aleksei Batrakov",
+      "to": "Galatasaray|Mario Lemina",
+      "weight": 1,
+      "correlation_pct": 2.9
+    },
+    {
+      "from": "Galatasaray|Aleksei Batrakov",
+      "to": "Galatasaray|Davinson Sánchez",
+      "weight": 1,
+      "correlation_pct": 2.9
+    },
+    {
+      "from": "VfB Stuttgart|Ramon Hendriks",
+      "to": "VfB Stuttgart|Maximilian Mittelstädt",
+      "weight": 2,
+      "correlation_pct": 2.9
+    },
+    {
+      "from": "Galatasaray|Roland Sallai",
+      "to": "Galatasaray|Abdülkerim Bardakcı",
+      "weight": 1,
+      "correlation_pct": 2.8
+    },
+    {
+      "from": "VfB Stuttgart|Bilal El Khannouss",
+      "to": "VfB Stuttgart|Grischa Prömel",
+      "weight": 1,
+      "correlation_pct": 2.8
+    },
+    {
+      "from": "VfB Stuttgart|Yanik Spalt",
+      "to": "VfB Stuttgart|Ramon Hendriks",
+      "weight": 1,
+      "correlation_pct": 2.7
+    },
+    {
+      "from": "VfB Stuttgart|Bilal El Khannouss",
+      "to": "VfB Stuttgart|Yanik Spalt",
+      "weight": 1,
+      "correlation_pct": 2.7
+    },
+    {
+      "from": "Galatasaray|Yunus Akgün",
+      "to": "Galatasaray|Ismail Jakobs",
+      "weight": 1,
+      "correlation_pct": 2.6
+    },
+    {
+      "from": "VfB Stuttgart|Nikolas Nartey",
+      "to": "VfB Stuttgart|Maximilian Mittelstädt",
+      "weight": 1,
+      "correlation_pct": 2.6
+    },
+    {
+      "from": "VfB Stuttgart|Jamie Leweling",
+      "to": "VfB Stuttgart|Maximilian Mittelstädt",
+      "weight": 1,
+      "correlation_pct": 2.5
+    },
+    {
+      "from": "VfB Stuttgart|Maximilian Mittelstädt",
+      "to": "VfB Stuttgart|Lorenz Assignon",
+      "weight": 1,
+      "correlation_pct": 2.5
+    },
+    {
+      "from": "VfB Stuttgart|Deniz Undav",
+      "to": "VfB Stuttgart|Ramon Hendriks",
+      "weight": 1,
+      "correlation_pct": 2.5
+    },
+    {
+      "from": "VfB Stuttgart|Bilal El Khannouss",
+      "to": "VfB Stuttgart|Jeff Chabot",
+      "weight": 1,
+      "correlation_pct": 2.4
+    },
+    {
+      "from": "Galatasaray|Yunus Akgün",
+      "to": "Galatasaray|Abdülkerim Bardakcı",
+      "weight": 1,
+      "correlation_pct": 2.3
+    }
+  ],
+  "substitutions": {
+    "Galatasaray": [
+      {
+        "in": "Wilfried Singo",
+        "out": "Roland Sallai",
+        "sub_minute": 71,
+        "in_minutes": 26,
+        "out_minutes": 70,
+        "position_group": "FB"
+      },
+      {
+        "in": "Rafael Leão",
+        "out": "Barış Alper Yılmaz",
+        "sub_minute": 71,
+        "in_minutes": 26,
+        "out_minutes": 70,
+        "position_group": "AM"
+      },
+      {
+        "in": "Leroy Sané",
+        "out": "Aleksei Batrakov",
+        "sub_minute": 80,
+        "in_minutes": 17,
+        "out_minutes": 80,
+        "position_group": "AM"
+      },
+      {
+        "in": "Eren Elmalı",
+        "out": "Ismail Jakobs",
+        "sub_minute": 80,
+        "in_minutes": 17,
+        "out_minutes": 80,
+        "position_group": "FB"
+      },
+      {
+        "in": "Gabriel Sara",
+        "out": "Mario Lemina",
+        "sub_minute": 86,
+        "in_minutes": 11,
+        "out_minutes": 85,
+        "position_group": "CM"
+      }
+    ],
+    "VfB Stuttgart": [
+      {
+        "in": "Lorenz Assignon",
+        "out": "Jamie Leweling",
+        "sub_minute": 78,
+        "in_minutes": 19,
+        "out_minutes": 77,
+        "position_group": "FB"
+      },
+      {
+        "in": "Nikolas Nartey",
+        "out": "Yanik Spalt",
+        "sub_minute": 78,
+        "in_minutes": 19,
+        "out_minutes": 79,
+        "position_group": "CM"
+      },
+      {
+        "in": "Dzenan Pejcinovic",
+        "out": "Ermedin Demirovic",
+        "sub_minute": 78,
+        "in_minutes": 19,
+        "out_minutes": 77,
+        "position_group": "FW"
+      },
+      {
+        "in": "Atakan Karazor",
+        "out": "Grischa Prömel",
+        "sub_minute": 80,
+        "in_minutes": 17,
+        "out_minutes": 77,
+        "position_group": "CM"
+      },
+      {
+        "in": "Tiago Tomás",
+        "out": "Chris Führich",
+        "sub_minute": 85,
+        "in_minutes": 12,
+        "out_minutes": 85,
+        "position_group": "FB"
+      }
+    ]
+  },
+  "contributions": {
+    "Galatasaray|Aleksei Batrakov": {
+      "offensive_pct": 20.6,
+      "defensive_pct": 6.1,
+      "total_pct": 13.4,
+      "offensive_raw": 25.2,
+      "defensive_raw": 19.8,
+      "off_breakdown": {
+        "Goals": 2.0,
+        "xG (expected goals)": 0.59,
+        "xA (expected assists)": 0.31,
+        "Shots": 3.0,
+        "Progressive passes": 6.0,
+        "Chances created": 2.0,
+        "Passes into the penalty box": 6.0,
+        "Crosses": 2.0,
+        "Final third entries": 4.0
+      },
+      "def_breakdown": {
+        "Tackles": 1.0,
+        "Interceptions": 3.0,
+        "Ball recoveries": 2.0,
+        "Challenges won": 7.0,
+        "Aerial challenges won": 2.0
+      }
+    },
+    "Galatasaray|Yunus Akgün": {
+      "offensive_pct": 18.9,
+      "defensive_pct": 7.4,
+      "total_pct": 13.2,
+      "offensive_raw": 23.13,
+      "defensive_raw": 24.0,
+      "off_breakdown": {
+        "xA (expected assists)": 0.71,
+        "Key passes": 1.0,
+        "Progressive passes": 11.0,
+        "Chances created": 2.0,
+        "Passes into the penalty box": 10.0,
+        "Crosses": 1.0,
+        "Final third entries": 4.0
+      },
+      "def_breakdown": {
+        "Tackles": 4.0,
+        "Tackles successful": 2.0,
+        "Interceptions": 2.0,
+        "Challenges won": 7.0
+      }
+    },
+    "VfB Stuttgart|Chris Führich": {
+      "offensive_pct": 10.1,
+      "defensive_pct": 6.1,
+      "total_pct": 8.1,
+      "offensive_raw": 14.41,
+      "defensive_raw": 20.2,
+      "off_breakdown": {
+        "xG (expected goals)": 0.17,
+        "xA (expected assists)": 0.7,
+        "Shots": 3.0,
+        "Progressive passes": 7.0,
+        "Chances created": 1.0,
+        "Passes into the penalty box": 4.0,
+        "Crosses": 2.0,
+        "Final third entries": 2.0
+      },
+      "def_breakdown": {
+        "Tackles": 3.0,
+        "Interceptions": 2.0,
+        "Challenges won": 9.0,
+        "Aerial challenges won": 1.0
+      }
+    },
+    "Galatasaray|Lucas Torreira": {
+      "offensive_pct": 7.4,
+      "defensive_pct": 15.8,
+      "total_pct": 11.6,
+      "offensive_raw": 9.03,
+      "defensive_raw": 51.3,
+      "off_breakdown": {
+        "xG (expected goals)": 0.09,
+        "xA (expected assists)": 0.42,
+        "Shots": 1.0,
+        "Progressive passes": 8.0,
+        "Passes into the penalty box": 1.0,
+        "Final third entries": 2.0
+      },
+      "def_breakdown": {
+        "Tackles": 6.0,
+        "Tackles successful": 3.0,
+        "Interceptions": 4.0,
+        "Ball recoveries": 5.0,
+        "Ball recoveries in opponent's half": 2.0,
+        "Challenges won": 10.0,
+        "Aerial challenges won": 4.0
+      }
+    },
+    "Galatasaray|Ismail Jakobs": {
+      "offensive_pct": 5.6,
+      "defensive_pct": 11.4,
+      "total_pct": 8.5,
+      "offensive_raw": 6.9,
+      "defensive_raw": 36.9,
+      "off_breakdown": {
+        "Progressive passes": 8.0,
+        "Passes into the penalty box": 1.0,
+        "Crosses": 1.0,
+        "Final third entries": 1.0
+      },
+      "def_breakdown": {
+        "Tackles": 4.0,
+        "Tackles successful": 3.0,
+        "Interceptions": 2.0,
+        "Ball recoveries": 5.0,
+        "Ball recoveries in opponent's half": 2.0,
+        "Challenges won": 6.0,
+        "Aerial challenges won": 2.0
+      }
+    },
+    "VfB Stuttgart|Maximilian Mittelstädt": {
+      "offensive_pct": 17.3,
+      "defensive_pct": 19.0,
+      "total_pct": 18.1,
+      "offensive_raw": 24.62,
+      "defensive_raw": 63.3,
+      "off_breakdown": {
+        "xA (expected assists)": 0.54,
+        "Key passes": 2.0,
+        "Progressive passes": 14.0,
+        "Chances created": 2.0,
+        "Passes into the penalty box": 8.0,
+        "Crosses": 4.0,
+        "Final third entries": 2.0
+      },
+      "def_breakdown": {
+        "Tackles": 6.0,
+        "Tackles successful": 3.0,
+        "Interceptions": 9.0,
+        "Ball recoveries": 12.0,
+        "Challenges won": 9.0,
+        "Aerial challenges won": 2.0
+      }
+    },
+    "Galatasaray|Abdülkerim Bardakcı": {
+      "offensive_pct": 5.6,
+      "defensive_pct": 9.9,
+      "total_pct": 7.8,
+      "offensive_raw": 6.9,
+      "defensive_raw": 32.1,
+      "off_breakdown": {
+        "Progressive passes": 9.0,
+        "Final third entries": 2.0
+      },
+      "def_breakdown": {
+        "Tackles": 1.0,
+        "Tackles successful": 1.0,
+        "Interceptions": 7.0,
+        "Ball recoveries": 7.0,
+        "Challenges won": 4.0,
+        "Aerial challenges won": 1.0
+      }
+    },
+    "Galatasaray|Roland Sallai": {
+      "offensive_pct": 2.8,
+      "defensive_pct": 7.2,
+      "total_pct": 5.0,
+      "offensive_raw": 3.4,
+      "defensive_raw": 23.5,
+      "off_breakdown": {
+        "Progressive passes": 4.0,
+        "Final third entries": 2.0
+      },
+      "def_breakdown": {
+        "Tackles": 3.0,
+        "Tackles successful": 1.0,
+        "Interceptions": 1.0,
+        "Ball recoveries": 2.0,
+        "Challenges won": 7.0,
+        "Aerial challenges won": 3.0
+      }
+    },
+    "Galatasaray|Barış Alper Yılmaz": {
+      "offensive_pct": 4.0,
+      "defensive_pct": 4.9,
+      "total_pct": 4.4,
+      "offensive_raw": 4.88,
+      "defensive_raw": 15.8,
+      "off_breakdown": {
+        "xG (expected goals)": 0.01,
+        "xA (expected assists)": 0.35,
+        "Shots": 1.0,
+        "Progressive passes": 1.0,
+        "Passes into the penalty box": 3.0,
+        "Crosses": 1.0
+      },
+      "def_breakdown": {
+        "Interceptions": 1.0,
+        "Ball recoveries": 1.0,
+        "Challenges won": 9.0,
+        "Aerial challenges won": 3.0
+      }
+    },
+    "VfB Stuttgart|Bilal El Khannouss": {
+      "offensive_pct": 14.7,
+      "defensive_pct": 9.1,
+      "total_pct": 11.9,
+      "offensive_raw": 20.86,
+      "defensive_raw": 30.5,
+      "off_breakdown": {
+        "xG (expected goals)": 0.13,
+        "xA (expected assists)": 0.19,
+        "Shots": 2.0,
+        "Key passes": 1.0,
+        "Progressive passes": 16.0,
+        "Passes into the penalty box": 4.0,
+        "Crosses": 3.0,
+        "Final third entries": 8.0
+      },
+      "def_breakdown": {
+        "Tackles": 3.0,
+        "Tackles successful": 3.0,
+        "Interceptions": 1.0,
+        "Ball recoveries": 4.0,
+        "Ball recoveries in opponent's half": 2.0,
+        "Challenges won": 6.0,
+        "Aerial challenges won": 1.0
+      }
+    },
+    "VfB Stuttgart|Jamie Leweling": {
+      "offensive_pct": 7.6,
+      "defensive_pct": 4.4,
+      "total_pct": 6.0,
+      "offensive_raw": 10.79,
+      "defensive_raw": 14.7,
+      "off_breakdown": {
+        "xG (expected goals)": 0.53,
+        "Shots": 2.0,
+        "Key passes": 2.0,
+        "Progressive passes": 1.0,
+        "Passes into the penalty box": 4.0,
+        "Crosses": 5.0,
+        "Final third entries": 1.0
+      },
+      "def_breakdown": {
+        "Tackles": 1.0,
+        "Interceptions": 2.0,
+        "Ball recoveries": 1.0,
+        "Ball recoveries in opponent's half": 1.0,
+        "Challenges won": 6.0
+      }
+    },
+    "Galatasaray|Mario Lemina": {
+      "offensive_pct": 4.3,
+      "defensive_pct": 13.3,
+      "total_pct": 8.8,
+      "offensive_raw": 5.2,
+      "defensive_raw": 43.2,
+      "off_breakdown": {
+        "Progressive passes": 7.0,
+        "Final third entries": 1.0
+      },
+      "def_breakdown": {
+        "Tackles": 4.0,
+        "Tackles successful": 3.0,
+        "Interceptions": 4.0,
+        "Ball recoveries": 10.0,
+        "Ball recoveries in opponent's half": 1.0,
+        "Challenges won": 5.0,
+        "Aerial challenges won": 1.0
+      }
+    },
+    "Galatasaray|Victor Osimhen": {
+      "offensive_pct": 6.3,
+      "defensive_pct": 4.2,
+      "total_pct": 5.2,
+      "offensive_raw": 7.67,
+      "defensive_raw": 13.6,
+      "off_breakdown": {
+        "xG (expected goals)": 0.69,
+        "Shots": 7.0,
+        "Progressive passes": 3.0
+      },
+      "def_breakdown": {
+        "Tackles": 1.0,
+        "Interceptions": 1.0,
+        "Ball recoveries": 1.0,
+        "Challenges won": 6.0,
+        "Aerial challenges won": 2.0
+      }
+    },
+    "VfB Stuttgart|Lorenz Assignon": {
+      "offensive_pct": 4.8,
+      "defensive_pct": 4.0,
+      "total_pct": 4.4,
+      "offensive_raw": 6.88,
+      "defensive_raw": 13.4,
+      "off_breakdown": {
+        "xG (expected goals)": 0.03,
+        "xA (expected assists)": 0.33,
+        "Shots": 1.0,
+        "Key passes": 1.0,
+        "Progressive passes": 2.0,
+        "Chances created": 1.0,
+        "Passes into the penalty box": 1.0,
+        "Crosses": 2.0
+      },
+      "def_breakdown": {
+        "Tackles": 1.0,
+        "Tackles successful": 1.0,
+        "Interceptions": 2.0,
+        "Ball recoveries": 2.0,
+        "Ball recoveries in opponent's half": 1.0,
+        "Challenges won": 1.0
+      }
+    },
+    "Galatasaray|Davinson Sánchez": {
+      "offensive_pct": 18.5,
+      "defensive_pct": 13.2,
+      "total_pct": 15.9,
+      "offensive_raw": 22.68,
+      "defensive_raw": 42.9,
+      "off_breakdown": {
+        "Assists": 1.0,
+        "xA (expected assists)": 0.26,
+        "Key passes": 1.0,
+        "Progressive passes": 17.0,
+        "Chances created": 1.0,
+        "Passes into the penalty box": 3.0,
+        "Final third entries": 3.0
+      },
+      "def_breakdown": {
+        "Tackles": 3.0,
+        "Interceptions": 7.0,
+        "Ball recoveries": 8.0,
+        "Ball recoveries in opponent's half": 1.0,
+        "Challenges won": 7.0,
+        "Aerial challenges won": 4.0
+      }
+    },
+    "VfB Stuttgart|Ramon Hendriks": {
+      "offensive_pct": 8.5,
+      "defensive_pct": 15.1,
+      "total_pct": 11.8,
+      "offensive_raw": 12.02,
+      "defensive_raw": 50.2,
+      "off_breakdown": {
+        "xA (expected assists)": 0.04,
+        "Progressive passes": 15.0,
+        "Passes into the penalty box": 1.0,
+        "Final third entries": 2.0
+      },
+      "def_breakdown": {
+        "Tackles": 2.0,
+        "Interceptions": 8.0,
+        "Ball recoveries": 8.0,
+        "Challenges won": 11.0,
+        "Aerial challenges won": 8.0
+      }
+    },
+    "VfB Stuttgart|Jeff Chabot": {
+      "offensive_pct": 7.2,
+      "defensive_pct": 10.2,
+      "total_pct": 8.7,
+      "offensive_raw": 10.2,
+      "defensive_raw": 34.0,
+      "off_breakdown": {
+        "Key passes": 1.0,
+        "Progressive passes": 12.0,
+        "Final third entries": 1.0
+      },
+      "def_breakdown": {
+        "Interceptions": 8.0,
+        "Ball recoveries": 7.0,
+        "Challenges won": 6.0,
+        "Aerial challenges won": 3.0
+      }
+    },
+    "VfB Stuttgart|Deniz Undav": {
+      "offensive_pct": 15.4,
+      "defensive_pct": 6.5,
+      "total_pct": 10.9,
+      "offensive_raw": 21.85,
+      "defensive_raw": 21.6,
+      "off_breakdown": {
+        "xG (expected goals)": 0.1,
+        "xA (expected assists)": 0.55,
+        "Shots": 2.0,
+        "Key passes": 1.0,
+        "Progressive passes": 12.0,
+        "Chances created": 2.0,
+        "Passes into the penalty box": 6.0,
+        "Final third entries": 6.0
+      },
+      "def_breakdown": {
+        "Tackles": 3.0,
+        "Tackles successful": 1.0,
+        "Interceptions": 2.0,
+        "Ball recoveries": 1.0,
+        "Ball recoveries in opponent's half": 1.0,
+        "Challenges won": 4.0,
+        "Aerial challenges won": 2.0
+      }
+    },
+    "VfB Stuttgart|Yanik Spalt": {
+      "offensive_pct": 5.1,
+      "defensive_pct": 13.1,
+      "total_pct": 9.1,
+      "offensive_raw": 7.32,
+      "defensive_raw": 43.8,
+      "off_breakdown": {
+        "xA (expected assists)": 0.04,
+        "Progressive passes": 6.0,
+        "Passes into the penalty box": 2.0,
+        "Crosses": 1.0,
+        "Final third entries": 4.0
+      },
+      "def_breakdown": {
+        "Tackles": 5.0,
+        "Tackles successful": 2.0,
+        "Interceptions": 7.0,
+        "Ball recoveries": 3.0,
+        "Ball recoveries in opponent's half": 2.0,
+        "Challenges won": 7.0,
+        "Aerial challenges won": 1.0
+      }
+    },
+    "Galatasaray|Wilfried Singo": {
+      "offensive_pct": 1.4,
+      "defensive_pct": 1.9,
+      "total_pct": 1.7,
+      "offensive_raw": 1.7,
+      "defensive_raw": 6.2,
+      "off_breakdown": {
+        "Progressive passes": 1.0,
+        "Passes into the penalty box": 1.0,
+        "Crosses": 1.0
+      },
+      "def_breakdown": {
+        "Interceptions": 2.0,
+        "Challenges won": 1.0,
+        "Aerial challenges won": 1.0
+      }
+    },
+    "Galatasaray|Leroy Sané": {
+      "offensive_pct": 0.2,
+      "defensive_pct": 1.2,
+      "total_pct": 0.7,
+      "offensive_raw": 0.3,
+      "defensive_raw": 4.0,
+      "off_breakdown": {
+        "Final third entries": 1.0
+      },
+      "def_breakdown": {
+        "Interceptions": 1.0,
+        "Challenges won": 2.0
+      }
+    },
+    "Galatasaray|Rafael Leão": {
+      "offensive_pct": 1.7,
+      "defensive_pct": 0.6,
+      "total_pct": 1.2,
+      "offensive_raw": 2.09,
+      "defensive_raw": 2.0,
+      "off_breakdown": {
+        "xA (expected assists)": 0.03,
+        "Progressive passes": 1.0,
+        "Passes into the penalty box": 1.0,
+        "Crosses": 1.0,
+        "Final third entries": 1.0
+      },
+      "def_breakdown": {
+        "Challenges won": 2.0
+      }
+    },
+    "Galatasaray|Eren Elmalı": {
+      "offensive_pct": 0.8,
+      "defensive_pct": 2.8,
+      "total_pct": 1.8,
+      "offensive_raw": 1.0,
+      "defensive_raw": 9.1,
+      "off_breakdown": {
+        "Progressive passes": 1.0,
+        "Final third entries": 1.0
+      },
+      "def_breakdown": {
+        "Tackles": 1.0,
+        "Tackles successful": 1.0,
+        "Ball recoveries": 3.0,
+        "Challenges won": 1.0
+      }
+    },
+    "VfB Stuttgart|Nikolas Nartey": {
+      "offensive_pct": 0.5,
+      "defensive_pct": 3.6,
+      "total_pct": 2.0,
+      "offensive_raw": 0.7,
+      "defensive_raw": 12.0,
+      "off_breakdown": {
+        "Progressive passes": 1.0
+      },
+      "def_breakdown": {
+        "Tackles": 2.0,
+        "Tackles successful": 2.0,
+        "Challenges won": 3.0
+      }
+    },
+    "VfB Stuttgart|Dzenan Pejcinovic": {
+      "offensive_pct": 1.4,
+      "defensive_pct": 0.7,
+      "total_pct": 1.0,
+      "offensive_raw": 2.03,
+      "defensive_raw": 2.2,
+      "off_breakdown": {
+        "xG (expected goals)": 0.18,
+        "xA (expected assists)": 0.33,
+        "Shots": 1.0
+      },
+      "def_breakdown": {
+        "Ball recoveries": 1.0,
+        "Challenges won": 1.0
+      }
+    },
+    "VfB Stuttgart|Ermedin Demirovic": {
+      "offensive_pct": 0.3,
+      "defensive_pct": 2.1,
+      "total_pct": 1.2,
+      "offensive_raw": 0.39,
+      "defensive_raw": 7.0,
+      "off_breakdown": {
+        "xA (expected assists)": 0.03,
+        "Final third entries": 1.0
+      },
+      "def_breakdown": {
+        "Tackles": 2.0,
+        "Interceptions": 1.0,
+        "Challenges won": 1.0
+      }
+    },
+    "VfB Stuttgart|Atakan Karazor": {
+      "offensive_pct": 0.0,
+      "defensive_pct": 1.6,
+      "total_pct": 0.8,
+      "offensive_raw": 0.0,
+      "defensive_raw": 5.2,
+      "off_breakdown": {},
+      "def_breakdown": {
+        "Interceptions": 2.0,
+        "Ball recoveries": 1.0
+      }
+    },
+    "VfB Stuttgart|Grischa Prömel": {
+      "offensive_pct": 5.1,
+      "defensive_pct": 4.6,
+      "total_pct": 4.9,
+      "offensive_raw": 7.3,
+      "defensive_raw": 15.4,
+      "off_breakdown": {
+        "Progressive passes": 8.0,
+        "Passes into the penalty box": 1.0,
+        "Final third entries": 3.0
+      },
+      "def_breakdown": {
+        "Tackles": 2.0,
+        "Tackles successful": 1.0,
+        "Interceptions": 2.0,
+        "Ball recoveries": 2.0,
+        "Ball recoveries in opponent's half": 1.0,
+        "Challenges won": 1.0
+      }
+    },
+    "Galatasaray|Gabriel Sara": {
+      "offensive_pct": 1.8,
+      "defensive_pct": 0.0,
+      "total_pct": 0.9,
+      "offensive_raw": 2.2,
+      "defensive_raw": 0.0,
+      "off_breakdown": {
+        "Key passes": 1.0,
+        "Progressive passes": 1.0
+      },
+      "def_breakdown": {}
+    },
+    "VfB Stuttgart|Tiago Tomás": {
+      "offensive_pct": 2.0,
+      "defensive_pct": 0.0,
+      "total_pct": 1.0,
+      "offensive_raw": 2.8,
+      "defensive_raw": 0.0,
+      "off_breakdown": {
+        "xG (expected goals)": 0.6,
+        "Shots": 2.0
+      },
+      "def_breakdown": {}
+    },
+    "Galatasaray|Uğurcan Çakır": {
+      "offensive_pct": 0.5,
+      "defensive_pct": 2.0,
+      "total_pct": 1.25,
+      "offensive_raw": 0,
+      "defensive_raw": 0,
+      "off_breakdown": {},
+      "def_breakdown": {},
+      "is_gk": true
+    },
+    "VfB Stuttgart|Fabian Bredlow": {
+      "offensive_pct": 0.5,
+      "defensive_pct": 2.0,
+      "total_pct": 1.25,
+      "offensive_raw": 0,
+      "defensive_raw": 0,
+      "off_breakdown": {},
+      "def_breakdown": {},
+      "is_gk": true
+    }
+  },
+  "meta": {
+    "method": "inferRecipientsFromNextPass",
+    "total_match_minutes": 97,
+    "node_count": 30,
+    "edge_count": 180,
+    "captured": 834,
+    "total_passes": 1049,
+    "coverage_pct": 79.5,
+    "contribution_weights": {
+      "offensive": [
+        "Goals",
+        "Assists",
+        "xG (expected goals)",
+        "xA (expected assists)",
+        "Shots",
+        "Key passes",
+        "Progressive passes",
+        "Chances created",
+        "Passes into the penalty box",
+        "Crosses",
+        "Final third entries"
+      ],
+      "defensive": [
+        "Tackles",
+        "Tackles successful",
+        "Interceptions",
+        "Ball recoveries",
+        "Ball recoveries in opponent's half",
+        "Challenges won",
+        "Aerial challenges won",
+        "Clearances"
+      ]
+    }
+  }
+}

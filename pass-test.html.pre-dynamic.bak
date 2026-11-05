@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="tr" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>HPAnalytic · Pas Ağı</title>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Newsreader:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  body { margin:0; background:#08090B; color:#F4F2EC; font-family:'JetBrains Mono',monospace; padding:32px 20px 80px; }
+  .wrap { max-width:1100px; margin:0 auto; }
+  .kicker { color:#B4FF39; font-size:11px; letter-spacing:0.18em; text-transform:uppercase; margin-bottom:12px; }
+  h1 { font-family:'Newsreader',serif; font-weight:400; font-size:32px; margin:0 0 12px; letter-spacing:-0.01em; }
+  .sub { color:rgba(244,242,236,0.5); font-size:13px; margin:0 0 32px; line-height:1.7; max-width:700px; }
+  #pn-root { margin-top:24px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="kicker">HPAnalytic · Pas Örgüsü</div>
+  <h1>Top nereden nereye dönüyor?</h1>
+  <p class="sub">Galatasaray — VfB Stuttgart · 03.11.2026 · Her düğüm bir oyuncu, boyutu pas hacmi. Çizgilerin kalınlığı pas sıklığı. Bir oyuncuya dokun → ego ağ (sadece onun bağlantıları kalır).</p>
+  <div id="pn-root"></div>
+</div>
+<script type="module">
+  import { initPassNetwork } from '/src/js/viz/pass-network.js';
+  initPassNetwork(document.getElementById('pn-root'));
+</script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="tr" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>HPAnalytic · Pas Ağı</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Newsreader:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  body { margin:0; background:#08090B; color:#F4F2EC; font-family:'JetBrains Mono',monospace; padding:48px 24px 96px; min-height:100vh; }
+  .wrap { max-width:1000px; margin:0 auto; }
+  .kicker { color:#B4FF39; font-size:11px; letter-spacing:0.2em; text-transform:uppercase; margin-bottom:12px; }
+  h1 { font-family:'Newsreader',serif; font-weight:400; font-size:clamp(32px,5vw,44px); margin:0 0 12px; letter-spacing:-0.015em; line-height:1.1; }
+  .sub { color:rgba(244,242,236,0.45); font-size:14px; line-height:1.65; margin:0 0 12px; max-width:640px; }
+  .sub em { font-family:'Newsreader',serif; color:#B4FF39; font-style:italic; }
+  #passnet { margin-top:32px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="kicker">HPAnalytic · Pas Ağı</div>
+  <h1>Kim kime oynuyor?</h1>
+  <p class="sub">Galatasaray — VfB Stuttgart · 03.11.2026 · Her düğüm bir oyuncu, boyutu pas sayısıyla ölçekli. Kenarlar bağlantıyı gösterir — kalınlık sıklığa, yön topun akışına.</p>
+  <p class="sub"><em>Bir oyuncuya dokunun</em>, sahne onun etrafında yeniden kurulur.</p>
+  <div id="passnet"></div>
+</div>
+<script type="module">
+  import { initPassNetwork } from '/src/js/viz/pass-network.js';
+  initPassNetwork(document.getElementById('passnet'));
+</script>
+</body>
+</html>

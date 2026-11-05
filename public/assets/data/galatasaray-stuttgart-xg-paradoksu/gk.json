@@ -1,0 +1,3331 @@
+{
+  "role": "GOALKEEPER",
+  "source": {
+    "csv": "/sdcard/HPAnaliz/SportsBase/maclar/VfB Stuttgart 1-1 Atlético de Madrid 20.10/VfB Stuttgart 1-1 Atlético de Madrid 20.10.2026, Full match (1).csv",
+    "xml": "/sdcard/HPAnaliz/SportsBase/maclar/VfB Stuttgart 1-1 Atlético de Madrid 20.10/VfB Stuttgart 1-1 Atlético de Madrid 20.10.2026, Full match (1).xml",
+    "csv_sha": "ca3a480db476073f",
+    "xml_sha": "3a8de4ee71c270a0"
+  },
+  "reflection": {
+    "csv_rows": 174,
+    "xml_rows": 174,
+    "status": "PASS"
+  },
+  "anchors": {
+    "h1_start": 4.69,
+    "halftime": 2710.69,
+    "h2_start": 2742.92,
+    "match_end": 5694.92,
+    "h1_duration": 2706.0,
+    "total_duration": 5690.23
+  },
+  "row_count": 174,
+  "events": [
+    {
+      "source_row": 2,
+      "window_key": [
+        4.69,
+        4.69
+      ],
+      "is_involvement": false,
+      "t_norm": 0.0,
+      "t_raw": 4.69,
+      "half": "1",
+      "action": "Start of the 1st half",
+      "code": "Start of the 1st half",
+      "player": null,
+      "shirt": null,
+      "player_id": null,
+      "team": "",
+      "x": null,
+      "y": null
+    },
+    {
+      "source_row": 3,
+      "window_key": [
+        13.69,
+        25.69
+      ],
+      "is_involvement": false,
+      "t_norm": 9.0,
+      "t_raw": 13.69,
+      "half": "1",
+      "action": "Passes accurate",
+      "code": "13. Jan Oblak (1071798) - Passes accurate",
+      "player": "Jan Oblak",
+      "shirt": "13",
+      "player_id": "1071798",
+      "team": "Atlético de Madrid (6662)",
+      "x": 12.83,
+      "y": 27.74
+    },
+    {
+      "source_row": 4,
+      "window_key": [
+        20.69,
+        32.69
+      ],
+      "is_involvement": false,
+      "t_norm": 16.0,
+      "t_raw": 20.69,
+      "half": "1",
+      "action": "Opponent's mid-range shots on target",
+      "code": "13. Jan Oblak (1071798) - Opponent's mid-range shots on target",
+      "player": "Jan Oblak",
+      "shirt": "13",
+      "player_id": "1071798",
+      "team": "Atlético de Madrid (6662)",
+      "x": 93.42,
+      "y": 42.6
+    },
+    {
+      "source_row": 5,
+      "window_key": [
+        20.69,
+        32.69
+      ],
+      "is_involvement": false,
+      "t_norm": 16.0,
+      "t_raw": 20.69,
+      "half": "1",
+      "action": "Shots on target",
+      "code": "13. Jan Oblak (1071798) - Shots on target",
+      "player": "Jan Oblak",
+      "shirt": "13",
+      "player_id": "1071798",
+      "team": "Atlético de Madrid (6662)",
+      "x": 93.42,
+      "y": 42.6
+    },
+    {
+      "source_row": 6,
+      "window_key": [
+        20.69,
+        32.69
+      ],
+      "is_involvement": false,
+      "t_norm": 16.0,
+      "t_raw": 20.69,
+      "half": "1",
+      "action": "Shots saved",
+      "code": "13. Jan Oblak (1071798) - Shots saved",
+      "player": "Jan Oblak",
+      "shirt": "13",
+      "player_id": "1071798",
+      "team": "Atlético de Madrid (6662)",
+      "x": 93.42,
+      "y": 42.6
+    },
+    {
+      "source_row": 7,
+      "window_key": [
+        21.69,
+        33.69
+      ],
+      "is_involvement": false,
+      "t_norm": 17.0,
+      "t_raw": 21.69,
+      "half": "1",
+      "action": "Supersaves",
+      "code": "13. Jan Oblak (1071798) - Supersaves",
+      "player": "Jan Oblak",
+      "shirt": "13",
+      "player_id": "1071798",
+      "team": "Atlético de Madrid (6662)",
+      "x": 4.69,
+      "y": 30.07
+    },
+    {
+      "source_row": 8,
+      "window_key": [
+        40.69,
+        52.69
+      ],
+      "is_involvement": false,
+      "t_norm": 36.0,
+      "t_raw": 40.69,
+      "half": "1",
+      "action": "Successful cross and pass interception attempts",
+      "code": "13. Jan Oblak (1071798) - Successful cross and pass interception attempts",
+      "player": "Jan Oblak",
+      "shirt": "13",
+      "player_id": "1071798",
+      "team": "Atlético de Madrid (6662)",
+      "x": 5.09,
+      "y": 34.53
+    },
+    {
+      "source_row": 9,
+      "window_key": [
+        42.69,
+        54.69
+      ],
+      "is_involvement": false,
+      "t_norm": 38.0,
+      "t_raw": 42.69,
+      "half": "1",
+      "action": "Opponent's long-range shots on target",
+      "code": "13. Jan Oblak (1071798) - Opponent's long-range shots on target",
+      "player": "Jan Oblak",
+      "shirt": "13",
+      "player_id": "1071798",
+      "team": "Atlético de Madrid (6662)",
+      "x": 84.18,
+      "y": 34.95
+    },
+    {
+      "source_row": 10,
+      "window_key": [
+        42.69,
+        54.69
+      ],
+      "is_involvement": false,
+      "t_norm": 38.0,
+      "t_raw": 42.69,
+      "half": "1",
+      "action": "Shots on target",
+      "code": "13. Jan Oblak (1071798) - Shots on target",
+      "player": "Jan Oblak",
+      "shirt": "13",
+      "player_id": "1071798",
+      "team": "Atlético de Madrid (6662)",
+      "x": 84.18,
+      "y": 34.95
+    },
+    {
+      "source_row": 11,
+      "window_key": [
+        42.69,
+        54.69
+      ],
+      "is_involvement": false,
+      "t_norm": 38.0,
+      "t_raw": 42.69,
+      "half": "1",
+      "action": "Shots saved",
+      "code": "13. Jan Oblak (1071798) - Shots saved",
+      "player": "Jan Oblak",
+      "shirt": "13",
+      "player_id": "1071798",
+      "team": "Atlético de Madrid (6662)",
+      "x": 84.18,
+      "y": 34.95
+    },
+    {
+      "source_row": 12,
+      "window_key": [
+        59.69,
+        71.69
+      ],
+      "is_involvement": false,
+      "t_norm": 55.0,
+      "t_raw": 59.69,
+      "half": "1",
+      "action": "Long passes",
+      "code": "13. Jan Oblak (1071798) - Long passes",
+      "player": "Jan Oblak",
+      "shirt": "13",
+      "player_id": "1071798",
+      "team": "Atlético de Madrid (6662)",
+      "x": 17.56,
+      "y": 28.67
+    },
+    {
+      "source_row": 13,
+      "window_key": [
+        59.69,
+        71.69
+      ],
+      "is_involvement": false,
+      "t_norm": 55.0,
+      "t_raw": 59.69,
+      "half": "1",
+      "action": "Passes accurate",
+      "code": "13. Jan Oblak (1071798) - Passes accurate",
+      "player": "Jan Oblak",
+      "shirt": "13",
+      "player_id": "1071798",
+      "team": "Atlético de Madrid (6662)",
+      "x": 17.56,
+      "y": 28.67
+    },
+    {
+      "source_row": 14,
+      "window_key": [
+        78.69,
+        90.69
+      ],
+      "is_involvement": false,
+      "t_norm": 74.0,
+      "t_raw": 78.69,
+      "half": "1",
+      "action": "Passes accurate",
+      "code": "13. Jan Oblak (1071798) - Passes accurate",
+      "player": "Jan Oblak",
+      "shirt": "13",
+      "player_id": "1071798",
+      "team": "Atlético de Madrid (6662)",
+      "x": 10.7,
+      "y": 29.44
+    },
+    {
+      "source_row": 15,
+      "window_key": [
+        92.69,
+        104.69
+      ],
+      "is_involvement": false,
+      "t_norm": 88.0,
+      "t_raw": 92.69,
+      "half": "1",
+      "action": "Passes accurate",
+      "code": "41. Dennis Seimen (1329654) - Passes accurate",
+      "player": "Dennis Seimen",
+      "shirt": "41",
+      "player_id": "1329654",
+      "team": "VfB Stuttgart (73512)",
+      "x": 18.58,
+      "y": 44.72
+    },
+    {
+      "source_row": 16,
+      "window_key": [
+        152.69,
+        164.69
+      ],
+      "is_involvement": false,
+      "t_norm": 148.0,
+      "t_raw": 152.69,
+      "half": "1",
+      "action": "Shots off target",
+      "code": "13. Jan Oblak (1071798) - Shots off target",
+      "player": "Jan Oblak",
+      "shirt": "13",
+      "player_id": "1071798",
+      "team": "Atlético de Madrid (6662)",
+      "x": 95.62,
+      "y": 50.63
+    },
+    {
+      "source_row": 17,
+      "window_key": [
+        184.69,
+        196.69
+      ],
+      "is_involvement": false,
+      "t_norm": 180.0,
+      "t_raw": 184.69,
+      "half": "1",
+      "action": "Long passes",
+      "code": "13. Jan Oblak (1071798) - Long passes",
+      "player": "Jan Oblak",
+      "shirt": "13",
+      "player_id": "1071798",
+      "team": "Atlético de Madrid (6662)",
+      "x": 4.14,
+      "y": 36.78
+    },
+    {
+      "source_row": 18,
+      "window_key": [
+        184.69,
+        196.69
+      ],
+      "is_involvement": false,
+      "t_norm": 180.0,
+      "t_raw": 184.69,
+      "half": "1",
+      "action": "Passes accurate",
+      "code": "13. Jan Oblak (1071798) - Passes accurate",
+      "player": "Jan Oblak",
+      "shirt": "13",
+      "player_id": "1071798",
+      "team": "Atlético de Madrid (6662)",
+      "x": 4.14,
+      "y": 36.78
+    },
+    {
+      "source_row": 19,
+      "window_key": [
+        228.69,
+        240.69
+      ],
+      "is_involvement": false,
+      "t_norm": 224.0,
+      "t_raw": 228.69,
+      "half": "1",
+      "action": "Passes accurate",
+      "code": "13. Jan Oblak (1071798) - Passes accurate",
+      "player": "Jan Oblak",
+      "shirt": "13",
+      "player_id": "1071798",
+      "team": "Atlético de Madrid (6662)",
+      "x": 10.7,
+      "y": 51.22
+    },
+    {
+      "source_row": 20,
+      "window_key": [
+        251.69,
+        263.69
+      ],
+      "is_involvement": false,
+      "t_norm": 247.0,
+      "t_raw": 251.69,
+      "half": "1",
+      "action": "Passes accurate",
+      "code": "13. Jan Oblak (1071798) - Passes accurate",
+      "player": "Jan Oblak",
+      "shirt": "13",
+      "player_id": "1071798",
+      "team": "Atlético de Madrid (6662)",
+      "x": 2.89,
+      "y": 34.83
+    },
+    {
+      "source_row": 21,
+      "window_key": [
+        288.69,
+        300.69
+      ],
+      "is_involvement": false,
+      "t_norm": 284.0,
+      "t_raw": 288.69,
+      "half": "1",
+      "action": "Inaccurate passes",
+      "code": "41. Dennis Seimen (1329654) - Inaccurate passes",
+      "player": "Dennis Seimen",
+      "shirt": "41",
+      "player_id": "1329654",
+      "team": "VfB Stuttgart (73512)",
+      "x": 3.92,
+      "y": 34.87
+    },
+    {
+      "source_row": 22,
+      "window_key": [
+        288.69,
+        300.69
+      ],
+      "is_involvement": false,
+      "t_norm": 284.0,
+      "t_raw": 288.69,
+      "half": "1",
+      "action": "Incomplete long passes",
+      "code": "41. Dennis Seimen (1329654) - Incomplete long passes",
+      "player": "Dennis Seimen",
+      "shirt": "41",
+      "player_id": "1329654",
+      "team": "VfB Stuttgart (73512)",
+      "x": 3.92,
+      "y": 34.87
+    },
+    {
+      "source_row": 23,
+      "window_key": [
+        305.69,
+        317.69
+      ],
+      "is_involvement": false,
+      "t_norm": 301.0,
+      "t_raw": 305.69,
+      "half": "1",
+      "action": "Passes accurate",
+      "code": "13. Jan Oblak (1071798) - Passes accurate",
+      "player": "Jan Oblak",
+      "shirt": "13",
+      "player_id": "1071798",
+      "team": "Atlético de Madrid (6662)",
+      "x": 10.85,
+      "y": 36.15
+    },
+    {
+      "source_row": 24,
+      "window_key": [
+        313.69,
+        325.69
+      ],
+      "is_involvement": false,
+      "t_norm": 309.0,
+      "t_raw": 313.69,
+      "half": "1",
+      "action": "Passes accurate",
+      "code": "13. Jan Oblak (1071798) - Passes accurate",
+      "player": "Jan Oblak",
+      "shirt": "13",
+      "player_id": "1071798",
+      "team": "Atlético de Madrid (6662)",
+      "x": 4.17,
+      "y": 30.28
+    },
+    {
+      "source_row": 25,
+      "window_key": [
+        338.69,
+        350.69
+      ],
+      "is_involvement": false,
+      "t_norm": 334.0,
+      "t_raw": 338.69,
+      "half": "1",
+      "action": "Passes accurate",
+      "code": "41. Dennis Seimen (1329654) - Passes accurate",
+      "player": "Dennis Seimen",
+      "shirt": "41",
+      "player_id": "1329654",
+      "team": "VfB Stuttgart (73512)",
+      "x": 11.8,
+      "y": 32.41
+    },
+    {
+      "source_row": 26,
+      "window_key": [
+        471.69,
+        483.69
+      ],
+      "is_involvement": false,
+      "t_norm": 467.0,
+      "t_raw": 471.69,
+      "half": "1",
+      "action": "Goal kicks",
+      "code": "13. Jan Oblak (1071798) - Goal kicks",
+      "player": "Jan Oblak",
+      "shirt": "13",
+      "player_id": "1071798",
+      "team": "Atlético de Madrid (6662)",
+      "x": 5.13,
+      "y": 27.82
+    },
+    {
+      "source_row": 27,
+      "window_key": [
+        471.69,
+        483.69
+      ],
+      "is_involvement": false,
+      "t_norm": 467.0,
+      "t_raw": 471.69,
+      "half": "1",
+      "action": "Goal kicks long (40+ m)",
+      "code": "13. Jan Oblak (1071798) - Goal kicks long (40+ m)",
+      "player": "Jan Oblak",
+      "shirt": "13",
+      "player_id": "1071798",
+      "team": "Atlético de Madrid (6662)",
+      "x": 5.13,
+      "y": 27.82
+    },
+    {
+      "source_row": 28,
+      "window_key": [
+        471.69,
+        483.69
+      ],
+      "is_involvement": false,
+      "t_norm": 467.0,
+      "t_raw": 471.69,
+      "half": "1",
+      "action": "Long passes",
+      "code": "13. Jan Oblak (1071798) - Long passes",
+      "player": "Jan Oblak",
+      "shirt": "13",
+      "player_id": "1071798",
+      "team": "Atlético de Madrid (6662)",
+      "x": 5.13,
+      "y": 27.82
+    },
+    {
+      "source_row": 29,
+      "window_key": [
+        471.69,
+        483.69
+      ],
+      "is_involvement": false,
+      "t_norm": 467.0,
+      "t_raw": 471.69,
+      "half": "1",
+      "action": "Passes accurate",
+      "code": "13. Jan Oblak (1071798) - Passes accurate",
+      "player": "Jan Oblak",
+      "shirt": "13",
+      "player_id": "1071798",
+      "team": "Atlético de Madrid (6662)",
+      "x": 5.13,
+      "y": 27.82
+    },
+    {
+      "source_row": 30,
+      "window_key": [
+        492.69,
+        504.69
+      ],
+      "is_involvement": false,
+      "t_norm": 488.0,
+      "t_raw": 492.69,
+      "half": "1",
+      "action": "Passes accurate",
+      "code": "41. Dennis Seimen (1329654) - Passes accurate",
+      "player": "Dennis Seimen",
+      "shirt": "41",
+      "player_id": "1329654",
+      "team": "VfB Stuttgart (73512)",
+      "x": 7.33,
+      "y": 17.88
+    },
+    {
+      "source_row": 31,
+      "window_key": [
+        543.69,
+        555.69
+      ],
+      "is_involvement": false,
+      "t_norm": 539.0,
+      "t_raw": 543.69,
+      "half": "1",
+      "action": "Passes accurate",
+      "code": "41. Dennis Seimen (1329654) - Passes accurate",
+      "player": "Dennis Seimen",
+      "shirt": "41",
+      "player_id": "1329654",
+      "team": "VfB Stuttgart (73512)",
+      "x": 18.69,
+      "y": 32.19
+    },
+    {
+      "source_row": 32,
+      "window_key": [
+        599.69,
+        611.69
+      ],
+      "is_involvement": false,
+      "t_norm": 595.0,
+      "t_raw": 599.69,
+      "half": "1",
+      "action": "Opponent's mid-range shots on target",
+      "code": "13. Jan Oblak (1071798) - Opponent's mid-range shots on target",
+      "player": "Jan Oblak",
+      "shirt": "13",
+      "player_id": "1071798",
+      "team": "Atlético de Madrid (6662)",
+      "x": 88.43,
+      "y": 33.6
+    },
+    {
+      "source_row": 33,
+      "window_key": [
+        599.69,
+        611.69
+      ],
+      "is_involvement": false,
+      "t_norm": 595.0,
+      "t_raw": 599.69,
+      "half": "1",
+      "action": "Shots on target",
+      "code": "13. Jan Oblak (1071798) - Shots on target",
+      "player": "Jan Oblak",
+      "shirt": "13",
+      "player_id": "1071798",
+      "team": "Atlético de Madrid (6662)",
+      "x": 88.43,
+      "y": 33.6
+    },
+    {
+      "source_row": 34,
+      "window_key": [
+        599.69,
+        611.69
+      ],
+      "is_involvement": false,
+      "t_norm": 595.0,
+      "t_raw": 599.69,
+      "half": "1",
+      "action": "Shots saved",
+      "code": "13. Jan Oblak (1071798) - Shots saved",
+      "player": "Jan Oblak",
+      "shirt": "13",
+      "player_id": "1071798",
+      "team": "Atlético de Madrid (6662)",
+      "x": 88.43,
+      "y": 33.6
+    },
+    {
+      "source_row": 35,
+      "window_key": [
+        600.69,
+        612.69
+      ],
+      "is_involvement": false,
+      "t_norm": 596.0,
+      "t_raw": 600.69,
+      "half": "1",
+      "action": "Supersaves",
+      "code": "13. Jan Oblak (1071798) - Supersaves",
+      "player": "Jan Oblak",
+      "shirt": "13",
+      "player_id": "1071798",
+      "team": "Atlético de Madrid (6662)",
+      "x": 1.06,
+      "y": 35.0
+    },
+    {
+      "source_row": 36,
+      "window_key": [
+        603.69,
+        615.69
+      ],
+      "is_involvement": false,
+      "t_norm": 599.0,
+      "t_raw": 603.69,
+      "half": "1",
+      "action": "Shots off target",
+      "code": "13. Jan Oblak (1071798) - Shots off target",
+      "player": "Jan Oblak",
+      "shirt": "13",
+      "player_id": "1071798",
+      "team": "Atlético de Madrid (6662)",
+      "x": 98.77,
+      "y": 20.13
+    },
+    {
+      "source_row": 37,
+      "window_key": [
+        638.69,
+        650.69
+      ],
+      "is_involvement": false,
+      "t_norm": 634.0,
+      "t_raw": 638.69,
+      "half": "1",
+      "action": "Goal kicks",
+      "code": "13. Jan Oblak (1071798) - Goal kicks",
+      "player": "Jan Oblak",
+      "shirt": "13",
+      "player_id": "1071798",
+      "team": "Atlético de Madrid (6662)",
+      "x": 5.31,
+      "y": 27.27
+    },
+    {
+      "source_row": 38,
+      "window_key": [
+        638.69,
+        650.69
+      ],
+      "is_involvement": false,
+      "t_norm": 634.0,
+      "t_raw": 638.69,
+      "half": "1",
+      "action": "Goal kicks long (40+ m)",
+      "code": "13. Jan Oblak (1071798) - Goal kicks long (40+ m)",
+      "player": "Jan Oblak",
+      "shirt": "13",
+      "player_id": "1071798",
+      "team": "Atlético de Madrid (6662)",
+      "x": 5.31,
+      "y": 27.27
+    },
+    {
+      "source_row": 39,
+      "window_key": [
+        638.69,
+        650.69
+      ],
+      "is_involvement": false,
+      "t_norm": 634.0,
+      "t_raw": 638.69,
+      "half": "1",
+      "action": "Long passes",
+      "code": "13. Jan Oblak (1071798) - Long passes",
+      "player": "Jan Oblak",
+      "shirt": "13",
+      "player_id": "1071798",
+      "team": "Atlético de Madrid (6662)",
+      "x": 5.31,
+      "y": 27.27
+    },
+    {
+      "source_row": 40,
+      "window_key": [
+        638.69,
+        650.69
+      ],
+      "is_involvement": false,
+      "t_norm": 634.0,
+      "t_raw": 638.69,
+      "half": "1",
+      "action": "Passes accurate",
+      "code": "13. Jan Oblak (1071798) - Passes accurate",
+      "player": "Jan Oblak",
+      "shirt": "13",
+      "player_id": "1071798",
+      "team": "Atlético de Madrid (6662)",
+      "x": 5.31,
+      "y": 27.27
+    },
+    {
+      "source_row": 41,
+      "window_key": [
+        654.69,
+        666.69
+      ],
+      "is_involvement": false,
+      "t_norm": 650.0,
+      "t_raw": 654.69,
+      "half": "1",
+      "action": "Long passes",
+      "code": "41. Dennis Seimen (1329654) - Long passes",
+      "player": "Dennis Seimen",
+      "shirt": "41",
+      "player_id": "1329654",
+      "team": "VfB Stuttgart (73512)",
+      "x": 7.84,
+      "y": 26.46
+    },
+    {
+      "source_row": 42,
+      "window_key": [
+        654.69,
+        666.69
+      ],
+      "is_involvement": false,
+      "t_norm": 650.0,
+      "t_raw": 654.69,
+      "half": "1",
+      "action": "Passes accurate",
+      "code": "41. Dennis Seimen (1329654) - Passes accurate",
+      "player": "Dennis Seimen",
+      "shirt": "41",
+      "player_id": "1329654",
+      "team": "VfB Stuttgart (73512)",
+      "x": 7.84,
+      "y": 26.46
+    },
+    {
+      "source_row": 43,
+      "window_key": [
+        661.69,
+        673.69
+      ],
+      "is_involvement": false,
+      "t_norm": 657.0,
+      "t_raw": 661.69,
+      "half": "1",
+      "action": "Inaccurate passes",
+      "code": "13. Jan Oblak (1071798) - Inaccurate passes",
+      "player": "Jan Oblak",
+      "shirt": "13",
+      "player_id": "1071798",
+      "team": "Atlético de Madrid (6662)",
+      "x": 26.21,
+      "y": 48.55
+    },
+    {
+      "source_row": 44,
+      "window_key": [
+        661.69,
+        673.69
+      ],
+      "is_involvement": false,
+      "t_norm": 657.0,
+      "t_raw": 661.69,
+      "half": "1",
+      "action": "Incomplete long passes",
+      "code": "13. Jan Oblak (1071798) - Incomplete long passes",
+      "player": "Jan Oblak",
+      "shirt": "13",
+      "player_id": "1071798",
+      "team": "Atlético de Madrid (6662)",
+      "x": 26.21,
+      "y": 48.55
+    },
+    {
+      "source_row": 45,
+      "window_key": [
+        661.69,
+        673.69
+      ],
+      "is_involvement": false,
+      "t_norm": 657.0,
+      "t_raw": 661.69,
+      "half": "1",
+      "action": "Successful cross and pass interception attempts",
+      "code": "13. Jan Oblak (1071798) - Successful cross and pass interception attempts",
+      "player": "Jan Oblak",
+      "shirt": "13",
+      "player_id": "1071798",
+      "team": "Atlético de Madrid (6662)",
+      "x": 26.21,
+      "y": 48.55
+    },
+    {
+      "source_row": 46,
+      "window_key": [
+        668.69,
+        680.69
+      ],
+      "is_involvement": false,
+      "t_norm": 664.0,
+      "t_raw": 668.69,
+      "half": "1",
+      "action": "Passes accurate",
+      "code": "41. Dennis Seimen (1329654) - Passes accurate",
+      "player": "Dennis Seimen",
+      "shirt": "41",
+      "player_id": "1329654",
+      "team": "VfB Stuttgart (73512)",
+      "x": 14.95,
+      "y": 25.02
+    },
+    {
+      "source_row": 47,
+      "window_key": [
+        752.69,
+        764.69
+      ],
+      "is_involvement": false,
+      "t_norm": 748.0,
+      "t_raw": 752.69,
+      "half": "1",
+      "action": "Passes accurate",
+      "code": "41. Dennis Seimen (1329654) - Passes accurate",
+      "player": "Dennis Seimen",
+      "shirt": "41",
+      "player_id": "1329654",
+      "team": "VfB Stuttgart (73512)",
+      "x": 8.54,
+      "y": 35.76
+    },
+    {
+      "source_row": 48,
+      "window_key": [
+        778.69,
+        790.69
+      ],
+      "is_involvement": false,
+      "t_norm": 774.0,
+      "t_raw": 778.69,
+      "half": "1",
+      "action": "Shots off target",
+      "code": "13. Jan Oblak (1071798) - Shots off target",
+      "player": "Jan Oblak",
+      "shirt": "13",
+      "player_id": "1071798",
+      "team": "Atlético de Madrid (6662)",
+      "x": 96.65,
+      "y": 48.29
+    },
+    {
+      "source_row": 49,
+      "window_key": [
+        950.69,
+        962.69
+      ],
+      "is_involvement": false,
+      "t_norm": 946.0,
+      "t_raw": 950.69,
+      "half": "1",
+      "action": "Shots off target",
+      "code": "13. Jan Oblak (1071798) - Shots off target",
+      "player": "Jan Oblak",
+      "shirt": "13",
+      "player_id": "1071798",
+      "team": "Atlético de Madrid (6662)",
+      "x": 84.47,
+      "y": 33.98
+    },
+    {
+      "source_row": 50,
+      "window_key": [
+        974.69,
+        986.69
+      ],
+      "is_involvement": false,
+      "t_norm": 970.0,
+      "t_raw": 974.69,
+      "half": "1",
+      "action": "Goal kicks",
+      "code": "13. Jan Oblak (1071798) - Goal kicks",
+      "player": "Jan Oblak",
+      "shirt": "13",
+      "player_id": "1071798",
+      "team": "Atlético de Madrid (6662)",
+      "x": 4.91,
+      "y": 34.32
+    },
+    {
+      "source_row": 51,
+      "window_key": [
+        974.69,
+        986.69
+      ],
+      "is_involvement": false,
+      "t_norm": 970.0,
+      "t_raw": 974.69,
+      "half": "1",
+      "action": "Goal kicks long (40+ m)",
+      "code": "13. Jan Oblak (1071798) - Goal kicks long (40+ m)",
+      "player": "Jan Oblak",
+      "shirt": "13",
+      "player_id": "1071798",
+      "team": "Atlético de Madrid (6662)",
+      "x": 4.91,
+      "y": 34.32
+    },
+    {
+      "source_row": 52,
+      "window_key": [
+        974.69,
+        986.69
+      ],
+      "is_involvement": false,
+      "t_norm": 970.0,
+      "t_raw": 974.69,
+      "half": "1",
+      "action": "Long passes",
+      "code": "13. Jan Oblak (1071798) - Long passes",
+      "player": "Jan Oblak",
+      "shirt": "13",
+      "player_id": "1071798",
+      "team": "Atlético de Madrid (6662)",
+      "x": 4.91,
+      "y": 34.32
+    },
+    {
+      "source_row": 53,
+      "window_key": [
+        974.69,
+        986.69
+      ],
+      "is_involvement": false,
+      "t_norm": 970.0,
+      "t_raw": 974.69,
+      "half": "1",
+      "action": "Passes accurate",
+      "code": "13. Jan Oblak (1071798) - Passes accurate",
+      "player": "Jan Oblak",
+      "shirt": "13",
+      "player_id": "1071798",
+      "team": "Atlético de Madrid (6662)",
+      "x": 4.91,
+      "y": 34.32
+    },
+    {
+      "source_row": 54,
+      "window_key": [
+        1303.69,
+        1315.69
+      ],
+      "is_involvement": false,
+      "t_norm": 1299.0,
+      "t_raw": 1303.69,
+      "half": "1",
+      "action": "Passes accurate",
+      "code": "13. Jan Oblak (1071798) - Passes accurate",
+      "player": "Jan Oblak",
+      "shirt": "13",
+      "player_id": "1071798",
+      "team": "Atlético de Madrid (6662)",
+      "x": 6.23,
+      "y": 36.7
+    },
+    {
+      "source_row": 55,
+      "window_key": [
+        1315.69,
+        1327.69
+      ],
+      "is_involvement": false,
+      "t_norm": 1311.0,
+      "t_raw": 1315.69,
+      "half": "1",
+      "action": "Passes accurate",
+      "code": "13. Jan Oblak (1071798) - Passes accurate",
+      "player": "Jan Oblak",
+      "shirt": "13",
+      "player_id": "1071798",
+      "team": "Atlético de Madrid (6662)",
+      "x": 9.09,
+      "y": 30.58
+    },
+    {
+      "source_row": 56,
+      "window_key": [
+        1436.69,
+        1448.69
+      ],
+      "is_involvement": false,
+      "t_norm": 1432.0,
+      "t_raw": 1436.69,
+      "half": "1",
+      "action": "Passes accurate",
+      "code": "41. Dennis Seimen (1329654) - Passes accurate",
+      "player": "Dennis Seimen",
+      "shirt": "41",
+      "player_id": "1329654",
+      "team": "VfB Stuttgart (73512)",
+      "x": 28.34,
+      "y": 34.66
+    },
+    {
+      "source_row": 57,
+      "window_key": [
+        1526.69,
+        1538.69
+      ],
+      "is_involvement": false,
+      "t_norm": 1522.0,
+      "t_raw": 1526.69,
+      "half": "1",
+      "action": "Long passes",
+      "code": "13. Jan Oblak (1071798) - Long passes",
+      "player": "Jan Oblak",
+      "shirt": "13",
+      "player_id": "1071798",
+      "team": "Atlético de Madrid (6662)",
+      "x": 15.5,
+      "y": 20.69
+    },
+    {
+      "source_row": 58,
+      "window_key": [
+        1526.69,
+        1538.69
+      ],
+      "is_involvement": false,
+      "t_norm": 1522.0,
+      "t_raw": 1526.69,
+      "half": "1",
+      "action": "Passes accurate",
+      "code": "13. Jan Oblak (1071798) - Passes accurate",
+      "player": "Jan Oblak",
+      "shirt": "13",
+      "player_id": "1071798",
+      "team": "Atlético de Madrid (6662)",
+      "x": 15.5,
+      "y": 20.69
+    },
+    {
+      "source_row": 59,
+      "window_key": [
+        1594.69,
+        1606.69
+      ],
+      "is_involvement": false,
+      "t_norm": 1590.0,
+      "t_raw": 1594.69,
+      "half": "1",
+      "action": "Goal kicks",
+      "code": "13. Jan Oblak (1071798) - Goal kicks",
+      "player": "Jan Oblak",
+      "shirt": "13",
+      "player_id": "1071798",
+      "team": "Atlético de Madrid (6662)",
+      "x": 5.13,
+      "y": 28.16
+    },
+    {
+      "source_row": 60,
+      "window_key": [
+        1594.69,
+        1606.69
+      ],
+      "is_involvement": false,
+      "t_norm": 1590.0,
+      "t_raw": 1594.69,
+      "half": "1",
+      "action": "Goal kicks long (40+ m)",
+      "code": "13. Jan Oblak (1071798) - Goal kicks long (40+ m)",
+      "player": "Jan Oblak",
+      "shirt": "13",
+      "player_id": "1071798",
+      "team": "Atlético de Madrid (6662)",
+      "x": 5.13,
+      "y": 28.16
+    },
+    {
+      "source_row": 61,
+      "window_key": [
+        1594.69,
+        1606.69
+      ],
+      "is_involvement": false,
+      "t_norm": 1590.0,
+      "t_raw": 1594.69,
+      "half": "1",
+      "action": "Long passes",
+      "code": "13. Jan Oblak (1071798) - Long passes",
+      "player": "Jan Oblak",
+      "shirt": "13",
+      "player_id": "1071798",
+      "team": "Atlético de Madrid (6662)",
+      "x": 5.13,
+      "y": 28.16
+    },
+    {
+      "source_row": 62,
+      "window_key": [
+        1594.69,
+        1606.69
+      ],
+      "is_involvement": false,
+      "t_norm": 1590.0,
+      "t_raw": 1594.69,
+      "half": "1",
+      "action": "Passes accurate",
+      "code": "13. Jan Oblak (1071798) - Passes accurate",
+      "player": "Jan Oblak",
+      "shirt": "13",
+      "player_id": "1071798",
+      "team": "Atlético de Madrid (6662)",
+      "x": 5.13,
+      "y": 28.16
+    },
+    {
+      "source_row": 63,
+      "window_key": [
+        1680.69,
+        1692.69
+      ],
+      "is_involvement": false,
+      "t_norm": 1676.0,
+      "t_raw": 1680.69,
+      "half": "1",
+      "action": "Passes accurate",
+      "code": "13. Jan Oblak (1071798) - Passes accurate",
+      "player": "Jan Oblak",
+      "shirt": "13",
+      "player_id": "1071798",
+      "team": "Atlético de Madrid (6662)",
+      "x": 6.85,
+      "y": 30.84
+    },
+    {
+      "source_row": 64,
+      "window_key": [
+        1738.69,
+        1750.69
+      ],
+      "is_involvement": false,
+      "t_norm": 1734.0,
+      "t_raw": 1738.69,
+      "half": "1",
+      "action": "Shots off target",
+      "code": "41. Dennis Seimen (1329654) - Shots off target",
+      "player": "Dennis Seimen",
+      "shirt": "41",
+      "player_id": "1329654",
+      "team": "VfB Stuttgart (73512)",
+      "x": 100.64,
+      "y": 32.88
+    },
+    {
+      "source_row": 65,
+      "window_key": [
+        1765.69,
+        1777.69
+      ],
+      "is_involvement": false,
+      "t_norm": 1761.0,
+      "t_raw": 1765.69,
+      "half": "1",
+      "action": "Goal kicks",
+      "code": "41. Dennis Seimen (1329654) - Goal kicks",
+      "player": "Dennis Seimen",
+      "shirt": "41",
+      "player_id": "1329654",
+      "team": "VfB Stuttgart (73512)",
+      "x": 5.24,
+      "y": 32.36
+    },
+    {
+      "source_row": 66,
+      "window_key": [
+        1765.69,
+        1777.69
+      ],
+      "is_involvement": false,
+      "t_norm": 1761.0,
+      "t_raw": 1765.69,
+      "half": "1",
+      "action": "Goal kicks long (40+ m)",
+      "code": "41. Dennis Seimen (1329654) - Goal kicks long (40+ m)",
+      "player": "Dennis Seimen",
+      "shirt": "41",
+      "player_id": "1329654",
+      "team": "VfB Stuttgart (73512)",
+      "x": 5.24,
+      "y": 32.36
+    },
+    {
+      "source_row": 67,
+      "window_key": [
+        1765.69,
+        1777.69
+      ],
+      "is_involvement": false,
+      "t_norm": 1761.0,
+      "t_raw": 1765.69,
+      "half": "1",
+      "action": "Long passes",
+      "code": "41. Dennis Seimen (1329654) - Long passes",
+      "player": "Dennis Seimen",
+      "shirt": "41",
+      "player_id": "1329654",
+      "team": "VfB Stuttgart (73512)",
+      "x": 5.24,
+      "y": 32.36
+    },
+    {
+      "source_row": 68,
+      "window_key": [
+        1765.69,
+        1777.69
+      ],
+      "is_involvement": false,
+      "t_norm": 1761.0,
+      "t_raw": 1765.69,
+      "half": "1",
+      "action": "Passes accurate",
+      "code": "41. Dennis Seimen (1329654) - Passes accurate",
+      "player": "Dennis Seimen",
+      "shirt": "41",
+      "player_id": "1329654",
+      "team": "VfB Stuttgart (73512)",
+      "x": 5.24,
+      "y": 32.36
+    },
+    {
+      "source_row": 69,
+      "window_key": [
+        1868.69,
+        1880.69
+      ],
+      "is_involvement": false,
+      "t_norm": 1864.0,
+      "t_raw": 1868.69,
+      "half": "1",
+      "action": "Passes accurate",
+      "code": "41. Dennis Seimen (1329654) - Passes accurate",
+      "player": "Dennis Seimen",
+      "shirt": "41",
+      "player_id": "1329654",
+      "team": "VfB Stuttgart (73512)",
+      "x": 5.42,
+      "y": 37.42
+    },
+    {
+      "source_row": 70,
+      "window_key": [
+        1880.69,
+        1892.69
+      ],
+      "is_involvement": false,
+      "t_norm": 1876.0,
+      "t_raw": 1880.69,
+      "half": "1",
+      "action": "Long passes",
+      "code": "41. Dennis Seimen (1329654) - Long passes",
+      "player": "Dennis Seimen",
+      "shirt": "41",
+      "player_id": "1329654",
+      "team": "VfB Stuttgart (73512)",
+      "x": 1.46,
+      "y": 53.17
+    },
+    {
+      "source_row": 71,
+      "window_key": [
+        1880.69,
+        1892.69
+      ],
+      "is_involvement": false,
+      "t_norm": 1876.0,
+      "t_raw": 1880.69,
+      "half": "1",
+      "action": "Passes accurate",
+      "code": "41. Dennis Seimen (1329654) - Passes accurate",
+      "player": "Dennis Seimen",
+      "shirt": "41",
+      "player_id": "1329654",
+      "team": "VfB Stuttgart (73512)",
+      "x": 1.46,
+      "y": 53.17
+    },
+    {
+      "source_row": 72,
+      "window_key": [
+        1935.69,
+        1947.69
+      ],
+      "is_involvement": false,
+      "t_norm": 1931.0,
+      "t_raw": 1935.69,
+      "half": "1",
+      "action": "Passes accurate",
+      "code": "13. Jan Oblak (1071798) - Passes accurate",
+      "player": "Jan Oblak",
+      "shirt": "13",
+      "player_id": "1071798",
+      "team": "Atlético de Madrid (6662)",
+      "x": 4.83,
+      "y": 33.26
+    },
+    {
+      "source_row": 73,
+      "window_key": [
+        1953.69,
+        1965.69
+      ],
+      "is_involvement": false,
+      "t_norm": 1949.0,
+      "t_raw": 1953.69,
+      "half": "1",
+      "action": "Passes accurate",
+      "code": "13. Jan Oblak (1071798) - Passes accurate",
+      "player": "Jan Oblak",
+      "shirt": "13",
+      "player_id": "1071798",
+      "team": "Atlético de Madrid (6662)",
+      "x": 1.94,
+      "y": 33.26
+    },
+    {
+      "source_row": 74,
+      "window_key": [
+        1990.69,
+        2002.69
+      ],
+      "is_involvement": false,
+      "t_norm": 1986.0,
+      "t_raw": 1990.69,
+      "half": "1",
+      "action": "Long passes",
+      "code": "13. Jan Oblak (1071798) - Long passes",
+      "player": "Jan Oblak",
+      "shirt": "13",
+      "player_id": "1071798",
+      "team": "Atlético de Madrid (6662)",
+      "x": 9.27,
+      "y": 21.07
+    },
+    {
+      "source_row": 75,
+      "window_key": [
+        1990.69,
+        2002.69
+      ],
+      "is_involvement": false,
+      "t_norm": 1986.0,
+      "t_raw": 1990.69,
+      "half": "1",
+      "action": "Passes accurate",
+      "code": "13. Jan Oblak (1071798) - Passes accurate",
+      "player": "Jan Oblak",
+      "shirt": "13",
+      "player_id": "1071798",
+      "team": "Atlético de Madrid (6662)",
+      "x": 9.27,
+      "y": 21.07
+    },
+    {
+      "source_row": 76,
+      "window_key": [
+        2006.69,
+        2018.69
+      ],
+      "is_involvement": false,
+      "t_norm": 2002.0,
+      "t_raw": 2006.69,
+      "half": "1",
+      "action": "Passes accurate",
+      "code": "13. Jan Oblak (1071798) - Passes accurate",
+      "player": "Jan Oblak",
+      "shirt": "13",
+      "player_id": "1071798",
+      "team": "Atlético de Madrid (6662)",
+      "x": 10.7,
+      "y": 27.91
+    },
+    {
+      "source_row": 77,
+      "window_key": [
+        2096.69,
+        2108.69
+      ],
+      "is_involvement": false,
+      "t_norm": 2092.0,
+      "t_raw": 2096.69,
+      "half": "1",
+      "action": "Passes accurate",
+      "code": "13. Jan Oblak (1071798) - Passes accurate",
+      "player": "Jan Oblak",
+      "shirt": "13",
+      "player_id": "1071798",
+      "team": "Atlético de Madrid (6662)",
+      "x": 5.31,
+      "y": 31.86
+    },
+    {
+      "source_row": 78,
+      "window_key": [
+        2136.69,
+        2148.69
+      ],
+      "is_involvement": false,
+      "t_norm": 2132.0,
+      "t_raw": 2136.69,
+      "half": "1",
+      "action": "Goals conceded",
+      "code": "13. Jan Oblak (1071798) - Goals conceded",
+      "player": "Jan Oblak",
+      "shirt": "13",
+      "player_id": "1071798",
+      "team": "Atlético de Madrid (6662)",
+      "x": 86.27,
+      "y": 37.55
+    },
+    {
+      "source_row": 79,
+      "window_key": [
+        2136.69,
+        2148.69
+      ],
+      "is_involvement": false,
+      "t_norm": 2132.0,
+      "t_raw": 2136.69,
+      "half": "1",
+      "action": "Opponent's mid-range shots on target",
+      "code": "13. Jan Oblak (1071798) - Opponent's mid-range shots on target",
+      "player": "Jan Oblak",
+      "shirt": "13",
+      "player_id": "1071798",
+      "team": "Atlético de Madrid (6662)",
+      "x": 86.27,
+      "y": 37.55
+    },
+    {
+      "source_row": 80,
+      "window_key": [
+        2136.69,
+        2148.69
+      ],
+      "is_involvement": false,
+      "t_norm": 2132.0,
+      "t_raw": 2136.69,
+      "half": "1",
+      "action": "Shots on target",
+      "code": "13. Jan Oblak (1071798) - Shots on target",
+      "player": "Jan Oblak",
+      "shirt": "13",
+      "player_id": "1071798",
+      "team": "Atlético de Madrid (6662)",
+      "x": 86.27,
+      "y": 37.55
+    },
+    {
+      "source_row": 81,
+      "window_key": [
+        2233.69,
+        2245.69
+      ],
+      "is_involvement": false,
+      "t_norm": 2229.0,
+      "t_raw": 2233.69,
+      "half": "1",
+      "action": "Long passes",
+      "code": "41. Dennis Seimen (1329654) - Long passes",
+      "player": "Dennis Seimen",
+      "shirt": "41",
+      "player_id": "1329654",
+      "team": "VfB Stuttgart (73512)",
+      "x": 5.24,
+      "y": 45.53
+    },
+    {
+      "source_row": 82,
+      "window_key": [
+        2233.69,
+        2245.69
+      ],
+      "is_involvement": false,
+      "t_norm": 2229.0,
+      "t_raw": 2233.69,
+      "half": "1",
+      "action": "Passes accurate",
+      "code": "41. Dennis Seimen (1329654) - Passes accurate",
+      "player": "Dennis Seimen",
+      "shirt": "41",
+      "player_id": "1329654",
+      "team": "VfB Stuttgart (73512)",
+      "x": 5.24,
+      "y": 45.53
+    },
+    {
+      "source_row": 83,
+      "window_key": [
+        2351.69,
+        2363.69
+      ],
+      "is_involvement": false,
+      "t_norm": 2347.0,
+      "t_raw": 2351.69,
+      "half": "1",
+      "action": "Shots off target",
+      "code": "41. Dennis Seimen (1329654) - Shots off target",
+      "player": "Dennis Seimen",
+      "shirt": "41",
+      "player_id": "1329654",
+      "team": "VfB Stuttgart (73512)",
+      "x": 100.86,
+      "y": 26.89
+    },
+    {
+      "source_row": 84,
+      "window_key": [
+        2378.69,
+        2390.69
+      ],
+      "is_involvement": false,
+      "t_norm": 2374.0,
+      "t_raw": 2378.69,
+      "half": "1",
+      "action": "Goal kicks",
+      "code": "41. Dennis Seimen (1329654) - Goal kicks",
+      "player": "Dennis Seimen",
+      "shirt": "41",
+      "player_id": "1329654",
+      "team": "VfB Stuttgart (73512)",
+      "x": 5.09,
+      "y": 34.95
+    },
+    {
+      "source_row": 85,
+      "window_key": [
+        2378.69,
+        2390.69
+      ],
+      "is_involvement": false,
+      "t_norm": 2374.0,
+      "t_raw": 2378.69,
+      "half": "1",
+      "action": "Goal kicks long (40+ m)",
+      "code": "41. Dennis Seimen (1329654) - Goal kicks long (40+ m)",
+      "player": "Dennis Seimen",
+      "shirt": "41",
+      "player_id": "1329654",
+      "team": "VfB Stuttgart (73512)",
+      "x": 5.09,
+      "y": 34.95
+    },
+    {
+      "source_row": 86,
+      "window_key": [
+        2378.69,
+        2390.69
+      ],
+      "is_involvement": false,
+      "t_norm": 2374.0,
+      "t_raw": 2378.69,
+      "half": "1",
+      "action": "Long passes",
+      "code": "41. Dennis Seimen (1329654) - Long passes",
+      "player": "Dennis Seimen",
+      "shirt": "41",
+      "player_id": "1329654",
+      "team": "VfB Stuttgart (73512)",
+      "x": 5.09,
+      "y": 34.95
+    },
+    {
+      "source_row": 87,
+      "window_key": [
+        2378.69,
+        2390.69
+      ],
+      "is_involvement": false,
+      "t_norm": 2374.0,
+      "t_raw": 2378.69,
+      "half": "1",
+      "action": "Passes accurate",
+      "code": "41. Dennis Seimen (1329654) - Passes accurate",
+      "player": "Dennis Seimen",
+      "shirt": "41",
+      "player_id": "1329654",
+      "team": "VfB Stuttgart (73512)",
+      "x": 5.09,
+      "y": 34.95
+    },
+    {
+      "source_row": 88,
+      "window_key": [
+        2415.69,
+        2427.69
+      ],
+      "is_involvement": false,
+      "t_norm": 2411.0,
+      "t_raw": 2415.69,
+      "half": "1",
+      "action": "Passes accurate",
+      "code": "13. Jan Oblak (1071798) - Passes accurate",
+      "player": "Jan Oblak",
+      "shirt": "13",
+      "player_id": "1071798",
+      "team": "Atlético de Madrid (6662)",
+      "x": 6.78,
+      "y": 33.34
+    },
+    {
+      "source_row": 89,
+      "window_key": [
+        2421.69,
+        2433.69
+      ],
+      "is_involvement": false,
+      "t_norm": 2417.0,
+      "t_raw": 2421.69,
+      "half": "1",
+      "action": "Long passes",
+      "code": "13. Jan Oblak (1071798) - Long passes",
+      "player": "Jan Oblak",
+      "shirt": "13",
+      "player_id": "1071798",
+      "team": "Atlético de Madrid (6662)",
+      "x": 2.63,
+      "y": 33.47
+    },
+    {
+      "source_row": 90,
+      "window_key": [
+        2421.69,
+        2433.69
+      ],
+      "is_involvement": false,
+      "t_norm": 2417.0,
+      "t_raw": 2421.69,
+      "half": "1",
+      "action": "Passes accurate",
+      "code": "13. Jan Oblak (1071798) - Passes accurate",
+      "player": "Jan Oblak",
+      "shirt": "13",
+      "player_id": "1071798",
+      "team": "Atlético de Madrid (6662)",
+      "x": 2.63,
+      "y": 33.47
+    },
+    {
+      "source_row": 91,
+      "window_key": [
+        2519.69,
+        2531.69
+      ],
+      "is_involvement": false,
+      "t_norm": 2515.0,
+      "t_raw": 2519.69,
+      "half": "1",
+      "action": "Opponent's close-range shots on target",
+      "code": "41. Dennis Seimen (1329654) - Opponent's close-range shots on target",
+      "player": "Dennis Seimen",
+      "shirt": "41",
+      "player_id": "1329654",
+      "team": "VfB Stuttgart (73512)",
+      "x": 98.99,
+      "y": 39.76
+    },
+    {
+      "source_row": 92,
+      "window_key": [
+        2519.69,
+        2531.69
+      ],
+      "is_involvement": false,
+      "t_norm": 2515.0,
+      "t_raw": 2519.69,
+      "half": "1",
+      "action": "Shots on target",
+      "code": "41. Dennis Seimen (1329654) - Shots on target",
+      "player": "Dennis Seimen",
+      "shirt": "41",
+      "player_id": "1329654",
+      "team": "VfB Stuttgart (73512)",
+      "x": 98.99,
+      "y": 39.76
+    },
+    {
+      "source_row": 93,
+      "window_key": [
+        2519.69,
+        2531.69
+      ],
+      "is_involvement": false,
+      "t_norm": 2515.0,
+      "t_raw": 2519.69,
+      "half": "1",
+      "action": "Shots saved",
+      "code": "41. Dennis Seimen (1329654) - Shots saved",
+      "player": "Dennis Seimen",
+      "shirt": "41",
+      "player_id": "1329654",
+      "team": "VfB Stuttgart (73512)",
+      "x": 98.99,
+      "y": 39.76
+    },
+    {
+      "source_row": 94,
+      "window_key": [
+        2522.69,
+        2534.69
+      ],
+      "is_involvement": false,
+      "t_norm": 2518.0,
+      "t_raw": 2522.69,
+      "half": "1",
+      "action": "Passes accurate",
+      "code": "41. Dennis Seimen (1329654) - Passes accurate",
+      "player": "Dennis Seimen",
+      "shirt": "41",
+      "player_id": "1329654",
+      "team": "VfB Stuttgart (73512)",
+      "x": 13.16,
+      "y": 36.27
+    },
+    {
+      "source_row": 95,
+      "window_key": [
+        2542.69,
+        2554.69
+      ],
+      "is_involvement": false,
+      "t_norm": 2538.0,
+      "t_raw": 2542.69,
+      "half": "1",
+      "action": "Inaccurate passes",
+      "code": "41. Dennis Seimen (1329654) - Inaccurate passes",
+      "player": "Dennis Seimen",
+      "shirt": "41",
+      "player_id": "1329654",
+      "team": "VfB Stuttgart (73512)",
+      "x": 4.25,
+      "y": 29.77
+    },
+    {
+      "source_row": 96,
+      "window_key": [
+        2542.69,
+        2554.69
+      ],
+      "is_involvement": false,
+      "t_norm": 2538.0,
+      "t_raw": 2542.69,
+      "half": "1",
+      "action": "Incomplete long passes",
+      "code": "41. Dennis Seimen (1329654) - Incomplete long passes",
+      "player": "Dennis Seimen",
+      "shirt": "41",
+      "player_id": "1329654",
+      "team": "VfB Stuttgart (73512)",
+      "x": 4.25,
+      "y": 29.77
+    },
+    {
+      "source_row": 97,
+      "window_key": [
+        2613.69,
+        2625.69
+      ],
+      "is_involvement": false,
+      "t_norm": 2609.0,
+      "t_raw": 2613.69,
+      "half": "1",
+      "action": "Shots off target",
+      "code": "41. Dennis Seimen (1329654) - Shots off target",
+      "player": "Dennis Seimen",
+      "shirt": "41",
+      "player_id": "1329654",
+      "team": "VfB Stuttgart (73512)",
+      "x": 92.94,
+      "y": 28.97
+    },
+    {
+      "source_row": 98,
+      "window_key": [
+        2621.69,
+        2633.69
+      ],
+      "is_involvement": false,
+      "t_norm": 2617.0,
+      "t_raw": 2621.69,
+      "half": "1",
+      "action": "Passes accurate",
+      "code": "41. Dennis Seimen (1329654) - Passes accurate",
+      "player": "Dennis Seimen",
+      "shirt": "41",
+      "player_id": "1329654",
+      "team": "VfB Stuttgart (73512)",
+      "x": 2.71,
+      "y": 22.13
+    },
+    {
+      "source_row": 99,
+      "window_key": [
+        2710.69,
+        2710.69
+      ],
+      "is_involvement": false,
+      "t_norm": 2706.0,
+      "t_raw": 2710.69,
+      "half": "1",
+      "action": "Halftime",
+      "code": "Halftime",
+      "player": null,
+      "shirt": null,
+      "player_id": null,
+      "team": "",
+      "x": null,
+      "y": null
+    },
+    {
+      "source_row": 100,
+      "window_key": [
+        2742.92,
+        2742.92
+      ],
+      "is_involvement": false,
+      "t_norm": 2706.0,
+      "t_raw": 2742.92,
+      "half": "2",
+      "action": "Start of the 2nd half",
+      "code": "Start of the 2nd half",
+      "player": null,
+      "shirt": null,
+      "player_id": null,
+      "team": "",
+      "x": null,
+      "y": null
+    },
+    {
+      "source_row": 101,
+      "window_key": [
+        2794.92,
+        2806.92
+      ],
+      "is_involvement": false,
+      "t_norm": 2758.0,
+      "t_raw": 2794.92,
+      "half": "2",
+      "action": "Long passes",
+      "code": "13. Jan Oblak (1071798) - Long passes",
+      "player": "Jan Oblak",
+      "shirt": "13",
+      "player_id": "1071798",
+      "team": "Atlético de Madrid (6662)",
+      "x": 3.15,
+      "y": 22.85
+    },
+    {
+      "source_row": 102,
+      "window_key": [
+        2794.92,
+        2806.92
+      ],
+      "is_involvement": false,
+      "t_norm": 2758.0,
+      "t_raw": 2794.92,
+      "half": "2",
+      "action": "Passes accurate",
+      "code": "13. Jan Oblak (1071798) - Passes accurate",
+      "player": "Jan Oblak",
+      "shirt": "13",
+      "player_id": "1071798",
+      "team": "Atlético de Madrid (6662)",
+      "x": 3.15,
+      "y": 22.85
+    },
+    {
+      "source_row": 103,
+      "window_key": [
+        2810.92,
+        2822.92
+      ],
+      "is_involvement": false,
+      "t_norm": 2774.0,
+      "t_raw": 2810.92,
+      "half": "2",
+      "action": "Goals conceded",
+      "code": "41. Dennis Seimen (1329654) - Goals conceded",
+      "player": "Dennis Seimen",
+      "shirt": "41",
+      "player_id": "1329654",
+      "team": "VfB Stuttgart (73512)",
+      "x": 96.06,
+      "y": 34.95
+    },
+    {
+      "source_row": 104,
+      "window_key": [
+        2810.92,
+        2822.92
+      ],
+      "is_involvement": false,
+      "t_norm": 2774.0,
+      "t_raw": 2810.92,
+      "half": "2",
+      "action": "Opponent's close-range shots on target",
+      "code": "41. Dennis Seimen (1329654) - Opponent's close-range shots on target",
+      "player": "Dennis Seimen",
+      "shirt": "41",
+      "player_id": "1329654",
+      "team": "VfB Stuttgart (73512)",
+      "x": 96.06,
+      "y": 34.95
+    },
+    {
+      "source_row": 105,
+      "window_key": [
+        2810.92,
+        2822.92
+      ],
+      "is_involvement": false,
+      "t_norm": 2774.0,
+      "t_raw": 2810.92,
+      "half": "2",
+      "action": "Shots on target",
+      "code": "41. Dennis Seimen (1329654) - Shots on target",
+      "player": "Dennis Seimen",
+      "shirt": "41",
+      "player_id": "1329654",
+      "team": "VfB Stuttgart (73512)",
+      "x": 96.06,
+      "y": 34.95
+    },
+    {
+      "source_row": 106,
+      "window_key": [
+        2882.92,
+        2894.92
+      ],
+      "is_involvement": false,
+      "t_norm": 2846.0,
+      "t_raw": 2882.92,
+      "half": "2",
+      "action": "Passes accurate",
+      "code": "13. Jan Oblak (1071798) - Passes accurate",
+      "player": "Jan Oblak",
+      "shirt": "13",
+      "player_id": "1071798",
+      "team": "Atlético de Madrid (6662)",
+      "x": 11.14,
+      "y": 38.1
+    },
+    {
+      "source_row": 107,
+      "window_key": [
+        2992.92,
+        3004.92
+      ],
+      "is_involvement": false,
+      "t_norm": 2956.0,
+      "t_raw": 2992.92,
+      "half": "2",
+      "action": "Successful cross and pass interception attempts",
+      "code": "41. Dennis Seimen (1329654) - Successful cross and pass interception attempts",
+      "player": "Dennis Seimen",
+      "shirt": "41",
+      "player_id": "1329654",
+      "team": "VfB Stuttgart (73512)",
+      "x": 6.12,
+      "y": 23.79
+    },
+    {
+      "source_row": 108,
+      "window_key": [
+        3001.92,
+        3013.92
+      ],
+      "is_involvement": false,
+      "t_norm": 2965.0,
+      "t_raw": 3001.92,
+      "half": "2",
+      "action": "Passes accurate",
+      "code": "41. Dennis Seimen (1329654) - Passes accurate",
+      "player": "Dennis Seimen",
+      "shirt": "41",
+      "player_id": "1329654",
+      "team": "VfB Stuttgart (73512)",
+      "x": 5.46,
+      "y": 33.09
+    },
+    {
+      "source_row": 109,
+      "window_key": [
+        3072.92,
+        3084.92
+      ],
+      "is_involvement": false,
+      "t_norm": 3036.0,
+      "t_raw": 3072.92,
+      "half": "2",
+      "action": "Passes accurate",
+      "code": "13. Jan Oblak (1071798) - Passes accurate",
+      "player": "Jan Oblak",
+      "shirt": "13",
+      "player_id": "1071798",
+      "team": "Atlético de Madrid (6662)",
+      "x": 5.49,
+      "y": 33.72
+    },
+    {
+      "source_row": 110,
+      "window_key": [
+        3088.92,
+        3100.92
+      ],
+      "is_involvement": false,
+      "t_norm": 3052.0,
+      "t_raw": 3088.92,
+      "half": "2",
+      "action": "Passes accurate",
+      "code": "41. Dennis Seimen (1329654) - Passes accurate",
+      "player": "Dennis Seimen",
+      "shirt": "41",
+      "player_id": "1329654",
+      "team": "VfB Stuttgart (73512)",
+      "x": 20.6,
+      "y": 28.25
+    },
+    {
+      "source_row": 111,
+      "window_key": [
+        3172.92,
+        3184.92
+      ],
+      "is_involvement": false,
+      "t_norm": 3136.0,
+      "t_raw": 3172.92,
+      "half": "2",
+      "action": "Passes accurate",
+      "code": "41. Dennis Seimen (1329654) - Passes accurate",
+      "player": "Dennis Seimen",
+      "shirt": "41",
+      "player_id": "1329654",
+      "team": "VfB Stuttgart (73512)",
+      "x": 6.04,
+      "y": 41.24
+    },
+    {
+      "source_row": 112,
+      "window_key": [
+        3431.92,
+        3443.92
+      ],
+      "is_involvement": false,
+      "t_norm": 3395.0,
+      "t_raw": 3431.92,
+      "half": "2",
+      "action": "Successful cross and pass interception attempts",
+      "code": "13. Jan Oblak (1071798) - Successful cross and pass interception attempts",
+      "player": "Jan Oblak",
+      "shirt": "13",
+      "player_id": "1071798",
+      "team": "Atlético de Madrid (6662)",
+      "x": 6.04,
+      "y": 33.43
+    },
+    {
+      "source_row": 113,
+      "window_key": [
+        3438.92,
+        3450.92
+      ],
+      "is_involvement": false,
+      "t_norm": 3402.0,
+      "t_raw": 3438.92,
+      "half": "2",
+      "action": "Passes accurate",
+      "code": "13. Jan Oblak (1071798) - Passes accurate",
+      "player": "Jan Oblak",
+      "shirt": "13",
+      "player_id": "1071798",
+      "team": "Atlético de Madrid (6662)",
+      "x": 9.09,
+      "y": 32.49
+    },
+    {
+      "source_row": 114,
+      "window_key": [
+        3641.92,
+        3653.92
+      ],
+      "is_involvement": false,
+      "t_norm": 3605.0,
+      "t_raw": 3641.92,
+      "half": "2",
+      "action": "Goal kicks",
+      "code": "41. Dennis Seimen (1329654) - Goal kicks",
+      "player": "Dennis Seimen",
+      "shirt": "41",
+      "player_id": "1329654",
+      "team": "VfB Stuttgart (73512)",
+      "x": 5.35,
+      "y": 34.36
+    },
+    {
+      "source_row": 115,
+      "window_key": [
+        3641.92,
+        3653.92
+      ],
+      "is_involvement": false,
+      "t_norm": 3605.0,
+      "t_raw": 3641.92,
+      "half": "2",
+      "action": "Goal kicks long (40+ m)",
+      "code": "41. Dennis Seimen (1329654) - Goal kicks long (40+ m)",
+      "player": "Dennis Seimen",
+      "shirt": "41",
+      "player_id": "1329654",
+      "team": "VfB Stuttgart (73512)",
+      "x": 5.35,
+      "y": 34.36
+    },
+    {
+      "source_row": 116,
+      "window_key": [
+        3641.92,
+        3653.92
+      ],
+      "is_involvement": false,
+      "t_norm": 3605.0,
+      "t_raw": 3641.92,
+      "half": "2",
+      "action": "Long passes",
+      "code": "41. Dennis Seimen (1329654) - Long passes",
+      "player": "Dennis Seimen",
+      "shirt": "41",
+      "player_id": "1329654",
+      "team": "VfB Stuttgart (73512)",
+      "x": 5.35,
+      "y": 34.36
+    },
+    {
+      "source_row": 117,
+      "window_key": [
+        3641.92,
+        3653.92
+      ],
+      "is_involvement": false,
+      "t_norm": 3605.0,
+      "t_raw": 3641.92,
+      "half": "2",
+      "action": "Passes accurate",
+      "code": "41. Dennis Seimen (1329654) - Passes accurate",
+      "player": "Dennis Seimen",
+      "shirt": "41",
+      "player_id": "1329654",
+      "team": "VfB Stuttgart (73512)",
+      "x": 5.35,
+      "y": 34.36
+    },
+    {
+      "source_row": 118,
+      "window_key": [
+        3681.92,
+        3693.92
+      ],
+      "is_involvement": false,
+      "t_norm": 3645.0,
+      "t_raw": 3681.92,
+      "half": "2",
+      "action": "Opponent's mid-range shots on target",
+      "code": "41. Dennis Seimen (1329654) - Opponent's mid-range shots on target",
+      "player": "Dennis Seimen",
+      "shirt": "41",
+      "player_id": "1329654",
+      "team": "VfB Stuttgart (73512)",
+      "x": 96.98,
+      "y": 18.65
+    },
+    {
+      "source_row": 119,
+      "window_key": [
+        3681.92,
+        3693.92
+      ],
+      "is_involvement": false,
+      "t_norm": 3645.0,
+      "t_raw": 3681.92,
+      "half": "2",
+      "action": "Shots on target",
+      "code": "41. Dennis Seimen (1329654) - Shots on target",
+      "player": "Dennis Seimen",
+      "shirt": "41",
+      "player_id": "1329654",
+      "team": "VfB Stuttgart (73512)",
+      "x": 96.98,
+      "y": 18.65
+    },
+    {
+      "source_row": 120,
+      "window_key": [
+        3681.92,
+        3693.92
+      ],
+      "is_involvement": false,
+      "t_norm": 3645.0,
+      "t_raw": 3681.92,
+      "half": "2",
+      "action": "Shots saved",
+      "code": "41. Dennis Seimen (1329654) - Shots saved",
+      "player": "Dennis Seimen",
+      "shirt": "41",
+      "player_id": "1329654",
+      "team": "VfB Stuttgart (73512)",
+      "x": 96.98,
+      "y": 18.65
+    },
+    {
+      "source_row": 121,
+      "window_key": [
+        3681.92,
+        3693.92
+      ],
+      "is_involvement": false,
+      "t_norm": 3645.0,
+      "t_raw": 3681.92,
+      "half": "2",
+      "action": "Supersaves",
+      "code": "41. Dennis Seimen (1329654) - Supersaves",
+      "player": "Dennis Seimen",
+      "shirt": "41",
+      "player_id": "1329654",
+      "team": "VfB Stuttgart (73512)",
+      "x": 1.02,
+      "y": 36.1
+    },
+    {
+      "source_row": 122,
+      "window_key": [
+        3707.92,
+        3719.92
+      ],
+      "is_involvement": false,
+      "t_norm": 3671.0,
+      "t_raw": 3707.92,
+      "half": "2",
+      "action": "Goal kicks",
+      "code": "41. Dennis Seimen (1329654) - Goal kicks",
+      "player": "Dennis Seimen",
+      "shirt": "41",
+      "player_id": "1329654",
+      "team": "VfB Stuttgart (73512)",
+      "x": 5.02,
+      "y": 34.7
+    },
+    {
+      "source_row": 123,
+      "window_key": [
+        3707.92,
+        3719.92
+      ],
+      "is_involvement": false,
+      "t_norm": 3671.0,
+      "t_raw": 3707.92,
+      "half": "2",
+      "action": "Goal kicks long (40+ m)",
+      "code": "41. Dennis Seimen (1329654) - Goal kicks long (40+ m)",
+      "player": "Dennis Seimen",
+      "shirt": "41",
+      "player_id": "1329654",
+      "team": "VfB Stuttgart (73512)",
+      "x": 5.02,
+      "y": 34.7
+    },
+    {
+      "source_row": 124,
+      "window_key": [
+        3707.92,
+        3719.92
+      ],
+      "is_involvement": false,
+      "t_norm": 3671.0,
+      "t_raw": 3707.92,
+      "half": "2",
+      "action": "Long passes",
+      "code": "41. Dennis Seimen (1329654) - Long passes",
+      "player": "Dennis Seimen",
+      "shirt": "41",
+      "player_id": "1329654",
+      "team": "VfB Stuttgart (73512)",
+      "x": 5.02,
+      "y": 34.7
+    },
+    {
+      "source_row": 125,
+      "window_key": [
+        3707.92,
+        3719.92
+      ],
+      "is_involvement": false,
+      "t_norm": 3671.0,
+      "t_raw": 3707.92,
+      "half": "2",
+      "action": "Passes accurate",
+      "code": "41. Dennis Seimen (1329654) - Passes accurate",
+      "player": "Dennis Seimen",
+      "shirt": "41",
+      "player_id": "1329654",
+      "team": "VfB Stuttgart (73512)",
+      "x": 5.02,
+      "y": 34.7
+    },
+    {
+      "source_row": 126,
+      "window_key": [
+        3745.92,
+        3757.92
+      ],
+      "is_involvement": false,
+      "t_norm": 3709.0,
+      "t_raw": 3745.92,
+      "half": "2",
+      "action": "Passes accurate",
+      "code": "13. Jan Oblak (1071798) - Passes accurate",
+      "player": "Jan Oblak",
+      "shirt": "13",
+      "player_id": "1071798",
+      "team": "Atlético de Madrid (6662)",
+      "x": 11.65,
+      "y": 26.5
+    },
+    {
+      "source_row": 127,
+      "window_key": [
+        3978.92,
+        3990.92
+      ],
+      "is_involvement": false,
+      "t_norm": 3942.0,
+      "t_raw": 3978.92,
+      "half": "2",
+      "action": "Shots off target",
+      "code": "13. Jan Oblak (1071798) - Shots off target",
+      "player": "Jan Oblak",
+      "shirt": "13",
+      "player_id": "1071798",
+      "team": "Atlético de Madrid (6662)",
+      "x": 98.0,
+      "y": 33.85
+    },
+    {
+      "source_row": 128,
+      "window_key": [
+        4010.92,
+        4022.92
+      ],
+      "is_involvement": false,
+      "t_norm": 3974.0,
+      "t_raw": 4010.92,
+      "half": "2",
+      "action": "Goal kicks",
+      "code": "13. Jan Oblak (1071798) - Goal kicks",
+      "player": "Jan Oblak",
+      "shirt": "13",
+      "player_id": "1071798",
+      "team": "Atlético de Madrid (6662)",
+      "x": 5.27,
+      "y": 27.14
+    },
+    {
+      "source_row": 129,
+      "window_key": [
+        4010.92,
+        4022.92
+      ],
+      "is_involvement": false,
+      "t_norm": 3974.0,
+      "t_raw": 4010.92,
+      "half": "2",
+      "action": "Goal kicks long (40+ m)",
+      "code": "13. Jan Oblak (1071798) - Goal kicks long (40+ m)",
+      "player": "Jan Oblak",
+      "shirt": "13",
+      "player_id": "1071798",
+      "team": "Atlético de Madrid (6662)",
+      "x": 5.27,
+      "y": 27.14
+    },
+    {
+      "source_row": 130,
+      "window_key": [
+        4010.92,
+        4022.92
+      ],
+      "is_involvement": false,
+      "t_norm": 3974.0,
+      "t_raw": 4010.92,
+      "half": "2",
+      "action": "Long passes",
+      "code": "13. Jan Oblak (1071798) - Long passes",
+      "player": "Jan Oblak",
+      "shirt": "13",
+      "player_id": "1071798",
+      "team": "Atlético de Madrid (6662)",
+      "x": 5.27,
+      "y": 27.14
+    },
+    {
+      "source_row": 131,
+      "window_key": [
+        4010.92,
+        4022.92
+      ],
+      "is_involvement": false,
+      "t_norm": 3974.0,
+      "t_raw": 4010.92,
+      "half": "2",
+      "action": "Passes accurate",
+      "code": "13. Jan Oblak (1071798) - Passes accurate",
+      "player": "Jan Oblak",
+      "shirt": "13",
+      "player_id": "1071798",
+      "team": "Atlético de Madrid (6662)",
+      "x": 5.27,
+      "y": 27.14
+    },
+    {
+      "source_row": 132,
+      "window_key": [
+        4071.92,
+        4083.92
+      ],
+      "is_involvement": false,
+      "t_norm": 4035.0,
+      "t_raw": 4071.92,
+      "half": "2",
+      "action": "Inaccurate passes",
+      "code": "13. Jan Oblak (1071798) - Inaccurate passes",
+      "player": "Jan Oblak",
+      "shirt": "13",
+      "player_id": "1071798",
+      "team": "Atlético de Madrid (6662)",
+      "x": 14.62,
+      "y": 32.75
+    },
+    {
+      "source_row": 133,
+      "window_key": [
+        4071.92,
+        4083.92
+      ],
+      "is_involvement": false,
+      "t_norm": 4035.0,
+      "t_raw": 4071.92,
+      "half": "2",
+      "action": "Incomplete long passes",
+      "code": "13. Jan Oblak (1071798) - Incomplete long passes",
+      "player": "Jan Oblak",
+      "shirt": "13",
+      "player_id": "1071798",
+      "team": "Atlético de Madrid (6662)",
+      "x": 14.62,
+      "y": 32.75
+    },
+    {
+      "source_row": 134,
+      "window_key": [
+        4238.92,
+        4250.92
+      ],
+      "is_involvement": false,
+      "t_norm": 4202.0,
+      "t_raw": 4238.92,
+      "half": "2",
+      "action": "Long passes",
+      "code": "13. Jan Oblak (1071798) - Long passes",
+      "player": "Jan Oblak",
+      "shirt": "13",
+      "player_id": "1071798",
+      "team": "Atlético de Madrid (6662)",
+      "x": 13.49,
+      "y": 39.97
+    },
+    {
+      "source_row": 135,
+      "window_key": [
+        4238.92,
+        4250.92
+      ],
+      "is_involvement": false,
+      "t_norm": 4202.0,
+      "t_raw": 4238.92,
+      "half": "2",
+      "action": "Passes accurate",
+      "code": "13. Jan Oblak (1071798) - Passes accurate",
+      "player": "Jan Oblak",
+      "shirt": "13",
+      "player_id": "1071798",
+      "team": "Atlético de Madrid (6662)",
+      "x": 13.49,
+      "y": 39.97
+    },
+    {
+      "source_row": 136,
+      "window_key": [
+        4561.92,
+        4573.92
+      ],
+      "is_involvement": false,
+      "t_norm": 4525.0,
+      "t_raw": 4561.92,
+      "half": "2",
+      "action": "Successful cross and pass interception attempts",
+      "code": "13. Jan Oblak (1071798) - Successful cross and pass interception attempts",
+      "player": "Jan Oblak",
+      "shirt": "13",
+      "player_id": "1071798",
+      "team": "Atlético de Madrid (6662)",
+      "x": 4.58,
+      "y": 34.87
+    },
+    {
+      "source_row": 137,
+      "window_key": [
+        4575.92,
+        4587.92
+      ],
+      "is_involvement": false,
+      "t_norm": 4539.0,
+      "t_raw": 4575.92,
+      "half": "2",
+      "action": "Long passes",
+      "code": "13. Jan Oblak (1071798) - Long passes",
+      "player": "Jan Oblak",
+      "shirt": "13",
+      "player_id": "1071798",
+      "team": "Atlético de Madrid (6662)",
+      "x": 5.27,
+      "y": 31.13
+    },
+    {
+      "source_row": 138,
+      "window_key": [
+        4575.92,
+        4587.92
+      ],
+      "is_involvement": false,
+      "t_norm": 4539.0,
+      "t_raw": 4575.92,
+      "half": "2",
+      "action": "Passes accurate",
+      "code": "13. Jan Oblak (1071798) - Passes accurate",
+      "player": "Jan Oblak",
+      "shirt": "13",
+      "player_id": "1071798",
+      "team": "Atlético de Madrid (6662)",
+      "x": 5.27,
+      "y": 31.13
+    },
+    {
+      "source_row": 139,
+      "window_key": [
+        4631.92,
+        4643.92
+      ],
+      "is_involvement": false,
+      "t_norm": 4595.0,
+      "t_raw": 4631.92,
+      "half": "2",
+      "action": "Passes accurate",
+      "code": "41. Dennis Seimen (1329654) - Passes accurate",
+      "player": "Dennis Seimen",
+      "shirt": "41",
+      "player_id": "1329654",
+      "team": "VfB Stuttgart (73512)",
+      "x": 9.97,
+      "y": 42.18
+    },
+    {
+      "source_row": 140,
+      "window_key": [
+        4673.92,
+        4685.92
+      ],
+      "is_involvement": false,
+      "t_norm": 4637.0,
+      "t_raw": 4673.92,
+      "half": "2",
+      "action": "Shots off target",
+      "code": "13. Jan Oblak (1071798) - Shots off target",
+      "player": "Jan Oblak",
+      "shirt": "13",
+      "player_id": "1071798",
+      "team": "Atlético de Madrid (6662)",
+      "x": 86.23,
+      "y": 50.8
+    },
+    {
+      "source_row": 141,
+      "window_key": [
+        4728.92,
+        4740.92
+      ],
+      "is_involvement": false,
+      "t_norm": 4692.0,
+      "t_raw": 4728.92,
+      "half": "2",
+      "action": "Goal kicks",
+      "code": "13. Jan Oblak (1071798) - Goal kicks",
+      "player": "Jan Oblak",
+      "shirt": "13",
+      "player_id": "1071798",
+      "team": "Atlético de Madrid (6662)",
+      "x": 5.49,
+      "y": 26.5
+    },
+    {
+      "source_row": 142,
+      "window_key": [
+        4728.92,
+        4740.92
+      ],
+      "is_involvement": false,
+      "t_norm": 4692.0,
+      "t_raw": 4728.92,
+      "half": "2",
+      "action": "Goal kicks long (40+ m)",
+      "code": "13. Jan Oblak (1071798) - Goal kicks long (40+ m)",
+      "player": "Jan Oblak",
+      "shirt": "13",
+      "player_id": "1071798",
+      "team": "Atlético de Madrid (6662)",
+      "x": 5.49,
+      "y": 26.5
+    },
+    {
+      "source_row": 143,
+      "window_key": [
+        4728.92,
+        4740.92
+      ],
+      "is_involvement": false,
+      "t_norm": 4692.0,
+      "t_raw": 4728.92,
+      "half": "2",
+      "action": "Long passes",
+      "code": "13. Jan Oblak (1071798) - Long passes",
+      "player": "Jan Oblak",
+      "shirt": "13",
+      "player_id": "1071798",
+      "team": "Atlético de Madrid (6662)",
+      "x": 5.49,
+      "y": 26.5
+    },
+    {
+      "source_row": 144,
+      "window_key": [
+        4728.92,
+        4740.92
+      ],
+      "is_involvement": false,
+      "t_norm": 4692.0,
+      "t_raw": 4728.92,
+      "half": "2",
+      "action": "Passes accurate",
+      "code": "13. Jan Oblak (1071798) - Passes accurate",
+      "player": "Jan Oblak",
+      "shirt": "13",
+      "player_id": "1071798",
+      "team": "Atlético de Madrid (6662)",
+      "x": 5.49,
+      "y": 26.5
+    },
+    {
+      "source_row": 145,
+      "window_key": [
+        4773.92,
+        4785.92
+      ],
+      "is_involvement": false,
+      "t_norm": 4737.0,
+      "t_raw": 4773.92,
+      "half": "2",
+      "action": "Passes accurate",
+      "code": "41. Dennis Seimen (1329654) - Passes accurate",
+      "player": "Dennis Seimen",
+      "shirt": "41",
+      "player_id": "1329654",
+      "team": "VfB Stuttgart (73512)",
+      "x": 6.96,
+      "y": 12.19
+    },
+    {
+      "source_row": 146,
+      "window_key": [
+        4877.92,
+        4889.92
+      ],
+      "is_involvement": false,
+      "t_norm": 4841.0,
+      "t_raw": 4877.92,
+      "half": "2",
+      "action": "Shots off target",
+      "code": "13. Jan Oblak (1071798) - Shots off target",
+      "player": "Jan Oblak",
+      "shirt": "13",
+      "player_id": "1071798",
+      "team": "Atlético de Madrid (6662)",
+      "x": 99.03,
+      "y": 36.74
+    },
+    {
+      "source_row": 147,
+      "window_key": [
+        4906.92,
+        4918.92
+      ],
+      "is_involvement": false,
+      "t_norm": 4870.0,
+      "t_raw": 4906.92,
+      "half": "2",
+      "action": "Goal kicks",
+      "code": "13. Jan Oblak (1071798) - Goal kicks",
+      "player": "Jan Oblak",
+      "shirt": "13",
+      "player_id": "1071798",
+      "team": "Atlético de Madrid (6662)",
+      "x": 4.94,
+      "y": 28.37
+    },
+    {
+      "source_row": 148,
+      "window_key": [
+        4906.92,
+        4918.92
+      ],
+      "is_involvement": false,
+      "t_norm": 4870.0,
+      "t_raw": 4906.92,
+      "half": "2",
+      "action": "Goal kicks long (40+ m)",
+      "code": "13. Jan Oblak (1071798) - Goal kicks long (40+ m)",
+      "player": "Jan Oblak",
+      "shirt": "13",
+      "player_id": "1071798",
+      "team": "Atlético de Madrid (6662)",
+      "x": 4.94,
+      "y": 28.37
+    },
+    {
+      "source_row": 149,
+      "window_key": [
+        4906.92,
+        4918.92
+      ],
+      "is_involvement": false,
+      "t_norm": 4870.0,
+      "t_raw": 4906.92,
+      "half": "2",
+      "action": "Long passes",
+      "code": "13. Jan Oblak (1071798) - Long passes",
+      "player": "Jan Oblak",
+      "shirt": "13",
+      "player_id": "1071798",
+      "team": "Atlético de Madrid (6662)",
+      "x": 4.94,
+      "y": 28.37
+    },
+    {
+      "source_row": 150,
+      "window_key": [
+        4906.92,
+        4918.92
+      ],
+      "is_involvement": false,
+      "t_norm": 4870.0,
+      "t_raw": 4906.92,
+      "half": "2",
+      "action": "Passes accurate",
+      "code": "13. Jan Oblak (1071798) - Passes accurate",
+      "player": "Jan Oblak",
+      "shirt": "13",
+      "player_id": "1071798",
+      "team": "Atlético de Madrid (6662)",
+      "x": 4.94,
+      "y": 28.37
+    },
+    {
+      "source_row": 151,
+      "window_key": [
+        4939.92,
+        4951.92
+      ],
+      "is_involvement": false,
+      "t_norm": 4903.0,
+      "t_raw": 4939.92,
+      "half": "2",
+      "action": "Passes accurate",
+      "code": "13. Jan Oblak (1071798) - Passes accurate",
+      "player": "Jan Oblak",
+      "shirt": "13",
+      "player_id": "1071798",
+      "team": "Atlético de Madrid (6662)",
+      "x": 20.09,
+      "y": 37.55
+    },
+    {
+      "source_row": 152,
+      "window_key": [
+        4982.92,
+        4994.92
+      ],
+      "is_involvement": false,
+      "t_norm": 4946.0,
+      "t_raw": 4982.92,
+      "half": "2",
+      "action": "Inaccurate passes",
+      "code": "13. Jan Oblak (1071798) - Inaccurate passes",
+      "player": "Jan Oblak",
+      "shirt": "13",
+      "player_id": "1071798",
+      "team": "Atlético de Madrid (6662)",
+      "x": 31.86,
+      "y": 27.06
+    },
+    {
+      "source_row": 153,
+      "window_key": [
+        5065.92,
+        5077.92
+      ],
+      "is_involvement": false,
+      "t_norm": 5029.0,
+      "t_raw": 5065.92,
+      "half": "2",
+      "action": "Successful cross and pass interception attempts",
+      "code": "13. Jan Oblak (1071798) - Successful cross and pass interception attempts",
+      "player": "Jan Oblak",
+      "shirt": "13",
+      "player_id": "1071798",
+      "team": "Atlético de Madrid (6662)",
+      "x": 4.8,
+      "y": 35.63
+    },
+    {
+      "source_row": 154,
+      "window_key": [
+        5080.92,
+        5092.92
+      ],
+      "is_involvement": false,
+      "t_norm": 5044.0,
+      "t_raw": 5080.92,
+      "half": "2",
+      "action": "Long passes",
+      "code": "13. Jan Oblak (1071798) - Long passes",
+      "player": "Jan Oblak",
+      "shirt": "13",
+      "player_id": "1071798",
+      "team": "Atlético de Madrid (6662)",
+      "x": 15.72,
+      "y": 25.82
+    },
+    {
+      "source_row": 155,
+      "window_key": [
+        5080.92,
+        5092.92
+      ],
+      "is_involvement": false,
+      "t_norm": 5044.0,
+      "t_raw": 5080.92,
+      "half": "2",
+      "action": "Passes accurate",
+      "code": "13. Jan Oblak (1071798) - Passes accurate",
+      "player": "Jan Oblak",
+      "shirt": "13",
+      "player_id": "1071798",
+      "team": "Atlético de Madrid (6662)",
+      "x": 15.72,
+      "y": 25.82
+    },
+    {
+      "source_row": 156,
+      "window_key": [
+        5167.92,
+        5179.92
+      ],
+      "is_involvement": false,
+      "t_norm": 5131.0,
+      "t_raw": 5167.92,
+      "half": "2",
+      "action": "Passes accurate",
+      "code": "13. Jan Oblak (1071798) - Passes accurate",
+      "player": "Jan Oblak",
+      "shirt": "13",
+      "player_id": "1071798",
+      "team": "Atlético de Madrid (6662)",
+      "x": 5.9,
+      "y": 27.69
+    },
+    {
+      "source_row": 157,
+      "window_key": [
+        5256.92,
+        5268.92
+      ],
+      "is_involvement": false,
+      "t_norm": 5220.0,
+      "t_raw": 5256.92,
+      "half": "2",
+      "action": "Long passes",
+      "code": "13. Jan Oblak (1071798) - Long passes",
+      "player": "Jan Oblak",
+      "shirt": "13",
+      "player_id": "1071798",
+      "team": "Atlético de Madrid (6662)",
+      "x": 20.41,
+      "y": 2.46
+    },
+    {
+      "source_row": 158,
+      "window_key": [
+        5256.92,
+        5268.92
+      ],
+      "is_involvement": false,
+      "t_norm": 5220.0,
+      "t_raw": 5256.92,
+      "half": "2",
+      "action": "Passes accurate",
+      "code": "13. Jan Oblak (1071798) - Passes accurate",
+      "player": "Jan Oblak",
+      "shirt": "13",
+      "player_id": "1071798",
+      "team": "Atlético de Madrid (6662)",
+      "x": 20.41,
+      "y": 2.46
+    },
+    {
+      "source_row": 159,
+      "window_key": [
+        5339.92,
+        5351.92
+      ],
+      "is_involvement": false,
+      "t_norm": 5303.0,
+      "t_raw": 5339.92,
+      "half": "2",
+      "action": "Opponent's mid-range shots on target",
+      "code": "13. Jan Oblak (1071798) - Opponent's mid-range shots on target",
+      "player": "Jan Oblak",
+      "shirt": "13",
+      "player_id": "1071798",
+      "team": "Atlético de Madrid (6662)",
+      "x": 89.94,
+      "y": 31.81
+    },
+    {
+      "source_row": 160,
+      "window_key": [
+        5339.92,
+        5351.92
+      ],
+      "is_involvement": false,
+      "t_norm": 5303.0,
+      "t_raw": 5339.92,
+      "half": "2",
+      "action": "Shots on target",
+      "code": "13. Jan Oblak (1071798) - Shots on target",
+      "player": "Jan Oblak",
+      "shirt": "13",
+      "player_id": "1071798",
+      "team": "Atlético de Madrid (6662)",
+      "x": 89.94,
+      "y": 31.81
+    },
+    {
+      "source_row": 161,
+      "window_key": [
+        5339.92,
+        5351.92
+      ],
+      "is_involvement": false,
+      "t_norm": 5303.0,
+      "t_raw": 5339.92,
+      "half": "2",
+      "action": "Shots saved",
+      "code": "13. Jan Oblak (1071798) - Shots saved",
+      "player": "Jan Oblak",
+      "shirt": "13",
+      "player_id": "1071798",
+      "team": "Atlético de Madrid (6662)",
+      "x": 89.94,
+      "y": 31.81
+    },
+    {
+      "source_row": 162,
+      "window_key": [
+        5356.92,
+        5368.92
+      ],
+      "is_involvement": false,
+      "t_norm": 5320.0,
+      "t_raw": 5356.92,
+      "half": "2",
+      "action": "Long passes",
+      "code": "13. Jan Oblak (1071798) - Long passes",
+      "player": "Jan Oblak",
+      "shirt": "13",
+      "player_id": "1071798",
+      "team": "Atlético de Madrid (6662)",
+      "x": 3.16,
+      "y": 32.97
+    },
+    {
+      "source_row": 163,
+      "window_key": [
+        5356.92,
+        5368.92
+      ],
+      "is_involvement": false,
+      "t_norm": 5320.0,
+      "t_raw": 5356.92,
+      "half": "2",
+      "action": "Passes accurate",
+      "code": "13. Jan Oblak (1071798) - Passes accurate",
+      "player": "Jan Oblak",
+      "shirt": "13",
+      "player_id": "1071798",
+      "team": "Atlético de Madrid (6662)",
+      "x": 3.16,
+      "y": 32.97
+    },
+    {
+      "source_row": 164,
+      "window_key": [
+        5364.92,
+        5376.92
+      ],
+      "is_involvement": false,
+      "t_norm": 5328.0,
+      "t_raw": 5364.92,
+      "half": "2",
+      "action": "Passes accurate",
+      "code": "41. Dennis Seimen (1329654) - Passes accurate",
+      "player": "Dennis Seimen",
+      "shirt": "41",
+      "player_id": "1329654",
+      "team": "VfB Stuttgart (73512)",
+      "x": 16.38,
+      "y": 38.3
+    },
+    {
+      "source_row": 165,
+      "window_key": [
+        5438.92,
+        5450.92
+      ],
+      "is_involvement": false,
+      "t_norm": 5402.0,
+      "t_raw": 5438.92,
+      "half": "2",
+      "action": "Goal kicks",
+      "code": "13. Jan Oblak (1071798) - Goal kicks",
+      "player": "Jan Oblak",
+      "shirt": "13",
+      "player_id": "1071798",
+      "team": "Atlético de Madrid (6662)",
+      "x": 5.28,
+      "y": 39.55
+    },
+    {
+      "source_row": 166,
+      "window_key": [
+        5438.92,
+        5450.92
+      ],
+      "is_involvement": false,
+      "t_norm": 5402.0,
+      "t_raw": 5438.92,
+      "half": "2",
+      "action": "Goal kicks long (40+ m)",
+      "code": "13. Jan Oblak (1071798) - Goal kicks long (40+ m)",
+      "player": "Jan Oblak",
+      "shirt": "13",
+      "player_id": "1071798",
+      "team": "Atlético de Madrid (6662)",
+      "x": 5.28,
+      "y": 39.55
+    },
+    {
+      "source_row": 167,
+      "window_key": [
+        5438.92,
+        5450.92
+      ],
+      "is_involvement": false,
+      "t_norm": 5402.0,
+      "t_raw": 5438.92,
+      "half": "2",
+      "action": "Inaccurate passes",
+      "code": "13. Jan Oblak (1071798) - Inaccurate passes",
+      "player": "Jan Oblak",
+      "shirt": "13",
+      "player_id": "1071798",
+      "team": "Atlético de Madrid (6662)",
+      "x": 5.28,
+      "y": 39.55
+    },
+    {
+      "source_row": 168,
+      "window_key": [
+        5438.92,
+        5450.92
+      ],
+      "is_involvement": false,
+      "t_norm": 5402.0,
+      "t_raw": 5438.92,
+      "half": "2",
+      "action": "Incomplete long passes",
+      "code": "13. Jan Oblak (1071798) - Incomplete long passes",
+      "player": "Jan Oblak",
+      "shirt": "13",
+      "player_id": "1071798",
+      "team": "Atlético de Madrid (6662)",
+      "x": 5.28,
+      "y": 39.55
+    },
+    {
+      "source_row": 169,
+      "window_key": [
+        5479.92,
+        5491.92
+      ],
+      "is_involvement": false,
+      "t_norm": 5443.0,
+      "t_raw": 5479.92,
+      "half": "2",
+      "action": "Passes accurate",
+      "code": "41. Dennis Seimen (1329654) - Passes accurate",
+      "player": "Dennis Seimen",
+      "shirt": "41",
+      "player_id": "1329654",
+      "team": "VfB Stuttgart (73512)",
+      "x": 14.62,
+      "y": 49.92
+    },
+    {
+      "source_row": 170,
+      "window_key": [
+        5562.92,
+        5574.92
+      ],
+      "is_involvement": false,
+      "t_norm": 5526.0,
+      "t_raw": 5562.92,
+      "half": "2",
+      "action": "Long passes",
+      "code": "13. Jan Oblak (1071798) - Long passes",
+      "player": "Jan Oblak",
+      "shirt": "13",
+      "player_id": "1071798",
+      "team": "Atlético de Madrid (6662)",
+      "x": 36.24,
+      "y": 14.34
+    },
+    {
+      "source_row": 171,
+      "window_key": [
+        5562.92,
+        5574.92
+      ],
+      "is_involvement": false,
+      "t_norm": 5526.0,
+      "t_raw": 5562.92,
+      "half": "2",
+      "action": "Passes accurate",
+      "code": "13. Jan Oblak (1071798) - Passes accurate",
+      "player": "Jan Oblak",
+      "shirt": "13",
+      "player_id": "1071798",
+      "team": "Atlético de Madrid (6662)",
+      "x": 36.24,
+      "y": 14.34
+    },
+    {
+      "source_row": 172,
+      "window_key": [
+        5593.92,
+        5605.92
+      ],
+      "is_involvement": false,
+      "t_norm": 5557.0,
+      "t_raw": 5593.92,
+      "half": "2",
+      "action": "Long passes",
+      "code": "13. Jan Oblak (1071798) - Long passes",
+      "player": "Jan Oblak",
+      "shirt": "13",
+      "player_id": "1071798",
+      "team": "Atlético de Madrid (6662)",
+      "x": 9.35,
+      "y": 32.89
+    },
+    {
+      "source_row": 173,
+      "window_key": [
+        5593.92,
+        5605.92
+      ],
+      "is_involvement": false,
+      "t_norm": 5557.0,
+      "t_raw": 5593.92,
+      "half": "2",
+      "action": "Passes accurate",
+      "code": "13. Jan Oblak (1071798) - Passes accurate",
+      "player": "Jan Oblak",
+      "shirt": "13",
+      "player_id": "1071798",
+      "team": "Atlético de Madrid (6662)",
+      "x": 9.35,
+      "y": 32.89
+    },
+    {
+      "source_row": 174,
+      "window_key": [
+        5657.92,
+        5669.92
+      ],
+      "is_involvement": false,
+      "t_norm": 5621.0,
+      "t_raw": 5657.92,
+      "half": "2",
+      "action": "Shots off target",
+      "code": "13. Jan Oblak (1071798) - Shots off target",
+      "player": "Jan Oblak",
+      "shirt": "13",
+      "player_id": "1071798",
+      "team": "Atlético de Madrid (6662)",
+      "x": 94.92,
+      "y": 29.98
+    },
+    {
+      "source_row": 175,
+      "window_key": [
+        5694.92,
+        5694.92
+      ],
+      "is_involvement": false,
+      "t_norm": 5658.0,
+      "t_raw": 5694.92,
+      "half": "2",
+      "action": "End of the match",
+      "code": "End of the match",
+      "player": null,
+      "shirt": null,
+      "player_id": null,
+      "team": "",
+      "x": null,
+      "y": null
+    }
+  ]
+}

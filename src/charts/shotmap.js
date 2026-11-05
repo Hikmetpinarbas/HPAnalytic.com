@@ -13,12 +13,15 @@ const TYPE_META = {
 let DATA = null;
 let state = { team: 'all', type: 'all', player: null };
 
-export async function initShotMap(containerId, filtersId) {
+export async function initShotMap(containerId, filtersId, dataUrl = "/assets/data/shot_map.json") {
   const container = document.getElementById(containerId);
   if (!container || container.querySelector('svg')) return;
   container.innerHTML = '';
 
-  if (!DATA) DATA = await fetch('/assets/data/shot_map.json').then(r => r.json());
+  if (!DATA || DATA._source !== dataUrl) {
+    DATA = await fetch(dataUrl).then(r => r.json());
+    DATA._source = dataUrl;
+  }
   if (!DATA || !DATA.length) { container.textContent = 'Veri yok'; return; }
 
   const PITCH_L = 105, PITCH_W = 68, M = 8, K = 6.2;

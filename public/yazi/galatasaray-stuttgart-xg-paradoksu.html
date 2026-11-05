@@ -1,0 +1,319 @@
+<!doctype html><html lang="tr"><head><meta charset="utf-8"/><style>html{background:#08090B}body{background:#08090B;color:#F4F2EC;margin:0}</style><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/><meta name="theme-color" content="#08090B"/><title>Galatasaray 2-0 Stuttgart: xG paradoksu — HP//Analytic</title><meta name="description" content="Stuttgart xG 1.74, Galatasaray 1.38. Ama sahadan 2-0 GS ayrıldı."/><meta property="og:title" content="Galatasaray 2-0 Stuttgart: xG paradoksu"/><meta property="og:description" content="Stuttgart xG 1.74, Galatasaray 1.38. Ama sahadan 2-0 GS ayrıldı."/><meta property="og:type" content="article"/><meta property="og:site_name" content="HPAnalytic"/><meta name="twitter:card" content="summary"/><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;700&family=JetBrains+Mono:wght@400;500;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet"><style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#08090B;--bg-elev:#0D0E12;--ink:#F4F2EC;--ink-soft:#8A8A93;--ink-faint:#4A4A52;--line:#1B1B21;--line-bright:#2A2B33;--neon:#B4FF39;--orange:#FF6B35;--serif:'Newsreader',Georgia,serif;--mono:'JetBrains Mono',monospace;--sans:'Hanken Grotesk',system-ui,sans-serif}
+html{background:var(--bg);-webkit-font-smoothing:antialiased;scroll-behavior:smooth}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.6;min-height:100vh;background-image:radial-gradient(ellipse 60% 40% at 15% -10%,rgba(180,255,57,0.06),transparent 60%);cursor:auto}
+a{color:inherit;text-decoration:none}
+::selection{background:var(--neon);color:var(--bg)}
+
+/* Reading Progress */
+.progress-bar{position:fixed;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--neon),var(--orange));z-index:1000;width:0%;transition:width .1s}
+
+/* Back */
+.back{position:fixed;top:20px;left:20px;z-index:10;font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-soft);padding:8px 14px;border:1px solid var(--line);background:rgba(10,10,12,.85);backdrop-filter:blur(12px);transition:all .2s;border-radius:4px}
+.back:hover{color:var(--neon);border-color:var(--neon)}
+
+/* Hero */
+.hero{padding:100px 24px 48px;max-width:1200px;margin:0 auto;border-bottom:1px solid var(--line)}
+@media(min-width:768px){.hero{padding:130px 48px 64px}}
+.hero-top{display:flex;gap:16px;align-items:center;margin-bottom:28px;flex-wrap:wrap}
+.type-badge{font-family:var(--mono);font-size:10px;letter-spacing:.24em;text-transform:uppercase;padding:6px 12px;border:1px solid;border-radius:2px}
+.hero-date{font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-faint)}
+.hero-read{font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-faint)}
+.hero h1{font-family:var(--serif);font-weight:400;font-size:clamp(32px,6vw,64px);line-height:1.05;letter-spacing:-.025em;color:var(--ink);margin-bottom:24px}
+@media(min-width:768px){.hero h1{font-size:clamp(40px,7vw,80px);letter-spacing:-.03em}}
+.hero .lede{font-family:var(--serif);font-size:clamp(18px,2.5vw,24px);line-height:1.5;font-style:italic;color:var(--ink-soft);max-width:820px}
+
+/* Layout */
+.layout{display:grid;grid-template-columns:1fr;gap:0;max-width:1200px;margin:0 auto;padding:48px 24px 80px}
+@media(min-width:1024px){.layout{grid-template-columns:220px 1fr;gap:80px;padding:64px 48px 96px}}
+
+/* TOC */
+.toc{display:none}
+@media(min-width:1024px){.toc{display:block;position:sticky;top:100px;align-self:start;max-height:calc(100vh - 140px);overflow-y:auto}}
+.toc-label{font-family:var(--mono);font-size:9px;letter-spacing:.24em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:16px}
+.toc ol{list-style:none;display:flex;flex-direction:column;gap:2px;border-left:1px solid var(--line);padding-left:0}
+.toc li{padding:6px 0 6px 16px;font-family:var(--sans);font-size:13px;line-height:1.4;border-left:2px solid transparent;margin-left:-1px;transition:all .2s}
+.toc a{color:var(--ink-soft);display:block}
+.toc li:hover a{color:var(--ink)}
+.toc li.active{border-left-color:var(--neon)}
+.toc li.active a{color:var(--neon)}
+
+/* Article */
+.article{max-width:720px;font-size:17px;line-height:1.8;color:#E4E2DC}
+@media(min-width:768px){.article{font-size:18px}}
+.article > p:first-of-type::first-letter{font-family:var(--serif);font-size:5em;line-height:1;float:left;padding:6px 12px 0 0;color:var(--neon);font-weight:500}
+.article h2{font-family:var(--serif);font-weight:400;font-size:clamp(26px,4vw,40px);line-height:1.15;letter-spacing:-.02em;margin:64px 0 20px;color:var(--ink);scroll-margin-top:100px}
+.article h3{font-family:var(--serif);font-weight:500;font-size:clamp(20px,3vw,26px);line-height:1.25;margin:40px 0 16px;color:var(--ink);scroll-margin-top:100px}
+.article p{margin:0 0 24px}
+.article strong{color:var(--ink);font-weight:600}
+.article em{font-family:var(--serif);font-style:italic}
+.article a{color:var(--neon);text-decoration:underline;text-underline-offset:3px}
+.article ul,.article ol{margin:0 0 24px 24px}
+.article li{margin-bottom:10px}
+.article blockquote{border-left:2px solid var(--neon);padding:12px 0 12px 28px;margin:32px 0;font-family:var(--serif);font-style:italic;font-size:clamp(20px,2.5vw,26px);color:var(--neon);line-height:1.5}
+.article code{font-family:var(--mono);font-size:.9em;background:var(--line);padding:2px 6px;border-radius:2px}
+.article hr{border:none;border-top:1px solid var(--line);margin:48px 0}
+.article img{max-width:100%;height:auto;display:block;margin:24px 0;border:1px solid var(--line)}
+.article table{width:100%;border-collapse:collapse;margin:24px 0;font-size:14px}
+.article th,.article td{padding:10px 12px;border:1px solid var(--line);text-align:left}
+.article th{background:var(--bg-elev);font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft)}
+
+/* Author + Share */
+
+
+
+
+
+
+
+
+
+/* Related */
+.related{padding:0 24px 80px;max-width:1200px;margin:0 auto;border-top:1px solid var(--line);padding-top:64px}
+@media(min-width:768px){.related{padding:0 48px 96px;padding-top:64px}}
+.related-title{font-family:var(--serif);font-size:clamp(24px,3vw,32px);font-weight:400;margin-bottom:32px;color:var(--ink)}
+.related-grid{display:grid;grid-template-columns:1fr;gap:1px;background:var(--line);border:1px solid var(--line)}
+@media(min-width:768px){.related-grid{grid-template-columns:repeat(3,1fr)}}
+.rel-card{background:var(--bg);padding:24px;display:flex;flex-direction:column;gap:10px;transition:background .2s;min-height:200px}
+.rel-card:hover{background:var(--bg-elev)}
+.rel-tag{font-family:var(--mono);font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-faint)}
+.rel-card h4{font-family:var(--serif);font-size:18px;font-weight:500;line-height:1.25;color:var(--ink);flex:1}
+.rel-cta{font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--neon)}
+
+/* Footer */
+.site-footer{max-width:1200px;margin:0 auto;padding:32px 24px;border-top:1px solid var(--line);display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-faint)}
+.site-footer a{color:var(--ink-soft)}
+.site-footer a:hover{color:var(--neon)}
+@media(min-width:768px){.site-footer{padding:32px 48px}}
+
+html{opacity:1;transition:opacity .22s cubic-bezier(.2,.9,.3,1)}html.page-leaving{opacity:0}@keyframes pageFadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}body{animation:pageFadeIn .4s cubic-bezier(.2,.9,.3,1)}
+/* hp-viz-embed-marker */
+/* HPAnalytic — Viz Görsel Dili (Rams + Scher) */
+
+[data-viz] {
+  margin: 3rem 0;
+  padding: 2rem 1rem;
+  position: relative;
+  min-height: 200px;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+
+[data-viz].viz-active {
+  opacity: 1;
+}
+
+[data-viz].viz-loading {
+  opacity: 1;
+}
+
+[data-viz].viz-loading::before {
+  content: 'VERİ YÜKLENİYOR';
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.3em;
+  color: #B4FF39;
+  animation: viz-pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes viz-pulse {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 1; }
+}
+
+/* Scher Tipografisi: Başlık = Görsel İmge */
+.viz-title {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid #1E211D;
+}
+
+.viz-title span {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(1.5rem, 5vw, 2.2rem);
+  font-weight: 400;
+  color: #EDEFEA;
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+
+.viz-title small {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.3em;
+  color: #FF6B35;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+/* Edge Case: Hata Toleransı (Hamilton) */
+.viz-error {
+  padding: 2rem;
+  text-align: center;
+  border: 1px dashed #FF3B3B;
+  color: #FF3B3B;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+}
+
+/* Responsive (Marcotte) */
+@media (max-width: 640px) {
+  [data-viz] { margin: 2rem 0; padding: 1.5rem 0.5rem; }
+  .viz-title { flex-direction: column; gap: 0.5rem; }
+}
+/* HPAnalytic — Viz Görsel Dili (Rams + Scher) */
+
+[data-viz] {
+  margin: 3rem 0;
+  padding: 2rem 1rem;
+  position: relative;
+  min-height: 200px;
+  opacity: 0;
+  transition: opacity 0.6s ease;
+}
+
+[data-viz].viz-active {
+  opacity: 1;
+}
+
+[data-viz].viz-loading {
+  opacity: 1;
+}
+
+[data-viz].viz-loading::before {
+  content: 'VERİ YÜKLENİYOR';
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 11px;
+  letter-spacing: 0.3em;
+  color: #B4FF39;
+  animation: viz-pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes viz-pulse {
+  0%, 100% { opacity: 0.3; }
+  50% { opacity: 1; }
+}
+
+/* Scher Tipografisi: Başlık = Görsel İmge */
+.viz-title {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid #1E211D;
+}
+
+.viz-title span {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: clamp(1.5rem, 5vw, 2.2rem);
+  font-weight: 400;
+  color: #EDEFEA;
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+
+.viz-title small {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px;
+  letter-spacing: 0.3em;
+  color: #FF6B35;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+/* Edge Case: Hata Toleransı (Hamilton) */
+.viz-error {
+  padding: 2rem;
+  text-align: center;
+  border: 1px dashed #FF3B3B;
+  color: #FF3B3B;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+}
+
+/* Responsive (Marcotte) */
+@media (max-width: 640px) {
+  [data-viz] { margin: 2rem 0; padding: 1.5rem 0.5rem; }
+  .viz-title { flex-direction: column; gap: 0.5rem; }
+}
+
+</style></head><body>
+<div class="progress-bar" id="progress"></div>
+<a href="/" class="back">← Ana sayfa</a>
+<section class="hero">
+  <div class="hero-top">
+    <span class="type-badge" style="color:#B4FF39;border-color:#B4FF39">Analiz</span>
+    <span class="hero-date">2026-11-05</span>
+    <span class="hero-read">3 dk okuma</span>
+  </div>
+  
+  <h1>Galatasaray 2-0 Stuttgart: xG paradoksu</h1>
+  <p class="lede">Stuttgart xG 1.74, Galatasaray 1.38. Ama sahadan 2-0 GS ayrıldı.</p>
+</section>
+<div class="layout">
+  <aside class="toc"><div class="toc-label">İçindekiler</div><ol><li data-level="2"><a href="#h-mekanizma">Mekanizma</a></li><li data-level="2"><a href="#h-saha-okuması">Saha Okuması</a></li><li data-level="2"><a href="#h-6-faz">6 Faz</a></li><li data-level="2"><a href="#h-kanıt">Kanıt</a></li><li data-level="2"><a href="#h-oyuncu-mikro-anlatısı">Oyuncu Mikro-Anlatısı</a></li><li data-level="2"><a href="#h-hpanalytic-özel">HPAnalytic Özel</a></li><li data-level="2"><a href="#h-maçın-sorusu">Maçın Sorusu</a></li></ol></aside>
+  <article class="article">
+    <p>Galatasaray, xG&#39;de (gol beklentisi) geride kalmasına rağmen, Stuttgart&#39;ı 2-0&#39;lık net bir skorla mağlup etti. Bu sonuç, maçın tek sayısal sürpriziydi.</p>
+<h2 id="h-mekanizma">Mekanizma</h2>
+<p>Galatasaray, xG&#39;de Stuttgart&#39;ın gerisinde kalmasına rağmen, skorda üstünlüğü ele geçirdi. Bu paradoksun altında yatan mekanizma, Galatasaray&#39;ın topa sahip olma ve pas isabet oranlarındaki üstünlüğü. Galatasaray, %58.7&#39;lik topla oynama oranı ve %81&#39;lik pas isabet oranı ile Stuttgart&#39;ın %55.4 ve %76&#39;lık oranlarını geride bıraktı. Bu üstünlük, Galatasaray&#39;ın oyunu kontrol etmesini ve skoru lehine çevirmesini sağladı.</p>
+<h2 id="h-saha-okuması">Saha Okuması</h2>
+<p>Galatasaray, pas ağı ve top hakimiyeti ile oyunu domine etti. %81&#39;lik pas isabet oranı, Stuttgart&#39;ın %76&#39;lık oranını geride bıraktı. Bu, Galatasaray&#39;ın pas trafiğinin daha akıcı ve etkili olduğunu gösteriyor. Ayrıca, Galatasaray&#39;ın 383 toplam pası, Stuttgart&#39;ın 364 pasına kıyasla daha fazla pas yapma girişiminde bulunduklarını ortaya koyuyor.</p>
+<p>Top kapma ve ikili mücadele istatistiklerinde de Galatasaray üstünlük kurdu. 35 top kapma ile Stuttgart&#39;ın 46&#39;sına yakın bir performans sergilediler. İkili mücadelelerde ise %50&#39;lik oranla Stuttgart&#39;ın %44&#39;ünü geçtiler. Bu veriler, Galatasaray&#39;ın hem savunmada hem de hücumda daha etkili olduğunu gösteriyor.</p>
+<h2 id="h-6-faz">6 Faz</h2>
+<p>Maçın kilit anları, yerleşik hücum ve yerleşik savunma fazlarında yaşandı. Galatasaray, yerleşik hücumda 54 pencere ile Stuttgart&#39;ın 58 penceresine yakın bir performans sergiledi. Yerleşik savunmada ise 58 pencere ile Stuttgart&#39;ın 54 penceresini geride bıraktı. Bu fazlar, Galatasaray&#39;ın oyunu kontrol ettiğini ve skoru lehine çevirmek için fırsatlar yarattığını gösteriyor.</p>
+<h2 id="h-kanıt">Kanıt</h2>
+<p>xG verileri, Galatasaray&#39;ın skorda üstünlüğüne rağmen, Stuttgart&#39;ın gol atma potansiyeli açısından daha yüksek bir beklenti yarattığını gösteriyor. Stuttgart&#39;ın xG değeri 1.74 iken, Galatasaray&#39;ın 1.38. Ancak, Galatasaray&#39;ın pas isabet oranındaki üstünlüğü ve topa sahip olma oranı, bu dezavantajı aşmalarını sağladı.</p>
+<p>PPDA (Baskı) verileri, her iki takımın da baskı kurmakta zorlandığını gösteriyor. Galatasaray ve Stuttgart&#39;ın PPDA değeri 0.0 olarak kaydedildi. Bu, iki takımın da rakiplerine baskı kurmakta zorlandığını ve savunmada açıklar verdiğini gösteriyor.</p>
+<h2 id="h-oyuncu-mikro-anlatısı">Oyuncu Mikro-Anlatısı</h2>
+<p>Galatasaray&#39;ın kalecisi Uğurcan Çakır, maçın en değerli aksiyonlarına imza attı. Çakır, 47 pas ile takımının en çok pas yapan oyuncusu oldu ve bu pasların %59.6&#39;sını isabetli olarak tamamladı. Bu, Galatasaray&#39;ın oyun kurma ve topu ileriye taşıma stratejisinde önemli bir rol oynadı.</p>
+<h2 id="h-hpanalytic-özel">HPAnalytic Özel</h2>
+<p>Field Tilt ve Pitch Control metrikleri, Galatasaray&#39;ın saha hakimiyetini ve topa sahip olma oranındaki üstünlüğünü destekliyor. Galatasaray, Field Tilt&#39;te %58.7&#39;lik bir oranla Stuttgart&#39;ın %55.4&#39;ünü geride bıraktı. Pitch Control&#39;da ise Galatasaray %81&#39;lik pas isabet oranı ile Stuttgart&#39;ın %76&#39;lık oranını geçti.</p>
+<h2 id="h-maçın-sorusu">Maçın Sorusu</h2>
+<p>Maçın sorusu şudur: Galatasaray, xG&#39;de geride kalmasına rağmen skorda üstünlüğü nasıl sağladı? Cevap, topa sahip olma ve pas isabet oranlarındaki üstünlükte yatıyor. Galatasaray, bu sayısal avantajları skora yansıtmayı başardı.</p>
+
+    </article>
+</div>
+<section class="related"><h2 class="related-title">Benzer Yazılar</h2><div class="related-grid"><a href="/yazi/2002-dunya-kupasi-sans-mi-mekanizma-mi.html" class="rel-card"><span class="rel-tag">Analiz</span><h4>2002 Dünya Kupası: Şans mı, Mekanizma mı?</h4><span class="rel-cta">Oku →</span></a><a href="/yazi/2026-11-03-galatasaray-vs-stuttgart-llm.html" class="rel-card"><span class="rel-tag">Analiz</span><h4>2026-11-03-galatasaray-vs-stuttgart-llm</h4><span class="rel-cta">Oku →</span></a><a href="/yazi/2026-11-03-galatasaray-vs-stuttgart.html" class="rel-card"><span class="rel-tag">Analiz</span><h4>Maç Raporu: VfB Stuttgart vs Galatasaray</h4><span class="rel-cta">Oku →</span></a></div></section>
+<footer class="site-footer"><span>© 2026 HP//Analytic</span><a href="/">Ana sayfa</a></footer>
+<script>
+const bar = document.getElementById('progress');
+window.addEventListener('scroll', () => {
+  const h = document.documentElement.scrollHeight - window.innerHeight;
+  bar.style.width = (window.scrollY / h * 100) + '%';
+}, { passive: true });
+// TOC active state
+const tocLinks = document.querySelectorAll('.toc a');
+const headings = [...document.querySelectorAll('.article h2, .article h3')];
+if (tocLinks.length && headings.length) {
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        tocLinks.forEach(l => l.parentElement.classList.remove('active'));
+        const active = document.querySelector('.toc a[href="#' + e.target.id + '"]');
+        if (active) active.parentElement.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-100px 0px -70% 0px' });
+  headings.forEach(h => obs.observe(h));
+}
+</script>
+<script src="/page-transition.js" defer></script>
+<script src="/extras2.js" defer></script>
+<script type="module" src="/src/viz/embed.js"></script>
+<div id="viz-and-stars-container"></div>
+<!-- VIZ_SLOT -->
+<!-- STARS_SLOT -->
+</body></html>

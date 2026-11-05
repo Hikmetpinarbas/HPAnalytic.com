@@ -1,0 +1,269 @@
+import * as d3 from 'd3';
+import { gsap } from 'gsap';
+
+const C = { text:'#F4F2EC', muted:'rgba(244,242,236,0.4)', neon:'#B4FF39', orange:'#FF6B35', line:'rgba(180,255,57,0.12)', pitch:'rgba(20,24,28,0.5)' };
+const PW = 105, PH = 68;
+
+export function initPassNetwork(root, opts = {}) {
+  if (!root) return;
+  root.innerHTML = '';
+
+  const state = { team: 'Galatasaray', data: null, filter: 'starters' };
+
+  const wrap = document.createElement('div');
+  wrap.style.cssText = 'font-family:"JetBrains Mono",monospace;';
+  wrap.innerHTML = `
+    <style>
+      @keyframes pn-marquee { 0% { transform: translateX(0); } 100% { transform: translateX(-50%); } }
+      .pn-marquee-box { overflow: hidden; white-space: nowrap; padding: 10px 0; border-top: 1px dashed ${C.line}; border-bottom: 1px dashed ${C.line}; margin-top: 12px; }
+      .pn-marquee-box > div { display: inline-block; animation: pn-marquee 50s linear infinite; color: ${C.muted}; font-family:'Newsreader',serif; font-style: italic; font-size: 14px; }
+      .pn-marquee-box > div > span { padding: 0 30px; }
+
+      .pn-team-toggle { display:flex; justify-content:center; gap:0; margin-bottom:16px; }
+      .pn-team-toggle button { background:transparent; border:1px solid ${C.line}; color:${C.muted}; padding:10px 22px; font:inherit; font-size:12px; letter-spacing:0.08em; cursor:pointer; transition: all 0.2s; }
+      .pn-team-toggle button:first-child { border-radius: 2px 0 0 2px; border-right:none; }
+      .pn-team-toggle button:last-child { border-radius: 0 2px 2px 0; }
+      .pn-team-toggle button.is-active[data-team="Galatasaray"] { color:${C.orange}; border-color:${C.orange}; }
+      .pn-team-toggle button.is-active[data-team="VfB Stuttgart"] { color:${C.neon}; border-color:${C.neon}; }
+
+      .pn-actions { display:flex; justify-content:space-between; align-items:center; margin-bottom:12px; gap:12px; }
+      .pn-subs-btn { background:rgba(255,107,53,0.15); color:${C.orange}; border:1px solid ${C.orange}; padding:9px 18px; font:inherit; font-size:11px; font-weight:500; letter-spacing:0.12em; cursor:pointer; border-radius:2px; transition: all 0.2s; }
+      .pn-subs-btn:hover { background:rgba(255,107,53,0.3); }
+      .pn-subs-btn.is-active { background:${C.orange}; color:#08090B; border-color:${C.orange}; }
+      .pn-count { font-size:11px; color:${C.muted}; letter-spacing:0.1em; }
+
+      .pn-pitch-wrap { position:relative; }
+      .pn-subs-panel { position:absolute; top:12px; right:12px; width:260px; max-height:70%; overflow-y:auto; background:rgba(8,9,11,0.96); border:1px solid ${C.line}; padding:14px; border-radius:4px; z-index:11; backdrop-filter:blur(10px); }
+      .pn-subs-panel h4 { margin:0 0 12px; font-family:'JetBrains Mono',monospace; font-size:10px; letter-spacing:0.15em; color:${C.orange}; text-transform:uppercase; }
+      .pn-sub-item { padding:8px 0; border-bottom:1px dashed ${C.line}; font-size:11px; color:${C.text}; }
+      .pn-sub-item .pn-sub-min { color:${C.muted}; font-size:10px; display:block; margin-bottom:2px; }
+      .pn-sub-item .pn-sub-in { color:${C.neon}; }
+      .pn-sub-item .pn-sub-out { color:${C.orange}; opacity:0.7; text-decoration:line-through; }
+      .pn-caption-line { min-height:22px; margin-top:8px; font-family:'Newsreader',serif; font-style:italic; font-size:13px; color:${C.muted}; }
+    </style>
+
+    <div class="pn-team-toggle">
+      <button data-team="Galatasaray" class="is-active">GALATASARAY</button>
+      <button data-team="VfB Stuttgart">STUTTGART</button>
+    </div>
+
+    <div class="pn-actions">
+      <button class="pn-subs-btn" type="button">DEĞİŞENLER</button>
+      <span class="pn-count">11 oyuncu</span>
+    </div>
+
+    <div class="pn-pitch-wrap">
+      <div class="pn-subs-panel" style="display:none;"></div>
+      <svg class="pn-svg" viewBox="-8 -6 ${PW+16} ${PH+12}" style="width:100%;height:auto;background:${C.pitch};border:1px solid ${C.line};"></svg>
+      <div class="pn-caption-line"></div>
+    </div>
+
+    <div class="pn-marquee-box"><div></div></div>
+
+    <div style="display:flex;gap:20px;font-size:10px;color:${C.muted};margin-top:12px;flex-wrap:wrap;letter-spacing:0.05em;">
+      <span><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:${C.orange};margin-right:6px;"></span>Galatasaray</span>
+      <span><span style="display:inline-block;width:8px;height:8px;border-radius:50%;background:${C.neon};margin-right:6px;"></span>Stuttgart</span>
+      <span style="margin-left:auto;font-style:italic;">Node = pas hacmi · Çizgi = korelasyon · Hover → ego ağ</span>
+    </div>
+  `;
+  root.appendChild(wrap);
+
+  const svg = d3.select(wrap.querySelector('.pn-svg'));
+  const caption = wrap.querySelector('.pn-caption');
+  const marqueeInner = wrap.querySelector('.pn-caption-scroll > div');
+
+  function setCaption(t) {
+    caption.textContent = t || '';
+    gsap.fromTo(caption, {opacity:0, y:6}, {opacity:1, y:0, duration:0.5});
+  }
+
+  function setMarquee(teamNodes, teamEdges, team) {
+    const topEdges = teamEdges.slice(0, 4).map(e => {
+      const src = state.data.nodes[e.from]?.name.split(' ').pop();
+      const dst = state.data.nodes[e.to]?.name.split(' ').pop();
+      return `${src} → ${dst} (${e.weight} pas)`;
+    });
+    const topPassers = teamNodes.slice().sort((a,b) => b[1].passes - a[1].passes).slice(0,3)
+      .map(([_, n]) => `${n.name.split(' ').pop()} (${n.passes})`);
+    const text = [
+      `${team} · ${teamNodes.length} oyuncu · ${teamEdges.length} pas bağlantısı`,
+      `En çok pas atanlar: ${topPassers.join(' · ')}`,
+      `En güçlü bağlantılar: ${topEdges.join(' · ')}`,
+      `Toplam pas yakalama: %${state.data.meta.coverage_pct}`,
+    ].join('   ✦   ');
+    marqueeInner.innerHTML = `<span>${text}</span><span>${text}</span>`;
+  }
+
+  function drawPitch() {
+    svg.selectAll('*').remove();
+    const g = svg.append('g').attr('fill','none').attr('stroke',C.line).attr('stroke-width',0.15);
+    g.append('rect').attr('x',1).attr('y',1).attr('width',PW-2).attr('height',PH-2);
+    g.append('line').attr('x1',PW/2).attr('y1',1).attr('x2',PW/2).attr('y2',PH-1);
+    g.append('circle').attr('cx',PW/2).attr('cy',PH/2).attr('r',9.15);
+    g.append('rect').attr('x',1).attr('y',13.84).attr('width',16.5).attr('height',40.32);
+    g.append('rect').attr('x',PW-17.5).attr('y',13.84).attr('width',16.5).attr('height',40.32);
+    g.append('rect').attr('x',1).attr('y',24.84).attr('width',5.5).attr('height',18.32);
+    g.append('rect').attr('x',PW-6.5).attr('y',24.84).attr('width',5.5).attr('height',18.32);
+  }
+
+  function drawArrows(team) {
+    svg.selectAll('g.pn-arrows').remove();
+    const g = svg.append('g').attr('class','pn-arrows');
+    const yTop = -4;
+    const color = team === 'Galatasaray' ? C.orange : C.neon;
+
+    // Sol ok (Stuttgart hücum yönü) — sağdan sola
+    const stuttgartActive = team === 'VfB Stuttgart';
+    g.append('line')
+      .attr('x1', 30).attr('y1', yTop)
+      .attr('x2', 70).attr('y2', yTop)
+      .attr('stroke', C.neon)
+      .attr('stroke-width', stuttgartActive ? 0.35 : 0.15)
+      .attr('opacity', stuttgartActive ? 1 : 0.35)
+      .attr('marker-end', 'url(#arrow-neon)');
+    g.append('text').attr('x', 30).attr('y', yTop - 1.5).attr('fill', C.neon).attr('font-size', 1.8).attr('font-family','JetBrains Mono').attr('opacity', stuttgartActive ? 1 : 0.35).text('Stuttgart hücum');
+    g.append('line')
+      .attr('x1', PW-30).attr('y1', yTop)
+      .attr('x2', PW-70).attr('y2', yTop)
+      .attr('stroke', C.neon)
+      .attr('stroke-width', stuttgartActive ? 0.35 : 0.15)
+      .attr('opacity', stuttgartActive ? 1 : 0.35)
+      .attr('marker-end', 'url(#arrow-neon)');
+
+    // Sağ ok (Galatasaray hücum yönü) — soldan sağa
+    const gsActive = team === 'Galatasaray';
+    g.append('line')
+      .attr('x1', 35).attr('y1', PH + 4)
+      .attr('x2', 75).attr('y2', PH + 4)
+      .attr('stroke', C.orange)
+      .attr('stroke-width', gsActive ? 0.35 : 0.15)
+      .attr('opacity', gsActive ? 1 : 0.35)
+      .attr('marker-end', 'url(#arrow-orange)');
+    g.append('line')
+      .attr('x1', PW-35).attr('y1', PH + 4)
+      .attr('x2', PW-75).attr('y2', PH + 4)
+      .attr('stroke', C.orange)
+      .attr('stroke-width', gsActive ? 0.35 : 0.15)
+      .attr('opacity', gsActive ? 1 : 0.35)
+      .attr('marker-end', 'url(#arrow-orange)');
+
+    // Defs (marker) bir kere
+    svg.select('defs').remove();
+    const defs = svg.insert('defs', ':first-child');
+    ['neon', 'orange'].forEach(c => {
+      const m = defs.append('marker').attr('id', `arrow-${c}`)
+        .attr('viewBox','0 0 10 10').attr('refX', 9).attr('refY', 5)
+        .attr('markerWidth', 4).attr('markerHeight', 4).attr('orient', 'auto');
+      m.append('path').attr('d','M0,0 L10,5 L0,10 z').attr('fill', c === 'neon' ? C.neon : C.orange);
+    });
+  }
+
+  function render() {
+    svg.selectAll('g.pn-edges, g.pn-nodes').remove();
+
+    const team = state.team;
+    const accent = team === 'Galatasaray' ? C.orange : C.neon;
+    const nodes = state.data.nodes;
+    const edges = state.data.edges;
+
+    let teamNodes = Object.entries(nodes).filter(([k, v]) => v.team === team);
+    if (state.filter === 'starters') {
+      teamNodes = teamNodes.filter(([_, n]) => n.minutes >= 45);
+    }
+
+    const nodeKeys = new Set(teamNodes.map(([k]) => k));
+    const teamEdges = edges.filter(e => nodeKeys.has(e.from) && nodeKeys.has(e.to));
+    const nodeMap = Object.fromEntries(teamNodes);
+
+    drawArrows(team);
+
+    if (!teamNodes.length) { setCaption('Bu takım için veri yok.'); return; }
+
+    const maxPasses = Math.max(...teamNodes.map(([_, n]) => n.passes), 1);
+    const maxWeight = Math.max(...teamEdges.map(e => e.weight), 1);
+
+    // EDGES
+    const edgesG = svg.append('g').attr('class', 'pn-edges');
+    teamEdges.forEach((e, i) => {
+      const src = nodeMap[e.from], dst = nodeMap[e.to];
+      if (!src || !dst) return;
+      const mx = (src.x + dst.x) / 2, my = (src.y + dst.y) / 2;
+      const dx = dst.x - src.x, dy = dst.y - src.y;
+      const len = Math.sqrt(dx*dx + dy*dy) || 1;
+      const off = Math.min(len * 0.12, 5);
+      const cx = mx + (-dy / len) * off;
+      const cy = my + (dx / len) * off;
+
+      const path = edgesG.append('path')
+        .attr('d', `M ${src.x} ${src.y} Q ${cx} ${cy} ${dst.x} ${dst.y}`)
+        .attr('fill', 'none').attr('stroke', accent)
+        .attr('stroke-width', 0.08 + (e.weight / maxWeight) * 0.5)
+        .attr('opacity', 0.15 + (e.weight / maxWeight) * 0.55)
+        .attr('data-from', e.from).attr('data-to', e.to)
+        .attr('stroke-linecap','round');
+
+      const n = path.node();
+      const L = n.getTotalLength();
+      n.style.strokeDasharray = L;
+      n.style.strokeDashoffset = L;
+      gsap.to(n, { strokeDashoffset: 0, duration: 1.2, delay: 0.3 + i * 0.008, ease: 'power2.out' });
+    });
+
+    // NODES
+    const nodesG = svg.append('g').attr('class', 'pn-nodes');
+    teamNodes.forEach(([key, n], i) => {
+      const r = 1.2 + Math.sqrt(n.passes / maxPasses) * 2.2;
+      const g = nodesG.append('g').attr('class','pn-node').attr('data-key', key).style('cursor','pointer');
+
+      g.append('circle').attr('cx', n.x).attr('cy', n.y).attr('r', 0)
+        .attr('fill','#0A0C10').attr('stroke', accent).attr('stroke-width', 0.35)
+        .attr('class','pn-circle');
+
+      g.append('text').attr('x', n.x).attr('y', n.y - r - 1)
+        .attr('text-anchor','middle').attr('fill', C.text)
+        .attr('font-size', 1.05).attr('font-family','JetBrains Mono')
+        .attr('opacity', 0).attr('class','pn-label')
+        .text(n.name.split(' ').pop());
+
+      gsap.to(g.select('.pn-circle').node(), { attr:{r}, duration: 0.6, delay: 0.4 + i * 0.05, ease:'back.out(1.7)' });
+      gsap.to(g.select('.pn-label').node(), { attr:{opacity: 0.85}, duration: 0.6, delay: 0.6 + i * 0.05 });
+
+      g.on('mouseenter touchstart', () => {
+        nodesG.selectAll('.pn-node').each(function() {
+          this.style.opacity = this.getAttribute('data-key') === key ? 1 : 0.12;
+        });
+        edgesG.selectAll('path').each(function() {
+          const involved = this.getAttribute('data-from') === key || this.getAttribute('data-to') === key;
+          this.style.opacity = involved ? 0.95 : 0.04;
+        });
+        const outC = teamEdges.filter(e => e.from === key).reduce((s,e)=>s+e.weight,0);
+        const inC = teamEdges.filter(e => e.to === key).reduce((s,e)=>s+e.weight,0);
+        setCaption(`${n.name} · ${n.passes} pas · ${outC} gönderilen, ${inC} alınan`);
+      });
+      g.on('mouseleave touchend', () => {
+        nodesG.selectAll('.pn-node').style('opacity', 1);
+        edgesG.selectAll('path').style('opacity', null);
+        setCaption('');
+      });
+    });
+
+    setMarquee(teamNodes, teamEdges, team);
+  }
+
+  wrap.querySelector('.pn-team').addEventListener('change', (e) => {
+    state.team = e.target.value;
+    render();
+  });
+
+  fetch(opts.dataUrl || '/assets/data/gs-stuttgart/pass_network_v2.json')
+    .then(r => r.json())
+    .then(data => {
+      state.data = data;
+      drawPitch();
+      render();
+    })
+    .catch(err => {
+      console.error(err);
+      setCaption('Veri yüklenemedi: ' + err.message);
+    });
+}

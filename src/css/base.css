@@ -6201,3 +6201,6 @@ body { cursor: none; }
 @media (max-width: 640px) {
   .lg-cor-row { grid-template-columns: 80px 1fr 80px; gap: 8px; }
 }
+
+/* Taktik Tahta Boş Panel Gizleme */
+[hidden] { display: none !important; }

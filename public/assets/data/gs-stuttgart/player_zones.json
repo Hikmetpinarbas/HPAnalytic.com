@@ -1,0 +1,8409 @@
+{
+  "VfB Stuttgart|Bilal El Khannouss": {
+    "pass_points": [
+      {
+        "x": 52.5,
+        "y": 34.0,
+        "minute": 5.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 40.8,
+        "y": 55.6,
+        "minute": 199.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 21.3,
+        "y": 57.7,
+        "minute": 266.3,
+        "action": "Long passes"
+      },
+      {
+        "x": 21.3,
+        "y": 57.7,
+        "minute": 266.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 21.3,
+        "y": 57.7,
+        "minute": 266.3,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 21.3,
+        "y": 57.7,
+        "minute": 266.3,
+        "action": "Progressive passes accurate"
+      },
+      {
+        "x": 60.2,
+        "y": 42.9,
+        "minute": 504.3,
+        "action": "Long passes"
+      },
+      {
+        "x": 60.2,
+        "y": 42.9,
+        "minute": 504.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 44.6,
+        "y": 20.8,
+        "minute": 1143.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 31.5,
+        "y": 27.6,
+        "minute": 1150.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 49.1,
+        "y": 32.1,
+        "minute": 1358.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 81.0,
+        "y": 51.0,
+        "minute": 1970.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 81.0,
+        "y": 51.0,
+        "minute": 1970.3,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 81.0,
+        "y": 51.0,
+        "minute": 1970.3,
+        "action": "Passes into the penalty box accurate"
+      },
+      {
+        "x": 81.0,
+        "y": 51.0,
+        "minute": 1970.3,
+        "action": "Progressive passes accurate"
+      },
+      {
+        "x": 78.2,
+        "y": 43.3,
+        "minute": 1977.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 65.6,
+        "y": 51.4,
+        "minute": 1982.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 65.6,
+        "y": 51.4,
+        "minute": 1982.3,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 41.0,
+        "y": 62.9,
+        "minute": 2010.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 58.6,
+        "y": 55.0,
+        "minute": 2021.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 58.6,
+        "y": 55.0,
+        "minute": 2021.3,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 58.6,
+        "y": 55.0,
+        "minute": 2021.3,
+        "action": "Progressive passes accurate"
+      },
+      {
+        "x": 61.6,
+        "y": 61.0,
+        "minute": 2028.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 39.8,
+        "y": 61.9,
+        "minute": 2081.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 75.8,
+        "y": 6.3,
+        "minute": 2131.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 75.8,
+        "y": 6.3,
+        "minute": 2131.3,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 75.8,
+        "y": 6.3,
+        "minute": 2131.3,
+        "action": "Progressive passes accurate"
+      },
+      {
+        "x": 83.7,
+        "y": 40.4,
+        "minute": 2470.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 56.3,
+        "y": 63.2,
+        "minute": 2720.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 41.5,
+        "y": 3.9,
+        "minute": 2903.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 41.5,
+        "y": 3.9,
+        "minute": 2903.7,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 41.5,
+        "y": 3.9,
+        "minute": 2903.7,
+        "action": "Progressive passes accurate"
+      },
+      {
+        "x": 70.9,
+        "y": 21.0,
+        "minute": 3249.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 70.9,
+        "y": 21.0,
+        "minute": 3249.7,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 70.9,
+        "y": 21.0,
+        "minute": 3249.7,
+        "action": "Progressive passes accurate"
+      },
+      {
+        "x": 51.6,
+        "y": 5.5,
+        "minute": 3430.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 48.2,
+        "y": 19.9,
+        "minute": 3542.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 68.5,
+        "y": 45.1,
+        "minute": 3654.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 29.6,
+        "y": 28.8,
+        "minute": 3744.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 29.6,
+        "y": 28.8,
+        "minute": 3744.7,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 68.7,
+        "y": 4.8,
+        "minute": 3908.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 68.7,
+        "y": 4.8,
+        "minute": 3908.7,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 54.0,
+        "y": 30.4,
+        "minute": 4044.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 65.5,
+        "y": 10.3,
+        "minute": 4100.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 65.5,
+        "y": 10.3,
+        "minute": 4100.7,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 65.5,
+        "y": 10.3,
+        "minute": 4100.7,
+        "action": "Progressive passes accurate"
+      },
+      {
+        "x": 83.9,
+        "y": 21.6,
+        "minute": 4153.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 83.9,
+        "y": 21.6,
+        "minute": 4153.7,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 83.9,
+        "y": 21.6,
+        "minute": 4153.7,
+        "action": "Progressive passes accurate"
+      },
+      {
+        "x": 60.6,
+        "y": 44.6,
+        "minute": 4181.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 68.4,
+        "y": 19.1,
+        "minute": 4668.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 68.4,
+        "y": 19.1,
+        "minute": 4668.7,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 76.5,
+        "y": 16.0,
+        "minute": 4669.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 76.5,
+        "y": 16.0,
+        "minute": 4669.7,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 69.3,
+        "y": 22.4,
+        "minute": 4995.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 69.3,
+        "y": 22.4,
+        "minute": 4995.7,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 69.3,
+        "y": 22.4,
+        "minute": 4995.7,
+        "action": "Progressive passes accurate"
+      },
+      {
+        "x": 83.7,
+        "y": 17.1,
+        "minute": 5005.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 83.7,
+        "y": 17.1,
+        "minute": 5005.7,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 44.4,
+        "y": 9.7,
+        "minute": 5034.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 44.4,
+        "y": 9.7,
+        "minute": 5034.7,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 69.1,
+        "y": 11.2,
+        "minute": 5196.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 47.0,
+        "y": 42.8,
+        "minute": 5588.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 47.0,
+        "y": 42.8,
+        "minute": 5588.7,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 75.2,
+        "y": 9.9,
+        "minute": 5653.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 53.5,
+        "y": 7.0,
+        "minute": 5713.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 53.5,
+        "y": 7.0,
+        "minute": 5713.7,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 53.5,
+        "y": 7.0,
+        "minute": 5713.7,
+        "action": "Progressive passes accurate"
+      },
+      {
+        "x": 75.2,
+        "y": 20.4,
+        "minute": 5819.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 75.2,
+        "y": 20.4,
+        "minute": 5819.7,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 75.2,
+        "y": 20.4,
+        "minute": 5819.7,
+        "action": "Progressive passes accurate"
+      },
+      {
+        "x": 64.3,
+        "y": 2.4,
+        "minute": 5831.7,
+        "action": "Passes accurate"
+      }
+    ],
+    "total_passes": 72,
+    "min_x": 21.3,
+    "max_x": 83.9,
+    "min_y": 2.4,
+    "max_y": 63.2,
+    "centroid": {
+      "x": 60.4,
+      "y": 28.8
+    },
+    "hull": [
+      [
+        21.3,
+        57.7
+      ],
+      [
+        29.6,
+        28.8
+      ],
+      [
+        41.5,
+        3.9
+      ],
+      [
+        64.3,
+        2.4
+      ],
+      [
+        75.8,
+        6.3
+      ],
+      [
+        83.7,
+        17.1
+      ],
+      [
+        83.9,
+        21.6
+      ],
+      [
+        83.7,
+        40.4
+      ],
+      [
+        81.0,
+        51.0
+      ],
+      [
+        61.6,
+        61.0
+      ],
+      [
+        56.3,
+        63.2
+      ],
+      [
+        41.0,
+        62.9
+      ]
+    ]
+  },
+  "VfB Stuttgart|Ramon Hendriks": {
+    "pass_points": [
+      {
+        "x": 28.4,
+        "y": 34.3,
+        "minute": 5.3,
+        "action": "Long passes"
+      },
+      {
+        "x": 28.4,
+        "y": 34.3,
+        "minute": 5.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 28.4,
+        "y": 34.3,
+        "minute": 5.3,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 28.4,
+        "y": 34.3,
+        "minute": 5.3,
+        "action": "Progressive passes accurate"
+      },
+      {
+        "x": 53.0,
+        "y": 27.6,
+        "minute": 596.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 53.0,
+        "y": 27.6,
+        "minute": 596.3,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 53.0,
+        "y": 27.6,
+        "minute": 596.3,
+        "action": "Progressive passes accurate"
+      },
+      {
+        "x": 57.2,
+        "y": 7.0,
+        "minute": 1139.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 57.2,
+        "y": 7.0,
+        "minute": 1139.3,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 57.2,
+        "y": 7.0,
+        "minute": 1139.3,
+        "action": "Progressive passes accurate"
+      },
+      {
+        "x": 27.8,
+        "y": 16.3,
+        "minute": 1249.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 27.8,
+        "y": 16.3,
+        "minute": 1249.3,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 31.8,
+        "y": 23.9,
+        "minute": 1356.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 31.8,
+        "y": 23.9,
+        "minute": 1356.3,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 6.2,
+        "y": 26.3,
+        "minute": 1463.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 13.5,
+        "y": 29.2,
+        "minute": 1469.3,
+        "action": "Long passes"
+      },
+      {
+        "x": 13.5,
+        "y": 29.2,
+        "minute": 1469.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 13.5,
+        "y": 29.2,
+        "minute": 1469.3,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 13.5,
+        "y": 29.2,
+        "minute": 1469.3,
+        "action": "Progressive passes accurate"
+      },
+      {
+        "x": 37.8,
+        "y": 0.0,
+        "minute": 1499.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 37.8,
+        "y": 0.0,
+        "minute": 1499.3,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 37.8,
+        "y": 0.0,
+        "minute": 1499.3,
+        "action": "Progressive passes accurate"
+      },
+      {
+        "x": 69.3,
+        "y": 9.4,
+        "minute": 2512.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 69.3,
+        "y": 9.4,
+        "minute": 2512.3,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 33.6,
+        "y": 20.0,
+        "minute": 2684.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 33.6,
+        "y": 20.0,
+        "minute": 2684.3,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 25.8,
+        "y": 14.8,
+        "minute": 3046.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 25.8,
+        "y": 14.8,
+        "minute": 3046.7,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 39.8,
+        "y": 29.0,
+        "minute": 3425.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 39.8,
+        "y": 29.0,
+        "minute": 3425.7,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 39.8,
+        "y": 29.0,
+        "minute": 3425.7,
+        "action": "Progressive passes accurate"
+      },
+      {
+        "x": 39.5,
+        "y": 14.0,
+        "minute": 3433.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 39.5,
+        "y": 14.0,
+        "minute": 3433.7,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 39.5,
+        "y": 14.0,
+        "minute": 3433.7,
+        "action": "Progressive passes accurate"
+      },
+      {
+        "x": 5.2,
+        "y": 25.6,
+        "minute": 3620.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 65.5,
+        "y": 21.4,
+        "minute": 3660.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 65.5,
+        "y": 21.4,
+        "minute": 3660.7,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 65.5,
+        "y": 21.4,
+        "minute": 3660.7,
+        "action": "Progressive passes accurate"
+      },
+      {
+        "x": 11.2,
+        "y": 15.9,
+        "minute": 3736.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 11.2,
+        "y": 15.9,
+        "minute": 3736.7,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 46.3,
+        "y": 5.6,
+        "minute": 3918.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 46.3,
+        "y": 5.6,
+        "minute": 3918.7,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 46.3,
+        "y": 5.6,
+        "minute": 3918.7,
+        "action": "Progressive passes accurate"
+      },
+      {
+        "x": 60.5,
+        "y": 27.7,
+        "minute": 4095.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 46.6,
+        "y": 17.9,
+        "minute": 4109.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 46.6,
+        "y": 17.9,
+        "minute": 4109.7,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 5.4,
+        "y": 29.0,
+        "minute": 4338.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 40.1,
+        "y": 21.1,
+        "minute": 4362.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 40.1,
+        "y": 21.1,
+        "minute": 4362.7,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 40.1,
+        "y": 21.1,
+        "minute": 4362.7,
+        "action": "Progressive passes accurate"
+      },
+      {
+        "x": 46.5,
+        "y": 11.8,
+        "minute": 4666.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 46.5,
+        "y": 11.8,
+        "minute": 4666.7,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 46.5,
+        "y": 11.8,
+        "minute": 4666.7,
+        "action": "Progressive passes accurate"
+      },
+      {
+        "x": 11.7,
+        "y": 25.6,
+        "minute": 4981.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 11.7,
+        "y": 25.6,
+        "minute": 4981.7,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 29.2,
+        "y": 19.9,
+        "minute": 5077.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 29.2,
+        "y": 19.9,
+        "minute": 5077.7,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 36.2,
+        "y": 21.4,
+        "minute": 5079.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 36.2,
+        "y": 21.4,
+        "minute": 5079.7,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 37.6,
+        "y": 4.6,
+        "minute": 5399.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 68.4,
+        "y": 31.6,
+        "minute": 5644.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 56.3,
+        "y": 21.8,
+        "minute": 5666.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 56.3,
+        "y": 21.8,
+        "minute": 5666.7,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 56.3,
+        "y": 21.8,
+        "minute": 5666.7,
+        "action": "Progressive passes accurate"
+      },
+      {
+        "x": 35.7,
+        "y": 1.4,
+        "minute": 5710.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 35.7,
+        "y": 1.4,
+        "minute": 5710.7,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 35.0,
+        "y": 31.3,
+        "minute": 5815.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 35.0,
+        "y": 31.3,
+        "minute": 5815.7,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 35.0,
+        "y": 31.3,
+        "minute": 5815.7,
+        "action": "Progressive passes accurate"
+      }
+    ],
+    "total_passes": 69,
+    "min_x": 5.2,
+    "max_x": 69.3,
+    "min_y": 0.0,
+    "max_y": 34.3,
+    "centroid": {
+      "x": 38.0,
+      "y": 19.5
+    },
+    "hull": [
+      [
+        5.2,
+        25.6
+      ],
+      [
+        11.2,
+        15.9
+      ],
+      [
+        37.8,
+        0.0
+      ],
+      [
+        69.3,
+        9.4
+      ],
+      [
+        68.4,
+        31.6
+      ],
+      [
+        28.4,
+        34.3
+      ],
+      [
+        5.4,
+        29.0
+      ]
+    ]
+  },
+  "VfB Stuttgart|Maximilian Mittelstädt": {
+    "pass_points": [
+      {
+        "x": 37.0,
+        "y": 44.5,
+        "minute": 55.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 37.0,
+        "y": 44.5,
+        "minute": 55.3,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 37.0,
+        "y": 44.5,
+        "minute": 55.3,
+        "action": "Progressive passes accurate"
+      },
+      {
+        "x": 34.7,
+        "y": 46.8,
+        "minute": 400.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 34.7,
+        "y": 46.8,
+        "minute": 400.3,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 34.7,
+        "y": 46.8,
+        "minute": 400.3,
+        "action": "Progressive passes accurate"
+      },
+      {
+        "x": 98.8,
+        "y": 64.5,
+        "minute": 448.3,
+        "action": "Key passes accurate"
+      },
+      {
+        "x": 98.8,
+        "y": 64.5,
+        "minute": 448.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 98.8,
+        "y": 64.5,
+        "minute": 448.3,
+        "action": "Passes into the penalty box accurate"
+      },
+      {
+        "x": 37.1,
+        "y": 56.5,
+        "minute": 501.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 37.1,
+        "y": 56.5,
+        "minute": 501.3,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 37.1,
+        "y": 56.5,
+        "minute": 501.3,
+        "action": "Progressive passes accurate"
+      },
+      {
+        "x": 32.5,
+        "y": 42.0,
+        "minute": 530.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 64.7,
+        "y": 67.6,
+        "minute": 589.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 57.0,
+        "y": 65.5,
+        "minute": 591.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 52.6,
+        "y": 39.3,
+        "minute": 825.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 52.6,
+        "y": 39.3,
+        "minute": 825.3,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 71.7,
+        "y": 59.1,
+        "minute": 1172.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 71.7,
+        "y": 59.1,
+        "minute": 1172.3,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 33.2,
+        "y": 49.7,
+        "minute": 1211.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 50.9,
+        "y": 68.0,
+        "minute": 1610.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 30.1,
+        "y": 68.0,
+        "minute": 1628.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 30.1,
+        "y": 68.0,
+        "minute": 1628.3,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 32.5,
+        "y": 65.2,
+        "minute": 1629.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 32.5,
+        "y": 65.2,
+        "minute": 1629.3,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 32.5,
+        "y": 65.2,
+        "minute": 1629.3,
+        "action": "Progressive passes accurate"
+      },
+      {
+        "x": 55.8,
+        "y": 61.6,
+        "minute": 1960.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 59.4,
+        "y": 67.5,
+        "minute": 2001.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 59.4,
+        "y": 67.5,
+        "minute": 2001.3,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 54.4,
+        "y": 61.0,
+        "minute": 2025.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 28.0,
+        "y": 68.0,
+        "minute": 2080.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 28.0,
+        "y": 68.0,
+        "minute": 2080.3,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 27.1,
+        "y": 63.8,
+        "minute": 2083.3,
+        "action": "Long passes"
+      },
+      {
+        "x": 27.1,
+        "y": 63.8,
+        "minute": 2083.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 105.0,
+        "y": 0.0,
+        "minute": 2166.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 105.0,
+        "y": 0.0,
+        "minute": 2166.3,
+        "action": "Passes into the penalty box accurate"
+      },
+      {
+        "x": 79.3,
+        "y": 68.0,
+        "minute": 2449.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 71.0,
+        "y": 62.2,
+        "minute": 2452.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 74.1,
+        "y": 1.6,
+        "minute": 2515.3,
+        "action": "Long passes"
+      },
+      {
+        "x": 74.1,
+        "y": 1.6,
+        "minute": 2515.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 74.1,
+        "y": 1.6,
+        "minute": 2515.3,
+        "action": "Passes into the penalty box accurate"
+      },
+      {
+        "x": 26.6,
+        "y": 60.3,
+        "minute": 2558.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 24.3,
+        "y": 42.3,
+        "minute": 2716.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 24.3,
+        "y": 42.3,
+        "minute": 2716.3,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 46.0,
+        "y": 58.4,
+        "minute": 2725.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 41.7,
+        "y": 58.4,
+        "minute": 2727.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 41.7,
+        "y": 58.4,
+        "minute": 2727.3,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 41.7,
+        "y": 58.4,
+        "minute": 2727.3,
+        "action": "Progressive passes accurate"
+      },
+      {
+        "x": 51.2,
+        "y": 56.5,
+        "minute": 2734.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 26.6,
+        "y": 27.8,
+        "minute": 2969.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 32.2,
+        "y": 46.3,
+        "minute": 3277.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 45.0,
+        "y": 63.7,
+        "minute": 3296.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 45.0,
+        "y": 63.7,
+        "minute": 3296.7,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 45.0,
+        "y": 63.7,
+        "minute": 3296.7,
+        "action": "Progressive passes accurate"
+      },
+      {
+        "x": 59.1,
+        "y": 68.0,
+        "minute": 3415.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 59.1,
+        "y": 68.0,
+        "minute": 3415.7,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 59.1,
+        "y": 68.0,
+        "minute": 3415.7,
+        "action": "Progressive passes accurate"
+      },
+      {
+        "x": 48.9,
+        "y": 60.1,
+        "minute": 3420.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 72.4,
+        "y": 68.0,
+        "minute": 3650.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 36.7,
+        "y": 59.5,
+        "minute": 3714.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 34.8,
+        "y": 56.5,
+        "minute": 3815.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 40.1,
+        "y": 61.3,
+        "minute": 3924.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 40.1,
+        "y": 61.3,
+        "minute": 3924.7,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 40.1,
+        "y": 61.3,
+        "minute": 3924.7,
+        "action": "Progressive passes accurate"
+      },
+      {
+        "x": 81.4,
+        "y": 57.6,
+        "minute": 4076.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 81.4,
+        "y": 57.6,
+        "minute": 4076.7,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 81.4,
+        "y": 57.6,
+        "minute": 4076.7,
+        "action": "Progressive passes accurate"
+      },
+      {
+        "x": 70.8,
+        "y": 60.8,
+        "minute": 4184.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 69.6,
+        "y": 48.2,
+        "minute": 4285.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 69.6,
+        "y": 48.2,
+        "minute": 4285.7,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 69.6,
+        "y": 48.2,
+        "minute": 4285.7,
+        "action": "Progressive passes accurate"
+      },
+      {
+        "x": 23.8,
+        "y": 63.5,
+        "minute": 4511.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 23.8,
+        "y": 63.5,
+        "minute": 4511.7,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 27.5,
+        "y": 52.9,
+        "minute": 4565.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 29.5,
+        "y": 60.3,
+        "minute": 4572.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 29.6,
+        "y": 56.7,
+        "minute": 4581.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 29.6,
+        "y": 56.7,
+        "minute": 4581.7,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 33.4,
+        "y": 55.5,
+        "minute": 4590.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 33.4,
+        "y": 55.5,
+        "minute": 4590.7,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 42.8,
+        "y": 68.0,
+        "minute": 4833.7,
+        "action": "Passes accurate"
+      }
+    ],
+    "total_passes": 104,
+    "min_x": 8.6,
+    "max_x": 105.0,
+    "min_y": 0.0,
+    "max_y": 68.0,
+    "centroid": {
+      "x": 48.9,
+      "y": 54.6
+    },
+    "hull": [
+      [
+        8.6,
+        45.1
+      ],
+      [
+        26.6,
+        27.8
+      ],
+      [
+        74.1,
+        1.6
+      ],
+      [
+        105.0,
+        0.0
+      ],
+      [
+        98.8,
+        64.5
+      ],
+      [
+        80.9,
+        68.0
+      ],
+      [
+        28.0,
+        68.0
+      ],
+      [
+        21.6,
+        65.1
+      ]
+    ]
+  },
+  "VfB Stuttgart|Ermedin Demirovic": {
+    "pass_points": [
+      {
+        "x": 64.3,
+        "y": 40.2,
+        "minute": 58.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 52.5,
+        "y": 34.0,
+        "minute": 1075.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 63.8,
+        "y": 39.4,
+        "minute": 2462.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 63.8,
+        "y": 39.4,
+        "minute": 2462.3,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 76.5,
+        "y": 37.8,
+        "minute": 3246.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 91.0,
+        "y": 50.1,
+        "minute": 3552.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 66.7,
+        "y": 47.9,
+        "minute": 3632.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 66.7,
+        "y": 47.9,
+        "minute": 3632.7,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 86.0,
+        "y": 60.6,
+        "minute": 3932.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 32.5,
+        "y": 50.0,
+        "minute": 4564.7,
+        "action": "Passes accurate"
+      }
+    ],
+    "total_passes": 10,
+    "min_x": 32.5,
+    "max_x": 91.0,
+    "min_y": 34.0,
+    "max_y": 60.6,
+    "centroid": {
+      "x": 66.4,
+      "y": 44.7
+    },
+    "hull": [
+      [
+        32.5,
+        50.0
+      ],
+      [
+        52.5,
+        34.0
+      ],
+      [
+        76.5,
+        37.8
+      ],
+      [
+        91.0,
+        50.1
+      ],
+      [
+        86.0,
+        60.6
+      ]
+    ]
+  },
+  "Galatasaray|Lucas Torreira": {
+    "pass_points": [
+      {
+        "x": 54.7,
+        "y": 30.8,
+        "minute": 178.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 39.2,
+        "y": 42.7,
+        "minute": 277.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 41.2,
+        "y": 63.5,
+        "minute": 284.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 46.1,
+        "y": 31.5,
+        "minute": 495.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 43.3,
+        "y": 43.3,
+        "minute": 548.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 81.9,
+        "y": 44.6,
+        "minute": 641.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 81.9,
+        "y": 22.6,
+        "minute": 670.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 81.9,
+        "y": 22.6,
+        "minute": 670.3,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 81.9,
+        "y": 22.6,
+        "minute": 670.3,
+        "action": "Passes into the penalty box accurate"
+      },
+      {
+        "x": 81.9,
+        "y": 22.6,
+        "minute": 670.3,
+        "action": "Progressive passes accurate"
+      },
+      {
+        "x": 38.8,
+        "y": 35.4,
+        "minute": 837.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 44.5,
+        "y": 51.9,
+        "minute": 866.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 29.2,
+        "y": 28.8,
+        "minute": 1128.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 41.4,
+        "y": 15.5,
+        "minute": 1281.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 41.4,
+        "y": 15.5,
+        "minute": 1281.3,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 41.4,
+        "y": 15.5,
+        "minute": 1281.3,
+        "action": "Progressive passes accurate"
+      },
+      {
+        "x": 51.0,
+        "y": 47.3,
+        "minute": 1360.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 64.9,
+        "y": 65.2,
+        "minute": 1367.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 64.9,
+        "y": 65.2,
+        "minute": 1367.3,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 64.9,
+        "y": 65.2,
+        "minute": 1367.3,
+        "action": "Progressive passes accurate"
+      },
+      {
+        "x": 39.5,
+        "y": 23.7,
+        "minute": 1478.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 39.5,
+        "y": 23.7,
+        "minute": 1478.3,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 67.0,
+        "y": 62.7,
+        "minute": 1574.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 45.7,
+        "y": 28.1,
+        "minute": 2046.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 70.8,
+        "y": 55.7,
+        "minute": 2614.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 60.0,
+        "y": 36.5,
+        "minute": 2816.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 60.0,
+        "y": 36.5,
+        "minute": 2816.3,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 52.5,
+        "y": 34.0,
+        "minute": 2898.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 33.7,
+        "y": 55.2,
+        "minute": 2927.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 33.7,
+        "y": 55.2,
+        "minute": 2927.7,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 67.5,
+        "y": 41.1,
+        "minute": 2994.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 67.5,
+        "y": 41.1,
+        "minute": 2994.7,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 49.9,
+        "y": 15.1,
+        "minute": 3288.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 49.9,
+        "y": 15.1,
+        "minute": 3288.7,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 78.8,
+        "y": 47.4,
+        "minute": 3472.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 28.0,
+        "y": 31.2,
+        "minute": 3585.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 29.3,
+        "y": 28.9,
+        "minute": 4414.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 29.3,
+        "y": 28.9,
+        "minute": 4414.7,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 45.7,
+        "y": 12.4,
+        "minute": 4527.7,
+        "action": "Long passes"
+      },
+      {
+        "x": 45.7,
+        "y": 12.4,
+        "minute": 4527.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 40.2,
+        "y": 47.7,
+        "minute": 4549.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 25.9,
+        "y": 21.9,
+        "minute": 4866.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 25.9,
+        "y": 21.9,
+        "minute": 4866.7,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 44.5,
+        "y": 29.9,
+        "minute": 4908.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 70.7,
+        "y": 57.1,
+        "minute": 4959.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 70.7,
+        "y": 57.1,
+        "minute": 4959.7,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 70.7,
+        "y": 57.1,
+        "minute": 4959.7,
+        "action": "Progressive passes accurate"
+      },
+      {
+        "x": 34.8,
+        "y": 34.2,
+        "minute": 5055.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 48.1,
+        "y": 35.1,
+        "minute": 5299.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 96.0,
+        "y": 9.9,
+        "minute": 5578.7,
+        "action": "Passes accurate"
+      }
+    ],
+    "total_passes": 50,
+    "min_x": 25.9,
+    "max_x": 96.0,
+    "min_y": 9.9,
+    "max_y": 65.2,
+    "centroid": {
+      "x": 52.8,
+      "y": 36.2
+    },
+    "hull": [
+      [
+        25.9,
+        21.9
+      ],
+      [
+        45.7,
+        12.4
+      ],
+      [
+        96.0,
+        9.9
+      ],
+      [
+        81.9,
+        44.6
+      ],
+      [
+        67.0,
+        62.7
+      ],
+      [
+        64.9,
+        65.2
+      ],
+      [
+        41.2,
+        63.5
+      ],
+      [
+        33.7,
+        55.2
+      ],
+      [
+        28.0,
+        31.2
+      ]
+    ]
+  },
+  "Galatasaray|Davinson Sánchez": {
+    "pass_points": [
+      {
+        "x": 41.8,
+        "y": 27.6,
+        "minute": 179.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 49.4,
+        "y": 23.1,
+        "minute": 202.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 49.4,
+        "y": 23.1,
+        "minute": 202.3,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 49.4,
+        "y": 23.1,
+        "minute": 202.3,
+        "action": "Progressive passes accurate"
+      },
+      {
+        "x": 32.0,
+        "y": 16.6,
+        "minute": 310.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 25.7,
+        "y": 8.3,
+        "minute": 322.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 22.6,
+        "y": 18.6,
+        "minute": 374.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 31.8,
+        "y": 30.6,
+        "minute": 551.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 76.7,
+        "y": 19.2,
+        "minute": 649.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 69.9,
+        "y": 19.4,
+        "minute": 666.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 69.9,
+        "y": 19.4,
+        "minute": 666.3,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 69.9,
+        "y": 19.4,
+        "minute": 666.3,
+        "action": "Progressive passes accurate"
+      },
+      {
+        "x": 45.0,
+        "y": 14.9,
+        "minute": 871.3,
+        "action": "Key passes accurate"
+      },
+      {
+        "x": 45.0,
+        "y": 14.9,
+        "minute": 871.3,
+        "action": "Progressive passes accurate"
+      },
+      {
+        "x": 27.8,
+        "y": 25.9,
+        "minute": 1086.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 37.1,
+        "y": 21.5,
+        "minute": 1259.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 31.7,
+        "y": 9.2,
+        "minute": 1588.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 36.6,
+        "y": 15.2,
+        "minute": 1727.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 28.2,
+        "y": 14.7,
+        "minute": 2044.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 28.2,
+        "y": 14.7,
+        "minute": 2044.3,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 27.8,
+        "y": 9.6,
+        "minute": 2431.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 25.9,
+        "y": 1.4,
+        "minute": 2679.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 25.9,
+        "y": 1.4,
+        "minute": 2679.3,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 25.0,
+        "y": 41.8,
+        "minute": 2911.7,
+        "action": "Long passes"
+      },
+      {
+        "x": 25.0,
+        "y": 41.8,
+        "minute": 2911.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 25.0,
+        "y": 41.8,
+        "minute": 2911.7,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 25.0,
+        "y": 41.8,
+        "minute": 2911.7,
+        "action": "Progressive passes accurate"
+      },
+      {
+        "x": 61.6,
+        "y": 20.1,
+        "minute": 3037.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 68.5,
+        "y": 5.2,
+        "minute": 3503.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 96.0,
+        "y": 9.0,
+        "minute": 3514.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 96.0,
+        "y": 9.0,
+        "minute": 3514.7,
+        "action": "Passes into the penalty box accurate"
+      },
+      {
+        "x": 24.3,
+        "y": 4.8,
+        "minute": 3589.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 24.3,
+        "y": 4.8,
+        "minute": 3589.7,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 47.1,
+        "y": 20.1,
+        "minute": 3811.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 47.1,
+        "y": 20.1,
+        "minute": 3811.7,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 47.1,
+        "y": 20.1,
+        "minute": 3811.7,
+        "action": "Progressive passes accurate"
+      },
+      {
+        "x": 15.5,
+        "y": 43.0,
+        "minute": 4266.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 15.5,
+        "y": 43.0,
+        "minute": 4266.7,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 68.2,
+        "y": 30.7,
+        "minute": 4470.7,
+        "action": "Long passes"
+      },
+      {
+        "x": 68.2,
+        "y": 30.7,
+        "minute": 4470.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 42.2,
+        "y": 7.3,
+        "minute": 4520.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 42.2,
+        "y": 7.3,
+        "minute": 4520.7,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 43.2,
+        "y": 22.8,
+        "minute": 4654.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 32.0,
+        "y": 31.2,
+        "minute": 4660.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 26.4,
+        "y": 29.2,
+        "minute": 4913.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 49.1,
+        "y": 7.3,
+        "minute": 5302.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 49.1,
+        "y": 7.3,
+        "minute": 5302.7,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 43.0,
+        "y": 26.1,
+        "minute": 5516.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 34.5,
+        "y": 55.3,
+        "minute": 5722.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 34.5,
+        "y": 55.3,
+        "minute": 5722.7,
+        "action": "Passes forward accurate"
+      }
+    ],
+    "total_passes": 50,
+    "min_x": 15.5,
+    "max_x": 96.0,
+    "min_y": 1.4,
+    "max_y": 55.3,
+    "centroid": {
+      "x": 42.5,
+      "y": 21.4
+    },
+    "hull": [
+      [
+        15.5,
+        43.0
+      ],
+      [
+        24.3,
+        4.8
+      ],
+      [
+        25.9,
+        1.4
+      ],
+      [
+        68.5,
+        5.2
+      ],
+      [
+        96.0,
+        9.0
+      ],
+      [
+        68.2,
+        30.7
+      ],
+      [
+        34.5,
+        55.3
+      ]
+    ]
+  },
+  "Galatasaray|Roland Sallai": {
+    "pass_points": [
+      {
+        "x": 42.9,
+        "y": 15.5,
+        "minute": 182.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 65.7,
+        "y": 10.2,
+        "minute": 223.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 65.7,
+        "y": 10.2,
+        "minute": 223.3,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 45.5,
+        "y": 0.0,
+        "minute": 305.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 33.9,
+        "y": 3.3,
+        "minute": 317.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 30.0,
+        "y": 0.0,
+        "minute": 370.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 24.5,
+        "y": 17.8,
+        "minute": 553.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 76.9,
+        "y": 38.4,
+        "minute": 645.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 25.1,
+        "y": 0.0,
+        "minute": 772.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 32.8,
+        "y": 13.5,
+        "minute": 835.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 27.9,
+        "y": 7.7,
+        "minute": 1088.3,
+        "action": "Long passes"
+      },
+      {
+        "x": 27.9,
+        "y": 7.7,
+        "minute": 1088.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 27.9,
+        "y": 7.7,
+        "minute": 1088.3,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 27.9,
+        "y": 7.7,
+        "minute": 1088.3,
+        "action": "Progressive passes accurate"
+      },
+      {
+        "x": 29.8,
+        "y": 17.2,
+        "minute": 1261.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 54.9,
+        "y": 4.7,
+        "minute": 1584.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 62.9,
+        "y": 0.0,
+        "minute": 1723.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 21.9,
+        "y": 11.1,
+        "minute": 1795.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 21.9,
+        "y": 11.1,
+        "minute": 1795.3,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 60.0,
+        "y": 0.0,
+        "minute": 2041.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 45.3,
+        "y": 0.0,
+        "minute": 2428.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 17.9,
+        "y": 0.0,
+        "minute": 2552.3,
+        "action": "Long passes"
+      },
+      {
+        "x": 17.9,
+        "y": 0.0,
+        "minute": 2552.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 17.9,
+        "y": 0.0,
+        "minute": 2552.3,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 17.9,
+        "y": 0.0,
+        "minute": 2552.3,
+        "action": "Progressive passes accurate"
+      },
+      {
+        "x": 70.5,
+        "y": 15.7,
+        "minute": 2754.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 70.5,
+        "y": 15.7,
+        "minute": 2754.3,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 76.0,
+        "y": 2.7,
+        "minute": 2878.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 75.2,
+        "y": 18.1,
+        "minute": 3202.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 75.2,
+        "y": 18.1,
+        "minute": 3202.7,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 75.2,
+        "y": 18.1,
+        "minute": 3202.7,
+        "action": "Progressive passes accurate"
+      },
+      {
+        "x": 39.8,
+        "y": 22.1,
+        "minute": 3223.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 39.8,
+        "y": 22.1,
+        "minute": 3223.7,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 41.6,
+        "y": 13.6,
+        "minute": 3286.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 41.6,
+        "y": 13.6,
+        "minute": 3286.7,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 39.2,
+        "y": 3.3,
+        "minute": 3293.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 36.0,
+        "y": 8.9,
+        "minute": 3497.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 36.0,
+        "y": 8.9,
+        "minute": 3497.7,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 32.5,
+        "y": 2.4,
+        "minute": 3591.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 32.5,
+        "y": 2.4,
+        "minute": 3591.7,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 32.5,
+        "y": 2.4,
+        "minute": 3591.7,
+        "action": "Progressive passes accurate"
+      }
+    ],
+    "total_passes": 41,
+    "min_x": 17.9,
+    "max_x": 76.9,
+    "min_y": 0.0,
+    "max_y": 38.4,
+    "centroid": {
+      "x": 42.4,
+      "y": 9.1
+    },
+    "hull": [
+      [
+        17.9,
+        0.0
+      ],
+      [
+        62.9,
+        0.0
+      ],
+      [
+        76.0,
+        2.7
+      ],
+      [
+        76.9,
+        38.4
+      ],
+      [
+        24.5,
+        17.8
+      ],
+      [
+        21.9,
+        11.1
+      ]
+    ]
+  },
+  "Galatasaray|Yunus Akgün": {
+    "pass_points": [
+      {
+        "x": 40.4,
+        "y": 2.5,
+        "minute": 187.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 29.9,
+        "y": 27.7,
+        "minute": 410.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 64.3,
+        "y": 3.5,
+        "minute": 619.3,
+        "action": "Long passes"
+      },
+      {
+        "x": 64.3,
+        "y": 3.5,
+        "minute": 619.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 64.3,
+        "y": 3.5,
+        "minute": 619.3,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 64.3,
+        "y": 3.5,
+        "minute": 619.3,
+        "action": "Passes into the penalty box accurate"
+      },
+      {
+        "x": 64.3,
+        "y": 3.5,
+        "minute": 619.3,
+        "action": "Progressive passes accurate"
+      },
+      {
+        "x": 80.3,
+        "y": 5.2,
+        "minute": 669.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 38.3,
+        "y": 4.5,
+        "minute": 1274.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 48.2,
+        "y": 31.4,
+        "minute": 1413.3,
+        "action": "Long passes"
+      },
+      {
+        "x": 48.2,
+        "y": 31.4,
+        "minute": 1413.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 48.2,
+        "y": 31.4,
+        "minute": 1413.3,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 48.2,
+        "y": 31.4,
+        "minute": 1413.3,
+        "action": "Progressive passes accurate"
+      },
+      {
+        "x": 51.0,
+        "y": 36.9,
+        "minute": 1554.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 66.5,
+        "y": 17.8,
+        "minute": 1583.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 105.0,
+        "y": 0.0,
+        "minute": 1903.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 105.0,
+        "y": 0.0,
+        "minute": 1903.3,
+        "action": "Passes into the penalty box accurate"
+      },
+      {
+        "x": 105.0,
+        "y": 0.0,
+        "minute": 1922.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 105.0,
+        "y": 0.0,
+        "minute": 1922.3,
+        "action": "Passes into the penalty box accurate"
+      },
+      {
+        "x": 48.2,
+        "y": 6.8,
+        "minute": 2681.3,
+        "action": "Long passes"
+      },
+      {
+        "x": 48.2,
+        "y": 6.8,
+        "minute": 2681.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 48.2,
+        "y": 6.8,
+        "minute": 2681.3,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 48.2,
+        "y": 6.8,
+        "minute": 2681.3,
+        "action": "Progressive passes accurate"
+      },
+      {
+        "x": 88.2,
+        "y": 43.9,
+        "minute": 2801.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 70.2,
+        "y": 1.9,
+        "minute": 3033.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 79.5,
+        "y": 2.7,
+        "minute": 3168.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 79.5,
+        "y": 2.7,
+        "minute": 3168.7,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 79.5,
+        "y": 2.7,
+        "minute": 3168.7,
+        "action": "Passes into the penalty box accurate"
+      },
+      {
+        "x": 79.5,
+        "y": 2.7,
+        "minute": 3168.7,
+        "action": "Progressive passes accurate"
+      },
+      {
+        "x": 57.9,
+        "y": 7.4,
+        "minute": 3290.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 26.1,
+        "y": 10.0,
+        "minute": 3337.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 26.1,
+        "y": 10.0,
+        "minute": 3337.7,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 59.9,
+        "y": 16.7,
+        "minute": 3374.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 74.6,
+        "y": 21.2,
+        "minute": 3453.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 44.8,
+        "y": 21.2,
+        "minute": 3498.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 44.8,
+        "y": 21.2,
+        "minute": 3498.7,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 44.8,
+        "y": 21.2,
+        "minute": 3498.7,
+        "action": "Progressive passes accurate"
+      },
+      {
+        "x": 75.0,
+        "y": 16.8,
+        "minute": 3509.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 75.0,
+        "y": 16.8,
+        "minute": 3509.7,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 90.7,
+        "y": 16.2,
+        "minute": 3516.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 61.3,
+        "y": 13.6,
+        "minute": 3598.7,
+        "action": "Key passes accurate"
+      },
+      {
+        "x": 61.3,
+        "y": 13.6,
+        "minute": 3598.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 61.3,
+        "y": 13.6,
+        "minute": 3598.7,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 61.3,
+        "y": 13.6,
+        "minute": 3598.7,
+        "action": "Passes into the penalty box accurate"
+      },
+      {
+        "x": 61.3,
+        "y": 13.6,
+        "minute": 3598.7,
+        "action": "Progressive passes accurate"
+      },
+      {
+        "x": 105.0,
+        "y": 0.0,
+        "minute": 4464.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 105.0,
+        "y": 0.0,
+        "minute": 4464.7,
+        "action": "Passes into the penalty box accurate"
+      },
+      {
+        "x": 59.9,
+        "y": 25.8,
+        "minute": 5017.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 59.9,
+        "y": 25.8,
+        "minute": 5017.7,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 59.9,
+        "y": 25.8,
+        "minute": 5017.7,
+        "action": "Progressive passes accurate"
+      },
+      {
+        "x": 40.9,
+        "y": 16.0,
+        "minute": 5051.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 68.4,
+        "y": 61.8,
+        "minute": 5114.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 68.4,
+        "y": 61.8,
+        "minute": 5114.7,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 77.8,
+        "y": 12.9,
+        "minute": 5571.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 77.8,
+        "y": 12.9,
+        "minute": 5571.7,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 77.8,
+        "y": 12.9,
+        "minute": 5571.7,
+        "action": "Progressive passes accurate"
+      },
+      {
+        "x": 82.4,
+        "y": 2.9,
+        "minute": 5576.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 82.4,
+        "y": 2.9,
+        "minute": 5576.7,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 82.4,
+        "y": 2.9,
+        "minute": 5576.7,
+        "action": "Progressive passes accurate"
+      },
+      {
+        "x": 9.9,
+        "y": 2.9,
+        "minute": 5620.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 16.4,
+        "y": 5.2,
+        "minute": 5623.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 16.4,
+        "y": 5.2,
+        "minute": 5623.7,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 82.1,
+        "y": 44.2,
+        "minute": 5732.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 82.1,
+        "y": 44.2,
+        "minute": 5732.7,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 82.1,
+        "y": 44.2,
+        "minute": 5732.7,
+        "action": "Passes into the penalty box accurate"
+      },
+      {
+        "x": 82.1,
+        "y": 44.2,
+        "minute": 5732.7,
+        "action": "Progressive passes accurate"
+      }
+    ],
+    "total_passes": 66,
+    "min_x": 9.9,
+    "max_x": 105.0,
+    "min_y": 0.0,
+    "max_y": 61.8,
+    "centroid": {
+      "x": 64.5,
+      "y": 15.5
+    },
+    "hull": [
+      [
+        9.9,
+        2.9
+      ],
+      [
+        105.0,
+        0.0
+      ],
+      [
+        88.2,
+        43.9
+      ],
+      [
+        68.4,
+        61.8
+      ],
+      [
+        29.9,
+        27.7
+      ]
+    ]
+  },
+  "VfB Stuttgart|Atakan Karazor": {
+    "pass_points": [
+      {
+        "x": 25.2,
+        "y": 53.9,
+        "minute": 192.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 31.6,
+        "y": 45.5,
+        "minute": 198.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 31.6,
+        "y": 45.5,
+        "minute": 198.3,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 59.7,
+        "y": 61.5,
+        "minute": 590.3,
+        "action": "Passes accurate"
+      }
+    ],
+    "total_passes": 4,
+    "min_x": 25.2,
+    "max_x": 59.7,
+    "min_y": 45.5,
+    "max_y": 61.5,
+    "centroid": {
+      "x": 37.0,
+      "y": 51.6
+    },
+    "hull": [
+      [
+        25.2,
+        53.9
+      ],
+      [
+        31.6,
+        45.5
+      ],
+      [
+        59.7,
+        61.5
+      ]
+    ]
+  },
+  "Galatasaray|Barış Alper Yılmaz": {
+    "pass_points": [
+      {
+        "x": 76.4,
+        "y": 38.1,
+        "minute": 204.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 75.8,
+        "y": 39.6,
+        "minute": 210.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 45.4,
+        "y": 65.2,
+        "minute": 284.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 63.7,
+        "y": 66.0,
+        "minute": 1227.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 63.7,
+        "y": 66.0,
+        "minute": 1227.3,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 59.8,
+        "y": 64.0,
+        "minute": 1236.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 84.8,
+        "y": 40.4,
+        "minute": 1289.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 84.8,
+        "y": 40.4,
+        "minute": 1289.3,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 84.8,
+        "y": 40.4,
+        "minute": 1289.3,
+        "action": "Passes into the penalty box accurate"
+      },
+      {
+        "x": 51.8,
+        "y": 40.7,
+        "minute": 1349.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 77.5,
+        "y": 61.9,
+        "minute": 1368.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 77.5,
+        "y": 61.9,
+        "minute": 1368.3,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 74.8,
+        "y": 67.1,
+        "minute": 1539.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 70.9,
+        "y": 59.7,
+        "minute": 1558.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 83.9,
+        "y": 41.5,
+        "minute": 2616.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 83.9,
+        "y": 41.5,
+        "minute": 2616.3,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 83.9,
+        "y": 41.5,
+        "minute": 2616.3,
+        "action": "Passes into the penalty box accurate"
+      },
+      {
+        "x": 71.0,
+        "y": 27.6,
+        "minute": 3163.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 70.2,
+        "y": 46.6,
+        "minute": 3447.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 92.4,
+        "y": 63.1,
+        "minute": 3470.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 93.7,
+        "y": 22.6,
+        "minute": 3520.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 7.6,
+        "y": 3.1,
+        "minute": 4170.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 7.6,
+        "y": 3.1,
+        "minute": 4170.7,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 7.6,
+        "y": 3.1,
+        "minute": 4170.7,
+        "action": "Progressive passes accurate"
+      }
+    ],
+    "total_passes": 24,
+    "min_x": 7.6,
+    "max_x": 93.7,
+    "min_y": 3.1,
+    "max_y": 67.1,
+    "centroid": {
+      "x": 66.4,
+      "y": 43.5
+    },
+    "hull": [
+      [
+        7.6,
+        3.1
+      ],
+      [
+        93.7,
+        22.6
+      ],
+      [
+        92.4,
+        63.1
+      ],
+      [
+        74.8,
+        67.1
+      ],
+      [
+        45.4,
+        65.2
+      ]
+    ]
+  },
+  "Galatasaray|Aleksei Batrakov": {
+    "pass_points": [
+      {
+        "x": 71.5,
+        "y": 34.4,
+        "minute": 206.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 71.5,
+        "y": 34.4,
+        "minute": 206.3,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 77.3,
+        "y": 53.1,
+        "minute": 215.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 72.3,
+        "y": 1.5,
+        "minute": 259.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 72.3,
+        "y": 1.5,
+        "minute": 259.3,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 72.3,
+        "y": 1.5,
+        "minute": 259.3,
+        "action": "Progressive passes accurate"
+      },
+      {
+        "x": 26.6,
+        "y": 29.8,
+        "minute": 409.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 26.6,
+        "y": 29.8,
+        "minute": 409.3,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 54.7,
+        "y": 32.8,
+        "minute": 494.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 25.5,
+        "y": 56.7,
+        "minute": 521.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 84.1,
+        "y": 53.6,
+        "minute": 637.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 34.2,
+        "y": 56.4,
+        "minute": 816.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 29.4,
+        "y": 30.8,
+        "minute": 829.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 46.0,
+        "y": 29.8,
+        "minute": 867.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 63.0,
+        "y": 24.9,
+        "minute": 1284.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 58.7,
+        "y": 38.2,
+        "minute": 1343.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 58.7,
+        "y": 38.2,
+        "minute": 1343.3,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 58.7,
+        "y": 38.2,
+        "minute": 1343.3,
+        "action": "Progressive passes accurate"
+      },
+      {
+        "x": 67.5,
+        "y": 62.0,
+        "minute": 1375.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 67.5,
+        "y": 62.0,
+        "minute": 1375.3,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 67.5,
+        "y": 62.0,
+        "minute": 1375.3,
+        "action": "Progressive passes accurate"
+      },
+      {
+        "x": 46.8,
+        "y": 44.3,
+        "minute": 1412.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 55.3,
+        "y": 63.4,
+        "minute": 1544.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 58.2,
+        "y": 57.3,
+        "minute": 1557.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 58.2,
+        "y": 57.3,
+        "minute": 1557.3,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 58.2,
+        "y": 57.3,
+        "minute": 1557.3,
+        "action": "Progressive passes accurate"
+      },
+      {
+        "x": 64.1,
+        "y": 52.0,
+        "minute": 1563.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 31.3,
+        "y": 33.4,
+        "minute": 1597.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 47.8,
+        "y": 26.3,
+        "minute": 1730.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 76.6,
+        "y": 45.5,
+        "minute": 2615.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 76.6,
+        "y": 45.5,
+        "minute": 2615.3,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 91.5,
+        "y": 59.0,
+        "minute": 2803.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 91.5,
+        "y": 59.0,
+        "minute": 2803.3,
+        "action": "Passes into the penalty box accurate"
+      },
+      {
+        "x": 82.5,
+        "y": 12.4,
+        "minute": 3207.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 82.5,
+        "y": 12.4,
+        "minute": 3207.7,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 82.5,
+        "y": 12.4,
+        "minute": 3207.7,
+        "action": "Passes into the penalty box accurate"
+      },
+      {
+        "x": 82.5,
+        "y": 12.4,
+        "minute": 3207.7,
+        "action": "Progressive passes accurate"
+      },
+      {
+        "x": 42.7,
+        "y": 57.9,
+        "minute": 3436.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 67.8,
+        "y": 41.6,
+        "minute": 3452.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 80.1,
+        "y": 56.3,
+        "minute": 3471.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 35.0,
+        "y": 45.6,
+        "minute": 3493.7,
+        "action": "Long passes"
+      },
+      {
+        "x": 35.0,
+        "y": 45.6,
+        "minute": 3493.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 62.3,
+        "y": 4.3,
+        "minute": 3595.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 74.1,
+        "y": 48.7,
+        "minute": 4314.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 74.1,
+        "y": 48.7,
+        "minute": 4314.7,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 74.1,
+        "y": 48.7,
+        "minute": 4314.7,
+        "action": "Progressive passes accurate"
+      },
+      {
+        "x": 36.8,
+        "y": 27.5,
+        "minute": 4415.7,
+        "action": "Long passes"
+      },
+      {
+        "x": 36.8,
+        "y": 27.5,
+        "minute": 4415.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 36.8,
+        "y": 27.5,
+        "minute": 4415.7,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 36.8,
+        "y": 27.5,
+        "minute": 4415.7,
+        "action": "Progressive passes accurate"
+      },
+      {
+        "x": 61.1,
+        "y": 47.7,
+        "minute": 4498.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 71.3,
+        "y": 64.1,
+        "minute": 4540.7,
+        "action": "Passes accurate"
+      }
+    ],
+    "total_passes": 52,
+    "min_x": 25.5,
+    "max_x": 91.5,
+    "min_y": 1.5,
+    "max_y": 64.1,
+    "centroid": {
+      "x": 59.9,
+      "y": 39.2
+    },
+    "hull": [
+      [
+        25.5,
+        56.7
+      ],
+      [
+        26.6,
+        29.8
+      ],
+      [
+        62.3,
+        4.3
+      ],
+      [
+        72.3,
+        1.5
+      ],
+      [
+        82.5,
+        12.4
+      ],
+      [
+        91.5,
+        59.0
+      ],
+      [
+        71.3,
+        64.1
+      ],
+      [
+        55.3,
+        63.4
+      ]
+    ]
+  },
+  "Galatasaray|Ismail Jakobs": {
+    "pass_points": [
+      {
+        "x": 75.5,
+        "y": 62.9,
+        "minute": 216.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 37.1,
+        "y": 66.0,
+        "minute": 280.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 37.1,
+        "y": 66.0,
+        "minute": 280.3,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 33.5,
+        "y": 66.3,
+        "minute": 286.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 16.7,
+        "y": 65.6,
+        "minute": 517.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 16.7,
+        "y": 65.6,
+        "minute": 517.3,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 46.6,
+        "y": 46.6,
+        "minute": 547.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 67.5,
+        "y": 68.0,
+        "minute": 855.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 43.7,
+        "y": 65.7,
+        "minute": 1225.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 43.7,
+        "y": 65.7,
+        "minute": 1225.3,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 43.7,
+        "y": 65.7,
+        "minute": 1225.3,
+        "action": "Progressive passes accurate"
+      },
+      {
+        "x": 68.2,
+        "y": 67.5,
+        "minute": 1231.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 52.9,
+        "y": 64.9,
+        "minute": 1364.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 52.9,
+        "y": 64.9,
+        "minute": 1364.3,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 52.9,
+        "y": 64.9,
+        "minute": 1364.3,
+        "action": "Progressive passes accurate"
+      },
+      {
+        "x": 28.1,
+        "y": 56.4,
+        "minute": 1410.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 28.1,
+        "y": 56.4,
+        "minute": 1410.3,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 62.0,
+        "y": 66.9,
+        "minute": 1542.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 74.0,
+        "y": 64.6,
+        "minute": 1572.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 46.2,
+        "y": 68.0,
+        "minute": 1783.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 50.6,
+        "y": 64.0,
+        "minute": 2694.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 50.6,
+        "y": 64.0,
+        "minute": 2694.3,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 50.6,
+        "y": 64.0,
+        "minute": 2694.3,
+        "action": "Progressive passes accurate"
+      },
+      {
+        "x": 36.4,
+        "y": 50.8,
+        "minute": 2740.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 36.4,
+        "y": 50.8,
+        "minute": 2740.3,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 36.4,
+        "y": 50.8,
+        "minute": 2740.3,
+        "action": "Progressive passes accurate"
+      },
+      {
+        "x": 53.8,
+        "y": 68.0,
+        "minute": 2949.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 53.8,
+        "y": 68.0,
+        "minute": 2949.7,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 53.8,
+        "y": 68.0,
+        "minute": 2949.7,
+        "action": "Progressive passes accurate"
+      },
+      {
+        "x": 64.7,
+        "y": 65.2,
+        "minute": 3042.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 28.1,
+        "y": 56.2,
+        "minute": 3438.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 73.4,
+        "y": 62.3,
+        "minute": 3463.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 73.4,
+        "y": 62.3,
+        "minute": 3463.7,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 73.4,
+        "y": 62.3,
+        "minute": 3463.7,
+        "action": "Progressive passes accurate"
+      },
+      {
+        "x": 63.2,
+        "y": 65.5,
+        "minute": 4011.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 63.2,
+        "y": 65.5,
+        "minute": 4011.7,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 63.2,
+        "y": 65.5,
+        "minute": 4011.7,
+        "action": "Progressive passes accurate"
+      },
+      {
+        "x": 89.1,
+        "y": 68.0,
+        "minute": 4026.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 12.6,
+        "y": 68.0,
+        "minute": 4255.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 12.6,
+        "y": 68.0,
+        "minute": 4255.7,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 12.6,
+        "y": 68.0,
+        "minute": 4255.7,
+        "action": "Progressive passes accurate"
+      },
+      {
+        "x": 17.1,
+        "y": 62.9,
+        "minute": 4371.7,
+        "action": "Passes into offside"
+      },
+      {
+        "x": 72.2,
+        "y": 38.9,
+        "minute": 4468.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 63.3,
+        "y": 59.2,
+        "minute": 4493.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 42.5,
+        "y": 65.0,
+        "minute": 4536.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 42.5,
+        "y": 65.0,
+        "minute": 4536.7,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 42.5,
+        "y": 65.0,
+        "minute": 4536.7,
+        "action": "Progressive passes accurate"
+      },
+      {
+        "x": 57.5,
+        "y": 64.6,
+        "minute": 4544.7,
+        "action": "Passes accurate"
+      }
+    ],
+    "total_passes": 48,
+    "min_x": 12.6,
+    "max_x": 89.1,
+    "min_y": 38.9,
+    "max_y": 68.0,
+    "centroid": {
+      "x": 48.3,
+      "y": 63.0
+    },
+    "hull": [
+      [
+        12.6,
+        68.0
+      ],
+      [
+        17.1,
+        62.9
+      ],
+      [
+        36.4,
+        50.8
+      ],
+      [
+        46.6,
+        46.6
+      ],
+      [
+        72.2,
+        38.9
+      ],
+      [
+        89.1,
+        68.0
+      ]
+    ]
+  },
+  "Galatasaray|Mario Lemina": {
+    "pass_points": [
+      {
+        "x": 56.7,
+        "y": 37.7,
+        "minute": 220.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 40.3,
+        "y": 61.6,
+        "minute": 275.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 29.2,
+        "y": 53.3,
+        "minute": 278.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 25.4,
+        "y": 57.8,
+        "minute": 291.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 11.7,
+        "y": 29.0,
+        "minute": 454.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 11.7,
+        "y": 29.0,
+        "minute": 454.3,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 65.9,
+        "y": 37.8,
+        "minute": 651.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 65.9,
+        "y": 37.8,
+        "minute": 651.3,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 65.9,
+        "y": 37.8,
+        "minute": 651.3,
+        "action": "Progressive passes accurate"
+      },
+      {
+        "x": 41.2,
+        "y": 32.8,
+        "minute": 1219.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 34.6,
+        "y": 42.6,
+        "minute": 1241.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 50.4,
+        "y": 31.9,
+        "minute": 1342.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 50.4,
+        "y": 31.9,
+        "minute": 1342.3,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 35.1,
+        "y": 44.2,
+        "minute": 1550.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 35.1,
+        "y": 44.2,
+        "minute": 1550.3,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 53.6,
+        "y": 39.6,
+        "minute": 1566.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 46.5,
+        "y": 36.6,
+        "minute": 1580.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 46.5,
+        "y": 36.6,
+        "minute": 1580.3,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 46.5,
+        "y": 36.6,
+        "minute": 1580.3,
+        "action": "Progressive passes accurate"
+      },
+      {
+        "x": 15.7,
+        "y": 38.6,
+        "minute": 1595.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 15.7,
+        "y": 38.6,
+        "minute": 1595.3,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 14.7,
+        "y": 56.4,
+        "minute": 1656.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 14.7,
+        "y": 56.4,
+        "minute": 1656.3,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 45.6,
+        "y": 17.5,
+        "minute": 2015.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 45.6,
+        "y": 17.5,
+        "minute": 2015.3,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 45.6,
+        "y": 17.5,
+        "minute": 2015.3,
+        "action": "Progressive passes accurate"
+      },
+      {
+        "x": 28.7,
+        "y": 24.8,
+        "minute": 2737.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 97.1,
+        "y": 2.7,
+        "minute": 2876.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 58.8,
+        "y": 47.0,
+        "minute": 2993.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 58.8,
+        "y": 47.0,
+        "minute": 2993.7,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 18.1,
+        "y": 44.8,
+        "minute": 3363.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 72.3,
+        "y": 44.9,
+        "minute": 3460.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 51.3,
+        "y": 48.7,
+        "minute": 3478.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 31.7,
+        "y": 56.5,
+        "minute": 3487.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 24.9,
+        "y": 47.7,
+        "minute": 3699.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 61.7,
+        "y": 60.9,
+        "minute": 4029.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 10.2,
+        "y": 55.5,
+        "minute": 4273.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 30.7,
+        "y": 28.5,
+        "minute": 4865.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 38.3,
+        "y": 63.8,
+        "minute": 4939.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 38.3,
+        "y": 63.8,
+        "minute": 4939.7,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 38.3,
+        "y": 63.8,
+        "minute": 4939.7,
+        "action": "Progressive passes accurate"
+      },
+      {
+        "x": 54.3,
+        "y": 57.8,
+        "minute": 4952.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 54.3,
+        "y": 57.8,
+        "minute": 4952.7,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 54.3,
+        "y": 57.8,
+        "minute": 4952.7,
+        "action": "Progressive passes accurate"
+      },
+      {
+        "x": 56.7,
+        "y": 61.6,
+        "minute": 4957.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 56.7,
+        "y": 61.6,
+        "minute": 4957.7,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 56.7,
+        "y": 61.6,
+        "minute": 4957.7,
+        "action": "Progressive passes accurate"
+      },
+      {
+        "x": 21.6,
+        "y": 47.5,
+        "minute": 5009.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 21.6,
+        "y": 47.5,
+        "minute": 5009.7,
+        "action": "Passes forward accurate"
+      }
+    ],
+    "total_passes": 49,
+    "min_x": 10.2,
+    "max_x": 97.1,
+    "min_y": 2.7,
+    "max_y": 63.8,
+    "centroid": {
+      "x": 41.7,
+      "y": 44.0
+    },
+    "hull": [
+      [
+        10.2,
+        55.5
+      ],
+      [
+        11.7,
+        29.0
+      ],
+      [
+        45.6,
+        17.5
+      ],
+      [
+        97.1,
+        2.7
+      ],
+      [
+        72.3,
+        44.9
+      ],
+      [
+        61.7,
+        60.9
+      ],
+      [
+        56.7,
+        61.6
+      ],
+      [
+        38.3,
+        63.8
+      ]
+    ]
+  },
+  "VfB Stuttgart|Chris Führich": {
+    "pass_points": [
+      {
+        "x": 79.8,
+        "y": 53.6,
+        "minute": 406.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 79.8,
+        "y": 53.6,
+        "minute": 406.3,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 81.1,
+        "y": 63.2,
+        "minute": 446.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 81.1,
+        "y": 63.2,
+        "minute": 446.3,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 81.1,
+        "y": 63.2,
+        "minute": 446.3,
+        "action": "Progressive passes accurate"
+      },
+      {
+        "x": 82.2,
+        "y": 53.2,
+        "minute": 462.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 82.2,
+        "y": 53.2,
+        "minute": 462.3,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 54.8,
+        "y": 60.2,
+        "minute": 502.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 100.2,
+        "y": 50.0,
+        "minute": 607.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 74.8,
+        "y": 60.5,
+        "minute": 1178.3,
+        "action": "Long passes"
+      },
+      {
+        "x": 74.8,
+        "y": 60.5,
+        "minute": 1178.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 74.8,
+        "y": 60.5,
+        "minute": 1178.3,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 74.8,
+        "y": 60.5,
+        "minute": 1178.3,
+        "action": "Passes into the penalty box accurate"
+      },
+      {
+        "x": 74.8,
+        "y": 60.5,
+        "minute": 1178.3,
+        "action": "Progressive passes accurate"
+      },
+      {
+        "x": 45.2,
+        "y": 58.3,
+        "minute": 1615.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 45.2,
+        "y": 58.3,
+        "minute": 1615.3,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 44.8,
+        "y": 63.8,
+        "minute": 1618.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 92.9,
+        "y": 51.3,
+        "minute": 1973.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 68.1,
+        "y": 65.8,
+        "minute": 2023.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 92.1,
+        "y": 52.6,
+        "minute": 2468.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 56.6,
+        "y": 66.4,
+        "minute": 2721.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 36.0,
+        "y": 48.8,
+        "minute": 2811.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 36.0,
+        "y": 48.8,
+        "minute": 2811.3,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 36.0,
+        "y": 48.8,
+        "minute": 2811.3,
+        "action": "Progressive passes accurate"
+      },
+      {
+        "x": 92.5,
+        "y": 46.2,
+        "minute": 3639.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 92.5,
+        "y": 46.2,
+        "minute": 3639.7,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 31.2,
+        "y": 64.5,
+        "minute": 3716.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 79.7,
+        "y": 57.1,
+        "minute": 3752.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 79.7,
+        "y": 57.1,
+        "minute": 3752.7,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 79.7,
+        "y": 57.1,
+        "minute": 3752.7,
+        "action": "Passes into the penalty box accurate"
+      },
+      {
+        "x": 79.7,
+        "y": 57.1,
+        "minute": 3752.7,
+        "action": "Progressive passes accurate"
+      },
+      {
+        "x": 66.4,
+        "y": 63.2,
+        "minute": 3927.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 66.4,
+        "y": 63.2,
+        "minute": 3927.7,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 66.4,
+        "y": 63.2,
+        "minute": 3927.7,
+        "action": "Progressive passes accurate"
+      },
+      {
+        "x": 80.8,
+        "y": 52.5,
+        "minute": 3937.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 105.0,
+        "y": 68.0,
+        "minute": 4074.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 95.3,
+        "y": 60.3,
+        "minute": 4077.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 95.3,
+        "y": 60.3,
+        "minute": 4077.7,
+        "action": "Passes into the penalty box accurate"
+      },
+      {
+        "x": 99.6,
+        "y": 7.4,
+        "minute": 4160.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 87.6,
+        "y": 55.1,
+        "minute": 4294.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 87.6,
+        "y": 55.1,
+        "minute": 4294.7,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 27.9,
+        "y": 66.5,
+        "minute": 4570.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 36.0,
+        "y": 65.7,
+        "minute": 4584.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 63.2,
+        "y": 65.7,
+        "minute": 4846.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 68.7,
+        "y": 57.0,
+        "minute": 4862.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 57.0,
+        "y": 65.3,
+        "minute": 4989.7,
+        "action": "Passes accurate"
+      }
+    ],
+    "total_passes": 46,
+    "min_x": 27.9,
+    "max_x": 105.0,
+    "min_y": 7.4,
+    "max_y": 68.0,
+    "centroid": {
+      "x": 71.5,
+      "y": 57.2
+    },
+    "hull": [
+      [
+        27.9,
+        66.5
+      ],
+      [
+        36.0,
+        48.8
+      ],
+      [
+        99.6,
+        7.4
+      ],
+      [
+        105.0,
+        68.0
+      ]
+    ]
+  },
+  "VfB Stuttgart|Jeff Chabot": {
+    "pass_points": [
+      {
+        "x": 58.5,
+        "y": 36.5,
+        "minute": 435.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 28.0,
+        "y": 43.9,
+        "minute": 538.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 36.2,
+        "y": 54.7,
+        "minute": 778.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 36.2,
+        "y": 54.7,
+        "minute": 778.3,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 36.2,
+        "y": 54.7,
+        "minute": 778.3,
+        "action": "Progressive passes accurate"
+      },
+      {
+        "x": 25.8,
+        "y": 45.4,
+        "minute": 1210.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 25.8,
+        "y": 45.4,
+        "minute": 1210.3,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 88.1,
+        "y": 49.5,
+        "minute": 2520.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 24.2,
+        "y": 37.0,
+        "minute": 3101.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 24.2,
+        "y": 37.0,
+        "minute": 3101.7,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 30.1,
+        "y": 42.4,
+        "minute": 3108.7,
+        "action": "Long passes"
+      },
+      {
+        "x": 30.1,
+        "y": 42.4,
+        "minute": 3108.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 30.1,
+        "y": 42.4,
+        "minute": 3108.7,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 30.1,
+        "y": 42.4,
+        "minute": 3108.7,
+        "action": "Progressive passes accurate"
+      },
+      {
+        "x": 52.2,
+        "y": 41.4,
+        "minute": 3243.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 52.2,
+        "y": 41.4,
+        "minute": 3243.7,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 35.7,
+        "y": 35.7,
+        "minute": 3275.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 35.7,
+        "y": 35.7,
+        "minute": 3275.7,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 35.0,
+        "y": 34.1,
+        "minute": 3394.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 35.0,
+        "y": 34.1,
+        "minute": 3394.7,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 35.0,
+        "y": 34.1,
+        "minute": 3394.7,
+        "action": "Progressive passes accurate"
+      },
+      {
+        "x": 48.9,
+        "y": 40.4,
+        "minute": 3547.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 48.9,
+        "y": 40.4,
+        "minute": 3547.7,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 48.9,
+        "y": 40.4,
+        "minute": 3547.7,
+        "action": "Progressive passes accurate"
+      },
+      {
+        "x": 26.7,
+        "y": 64.3,
+        "minute": 3706.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 30.1,
+        "y": 31.9,
+        "minute": 3808.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 30.1,
+        "y": 31.9,
+        "minute": 3808.7,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 29.3,
+        "y": 33.5,
+        "minute": 4041.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 29.3,
+        "y": 33.5,
+        "minute": 4041.7,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 33.5,
+        "y": 34.0,
+        "minute": 4349.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 33.5,
+        "y": 34.0,
+        "minute": 4349.7,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 34.8,
+        "y": 33.4,
+        "minute": 4356.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 34.8,
+        "y": 33.4,
+        "minute": 4356.7,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 34.8,
+        "y": 33.4,
+        "minute": 4356.7,
+        "action": "Progressive passes accurate"
+      },
+      {
+        "x": 43.8,
+        "y": 12.2,
+        "minute": 4398.7,
+        "action": "Long passes"
+      },
+      {
+        "x": 43.8,
+        "y": 12.2,
+        "minute": 4398.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 43.0,
+        "y": 45.6,
+        "minute": 4844.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 43.0,
+        "y": 45.6,
+        "minute": 4844.7,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 43.0,
+        "y": 45.6,
+        "minute": 4844.7,
+        "action": "Progressive passes accurate"
+      },
+      {
+        "x": 60.9,
+        "y": 52.5,
+        "minute": 4857.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 28.9,
+        "y": 23.4,
+        "minute": 5167.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 28.9,
+        "y": 23.4,
+        "minute": 5167.7,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 28.9,
+        "y": 23.4,
+        "minute": 5167.7,
+        "action": "Progressive passes accurate"
+      },
+      {
+        "x": 31.6,
+        "y": 25.8,
+        "minute": 5201.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 31.6,
+        "y": 25.8,
+        "minute": 5201.7,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 24.1,
+        "y": 31.4,
+        "minute": 5207.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 38.3,
+        "y": 41.5,
+        "minute": 5215.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 30.1,
+        "y": 21.3,
+        "minute": 5402.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 34.6,
+        "y": 33.7,
+        "minute": 5688.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 34.6,
+        "y": 33.7,
+        "minute": 5688.7,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 34.6,
+        "y": 33.7,
+        "minute": 5688.7,
+        "action": "Progressive passes accurate"
+      },
+      {
+        "x": 13.3,
+        "y": 36.2,
+        "minute": 5750.7,
+        "action": "Passes accurate"
+      }
+    ],
+    "total_passes": 52,
+    "min_x": 13.3,
+    "max_x": 88.1,
+    "min_y": 12.2,
+    "max_y": 64.3,
+    "centroid": {
+      "x": 36.2,
+      "y": 37.2
+    },
+    "hull": [
+      [
+        13.3,
+        36.2
+      ],
+      [
+        30.1,
+        21.3
+      ],
+      [
+        43.8,
+        12.2
+      ],
+      [
+        88.1,
+        49.5
+      ],
+      [
+        26.7,
+        64.3
+      ]
+    ]
+  },
+  "VfB Stuttgart|Grischa Prömel": {
+    "pass_points": [
+      {
+        "x": 72.2,
+        "y": 40.3,
+        "minute": 459.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 67.0,
+        "y": 5.2,
+        "minute": 1137.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 64.0,
+        "y": 35.2,
+        "minute": 1169.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 69.1,
+        "y": 41.3,
+        "minute": 1979.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 35.4,
+        "y": 25.5,
+        "minute": 2113.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 45.5,
+        "y": 58.0,
+        "minute": 2456.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 38.9,
+        "y": 54.0,
+        "minute": 2726.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 38.9,
+        "y": 54.0,
+        "minute": 2726.3,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 28.8,
+        "y": 40.5,
+        "minute": 2986.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 34.2,
+        "y": 17.8,
+        "minute": 3047.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 38.0,
+        "y": 29.4,
+        "minute": 3106.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 42.9,
+        "y": 19.8,
+        "minute": 3391.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 64.8,
+        "y": 48.0,
+        "minute": 3653.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 64.8,
+        "y": 48.0,
+        "minute": 3653.7,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 60.4,
+        "y": 52.5,
+        "minute": 3656.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 64.0,
+        "y": 10.7,
+        "minute": 4104.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 69.2,
+        "y": 12.4,
+        "minute": 4114.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 69.2,
+        "y": 12.4,
+        "minute": 4114.7,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 69.2,
+        "y": 12.4,
+        "minute": 4114.7,
+        "action": "Progressive passes accurate"
+      },
+      {
+        "x": 70.9,
+        "y": 33.2,
+        "minute": 4188.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 70.9,
+        "y": 33.2,
+        "minute": 4188.7,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 70.9,
+        "y": 33.2,
+        "minute": 4188.7,
+        "action": "Progressive passes accurate"
+      },
+      {
+        "x": 58.8,
+        "y": 9.0,
+        "minute": 4261.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 58.8,
+        "y": 9.0,
+        "minute": 4261.7,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 58.8,
+        "y": 9.0,
+        "minute": 4261.7,
+        "action": "Progressive passes accurate"
+      },
+      {
+        "x": 62.4,
+        "y": 7.1,
+        "minute": 4264.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 62.4,
+        "y": 7.1,
+        "minute": 4264.7,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 62.4,
+        "y": 7.1,
+        "minute": 4264.7,
+        "action": "Passes into the penalty box accurate"
+      },
+      {
+        "x": 62.4,
+        "y": 7.1,
+        "minute": 4264.7,
+        "action": "Progressive passes accurate"
+      },
+      {
+        "x": 47.4,
+        "y": 28.1,
+        "minute": 4361.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 19.5,
+        "y": 34.0,
+        "minute": 4561.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 19.5,
+        "y": 34.0,
+        "minute": 4561.7,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 34.0,
+        "y": 48.6,
+        "minute": 4579.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 42.7,
+        "y": 45.5,
+        "minute": 4593.7,
+        "action": "Passes into offside"
+      }
+    ],
+    "total_passes": 34,
+    "min_x": 19.5,
+    "max_x": 72.2,
+    "min_y": 5.2,
+    "max_y": 58.0,
+    "centroid": {
+      "x": 54.1,
+      "y": 28.3
+    },
+    "hull": [
+      [
+        19.5,
+        34.0
+      ],
+      [
+        34.2,
+        17.8
+      ],
+      [
+        67.0,
+        5.2
+      ],
+      [
+        69.2,
+        12.4
+      ],
+      [
+        72.2,
+        40.3
+      ],
+      [
+        64.8,
+        48.0
+      ],
+      [
+        60.4,
+        52.5
+      ],
+      [
+        45.5,
+        58.0
+      ],
+      [
+        38.9,
+        54.0
+      ]
+    ]
+  },
+  "Galatasaray|Abdülkerim Bardakcı": {
+    "pass_points": [
+      {
+        "x": 37.1,
+        "y": 36.0,
+        "minute": 497.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 37.1,
+        "y": 36.0,
+        "minute": 497.3,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 37.1,
+        "y": 36.0,
+        "minute": 497.3,
+        "action": "Progressive passes accurate"
+      },
+      {
+        "x": 8.9,
+        "y": 31.4,
+        "minute": 610.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 8.9,
+        "y": 31.4,
+        "minute": 610.3,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 8.9,
+        "y": 31.4,
+        "minute": 610.3,
+        "action": "Progressive passes accurate"
+      },
+      {
+        "x": 66.8,
+        "y": 33.7,
+        "minute": 659.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 26.1,
+        "y": 34.1,
+        "minute": 782.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 26.1,
+        "y": 34.1,
+        "minute": 782.3,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 12.6,
+        "y": 50.5,
+        "minute": 820.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 41.8,
+        "y": 63.5,
+        "minute": 858.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 40.0,
+        "y": 42.1,
+        "minute": 1221.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 45.3,
+        "y": 53.6,
+        "minute": 1238.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 40.3,
+        "y": 51.0,
+        "minute": 1362.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 40.3,
+        "y": 51.0,
+        "minute": 1362.3,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 40.3,
+        "y": 51.0,
+        "minute": 1362.3,
+        "action": "Progressive passes accurate"
+      },
+      {
+        "x": 30.9,
+        "y": 33.1,
+        "minute": 1472.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 30.9,
+        "y": 33.1,
+        "minute": 1472.3,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 5.7,
+        "y": 41.9,
+        "minute": 1531.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 36.1,
+        "y": 60.1,
+        "minute": 1547.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 54.6,
+        "y": 46.0,
+        "minute": 1565.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 58.1,
+        "y": 48.6,
+        "minute": 1568.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 58.1,
+        "y": 48.6,
+        "minute": 1568.3,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 58.1,
+        "y": 48.6,
+        "minute": 1568.3,
+        "action": "Progressive passes accurate"
+      },
+      {
+        "x": 54.7,
+        "y": 55.8,
+        "minute": 1576.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 38.4,
+        "y": 25.6,
+        "minute": 1729.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 38.4,
+        "y": 25.6,
+        "minute": 1729.3,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 26.0,
+        "y": 25.6,
+        "minute": 1764.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 30.4,
+        "y": 58.8,
+        "minute": 1772.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 30.4,
+        "y": 58.8,
+        "minute": 1772.3,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 29.6,
+        "y": 59.5,
+        "minute": 1786.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 30.1,
+        "y": 29.0,
+        "minute": 1953.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 30.1,
+        "y": 29.0,
+        "minute": 1953.3,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 30.1,
+        "y": 29.0,
+        "minute": 1953.3,
+        "action": "Progressive passes accurate"
+      },
+      {
+        "x": 37.6,
+        "y": 57.6,
+        "minute": 2050.3,
+        "action": "Long passes"
+      },
+      {
+        "x": 37.6,
+        "y": 57.6,
+        "minute": 2050.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 37.6,
+        "y": 57.6,
+        "minute": 2050.3,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 37.6,
+        "y": 57.6,
+        "minute": 2050.3,
+        "action": "Progressive passes accurate"
+      },
+      {
+        "x": 56.1,
+        "y": 41.0,
+        "minute": 2814.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 56.1,
+        "y": 41.0,
+        "minute": 2814.3,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 61.3,
+        "y": 61.6,
+        "minute": 3040.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 61.3,
+        "y": 61.6,
+        "minute": 3040.7,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 57.0,
+        "y": 64.6,
+        "minute": 3045.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 57.0,
+        "y": 64.6,
+        "minute": 3045.7,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 57.0,
+        "y": 64.6,
+        "minute": 3045.7,
+        "action": "Progressive passes accurate"
+      },
+      {
+        "x": 4.7,
+        "y": 41.8,
+        "minute": 3090.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 66.9,
+        "y": 63.7,
+        "minute": 3475.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 5.3,
+        "y": 41.7,
+        "minute": 3581.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 27.7,
+        "y": 61.1,
+        "minute": 3683.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 27.7,
+        "y": 61.1,
+        "minute": 3683.7,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 41.3,
+        "y": 61.6,
+        "minute": 3696.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 40.9,
+        "y": 38.7,
+        "minute": 4033.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 35.4,
+        "y": 33.3,
+        "minute": 4358.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 35.4,
+        "y": 33.3,
+        "minute": 4358.7,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 18.5,
+        "y": 50.1,
+        "minute": 4368.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 43.3,
+        "y": 54.8,
+        "minute": 4502.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 37.3,
+        "y": 55.0,
+        "minute": 4534.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 34.5,
+        "y": 53.0,
+        "minute": 4547.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 34.5,
+        "y": 53.0,
+        "minute": 4547.7,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 31.0,
+        "y": 53.9,
+        "minute": 4822.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 31.5,
+        "y": 52.9,
+        "minute": 4946.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 31.5,
+        "y": 52.9,
+        "minute": 4946.7,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 45.4,
+        "y": 45.8,
+        "minute": 5297.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 33.4,
+        "y": 48.6,
+        "minute": 5518.7,
+        "action": "Passes accurate"
+      }
+    ],
+    "total_passes": 64,
+    "min_x": 4.7,
+    "max_x": 66.9,
+    "min_y": 25.6,
+    "max_y": 64.6,
+    "centroid": {
+      "x": 37.0,
+      "y": 47.0
+    },
+    "hull": [
+      [
+        4.7,
+        41.8
+      ],
+      [
+        8.9,
+        31.4
+      ],
+      [
+        26.0,
+        25.6
+      ],
+      [
+        38.4,
+        25.6
+      ],
+      [
+        66.8,
+        33.7
+      ],
+      [
+        66.9,
+        63.7
+      ],
+      [
+        57.0,
+        64.6
+      ],
+      [
+        41.8,
+        63.5
+      ],
+      [
+        27.7,
+        61.1
+      ],
+      [
+        12.6,
+        50.5
+      ]
+    ]
+  },
+  "Galatasaray|Victor Osimhen": {
+    "pass_points": [
+      {
+        "x": 42.6,
+        "y": 21.0,
+        "minute": 613.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 69.3,
+        "y": 19.5,
+        "minute": 1283.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 85.0,
+        "y": 49.3,
+        "minute": 2752.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 47.9,
+        "y": 36.8,
+        "minute": 3369.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 47.9,
+        "y": 36.8,
+        "minute": 3369.7,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 47.9,
+        "y": 36.8,
+        "minute": 3369.7,
+        "action": "Progressive passes accurate"
+      },
+      {
+        "x": 57.0,
+        "y": 34.3,
+        "minute": 3446.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 57.0,
+        "y": 34.3,
+        "minute": 3446.7,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 57.0,
+        "y": 34.3,
+        "minute": 3446.7,
+        "action": "Progressive passes accurate"
+      },
+      {
+        "x": 79.2,
+        "y": 22.6,
+        "minute": 3507.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 84.3,
+        "y": 15.1,
+        "minute": 3511.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 84.3,
+        "y": 15.1,
+        "minute": 3511.7,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 84.3,
+        "y": 15.1,
+        "minute": 3511.7,
+        "action": "Progressive passes accurate"
+      },
+      {
+        "x": 44.3,
+        "y": 63.6,
+        "minute": 4257.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 44.3,
+        "y": 63.6,
+        "minute": 4257.7,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 73.4,
+        "y": 60.9,
+        "minute": 4423.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 70.8,
+        "y": 68.0,
+        "minute": 4816.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 91.3,
+        "y": 28.4,
+        "minute": 5024.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 79.1,
+        "y": 12.0,
+        "minute": 5567.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 61.9,
+        "y": 54.5,
+        "minute": 5724.7,
+        "action": "Passes accurate"
+      }
+    ],
+    "total_passes": 20,
+    "min_x": 42.6,
+    "max_x": 91.3,
+    "min_y": 12.0,
+    "max_y": 68.0,
+    "centroid": {
+      "x": 65.4,
+      "y": 36.1
+    },
+    "hull": [
+      [
+        42.6,
+        21.0
+      ],
+      [
+        79.1,
+        12.0
+      ],
+      [
+        84.3,
+        15.1
+      ],
+      [
+        91.3,
+        28.4
+      ],
+      [
+        85.0,
+        49.3
+      ],
+      [
+        70.8,
+        68.0
+      ],
+      [
+        44.3,
+        63.6
+      ]
+    ]
+  },
+  "VfB Stuttgart|Deniz Undav": {
+    "pass_points": [
+      {
+        "x": 76.1,
+        "y": 41.3,
+        "minute": 1160.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 48.0,
+        "y": 40.5,
+        "minute": 1634.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 77.4,
+        "y": 14.8,
+        "minute": 1646.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 77.4,
+        "y": 14.8,
+        "minute": 1646.3,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 77.4,
+        "y": 14.8,
+        "minute": 1646.3,
+        "action": "Passes into the penalty box accurate"
+      },
+      {
+        "x": 77.4,
+        "y": 14.8,
+        "minute": 1646.3,
+        "action": "Progressive passes accurate"
+      },
+      {
+        "x": 55.7,
+        "y": 53.4,
+        "minute": 2025.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 55.7,
+        "y": 53.4,
+        "minute": 2025.3,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 67.9,
+        "y": 43.3,
+        "minute": 2463.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 67.9,
+        "y": 43.3,
+        "minute": 2463.3,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 67.9,
+        "y": 43.3,
+        "minute": 2463.3,
+        "action": "Progressive passes accurate"
+      },
+      {
+        "x": 80.4,
+        "y": 31.3,
+        "minute": 2471.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 80.4,
+        "y": 31.3,
+        "minute": 2471.3,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 80.4,
+        "y": 31.3,
+        "minute": 2471.3,
+        "action": "Passes into the penalty box accurate"
+      },
+      {
+        "x": 80.4,
+        "y": 31.3,
+        "minute": 2471.3,
+        "action": "Progressive passes accurate"
+      },
+      {
+        "x": 30.9,
+        "y": 36.5,
+        "minute": 2807.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 30.9,
+        "y": 36.5,
+        "minute": 2807.3,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 67.2,
+        "y": 46.8,
+        "minute": 3548.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 67.2,
+        "y": 46.8,
+        "minute": 3548.7,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 67.2,
+        "y": 46.8,
+        "minute": 3548.7,
+        "action": "Progressive passes accurate"
+      },
+      {
+        "x": 73.2,
+        "y": 54.3,
+        "minute": 3633.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 73.2,
+        "y": 54.3,
+        "minute": 3633.7,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 73.2,
+        "y": 54.3,
+        "minute": 3633.7,
+        "action": "Passes into the penalty box accurate"
+      },
+      {
+        "x": 73.2,
+        "y": 54.3,
+        "minute": 3633.7,
+        "action": "Progressive passes accurate"
+      },
+      {
+        "x": 60.1,
+        "y": 46.1,
+        "minute": 3749.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 60.1,
+        "y": 46.1,
+        "minute": 3749.7,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 60.1,
+        "y": 46.1,
+        "minute": 3749.7,
+        "action": "Progressive passes accurate"
+      },
+      {
+        "x": 90.5,
+        "y": 8.7,
+        "minute": 4084.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 73.1,
+        "y": 51.9,
+        "minute": 4412.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 61.3,
+        "y": 44.6,
+        "minute": 4993.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 39.5,
+        "y": 21.4,
+        "minute": 5033.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 49.9,
+        "y": 51.9,
+        "minute": 5219.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 65.5,
+        "y": 57.5,
+        "minute": 5319.7,
+        "action": "Key passes accurate"
+      },
+      {
+        "x": 65.5,
+        "y": 57.5,
+        "minute": 5319.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 65.5,
+        "y": 57.5,
+        "minute": 5319.7,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 65.5,
+        "y": 57.5,
+        "minute": 5319.7,
+        "action": "Passes into the penalty box accurate"
+      },
+      {
+        "x": 65.5,
+        "y": 57.5,
+        "minute": 5319.7,
+        "action": "Progressive passes accurate"
+      },
+      {
+        "x": 28.4,
+        "y": 50.9,
+        "minute": 5584.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 28.4,
+        "y": 50.9,
+        "minute": 5584.7,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 75.1,
+        "y": 30.8,
+        "minute": 5595.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 75.1,
+        "y": 30.8,
+        "minute": 5595.7,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 75.1,
+        "y": 30.8,
+        "minute": 5595.7,
+        "action": "Passes into the penalty box accurate"
+      },
+      {
+        "x": 75.1,
+        "y": 30.8,
+        "minute": 5595.7,
+        "action": "Progressive passes accurate"
+      },
+      {
+        "x": 73.7,
+        "y": 30.8,
+        "minute": 5640.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 73.1,
+        "y": 53.8,
+        "minute": 5763.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 73.1,
+        "y": 53.8,
+        "minute": 5763.7,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 73.1,
+        "y": 53.8,
+        "minute": 5763.7,
+        "action": "Progressive passes accurate"
+      }
+    ],
+    "total_passes": 47,
+    "min_x": 28.4,
+    "max_x": 90.5,
+    "min_y": 8.7,
+    "max_y": 57.5,
+    "centroid": {
+      "x": 65.9,
+      "y": 41.6
+    },
+    "hull": [
+      [
+        28.4,
+        50.9
+      ],
+      [
+        30.9,
+        36.5
+      ],
+      [
+        39.5,
+        21.4
+      ],
+      [
+        90.5,
+        8.7
+      ],
+      [
+        73.2,
+        54.3
+      ],
+      [
+        65.5,
+        57.5
+      ]
+    ]
+  },
+  "VfB Stuttgart|Yanik Spalt": {
+    "pass_points": [
+      {
+        "x": 67.5,
+        "y": 33.8,
+        "minute": 1167.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 52.0,
+        "y": 57.3,
+        "minute": 1615.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 38.5,
+        "y": 62.8,
+        "minute": 1628.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 72.6,
+        "y": 42.6,
+        "minute": 1968.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 72.6,
+        "y": 42.6,
+        "minute": 1968.3,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 72.6,
+        "y": 42.6,
+        "minute": 1968.3,
+        "action": "Progressive passes accurate"
+      },
+      {
+        "x": 77.8,
+        "y": 60.9,
+        "minute": 2450.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 30.4,
+        "y": 22.0,
+        "minute": 3049.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 36.7,
+        "y": 36.8,
+        "minute": 3104.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 63.8,
+        "y": 41.1,
+        "minute": 3245.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 63.8,
+        "y": 41.1,
+        "minute": 3245.7,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 63.8,
+        "y": 41.1,
+        "minute": 3245.7,
+        "action": "Progressive passes accurate"
+      },
+      {
+        "x": 39.3,
+        "y": 39.5,
+        "minute": 3276.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 7.3,
+        "y": 7.1,
+        "minute": 3731.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 25.4,
+        "y": 13.4,
+        "minute": 3742.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 57.8,
+        "y": 20.7,
+        "minute": 3920.7,
+        "action": "Long passes"
+      },
+      {
+        "x": 57.8,
+        "y": 20.7,
+        "minute": 3920.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 58.4,
+        "y": 40.6,
+        "minute": 4046.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 58.4,
+        "y": 40.6,
+        "minute": 4046.7,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 58.4,
+        "y": 40.6,
+        "minute": 4046.7,
+        "action": "Progressive passes accurate"
+      },
+      {
+        "x": 84.4,
+        "y": 24.2,
+        "minute": 4090.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 84.4,
+        "y": 24.2,
+        "minute": 4090.7,
+        "action": "Passes into the penalty box accurate"
+      },
+      {
+        "x": 61.3,
+        "y": 33.9,
+        "minute": 4097.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 54.1,
+        "y": 10.9,
+        "minute": 4259.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 54.1,
+        "y": 10.9,
+        "minute": 4259.7,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 40.8,
+        "y": 57.7,
+        "minute": 4591.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 69.1,
+        "y": 37.8,
+        "minute": 4863.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 69.1,
+        "y": 37.8,
+        "minute": 4863.7,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 69.1,
+        "y": 37.8,
+        "minute": 4863.7,
+        "action": "Progressive passes accurate"
+      },
+      {
+        "x": 33.9,
+        "y": 30.9,
+        "minute": 4930.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 33.9,
+        "y": 30.9,
+        "minute": 4930.7,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 30.3,
+        "y": 43.2,
+        "minute": 4986.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 53.0,
+        "y": 59.5,
+        "minute": 4990.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 39.9,
+        "y": 26.9,
+        "minute": 5078.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 35.5,
+        "y": 36.2,
+        "minute": 5217.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 35.5,
+        "y": 36.2,
+        "minute": 5217.7,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 65.2,
+        "y": 62.1,
+        "minute": 5637.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 65.4,
+        "y": 34.3,
+        "minute": 5648.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 69.8,
+        "y": 22.6,
+        "minute": 5655.7,
+        "action": "Passes accurate"
+      }
+    ],
+    "total_passes": 39,
+    "min_x": 7.3,
+    "max_x": 84.4,
+    "min_y": 7.1,
+    "max_y": 62.8,
+    "centroid": {
+      "x": 54.5,
+      "y": 36.0
+    },
+    "hull": [
+      [
+        7.3,
+        7.1
+      ],
+      [
+        54.1,
+        10.9
+      ],
+      [
+        84.4,
+        24.2
+      ],
+      [
+        77.8,
+        60.9
+      ],
+      [
+        65.2,
+        62.1
+      ],
+      [
+        38.5,
+        62.8
+      ]
+    ]
+  },
+  "VfB Stuttgart|Jamie Leweling": {
+    "pass_points": [
+      {
+        "x": 37.0,
+        "y": 28.7,
+        "minute": 1254.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 42.1,
+        "y": 0.0,
+        "minute": 2106.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 42.1,
+        "y": 0.0,
+        "minute": 2106.3,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 42.1,
+        "y": 0.0,
+        "minute": 2106.3,
+        "action": "Progressive passes accurate"
+      },
+      {
+        "x": 21.4,
+        "y": 11.7,
+        "minute": 2611.3,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 21.4,
+        "y": 11.7,
+        "minute": 2611.3,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 29.3,
+        "y": 0.0,
+        "minute": 2964.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 29.9,
+        "y": 0.0,
+        "minute": 3007.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 29.9,
+        "y": 0.0,
+        "minute": 3007.7,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 29.9,
+        "y": 0.0,
+        "minute": 3007.7,
+        "action": "Progressive passes accurate"
+      },
+      {
+        "x": 85.9,
+        "y": 13.2,
+        "minute": 3251.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 46.2,
+        "y": 23.8,
+        "minute": 3540.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 70.2,
+        "y": 0.0,
+        "minute": 3915.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 70.2,
+        "y": 5.2,
+        "minute": 4102.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 69.0,
+        "y": 2.9,
+        "minute": 4262.7,
+        "action": "Passes accurate"
+      }
+    ],
+    "total_passes": 15,
+    "min_x": 21.4,
+    "max_x": 85.9,
+    "min_y": 0.0,
+    "max_y": 28.7,
+    "centroid": {
+      "x": 44.4,
+      "y": 6.5
+    },
+    "hull": [
+      [
+        21.4,
+        11.7
+      ],
+      [
+        29.3,
+        0.0
+      ],
+      [
+        70.2,
+        0.0
+      ],
+      [
+        85.9,
+        13.2
+      ],
+      [
+        37.0,
+        28.7
+      ]
+    ]
+  },
+  "Galatasaray|Rafael Leão": {
+    "pass_points": [
+      {
+        "x": 100.6,
+        "y": 68.0,
+        "minute": 4487.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 44.1,
+        "y": 46.3,
+        "minute": 4553.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 54.1,
+        "y": 58.3,
+        "minute": 4943.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 58.0,
+        "y": 56.3,
+        "minute": 4955.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 57.2,
+        "y": 49.5,
+        "minute": 5014.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 72.0,
+        "y": 62.9,
+        "minute": 5293.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 45.9,
+        "y": 57.6,
+        "minute": 5416.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 50.6,
+        "y": 62.9,
+        "minute": 5492.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 50.6,
+        "y": 62.9,
+        "minute": 5492.7,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 50.6,
+        "y": 62.9,
+        "minute": 5492.7,
+        "action": "Progressive passes accurate"
+      },
+      {
+        "x": 51.9,
+        "y": 60.9,
+        "minute": 5722.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 51.9,
+        "y": 60.9,
+        "minute": 5722.7,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 75.6,
+        "y": 55.1,
+        "minute": 5730.7,
+        "action": "Passes accurate"
+      }
+    ],
+    "total_passes": 13,
+    "min_x": 44.1,
+    "max_x": 100.6,
+    "min_y": 46.3,
+    "max_y": 68.0,
+    "centroid": {
+      "x": 58.7,
+      "y": 58.8
+    },
+    "hull": [
+      [
+        44.1,
+        46.3
+      ],
+      [
+        57.2,
+        49.5
+      ],
+      [
+        75.6,
+        55.1
+      ],
+      [
+        100.6,
+        68.0
+      ],
+      [
+        50.6,
+        62.9
+      ],
+      [
+        45.9,
+        57.6
+      ]
+    ]
+  },
+  "Galatasaray|Wilfried Singo": {
+    "pass_points": [
+      {
+        "x": 60.9,
+        "y": 0.0,
+        "minute": 4518.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 44.4,
+        "y": 5.8,
+        "minute": 4657.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 45.9,
+        "y": 1.0,
+        "minute": 4909.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 34.8,
+        "y": 6.2,
+        "minute": 5049.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 34.8,
+        "y": 6.2,
+        "minute": 5049.7,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 29.6,
+        "y": 2.9,
+        "minute": 5276.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 29.6,
+        "y": 2.9,
+        "minute": 5276.7,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 59.9,
+        "y": 2.7,
+        "minute": 5510.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 71.9,
+        "y": 9.7,
+        "minute": 5565.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 71.9,
+        "y": 9.7,
+        "minute": 5565.7,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 94.7,
+        "y": 1.9,
+        "minute": 5574.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 4.4,
+        "y": 0.0,
+        "minute": 5620.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 4.4,
+        "y": 0.0,
+        "minute": 5620.7,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 3.9,
+        "y": 1.4,
+        "minute": 5621.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 3.9,
+        "y": 1.4,
+        "minute": 5621.7,
+        "action": "Passes forward accurate"
+      }
+    ],
+    "total_passes": 15,
+    "min_x": 3.9,
+    "max_x": 94.7,
+    "min_y": 0.0,
+    "max_y": 9.7,
+    "centroid": {
+      "x": 39.7,
+      "y": 3.5
+    },
+    "hull": [
+      [
+        3.9,
+        1.4
+      ],
+      [
+        4.4,
+        0.0
+      ],
+      [
+        60.9,
+        0.0
+      ],
+      [
+        94.7,
+        1.9
+      ],
+      [
+        71.9,
+        9.7
+      ],
+      [
+        34.8,
+        6.2
+      ]
+    ]
+  },
+  "VfB Stuttgart|Dzenan Pejcinovic": {
+    "pass_points": [
+      {
+        "x": 72.5,
+        "y": 14.1,
+        "minute": 4669.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 72.5,
+        "y": 14.1,
+        "minute": 4669.7,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 27.0,
+        "y": 43.7,
+        "minute": 5028.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 52.9,
+        "y": 5.2,
+        "minute": 5375.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 71.7,
+        "y": 42.8,
+        "minute": 5592.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 89.2,
+        "y": 18.8,
+        "minute": 5598.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 89.2,
+        "y": 18.8,
+        "minute": 5598.7,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 35.8,
+        "y": 29.0,
+        "minute": 5755.7,
+        "action": "Passes accurate"
+      }
+    ],
+    "total_passes": 8,
+    "min_x": 27.0,
+    "max_x": 89.2,
+    "min_y": 5.2,
+    "max_y": 43.7,
+    "centroid": {
+      "x": 63.9,
+      "y": 23.3
+    },
+    "hull": [
+      [
+        27.0,
+        43.7
+      ],
+      [
+        35.8,
+        29.0
+      ],
+      [
+        52.9,
+        5.2
+      ],
+      [
+        89.2,
+        18.8
+      ],
+      [
+        71.7,
+        42.8
+      ]
+    ]
+  },
+  "VfB Stuttgart|Nikolas Nartey": {
+    "pass_points": [
+      {
+        "x": 81.6,
+        "y": 18.9,
+        "minute": 4670.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 49.1,
+        "y": 62.8,
+        "minute": 4849.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 80.7,
+        "y": 42.2,
+        "minute": 4864.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 38.0,
+        "y": 30.1,
+        "minute": 5204.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 44.7,
+        "y": 59.5,
+        "minute": 5221.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 44.7,
+        "y": 59.5,
+        "minute": 5221.7,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 44.7,
+        "y": 59.5,
+        "minute": 5221.7,
+        "action": "Progressive passes accurate"
+      },
+      {
+        "x": 68.7,
+        "y": 38.8,
+        "minute": 5659.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 44.1,
+        "y": 12.6,
+        "minute": 5712.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 44.1,
+        "y": 12.6,
+        "minute": 5712.7,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 47.4,
+        "y": 59.6,
+        "minute": 5807.7,
+        "action": "Passes accurate"
+      }
+    ],
+    "total_passes": 11,
+    "min_x": 38.0,
+    "max_x": 81.6,
+    "min_y": 12.6,
+    "max_y": 62.8,
+    "centroid": {
+      "x": 53.4,
+      "y": 41.5
+    },
+    "hull": [
+      [
+        38.0,
+        30.1
+      ],
+      [
+        44.1,
+        12.6
+      ],
+      [
+        81.6,
+        18.9
+      ],
+      [
+        80.7,
+        42.2
+      ],
+      [
+        49.1,
+        62.8
+      ],
+      [
+        44.7,
+        59.5
+      ]
+    ]
+  },
+  "Galatasaray|Eren Elmalı": {
+    "pass_points": [
+      {
+        "x": 60.9,
+        "y": 63.7,
+        "minute": 4819.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 33.7,
+        "y": 53.8,
+        "minute": 4937.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 63.8,
+        "y": 67.9,
+        "minute": 5113.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 63.8,
+        "y": 67.9,
+        "minute": 5113.7,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 56.6,
+        "y": 68.0,
+        "minute": 5158.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 61.4,
+        "y": 65.4,
+        "minute": 5162.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 33.5,
+        "y": 68.0,
+        "minute": 5193.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 33.5,
+        "y": 68.0,
+        "minute": 5193.7,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 61.6,
+        "y": 56.8,
+        "minute": 5290.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 61.6,
+        "y": 56.8,
+        "minute": 5290.7,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 61.6,
+        "y": 56.8,
+        "minute": 5290.7,
+        "action": "Progressive passes accurate"
+      },
+      {
+        "x": 24.9,
+        "y": 55.2,
+        "minute": 5414.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 24.9,
+        "y": 55.2,
+        "minute": 5414.7,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 30.2,
+        "y": 67.9,
+        "minute": 5491.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 30.2,
+        "y": 67.9,
+        "minute": 5491.7,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 23.0,
+        "y": 68.0,
+        "minute": 5704.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 23.0,
+        "y": 68.0,
+        "minute": 5704.7,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 23.0,
+        "y": 68.0,
+        "minute": 5704.7,
+        "action": "Progressive passes accurate"
+      },
+      {
+        "x": 6.8,
+        "y": 54.9,
+        "minute": 5825.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 6.8,
+        "y": 54.9,
+        "minute": 5825.7,
+        "action": "Passes forward accurate"
+      }
+    ],
+    "total_passes": 20,
+    "min_x": 6.8,
+    "max_x": 63.8,
+    "min_y": 53.8,
+    "max_y": 68.0,
+    "centroid": {
+      "x": 39.2,
+      "y": 62.7
+    },
+    "hull": [
+      [
+        6.8,
+        54.9
+      ],
+      [
+        33.7,
+        53.8
+      ],
+      [
+        61.6,
+        56.8
+      ],
+      [
+        63.8,
+        67.9
+      ],
+      [
+        56.6,
+        68.0
+      ],
+      [
+        23.0,
+        68.0
+      ]
+    ]
+  },
+  "VfB Stuttgart|Lorenz Assignon": {
+    "pass_points": [
+      {
+        "x": 91.6,
+        "y": 8.3,
+        "minute": 5001.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 12.4,
+        "y": 0.0,
+        "minute": 5069.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 21.4,
+        "y": 4.1,
+        "minute": 5072.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 21.4,
+        "y": 4.1,
+        "minute": 5072.7,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 49.1,
+        "y": 8.0,
+        "minute": 5199.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 37.7,
+        "y": 0.0,
+        "minute": 5373.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 37.7,
+        "y": 0.0,
+        "minute": 5373.7,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 37.7,
+        "y": 0.0,
+        "minute": 5373.7,
+        "action": "Progressive passes accurate"
+      },
+      {
+        "x": 31.0,
+        "y": 2.7,
+        "minute": 5378.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 31.0,
+        "y": 2.7,
+        "minute": 5378.7,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 100.9,
+        "y": 15.3,
+        "minute": 5600.7,
+        "action": "Key passes accurate"
+      },
+      {
+        "x": 100.9,
+        "y": 15.3,
+        "minute": 5600.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 77.2,
+        "y": 2.5,
+        "minute": 5668.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 77.2,
+        "y": 2.5,
+        "minute": 5668.7,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 77.2,
+        "y": 2.5,
+        "minute": 5668.7,
+        "action": "Progressive passes accurate"
+      },
+      {
+        "x": 41.4,
+        "y": 2.9,
+        "minute": 5711.7,
+        "action": "Passes accurate"
+      }
+    ],
+    "total_passes": 16,
+    "min_x": 12.4,
+    "max_x": 100.9,
+    "min_y": 0.0,
+    "max_y": 15.3,
+    "centroid": {
+      "x": 52.9,
+      "y": 4.4
+    },
+    "hull": [
+      [
+        12.4,
+        0.0
+      ],
+      [
+        37.7,
+        0.0
+      ],
+      [
+        77.2,
+        2.5
+      ],
+      [
+        91.6,
+        8.3
+      ],
+      [
+        100.9,
+        15.3
+      ],
+      [
+        21.4,
+        4.1
+      ]
+    ]
+  },
+  "Galatasaray|Leroy Sané": {
+    "pass_points": [
+      {
+        "x": 92.2,
+        "y": 24.2,
+        "minute": 5023.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 55.4,
+        "y": 27.4,
+        "minute": 5286.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 59.5,
+        "y": 47.9,
+        "minute": 5295.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 76.9,
+        "y": 0.0,
+        "minute": 5507.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 69.1,
+        "y": 6.6,
+        "minute": 5568.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 69.1,
+        "y": 6.6,
+        "minute": 5568.7,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 21.5,
+        "y": 1.9,
+        "minute": 5622.7,
+        "action": "Passes accurate"
+      }
+    ],
+    "total_passes": 7,
+    "min_x": 21.5,
+    "max_x": 92.2,
+    "min_y": 0.0,
+    "max_y": 47.9,
+    "centroid": {
+      "x": 63.4,
+      "y": 16.4
+    },
+    "hull": [
+      [
+        21.5,
+        1.9
+      ],
+      [
+        76.9,
+        0.0
+      ],
+      [
+        92.2,
+        24.2
+      ],
+      [
+        59.5,
+        47.9
+      ]
+    ]
+  },
+  "Galatasaray|Gabriel Sara": {
+    "pass_points": [
+      {
+        "x": 56.1,
+        "y": 60.9,
+        "minute": 5159.7,
+        "action": "Passes accurate"
+      },
+      {
+        "x": 56.1,
+        "y": 60.9,
+        "minute": 5159.7,
+        "action": "Passes forward accurate"
+      },
+      {
+        "x": 35.2,
+        "y": 54.3,
+        "minute": 5418.7,
+        "action": "Passes accurate"
+      }
+    ],
+    "total_passes": 3,
+    "min_x": 35.2,
+    "max_x": 56.1,
+    "min_y": 54.3,
+    "max_y": 60.9,
+    "centroid": {
+      "x": 49.1,
+      "y": 58.7
+    },
+    "hull": [
+      [
+        35.2,
+        54.3
+      ],
+      [
+        56.1,
+        60.9
+      ]
+    ]
+  },
+  "Galatasaray|Uğurcan Çakır": {
+    "pass_points": [
+      {
+        "x": 54.7,
+        "y": 30.8,
+        "minute": 0,
+        "action": "goal_kick_short"
+      },
+      {
+        "x": 41.8,
+        "y": 27.6,
+        "minute": 0,
+        "action": "goal_kick_short"
+      },
+      {
+        "x": 42.9,
+        "y": 15.5,
+        "minute": 0,
+        "action": "goal_kick_short"
+      },
+      {
+        "x": 60.3,
+        "y": 19.6,
+        "minute": 0,
+        "action": "goal_kick_short"
+      },
+      {
+        "x": 76.4,
+        "y": 38.1,
+        "minute": 0,
+        "action": "goal_kick_short"
+      },
+      {
+        "x": 71.5,
+        "y": 34.4,
+        "minute": 0,
+        "action": "goal_kick_short"
+      },
+      {
+        "x": 75.8,
+        "y": 39.6,
+        "minute": 0,
+        "action": "goal_kick_short"
+      },
+      {
+        "x": 77.3,
+        "y": 53.1,
+        "minute": 0,
+        "action": "goal_kick_short"
+      },
+      {
+        "x": 65.7,
+        "y": 10.2,
+        "minute": 0,
+        "action": "goal_kick_short"
+      },
+      {
+        "x": 39.2,
+        "y": 42.7,
+        "minute": 0,
+        "action": "goal_kick_short"
+      },
+      {
+        "x": 29.2,
+        "y": 53.3,
+        "minute": 0,
+        "action": "goal_kick_short"
+      },
+      {
+        "x": 37.1,
+        "y": 66.0,
+        "minute": 0,
+        "action": "goal_kick_short"
+      },
+      {
+        "x": 45.4,
+        "y": 65.2,
+        "minute": 0,
+        "action": "goal_kick_short"
+      },
+      {
+        "x": 41.2,
+        "y": 63.5,
+        "minute": 0,
+        "action": "goal_kick_short"
+      },
+      {
+        "x": 33.5,
+        "y": 66.3,
+        "minute": 0,
+        "action": "goal_kick_short"
+      },
+      {
+        "x": 25.7,
+        "y": 8.3,
+        "minute": 0,
+        "action": "goal_kick_short"
+      },
+      {
+        "x": 19.0,
+        "y": 3.3,
+        "minute": 0,
+        "action": "goal_kick_short"
+      },
+      {
+        "x": 26.6,
+        "y": 29.8,
+        "minute": 0,
+        "action": "goal_kick_short"
+      },
+      {
+        "x": 29.9,
+        "y": 27.7,
+        "minute": 0,
+        "action": "goal_kick_short"
+      },
+      {
+        "x": 54.7,
+        "y": 32.8,
+        "minute": 0,
+        "action": "goal_kick_short"
+      },
+      {
+        "x": 46.1,
+        "y": 31.5,
+        "minute": 0,
+        "action": "goal_kick_short"
+      },
+      {
+        "x": 16.7,
+        "y": 65.6,
+        "minute": 0,
+        "action": "goal_kick_short"
+      },
+      {
+        "x": 46.6,
+        "y": 46.6,
+        "minute": 0,
+        "action": "goal_kick_short"
+      },
+      {
+        "x": 42.6,
+        "y": 21.0,
+        "minute": 0,
+        "action": "goal_kick_short"
+      },
+      {
+        "x": 92.4,
+        "y": 44.6,
+        "minute": 0,
+        "action": "goal_kick_short"
+      },
+      {
+        "x": 84.1,
+        "y": 53.6,
+        "minute": 0,
+        "action": "goal_kick_short"
+      },
+      {
+        "x": 81.9,
+        "y": 44.6,
+        "minute": 0,
+        "action": "goal_kick_short"
+      },
+      {
+        "x": 66.8,
+        "y": 33.7,
+        "minute": 0,
+        "action": "goal_kick_short"
+      },
+      {
+        "x": 26.1,
+        "y": 34.1,
+        "minute": 0,
+        "action": "goal_kick_short"
+      },
+      {
+        "x": 34.2,
+        "y": 56.4,
+        "minute": 0,
+        "action": "goal_kick_short"
+      },
+      {
+        "x": 12.6,
+        "y": 50.5,
+        "minute": 0,
+        "action": "goal_kick_short"
+      },
+      {
+        "x": 41.8,
+        "y": 63.5,
+        "minute": 0,
+        "action": "goal_kick_short"
+      },
+      {
+        "x": 27.8,
+        "y": 66.9,
+        "minute": 0,
+        "action": "goal_kick_short"
+      },
+      {
+        "x": 41.2,
+        "y": 32.8,
+        "minute": 0,
+        "action": "goal_kick_short"
+      },
+      {
+        "x": 63.7,
+        "y": 66.0,
+        "minute": 0,
+        "action": "goal_kick_short"
+      },
+      {
+        "x": 68.2,
+        "y": 67.5,
+        "minute": 0,
+        "action": "goal_kick_short"
+      },
+      {
+        "x": 37.1,
+        "y": 21.5,
+        "minute": 0,
+        "action": "goal_kick_short"
+      },
+      {
+        "x": 38.3,
+        "y": 4.5,
+        "minute": 0,
+        "action": "goal_kick_short"
+      },
+      {
+        "x": 69.3,
+        "y": 19.5,
+        "minute": 0,
+        "action": "goal_kick_short"
+      },
+      {
+        "x": 84.8,
+        "y": 40.4,
+        "minute": 0,
+        "action": "goal_kick_short"
+      },
+      {
+        "x": 63.2,
+        "y": 18.4,
+        "minute": 0,
+        "action": "goal_kick_short"
+      },
+      {
+        "x": 50.4,
+        "y": 31.9,
+        "minute": 0,
+        "action": "goal_kick_short"
+      },
+      {
+        "x": 58.7,
+        "y": 38.2,
+        "minute": 0,
+        "action": "goal_kick_short"
+      },
+      {
+        "x": 51.0,
+        "y": 47.3,
+        "minute": 0,
+        "action": "goal_kick_short"
+      },
+      {
+        "x": 52.9,
+        "y": 64.9,
+        "minute": 0,
+        "action": "goal_kick_short"
+      },
+      {
+        "x": 64.9,
+        "y": 65.2,
+        "minute": 0,
+        "action": "goal_kick_short"
+      },
+      {
+        "x": 77.5,
+        "y": 61.9,
+        "minute": 0,
+        "action": "goal_kick_short"
+      },
+      {
+        "x": 67.5,
+        "y": 62.0,
+        "minute": 0,
+        "action": "goal_kick_short"
+      },
+      {
+        "x": 46.8,
+        "y": 44.3,
+        "minute": 0,
+        "action": "goal_kick_short"
+      },
+      {
+        "x": 30.9,
+        "y": 33.1,
+        "minute": 0,
+        "action": "goal_kick_short"
+      },
+      {
+        "x": 39.5,
+        "y": 23.7,
+        "minute": 0,
+        "action": "goal_kick_short"
+      },
+      {
+        "x": 36.0,
+        "y": 58.7,
+        "minute": 0,
+        "action": "goal_kick_short"
+      },
+      {
+        "x": 5.7,
+        "y": 41.9,
+        "minute": 0,
+        "action": "goal_kick_short"
+      },
+      {
+        "x": 74.8,
+        "y": 67.1,
+        "minute": 0,
+        "action": "goal_kick_short"
+      },
+      {
+        "x": 62.0,
+        "y": 66.9,
+        "minute": 0,
+        "action": "goal_kick_short"
+      },
+      {
+        "x": 36.1,
+        "y": 60.1,
+        "minute": 0,
+        "action": "goal_kick_short"
+      },
+      {
+        "x": 51.0,
+        "y": 36.9,
+        "minute": 0,
+        "action": "goal_kick_short"
+      },
+      {
+        "x": 58.2,
+        "y": 57.3,
+        "minute": 0,
+        "action": "goal_kick_short"
+      },
+      {
+        "x": 70.9,
+        "y": 59.7,
+        "minute": 0,
+        "action": "goal_kick_short"
+      },
+      {
+        "x": 64.1,
+        "y": 52.0,
+        "minute": 0,
+        "action": "goal_kick_short"
+      },
+      {
+        "x": 40.4,
+        "y": 2.5,
+        "minute": 0,
+        "action": "goal_kick_medium"
+      },
+      {
+        "x": 49.4,
+        "y": 23.1,
+        "minute": 0,
+        "action": "goal_kick_medium"
+      },
+      {
+        "x": 75.5,
+        "y": 62.9,
+        "minute": 0,
+        "action": "goal_kick_medium"
+      },
+      {
+        "x": 56.7,
+        "y": 37.7,
+        "minute": 0,
+        "action": "goal_kick_medium"
+      },
+      {
+        "x": 72.3,
+        "y": 1.5,
+        "minute": 0,
+        "action": "goal_kick_medium"
+      },
+      {
+        "x": 40.3,
+        "y": 61.6,
+        "minute": 0,
+        "action": "goal_kick_medium"
+      },
+      {
+        "x": 25.4,
+        "y": 57.8,
+        "minute": 0,
+        "action": "goal_kick_medium"
+      },
+      {
+        "x": 45.5,
+        "y": 0.0,
+        "minute": 0,
+        "action": "goal_kick_medium"
+      },
+      {
+        "x": 32.0,
+        "y": 16.6,
+        "minute": 0,
+        "action": "goal_kick_medium"
+      },
+      {
+        "x": 15.1,
+        "y": 29.8,
+        "minute": 0,
+        "action": "goal_kick_medium"
+      },
+      {
+        "x": 33.9,
+        "y": 3.3,
+        "minute": 0,
+        "action": "goal_kick_medium"
+      },
+      {
+        "x": 30.0,
+        "y": 0.0,
+        "minute": 0,
+        "action": "goal_kick_medium"
+      },
+      {
+        "x": 22.6,
+        "y": 18.6,
+        "minute": 0,
+        "action": "goal_kick_medium"
+      },
+      {
+        "x": 26.4,
+        "y": 27.1,
+        "minute": 0,
+        "action": "goal_kick_medium"
+      },
+      {
+        "x": 11.7,
+        "y": 29.0,
+        "minute": 0,
+        "action": "goal_kick_medium"
+      },
+      {
+        "x": 37.1,
+        "y": 36.0,
+        "minute": 0,
+        "action": "goal_kick_medium"
+      },
+      {
+        "x": 25.5,
+        "y": 56.7,
+        "minute": 0,
+        "action": "goal_kick_medium"
+      },
+      {
+        "x": 43.3,
+        "y": 43.3,
+        "minute": 0,
+        "action": "goal_kick_medium"
+      },
+      {
+        "x": 31.8,
+        "y": 30.6,
+        "minute": 0,
+        "action": "goal_kick_medium"
+      },
+      {
+        "x": 24.5,
+        "y": 17.8,
+        "minute": 0,
+        "action": "goal_kick_medium"
+      }
+    ],
+    "total_passes": 174,
+    "min_x": 4.3,
+    "max_x": 102.4,
+    "min_y": 0.0,
+    "max_y": 68.0,
+    "centroid": {
+      "x": 40.6,
+      "y": 36.2
+    },
+    "hull": [
+      [
+        4.3,
+        25.3
+      ],
+      [
+        15.8,
+        3.7
+      ],
+      [
+        17.9,
+        0.0
+      ],
+      [
+        45.5,
+        0.0
+      ],
+      [
+        72.3,
+        1.5
+      ],
+      [
+        80.3,
+        5.2
+      ],
+      [
+        102.4,
+        18.8
+      ],
+      [
+        95.5,
+        54.5
+      ],
+      [
+        91.5,
+        58.3
+      ],
+      [
+        74.8,
+        67.1
+      ],
+      [
+        67.5,
+        68.0
+      ],
+      [
+        27.8,
+        66.9
+      ],
+      [
+        16.7,
+        65.6
+      ],
+      [
+        4.6,
+        40.1
+      ]
+    ]
+  },
+  "VfB Stuttgart|Fabian Bredlow": {
+    "pass_points": [
+      {
+        "x": 64.3,
+        "y": 40.2,
+        "minute": 0,
+        "action": "goal_kick_short"
+      },
+      {
+        "x": 31.6,
+        "y": 45.5,
+        "minute": 0,
+        "action": "goal_kick_short"
+      },
+      {
+        "x": 40.8,
+        "y": 55.6,
+        "minute": 0,
+        "action": "goal_kick_short"
+      },
+      {
+        "x": 79.8,
+        "y": 53.6,
+        "minute": 0,
+        "action": "goal_kick_short"
+      },
+      {
+        "x": 72.2,
+        "y": 40.3,
+        "minute": 0,
+        "action": "goal_kick_short"
+      },
+      {
+        "x": 82.2,
+        "y": 53.2,
+        "minute": 0,
+        "action": "goal_kick_short"
+      },
+      {
+        "x": 54.8,
+        "y": 60.2,
+        "minute": 0,
+        "action": "goal_kick_short"
+      },
+      {
+        "x": 13.1,
+        "y": 37.8,
+        "minute": 0,
+        "action": "goal_kick_short"
+      },
+      {
+        "x": 62.8,
+        "y": 22.1,
+        "minute": 0,
+        "action": "goal_kick_short"
+      },
+      {
+        "x": 64.7,
+        "y": 67.6,
+        "minute": 0,
+        "action": "goal_kick_short"
+      },
+      {
+        "x": 59.7,
+        "y": 61.5,
+        "minute": 0,
+        "action": "goal_kick_short"
+      },
+      {
+        "x": 100.2,
+        "y": 50.0,
+        "minute": 0,
+        "action": "goal_kick_short"
+      },
+      {
+        "x": 68.2,
+        "y": 34.6,
+        "minute": 0,
+        "action": "goal_kick_short"
+      },
+      {
+        "x": 52.6,
+        "y": 39.3,
+        "minute": 0,
+        "action": "goal_kick_short"
+      },
+      {
+        "x": 67.0,
+        "y": 5.2,
+        "minute": 0,
+        "action": "goal_kick_short"
+      },
+      {
+        "x": 21.9,
+        "y": 32.5,
+        "minute": 0,
+        "action": "goal_kick_short"
+      },
+      {
+        "x": 76.1,
+        "y": 41.3,
+        "minute": 0,
+        "action": "goal_kick_short"
+      },
+      {
+        "x": 77.4,
+        "y": 29.5,
+        "minute": 0,
+        "action": "goal_kick_short"
+      },
+      {
+        "x": 67.5,
+        "y": 33.8,
+        "minute": 0,
+        "action": "goal_kick_short"
+      },
+      {
+        "x": 71.7,
+        "y": 59.1,
+        "minute": 0,
+        "action": "goal_kick_short"
+      },
+      {
+        "x": 25.8,
+        "y": 45.4,
+        "minute": 0,
+        "action": "goal_kick_short"
+      },
+      {
+        "x": 27.8,
+        "y": 16.3,
+        "minute": 0,
+        "action": "goal_kick_short"
+      },
+      {
+        "x": 49.8,
+        "y": 55.9,
+        "minute": 0,
+        "action": "goal_kick_short"
+      },
+      {
+        "x": 49.1,
+        "y": 32.1,
+        "minute": 0,
+        "action": "goal_kick_short"
+      },
+      {
+        "x": 6.2,
+        "y": 26.3,
+        "minute": 0,
+        "action": "goal_kick_short"
+      },
+      {
+        "x": 8.2,
+        "y": 30.1,
+        "minute": 0,
+        "action": "goal_kick_short"
+      },
+      {
+        "x": 50.9,
+        "y": 68.0,
+        "minute": 0,
+        "action": "goal_kick_short"
+      },
+      {
+        "x": 45.2,
+        "y": 58.3,
+        "minute": 0,
+        "action": "goal_kick_short"
+      },
+      {
+        "x": 52.0,
+        "y": 57.3,
+        "minute": 0,
+        "action": "goal_kick_short"
+      },
+      {
+        "x": 44.8,
+        "y": 63.8,
+        "minute": 0,
+        "action": "goal_kick_short"
+      },
+      {
+        "x": 40.2,
+        "y": 63.2,
+        "minute": 0,
+        "action": "goal_kick_short"
+      },
+      {
+        "x": 30.1,
+        "y": 68.0,
+        "minute": 0,
+        "action": "goal_kick_short"
+      },
+      {
+        "x": 38.5,
+        "y": 62.8,
+        "minute": 0,
+        "action": "goal_kick_short"
+      },
+      {
+        "x": 103.1,
+        "y": 23.6,
+        "minute": 0,
+        "action": "goal_kick_short"
+      },
+      {
+        "x": 55.8,
+        "y": 61.6,
+        "minute": 0,
+        "action": "goal_kick_short"
+      },
+      {
+        "x": 72.6,
+        "y": 42.6,
+        "minute": 0,
+        "action": "goal_kick_short"
+      },
+      {
+        "x": 92.9,
+        "y": 51.3,
+        "minute": 0,
+        "action": "goal_kick_short"
+      },
+      {
+        "x": 78.2,
+        "y": 43.3,
+        "minute": 0,
+        "action": "goal_kick_short"
+      },
+      {
+        "x": 69.1,
+        "y": 41.3,
+        "minute": 0,
+        "action": "goal_kick_short"
+      },
+      {
+        "x": 65.6,
+        "y": 51.4,
+        "minute": 0,
+        "action": "goal_kick_short"
+      },
+      {
+        "x": 70.3,
+        "y": 45.8,
+        "minute": 0,
+        "action": "goal_kick_short"
+      },
+      {
+        "x": 59.4,
+        "y": 67.5,
+        "minute": 0,
+        "action": "goal_kick_short"
+      },
+      {
+        "x": 58.6,
+        "y": 55.0,
+        "minute": 0,
+        "action": "goal_kick_short"
+      },
+      {
+        "x": 68.1,
+        "y": 65.8,
+        "minute": 0,
+        "action": "goal_kick_short"
+      },
+      {
+        "x": 54.4,
+        "y": 61.0,
+        "minute": 0,
+        "action": "goal_kick_short"
+      },
+      {
+        "x": 55.7,
+        "y": 53.4,
+        "minute": 0,
+        "action": "goal_kick_short"
+      },
+      {
+        "x": 28.0,
+        "y": 68.0,
+        "minute": 0,
+        "action": "goal_kick_short"
+      },
+      {
+        "x": 39.8,
+        "y": 61.9,
+        "minute": 0,
+        "action": "goal_kick_short"
+      },
+      {
+        "x": 34.2,
+        "y": 20.7,
+        "minute": 0,
+        "action": "goal_kick_short"
+      },
+      {
+        "x": 99.7,
+        "y": 3.4,
+        "minute": 0,
+        "action": "goal_kick_short"
+      },
+      {
+        "x": 79.3,
+        "y": 68.0,
+        "minute": 0,
+        "action": "goal_kick_short"
+      },
+      {
+        "x": 77.8,
+        "y": 60.9,
+        "minute": 0,
+        "action": "goal_kick_short"
+      },
+      {
+        "x": 63.8,
+        "y": 39.4,
+        "minute": 0,
+        "action": "goal_kick_short"
+      },
+      {
+        "x": 92.1,
+        "y": 52.6,
+        "minute": 0,
+        "action": "goal_kick_short"
+      },
+      {
+        "x": 83.7,
+        "y": 40.4,
+        "minute": 0,
+        "action": "goal_kick_short"
+      },
+      {
+        "x": 69.3,
+        "y": 9.4,
+        "minute": 0,
+        "action": "goal_kick_short"
+      },
+      {
+        "x": 21.4,
+        "y": 11.7,
+        "minute": 0,
+        "action": "goal_kick_short"
+      },
+      {
+        "x": 25.5,
+        "y": 13.6,
+        "minute": 0,
+        "action": "goal_kick_short"
+      },
+      {
+        "x": 33.6,
+        "y": 20.0,
+        "minute": 0,
+        "action": "goal_kick_short"
+      },
+      {
+        "x": 56.3,
+        "y": 63.2,
+        "minute": 0,
+        "action": "goal_kick_short"
+      },
+      {
+        "x": 52.5,
+        "y": 34.0,
+        "minute": 0,
+        "action": "goal_kick_medium"
+      },
+      {
+        "x": 16.6,
+        "y": 35.4,
+        "minute": 0,
+        "action": "goal_kick_medium"
+      },
+      {
+        "x": 37.0,
+        "y": 44.5,
+        "minute": 0,
+        "action": "goal_kick_medium"
+      },
+      {
+        "x": 25.2,
+        "y": 53.9,
+        "minute": 0,
+        "action": "goal_kick_medium"
+      },
+      {
+        "x": 7.9,
+        "y": 43.8,
+        "minute": 0,
+        "action": "goal_kick_medium"
+      },
+      {
+        "x": 33.0,
+        "y": 50.5,
+        "minute": 0,
+        "action": "goal_kick_medium"
+      },
+      {
+        "x": 34.4,
+        "y": 0.0,
+        "minute": 0,
+        "action": "goal_kick_medium"
+      },
+      {
+        "x": 34.7,
+        "y": 46.8,
+        "minute": 0,
+        "action": "goal_kick_medium"
+      },
+      {
+        "x": 58.5,
+        "y": 36.5,
+        "minute": 0,
+        "action": "goal_kick_medium"
+      },
+      {
+        "x": 81.1,
+        "y": 63.2,
+        "minute": 0,
+        "action": "goal_kick_medium"
+      },
+      {
+        "x": 98.8,
+        "y": 64.5,
+        "minute": 0,
+        "action": "goal_kick_medium"
+      },
+      {
+        "x": 86.8,
+        "y": 49.8,
+        "minute": 0,
+        "action": "goal_kick_medium"
+      },
+      {
+        "x": 37.1,
+        "y": 56.5,
+        "minute": 0,
+        "action": "goal_kick_medium"
+      },
+      {
+        "x": 32.5,
+        "y": 42.0,
+        "minute": 0,
+        "action": "goal_kick_medium"
+      },
+      {
+        "x": 28.0,
+        "y": 43.9,
+        "minute": 0,
+        "action": "goal_kick_medium"
+      },
+      {
+        "x": 57.0,
+        "y": 65.5,
+        "minute": 0,
+        "action": "goal_kick_medium"
+      },
+      {
+        "x": 53.0,
+        "y": 27.6,
+        "minute": 0,
+        "action": "goal_kick_medium"
+      },
+      {
+        "x": 79.5,
+        "y": 7.8,
+        "minute": 0,
+        "action": "goal_kick_medium"
+      },
+      {
+        "x": 8.2,
+        "y": 38.5,
+        "minute": 0,
+        "action": "goal_kick_medium"
+      },
+      {
+        "x": 36.2,
+        "y": 54.7,
+        "minute": 0,
+        "action": "goal_kick_medium"
+      }
+    ],
+    "total_passes": 156,
+    "min_x": 6.2,
+    "max_x": 105.0,
+    "min_y": 0.0,
+    "max_y": 68.0,
+    "centroid": {
+      "x": 47.3,
+      "y": 40.8
+    },
+    "hull": [
+      [
+        6.2,
+        26.3
+      ],
+      [
+        21.4,
+        11.7
+      ],
+      [
+        34.4,
+        0.0
+      ],
+      [
+        105.0,
+        0.0
+      ],
+      [
+        103.1,
+        23.6
+      ],
+      [
+        98.8,
+        64.5
+      ],
+      [
+        79.3,
+        68.0
+      ],
+      [
+        28.0,
+        68.0
+      ],
+      [
+        14.3,
+        54.8
+      ],
+      [
+        10.3,
+        48.2
+      ],
+      [
+        7.9,
+        43.8
+      ],
+      [
+        7.0,
+        35.4
+      ]
+    ]
+  }
+}

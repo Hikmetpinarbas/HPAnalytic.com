@@ -1,0 +1,107 @@
+"""
+Her oyuncu için pas noktaları + hareket alanı (convex hull).
+Kaynak: teams.csv (oyuncu bazlı pass event'leri), goalkeepers için gk_distribution.json.
+"""
+import csv, json, re
+from collections import defaultdict
+from pathlib import Path
+
+# --- AUTO: --src / --out destegi ---
+import sys, argparse
+from pathlib import Path as _PathAlias
+_ap = argparse.ArgumentParser(add_help=False)
+_ap.add_argument('--src', default=None)
+_ap.add_argument('--out', default=None)
+_args, _ = _ap.parse_known_args()
+# --- /AUTO ---
+
+BASE = Path(_args.out) if _args.out else Path("public/assets/data/gs-stuttgart")
+OUT = BASE / "player_zones.json"
+
+def parse(code):
+    m = re.search(r"\d+\.\s+(.+?)\s+\((\d+)\)", code)
+    return (m.group(1).strip(), m.group(2)) if m else (None, None)
+
+def convex_hull(points):
+    """Andrew's monotone chain."""
+    points = sorted(set(points))
+    if len(points) <= 2: return points
+    def cross(O, A, B):
+        return (A[0]-O[0])*(B[1]-O[1]) - (A[1]-O[1])*(B[0]-O[0])
+    lower = []
+    for p in points:
+        while len(lower) >= 2 and cross(lower[-2], lower[-1], p) <= 0:
+            lower.pop()
+        lower.append(p)
+    upper = []
+    for p in reversed(points):
+        while len(upper) >= 2 and cross(upper[-2], upper[-1], p) <= 0:
+            upper.pop()
+        upper.append(p)
+    return lower[:-1] + upper[:-1]
+
+# === 1. teams.csv'den pas noktaları ===
+player_passes = defaultdict(list)
+with open(BASE / "teams.csv", encoding="utf-8") as f:
+    for row in csv.DictReader(f, delimiter=";"):
+        if not row["pos_x"] or " - " not in row["code"]: continue
+        name, pid = parse(row["code"])
+        if not name: continue
+        team_raw = row.get("team", "")
+        team = "Galatasaray" if "Galatasaray" in team_raw else ("VfB Stuttgart" if "Stuttgart" in team_raw else None)
+        if not team: continue
+        action = row["action"].lower()
+        if "pass" not in action: continue
+        if "incomplete" in action or "inaccurate" in action: continue
+        try:
+            x, y = float(row["pos_x"]), float(row["pos_y"])
+            t = float(row["start"])
+        except: continue
+        player_passes[f"{team}|{name}"].append({
+            "x": round(x, 1), "y": round(y, 1),
+            "minute": round(t, 1),
+            "action": row["action"],
+        })
+
+# === 2. GK landing noktaları ===
+gk_file = BASE / "gk_distribution.json"
+if gk_file.exists():
+    gk_data = json.load(open(gk_file, encoding="utf-8"))
+    for team_key, gk in gk_data.items():
+        name = gk["player"]
+        key = f"{team_key}|{name}"
+        if key in player_passes and len(player_passes[key]) > 5: continue
+        for type_key, pts in gk.get("landings", {}).items():
+            for p in pts:
+                player_passes[key].append({
+                    "x": p["x"], "y": p["y"],
+                    "minute": 0,
+                    "action": f"goal_kick_{type_key}",
+                })
+
+# === 3. Zone hesapla ===
+zones = {}
+for key, points in player_passes.items():
+    if len(points) < 3: continue
+    # Unique noktalar (convex hull için)
+    unique_pts = list(set((p["x"], p["y"]) for p in points))
+    hull = convex_hull(unique_pts)
+    xs = [p["x"] for p in points]
+    ys = [p["y"] for p in points]
+    zones[key] = {
+        "pass_points": sorted(points, key=lambda p: p["minute"])[:80],
+        "total_passes": len(points),
+        "min_x": round(min(xs), 1), "max_x": round(max(xs), 1),
+        "min_y": round(min(ys), 1), "max_y": round(max(ys), 1),
+        "centroid": {"x": round(sum(xs)/len(xs), 1), "y": round(sum(ys)/len(ys), 1)},
+        "hull": [[round(x, 1), round(y, 1)] for x, y in hull],
+    }
+
+with open(OUT, "w", encoding="utf-8") as f:
+    json.dump(zones, f, indent=2, ensure_ascii=False)
+
+print(f"✅ {OUT} — {len(zones)} oyuncu")
+print("\nÖrnek:")
+for k, z in list(zones.items())[:6]:
+    print(f"  {k}: {z['total_passes']} pas, hull {len(z['hull'])} nokta, "
+          f"x[{z['min_x']}-{z['max_x']}] y[{z['min_y']}-{z['max_y']}]")

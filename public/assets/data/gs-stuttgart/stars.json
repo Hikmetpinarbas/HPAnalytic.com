@@ -1,0 +1,29 @@
+[
+  {
+    "label": "SNIPER",
+    "player": "Aleksei Batrakov",
+    "team": "Galatasaray",
+    "metric_big": "0.59 → 2",
+    "metric_label": "xG → Gol",
+    "note": "3 şut, 3 isabet, 2 gol. Bitiricilik farkı +1.41.",
+    "mini_chart": "target"
+  },
+  {
+    "label": "MERKEZ",
+    "player": "Lucas Torreira",
+    "team": "Galatasaray",
+    "metric_big": "50 pas",
+    "metric_label": "Ego ağı merkezi",
+    "note": "Pas ağının kalbi. Dağıtım ondan geçiyor.",
+    "mini_chart": "circle"
+  },
+  {
+    "label": "BOŞA KÜREK",
+    "player": "Maximilian Mittelstädt",
+    "team": "VfB Stuttgart",
+    "metric_big": "104 → 0",
+    "metric_label": "Pas → Skor Katkısı",
+    "note": "En çok pas yapan, sıfır gol, sıfır asist.",
+    "mini_chart": "bar"
+  }
+]

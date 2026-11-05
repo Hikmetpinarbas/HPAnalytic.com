@@ -1,0 +1,1 @@
+bash: line 1: /home/userland/.local/bin/claude: No such file or directory

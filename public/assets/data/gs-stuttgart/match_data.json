@@ -1,0 +1,1163 @@
+[
+  {
+    "team": "VfB Stuttgart",
+    "name": "40 m)",
+    "avg_x": 51.81,
+    "avg_y": 35.52,
+    "defensive_pos": null,
+    "offensive_pos": null,
+    "total_passes": 0
+  },
+  {
+    "team": "VfB Stuttgart",
+    "name": "Passes accurate",
+    "avg_x": 49.07,
+    "avg_y": 37.76,
+    "defensive_pos": null,
+    "offensive_pos": {
+      "x": 49.07,
+      "y": 37.76
+    },
+    "total_passes": 314
+  },
+  {
+    "team": "VfB Stuttgart",
+    "name": "Positional attacks",
+    "avg_x": 41.37,
+    "avg_y": 35.97,
+    "defensive_pos": null,
+    "offensive_pos": {
+      "x": 41.37,
+      "y": 35.97
+    },
+    "total_passes": 0
+  },
+  {
+    "team": "VfB Stuttgart",
+    "name": "Goal kicks long (40+ m)",
+    "avg_x": 28.36,
+    "avg_y": 38.45,
+    "defensive_pos": null,
+    "offensive_pos": null,
+    "total_passes": 0
+  },
+  {
+    "team": "VfB Stuttgart",
+    "name": "Long passes",
+    "avg_x": 29.87,
+    "avg_y": 38.2,
+    "defensive_pos": null,
+    "offensive_pos": {
+      "x": 29.87,
+      "y": 38.2
+    },
+    "total_passes": 21
+  },
+  {
+    "team": "VfB Stuttgart",
+    "name": "Passes forward accurate",
+    "avg_x": 44.2,
+    "avg_y": 35.13,
+    "defensive_pos": null,
+    "offensive_pos": {
+      "x": 44.2,
+      "y": 35.13
+    },
+    "total_passes": 156
+  },
+  {
+    "team": "VfB Stuttgart",
+    "name": "Progressive passes accurate",
+    "avg_x": 49.35,
+    "avg_y": 35.4,
+    "defensive_pos": null,
+    "offensive_pos": {
+      "x": 49.35,
+      "y": 35.4
+    },
+    "total_passes": 81
+  },
+  {
+    "team": "VfB Stuttgart",
+    "name": "Aerial challenges lost",
+    "avg_x": 46.28,
+    "avg_y": 31.57,
+    "defensive_pos": {
+      "x": 46.28,
+      "y": 31.57
+    },
+    "offensive_pos": null,
+    "total_passes": 0
+  },
+  {
+    "team": "Galatasaray",
+    "name": "Aerial challenges won",
+    "avg_x": 46.28,
+    "avg_y": 31.57,
+    "defensive_pos": {
+      "x": 46.28,
+      "y": 31.57
+    },
+    "offensive_pos": null,
+    "total_passes": 0
+  },
+  {
+    "team": "VfB Stuttgart",
+    "name": "Ball losses",
+    "avg_x": 75.4,
+    "avg_y": 33.29,
+    "defensive_pos": {
+      "x": 75.4,
+      "y": 33.29
+    },
+    "offensive_pos": null,
+    "total_passes": 0
+  },
+  {
+    "team": "VfB Stuttgart",
+    "name": "Challenges unsuccessful",
+    "avg_x": 50.72,
+    "avg_y": 31.81,
+    "defensive_pos": {
+      "x": 50.72,
+      "y": 31.81
+    },
+    "offensive_pos": null,
+    "total_passes": 0
+  },
+  {
+    "team": "Galatasaray",
+    "name": "Challenges won",
+    "avg_x": 50.72,
+    "avg_y": 31.81,
+    "defensive_pos": {
+      "x": 50.72,
+      "y": 31.81
+    },
+    "offensive_pos": null,
+    "total_passes": 0
+  },
+  {
+    "team": "VfB Stuttgart",
+    "name": "Fouls",
+    "avg_x": 63.58,
+    "avg_y": 41.35,
+    "defensive_pos": {
+      "x": 63.58,
+      "y": 41.35
+    },
+    "offensive_pos": null,
+    "total_passes": 0
+  },
+  {
+    "team": "Galatasaray",
+    "name": "Opponent fouls",
+    "avg_x": 63.58,
+    "avg_y": 41.35,
+    "defensive_pos": {
+      "x": 63.58,
+      "y": 41.35
+    },
+    "offensive_pos": null,
+    "total_passes": 0
+  },
+  {
+    "team": "Galatasaray",
+    "name": "Ball losses",
+    "avg_x": 70.19,
+    "avg_y": 34.25,
+    "defensive_pos": {
+      "x": 70.19,
+      "y": 34.25
+    },
+    "offensive_pos": null,
+    "total_passes": 0
+  },
+  {
+    "team": "Galatasaray",
+    "name": "Goal kicks long (40+ m)",
+    "avg_x": 24.88,
+    "avg_y": 31.49,
+    "defensive_pos": null,
+    "offensive_pos": null,
+    "total_passes": 0
+  },
+  {
+    "team": "Galatasaray",
+    "name": "Inaccurate passes",
+    "avg_x": 45.64,
+    "avg_y": 33.24,
+    "defensive_pos": null,
+    "offensive_pos": {
+      "x": 45.64,
+      "y": 33.24
+    },
+    "total_passes": 88
+  },
+  {
+    "team": "Galatasaray",
+    "name": "Incomplete long passes",
+    "avg_x": 23.39,
+    "avg_y": 35.43,
+    "defensive_pos": null,
+    "offensive_pos": {
+      "x": 23.39,
+      "y": 35.43
+    },
+    "total_passes": 28
+  },
+  {
+    "team": "Galatasaray",
+    "name": "Incomplete passes forward",
+    "avg_x": 35.02,
+    "avg_y": 31.72,
+    "defensive_pos": null,
+    "offensive_pos": {
+      "x": 35.02,
+      "y": 31.72
+    },
+    "total_passes": 67
+  },
+  {
+    "team": "Galatasaray",
+    "name": "Incomplete passes into the box",
+    "avg_x": 76.23,
+    "avg_y": 30.67,
+    "defensive_pos": null,
+    "offensive_pos": {
+      "x": 76.23,
+      "y": 30.67
+    },
+    "total_passes": 14
+  },
+  {
+    "team": "Galatasaray",
+    "name": "Incomplete progressive passes",
+    "avg_x": 33.15,
+    "avg_y": 32.31,
+    "defensive_pos": null,
+    "offensive_pos": {
+      "x": 33.15,
+      "y": 32.31
+    },
+    "total_passes": 48
+  },
+  {
+    "team": "VfB Stuttgart",
+    "name": "Ball recoveries",
+    "avg_x": 33.89,
+    "avg_y": 34.81,
+    "defensive_pos": {
+      "x": 33.89,
+      "y": 34.81
+    },
+    "offensive_pos": null,
+    "total_passes": 0
+  },
+  {
+    "team": "VfB Stuttgart",
+    "name": "Bad ball control",
+    "avg_x": 65.39,
+    "avg_y": 35.45,
+    "defensive_pos": null,
+    "offensive_pos": null,
+    "total_passes": 0
+  },
+  {
+    "team": "VfB Stuttgart",
+    "name": "15 m)",
+    "avg_x": 52.8,
+    "avg_y": 36.91,
+    "defensive_pos": null,
+    "offensive_pos": null,
+    "total_passes": 0
+  },
+  {
+    "team": "Galatasaray",
+    "name": "Opp. yellow cards",
+    "avg_x": 49.45,
+    "avg_y": 42.81,
+    "defensive_pos": null,
+    "offensive_pos": null,
+    "total_passes": 0
+  },
+  {
+    "team": "VfB Stuttgart",
+    "name": "Yellow cards",
+    "avg_x": 49.45,
+    "avg_y": 42.81,
+    "defensive_pos": null,
+    "offensive_pos": null,
+    "total_passes": 0
+  },
+  {
+    "team": "Galatasaray",
+    "name": "15 m)",
+    "avg_x": 52.38,
+    "avg_y": 38.36,
+    "defensive_pos": null,
+    "offensive_pos": null,
+    "total_passes": 0
+  },
+  {
+    "team": "Galatasaray",
+    "name": "Passes accurate",
+    "avg_x": 47.28,
+    "avg_y": 36.02,
+    "defensive_pos": null,
+    "offensive_pos": {
+      "x": 47.28,
+      "y": 36.02
+    },
+    "total_passes": 341
+  },
+  {
+    "team": "Galatasaray",
+    "name": "Positional attacks",
+    "avg_x": 42.96,
+    "avg_y": 35.31,
+    "defensive_pos": null,
+    "offensive_pos": {
+      "x": 42.96,
+      "y": 35.31
+    },
+    "total_passes": 0
+  },
+  {
+    "team": "Galatasaray",
+    "name": "Dribbles successful",
+    "avg_x": 65.39,
+    "avg_y": 28.17,
+    "defensive_pos": null,
+    "offensive_pos": {
+      "x": 65.39,
+      "y": 28.17
+    },
+    "total_passes": 0
+  },
+  {
+    "team": "VfB Stuttgart",
+    "name": "Tackles unsuccessful",
+    "avg_x": 65.39,
+    "avg_y": 28.17,
+    "defensive_pos": {
+      "x": 65.39,
+      "y": 28.17
+    },
+    "offensive_pos": null,
+    "total_passes": 0
+  },
+  {
+    "team": "Galatasaray",
+    "name": "40 m)",
+    "avg_x": 48.58,
+    "avg_y": 34.27,
+    "defensive_pos": null,
+    "offensive_pos": null,
+    "total_passes": 0
+  },
+  {
+    "team": "VfB Stuttgart",
+    "name": "Inaccurate passes",
+    "avg_x": 54.06,
+    "avg_y": 31.13,
+    "defensive_pos": null,
+    "offensive_pos": {
+      "x": 54.06,
+      "y": 31.13
+    },
+    "total_passes": 82
+  },
+  {
+    "team": "VfB Stuttgart",
+    "name": "Incomplete passes forward",
+    "avg_x": 43.26,
+    "avg_y": 33.07,
+    "defensive_pos": null,
+    "offensive_pos": {
+      "x": 43.26,
+      "y": 33.07
+    },
+    "total_passes": 59
+  },
+  {
+    "team": "VfB Stuttgart",
+    "name": "Incomplete progressive passes",
+    "avg_x": 44.81,
+    "avg_y": 32.92,
+    "defensive_pos": null,
+    "offensive_pos": {
+      "x": 44.81,
+      "y": 32.92
+    },
+    "total_passes": 43
+  },
+  {
+    "team": "Galatasaray",
+    "name": "Ball recoveries",
+    "avg_x": 28.81,
+    "avg_y": 36.29,
+    "defensive_pos": {
+      "x": 28.81,
+      "y": 36.29
+    },
+    "offensive_pos": null,
+    "total_passes": 0
+  },
+  {
+    "team": "Galatasaray",
+    "name": "Passes forward accurate",
+    "avg_x": 40.83,
+    "avg_y": 35.52,
+    "defensive_pos": null,
+    "offensive_pos": {
+      "x": 40.83,
+      "y": 35.52
+    },
+    "total_passes": 147
+  },
+  {
+    "team": "Galatasaray",
+    "name": "Progressive passes accurate",
+    "avg_x": 43.42,
+    "avg_y": 35.41,
+    "defensive_pos": null,
+    "offensive_pos": {
+      "x": 43.42,
+      "y": 35.41
+    },
+    "total_passes": 76
+  },
+  {
+    "team": "Galatasaray",
+    "name": "Dribbling in the final third successful",
+    "avg_x": 81.84,
+    "avg_y": 31.03,
+    "defensive_pos": null,
+    "offensive_pos": null,
+    "total_passes": 0
+  },
+  {
+    "team": "Galatasaray",
+    "name": "Bad ball control",
+    "avg_x": 67.77,
+    "avg_y": 37.33,
+    "defensive_pos": null,
+    "offensive_pos": null,
+    "total_passes": 0
+  },
+  {
+    "team": "VfB Stuttgart",
+    "name": "Counterattacks",
+    "avg_x": 35.87,
+    "avg_y": 40.58,
+    "defensive_pos": null,
+    "offensive_pos": {
+      "x": 35.87,
+      "y": 40.58
+    },
+    "total_passes": 0
+  },
+  {
+    "team": "Galatasaray",
+    "name": "Tackles successful",
+    "avg_x": 48.93,
+    "avg_y": 32.12,
+    "defensive_pos": {
+      "x": 48.93,
+      "y": 32.12
+    },
+    "offensive_pos": null,
+    "total_passes": 0
+  },
+  {
+    "team": "Galatasaray",
+    "name": "Long passes",
+    "avg_x": 25.74,
+    "avg_y": 27.74,
+    "defensive_pos": null,
+    "offensive_pos": {
+      "x": 25.74,
+      "y": 27.74
+    },
+    "total_passes": 25
+  },
+  {
+    "team": "Galatasaray",
+    "name": "Challenges unsuccessful",
+    "avg_x": 51.15,
+    "avg_y": 31.18,
+    "defensive_pos": {
+      "x": 51.15,
+      "y": 31.18
+    },
+    "offensive_pos": null,
+    "total_passes": 0
+  },
+  {
+    "team": "VfB Stuttgart",
+    "name": "Challenges won",
+    "avg_x": 51.15,
+    "avg_y": 31.18,
+    "defensive_pos": {
+      "x": 51.15,
+      "y": 31.18
+    },
+    "offensive_pos": null,
+    "total_passes": 0
+  },
+  {
+    "team": "Galatasaray",
+    "name": "Carry",
+    "avg_x": 50.6,
+    "avg_y": 30.3,
+    "defensive_pos": null,
+    "offensive_pos": {
+      "x": 50.6,
+      "y": 30.3
+    },
+    "total_passes": 0
+  },
+  {
+    "team": "Galatasaray",
+    "name": "Ball losses in own half",
+    "avg_x": 37.74,
+    "avg_y": 32.34,
+    "defensive_pos": {
+      "x": 37.74,
+      "y": 32.34
+    },
+    "offensive_pos": null,
+    "total_passes": 0
+  },
+  {
+    "team": "VfB Stuttgart",
+    "name": "Ball recoveries in opponent's half",
+    "avg_x": 70.58,
+    "avg_y": 26.14,
+    "defensive_pos": {
+      "x": 70.58,
+      "y": 26.14
+    },
+    "offensive_pos": null,
+    "total_passes": 0
+  },
+  {
+    "team": "VfB Stuttgart",
+    "name": "Carry",
+    "avg_x": 58.14,
+    "avg_y": 33.15,
+    "defensive_pos": null,
+    "offensive_pos": {
+      "x": 58.14,
+      "y": 33.15
+    },
+    "total_passes": 0
+  },
+  {
+    "team": "VfB Stuttgart",
+    "name": "Dribbles successful",
+    "avg_x": 69.88,
+    "avg_y": 41.25,
+    "defensive_pos": null,
+    "offensive_pos": {
+      "x": 69.88,
+      "y": 41.25
+    },
+    "total_passes": 0
+  },
+  {
+    "team": "Galatasaray",
+    "name": "Fouls",
+    "avg_x": 66.04,
+    "avg_y": 34.96,
+    "defensive_pos": {
+      "x": 66.04,
+      "y": 34.96
+    },
+    "offensive_pos": null,
+    "total_passes": 0
+  },
+  {
+    "team": "VfB Stuttgart",
+    "name": "Opponent fouls",
+    "avg_x": 66.04,
+    "avg_y": 34.96,
+    "defensive_pos": {
+      "x": 66.04,
+      "y": 34.96
+    },
+    "offensive_pos": null,
+    "total_passes": 0
+  },
+  {
+    "team": "Galatasaray",
+    "name": "Tackles unsuccessful",
+    "avg_x": 69.88,
+    "avg_y": 41.25,
+    "defensive_pos": {
+      "x": 69.88,
+      "y": 41.25
+    },
+    "offensive_pos": null,
+    "total_passes": 0
+  },
+  {
+    "team": "VfB Stuttgart",
+    "name": "Positional attacks with shots",
+    "avg_x": 43.87,
+    "avg_y": 36.01,
+    "defensive_pos": null,
+    "offensive_pos": {
+      "x": 43.87,
+      "y": 36.01
+    },
+    "total_passes": 0
+  },
+  {
+    "team": "VfB Stuttgart",
+    "name": "Dribbling in the final third successful",
+    "avg_x": 86.31,
+    "avg_y": 50.76,
+    "defensive_pos": null,
+    "offensive_pos": null,
+    "total_passes": 0
+  },
+  {
+    "team": "VfB Stuttgart",
+    "name": "Crosses accurate",
+    "avg_x": 89.42,
+    "avg_y": 43.02,
+    "defensive_pos": null,
+    "offensive_pos": {
+      "x": 89.42,
+      "y": 43.02
+    },
+    "total_passes": 0
+  },
+  {
+    "team": "VfB Stuttgart",
+    "name": "Key passes accurate",
+    "avg_x": 89.42,
+    "avg_y": 48.29,
+    "defensive_pos": null,
+    "offensive_pos": {
+      "x": 89.42,
+      "y": 48.29
+    },
+    "total_passes": 4
+  },
+  {
+    "team": "VfB Stuttgart",
+    "name": "Passes into the penalty box accurate",
+    "avg_x": 79.88,
+    "avg_y": 39.09,
+    "defensive_pos": null,
+    "offensive_pos": {
+      "x": 79.88,
+      "y": 39.09
+    },
+    "total_passes": 16
+  },
+  {
+    "team": "VfB Stuttgart",
+    "name": "Chances",
+    "avg_x": 94.86,
+    "avg_y": 35.78,
+    "defensive_pos": null,
+    "offensive_pos": {
+      "x": 94.86,
+      "y": 35.78
+    },
+    "total_passes": 0
+  },
+  {
+    "team": "VfB Stuttgart",
+    "name": "Shots",
+    "avg_x": 91.61,
+    "avg_y": 35.77,
+    "defensive_pos": null,
+    "offensive_pos": {
+      "x": 91.61,
+      "y": 35.77
+    },
+    "total_passes": 0
+  },
+  {
+    "team": "VfB Stuttgart",
+    "name": "Shots on post / bar",
+    "avg_x": 98.92,
+    "avg_y": 26.44,
+    "defensive_pos": null,
+    "offensive_pos": {
+      "x": 98.92,
+      "y": 26.44
+    },
+    "total_passes": 0
+  },
+  {
+    "team": "VfB Stuttgart",
+    "name": "Dribbles unsuccessful",
+    "avg_x": 63.62,
+    "avg_y": 29.16,
+    "defensive_pos": null,
+    "offensive_pos": {
+      "x": 63.62,
+      "y": 29.16
+    },
+    "total_passes": 0
+  },
+  {
+    "team": "VfB Stuttgart",
+    "name": "Unsuccessful dribbles in the final third",
+    "avg_x": 87.95,
+    "avg_y": 12.2,
+    "defensive_pos": null,
+    "offensive_pos": {
+      "x": 87.95,
+      "y": 12.2
+    },
+    "total_passes": 0
+  },
+  {
+    "team": "VfB Stuttgart",
+    "name": "Crosses inaccurate",
+    "avg_x": 90.91,
+    "avg_y": 14.84,
+    "defensive_pos": null,
+    "offensive_pos": {
+      "x": 90.91,
+      "y": 14.84
+    },
+    "total_passes": 0
+  },
+  {
+    "team": "VfB Stuttgart",
+    "name": "Incomplete key passes",
+    "avg_x": 73.4,
+    "avg_y": 27.26,
+    "defensive_pos": null,
+    "offensive_pos": {
+      "x": 73.4,
+      "y": 27.26
+    },
+    "total_passes": 4
+  },
+  {
+    "team": "VfB Stuttgart",
+    "name": "Incomplete passes into the box",
+    "avg_x": 88.93,
+    "avg_y": 19.72,
+    "defensive_pos": null,
+    "offensive_pos": {
+      "x": 88.93,
+      "y": 19.72
+    },
+    "total_passes": 15
+  },
+  {
+    "team": "Galatasaray",
+    "name": "Counterattacks",
+    "avg_x": 25.12,
+    "avg_y": 35.18,
+    "defensive_pos": null,
+    "offensive_pos": {
+      "x": 25.12,
+      "y": 35.18
+    },
+    "total_passes": 0
+  },
+  {
+    "team": "Galatasaray",
+    "name": "Passes into the penalty box accurate",
+    "avg_x": 86.36,
+    "avg_y": 19.14,
+    "defensive_pos": null,
+    "offensive_pos": {
+      "x": 86.36,
+      "y": 19.14
+    },
+    "total_passes": 13
+  },
+  {
+    "team": "Galatasaray",
+    "name": "Positional attacks with shots",
+    "avg_x": 40.57,
+    "avg_y": 44.69,
+    "defensive_pos": null,
+    "offensive_pos": {
+      "x": 40.57,
+      "y": 44.69
+    },
+    "total_passes": 0
+  },
+  {
+    "team": "Galatasaray",
+    "name": "Chances",
+    "avg_x": 96.42,
+    "avg_y": 32.69,
+    "defensive_pos": null,
+    "offensive_pos": {
+      "x": 96.42,
+      "y": 32.69
+    },
+    "total_passes": 0
+  },
+  {
+    "team": "Galatasaray",
+    "name": "Goals",
+    "avg_x": 95.53,
+    "avg_y": 29.41,
+    "defensive_pos": null,
+    "offensive_pos": null,
+    "total_passes": 0
+  },
+  {
+    "team": "Galatasaray",
+    "name": "Shots",
+    "avg_x": 93.09,
+    "avg_y": 36.78,
+    "defensive_pos": null,
+    "offensive_pos": {
+      "x": 93.09,
+      "y": 36.78
+    },
+    "total_passes": 0
+  },
+  {
+    "team": "Galatasaray",
+    "name": "Shots on target",
+    "avg_x": 93.18,
+    "avg_y": 32.28,
+    "defensive_pos": null,
+    "offensive_pos": {
+      "x": 93.18,
+      "y": 32.28
+    },
+    "total_passes": 0
+  },
+  {
+    "team": "VfB Stuttgart",
+    "name": "Incomplete long passes",
+    "avg_x": 26.23,
+    "avg_y": 38.8,
+    "defensive_pos": null,
+    "offensive_pos": {
+      "x": 26.23,
+      "y": 38.8
+    },
+    "total_passes": 15
+  },
+  {
+    "team": "Galatasaray",
+    "name": "Aerial challenges lost",
+    "avg_x": 39.05,
+    "avg_y": 33.65,
+    "defensive_pos": {
+      "x": 39.05,
+      "y": 33.65
+    },
+    "offensive_pos": null,
+    "total_passes": 0
+  },
+  {
+    "team": "VfB Stuttgart",
+    "name": "Aerial challenges won",
+    "avg_x": 39.05,
+    "avg_y": 33.65,
+    "defensive_pos": {
+      "x": 39.05,
+      "y": 33.65
+    },
+    "offensive_pos": null,
+    "total_passes": 0
+  },
+  {
+    "team": "VfB Stuttgart",
+    "name": "Shots off target",
+    "avg_x": 90.51,
+    "avg_y": 33.39,
+    "defensive_pos": null,
+    "offensive_pos": {
+      "x": 90.51,
+      "y": 33.39
+    },
+    "total_passes": 0
+  },
+  {
+    "team": "VfB Stuttgart",
+    "name": "Clearances",
+    "avg_x": 21.0,
+    "avg_y": 32.29,
+    "defensive_pos": {
+      "x": 21.0,
+      "y": 32.29
+    },
+    "offensive_pos": null,
+    "total_passes": 0
+  },
+  {
+    "team": "Galatasaray",
+    "name": "Key passes accurate",
+    "avg_x": 53.13,
+    "avg_y": 14.28,
+    "defensive_pos": null,
+    "offensive_pos": {
+      "x": 53.13,
+      "y": 14.28
+    },
+    "total_passes": 2
+  },
+  {
+    "team": "VfB Stuttgart",
+    "name": "Tackles successful",
+    "avg_x": 54.4,
+    "avg_y": 20.78,
+    "defensive_pos": {
+      "x": 54.4,
+      "y": 20.78
+    },
+    "offensive_pos": null,
+    "total_passes": 0
+  },
+  {
+    "team": "Galatasaray",
+    "name": "Offsides",
+    "avg_x": 81.52,
+    "avg_y": 40.27,
+    "defensive_pos": null,
+    "offensive_pos": null,
+    "total_passes": 0
+  },
+  {
+    "team": "Galatasaray",
+    "name": "Crosses inaccurate",
+    "avg_x": 93.32,
+    "avg_y": 36.41,
+    "defensive_pos": null,
+    "offensive_pos": {
+      "x": 93.32,
+      "y": 36.41
+    },
+    "total_passes": 0
+  },
+  {
+    "team": "Galatasaray",
+    "name": "Shots off target",
+    "avg_x": 95.03,
+    "avg_y": 40.2,
+    "defensive_pos": null,
+    "offensive_pos": {
+      "x": 95.03,
+      "y": 40.2
+    },
+    "total_passes": 0
+  },
+  {
+    "team": "VfB Stuttgart",
+    "name": "Ball losses in own half",
+    "avg_x": 41.91,
+    "avg_y": 30.39,
+    "defensive_pos": {
+      "x": 41.91,
+      "y": 30.39
+    },
+    "offensive_pos": null,
+    "total_passes": 0
+  },
+  {
+    "team": "Galatasaray",
+    "name": "Ball recoveries in opponent's half",
+    "avg_x": 60.16,
+    "avg_y": 39.54,
+    "defensive_pos": {
+      "x": 60.16,
+      "y": 39.54
+    },
+    "offensive_pos": null,
+    "total_passes": 0
+  },
+  {
+    "team": "Galatasaray",
+    "name": "Attacks from free kicks",
+    "avg_x": 56.13,
+    "avg_y": 23.26,
+    "defensive_pos": null,
+    "offensive_pos": {
+      "x": 56.13,
+      "y": 23.26
+    },
+    "total_passes": 0
+  },
+  {
+    "team": "Galatasaray",
+    "name": "Attacks from corners",
+    "avg_x": 105.0,
+    "avg_y": 11.33,
+    "defensive_pos": null,
+    "offensive_pos": {
+      "x": 105.0,
+      "y": 11.33
+    },
+    "total_passes": 0
+  },
+  {
+    "team": "Galatasaray",
+    "name": "Dribbles unsuccessful",
+    "avg_x": 53.15,
+    "avg_y": 23.1,
+    "defensive_pos": null,
+    "offensive_pos": {
+      "x": 53.15,
+      "y": 23.1
+    },
+    "total_passes": 0
+  },
+  {
+    "team": "VfB Stuttgart",
+    "name": "Shots blocked",
+    "avg_x": 92.41,
+    "avg_y": 42.4,
+    "defensive_pos": null,
+    "offensive_pos": {
+      "x": 92.41,
+      "y": 42.4
+    },
+    "total_passes": 0
+  },
+  {
+    "team": "VfB Stuttgart",
+    "name": "Attacks from corners",
+    "avg_x": 105.0,
+    "avg_y": 17.0,
+    "defensive_pos": null,
+    "offensive_pos": {
+      "x": 105.0,
+      "y": 17.0
+    },
+    "total_passes": 0
+  },
+  {
+    "team": "VfB Stuttgart",
+    "name": "Opp. yellow cards",
+    "avg_x": 62.93,
+    "avg_y": 33.09,
+    "defensive_pos": null,
+    "offensive_pos": null,
+    "total_passes": 0
+  },
+  {
+    "team": "Galatasaray",
+    "name": "Yellow cards",
+    "avg_x": 58.81,
+    "avg_y": 27.04,
+    "defensive_pos": null,
+    "offensive_pos": null,
+    "total_passes": 0
+  },
+  {
+    "team": "VfB Stuttgart",
+    "name": "Offsides",
+    "avg_x": 73.44,
+    "avg_y": 38.42,
+    "defensive_pos": null,
+    "offensive_pos": null,
+    "total_passes": 0
+  },
+  {
+    "team": "Galatasaray",
+    "name": "Shots blocked",
+    "avg_x": 89.73,
+    "avg_y": 37.07,
+    "defensive_pos": null,
+    "offensive_pos": {
+      "x": 89.73,
+      "y": 37.07
+    },
+    "total_passes": 0
+  },
+  {
+    "team": "Galatasaray",
+    "name": "Crosses accurate",
+    "avg_x": 86.96,
+    "avg_y": 35.73,
+    "defensive_pos": null,
+    "offensive_pos": {
+      "x": 86.96,
+      "y": 35.73
+    },
+    "total_passes": 0
+  },
+  {
+    "team": "VfB Stuttgart",
+    "name": "Attacks from free kicks",
+    "avg_x": 64.46,
+    "avg_y": 59.89,
+    "defensive_pos": null,
+    "offensive_pos": {
+      "x": 64.46,
+      "y": 59.89
+    },
+    "total_passes": 0
+  },
+  {
+    "team": "Galatasaray",
+    "name": "Clearances",
+    "avg_x": 6.9,
+    "avg_y": 25.87,
+    "defensive_pos": {
+      "x": 6.9,
+      "y": 25.87
+    },
+    "offensive_pos": null,
+    "total_passes": 0
+  },
+  {
+    "team": "VfB Stuttgart",
+    "name": "Shots on target",
+    "avg_x": 90.93,
+    "avg_y": 37.37,
+    "defensive_pos": null,
+    "offensive_pos": {
+      "x": 90.93,
+      "y": 37.37
+    },
+    "total_passes": 0
+  },
+  {
+    "team": "VfB Stuttgart",
+    "name": "ins",
+    "avg_x": 90.65,
+    "avg_y": 68.0,
+    "defensive_pos": null,
+    "offensive_pos": {
+      "x": 90.65,
+      "y": 68.0
+    },
+    "total_passes": 0
+  },
+  {
+    "team": "Galatasaray",
+    "name": "Unsuccessful dribbles in the final third",
+    "avg_x": 85.06,
+    "avg_y": 17.96,
+    "defensive_pos": null,
+    "offensive_pos": {
+      "x": 85.06,
+      "y": 17.96
+    },
+    "total_passes": 0
+  },
+  {
+    "team": "Galatasaray",
+    "name": "Incomplete key passes",
+    "avg_x": 71.28,
+    "avg_y": 52.73,
+    "defensive_pos": null,
+    "offensive_pos": {
+      "x": 71.28,
+      "y": 52.73
+    },
+    "total_passes": 1
+  }
+]

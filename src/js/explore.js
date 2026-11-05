@@ -15,6 +15,8 @@ const TYPE_COLOR = {
 function render() {
   const el = document.getElementById('explore-latest');
   if (!el) return;
+  // Static cards from build-yazi.mjs are authoritative; preserve them.
+  if (el.querySelector('a.explore-card')) return;
   el.innerHTML = ARTICLES.map(a => `
     <a href="/yazi/${a.slug}.html" class="explore-card">
       <div class="ec-meta">

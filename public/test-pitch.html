@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<title>GS – Stuttgart Formasyon Testi</title>
+<style>
+  body{margin:0;background:#0a0a0a;color:#eee;font-family:system-ui,sans-serif;padding:20px}
+  h1{font-size:18px;margin:0 0 6px}
+  .meta{font-size:12px;opacity:.6;margin-bottom:16px}
+  svg{display:block;width:100%;max-width:960px;background:#1a3d1f;border-radius:8px;border:2px solid #333}
+  .legend{display:flex;gap:20px;margin-top:10px;font-size:13px}
+  .dot{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:6px;vertical-align:middle}
+</style>
+</head>
+<body>
+<h1>Galatasaray 4-2-3-1 · Stuttgart 3-4-2-1</h1>
+<div class="meta">Kaynak: manuel diziliş · Match: galatasaray-stuttgart-2026-11-03</div>
+<svg id="pitch" viewBox="0 0 100 100" preserveAspectRatio="none"></svg>
+<div class="legend">
+  <span><span class="dot" style="background:#f5c518"></span>Galatasaray (sağa)</span>
+  <span><span class="dot" style="background:#e63946"></span>Stuttgart (sola)</span>
+</div>
+
+<script>
+const SVG = "http://www.w3.org/2000/svg";
+const el = (t, a={}) => { const e=document.createElementNS(SVG,t); for(const k in a) e.setAttribute(k,a[k]); return e; };
+const CLAMP_X = x => Math.max(2, Math.min(98, x));
+const CLAMP_Y = y => Math.max(5, Math.min(95, y));
+
+async function main(){
+  const [gs, st] = await Promise.all([
+    fetch('/public_data/formations/galatasaray.json').then(r=>r.json()),
+    fetch('/public_data/formations/stuttgart.json').then(r=>r.json())
+  ]);
+  const svg = document.getElementById('pitch');
+
+  // saha
+  svg.appendChild(el('rect',{x:0,y:0,width:100,height:100,fill:'#1a3d1f',stroke:'#fff','stroke-width':0.4}));
+  svg.appendChild(el('line',{x1:50,y1:0,x2:50,y2:100,stroke:'#fff','stroke-width':0.3}));
+  svg.appendChild(el('circle',{cx:50,cy:50,r:9.15,fill:'none',stroke:'#fff','stroke-width':0.3}));
+  svg.appendChild(el('rect',{x:0,y:21,width:16.5,height:58,fill:'none',stroke:'#fff','stroke-width':0.3}));
+  svg.appendChild(el('rect',{x:83.5,y:21,width:16.5,height:58,fill:'none',stroke:'#fff','stroke-width':0.3}));
+  svg.appendChild(el('rect',{x:0,y:37,width:5.5,height:26,fill:'none',stroke:'#fff','stroke-width':0.3}));
+  svg.appendChild(el('rect',{x:94.5,y:37,width:5.5,height:26,fill:'none',stroke:'#fff','stroke-width':0.3}));
+
+  // oyuncular
+  for (const [team, color] of [[gs,'#f5c518'],[st,'#e63946']]) {
+    for (const p of team.players) {
+      const isGK = p.role === 'GK';
+      const cx = isGK ? (team.side==='home'?4:96) : CLAMP_X(p.x);
+      const cy = isGK ? 50 : CLAMP_Y(p.y);
+      svg.appendChild(el('circle',{cx,cy,r:2.6,fill:color,stroke:'#fff','stroke-width':0.35}));
+      const t = el('text',{x:cx,y:cy+0.7,'text-anchor':'middle','font-size':1.5,'font-weight':700,fill:'#000','font-family':'system-ui'});
+      t.textContent = p.name.split(' ').pop(); // soyad
+      svg.appendChild(t);
+    }
+  }
+  console.log('✅', gs.players.length, '+', st.players.length, 'oyuncu çizildi');
+}
+main();
+</script>
+</body>
+</html>

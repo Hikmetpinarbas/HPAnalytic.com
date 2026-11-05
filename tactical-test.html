@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="tr" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>HPAnalytic — Taktik Tahta</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Newsreader:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #08090B;
+    --text: #F4F2EC;
+    --muted: rgba(244,242,236,0.45);
+    --neon: #B4FF39;
+    --orange: #FF6B35;
+    --line: rgba(180,255,57,0.10);
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; background: var(--bg); color: var(--text); font-family: 'JetBrains Mono', monospace; }
+  .wrap { max-width: 1100px; margin: 0 auto; padding: 48px 24px 80px; }
+  .hero { margin-bottom: 32px; }
+  .hero h1 { font-family: 'Newsreader', serif; font-weight: 400; font-size: 38px; margin: 0 0 8px; letter-spacing: -0.01em; }
+  .hero p { color: var(--muted); font-size: 13px; margin: 0; }
+  .kicker { color: var(--neon); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; margin-bottom: 12px; }
+
+  #tactical { margin-top: 24px; }
+  .tm-shell { display: flex; flex-direction: column; gap: 20px; }
+  .tm-head { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 16px; align-items: center; }
+  .tm-tabs { display: flex; gap: 6px; }
+  .tm-tab { background: transparent; color: var(--muted); border: 1px solid transparent; padding: 8px 14px; font: inherit; font-size: 12px; cursor: pointer; border-radius: 2px; letter-spacing: 0.04em; }
+  .tm-tab:hover { color: var(--text); }
+  .tm-tab.is-active { color: var(--neon); border-color: rgba(180,255,57,0.3); }
+  .tm-tools { display: flex; gap: 8px; }
+  .tm-team { background: transparent; color: var(--text); border: 1px solid var(--line); padding: 8px 12px; font: inherit; font-size: 12px; border-radius: 2px; cursor: pointer; }
+  .tm-team option { background: #111; }
+  .tm-btn { background: transparent; color: var(--orange); border: 1px solid rgba(255,107,53,0.3); padding: 8px 14px; font: inherit; font-size: 12px; cursor: pointer; border-radius: 2px; }
+  .tm-btn:hover { background: rgba(255,107,53,0.08); }
+
+  .tm-stage { position: relative; }
+  .tm-svg { width: 100%; height: auto; display: block; border: 1px solid var(--line); border-radius: 4px; background: linear-gradient(180deg, rgba(14,18,22,0.5) 0%, rgba(8,9,11,0.5) 100%); }
+  .tm-caption { min-height: 28px; margin-top: 14px; color: var(--muted); font-size: 13px; font-style: italic; font-family: 'Newsreader', serif; letter-spacing: 0.005em; }
+  .tm-caption[data-kind="defensive"] { color: var(--orange); }
+  .tm-caption[data-kind="offensive"] { color: var(--neon); }
+
+  .tm-subs { position: absolute; top: 12px; right: 12px; width: 280px; max-height: 70%; overflow-y: auto; background: rgba(12, 16, 20, 0.95); border: 1px solid var(--line); padding: 16px; border-radius: 4px; backdrop-filter: blur(12px); }
+  .tm-subs header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+  .tm-subs header span { color: var(--neon); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; }
+  .tm-subs header button { background: none; border: none; color: var(--muted); font-size: 18px; cursor: pointer; }
+  .tm-subs-list { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 8px; }
+  .tm-subs-list li { padding: 8px 0; border-bottom: 1px dashed var(--line); font-size: 12px; }
+  .tm-subs-list li strong { display: block; color: var(--text); font-weight: 500; }
+  .tm-subs-list li span { color: var(--muted); font-size: 11px; }
+
+  .tm-legend { display: flex; gap: 20px; align-items: center; font-size: 11px; color: var(--muted); letter-spacing: 0.05em; }
+  .tm-legend span { display: flex; align-items: center; gap: 8px; }
+  .tm-legend i { display: inline-block; width: 14px; height: 1.5px; }
+  .tm-legend .tm-hint { margin-left: auto; opacity: 0.5; font-style: italic; }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="hero">
+      <div class="kicker">HPAnalytic · Taktik Tahta</div>
+      <h1>Formasyondan mekâna, mekândan harekete.</h1>
+      <p>Galatasaray — VfB Stuttgart · 03.11.2026 · Her oyuncu önce formasyonunda durur, sonra defansif ortalamasına çekilir, ardından ofansif ortalamasına akar.</p>
+    </div>
+    <div id="tactical"></div>
+  </div>
+
+  <script type="module">
+    import { initTacticalMap } from '/src/js/viz/tactical-map.js';
+    initTacticalMap(document.getElementById('tactical'));
+  </script>
+</body>
+</html>

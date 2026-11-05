@@ -147,7 +147,7 @@ export async function render(container) {
     if (!tracesG || !traces.length) return;
     traces.forEach((tr, ti) => {
       const cellsData = tr.cells || [];
-      if (!cellsData.length) continue;
+      if (!cellsData.length) return;
       // Her trace için nokta + iz bırakan çizgi
       const g = document.createElementNS('http://www.w3.org/2000/svg', 'g');
       g.setAttribute('class', `xtg-trace xtg-trace-${ti}`);

@@ -1,0 +1,1479 @@
+{
+  "nodes": {
+    "Galatasaray|Abdülkerim Bardakcı": {
+      "team": "Galatasaray",
+      "name": "Abdülkerim Bardakcı",
+      "x": 39.55,
+      "y": 46.23,
+      "passes": 66,
+      "minutes": 98,
+      "role": "starter",
+      "subbed_out_at": null,
+      "came_on_at": null,
+      "position": "LCB"
+    },
+    "Galatasaray|Lucas Torreira": {
+      "team": "Galatasaray",
+      "name": "Lucas Torreira",
+      "x": 50.31,
+      "y": 28.57,
+      "passes": 77,
+      "minutes": 98,
+      "role": "starter",
+      "subbed_out_at": null,
+      "came_on_at": null,
+      "position": "RCDM"
+    },
+    "Galatasaray|Roland Sallai": {
+      "team": "Galatasaray",
+      "name": "Roland Sallai",
+      "x": 55.24,
+      "y": 17.41,
+      "passes": 86,
+      "minutes": 98,
+      "role": "starter",
+      "subbed_out_at": null,
+      "came_on_at": null,
+      "position": "RB"
+    },
+    "Galatasaray|Davinson Sánchez": {
+      "team": "Galatasaray",
+      "name": "Davinson Sánchez",
+      "x": 48.54,
+      "y": 23.99,
+      "passes": 95,
+      "minutes": 98,
+      "role": "starter",
+      "subbed_out_at": null,
+      "came_on_at": null,
+      "position": "RCB"
+    },
+    "Galatasaray|Yunus Akgün": {
+      "team": "Galatasaray",
+      "name": "Yunus Akgün",
+      "x": 62.17,
+      "y": 19.88,
+      "passes": 46,
+      "minutes": 82,
+      "role": "starter",
+      "subbed_out_at": 83,
+      "came_on_at": null,
+      "position": "RAM"
+    },
+    "Galatasaray|Aleksei Batrakov": {
+      "team": "Galatasaray",
+      "name": "Aleksei Batrakov",
+      "x": 70.0,
+      "y": 31.82,
+      "passes": 67,
+      "minutes": 82,
+      "role": "starter",
+      "subbed_out_at": 83,
+      "came_on_at": null,
+      "position": "CAM"
+    },
+    "Galatasaray|Ismail Jakobs": {
+      "team": "Galatasaray",
+      "name": "Ismail Jakobs",
+      "x": 55.5,
+      "y": 48.22,
+      "passes": 61,
+      "minutes": 82,
+      "role": "starter",
+      "subbed_out_at": 83,
+      "came_on_at": null,
+      "position": "LB"
+    },
+    "Galatasaray|Mario Lemina": {
+      "team": "Galatasaray",
+      "name": "Mario Lemina",
+      "x": 53.74,
+      "y": 36.46,
+      "passes": 70,
+      "minutes": 98,
+      "role": "starter",
+      "subbed_out_at": null,
+      "came_on_at": null,
+      "position": "LCDM"
+    },
+    "Galatasaray|Victor Osimhen": {
+      "team": "Galatasaray",
+      "name": "Victor Osimhen",
+      "x": 70.69,
+      "y": 31.22,
+      "passes": 11,
+      "minutes": 90,
+      "role": "starter",
+      "subbed_out_at": 91,
+      "came_on_at": null,
+      "position": "CF"
+    },
+    "Galatasaray|Barış Alper Yılmaz": {
+      "team": "Galatasaray",
+      "name": "Barış Alper Yılmaz",
+      "x": 62.66,
+      "y": 42.16,
+      "passes": 19,
+      "minutes": 67,
+      "role": "starter",
+      "subbed_out_at": 67,
+      "came_on_at": null,
+      "position": "LAM"
+    },
+    "Galatasaray|Rafael Leão": {
+      "team": "Galatasaray",
+      "name": "Rafael Leão",
+      "x": 59.25,
+      "y": 44.23,
+      "passes": 18,
+      "minutes": 31,
+      "role": "sub",
+      "subbed_out_at": null,
+      "came_on_at": 67,
+      "position": "LAM"
+    },
+    "Galatasaray|Eren Elmalı": {
+      "team": "Galatasaray",
+      "name": "Eren Elmalı",
+      "x": 27.83,
+      "y": 54.49,
+      "passes": 6,
+      "minutes": 15,
+      "role": "sub",
+      "subbed_out_at": null,
+      "came_on_at": 83,
+      "position": "LB"
+    },
+    "Galatasaray|Gabriel Sara": {
+      "team": "Galatasaray",
+      "name": "Gabriel Sara",
+      "x": 52.55,
+      "y": 37.43,
+      "passes": 4,
+      "minutes": 15,
+      "role": "sub",
+      "subbed_out_at": null,
+      "came_on_at": 83,
+      "position": "CAM"
+    },
+    "Galatasaray|Leroy Sané": {
+      "team": "Galatasaray",
+      "name": "Leroy Sané",
+      "x": 55.84,
+      "y": 18.81,
+      "passes": 7,
+      "minutes": 15,
+      "role": "sub",
+      "subbed_out_at": null,
+      "came_on_at": 83,
+      "position": "RAM"
+    },
+    "Galatasaray|Wilfried Singo": {
+      "team": "Galatasaray",
+      "name": "Wilfried Singo",
+      "x": 55.73,
+      "y": 12.92,
+      "passes": 8,
+      "minutes": 7,
+      "role": "sub",
+      "subbed_out_at": null,
+      "came_on_at": 91,
+      "position": "RB"
+    },
+    "Fenerbahce|Ederson": {
+      "team": "Fenerbahce",
+      "name": "Ederson",
+      "x": 5,
+      "y": 34,
+      "passes": 32,
+      "minutes": 97,
+      "role": "starter",
+      "subbed_out_at": null,
+      "came_on_at": null,
+      "position": "GK",
+      "is_gk": true
+    },
+    "Galatasaray|Uğurcan Çakır": {
+      "team": "Galatasaray",
+      "name": "Uğurcan Çakır",
+      "x": 5,
+      "y": 34,
+      "passes": 42,
+      "minutes": 97,
+      "role": "starter",
+      "subbed_out_at": null,
+      "came_on_at": null,
+      "position": "GK",
+      "is_gk": true
+    }
+  },
+  "edges": [
+    {
+      "from": "Galatasaray|Ismail Jakobs",
+      "to": "Galatasaray|Barış Alper Yılmaz",
+      "weight": 16,
+      "correlation_pct": 40.2
+    },
+    {
+      "from": "Galatasaray|Yunus Akgün",
+      "to": "Galatasaray|Aleksei Batrakov",
+      "weight": 18,
+      "correlation_pct": 32.2
+    },
+    {
+      "from": "Galatasaray|Roland Sallai",
+      "to": "Galatasaray|Yunus Akgün",
+      "weight": 19,
+      "correlation_pct": 29.1
+    },
+    {
+      "from": "Galatasaray|Ismail Jakobs",
+      "to": "Galatasaray|Victor Osimhen",
+      "weight": 9,
+      "correlation_pct": 25.7
+    },
+    {
+      "from": "Galatasaray|Davinson Sánchez",
+      "to": "Galatasaray|Roland Sallai",
+      "weight": 22,
+      "correlation_pct": 24.6
+    },
+    {
+      "from": "Galatasaray|Abdülkerim Bardakcı",
+      "to": "Galatasaray|Ismail Jakobs",
+      "weight": 14,
+      "correlation_pct": 22.5
+    },
+    {
+      "from": "Galatasaray|Ismail Jakobs",
+      "to": "Galatasaray|Rafael Leão",
+      "weight": 8,
+      "correlation_pct": 21.0
+    },
+    {
+      "from": "Galatasaray|Abdülkerim Bardakcı",
+      "to": "Galatasaray|Barış Alper Yılmaz",
+      "weight": 8,
+      "correlation_pct": 19.5
+    },
+    {
+      "from": "Galatasaray|Aleksei Batrakov",
+      "to": "Galatasaray|Victor Osimhen",
+      "weight": 7,
+      "correlation_pct": 18.8
+    },
+    {
+      "from": "Galatasaray|Mario Lemina",
+      "to": "Galatasaray|Victor Osimhen",
+      "weight": 7,
+      "correlation_pct": 18.1
+    },
+    {
+      "from": "Galatasaray|Lucas Torreira",
+      "to": "Galatasaray|Roland Sallai",
+      "weight": 14,
+      "correlation_pct": 17.6
+    },
+    {
+      "from": "Galatasaray|Lucas Torreira",
+      "to": "Galatasaray|Barış Alper Yılmaz",
+      "weight": 8,
+      "correlation_pct": 17.3
+    },
+    {
+      "from": "Galatasaray|Lucas Torreira",
+      "to": "Galatasaray|Yunus Akgün",
+      "weight": 10,
+      "correlation_pct": 16.8
+    },
+    {
+      "from": "Galatasaray|Davinson Sánchez",
+      "to": "Galatasaray|Lucas Torreira",
+      "weight": 14,
+      "correlation_pct": 16.7
+    },
+    {
+      "from": "Galatasaray|Mario Lemina",
+      "to": "Galatasaray|Abdülkerim Bardakcı",
+      "weight": 11,
+      "correlation_pct": 16.7
+    },
+    {
+      "from": "Galatasaray|Davinson Sánchez",
+      "to": "Galatasaray|Aleksei Batrakov",
+      "weight": 13,
+      "correlation_pct": 16.5
+    },
+    {
+      "from": "Galatasaray|Abdülkerim Bardakcı",
+      "to": "Galatasaray|Victor Osimhen",
+      "weight": 6,
+      "correlation_pct": 16.5
+    },
+    {
+      "from": "Galatasaray|Davinson Sánchez",
+      "to": "Galatasaray|Yunus Akgün",
+      "weight": 11,
+      "correlation_pct": 16.1
+    },
+    {
+      "from": "Galatasaray|Roland Sallai",
+      "to": "Galatasaray|Aleksei Batrakov",
+      "weight": 12,
+      "correlation_pct": 16.1
+    },
+    {
+      "from": "Galatasaray|Victor Osimhen",
+      "to": "Galatasaray|Barış Alper Yılmaz",
+      "weight": 2,
+      "correlation_pct": 15.6
+    },
+    {
+      "from": "Galatasaray|Barış Alper Yılmaz",
+      "to": "Galatasaray|Victor Osimhen",
+      "weight": 2,
+      "correlation_pct": 15.6
+    },
+    {
+      "from": "Galatasaray|Yunus Akgün",
+      "to": "Galatasaray|Victor Osimhen",
+      "weight": 4,
+      "correlation_pct": 15.3
+    },
+    {
+      "from": "Galatasaray|Abdülkerim Bardakcı",
+      "to": "Galatasaray|Mario Lemina",
+      "weight": 10,
+      "correlation_pct": 15.2
+    },
+    {
+      "from": "Galatasaray|Abdülkerim Bardakcı",
+      "to": "Galatasaray|Rafael Leão",
+      "weight": 6,
+      "correlation_pct": 15.1
+    },
+    {
+      "from": "Galatasaray|Aleksei Batrakov",
+      "to": "Galatasaray|Yunus Akgün",
+      "weight": 8,
+      "correlation_pct": 14.8
+    },
+    {
+      "from": "Galatasaray|Aleksei Batrakov",
+      "to": "Galatasaray|Barış Alper Yılmaz",
+      "weight": 6,
+      "correlation_pct": 14.8
+    },
+    {
+      "from": "Galatasaray|Ismail Jakobs",
+      "to": "Galatasaray|Abdülkerim Bardakcı",
+      "weight": 9,
+      "correlation_pct": 14.7
+    },
+    {
+      "from": "Galatasaray|Mario Lemina",
+      "to": "Galatasaray|Rafael Leão",
+      "weight": 6,
+      "correlation_pct": 14.4
+    },
+    {
+      "from": "Galatasaray|Barış Alper Yılmaz",
+      "to": "Galatasaray|Ismail Jakobs",
+      "weight": 5,
+      "correlation_pct": 13.4
+    },
+    {
+      "from": "Galatasaray|Lucas Torreira",
+      "to": "Galatasaray|Abdülkerim Bardakcı",
+      "weight": 9,
+      "correlation_pct": 13.1
+    },
+    {
+      "from": "Galatasaray|Roland Sallai",
+      "to": "Galatasaray|Victor Osimhen",
+      "weight": 6,
+      "correlation_pct": 13.1
+    },
+    {
+      "from": "Galatasaray|Mario Lemina",
+      "to": "Galatasaray|Ismail Jakobs",
+      "weight": 8,
+      "correlation_pct": 12.8
+    },
+    {
+      "from": "Galatasaray|Roland Sallai",
+      "to": "Galatasaray|Davinson Sánchez",
+      "weight": 11,
+      "correlation_pct": 12.6
+    },
+    {
+      "from": "Galatasaray|Aleksei Batrakov",
+      "to": "Galatasaray|Roland Sallai",
+      "weight": 9,
+      "correlation_pct": 12.3
+    },
+    {
+      "from": "Galatasaray|Aleksei Batrakov",
+      "to": "Galatasaray|Mario Lemina",
+      "weight": 8,
+      "correlation_pct": 12.2
+    },
+    {
+      "from": "Galatasaray|Roland Sallai",
+      "to": "Galatasaray|Barış Alper Yılmaz",
+      "weight": 6,
+      "correlation_pct": 12.1
+    },
+    {
+      "from": "Galatasaray|Lucas Torreira",
+      "to": "Galatasaray|Aleksei Batrakov",
+      "weight": 8,
+      "correlation_pct": 11.6
+    },
+    {
+      "from": "Galatasaray|Aleksei Batrakov",
+      "to": "Galatasaray|Lucas Torreira",
+      "weight": 8,
+      "correlation_pct": 11.6
+    },
+    {
+      "from": "Galatasaray|Aleksei Batrakov",
+      "to": "Galatasaray|Ismail Jakobs",
+      "weight": 7,
+      "correlation_pct": 11.5
+    },
+    {
+      "from": "Galatasaray|Mario Lemina",
+      "to": "Galatasaray|Lucas Torreira",
+      "weight": 8,
+      "correlation_pct": 11.4
+    },
+    {
+      "from": "Galatasaray|Yunus Akgün",
+      "to": "Galatasaray|Roland Sallai",
+      "weight": 7,
+      "correlation_pct": 11.2
+    },
+    {
+      "from": "Galatasaray|Mario Lemina",
+      "to": "Galatasaray|Yunus Akgün",
+      "weight": 6,
+      "correlation_pct": 11.0
+    },
+    {
+      "from": "Galatasaray|Davinson Sánchez",
+      "to": "Galatasaray|Abdülkerim Bardakcı",
+      "weight": 8,
+      "correlation_pct": 10.4
+    },
+    {
+      "from": "Galatasaray|Barış Alper Yılmaz",
+      "to": "Galatasaray|Aleksei Batrakov",
+      "weight": 4,
+      "correlation_pct": 10.2
+    },
+    {
+      "from": "Galatasaray|Ismail Jakobs",
+      "to": "Galatasaray|Yunus Akgün",
+      "weight": 5,
+      "correlation_pct": 10.1
+    },
+    {
+      "from": "Galatasaray|Lucas Torreira",
+      "to": "Galatasaray|Mario Lemina",
+      "weight": 7,
+      "correlation_pct": 10.1
+    },
+    {
+      "from": "Galatasaray|Ismail Jakobs",
+      "to": "Galatasaray|Aleksei Batrakov",
+      "weight": 6,
+      "correlation_pct": 10.0
+    },
+    {
+      "from": "Galatasaray|Rafael Leão",
+      "to": "Galatasaray|Mario Lemina",
+      "weight": 4,
+      "correlation_pct": 10.0
+    },
+    {
+      "from": "Galatasaray|Roland Sallai",
+      "to": "Galatasaray|Abdülkerim Bardakcı",
+      "weight": 7,
+      "correlation_pct": 9.7
+    },
+    {
+      "from": "Galatasaray|Roland Sallai",
+      "to": "Galatasaray|Mario Lemina",
+      "weight": 7,
+      "correlation_pct": 9.5
+    },
+    {
+      "from": "Galatasaray|Abdülkerim Bardakcı",
+      "to": "Galatasaray|Lucas Torreira",
+      "weight": 6,
+      "correlation_pct": 9.0
+    },
+    {
+      "from": "Galatasaray|Victor Osimhen",
+      "to": "Galatasaray|Abdülkerim Bardakcı",
+      "weight": 3,
+      "correlation_pct": 8.9
+    },
+    {
+      "from": "Galatasaray|Yunus Akgün",
+      "to": "Galatasaray|Lucas Torreira",
+      "weight": 5,
+      "correlation_pct": 8.8
+    },
+    {
+      "from": "Galatasaray|Davinson Sánchez",
+      "to": "Galatasaray|Victor Osimhen",
+      "weight": 4,
+      "correlation_pct": 8.3
+    },
+    {
+      "from": "Galatasaray|Roland Sallai",
+      "to": "Galatasaray|Lucas Torreira",
+      "weight": 6,
+      "correlation_pct": 7.9
+    },
+    {
+      "from": "Galatasaray|Ismail Jakobs",
+      "to": "Galatasaray|Lucas Torreira",
+      "weight": 5,
+      "correlation_pct": 7.9
+    },
+    {
+      "from": "Galatasaray|Davinson Sánchez",
+      "to": "Galatasaray|Mario Lemina",
+      "weight": 6,
+      "correlation_pct": 7.8
+    },
+    {
+      "from": "Galatasaray|Mario Lemina",
+      "to": "Galatasaray|Davinson Sánchez",
+      "weight": 6,
+      "correlation_pct": 7.8
+    },
+    {
+      "from": "Galatasaray|Lucas Torreira",
+      "to": "Galatasaray|Victor Osimhen",
+      "weight": 3,
+      "correlation_pct": 7.8
+    },
+    {
+      "from": "Galatasaray|Mario Lemina",
+      "to": "Galatasaray|Barış Alper Yılmaz",
+      "weight": 3,
+      "correlation_pct": 7.7
+    },
+    {
+      "from": "Galatasaray|Rafael Leão",
+      "to": "Galatasaray|Yunus Akgün",
+      "weight": 2,
+      "correlation_pct": 7.6
+    },
+    {
+      "from": "Galatasaray|Lucas Torreira",
+      "to": "Galatasaray|Davinson Sánchez",
+      "weight": 6,
+      "correlation_pct": 7.5
+    },
+    {
+      "from": "Galatasaray|Yunus Akgün",
+      "to": "Galatasaray|Barış Alper Yılmaz",
+      "weight": 2,
+      "correlation_pct": 7.5
+    },
+    {
+      "from": "Galatasaray|Mario Lemina",
+      "to": "Galatasaray|Roland Sallai",
+      "weight": 5,
+      "correlation_pct": 7.0
+    },
+    {
+      "from": "Galatasaray|Abdülkerim Bardakcı",
+      "to": "Galatasaray|Aleksei Batrakov",
+      "weight": 4,
+      "correlation_pct": 6.7
+    },
+    {
+      "from": "Galatasaray|Aleksei Batrakov",
+      "to": "Galatasaray|Abdülkerim Bardakcı",
+      "weight": 4,
+      "correlation_pct": 6.7
+    },
+    {
+      "from": "Galatasaray|Victor Osimhen",
+      "to": "Galatasaray|Aleksei Batrakov",
+      "weight": 2,
+      "correlation_pct": 6.2
+    },
+    {
+      "from": "Galatasaray|Aleksei Batrakov",
+      "to": "Galatasaray|Davinson Sánchez",
+      "weight": 4,
+      "correlation_pct": 5.5
+    },
+    {
+      "from": "Galatasaray|Barış Alper Yılmaz",
+      "to": "Galatasaray|Mario Lemina",
+      "weight": 2,
+      "correlation_pct": 5.5
+    },
+    {
+      "from": "Galatasaray|Lucas Torreira",
+      "to": "Galatasaray|Rafael Leão",
+      "weight": 2,
+      "correlation_pct": 5.2
+    },
+    {
+      "from": "Galatasaray|Victor Osimhen",
+      "to": "Galatasaray|Yunus Akgün",
+      "weight": 1,
+      "correlation_pct": 5.1
+    },
+    {
+      "from": "Galatasaray|Mario Lemina",
+      "to": "Galatasaray|Aleksei Batrakov",
+      "weight": 3,
+      "correlation_pct": 5.0
+    },
+    {
+      "from": "Galatasaray|Yunus Akgün",
+      "to": "Galatasaray|Davinson Sánchez",
+      "weight": 3,
+      "correlation_pct": 4.9
+    },
+    {
+      "from": "Galatasaray|Davinson Sánchez",
+      "to": "Galatasaray|Wilfried Singo",
+      "weight": 2,
+      "correlation_pct": 4.8
+    },
+    {
+      "from": "Galatasaray|Roland Sallai",
+      "to": "Galatasaray|Ismail Jakobs",
+      "weight": 3,
+      "correlation_pct": 4.7
+    },
+    {
+      "from": "Galatasaray|Barış Alper Yılmaz",
+      "to": "Galatasaray|Yunus Akgün",
+      "weight": 1,
+      "correlation_pct": 4.5
+    },
+    {
+      "from": "Galatasaray|Yunus Akgün",
+      "to": "Galatasaray|Mario Lemina",
+      "weight": 2,
+      "correlation_pct": 4.2
+    },
+    {
+      "from": "Galatasaray|Victor Osimhen",
+      "to": "Galatasaray|Ismail Jakobs",
+      "weight": 1,
+      "correlation_pct": 4.1
+    },
+    {
+      "from": "Galatasaray|Lucas Torreira",
+      "to": "Galatasaray|Ismail Jakobs",
+      "weight": 2,
+      "correlation_pct": 3.6
+    },
+    {
+      "from": "Galatasaray|Rafael Leão",
+      "to": "Galatasaray|Abdülkerim Bardakcı",
+      "weight": 1,
+      "correlation_pct": 3.5
+    },
+    {
+      "from": "Galatasaray|Aleksei Batrakov",
+      "to": "Galatasaray|Rafael Leão",
+      "weight": 1,
+      "correlation_pct": 3.4
+    },
+    {
+      "from": "Galatasaray|Rafael Leão",
+      "to": "Galatasaray|Aleksei Batrakov",
+      "weight": 1,
+      "correlation_pct": 3.4
+    },
+    {
+      "from": "Galatasaray|Wilfried Singo",
+      "to": "Galatasaray|Lucas Torreira",
+      "weight": 1,
+      "correlation_pct": 3.4
+    },
+    {
+      "from": "Galatasaray|Barış Alper Yılmaz",
+      "to": "Galatasaray|Lucas Torreira",
+      "weight": 1,
+      "correlation_pct": 3.1
+    },
+    {
+      "from": "Galatasaray|Rafael Leão",
+      "to": "Galatasaray|Lucas Torreira",
+      "weight": 1,
+      "correlation_pct": 3.1
+    },
+    {
+      "from": "Galatasaray|Victor Osimhen",
+      "to": "Galatasaray|Roland Sallai",
+      "weight": 1,
+      "correlation_pct": 3.0
+    },
+    {
+      "from": "Galatasaray|Wilfried Singo",
+      "to": "Galatasaray|Davinson Sánchez",
+      "weight": 1,
+      "correlation_pct": 2.9
+    },
+    {
+      "from": "Galatasaray|Abdülkerim Bardakcı",
+      "to": "Galatasaray|Yunus Akgün",
+      "weight": 1,
+      "correlation_pct": 2.6
+    },
+    {
+      "from": "Galatasaray|Yunus Akgün",
+      "to": "Galatasaray|Abdülkerim Bardakcı",
+      "weight": 1,
+      "correlation_pct": 2.6
+    },
+    {
+      "from": "Galatasaray|Ismail Jakobs",
+      "to": "Galatasaray|Davinson Sánchez",
+      "weight": 1,
+      "correlation_pct": 1.9
+    },
+    {
+      "from": "Galatasaray|Abdülkerim Bardakcı",
+      "to": "Galatasaray|Roland Sallai",
+      "weight": 1,
+      "correlation_pct": 1.9
+    },
+    {
+      "from": "Galatasaray|Davinson Sánchez",
+      "to": "Galatasaray|Ismail Jakobs",
+      "weight": 1,
+      "correlation_pct": 1.9
+    },
+    {
+      "from": "Galatasaray|Abdülkerim Bardakcı",
+      "to": "Galatasaray|Davinson Sánchez",
+      "weight": 1,
+      "correlation_pct": 1.8
+    }
+  ],
+  "substitutions": {
+    "Galatasaray": [
+      {
+        "in": "Rafael Leão",
+        "out": "Barış Alper Yılmaz",
+        "sub_minute": 67,
+        "in_minutes": 31,
+        "out_minutes": 67,
+        "position_group": "AM"
+      },
+      {
+        "in": "Leroy Sané",
+        "out": "Aleksei Batrakov",
+        "sub_minute": 83,
+        "in_minutes": 15,
+        "out_minutes": 82,
+        "position_group": "AM"
+      },
+      {
+        "in": "Eren Elmalı",
+        "out": "Ismail Jakobs",
+        "sub_minute": 83,
+        "in_minutes": 15,
+        "out_minutes": 82,
+        "position_group": "FB"
+      },
+      {
+        "in": "Gabriel Sara",
+        "out": "Yunus Akgün",
+        "sub_minute": 83,
+        "in_minutes": 15,
+        "out_minutes": 82,
+        "position_group": "AM"
+      },
+      {
+        "in": "Wilfried Singo",
+        "out": "Victor Osimhen",
+        "sub_minute": 91,
+        "in_minutes": 7,
+        "out_minutes": 90,
+        "position_group": "FB"
+      }
+    ]
+  },
+  "contributions": {
+    "Galatasaray|Victor Osimhen": {
+      "offensive_pct": 10.1,
+      "defensive_pct": 3.2,
+      "total_pct": 6.7,
+      "offensive_raw": 18.52,
+      "defensive_raw": 10.8,
+      "off_breakdown": {
+        "Goals": 2.0,
+        "xG (expected goals)": 0.95,
+        "xA (expected assists)": 0.59,
+        "Shots": 6.0,
+        "Key passes": 1.0,
+        "Progressive passes": 2.0
+      },
+      "def_breakdown": {
+        "Challenges won": 6.0,
+        "Aerial challenges won": 4.0
+      }
+    },
+    "Galatasaray|Barış Alper Yılmaz": {
+      "offensive_pct": 9.7,
+      "defensive_pct": 5.9,
+      "total_pct": 7.8,
+      "offensive_raw": 17.78,
+      "defensive_raw": 19.7,
+      "off_breakdown": {
+        "Assists": 1.0,
+        "xG (expected goals)": 0.44,
+        "xA (expected assists)": 0.62,
+        "Shots": 3.0,
+        "Key passes": 2.0,
+        "Progressive passes": 2.0,
+        "Chances created": 3.0,
+        "Passes into the penalty box": 1.0,
+        "Final third entries": 1.0
+      },
+      "def_breakdown": {
+        "Tackles": 1.0,
+        "Tackles successful": 1.0,
+        "Interceptions": 1.0,
+        "Ball recoveries": 1.0,
+        "Challenges won": 12.0
+      }
+    },
+    "Galatasaray|Ismail Jakobs": {
+      "offensive_pct": 9.2,
+      "defensive_pct": 8.6,
+      "total_pct": 8.9,
+      "offensive_raw": 16.85,
+      "defensive_raw": 29.0,
+      "off_breakdown": {
+        "xG (expected goals)": 0.2,
+        "xA (expected assists)": 0.35,
+        "Shots": 2.0,
+        "Key passes": 1.0,
+        "Progressive passes": 7.0,
+        "Chances created": 1.0,
+        "Passes into the penalty box": 7.0,
+        "Crosses": 2.0,
+        "Final third entries": 2.0
+      },
+      "def_breakdown": {
+        "Tackles": 1.0,
+        "Interceptions": 7.0,
+        "Ball recoveries": 5.0,
+        "Ball recoveries in opponent's half": 2.0,
+        "Challenges won": 4.0
+      }
+    },
+    "Galatasaray|Davinson Sánchez": {
+      "offensive_pct": 16.8,
+      "defensive_pct": 14.0,
+      "total_pct": 15.4,
+      "offensive_raw": 30.78,
+      "defensive_raw": 46.9,
+      "off_breakdown": {
+        "Assists": 1.0,
+        "xA (expected assists)": 0.66,
+        "Key passes": 3.0,
+        "Progressive passes": 20.0,
+        "Chances created": 2.0,
+        "Passes into the penalty box": 3.0,
+        "Final third entries": 5.0
+      },
+      "def_breakdown": {
+        "Tackles": 1.0,
+        "Tackles successful": 1.0,
+        "Interceptions": 11.0,
+        "Ball recoveries": 9.0,
+        "Challenges won": 6.0,
+        "Aerial challenges won": 3.0
+      }
+    },
+    "Galatasaray|Aleksei Batrakov": {
+      "offensive_pct": 16.4,
+      "defensive_pct": 11.5,
+      "total_pct": 13.9,
+      "offensive_raw": 29.99,
+      "defensive_raw": 38.6,
+      "off_breakdown": {
+        "xG (expected goals)": 0.25,
+        "xA (expected assists)": 0.48,
+        "Shots": 2.0,
+        "Key passes": 4.0,
+        "Progressive passes": 7.0,
+        "Chances created": 4.0,
+        "Passes into the penalty box": 12.0,
+        "Final third entries": 5.0
+      },
+      "def_breakdown": {
+        "Tackles": 4.0,
+        "Tackles successful": 4.0,
+        "Interceptions": 3.0,
+        "Ball recoveries": 3.0,
+        "Ball recoveries in opponent's half": 2.0,
+        "Challenges won": 8.0
+      }
+    },
+    "Galatasaray|Roland Sallai": {
+      "offensive_pct": 9.8,
+      "defensive_pct": 11.3,
+      "total_pct": 10.5,
+      "offensive_raw": 17.87,
+      "defensive_raw": 38.1,
+      "off_breakdown": {
+        "xG (expected goals)": 0.04,
+        "xA (expected assists)": 0.25,
+        "Shots": 1.0,
+        "Key passes": 2.0,
+        "Progressive passes": 11.0,
+        "Chances created": 1.0,
+        "Passes into the penalty box": 3.0,
+        "Crosses": 2.0,
+        "Final third entries": 6.0
+      },
+      "def_breakdown": {
+        "Tackles": 3.0,
+        "Tackles successful": 1.0,
+        "Interceptions": 6.0,
+        "Ball recoveries": 6.0,
+        "Challenges won": 8.0,
+        "Aerial challenges won": 2.0
+      }
+    },
+    "Galatasaray|Yunus Akgün": {
+      "offensive_pct": 7.3,
+      "defensive_pct": 6.3,
+      "total_pct": 6.8,
+      "offensive_raw": 13.45,
+      "defensive_raw": 21.1,
+      "off_breakdown": {
+        "xG (expected goals)": 0.04,
+        "xA (expected assists)": 0.21,
+        "Shots": 1.0,
+        "Key passes": 1.0,
+        "Progressive passes": 6.0,
+        "Chances created": 1.0,
+        "Passes into the penalty box": 6.0,
+        "Crosses": 1.0,
+        "Final third entries": 1.0
+      },
+      "def_breakdown": {
+        "Tackles": 1.0,
+        "Interceptions": 3.0,
+        "Ball recoveries": 2.0,
+        "Ball recoveries in opponent's half": 1.0,
+        "Challenges won": 8.0,
+        "Aerial challenges won": 1.0
+      }
+    },
+    "Fenerbahce|İrfan Can Kahveci": {
+      "offensive_pct": 18.3,
+      "defensive_pct": 5.4,
+      "total_pct": 11.8,
+      "offensive_raw": 15.96,
+      "defensive_raw": 17.4,
+      "off_breakdown": {
+        "Goals": 1.0,
+        "xG (expected goals)": 0.22,
+        "Shots": 1.0,
+        "Progressive passes": 8.0,
+        "Passes into the penalty box": 5.0,
+        "Crosses": 3.0,
+        "Final third entries": 2.0
+      },
+      "def_breakdown": {
+        "Tackles": 3.0,
+        "Interceptions": 2.0,
+        "Ball recoveries": 1.0,
+        "Challenges won": 5.0,
+        "Aerial challenges won": 1.0
+      }
+    },
+    "Galatasaray|Rafael Leão": {
+      "offensive_pct": 3.4,
+      "defensive_pct": 3.5,
+      "total_pct": 3.4,
+      "offensive_raw": 6.18,
+      "defensive_raw": 11.7,
+      "off_breakdown": {
+        "xG (expected goals)": 0.12,
+        "xA (expected assists)": 0.04,
+        "Shots": 2.0,
+        "Progressive passes": 2.0,
+        "Chances created": 1.0,
+        "Passes into the penalty box": 2.0,
+        "Crosses": 1.0,
+        "Final third entries": 1.0
+      },
+      "def_breakdown": {
+        "Tackles": 2.0,
+        "Tackles successful": 1.0,
+        "Ball recoveries": 1.0,
+        "Challenges won": 4.0
+      }
+    },
+    "Fenerbahce|Kerem Akturkoglu": {
+      "offensive_pct": 6.5,
+      "defensive_pct": 1.2,
+      "total_pct": 3.9,
+      "offensive_raw": 5.68,
+      "defensive_raw": 4.0,
+      "off_breakdown": {
+        "xG (expected goals)": 0.08,
+        "xA (expected assists)": 0.38,
+        "Shots": 1.0,
+        "Key passes": 1.0,
+        "Chances created": 1.0,
+        "Passes into the penalty box": 1.0,
+        "Final third entries": 1.0
+      },
+      "def_breakdown": {
+        "Challenges won": 4.0
+      }
+    },
+    "Galatasaray|Mario Lemina": {
+      "offensive_pct": 6.3,
+      "defensive_pct": 9.3,
+      "total_pct": 7.8,
+      "offensive_raw": 11.6,
+      "defensive_raw": 31.3,
+      "off_breakdown": {
+        "Key passes": 1.0,
+        "Progressive passes": 10.0,
+        "Chances created": 1.0,
+        "Passes into the penalty box": 1.0,
+        "Crosses": 1.0,
+        "Final third entries": 3.0
+      },
+      "def_breakdown": {
+        "Tackles": 2.0,
+        "Tackles successful": 1.0,
+        "Interceptions": 7.0,
+        "Ball recoveries": 3.0,
+        "Ball recoveries in opponent's half": 2.0,
+        "Challenges won": 3.0,
+        "Aerial challenges won": 1.0
+      }
+    },
+    "Galatasaray|Lucas Torreira": {
+      "offensive_pct": 5.5,
+      "defensive_pct": 13.9,
+      "total_pct": 9.7,
+      "offensive_raw": 10.15,
+      "defensive_raw": 46.7,
+      "off_breakdown": {
+        "xG (expected goals)": 0.65,
+        "Shots": 2.0,
+        "Progressive passes": 9.0,
+        "Final third entries": 3.0
+      },
+      "def_breakdown": {
+        "Tackles": 3.0,
+        "Interceptions": 12.0,
+        "Ball recoveries": 5.0,
+        "Ball recoveries in opponent's half": 3.0,
+        "Challenges won": 5.0,
+        "Aerial challenges won": 1.0
+      }
+    },
+    "Galatasaray|Leroy Sané": {
+      "offensive_pct": 0.6,
+      "defensive_pct": 0.9,
+      "total_pct": 0.8,
+      "offensive_raw": 1.16,
+      "defensive_raw": 3.0,
+      "off_breakdown": {
+        "xG (expected goals)": 0.02,
+        "xA (expected assists)": 0.1,
+        "Shots": 1.0,
+        "Final third entries": 1.0
+      },
+      "def_breakdown": {
+        "Tackles": 1.0,
+        "Challenges won": 1.0
+      }
+    },
+    "Galatasaray|Eren Elmalı": {
+      "offensive_pct": 0.4,
+      "defensive_pct": 1.9,
+      "total_pct": 1.1,
+      "offensive_raw": 0.7,
+      "defensive_raw": 6.4,
+      "off_breakdown": {
+        "Progressive passes": 1.0
+      },
+      "def_breakdown": {
+        "Interceptions": 1.0,
+        "Ball recoveries": 1.0,
+        "Challenges won": 2.0,
+        "Aerial challenges won": 1.0
+      }
+    },
+    "Fenerbahce|Ngolo Kante": {
+      "offensive_pct": 10.5,
+      "defensive_pct": 5.3,
+      "total_pct": 7.9,
+      "offensive_raw": 9.13,
+      "defensive_raw": 17.2,
+      "off_breakdown": {
+        "xA (expected assists)": 0.21,
+        "Key passes": 2.0,
+        "Progressive passes": 2.0,
+        "Chances created": 1.0,
+        "Passes into the penalty box": 2.0,
+        "Crosses": 2.0,
+        "Final third entries": 3.0
+      },
+      "def_breakdown": {
+        "Tackles": 1.0,
+        "Tackles successful": 1.0,
+        "Interceptions": 3.0,
+        "Ball recoveries": 1.0,
+        "Ball recoveries in opponent's half": 1.0,
+        "Challenges won": 4.0
+      }
+    },
+    "Galatasaray|Gabriel Sara": {
+      "offensive_pct": 0.0,
+      "defensive_pct": 1.2,
+      "total_pct": 0.6,
+      "offensive_raw": 0.0,
+      "defensive_raw": 4.0,
+      "off_breakdown": {},
+      "def_breakdown": {
+        "Tackles": 1.0,
+        "Interceptions": 1.0
+      }
+    },
+    "Fenerbahce|Oğuz Aydın": {
+      "offensive_pct": 13.9,
+      "defensive_pct": 11.0,
+      "total_pct": 12.4,
+      "offensive_raw": 12.16,
+      "defensive_raw": 35.5,
+      "off_breakdown": {
+        "Assists": 1.0,
+        "xA (expected assists)": 0.22,
+        "Progressive passes": 2.0,
+        "Chances created": 1.0,
+        "Passes into the penalty box": 5.0,
+        "Crosses": 3.0,
+        "Final third entries": 1.0
+      },
+      "def_breakdown": {
+        "Tackles": 5.0,
+        "Tackles successful": 3.0,
+        "Interceptions": 1.0,
+        "Ball recoveries": 2.0,
+        "Challenges won": 10.0,
+        "Aerial challenges won": 3.0
+      }
+    },
+    "Fenerbahce|Mert Hakan Yandaş": {
+      "offensive_pct": 8.1,
+      "defensive_pct": 2.7,
+      "total_pct": 5.4,
+      "offensive_raw": 7.1,
+      "defensive_raw": 8.9,
+      "off_breakdown": {
+        "Key passes": 1.0,
+        "Progressive passes": 1.0,
+        "Chances created": 1.0,
+        "Passes into the penalty box": 4.0,
+        "Crosses": 1.0,
+        "Final third entries": 1.0
+      },
+      "def_breakdown": {
+        "Tackles": 1.0,
+        "Tackles successful": 1.0,
+        "Ball recoveries": 1.0,
+        "Challenges won": 2.0,
+        "Aerial challenges won": 1.0
+      }
+    },
+    "Fenerbahce|Dorgeles Nene": {
+      "offensive_pct": 0.3,
+      "defensive_pct": 1.6,
+      "total_pct": 1.0,
+      "offensive_raw": 0.3,
+      "defensive_raw": 5.2,
+      "off_breakdown": {
+        "Final third entries": 1.0
+      },
+      "def_breakdown": {
+        "Interceptions": 1.0,
+        "Ball recoveries": 1.0,
+        "Challenges won": 2.0
+      }
+    },
+    "Fenerbahce|Kojo Oppong": {
+      "offensive_pct": 4.6,
+      "defensive_pct": 4.4,
+      "total_pct": 4.5,
+      "offensive_raw": 3.98,
+      "defensive_raw": 14.4,
+      "off_breakdown": {
+        "xA (expected assists)": 0.16,
+        "Progressive passes": 5.0
+      },
+      "def_breakdown": {
+        "Tackles": 2.0,
+        "Interceptions": 3.0,
+        "Ball recoveries": 1.0,
+        "Challenges won": 2.0,
+        "Aerial challenges won": 1.0
+      }
+    },
+    "Fenerbahce|Mason Greenwood": {
+      "offensive_pct": 3.6,
+      "defensive_pct": 7.9,
+      "total_pct": 5.8,
+      "offensive_raw": 3.13,
+      "defensive_raw": 25.7,
+      "off_breakdown": {
+        "xA (expected assists)": 0.21,
+        "Progressive passes": 1.0,
+        "Passes into the penalty box": 2.0,
+        "Crosses": 1.0
+      },
+      "def_breakdown": {
+        "Tackles": 4.0,
+        "Tackles successful": 3.0,
+        "Interceptions": 2.0,
+        "Ball recoveries": 1.0,
+        "Challenges won": 5.0
+      }
+    },
+    "Fenerbahce|Levent Mercan": {
+      "offensive_pct": 8.0,
+      "defensive_pct": 8.1,
+      "total_pct": 8.1,
+      "offensive_raw": 7.0,
+      "defensive_raw": 26.4,
+      "off_breakdown": {
+        "Progressive passes": 6.0,
+        "Passes into the penalty box": 3.0,
+        "Crosses": 2.0
+      },
+      "def_breakdown": {
+        "Tackles": 4.0,
+        "Tackles successful": 2.0,
+        "Interceptions": 4.0,
+        "Ball recoveries": 2.0,
+        "Challenges won": 3.0
+      }
+    },
+    "Fenerbahce|Milan Skriniar": {
+      "offensive_pct": 3.5,
+      "defensive_pct": 10.8,
+      "total_pct": 7.2,
+      "offensive_raw": 3.08,
+      "defensive_raw": 35.0,
+      "off_breakdown": {
+        "xG (expected goals)": 0.16,
+        "Shots": 1.0,
+        "Progressive passes": 3.0
+      },
+      "def_breakdown": {
+        "Tackles": 3.0,
+        "Interceptions": 8.0,
+        "Ball recoveries": 3.0,
+        "Challenges won": 7.0,
+        "Aerial challenges won": 2.0
+      }
+    },
+    "Fenerbahce|Nelson Semedo": {
+      "offensive_pct": 6.8,
+      "defensive_pct": 9.1,
+      "total_pct": 7.9,
+      "offensive_raw": 5.9,
+      "defensive_raw": 29.5,
+      "off_breakdown": {
+        "Progressive passes": 7.0,
+        "Passes into the penalty box": 1.0,
+        "Crosses": 1.0
+      },
+      "def_breakdown": {
+        "Tackles": 3.0,
+        "Tackles successful": 1.0,
+        "Interceptions": 4.0,
+        "Ball recoveries": 3.0,
+        "Challenges won": 7.0,
+        "Aerial challenges won": 2.0
+      }
+    },
+    "Fenerbahce|Romelu Lukaku": {
+      "offensive_pct": 2.8,
+      "defensive_pct": 5.5,
+      "total_pct": 4.1,
+      "offensive_raw": 2.43,
+      "defensive_raw": 17.8,
+      "off_breakdown": {
+        "xG (expected goals)": 0.21,
+        "Shots": 1.0,
+        "Progressive passes": 1.0,
+        "Final third entries": 2.0
+      },
+      "def_breakdown": {
+        "Interceptions": 3.0,
+        "Challenges won": 7.0,
+        "Aerial challenges won": 4.0
+      }
+    },
+    "Galatasaray|Abdülkerim Bardakcı": {
+      "offensive_pct": 3.8,
+      "defensive_pct": 7.8,
+      "total_pct": 5.8,
+      "offensive_raw": 7.0,
+      "defensive_raw": 26.2,
+      "off_breakdown": {
+        "Progressive passes": 10.0
+      },
+      "def_breakdown": {
+        "Tackles": 3.0,
+        "Tackles successful": 2.0,
+        "Interceptions": 2.0,
+        "Ball recoveries": 5.0,
+        "Challenges won": 4.0,
+        "Aerial challenges won": 1.0
+      }
+    },
+    "Fenerbahce|Mattéo Guendouzi": {
+      "offensive_pct": 7.0,
+      "defensive_pct": 7.7,
+      "total_pct": 7.3,
+      "offensive_raw": 6.1,
+      "defensive_raw": 25.0,
+      "off_breakdown": {
+        "Key passes": 1.0,
+        "Progressive passes": 5.0,
+        "Passes into the penalty box": 1.0,
+        "Final third entries": 1.0
+      },
+      "def_breakdown": {
+        "Tackles": 3.0,
+        "Interceptions": 4.0,
+        "Ball recoveries": 2.0,
+        "Challenges won": 5.0,
+        "Aerial challenges won": 3.0
+      }
+    },
+    "Fenerbahce|Archie Brown": {
+      "offensive_pct": 6.2,
+      "defensive_pct": 18.5,
+      "total_pct": 12.3,
+      "offensive_raw": 5.4,
+      "defensive_raw": 59.8,
+      "off_breakdown": {
+        "Progressive passes": 5.0,
+        "Passes into the penalty box": 2.0,
+        "Final third entries": 1.0
+      },
+      "def_breakdown": {
+        "Tackles": 5.0,
+        "Tackles successful": 4.0,
+        "Interceptions": 9.0,
+        "Ball recoveries": 6.0,
+        "Challenges won": 11.0,
+        "Aerial challenges won": 3.0
+      }
+    },
+    "Fenerbahce|Vedat Muriqi": {
+      "offensive_pct": 0.0,
+      "defensive_pct": 0.7,
+      "total_pct": 0.3,
+      "offensive_raw": 0.0,
+      "defensive_raw": 2.2,
+      "off_breakdown": {},
+      "def_breakdown": {
+        "Challenges won": 1.0,
+        "Aerial challenges won": 1.0
+      }
+    },
+    "Galatasaray|Wilfried Singo": {
+      "offensive_pct": 0.5,
+      "defensive_pct": 0.8,
+      "total_pct": 0.7,
+      "offensive_raw": 1.0,
+      "defensive_raw": 2.7,
+      "off_breakdown": {
+        "Progressive passes": 1.0,
+        "Final third entries": 1.0
+      },
+      "def_breakdown": {
+        "Ball recoveries": 1.0,
+        "Ball recoveries in opponent's half": 1.0
+      }
+    },
+    "Fenerbahce|Ederson": {
+      "offensive_pct": 0.5,
+      "defensive_pct": 2.0,
+      "total_pct": 1.25,
+      "offensive_raw": 0,
+      "defensive_raw": 0,
+      "off_breakdown": {},
+      "def_breakdown": {},
+      "is_gk": true
+    },
+    "Galatasaray|Uğurcan Çakır": {
+      "offensive_pct": 0.5,
+      "defensive_pct": 2.0,
+      "total_pct": 1.25,
+      "offensive_raw": 0,
+      "defensive_raw": 0,
+      "off_breakdown": {},
+      "def_breakdown": {},
+      "is_gk": true
+    }
+  },
+  "meta": {
+    "method": "inferRecipientsFromNextPass",
+    "total_match_minutes": 97,
+    "node_count": 15,
+    "edge_count": 93,
+    "captured": 586,
+    "total_passes": 641,
+    "coverage_pct": 91.4,
+    "contribution_weights": {
+      "offensive": [
+        "Goals",
+        "Assists",
+        "xG (expected goals)",
+        "xA (expected assists)",
+        "Shots",
+        "Key passes",
+        "Progressive passes",
+        "Chances created",
+        "Passes into the penalty box",
+        "Crosses",
+        "Final third entries"
+      ],
+      "defensive": [
+        "Tackles",
+        "Tackles successful",
+        "Interceptions",
+        "Ball recoveries",
+        "Ball recoveries in opponent's half",
+        "Challenges won",
+        "Aerial challenges won",
+        "Clearances"
+      ]
+    }
+  }
+}

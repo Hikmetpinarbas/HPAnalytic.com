@@ -1,0 +1,1140 @@
+{
+  "all": {
+    "konya": [
+      {
+        "id": 5,
+        "name": "Uğurcan Yazğılı",
+        "min_x": 4.8,
+        "max_x": 84.2,
+        "avg_x": 48.9,
+        "avg_y": 15.2,
+        "actions": [
+          "Passes accurate",
+          "Involvement in positional attacks",
+          "Passes forward accurate"
+        ],
+        "samples": 59
+      },
+      {
+        "id": 8,
+        "name": "Marko Jevtovic",
+        "min_x": 3.7,
+        "max_x": 101.4,
+        "avg_x": 45.4,
+        "avg_y": 30.9,
+        "actions": [
+          "Passes accurate",
+          "Involvement in positional attacks",
+          "Passes forward accurate"
+        ],
+        "samples": 140
+      },
+      {
+        "id": 9,
+        "name": "Deniz Türüç",
+        "min_x": 1.6,
+        "max_x": 105.0,
+        "avg_x": 59.9,
+        "avg_y": 17.5,
+        "actions": [
+          "Passes accurate",
+          "Involvement in positional attacks",
+          "Inaccurate passes"
+        ],
+        "samples": 185
+      },
+      {
+        "id": 10,
+        "name": "Enis Bardhi",
+        "min_x": 6.0,
+        "max_x": 94.8,
+        "avg_x": 53.1,
+        "avg_y": 33.3,
+        "actions": [
+          "Passes accurate",
+          "Involvement in positional attacks",
+          "Ball losses"
+        ],
+        "samples": 71
+      },
+      {
+        "id": 11,
+        "name": "Jackson Muleka",
+        "min_x": 1.6,
+        "max_x": 102.8,
+        "avg_x": 60.5,
+        "avg_y": 30.8,
+        "actions": [
+          "Passes accurate",
+          "Involvement in positional attacks",
+          "Challenges unsuccessful"
+        ],
+        "samples": 49
+      },
+      {
+        "id": 15,
+        "name": "Chidozie Awaziem",
+        "min_x": 2.0,
+        "max_x": 97.2,
+        "avg_x": 32.1,
+        "avg_y": 39.0,
+        "actions": [
+          "Passes accurate",
+          "Involvement in positional attacks",
+          "Passes forward accurate"
+        ],
+        "samples": 105
+      },
+      {
+        "id": 17,
+        "name": "Yhoan Andzouana",
+        "min_x": 8.2,
+        "max_x": 97.5,
+        "avg_x": 61.6,
+        "avg_y": 12.6,
+        "actions": [
+          "Passes accurate",
+          "Involvement in positional attacks",
+          "Passes forward accurate"
+        ],
+        "samples": 105
+      },
+      {
+        "id": 19,
+        "name": "Ebrima Colley",
+        "min_x": 1.8,
+        "max_x": 103.2,
+        "avg_x": 58.1,
+        "avg_y": 46.1,
+        "actions": [
+          "Involvement in positional attacks",
+          "Passes accurate",
+          "Challenges unsuccessful"
+        ],
+        "samples": 27
+      },
+      {
+        "id": 22,
+        "name": "Rayyan Baniya",
+        "min_x": 1.6,
+        "max_x": 97.4,
+        "avg_x": 35.4,
+        "avg_y": 23.9,
+        "actions": [
+          "Passes accurate",
+          "Involvement in positional attacks",
+          "Passes forward accurate"
+        ],
+        "samples": 114
+      },
+      {
+        "id": 26,
+        "name": "Arthur Masuaku",
+        "min_x": 6.0,
+        "max_x": 102.6,
+        "avg_x": 51.2,
+        "avg_y": 52.3,
+        "actions": [
+          "Passes accurate",
+          "Involvement in positional attacks",
+          "Passes forward accurate"
+        ],
+        "samples": 129
+      },
+      {
+        "id": 42,
+        "name": "Mostafa Mohamed",
+        "min_x": 4.2,
+        "max_x": 100.8,
+        "avg_x": 52.5,
+        "avg_y": 35.4,
+        "actions": [
+          "Involvement in positional attacks",
+          "Passes accurate",
+          "Ball losses"
+        ],
+        "samples": 45
+      },
+      {
+        "id": 66,
+        "name": "Rajmund Tóth",
+        "min_x": 3.7,
+        "max_x": 104.1,
+        "avg_x": 57.2,
+        "avg_y": 21.9,
+        "actions": [
+          "Passes accurate",
+          "Involvement in positional attacks",
+          "Challenges unsuccessful"
+        ],
+        "samples": 62
+      },
+      {
+        "id": 77,
+        "name": "Melih İbrahimoğlu",
+        "min_x": 5.1,
+        "max_x": 97.5,
+        "avg_x": 47.3,
+        "avg_y": 34.1,
+        "actions": [
+          "Passes accurate",
+          "Involvement in positional attacks",
+          "Passes forward accurate"
+        ],
+        "samples": 131
+      },
+      {
+        "id": 91,
+        "name": "Jean-Luc Dompé",
+        "min_x": 10.8,
+        "max_x": 105.0,
+        "avg_x": 70.0,
+        "avg_y": 50.2,
+        "actions": [
+          "Passes accurate",
+          "Involvement in positional attacks",
+          "Inaccurate passes"
+        ],
+        "samples": 94
+      },
+      {
+        "id": 94,
+        "name": "Enis Destan",
+        "min_x": 20.8,
+        "max_x": 98.0,
+        "avg_x": 68.1,
+        "avg_y": 40.8,
+        "actions": [
+          "Challenges won",
+          "Involvement in positional attacks",
+          "Passes accurate"
+        ],
+        "samples": 14
+      }
+    ],
+    "gs": [
+      {
+        "id": 3,
+        "name": "El Chadaille Bitshiabu",
+        "min_x": 4.6,
+        "max_x": 65.7,
+        "avg_x": 31.9,
+        "avg_y": 45.6,
+        "actions": [
+          "Passes accurate",
+          "Involvement in positional attacks",
+          "Passes forward accurate"
+        ],
+        "samples": 46
+      },
+      {
+        "id": 6,
+        "name": "Davinson Sánchez",
+        "min_x": 2.5,
+        "max_x": 105.0,
+        "avg_x": 36.0,
+        "avg_y": 27.2,
+        "actions": [
+          "Passes accurate",
+          "Involvement in positional attacks",
+          "Passes forward accurate"
+        ],
+        "samples": 97
+      },
+      {
+        "id": 7,
+        "name": "Roland Sallai",
+        "min_x": 2.5,
+        "max_x": 105.0,
+        "avg_x": 51.1,
+        "avg_y": 20.1,
+        "actions": [
+          "Passes accurate",
+          "Involvement in positional attacks",
+          "Passes forward accurate"
+        ],
+        "samples": 122
+      },
+      {
+        "id": 8,
+        "name": "Gabriel Sara",
+        "min_x": 5.0,
+        "max_x": 105.0,
+        "avg_x": 62.8,
+        "avg_y": 39.7,
+        "actions": [
+          "Passes accurate",
+          "Involvement in positional attacks",
+          "Passes forward accurate"
+        ],
+        "samples": 129
+      },
+      {
+        "id": 10,
+        "name": "Leroy Sané",
+        "min_x": 4.6,
+        "max_x": 105.0,
+        "avg_x": 59.7,
+        "avg_y": 28.2,
+        "actions": [
+          "Passes accurate",
+          "Involvement in positional attacks",
+          "Passes forward accurate"
+        ],
+        "samples": 80
+      },
+      {
+        "id": 11,
+        "name": "Yunus Akgün",
+        "min_x": 2.5,
+        "max_x": 105.0,
+        "avg_x": 53.1,
+        "avg_y": 26.4,
+        "actions": [
+          "Passes accurate",
+          "Involvement in positional attacks",
+          "Passes forward accurate"
+        ],
+        "samples": 100
+      },
+      {
+        "id": 17,
+        "name": "Eren Elmalı",
+        "min_x": 3.4,
+        "max_x": 105.0,
+        "avg_x": 56.7,
+        "avg_y": 53.1,
+        "actions": [
+          "Passes accurate",
+          "Involvement in positional attacks",
+          "Passes forward accurate"
+        ],
+        "samples": 141
+      },
+      {
+        "id": 18,
+        "name": "Lesley Ugochukwu",
+        "min_x": 4.6,
+        "max_x": 102.5,
+        "avg_x": 49.7,
+        "avg_y": 33.6,
+        "actions": [
+          "Passes accurate",
+          "Involvement in positional attacks",
+          "Involvement in positional attacks with shots"
+        ],
+        "samples": 52
+      },
+      {
+        "id": 20,
+        "name": "İlkay Gündoğan",
+        "min_x": 6.7,
+        "max_x": 105.0,
+        "avg_x": 52.2,
+        "avg_y": 38.8,
+        "actions": [
+          "Passes accurate",
+          "Involvement in positional attacks",
+          "Passes forward accurate"
+        ],
+        "samples": 71
+      },
+      {
+        "id": 21,
+        "name": "Deniz Gul",
+        "min_x": 3.7,
+        "max_x": 105.0,
+        "avg_x": 56.5,
+        "avg_y": 34.8,
+        "actions": [
+          "Challenges unsuccessful",
+          "Involvement in positional attacks",
+          "Passes accurate"
+        ],
+        "samples": 32
+      },
+      {
+        "id": 27,
+        "name": "Rafael Leão",
+        "min_x": 2.5,
+        "max_x": 105.0,
+        "avg_x": 61.1,
+        "avg_y": 46.0,
+        "actions": [
+          "Passes accurate",
+          "Involvement in positional attacks",
+          "Passes forward accurate"
+        ],
+        "samples": 164
+      },
+      {
+        "id": 34,
+        "name": "Lucas Torreira",
+        "min_x": 1.6,
+        "max_x": 96.7,
+        "avg_x": 48.8,
+        "avg_y": 33.3,
+        "actions": [
+          "Passes accurate",
+          "Involvement in positional attacks",
+          "Passes forward accurate"
+        ],
+        "samples": 69
+      },
+      {
+        "id": 45,
+        "name": "Victor Osimhen",
+        "min_x": 1.7,
+        "max_x": 105.0,
+        "avg_x": 65.7,
+        "avg_y": 35.5,
+        "actions": [
+          "Involvement in positional attacks",
+          "Ball losses",
+          "Challenges unsuccessful"
+        ],
+        "samples": 57
+      },
+      {
+        "id": 74,
+        "name": "Renato Nhaga",
+        "min_x": 10.8,
+        "max_x": 89.4,
+        "avg_x": 50.8,
+        "avg_y": 40.3,
+        "actions": [
+          "Passes accurate",
+          "Involvement in positional attacks",
+          "Carry"
+        ],
+        "samples": 40
+      },
+      {
+        "id": 83,
+        "name": "Aleksei Batrakov",
+        "min_x": 1.7,
+        "max_x": 105.0,
+        "avg_x": 59.1,
+        "avg_y": 38.0,
+        "actions": [
+          "Passes accurate",
+          "Involvement in positional attacks",
+          "Passes forward accurate"
+        ],
+        "samples": 93
+      },
+      {
+        "id": 90,
+        "name": "Wilfried Singo",
+        "min_x": 1.7,
+        "max_x": 105.0,
+        "avg_x": 42.3,
+        "avg_y": 41.7,
+        "actions": [
+          "Passes accurate",
+          "Involvement in positional attacks",
+          "Passes forward accurate"
+        ],
+        "samples": 179
+      }
+    ]
+  },
+  "1h": {
+    "konya": [
+      {
+        "id": 8,
+        "name": "Marko Jevtovic",
+        "min_x": 6.3,
+        "max_x": 98.7,
+        "avg_x": 43.7,
+        "avg_y": 27.8,
+        "actions": [
+          "Passes accurate",
+          "Passes forward accurate",
+          "Involvement in positional attacks"
+        ],
+        "samples": 70
+      },
+      {
+        "id": 9,
+        "name": "Deniz Türüç",
+        "min_x": 1.6,
+        "max_x": 105.0,
+        "avg_x": 58.9,
+        "avg_y": 18.4,
+        "actions": [
+          "Passes accurate",
+          "Involvement in positional attacks",
+          "Inaccurate passes"
+        ],
+        "samples": 96
+      },
+      {
+        "id": 11,
+        "name": "Jackson Muleka",
+        "min_x": 1.6,
+        "max_x": 102.8,
+        "avg_x": 60.5,
+        "avg_y": 30.8,
+        "actions": [
+          "Passes accurate",
+          "Involvement in positional attacks",
+          "Challenges unsuccessful"
+        ],
+        "samples": 49
+      },
+      {
+        "id": 15,
+        "name": "Chidozie Awaziem",
+        "min_x": 3.0,
+        "max_x": 97.2,
+        "avg_x": 34.0,
+        "avg_y": 35.1,
+        "actions": [
+          "Passes accurate",
+          "Involvement in positional attacks",
+          "Passes forward accurate"
+        ],
+        "samples": 46
+      },
+      {
+        "id": 17,
+        "name": "Yhoan Andzouana",
+        "min_x": 8.2,
+        "max_x": 97.5,
+        "avg_x": 62.5,
+        "avg_y": 12.8,
+        "actions": [
+          "Passes accurate",
+          "Involvement in positional attacks",
+          "Passes forward accurate"
+        ],
+        "samples": 88
+      },
+      {
+        "id": 22,
+        "name": "Rayyan Baniya",
+        "min_x": 1.6,
+        "max_x": 97.4,
+        "avg_x": 32.8,
+        "avg_y": 22.3,
+        "actions": [
+          "Passes accurate",
+          "Passes forward accurate",
+          "Involvement in positional attacks"
+        ],
+        "samples": 56
+      },
+      {
+        "id": 26,
+        "name": "Arthur Masuaku",
+        "min_x": 8.2,
+        "max_x": 102.6,
+        "avg_x": 46.7,
+        "avg_y": 50.6,
+        "actions": [
+          "Passes accurate",
+          "Passes forward accurate",
+          "Involvement in positional attacks"
+        ],
+        "samples": 46
+      },
+      {
+        "id": 66,
+        "name": "Rajmund Tóth",
+        "min_x": 3.7,
+        "max_x": 104.1,
+        "avg_x": 57.2,
+        "avg_y": 21.9,
+        "actions": [
+          "Passes accurate",
+          "Involvement in positional attacks",
+          "Challenges unsuccessful"
+        ],
+        "samples": 62
+      },
+      {
+        "id": 77,
+        "name": "Melih İbrahimoğlu",
+        "min_x": 5.1,
+        "max_x": 97.5,
+        "avg_x": 45.9,
+        "avg_y": 29.8,
+        "actions": [
+          "Passes accurate",
+          "Involvement in positional attacks",
+          "Passes forward accurate"
+        ],
+        "samples": 64
+      },
+      {
+        "id": 91,
+        "name": "Jean-Luc Dompé",
+        "min_x": 10.8,
+        "max_x": 105.0,
+        "avg_x": 73.6,
+        "avg_y": 50.4,
+        "actions": [
+          "Passes accurate",
+          "Involvement in positional attacks",
+          "Inaccurate passes"
+        ],
+        "samples": 81
+      }
+    ],
+    "gs": [
+      {
+        "id": 6,
+        "name": "Davinson Sánchez",
+        "min_x": 3.7,
+        "max_x": 96.8,
+        "avg_x": 35.5,
+        "avg_y": 25.9,
+        "actions": [
+          "Passes accurate",
+          "Involvement in positional attacks",
+          "Passes forward accurate"
+        ],
+        "samples": 65
+      },
+      {
+        "id": 7,
+        "name": "Roland Sallai",
+        "min_x": 2.6,
+        "max_x": 100.8,
+        "avg_x": 45.3,
+        "avg_y": 21.6,
+        "actions": [
+          "Passes accurate",
+          "Involvement in positional attacks",
+          "Ball recoveries"
+        ],
+        "samples": 40
+      },
+      {
+        "id": 8,
+        "name": "Gabriel Sara",
+        "min_x": 5.0,
+        "max_x": 105.0,
+        "avg_x": 64.2,
+        "avg_y": 40.1,
+        "actions": [
+          "Passes accurate",
+          "Involvement in positional attacks",
+          "Passes forward accurate"
+        ],
+        "samples": 109
+      },
+      {
+        "id": 11,
+        "name": "Yunus Akgün",
+        "min_x": 6.3,
+        "max_x": 105.0,
+        "avg_x": 55.1,
+        "avg_y": 26.7,
+        "actions": [
+          "Passes accurate",
+          "Involvement in positional attacks",
+          "Passes forward accurate"
+        ],
+        "samples": 81
+      },
+      {
+        "id": 17,
+        "name": "Eren Elmalı",
+        "min_x": 3.4,
+        "max_x": 103.2,
+        "avg_x": 53.8,
+        "avg_y": 56.5,
+        "actions": [
+          "Involvement in positional attacks",
+          "Passes accurate",
+          "Inaccurate passes"
+        ],
+        "samples": 61
+      },
+      {
+        "id": 27,
+        "name": "Rafael Leão",
+        "min_x": 5.0,
+        "max_x": 105.0,
+        "avg_x": 59.7,
+        "avg_y": 47.7,
+        "actions": [
+          "Passes accurate",
+          "Involvement in positional attacks",
+          "Passes forward accurate"
+        ],
+        "samples": 92
+      },
+      {
+        "id": 34,
+        "name": "Lucas Torreira",
+        "min_x": 1.6,
+        "max_x": 96.7,
+        "avg_x": 51.4,
+        "avg_y": 30.0,
+        "actions": [
+          "Passes accurate",
+          "Involvement in positional attacks",
+          "Passes forward accurate"
+        ],
+        "samples": 54
+      },
+      {
+        "id": 45,
+        "name": "Victor Osimhen",
+        "min_x": 1.7,
+        "max_x": 105.0,
+        "avg_x": 65.7,
+        "avg_y": 34.6,
+        "actions": [
+          "Ball losses",
+          "Involvement in positional attacks",
+          "Involvement in counterattacks"
+        ],
+        "samples": 45
+      },
+      {
+        "id": 83,
+        "name": "Aleksei Batrakov",
+        "min_x": 1.7,
+        "max_x": 105.0,
+        "avg_x": 58.6,
+        "avg_y": 36.9,
+        "actions": [
+          "Passes accurate",
+          "Involvement in positional attacks",
+          "Passes forward accurate"
+        ],
+        "samples": 69
+      },
+      {
+        "id": 90,
+        "name": "Wilfried Singo",
+        "min_x": 1.7,
+        "max_x": 105.0,
+        "avg_x": 46.0,
+        "avg_y": 47.3,
+        "actions": [
+          "Passes accurate",
+          "Involvement in positional attacks",
+          "Passes forward accurate"
+        ],
+        "samples": 92
+      }
+    ]
+  },
+  "2h": {
+    "konya": [
+      {
+        "id": 5,
+        "name": "Uğurcan Yazğılı",
+        "min_x": 4.8,
+        "max_x": 84.2,
+        "avg_x": 48.9,
+        "avg_y": 15.2,
+        "actions": [
+          "Passes accurate",
+          "Involvement in positional attacks",
+          "Passes forward accurate"
+        ],
+        "samples": 59
+      },
+      {
+        "id": 8,
+        "name": "Marko Jevtovic",
+        "min_x": 3.7,
+        "max_x": 101.4,
+        "avg_x": 47.1,
+        "avg_y": 33.9,
+        "actions": [
+          "Passes accurate",
+          "Involvement in positional attacks",
+          "Passes forward accurate"
+        ],
+        "samples": 70
+      },
+      {
+        "id": 9,
+        "name": "Deniz Türüç",
+        "min_x": 9.5,
+        "max_x": 98.4,
+        "avg_x": 60.9,
+        "avg_y": 16.5,
+        "actions": [
+          "Passes accurate",
+          "Involvement in positional attacks",
+          "Inaccurate passes"
+        ],
+        "samples": 89
+      },
+      {
+        "id": 10,
+        "name": "Enis Bardhi",
+        "min_x": 6.0,
+        "max_x": 94.8,
+        "avg_x": 53.1,
+        "avg_y": 33.3,
+        "actions": [
+          "Passes accurate",
+          "Involvement in positional attacks",
+          "Ball losses"
+        ],
+        "samples": 71
+      },
+      {
+        "id": 15,
+        "name": "Chidozie Awaziem",
+        "min_x": 2.0,
+        "max_x": 71.2,
+        "avg_x": 30.6,
+        "avg_y": 42.1,
+        "actions": [
+          "Passes accurate",
+          "Involvement in positional attacks",
+          "Passes forward accurate"
+        ],
+        "samples": 59
+      },
+      {
+        "id": 17,
+        "name": "Yhoan Andzouana",
+        "min_x": 9.5,
+        "max_x": 90.9,
+        "avg_x": 56.7,
+        "avg_y": 11.8,
+        "actions": [
+          "Passes accurate",
+          "Involvement in counterattacks",
+          "Incomplete passes forward"
+        ],
+        "samples": 17
+      },
+      {
+        "id": 19,
+        "name": "Ebrima Colley",
+        "min_x": 1.8,
+        "max_x": 103.2,
+        "avg_x": 58.1,
+        "avg_y": 46.1,
+        "actions": [
+          "Involvement in positional attacks",
+          "Passes accurate",
+          "Challenges unsuccessful"
+        ],
+        "samples": 27
+      },
+      {
+        "id": 22,
+        "name": "Rayyan Baniya",
+        "min_x": 3.2,
+        "max_x": 76.2,
+        "avg_x": 37.8,
+        "avg_y": 25.5,
+        "actions": [
+          "Passes accurate",
+          "Involvement in positional attacks",
+          "Passes forward accurate"
+        ],
+        "samples": 58
+      },
+      {
+        "id": 26,
+        "name": "Arthur Masuaku",
+        "min_x": 6.0,
+        "max_x": 84.8,
+        "avg_x": 53.7,
+        "avg_y": 53.2,
+        "actions": [
+          "Passes accurate",
+          "Involvement in positional attacks",
+          "Passes forward accurate"
+        ],
+        "samples": 83
+      },
+      {
+        "id": 42,
+        "name": "Mostafa Mohamed",
+        "min_x": 4.2,
+        "max_x": 100.8,
+        "avg_x": 52.5,
+        "avg_y": 35.4,
+        "actions": [
+          "Involvement in positional attacks",
+          "Passes accurate",
+          "Ball losses"
+        ],
+        "samples": 45
+      },
+      {
+        "id": 77,
+        "name": "Melih İbrahimoğlu",
+        "min_x": 14.6,
+        "max_x": 82.7,
+        "avg_x": 48.6,
+        "avg_y": 38.2,
+        "actions": [
+          "Passes accurate",
+          "Involvement in positional attacks",
+          "Passes forward accurate"
+        ],
+        "samples": 67
+      },
+      {
+        "id": 91,
+        "name": "Jean-Luc Dompé",
+        "min_x": 14.6,
+        "max_x": 76.4,
+        "avg_x": 47.5,
+        "avg_y": 49.0,
+        "actions": [
+          "Passes accurate",
+          "Involvement in positional attacks",
+          "Carry"
+        ],
+        "samples": 13
+      },
+      {
+        "id": 94,
+        "name": "Enis Destan",
+        "min_x": 20.8,
+        "max_x": 98.0,
+        "avg_x": 68.1,
+        "avg_y": 40.8,
+        "actions": [
+          "Challenges won",
+          "Involvement in positional attacks",
+          "Passes accurate"
+        ],
+        "samples": 14
+      }
+    ],
+    "gs": [
+      {
+        "id": 3,
+        "name": "El Chadaille Bitshiabu",
+        "min_x": 4.6,
+        "max_x": 65.7,
+        "avg_x": 31.9,
+        "avg_y": 45.6,
+        "actions": [
+          "Passes accurate",
+          "Involvement in positional attacks",
+          "Passes forward accurate"
+        ],
+        "samples": 46
+      },
+      {
+        "id": 6,
+        "name": "Davinson Sánchez",
+        "min_x": 2.5,
+        "max_x": 105.0,
+        "avg_x": 37.1,
+        "avg_y": 29.9,
+        "actions": [
+          "Passes accurate",
+          "Involvement in positional attacks",
+          "Passes forward accurate"
+        ],
+        "samples": 32
+      },
+      {
+        "id": 7,
+        "name": "Roland Sallai",
+        "min_x": 2.5,
+        "max_x": 105.0,
+        "avg_x": 53.9,
+        "avg_y": 19.4,
+        "actions": [
+          "Passes accurate",
+          "Passes forward accurate",
+          "Involvement in positional attacks"
+        ],
+        "samples": 82
+      },
+      {
+        "id": 8,
+        "name": "Gabriel Sara",
+        "min_x": 18.5,
+        "max_x": 105.0,
+        "avg_x": 55.2,
+        "avg_y": 37.6,
+        "actions": [
+          "Passes accurate",
+          "Involvement in positional attacks",
+          "Involvement in counterattacks with shots"
+        ],
+        "samples": 20
+      },
+      {
+        "id": 10,
+        "name": "Leroy Sané",
+        "min_x": 4.6,
+        "max_x": 105.0,
+        "avg_x": 59.7,
+        "avg_y": 28.2,
+        "actions": [
+          "Passes accurate",
+          "Involvement in positional attacks",
+          "Passes forward accurate"
+        ],
+        "samples": 80
+      },
+      {
+        "id": 11,
+        "name": "Yunus Akgün",
+        "min_x": 2.5,
+        "max_x": 70.9,
+        "avg_x": 44.6,
+        "avg_y": 25.0,
+        "actions": [
+          "Passes accurate",
+          "Involvement in positional attacks",
+          "Passes forward accurate"
+        ],
+        "samples": 19
+      },
+      {
+        "id": 17,
+        "name": "Eren Elmalı",
+        "min_x": 6.6,
+        "max_x": 105.0,
+        "avg_x": 59.0,
+        "avg_y": 50.6,
+        "actions": [
+          "Passes accurate",
+          "Involvement in positional attacks",
+          "Passes forward accurate"
+        ],
+        "samples": 80
+      },
+      {
+        "id": 18,
+        "name": "Lesley Ugochukwu",
+        "min_x": 4.6,
+        "max_x": 102.5,
+        "avg_x": 49.7,
+        "avg_y": 33.6,
+        "actions": [
+          "Passes accurate",
+          "Involvement in positional attacks",
+          "Involvement in positional attacks with shots"
+        ],
+        "samples": 52
+      },
+      {
+        "id": 20,
+        "name": "İlkay Gündoğan",
+        "min_x": 6.7,
+        "max_x": 105.0,
+        "avg_x": 52.2,
+        "avg_y": 38.8,
+        "actions": [
+          "Passes accurate",
+          "Involvement in positional attacks",
+          "Passes forward accurate"
+        ],
+        "samples": 71
+      },
+      {
+        "id": 21,
+        "name": "Deniz Gul",
+        "min_x": 3.7,
+        "max_x": 105.0,
+        "avg_x": 56.5,
+        "avg_y": 34.8,
+        "actions": [
+          "Challenges unsuccessful",
+          "Involvement in positional attacks",
+          "Passes accurate"
+        ],
+        "samples": 32
+      },
+      {
+        "id": 27,
+        "name": "Rafael Leão",
+        "min_x": 2.5,
+        "max_x": 102.1,
+        "avg_x": 62.9,
+        "avg_y": 43.8,
+        "actions": [
+          "Passes accurate",
+          "Involvement in positional attacks",
+          "Ball losses"
+        ],
+        "samples": 72
+      },
+      {
+        "id": 34,
+        "name": "Lucas Torreira",
+        "min_x": 2.5,
+        "max_x": 81.5,
+        "avg_x": 39.5,
+        "avg_y": 45.5,
+        "actions": [
+          "Passes accurate",
+          "Involvement in positional attacks",
+          "Ball recoveries"
+        ],
+        "samples": 15
+      },
+      {
+        "id": 45,
+        "name": "Victor Osimhen",
+        "min_x": 2.0,
+        "max_x": 105.0,
+        "avg_x": 66.1,
+        "avg_y": 38.9,
+        "actions": [
+          "Involvement in positional attacks",
+          "Passes accurate",
+          "Involvement in set-piece attacks"
+        ],
+        "samples": 12
+      },
+      {
+        "id": 74,
+        "name": "Renato Nhaga",
+        "min_x": 10.8,
+        "max_x": 89.4,
+        "avg_x": 50.8,
+        "avg_y": 40.3,
+        "actions": [
+          "Passes accurate",
+          "Involvement in positional attacks",
+          "Carry"
+        ],
+        "samples": 40
+      },
+      {
+        "id": 83,
+        "name": "Aleksei Batrakov",
+        "min_x": 2.5,
+        "max_x": 105.0,
+        "avg_x": 60.7,
+        "avg_y": 41.4,
+        "actions": [
+          "Passes accurate",
+          "Involvement in positional attacks",
+          "Involvement in counterattacks with shots"
+        ],
+        "samples": 24
+      },
+      {
+        "id": 90,
+        "name": "Wilfried Singo",
+        "min_x": 1.8,
+        "max_x": 81.4,
+        "avg_x": 38.4,
+        "avg_y": 35.8,
+        "actions": [
+          "Passes accurate",
+          "Involvement in positional attacks",
+          "Passes forward accurate"
+        ],
+        "samples": 87
+      }
+    ]
+  }
+}

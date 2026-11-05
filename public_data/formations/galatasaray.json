@@ -1,0 +1,20 @@
+{
+  "team": "Galatasaray",
+  "side": "home",
+  "formation": "4-2-3-1",
+  "match": "galatasaray-stuttgart-2026-11-03",
+  "source": "manual-lineup-20261104",
+  "players": [
+    { "id": null, "name": "Uğurcan Çakır",        "role": "GK",  "x": 5,  "y": 50 },
+    { "id": null, "name": "Roland Sallai",         "role": "RB",  "x": 20, "y": 82 },
+    { "id": null, "name": "Davinson Sánchez",      "role": "RCB", "x": 17, "y": 61 },
+    { "id": null, "name": "Abdülkerim Bardakcı",   "role": "LCB", "x": 17, "y": 39 },
+    { "id": null, "name": "Ismail Jakobs",         "role": "LB",  "x": 20, "y": 18 },
+    { "id": null, "name": "Lucas Torreira",        "role": "RDM", "x": 34, "y": 60 },
+    { "id": null, "name": "Mario Lemina",          "role": "LDM", "x": 34, "y": 40 },
+    { "id": null, "name": "Yunus Akgün",           "role": "RW",  "x": 57, "y": 84 },
+    { "id": null, "name": "Aleksey Batrakov",      "role": "CAM", "x": 54, "y": 50 },
+    { "id": null, "name": "Barış Alper Yılmaz",    "role": "LW",  "x": 57, "y": 16 },
+    { "id": null, "name": "Victor Osimhen",        "role": "ST",  "x": 76, "y": 50 }
+  ]
+}

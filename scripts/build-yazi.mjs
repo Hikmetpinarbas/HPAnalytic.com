@@ -362,14 +362,19 @@ if (tocLinks.length && headings.length) {
 </script>
 <script src="/page-transition.js" defer></script>
 <script src="/extras2.js" defer></script>
-<script type="module" src="/src/viz/embed.js"></script>
+<!-- embed.js geçici devre dışı -->
+<div id="viz-and-stars-container"></div>
+<!-- VIZ_SLOT -->
+<!-- STARS_SLOT -->
 </body></html>`;
 }
 
 const files = readdirSync(SRC).filter(f => f.endsWith('.md'));
 const all = [];
+const selectedSources = new Map();
 for (const file of files) {
   const raw = readFileSync(resolve(SRC, file), 'utf-8');
+
   const m = raw.match(/^---\n([\s\S]*?)\n---\n\n?([\s\S]*)$/);
   if (!m) { console.log('✗ ' + file); continue; }
   const meta = {};
@@ -384,7 +389,26 @@ for (const file of files) {
       else meta[k] = v;
     }
   });
-  all.push({ slug: meta.slug || file.replace('.md', ''), title: meta.title || '', type: meta.type || 'articles', excerpt: meta.excerpt || '', date: meta.date || '', read: meta.read ? Number(meta.read) : Math.ceil(m[2].split(' ').length / 200), source: meta.source || '', portrait, portrait_credit, body: m[2].trim().replace(/^#\s+.*$/m, '').trim() });
+  const slug = meta.slug || file.replace(/\.md$/, '');
+  if (!/^[a-z0-9-]+$/.test(slug)) { console.warn('⚠ Geçersiz slug: ' + file); continue; }
+  const parsedRead = Number(meta.read);
+  const read = Number.isFinite(parsedRead) && parsedRead > 0 ? parsedRead : Math.max(1, Math.ceil(m[2].split(/\s+/).length / 200));
+  const article = { slug, title: meta.title || '', type: meta.type || 'articles', excerpt: meta.excerpt || '', date: meta.date || '', read, source: meta.source || '', portrait, portrait_credit, body: m[2].trim().replace(/^#\s+.*$/m, '').trim() };
+  const previous = selectedSources.get(slug);
+  if (previous) {
+    // The slug-named Markdown is canonical. Never allow a second filename
+    // to overwrite its HTML or duplicate its homepage card.
+    if (previous === slug + '.md') {
+      console.warn('⚠ Tekrarlanan slug atlandı: ' + file + ' (öncelik: ' + previous + ')');
+      continue;
+    }
+    if (file !== slug + '.md') throw new Error('Çakışan slug: ' + slug + ' (' + previous + ', ' + file + ')');
+    const i = all.findIndex(item => item.slug === slug);
+    all.splice(i, 1);
+    console.warn('⚠ Canonical slug kaynak seçildi: ' + file + ' (yerine: ' + previous + ')');
+  }
+  selectedSources.set(slug, file);
+  all.push(article);
 }
 
 for (const a of all) {
@@ -402,3 +426,37 @@ for (const a of all) {
   console.log('✓ ' + a.slug + ' · ' + out.length + ' bytes');
 }
 console.log('\n── ' + all.length + ' yazı yeniden üretildi ──');
+
+
+// Build the static recent-articles section from the same Markdown sources.
+const latest = [...all]
+  .filter(a => a.slug && a.title && /^\d{4}-\d{2}-\d{2}$/.test(a.date))
+  .sort((a, b) => b.date.localeCompare(a.date) || a.slug.localeCompare(b.slug))
+  .slice(0, 6);
+const latestCards = latest.map(a => {
+  const label = TYPE_LABEL[a.type] || 'Yazı';
+  const displayDate = a.date.split('-').reverse().join('.');
+  return `      <a href="/yazi/${esc(a.slug)}.html" class="explore-card">
+        <div class="ec-meta"><span class="ec-type">${esc(label)}</span><span class="ec-date">${esc(displayDate)}</span></div>
+        <h3 class="ec-title">${esc(a.title)}</h3>
+        <span class="ec-read">${a.read} dk okuma →</span>
+      </a>`;
+}).join('\n');
+const indexPath = resolve('index.html');
+const indexHtml = readFileSync(indexPath, 'utf8');
+const startMarker = '<!-- HPA_LATEST_START -->';
+const endMarker = '<!-- HPA_LATEST_END -->';
+const section = `${startMarker}\n${latestCards}\n      ${endMarker}`;
+let nextIndex;
+if (indexHtml.includes(startMarker) && indexHtml.includes(endMarker)) {
+  const begin = indexHtml.indexOf(startMarker);
+  const end = indexHtml.indexOf(endMarker, begin);
+  if (end < 0) throw new Error('recent-articles markers broken');
+  nextIndex = indexHtml.slice(0, begin) + section + indexHtml.slice(end + endMarker.length);
+} else {
+  const placeholder = '<div class="explore-loading">Son yazılar yükleniyor…</div>';
+  if (!indexHtml.includes(placeholder)) throw new Error('recent-articles placeholder missing');
+  nextIndex = indexHtml.replace(placeholder, section);
+}
+if (nextIndex !== indexHtml) writeFileSync(indexPath, nextIndex);
+console.log('✓ Ana sayfa Son Yazılar: ' + latest.length + ' makale');

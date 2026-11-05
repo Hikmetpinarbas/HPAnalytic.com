@@ -1,0 +1,14 @@
+{
+  "slug": "galatasaray-stuttgart-xg-paradoksu",
+  "title": "Galatasaray 2-0 Stuttgart: xG Paradoksu",
+  "date": "2026-11-03",
+  "score": { "home": 2, "away": 0 },
+  "teams": {
+    "home": { "name": "Galatasaray", "xg": null, "n_windows_total": 701 },
+    "away": { "name": "VfB Stuttgart", "xg": null, "n_windows_total": 662 }
+  },
+  "analysis": {
+    "status": "verified",
+    "summary": "Galatasaray 2-0 kazandı. Stuttgart daha fazla şut (7'ye 6) ve fırsat (6'ya 4) bulmasına rağmen gol atamadı. Galatasaray 19 kontratak ile dikey geçişlerde üstünlük sağladı."
+  }
+}

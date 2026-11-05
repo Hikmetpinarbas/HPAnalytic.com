@@ -1,0 +1,38 @@
+import subprocess, sys, shutil
+from pathlib import Path
+
+def main():
+    args = sys.argv[1:]
+    src, slug = None, None
+    for i, a in enumerate(args):
+        if a == '--src' and i+1 < len(args): src = args[i+1]
+        elif a == '--slug' and i+1 < len(args): slug = args[i+1]
+    if not src or not slug:
+        print("KULLANIM: --src <dizin> --slug <slug>"); sys.exit(1)
+    src_path = Path(src)
+    if not src_path.exists():
+        print(f"HATA: {src} bulunamadi"); sys.exit(1)
+    out = Path("public/assets/data") / slug
+    out.mkdir(parents=True, exist_ok=True)
+    for target, pattern in [("players.csv","*__PLAYERS__CSV.csv"),("teams.csv","*__TEAMS__CSV.csv")]:
+        s = next(src_path.glob(pattern), None)
+        if s:
+            shutil.copy(s, out / target); print(f"  kopya: {target}")
+        else:
+            print(f"  UYARI: {pattern} bulunamadi")
+    for script, exp in [("build_gk_data.py","gk_distribution.json"),
+                        ("build_pass_network_v2.py","pass_network_v2.json"),
+                        ("build_player_zones.py","player_zones.json")]:
+        print(f"\n> {script}")
+        r = subprocess.run([sys.executable, f"scripts/{script}",
+                            "--src", str(src_path.resolve()),
+                            "--out", str(out.resolve())])
+        if r.returncode == 0 and (out/exp).exists():
+            print(f"  OK: {exp}")
+        else:
+            print(f"  FAIL exit={r.returncode}")
+    print(f"\nCIKTI: {out}")
+    for f in sorted(out.iterdir()):
+        print(f"  {f.name}: {f.stat().st_size}")
+
+if __name__ == "__main__": main()

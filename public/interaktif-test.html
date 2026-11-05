@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="tr" data-theme="dark">
+<head>
+<meta charset="utf-8">
+<title>HPAnalytic — Taktik Tahta (Test)</title>
+<style>
+  :root { --bg:#08090B; --text:#F4F2EC; --neon:#B4FF39; --turuncu:#FF6B35; }
+  body { margin:0; background:var(--bg); color:var(--text); font-family:system-ui,sans-serif; padding:20px; }
+  .header { display:flex; justify-content:space-between; align-items:center; margin-bottom:20px; }
+  .tabs { display:flex; gap:10px; }
+  .tab { padding:8px 16px; border:1px solid #333; border-radius:4px; cursor:pointer; background:none; color:var(--text); }
+  .tab.active { border-color:var(--neon); color:var(--neon); }
+  .team-select { padding:8px; background:#111; color:white; border:1px solid #333; border-radius:4px; }
+  .btn-degisiklik { padding:8px 16px; border:1px solid var(--turuncu); color:var(--turuncu); background:none; border-radius:4px; cursor:pointer; }
+  
+  #pitch-container { position:relative; width:100%; max-width:900px; margin:0 auto; }
+  svg { width:100%; height:auto; display:block; }
+  
+  /* Animasyon İzleri */
+  .trail-def { fill:none; stroke:var(--turuncu); stroke-width:2; stroke-dasharray:5,5; opacity:0; }
+  .trail-off { fill:none; stroke:var(--neon); stroke-width:2; stroke-dasharray:5,5; opacity:0; }
+  .player-circle { transition: all 0.3s; cursor:pointer; }
+  
+  .tooltip { position:absolute; background:rgba(0,0,0,0.9); border:1px solid var(--neon); padding:10px; border-radius:4px; pointer-events:none; opacity:0; transition:opacity 0.2s; color:white; font-size:12px; }
+</style>
+</head>
+<body>
+<div class="header">
+  <div class="tabs">
+    <button class="tab active">Tüm Maç</button>
+    <button class="tab">İlk Yarı</button>
+    <button class="tab">İkinci Yarı</button>
+  </div>
+  <div style="display:flex; gap:10px;">
+    <select class="team-select" id="team-select">
+      <option value="Galatasaray">Galatasaray (Ev Sahibi)</option>
+      <option value="VfB Stuttgart">Stuttgart (Deplasman)</option>
+    </select>
+    <button class="btn-degisiklik">🔄 Değişiklikler</button>
+  </div>
+</div>
+
+<div id="pitch-container">
+  <div class="tooltip" id="tooltip"></div>
+  <svg id="pitch" viewBox="0 0 105 68"></svg>
+</div>
+
+<!-- Kütüphaneleri CDN'den çekelim (Test için) -->
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script>
+const TEAM_COLORS = { "Galatasaray": "#FF6B35", "VfB Stuttgart": "#B4FF39" };
+const SVG_NS = "http://www.w3.org/2000/svg";
+let currentTeam = "Galatasaray";
+let playerData = [];
+let matchData = [];
+
+// 1. Sahayı Çiz
+const svg = d3.select("#pitch");
+svg.append("rect").attr("width", 105).attr("height", 68).attr("fill", "#1a3d1f").attr("stroke", "#fff").attr("stroke-width", 0.5);
+svg.append("line").attr("x1", 52.5).attr("y1", 0).attr("x2", 52.5).attr("y2", 68).attr("stroke", "#fff").attr("stroke-width", 0.5);
+svg.append("circle").attr("cx", 52.5).attr("cy", 34).attr("r", 9.15).attr("fill", "none").attr("stroke", "#fff").attr("stroke-width", 0.5);
+// Ceza sahaları
+svg.append("rect").attr("x", 0).attr("y", 13.84).attr("width", 16.5).attr("height", 40.32).attr("fill", "none").attr("stroke", "#fff").attr("stroke-width", 0.5);
+svg.append("rect").attr("x", 88.5).attr("y", 13.84).attr("width", 16.5).attr("height", 40.32).attr("fill", "none").attr("stroke", "#fff").attr("stroke-width", 0.5);
+
+// Katmanlar
+const trailLayer = svg.append("g").attr("id", "trails");
+const playerLayer = svg.append("g").attr("id", "players");
+
+// 2. Verileri Yükle ve Çalıştır
+async function init() {
+  try {
+    playerData = await d3.json("/public/assets/data/gs-stuttgart/player_stats.json");
+    matchData = await d3.json("/public/assets/data/gs-stuttgart/match_data.json");
+    drawPlayers();
+  } catch (e) {
+    console.error("Veri yüklenemedi. Sunucu çalışıyor mu?", e);
+  }
+}
+
+function drawPlayers() {
+  playerLayer.selectAll("*").remove();
+  trailLayer.selectAll("*").remove();
+
+  // Seçili takımın oyuncularını filtrele
+  const teamPlayers = playerData.filter(d => d.Team === currentTeam);
+  
+  // Sadece ilk 11'i al (basitçe oynama dakikası > 45 olanlar)
+  const starters = teamPlayers.filter(d => d['Minutes played'] > 45);
+
+  starters.forEach((p, i) => {
+    // Rastgele bir formasyon yeri ver (gerçek formasyon verisini sonra bağlayacağız)
+    const startX = currentTeam === "Galatasaray" ? 20 + (i % 4) * 10 : 85 - (i % 4) * 10;
+    const startY = 10 + (i * 6);
+
+    // Defansif ve Ofansif konumları (match_data.json'dan alıyoruz)
+    const mData = matchData.find(m => m.name.includes(p.Player.split(' ').pop())); // Basit eşleştirme
+    const defPos = mData && mData.defensive_pos ? mData.defensive_pos : { x: startX + 10, y: startY };
+    const offPos = mData && mData.offensive_pos ? mData.offensive_pos : { x: startX - 10, y: startY };
+
+    // 1. Defansif İz Çizgisi (Turuncu)
+    const defTrail = trailLayer.append("path")
+      .attr("d", `M ${startX} ${startY} L ${defPos.x} ${defPos.y}`)
+      .attr("class", "trail-def");
+    
+    // 2. Ofansif İz Çizgisi (Neon Yeşil)
+    const offTrail = trailLayer.append("path")
+      .attr("d", `M ${defPos.x} ${defPos.y} L ${offPos.x} ${offPos.y}`)
+      .attr("class", "trail-off");
+
+    // 3. Oyuncu Dairesi
+    const g = playerLayer.append("g").attr("class", "player-group");
+    const circle = g.append("circle")
+      .attr("cx", startX).attr("cy", startY).attr("r", 2.5)
+      .attr("fill", TEAM_COLORS[currentTeam]).attr("stroke", "#000").attr("stroke-width", 0.5)
+      .attr("class", "player-circle")
+      .on("mouseover", (event) => {
+        const tooltip = document.getElementById("tooltip");
+        tooltip.style.opacity = 1;
+        tooltip.style.left = event.pageX + 10 + "px";
+        tooltip.style.top = event.pageY + 10 + "px";
+        tooltip.innerHTML = `<strong>${p.Player}</strong><br>xG: ${p['xG (expected goals)']}<br>Pas: ${p['Passes']}<br>İkili Mücadele: ${p['Challenges won, %']}%`;
+      })
+      .on("mouseout", () => document.getElementById("tooltip").style.opacity = 0);
+
+    // İsim Etiketi
+    g.append("text").attr("x", startX).attr("y", startY + 4.5).text(p.Player.split(' ').pop()).attr("font-size", 2).attr("fill", "white").attr("text-anchor", "middle");
+
+    // 4. ANİMASYON (GSAP ile)
+    const tl = gsap.timeline({ delay: i * 0.1 });
+    
+    // A: Defansif konuma kay (İz bırakarak)
+    tl.to(circle.node(), { attr: { cx: defPos.x, cy: defPos.y }, duration: 1.5, ease: "power2.inOut" })
+      .to(defTrail.node(), { opacity: 1, duration: 1.5 }, "<")
+      // İzi sil (uzaktan yakına)
+      .to(defTrail.node(), { strokeDashoffset: -100, opacity: 0, duration: 1.5, delay: 0.5 });
+
+    // B: Ofansif konuma kay (İz bırakarak)
+    tl.to(circle.node(), { attr: { cx: offPos.x, cy: offPos.y }, duration: 1.5, ease: "power2.inOut" }, "+=0.5")
+      .to(offTrail.node(), { opacity: 1, duration: 1.5 }, "<")
+      .to(offTrail.node(), { strokeDashoffset: -100, opacity: 0, duration: 1.5, delay: 0.5 });
+  });
+}
+
+// Takım değiştiğinde yeniden çiz
+document.getElementById("team-select").addEventListener("change", (e) => {
+  currentTeam = e.target.value;
+  drawPlayers();
+});
+
+init();
+</script>
+</body>
+</html>

@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Konyaspor 0-4 Galatasaray | HPAnalytic</title>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;600&family=Playfair+Display:ital,wght@0,700;1,700;1,400&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+<style>
+:root{--bg:#0A0A0A;--panel:#111311;--neon:#B4FF39;--orange:#FF6B35;--text:#EDEFEA;--muted:#666}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--bg);color:var(--text);font-family:'IBM Plex Mono',monospace;line-height:1.75;overflow-x:hidden;font-size:17px}
+.nav{border-bottom:1px solid #222;padding:1.5rem;display:flex;justify-content:space-between;font-size:0.8rem;letter-spacing:0.15em}
+.nav a{color:var(--text);text-decoration:none}
+.brand{color:var(--neon)!important;font-weight:600}
+.wrap{max-width:760px;margin:0 auto;padding:4rem 1.5rem}
+.kicker{color:var(--neon);font-size:0.8rem;letter-spacing:0.2em;text-transform:uppercase;margin-bottom:2rem}
+h1{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(2.5rem,6vw,4.2rem);line-height:1.05;margin-bottom:2rem}
+h2{font-family:'Playfair Display',serif;font-style:italic;font-size:clamp(1.6rem,3.5vw,2.2rem);margin:4.5rem 0 1.5rem;color:var(--text)}
+h2::before{content:"— ";color:var(--neon)}
+p{margin-bottom:1.4rem;color:#c8c8c8}
+p.short{font-size:1.05rem}
+p.lede{font-family:'Playfair Display',serif;font-size:1.25rem;line-height:1.6;color:var(--text);font-style:italic;margin:2rem 0 2.5rem;padding-left:1.2rem;border-left:2px solid var(--neon)}
+strong{color:var(--text);font-weight:600}
+em{color:var(--orange);font-style:normal;font-weight:600}
+.scene{font-family:'Playfair Display',serif;font-size:1.15rem;line-height:1.7;padding:2rem 0;color:#ddd;font-style:italic;border-top:1px solid #1a1c1a;border-bottom:1px solid #1a1c1a;margin:2.5rem 0}
+.scene .time{color:var(--neon);font-style:normal;font-family:'IBM Plex Mono',monospace;font-size:0.85rem;letter-spacing:0.15em;display:block;margin-bottom:1rem}
+
+/* HERO xG */
+.xg-hero{display:grid;grid-template-columns:1fr auto 1fr;gap:2rem;align-items:end;padding:3rem 0;margin:3rem 0;border-top:1px solid #222;border-bottom:1px solid #222}
+.xg-side{text-align:center}
+.xg-side .team{font-size:0.8rem;color:var(--muted);letter-spacing:0.15em;margin-bottom:0.8rem}
+.xg-side .val{font-family:'Playfair Display',serif;font-size:clamp(3rem,8vw,5rem);line-height:1}
+.xg-side.win .val{color:var(--neon)}
+.xg-side.lose .val{color:var(--muted)}
+.xg-side .lbl{font-size:0.75rem;color:var(--muted);margin-top:0.5rem;letter-spacing:0.1em}
+.xg-vs{color:var(--muted);font-style:italic;font-size:0.9rem;padding-bottom:1rem}
+
+/* GOL BUBBLES */
+.bubble-chart{background:var(--panel);border:1px solid #1a1c1a;padding:2rem 1.5rem 1.5rem;margin:2.5rem 0}
+.bubble-title{font-size:0.8rem;color:var(--muted);letter-spacing:0.15em;margin-bottom:1.5rem}
+.bubble-svg{width:100%;height:auto;display:block;overflow:visible}
+.bubble-svg .axis{stroke:#2a2d2a;stroke-width:1}
+.bubble-svg .axis-lbl{fill:var(--muted);font-size:9px;font-family:'IBM Plex Mono',monospace}
+.bubble-svg .bub{fill:var(--neon);fill-opacity:0.85;cursor:pointer;transition:fill-opacity 0.2s}
+.bubble-svg .bub:hover{fill-opacity:1}
+.bubble-svg .bub.orange{fill:var(--orange)}
+.bubble-svg .bub-lbl{fill:var(--text);font-size:10px;font-family:'IBM Plex Mono',monospace;font-weight:600}
+
+/* SPRINT MIRROR */
+.mirror{display:grid;grid-template-columns:1fr 1fr;margin:2.5rem 0;background:var(--panel);border:1px solid #1a1c1a;overflow:hidden}
+.mirror-side{padding:2rem 1.5rem}
+.mirror-side.left{border-right:1px solid #1a1c1a;text-align:right}
+.mirror-side .who{font-size:0.75rem;color:var(--muted);letter-spacing:0.15em;margin-bottom:1.2rem}
+.mirror-bar{margin-bottom:1.2rem}
+.mirror-bar .lbl{font-size:0.72rem;color:var(--muted);margin-bottom:0.3rem}
+.mirror-bar .num{font-family:'Playfair Display',serif;font-size:1.6rem;line-height:1}
+.mirror-bar .num.gs{color:var(--neon)}
+.mirror-bar .num.kon{color:var(--orange)}
+.mirror-bar .track{height:6px;background:#0a0a0a;margin-top:0.4rem;overflow:hidden}
+.mirror-side.left .track{direction:rtl}
+.mirror-bar .fill{height:100%;width:0}
+.mirror-bar .fill.gs{background:var(--neon)}
+.mirror-bar .fill.kon{background:var(--orange)}
+.mirror-caption{grid-column:1/-1;text-align:center;padding:1.2rem;border-top:1px solid #1a1c1a;font-size:0.8rem;color:var(--muted);letter-spacing:0.1em}
+.mirror-caption strong{color:var(--text)}
+
+/* FUNNEL */
+.funnel{padding:2rem 1rem;margin:2.5rem 0;background:var(--panel);border:1px solid #1a1c1a}
+.funnel-title{font-size:0.8rem;color:var(--muted);letter-spacing:0.15em;margin-bottom:2rem;text-align:center}
+.funnel-step{margin:0 auto 0.6rem;text-align:center;padding:1rem;border:1px solid #2a2d2a}
+.funnel-step.s1{width:100%;border-color:#3a3d3a}
+.funnel-step.s2{width:65%;border-color:#4a5048}
+.funnel-step.s3{width:35%;border-color:var(--neon);background:rgba(180,255,57,0.04)}
+.funnel-step .lbl{font-size:0.72rem;color:var(--muted);letter-spacing:0.1em;margin-bottom:0.3rem}
+.funnel-step .val{font-family:'Playfair Display',serif;font-size:2rem;line-height:1}
+.funnel-step.s1 .val{color:var(--text)}
+.funnel-step.s2 .val{color:var(--orange)}
+.funnel-step.s3 .val{color:var(--neon)}
+.funnel-note{text-align:center;font-size:0.78rem;color:var(--muted);margin-top:1.2rem;font-style:italic}
+
+.pull{font-family:'Playfair Display',serif;font-style:italic;font-size:1.4rem;line-height:1.4;padding:2rem 0;border-top:1px solid #222;border-bottom:1px solid #222;margin:3rem 0;color:var(--text)}
+.boundary{border-left:2px solid var(--orange);padding:1rem 1.5rem;margin:2.5rem 0;font-size:0.95rem;color:#aaa;font-style:italic}
+.boundary::before{content:"Yanlışsam ne görmeliyim? ";color:var(--orange);font-style:normal;font-weight:600}
+.goals{display:grid;grid-template-columns:repeat(4,1fr);gap:0.5rem;margin:2rem 0}
+.goal{padding:1rem 0.5rem;border-top:2px solid #222}
+.goal.big{border-top-color:var(--neon)}
+.goal .min{color:var(--neon);font-size:1rem;font-weight:600}
+.goal .who{font-size:0.85rem;margin-top:0.3rem}
+.goal .xg{color:var(--muted);font-size:0.7rem;margin-top:0.3rem}
+.note{color:var(--muted);font-size:0.8rem;border-top:1px solid #222;padding-top:1.5rem;margin-top:3rem;line-height:1.6}
+.footer{color:var(--muted);font-size:0.75rem;padding:2rem 1.5rem;border-top:1px solid #222;text-align:center;letter-spacing:0.1em}
+@media(max-width:600px){.wrap{padding:2rem 1rem}.xg-hero{gap:1rem}.goals{grid-template-columns:1fr 1fr}.mirror{grid-template-columns:1fr}.mirror-side.left{border-right:none;border-bottom:1px solid #1a1c1a;text-align:left}.mirror-side.left .track{direction:ltr}}
+.shot-stage{perspective:1400px;perspective-origin:50% 100%;padding:2rem 0;margin:2.5rem 0}.shot-pitch{transform:rotateX(38deg);transform-style:preserve-3d;background:#050605;box-shadow:0 20px 60px rgba(180,255,57,0.05),0 0 0 1px #1a1c1a;border-radius:2px;overflow:hidden}.shot-pitch svg{width:100%;height:auto;display:block}.shot-goal circle{animation:goalPulse 2.4s ease-in-out infinite;transform-box:fill-box;transform-origin:center}.shot-miss{opacity:0.28;transition:opacity 0.25s}.shot-miss:hover{opacity:1}.shot-legend{display:flex;gap:1.5rem;justify-content:center;margin-top:1.5rem;font-size:0.75rem;color:var(--muted);letter-spacing:0.1em}.shot-legend .dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:6px;vertical-align:middle}.shot-legend .dot.goal{background:var(--neon);box-shadow:0 0 6px var(--neon)}.shot-legend .dot.miss{background:var(--orange);opacity:0.4}@keyframes goalPulse{0%,100%{transform:scale(1)}50%{transform:scale(1.35)}}.pitch-toggle{display:flex;gap:0.4rem;margin:1.5rem 0;justify-content:center;flex-wrap:wrap}.pitch-toggle button{background:transparent;border:1px solid #2a2d2a;color:var(--muted);font-family:'IBM Plex Mono',monospace;font-size:0.78rem;letter-spacing:0.1em;padding:0.55rem 1.1rem;cursor:pointer;transition:all 0.25s}.pitch-toggle button:hover{border-color:var(--neon);color:var(--neon)}.pitch-toggle button.active{background:var(--neon);color:var(--bg);border-color:var(--neon)}.pitches{display:grid;grid-template-columns:1fr;gap:1.2rem;margin:1rem 0}.pitch-wrap{background:#050605;border:1px solid #1a1c1a;padding:1rem 1rem 0;overflow:hidden}.pitch-title{font-size:0.72rem;letter-spacing:0.15em;color:var(--muted);text-align:center;margin-bottom:0.6rem}.pitch-wrap svg{width:100%;height:auto;display:block}.pitch-wrap .trail{stroke-width:0.55;stroke-dasharray:1.4 1.6;fill:none;opacity:0.08;transition:opacity 0.35s ease,filter 0.35s ease}.pitch-wrap .trail.lit{opacity:1;filter:drop-shadow(0 0 1.2px currentColor) drop-shadow(0 0 2.5px currentColor)}.pitch-wrap .player{cursor:pointer;}.pitch-wrap .player .halo{animation:haloPulse 3.2s ease-in-out infinite}@keyframes haloPulse{0%,100%{opacity:0.25}50%{opacity:0.5}}.pitch-wrap .player .body{filter:drop-shadow(0 0 0.8px currentColor)}.pitch-wrap .player:hover .halo{opacity:0.9;stroke-width:0.3}.pitch-wrap .player:hover .body{filter:drop-shadow(0 0 2px currentColor) drop-shadow(0 0 4px currentColor)}.pitch-wrap .pnum{pointer-events:none}.pitch-legend{display:flex;gap:2rem;justify-content:center;font-size:0.75rem;color:var(--muted);letter-spacing:0.1em;margin:1rem 0 2rem}.pitch-legend .dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:6px;vertical-align:middle}.pitch-legend .dot.gs{background:var(--neon);box-shadow:0 0 6px var(--neon)}.pitch-legend .dot.kon{background:var(--orange);box-shadow:0 0 6px var(--orange)}.pitch-toggle{display:flex;gap:0.4rem;margin:1.5rem 0;justify-content:center;flex-wrap:wrap}.pitch-toggle button{background:transparent;border:1px solid #2a2d2a;color:var(--muted);font-family:'IBM Plex Mono',monospace;font-size:0.78rem;letter-spacing:0.1em;padding:0.55rem 1.1rem;cursor:pointer;transition:all 0.25s}.pitch-toggle button:hover{border-color:var(--neon);color:var(--neon)}.pitch-toggle button.active{background:var(--neon);color:var(--bg);border-color:var(--neon)}.pitches{display:grid;grid-template-columns:1fr;gap:1.2rem;margin:1rem 0}.pitch-wrap{background:#050605;border:1px solid #1a1c1a;padding:1rem 1rem 0;overflow:hidden}.pitch-title{font-size:0.72rem;letter-spacing:0.15em;color:var(--muted);text-align:center;margin-bottom:0.6rem}.pitch-wrap svg{width:100%;height:auto;display:block}.pitch-wrap .trail{stroke-width:0.55;stroke-dasharray:1.4 1.6;fill:none;opacity:0.08;transition:opacity 0.35s ease,filter 0.35s ease}.pitch-wrap .trail.lit{opacity:1;filter:drop-shadow(0 0 1.2px currentColor) drop-shadow(0 0 2.5px currentColor)}.pitch-wrap .player{cursor:pointer}.pitch-wrap .badge{filter:drop-shadow(0 0 1.2px currentColor);transition:filter 0.25s ease,stroke-width 0.25s ease}.pitch-wrap .player:hover .badge{filter:drop-shadow(0 0 3px currentColor) drop-shadow(0 0 5px currentColor);stroke-width:0.55}.pitch-wrap .pnum{pointer-events:none;user-select:none}.pitch-marquee{overflow:hidden;border-top:1px solid #1a1c1a;background:rgba(5,6,5,0.85);padding:0.8rem 0;position:relative}.pitch-marquee::before,.pitch-marquee::after{content:"";position:absolute;top:0;bottom:0;width:3rem;z-index:2;pointer-events:none}.pitch-marquee::before{left:0;background:linear-gradient(to right,#050605,transparent)}.pitch-marquee::after{right:0;background:linear-gradient(to left,#050605,transparent)}.pitch-marquee-track{display:inline-flex;gap:2.5rem;white-space:nowrap;animation:scroll 90s linear infinite;padding-left:1.5rem}.pitch-marquee:hover .pitch-marquee-track{animation-play-state:paused}@keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}.mq-item{display:inline-flex;align-items:center;gap:0.9rem;font-family:'IBM Plex Mono',monospace;font-size:0.85rem}.mq-name{font-weight:700;letter-spacing:0.05em;color:var(--text)}.mq-fwd{color:#B4FF39}.mq-bwd{color:#FF6B35}.mq-sep{color:#333;margin-left:0.5rem}.pitch-legend{display:flex;gap:2rem;justify-content:center;font-size:0.75rem;color:var(--muted);letter-spacing:0.1em;margin:1rem 0 2rem}.pitch-legend .dot{display:inline-block;width:8px;height:8px;border-radius:50%;margin-right:6px;vertical-align:middle}.pitch-legend .dot.gs{background:var(--neon);box-shadow:0 0 6px var(--neon)}.pitch-legend .dot.kon{background:var(--orange);box-shadow:0 0 6px var(--orange)}
+.goal-theater{display:flex;flex-direction:column;gap:1.2rem;margin:2rem 0}
+.goal-card{background:#050605;border:1px solid #1a1c1a;padding:1rem}
+.goal-head{display:flex;justify-content:space-between;font-family:'IBM Plex Mono',monospace;font-size:0.8rem;color:var(--muted);margin-bottom:0.6rem}
+.goal-head .min{color:var(--neon)}
+.goal-head .name{color:var(--text);font-weight:700}
+.goal-stage{position:relative}
+.goal-stage svg{width:100%;height:auto;display:block}
+.goal-caption{font-family:'IBM Plex Mono',monospace;font-size:0.78rem;color:var(--muted);padding:0.6rem 0;min-height:1.4rem;text-align:center;letter-spacing:0.05em}
+.goal-caption .player{color:var(--text);font-weight:700}
+.goal-caption .pass{color:#B4FF39}
+.goal-caption .dribble{color:#F5C518}
+.goal-caption .shot{color:#FF3B30}
+.goal-caption .empty{color:#555}
+.top-dot{fill:#EDEFEA;filter:drop-shadow(0 0 0.6px #fff) drop-shadow(0 0 1.5px #fff)}
+.trail-pass{stroke:#B4FF39;stroke-width:0.6;stroke-dasharray:1.2 0.8;fill:none;opacity:0.85}
+.trail-dribble{stroke:#F5C518;stroke-width:0.6;stroke-dasharray:0.3 1.1;fill:none;opacity:0.85}
+.trail-shot{stroke:#FF3B30;stroke-width:0.7;fill:none}
+.arrowhead{fill:#FF3B30}
+.pitch-svg .player-g{transform-origin:0px 0px;animation:swingPlayer 12.5s cubic-bezier(0.4,0,0.2,1) infinite}@keyframes swingPlayer{0%,12%{transform:translate(0px,0px)}52%,60%{transform:translate(var(--dx),var(--dy))}100%{transform:translate(0px,0px)}}.pitch-svg .trail-fwd{stroke:#B4FF39;stroke-width:0.35;stroke-dasharray:200;fill:none;opacity:0;animation:drawFwd 12.5s linear infinite}@keyframes drawFwd{0%,12%{stroke-dashoffset:200;opacity:0}14%{opacity:0.9}52%{stroke-dashoffset:0;opacity:0.9}54%,100%{opacity:0}}.pitch-svg .trail-bck{stroke:#FF6B35;stroke-width:0.35;stroke-dasharray:200;fill:none;opacity:0;animation:drawBck 12.5s linear infinite}@keyframes drawBck{0%,60%{stroke-dashoffset:200;opacity:0}62%{opacity:0.9}100%{stroke-dashoffset:0;opacity:0.9}}</style>
+</head>
+<body>
+<nav class="nav"><a href="/" class="brand">HP//Analytic</a><a href="/yazi">MAÇ DOSYASI</a></nav>
+<main class="wrap">
+<article>
+<div class="kicker">Süper Lig · 30 Ekim 2026</div>
+<h1>Aynı mesafe, farklı yön.</h1>
+
+<div class="scene">
+<span class="time">61. DAKİKA</span>
+Leão sağdan içeri kat ediyor. Konyaspor savunması geri geri koşuyor. Top ayağında, ceza sahası yayı üzerinde. Bir dokunuş, iki. Kaleciyle karşı karşıya. Gol.
+</div>
+
+<p class="lede">Skor 4-0. Maç kopmuş. Ama bu golün hikâyesi 61. dakikada başlamıyor.</p>
+
+<p class="short">Hikâye, 90 dakika boyunca her iki takımın sprintini <em>nereye</em> harcadığında başlıyor.</p>
+
+<h2>Pozisyon haritaları</h2>
+
+
+
+
+
+
+
+
+
+
+
+<style id="hp-motor-css">
+.hp-tabs { display: flex; gap: 0.5rem; justify-content: center; margin: 1.5rem 0; }
+.hp-tab { background: #0D0E12; color: #8A8A93; border: 1px solid #2A2B33; padding: 0.4rem 1rem; border-radius: 20px; font-family: monospace; font-size: 0.8rem; cursor: pointer; transition: 0.2s; }
+.hp-tab.active { background: #FFF; color: #000; border-color: #FFF; font-weight: bold; }
+.hp-panel { background: #050605; border: 1px solid #1B1B21; border-radius: 12px; padding: 1rem; margin-bottom: 1rem; }
+.hp-title { font-family: monospace; text-align: center; margin-bottom: 0.5rem; font-size: 1rem; letter-spacing: 1px; font-weight: bold; }
+.hp-svg { width: 100%; height: auto; display: block; background: #08090B; border-radius: 8px; }
+
+/* ALTYAZI (TICKER) - CSS ile pürüzsüz akış */
+.hp-ticker-wrap { margin-top: 0.5rem; height: 2.2rem; background: #0D0E12; border-radius: 4px; display: flex; align-items: center; overflow: hidden; position: relative; border: 1px solid #1B1B21;}
+.hp-ticker-text { font-family: monospace; font-size: 1rem; white-space: nowrap; position: absolute; font-weight: bold; letter-spacing: 0.5px; }
+@keyframes ticker-scroll {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+}
+.ticker-anim { display: inline-block; animation: ticker-scroll 6s linear infinite; padding-left: 20px; }
+
+/* OYUNCU İKONLARI */
+.hp-pl { transition: transform 4s cubic-bezier(0.25, 1, 0.5, 1); } /* 4 saniye süper ağır çekim */
+.hp-txt { font-family: monospace; text-anchor: middle; dominant-baseline: central; font-weight: bold; pointer-events: none; fill: #000; font-size: 3.5px; }
+</style>
+
+<div id="hp-pos-motor"></div>
+
+<script>
+(function(){
+    const REPO = "/assets/data/konya-gs/players_heatmap.json";
+    
+    // Takım Renkleri (Gerçek)
+    const TEAM_COLOR = { 
+        konya: "#00A859", // Konyaspor Yeşil
+        gs: "#FBB800"     // Galatasaray Sarı
+    };
+    
+    // İz Renkleri
+    const COLOR_FWD = "#B4FF39"; // Neon Yeşil (Hücum)
+    const COLOR_DEF = "#FF6B35"; // Turuncu (Defans)
+    
+    let activeHalf = "all";
+    let data = null;
+    let timers = [];
+
+    function updateTicker(teamId, text, color) {
+        const wrap = document.getElementById("hp-ticker-" + teamId);
+        if(!wrap) return;
+        // Yeni metni oluştur ve CSS animasyonunu ata
+        wrap.innerHTML = `<div class="hp-ticker-text" style="color:${color}"><span class="ticker-anim">${text}</span></div>`;
+    }
+
+    function drawTrail(svg, x1, y1, x2, y2, color, isDashed) {
+        const ns = "http://www.w3.org/2000/svg";
+        const line = document.createElementNS(ns, "line");
+        line.setAttribute("x1", x1); line.setAttribute("y1", y1);
+        line.setAttribute("x2", x1); line.setAttribute("y2", y1);
+        line.setAttribute("stroke", color);
+        line.setAttribute("stroke-width", "0.8");
+        line.setAttribute("stroke-linecap", "round");
+        if (isDashed) line.setAttribute("stroke-dasharray", "2 2");
+        line.setAttribute("fill", "none");
+        svg.appendChild(line);
+        
+        // Çizgi hareketle birlikte uzasın (4 saniye)
+        const t0 = performance.now();
+        function anim(t) {
+            const p = Math.min((t - t0) / 4000, 1);
+            line.setAttribute("x2", x1 + (x2 - x1) * p);
+            line.setAttribute("y2", y1 + (y2 - y1) * p);
+            if (p < 1) requestAnimationFrame(anim);
+        }
+        requestAnimationFrame(anim);
+    }
+
+    function drawTeam(teamId, players) {
+        const svg = document.getElementById("hp-svg-" + teamId);
+        if(!svg) return;
+        svg.querySelectorAll(".hp-pl, .hp-trail-svg").forEach(e => e.remove());
+        
+        const ns = "http://www.w3.org/2000/svg";
+        const teamColor = TEAM_COLOR[teamId];
+        const isKonya = teamId === "konya";
+        
+        const trailLayer = document.createElementNS(ns, "g");
+        trailLayer.setAttribute("class", "hp-trail-svg");
+        svg.appendChild(trailLayer);
+        
+        players.forEach(p => {
+            // Bütün sahayı aynala (Konya sol, GS sağ olsun diye)
+            const getX = (x) => 105 - x; 
+            
+            const baseX = getX(p.avg[0]);
+            const baseY = p.avg[1];
+            
+            const xs = p.points.map(pt => pt[0]);
+            const rawMin = Math.min(...xs);
+            const rawMax = Math.max(...xs);
+            
+            // En ofansif ve en defansif uç noktalar
+            let fwdX, bckX;
+            if (isKonya) {
+                // Konya solda, sağa hücum eder (x artar)
+                fwdX = getX(rawMin); // En yüksek x değeri
+                bckX = getX(rawMax); // En düşük x değeri
+            } else {
+                // GS sağda, sola hücum eder (x azalır)
+                fwdX = getX(rawMax); // En düşük x değeri
+                bckX = getX(rawMin); // En yüksek x değeri
+            }
+            
+            // Oyuncu İkonu
+            const g = document.createElementNS(ns, "g");
+            g.setAttribute("class", "hp-pl");
+            g.setAttribute("transform", `translate(${baseX.toFixed(1)}, ${baseY.toFixed(1)})`);
+            
+            const rect = document.createElementNS(ns, "rect");
+            rect.setAttribute("x", "-3"); rect.setAttribute("y", "-3");
+            rect.setAttribute("width", "6"); rect.setAttribute("height", "6");
+            rect.setAttribute("rx", "1.2"); 
+            rect.setAttribute("fill", teamColor); // İkon rengi ASLA değişmez
+            rect.setAttribute("stroke", "#000"); rect.setAttribute("stroke-width", "0.2");
+            
+            const txt = document.createElementNS(ns, "text");
+            txt.setAttribute("class", "hp-txt");
+            txt.textContent = p.id;
+            
+            g.appendChild(rect); g.appendChild(txt);
+            svg.appendChild(g);
+            
+            const offAct = p.actions[0] || "Hücum";
+            const defAct = p.actions[1] || "Defans";
+            
+            // === ANİMASYON DÖNGÜSÜ ===
+            function cycle() {
+                // 1. OFANSİF HAREKET (4s)
+                updateTicker(teamId, `#${p.id} ${p.name} — ${offAct}`, COLOR_FWD);
+                g.setAttribute("transform", `translate(${fwdX.toFixed(1)}, ${baseY.toFixed(1)})`);
+                drawTrail(svg, baseX, baseY, fwdX, baseY, COLOR_FWD, false);
+                
+                // 2. BEKLEME (1.5s) ardından DEFANSİF (4s)
+                timers.push(setTimeout(() => {
+                    updateTicker(teamId, `#${p.id} ${p.name} — ${defAct}`, COLOR_DEF);
+                    g.setAttribute("transform", `translate(${bckX.toFixed(1)}, ${baseY.toFixed(1)})`);
+                    drawTrail(svg, baseX, baseY, bckX, baseY, COLOR_DEF, true);
+                    
+                    // 3. BEKLEME ve RESET (2s)
+                    timers.push(setTimeout(() => {
+                        g.setAttribute("transform", `translate(${baseX.toFixed(1)}, ${baseY.toFixed(1)})`);
+                        timers.push(setTimeout(cycle, 2000));
+                    }, 4000 + 1500));
+                }, 4000 + 1500));
+            }
+            
+            // Formasyonun ilk 3 saniye görünmesi için gecikmeli başlat
+            timers.push(setTimeout(cycle, 3000 + Math.random() * 500));
+        });
+    }
+
+    function render() {
+        timers.forEach(clearTimeout); timers = [];
+        const box = document.getElementById("hp-pos-motor");
+        if(!box || !data) return;
+        const half = data[activeHalf];
+        
+        box.innerHTML = `
+            <div class="hp-tabs">
+                <button class="hp-tab ${activeHalf==='all'?'active':''}" onclick="window.hpSetHalf('all')">Tüm Maç</button>
+                <button class="hp-tab ${activeHalf==='1h'?'active':''}" onclick="window.hpSetHalf('1h')">1. Yarı</button>
+                <button class="hp-tab ${activeHalf==='2h'?'active':''}" onclick="window.hpSetHalf('2h')">2. Yarı</button>
+            </div>
+            <div class="hp-panel">
+                <div class="hp-title" style="color:${TEAM_COLOR.konya}">KONYASPOR (Ev Sahibi)</div>
+                <svg class="hp-svg" viewBox="0 0 105 68" id="hp-svg-konya">
+                    <rect width="105" height="68" fill="none" stroke="#1B1B21" stroke-width="0.4"/>
+                    <line x1="52.5" y1="0" x2="52.5" y2="68" stroke="#1B1B21" stroke-width="0.4"/>
+                    <circle cx="52.5" cy="34" r="9.15" fill="none" stroke="#1B1B21" stroke-width="0.4"/>
+                    <rect x="0" y="13.85" width="16.5" height="40.3" fill="none" stroke="#1B1B21" stroke-width="0.4"/>
+                    <rect x="88.5" y="13.85" width="16.5" height="40.3" fill="none" stroke="#1B1B21" stroke-width="0.4"/>
+                </svg>
+                <div class="hp-ticker-wrap" id="hp-ticker-konya"></div>
+            </div>
+            <div class="hp-panel">
+                <div class="hp-title" style="color:${TEAM_COLOR.gs}">GALATASARAY (Deplasman)</div>
+                <svg class="hp-svg" viewBox="0 0 105 68" id="hp-svg-gs">
+                    <rect width="105" height="68" fill="none" stroke="#1B1B21" stroke-width="0.4"/>
+                    <line x1="52.5" y1="0" x2="52.5" y2="68" stroke="#1B1B21" stroke-width="0.4"/>
+                    <circle cx="52.5" cy="34" r="9.15" fill="none" stroke="#1B1B21" stroke-width="0.4"/>
+                    <rect x="0" y="13.85" width="16.5" height="40.3" fill="none" stroke="#1B1B21" stroke-width="0.4"/>
+                    <rect x="88.5" y="13.85" width="16.5" height="40.3" fill="none" stroke="#1B1B21" stroke-width="0.4"/>
+                </svg>
+                <div class="hp-ticker-wrap" id="hp-ticker-gs"></div>
+            </div>
+        `;
+        
+        setTimeout(() => {
+            drawTeam("konya", half.konya);
+            drawTeam("gs", half.gs);
+        }, 50);
+    }
+    
+    window.hpSetHalf = (h) => { activeHalf = h; render(); };
+    fetch(REPO + "?v=" + Date.now()).then(r => r.json()).then(j => { data = j; render(); });
+})();
+</script>
+
+
+
+
+
+
+
+
+
+
+
+<h2>Gol anları</h2>
+<p class="short">Her gol, olay zinciriyle. Pas kesik yeşil, dripling noktalı sarı, şut düz kırmızı okla.</p>
+<script type="application/json" id="goals-data">[{"player": "Victor Osimhen", "min": 11, "chain": [{"t": 679.41, "x": 97.19, "y": 32.08, "player": "Victor Osimhen", "action": "Shots on target"}, {"t": 679.41, "x": 97.19, "y": 32.08, "player": "Victor Osimhen", "action": "Goals"}]}, {"player": "Yunus Akgün", "min": 27, "chain": [{"t": 1628.41, "x": 105.0, "y": 68.0, "player": "Gabriel Sara", "action": "Passes accurate"}, {"t": 1632.41, "x": 83.5, "y": 47.89, "player": "Yunus Akgün", "action": "Shots on target"}, {"t": 1632.41, "x": 83.5, "y": 47.89, "player": "Yunus Akgün", "action": "Goals"}]}, {"player": "Aleksei Batrakov", "min": 54, "chain": [{"t": 3269.95, "x": 16.46, "y": 17.509999999999998, "player": "Eren Elmalı", "action": "Passes accurate"}, {"t": 3271.95, "x": 23.52, "y": 20.83, "player": "Lucas Torreira", "action": "Passes accurate"}, {"t": 3273.95, "x": 37.63, "y": 6.729999999999997, "player": "Rafael Leão", "action": "Passes accurate"}, {"t": 3281.95, "x": 94.0, "y": 24.060000000000002, "player": "Aleksei Batrakov", "action": "Shots on target"}, {"t": 3281.95, "x": 94.0, "y": 24.060000000000002, "player": "Aleksei Batrakov", "action": "Goals"}]}, {"player": "Rafael Leão", "min": 61, "chain": [{"t": 3686.95, "x": 94.0, "y": 34.0, "player": "Rafael Leão", "action": "Penalty"}, {"t": 3686.95, "x": 94.0, "y": 34.0, "player": "Rafael Leão", "action": "Goals"}]}]</script>
+<div class="goal-theater"></div>
+<h2>Neden kazandı?</h2>
+
+<p class="short">Dört gol, dört ayrı mekanizma.</p>
+<p class="short">Ama dört mekanizmanın ortak noktası var: <strong>sprintin yönü.</strong></p>
+<p class="short">Galatasaray topu kazandığında ileri koştu. Konyaspor kaybettiğinde geri koştu.</p>
+<p class="short">Bu bir taktik değil. Bu bir refleks.</p>
+<p class="short">Ve refleks, maçın her dakikasında tekrarlandı.</p>
+
+<div class="boundary">Sonraki üç maçta Galatasaray yine sprintini hücuma harcarsa, "sistematik" deriz. Tek maç, tek gözlem.</div>
+
+<div class="scene">
+<span class="time">90+8. DAKİKA</span>
+Maç bitti. 4-0. Dört gol, üç puan. Ama asıl hikâye skorda değil. Skorun arkasındaki iki farklı niyette.
+</div>
+
+<p class="short">Biri ileri koştu, diğeri geri. Biri sprintini hücuma harcadı, diğeri savunmaya.</p>
+<p class="short">Futbol bazen bu kadar basit. Ama basit olan, kolay değil.</p>
+
+<div class="note">Veri: SportsBase V4 canonical · XLSX aggregate · maç fitness XLSX. Her sayı en az iki kaynakla çapraz doğrulandı. Sprint toplamları hücum/savunma kırılımına tam oturmuyor (GS 384m, Konya 437m sınıflandırılmamış); bu kısım yayınlanan teze dahil edilmedi.</div>
+</article>
+</main>
+<footer class="footer">HP//ANALYTIC — VERİ DEĞİL, MEKANİZMA.</footer>
+
+<script>
+gsap.registerPlugin(ScrollTrigger);
+gsap.from('[data-xg] .val',{opacity:0,y:20,duration:0.9,stagger:0.15,ease:'power3.out',scrollTrigger:{trigger:'[data-xg]',start:'top 85%'}});
+document.querySelectorAll('[data-mirror] .fill').forEach(b=>{
+  gsap.to(b,{width:b.dataset.w+'%',duration:1.4,ease:'power3.out',scrollTrigger:{trigger:'[data-mirror]',start:'top 80%'}});
+});
+document.querySelectorAll('[data-bubbles] .bub').forEach((c,i)=>{
+  gsap.from(c,{attr:{r:0},opacity:0,duration:0.9,delay:i*0.15,ease:'back.out(2)',scrollTrigger:{trigger:'[data-bubbles]',start:'top 80%'}});
+  c.addEventListener('mouseenter',()=>{ c.setAttribute('opacity','0.5'); });
+  c.addEventListener('mouseleave',()=>{ c.setAttribute('opacity','1'); });
+  c.addEventListener('click',()=>{ alert(c.dataset.gol); });
+});
+document.querySelectorAll('[data-funnel] .funnel-step').forEach((s,i)=>{
+  gsap.from(s,{opacity:0,y:15,duration:0.6,delay:i*0.2,ease:'power2.out',scrollTrigger:{trigger:'[data-funnel]',start:'top 80%'}});
+});
+
+
+
+
+
+
+
+gsap.from('.shot',{opacity:0,y:-6,duration:0.55,stagger:0.04,ease:'back.out(1.6)',scrollTrigger:{trigger:'.shot-stage',start:'top 78%'}});document.querySelectorAll(',4500)});
+(function(){
+  (function(){
+  var RAF = [];
+  
+
+(function(){
+  var d = document.getElementById('goals-data');
+  if (!d) { console.error('goals-data yok'); return; }
+  var data;
+  try { data = JSON.parse(d.textContent); }
+  catch(e) { console.error('JSON parse:', e); return; }
+  var container = document.querySelector('.goal-theater');
+  if (!container) { console.error('goal-theater yok'); return; }
+  var NS = 'http://www.w3.org/2000/svg';
+  data.forEach(function(g, gi){
+    var card = document.createElement('div');
+    card.className = 'goal-card';
+    card.innerHTML = '<div class="goal-head"><span class="min">'+g.min+"'</span><span class=\"name\">"+g.player+'</span><span>'+g.chain.length+' event</span></div><div class="goal-stage"></div><div class="goal-caption"></div>';
+    container.appendChild(card);
+    var stage = card.querySelector('.goal-stage'), caption = card.querySelector('.goal-caption');
+    stage.innerHTML = '<svg viewBox="0 0 105 68" preserveAspectRatio="xMidYMid meet"><defs><marker id="ah'+gi+'" markerWidth="4" markerHeight="4" refX="2" refY="2" orient="auto"><polygon class="arrowhead" points="0,0 4,2 0,4"/></marker></defs><rect x="0.2" y="0.2" width="104.6" height="67.6" fill="none" stroke="#1a1c1a" stroke-width="0.3"/><line x1="52.5" y1="0.2" x2="52.5" y2="67.8" stroke="#1a1c1a" stroke-width="0.3"/><circle cx="52.5" cy="34" r="9.15" fill="none" stroke="#1a1c1a" stroke-width="0.3"/><rect x="0.2" y="13.85" width="16.5" height="40.3" fill="none" stroke="#1a1c1a" stroke-width="0.3"/><rect x="88.3" y="13.85" width="16.5" height="40.3" fill="none" stroke="#1a1c1a" stroke-width="0.3"/></svg>';
+    var svgEl = stage.querySelector('svg');
+    var ball = document.createElementNS(NS,'circle');
+    ball.setAttribute('r','1.4'); ball.setAttribute('class','top-dot');
+    ball.setAttribute('cx', g.chain[0].x); ball.setAttribute('cy', g.chain[0].y);
+    svgEl.appendChild(ball);
+    g.chain.forEach(function(step, si){
+      if (si === 0) return;
+      var prev = g.chain[si-1];
+      var line = document.createElementNS(NS,'line');
+      line.setAttribute('x1', prev.x); line.setAttribute('y1', prev.y);
+      line.setAttribute('x2', step.x);   line.setAttribute('y2', step.y);
+      var cls = 'trail-pass';
+      if (step.action === 'Goals' || step.action.indexOf('Shots')===0) cls = 'trail-shot';
+      else if (step.action.indexOf('Dribble')>=0 || step.action === 'Carries') cls = 'trail-dribble';
+      line.setAttribute('class', cls);
+      if (cls === 'trail-shot') line.setAttribute('marker-end','url(#ah'+gi+')');
+      svgEl.appendChild(line);
+    });
+    var obs = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if (!e.isIntersecting || card.dataset.played) return;
+        card.dataset.played = '1';
+        play(g, ball, caption);
+      });
+    }, {threshold:0.3});
+    obs.observe(card);
+  });
+  function play(g, ball, caption){
+    var chain = g.chain, i = 0;
+    function step(){
+      if (i >= chain.length) {
+        i = 0;
+        caption.innerHTML = '<span class="empty">tekrar oynatılıyor…</span>';
+        setTimeout(step, 2000);
+        return;
+      }
+      var c = chain[i], prev = i > 0 ? chain[i-1] : c;
+      var dist = i > 0 ? Math.sqrt(Math.pow(c.x-prev.x,2)+Math.pow(c.y-prev.y,2))*1.05 : 0;
+      var distStr = dist ? dist.toFixed(1)+'m' : '—';
+      var kind = c.action === 'Goals' ? '<span class="shot">GOL</span>' :
+                 c.action.indexOf('Shots')===0 ? '<span class="shot">şut '+distStr+'</span>' :
+                 (c.action.indexOf('Dribble')>=0 || c.action === 'Carries') ? '<span class="dribble">dripling '+distStr+'</span>' :
+                 '<span class="pass">pas '+distStr+'</span>';
+      caption.innerHTML = '<span class="player">'+c.player+'</span> · '+kind;
+      var sx = prev.x, sy = prev.y, ex = c.x, ey = c.y, t0 = performance.now(), dur = 900;
+      (function frame(now){
+        var p = Math.min((now-t0)/dur, 1), e = 1 - Math.pow(1-p, 2);
+        ball.setAttribute('cx', sx + (ex-sx)*e);
+        ball.setAttribute('cy', sy + (ey-sy)*e);
+        if (p < 1) requestAnimationFrame(frame);
+        else { i++; setTimeout(step, 700); }
+      })(t0);
+    }
+    step();
+  }
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,330 @@
+---
+title: "Maç Raporu: VfB Stuttgart vs Galatasaray"
+date: "2026-11-03"
+author: "Hikmet Pınarbaş"
+---
+
+# Maç Raporu: VfB Stuttgart vs Galatasaray
+
+*05.11.2026 · UEFA Şampiyonlar Ligi · HPAnalytic Derin Analiz*
+
+---
+
+
+
+:::visual [pass-network] | Pas Ağı | Daire büyüdükçe pas sayısı artar. Çizgi kalınlaştıkça bağlantı güçlenir.
+:::
+
+## 1. Skor ve Sonuç
+**VfB Stuttgart 0 - 2 Galatasaray**
+
+### 🧠 Maçın Sentezi ve Argümanı
+- VfB Stuttgart xG'de üstün olsa da (1.74 vs 1.38), skora yansıtamadı.
+
+
+---
+
+## 2. Takım Sezon Profili (Durum Bazlı)
+
+### İç Saha / Dış Saha Performansı
+| Durum | VfB Stuttgart (Maç) | VfB Stuttgart (Galibiyet) | VfB Stuttgart (xG) | Galatasaray (Maç) | Galatasaray (Galibiyet) | Galatasaray (xG) |
+|---|---|---|---|---|---|---|
+| **İç Saha** | 5 | 2 | 2.18 | 0 | 0 | 0 |
+| **Dış Saha** | 7 | 4 | 2.49 | 0 | 0 | 0 |
+
+### Sezon Ortalaması (Kaynak: bulk/SEASON_*_TEAMS.xlsx)
+
+> ⚠️ PPDA ve Possession **sezon ortalamasıdır**. Maç bazlı değerler XLSX'te yok.
+
+### Maç Durumu (Önde / Geride)
+| Durum | VfB Stuttgart (xG) | VfB Stuttgart (Poss%) | VfB Stuttgart (PPDA) | Galatasaray (xG) | Galatasaray (Poss%) | Galatasaray (PPDA) |
+|---|---|---|---|---|---|---|
+| **Önde** | 2.84 | 0 | 0 | 0 | 0 | 0 |
+| **Geride** | 1.95 | 0 | 0 | 0 | 0 | 0 |
+
+---
+
+## 2.3. Kilit Olay Dizileri (Event Tracking)
+
+### ⚽ Goller Nasıl Geldi?
+
+### ⚽ Galatasaray — 11:14
+
+| Dakika | Takım | Aksiyon | Konum |
+|---|---|---|---|
+| 10:59 | Galatasaray | Goal kicks short (0-15 m) | (66.8, 33.7) |
+| 11:06 | Galatasaray | Goal kicks medium (15-40 m) | (69.9, 19.4) |
+| 11:09 | Galatasaray | Goal kicks medium (15-40 m) | (80.3, 5.2) |
+| 11:10 | Galatasaray | Goal kicks medium (15-40 m) | (81.9, 22.6) |
+| 11:12 | Galatasaray | Goal kicks medium (15-40 m) | (102.4, 18.8) |
+| 11:14 | Galatasaray | Goals | (94.8, 31.2) |
+
+
+### ⚽ Galatasaray — 14:35
+
+| Dakika | Takım | Aksiyon | Konum |
+|---|---|---|---|
+| 14:26 | Galatasaray | Goal kicks medium (15-40 m) | (44.5, 51.9) |
+| 14:27 | Galatasaray | Goal kicks medium (15-40 m) | (46.0, 29.8) |
+| 14:31 | Galatasaray | Goal kicks long (40+ m) | (45.0, 14.9) |
+| 14:35 | Galatasaray | Goals | (96.2, 27.6) |
+
+
+
+
+---
+
+## 2.5. 6 Oyun Fazı Dağılımı
+
+_Ham tag: 3469 → Benzersiz pencere: 1205 (ort. 2.9 tag/pencere)_
+
+**Faz dağılımı (SportsBase'un kendi etiketleri):**
+- **Yerleşik Hücum**: 112 pencere  (Galatasaray:54, VfB Stuttgart:58)
+- **Geçiş Hücumu**: 33 pencere  (Galatasaray:19, VfB Stuttgart:14)
+- **Yerleşik Savunma**: 112 pencere  (Galatasaray:58, VfB Stuttgart:54)
+- **Geçiş Savunması**: 33 pencere  (Galatasaray:14, VfB Stuttgart:19)
+- **Duran Top Hücumu**: 16 pencere  (Galatasaray:9, VfB Stuttgart:7)
+
+**Kartlar ve şutlar:**
+- Sarı: 8 (VfB Stuttgart:5, Galatasaray:3)
+- Kırmızı: 0 ()
+- İsabetli şut: 2 (VfB Stuttgart:1, Galatasaray:1)
+- İsabetsiz şut: 10 (VfB Stuttgart:6, Galatasaray:4)
+
+
+---
+
+## 3. Pas Ağı
+
+> ⚠️ Veri setinde pas alıcısı (receiver) bilgisi bulunmuyor. Pas ağı analizi devre dışı (uydurma bağlantı üretilmiyor).
+
+---
+
+## 4. Takım İstatistikleri (131 Metrik Analizi)
+
+| Metrik | VfB Stuttgart | Galatasaray |
+|---|---|---|
+| **Gol** | 0 | 2 |
+| **xG (Gol Beklentisi)** | 1.74 | 1.38 |
+| **Toplam Şut** | 13 | 12 |
+| **İsabetli Şut** | 5 | 4 |
+| **Toplam Pas** | 364 | 383 |
+| **Pas İsabet %** | %76 | %81 |
+| **Topla Oynama** | %48.6 | %51.4 |
+| **PPDA (Baskı)** | 0.0 | 0.0 |
+| **Kilit Pas** | 8 | 3 |
+| **Top Kapma** | 46 | 35 |
+| **İkili Mücadele %** | %44 | %50 |
+| **Faul** | 16 | 13 |
+| **Korner** | 4 | 6 |
+| **Sarı Kart** | 5 | 3 |
+| **Kırmızı Kart** | 0 | 0 |
+| **Toplam Eylem Pencere** | 662 | 701 |
+
+---
+
+## 4.5. Beklenen Tehdit (xT) — Karun Singh Modeli
+
+
+**Takım xT toplamı (pas + top sürme):**
+
+| Takım | xT | xT/pas | Pas isabet | Beklenen isabet | Fazla/eksik | Risk |
+|---|---|---|---|---|---|---|
+| Galatasaray | **0.00** | 0.0000 | 59.6% | 69.4% | **-4.59** | 0.306 |
+| VfB Stuttgart | **0.00** | 0.0000 | 75.0% | 76.6% | **-0.51** | 0.234 |
+
+
+> **Fazla/eksik:** Gerçek pas isabeti - beklenen isabet. Pozitif = beklentinin üstünde. Negatif = baskı altında ezilmiş.
+
+
+**En yüksek xT üreten oyuncular:**
+
+| Oyuncu | Takım | xT | Pas | Pas isabet | Fazla/eksik |
+|---|---|---|---|---|---|
+| Fabian Bredlow | VfB Stuttgart | 0.000 | 32 | 75.0% | -0.51 |
+| Uğurcan Çakır | Galatasaray | 0.000 | 47 | 59.6% | -4.59 |
+
+
+
+
+**Maçın en değerli 5 aksiyonu (en yüksek xT ekleyen):**
+
+| Dakika | Takım | Oyuncu | Aksiyon | xT ekledi |
+|---|---|---|---|---|
+| 0:53 | VfB Stuttgart | Fabian Bredlow | pass | **0.0000** |
+| 3:14 | VfB Stuttgart | Fabian Bredlow | pass | **0.0000** |
+| 4:54 | Galatasaray | Uğurcan Çakır | pass | **0.0000** |
+| 5:14 | Galatasaray | Uğurcan Çakır | pass | **0.0000** |
+| 8:54 | VfB Stuttgart | Fabian Bredlow | pass | **0.0000** |
+
+
+
+
+**Maçın en riskli 5 aksiyonu (en düşük xT net):**
+
+| Dakika | Takım | Oyuncu | Aksiyon | xT net |
+|---|---|---|---|---|
+| 3:14 | VfB Stuttgart | Fabian Bredlow | pass | -0.0192 |
+| 33:33 | VfB Stuttgart | Fabian Bredlow | pass | -0.0192 |
+| 53:41 | VfB Stuttgart | Fabian Bredlow | pass | -0.0192 |
+| 86:49 | VfB Stuttgart | Fabian Bredlow | pass | -0.0192 |
+| 20:45 | Galatasaray | Uğurcan Çakır | pass | -0.0187 |
+
+
+
+
+
+---
+
+## 5. Bölgesel Zone Geçiş Ağı (NetworkX)
+
+**Toplam Düğüm:**  | **Toplam Kenar:** 
+
+| Kaynak → Hedef | Pas Sayısı |
+|---|---|
+
+
+![Pas Ağı Görseli](/sdcard/HPAnaliz/Analiz/sosyal_medya/pass_net_VfB_Stuttgart.png)
+
+---
+
+## 6. Taktiksel Pas Yönü ve Amaç Analizi
+
+| Taktiksel Eylem | VfB Stuttgart | Galatasaray |
+|---|---|---|
+| **Merkezden Delme** | 26 | 27 |
+| **Kanattan Merkeze Kırma** | 12 | 16 |
+| **Merkezden Kanata Açma** | 18 | 19 |
+| **Güvenli Oyun** | 98 | 119 |
+| **İleri Paslar** | 81 | 69 |
+
+---
+
+## 7. Bireysel Oyuncu Performansı ve Sezon Kıyaslaması
+
+
+**VfB Stuttgart**
+| Oyuncu | DK | Gol | Asist | xG | xA | Kilit Pas | Pas % | Top Kapma | İkili Müc. % | Sezon Kıyas |
+|---|---|---|---|---|---|---|---|---|---|---|
+| Maximilian Mittelstädt | 97 | - | - | 0 | 0.54 | 2 | 0.84 | 9 | 0.56 | Sezon ortalamasında |
+| Bilal El Khannouss | 97 | - | - | 0.13 | 0.19 | 1 | 0.8300000000000001 | 1 | 0.6 | Sezon ortalamasında |
+| Ramon Hendriks | 97 | - | - | 0 | 0.04 | 0 | 0.81 | 8 | 0.6900000000000001 | Sezon ortalamasında |
+| Jeff Chabot | 97 | - | - | 0 | 0 | 1 | 0.76 | 8 | 0.55 | Sezon ortalamasında |
+| Deniz Undav | 97 | - | - | 0.1 | 0.55 | 1 | 0.8 | 2 | 0.4 | Sezon ortalamasında |
+| Chris Führich | 85 | - | - | 0.17 | 0.7 | 0 | 0.84 | 2 | 0.53 | Sezon ortalamasında |
+| Yanik Spalt | 79 | - | - | 0 | 0.04 | 0 | 0.87 | 7 | 0.47 | Sezon ortalamasında |
+| Jamie Leweling | 77 | - | - | 0.53 | 0 | 2 | 0.48 | 2 | 0.43 | Sezonun üzerinde (Formda) |
+| Ermedin Demirovic | 77 | - | - | 0 | 0.03 | 0 | 0.8 | 1 | 0.06 | Sezon ortalamasında |
+| Grischa Prömel | 77 | - | - | 0 | 0 | 0 | 0.72 | 2 | 0.25 | Sezon ortalamasında |
+| Lorenz Assignon | 19 | - | - | 0.03 | 0.33 | 1 | 0.6900000000000001 | 2 | 1 | Sezon ortalamasında |
+| Nikolas Nartey | 19 | - | - | 0 | 0 | 0 | 1.0 | 0 | 0.6 | Sezon ortalamasında |
+| Dzenan Pejcinovic | 19 | - | - | 0.18 | 0.33 | 0 | 1.0 | 0 | 0.5 | Sezon ortalamasında |
+| Atakan Karazor | 17 | - | - | 0 | 0 | 0 | 1.0 | 2 | 0 | Sezon ortalamasında |
+| Tiago Tomás | 12 | - | - | 0.6 | 0 | 0 | 0.0 | 0 | 0 | Sezonun üzerinde (Formda) |
+
+
+**Galatasaray**
+| Oyuncu | DK | Gol | Asist | xG | xA | Kilit Pas | Pas % | Top Kapma | İkili Müc. % | Sezon Kıyas |
+|---|---|---|---|---|---|---|---|---|---|---|
+| Yunus Akgün | 97 | - | - | 0 | 0.71 | 1 | 0.89 | 2 | 0.47 | Sezon ortalamasında |
+| Lucas Torreira | 97 | - | - | 0.09 | 0.42 | 0 | 0.85 | 4 | 0.71 | Sezon ortalamasında |
+| Abdülkerim Bardakcı | 97 | - | - | 0 | 0 | 0 | 0.93 | 7 | 0.67 | Sezon ortalamasında |
+| Victor Osimhen | 97 | - | - | 0.69 | 0 | 0 | 0.76 | 1 | 0.46 | Sezonun üzerinde (Formda) |
+| Davinson Sánchez | 97 | - | 1 | 0 | 0.26 | 1 | 0.6900000000000001 | 7 | 0.44 | Sezon ortalamasında |
+| Mario Lemina | 85 | - | - | 0 | 0 | 0 | 0.8300000000000001 | 4 | 0.56 | Sezon ortalamasında |
+| Aleksei Batrakov | 80 | 2 | - | 0.59 | 0.31 | 0 | 0.79 | 3 | 0.47 | Sezonun üzerinde (Formda) |
+| Ismail Jakobs | 80 | - | - | 0 | 0 | 0 | 0.81 | 2 | 0.67 | Sezon ortalamasında |
+| Roland Sallai | 70 | - | - | 0 | 0 | 0 | 0.86 | 1 | 0.54 | Sezon ortalamasında |
+| Barış Alper Yılmaz | 70 | - | - | 0.01 | 0.35 | 0 | 0.76 | 1 | 0.56 | Sezon ortalamasında |
+| Wilfried Singo | 26 | - | - | 0 | 0 | 0 | 0.77 | 2 | 0.5 | Sezon ortalamasında |
+| Rafael Leão | 26 | - | - | 0 | 0.03 | 0 | 0.8300000000000001 | 0 | 0.33 | Sezon ortalamasında |
+| Leroy Sané | 17 | - | - | 0 | 0 | 0 | 1.0 | 1 | 0.67 | Sezon ortalamasında |
+| Eren Elmalı | 17 | - | - | 0 | 0 | 0 | 0.92 | 0 | 0.5 | Sezon ortalamasında |
+| Gabriel Sara | 11 | - | - | 0 | 0 | 1 | 0.4 | 0 | 0 | Sezon ortalamasında |
+
+
+
+---
+
+## 8. Kaleci Analizi
+
+| Kaleci | Takım | DK | Şut | İsabetli Şut | Kurtarış | Kurtarış % | Yenilen Gol |
+|---|---|---|---|---|---|---|---|
+| Uğurcan Çakır | Galatasaray | 97 | 13 | 5 | 5 | 1.0 | 0 |
+| Fabian Bredlow | VfB Stuttgart | 97 | 12 | 4 | 2 | 0.5 | 2 |
+
+
+
+
+---
+
+## 9. Kompozit Metrikler (v2 — Wilson + Shrinkage)
+
+
+
+### 9.1 Bölgesel Hakimiyet (Field Tilt)
+> Hücum üçüncüsünde (pos_x > 66.7) yapılan pasların takım payı. Toplam 100.
+
+| Takım | Field Tilt % |
+|---|---|
+| Galatasaray | **48.0%** |
+| VfB Stuttgart | **52.0%** |
+
+
+
+
+
+
+### 9.2 Kompozit Oyuncu Skoru (İlk 5)
+> Wilson alt sınırı + Beta-Binomial shrinkage. 15+ olayı olan oyuncular sıralanır.
+
+| # | Oyuncu | Skor | Güvenilir Pas | Gol | Olay |
+|---|---|---|---|---|---|
+| 1 | Maximilian Mittelstädt | **17.1** | 0.698 | 0 | 77 |
+| 2 | Bilal El Khannouss | **13.1** | 0.733 | 0 | 54 |
+| 3 | Abdülkerim Bardakcı | **10.6** | 0.752 | 0 | 44 |
+| 4 | Davinson Sánchez | **10.5** | 0.535 | 0 | 56 |
+| 5 | Chris Führich | **10.0** | 0.641 | 0 | 46 |
+
+
+
+
+**Düşük Örneklem (sıralamaya dahil edilmedi):**
+- Wilfried Singo — 13 olay, ham pas %80.0
+- Dzenan Pejcinovic — 9 olay, ham pas %100.0
+- Nikolas Nartey — 9 olay, ham pas %100.0
+- Leroy Sané — 8 olay, ham pas %100.0
+- Atakan Karazor — 5 olay, ham pas %100.0
+
+
+
+
+
+
+
+### 9.3 Pas Ağı Merkeziliği
+> 30 düğüm, 197 kenar.
+
+| Rol | Oyuncu | Skor |
+|---|---|---|
+| 🕸️ Köprü (Betweenness) | Maximilian Mittelstädt | 0.0491 |
+| 🕸️ Köprü (Betweenness) | Victor Osimhen | 0.0449 |
+| 🕸️ Köprü (Betweenness) | Nikolas Nartey | 0.0331 |
+
+| 🎯 Merkez (Closeness) | Bilal El Khannouss | 0.3976 |
+| 🎯 Merkez (Closeness) | Maximilian Mittelstädt | 0.3976 |
+
+
+
+
+
+
+### 9.4 Öngörülemezlik (Shannon Entropisi)
+- **Ortalama göreli entropi:** 0.963 (20 pencere, 300s)
+- **Yorum:** yüksek=öngörülemez/dağınık, düşük=tekrarlı/öngörülebilir
+
+
+
+
+---
+*Rapor: 2026-11-05 14:50 · Termux HPAnalytic*

@@ -1,0 +1,56 @@
+{
+  "agents": {
+    "gemini": {
+      "command": "gemini -p \"{prompt}\"",
+      "strengths": ["uzun metin", "hızlı", "ucuz", "türkçe"],
+      "max_tokens": 8000
+    },
+    "claude": {
+      "command": "claude -p \"{prompt}\"",
+      "strengths": ["titizlik", "uzun bağlam", "karmaşık kod"],
+      "max_tokens": 8000
+    },
+    "opencode": {
+      "command": "opencode \"{prompt}\"",
+      "strengths": ["dosya manipülasyonu", "çoklu dosya", "kod yazma"],
+      "max_tokens": 16000
+    },
+    "deepseek": {
+      "command": "./local-ai/llama.cpp/build/bin/llama-cli -m local-ai/models/DeepSeek-R1-Distill-Qwen-7B-Q4_K_M.gguf -c 4096 -t 4 -n 1024 -p \"{prompt}\"",
+      "strengths": ["offline", "düşünme zinciri", "sıfır maliyet"],
+      "max_tokens": 1024
+    },
+    "jules": {
+      "command": "jules \"{prompt}\"",
+      "strengths": ["tarayıcı erişimi", "web arama"],
+      "max_tokens": 8000
+    }
+  },
+  "tasks": {
+    "yazi-yaz": {
+      "recommended": ["gemini", "claude"],
+      "inputs": ["slug", "title", "type", "verified_data", "brief"],
+      "output": "content/yazilar/{slug}.md"
+    },
+    "veri-analiz": {
+      "recommended": ["opencode", "claude"],
+      "inputs": ["csv_path", "sorgu"],
+      "output": "analysis/{sorgu}.json"
+    },
+    "gorsel-motor": {
+      "recommended": ["opencode", "claude"],
+      "inputs": ["html_path", "brief"],
+      "output": "public/yazi/{slug}.html (patch)"
+    },
+    "kalite-kontrol": {
+      "recommended": ["deepseek", "claude"],
+      "inputs": ["md_path"],
+      "output": "reports/qc-{slug}.json"
+    },
+    "web-arastirma": {
+      "recommended": ["jules"],
+      "inputs": ["soru"],
+      "output": "research/{slug}.md"
+    }
+  }
+}

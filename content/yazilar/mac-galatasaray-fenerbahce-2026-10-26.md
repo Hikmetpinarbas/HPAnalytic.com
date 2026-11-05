@@ -10,6 +10,9 @@ Galatasaray’ın sahasında Fenerbahçe’yi 2-1 mağlup ettiği karşılaşma,
 
 ### Hücum Hacmi ve Bitiricilik Sorunu
 
+<div id="derbi-shotmap" style="margin: 2rem 0; border: 1px solid #2E271C; border-radius: 8px; padding: 1rem;"></div>
+
+
 Galatasaray karşılaşmayı toplam 20 şutla tamamladı. Bu şutların dağılımı, sarı-kırmızılı ekibin rakip ceza sahası ve çevresinde ne kadar aktif olduğunu kanıtlıyor:
 
 *   **Kaleyi Bulan Şutlar:** 8

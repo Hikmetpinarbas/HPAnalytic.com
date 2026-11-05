@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <!-- Background -->
+  <rect width="1200" height="630" fill="#0a0a0a"/>
+  
+  <!-- Framing Lines -->
+  <line x1="40" y1="100" x2="1160" y2="100" stroke="#333" stroke-width="1"/>
+  <line x1="40" y1="530" x2="1160" y2="530" stroke="#333" stroke-width="1"/>
+  
+  <!-- Header Text -->
+  <text x="40" y="50" fill="#fff" font-family="Inter, Arial, sans-serif" font-weight="600" font-size="14" letter-spacing="4">MAÇ ANALİZİ</text>
+  
+  <!-- Team Names -->
+  <text x="40" y="150" fill="#fff" font-family="Inter, Arial, sans-serif" font-weight="800" font-size="32">GALATASARAY</text>
+  <text x="40" y="185" fill="#888" font-family="Inter, Arial, sans-serif" font-weight="500" font-size="24">STUTTGART</text>
+  
+  <!-- xG Paradoksu Text -->
+  <text x="40" y="320" fill="#fff" font-family="Inter, Arial, sans-serif" font-weight="900" font-size="110" letter-spacing="-2">xG</text>
+  <text x="40" y="430" fill="#fff" font-family="Inter, Arial, sans-serif" font-weight="800" font-size="80" letter-spacing="-1">Paradoksu</text>
+  
+  <!-- Right Side Pitch Graphics -->
+  <rect x="750" y="120" width="380" height="380" fill="none" stroke="#333" stroke-width="1"/>
+  <line x1="940" y1="120" x2="940" y2="500" stroke="#333" stroke-width="1"/>
+  <circle cx="940" cy="310" r="60" fill="none" stroke="#333" stroke-width="1"/>
+  <rect x="750" y="200" width="60" height="220" fill="none" stroke="#333" stroke-width="1"/>
+  <rect x="1070" y="200" width="60" height="220" fill="none" stroke="#333" stroke-width="1"/>
+  
+  <!-- Score -->
+  <text x="940" y="360" fill="#fff" font-family="Inter, Arial, sans-serif" font-weight="900" font-size="160" text-anchor="middle" letter-spacing="-5">2-0</text>
+  
+  <!-- Footer -->
+  <text x="40" y="580" fill="#888" font-family="Inter, Arial, sans-serif" font-weight="500" font-size="12" letter-spacing="2">SKOR VE BEKLENTİ</text>
+  <text x="1160" y="580" fill="#888" font-family="Inter, Arial, sans-serif" font-weight="500" font-size="12" letter-spacing="2" text-anchor="end">xG PARADOKSU</text>
+</svg>

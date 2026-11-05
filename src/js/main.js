@@ -219,3 +219,12 @@ if (import.meta && import.meta.hot) {
 })();
 
 
+
+// -- YAZIYA ÖZEL İNTERAKTİF GRAFİKLER --
+import { initShotMap } from '../charts/shotmap.js';
+if (document.getElementById('derbi-shotmap')) {
+  initShotMap('derbi-shotmap', null, '/assets/data/shot_map_derbi.json');
+}
+
+// HPAnalytic — interaktif görseller
+import '/src/visuals-init.js';
