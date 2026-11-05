@@ -14,14 +14,11 @@ Buradaki mesele, hangi takımın daha fazla hücum ettiği değil. Hücumların 
 :::image /assets/images/gs-stuttgart/dashboard.png | Maç Dashboard'u | Özet
 :::
 
-:::visual [match-viz] | Maç Sahnesi | İnteraktif Taktik Harita
 :::
 
 
-:::visual [event-animation] | Olay Animasyonu | GSAP ile topun hareketi ve pres anı
 :::
 
-:::visual [shot-map] | Şut Haritası | Sözleşme A1: Şutlar nereden?
 :::
 
 :::visual [pass-network] | Pas Ağı | Sözleşme C1: Pas ağı hangi oyuncudan geçiyor?
@@ -141,3 +138,9 @@ Futbolun kalitesi yalnızca topun kimde olduğuyla açıklanamaz. Topun hangi ko
 Galatasaray'ın galibiyeti, bu soruları sormak için güçlü bir başlangıç noktası sunuyor.
 
 Çünkü oyunu anlamak, skoru açıklayan bir hikâye bulmak değil; o skoru mümkün kılan ilişkileri ortaya çıkarmaktır.
+
+:::visual [tactical-map] | Taktik Harita | Formasyon kayması ve faz geçişleri.
+:::
+
+:::visual [gk-distribution] | Kaleci Dağıtımı | Uzun top mu, kısa pas mı?
+:::

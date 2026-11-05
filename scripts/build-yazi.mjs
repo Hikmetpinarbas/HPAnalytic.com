@@ -1,10 +1,13 @@
 import { readFileSync, readdirSync, writeFileSync, mkdirSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { marked } from 'marked';
+import * as esbuild from 'esbuild';
 
 const SRC = resolve('content/yazilar');
 const OUT = resolve('public/yazi');
 mkdirSync(OUT, { recursive: true });
+await esbuild.build({ entryPoints: ['src/js/article-viz.js'], bundle: true, format: 'esm', outfile: 'public/assets/js/article-viz.js', minify: true, target: 'es2020', logLevel: 'silent' });
+console.log('OK article-viz.js bundle edildi');
 
 const TYPE_LABEL = { mac: 'Maç Dosyası', metrik: 'Metrik', portre: 'Portre', scouting: 'Scouting', kultur: 'Kültür', articles: 'Analiz', portraits: 'Portre' };
 const TYPE_COLOR = { mac: '#B4FF39', metrik: '#D4A548', portre: '#FF6B35', scouting: '#6B9FE8', kultur: '#9B7BB8', articles: '#B4FF39', portraits: '#FF6B35' };
