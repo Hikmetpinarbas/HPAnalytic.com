@@ -1,10 +1,13 @@
 import { readFileSync, readdirSync, writeFileSync, mkdirSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { marked } from 'marked';
+import * as esbuild from 'esbuild';
 
 const SRC = resolve('content/yazilar');
 const OUT = resolve('public/yazi');
 mkdirSync(OUT, { recursive: true });
+await esbuild.build({ entryPoints: ['src/viz/embed.js'], bundle: true, format: 'esm', outfile: 'public/assets/js/viz-embed.js', minify: true, target: 'es2020', logLevel: 'silent' });
+console.log('OK viz-embed.js bundle');
 
 const TYPE_LABEL = { mac: 'Maç Dosyası', metrik: 'Metrik', portre: 'Portre', scouting: 'Scouting', kultur: 'Kültür', articles: 'Analiz', portraits: 'Portre' };
 const TYPE_COLOR = { mac: '#B4FF39', metrik: '#D4A548', portre: '#FF6B35', scouting: '#6B9FE8', kultur: '#9B7BB8', articles: '#B4FF39', portraits: '#FF6B35' };
@@ -104,7 +107,7 @@ html{opacity:1;transition:opacity .22s cubic-bezier(.2,.9,.3,1)}html.page-leavin
 /* hp-viz-embed-marker */
 /* HPAnalytic — Viz Görsel Dili (Rams + Scher) */
 
-[data-viz] {
+[data-visual-body] {
   margin: 3rem 0;
   padding: 2rem 1rem;
   position: relative;
@@ -113,15 +116,15 @@ html{opacity:1;transition:opacity .22s cubic-bezier(.2,.9,.3,1)}html.page-leavin
   transition: opacity 0.6s ease;
 }
 
-[data-viz].viz-active {
+[data-visual-body].viz-active {
   opacity: 1;
 }
 
-[data-viz].viz-loading {
+[data-visual-body].viz-loading {
   opacity: 1;
 }
 
-[data-viz].viz-loading::before {
+[data-visual-body].viz-loading::before {
   content: 'VERİ YÜKLENİYOR';
   position: absolute;
   top: 50%; left: 50%;
@@ -179,12 +182,12 @@ html{opacity:1;transition:opacity .22s cubic-bezier(.2,.9,.3,1)}html.page-leavin
 
 /* Responsive (Marcotte) */
 @media (max-width: 640px) {
-  [data-viz] { margin: 2rem 0; padding: 1.5rem 0.5rem; }
+  [data-visual-body] { margin: 2rem 0; padding: 1.5rem 0.5rem; }
   .viz-title { flex-direction: column; gap: 0.5rem; }
 }
 /* HPAnalytic — Viz Görsel Dili (Rams + Scher) */
 
-[data-viz] {
+[data-visual-body] {
   margin: 3rem 0;
   padding: 2rem 1rem;
   position: relative;
@@ -193,15 +196,15 @@ html{opacity:1;transition:opacity .22s cubic-bezier(.2,.9,.3,1)}html.page-leavin
   transition: opacity 0.6s ease;
 }
 
-[data-viz].viz-active {
+[data-visual-body].viz-active {
   opacity: 1;
 }
 
-[data-viz].viz-loading {
+[data-visual-body].viz-loading {
   opacity: 1;
 }
 
-[data-viz].viz-loading::before {
+[data-visual-body].viz-loading::before {
   content: 'VERİ YÜKLENİYOR';
   position: absolute;
   top: 50%; left: 50%;
@@ -259,7 +262,7 @@ html{opacity:1;transition:opacity .22s cubic-bezier(.2,.9,.3,1)}html.page-leavin
 
 /* Responsive (Marcotte) */
 @media (max-width: 640px) {
-  [data-viz] { margin: 2rem 0; padding: 1.5rem 0.5rem; }
+  [data-visual-body] { margin: 2rem 0; padding: 1.5rem 0.5rem; }
   .viz-title { flex-direction: column; gap: 0.5rem; }
 }
 
@@ -362,7 +365,7 @@ if (tocLinks.length && headings.length) {
 </script>
 <script src="/page-transition.js" defer></script>
 <script src="/extras2.js" defer></script>
-<!-- embed.js geçici devre dışı -->
+<script type="module" src="/assets/js/viz-embed.js"></script>
 <div id="viz-and-stars-container"></div>
 <!-- VIZ_SLOT -->
 <!-- STARS_SLOT -->

@@ -91,7 +91,7 @@ html{opacity:1;transition:opacity .22s cubic-bezier(.2,.9,.3,1)}html.page-leavin
 /* hp-viz-embed-marker */
 /* HPAnalytic — Viz Görsel Dili (Rams + Scher) */
 
-[data-viz] {
+[data-visual-body] {
   margin: 3rem 0;
   padding: 2rem 1rem;
   position: relative;
@@ -100,15 +100,15 @@ html{opacity:1;transition:opacity .22s cubic-bezier(.2,.9,.3,1)}html.page-leavin
   transition: opacity 0.6s ease;
 }
 
-[data-viz].viz-active {
+[data-visual-body].viz-active {
   opacity: 1;
 }
 
-[data-viz].viz-loading {
+[data-visual-body].viz-loading {
   opacity: 1;
 }
 
-[data-viz].viz-loading::before {
+[data-visual-body].viz-loading::before {
   content: 'VERİ YÜKLENİYOR';
   position: absolute;
   top: 50%; left: 50%;
@@ -166,12 +166,12 @@ html{opacity:1;transition:opacity .22s cubic-bezier(.2,.9,.3,1)}html.page-leavin
 
 /* Responsive (Marcotte) */
 @media (max-width: 640px) {
-  [data-viz] { margin: 2rem 0; padding: 1.5rem 0.5rem; }
+  [data-visual-body] { margin: 2rem 0; padding: 1.5rem 0.5rem; }
   .viz-title { flex-direction: column; gap: 0.5rem; }
 }
 /* HPAnalytic — Viz Görsel Dili (Rams + Scher) */
 
-[data-viz] {
+[data-visual-body] {
   margin: 3rem 0;
   padding: 2rem 1rem;
   position: relative;
@@ -180,15 +180,15 @@ html{opacity:1;transition:opacity .22s cubic-bezier(.2,.9,.3,1)}html.page-leavin
   transition: opacity 0.6s ease;
 }
 
-[data-viz].viz-active {
+[data-visual-body].viz-active {
   opacity: 1;
 }
 
-[data-viz].viz-loading {
+[data-visual-body].viz-loading {
   opacity: 1;
 }
 
-[data-viz].viz-loading::before {
+[data-visual-body].viz-loading::before {
   content: 'VERİ YÜKLENİYOR';
   position: absolute;
   top: 50%; left: 50%;
@@ -246,7 +246,7 @@ html{opacity:1;transition:opacity .22s cubic-bezier(.2,.9,.3,1)}html.page-leavin
 
 /* Responsive (Marcotte) */
 @media (max-width: 640px) {
-  [data-viz] { margin: 2rem 0; padding: 1.5rem 0.5rem; }
+  [data-visual-body] { margin: 2rem 0; padding: 1.5rem 0.5rem; }
   .viz-title { flex-direction: column; gap: 0.5rem; }
 }
 
@@ -267,23 +267,26 @@ html{opacity:1;transition:opacity .22s cubic-bezier(.2,.9,.3,1)}html.page-leavin
   <aside class="toc"><div class="toc-label">İçindekiler</div><ol><li data-level="2"><a href="#h-1-altı-şutla-i-ki-gol-hücumun-hacmi-deği">1. Altı Şutla İki Gol: Hücumun Hacmi Değil, Tehdidin Niteliği</a></li><li data-level="2"><a href="#h-2-geçiş-asimetrisi-aynı-oyunda-i-ki-fark">2. Geçiş Asimetrisi: Aynı Oyunda İki Farklı Tehdit</a></li><li data-level="2"><a href="#h-3-i-ki-golün-arkasındaki-mesele-sonuç-il">3. İki Golün Arkasındaki Mesele: Sonuç ile Süreci Ayırmak</a></li></ol></aside>
   <article class="article">
     <p>Bir futbol maçında üstünlüğü belirleyen şey, topun hangi takımda daha uzun süre kaldığı mıdır? Yoksa topun rakip savunma için ne kadar büyük bir probleme dönüştüğü mü? Galatasaray’ın Stuttgart karşısında aldığı 2-0’lık galibiyet, bu iki sorunun neden birbirinden ayrılması gerektiğini gösteriyor.</p>
-<figure class="blk-image"><img src="/assets/images/gs-stuttgart/dashboard.png" alt="Maç Dashboard'u" loading="lazy"><figcaption>Pas, şut, xG özeti</figcaption></figure>
-:::
-
 <p>Skor rahat bir galibiyeti anlatıyor. Fakat maçın sayısal yapısı, iki takım arasındaki farkın skor kadar büyük olmadığını gösteriyor. Galatasaray topa yüzde 51,4 oranında sahip olurken Stuttgart yüzde 48,6&#39;da kaldı. Şut sayısında Stuttgart&#39;ın yediye altılık üstünlüğü vardı. Buna karşılık üretilen pozisyonların beklenen gol değeri Galatasaray lehineydi.</p>
 <p>Buradaki mesele, hangi takımın daha fazla hücum ettiği değil. Hücumların hangi koşullarda tehlikeye dönüştüğü.</p>
-<h2 id="h-1-altı-şutla-i-ki-gol-hücumun-hacmi-deği">1. Altı Şutla İki Gol: Hücumun Hacmi Değil, Tehdidin Niteliği</h2>
-<p>Futbolda hücum üstünlüğü çoğu zaman sayılar üzerinden tarif edilir. Daha fazla şut atan, daha çok topa sahip olan veya rakip ceza sahasına daha sık giren takımın oyunu yönettiği düşünülür. Oysa bu göstergeler farklı şeyleri ölçer. Bir takımın topa sahip olması, rakibin savunma organizasyonunu bozduğu anlamına gelmez.</p>
-<figure class="blk-image"><img src="/assets/images/gs-stuttgart/stats_bar.png" alt="131 Metrik Karşılaştırması" loading="lazy"><figcaption>Galatasaray vs VfB Stuttgart</figcaption></figure>
+<figure class="blk-image"><img src="/assets/images/gs-stuttgart/dashboard.png" alt="Maç Dashboard'u" loading="lazy"><figcaption>Özet</figcaption></figure>
 :::
 
+<figure class="blk-visual" data-visual="match-viz"><figcaption class="bv-title">Maç Sahnesi</figcaption><div class="bv-body" data-visual-body="match-viz"></div><div class="bv-note">İnteraktif Taktik Harita</div></figure>
+
+
+<figure class="blk-visual" data-visual="event-animation"><figcaption class="bv-title">Olay Animasyonu</figcaption><div class="bv-body" data-visual-body="event-animation"></div><div class="bv-note">GSAP ile topun hareketi ve pres anı</div></figure>
+
+<figure class="blk-visual" data-visual="shot-map"><figcaption class="bv-title">Şut Haritası</figcaption><div class="bv-body" data-visual-body="shot-map"></div><div class="bv-note">Sözleşme A1: Şutlar nereden?</div></figure>
+
+<figure class="blk-visual" data-visual="pass-network"><figcaption class="bv-title">Pas Ağı</figcaption><div class="bv-body" data-visual-body="pass-network"></div><div class="bv-note">Sözleşme C1: Pas ağı hangi oyuncudan geçiyor?</div></figure>
+
+<h2 id="h-1-altı-şutla-i-ki-gol-hücumun-hacmi-deği">1. Altı Şutla İki Gol: Hücumun Hacmi Değil, Tehdidin Niteliği</h2>
+<p>Futbolda hücum üstünlüğü çoğu zaman sayılar üzerinden tarif edilir. Daha fazla şut atan, daha çok topa sahip olan veya rakip ceza sahasına daha sık giren takımın oyunu yönettiği düşünülür. Oysa bu göstergeler farklı şeyleri ölçer. Bir takımın topa sahip olması, rakibin savunma organizasyonunu bozduğu anlamına gelmez.</p>
 <p>Galatasaray altı, Stuttgart yedi şut çekti. Ancak Galatasaray&#39;ın beklenen gol toplamı 1,74&#39;e, Stuttgart&#39;ınki 1,38&#39;e ulaştı. Başka bir ifadeyle Galatasaray, daha az şutla daha yüksek toplam gol beklentisi oluşturdu.</p>
 <p>Şut başına beklenen gol değerinde de fark görülüyor. Galatasaray&#39;ın ortalaması yaklaşık 0,29, Stuttgart&#39;ın ise 0,20. Bu, Galatasaray&#39;ın şutlarının ortalama olarak daha yüksek gol olasılığı taşıdığını gösteriyor.</p>
 <p>Fakat asıl ayrım burada başlamıyor.</p>
 <p>Beklenen tehdit, yani xT, topun farklı saha bölgelerine taşınmasının gelecekteki gol üretme potansiyelini değerlendirmeye çalışır. Galatasaray&#39;ın 1,88&#39;lik toplamına karşı Stuttgart&#39;ın 1,01&#39;de kalması, kullanılan model kapsamında Galatasaray&#39;ın daha yüksek tehdit değeri biriktirdiğini ortaya koyuyor.</p>
-<figure class="blk-image"><img src="/assets/images/gs-stuttgart/xt_grid_heatmap.png" alt="xT Izgarası" loading="lazy"><figcaption>Hücre başına tehdit</figcaption></figure>
-:::
-
 <p>Bu iki ölçümü birlikte düşünmek gerekiyor.</p>
 <p>Beklenen gol, şutun oluştuğu andaki gol olasılığına odaklanır. Beklenen tehdit ise şuttan önce topun bulunduğu ve taşındığı bölgelerin hücum değerine ilişkin başka bir pencere açar.</p>
 <p>Galatasaray her iki ölçümde de öndeydi.</p>
@@ -292,6 +295,9 @@ html{opacity:1;transition:opacity .22s cubic-bezier(.2,.9,.3,1)}html.page-leavin
 <p>Bir kanat oyuncusunun içeri kat etmesiyle merkezde açılan boşluk, aynı koridorda yapılan sıradan bir pasla eşdeğer değildir. İki hareket de topu ileri taşıyabilir; ancak rakip savunmanın dengesine etkileri farklı olabilir.</p>
 <p>Galatasaray&#39;ın sayıları, bu farkı araştırmamız gerektiğini söylüyor. Savunma hattının gerçekten hangi hareketle bozulduğunu ise yalnızca toplam istatistiklerden çıkaramayız.</p>
 <p>Ortaya çıkan temel sonuç şu: Galatasaray daha fazla şut üretmedi; ürettiği şutlara daha yüksek gol ihtimali taşıyan koşullar eşlik etti.</p>
+<figure class="blk-image"><img src="/assets/images/gs-stuttgart/stats_bar.png" alt="Metrikler" loading="lazy"><figcaption>131 Metrik</figcaption></figure>
+:::
+
 <h2 id="h-2-geçiş-asimetrisi-aynı-oyunda-i-ki-fark">2. Geçiş Asimetrisi: Aynı Oyunda İki Farklı Tehdit</h2>
 <p>Geçiş hücumları çoğu zaman hızlı koşularla açıklanır. Bir takım topu kazanır, rakip kaleye yönelir ve savunma yerleşmeden fırsat arar.</p>
 <p>Fakat hız, geçişin yalnızca görünen tarafıdır.</p>
@@ -311,14 +317,14 @@ html{opacity:1;transition:opacity .22s cubic-bezier(.2,.9,.3,1)}html.page-leavin
 <p>Benzer biçimde merkez koridordan başlayan geçişle çizgi üzerinden ilerleyen geçişin savunma oyuncularına yüklediği kararlar farklıdır.</p>
 <p>Galatasaray&#39;ın kontratak üstünlüğü bu mekanizmaların hangisiyle oluştuğunu kanıtlamıyor. Fakat oyunun yalnızca durağan top sahipliği üzerinden okunamayacağını açıkça gösteriyor.</p>
 <p>Geçiş hücumunda mesele kaç kez koşulduğu değil; her koşunun rakip savunmaya hangi kararı verdirdiğidir.</p>
+<figure class="blk-image"><img src="/assets/images/gs-stuttgart/xt_grid_heatmap.png" alt="xT Izgarası" loading="lazy"><figcaption>Isı Haritası</figcaption></figure>
+:::
+
 <h2 id="h-3-i-ki-golün-arkasındaki-mesele-sonuç-il">3. İki Golün Arkasındaki Mesele: Sonuç ile Süreci Ayırmak</h2>
 <p>İki farklı maç düşünelim.</p>
 <p>Birincisinde bir takım rakibine neredeyse hiç fırsat vermeden kazanır. İkincisinde ise rakip de önemli gol pozisyonları bulur ama bunları değerlendiremez.</p>
 <p>İki karşılaşma aynı skorla bitebilir. Buna rağmen kazanan takımların savunma ve hücum performansları eşdeğer değildir.</p>
 <p>Galatasaray&#39;ın Stuttgart karşısındaki galibiyetini değerlendirirken bu ayrımı korumak gerekiyor.</p>
-<figure class="blk-image"><img src="/assets/images/gs-stuttgart/shotmap.png" alt="Şut Haritası" loading="lazy"><figcaption>Shot map</figcaption></figure>
-:::
-
 <p>Stuttgart&#39;ın yedi şutla kayda değer bir beklenen gol toplamına ulaşması, Galatasaray&#39;ın rakip hücumları bütünüyle etkisizleştirdiği iddiasını desteklemiyor. Stuttgart da gol olasılığı taşıyan fırsatlar üretti.</p>
 <p>Buna karşılık Galatasaray, daha yüksek beklenen gol değerine ulaşıp iki gol kaydetti.</p>
 <p>Toplam beklenen goller arasındaki fark yalnızca 0,36&#39;ydı. Gerçek skor farkı ise iki gol.</p>
@@ -339,7 +345,7 @@ html{opacity:1;transition:opacity .22s cubic-bezier(.2,.9,.3,1)}html.page-leavin
 
     </article>
 </div>
-<section class="related"><h2 class="related-title">Benzer Yazılar</h2><div class="related-grid"><a href="/yazi/2002-dunya-kupasi-sans-mi-mekanizma-mi.html" class="rel-card"><span class="rel-tag">Analiz</span><h4>2002 Dünya Kupası: Şans mı, Mekanizma mı?</h4><span class="rel-cta">Oku →</span></a><a href="/yazi/articles-matematik-yalan-soylemeyi-bilmez.html" class="rel-card"><span class="rel-tag">Analiz</span><h4>Matematik yalan söylemeyi bilmez</h4><span class="rel-cta">Oku →</span></a><a href="/yazi/articles-valeriy-lobanovskyi-takimin-zekasini-tasarlamak.html" class="rel-card"><span class="rel-tag">Analiz</span><h4>Valeriy Lobanovskyi: Bir Takımın Zekâsını Tasarlamak</h4><span class="rel-cta">Oku →</span></a></div></section>
+<section class="related"><h2 class="related-title">Benzer Yazılar</h2><div class="related-grid"><a href="/yazi/2002-dunya-kupasi-sans-mi-mekanizma-mi.html" class="rel-card"><span class="rel-tag">Analiz</span><h4>2002 Dünya Kupası: Şans mı, Mekanizma mı?</h4><span class="rel-cta">Oku →</span></a><a href="/yazi/2026-11-03-galatasaray-vs-stuttgart-llm.html" class="rel-card"><span class="rel-tag">Analiz</span><h4>2026-11-03-galatasaray-vs-stuttgart-llm</h4><span class="rel-cta">Oku →</span></a><a href="/yazi/galatasaray-stuttgart-xg-paradoksu.html" class="rel-card"><span class="rel-tag">Analiz</span><h4>Galatasaray 2-0 Stuttgart: xG Paradoksu</h4><span class="rel-cta">Oku →</span></a></div></section>
 <footer class="site-footer"><span>© 2026 HP//Analytic</span><a href="/">Ana sayfa</a></footer>
 <script>
 const bar = document.getElementById('progress');
@@ -365,7 +371,7 @@ if (tocLinks.length && headings.length) {
 </script>
 <script src="/page-transition.js" defer></script>
 <script src="/extras2.js" defer></script>
-<!-- embed.js geçici devre dışı -->
+<script type="module" src="/assets/js/viz-embed.js"></script>
 <div id="viz-and-stars-container"></div>
 <!-- VIZ_SLOT -->
 <!-- STARS_SLOT -->

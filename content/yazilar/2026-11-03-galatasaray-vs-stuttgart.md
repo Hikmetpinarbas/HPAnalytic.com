@@ -7,19 +7,29 @@ cover: "assets/covers/2026-11-03-galatasaray-vs-stuttgart.png"
 
 Bir futbol maçında üstünlüğü belirleyen şey, topun hangi takımda daha uzun süre kaldığı mıdır? Yoksa topun rakip savunma için ne kadar büyük bir probleme dönüştüğü mü? Galatasaray’ın Stuttgart karşısında aldığı 2-0’lık galibiyet, bu iki sorunun neden birbirinden ayrılması gerektiğini gösteriyor.
 
-:::image /assets/images/gs-stuttgart/dashboard.png | Maç Dashboard'u | Pas, şut, xG özeti
-:::
-
 Skor rahat bir galibiyeti anlatıyor. Fakat maçın sayısal yapısı, iki takım arasındaki farkın skor kadar büyük olmadığını gösteriyor. Galatasaray topa yüzde 51,4 oranında sahip olurken Stuttgart yüzde 48,6'da kaldı. Şut sayısında Stuttgart'ın yediye altılık üstünlüğü vardı. Buna karşılık üretilen pozisyonların beklenen gol değeri Galatasaray lehineydi.
 
 Buradaki mesele, hangi takımın daha fazla hücum ettiği değil. Hücumların hangi koşullarda tehlikeye dönüştüğü.
 
+:::image /assets/images/gs-stuttgart/dashboard.png | Maç Dashboard'u | Özet
+:::
+
+:::visual [match-viz] | Maç Sahnesi | İnteraktif Taktik Harita
+:::
+
+
+:::visual [event-animation] | Olay Animasyonu | GSAP ile topun hareketi ve pres anı
+:::
+
+:::visual [shot-map] | Şut Haritası | Sözleşme A1: Şutlar nereden?
+:::
+
+:::visual [pass-network] | Pas Ağı | Sözleşme C1: Pas ağı hangi oyuncudan geçiyor?
+:::
+
 ## 1. Altı Şutla İki Gol: Hücumun Hacmi Değil, Tehdidin Niteliği
 
 Futbolda hücum üstünlüğü çoğu zaman sayılar üzerinden tarif edilir. Daha fazla şut atan, daha çok topa sahip olan veya rakip ceza sahasına daha sık giren takımın oyunu yönettiği düşünülür. Oysa bu göstergeler farklı şeyleri ölçer. Bir takımın topa sahip olması, rakibin savunma organizasyonunu bozduğu anlamına gelmez.
-
-:::image /assets/images/gs-stuttgart/stats_bar.png | 131 Metrik Karşılaştırması | Galatasaray vs VfB Stuttgart
-:::
 
 Galatasaray altı, Stuttgart yedi şut çekti. Ancak Galatasaray'ın beklenen gol toplamı 1,74'e, Stuttgart'ınki 1,38'e ulaştı. Başka bir ifadeyle Galatasaray, daha az şutla daha yüksek toplam gol beklentisi oluşturdu.
 
@@ -28,9 +38,6 @@ Galatasaray altı, Stuttgart yedi şut çekti. Ancak Galatasaray'ın beklenen go
 Fakat asıl ayrım burada başlamıyor.
 
 Beklenen tehdit, yani xT, topun farklı saha bölgelerine taşınmasının gelecekteki gol üretme potansiyelini değerlendirmeye çalışır. Galatasaray'ın 1,88'lik toplamına karşı Stuttgart'ın 1,01'de kalması, kullanılan model kapsamında Galatasaray'ın daha yüksek tehdit değeri biriktirdiğini ortaya koyuyor.
-
-:::image /assets/images/gs-stuttgart/xt_grid_heatmap.png | xT Izgarası | Hücre başına tehdit
-:::
 
 Bu iki ölçümü birlikte düşünmek gerekiyor.
 
@@ -47,6 +54,9 @@ Bir kanat oyuncusunun içeri kat etmesiyle merkezde açılan boşluk, aynı kori
 Galatasaray'ın sayıları, bu farkı araştırmamız gerektiğini söylüyor. Savunma hattının gerçekten hangi hareketle bozulduğunu ise yalnızca toplam istatistiklerden çıkaramayız.
 
 Ortaya çıkan temel sonuç şu: Galatasaray daha fazla şut üretmedi; ürettiği şutlara daha yüksek gol ihtimali taşıyan koşullar eşlik etti.
+
+:::image /assets/images/gs-stuttgart/stats_bar.png | Metrikler | 131 Metrik
+:::
 
 ## 2. Geçiş Asimetrisi: Aynı Oyunda İki Farklı Tehdit
 
@@ -85,6 +95,9 @@ Galatasaray'ın kontratak üstünlüğü bu mekanizmaların hangisiyle oluştuğ
 
 Geçiş hücumunda mesele kaç kez koşulduğu değil; her koşunun rakip savunmaya hangi kararı verdirdiğidir.
 
+:::image /assets/images/gs-stuttgart/xt_grid_heatmap.png | xT Izgarası | Isı Haritası
+:::
+
 ## 3. İki Golün Arkasındaki Mesele: Sonuç ile Süreci Ayırmak
 
 İki farklı maç düşünelim.
@@ -94,9 +107,6 @@ Birincisinde bir takım rakibine neredeyse hiç fırsat vermeden kazanır. İkin
 İki karşılaşma aynı skorla bitebilir. Buna rağmen kazanan takımların savunma ve hücum performansları eşdeğer değildir.
 
 Galatasaray'ın Stuttgart karşısındaki galibiyetini değerlendirirken bu ayrımı korumak gerekiyor.
-
-:::image /assets/images/gs-stuttgart/shotmap.png | Şut Haritası | Shot map
-:::
 
 Stuttgart'ın yedi şutla kayda değer bir beklenen gol toplamına ulaşması, Galatasaray'ın rakip hücumları bütünüyle etkisizleştirdiği iddiasını desteklemiyor. Stuttgart da gol olasılığı taşıyan fırsatlar üretti.
 

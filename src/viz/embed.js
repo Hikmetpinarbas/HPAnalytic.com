@@ -42,10 +42,18 @@ async function loadAndRender(container, type, matchId, playerName) {
       return;
     }
 
-    if (type === 'event-anim') {
+    if (type === 'event-anim' || type === 'event-animation') {
       container.classList.remove('viz-loading');
       container.classList.add('viz-active');
       renderEventAnimation(container);
+      return;
+    }
+
+    const UNSUPPORTED = ['match-viz', 'pass-network', 'shot-map'];
+    if (UNSUPPORTED.includes(type)) {
+      container.classList.remove('viz-loading');
+      container.classList.add('viz-active');
+      container.innerHTML = '<div style="padding:2rem;text-align:center;color:#8A8A93;font-family:JetBrains Mono,monospace;font-size:11px;letter-spacing:.15em;text-transform:uppercase;border:1px dashed #2A2B33;border-radius:4px">Bu gorsel hazirlaniyor - cok yakinda</div>';
       return;
     }
 

@@ -91,7 +91,7 @@ html{opacity:1;transition:opacity .22s cubic-bezier(.2,.9,.3,1)}html.page-leavin
 /* hp-viz-embed-marker */
 /* HPAnalytic — Viz Görsel Dili (Rams + Scher) */
 
-[data-viz] {
+[data-visual-body] {
   margin: 3rem 0;
   padding: 2rem 1rem;
   position: relative;
@@ -100,15 +100,15 @@ html{opacity:1;transition:opacity .22s cubic-bezier(.2,.9,.3,1)}html.page-leavin
   transition: opacity 0.6s ease;
 }
 
-[data-viz].viz-active {
+[data-visual-body].viz-active {
   opacity: 1;
 }
 
-[data-viz].viz-loading {
+[data-visual-body].viz-loading {
   opacity: 1;
 }
 
-[data-viz].viz-loading::before {
+[data-visual-body].viz-loading::before {
   content: 'VERİ YÜKLENİYOR';
   position: absolute;
   top: 50%; left: 50%;
@@ -166,12 +166,12 @@ html{opacity:1;transition:opacity .22s cubic-bezier(.2,.9,.3,1)}html.page-leavin
 
 /* Responsive (Marcotte) */
 @media (max-width: 640px) {
-  [data-viz] { margin: 2rem 0; padding: 1.5rem 0.5rem; }
+  [data-visual-body] { margin: 2rem 0; padding: 1.5rem 0.5rem; }
   .viz-title { flex-direction: column; gap: 0.5rem; }
 }
 /* HPAnalytic — Viz Görsel Dili (Rams + Scher) */
 
-[data-viz] {
+[data-visual-body] {
   margin: 3rem 0;
   padding: 2rem 1rem;
   position: relative;
@@ -180,15 +180,15 @@ html{opacity:1;transition:opacity .22s cubic-bezier(.2,.9,.3,1)}html.page-leavin
   transition: opacity 0.6s ease;
 }
 
-[data-viz].viz-active {
+[data-visual-body].viz-active {
   opacity: 1;
 }
 
-[data-viz].viz-loading {
+[data-visual-body].viz-loading {
   opacity: 1;
 }
 
-[data-viz].viz-loading::before {
+[data-visual-body].viz-loading::before {
   content: 'VERİ YÜKLENİYOR';
   position: absolute;
   top: 50%; left: 50%;
@@ -246,7 +246,7 @@ html{opacity:1;transition:opacity .22s cubic-bezier(.2,.9,.3,1)}html.page-leavin
 
 /* Responsive (Marcotte) */
 @media (max-width: 640px) {
-  [data-viz] { margin: 2rem 0; padding: 1.5rem 0.5rem; }
+  [data-visual-body] { margin: 2rem 0; padding: 1.5rem 0.5rem; }
   .viz-title { flex-direction: column; gap: 0.5rem; }
 }
 
@@ -306,7 +306,7 @@ html{opacity:1;transition:opacity .22s cubic-bezier(.2,.9,.3,1)}html.page-leavin
 
     </article>
 </div>
-<section class="related"><h2 class="related-title">Benzer Yazılar</h2><div class="related-grid"><a href="/yazi/2002-dunya-kupasi-sans-mi-mekanizma-mi.html" class="rel-card"><span class="rel-tag">Analiz</span><h4>2002 Dünya Kupası: Şans mı, Mekanizma mı?</h4><span class="rel-cta">Oku →</span></a><a href="/yazi/2026-11-03-galatasaray-vs-stuttgart.html" class="rel-card"><span class="rel-tag">Analiz</span><h4>Galatasaray Stuttgart’ı Nasıl Yendi? Topa Değil, Tehlikenin Yönüne Hükmetmek</h4><span class="rel-cta">Oku →</span></a><a href="/yazi/articles-matematik-yalan-soylemeyi-bilmez.html" class="rel-card"><span class="rel-tag">Analiz</span><h4>Matematik yalan söylemeyi bilmez</h4><span class="rel-cta">Oku →</span></a></div></section>
+<section class="related"><h2 class="related-title">Benzer Yazılar</h2><div class="related-grid"><a href="/yazi/2002-dunya-kupasi-sans-mi-mekanizma-mi.html" class="rel-card"><span class="rel-tag">Analiz</span><h4>2002 Dünya Kupası: Şans mı, Mekanizma mı?</h4><span class="rel-cta">Oku →</span></a><a href="/yazi/2026-11-03-galatasaray-vs-stuttgart-llm.html" class="rel-card"><span class="rel-tag">Analiz</span><h4>2026-11-03-galatasaray-vs-stuttgart-llm</h4><span class="rel-cta">Oku →</span></a><a href="/yazi/2026-11-03-galatasaray-vs-stuttgart.html" class="rel-card"><span class="rel-tag">Analiz</span><h4>Galatasaray Stuttgart’ı Nasıl Yendi? Topa Değil, Tehlikenin Yönüne Hükmetmek</h4><span class="rel-cta">Oku →</span></a></div></section>
 <footer class="site-footer"><span>© 2026 HP//Analytic</span><a href="/">Ana sayfa</a></footer>
 <script>
 const bar = document.getElementById('progress');
@@ -332,7 +332,7 @@ if (tocLinks.length && headings.length) {
 </script>
 <script src="/page-transition.js" defer></script>
 <script src="/extras2.js" defer></script>
-<!-- embed.js geçici devre dışı -->
+<script type="module" src="/assets/js/viz-embed.js"></script>
 <div id="viz-and-stars-container"></div>
 <!-- VIZ_SLOT -->
 <!-- STARS_SLOT -->

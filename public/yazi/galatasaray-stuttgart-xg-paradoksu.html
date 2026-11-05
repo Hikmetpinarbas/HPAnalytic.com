@@ -1,4 +1,4 @@
-<!doctype html><html lang="tr"><head><meta charset="utf-8"/><style>html{background:#08090B}body{background:#08090B;color:#F4F2EC;margin:0}</style><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/><meta name="theme-color" content="#08090B"/><title>Galatasaray 2-0 Stuttgart: xG paradoksu — HP//Analytic</title><meta name="description" content="Stuttgart xG 1.74, Galatasaray 1.38. Ama sahadan 2-0 GS ayrıldı."/><meta property="og:title" content="Galatasaray 2-0 Stuttgart: xG paradoksu"/><meta property="og:description" content="Stuttgart xG 1.74, Galatasaray 1.38. Ama sahadan 2-0 GS ayrıldı."/><meta property="og:type" content="article"/><meta property="og:site_name" content="HPAnalytic"/><meta name="twitter:card" content="summary"/><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;700&family=JetBrains+Mono:wght@400;500;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet"><style>
+<!doctype html><html lang="tr"><head><meta charset="utf-8"/><style>html{background:#08090B}body{background:#08090B;color:#F4F2EC;margin:0}</style><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/><meta name="theme-color" content="#08090B"/><title>Galatasaray 2-0 Stuttgart: xG Paradoksu — HP//Analytic</title><meta name="description" content="Galatasaray 2-0 Stuttgart: xG Paradoksu"/><meta property="og:title" content="Galatasaray 2-0 Stuttgart: xG Paradoksu"/><meta property="og:description" content="Galatasaray 2-0 Stuttgart: xG Paradoksu"/><meta property="og:type" content="article"/><meta property="og:site_name" content="HPAnalytic"/><meta name="twitter:card" content="summary"/><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;700&family=JetBrains+Mono:wght@400;500;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet"><style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{--bg:#08090B;--bg-elev:#0D0E12;--ink:#F4F2EC;--ink-soft:#8A8A93;--ink-faint:#4A4A52;--line:#1B1B21;--line-bright:#2A2B33;--neon:#B4FF39;--orange:#FF6B35;--serif:'Newsreader',Georgia,serif;--mono:'JetBrains Mono',monospace;--sans:'Hanken Grotesk',system-ui,sans-serif}
 html{background:var(--bg);-webkit-font-smoothing:antialiased;scroll-behavior:smooth}
@@ -91,7 +91,7 @@ html{opacity:1;transition:opacity .22s cubic-bezier(.2,.9,.3,1)}html.page-leavin
 /* hp-viz-embed-marker */
 /* HPAnalytic — Viz Görsel Dili (Rams + Scher) */
 
-[data-viz] {
+[data-visual-body] {
   margin: 3rem 0;
   padding: 2rem 1rem;
   position: relative;
@@ -100,15 +100,15 @@ html{opacity:1;transition:opacity .22s cubic-bezier(.2,.9,.3,1)}html.page-leavin
   transition: opacity 0.6s ease;
 }
 
-[data-viz].viz-active {
+[data-visual-body].viz-active {
   opacity: 1;
 }
 
-[data-viz].viz-loading {
+[data-visual-body].viz-loading {
   opacity: 1;
 }
 
-[data-viz].viz-loading::before {
+[data-visual-body].viz-loading::before {
   content: 'VERİ YÜKLENİYOR';
   position: absolute;
   top: 50%; left: 50%;
@@ -166,12 +166,12 @@ html{opacity:1;transition:opacity .22s cubic-bezier(.2,.9,.3,1)}html.page-leavin
 
 /* Responsive (Marcotte) */
 @media (max-width: 640px) {
-  [data-viz] { margin: 2rem 0; padding: 1.5rem 0.5rem; }
+  [data-visual-body] { margin: 2rem 0; padding: 1.5rem 0.5rem; }
   .viz-title { flex-direction: column; gap: 0.5rem; }
 }
 /* HPAnalytic — Viz Görsel Dili (Rams + Scher) */
 
-[data-viz] {
+[data-visual-body] {
   margin: 3rem 0;
   padding: 2rem 1rem;
   position: relative;
@@ -180,15 +180,15 @@ html{opacity:1;transition:opacity .22s cubic-bezier(.2,.9,.3,1)}html.page-leavin
   transition: opacity 0.6s ease;
 }
 
-[data-viz].viz-active {
+[data-visual-body].viz-active {
   opacity: 1;
 }
 
-[data-viz].viz-loading {
+[data-visual-body].viz-loading {
   opacity: 1;
 }
 
-[data-viz].viz-loading::before {
+[data-visual-body].viz-loading::before {
   content: 'VERİ YÜKLENİYOR';
   position: absolute;
   top: 50%; left: 50%;
@@ -246,7 +246,7 @@ html{opacity:1;transition:opacity .22s cubic-bezier(.2,.9,.3,1)}html.page-leavin
 
 /* Responsive (Marcotte) */
 @media (max-width: 640px) {
-  [data-viz] { margin: 2rem 0; padding: 1.5rem 0.5rem; }
+  [data-visual-body] { margin: 2rem 0; padding: 1.5rem 0.5rem; }
   .viz-title { flex-direction: column; gap: 0.5rem; }
 }
 
@@ -256,37 +256,24 @@ html{opacity:1;transition:opacity .22s cubic-bezier(.2,.9,.3,1)}html.page-leavin
 <section class="hero">
   <div class="hero-top">
     <span class="type-badge" style="color:#B4FF39;border-color:#B4FF39">Analiz</span>
-    <span class="hero-date">2026-11-05</span>
-    <span class="hero-read">3 dk okuma</span>
+    <span class="hero-date">2026-11-03</span>
+    <span class="hero-read">2 dk okuma</span>
   </div>
   
-  <h1>Galatasaray 2-0 Stuttgart: xG paradoksu</h1>
-  <p class="lede">Stuttgart xG 1.74, Galatasaray 1.38. Ama sahadan 2-0 GS ayrıldı.</p>
+  <h1>Galatasaray 2-0 Stuttgart: xG Paradoksu</h1>
+  
 </section>
 <div class="layout">
-  <aside class="toc"><div class="toc-label">İçindekiler</div><ol><li data-level="2"><a href="#h-mekanizma">Mekanizma</a></li><li data-level="2"><a href="#h-saha-okuması">Saha Okuması</a></li><li data-level="2"><a href="#h-6-faz">6 Faz</a></li><li data-level="2"><a href="#h-kanıt">Kanıt</a></li><li data-level="2"><a href="#h-oyuncu-mikro-anlatısı">Oyuncu Mikro-Anlatısı</a></li><li data-level="2"><a href="#h-hpanalytic-özel">HPAnalytic Özel</a></li><li data-level="2"><a href="#h-maçın-sorusu">Maçın Sorusu</a></li></ol></aside>
+  <div></div>
   <article class="article">
-    <p>Galatasaray, xG&#39;de (gol beklentisi) geride kalmasına rağmen, Stuttgart&#39;ı 2-0&#39;lık net bir skorla mağlup etti. Bu sonuç, maçın tek sayısal sürpriziydi.</p>
-<h2 id="h-mekanizma">Mekanizma</h2>
-<p>Galatasaray, xG&#39;de Stuttgart&#39;ın gerisinde kalmasına rağmen, skorda üstünlüğü ele geçirdi. Bu paradoksun altında yatan mekanizma, Galatasaray&#39;ın topa sahip olma ve pas isabet oranlarındaki üstünlüğü. Galatasaray, %58.7&#39;lik topla oynama oranı ve %81&#39;lik pas isabet oranı ile Stuttgart&#39;ın %55.4 ve %76&#39;lık oranlarını geride bıraktı. Bu üstünlük, Galatasaray&#39;ın oyunu kontrol etmesini ve skoru lehine çevirmesini sağladı.</p>
-<h2 id="h-saha-okuması">Saha Okuması</h2>
-<p>Galatasaray, pas ağı ve top hakimiyeti ile oyunu domine etti. %81&#39;lik pas isabet oranı, Stuttgart&#39;ın %76&#39;lık oranını geride bıraktı. Bu, Galatasaray&#39;ın pas trafiğinin daha akıcı ve etkili olduğunu gösteriyor. Ayrıca, Galatasaray&#39;ın 383 toplam pası, Stuttgart&#39;ın 364 pasına kıyasla daha fazla pas yapma girişiminde bulunduklarını ortaya koyuyor.</p>
-<p>Top kapma ve ikili mücadele istatistiklerinde de Galatasaray üstünlük kurdu. 35 top kapma ile Stuttgart&#39;ın 46&#39;sına yakın bir performans sergilediler. İkili mücadelelerde ise %50&#39;lik oranla Stuttgart&#39;ın %44&#39;ünü geçtiler. Bu veriler, Galatasaray&#39;ın hem savunmada hem de hücumda daha etkili olduğunu gösteriyor.</p>
-<h2 id="h-6-faz">6 Faz</h2>
-<p>Maçın kilit anları, yerleşik hücum ve yerleşik savunma fazlarında yaşandı. Galatasaray, yerleşik hücumda 54 pencere ile Stuttgart&#39;ın 58 penceresine yakın bir performans sergiledi. Yerleşik savunmada ise 58 pencere ile Stuttgart&#39;ın 54 penceresini geride bıraktı. Bu fazlar, Galatasaray&#39;ın oyunu kontrol ettiğini ve skoru lehine çevirmek için fırsatlar yarattığını gösteriyor.</p>
-<h2 id="h-kanıt">Kanıt</h2>
-<p>xG verileri, Galatasaray&#39;ın skorda üstünlüğüne rağmen, Stuttgart&#39;ın gol atma potansiyeli açısından daha yüksek bir beklenti yarattığını gösteriyor. Stuttgart&#39;ın xG değeri 1.74 iken, Galatasaray&#39;ın 1.38. Ancak, Galatasaray&#39;ın pas isabet oranındaki üstünlüğü ve topa sahip olma oranı, bu dezavantajı aşmalarını sağladı.</p>
-<p>PPDA (Baskı) verileri, her iki takımın da baskı kurmakta zorlandığını gösteriyor. Galatasaray ve Stuttgart&#39;ın PPDA değeri 0.0 olarak kaydedildi. Bu, iki takımın da rakiplerine baskı kurmakta zorlandığını ve savunmada açıklar verdiğini gösteriyor.</p>
-<h2 id="h-oyuncu-mikro-anlatısı">Oyuncu Mikro-Anlatısı</h2>
-<p>Galatasaray&#39;ın kalecisi Uğurcan Çakır, maçın en değerli aksiyonlarına imza attı. Çakır, 47 pas ile takımının en çok pas yapan oyuncusu oldu ve bu pasların %59.6&#39;sını isabetli olarak tamamladı. Bu, Galatasaray&#39;ın oyun kurma ve topu ileriye taşıma stratejisinde önemli bir rol oynadı.</p>
-<h2 id="h-hpanalytic-özel">HPAnalytic Özel</h2>
-<p>Field Tilt ve Pitch Control metrikleri, Galatasaray&#39;ın saha hakimiyetini ve topa sahip olma oranındaki üstünlüğünü destekliyor. Galatasaray, Field Tilt&#39;te %58.7&#39;lik bir oranla Stuttgart&#39;ın %55.4&#39;ünü geride bıraktı. Pitch Control&#39;da ise Galatasaray %81&#39;lik pas isabet oranı ile Stuttgart&#39;ın %76&#39;lık oranını geçti.</p>
-<h2 id="h-maçın-sorusu">Maçın Sorusu</h2>
-<p>Maçın sorusu şudur: Galatasaray, xG&#39;de geride kalmasına rağmen skorda üstünlüğü nasıl sağladı? Cevap, topa sahip olma ve pas isabet oranlarındaki üstünlükte yatıyor. Galatasaray, bu sayısal avantajları skora yansıtmayı başardı.</p>
+    <p>Modern futbol analitiğinde skor ile beklenen gol (xG) arasındaki asimetri, şans faktörüyle değil; aksiyonun hangi faza, hangi hızla ve rakip savunmanın hangi yapısal dengesizlik anında taşındığıyla açıklanır. Valeriy Lobanovskyi’nin &quot;fonksiyonel alt sistemler ve dinamik denge&quot; analitiği ile Pep Guardiola’nın &quot;mekânsal parselasyon ve geçiş emniyeti&quot; doktrinleri ekseninde incelendiğinde, bu eşleşme saf bir üretim hacmi ile bitiricilik verimliliği çatışmasıdır.</p>
+<p>Müsabakanın kümülatif üretim metrikleri geleneksel hacim okumasıyla çelişir: VfB Stuttgart 7 şut ve 6 net fırsat (Chances) üretirken, Galatasaray maçı yalnızca 6 şut ve 4 fırsatla tamamlamıştır. Stuttgart’ın 58 set hücumu (x=41.37) ve rakip ceza sahası çevresine yığdığı 16 orta (6 isabetli, 10 isabetsiz) tabelaya yansımazken; Galatasaray’ın toplamda daha az şut denemesine rağmen 2 gol bulması, saf kümülatif xG modellerinin göremediği &quot;şut başına pozisyon kalitesi&quot; ayrışmasını doğurmuştur.</p>
+<p>Paradoksu çözen temel mekanizma, geçiş fazlarının uzamsal hızında yatar. Galatasaray maç genelinde 19 kontratak inşa ederken, Stuttgart 14 kontratakta kalmıştır. Sarı-kırmızılı yapı, top kayıplarını geride verip (x=69.79, n=65) kazandığı anlarda doğrudan dikey vektörler kullanmıştır. Stuttgart’ın orta blokta gördüğü 5 sarı kartın ortalama lokasyonu (x=49.45), Galatasaray geçişlerinin rakip yerleşimi henüz oturmamışken taktik faullerle kesilmeye çalışıldığını belgeler. Stuttgart&#39;ın 7 şutu yerleşik savunma bloklarına karşı düşük açılı ve kalabalık ceza sahası vuruşlarıyla tükenirken; Galatasaray’ın 6 şutu, 19 kontratağın savunma geometrisini bozduğu koridorlarda vuruş başına xG değeri çok daha yüksek temaslara dönüşmüştür.</p>
+<p>Oyunun boyunu ve geçiş zeminini belirleyen birinci bölge kurulumları ise bu verimliliği kalıcı kılmıştır. Galatasaray kaleci ve savunma hattı, 40 metre üzeri uzun paslarda 53 aksiyon (x=23.62) kaydederek Stuttgart&#39;ın (33 aksiyon) önüne geçmiş; topun indiği x=46.28 koordinatında 23 hava topu kazanarak Stuttgart&#39;a aynı noktada 23 hava topu kaybettirmiştir. Merkezdeki bu fiziksel emniyet ve kazanılan 42 ikili mücadele (x=57.05), Galatasaray&#39;ın düşük şut hacmine (6) rağmen yüksek değerli anları yakalayıp 2-0&#39;lık skoru mekanik bir üstünlükle almasını sağlamıştır.</p>
 
     </article>
 </div>
-<section class="related"><h2 class="related-title">Benzer Yazılar</h2><div class="related-grid"><a href="/yazi/2002-dunya-kupasi-sans-mi-mekanizma-mi.html" class="rel-card"><span class="rel-tag">Analiz</span><h4>2002 Dünya Kupası: Şans mı, Mekanizma mı?</h4><span class="rel-cta">Oku →</span></a><a href="/yazi/2026-11-03-galatasaray-vs-stuttgart-llm.html" class="rel-card"><span class="rel-tag">Analiz</span><h4>2026-11-03-galatasaray-vs-stuttgart-llm</h4><span class="rel-cta">Oku →</span></a><a href="/yazi/2026-11-03-galatasaray-vs-stuttgart.html" class="rel-card"><span class="rel-tag">Analiz</span><h4>Maç Raporu: VfB Stuttgart vs Galatasaray</h4><span class="rel-cta">Oku →</span></a></div></section>
+<section class="related"><h2 class="related-title">Benzer Yazılar</h2><div class="related-grid"><a href="/yazi/2002-dunya-kupasi-sans-mi-mekanizma-mi.html" class="rel-card"><span class="rel-tag">Analiz</span><h4>2002 Dünya Kupası: Şans mı, Mekanizma mı?</h4><span class="rel-cta">Oku →</span></a><a href="/yazi/2026-11-03-galatasaray-vs-stuttgart-llm.html" class="rel-card"><span class="rel-tag">Analiz</span><h4>2026-11-03-galatasaray-vs-stuttgart-llm</h4><span class="rel-cta">Oku →</span></a><a href="/yazi/2026-11-03-galatasaray-vs-stuttgart.html" class="rel-card"><span class="rel-tag">Analiz</span><h4>Galatasaray Stuttgart’ı Nasıl Yendi? Topa Değil, Tehlikenin Yönüne Hükmetmek</h4><span class="rel-cta">Oku →</span></a></div></section>
 <footer class="site-footer"><span>© 2026 HP//Analytic</span><a href="/">Ana sayfa</a></footer>
 <script>
 const bar = document.getElementById('progress');
@@ -312,7 +299,7 @@ if (tocLinks.length && headings.length) {
 </script>
 <script src="/page-transition.js" defer></script>
 <script src="/extras2.js" defer></script>
-<script type="module" src="/src/viz/embed.js"></script>
+<script type="module" src="/assets/js/viz-embed.js"></script>
 <div id="viz-and-stars-container"></div>
 <!-- VIZ_SLOT -->
 <!-- STARS_SLOT -->
