@@ -1,0 +1,11 @@
+{
+  "title": "Grace Hopper",
+  "description": "Bilgisayar tarihinden bir arşiv portresi. Fotoğraf, kırpma ve tipografi katmanları bağımsız; kaynak dosya korunur.",
+  "unit": null,
+  "source": "Matplotlib archive sample / James S. Davis / U.S. Navy",
+  "license": "Public domain (US), James S. Davis / U.S. Navy, NH 96919-KN; original composition under project LICENSE",
+  "provenance": {
+    "kind": "real",
+    "method": "Existing archival photograph, not a generated subject"
+  }
+}

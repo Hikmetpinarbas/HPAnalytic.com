@@ -1,0 +1,41 @@
+{
+  "provenance": "synthetic",
+  "publication_authorized": false,
+  "real_sequence": false,
+  "real_trajectory": false,
+  "note": "Prototype only. Synthetic data — never publication-ready. real_sequence=false, real_trajectory=false gates badge display.",
+  "pitch": { "width": 105, "height": 68 },
+  "players": [
+    { "id": "p01", "name": "GK",  "x": 6,  "y": 34, "x_from": 6,  "y_from": 34, "x_to": 6,  "y_to": 34, "central": false },
+    { "id": "p02", "name": "RB",  "x": 24, "y": 54, "x_from": 10, "y_from": 60, "x_to": 30, "y_to": 52, "central": false },
+    { "id": "p03", "name": "CB1", "x": 22, "y": 40, "x_from": 8,  "y_from": 44, "x_to": 24, "y_to": 40, "central": false },
+    { "id": "p04", "name": "CB2", "x": 22, "y": 28, "x_from": 8,  "y_from": 24, "x_to": 24, "y_to": 28, "central": false },
+    { "id": "p05", "name": "LB",  "x": 24, "y": 14, "x_from": 10, "y_from": 8,  "x_to": 30, "y_to": 16, "central": false },
+    { "id": "p06", "name": "CM1", "x": 50, "y": 44, "x_from": 30, "y_from": 50, "x_to": 50, "y_to": 44, "central": true  },
+    { "id": "p07", "name": "CM2", "x": 50, "y": 24, "x_from": 30, "y_from": 18, "x_to": 50, "y_to": 24, "central": true  },
+    { "id": "p08", "name": "RM",  "x": 72, "y": 52, "x_from": 55, "y_from": 60, "x_to": 72, "y_to": 52, "central": false },
+    { "id": "p09", "name": "LM",  "x": 72, "y": 16, "x_from": 55, "y_from": 8,  "x_to": 72, "y_to": 16, "central": false },
+    { "id": "p10", "name": "ST1", "x": 90, "y": 42, "x_from": 80, "y_from": 45, "x_to": 90, "y_to": 42, "central": true  },
+    { "id": "p11", "name": "ST2", "x": 90, "y": 26, "x_from": 80, "y_from": 23, "x_to": 90, "y_to": 26, "central": false }
+  ],
+  "pass_network": [
+    { "from": "p06", "to": "p07", "value": 92 },
+    { "from": "p06", "to": "p10", "value": 85 },
+    { "from": "p03", "to": "p06", "value": 81 },
+    { "from": "p04", "to": "p07", "value": 79 },
+    { "from": "p07", "to": "p08", "value": 76 },
+    { "from": "p06", "to": "p08", "value": 74 },
+    { "from": "p02", "to": "p06", "value": 71 },
+    { "from": "p05", "to": "p07", "value": 70 },
+    { "from": "p07", "to": "p09", "value": 68 },
+    { "from": "p08", "to": "p10", "value": 66 },
+    { "from": "p09", "to": "p11", "value": 64 },
+    { "from": "p10", "to": "p11", "value": 61 },
+    { "from": "p01", "to": "p03", "value": 58 },
+    { "from": "p03", "to": "p04", "value": 55 },
+    { "from": "p11", "to": "p08", "value": 52 },
+    { "from": "p02", "to": "p03", "value": 48 },
+    { "from": "p04", "to": "p05", "value": 45 },
+    { "from": "p01", "to": "p05", "value": 42 }
+  ]
+}

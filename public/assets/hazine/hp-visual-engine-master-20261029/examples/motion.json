@@ -1,0 +1,16 @@
+{
+  "schema": "visual-production/v1",
+  "license": "Original authored demo geometry and synthetic fixtures; project LICENSE",
+  "provenance": {
+    "kind": "synthetic",
+    "method": "deterministically authored example; not an observed match"
+  },
+  "source": "Visual Factory / authored demo",
+  "export_layer_rasters": false,
+  "id": "motion-study",
+  "engine": "motion",
+  "title": "Üç saniyede, dört taktik sahne.",
+  "description": "İki takım ve top aynı zaman ekseninde. Tamamı çizilmiş anahtar kareler; gerçek maçta gözlenmiş hareket değildir.",
+  "data": "data/sequence.json",
+  "video": true
+}

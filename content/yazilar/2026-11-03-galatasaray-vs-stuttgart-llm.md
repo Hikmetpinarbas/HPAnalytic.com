@@ -1,6 +1,9 @@
 ---
-title: "2026-11-03-galatasaray-vs-stuttgart-llm"
+title: "Galatasaray vs Stuttgart: Geçiş Koridorlarının Haritası"
+slug: galatasaray-stuttgart-gecis-haritasi
 date: "2026-11-03"
+type: mac
+excerpt: "Faz geçişlerinin ve geçiş koridorlarının karar verici olduğu bir maçın analizi."
 author: "Hikmet Pınarbaş"
 ---
 

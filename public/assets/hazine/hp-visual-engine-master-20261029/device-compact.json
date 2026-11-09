@@ -1,0 +1,391 @@
+[
+  {
+    "job_id": "hp-comet",
+    "engine": "data",
+    "profile": "web",
+    "variant": "landscape",
+    "video": null,
+    "warnings": [],
+    "directory": "hp-comet/web/landscape/744bdcf4d21f7428",
+    "wall_seconds": 0.8698,
+    "cpu_seconds": 0.462153,
+    "peak_rss_bytes": 40615936,
+    "worker_exit_code": 0,
+    "process_group_remaining": false,
+    "quality": {
+      "schema": "visual-quality/v1",
+      "automated_pass": true,
+      "checks": {
+        "svg_xml_valid": true,
+        "named_layers": true,
+        "has_title": true,
+        "has_description": true,
+        "provenance_present": true,
+        "raster_decodes": true,
+        "preview_decodes": true,
+        "nonempty_image": true
+      },
+      "files": {
+        "preview.webp": {
+          "width": 640,
+          "height": 427,
+          "bytes": 9878
+        },
+        "final.png": {
+          "width": 960,
+          "height": 640,
+          "bytes": 26769
+        }
+      },
+      "palette_contrast": {
+        "ink_on_paper": 12.22,
+        "muted_on_paper": 5.34,
+        "ivory_on_navy": 12.29
+      },
+      "visual_review": "required; automatic tests do not establish aesthetic quality or all text overlaps",
+      "mobile_readability": "Use portrait variant and review at actual display size; dense landscape labels are not mobile body text."
+    }
+  },
+  {
+    "job_id": "hp-passflow",
+    "engine": "football",
+    "profile": "web",
+    "variant": "landscape",
+    "video": null,
+    "warnings": [],
+    "directory": "hp-passflow/web/landscape/c8dc2c26b30c8cea",
+    "wall_seconds": 1.3534,
+    "cpu_seconds": 0.45657,
+    "peak_rss_bytes": 42045440,
+    "worker_exit_code": 0,
+    "process_group_remaining": false,
+    "quality": {
+      "schema": "visual-quality/v1",
+      "automated_pass": true,
+      "checks": {
+        "svg_xml_valid": true,
+        "named_layers": true,
+        "has_title": true,
+        "has_description": true,
+        "provenance_present": true,
+        "raster_decodes": true,
+        "preview_decodes": true,
+        "nonempty_image": true
+      },
+      "files": {
+        "preview.webp": {
+          "width": 640,
+          "height": 480,
+          "bytes": 13190
+        },
+        "final.png": {
+          "width": 960,
+          "height": 720,
+          "bytes": 25609
+        }
+      },
+      "palette_contrast": {
+        "ink_on_paper": 12.22,
+        "muted_on_paper": 5.34,
+        "ivory_on_navy": 12.29
+      },
+      "visual_review": "required; automatic tests do not establish aesthetic quality or all text overlaps",
+      "mobile_readability": "Use portrait variant and review at actual display size; dense landscape labels are not mobile body text."
+    }
+  },
+  {
+    "job_id": "hp-third-man",
+    "engine": "motion",
+    "profile": "web",
+    "variant": "landscape",
+    "video": {
+      "fps": 30,
+      "duration_seconds": 6,
+      "width": 640,
+      "height": 454,
+      "frames": 180,
+      "encoder": "libx264 / software / 1 thread"
+    },
+    "warnings": [],
+    "directory": "hp-third-man/web/landscape/a8a88e0044055d83",
+    "wall_seconds": 18.5792,
+    "cpu_seconds": 13.981385,
+    "peak_rss_bytes": 41566208,
+    "worker_exit_code": 0,
+    "process_group_remaining": false,
+    "quality": {
+      "schema": "visual-quality/v1",
+      "automated_pass": true,
+      "checks": {
+        "svg_xml_valid": true,
+        "named_layers": true,
+        "has_title": true,
+        "has_description": true,
+        "provenance_present": true,
+        "raster_decodes": true,
+        "preview_decodes": true,
+        "nonempty_image": true
+      },
+      "files": {
+        "preview.webp": {
+          "width": 640,
+          "height": 453,
+          "bytes": 15656
+        },
+        "final.png": {
+          "width": 960,
+          "height": 680,
+          "bytes": 29186
+        }
+      },
+      "palette_contrast": {
+        "ink_on_paper": 12.22,
+        "muted_on_paper": 5.34,
+        "ivory_on_navy": 12.29
+      },
+      "visual_review": "required; automatic tests do not establish aesthetic quality or all text overlaps",
+      "mobile_readability": "Use portrait variant and review at actual display size; dense landscape labels are not mobile body text."
+    }
+  },
+  {
+    "job_id": "photo-study",
+    "engine": "photo",
+    "profile": "web",
+    "variant": "landscape",
+    "video": null,
+    "warnings": [
+      "Archive source has limited native resolution; requested composition may upscale it. Use a higher-resolution licensed source for print."
+    ],
+    "directory": "photo-study/web/landscape/cc23562e260ab1f2",
+    "wall_seconds": 2.7492,
+    "cpu_seconds": 1.261523,
+    "peak_rss_bytes": 54849536,
+    "worker_exit_code": 0,
+    "process_group_remaining": false,
+    "quality": {
+      "schema": "visual-quality/v1",
+      "automated_pass": true,
+      "checks": {
+        "svg_xml_valid": true,
+        "named_layers": true,
+        "has_title": true,
+        "has_description": true,
+        "provenance_present": true,
+        "raster_decodes": true,
+        "preview_decodes": true,
+        "nonempty_image": true
+      },
+      "files": {
+        "preview.webp": {
+          "width": 640,
+          "height": 427,
+          "bytes": 25010
+        },
+        "final.png": {
+          "width": 960,
+          "height": 640,
+          "bytes": 284030
+        }
+      },
+      "palette_contrast": {
+        "ink_on_paper": 12.22,
+        "muted_on_paper": 5.34,
+        "ivory_on_navy": 12.29
+      },
+      "visual_review": "required; automatic tests do not establish aesthetic quality or all text overlaps",
+      "mobile_readability": "Use portrait variant and review at actual display size; dense landscape labels are not mobile body text."
+    }
+  },
+  {
+    "job_id": "hp-photo-social",
+    "engine": "photo",
+    "profile": "web",
+    "variant": "landscape",
+    "video": null,
+    "warnings": [
+      "Archive source has limited native resolution; requested composition may upscale it. Use a higher-resolution licensed source for print."
+    ],
+    "directory": "hp-photo-social/web/landscape/19e945be0a622e45",
+    "wall_seconds": 3.3809,
+    "cpu_seconds": 1.744269,
+    "peak_rss_bytes": 64122880,
+    "worker_exit_code": 0,
+    "process_group_remaining": false,
+    "quality": {
+      "schema": "visual-quality/v1",
+      "automated_pass": true,
+      "checks": {
+        "svg_xml_valid": true,
+        "named_layers": true,
+        "has_title": true,
+        "has_description": true,
+        "provenance_present": true,
+        "raster_decodes": true,
+        "preview_decodes": true,
+        "nonempty_image": true
+      },
+      "files": {
+        "preview.webp": {
+          "width": 640,
+          "height": 640,
+          "bytes": 37306
+        },
+        "final.png": {
+          "width": 960,
+          "height": 960,
+          "bytes": 382016
+        }
+      },
+      "palette_contrast": {
+        "ink_on_paper": 12.22,
+        "muted_on_paper": 5.34,
+        "ivory_on_navy": 12.29
+      },
+      "visual_review": "required; automatic tests do not establish aesthetic quality or all text overlaps",
+      "mobile_readability": "Use portrait variant and review at actual display size; dense landscape labels are not mobile body text."
+    }
+  },
+  {
+    "job_id": "photo-study",
+    "engine": "photo",
+    "profile": "web",
+    "variant": "portrait",
+    "video": null,
+    "warnings": [
+      "Archive source has limited native resolution; requested composition may upscale it. Use a higher-resolution licensed source for print."
+    ],
+    "directory": "photo-study/web/portrait/3c8930731c9ee5ac",
+    "wall_seconds": 4.5263,
+    "cpu_seconds": 2.4504289999999997,
+    "peak_rss_bytes": 75952128,
+    "worker_exit_code": 0,
+    "process_group_remaining": false,
+    "quality": {
+      "schema": "visual-quality/v1",
+      "automated_pass": true,
+      "checks": {
+        "svg_xml_valid": true,
+        "named_layers": true,
+        "has_title": true,
+        "has_description": true,
+        "provenance_present": true,
+        "raster_decodes": true,
+        "preview_decodes": true,
+        "nonempty_image": true
+      },
+      "files": {
+        "preview.webp": {
+          "width": 640,
+          "height": 853,
+          "bytes": 47896
+        },
+        "final.png": {
+          "width": 960,
+          "height": 1280,
+          "bytes": 457703
+        }
+      },
+      "palette_contrast": {
+        "ink_on_paper": 12.22,
+        "muted_on_paper": 5.34,
+        "ivory_on_navy": 12.29
+      },
+      "visual_review": "required; automatic tests do not establish aesthetic quality or all text overlaps",
+      "mobile_readability": "Use portrait variant and review at actual display size; dense landscape labels are not mobile body text."
+    }
+  },
+  {
+    "job_id": "hp-cover",
+    "engine": "vector",
+    "profile": "print",
+    "variant": "landscape",
+    "video": null,
+    "warnings": [],
+    "directory": "hp-cover/print/landscape/57b6ed50dbcfe2e7",
+    "wall_seconds": 3.2711,
+    "cpu_seconds": 1.403389,
+    "peak_rss_bytes": 68177920,
+    "worker_exit_code": 0,
+    "process_group_remaining": false,
+    "quality": {
+      "schema": "visual-quality/v1",
+      "automated_pass": true,
+      "checks": {
+        "svg_xml_valid": true,
+        "named_layers": true,
+        "has_title": true,
+        "has_description": true,
+        "provenance_present": true,
+        "raster_decodes": true,
+        "preview_decodes": true,
+        "nonempty_image": true
+      },
+      "files": {
+        "preview.webp": {
+          "width": 640,
+          "height": 427,
+          "bytes": 22574
+        },
+        "final.png": {
+          "width": 1920,
+          "height": 1280,
+          "bytes": 75570
+        }
+      },
+      "palette_contrast": {
+        "ink_on_paper": 12.22,
+        "muted_on_paper": 5.34,
+        "ivory_on_navy": 12.29
+      },
+      "visual_review": "required; automatic tests do not establish aesthetic quality or all text overlaps",
+      "mobile_readability": "Use portrait variant and review at actual display size; dense landscape labels are not mobile body text."
+    }
+  },
+  {
+    "job_id": "hp-cover",
+    "engine": "vector",
+    "profile": "web",
+    "variant": "landscape",
+    "video": null,
+    "warnings": [],
+    "directory": "hp-cover/web/landscape/711b64f41e8005bb",
+    "wall_seconds": 2.2291,
+    "cpu_seconds": 0.6817789999999999,
+    "peak_rss_bytes": 41496576,
+    "worker_exit_code": 0,
+    "process_group_remaining": false,
+    "quality": {
+      "schema": "visual-quality/v1",
+      "automated_pass": true,
+      "checks": {
+        "svg_xml_valid": true,
+        "named_layers": true,
+        "has_title": true,
+        "has_description": true,
+        "provenance_present": true,
+        "raster_decodes": true,
+        "preview_decodes": true,
+        "nonempty_image": true
+      },
+      "files": {
+        "preview.webp": {
+          "width": 640,
+          "height": 427,
+          "bytes": 22954
+        },
+        "final.png": {
+          "width": 960,
+          "height": 640,
+          "bytes": 31021
+        }
+      },
+      "palette_contrast": {
+        "ink_on_paper": 12.22,
+        "muted_on_paper": 5.34,
+        "ivory_on_navy": 12.29
+      },
+      "visual_review": "required; automatic tests do not establish aesthetic quality or all text overlaps",
+      "mobile_readability": "Use portrait variant and review at actual display size; dense landscape labels are not mobile body text."
+    }
+  }
+]

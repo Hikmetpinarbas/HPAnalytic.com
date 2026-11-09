@@ -1,0 +1,24 @@
+{
+  "assets": {
+    "svg": "scene.svg",
+    "raster": "render.png",
+    "preview": "preview.webp",
+    "active_layers": [
+      "background",
+      "geometry",
+      "annotations",
+      "typography",
+      "effects",
+      "metadata"
+    ]
+  },
+  "warnings": [],
+  "worker": {
+    "seconds": 0.3802632810547948,
+    "peak_rss_bytes": 37044224,
+    "cpu_seconds": 0.472947,
+    "virtual_memory_limit_bytes": 536870912,
+    "virtual_baseline_bytes": 0,
+    "rss_limit_bytes": 536870912
+  }
+}

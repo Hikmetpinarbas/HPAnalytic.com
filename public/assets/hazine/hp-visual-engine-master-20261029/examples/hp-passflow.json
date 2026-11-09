@@ -1,0 +1,16 @@
+{
+  "schema": "visual-production/v1",
+  "license": "Original authored demo geometry and synthetic fixtures; project LICENSE",
+  "provenance": {
+    "kind": "synthetic",
+    "method": "deterministically authored example; not an observed match"
+  },
+  "source": "Visual Factory / authored demo",
+  "export_layer_rasters": false,
+  "id": "hp-passflow",
+  "engine": "football",
+  "style": "passflow-bin",
+  "title": "Pas yönleri: baskıdan çıkış koridorları",
+  "description": "Sentetik olay örneği. Yönlü pas dağılımı; oyuncu tracking kaydı değildir.",
+  "data": "data/passes.csv"
+}

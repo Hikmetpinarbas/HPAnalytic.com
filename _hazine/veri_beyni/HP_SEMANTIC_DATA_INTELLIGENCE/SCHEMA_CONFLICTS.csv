@@ -1,0 +1,2 @@
+dataset_a,dataset_b,conflict_type,resolution
+SportsBase_XML,SportsBase_CSV,Coordinate_Grid,Standardized to Opta 100x100 -> Metres 105x68

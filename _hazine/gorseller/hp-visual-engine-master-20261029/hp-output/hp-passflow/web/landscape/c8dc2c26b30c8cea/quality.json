@@ -1,0 +1,33 @@
+{
+  "schema": "visual-quality/v1",
+  "automated_pass": true,
+  "checks": {
+    "svg_xml_valid": true,
+    "named_layers": true,
+    "has_title": true,
+    "has_description": true,
+    "provenance_present": true,
+    "raster_decodes": true,
+    "preview_decodes": true,
+    "nonempty_image": true
+  },
+  "files": {
+    "preview.webp": {
+      "width": 640,
+      "height": 480,
+      "bytes": 13190
+    },
+    "final.png": {
+      "width": 960,
+      "height": 720,
+      "bytes": 25609
+    }
+  },
+  "palette_contrast": {
+    "ink_on_paper": 12.22,
+    "muted_on_paper": 5.34,
+    "ivory_on_navy": 12.29
+  },
+  "visual_review": "required; automatic tests do not establish aesthetic quality or all text overlaps",
+  "mobile_readability": "Use portrait variant and review at actual display size; dense landscape labels are not mobile body text."
+}

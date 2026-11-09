@@ -1,0 +1,41 @@
+{
+  "project_id": "hp-comet",
+  "source_id": "authored-fixtures",
+  "original_data_paths": [
+    "../examples/data/comet.csv"
+  ],
+  "source_licenses": [
+    "project MIT"
+  ],
+  "data_type": "ILLUSTRATIVE",
+  "coordinate_system": "not spatial football data",
+  "attack_direction": null,
+  "temporal_resolution": null,
+  "players": [],
+  "ball": null,
+  "events": [],
+  "analytic_claim": "Demonstration only; no observed-match claim",
+  "visual_grammar": "comparative comet",
+  "scene_layers": [
+    "Background",
+    "Coordinate system",
+    "Actors",
+    "Ball and events",
+    "Tactical relations",
+    "Analytical surface",
+    "Editorial explanation",
+    "Typography and credits"
+  ],
+  "captions": [],
+  "output_targets": [
+    "SVG",
+    "PNG",
+    "HTML"
+  ],
+  "editorial_credits": [
+    "Analiz ve çizim: HPAnalytic",
+    "Veriler/hareketler: temsili"
+  ],
+  "verification_status": "demo",
+  "production_job": "../examples/hp-comet.json"
+}

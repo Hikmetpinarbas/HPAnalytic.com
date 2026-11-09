@@ -1,0 +1,9 @@
+İddia No,Analitik İddia ve Futbol Karşılığı,Kaynak Dosya,Kayıt / Satır Kanıtı,Doğrulama Durumu
+İD-01,"Fenerbahçe ligin en keskin bitiricilik profiline sahiptir (22 gol / 22.3 xG, 0.99 dönüşüm).",SEASON_2026-10-21_Turkey_Super_Lig_TEAMS.xlsx,"Fenerbahçe satırı: Goals=22, xG=22.30, xGC=0.99",DOĞRULANDI
+İD-02,"Galatasaray ligin en hacimli şut üreten takımıdır ancak kalitesi düşüktür (161 şut, 0.12 xGPS).",SEASON_2026-10-21_Turkey_Super_Lig_TEAMS.xlsx,"Galatasaray satırı: Shots=161, xGPS=0.12",DOĞRULANDI
+İD-03,"Galatasaray ligin en agresif ön alan pres takımıdır (PPDA: 5.04, Lig Medyanı: 6.80).",SEASON_2026-10-21_Turkey_Super_Lig_TEAMS.xlsx,"Galatasaray satırı: PPDA=5.04, High Press Win=58.33%",DOĞRULANDI
+İD-04,"Fenerbahçe geçiş hücumlarında lig medyanının çok üzerindedir (32 şutla biten kontra, Medyan: 19.2).",SEASON_2026-10-21_Turkey_Super_Lig_TEAMS.xlsx,Fenerbahçe satırı: Counterattacks with shots=32,DOĞRULANDI
+İD-05,Fenerbahçe'nin en büyük yapısal riski kendi yarı alanındaki 92 top kaybıdır (GS: 75).,SEASON_2026-10-21_Turkey_Super_Lig_TEAMS.xlsx,Fenerbahçe satırı: Ball losses in own half=92,DOĞRULANDI
+İD-06,Hakem Atilla Karaoğlan derbi taraflarının maçlarında ortalama 27.22 faul ve 6.13 kart üretmektedir.,DERBI_HAKEMI_Atilla_Karaoglan_Kariyer_ve_Sezon_Mac_Istatistikleri_2026-10-25.xlsx,Tüm kariyeri sayfası: 23 FB/GS maçı toplamı,DOĞRULANDI
+İD-07,"Victor Osimhen ligde Galatasaray'ın hücum yükünü tek başına taşımaktadır (6 gol, 3 asist, 6.29 xG).",SEASON_2026-10-21_Turkey_Super_Lig_PLAYERS.xlsx,"Osimhen satırı: Goals=6, Assists=3, xG=6.29, Shots=38",DOĞRULANDI
+İD-08,"Vedat Muriqi Fenerbahçe'de ceza sahası içi bitiriciliğin merkezidir (7 gol, 5.35 xG, 20 şut).",SEASON_2026-10-21_Turkey_Super_Lig_PLAYERS.xlsx,"Muriqi satırı: Goals=7, xG=5.35, Shots=20, Dk=436",DOĞRULANDI

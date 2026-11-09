@@ -42,7 +42,6 @@ a{color:inherit;text-decoration:none}
 /* Article */
 .article{max-width:720px;font-size:17px;line-height:1.8;color:#E4E2DC}
 @media(min-width:768px){.article{font-size:18px}}
-.article > p:first-of-type::first-letter{font-family:var(--serif);font-size:5em;line-height:1;float:left;padding:6px 12px 0 0;color:var(--neon);font-weight:500}
 .article h2{font-family:var(--serif);font-weight:400;font-size:clamp(26px,4vw,40px);line-height:1.15;letter-spacing:-.02em;margin:64px 0 20px;color:var(--ink);scroll-margin-top:100px}
 .article h3{font-family:var(--serif);font-weight:500;font-size:clamp(20px,3vw,26px);line-height:1.25;margin:40px 0 16px;color:var(--ink);scroll-margin-top:100px}
 .article p{margin:0 0 24px}
@@ -250,7 +249,57 @@ html{opacity:1;transition:opacity .22s cubic-bezier(.2,.9,.3,1)}html.page-leavin
   .viz-title { flex-direction: column; gap: 0.5rem; }
 }
 
-</style></head><body>
+/* HPAnalytic Katmanlı Saha — dark board / layer rail */
+[data-visual-body="pitch-layers"] {
+  --bg:#08090B; --bg-elev:#0D0E12; --ink:#F4F2EC; --ink-soft:#8A8A93;
+  --line:#1B1B21; --line-bright:#2A2B33; --neon:#B4FF39; --orange:#FF6B35;
+  --serif:'Newsreader',Georgia,serif; --mono:'JetBrains Mono',ui-monospace,monospace;
+  margin:4rem 0; padding:2.25rem 0 0; min-height:0; background:transparent;
+  border-top:1px solid var(--line); border-bottom:0; overflow:visible;
+}
+.pl-header { display:flex; align-items:baseline; gap:.75rem; flex-wrap:wrap; margin:0 0 1.25rem; padding:0 0 1rem; border-bottom:1px solid var(--line); }
+.pl-title { color:var(--ink); font:400 clamp(1.45rem,4vw,2.25rem)/1 var(--serif); letter-spacing:-.02em; }
+.pl-subtitle { color:var(--ink-soft); font:italic 400 clamp(1rem,2.2vw,1.25rem)/1.2 var(--serif); }
+.pl-svg-wrap { width:100%; max-width:960px; margin:0 auto; padding:clamp(10px,2vw,24px); background:var(--bg); border:1px solid var(--line); box-shadow:0 18px 48px rgba(0,0,0,.28); }
+.pl-svg-wrap svg { display:block; width:100%; background:var(--bg) !important; cursor:crosshair; }
+.pl-svg-wrap svg [data-hpa-layer] { transition:filter .25s ease; }
+.pl-svg-wrap svg [data-event] { cursor:pointer; transform-box:fill-box; transform-origin:center; }
+.pl-svg-wrap svg [data-hpa-layer="pitch"] rect { fill:var(--bg) !important; stroke:var(--neon) !important; }
+.pl-svg-wrap svg [data-hpa-layer="halfway"] *,
+.pl-svg-wrap svg [data-hpa-layer="penalty_boxes"] *,
+.pl-svg-wrap svg [data-hpa-layer="goals"] * { fill:none !important; stroke:#F8F6F0 !important; }
+.pl-svg-wrap svg [data-hpa-layer^="team_a_"] * { fill:var(--neon) !important; stroke:var(--neon) !important; }
+.pl-svg-wrap svg [data-hpa-layer^="team_b_"] * { fill:var(--orange) !important; stroke:var(--orange) !important; }
+.pl-svg-wrap svg [data-hpa-layer="counterattack_involvements"] *,
+.pl-svg-wrap svg [data-hpa-layer="set_piece_involvements"] * { stroke:var(--orange) !important; }
+.pl-svg-wrap svg [data-hpa-layer="carry_events"] * { fill:var(--neon) !important; stroke:var(--neon) !important; }
+.pl-svg-wrap svg [data-hpa-layer] [data-event] { stroke-dasharray:8 5; stroke-dashoffset:0; transition:filter .2s ease; }
+.pl-svg-wrap svg [data-event]:hover { filter:drop-shadow(0 0 6px currentColor); }
+.pl-dock { position:sticky; bottom:14px; z-index:4; display:flex; flex-direction:column; gap:8px; width:min(960px,100%); margin:12px auto 0; padding:10px; background:rgba(13,14,18,.92); border:1px solid var(--line-bright); box-shadow:0 14px 35px rgba(0,0,0,.35); }
+.pl-category-rail { display:flex; gap:6px; flex-wrap:wrap; }
+.pl-category.cmd-btn { min-height:34px; padding:8px 12px; color:var(--ink-soft); background:transparent; border-color:var(--line); border-radius:999px; font:500 10px/1 var(--mono); letter-spacing:.16em; text-transform:uppercase; cursor:pointer; }
+.pl-category.cmd-btn:hover,.pl-category.cmd-btn.is-open { color:var(--ink); border-color:var(--line-bright); }
+.pl-category.team_a.is-open { color:var(--neon); border-color:var(--neon); box-shadow:0 0 14px rgba(180,255,57,.18); }
+.pl-category.team_b.is-open { color:var(--orange); border-color:var(--orange); box-shadow:0 0 14px rgba(255,107,53,.18); }
+.pl-subrail { display:none; gap:6px; flex-wrap:wrap; padding-top:2px; }
+.pl-subrail.is-open { display:flex; }
+.pl-layer-btn { appearance:none; border:1px solid var(--line); border-radius:999px; padding:7px 10px; color:var(--ink-soft); background:rgba(8,9,11,.72); font:500 9px/1.2 var(--mono); letter-spacing:.06em; cursor:pointer; transition:color .2s,border-color .2s,box-shadow .2s,background .2s; }
+.pl-layer-btn:hover { color:var(--ink); border-color:var(--line-bright); }
+.pl-layer-btn.is-on { color:var(--neon); border-color:rgba(180,255,57,.75); background:rgba(180,255,57,.1); box-shadow:0 0 12px rgba(180,255,57,.18); }
+.pl-layer-btn.team_b.is-on { color:var(--orange); border-color:rgba(255,107,53,.78); background:rgba(255,107,53,.1); box-shadow:0 0 12px rgba(255,107,53,.18); }
+.pl-layer-btn.team_a.is-on { color:var(--neon); }
+.pl-loading { min-height:220px; display:grid; place-items:center; color:var(--neon); font:10px var(--mono); letter-spacing:.22em; }
+@media (min-width:769px) { .pl-dock { backdrop-filter:blur(16px); -webkit-backdrop-filter:blur(16px); } }
+@media (max-width:640px) {
+  [data-visual-body="pitch-layers"] { margin:2.5rem -0.5rem 1rem; padding-top:1.5rem; }
+  .pl-svg-wrap { border-left:0; border-right:0; padding:8px 0; }
+  .pl-dock { position:sticky; bottom:0; margin:8px -0.5rem 0; width:calc(100% + 1rem); border-left:0; border-right:0; border-radius:0; background:var(--bg-elev); }
+  .pl-category-rail,.pl-subrail { overflow-x:auto; flex-wrap:nowrap; scrollbar-width:none; }
+  .pl-category-rail::-webkit-scrollbar,.pl-subrail::-webkit-scrollbar { display:none; }
+  .pl-category.cmd-btn,.pl-layer-btn { flex:0 0 auto; }
+}
+
+</style></head><body data-article-type="mac" data-max-layers="8" data-preloader-duration="2.5">
 <div class="progress-bar" id="progress"></div>
 <a href="/" class="back">← Ana sayfa</a>
 <section class="hero">
@@ -365,7 +414,7 @@ html{opacity:1;transition:opacity .22s cubic-bezier(.2,.9,.3,1)}html.page-leavin
 
     </article>
 </div>
-<section class="related"><h2 class="related-title">Benzer Yazılar</h2><div class="related-grid"><a href="/yazi/mac-besiktas-crystal-palace-2026-10-22.html" class="rel-card"><span class="rel-tag">Maç Dosyası</span><h4>Siyah Beyaz Direniş, Londra Esintisi: Beşiktaş - Crystal Palace Analizi</h4><span class="rel-cta">Oku →</span></a><a href="/yazi/mac-fenerbahce-slavia-prag-2026-10-20.html" class="rel-card"><span class="rel-tag">Maç Dosyası</span><h4>Kadıköy’de Disiplin ve Kaosun Çarpışması: Fenerbahçe - Slavia Prag Analizi</h4><span class="rel-cta">Oku →</span></a><a href="/yazi/mac-galatasaray-fenerbahce-2026-10-26.html" class="rel-card"><span class="rel-tag">Maç Dosyası</span><h4>Galatasaray 2-1 Fenerbahçe: 20 Şut, 2 Gol — Kanıt ve Sınırları</h4><span class="rel-cta">Oku →</span></a></div></section>
+<section class="related"><h2 class="related-title">Benzer Yazılar</h2><div class="related-grid"><a href="/yazi/galatasaray-stuttgart-gecis-haritasi.html" class="rel-card"><span class="rel-tag">Maç Dosyası</span><h4>Galatasaray vs Stuttgart: Geçiş Koridorlarının Haritası</h4><span class="rel-cta">Oku →</span></a><a href="/yazi/mac-besiktas-crystal-palace-2026-10-22.html" class="rel-card"><span class="rel-tag">Maç Dosyası</span><h4>Siyah Beyaz Direniş, Londra Esintisi: Beşiktaş - Crystal Palace Analizi</h4><span class="rel-cta">Oku →</span></a><a href="/yazi/mac-fenerbahce-slavia-prag-2026-10-20.html" class="rel-card"><span class="rel-tag">Maç Dosyası</span><h4>Kadıköy’de Disiplin ve Kaosun Çarpışması: Fenerbahçe - Slavia Prag Analizi</h4><span class="rel-cta">Oku →</span></a></div></section>
 <footer class="site-footer"><span>© 2026 HP//Analytic</span><a href="/">Ana sayfa</a></footer>
 <script>
 const bar = document.getElementById('progress');

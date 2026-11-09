@@ -1,0 +1,42 @@
+{
+  "source": "StatsBomb open data",
+  "match_id": 15946,
+  "team": "Barcelona",
+  "observed": [
+    "pas sayıları",
+    "ortalama konumlar",
+    "pas lokasyonları"
+  ],
+  "derived": [
+    "betweenness",
+    "kümeleme",
+    "ağ yoğunluğu",
+    "karşılıklılık",
+    "kanal ağırlığı"
+  ],
+  "normalized": [
+    "soyad etiketleri (name_overrides.json + heuristic)"
+  ],
+  "metrics": {
+    "hub": "Piqué",
+    "hub_full": "Gerard Piqué Bernabéu",
+    "hub_betweenness": 0.03,
+    "top_connection": [
+      "Rakitić",
+      "Alba",
+      56
+    ],
+    "top_channel": "sol kanat",
+    "top_channel_share": 0.338,
+    "top3_involvement_share": 0.393,
+    "network_density": 0.846,
+    "reciprocity": 0.868,
+    "nodes": 14,
+    "edges": 77
+  },
+  "evidence": {
+    "amber": "StatsBomb gözlem",
+    "blue": "türetilmiş metrik",
+    "red": "kapsam dışı"
+  }
+}

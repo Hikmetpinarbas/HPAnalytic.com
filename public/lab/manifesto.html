@@ -1,0 +1,407 @@
+<!doctype html><html lang="tr"><head><meta charset="utf-8"/><style>html{background:#08090B}body{background:#08090B;color:#F4F2EC;margin:0}html[data-theme="light"]{background:#F8F6F0}html[data-theme="light"] body{background:#F8F6F0;color:#0A0A0C}</style><script>(function(){try{var t=localStorage.getItem('hpa-theme');if(!t)t=window.matchMedia('(prefers-color-scheme: light)').matches?'light':'dark';document.documentElement.setAttribute('data-theme',t);document.documentElement.style.colorScheme=t;}catch(e){}})();</script>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
+<meta name="theme-color" content="#08090B"/>
+<title>HPAnalytic Anayasası — Skoru değil, mekanizmayı okuyoruz</title>
+<meta name="description" content="HPAnalytic'in 2 yıllık vizyon belgesi: misyon, epistemik sıralama, mimari, yaratıcı DNA, editoryal ilkeler ve üretim kalitesi standartları."/>
+<meta property="og:title" content="HPAnalytic Anayasası"/>
+<meta property="og:description" content="Skoru değil, mekanizmayı okuyoruz. 2024–2026 vizyon belgesi."/>
+<meta property="og:type" content="article"/>
+<meta property="og:site_name" content="HPAnalytic"/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;700&family=JetBrains+Mono:wght@400;500;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#08090B;--bg-elev:#0D0E12;--bg-elev2:#14151A;--ink:#F4F2EC;--ink-soft:#8A8A93;--ink-faint:#4A4A52;--line:#1B1B21;--line-bright:#2A2B33;--neon:#B4FF39;--orange:#FF6B35;--serif:'Newsreader',Georgia,serif;--mono:'JetBrains Mono',monospace;--sans:'Hanken Grotesk',system-ui,sans-serif}
+[data-theme="light"]{--bg:#F8F6F0;--bg-elev:#FFFFFF;--bg-elev2:#EDEAE0;--ink:#0A0A0C;--ink-soft:#5A5A63;--ink-faint:#9A9AA3;--line:#DDD8CC;--line-bright:#C5C0B4;--neon:#5C9E00;--orange:#D65328}
+html{-webkit-font-smoothing:antialiased;scroll-behavior:smooth}
+body{font-family:var(--sans);line-height:1.6;min-height:100vh;background:var(--bg);color:var(--ink)}
+a{color:inherit;text-decoration:none}
+::selection{background:var(--neon);color:var(--bg)}
+
+/* Progress */
+.progress-bar{position:fixed;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--neon),var(--orange));z-index:1000;width:0%;transition:width .1s}
+
+/* Back */
+.back{position:fixed;top:20px;left:20px;z-index:10;font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-soft);padding:8px 14px;border:1px solid var(--line);background:rgba(10,10,12,.85);backdrop-filter:blur(12px);transition:all .2s;border-radius:4px}
+[data-theme="light"] .back{background:rgba(248,246,240,.85)}
+.back:hover{color:var(--neon);border-color:var(--neon)}
+
+/* Hero */
+.hero{padding:120px 24px 56px;max-width:1200px;margin:0 auto;border-bottom:1px solid var(--line);text-align:center}
+@media(min-width:768px){.hero{padding:160px 48px 72px}}
+.hero-badges{display:flex;gap:12px;justify-content:center;margin-bottom:32px;flex-wrap:wrap}
+.type-badge{font-family:var(--mono);font-size:10px;letter-spacing:.24em;text-transform:uppercase;padding:6px 12px;border:1px solid var(--neon);color:var(--neon);border-radius:2px}
+.date-badge{font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-faint);padding:6px 12px;border:1px solid var(--line);border-radius:2px}
+.hero h1{font-family:var(--serif);font-weight:400;font-size:clamp(36px,7vw,80px);line-height:1.05;letter-spacing:-.03em;color:var(--ink);margin-bottom:24px}
+.hero h1 em{font-style:normal;color:var(--neon)}
+.hero .lede{font-family:var(--serif);font-size:clamp(18px,2.5vw,26px);line-height:1.5;font-style:italic;color:var(--ink-soft);max-width:720px;margin:0 auto}
+
+/* Layout */
+.layout{display:grid;grid-template-columns:1fr;gap:0;max-width:1200px;margin:0 auto;padding:48px 24px 80px}
+@media(min-width:1024px){.layout{grid-template-columns:220px 1fr;gap:80px;padding:64px 48px 96px}}
+
+/* TOC */
+.toc{display:none}
+@media(min-width:1024px){.toc{display:block;position:sticky;top:100px;align-self:start;max-height:calc(100vh - 140px);overflow-y:auto}}
+.toc-label{font-family:var(--mono);font-size:9px;letter-spacing:.24em;text-transform:uppercase;color:var(--ink-faint);margin-bottom:16px}
+.toc ol{list-style:none;display:flex;flex-direction:column;gap:2px;border-left:1px solid var(--line);padding-left:0}
+.toc li{padding:6px 0 6px 16px;font-family:var(--sans);font-size:13px;line-height:1.4;border-left:2px solid transparent;margin-left:-1px;transition:all .2s}
+.toc a{color:var(--ink-soft);display:block}
+.toc li:hover a{color:var(--ink)}
+.toc li.active{border-left-color:var(--neon)}
+.toc li.active a{color:var(--neon)}
+
+/* Article */
+.article{max-width:720px;font-size:17px;line-height:1.8;color:var(--ink)}
+@media(min-width:768px){.article{font-size:18px}}
+.article > p:first-of-type::first-letter{font-family:var(--serif);font-size:5em;line-height:1;float:left;padding:6px 12px 0 0;color:var(--neon);font-weight:500}
+.article h2{font-family:var(--serif);font-weight:400;font-size:clamp(26px,4vw,40px);line-height:1.15;letter-spacing:-.02em;margin:64px 0 20px;color:var(--ink);scroll-margin-top:100px}
+.article h3{font-family:var(--serif);font-weight:500;font-size:clamp(20px,3vw,26px);line-height:1.25;margin:40px 0 16px;color:var(--ink);scroll-margin-top:100px}
+.article p{margin:0 0 24px}
+.article strong{color:var(--ink);font-weight:600}
+.article em{font-family:var(--serif);font-style:italic}
+.article a{color:var(--neon);text-decoration:underline;text-underline-offset:3px}
+.article ul,.article ol{margin:0 0 24px 24px}
+.article li{margin-bottom:10px}
+.article blockquote{border-left:2px solid var(--neon);padding:12px 0 12px 28px;margin:32px 0;font-family:var(--serif);font-style:italic;font-size:clamp(20px,2.5vw,26px);color:var(--neon);line-height:1.5}
+.article hr{border:none;border-top:1px solid var(--line);margin:48px 0}
+.article code{font-family:var(--mono);font-size:.85em;background:var(--bg-elev2);padding:2px 6px;border-radius:2px;color:var(--neon)}
+
+/* Section number */
+.sec-num{font-family:var(--mono);font-size:11px;letter-spacing:.25em;color:var(--orange);display:block;margin-bottom:6px}
+
+/* Epistemic Chain */
+.chain{list-style:none;margin:32px 0;padding:0;counter-reset:chain}
+.chain li{position:relative;padding:16px 16px 16px 56px;margin:0 0 2px;background:var(--bg-elev);border:1px solid var(--line);border-radius:4px;font-family:var(--sans);font-size:15px;transition:border-color .2s}
+.chain li:hover{border-color:var(--neon)}
+.chain li::before{counter-increment:chain;content:counter(chain);position:absolute;left:16px;top:50%;transform:translateY(-50%);font-family:var(--mono);font-size:18px;font-weight:700;color:var(--neon);width:28px;text-align:center}
+.chain li::after{content:'';position:absolute;left:29px;bottom:-3px;width:2px;height:5px;background:var(--neon);opacity:.35}
+.chain li:last-child::after{display:none}
+.chain .chain-label{font-weight:600;color:var(--ink)}
+.chain .chain-sub{color:var(--ink-soft);font-size:13px;margin-left:4px}
+
+/* Oda cards */
+.oda-grid{display:grid;grid-template-columns:1fr;gap:16px;margin:32px 0}
+@media(min-width:640px){.oda-grid{grid-template-columns:1fr 1fr}}
+.oda-card{background:var(--bg-elev);border:1px solid var(--line);border-radius:4px;padding:24px;transition:border-color .2s}
+.oda-card:hover{border-color:var(--neon)}
+.oda-card h4{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--neon);margin-bottom:12px}
+.oda-card .oda-path{font-family:var(--mono);font-size:13px;color:var(--orange);margin-bottom:8px}
+.oda-card p{font-size:14px;color:var(--ink-soft);line-height:1.6}
+.bridge-card{background:var(--bg-elev2);border:1px dashed var(--orange);border-radius:4px;padding:20px 24px;margin:16px 0 32px;text-align:center;font-family:var(--mono);font-size:13px;color:var(--orange);letter-spacing:.08em}
+
+/* DNA cards */
+.dna-grid{display:grid;grid-template-columns:1fr;gap:16px;margin:32px 0}
+@media(min-width:768px){.dna-grid{grid-template-columns:repeat(3,1fr)}}
+.dna-card{background:var(--bg-elev);border:1px solid var(--line);border-radius:4px;padding:24px;text-align:center;transition:border-color .2s}
+.dna-card:hover{border-color:var(--neon)}
+.dna-icon{font-size:32px;margin-bottom:12px;display:block}
+.dna-card h4{font-family:var(--serif);font-size:20px;font-weight:500;color:var(--ink);margin-bottom:8px}
+.dna-card p{font-size:14px;color:var(--ink-soft);line-height:1.6;font-family:var(--serif);font-style:italic}
+
+/* Rules list */
+.rule-list{list-style:none;margin:24px 0;padding:0}
+.rule-list li{padding:12px 0;border-bottom:1px solid var(--line);font-size:15px;color:var(--ink);display:flex;gap:12px;align-items:baseline}
+.rule-list li::before{content:'→';color:var(--neon);font-family:var(--mono);font-weight:700;flex-shrink:0}
+
+/* Role / Gate grid */
+.gate-grid{display:grid;grid-template-columns:1fr;gap:8px;margin:24px 0}
+@media(min-width:640px){.gate-grid{grid-template-columns:repeat(2,1fr)}}
+.gate-item{display:flex;align-items:center;gap:12px;padding:14px 16px;background:var(--bg-elev);border:1px solid var(--line);border-radius:4px;font-size:14px;transition:border-color .2s}
+.gate-item:hover{border-color:var(--neon)}
+.gate-letter{font-family:var(--mono);font-weight:700;font-size:16px;color:var(--neon);width:24px;text-align:center;flex-shrink:0}
+.gate-label{color:var(--ink)}
+
+/* Token table */
+.token-table{width:100%;border-collapse:collapse;margin:24px 0;font-size:14px}
+.token-table th,.token-table td{padding:10px 12px;border:1px solid var(--line);text-align:left}
+.token-table th{background:var(--bg-elev);font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-soft)}
+.token-table td{color:var(--ink)}
+.token-swatch{display:inline-block;width:16px;height:16px;border-radius:2px;vertical-align:middle;margin-right:8px;border:1px solid var(--line)}
+
+/* Pipeline */
+.pipeline{display:flex;align-items:center;justify-content:center;gap:8px;margin:24px 0;flex-wrap:wrap;font-family:var(--mono);font-size:12px;letter-spacing:.08em}
+.pipeline span{padding:8px 14px;border:1px solid var(--line);border-radius:2px;color:var(--ink-soft);background:var(--bg-elev);white-space:nowrap}
+.pipeline .arrow{border:none;background:none;color:var(--neon);font-size:16px;padding:0 4px}
+
+/* Signature */
+.manifesto-sig{display:block;text-align:right;font-family:var(--mono);font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:var(--ink-faint);margin-top:48px;padding-top:24px;border-top:1px solid var(--line)}
+.manifesto-sig .sig-neon{color:var(--neon)}
+
+/* Footer */
+.site-footer{max-width:1200px;margin:0 auto;padding:32px 24px;border-top:1px solid var(--line);display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-faint)}
+.site-footer a{color:var(--ink-soft)}.site-footer a:hover{color:var(--neon)}
+@media(min-width:768px){.site-footer{padding:32px 48px}}
+
+html{opacity:1;transition:opacity .22s cubic-bezier(.2,.9,.3,1)}html.page-leaving{opacity:0}@keyframes pageFadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}body{animation:pageFadeIn .4s cubic-bezier(.2,.9,.3,1)}
+</style>
+</head>
+<body>
+<div class="progress-bar" id="progress"></div>
+<a href="/" class="back">← Ana Sayfa</a>
+
+<section class="hero">
+  <div class="hero-badges">
+    <span class="type-badge">Anayasa</span>
+    <span class="date-badge">2024 — 2026 · 2 Yıllık Vizyon</span>
+  </div>
+  <h1>HP<em>Anal</em>ytic Anayasası</h1>
+  <p class="lede">Skoru değil, mekanizmayı okuyoruz.</p>
+</section>
+
+<div class="layout">
+  <nav class="toc">
+    <div class="toc-label">İçindekiler</div>
+    <ol>
+      <li><a href="#misyon">Misyon</a></li>
+      <li><a href="#epistemik">Epistemik Sıralama</a></li>
+      <li><a href="#iki-oda">İki Oda Mimarisi</a></li>
+      <li><a href="#yaratici-dna">Yaratıcı DNA</a></li>
+      <li><a href="#editoryal">Editoryal İlkeler</a></li>
+      <li><a href="#uretim">Üretim Kalitesi</a></li>
+      <li><a href="#yayimlama">Yayımlama Kapısı</a></li>
+      <li><a href="#tasarim">Tasarım Sistemi</a></li>
+    </ol>
+  </nav>
+
+  <article class="article">
+
+    <p>Bu belge, HPAnalytic'in kuruluşundan bugüne kadar biriken tüm vizyon belgelerini, tasarım kararlarını, editoryal ilkeleri ve üretim standartlarını tek bir çatı altında toplar. Bir manifesto değil, bir anayasa: değişebilir ama keyfi değiştirilemez. Her kural bir deneyimden, her sınır bir hatadan doğmuştur.</p>
+
+    <hr>
+
+    <!-- ═══ 01 MİSYON ═══ -->
+    <span class="sec-num" id="misyon">01 · MİSYON</span>
+    <h2>Skoru değil, skoru yaratan <em>mekanizmayı</em> okumak</h2>
+
+    <p>HPAnalytic; skoru değil, skoru yaratan mekanizmayı okuyan, veri odaklı, sinematik bir futbol analiz platformudur. Skor bir sonuçtur. Mekanizma, o sonucun neden ve nasıl ortaya çıktığını anlatır.</p>
+
+    <blockquote>Sayıyı görmek kolay. Sayının arkasındaki kararı görmek, analiz.</blockquote>
+
+    <p>Platform üç temel üzerine kuruludur:</p>
+    <ul>
+      <li><strong>Veri odaklılık:</strong> Her iddia, birincil kaynak verisine dayanır. Üretilmeyen veri üretilmez; tahmin, tahmin olarak etiketlenir.</li>
+      <li><strong>Sinematik anlatım:</strong> Veri, görsel bir dil aracılığıyla hikâyeye dönüşür. Grafik bir dekorasyon değil, bir argümandır.</li>
+      <li><strong>Mekanizma okuma:</strong> Toplam şut sayısı değil, o şutları yaratan pas dizileri, alan kullanımı, baskı kırılmaları.</li>
+    </ul>
+
+    <hr>
+
+    <!-- ═══ 02 EPİSTEMİK SIRALAMLA ═══ -->
+    <span class="sec-num" id="epistemik">02 · EPİSTEMİK SIRALAMLA</span>
+    <h2>Bilginin <em>hiyerarşisi</em></h2>
+
+    <p>HPAnalytic'te her analiz, altı katmanlı bir bilgi hiyerarşisinden geçer. Bir katmanı atlamak, çıkarımı çürütür.</p>
+
+    <ol class="chain">
+      <li><span class="chain-label">DOĞRULUK</span><span class="chain-sub"> — Veri doğru mu? Kaynak birincil mi?</span></li>
+      <li><span class="chain-label">KANIT</span><span class="chain-sub"> — İddiayı destekleyen kanıt var mı? Sayılabilir mi?</span></li>
+      <li><span class="chain-label">BAĞLAM</span><span class="chain-sub"> — Rakip kim? Skor durumu ne? Koşullar nedir?</span></li>
+      <li><span class="chain-label">MEKANİZMA</span><span class="chain-sub"> — Bu sonucu yaratan süreç nedir? Nasıl işliyor?</span></li>
+      <li><span class="chain-label">KARŞI KANIT</span><span class="chain-sub"> — Yanlışsam ne görmeliyim? Alternatif açıklama var mı?</span></li>
+      <li><span class="chain-label">KARAR DEĞERİ</span><span class="chain-sub"> — Bu bilgi bir teknik adamın, analistin veya okuyucunun kararını değiştirir mi?</span></li>
+    </ol>
+
+    <p>Her yazının sonunda, okuyucu şu üç sorunun cevabını bilmelidir: <strong>Ne biliyoruz? Ne bilmiyoruz? Ne çürütür?</strong></p>
+
+    <hr>
+
+    <!-- ═══ 03 İKİ ODA MİMARİSİ ═══ -->
+    <span class="sec-num" id="iki-oda">03 · İKİ ODA MİMARİSİ</span>
+    <h2>Sistem, iki <em>odadan</em> oluşur</h2>
+
+    <p>HPAnalytic'in teknik mimarisi, bir sınır çizgisiyle ikiye ayrılır. Bu ayrım keyfi değildir: veri üretimi ile görsel sunum, farklı disiplinlerdir. Birbirlerinin dosyalarına dokunmazlar.</p>
+
+    <div class="oda-grid">
+      <div class="oda-card">
+        <h4>Oda A — Site (Frontend)</h4>
+        <div class="oda-path">~/hpanalytic/</div>
+        <p>HTML, CSS, JavaScript. Vite ile derlenir. Netlify'a deploy edilir. Veriyi okur, üretmez. <code>src/</code>, <code>public/</code>, <code>index.html</code> burada yaşar.</p>
+      </div>
+      <div class="oda-card">
+        <h4>Oda B — Pipeline (Veri)</h4>
+        <div class="oda-path">/sdcard/HPAnalytic/</div>
+        <p>Python veri işleme. Ham CSV, XML, XLSX → temiz JSON. <code>build_package.py</code> ile paket üretilir. Site dosyalarına dokunulmaz.</p>
+      </div>
+    </div>
+
+    <div class="bridge-card">KÖPRÜ → Pipeline JSON üretir → Site kopyalar ve okur → <code>public/assets/data/packages/</code></div>
+
+    <p>Her komut öncesi üç soru: <strong>Neredeyim? Bu oda benim mi? Yanlış odadaysam doğru odaya geç.</strong></p>
+
+    <hr>
+
+    <!-- ═══ 04 YARATICI DNA ═══ -->
+    <span class="sec-num" id="yaratici-dna">04 · YARATICI DNA</span>
+    <h2>Caravaggio × Leonardo × <em>Tesla</em></h2>
+
+    <p>Sitenin görsel dili üç ustanın kesişiminde yaşar. Bu bir stil tercihi değil, bir tasarım felsefesidir. Her bileşen, bu üçlü DNA'nın en az bir kolunu taşır.</p>
+
+    <div class="dna-grid">
+      <div class="dna-card">
+        <span class="dna-icon" aria-hidden="true">◐</span>
+        <h4>Caravaggio</h4>
+        <p>Chiaroscuro. Kasıtlı görsel drama. Seçici ışıklandırma. Anıtsal kontrast. Karanlığın içinden çıkan vurgu.</p>
+      </div>
+      <div class="dna-card">
+        <span class="dna-icon" aria-hidden="true">◎</span>
+        <h4>Leonardo</h4>
+        <p>Anatomik hassasiyet. Disiplinli geometri. Defter detayı. Editoryal denge. Akıllı açıklama notları.</p>
+      </div>
+      <div class="dna-card">
+        <span class="dna-icon" aria-hidden="true">⚡</span>
+        <h4>Tesla</h4>
+        <p>İnce ışıklı çizgiler. Ketum elektrik-mavi veri aksanları. Bilimsel zarafet. Hareket dinamikleri.</p>
+      </div>
+    </div>
+
+    <blockquote>Jenerik Bootstrap gösterge tablosu yok. Anlamsız neon yok. Sahte ödül iddiası yok. Veri yerine üretilmiş metin yok.</blockquote>
+
+    <hr>
+
+    <!-- ═══ 05 EDİTORYAL İLKELER ═══ -->
+    <span class="sec-num" id="editoryal">05 · EDİTORYAL İLKELER</span>
+    <h2>Hikmet <em>DNA'sı</em></h2>
+
+    <p>HPAnalytic'in editoryal sesi, bir dizi katı kuraldan oluşur. Bu kurallar yazının kalitesini değil, dürüstlüğünü korur.</p>
+
+    <ul class="rule-list">
+      <li>Cümleler kısa: ortalama 12 kelime. Vurucu ol, doldurmacı değil.</li>
+      <li>Her paragrafta <strong>"X değil, Y"</strong> karşıtlığı kullan. Düşünceyi çatışmayla kes.</li>
+      <li>Metaforlar spor dışından gelsin: çöl, makine, laboratuvar, harita.</li>
+      <li><em>"Gözlem"</em> ve <em>"tahmin"</em> kelimelerini kullanma. Yerine <em>"olasılık"</em>, <em>"model çıktısı"</em> de.</li>
+      <li>Her iddiaya bir sınır cümlesi ekle: <strong>"Yanlışsam ne görmeliyim?"</strong></li>
+      <li>Tartışmalı "ilk", "devrimci", "değiştirdi" ifadeleri — ancak belgelen<wbr>diyse.</li>
+    </ul>
+
+    <h3>Bilgi Hattı</h3>
+    <div class="pipeline">
+      <span>SOURCE</span><span class="arrow">→</span>
+      <span>EVIDENCE</span><span class="arrow">→</span>
+      <span>FOOTBALL MEANING</span><span class="arrow">→</span>
+      <span>CLAIM DISCIPLINE</span><span class="arrow">→</span>
+      <span>ANALYST VALUE</span>
+    </div>
+
+    <p>Event-only veri ile tracking/video gerektiren çıkarımlar asla karıştırılmaz. Gözlem → mekanizma hipotezi → nedensellik → sonuç arasında sıçrama yasaktır.</p>
+
+    <hr>
+
+    <!-- ═══ 06 ÜRETİM KALİTESİ ═══ -->
+    <span class="sec-num" id="uretim">06 · ÜRETİM KALİTESİ</span>
+    <h2>Beş rol, altı <em>kapı</em></h2>
+
+    <p>Her HPAnalytic çıktısı, beş bağımsız rol tarafından üretilir ve altı kabul kapısından geçer. Bir artefakt sırf var olduğu için tamamlanmış sayılmaz.</p>
+
+    <h3>Roller</h3>
+    <div class="gate-grid">
+      <div class="gate-item"><span class="gate-letter">1</span><span class="gate-label"><strong>Analist</strong> — Kabul edilebilir birincil veri, şema, belirsizlik, ölçülebilir futbol iddiası</span></div>
+      <div class="gate-item"><span class="gate-letter">2</span><span class="gate-label"><strong>Araştırmacı</strong> — Kaynaklar, doğrulanabilir referanslar, tartışmalı yorumların işaretlenmesi</span></div>
+      <div class="gate-item"><span class="gate-letter">3</span><span class="gate-label"><strong>Sanat Yönetmeni</strong> — Hikâyeye uygun kompozisyon ve görsel gramer</span></div>
+      <div class="gate-item"><span class="gate-letter">4</span><span class="gate-label"><strong>Mühendis</strong> — Tekrarlanabilir çıktılar, lint/test, mobil ve masaüstü dışa aktarım</span></div>
+      <div class="gate-item"><span class="gate-letter">5</span><span class="gate-label"><strong>Denetçi</strong> — Kaynak doğruluğu, editoryal netlik, görsel hiyerarşi, teknik doğruluk</span></div>
+    </div>
+
+    <h3>Kabul Kapıları</h3>
+    <div class="gate-grid">
+      <div class="gate-item"><span class="gate-letter">A</span><span class="gate-label">Kanıt Bütünlüğü</span></div>
+      <div class="gate-item"><span class="gate-letter">B</span><span class="gate-label">Anlatı Yararlılığı</span></div>
+      <div class="gate-item"><span class="gate-letter">C</span><span class="gate-label">Sanat Yönetimi ve Okunabilirlik</span></div>
+      <div class="gate-item"><span class="gate-letter">D</span><span class="gate-label">Çapraz Cihaz QA</span></div>
+      <div class="gate-item"><span class="gate-letter">E</span><span class="gate-label">Tekrarlanabilirlik</span></div>
+      <div class="gate-item"><span class="gate-letter">F</span><span class="gate-label">Güvenli Yayın — İNSAN ONAYI GEREKLİ</span></div>
+    </div>
+
+    <hr>
+
+    <!-- ═══ 07 YAYIMLAMA KAPISI ═══ -->
+    <span class="sec-num" id="yayimlama">07 · YAYIMLAMA KAPISI</span>
+    <h2>Üç <em>hazırlık</em>, üç farklı anlam</h2>
+
+    <blockquote>Hiçbir zaman canlı siteye, DNS'e, CMS'ye veya üretim CDN'ine açık, ayrı bir sahip onayı olmadan deploy yapılmaz.</blockquote>
+
+    <p>HPAnalytic'te üç farklı "hazır" durumu vardır ve bunlar birbirinin yerine geçmez:</p>
+
+    <div class="gate-grid">
+      <div class="gate-item"><span class="gate-letter" style="color:var(--orange)">E</span><span class="gate-label"><strong>engine_ready</strong> — Veri motoru çalışıyor, JSON üretilebilir</span></div>
+      <div class="gate-item"><span class="gate-letter" style="color:var(--orange)">U</span><span class="gate-label"><strong>UI_ready</strong> — Arayüz test edildi, QA geçti</span></div>
+      <div class="gate-item"><span class="gate-letter" style="color:var(--orange)">P</span><span class="gate-label"><strong>publication_ready</strong> — İçerik doğrulandı, sahip onayı alındı</span></div>
+    </div>
+
+    <p>Testlerin geçmesi sahip onayı yerine geçmez. Motor hazır olması yayına hazır demek değildir. Canlıya çıkış her zaman ayrı bir kapıdır.</p>
+
+    <hr>
+
+    <!-- ═══ 08 TASARIM SİSTEMİ ═══ -->
+    <span class="sec-num" id="tasarim">08 · TASARIM SİSTEMİ</span>
+    <h2>Jetonlar ve <em>sözleşmeler</em></h2>
+
+    <h3>Renk Paleti</h3>
+    <table class="token-table">
+      <thead><tr><th>Jeton</th><th>Değer (Dark)</th><th>Değer (Light)</th><th>Kullanım</th></tr></thead>
+      <tbody>
+        <tr><td><span class="token-swatch" style="background:#08090B"></span><code>--bg</code></td><td>#08090B</td><td>#F8F6F0</td><td>Sayfa zemin</td></tr>
+        <tr><td><span class="token-swatch" style="background:#0D0E12"></span><code>--bg-elev</code></td><td>#0D0E12</td><td>#FFFFFF</td><td>Yükseltilmiş yüzey</td></tr>
+        <tr><td><span class="token-swatch" style="background:#F4F2EC"></span><code>--ink</code></td><td>#F4F2EC</td><td>#0A0A0C</td><td>Ana metin</td></tr>
+        <tr><td><span class="token-swatch" style="background:#B4FF39"></span><code>--neon</code></td><td>#B4FF39</td><td>#5C9E00</td><td>Vurgu, CTA, veri aksanı</td></tr>
+        <tr><td><span class="token-swatch" style="background:#FF6B35"></span><code>--orange</code></td><td>#FF6B35</td><td>#D65328</td><td>İkincil vurgu, uyarı</td></tr>
+        <tr><td><span class="token-swatch" style="background:#1B1B21"></span><code>--line</code></td><td>#1B1B21</td><td>#DDD8CC</td><td>Çizgi, sınır</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Tipografi Hiyerarşisi</h3>
+    <table class="token-table">
+      <thead><tr><th>Rol</th><th>Font</th><th>Ağırlıklar</th></tr></thead>
+      <tbody>
+        <tr><td>Başlıklar / Editoryal</td><td>Newsreader</td><td>400, 500, 600</td></tr>
+        <tr><td>Arayüz / Gövde</td><td>Hanken Grotesk</td><td>300, 400, 500, 700</td></tr>
+        <tr><td>Kod / Veri / Metadata</td><td>JetBrains Mono</td><td>400, 500, 700</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Tema Desteği</h3>
+    <p>Tüm renkler CSS özel özellikleri (<code>var()</code>) üzerinden tanımlanır. <code>[data-theme="light"]</code> seçicisi tüm jetonları açık temaya çevirir. Seçim <code>localStorage</code>'da saklanır, sistem tercihi dinlenir. Yeşil sıfır toleransı: hiçbir marka varlığında yeşil ton kullanılmaz — neon yalnızca veri aksanıdır.</p>
+
+    <hr>
+
+    <p>Bu anayasa, HPAnalytic'in tüm çalışanlarını, ajanlarını ve katkıda bulunanlarını bağlar. Değiştirilebilir, ancak her değişiklik gerekçelendirilmeli ve kayıt altına alınmalıdır.</p>
+
+    <div class="manifesto-sig">
+      — HP//<span class="sig-neon">Anal</span>YTIC Anayasası · v1.0 · Kasım 2026
+    </div>
+
+  </article>
+</div>
+
+<footer class="site-footer">
+  <span>&copy; 2026 HP//Analytic</span>
+  <a href="/">Ana sayfa</a>
+</footer>
+
+<script>
+const bar = document.getElementById('progress');
+window.addEventListener('scroll', () => {
+  const h = document.documentElement.scrollHeight - window.innerHeight;
+  if (h > 0) bar.style.width = (window.scrollY / h * 100) + '%';
+}, { passive: true });
+const tocLinks = document.querySelectorAll('.toc a');
+const headings = [...document.querySelectorAll('.article h2, .article h3')];
+if (tocLinks.length && headings.length) {
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        tocLinks.forEach(l => l.parentElement.classList.remove('active'));
+        const active = document.querySelector('.toc a[href="#' + e.target.closest('[id]').id + '"]');
+        if (active) active.parentElement.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-100px 0px -70% 0px' });
+  headings.forEach(h => obs.observe(h));
+}
+</script>
+<script src="/page-transition.js" defer></script>
+<script src="/extras2.js" defer></script>
+<script src="/gsap-micro.js" defer></script>
+<script src="/scroll-build.js" defer></script>
+</body></html>

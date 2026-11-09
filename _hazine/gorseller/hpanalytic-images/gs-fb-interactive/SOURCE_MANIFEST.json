@@ -1,0 +1,17 @@
+{
+  "run": "gs-fb-derby-20261026",
+  "source": "ENGINE_V1 reconciled + specialist outputs",
+  "engine_ready": true,
+  "publication_ready": false,
+  "shot_points": 20,
+  "shots_xlsx": 24,
+  "turnovers": 28,
+  "charts": [
+    "shots",
+    "recoveries",
+    "losses",
+    "passes",
+    "timeline",
+    "turnovers"
+  ]
+}

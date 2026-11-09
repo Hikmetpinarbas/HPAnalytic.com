@@ -1,0 +1,209 @@
+{
+  "project_id": "hp-third-man",
+  "source_id": "authored-fixtures",
+  "original_data_paths": [
+    "../examples/data/third-man.json"
+  ],
+  "source_licenses": [
+    "project MIT"
+  ],
+  "data_type": "ILLUSTRATIVE",
+  "coordinate_system": "105x68 metres",
+  "attack_direction": "left-to-right",
+  "temporal_resolution": "authored keyframes; interpolation is illustrative",
+  "players": [
+    {
+      "id": "A1",
+      "team": "A",
+      "x": 5,
+      "y": 34.0
+    },
+    {
+      "id": "A2",
+      "team": "A",
+      "x": 24.0,
+      "y": 10.0
+    },
+    {
+      "id": "A4",
+      "team": "A",
+      "x": 20.0,
+      "y": 27.0
+    },
+    {
+      "id": "A5",
+      "team": "A",
+      "x": 20.0,
+      "y": 44.0
+    },
+    {
+      "id": "A3",
+      "team": "A",
+      "x": 24.0,
+      "y": 59.0
+    },
+    {
+      "id": "A6",
+      "team": "A",
+      "x": 40,
+      "y": 34
+    },
+    {
+      "id": "A8",
+      "team": "A",
+      "x": 52,
+      "y": 28
+    },
+    {
+      "id": "A10",
+      "team": "A",
+      "x": 57,
+      "y": 20
+    },
+    {
+      "id": "A7",
+      "team": "A",
+      "x": 64.0,
+      "y": 12.0
+    },
+    {
+      "id": "A11",
+      "team": "A",
+      "x": 65.0,
+      "y": 49.0
+    },
+    {
+      "id": "A9",
+      "team": "A",
+      "x": 67.0,
+      "y": 34.0
+    },
+    {
+      "id": "B1",
+      "team": "B",
+      "x": 101,
+      "y": 34.0
+    },
+    {
+      "id": "B2",
+      "team": "B",
+      "x": 78.0,
+      "y": 9.0
+    },
+    {
+      "id": "B4",
+      "team": "B",
+      "x": 77.0,
+      "y": 26.0
+    },
+    {
+      "id": "B5",
+      "team": "B",
+      "x": 77.0,
+      "y": 43.0
+    },
+    {
+      "id": "B3",
+      "team": "B",
+      "x": 78.0,
+      "y": 59.0
+    },
+    {
+      "id": "B6",
+      "team": "B",
+      "x": 61.0,
+      "y": 20.0
+    },
+    {
+      "id": "B8",
+      "team": "B",
+      "x": 62.0,
+      "y": 36.0
+    },
+    {
+      "id": "B10",
+      "team": "B",
+      "x": 61.0,
+      "y": 52.0
+    },
+    {
+      "id": "B7",
+      "team": "B",
+      "x": 47.0,
+      "y": 12.0
+    },
+    {
+      "id": "B11",
+      "team": "B",
+      "x": 46.0,
+      "y": 37.0
+    },
+    {
+      "id": "B9",
+      "team": "B",
+      "x": 47.0,
+      "y": 57.0
+    }
+  ],
+  "ball": {
+    "x": 40,
+    "y": 34
+  },
+  "events": [
+    {
+      "time": 0,
+      "caption": "Başlangıç: A6 topa sahip, A8 bağlantı, A10 üçüncü adam · TEMSİLİ",
+      "evidence": "ILLUSTRATIVE"
+    },
+    {
+      "time": 1.2,
+      "caption": "İlk pas A8: B6 baskıya çıkar · TEMSİLİ",
+      "evidence": "ILLUSTRATIVE"
+    },
+    {
+      "time": 2.4,
+      "caption": "Duvar pası A6: A10 boşluğa koşar · TEMSİLİ",
+      "evidence": "ILLUSTRATIVE"
+    },
+    {
+      "time": 4.2,
+      "caption": "Üçüncü adam A10: B8 geri kayar, B10 koridoru kapatır · TEMSİLİ",
+      "evidence": "ILLUSTRATIVE"
+    },
+    {
+      "time": 6,
+      "caption": "Son pas/şut hazırlığı: savunma geri koşar · TEMSİLİ",
+      "evidence": "ILLUSTRATIVE"
+    }
+  ],
+  "analytic_claim": "Demonstration only; no observed-match claim",
+  "visual_grammar": "sequential tactical illustration",
+  "scene_layers": [
+    "Background",
+    "Coordinate system",
+    "Actors",
+    "Ball and events",
+    "Tactical relations",
+    "Analytical surface",
+    "Editorial explanation",
+    "Typography and credits"
+  ],
+  "captions": [
+    "Başlangıç: A6 topa sahip, A8 bağlantı, A10 üçüncü adam · TEMSİLİ",
+    "İlk pas A8: B6 baskıya çıkar · TEMSİLİ",
+    "Duvar pası A6: A10 boşluğa koşar · TEMSİLİ",
+    "Üçüncü adam A10: B8 geri kayar, B10 koridoru kapatır · TEMSİLİ",
+    "Son pas/şut hazırlığı: savunma geri koşar · TEMSİLİ"
+  ],
+  "output_targets": [
+    "SVG",
+    "PNG",
+    "HTML"
+  ],
+  "editorial_credits": [
+    "Analiz ve çizim: HPAnalytic",
+    "Veriler/hareketler: temsili"
+  ],
+  "verification_status": "demo",
+  "production_job": "../examples/hp-third-man.json"
+}

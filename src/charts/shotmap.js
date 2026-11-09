@@ -1,5 +1,6 @@
 import * as d3 from 'd3';
 import { gsap } from 'gsap';
+import { ease, duration, staggerProfiles } from '../js/motion-tokens.js';
 
 const TEAM_COLORS = { GS: '#FF6B35', FB: '#B4FF39' };
 const TYPE_META = {
@@ -177,9 +178,9 @@ export async function initShotMap(containerId, filtersId, dataUrl = "/assets/dat
       merged.style('opacity', 0);
       gsap.to(merged.nodes(), {
         opacity: 1,
-        duration: 0.35,
-        stagger: 0.008,
-        ease: 'power2.out',
+        duration: duration.ui,
+        stagger: staggerProfiles.fast.each,
+        ease: ease.data,
       });
     } else {
       merged.style('opacity', 1);

@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Pitch Layers Test — HPAnalytic</title>
+<style>
+html,body{background:#08090B;color:#F4F2EC;margin:0;padding:0;font-family:'JetBrains Mono',monospace}
+.container{max-width:800px;margin:40px auto;padding:0 16px}
+h1{font-size:16px;letter-spacing:0.1em;color:#B4FF39;text-transform:uppercase;font-weight:500}
+.section{margin:32px 0;padding:20px;border:1px solid rgba(180,255,57,0.12);border-radius:4px}
+.section-title{font-size:11px;color:rgba(244,242,236,0.4);letter-spacing:0.12em;margin-bottom:12px}
+</style>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+<div class="container">
+  <h1>Katmanlı Saha Görünümü — Test</h1>
+
+  <div class="section">
+    <div class="section-title">16 KATMANLI SVG (Crystal Palace test verisi)</div>
+    <div data-visual-body="pitch-layers"
+         data-viz-src="/assets/data/crystal-palace/sixteen_layers.svg"
+         data-viz-meta="/assets/data/crystal-palace/pitch_layers_meta.json">
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="section-title">9 KATMANLI SVG (temel katmanlar)</div>
+    <div data-visual-body="pitch-layers"
+         data-viz-src="/assets/data/crystal-palace/pitch_layers.svg"
+         data-viz-meta="/assets/data/crystal-palace/pitch_layers_meta.json">
+    </div>
+  </div>
+</div>
+
+<script src="/assets/js/pitch-layers-view.js"></script>
+</body>
+</html>

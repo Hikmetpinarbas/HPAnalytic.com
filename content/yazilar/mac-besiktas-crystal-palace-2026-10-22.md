@@ -18,3 +18,6 @@ Crystal Palace, tipik bir Premier Lig takımı profili çizerek savunma disiplin
 Maçın gidişatını belirleyen temel unsur, orta sahadaki ikili mücadelelerin yoğunluğu oldu. Beşiktaş, oyunun kontrolünü elinde tutmak adına tempoyu dikte etmeye çalışırken; Crystal Palace, fiziksel temaslı oyunuyla bu ritmi bozmayı hedefledi. İkinci yarıda yapılan hamleler, oyunun daha fazla geniş alana yayılmasına neden olsa da, her iki takımın da savunma konsantrasyonu maçın genelindeki taktiksel bütünlüğün bozulmasını engelledi.
 
 Sonuç olarak, Beşiktaş’ın teknik kapasitesi ve iç saha atmosferini arkasına alan baskısı ile Crystal Palace’ın Premier Lig kaynaklı atletizmi arasındaki bu denge, futbolseverlere taktiksel derinliği yüksek bir akşam yaşattı. Sahadaki disiplin ve her iki teknik adamın hamleleri, bu eşleşmenin saf bir "sistem mücadelesi" olduğunu kanıtladı.
+
+:::visual [pitch-layers] | Katmanlı Saha Görünümü | Pipeline gözlem çıktısından üretilen aday katmanlar; doğrulanmış fiziksel aksiyon veya yayın onayı değildir.
+:::

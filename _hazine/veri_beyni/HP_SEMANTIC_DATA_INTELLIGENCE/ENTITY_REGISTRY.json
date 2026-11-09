@@ -1,0 +1,41 @@
+{
+  "teams": [
+    {
+      "entity_id": "GS_2026",
+      "name": "Galatasaray SK",
+      "country": "TR",
+      "league": "Süper Lig",
+      "stadium": "RAMS Park"
+    },
+    {
+      "entity_id": "FB_2026",
+      "name": "Fenerbahçe SK",
+      "country": "TR",
+      "league": "Süper Lig",
+      "stadium": "Şükrü Saracoğlu"
+    }
+  ],
+  "matches": [
+    {
+      "match_id": "DERBI_20261026",
+      "home": "Galatasaray SK",
+      "away": "Fenerbahçe SK",
+      "date": "2026-10-26",
+      "competition": "Süper Lig - Hafta 9"
+    },
+    {
+      "match_id": "FB_SLA_20261023",
+      "home": "Fenerbahçe SK",
+      "away": "Slavia Prag",
+      "date": "2026-10-23",
+      "competition": "UEFA Europa League"
+    },
+    {
+      "match_id": "LIL_GS_20261022",
+      "home": "Lille",
+      "away": "Galatasaray SK",
+      "date": "2026-10-22",
+      "competition": "UEFA Champions League"
+    }
+  ]
+}

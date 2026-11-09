@@ -1,0 +1,798 @@
+{
+  "schema": "visual-manifest/v1",
+  "producer_version": "0.2.0",
+  "job_id": "hp-third-man",
+  "engine": "motion",
+  "profile": "preview",
+  "variant": "landscape",
+  "final": false,
+  "cache_key": "2fa525bbc68fe1c7422f32e7a926619f211149766e2a644b4629ab54addca56c",
+  "provenance": {
+    "kind": "synthetic",
+    "method": "deterministically authored example; not an observed match"
+  },
+  "license": "Original authored demo geometry and synthetic fixtures; project LICENSE",
+  "source": "Visual Factory / authored demo",
+  "inputs": {
+    "data": {
+      "name": "data/third-man.json",
+      "sha256": "8a83bb89ab52be333be9893cfa256466cc515d57e53cae2a2d444f266b6d80b6"
+    }
+  },
+  "fonts": {
+    "sans": {
+      "family": "DejaVu Sans",
+      "sha256": "b4c632e3cdf9acc7f28758fb5a323c8524d7fc6660d46904d9b6cbe2809c419c"
+    },
+    "serif": {
+      "family": "DejaVu Serif",
+      "sha256": "a52c2a69dfc93d0b511b98c1019a57eb3d6a62d328bdf1387f00851b02e3a315"
+    },
+    "license": "Bitstream Vera / DejaVu; fonts not bundled"
+  },
+  "limits": {
+    "memory_limit_bytes": 536870912,
+    "rss_limit_bytes": 536870912,
+    "threads": 1,
+    "max_seconds": 120,
+    "cpu_seconds": 90,
+    "temp_quota_bytes": 67108864,
+    "file_limit_bytes": 67108864,
+    "output_quota_bytes": 536870912,
+    "disk_reserve_bytes": 4677396070,
+    "max_width_preview": 960,
+    "max_width_final": 1920,
+    "max_pixels": 4000000,
+    "thermal_cpu_stop_c": 70,
+    "thermal_battery_stop_c": 42,
+    "battery_stop_percent": 20,
+    "threshold_status": "conservative provisional policy; validate on actual phone"
+  },
+  "measurements": {
+    "worker_exit_code": 0,
+    "process_group_remaining": false,
+    "wall_seconds": 2.1522,
+    "process_tree_peak_rss_bytes": 37085184,
+    "peak_threads_tree": 1,
+    "peak_processes": 1,
+    "worker": {
+      "seconds": 0.973573646042496,
+      "peak_rss_bytes": 37085184,
+      "cpu_seconds": 0.814603,
+      "virtual_memory_limit_bytes": 536870912,
+      "virtual_baseline_bytes": 0,
+      "rss_limit_bytes": 536870912
+    },
+    "sensors_before": {
+      "thermal": [
+        {
+          "type": "pa",
+          "celsius": 34.815
+        },
+        {
+          "type": "pm8550_exp2_usr",
+          "celsius": 35.564
+        },
+        {
+          "type": "pm8550_svooc_usr",
+          "celsius": 35.22
+        },
+        {
+          "type": "shell_front",
+          "celsius": 33.099
+        },
+        {
+          "type": "shell_frame",
+          "celsius": 33.394
+        },
+        {
+          "type": "shell_back",
+          "celsius": 33.471
+        },
+        {
+          "type": "zeku_explorer",
+          "celsius": 0.0
+        },
+        {
+          "type": "battery",
+          "celsius": 34.1
+        },
+        {
+          "type": "usb",
+          "celsius": 0.0
+        },
+        {
+          "type": "mmw_pa1",
+          "celsius": 34.758
+        },
+        {
+          "type": "mmw_pa2",
+          "celsius": 27.0
+        },
+        {
+          "type": "mmw_pa3",
+          "celsius": 27.0
+        },
+        {
+          "type": "sdr_mmw_therm",
+          "celsius": 27.0
+        },
+        {
+          "type": "sdr0_pa",
+          "celsius": 35.0
+        },
+        {
+          "type": "aoss-0",
+          "celsius": 37.6
+        },
+        {
+          "type": "cpuss-0",
+          "celsius": 38.4
+        },
+        {
+          "type": "cpuss-1",
+          "celsius": 39.6
+        },
+        {
+          "type": "cpuss-2",
+          "celsius": 38.8
+        },
+        {
+          "type": "cpuss-3",
+          "celsius": 38.8
+        },
+        {
+          "type": "cpu-1-0",
+          "celsius": 38.4
+        },
+        {
+          "type": "cpu-1-1",
+          "celsius": 38.0
+        },
+        {
+          "type": "cpu-1-2",
+          "celsius": 39.2
+        },
+        {
+          "type": "cpu-1-3",
+          "celsius": 39.2
+        },
+        {
+          "type": "cpu-1-4",
+          "celsius": 38.4
+        },
+        {
+          "type": "sdr0",
+          "celsius": 34.0
+        },
+        {
+          "type": "cpu-1-5",
+          "celsius": 39.6
+        },
+        {
+          "type": "cpu-1-6",
+          "celsius": 38.8
+        },
+        {
+          "type": "cpu-1-7",
+          "celsius": 37.6
+        },
+        {
+          "type": "cpu-1-8",
+          "celsius": 38.4
+        },
+        {
+          "type": "cpu-1-9",
+          "celsius": 38.0
+        },
+        {
+          "type": "cpu-1-10",
+          "celsius": 38.0
+        },
+        {
+          "type": "aoss-1",
+          "celsius": 37.4
+        },
+        {
+          "type": "cpu-0-0",
+          "celsius": 39.4
+        },
+        {
+          "type": "cpu-0-1",
+          "celsius": 38.2
+        },
+        {
+          "type": "cpu-0-2",
+          "celsius": 39.0
+        },
+        {
+          "type": "sdr1_pa",
+          "celsius": 0.0
+        },
+        {
+          "type": "nspss-0",
+          "celsius": 36.2
+        },
+        {
+          "type": "nspss-1",
+          "celsius": 36.6
+        },
+        {
+          "type": "nspss-2",
+          "celsius": 35.4
+        },
+        {
+          "type": "nspss-3",
+          "celsius": 36.2
+        },
+        {
+          "type": "video",
+          "celsius": 39.4
+        },
+        {
+          "type": "ddr",
+          "celsius": 37.0
+        },
+        {
+          "type": "mdmss-0",
+          "celsius": 36.2
+        },
+        {
+          "type": "mdmss-1",
+          "celsius": 36.2
+        },
+        {
+          "type": "mdmss-2",
+          "celsius": 36.2
+        },
+        {
+          "type": "mdmss-3",
+          "celsius": 35.8
+        },
+        {
+          "type": "sdr1",
+          "celsius": 34.0
+        },
+        {
+          "type": "camera-0",
+          "celsius": 36.6
+        },
+        {
+          "type": "camera-1",
+          "celsius": 37.0
+        },
+        {
+          "type": "aoss-2",
+          "celsius": 37.2
+        },
+        {
+          "type": "gpuss-0",
+          "celsius": 37.2
+        },
+        {
+          "type": "gpuss-1",
+          "celsius": 37.6
+        },
+        {
+          "type": "gpuss-2",
+          "celsius": 36.8
+        },
+        {
+          "type": "gpuss-3",
+          "celsius": 37.2
+        },
+        {
+          "type": "gpuss-4",
+          "celsius": 37.2
+        },
+        {
+          "type": "gpuss-5",
+          "celsius": 37.6
+        },
+        {
+          "type": "gpuss-6",
+          "celsius": 36.8
+        },
+        {
+          "type": "gpuss-7",
+          "celsius": 37.2
+        },
+        {
+          "type": "pm8550_tz",
+          "celsius": 38.074
+        },
+        {
+          "type": "pm8550b_tz",
+          "celsius": 33.559
+        },
+        {
+          "type": "pm8550b_lite_tz",
+          "celsius": 50.569
+        },
+        {
+          "type": "pm8550ve_f_tz",
+          "celsius": 29.245
+        },
+        {
+          "type": "pm8550vs_c_tz",
+          "celsius": 30.315
+        },
+        {
+          "type": "pm8550vs_d_tz",
+          "celsius": 28.843
+        },
+        {
+          "type": "pm8550vs_e_tz",
+          "celsius": 31.853
+        },
+        {
+          "type": "pm8550vs_g_tz",
+          "celsius": 30.683
+        },
+        {
+          "type": "pmr735d_k_tz",
+          "celsius": 37.0
+        },
+        {
+          "type": "pm8010m_tz",
+          "celsius": 37.0
+        },
+        {
+          "type": "pm8010n_tz",
+          "celsius": 37.0
+        },
+        {
+          "type": "skin-msm-therm",
+          "celsius": 34.715
+        },
+        {
+          "type": "cam-flash-therm",
+          "celsius": 34.853
+        },
+        {
+          "type": "wlan-therm",
+          "celsius": 35.296
+        },
+        {
+          "type": "pa-therm-1",
+          "celsius": 35.419
+        },
+        {
+          "type": "rear-tof-therm",
+          "celsius": 35.296
+        },
+        {
+          "type": "usb-therm",
+          "celsius": 35.137
+        },
+        {
+          "type": "xo-therm",
+          "celsius": 35.313
+        }
+      ],
+      "battery": [],
+      "thermal_available": true,
+      "battery_available": false
+    },
+    "sensors_after": {
+      "thermal": [
+        {
+          "type": "pa",
+          "celsius": 34.645
+        },
+        {
+          "type": "pm8550_exp2_usr",
+          "celsius": 35.645
+        },
+        {
+          "type": "pm8550_svooc_usr",
+          "celsius": 35.453
+        },
+        {
+          "type": "shell_front",
+          "celsius": 33.099
+        },
+        {
+          "type": "shell_frame",
+          "celsius": 33.394
+        },
+        {
+          "type": "shell_back",
+          "celsius": 33.471
+        },
+        {
+          "type": "zeku_explorer",
+          "celsius": 0.0
+        },
+        {
+          "type": "battery",
+          "celsius": 34.0
+        },
+        {
+          "type": "usb",
+          "celsius": 0.0
+        },
+        {
+          "type": "mmw_pa1",
+          "celsius": 34.758
+        },
+        {
+          "type": "mmw_pa2",
+          "celsius": 27.0
+        },
+        {
+          "type": "mmw_pa3",
+          "celsius": 27.0
+        },
+        {
+          "type": "sdr_mmw_therm",
+          "celsius": 27.0
+        },
+        {
+          "type": "sdr0_pa",
+          "celsius": 35.0
+        },
+        {
+          "type": "aoss-0",
+          "celsius": 38.0
+        },
+        {
+          "type": "cpuss-0",
+          "celsius": 39.2
+        },
+        {
+          "type": "cpuss-1",
+          "celsius": 40.4
+        },
+        {
+          "type": "cpuss-2",
+          "celsius": 38.8
+        },
+        {
+          "type": "cpuss-3",
+          "celsius": 39.2
+        },
+        {
+          "type": "cpu-1-0",
+          "celsius": 38.4
+        },
+        {
+          "type": "cpu-1-1",
+          "celsius": 38.0
+        },
+        {
+          "type": "cpu-1-2",
+          "celsius": 39.2
+        },
+        {
+          "type": "cpu-1-3",
+          "celsius": 40.4
+        },
+        {
+          "type": "cpu-1-4",
+          "celsius": 39.2
+        },
+        {
+          "type": "sdr0",
+          "celsius": 34.0
+        },
+        {
+          "type": "cpu-1-5",
+          "celsius": 40.4
+        },
+        {
+          "type": "cpu-1-6",
+          "celsius": 38.4
+        },
+        {
+          "type": "cpu-1-7",
+          "celsius": 39.6
+        },
+        {
+          "type": "cpu-1-8",
+          "celsius": 39.2
+        },
+        {
+          "type": "cpu-1-9",
+          "celsius": 38.8
+        },
+        {
+          "type": "cpu-1-10",
+          "celsius": 38.8
+        },
+        {
+          "type": "aoss-1",
+          "celsius": 36.2
+        },
+        {
+          "type": "cpu-0-0",
+          "celsius": 39.0
+        },
+        {
+          "type": "cpu-0-1",
+          "celsius": 37.4
+        },
+        {
+          "type": "cpu-0-2",
+          "celsius": 38.6
+        },
+        {
+          "type": "sdr1_pa",
+          "celsius": 0.0
+        },
+        {
+          "type": "nspss-0",
+          "celsius": 35.4
+        },
+        {
+          "type": "nspss-1",
+          "celsius": 35.8
+        },
+        {
+          "type": "nspss-2",
+          "celsius": 35.4
+        },
+        {
+          "type": "nspss-3",
+          "celsius": 35.8
+        },
+        {
+          "type": "video",
+          "celsius": 37.0
+        },
+        {
+          "type": "ddr",
+          "celsius": 35.8
+        },
+        {
+          "type": "mdmss-0",
+          "celsius": 35.8
+        },
+        {
+          "type": "mdmss-1",
+          "celsius": 35.4
+        },
+        {
+          "type": "mdmss-2",
+          "celsius": 35.4
+        },
+        {
+          "type": "mdmss-3",
+          "celsius": 35.4
+        },
+        {
+          "type": "sdr1",
+          "celsius": 34.0
+        },
+        {
+          "type": "camera-0",
+          "celsius": 35.4
+        },
+        {
+          "type": "camera-1",
+          "celsius": 36.2
+        },
+        {
+          "type": "aoss-2",
+          "celsius": 36.8
+        },
+        {
+          "type": "gpuss-0",
+          "celsius": 36.4
+        },
+        {
+          "type": "gpuss-1",
+          "celsius": 36.8
+        },
+        {
+          "type": "gpuss-2",
+          "celsius": 36.4
+        },
+        {
+          "type": "gpuss-3",
+          "celsius": 36.4
+        },
+        {
+          "type": "gpuss-4",
+          "celsius": 36.4
+        },
+        {
+          "type": "gpuss-5",
+          "celsius": 36.8
+        },
+        {
+          "type": "gpuss-6",
+          "celsius": 36.0
+        },
+        {
+          "type": "gpuss-7",
+          "celsius": 36.8
+        },
+        {
+          "type": "pm8550_tz",
+          "celsius": 37.906
+        },
+        {
+          "type": "pm8550b_tz",
+          "celsius": 33.458
+        },
+        {
+          "type": "pm8550b_lite_tz",
+          "celsius": 50.703
+        },
+        {
+          "type": "pm8550ve_f_tz",
+          "celsius": 29.111
+        },
+        {
+          "type": "pm8550vs_c_tz",
+          "celsius": 30.281
+        },
+        {
+          "type": "pm8550vs_d_tz",
+          "celsius": 28.509
+        },
+        {
+          "type": "pm8550vs_e_tz",
+          "celsius": 31.686
+        },
+        {
+          "type": "pm8550vs_g_tz",
+          "celsius": 30.214
+        },
+        {
+          "type": "pmr735d_k_tz",
+          "celsius": 37.0
+        },
+        {
+          "type": "pm8010m_tz",
+          "celsius": 37.0
+        },
+        {
+          "type": "pm8010n_tz",
+          "celsius": 37.0
+        },
+        {
+          "type": "skin-msm-therm",
+          "celsius": 34.67
+        },
+        {
+          "type": "cam-flash-therm",
+          "celsius": 34.795
+        },
+        {
+          "type": "wlan-therm",
+          "celsius": 35.302
+        },
+        {
+          "type": "pa-therm-1",
+          "celsius": 35.448
+        },
+        {
+          "type": "rear-tof-therm",
+          "celsius": 35.249
+        },
+        {
+          "type": "usb-therm",
+          "celsius": 35.131
+        },
+        {
+          "type": "xo-therm",
+          "celsius": 35.348
+        }
+      ],
+      "battery": [],
+      "thermal_available": true,
+      "battery_available": false
+    },
+    "sample_interval_seconds": 0.1,
+    "environment": {
+      "platform": "Linux-5.15.197-android13-8-o-01214-gbee5b6ef6244-aarch64-with-glibc2.43",
+      "architecture": "aarch64",
+      "runtime": "linux",
+      "android_kernel": true
+    }
+  },
+  "assets": {
+    "svg": "scene.svg",
+    "raster": "render.png",
+    "preview": "preview.webp",
+    "active_layers": [
+      "background",
+      "geometry",
+      "data-marks",
+      "annotations",
+      "typography",
+      "metadata"
+    ]
+  },
+  "artifacts": {
+    "animation.html": {
+      "bytes": 19848,
+      "sha256": "509f85d928b876b14c8644048b57a7e25d788e17418308c1db13be7b3193fd78"
+    },
+    "animation.json": {
+      "bytes": 10199,
+      "sha256": "8a83bb89ab52be333be9893cfa256466cc515d57e53cae2a2d444f266b6d80b6"
+    },
+    "copy.json": {
+      "bytes": 486,
+      "sha256": "05636b13382a74309af00ee3d77a8a20cdd8c5e4701a9224430f12db66d95581"
+    },
+    "inputs/data.json": {
+      "bytes": 10199,
+      "sha256": "8a83bb89ab52be333be9893cfa256466cc515d57e53cae2a2d444f266b6d80b6"
+    },
+    "keyframes/00.svg": {
+      "bytes": 11143,
+      "sha256": "eda756c0e5cf5f5c76a248df6024e4a31ecb712c9e9d67e90727876252ef82eb"
+    },
+    "keyframes/01.svg": {
+      "bytes": 11292,
+      "sha256": "eee8c62b6debfe93915cedf9cd321d9f79f017007a7f48bf8dc5bd4cb0e00669"
+    },
+    "keyframes/02.svg": {
+      "bytes": 11270,
+      "sha256": "b24f89d521f1e10645fc5430422b6c3952985611a380cff410daa9e2a6f124f9"
+    },
+    "keyframes/03.svg": {
+      "bytes": 11297,
+      "sha256": "33c3898121643f707737dc40748f4e10d41ebd702e02ff9c8f916b7d1f47e940"
+    },
+    "layers/annotations.svg": {
+      "bytes": 1933,
+      "sha256": "286c74d473fb8d1843ddb0d160da83c439e4ed40ca9abc7165defddeb241fb36"
+    },
+    "layers/background.svg": {
+      "bytes": 1541,
+      "sha256": "43ca586c301c337cf283d855c6ce9dd5774430062a325a5de529a8e8bec1eada"
+    },
+    "layers/data-marks.svg": {
+      "bytes": 8182,
+      "sha256": "37f7e05607d878e14aab9c720fc7fc816a04f9982a9298a18b9f226f6482370a"
+    },
+    "layers/geometry.svg": {
+      "bytes": 2712,
+      "sha256": "3869e9d621e245675b70063bf7b123da4d3c13ba7467a5d0279383f9d1318ff6"
+    },
+    "layers/metadata.svg": {
+      "bytes": 1659,
+      "sha256": "799abc83b51d738dd3c8b4c5b35e2e5f7b5e031cbfcd99b5eaa7392d061e726c"
+    },
+    "layers/typography.svg": {
+      "bytes": 2016,
+      "sha256": "823599413e0695340f406a12ecca1d80c69c079b56be043ca9a2fee2fdefe893"
+    },
+    "preview.webp": {
+      "bytes": 16088,
+      "sha256": "9abf2ba5b3df9300bb0038e06347ee6005937155dd3d5116ebc5b464011102da"
+    },
+    "production.json": {
+      "bytes": 645,
+      "sha256": "f14ef6d5b13560ab52bc1238f8ad3dcbd833f8d192962440ff53692d552dadad"
+    },
+    "quality.json": {
+      "bytes": 845,
+      "sha256": "6663936f145d64a7ccbbb284719b5922c873a746a421527a500f3c67ba55fe09"
+    },
+    "render.png": {
+      "bytes": 18369,
+      "sha256": "5fb278b56437a46dabe9cf2bbab3a3d45b114c08c7f7ae5bbc5a5106007864ed"
+    },
+    "scene.svg": {
+      "bytes": 11194,
+      "sha256": "2a97840f1311f601d02c9405bb4111b85b7c7c6db531b818290441fba7758207"
+    },
+    "worker-result.json": {
+      "bytes": 492,
+      "sha256": "7048c095f1df24fbc3b983f6c02b222df4adf34bb261667e257a5deeb3f67a23"
+    },
+    "worker.log": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  "video": null,
+  "warnings": [],
+  "visual_review_required": true
+}

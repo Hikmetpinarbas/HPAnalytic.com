@@ -1,0 +1,32 @@
+{
+  "assets": {
+    "svg": "scene.svg",
+    "raster": "final.png",
+    "preview": "preview.webp",
+    "active_layers": [
+      "background",
+      "geometry",
+      "data-marks",
+      "annotations",
+      "typography",
+      "metadata"
+    ]
+  },
+  "warnings": [],
+  "video": {
+    "fps": 30,
+    "duration_seconds": 6,
+    "width": 640,
+    "height": 454,
+    "frames": 180,
+    "encoder": "libx264 / software / 1 thread"
+  },
+  "worker": {
+    "seconds": 17.198284524027258,
+    "peak_rss_bytes": 41566208,
+    "cpu_seconds": 13.981385,
+    "virtual_memory_limit_bytes": 536870912,
+    "virtual_baseline_bytes": 0,
+    "rss_limit_bytes": 536870912
+  }
+}

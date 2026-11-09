@@ -2,11 +2,12 @@ import './menu.js';
 import './palette.js';
 import { initShotMap } from '../charts/shotmap.js';
 import { initPassNet } from '../charts/passnet.js';
+import { initPitchLayersView } from './viz/pitch-layers-view.js';
 import './lig.js';
 import './oyuncular.js';
 import './kars.js';
 
-const inited = { shotmap: false, passnet: false };
+const inited = { shotmap: false, passnet: false, saha: false };
 
 function ensureShot() {
   if (inited.shotmap) return;
@@ -20,6 +21,13 @@ function ensurePass() {
   initPassNet('passnet-container', '');
 }
 
+function ensureSaha() {
+  if (inited.saha) return;
+  inited.saha = true;
+  const el = document.getElementById('saha-container');
+  if (el) initPitchLayersView(el);
+}
+
 document.querySelectorAll('.lab-tab').forEach(tab => {
   tab.addEventListener('click', () => {
     const target = tab.dataset.target;
@@ -31,6 +39,7 @@ document.querySelectorAll('.lab-tab').forEach(tab => {
 
     if (target === 'shotmap-container') ensureShot();
     if (target === 'passnet-container') ensurePass();
+    if (target === 'saha-container') ensureSaha();
   });
 });
 

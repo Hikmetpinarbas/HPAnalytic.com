@@ -1,0 +1,11 @@
+{
+  "title": "Oyunun görünmeyen bağlantıları",
+  "description": "Futbol araştırma dosyası için özgün, soyut vektör kapak.",
+  "unit": null,
+  "source": "Visual Factory / authored demo",
+  "license": "Original authored demo geometry and synthetic fixtures; project LICENSE",
+  "provenance": {
+    "kind": "synthetic",
+    "method": "deterministically authored example; not an observed match"
+  }
+}

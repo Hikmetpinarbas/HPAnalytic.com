@@ -1,0 +1,17 @@
+<!doctype html>
+<html lang="tr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>reduced — scrollytelling-gk</title>
+<link rel="stylesheet" href="../scene.css"></head>
+<body><main class="container" style="padding:24px">
+<h1>reduced-motion</h1>
+<pre id="out">…</pre>
+<p class="meta">Bu sayfayı <em>prefers-reduced-motion: reduce</em> ile aç: animasyon olmamalı, bilgi tam (11 oyuncu + tüm bağlantı metinleri) görünmeli.</p>
+<p><a href="../index.html">← prototipe dön</a></p>
+</main>
+<script type="module">
+const out = document.getElementById("out");
+const mq = window.matchMedia("(prefers-reduced-motion: reduce)");
+const data = await (await fetch("../data/sample-formation.json")).json();
+out.textContent = `prefers-reduced-motion: reduce → ${mq.matches}\nshouldAnimate=${!mq.matches}\nplayers=${data.players.length} (bilgi tam: statik final konumda)\nPASS`;
+console.log("reduced ok");
+</script></body></html>

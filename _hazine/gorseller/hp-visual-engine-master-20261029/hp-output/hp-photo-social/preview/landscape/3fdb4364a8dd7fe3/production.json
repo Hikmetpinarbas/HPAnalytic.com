@@ -1,0 +1,22 @@
+{
+  "schema": "visual-production/v1",
+  "license": "Public domain (US), James S. Davis / U.S. Navy, NH 96919-KN; original composition under project LICENSE",
+  "provenance": {
+    "kind": "real",
+    "method": "Existing archival photograph, not a generated subject"
+  },
+  "source": "Matplotlib archive sample / James S. Davis / U.S. Navy",
+  "export_layer_rasters": false,
+  "id": "hp-photo-social",
+  "engine": "photo",
+  "title": "Grace Hopper",
+  "kicker": "COMPUTING HISTORY",
+  "archive_year": "01 — 1984",
+  "section_label": "ARCHIVE / PORTRAIT STUDY",
+  "credit": "Photo: James S. Davis / U.S. Navy · Public domain (US) · NH 96919-KN",
+  "description": "Bilgisayar tarihinden bir arşiv portresi. Fotoğraf, kırpma ve tipografi katmanları bağımsız; kaynak dosya korunur.",
+  "image": "inputs/image.jpg",
+  "avif": true,
+  "rights_verified": true,
+  "layout": "square"
+}

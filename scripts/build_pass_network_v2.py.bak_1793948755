@@ -1,0 +1,396 @@
+"""
+Pas Ağı v4 — Sürdürülebilir sürüm.
+Yeni:
+- Substitution inference (dakika farkından)
+- Her edge için correlation % (2*w/(src_passes+dst_passes)*100)
+- Her node için 'role' (starter/sub)
+- Opsiyonel: substitutions.json varsa onu kullanır (API için)
+"""
+import csv, json, re
+from collections import defaultdict
+from pathlib import Path
+import pandas as pd
+
+# --- AUTO: --src / --out destegi ---
+import sys, argparse
+from pathlib import Path as _PathAlias
+_ap = argparse.ArgumentParser(add_help=False)
+_ap.add_argument('--src', default=None)
+_ap.add_argument('--out', default=None)
+_args, _ = _ap.parse_known_args()
+# --- /AUTO ---
+
+BASE = Path(_args.out) if _args.out else Path("public/assets/data/gs-stuttgart")
+OUT = _args.out if _args.out else str(BASE / "pass_network_v2.json")
+SUBS_OVERRIDE = BASE / "substitutions.json"  # opsiyonel
+_PL_DEF = Path("/storage/emulated/0/HPAnaliz/SportsBase/maclar/MATCH_2026_11_03_Galatasaray_vs_VfB_Stuttgart/PLAYERS__CSV.csv")
+PLAYERS_CSV = next(Path(_args.src).glob("*PLAYERS*CSV*.csv"), _PL_DEF) if _args.src else _PL_DEF
+
+TOTAL_MATCH_MIN = 97  # 90 + 7 stoppage
+
+def parse(code):
+    m = re.search(r"\d+\.\s+(.+?)\s+\((\d+)\)", code)
+    if not m: return None, None
+    return m.group(1).strip(), m.group(2)
+
+def safe_int(v, d=0):
+    try:
+        if pd.isna(v): return d
+        if isinstance(v,str) and v.strip() in ('-','','nan'): return d
+        return int(float(v))
+    except: return d
+
+# === 1. Oyuncu meta (dakika, pozisyon) ===
+player_info = {}  # name -> {minutes, position, team}
+pstats = pd.read_csv(PLAYERS_CSV, sep=None, engine="python")
+for _, row in pstats.iterrows():
+    if pd.isna(row.get('Player')): continue
+    name = row['Player'].strip()
+    player_info[name] = {
+        'minutes': safe_int(row['Minutes played']),
+        'position': row.get('Position', '-') if not pd.isna(row.get('Position')) else '-',
+        'team': row['Team'],
+    }
+
+# === 2. Substitution inference ===
+def pos_group(pos):
+    """Pozisyon grupları — benzer bölgeleri eşleştir."""
+    if pos in ('CB', 'LCB', 'RCB'): return 'CB'
+    if pos in ('RB', 'LB', 'RWB', 'LWB'): return 'FB'
+    if pos in ('CDM', 'LCDM', 'RCDM', 'CM', 'LCM', 'RCM'): return 'CM'
+    if pos in ('CAM', 'RAM', 'LAM', 'RW', 'LW', 'RM', 'LM'): return 'AM'
+    if pos in ('CF', 'ST', 'LCF', 'RCF', 'SS'): return 'FW'
+    if pos == 'GK': return 'GK'
+    return pos or '-'
+
+def infer_subs():
+    """
+    Pairing yöntemi — starter/süb ayrımı yapmadan.
+    Kural: sub_minutes + subbed_out_minutes ≈ total_match_minutes
+    Eşleşme: aynı pozisyon grubu + yakın dakika.
+    """
+    subs_by_team = {}
+    for team in ['Galatasaray', 'VfB Stuttgart']:
+        team_players = {n: d for n, d in player_info.items() if d['team'] == team}
+        if not team_players: continue
+        
+        total = max(d['minutes'] for d in team_players.values())
+        threshold = total * 0.45  # 97 * 0.45 ≈ 43.6
+        
+        # Değişenler = az oynayan (< threshold)
+        # Tam oynayanlar = >= total - 3
+        # Subbed-off starter = arası
+        subs = {n: d for n, d in team_players.items() if 0 < d['minutes'] < threshold}
+        subbed_starters = {n: d for n, d in team_players.items() 
+                           if threshold <= d['minutes'] < total - 3}
+        
+        team_subs = []
+        available = dict(subbed_starters)
+        # En çok oynayandan aza doğru sub'ları eşleştir (büyük sub = önemli, önce eşleşsin)
+        for sub_name, sub_d in sorted(subs.items(), key=lambda x: -x[1]['minutes']):
+            target = total - sub_d['minutes']
+            sub_group = pos_group(sub_d['position'])
+            
+            best_name, best_score = None, 999
+            for st_name, st_d in available.items():
+                st_group = pos_group(st_d['position'])
+                group_penalty = 0 if st_group == sub_group else 15
+                score = abs(st_d['minutes'] - target) + group_penalty
+                if score < best_score:
+                    best_score = score
+                    best_name = st_name
+            
+            if best_name and best_score <= 20:
+                st_d = available[best_name]
+                team_subs.append({
+                    'in': sub_name,
+                    'out': best_name,
+                    'sub_minute': round(target),
+                    'in_minutes': sub_d['minutes'],
+                    'out_minutes': st_d['minutes'],
+                    'position_group': sub_group,
+                })
+                del available[best_name]
+            else:
+                print(f'  UYARI: {team} - {sub_name} ({sub_d["minutes"]} dk) eşleşmedi (score={best_score})')
+        
+        subs_by_team[team] = team_subs
+    return subs_by_team
+
+# Override varsa onu kullan (API için)
+if SUBS_OVERRIDE.exists():
+    with open(SUBS_OVERRIDE) as f:
+        subs_data = json.load(f)
+    print(f"Substitution override kullanıldı: {SUBS_OVERRIDE}")
+else:
+    subs_data = infer_subs()
+    print("Substitution dakikadan çıkarıldı.")
+
+# === 3. Event'leri topla ===
+events = []
+with open(BASE / "teams.csv", encoding="utf-8") as f:
+    for row in csv.DictReader(f, delimiter=";"):
+        if not row["pos_x"] or " - " not in row["code"]: continue
+        name, pid = parse(row["code"])
+        if not name: continue
+        team_raw = row.get("team", "")
+        team = "Galatasaray" if "Galatasaray" in team_raw else ("VfB Stuttgart" if "Stuttgart" in team_raw else None)
+        if not team: continue
+        try:
+            x, y = float(row["pos_x"]), float(row["pos_y"])
+            t = float(row["start"])
+        except: continue
+        events.append({"team": team, "player": name, "pid": pid,
+                       "t": t, "x": x, "y": y, "action": row["action"].lower()})
+
+events.sort(key=lambda e: (e["t"], int(e["pid"])))
+
+# === 4. Oyuncu meta ===
+player_meta = defaultdict(lambda: {"xs":[], "ys":[], "passes":0, "team":None})
+for e in events:
+    key = (e["team"], e["player"])
+    player_meta[key]["xs"].append(e["x"])
+    player_meta[key]["ys"].append(e["y"])
+    player_meta[key]["team"] = e["team"]
+    if "pass" in e["action"] and "incomplete" not in e["action"] and "inaccurate" not in e["action"]:
+        player_meta[key]["passes"] += 1
+
+# === 5. Pas bağlantıları ===
+connections = defaultdict(int)
+captured = 0
+total_passes = 0
+for i, e in enumerate(events):
+    if "pass" not in e["action"]: continue
+    if "incomplete" in e["action"] or "inaccurate" in e["action"]: continue
+    total_passes += 1
+    for j in range(i+1, min(i+15, len(events))):
+        e2 = events[j]
+        dt = e2["t"] - e["t"]
+        if dt > 5: break
+        if e2["team"] != e["team"]: break
+        if e2["player"] == e["player"]: continue
+        connections[(e["player"], e2["player"], e["team"])] += 1
+        captured += 1
+        break
+
+# === 6. Düğümler ===
+nodes = {}
+for (team, name), d in player_meta.items():
+    if len(d["xs"]) < 2: continue
+    avg_x = sum(d["xs"]) / len(d["xs"])
+    avg_y = sum(d["ys"]) / len(d["ys"])
+    if team == "VfB Stuttgart":
+        avg_x = 105 - avg_x
+        avg_y = 68 - avg_y
+    
+    info = player_info.get(name, {})
+    mins = info.get('minutes', 90)
+    # Starter mı? Sub mu?
+    subs = subs_data.get(team, [])
+    is_sub = any(s['in'] == name for s in subs)
+    is_subbed_out = any(s['out'] == name for s in subs)
+    
+    role = 'sub' if is_sub else 'starter'
+    subbed_out_minute = None
+    for s in subs:
+        if s['out'] == name:
+            subbed_out_minute = s['sub_minute']
+            break
+    came_on_minute = None
+    for s in subs:
+        if s['in'] == name:
+            came_on_minute = s['sub_minute']
+            break
+    
+    nodes[f"{team}|{name}"] = {
+        "team": team, "name": name,
+        "x": round(avg_x, 2), "y": round(avg_y, 2),
+        "passes": d["passes"],
+        "minutes": mins,
+        "role": role,
+        "subbed_out_at": subbed_out_minute,
+        "came_on_at": came_on_minute,
+        "position": info.get('position', '-'),
+    }
+
+# === 7. Kenarlar (correlation ile) ===
+edges = []
+for (src, dst, team), cnt in connections.items():
+    k1, k2 = f"{team}|{src}", f"{team}|{dst}"
+    if k1 in nodes and k2 in nodes:
+        edges.append({"from": k1, "to": k2, "weight": cnt})
+
+# NO MERGE — yönlü edge'ler korunur
+final_edges = []
+for e in edges:
+    src_key = e["from"]
+    dst_key = e["to"]
+    if src_key not in nodes or dst_key not in nodes: continue
+    src_passes = nodes[src_key]["passes"]
+    dst_passes = nodes[dst_key]["passes"]
+    denom = src_passes + dst_passes
+    corr = round(((2 * e["weight"] + 1) / (denom + 2)) * 100, 1) if denom >= 0 else 0
+    final_edges.append({"from": src_key, "to": dst_key, "weight": e["weight"], "correlation_pct": corr})
+
+final_edges = [e for e in final_edges if nodes[e['from']]['passes'] >= 1 and nodes[e['to']]['passes'] >= 1]
+final_edges.sort(key=lambda x: -x['correlation_pct'])
+
+# === 8. Çıktı + OFANSİF/DEFANSİF KATKI ===
+coverage = round(100 * captured / max(total_passes, 1), 1)
+
+def sf(v, d=0.0):
+    try:
+        if pd.isna(v): return d
+        if isinstance(v, str) and v.strip() in ('-', '', 'nan'): return d
+        return float(v)
+    except: return d
+
+# --- Ağırlıklar ---
+OFF_WEIGHTS = {
+    'Goals': 4.0, 'Assists': 4.0,
+    'xG (expected goals)': 3.0, 'xA (expected assists)': 3.0,
+    'Shots': 0.5, 'Key passes': 1.5,
+    'Progressive passes': 0.7,
+    'Chances created': 1.2,
+    'Passes into the penalty box': 0.8,
+    'Crosses': 0.2,
+    'Final third entries': 0.3,
+}
+DEF_WEIGHTS = {
+    'Tackles': 2.0, 'Tackles successful': 2.5,
+    'Interceptions': 2.0,
+    'Ball recoveries': 1.2,
+    "Ball recoveries in opponent's half": 1.5,
+    'Challenges won': 1.0,
+    'Aerial challenges won': 1.2,
+    'Clearances': 1.0,
+}
+
+# --- Ham skor ---
+stat_rows = {}
+for _, row in pstats.iterrows():
+    if pd.isna(row.get('Player')): continue
+    name = row['Player'].strip()
+    off_raw = sum(sf(row.get(m, 0)) * w for m, w in OFF_WEIGHTS.items())
+    def_raw = sum(sf(row.get(m, 0)) * w for m, w in DEF_WEIGHTS.items())
+    stat_rows[name] = {
+        'off_raw': round(off_raw, 2),
+        'def_raw': round(def_raw, 2),
+        'team': player_info.get(name, {}).get('team'),
+        'off_breakdown': {m: sf(row.get(m, 0)) for m in OFF_WEIGHTS if sf(row.get(m, 0)) > 0},
+        'def_breakdown': {m: sf(row.get(m, 0)) for m in DEF_WEIGHTS if sf(row.get(m, 0)) > 0},
+    }
+
+# --- Takım toplamları ---
+team_off = defaultdict(float)
+team_def = defaultdict(float)
+for name, s in stat_rows.items():
+    if s['team']:
+        team_off[s['team']] += s['off_raw']
+        team_def[s['team']] += s['def_raw']
+
+# --- Oyuncu bazlı paylar ---
+contributions = {}
+for name, s in stat_rows.items():
+    team = s['team']
+    if not team: continue
+    off_pct = (s['off_raw'] / team_off[team] * 100) if team_off[team] > 0 else 0
+    def_pct = (s['def_raw'] / team_def[team] * 100) if team_def[team] > 0 else 0
+    contributions[f"{team}|{name}"] = {
+        'offensive_pct': round(off_pct, 1),
+        'defensive_pct': round(def_pct, 1),
+        'total_pct': round((off_pct + def_pct) / 2, 1),
+        'offensive_raw': s['off_raw'],
+        'defensive_raw': s['def_raw'],
+        'off_breakdown': s['off_breakdown'],
+        'def_breakdown': s['def_breakdown'],
+    }
+
+# === JSON yaz ===
+result = {
+    "nodes": nodes,
+    "edges": final_edges,
+    "substitutions": subs_data,
+    "contributions": contributions,
+    "meta": {
+        "method": "inferRecipientsFromNextPass",
+        "total_match_minutes": TOTAL_MATCH_MIN,
+        "node_count": len(nodes),
+        "edge_count": len(final_edges),
+        "captured": captured,
+        "total_passes": total_passes,
+        "coverage_pct": coverage,
+        "contribution_weights": {
+            "offensive": list(OFF_WEIGHTS.keys()),
+            "defensive": list(DEF_WEIGHTS.keys()),
+        }
+    }
+}
+
+with open(OUT, "w", encoding="utf-8") as f:
+    json.dump(result, f, indent=2, ensure_ascii=False)
+
+# === Rapor ===
+print(f"\nOK: {OUT}")
+print(f"  Düğüm: {len(nodes)}, Kenar: {len(final_edges)}, Kapsama: %{coverage}")
+
+print(f"\nSubstitution eşleşmeleri:")
+for team, subs in subs_data.items():
+    print(f"  {team}:")
+    for s in subs:
+        print(f"    {s['in']:22s} <- {s['out']:22s} ({s['sub_minute']}')")
+
+print(f"\n=== OFANSİF / DEFANSİF KATKI ===")
+for team in ['Galatasaray', 'VfB Stuttgart']:
+    print(f"\n  {team}:")
+    tc = [(k, v) for k, v in contributions.items() if k.startswith(team + '|')]
+    tc.sort(key=lambda x: -(x[1]['offensive_pct'] + x[1]['defensive_pct']))
+    for k, v in tc[:10]:
+        name = k.split('|')[1]
+        print(f"    {name:26s} OF %{v['offensive_pct']:5.1f} | DEF %{v['defensive_pct']:5.1f} | TOT %{v['total_pct']:5.1f}")
+
+# === 10. GK EKLEME — goalkeepers.xlsx'ten ===
+print("\n=== GK EKLENİYOR ===")
+_GK_DEF = Path("/storage/emulated/0/HPAnaliz/SportsBase/maclar/MATCH_2026_11_03_Galatasaray_vs_VfB_Stuttgart/GOALKEEPERS__CSV.csv")
+GK_CSV = next(Path(_args.src).glob("*GOALKEEPERS*CSV*.csv"), _GK_DEF) if _args.src else _GK_DEF
+try:
+    gk_df = pd.read_csv(GK_CSV, sep=None, engine="python")
+    for _, row in gk_df.iterrows():
+        if pd.isna(row.get('Player')): continue
+        gk_name = row['Player'].strip()
+        team = row['Team']
+        try:
+            gk_passes = int(float(row['Passes'])) if not pd.isna(row['Passes']) else 0
+        except: gk_passes = 0
+        key = f"{team}|{gk_name}"
+        if key in result['nodes']:
+            continue
+        result['nodes'][key] = {
+            "team": team, "name": gk_name,
+            "x": 5, "y": 34,
+            "passes": gk_passes,
+            "minutes": 97,
+            "role": "starter",
+            "subbed_out_at": None,
+            "came_on_at": None,
+            "position": "GK",
+            "is_gk": True,
+        }
+        result['contributions'][key] = {
+            "offensive_pct": 0.5,
+            "defensive_pct": 2.0,
+            "total_pct": 1.25,
+            "offensive_raw": 0,
+            "defensive_raw": 0,
+            "off_breakdown": {},
+            "def_breakdown": {},
+            "is_gk": True,
+        }
+        print(f"  + {team} - {gk_name} ({gk_passes} pas)")
+except Exception as e:
+    print(f"  UYARI: goalkeepers.xlsx okunamadı: {e}")
+
+with open(OUT, "w", encoding="utf-8") as f:
+    json.dump(result, f, indent=2, ensure_ascii=False)
+
+print(f"\n✅ Final: {len(result['nodes'])} node, {len(result['edges'])} edge")

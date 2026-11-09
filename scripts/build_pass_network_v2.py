@@ -20,11 +20,17 @@ _ap.add_argument('--out', default=None)
 _args, _ = _ap.parse_known_args()
 # --- /AUTO ---
 
-BASE = Path(_args.out) if _args.out else Path("public/assets/data/gs-stuttgart")
-OUT = BASE / "pass_network_v2.json"
+BASE = Path(_args.src) if _args.src else Path("/storage/emulated/0/HPAnaliz/SportsBase/maclar/MATCH_2026_11_03_Galatasaray_vs_VfB_Stuttgart")
+OUT = _args.out if _args.out else str(BASE / "pass_network_v2.json")
 SUBS_OVERRIDE = BASE / "substitutions.json"  # opsiyonel
-_PL_DEF = Path("/storage/emulated/0/HPAnaliz/SportsBase/maclar/MATCH_2026_11_03_Galatasaray_vs_Stuttgart/MATCH_2026_11_03_Galatasaray_vs_Stuttgart__PLAYERS__XLSX.xlsx")
-PLAYERS_XLSX = next(Path(_args.src).glob("*__PLAYERS__XLSX.xlsx"), _PL_DEF) if _args.src else _PL_DEF
+_PL_DEF = Path("/storage/emulated/0/HPAnaliz/SportsBase/maclar/MATCH_2026_11_03_Galatasaray_vs_VfB_Stuttgart/PLAYERS__CSV.csv")
+if _args.src:
+    PLAYERS_CSV = next(
+        (p for p in Path(_args.src).glob("*.csv") if "PLAYERS" in p.name.upper() and "GOALKEEPERS" not in p.name.upper()),
+        _PL_DEF
+    )
+else:
+    PLAYERS_CSV = _PL_DEF
 
 TOTAL_MATCH_MIN = 97  # 90 + 7 stoppage
 
@@ -42,7 +48,7 @@ def safe_int(v, d=0):
 
 # === 1. Oyuncu meta (dakika, pozisyon) ===
 player_info = {}  # name -> {minutes, position, team}
-pstats = pd.read_excel(PLAYERS_XLSX)
+pstats = pd.read_csv(PLAYERS_CSV, sep=None, engine="python")
 for _, row in pstats.iterrows():
     if pd.isna(row.get('Player')): continue
     name = row['Player'].strip()
@@ -121,6 +127,9 @@ def infer_subs():
 if SUBS_OVERRIDE.exists():
     with open(SUBS_OVERRIDE) as f:
         subs_data = json.load(f)
+    # Eski format (list) uyumluluğu
+    if isinstance(subs_data, list):
+        subs_data = {"Bilinmiyor": subs_data} 
     print(f"Substitution override kullanıldı: {SUBS_OVERRIDE}")
 else:
     subs_data = infer_subs()
@@ -128,8 +137,21 @@ else:
 
 # === 3. Event'leri topla ===
 events = []
-with open(BASE / "teams.csv", encoding="utf-8") as f:
-    for row in csv.DictReader(f, delimiter=";"):
+# Teams CSV dosyasını bul (TEAMS__CSV.csv formatı)
+_teams_csv = next(
+    (p for p in BASE.glob("*.csv") if "TEAMS" in p.name.upper() and "GOALKEEPERS" not in p.name.upper()),
+    None
+)
+if _teams_csv is None:
+    raise FileNotFoundError(f"Teams CSV bulunamadı: {BASE}")
+
+# Delimiter otomatik algılama (virgül mü noktalı virgül mü?)
+with open(_teams_csv, "r", encoding="utf-8", errors="ignore") as _tf:
+    _header = _tf.readline()
+    _delim = ";" if _header.count(";") > _header.count(",") else ","
+
+with open(_teams_csv, encoding="utf-8") as f:
+    for row in csv.DictReader(f, delimiter=_delim):
         if not row["pos_x"] or " - " not in row["code"]: continue
         name, pid = parse(row["code"])
         if not name: continue
@@ -232,7 +254,7 @@ for e in edges:
     corr = round(((2 * e["weight"] + 1) / (denom + 2)) * 100, 1) if denom >= 0 else 0
     final_edges.append({"from": src_key, "to": dst_key, "weight": e["weight"], "correlation_pct": corr})
 
-final_edges = [e for e in final_edges if nodes[e['from']]['passes'] >= 8 and nodes[e['to']]['passes'] >= 8]
+final_edges = [e for e in final_edges if nodes[e['from']]['passes'] >= 1 and nodes[e['to']]['passes'] >= 1]
 final_edges.sort(key=lambda x: -x['correlation_pct'])
 
 # === 8. Çıktı + OFANSİF/DEFANSİF KATKI ===
@@ -309,7 +331,7 @@ for name, s in stat_rows.items():
 # === JSON yaz ===
 result = {
     "nodes": nodes,
-    "edges": final_edges[:200],
+    "edges": final_edges,
     "substitutions": subs_data,
     "contributions": contributions,
     "meta": {
@@ -351,10 +373,10 @@ for team in ['Galatasaray', 'VfB Stuttgart']:
 
 # === 10. GK EKLEME — goalkeepers.xlsx'ten ===
 print("\n=== GK EKLENİYOR ===")
-_GK_DEF = Path("/storage/emulated/0/HPAnaliz/SportsBase/maclar/MATCH_2026_11_03_Galatasaray_vs_Stuttgart/MATCH_2026_11_03_Galatasaray_vs_Stuttgart__GOALKEEPERS__XLSX.xlsx")
-GK_XLSX = next(Path(_args.src).glob("*__GOALKEEPERS__XLSX.xlsx"), _GK_DEF) if _args.src else _GK_DEF
+_GK_DEF = Path("/storage/emulated/0/HPAnaliz/SportsBase/maclar/MATCH_2026_11_03_Galatasaray_vs_VfB_Stuttgart/GOALKEEPERS__CSV.csv")
+GK_CSV = next(Path(_args.src).glob("*GOALKEEPERS*CSV*.csv"), _GK_DEF) if _args.src else _GK_DEF
 try:
-    gk_df = pd.read_excel(GK_XLSX)
+    gk_df = pd.read_csv(GK_CSV, sep=None, engine="python")
     for _, row in gk_df.iterrows():
         if pd.isna(row.get('Player')): continue
         gk_name = row['Player'].strip()

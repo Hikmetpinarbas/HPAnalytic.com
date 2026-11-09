@@ -1,0 +1,168 @@
+{
+  "schema": "visual-production/v1",
+  "license": "Original authored demo geometry and synthetic fixtures; project LICENSE",
+  "provenance": {
+    "kind": "synthetic",
+    "method": "deterministically authored example; not an observed match"
+  },
+  "source": "Visual Factory / authored demo",
+  "export_layer_rasters": false,
+  "id": "hp-cover",
+  "engine": "vector",
+  "title": "Oyunun görünmeyen bağlantıları",
+  "description": "Futbol araştırma dosyası için özgün, soyut vektör kapak.",
+  "shapes": [
+    {
+      "kind": "rect",
+      "layer": "background",
+      "attributes": {
+        "x": 0,
+        "y": 220,
+        "w": 1200,
+        "h": 520,
+        "fill": "#142f39"
+      }
+    },
+    {
+      "kind": "line",
+      "layer": "geometry",
+      "attributes": {
+        "points": [
+          [
+            330,
+            580
+          ],
+          [
+            620,
+            390
+          ]
+        ],
+        "stroke": "#6b9598",
+        "width": 3
+      }
+    },
+    {
+      "kind": "line",
+      "layer": "geometry",
+      "attributes": {
+        "points": [
+          [
+            620,
+            390
+          ],
+          [
+            920,
+            530
+          ]
+        ],
+        "stroke": "#6b9598",
+        "width": 3
+      }
+    },
+    {
+      "kind": "line",
+      "layer": "geometry",
+      "attributes": {
+        "points": [
+          [
+            920,
+            530
+          ],
+          [
+            330,
+            580
+          ]
+        ],
+        "stroke": "#6b9598",
+        "width": 3
+      }
+    },
+    {
+      "kind": "ellipse",
+      "layer": "effects",
+      "attributes": {
+        "x": 330,
+        "y": 580,
+        "rx": 50,
+        "ry": 50,
+        "fill": "#142f39",
+        "stroke": "#d9ae67",
+        "width": 3
+      }
+    },
+    {
+      "kind": "text",
+      "layer": "typography",
+      "attributes": {
+        "x": 330,
+        "y": 572,
+        "text": "ALAN",
+        "size": 16,
+        "fill": "#faf0da",
+        "anchor": "middle"
+      }
+    },
+    {
+      "kind": "ellipse",
+      "layer": "effects",
+      "attributes": {
+        "x": 620,
+        "y": 390,
+        "rx": 50,
+        "ry": 50,
+        "fill": "#142f39",
+        "stroke": "#d9ae67",
+        "width": 3
+      }
+    },
+    {
+      "kind": "text",
+      "layer": "typography",
+      "attributes": {
+        "x": 620,
+        "y": 382,
+        "text": "ZAMAN",
+        "size": 16,
+        "fill": "#faf0da",
+        "anchor": "middle"
+      }
+    },
+    {
+      "kind": "ellipse",
+      "layer": "effects",
+      "attributes": {
+        "x": 920,
+        "y": 530,
+        "rx": 50,
+        "ry": 50,
+        "fill": "#142f39",
+        "stroke": "#d9ae67",
+        "width": 3
+      }
+    },
+    {
+      "kind": "text",
+      "layer": "typography",
+      "attributes": {
+        "x": 920,
+        "y": 522,
+        "text": "İLİŞKİ",
+        "size": 16,
+        "fill": "#faf0da",
+        "anchor": "middle"
+      }
+    },
+    {
+      "kind": "text",
+      "layer": "typography",
+      "attributes": {
+        "x": 70,
+        "y": 285,
+        "text": "GÖRÜNMEYEN OYUN",
+        "size": 52,
+        "fill": "#faf0da",
+        "serif": true
+      }
+    }
+  ]
+}

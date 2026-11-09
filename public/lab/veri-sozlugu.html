@@ -1,0 +1,391 @@
+<!doctype html><html lang="tr"><head><meta charset="utf-8"/>
+<style>html{background:#08090B}body{background:#08090B;color:#F4F2EC;margin:0}html[data-theme="light"]{background:#F8F6F0}html[data-theme="light"] body{background:#F8F6F0;color:#0A0A0C}</style>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
+<meta name="theme-color" content="#08090B"/>
+<title>Veri Sözlüğü — HP//Analytic</title>
+<meta name="description" content="HPAnalytic'in semantik veri evrenini keşfet. Metrikler, varlıklar, şema çatışmaları ve bekleyen tanımlar."/>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;700&family=JetBrains+Mono:wght@400;500;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{--bg:#08090B;--bg-elev:#0D0E12;--bg-elev2:#14151A;--ink:#F4F2EC;--ink-soft:#8A8A93;--ink-faint:#4A4A52;--line:#1B1B21;--line-bright:#2A2B33;--neon:#B4FF39;--orange:#FF6B35;--amber:#D4A548;--serif:'Newsreader',Georgia,serif;--mono:'JetBrains Mono',monospace;--sans:'Hanken Grotesk',system-ui,sans-serif}
+[data-theme="light"]{--bg:#F8F6F0;--bg-elev:#FFFFFF;--bg-elev2:#EDEAE0;--ink:#0A0A0C;--ink-soft:#5A5A63;--ink-faint:#9A9AA3;--line:#DDD8CC;--line-bright:#C5C0B4;--neon:#5C9E00;--orange:#D65328;--amber:#A87D22}
+html{-webkit-font-smoothing:antialiased;scroll-behavior:smooth}
+body{font-family:var(--sans);line-height:1.6;min-height:100vh}
+a{color:inherit;text-decoration:none}
+::selection{background:var(--neon);color:var(--bg)}
+
+.progress-bar{position:fixed;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--neon),var(--orange));z-index:1000;width:0%;transition:width .1s}
+
+.back{position:fixed;top:20px;left:20px;z-index:10;font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-soft);padding:8px 14px;border:1px solid var(--line);background:rgba(10,10,12,.85);backdrop-filter:blur(12px);transition:all .2s;border-radius:4px}
+.back:hover{color:var(--neon);border-color:var(--neon)}
+[data-theme="light"] .back{background:rgba(248,246,240,.85)}
+
+.hero{padding:100px 24px 48px;max-width:1200px;margin:0 auto;border-bottom:1px solid var(--line)}
+@media(min-width:768px){.hero{padding:130px 48px 64px}}
+.hero-kicker{font-family:var(--mono);font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--orange);margin-bottom:16px}
+.hero h1{font-family:var(--serif);font-weight:400;font-size:clamp(36px,7vw,72px);line-height:1.05;letter-spacing:-.03em;color:var(--ink);margin-bottom:16px}
+.hero h1 em{font-style:italic;color:var(--neon)}
+.hero .lede{font-family:var(--serif);font-size:clamp(18px,2.5vw,24px);line-height:1.5;font-style:italic;color:var(--ink-soft);max-width:720px;margin-bottom:28px}
+.hero-stats{display:flex;gap:24px;flex-wrap:wrap;font-family:var(--mono);font-size:12px;letter-spacing:.08em;color:var(--ink-faint)}
+.hero-stats span{color:var(--neon);font-weight:700}
+
+.container{max-width:1200px;margin:0 auto;padding:32px 24px 80px}
+@media(min-width:768px){.container{padding:48px 48px 96px}}
+
+.search-wrap{position:relative;margin-bottom:32px}
+.search-input{width:100%;padding:16px 20px 16px 48px;font-family:var(--mono);font-size:14px;letter-spacing:.04em;color:var(--ink);background:var(--bg-elev);border:1px solid var(--line);border-radius:4px;outline:none;transition:border-color .2s}
+.search-input::placeholder{color:var(--ink-faint)}
+.search-input:focus{border-color:var(--neon)}
+.search-icon{position:absolute;left:16px;top:50%;transform:translateY(-50%);color:var(--ink-faint);pointer-events:none}
+.search-kbd{position:absolute;right:16px;top:50%;transform:translateY(-50%);font-family:var(--mono);font-size:10px;letter-spacing:.1em;color:var(--ink-faint);background:var(--bg-elev2);padding:3px 8px;border-radius:3px;border:1px solid var(--line)}
+
+.tabs{display:flex;gap:2px;margin-bottom:32px;border-bottom:1px solid var(--line);overflow-x:auto;-webkit-overflow-scrolling:touch}
+.tab{font-family:var(--mono);font-size:11px;letter-spacing:.15em;text-transform:uppercase;padding:12px 20px;cursor:pointer;color:var(--ink-faint);border-bottom:2px solid transparent;transition:all .2s;white-space:nowrap;background:none;border-top:none;border-left:none;border-right:none}
+.tab:hover{color:var(--ink-soft)}
+.tab.active{color:var(--neon);border-bottom-color:var(--neon)}
+
+.panel{display:none}
+.panel.active{display:block}
+
+.card-grid{display:grid;grid-template-columns:1fr;gap:16px}
+@media(min-width:640px){.card-grid{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1024px){.card-grid{grid-template-columns:repeat(3,1fr)}}
+
+.card{background:var(--bg-elev);border:1px solid var(--line);border-radius:4px;padding:24px;transition:all .25s;position:relative;overflow:hidden}
+.card:hover{border-color:var(--neon);transform:scale(1.02);box-shadow:0 0 20px rgba(180,255,57,0.08)}
+[data-theme="light"] .card:hover{box-shadow:0 0 16px rgba(92,158,0,0.1)}
+
+.card-name{font-family:var(--mono);font-size:18px;font-weight:700;color:var(--ink);margin-bottom:8px;letter-spacing:.02em}
+.card-badge{display:inline-block;font-family:var(--mono);font-size:9px;letter-spacing:.2em;text-transform:uppercase;padding:3px 8px;border-radius:2px;margin-bottom:12px}
+.badge-verified{color:var(--neon);border:1px solid var(--neon);background:rgba(180,255,57,0.06)}
+[data-theme="light"] .badge-verified{background:rgba(92,158,0,0.06)}
+.badge-hold{color:var(--amber);border:1px solid var(--amber);background:rgba(212,165,72,0.06)}
+.badge-resolved{color:var(--neon);border:1px solid var(--neon);background:rgba(180,255,57,0.06)}
+
+.card-def{font-family:var(--serif);font-size:15px;line-height:1.6;color:var(--ink-soft);margin-bottom:14px;font-style:italic}
+.card-meta{display:flex;gap:16px;flex-wrap:wrap;font-family:var(--mono);font-size:11px;color:var(--ink-faint);letter-spacing:.05em}
+.card-meta strong{color:var(--ink-soft)}
+
+mark{background:rgba(180,255,57,0.2);color:var(--ink);border-radius:2px;padding:0 2px}
+[data-theme="light"] mark{background:rgba(92,158,0,0.15)}
+
+.section-label{font-family:var(--mono);font-size:10px;letter-spacing:.25em;text-transform:uppercase;color:var(--orange);margin:40px 0 16px}
+
+.entity-card{background:var(--bg-elev);border:1px solid var(--line);border-radius:4px;padding:20px 24px;transition:all .25s}
+.entity-card:hover{border-color:var(--neon);box-shadow:0 0 16px rgba(180,255,57,0.06)}
+.entity-id{font-family:var(--mono);font-size:10px;letter-spacing:.15em;color:var(--ink-faint);margin-bottom:4px}
+.entity-name{font-family:var(--serif);font-size:20px;color:var(--ink);margin-bottom:8px}
+.entity-detail{font-family:var(--mono);font-size:12px;color:var(--ink-soft);line-height:1.8}
+.entity-detail span{color:var(--ink-faint)}
+
+.match-card{background:var(--bg-elev);border:1px solid var(--line);border-radius:4px;padding:20px 24px;transition:all .25s;display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center}
+.match-card:hover{border-color:var(--orange);box-shadow:0 0 16px rgba(255,107,53,0.08)}
+.match-teams{font-family:var(--serif);font-size:18px;color:var(--ink)}
+.match-teams em{color:var(--ink-faint);font-style:normal;font-size:14px}
+.match-comp{font-family:var(--mono);font-size:10px;letter-spacing:.12em;color:var(--orange);text-transform:uppercase}
+.match-date{font-family:var(--mono);font-size:12px;color:var(--ink-faint);text-align:right}
+.match-id{font-family:var(--mono);font-size:10px;color:var(--ink-faint);letter-spacing:.1em}
+
+.conflict-card{background:var(--bg-elev);border:1px solid var(--line);border-radius:4px;padding:28px;max-width:720px}
+.conflict-flow{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin:20px 0}
+.conflict-node{background:var(--bg-elev2);border:1px solid var(--line-bright);border-radius:4px;padding:12px 20px;font-family:var(--mono);font-size:13px;color:var(--ink);text-align:center;min-width:140px}
+.conflict-arrow{font-size:20px;color:var(--neon)}
+.conflict-type{font-family:var(--mono);font-size:11px;color:var(--ink-faint);letter-spacing:.1em;margin-bottom:6px}
+.conflict-resolution{font-family:var(--serif);font-size:15px;font-style:italic;color:var(--ink-soft);margin-top:16px;padding-top:16px;border-top:1px solid var(--line)}
+
+.hold-card{background:var(--bg-elev);border:1px solid var(--amber);border-radius:4px;padding:28px;max-width:720px}
+.hold-card .card-name{color:var(--amber)}
+.hold-reason{font-family:var(--serif);font-size:15px;line-height:1.6;color:var(--ink-soft);margin:12px 0;font-style:italic}
+.hold-source{font-family:var(--mono);font-size:11px;color:var(--ink-faint);letter-spacing:.06em}
+
+.audit-section{margin-top:80px;padding-top:48px;border-top:1px solid var(--line)}
+.audit-title{font-family:var(--serif);font-size:clamp(24px,4vw,36px);font-weight:400;color:var(--ink);margin-bottom:24px}
+.audit-title em{color:var(--neon);font-style:italic}
+.audit-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin-bottom:32px}
+.audit-stat{background:var(--bg-elev);border:1px solid var(--line);border-radius:4px;padding:20px;text-align:center}
+.audit-num{font-family:var(--mono);font-size:32px;font-weight:700;color:var(--neon);line-height:1}
+.audit-label{font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-faint);margin-top:8px}
+.audit-quote{font-family:var(--serif);font-size:clamp(16px,2vw,20px);line-height:1.6;font-style:italic;color:var(--ink-soft);border-left:2px solid var(--neon);padding:12px 0 12px 28px;max-width:720px}
+
+.empty-state{text-align:center;padding:48px 24px;color:var(--ink-faint);font-family:var(--serif);font-style:italic;font-size:16px}
+
+.site-footer{max-width:1200px;margin:0 auto;padding:32px 24px;border-top:1px solid var(--line);display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;font-family:var(--mono);font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--ink-faint)}
+.site-footer a{color:var(--ink-soft)}.site-footer a:hover{color:var(--neon)}
+
+html{opacity:1;transition:opacity .22s cubic-bezier(.2,.9,.3,1)}
+html.page-leaving{opacity:0}
+@keyframes pageFadeIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:translateY(0)}}
+body{animation:pageFadeIn .4s cubic-bezier(.2,.9,.3,1)}
+</style>
+</head>
+<body>
+
+<div class="progress-bar" id="progress"></div>
+<a href="/" class="back">← Ana Sayfa</a>
+
+<section class="hero">
+  <div class="hero-kicker">DATA LAB · VERİ SÖZLÜĞÜ</div>
+  <h1>Veri <em>Sözlüğü</em></h1>
+  <p class="lede">HPAnalytic'in semantik veri evrenini keşfet. Her metrik doğrulanmış, her varlık kayıtlı, her çatışma çözülmüş.</p>
+  <div class="hero-stats">
+    <span>12</span> Metrik ·
+    <span>2</span> Takım ·
+    <span>3</span> Maç ·
+    <span>1</span> Çözülen Çatışma
+  </div>
+</section>
+
+<div class="container">
+  <div class="search-wrap">
+    <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+    <input type="text" class="search-input" id="search" placeholder="Metrik, takım veya maç ara... (xG, Galatasaray, PPDA...)" autocomplete="off"/>
+    <span class="search-kbd" id="search-kbd">⌘K</span>
+  </div>
+
+  <div class="tabs" id="tabs">
+    <button class="tab active" data-tab="metrikler">Metrikler</button>
+    <button class="tab" data-tab="varliklar">Varlıklar</button>
+    <button class="tab" data-tab="catismalar">Çatışmalar</button>
+    <button class="tab" data-tab="beklemede">Beklemede</button>
+  </div>
+
+  <div class="panel active" id="panel-metrikler">
+    <div class="card-grid" id="metrics-grid"></div>
+    <div class="empty-state" id="metrics-empty" style="display:none">Aramanızla eşleşen metrik bulunamadı.</div>
+  </div>
+
+  <div class="panel" id="panel-varliklar">
+    <div class="section-label">TAKIMLAR</div>
+    <div class="card-grid" id="teams-grid" style="margin-bottom:32px"></div>
+    <div class="section-label">MAÇLAR</div>
+    <div id="matches-grid" style="display:grid;gap:12px"></div>
+    <div class="empty-state" id="entities-empty" style="display:none">Aramanızla eşleşen varlık bulunamadı.</div>
+  </div>
+
+  <div class="panel" id="panel-catismalar">
+    <div id="conflicts-content"></div>
+    <div class="empty-state" id="conflicts-empty" style="display:none">Aramanızla eşleşen çatışma bulunamadı.</div>
+  </div>
+
+  <div class="panel" id="panel-beklemede">
+    <div id="hold-content"></div>
+    <div class="empty-state" id="hold-empty" style="display:none">Aramanızla eşleşen bekleyen tanım bulunamadı.</div>
+  </div>
+
+  <section class="audit-section">
+    <h2 class="audit-title">HPFA Kabul <em>Denetimi</em></h2>
+    <div class="audit-grid">
+      <div class="audit-stat"><div class="audit-num">11</div><div class="audit-label">Artefakt</div></div>
+      <div class="audit-stat"><div class="audit-num">11/11</div><div class="audit-label">PASS</div></div>
+      <div class="audit-stat"><div class="audit-num">4</div><div class="audit-label">HPFA İlkesi</div></div>
+      <div class="audit-stat"><div class="audit-num">0</div><div class="audit-label">FAIL</div></div>
+    </div>
+    <blockquote class="audit-quote">
+      HPFA Kabul Heyeti adına; yukarıda listelenen tüm gereksinimlerin, semantik sözlüklerin, varlık kayıtlarının ve denetim raporlarının eksiksiz ve geçerli olduğu onaylanmıştır.
+    </blockquote>
+  </section>
+</div>
+
+<footer class="site-footer"><span>© 2026 HP//Analytic</span><a href="/">Ana sayfa</a></footer>
+
+<script>
+(async function(){
+  // ── DATA ──
+  var DATA_ROOT = '/hazine/veri_beyni/HP_SEMANTIC_DATA_INTELLIGENCE/';
+  function csvRows(text){
+    var lines = text.trim().split(/\r?\n/);
+    var headers = lines.shift().split(',');
+    return lines.filter(Boolean).map(function(line){
+      var values = line.split(',');
+      return headers.reduce(function(row, key, index){ row[key] = values[index] || ''; return row; }, {});
+    });
+  }
+  var loaded = await Promise.all([
+    fetch(DATA_ROOT+'SEMANTIC_DICTIONARY.json').then(function(r){ return r.json(); }),
+    fetch(DATA_ROOT+'ENTITY_REGISTRY.json').then(function(r){ return r.json(); }),
+    fetch(DATA_ROOT+'SCHEMA_CONFLICTS.csv').then(function(r){ return r.text(); }),
+    fetch(DATA_ROOT+'UNRESOLVED_SEMANTICS.csv').then(function(r){ return r.text(); })
+  ]);
+  var METRICS = loaded[0];
+  var ENTITIES = loaded[1];
+  var TEAMS = ENTITIES.teams || [];
+  var MATCHES = ENTITIES.matches || [];
+  var conflictRows = csvRows(loaded[2]);
+  var holdRows = csvRows(loaded[3]);
+  var CONFLICT = conflictRows[0] || {};
+  var HOLD = holdRows[0] || {};
+
+  // ── HELPERS ──
+  function esc(s){ var d=document.createElement('div'); d.textContent=s; return d.innerHTML; }
+  function highlight(text, q){
+    if(!q) return esc(text);
+    var safe = esc(text);
+    var re = new RegExp('('+q.replace(/[.*+?^${}()|[\]\\]/g,'\\$&')+')','gi');
+    return safe.replace(re,'<mark>$1</mark>');
+  }
+
+  // ── RENDER METRICS ──
+  function renderMetrics(q){
+    var grid = document.getElementById('metrics-grid');
+    var empty = document.getElementById('metrics-empty');
+    var html = '';
+    var count = 0;
+    var keys = Object.keys(METRICS);
+    for(var i=0;i<keys.length;i++){
+      var name = keys[i];
+      var m = METRICS[name];
+      var haystack = (name+' '+m.definition+' '+(m.unit||'')+' '+(m.scale||'')).toLowerCase();
+      if(q && haystack.indexOf(q.toLowerCase()) === -1) continue;
+      count++;
+      html += '<div class="card">';
+      html += '<div class="card-name">'+highlight(name,q)+'</div>';
+      html += '<span class="card-badge badge-verified">VERIFIED</span>';
+      html += '<div class="card-def">'+highlight(m.definition,q)+'</div>';
+      html += '<div class="card-meta">';
+      if(m.scale) html += '<span><strong>Ölçek:</strong> '+esc(m.scale)+'</span>';
+      if(m.unit) html += '<span><strong>Birim:</strong> '+highlight(m.unit,q)+'</span>';
+      html += '</div></div>';
+    }
+    grid.innerHTML = html;
+    empty.style.display = count ? 'none' : 'block';
+  }
+
+  // ── RENDER ENTITIES ──
+  function renderEntities(q){
+    var tGrid = document.getElementById('teams-grid');
+    var mGrid = document.getElementById('matches-grid');
+    var empty = document.getElementById('entities-empty');
+    var tHtml = '', mHtml = '', count = 0;
+
+    for(var i=0;i<TEAMS.length;i++){
+      var t = TEAMS[i];
+      var hay = (t.entity_id+' '+t.name+' '+t.league+' '+t.stadium+' '+t.country).toLowerCase();
+      if(q && hay.indexOf(q.toLowerCase()) === -1) continue;
+      count++;
+      tHtml += '<div class="entity-card">';
+      tHtml += '<div class="entity-id">'+esc(t.entity_id)+'</div>';
+      tHtml += '<div class="entity-name">'+highlight(t.name,q)+' 🇹🇷</div>';
+      tHtml += '<div class="entity-detail"><span>Lig:</span> '+esc(t.league)+' · <span>Stadyum:</span> '+highlight(t.stadium,q)+'</div>';
+      tHtml += '</div>';
+    }
+
+    for(var j=0;j<MATCHES.length;j++){
+      var m = MATCHES[j];
+      var hay2 = (m.match_id+' '+m.home+' '+m.away+' '+m.competition+' '+m.date).toLowerCase();
+      if(q && hay2.indexOf(q.toLowerCase()) === -1) continue;
+      count++;
+      mHtml += '<div class="match-card">';
+      mHtml += '<div><div class="match-teams">'+highlight(m.home,q)+' <em>vs</em> '+highlight(m.away,q)+'</div>';
+      mHtml += '<div class="match-comp">'+highlight(m.competition,q)+'</div>';
+      mHtml += '<div class="match-id">'+esc(m.match_id)+'</div></div>';
+      mHtml += '<div class="match-date">'+esc(m.date)+'</div>';
+      mHtml += '</div>';
+    }
+
+    tGrid.innerHTML = tHtml || '';
+    mGrid.innerHTML = mHtml || '';
+    empty.style.display = count ? 'none' : 'block';
+    document.querySelector('.section-label:nth-of-type(1)').style.display = tHtml ? '' : 'none';
+  }
+
+  // ── RENDER CONFLICTS ──
+  function renderConflicts(q){
+    var el = document.getElementById('conflicts-content');
+    var empty = document.getElementById('conflicts-empty');
+    var hay = (CONFLICT.a+' '+CONFLICT.b+' '+CONFLICT.type+' '+CONFLICT.resolution).toLowerCase();
+    if(q && hay.indexOf(q.toLowerCase()) === -1){
+      el.innerHTML = '';
+      empty.style.display = 'block';
+      return;
+    }
+    empty.style.display = 'none';
+    el.innerHTML =
+      '<div class="conflict-card">'+
+      '<span class="card-badge badge-resolved">RESOLVED</span>'+
+      '<div class="conflict-type">Çatışma Tipi: '+highlight(CONFLICT.type,q)+'</div>'+
+      '<div class="conflict-flow">'+
+        '<div class="conflict-node">'+highlight(CONFLICT.a,q)+'<br><small style="color:var(--ink-faint)">Opta 100×100</small></div>'+
+        '<span class="conflict-arrow">→</span>'+
+        '<div class="conflict-node">'+highlight(CONFLICT.b,q)+'<br><small style="color:var(--ink-faint)">Metres 105×68</small></div>'+
+        '<span class="conflict-arrow">→</span>'+
+        '<div class="conflict-node" style="border-color:var(--neon);color:var(--neon)">Standartlaştırıldı ✓</div>'+
+      '</div>'+
+      '<div class="conflict-resolution">'+highlight(CONFLICT.resolution,q)+'</div>'+
+      '</div>';
+  }
+
+  // ── RENDER HOLD ──
+  function renderHold(q){
+    var el = document.getElementById('hold-content');
+    var empty = document.getElementById('hold-empty');
+    var hay = (HOLD.column+' '+HOLD.source+' '+HOLD.reason).toLowerCase();
+    if(q && hay.indexOf(q.toLowerCase()) === -1){
+      el.innerHTML = '';
+      empty.style.display = 'block';
+      return;
+    }
+    empty.style.display = 'none';
+    el.innerHTML =
+      '<div class="hold-card">'+
+      '<span class="card-badge badge-hold">HOLD</span>'+
+      '<div class="card-name">'+highlight(HOLD.column,q)+'</div>'+
+      '<div class="hold-reason">'+highlight(HOLD.reason,q)+'</div>'+
+      '<div class="hold-source"><strong>Kaynak:</strong> '+highlight(HOLD.source,q)+'</div>'+
+      '<div style="margin-top:16px;font-family:var(--serif);font-size:14px;color:var(--ink-faint);line-height:1.6;">'+
+        'Bu metrik, sağlayıcının model tanımını kamuya açıklamaması nedeniyle analize dahil edilmemiştir. '+
+        'HPFA 0-EMIT ilkesi gereği, tanımı doğrulanmayan veriler hiçbir iddiada kullanılamaz.'+
+      '</div>'+
+      '</div>';
+  }
+
+  // ── TABS ──
+  var tabs = document.querySelectorAll('.tab');
+  var panels = document.querySelectorAll('.panel');
+  tabs.forEach(function(tab){
+    tab.addEventListener('click', function(){
+      tabs.forEach(function(t){ t.classList.remove('active'); });
+      panels.forEach(function(p){ p.classList.remove('active'); });
+      tab.classList.add('active');
+      document.getElementById('panel-'+tab.dataset.tab).classList.add('active');
+    });
+  });
+
+  // ── SEARCH ──
+  var searchInput = document.getElementById('search');
+  function renderAll(){
+    var q = searchInput.value.trim();
+    renderMetrics(q);
+    renderEntities(q);
+    renderConflicts(q);
+    renderHold(q);
+  }
+  searchInput.addEventListener('input', renderAll);
+
+  // Ctrl+K / ⌘K shortcut
+  var isMac = navigator.platform.indexOf('Mac') > -1;
+  document.getElementById('search-kbd').textContent = isMac ? '⌘K' : 'Ctrl+K';
+  document.addEventListener('keydown', function(e){
+    if((e.metaKey || e.ctrlKey) && e.key === 'k'){
+      e.preventDefault();
+      searchInput.focus();
+      searchInput.select();
+    }
+  });
+
+  // ── PROGRESS BAR ──
+  var bar = document.getElementById('progress');
+  window.addEventListener('scroll', function(){
+    var h = document.documentElement.scrollHeight - window.innerHeight;
+    bar.style.width = (h > 0 ? (window.scrollY / h * 100) : 0) + '%';
+  }, {passive:true});
+
+  // ── INITIAL RENDER ──
+  renderAll();
+})();
+</script>
+<script src="/page-transition.js" defer></script>
+<script src="/extras2.js" defer></script>
+<script src="/gsap-micro.js" defer></script>
+</body></html>

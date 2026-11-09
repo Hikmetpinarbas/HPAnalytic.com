@@ -1,5 +1,6 @@
 import * as d3 from 'd3';
 import { gsap } from 'gsap';
+import { ease, duration } from '../motion-tokens.js';
 
 const C = {
   text:'#F4F2EC', muted:'rgba(244,242,236,0.4)',
@@ -61,7 +62,7 @@ export function initTacticalMap(root, opts = {}) {
   function setCaption(text, kind) {
     caption.textContent = text || '';
     caption.style.color = kind === 'defensive' ? C.orange : kind === 'offensive' ? C.neon : C.muted;
-    gsap.fromTo(caption, {opacity:0, y:6}, {opacity:1, y:0, duration:0.6});
+    gsap.fromTo(caption, {opacity:0, y:6}, {opacity:1, y:0, duration: duration.ui, ease: ease.editorial});
   }
 
   function getPos(p, kind) {
@@ -134,14 +135,14 @@ export function initTacticalMap(root, opts = {}) {
       const tl = gsap.timeline({ delay: 0.2 + idx * 0.05 });
 
       // A) Formasyon → defansif
-      tl.to(dot.node(), { attr: { cx: defPos.x, cy: defPos.y }, duration: 1.2, ease:'power2.inOut' });
-      tl.to(nameText.node(), { attr: { x: defPos.x, y: defPos.y + 2.8 }, duration: 1.2, ease:'power2.inOut' }, '<');
+      tl.to(dot.node(), { attr: { cx: defPos.x, cy: defPos.y }, duration: duration.cinematic, ease: ease.draw });
+      tl.to(nameText.node(), { attr: { x: defPos.x, y: defPos.y + 2.8 }, duration: duration.cinematic, ease: ease.draw }, '<');
       tl.to(defLine.node(), { opacity: 1, duration: 0.2 }, '<');
       tl.to(defLine.node(), { opacity: 0, duration: 1.0 }, '+=0.3');
 
       // B) Defansif → ofansif
-      tl.to(dot.node(), { attr: { cx: offPos.x, cy: offPos.y }, duration: 1.2, ease:'power2.inOut' }, '+=0.3');
-      tl.to(nameText.node(), { attr: { x: offPos.x, y: offPos.y + 2.8 }, duration: 1.2, ease:'power2.inOut' }, '<');
+      tl.to(dot.node(), { attr: { cx: offPos.x, cy: offPos.y }, duration: duration.cinematic, ease: ease.draw }, '+=0.3');
+      tl.to(nameText.node(), { attr: { x: offPos.x, y: offPos.y + 2.8 }, duration: duration.cinematic, ease: ease.draw }, '<');
       tl.to(offLine.node(), { opacity: 1, duration: 0.2 }, '<');
       tl.to(offLine.node(), { opacity: 0, duration: 1.0 }, '+=0.3');
 

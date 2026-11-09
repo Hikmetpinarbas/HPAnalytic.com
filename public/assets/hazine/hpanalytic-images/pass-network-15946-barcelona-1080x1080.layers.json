@@ -1,0 +1,92 @@
+{
+  "chart": "pass_network",
+  "match_id": 15946,
+  "team": "Barcelona",
+  "generated": "2026-10-18T19:26:43",
+  "size": [
+    1080,
+    1080
+  ],
+  "layers": [
+    {
+      "id": "L1_pitch",
+      "band": "B1",
+      "toggle": true,
+      "evidence": "n/a",
+      "active": true
+    },
+    {
+      "id": "L2_zones",
+      "band": "B2",
+      "toggle": true,
+      "evidence": "blue",
+      "source": "baseline|sabit_izgara",
+      "active": true
+    },
+    {
+      "id": "L3_occupancy",
+      "band": "B3",
+      "toggle": false,
+      "evidence": "blue",
+      "source": "events.location",
+      "active": false
+    },
+    {
+      "id": "L3_hull",
+      "band": "B3",
+      "toggle": true,
+      "evidence": "amber",
+      "source": "events.location",
+      "active": true
+    },
+    {
+      "id": "L4_edges",
+      "band": "B4",
+      "toggle": true,
+      "evidence": "amber",
+      "encoding": "width=count, alpha=count",
+      "active": true
+    },
+    {
+      "id": "L5_nodes",
+      "band": "B5",
+      "toggle": true,
+      "evidence": "amber",
+      "encoding": "size=involvement, color=line",
+      "active": true
+    },
+    {
+      "id": "L6_emphasis",
+      "band": "B6",
+      "toggle": true,
+      "evidence": "amber",
+      "rule": "max1",
+      "metric": "betweenness",
+      "active": true
+    },
+    {
+      "id": "L7_labels",
+      "band": "B7",
+      "toggle": true,
+      "evidence": "amber",
+      "source": "player_abbrev+count",
+      "active": true
+    },
+    {
+      "id": "L8_annotation",
+      "band": "B8",
+      "toggle": true,
+      "evidence": "blue",
+      "max": 2,
+      "active": true
+    },
+    {
+      "id": "L9_meta",
+      "band": "B9",
+      "toggle": true,
+      "evidence": "mixed",
+      "active": true
+    }
+  ],
+  "name_resolution": "overrides + heuristic"
+}

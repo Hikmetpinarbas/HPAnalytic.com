@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#08090B">
+  <meta name="description" content="HPAnalytic Hazine Odası — görsel galeri ve keşif alanı.">
+  <link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;700&family=JetBrains+Mono:wght@400;500;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet">
+  <title>Hazine Odası · HPAnalytic</title>
+  <style>
+    :root { --bg:#08090B; --panel:#101416; --panel-2:#151a1d; --line:#2a3335; --lime:#B4FF39; --orange:#FF6B35; --muted:#8a9994; --text:#edf2e7; --font-display:'Newsreader', Georgia, serif; --font-sans:'Hanken Grotesk', system-ui, sans-serif; --font-mono:'JetBrains Mono', ui-monospace, monospace; }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; background:radial-gradient(circle at 80% -10%, #23311c 0, transparent 34rem), var(--bg); color:var(--text); font-family:var(--font-sans); }
+    body:before { content:""; position:fixed; inset:0; pointer-events:none; opacity:.14; background-image:linear-gradient(rgba(180,255,57,.08) 1px,transparent 1px),linear-gradient(90deg,rgba(180,255,57,.08) 1px,transparent 1px); background-size:44px 44px; mask-image:linear-gradient(to bottom,black,transparent 70%); }
+    .wrap { width:min(1400px, calc(100% - 40px)); margin:auto; position:relative; }
+    header { padding:62px 0 36px; display:grid; grid-template-columns:1fr auto; gap:28px; align-items:end; }
+    .eyebrow { color:var(--lime); font:700 11px/1.2 var(--font-mono); letter-spacing:.18em; text-transform:uppercase; }
+    h1 { margin:12px 0 10px; max-width:800px; font-family:var(--font-display); font-size:clamp(42px,8vw,104px); font-weight:500; line-height:.88; letter-spacing:-.07em; text-transform:uppercase; }
+    .intro { max-width:670px; color:#b7c2b6; line-height:1.6; font-size:16px; }
+    .stats { display:flex; flex-wrap:wrap; justify-content:flex-end; gap:10px; }
+    .stat { border:1px solid var(--line); background:rgba(16,20,22,.82); padding:13px 16px; min-width:110px; }
+    .stat strong { display:block; color:var(--lime); font:700 24px/1 var(--font-mono); }
+    .stat span { color:var(--muted); font-size:11px; text-transform:uppercase; letter-spacing:.1em; }
+    .toolbar { position:sticky; top:0; z-index:3; padding:14px 0; background:rgba(8,10,11,.88); backdrop-filter:blur(16px); border-top:1px solid var(--line); border-bottom:1px solid var(--line); }
+    .toolbar-inner { display:flex; gap:10px; align-items:center; flex-wrap:wrap; }
+    input, select { border:1px solid var(--line); background:var(--panel); color:var(--text); padding:12px 13px; font:inherit; outline:none; }
+    input { flex:1 1 260px; min-width:180px; } select { min-width:170px; }
+    input:focus, select:focus { border-color:var(--lime); box-shadow:0 0 0 2px rgba(180,255,57,.13); }
+    .count { margin-left:auto; color:var(--muted); font:12px var(--font-mono); }
+    .grid { column-width:245px; column-gap:16px; padding:28px 0 90px; }
+    .card { display:inline-block; width:100%; margin:0 0 16px; overflow:hidden; border:1px solid var(--line); background:linear-gradient(145deg,rgba(21,26,29,.94),rgba(11,14,15,.95)); transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease; break-inside:avoid; }
+    .card:hover { transform:translateY(-4px); border-color:var(--lime); box-shadow:0 14px 36px rgba(0,0,0,.3),0 0 0 1px rgba(180,255,57,.12); }
+    .thumb { aspect-ratio:16/10; background:#050606; display:grid; place-items:center; cursor:zoom-in; overflow:hidden; }
+    .thumb img { width:100%; height:100%; object-fit:contain; transition:transform .35s ease; }
+    .card:hover .thumb img { transform:scale(1.035); }
+    .meta { padding:14px; }
+    .type { display:inline-block; color:var(--orange); font:700 10px var(--font-mono); letter-spacing:.14em; text-transform:uppercase; margin-bottom:8px; }
+    .title { margin:0 0 8px; font-size:15px; line-height:1.25; overflow-wrap:anywhere; }
+    .path { color:var(--muted); font:11px/1.45 var(--font-mono); overflow-wrap:anywhere; }
+    .tag { display:inline-block; margin:10px 5px 0 0; padding:4px 7px; border:1px solid rgba(180,255,57,.28); color:var(--lime); font:10px var(--font-mono); }
+    .empty { grid-column:1/-1; padding:60px 20px; color:var(--muted); text-align:center; border:1px dashed var(--line); }
+    dialog { width:min(1240px,calc(100% - 28px)); max-height:calc(100% - 28px); padding:0; border:1px solid var(--lime); background:#090b0c; color:var(--text); box-shadow:0 24px 100px rgba(0,0,0,.72); }
+    dialog::backdrop { background:rgba(2,3,3,.86); backdrop-filter:blur(7px); }
+    .modal-head { display:flex; justify-content:space-between; gap:20px; align-items:start; padding:18px 20px; border-bottom:1px solid var(--line); }
+    .modal-head h2 { margin:0 0 7px; font-family:var(--font-display); font-size:22px; font-weight:500; overflow-wrap:anywhere; }
+    .modal-head p { margin:0; color:var(--muted); font:11px/1.4 var(--font-mono); overflow-wrap:anywhere; }
+    .close { border:1px solid var(--orange); background:transparent; color:var(--orange); padding:8px 11px; cursor:pointer; font:700 16px var(--font-mono); }
+    .modal-body { padding:20px; display:grid; grid-template-columns:minmax(0,1fr) 300px; gap:20px; align-items:start; min-height:300px; }
+    .modal-body img { display:block; width:100%; max-height:72vh; object-fit:contain; background:#050606; }
+    .schema { border:1px solid var(--line); background:var(--panel); padding:14px; min-height:240px; }
+    .schema h3 { margin:0 0 12px; color:var(--lime); font:700 11px var(--font-mono); letter-spacing:.13em; text-transform:uppercase; }
+    .schema dl { margin:0; display:grid; gap:9px; }
+    .schema dt { color:var(--orange); font:10px var(--font-mono); text-transform:uppercase; }
+    .schema dd { margin:2px 0 0; color:#d4ddd2; font:11px/1.4 var(--font-mono); overflow-wrap:anywhere; }
+    .schema a { color:var(--lime); }
+    .schema .none { color:var(--muted); font-size:12px; line-height:1.5; }
+    @media (max-width:720px) { .wrap { width:min(100% - 24px,1400px); } header { padding-top:34px; grid-template-columns:1fr; } .stats { justify-content:flex-start; } .count { margin-left:0; width:100%; } .grid { column-width:180px; column-gap:10px; } .card { margin-bottom:10px; } .modal-body { grid-template-columns:1fr; } }
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <header>
+      <div>
+        <div class="eyebrow">HPAnalytic / Lab / Archive</div>
+        <h1>Hazine<br><span style="color:var(--lime)">Odası</span></h1>
+        <p class="intro">Görsel galeri ve keşif alanı. Pas ağları, taktik haritalar, kaleci panoları ve görsel motorun katmanları; kaynak klasör yapısı korunarak tek bir odada.</p>
+      </div>
+      <div class="stats" aria-label="Galeri istatistikleri">
+        <div class="stat"><strong id="total">—</strong><span>görsel</span></div>
+        <div class="stat"><strong id="pngs">—</strong><span>PNG</span></div>
+        <div class="stat"><strong id="svgs">—</strong><span>SVG</span></div>
+      </div>
+    </header>
+  </main>
+  <section class="toolbar"><div class="wrap toolbar-inner">
+    <input id="search" type="search" placeholder="Görsel, klasör veya etiket ara…" aria-label="Galeride ara">
+    <select id="group" aria-label="Görsel ailesi"><option value="">Tüm aileler</option></select>
+    <select id="format" aria-label="Dosya formatı"><option value="">Tüm formatlar</option><option value="png">PNG</option><option value="svg">SVG</option></select>
+    <span class="count" id="count">Manifest yükleniyor…</span>
+  </div></section>
+  <main class="wrap"><section class="grid" id="gallery" aria-live="polite"></section></main>
+  <dialog id="viewer"><div class="modal-head"><div><h2 id="modal-title"></h2><p id="modal-path"></p></div><button class="close" id="close" aria-label="Kapat">×</button></div><div class="modal-body"><img id="modal-image" alt=""><aside class="schema"><h3>JSON / provenance</h3><div id="modal-schema"></div></aside></div></dialog>
+  <script>
+    const state = { all: [], filtered: [] };
+    const $ = (id) => document.getElementById(id);
+    const pretty = (value) => value.replace(/\.[^.]+$/, '').replace(/[-_]+/g, ' ').replace(/\b\w/g, (c) => c.toUpperCase());
+    const familyOf = (item) => item.family || 'Hazine';
+    function render() {
+      const query = $('search').value.trim().toLowerCase();
+      const group = $('group').value;
+      const format = $('format').value;
+      state.filtered = state.all.filter((item) => {
+        const haystack = [item.path, item.title, item.family, ...(item.tags || [])].join(' ').toLowerCase();
+        return (!query || haystack.includes(query)) && (!group || familyOf(item) === group) && (!format || item.type === format);
+      });
+      $('count').textContent = `${state.filtered.length} / ${state.all.length} gösteriliyor`;
+      $('gallery').innerHTML = state.filtered.length ? state.filtered.map((item, index) => `
+        <article class="card" data-index="${index}">
+          <div class="thumb" tabindex="0" role="button" aria-label="${item.title} görselini büyüt"><img loading="lazy" src="${item.url}" alt="${item.title}" onerror="this.closest('.card').remove()"></div>
+          <div class="meta"><span class="type">${item.type}</span><h2 class="title">${item.title}</h2><div class="path">${item.path}</div>${(item.tags || []).map((tag) => `<span class="tag">${tag}</span>`).join('')}</div>
+        </article>`).join('') : '<div class="empty">Bu filtrelerle eşleşen görsel bulunamadı.</div>';
+      document.querySelectorAll('.card').forEach((card) => { const open = () => openViewer(state.filtered[Number(card.dataset.index)]); card.querySelector('.thumb').addEventListener('click', open); card.querySelector('.thumb').addEventListener('keydown', (event) => { if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); open(); } }); });
+    }
+    function openViewer(item) {
+      if (!item) return;
+      $('modal-title').textContent = item.title; $('modal-path').textContent = item.path; $('modal-image').src = item.url; $('modal-image').alt = item.title;
+      const fields = item.schema || {};
+      const sources = item.jsonSources || [];
+      $('modal-schema').innerHTML = Object.keys(fields).length ? `<dl>${Object.entries(fields).map(([key, value]) => `<div><dt>${key}</dt><dd>${typeof value === 'object' ? JSON.stringify(value) : String(value)}</dd></div>`).join('')}</dl>${sources.length ? `<p class="path" style="margin-top:16px">Kaynak JSON</p>${sources.map((source) => `<a href="${source.url}" target="_blank" rel="noreferrer">${source.name}</a>`).join('<br>')}` : ''}` : '<p class="none">Bu görsel için klasör ağacında okunabilir şema alanı bulunamadı. Kaynak yolu korunuyor.</p>';
+      $('viewer').showModal();
+    }
+    $('close').addEventListener('click', () => $('viewer').close());
+    $('viewer').addEventListener('click', (event) => { if (event.target === $('viewer')) $('viewer').close(); });
+    ['search', 'group', 'format'].forEach((id) => $(id).addEventListener('input', render));
+    fetch('/assets/hazine-manifest.json').then((response) => response.json()).then((items) => {
+      state.all = items; $('total').textContent = items.length; $('pngs').textContent = items.filter((item) => item.type === 'png').length; $('svgs').textContent = items.filter((item) => item.type === 'svg').length;
+      [...new Set(items.map(familyOf))].sort((a,b) => a.localeCompare(b, 'tr')).forEach((family) => { const option = document.createElement('option'); option.value = family; option.textContent = family; $('group').append(option); }); render();
+    }).catch(() => { $('count').textContent = 'Manifest yüklenemedi'; $('gallery').innerHTML = '<div class="empty">Hazine manifesti okunamadı.</div>'; });
+  </script>
+</body>
+</html>

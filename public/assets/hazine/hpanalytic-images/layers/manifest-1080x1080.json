@@ -1,0 +1,155 @@
+{
+  "layers": [
+    {
+      "file": "L-ground-1080x1080.png",
+      "id": "ground",
+      "title": "1. Temel saha zemini",
+      "evidence": "n/a"
+    },
+    {
+      "file": "L-lines-1080x1080.png",
+      "id": "lines",
+      "title": "2. Saha cizgileri",
+      "evidence": "n/a"
+    },
+    {
+      "file": "L-xt-1080x1080.png",
+      "id": "xt",
+      "title": "3. xT tehdit gridi",
+      "evidence": "blue (model)"
+    },
+    {
+      "file": "L-player_pos-1080x1080.png",
+      "id": "player_pos",
+      "title": "4. Oyuncu konumlari",
+      "evidence": "amber (gozlem)"
+    },
+    {
+      "file": "L-player_fig-1080x1080.png",
+      "id": "player_fig",
+      "title": "5. Oyuncu figurleri",
+      "evidence": "amber (gozlem)"
+    },
+    {
+      "file": "L-halos-1080x1080.png",
+      "id": "halos",
+      "title": "6. Oyuncu hareleri",
+      "evidence": "dekoratif (kavramsal)"
+    },
+    {
+      "file": "L-active-1080x1080.png",
+      "id": "active",
+      "title": "7. Aktif oyuncu vurgulari",
+      "evidence": "amber (odak)"
+    },
+    {
+      "file": "L-pass_links-1080x1080.png",
+      "id": "pass_links",
+      "title": "8. Normal pas baglantilari",
+      "evidence": "amber (gozlem)"
+    },
+    {
+      "file": "L-freq_thickness-1080x1080.png",
+      "id": "freq_thickness",
+      "title": "9. Tekrara gore baglanti kalinliklari",
+      "evidence": "amber (gozlem)"
+    },
+    {
+      "file": "L-threat_emphasis-1080x1080.png",
+      "id": "threat_emphasis",
+      "title": "10. Tehdide gore iliski vurgulari",
+      "evidence": "blue (model)"
+    },
+    {
+      "file": "L-xg_motifs-1080x1080.png",
+      "id": "xg_motifs",
+      "title": "11. Gol beklentisi ureten tekrarli pas orguleri",
+      "evidence": "amber (odak)"
+    },
+    {
+      "file": "L-goal_chain-1080x1080.png",
+      "id": "goal_chain",
+      "title": "12. Golu olusturan aksiyon zinciri",
+      "evidence": "amber (gozlem)"
+    },
+    {
+      "file": "L-chain_vs_xg-1080x1080.png",
+      "id": "chain_vs_xg",
+      "title": "13. Zincir xT / sut xG / gerceklesen karsilastirmasi",
+      "evidence": "mixed (gozlem != model)"
+    },
+    {
+      "file": "L-meta-1080x1080.png",
+      "id": "meta",
+      "title": "14. Lejant ve kanit bandi (veri-disi)",
+      "evidence": "n/a (bant)"
+    }
+  ],
+  "production_order": [
+    "ground",
+    "lines",
+    "xt",
+    "player_pos",
+    "player_fig",
+    "halos",
+    "active",
+    "pass_links",
+    "freq_thickness",
+    "threat_emphasis",
+    "xg_motifs",
+    "goal_chain",
+    "chain_vs_xg",
+    "meta"
+  ],
+  "composite_order": [
+    "ground",
+    "lines",
+    "xt",
+    "pass_links",
+    "freq_thickness",
+    "threat_emphasis",
+    "halos",
+    "player_pos",
+    "player_fig",
+    "active",
+    "xg_motifs",
+    "goal_chain",
+    "chain_vs_xg",
+    "meta"
+  ],
+  "composite": "composite-1080x1080.png",
+  "size": [
+    1080,
+    1080
+  ],
+  "pitch_m": [
+    105.0,
+    68.0
+  ],
+  "xt_model": "HPAnalytic xT v1",
+  "xt_sample": {
+    "matches_used": 40,
+    "passes": 6029,
+    "shots": 987
+  },
+  "match_id": 15946,
+  "team": "Barcelona",
+  "notes": [
+    "konumlar pas olaylari ortalamasidir (kavramsal yerlesim)",
+    "hareler dekoratif/kavramsaldir, olcum degildir",
+    "xT = model (blue), gol zinciri ve bitiricilik = gozlem (amber); karistirilmaz"
+  ],
+  "active": [
+    "Alba",
+    "Messi",
+    "Rakitić"
+  ],
+  "links": 55,
+  "motifs": 4,
+  "chain": {
+    "minute": 91,
+    "xg": 0.42062446,
+    "threat": 0.684,
+    "n_steps": 8
+  }
+}

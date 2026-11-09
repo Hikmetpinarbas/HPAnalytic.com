@@ -1,0 +1,41 @@
+{
+  "project_id": "photo",
+  "source_id": "NH96919-KN",
+  "original_data_paths": [
+    "../examples/assets/grace_hopper-original.jpg"
+  ],
+  "source_licenses": [
+    "US Navy public domain; see PHOTO_LICENSE.json"
+  ],
+  "data_type": "OBSERVED",
+  "coordinate_system": "not spatial football data",
+  "attack_direction": null,
+  "temporal_resolution": null,
+  "players": [],
+  "ball": null,
+  "events": [],
+  "analytic_claim": "Demonstration only; no observed-match claim",
+  "visual_grammar": "licensed photo composition",
+  "scene_layers": [
+    "Background",
+    "Coordinate system",
+    "Actors",
+    "Ball and events",
+    "Tactical relations",
+    "Analytical surface",
+    "Editorial explanation",
+    "Typography and credits"
+  ],
+  "captions": [],
+  "output_targets": [
+    "SVG",
+    "PNG",
+    "HTML"
+  ],
+  "editorial_credits": [
+    "Analiz ve çizim: HPAnalytic",
+    "Fotoğraf: James S. Davis / US Navy"
+  ],
+  "verification_status": "demo",
+  "production_job": "../examples/photo.json"
+}

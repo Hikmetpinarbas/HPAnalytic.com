@@ -132,7 +132,7 @@ _Ham tag: 3493 → Benzersiz pencere: 1275 (ort. 2.7 tag/pencere)_
 |---|---|
 
 
-![Pas Ağı Görseli](/sdcard/HPAnaliz/Analiz/sosyal_medya/pass_net_Liverpool_FC.png)
+![Pas Ağı Görseli](/assets/images/pass_net_Liverpool_FC.png)
 
 ---
 

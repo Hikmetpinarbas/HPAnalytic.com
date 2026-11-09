@@ -1,4 +1,4 @@
-import { readFileSync, readdirSync, writeFileSync, mkdirSync } from 'node:fs';
+import { readFileSync, readdirSync, writeFileSync, mkdirSync, cpSync } from 'node:fs';
 import { resolve } from 'node:path';
 import { marked } from 'marked';
 import * as esbuild from 'esbuild';
@@ -6,11 +6,34 @@ import * as esbuild from 'esbuild';
 const SRC = resolve('content/yazilar');
 const OUT = resolve('public/yazi');
 mkdirSync(OUT, { recursive: true });
+const semanticSource = resolve('_hazine/veri_beyni/HP_SEMANTIC_DATA_INTELLIGENCE');
+const semanticPublic = resolve('public/hazine/veri_beyni/HP_SEMANTIC_DATA_INTELLIGENCE');
+cpSync(semanticSource, semanticPublic, { recursive: true });
+console.log('OK hazine veri sözlüğü public alana kopyalandı');
 await esbuild.build({ entryPoints: ['src/js/article-viz.js'], bundle: true, format: 'esm', outfile: 'public/assets/js/article-viz.js', minify: true, target: 'es2020', logLevel: 'silent' });
 console.log('OK article-viz.js bundle edildi');
+await esbuild.build({ entryPoints: ['src/js/gsap-micro.js'], bundle: true, format: 'iife', outfile: 'public/gsap-micro.js', minify: true, target: 'es2020', logLevel: 'silent' });
+console.log('OK gsap-micro.js bundle edildi');
 
 const TYPE_LABEL = { mac: 'Maç Dosyası', metrik: 'Metrik', portre: 'Portre', scouting: 'Scouting', kultur: 'Kültür', articles: 'Analiz', portraits: 'Portre' };
 const TYPE_COLOR = { mac: '#B4FF39', metrik: '#D4A548', portre: '#FF6B35', scouting: '#6B9FE8', kultur: '#9B7BB8', articles: '#B4FF39', portraits: '#FF6B35' };
+
+const ARTICLE_MOTION = {
+  pre_match:  { maxConcurrentLayers: 6, preloaderDuration: 2.0 },
+  post_match: { maxConcurrentLayers: 8, preloaderDuration: 2.5 },
+  tactical:   { maxConcurrentLayers: 8, preloaderDuration: 2.5 },
+  portrait:   { maxConcurrentLayers: 4, preloaderDuration: 1.8 },
+  metric:     { maxConcurrentLayers: 6, preloaderDuration: 2.0 },
+  culture:    { maxConcurrentLayers: 4, preloaderDuration: 2.0 },
+  mac:        { maxConcurrentLayers: 8, preloaderDuration: 2.5 },
+  metrik:     { maxConcurrentLayers: 6, preloaderDuration: 2.0 },
+  portre:     { maxConcurrentLayers: 4, preloaderDuration: 1.8 },
+  scouting:   { maxConcurrentLayers: 6, preloaderDuration: 2.0 },
+  kultur:     { maxConcurrentLayers: 4, preloaderDuration: 2.0 },
+  articles:   { maxConcurrentLayers: 6, preloaderDuration: 2.0 },
+  portraits:  { maxConcurrentLayers: 4, preloaderDuration: 1.8 },
+  default:    { maxConcurrentLayers: 6, preloaderDuration: 2.0 },
+};
 
 function esc(s) { return String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c])); }
 
@@ -58,7 +81,6 @@ a{color:inherit;text-decoration:none}
 /* Article */
 .article{max-width:720px;font-size:17px;line-height:1.8;color:#E4E2DC}
 @media(min-width:768px){.article{font-size:18px}}
-.article > p:first-of-type::first-letter{font-family:var(--serif);font-size:5em;line-height:1;float:left;padding:6px 12px 0 0;color:var(--neon);font-weight:500}
 .article h2{font-family:var(--serif);font-weight:400;font-size:clamp(26px,4vw,40px);line-height:1.15;letter-spacing:-.02em;margin:64px 0 20px;color:var(--ink);scroll-margin-top:100px}
 .article h3{font-family:var(--serif);font-weight:500;font-size:clamp(20px,3vw,26px);line-height:1.25;margin:40px 0 16px;color:var(--ink);scroll-margin-top:100px}
 .article p{margin:0 0 24px}
@@ -266,6 +288,56 @@ html{opacity:1;transition:opacity .22s cubic-bezier(.2,.9,.3,1)}html.page-leavin
   .viz-title { flex-direction: column; gap: 0.5rem; }
 }
 
+/* HPAnalytic Katmanlı Saha — dark board / layer rail */
+[data-visual-body="pitch-layers"] {
+  --bg:#08090B; --bg-elev:#0D0E12; --ink:#F4F2EC; --ink-soft:#8A8A93;
+  --line:#1B1B21; --line-bright:#2A2B33; --neon:#B4FF39; --orange:#FF6B35;
+  --serif:'Newsreader',Georgia,serif; --mono:'JetBrains Mono',ui-monospace,monospace;
+  margin:4rem 0; padding:2.25rem 0 0; min-height:0; background:transparent;
+  border-top:1px solid var(--line); border-bottom:0; overflow:visible;
+}
+.pl-header { display:flex; align-items:baseline; gap:.75rem; flex-wrap:wrap; margin:0 0 1.25rem; padding:0 0 1rem; border-bottom:1px solid var(--line); }
+.pl-title { color:var(--ink); font:400 clamp(1.45rem,4vw,2.25rem)/1 var(--serif); letter-spacing:-.02em; }
+.pl-subtitle { color:var(--ink-soft); font:italic 400 clamp(1rem,2.2vw,1.25rem)/1.2 var(--serif); }
+.pl-svg-wrap { width:100%; max-width:960px; margin:0 auto; padding:clamp(10px,2vw,24px); background:var(--bg); border:1px solid var(--line); box-shadow:0 18px 48px rgba(0,0,0,.28); }
+.pl-svg-wrap svg { display:block; width:100%; background:var(--bg) !important; cursor:crosshair; }
+.pl-svg-wrap svg [data-hpa-layer] { transition:filter .25s ease; }
+.pl-svg-wrap svg [data-event] { cursor:pointer; transform-box:fill-box; transform-origin:center; }
+.pl-svg-wrap svg [data-hpa-layer="pitch"] rect { fill:var(--bg) !important; stroke:var(--neon) !important; }
+.pl-svg-wrap svg [data-hpa-layer="halfway"] *,
+.pl-svg-wrap svg [data-hpa-layer="penalty_boxes"] *,
+.pl-svg-wrap svg [data-hpa-layer="goals"] * { fill:none !important; stroke:#F8F6F0 !important; }
+.pl-svg-wrap svg [data-hpa-layer^="team_a_"] * { fill:var(--neon) !important; stroke:var(--neon) !important; }
+.pl-svg-wrap svg [data-hpa-layer^="team_b_"] * { fill:var(--orange) !important; stroke:var(--orange) !important; }
+.pl-svg-wrap svg [data-hpa-layer="counterattack_involvements"] *,
+.pl-svg-wrap svg [data-hpa-layer="set_piece_involvements"] * { stroke:var(--orange) !important; }
+.pl-svg-wrap svg [data-hpa-layer="carry_events"] * { fill:var(--neon) !important; stroke:var(--neon) !important; }
+.pl-svg-wrap svg [data-hpa-layer] [data-event] { stroke-dasharray:8 5; stroke-dashoffset:0; transition:filter .2s ease; }
+.pl-svg-wrap svg [data-event]:hover { filter:drop-shadow(0 0 6px currentColor); }
+.pl-dock { position:sticky; bottom:14px; z-index:4; display:flex; flex-direction:column; gap:8px; width:min(960px,100%); margin:12px auto 0; padding:10px; background:rgba(13,14,18,.92); border:1px solid var(--line-bright); box-shadow:0 14px 35px rgba(0,0,0,.35); }
+.pl-category-rail { display:flex; gap:6px; flex-wrap:wrap; }
+.pl-category.cmd-btn { min-height:34px; padding:8px 12px; color:var(--ink-soft); background:transparent; border-color:var(--line); border-radius:999px; font:500 10px/1 var(--mono); letter-spacing:.16em; text-transform:uppercase; cursor:pointer; }
+.pl-category.cmd-btn:hover,.pl-category.cmd-btn.is-open { color:var(--ink); border-color:var(--line-bright); }
+.pl-category.team_a.is-open { color:var(--neon); border-color:var(--neon); box-shadow:0 0 14px rgba(180,255,57,.18); }
+.pl-category.team_b.is-open { color:var(--orange); border-color:var(--orange); box-shadow:0 0 14px rgba(255,107,53,.18); }
+.pl-subrail { display:none; gap:6px; flex-wrap:wrap; padding-top:2px; }
+.pl-subrail.is-open { display:flex; }
+.pl-layer-btn { appearance:none; border:1px solid var(--line); border-radius:999px; padding:7px 10px; color:var(--ink-soft); background:rgba(8,9,11,.72); font:500 9px/1.2 var(--mono); letter-spacing:.06em; cursor:pointer; transition:color .2s,border-color .2s,box-shadow .2s,background .2s; }
+.pl-layer-btn:hover { color:var(--ink); border-color:var(--line-bright); }
+.pl-layer-btn.is-on { color:var(--neon); border-color:rgba(180,255,57,.75); background:rgba(180,255,57,.1); box-shadow:0 0 12px rgba(180,255,57,.18); }
+.pl-layer-btn.team_b.is-on { color:var(--orange); border-color:rgba(255,107,53,.78); background:rgba(255,107,53,.1); box-shadow:0 0 12px rgba(255,107,53,.18); }
+.pl-layer-btn.team_a.is-on { color:var(--neon); }
+.pl-loading { min-height:220px; display:grid; place-items:center; color:var(--neon); font:10px var(--mono); letter-spacing:.22em; }
+@media (min-width:769px) { .pl-dock { backdrop-filter:blur(16px); -webkit-backdrop-filter:blur(16px); } }
+@media (max-width:640px) {
+  [data-visual-body="pitch-layers"] { margin:2.5rem -0.5rem 1rem; padding-top:1.5rem; }
+  .pl-svg-wrap { border-left:0; border-right:0; padding:8px 0; }
+  .pl-dock { position:sticky; bottom:0; margin:8px -0.5rem 0; width:calc(100% + 1rem); border-left:0; border-right:0; border-radius:0; background:var(--bg-elev); }
+  .pl-category-rail,.pl-subrail { overflow-x:auto; flex-wrap:nowrap; scrollbar-width:none; }
+  .pl-category-rail::-webkit-scrollbar,.pl-subrail::-webkit-scrollbar { display:none; }
+  .pl-category.cmd-btn,.pl-layer-btn { flex:0 0 auto; }
+}
+
 `;
 
 
@@ -318,9 +390,29 @@ function buildTOC(html) {
   return { html: newHtml, toc: tocItems };
 }
 
+function titleFromFilename(file) {
+  return file
+    .replace(/\.md$/i, '')
+    .replace(/^\d{4}-\d{2}-\d{2}[-_]?/, '')
+    .replace(/(?:[-_](?:llm|draft|final|v\d+))$/i, '')
+    .replace(/[-_]+/g, ' ')
+    .trim()
+    .split(/\s+/)
+    .map(word => /^(vs|xg|xt)$/i.test(word) ? word.toLowerCase() : word.charAt(0).toUpperCase() + word.slice(1))
+    .join(' ');
+}
+
+function resolveTitle(meta, body, file) {
+  const heading = body.match(/^#\s+(.+)$/m)?.[1]?.trim();
+  const candidate = heading || meta.title?.trim();
+  const looksLikeSlug = candidate && /^(?:\d{4}-\d{2}-\d{2}-)?[a-z0-9]+(?:-[a-z0-9]+)+$/i.test(candidate);
+  return candidate && !looksLikeSlug ? candidate : titleFromFilename(file);
+}
+
 function page({ title, bodyHtml, type, typeLabel, typeColor, date, read, excerpt, source, related, portrait = '', portrait_credit = '' }) {
   const { html: articleHtml, toc } = buildTOC(bodyHtml);
-  return `<!doctype html><html lang="tr"><head><meta charset="utf-8"/><style>html{background:#08090B}body{background:#08090B;color:#F4F2EC;margin:0}</style><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/><meta name="theme-color" content="#08090B"/><title>${esc(title)} — HP//Analytic</title><meta name="description" content="${esc(excerpt || title)}"/><meta property="og:title" content="${esc(title)}"/><meta property="og:description" content="${esc(excerpt || title)}"/><meta property="og:type" content="article"/><meta property="og:site_name" content="HPAnalytic"/>${portrait ? `<meta property="og:image" content="https://hpanalytic.com${portrait}"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:image" content="https://hpanalytic.com${portrait}"/>` : '<meta name="twitter:card" content="summary"/>'}<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;700&family=JetBrains+Mono:wght@400;500;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet"><style>${CSS}</style></head><body>
+  const motion = ARTICLE_MOTION[type] || ARTICLE_MOTION.default;
+  return `<!doctype html><html lang="tr"><head><meta charset="utf-8"/><style>html{background:#08090B}body{background:#08090B;color:#F4F2EC;margin:0}</style><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/><meta name="theme-color" content="#08090B"/><title>${esc(title)} — HP//Analytic</title><meta name="description" content="${esc(excerpt || title)}"/><meta property="og:title" content="${esc(title)}"/><meta property="og:description" content="${esc(excerpt || title)}"/><meta property="og:type" content="article"/><meta property="og:site_name" content="HPAnalytic"/>${portrait ? `<meta property="og:image" content="https://hpanalytic.com${portrait}"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:image" content="https://hpanalytic.com${portrait}"/>` : '<meta name="twitter:card" content="summary"/>'}<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;700&family=JetBrains+Mono:wght@400;500;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet"><style>${CSS}</style></head><body data-article-type="${esc(type)}" data-max-layers="${motion.maxConcurrentLayers}" data-preloader-duration="${motion.preloaderDuration}">
 <div class="progress-bar" id="progress"></div>
 <a href="/" class="back">← Ana sayfa</a>
 <section class="hero">
@@ -396,7 +488,8 @@ for (const file of files) {
   if (!/^[a-z0-9-]+$/.test(slug)) { console.warn('⚠ Geçersiz slug: ' + file); continue; }
   const parsedRead = Number(meta.read);
   const read = Number.isFinite(parsedRead) && parsedRead > 0 ? parsedRead : Math.max(1, Math.ceil(m[2].split(/\s+/).length / 200));
-  const article = { slug, title: meta.title || '', type: meta.type || 'articles', excerpt: meta.excerpt || '', date: meta.date || '', read, source: meta.source || '', portrait, portrait_credit, body: m[2].trim().replace(/^#\s+.*$/m, '').trim() };
+  const sourceBody = m[2].trim();
+  const article = { slug, title: resolveTitle(meta, sourceBody, file), type: meta.type || 'articles', excerpt: meta.excerpt || '', date: meta.date || '', read, source: meta.source || '', portrait, portrait_credit, body: sourceBody.replace(/^#\s+.*$/m, '').trim() };
   const previous = selectedSources.get(slug);
   if (previous) {
     // The slug-named Markdown is canonical. Never allow a second filename

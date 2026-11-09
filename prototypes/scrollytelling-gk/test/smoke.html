@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="tr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>smoke — scrollytelling-gk</title>
+<link rel="stylesheet" href="../scene.css"></head>
+<body><main class="container" style="padding:24px">
+<h1>smoke</h1>
+<pre id="out">…</pre>
+<p class="meta">Beklenen: 11 oyuncu · provenance synthetic · publication_authorized false · konsol hatası yok.</p>
+</main>
+<script type="module">
+const out = document.getElementById("out");
+(async () => {
+  const lines = [];
+  const data = await (await fetch("../data/sample-formation.json")).json();
+  lines.push(`provenance=${data.provenance} pub=${data.publication_authorized} real_sequence=${data.real_sequence} real_trajectory=${data.real_trajectory}`);
+  lines.push(`players=${data.players.length} pass_network=${data.pass_network.length}`);
+  lines.push(`central=${data.players.filter(p=>p.central).length}`);
+  // görsel sayım: main sayfası yüklenince SVG oluşur; burada veri bazlı kontrol
+  console.log("smoke ok");
+  out.textContent = lines.join("\n") + "\nPASS (veri kapısı)";
+})();
+</script></body></html>

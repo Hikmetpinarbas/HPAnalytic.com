@@ -1,0 +1,123 @@
+{
+  "layers": [
+    {
+      "file": "L-ground-1280x720.png",
+      "id": "ground",
+      "title": "1. Temel saha zemini",
+      "evidence": "n/a"
+    },
+    {
+      "file": "L-lines-1280x720.png",
+      "id": "lines",
+      "title": "2. Saha cizgileri",
+      "evidence": "n/a"
+    },
+    {
+      "file": "L-zone_baseline-1280x720.png",
+      "id": "zone_baseline",
+      "title": "Gol bolgesi referansi (model)",
+      "evidence": "blue (model)"
+    },
+    {
+      "file": "L-shot_density-1280x720.png",
+      "id": "shot_density",
+      "title": "Sut yogunlugu (gozlem, olay sayimi)",
+      "evidence": "amber (gozlem)"
+    },
+    {
+      "file": "L-keypass_arrows-1280x720.png",
+      "id": "keypass_arrows",
+      "title": "Asistle gelen sutlar",
+      "evidence": "amber (gozlem)"
+    },
+    {
+      "file": "L-shots-1280x720.png",
+      "id": "shots",
+      "title": "Sutlar (boy=xG, renk=sonuc)",
+      "evidence": "amber (gozlem)"
+    },
+    {
+      "file": "L-shot_emphasis-1280x720.png",
+      "id": "shot_emphasis",
+      "title": "En buyuk firsat vurgusu",
+      "evidence": "amber (odak)"
+    },
+    {
+      "file": "L-shot_labels-1280x720.png",
+      "id": "shot_labels",
+      "title": "xG dogrudan etiketleri",
+      "evidence": "amber (gozlem)"
+    },
+    {
+      "file": "L-shot_annotation-1280x720.png",
+      "id": "shot_annotation",
+      "title": "Sut okumasi (tek panel)",
+      "evidence": "mixed (gozlem)"
+    },
+    {
+      "file": "L-meta-1280x720.png",
+      "id": "meta",
+      "title": "14. Lejant ve kanit bandi (veri-disi)",
+      "evidence": "n/a (bant)"
+    }
+  ],
+  "production_order": [
+    "ground",
+    "lines",
+    "zone_baseline",
+    "shot_density",
+    "keypass_arrows",
+    "shots",
+    "shot_emphasis",
+    "shot_labels",
+    "shot_annotation",
+    "meta"
+  ],
+  "composite_order": [
+    "ground",
+    "lines",
+    "zone_baseline",
+    "shot_density",
+    "keypass_arrows",
+    "shots",
+    "shot_emphasis",
+    "shot_labels",
+    "shot_annotation",
+    "meta"
+  ],
+  "composite": "composite-1280x720.png",
+  "size": [
+    1280,
+    720
+  ],
+  "pitch_m": [
+    105.0,
+    68.0
+  ],
+  "xt_model": "HPAnalytic xT v1",
+  "xt_sample": {
+    "matches_used": 40,
+    "passes": 6029,
+    "shots": 987
+  },
+  "match_id": 15946,
+  "team": "Barcelona",
+  "notes": [
+    "satir ici: sutlar StatsBomb events gozlemi; xT ve gol bolgesi model",
+    "sut yogunlugu olay sayimidir (tracking degil); kavramsal/isinli degil",
+    "amber = gozlem/odak, blue = model, red = ihlal; karistirilmaz"
+  ],
+  "active": [
+    "Alba",
+    "Messi",
+    "Rakitić"
+  ],
+  "links": 0,
+  "motifs": 0,
+  "chain": null,
+  "shots": {
+    "n": 25,
+    "xg_total": 2.66,
+    "goals": 3
+  }
+}

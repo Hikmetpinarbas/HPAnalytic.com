@@ -1,0 +1,11 @@
+{
+  "title": "Aynı lig, farklı hücum eğilimleri",
+  "description": "Harsh Krishna repertuvarındaki comet gramerinden esinlenen bağımsız uygulama. Tüm değerler sentetik.",
+  "unit": "/90",
+  "source": "Visual Factory / authored demo",
+  "license": "Original authored demo geometry and synthetic fixtures; project LICENSE",
+  "provenance": {
+    "kind": "synthetic",
+    "method": "deterministically authored example; not an observed match"
+  }
+}

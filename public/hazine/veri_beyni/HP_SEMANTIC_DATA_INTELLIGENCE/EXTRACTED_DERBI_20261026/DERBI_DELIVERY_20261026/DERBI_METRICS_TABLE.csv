@@ -1,0 +1,29 @@
+Metrik Kodu,Türkçe Tanım,Fenerbahçe Değeri,Galatasaray Değeri,Süper Lig Medyanı,Metodolojik Tanım / Payda
+Goals,Atılan Gol,22,17,11.60,"Numerator: Sayılan Goller, Denominator: Tamamlanan Karşılaşmalar"
+xG (expected goals),Beklenen Gol,22.3,19.94,11.27,Şut bazlı olasılık modeli toplamı
+OxG (opponent's xG),Rakip Beklenen Gol,9.53,8.67,12.46,Kalede görülen şutların xG toplamı
+"NxG (net xG, difference between xG and OxG)",Net Beklenen Gol,12.77,11.27,-1.06,xG - OxG farkı
+xGC (xG conversion),xG Dönüşüm Verimliliği,0.99,0.85,0.90,Goals / xG oranı
+xGPS (xG per shot),Şut Başına xG Kalitesi,0.17,0.12,0.12,xG / Toplam Şut
+Shots,Toplam Şut,135,161,95.00,"Tüm bloklanan, isabetli ve dışarı giden şutlar"
+Shots on target,İsabetli Şut,60,66,34.00,Kaleyi bulan şutlar
+Chances,Gol Fırsatları,88,84,46.00,Net fırsat tanımlı hücum aksiyonları
+"Chances successful, %",Fırsat Başarı Yüzdesi,0.25,0.2024,0.22,Gole çevrilen fırsat oranı
+"Ball possession, %",Topa Sahip Olma Yüzdesi,0.541,0.5846,0.50,Topla oynama süresi oranı
+Passes,Toplam Pas,4375,4328,3752.00,Tüm pas denemeleri
+"Passes accurate, %",İsabetli Pas Yüzdesi,0.8697,0.8505,0.84,Doğru hedefe ulaşan pas oranı
+Key passes,Kilit Paslar,142,78,60.00,Şutla veya şut pozisyonuyla biten paslar
+Passes into the penalty box,Ceza Sahasına Pas,271,321,189.00,Rakip 18 içine atılan paslar
+"Passes into the penalty box accurate, %",Ceza Sahasına Pas İsabeti,0.5387,0.5357999999999999,0.47,Ceza sahasına isabetli pas oranı
+Actions in opponent's box,Rakip Ceza Sahası Aksiyonları,342,399,205.00,Ceza sahası içi temas ve eylemler
+Positional attacks,Yerleşik / Pozisyonel Hücum,438,516,451.00,Düzenli hücum sekansları
+Positional attacks with shots,Şutla Biten Pozisyonel Hücum,62,89,53.00,Şuta ulaşan yerleşik ataklar
+Counterattacks,Hızlı Hücum / Kontratak,114,103,96.00,Geçiş fazında başlayan hücumlar
+Counterattacks with shots,Şutla Biten Kontratak,32,21,19.20,Şutla tamamlanan geçiş atakları
+Challenges,Toplam İkili Mücadele,1013,1030,1049.40,Tüm temaslı mücadeleler
+"Challenges won, %",Kazanılan İkili Mücadele %,0.5291,0.535,0.50,Mücadele başarı oranı
+Aerial challenges,Hava Topu Mücadelesi,164,291,237.00,Havadaki ikili mücadeleler
+"Aerial challenges won, %",Kazanılan Hava Topu %,0.5244,0.5326,0.50,Hava topu üstünlük oranı
+PPDA,PPDA (Pres Hızı/Yoğunluğu),6.08,5.04,6.80,Rakip Pasları / Kendi Defansif Aksiyonları (Ön 60m)
+"High pressing successful, %",Yüksek Pres Başarı %,0.4571,0.5833,0.49,Ön alanda top kazandıran pres oranı
+Ball losses in own half,Kendi Yarı Alan Top Kaybı,92,75,106.00,İlk ve ikinci bölgedeki kayıplar

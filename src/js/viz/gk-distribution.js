@@ -1,5 +1,6 @@
 import * as d3 from 'd3';
 import { gsap } from 'gsap';
+import { ease, duration } from '../motion-tokens.js';
 
 const C = { text:'#F4F2EC', muted:'rgba(244,242,236,0.4)', neon:'#B4FF39', orange:'#FF6B35', line:'rgba(180,255,57,0.12)', pitch:'rgba(20,24,28,0.6)' };
 const TYPE_COLOR = { short: C.neon, medium: '#E8D44D', long: C.orange };
@@ -63,8 +64,8 @@ function renderCard(parent, gk, side) {
 
   // Animate numbers
   const nums = card.querySelectorAll('.gk-num');
-  gsap.fromTo(nums[0], {textContent:0}, {textContent: gk.passes, duration:1.4, ease:'power2.out', snap:{textContent:1}});
-  gsap.fromTo(nums[1], {textContent:0}, {textContent: gk.accuracy_pct, duration:1.4, ease:'power2.out', snap:{textContent:1}, onUpdate: function(){ nums[1].textContent = Math.round(parseFloat(nums[1].textContent)) + '%'; }});
+  gsap.fromTo(nums[0], {textContent:0}, {textContent: gk.passes, duration: duration.cinematic, ease: ease.editorial, snap:{textContent:1}});
+  gsap.fromTo(nums[1], {textContent:0}, {textContent: gk.accuracy_pct, duration: duration.cinematic, ease: ease.editorial, snap:{textContent:1}, onUpdate: function(){ nums[1].textContent = Math.round(parseFloat(nums[1].textContent)) + '%'; }});
 
   // Mini pitch
   const svg = d3.select(card.querySelector('.gk-mini-pitch'));
@@ -92,7 +93,7 @@ function renderCard(parent, gk, side) {
   const insight = card.querySelector('.gk-insight');
   const text = insightFor(gk);
   insight.textContent = text;
-  gsap.fromTo(insight, {opacity:0, y:8}, {opacity:1, y:0, duration:0.8, delay:1.5});
+  gsap.fromTo(insight, {opacity:0, y:8}, {opacity:1, y:0, duration: duration.reveal, delay:1.5, ease: ease.editorial});
 }
 
 function insightFor(gk) {

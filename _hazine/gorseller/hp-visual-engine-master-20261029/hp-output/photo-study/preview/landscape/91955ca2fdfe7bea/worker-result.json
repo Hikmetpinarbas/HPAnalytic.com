@@ -1,0 +1,26 @@
+{
+  "assets": {
+    "svg": "scene.svg",
+    "raster": "render.png",
+    "preview": "preview.webp",
+    "active_layers": [
+      "background",
+      "source-image",
+      "geometry",
+      "annotations",
+      "typography",
+      "metadata"
+    ]
+  },
+  "warnings": [
+    "Archive source has limited native resolution; requested composition may upscale it. Use a higher-resolution licensed source for print."
+  ],
+  "worker": {
+    "seconds": 0.7412842179182917,
+    "peak_rss_bytes": 40382464,
+    "cpu_seconds": 0.8411529999999999,
+    "virtual_memory_limit_bytes": 536870912,
+    "virtual_baseline_bytes": 0,
+    "rss_limit_bytes": 536870912
+  }
+}

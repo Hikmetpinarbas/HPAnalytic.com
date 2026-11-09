@@ -1,0 +1,330 @@
+{
+  "schema": "visual-production/v1",
+  "license": "Original authored demo geometry and synthetic fixtures; project LICENSE",
+  "provenance": {
+    "kind": "synthetic",
+    "method": "deterministically authored example; not an observed match"
+  },
+  "source": "Visual Factory / authored demo",
+  "export_layer_rasters": false,
+  "id": "hp-cover",
+  "engine": "vector",
+  "title": "Oyunun görünmeyen bağlantıları",
+  "description": "Futbol araştırma dosyası için özgün, soyut vektör kapak.",
+  "shapes": [
+    {
+      "kind": "rect",
+      "layer": "background",
+      "attributes": {
+        "x": 0,
+        "y": 220,
+        "w": 1200,
+        "h": 520,
+        "fill": "#142f39"
+      }
+    },
+    {
+      "kind": "line",
+      "layer": "geometry",
+      "attributes": {
+        "points": [
+          [
+            60,
+            700
+          ],
+          [
+            600,
+            260
+          ]
+        ],
+        "stroke": "#356876",
+        "width": 2
+      }
+    },
+    {
+      "kind": "line",
+      "layer": "geometry",
+      "attributes": {
+        "points": [
+          [
+            84,
+            700
+          ],
+          [
+            632,
+            260
+          ]
+        ],
+        "stroke": "#356876",
+        "width": 2
+      }
+    },
+    {
+      "kind": "line",
+      "layer": "geometry",
+      "attributes": {
+        "points": [
+          [
+            108,
+            700
+          ],
+          [
+            664,
+            260
+          ]
+        ],
+        "stroke": "#356876",
+        "width": 2
+      }
+    },
+    {
+      "kind": "line",
+      "layer": "geometry",
+      "attributes": {
+        "points": [
+          [
+            132,
+            700
+          ],
+          [
+            696,
+            260
+          ]
+        ],
+        "stroke": "#356876",
+        "width": 2
+      }
+    },
+    {
+      "kind": "line",
+      "layer": "geometry",
+      "attributes": {
+        "points": [
+          [
+            156,
+            700
+          ],
+          [
+            728,
+            260
+          ]
+        ],
+        "stroke": "#356876",
+        "width": 2
+      }
+    },
+    {
+      "kind": "line",
+      "layer": "geometry",
+      "attributes": {
+        "points": [
+          [
+            180,
+            700
+          ],
+          [
+            760,
+            260
+          ]
+        ],
+        "stroke": "#356876",
+        "width": 2
+      }
+    },
+    {
+      "kind": "line",
+      "layer": "geometry",
+      "attributes": {
+        "points": [
+          [
+            204,
+            700
+          ],
+          [
+            792,
+            260
+          ]
+        ],
+        "stroke": "#356876",
+        "width": 2
+      }
+    },
+    {
+      "kind": "line",
+      "layer": "geometry",
+      "attributes": {
+        "points": [
+          [
+            228,
+            700
+          ],
+          [
+            824,
+            260
+          ]
+        ],
+        "stroke": "#356876",
+        "width": 2
+      }
+    },
+    {
+      "kind": "line",
+      "layer": "geometry",
+      "attributes": {
+        "points": [
+          [
+            252,
+            700
+          ],
+          [
+            856,
+            260
+          ]
+        ],
+        "stroke": "#356876",
+        "width": 2
+      }
+    },
+    {
+      "kind": "line",
+      "layer": "geometry",
+      "attributes": {
+        "points": [
+          [
+            276,
+            700
+          ],
+          [
+            888,
+            260
+          ]
+        ],
+        "stroke": "#356876",
+        "width": 2
+      }
+    },
+    {
+      "kind": "line",
+      "layer": "geometry",
+      "attributes": {
+        "points": [
+          [
+            300,
+            700
+          ],
+          [
+            920,
+            260
+          ]
+        ],
+        "stroke": "#356876",
+        "width": 2
+      }
+    },
+    {
+      "kind": "line",
+      "layer": "geometry",
+      "attributes": {
+        "points": [
+          [
+            324,
+            700
+          ],
+          [
+            952,
+            260
+          ]
+        ],
+        "stroke": "#356876",
+        "width": 2
+      }
+    },
+    {
+      "kind": "line",
+      "layer": "geometry",
+      "attributes": {
+        "points": [
+          [
+            348,
+            700
+          ],
+          [
+            984,
+            260
+          ]
+        ],
+        "stroke": "#356876",
+        "width": 2
+      }
+    },
+    {
+      "kind": "line",
+      "layer": "geometry",
+      "attributes": {
+        "points": [
+          [
+            372,
+            700
+          ],
+          [
+            1016,
+            260
+          ]
+        ],
+        "stroke": "#356876",
+        "width": 2
+      }
+    },
+    {
+      "kind": "ellipse",
+      "layer": "effects",
+      "attributes": {
+        "x": 330,
+        "y": 580,
+        "rx": 45,
+        "ry": 45,
+        "fill": null,
+        "stroke": "#d9ae67",
+        "width": 3
+      }
+    },
+    {
+      "kind": "ellipse",
+      "layer": "effects",
+      "attributes": {
+        "x": 620,
+        "y": 390,
+        "rx": 61,
+        "ry": 61,
+        "fill": null,
+        "stroke": "#d9ae67",
+        "width": 3
+      }
+    },
+    {
+      "kind": "ellipse",
+      "layer": "effects",
+      "attributes": {
+        "x": 920,
+        "y": 530,
+        "rx": 77,
+        "ry": 77,
+        "fill": null,
+        "stroke": "#d9ae67",
+        "width": 3
+      }
+    },
+    {
+      "kind": "text",
+      "layer": "typography",
+      "attributes": {
+        "x": 70,
+        "y": 285,
+        "text": "GÖRÜNMEYEN OYUN",
+        "size": 52,
+        "fill": "#faf0da",
+        "serif": true
+      }
+    }
+  ]
+}

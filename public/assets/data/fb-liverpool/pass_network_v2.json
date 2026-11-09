@@ -1,0 +1,698 @@
+{
+  "nodes": {
+    "Fenerbahce|Ederson": {
+      "team": "Fenerbahce",
+      "name": "Ederson",
+      "x": 5,
+      "y": 34,
+      "passes": 33,
+      "minutes": 97,
+      "role": "starter",
+      "subbed_out_at": null,
+      "came_on_at": null,
+      "position": "GK",
+      "is_gk": true
+    },
+    "Liverpool FC|Alisson": {
+      "team": "Liverpool FC",
+      "name": "Alisson",
+      "x": 5,
+      "y": 34,
+      "passes": 34,
+      "minutes": 97,
+      "role": "starter",
+      "subbed_out_at": null,
+      "came_on_at": null,
+      "position": "GK",
+      "is_gk": true
+    }
+  },
+  "edges": [],
+  "substitutions": {},
+  "contributions": {
+    "Fenerbahce|Archie Brown": {
+      "offensive_pct": 26.7,
+      "defensive_pct": 13.3,
+      "total_pct": 20.0,
+      "offensive_raw": 34.12,
+      "defensive_raw": 49.4,
+      "off_breakdown": {
+        "Goals": 1.0,
+        "Assists": 1.0,
+        "xG (expected goals)": 0.77,
+        "xA (expected assists)": 0.77,
+        "Shots": 3.0,
+        "Key passes": 3.0,
+        "Progressive passes": 6.0,
+        "Chances created": 4.0,
+        "Passes into the penalty box": 7.0,
+        "Crosses": 3.0,
+        "Final third entries": 1.0
+      },
+      "def_breakdown": {
+        "Tackles": 5.0,
+        "Tackles successful": 3.0,
+        "Interceptions": 7.0,
+        "Ball recoveries": 6.0,
+        "Ball recoveries in opponent's half": 1.0,
+        "Challenges won": 8.0,
+        "Aerial challenges won": 1.0
+      }
+    },
+    "Fenerbahce|Mason Greenwood": {
+      "offensive_pct": 13.6,
+      "defensive_pct": 3.8,
+      "total_pct": 8.7,
+      "offensive_raw": 17.43,
+      "defensive_raw": 14.0,
+      "off_breakdown": {
+        "Goals": 1.0,
+        "xG (expected goals)": 0.34,
+        "xA (expected assists)": 0.37,
+        "Shots": 4.0,
+        "Key passes": 1.0,
+        "Progressive passes": 7.0,
+        "Chances created": 1.0,
+        "Passes into the penalty box": 1.0,
+        "Final third entries": 3.0
+      },
+      "def_breakdown": {
+        "Tackles": 2.0,
+        "Interceptions": 2.0,
+        "Challenges won": 6.0
+      }
+    },
+    "Liverpool FC|Trey Nyoni": {
+      "offensive_pct": 18.7,
+      "defensive_pct": 19.5,
+      "total_pct": 19.1,
+      "offensive_raw": 35.79,
+      "defensive_raw": 60.8,
+      "off_breakdown": {
+        "Goals": 1.0,
+        "xG (expected goals)": 0.13,
+        "Shots": 1.0,
+        "Key passes": 1.0,
+        "Progressive passes": 30.0,
+        "Chances created": 1.0,
+        "Passes into the penalty box": 3.0,
+        "Final third entries": 16.0
+      },
+      "def_breakdown": {
+        "Tackles": 2.0,
+        "Tackles successful": 2.0,
+        "Interceptions": 16.0,
+        "Ball recoveries": 9.0,
+        "Ball recoveries in opponent's half": 4.0,
+        "Challenges won": 3.0
+      }
+    },
+    "Fenerbahce|Vedat Muriqi": {
+      "offensive_pct": 9.5,
+      "defensive_pct": 4.0,
+      "total_pct": 6.8,
+      "offensive_raw": 12.15,
+      "defensive_raw": 15.0,
+      "off_breakdown": {
+        "Goals": 1.0,
+        "xG (expected goals)": 0.15,
+        "Shots": 1.0,
+        "Key passes": 1.0,
+        "Progressive passes": 4.0,
+        "Passes into the penalty box": 3.0,
+        "Crosses": 1.0,
+        "Final third entries": 1.0
+      },
+      "def_breakdown": {
+        "Interceptions": 2.0,
+        "Ball recoveries": 1.0,
+        "Challenges won": 5.0,
+        "Aerial challenges won": 4.0
+      }
+    },
+    "Liverpool FC|Ngumoha": {
+      "offensive_pct": 4.2,
+      "defensive_pct": 5.4,
+      "total_pct": 4.8,
+      "offensive_raw": 8.06,
+      "defensive_raw": 17.0,
+      "off_breakdown": {
+        "xG (expected goals)": 0.2,
+        "xA (expected assists)": 0.12,
+        "Shots": 2.0,
+        "Progressive passes": 4.0,
+        "Chances created": 1.0,
+        "Passes into the penalty box": 2.0,
+        "Crosses": 1.0,
+        "Final third entries": 1.0
+      },
+      "def_breakdown": {
+        "Tackles": 2.0,
+        "Challenges won": 13.0
+      }
+    },
+    "Fenerbahce|Ngolo Kante": {
+      "offensive_pct": 10.6,
+      "defensive_pct": 8.6,
+      "total_pct": 9.6,
+      "offensive_raw": 13.53,
+      "defensive_raw": 31.9,
+      "off_breakdown": {
+        "xG (expected goals)": 0.18,
+        "xA (expected assists)": 0.43,
+        "Shots": 1.0,
+        "Progressive passes": 10.0,
+        "Chances created": 1.0,
+        "Passes into the penalty box": 2.0,
+        "Crosses": 1.0,
+        "Final third entries": 4.0
+      },
+      "def_breakdown": {
+        "Tackles": 4.0,
+        "Tackles successful": 1.0,
+        "Interceptions": 6.0,
+        "Ball recoveries": 1.0,
+        "Challenges won": 7.0,
+        "Aerial challenges won": 1.0
+      }
+    },
+    "Liverpool FC|Virgil Van Dijk": {
+      "offensive_pct": 8.8,
+      "defensive_pct": 14.3,
+      "total_pct": 11.5,
+      "offensive_raw": 16.77,
+      "defensive_raw": 44.7,
+      "off_breakdown": {
+        "xG (expected goals)": 0.19,
+        "Shots": 3.0,
+        "Progressive passes": 16.0,
+        "Chances created": 1.0,
+        "Passes into the penalty box": 1.0,
+        "Final third entries": 5.0
+      },
+      "def_breakdown": {
+        "Interceptions": 10.0,
+        "Ball recoveries": 8.0,
+        "Ball recoveries in opponent's half": 1.0,
+        "Challenges won": 10.0,
+        "Aerial challenges won": 3.0
+      }
+    },
+    "Fenerbahce|İsmail Yüksek": {
+      "offensive_pct": 6.4,
+      "defensive_pct": 23.2,
+      "total_pct": 14.8,
+      "offensive_raw": 8.13,
+      "defensive_raw": 86.1,
+      "off_breakdown": {
+        "xG (expected goals)": 0.02,
+        "xA (expected assists)": 0.69,
+        "Shots": 1.0,
+        "Key passes": 1.0,
+        "Progressive passes": 4.0,
+        "Final third entries": 4.0
+      },
+      "def_breakdown": {
+        "Tackles": 9.0,
+        "Tackles successful": 5.0,
+        "Interceptions": 13.0,
+        "Ball recoveries": 10.0,
+        "Ball recoveries in opponent's half": 4.0,
+        "Challenges won": 8.0,
+        "Aerial challenges won": 3.0
+      }
+    },
+    "Fenerbahce|Romelu Lukaku": {
+      "offensive_pct": 4.8,
+      "defensive_pct": 3.9,
+      "total_pct": 4.4,
+      "offensive_raw": 6.09,
+      "defensive_raw": 14.6,
+      "off_breakdown": {
+        "xG (expected goals)": 0.07,
+        "xA (expected assists)": 0.06,
+        "Shots": 1.0,
+        "Key passes": 2.0,
+        "Progressive passes": 1.0,
+        "Chances created": 1.0,
+        "Final third entries": 1.0
+      },
+      "def_breakdown": {
+        "Interceptions": 1.0,
+        "Challenges won": 9.0,
+        "Aerial challenges won": 3.0
+      }
+    },
+    "Fenerbahce|Milan Skriniar": {
+      "offensive_pct": 5.5,
+      "defensive_pct": 9.8,
+      "total_pct": 7.6,
+      "offensive_raw": 7.06,
+      "defensive_raw": 36.2,
+      "off_breakdown": {
+        "xA (expected assists)": 0.02,
+        "Key passes": 1.0,
+        "Progressive passes": 7.0,
+        "Final third entries": 2.0
+      },
+      "def_breakdown": {
+        "Tackles": 2.0,
+        "Tackles successful": 2.0,
+        "Interceptions": 10.0,
+        "Ball recoveries": 1.0,
+        "Challenges won": 6.0
+      }
+    },
+    "Fenerbahce|Nelson Semedo": {
+      "offensive_pct": 2.0,
+      "defensive_pct": 8.6,
+      "total_pct": 5.3,
+      "offensive_raw": 2.56,
+      "defensive_raw": 32.0,
+      "off_breakdown": {
+        "xG (expected goals)": 0.02,
+        "Shots": 1.0,
+        "Progressive passes": 2.0,
+        "Final third entries": 2.0
+      },
+      "def_breakdown": {
+        "Tackles": 5.0,
+        "Interceptions": 5.0,
+        "Ball recoveries": 5.0,
+        "Ball recoveries in opponent's half": 2.0,
+        "Challenges won": 3.0
+      }
+    },
+    "Liverpool FC|Konstantinos Tsimikas": {
+      "offensive_pct": 7.6,
+      "defensive_pct": 6.2,
+      "total_pct": 6.9,
+      "offensive_raw": 14.52,
+      "defensive_raw": 19.4,
+      "off_breakdown": {
+        "xA (expected assists)": 0.64,
+        "Progressive passes": 4.0,
+        "Chances created": 2.0,
+        "Passes into the penalty box": 8.0,
+        "Crosses": 5.0
+      },
+      "def_breakdown": {
+        "Tackles": 4.0,
+        "Tackles successful": 1.0,
+        "Interceptions": 2.0,
+        "Ball recoveries": 2.0,
+        "Ball recoveries in opponent's half": 1.0,
+        "Challenges won": 1.0
+      }
+    },
+    "Liverpool FC|Victor Munoz": {
+      "offensive_pct": 5.1,
+      "defensive_pct": 8.8,
+      "total_pct": 7.0,
+      "offensive_raw": 9.86,
+      "defensive_raw": 27.6,
+      "off_breakdown": {
+        "xG (expected goals)": 0.19,
+        "xA (expected assists)": 0.23,
+        "Shots": 2.0,
+        "Key passes": 1.0,
+        "Chances created": 3.0,
+        "Passes into the penalty box": 2.0,
+        "Crosses": 3.0,
+        "Final third entries": 1.0
+      },
+      "def_breakdown": {
+        "Tackles": 2.0,
+        "Tackles successful": 1.0,
+        "Interceptions": 4.0,
+        "Ball recoveries": 3.0,
+        "Ball recoveries in opponent's half": 1.0,
+        "Challenges won": 8.0
+      }
+    },
+    "Liverpool FC|Dominik Szoboszlai": {
+      "offensive_pct": 17.7,
+      "defensive_pct": 6.9,
+      "total_pct": 12.3,
+      "offensive_raw": 33.87,
+      "defensive_raw": 21.6,
+      "off_breakdown": {
+        "xG (expected goals)": 0.06,
+        "xA (expected assists)": 0.23,
+        "Shots": 1.0,
+        "Key passes": 4.0,
+        "Progressive passes": 7.0,
+        "Chances created": 1.0,
+        "Passes into the penalty box": 20.0,
+        "Crosses": 10.0,
+        "Final third entries": 8.0
+      },
+      "def_breakdown": {
+        "Tackles": 2.0,
+        "Interceptions": 6.0,
+        "Ball recoveries": 3.0,
+        "Challenges won": 2.0
+      }
+    },
+    "Fenerbahce|Mattéo Guendouzi": {
+      "offensive_pct": 9.7,
+      "defensive_pct": 6.8,
+      "total_pct": 8.2,
+      "offensive_raw": 12.38,
+      "defensive_raw": 25.2,
+      "off_breakdown": {
+        "xG (expected goals)": 0.2,
+        "xA (expected assists)": 0.36,
+        "Shots": 2.0,
+        "Key passes": 1.0,
+        "Progressive passes": 5.0,
+        "Chances created": 1.0,
+        "Passes into the penalty box": 3.0,
+        "Crosses": 1.0,
+        "Final third entries": 3.0
+      },
+      "def_breakdown": {
+        "Tackles": 2.0,
+        "Tackles successful": 2.0,
+        "Interceptions": 6.0,
+        "Ball recoveries": 1.0,
+        "Challenges won": 3.0
+      }
+    },
+    "Liverpool FC|Joe Gomez": {
+      "offensive_pct": 8.5,
+      "defensive_pct": 6.8,
+      "total_pct": 7.7,
+      "offensive_raw": 16.32,
+      "defensive_raw": 21.3,
+      "off_breakdown": {
+        "xG (expected goals)": 0.02,
+        "xA (expected assists)": 0.12,
+        "Shots": 1.0,
+        "Key passes": 1.0,
+        "Progressive passes": 11.0,
+        "Passes into the penalty box": 6.0,
+        "Crosses": 4.0,
+        "Final third entries": 2.0
+      },
+      "def_breakdown": {
+        "Tackles": 1.0,
+        "Interceptions": 5.0,
+        "Ball recoveries": 4.0,
+        "Ball recoveries in opponent's half": 1.0,
+        "Challenges won": 3.0
+      }
+    },
+    "Liverpool FC|Alexander Isak": {
+      "offensive_pct": 3.5,
+      "defensive_pct": 0.3,
+      "total_pct": 1.9,
+      "offensive_raw": 6.71,
+      "defensive_raw": 1.0,
+      "off_breakdown": {
+        "Goals": 1.0,
+        "xG (expected goals)": 0.52,
+        "xA (expected assists)": 0.05,
+        "Shots": 2.0
+      },
+      "def_breakdown": {
+        "Challenges won": 1.0
+      }
+    },
+    "Liverpool FC|Alexis Mac Allister": {
+      "offensive_pct": 6.5,
+      "defensive_pct": 10.8,
+      "total_pct": 8.7,
+      "offensive_raw": 12.48,
+      "defensive_raw": 33.7,
+      "off_breakdown": {
+        "xG (expected goals)": 0.06,
+        "Shots": 1.0,
+        "Key passes": 1.0,
+        "Progressive passes": 9.0,
+        "Passes into the penalty box": 2.0,
+        "Final third entries": 8.0
+      },
+      "def_breakdown": {
+        "Tackles": 2.0,
+        "Tackles successful": 1.0,
+        "Interceptions": 4.0,
+        "Ball recoveries": 5.0,
+        "Ball recoveries in opponent's half": 4.0,
+        "Challenges won": 6.0,
+        "Aerial challenges won": 1.0
+      }
+    },
+    "Liverpool FC|Bradley Barcola": {
+      "offensive_pct": 4.1,
+      "defensive_pct": 3.3,
+      "total_pct": 3.7,
+      "offensive_raw": 7.82,
+      "defensive_raw": 10.4,
+      "off_breakdown": {
+        "xG (expected goals)": 0.27,
+        "xA (expected assists)": 0.07,
+        "Shots": 2.0,
+        "Key passes": 1.0,
+        "Progressive passes": 3.0,
+        "Chances created": 1.0,
+        "Passes into the penalty box": 1.0,
+        "Crosses": 1.0
+      },
+      "def_breakdown": {
+        "Tackles": 1.0,
+        "Interceptions": 1.0,
+        "Challenges won": 4.0,
+        "Aerial challenges won": 2.0
+      }
+    },
+    "Fenerbahce|Mert Müldür": {
+      "offensive_pct": 0.2,
+      "defensive_pct": 2.9,
+      "total_pct": 1.5,
+      "offensive_raw": 0.2,
+      "defensive_raw": 10.6,
+      "off_breakdown": {
+        "Crosses": 1.0
+      },
+      "def_breakdown": {
+        "Interceptions": 3.0,
+        "Ball recoveries": 2.0,
+        "Challenges won": 1.0,
+        "Aerial challenges won": 1.0
+      }
+    },
+    "Liverpool FC|Cody Gakpo": {
+      "offensive_pct": 6.3,
+      "defensive_pct": 3.5,
+      "total_pct": 4.9,
+      "offensive_raw": 12.06,
+      "defensive_raw": 10.9,
+      "off_breakdown": {
+        "Assists": 1.0,
+        "xG (expected goals)": 0.02,
+        "xA (expected assists)": 0.5,
+        "Shots": 1.0,
+        "Key passes": 1.0,
+        "Progressive passes": 1.0,
+        "Chances created": 1.0,
+        "Passes into the penalty box": 2.0,
+        "Crosses": 2.0,
+        "Final third entries": 2.0
+      },
+      "def_breakdown": {
+        "Tackles": 1.0,
+        "Tackles successful": 1.0,
+        "Interceptions": 1.0,
+        "Ball recoveries": 2.0,
+        "Challenges won": 2.0
+      }
+    },
+    "Fenerbahce|Kerem Akturkoglu": {
+      "offensive_pct": 1.6,
+      "defensive_pct": 0.3,
+      "total_pct": 0.9,
+      "offensive_raw": 2.0,
+      "defensive_raw": 1.0,
+      "off_breakdown": {
+        "xG (expected goals)": 0.1,
+        "Shots": 1.0,
+        "Chances created": 1.0
+      },
+      "def_breakdown": {
+        "Challenges won": 1.0
+      }
+    },
+    "Liverpool FC|Milos Kerkez": {
+      "offensive_pct": 1.1,
+      "defensive_pct": 0.3,
+      "total_pct": 0.7,
+      "offensive_raw": 2.2,
+      "defensive_raw": 1.0,
+      "off_breakdown": {
+        "Progressive passes": 1.0,
+        "Passes into the penalty box": 1.0,
+        "Crosses": 2.0,
+        "Final third entries": 1.0
+      },
+      "def_breakdown": {
+        "Challenges won": 1.0
+      }
+    },
+    "Liverpool FC|Florian Wirtz": {
+      "offensive_pct": 2.5,
+      "defensive_pct": 1.6,
+      "total_pct": 2.1,
+      "offensive_raw": 4.86,
+      "defensive_raw": 5.0,
+      "off_breakdown": {
+        "xA (expected assists)": 0.02,
+        "Progressive passes": 6.0,
+        "Final third entries": 2.0
+      },
+      "def_breakdown": {
+        "Interceptions": 2.0,
+        "Challenges won": 1.0
+      }
+    },
+    "Fenerbahce|İrfan Can Kahveci": {
+      "offensive_pct": 8.9,
+      "defensive_pct": 5.1,
+      "total_pct": 7.0,
+      "offensive_raw": 11.42,
+      "defensive_raw": 18.9,
+      "off_breakdown": {
+        "xG (expected goals)": 0.43,
+        "xA (expected assists)": 0.11,
+        "Shots": 1.0,
+        "Key passes": 1.0,
+        "Progressive passes": 5.0,
+        "Passes into the penalty box": 4.0,
+        "Crosses": 1.0,
+        "Final third entries": 3.0
+      },
+      "def_breakdown": {
+        "Tackles": 1.0,
+        "Tackles successful": 1.0,
+        "Interceptions": 3.0,
+        "Ball recoveries": 2.0,
+        "Challenges won": 6.0
+      }
+    },
+    "Fenerbahce|Kojo Oppong": {
+      "offensive_pct": 0.5,
+      "defensive_pct": 9.6,
+      "total_pct": 5.1,
+      "offensive_raw": 0.7,
+      "defensive_raw": 35.5,
+      "off_breakdown": {
+        "Progressive passes": 1.0
+      },
+      "def_breakdown": {
+        "Tackles": 2.0,
+        "Tackles successful": 1.0,
+        "Interceptions": 8.0,
+        "Ball recoveries": 4.0,
+        "Challenges won": 7.0,
+        "Aerial challenges won": 1.0
+      }
+    },
+    "Liverpool FC|Jérémy Jacquet": {
+      "offensive_pct": 5.3,
+      "defensive_pct": 11.2,
+      "total_pct": 8.3,
+      "offensive_raw": 10.21,
+      "defensive_raw": 35.0,
+      "off_breakdown": {
+        "xG (expected goals)": 0.17,
+        "Shots": 1.0,
+        "Progressive passes": 11.0,
+        "Final third entries": 5.0
+      },
+      "def_breakdown": {
+        "Tackles": 1.0,
+        "Tackles successful": 1.0,
+        "Interceptions": 4.0,
+        "Ball recoveries": 6.0,
+        "Ball recoveries in opponent's half": 1.0,
+        "Challenges won": 9.0,
+        "Aerial challenges won": 4.0
+      }
+    },
+    "Fenerbahce|Oğuz Aydın": {
+      "offensive_pct": 0.0,
+      "defensive_pct": 0.0,
+      "total_pct": 0.0,
+      "offensive_raw": 0.0,
+      "defensive_raw": 0.0,
+      "off_breakdown": {},
+      "def_breakdown": {}
+    },
+    "Liverpool FC|Lewis Koumas": {
+      "offensive_pct": 0.0,
+      "defensive_pct": 1.0,
+      "total_pct": 0.5,
+      "offensive_raw": 0.0,
+      "defensive_raw": 3.0,
+      "off_breakdown": {},
+      "def_breakdown": {
+        "Tackles": 1.0,
+        "Challenges won": 1.0
+      }
+    },
+    "Fenerbahce|Ederson": {
+      "offensive_pct": 0.5,
+      "defensive_pct": 2.0,
+      "total_pct": 1.25,
+      "offensive_raw": 0,
+      "defensive_raw": 0,
+      "off_breakdown": {},
+      "def_breakdown": {},
+      "is_gk": true
+    },
+    "Liverpool FC|Alisson": {
+      "offensive_pct": 0.5,
+      "defensive_pct": 2.0,
+      "total_pct": 1.25,
+      "offensive_raw": 0,
+      "defensive_raw": 0,
+      "off_breakdown": {},
+      "def_breakdown": {},
+      "is_gk": true
+    }
+  },
+  "meta": {
+    "method": "inferRecipientsFromNextPass",
+    "total_match_minutes": 97,
+    "node_count": 0,
+    "edge_count": 0,
+    "captured": 0,
+    "total_passes": 0,
+    "coverage_pct": 0.0,
+    "contribution_weights": {
+      "offensive": [
+        "Goals",
+        "Assists",
+        "xG (expected goals)",
+        "xA (expected assists)",
+        "Shots",
+        "Key passes",
+        "Progressive passes",
+        "Chances created",
+        "Passes into the penalty box",
+        "Crosses",
+        "Final third entries"
+      ],
+      "defensive": [
+        "Tackles",
+        "Tackles successful",
+        "Interceptions",
+        "Ball recoveries",
+        "Ball recoveries in opponent's half",
+        "Challenges won",
+        "Aerial challenges won",
+        "Clearances"
+      ]
+    }
+  }
+}

@@ -1,0 +1,230 @@
+{
+  "schema": "visual-catalog/v1",
+  "producer_version": "0.2.0",
+  "items": [
+    {
+      "id": "hp-comet",
+      "engine": "data",
+      "variant": "landscape",
+      "profile": "web",
+      "directory": "hp-comet/web/landscape/744bdcf4d21f7428",
+      "title": "Aynı lig, farklı hücum eğilimleri",
+      "alt": "Harsh Krishna repertuvarındaki comet gramerinden esinlenen bağımsız uygulama. Tüm değerler sentetik.",
+      "provenance": {
+        "kind": "synthetic",
+        "method": "deterministically authored example; not an observed match"
+      },
+      "license": "Original authored demo geometry and synthetic fixtures; project LICENSE",
+      "assets": {
+        "svg": "scene.svg",
+        "raster": "final.png",
+        "preview": "preview.webp",
+        "active_layers": [
+          "background",
+          "geometry",
+          "data-marks",
+          "annotations",
+          "typography",
+          "metadata"
+        ]
+      },
+      "cache_key": "744bdcf4d21f7428dcf64b528c901644c9879e122e838fbb88e8f21852e32dd1"
+    },
+    {
+      "id": "hp-passflow",
+      "engine": "football",
+      "variant": "landscape",
+      "profile": "web",
+      "directory": "hp-passflow/web/landscape/c8dc2c26b30c8cea",
+      "title": "Pas yönleri: baskıdan çıkış koridorları",
+      "alt": "Sentetik olay örneği. Yönlü pas dağılımı; oyuncu tracking kaydı değildir.",
+      "provenance": {
+        "kind": "synthetic",
+        "method": "deterministically authored example; not an observed match"
+      },
+      "license": "Original authored demo geometry and synthetic fixtures; project LICENSE",
+      "assets": {
+        "svg": "scene.svg",
+        "raster": "final.png",
+        "preview": "preview.webp",
+        "active_layers": [
+          "background",
+          "geometry",
+          "data-marks",
+          "annotations",
+          "typography",
+          "metadata"
+        ]
+      },
+      "cache_key": "c8dc2c26b30c8cea39f13d4ff02488f36b75f461e0d2c8e367ede21d3ef1adb7"
+    },
+    {
+      "id": "hp-third-man",
+      "engine": "motion",
+      "variant": "landscape",
+      "profile": "web",
+      "directory": "hp-third-man/web/landscape/a8a88e0044055d83",
+      "title": "Üçüncü adam: altı saniyelik taktik illüstrasyon",
+      "alt": "İki takım ve top aynı zaman ekseninde. Tamamı çizilmiş anahtar kareler; gerçek maçta gözlenmiş hareket değildir.",
+      "provenance": {
+        "kind": "synthetic",
+        "method": "deterministically authored example; not an observed match"
+      },
+      "license": "Original authored demo geometry and synthetic fixtures; project LICENSE",
+      "assets": {
+        "svg": "scene.svg",
+        "raster": "final.png",
+        "preview": "preview.webp",
+        "active_layers": [
+          "background",
+          "geometry",
+          "data-marks",
+          "annotations",
+          "typography",
+          "metadata"
+        ]
+      },
+      "cache_key": "a8a88e0044055d834c75ca9e974edea4c5f30a49fe385877d4bee616ef91b9e5"
+    },
+    {
+      "id": "photo-study",
+      "engine": "photo",
+      "variant": "landscape",
+      "profile": "web",
+      "directory": "photo-study/web/landscape/cc23562e260ab1f2",
+      "title": "Grace Hopper",
+      "alt": "Bilgisayar tarihinden bir arşiv portresi. Fotoğraf, kırpma ve tipografi katmanları bağımsız; kaynak dosya korunur.",
+      "provenance": {
+        "kind": "real",
+        "method": "Existing archival photograph, not a generated subject"
+      },
+      "license": "Public domain (US), James S. Davis / U.S. Navy, NH 96919-KN; original composition under project LICENSE",
+      "assets": {
+        "svg": "scene.svg",
+        "raster": "final.png",
+        "preview": "preview.webp",
+        "active_layers": [
+          "background",
+          "source-image",
+          "geometry",
+          "annotations",
+          "typography",
+          "metadata"
+        ]
+      },
+      "cache_key": "cc23562e260ab1f2a49605e651fb9c2b881cefd925b4a15babc2f54c3e97463e"
+    },
+    {
+      "id": "hp-photo-social",
+      "engine": "photo",
+      "variant": "landscape",
+      "profile": "web",
+      "directory": "hp-photo-social/web/landscape/19e945be0a622e45",
+      "title": "Grace Hopper",
+      "alt": "Bilgisayar tarihinden bir arşiv portresi. Fotoğraf, kırpma ve tipografi katmanları bağımsız; kaynak dosya korunur.",
+      "provenance": {
+        "kind": "real",
+        "method": "Existing archival photograph, not a generated subject"
+      },
+      "license": "Public domain (US), James S. Davis / U.S. Navy, NH 96919-KN; original composition under project LICENSE",
+      "assets": {
+        "svg": "scene.svg",
+        "raster": "final.png",
+        "preview": "preview.webp",
+        "active_layers": [
+          "background",
+          "source-image",
+          "geometry",
+          "annotations",
+          "typography",
+          "metadata"
+        ]
+      },
+      "cache_key": "19e945be0a622e45097a99782b112a1f93656171e1fcc020a576eb914bc26bd5"
+    },
+    {
+      "id": "photo-study",
+      "engine": "photo",
+      "variant": "portrait",
+      "profile": "web",
+      "directory": "photo-study/web/portrait/3c8930731c9ee5ac",
+      "title": "Grace Hopper",
+      "alt": "Bilgisayar tarihinden bir arşiv portresi. Fotoğraf, kırpma ve tipografi katmanları bağımsız; kaynak dosya korunur.",
+      "provenance": {
+        "kind": "real",
+        "method": "Existing archival photograph, not a generated subject"
+      },
+      "license": "Public domain (US), James S. Davis / U.S. Navy, NH 96919-KN; original composition under project LICENSE",
+      "assets": {
+        "svg": "scene.svg",
+        "raster": "final.png",
+        "preview": "preview.webp",
+        "active_layers": [
+          "background",
+          "source-image",
+          "geometry",
+          "annotations",
+          "typography",
+          "metadata"
+        ]
+      },
+      "cache_key": "3c8930731c9ee5ac061ed6e51f82d93aeb5e504561dc558bfc7f8f9957e85a7d"
+    },
+    {
+      "id": "hp-cover",
+      "engine": "vector",
+      "variant": "landscape",
+      "profile": "print",
+      "directory": "hp-cover/print/landscape/370f87f10d167ada",
+      "title": "Oyunun görünmeyen bağlantıları",
+      "alt": "Futbol araştırma dosyası için özgün, soyut vektör kapak.",
+      "provenance": {
+        "kind": "synthetic",
+        "method": "deterministically authored example; not an observed match"
+      },
+      "license": "Original authored demo geometry and synthetic fixtures; project LICENSE",
+      "assets": {
+        "svg": "scene.svg",
+        "raster": "final.png",
+        "preview": "preview.webp",
+        "active_layers": [
+          "background",
+          "geometry",
+          "annotations",
+          "typography",
+          "effects",
+          "metadata"
+        ]
+      },
+      "cache_key": "370f87f10d167adaa33660fca095882ee4cedb91599e9d031b7138b4fb690d07"
+    },
+    {
+      "id": "hp-cover",
+      "engine": "vector",
+      "variant": "landscape",
+      "profile": "web",
+      "directory": "hp-cover/web/landscape/cf90fe96b56db907",
+      "title": "Oyunun görünmeyen bağlantıları",
+      "alt": "Futbol araştırma dosyası için özgün, soyut vektör kapak.",
+      "provenance": {
+        "kind": "synthetic",
+        "method": "deterministically authored example; not an observed match"
+      },
+      "license": "Original authored demo geometry and synthetic fixtures; project LICENSE",
+      "assets": {
+        "svg": "scene.svg",
+        "raster": "final.png",
+        "preview": "preview.webp",
+        "active_layers": [
+          "background",
+          "geometry",
+          "annotations",
+          "typography",
+          "effects",
+          "metadata"
+        ]
+      },
+      "cache_key": "cf90fe96b56db9076322628018bbdb224fdc9d8fc8a87195b861d5d8671ce1c9"
+    }
+  ]
+}

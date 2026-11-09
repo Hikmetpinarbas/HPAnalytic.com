@@ -25,12 +25,6 @@ export function initPassNetwork(root, opts = {}) {
       .pn-subs.active { background:${C.orange}; color:#08090B; }
       .pn-count { font-size:11px; color:${C.muted}; }
       .pn-stage { position:relative; }
-      .pn-panel { position:absolute; top:12px; right:12px; width:260px; max-height:70%; overflow-y:auto; background:rgba(8,9,11,0.96); border:1px solid ${C.line}; padding:14px; border-radius:4px; z-index:11; }
-      .pn-panel h4 { margin:0 0 12px; font-size:10px; letter-spacing:0.15em; color:${C.orange}; text-transform:uppercase; }
-      .pn-sub { padding:8px 0; border-bottom:1px dashed ${C.line}; font-size:11px; color:${C.text}; }
-      .pn-sub .m { color:${C.muted}; font-size:10px; display:block; margin-bottom:2px; }
-      .pn-sub .in { color:${C.neon}; }
-      .pn-sub .out { color:${C.orange}; opacity:0.7; text-decoration:line-through; }
 
       .pn-hint { text-align:center; font-size:11px; color:${C.muted}; margin-top:8px; letter-spacing:0.05em; }
       .pn-hint strong { color:${C.text}; font-weight:500; }
@@ -58,7 +52,6 @@ export function initPassNetwork(root, opts = {}) {
       <span class="pn-count">0 oyuncu</span>
     </div>
     <div class="pn-stage">
-      <div class="pn-panel" style="display:none;"></div>
       <svg class="pn-svg" viewBox="-8 -6 ${PW+16} ${PH+12}" style="width:100%;height:auto;background:${C.pitch};border:1px solid ${C.line};"></svg>
     </div>
     <div class="pn-hint">Bir oyuncuya <strong>tıkla</strong> → pas çizgileri canlanır, altta pas partnerleri açılır.</div>
@@ -71,7 +64,6 @@ export function initPassNetwork(root, opts = {}) {
   const partners = wrap.querySelector('.pn-partners');
   const mq = wrap.querySelector('.pn-mq > div');
   const subsBtn = wrap.querySelector('.pn-subs');
-  const panel = wrap.querySelector('.pn-panel');
   const countEl = wrap.querySelector('.pn-count');
   const teamBtns = wrap.querySelectorAll('.pn-toggle button');
 
@@ -128,17 +120,7 @@ export function initPassNetwork(root, opts = {}) {
     });
   }
 
-  function renderPanel() {
-    const subs = state.data?.substitutions?.[state.team] || [];
-    if (!subs.length) { panel.innerHTML = `<h4>Değişenler</h4>`; return; }
-    panel.innerHTML = `<h4>Değişenler · ${subs.length}</h4>` + subs.map(s => `
-      <div class="pn-sub">
-        <span class="m">${s.sub_minute}'</span>
-        <span class="in">↑ ${s.in}</span><br>
-        <span class="out">↓ ${s.out}</span>
-      </div>
-    `).join('');
-  }
+  
 
   function renderPartners(key) {
     if (!key) {
@@ -470,8 +452,7 @@ export function initPassNetwork(root, opts = {}) {
     state.selectedKey = null;
     subsBtn.classList.remove('active');
     subsBtn.textContent = 'DEĞİŞENLER';
-    panel.style.display = 'none';
-    renderPanel();
+    
     renderPartners(null);
     render();
   }));
@@ -481,8 +462,8 @@ export function initPassNetwork(root, opts = {}) {
     state.selectedKey = null;
     subsBtn.classList.toggle('active', state.subsActive);
     subsBtn.textContent = state.subsActive ? 'İLK 11' : 'DEĞİŞENLER';
-    panel.style.display = state.subsActive ? 'block' : 'none';
-    if (state.subsActive) renderPanel();
+    
+    
     renderPartners(null);
     render();
   });
@@ -492,7 +473,7 @@ export function initPassNetwork(root, opts = {}) {
     .then(data => {
       state.data = data;
       drawPitch();
-      renderPanel();
+      
       render();
     })
     .catch(err => { console.error(err); });

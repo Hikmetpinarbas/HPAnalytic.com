@@ -1,0 +1,17 @@
+{
+  "schema": "visual-production/v1",
+  "license": "Original authored demo geometry and synthetic fixtures; project LICENSE",
+  "provenance": {
+    "kind": "synthetic",
+    "method": "deterministically authored example; not an observed match"
+  },
+  "source": "Visual Factory / authored demo",
+  "export_layer_rasters": false,
+  "id": "hp-third-man",
+  "engine": "motion",
+  "title": "Üçüncü adam: altı saniyelik taktik illüstrasyon",
+  "description": "İki takım ve top aynı zaman ekseninde. Tamamı çizilmiş anahtar kareler; gerçek maçta gözlenmiş hareket değildir.",
+  "data": "inputs/data.json",
+  "video": true,
+  "fps": 30
+}

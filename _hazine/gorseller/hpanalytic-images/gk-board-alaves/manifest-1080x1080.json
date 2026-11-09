@@ -1,0 +1,99 @@
+{
+  "layers": [
+    {
+      "file": "L-ground-1080x1080.png",
+      "id": "ground",
+      "title": "1. Temel saha zemini",
+      "evidence": "n/a"
+    },
+    {
+      "file": "L-lines-1080x1080.png",
+      "id": "lines",
+      "title": "2. Saha cizgileri",
+      "evidence": "n/a"
+    },
+    {
+      "file": "L-goal_frame-1080x1080.png",
+      "id": "goal_frame",
+      "title": "Kale referansi (kaleci)",
+      "evidence": "amber (gozlem)"
+    },
+    {
+      "file": "L-danger_zone-1080x1080.png",
+      "id": "danger_zone",
+      "title": "Yuksek tehlike bolgesi (model)",
+      "evidence": "blue (model)"
+    },
+    {
+      "file": "L-shots_faced-1080x1080.png",
+      "id": "shots_faced",
+      "title": "Karsilanan sutlar (boy=xG, renk=sonuc)",
+      "evidence": "amber (gozlem)"
+    },
+    {
+      "file": "L-gk_emphasis-1080x1080.png",
+      "id": "gk_emphasis",
+      "title": "Beklenmeyeni kurtardi vurgusu",
+      "evidence": "amber (odak)"
+    },
+    {
+      "file": "L-gk_annotation-1080x1080.png",
+      "id": "gk_annotation",
+      "title": "Kaleci okumasi (panel)",
+      "evidence": "mixed (gozlem)"
+    },
+    {
+      "file": "L-meta-1080x1080.png",
+      "id": "meta",
+      "title": "14. Lejant ve kanit bandi (veri-disi)",
+      "evidence": "n/a (bant)"
+    }
+  ],
+  "production_order": [
+    "ground",
+    "lines",
+    "goal_frame",
+    "danger_zone",
+    "shots_faced",
+    "gk_emphasis",
+    "gk_annotation",
+    "meta"
+  ],
+  "composite_order": [
+    "ground",
+    "lines",
+    "goal_frame",
+    "danger_zone",
+    "shots_faced",
+    "gk_emphasis",
+    "gk_annotation",
+    "meta"
+  ],
+  "composite": "composite-1080x1080.png",
+  "size": [
+    1080,
+    1080
+  ],
+  "pitch_m": [
+    105.0,
+    68.0
+  ],
+  "xt_model": "HPAnalytic xT v1",
+  "xt_sample": {
+    "matches_used": 40,
+    "passes": 6029,
+    "shots": 987
+  },
+  "match_id": 15946,
+  "team": "Deportivo Alavés",
+  "notes": [
+    "satir ici: sutlar StatsBomb events gozlemi; xT ve gol bolgesi model",
+    "sut yogunlugu olay sayimidir (tracking degil); kavramsal/isinli degil",
+    "amber = gozlem/odak, blue = model, red = ihlal; karistirilmaz"
+  ],
+  "active": [],
+  "links": 0,
+  "motifs": 0,
+  "chain": null,
+  "shots": null
+}

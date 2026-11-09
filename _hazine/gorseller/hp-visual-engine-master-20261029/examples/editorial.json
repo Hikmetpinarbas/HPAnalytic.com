@@ -1,0 +1,34 @@
+{
+  "schema": "visual-production/v1",
+  "license": "Original authored demo geometry and synthetic fixtures; project LICENSE",
+  "provenance": {
+    "kind": "synthetic",
+    "method": "deterministically authored example; not an observed match"
+  },
+  "source": "Visual Factory / authored demo",
+  "export_layer_rasters": false,
+  "id": "editorial-study",
+  "engine": "editorial",
+  "title": "Oyunu katmanlarına ayır.",
+  "headline_lines": [
+    "Bir pas.",
+    "Birden çok katman."
+  ],
+  "asset_caption": "01 / EVENT GEOMETRY · SENTETİK ÖRNEK",
+  "facts": [
+    [
+      "12",
+      "PAS OLAYI"
+    ],
+    [
+      "06",
+      "KATMAN"
+    ],
+    [
+      "105×68",
+      "METRE / SAHA"
+    ]
+  ],
+  "description": "Veri, geometri ve açıklama bir araya gelir. Saha motorunun çıktısı, ayrı bir yayın kompozisyonunda yeniden kullanılır.",
+  "compose_from": "football.json"
+}

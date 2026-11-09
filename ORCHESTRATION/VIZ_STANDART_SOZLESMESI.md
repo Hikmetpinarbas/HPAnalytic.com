@@ -19,3 +19,10 @@
 - [ ] Pilot 3 maç: `gs-stuttgart`, `gs-fener`, `scp-gs`
 - [ ] `viz_batch.py` yazımı (toplu işleyici)
 - [ ] `/mac/{slug}.html` dinamik sayfa
+
+## Kural 4: Oyuncu Değişiklikleri (Substitutions)
+- Saha görünümünde iki mod vardır: "İLK 11" (varsayılan) ve "GÜNCEL 11".
+- "GÜNCEL 11" modu aktif olduğunda: oyundan çıkan oyuncunun düğümü (node) silinir, yerine giren oyuncunun düğümü eklenir.
+- Giren oyuncu, çıkan oyuncunun koordinatlarına (x, y) yerleştirilir. Bu, oyuncuların saha içi konum sürekliliğini korur.
+- Node boyutu ve rengi, giren oyuncunun pas sayısına göre yeniden hesaplanır.
+- Edge'ler (pas bağlantıları) yeni node listesine göre yeniden filtrelenir.

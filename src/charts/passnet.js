@@ -1,5 +1,6 @@
 import * as d3 from 'd3';
 import { gsap } from 'gsap';
+import { ease, duration, staggerProfiles } from '../js/motion-tokens.js';
 
 const TEAM_COLORS = { GS: '#FF6B35', FB: '#B4FF39' };
 
@@ -186,9 +187,9 @@ export async function initPassNet(containerId, filtersId) {
     if (animate) {
       gsap.to(nodeSel.nodes(), {
         opacity: 1,
-        duration: 0.4,
-        stagger: 0.025,
-        ease: 'power2.out',
+        duration: duration.ui,
+        stagger: staggerProfiles.fast.each,
+        ease: ease.data,
       });
     }
   }

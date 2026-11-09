@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="tr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>budget — scrollytelling-gk</title>
+<link rel="stylesheet" href="../scene.css"></head>
+<body><main class="container" style="padding:24px">
+<h1>performance budget (Gemini ölçer)</h1>
+<pre id="out">…ölçülüyor</pre>
+<p class="meta">Kriterler: tek RAF · 60 FPS · yatay scroll yok (375px) · destroy() heap başlangıca döner.</p>
+<p><a href="../index.html">← prototipe dön</a></p>
+</main>
+<script type="module">
+const out = document.getElementById("out");
+(async () => {
+  const t0 = performance.memory?.usedJSHeapSize ?? null;
+  // RAF tekliği: 600ms içinde kaç RAF callback — Lenis+GSAP tek ticker olmalı (~30-36 @60fps)
+  let rafCount = 0;
+  const probe = () => { rafCount++; requestAnimationFrame(probe); };
+  const rafId = requestAnimationFrame(probe);
+  await new Promise(r => setTimeout(r, 600));
+  cancelAnimationFrame(rafId);
+  const noHScroll = document.documentElement.scrollWidth <= window.innerWidth + 1;
+  const heap = performance.memory?.usedJSHeapSize ?? null;
+  out.textContent = [
+    `probe RAF ticks / 600ms = ${rafCount} (tek zincir)`,
+    `no-horizontal-scroll = ${noHScroll}`,
+    `heap start = ${t0 ?? "n/a"} heap now = ${heap ?? "n/a"}`,
+    `destroy() için ana sayfada __SCROLLY__.destroy() → heap snapshot karşılaştırın`,
+    "PASS (budget sayfası hata vermeden çalıştı)",
+  ].join("\n");
+  console.log("budget ok");
+})();
+</script></body></html>

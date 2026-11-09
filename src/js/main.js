@@ -1,3 +1,4 @@
+import SplitType from 'split-type';
 import { initMatrixHero } from './matrix-hero.js';
 import { initTacticalShowcase } from "./tactical-showcase.js";
 import './live-marquee.js';
@@ -14,6 +15,8 @@ import Lenis from 'lenis';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { initPalette, initSectionIndicator, initScrollProgress } from './palette.js';
+import { ease, duration, staggerProfiles } from './motion-tokens.js';
+import { initMasthead } from './masthead.js';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -25,35 +28,24 @@ async function runPreloader() {
     pre.querySelectorAll('.pre-pitch path, .pre-pitch rect, .pre-pitch line, .pre-pitch circle').forEach(el => {
       const len = el.getTotalLength ? el.getTotalLength() : 200;
       el.style.strokeDasharray = len; el.style.strokeDashoffset = len;
-      tl.to(el, { strokeDashoffset: 0, duration: 0.6, ease: 'power2.inOut' }, 0);
+      tl.to(el, { strokeDashoffset: 0, duration: 0.6, ease: ease.draw }, 0);
     });
-    tl.to('.pre-letter', { y: 0, opacity: 1, duration: 0.5, stagger: 0.02, ease: 'expo.out' }, 0.15);
+    tl.to('.pre-letter', { y: 0, opacity: 1, duration: 0.5, stagger: staggerProfiles.fast.each, ease: ease.cinematic }, 0.15);
     const counter = pre.querySelector('.pre-count');
     const obj = { v: 0 };
-    tl.to(obj, { v: 100, duration: 1.0, ease: 'power2.inOut', onUpdate: () => { if (counter) counter.textContent = Math.round(obj.v) + '%'; } }, 0.1);
-    tl.to(pre, { opacity: 0, duration: 0.4, ease: 'power2.in' }, '+=0.1');
+    tl.to(obj, { v: 100, duration: 1.0, ease: ease.draw, onUpdate: () => { if (counter) counter.textContent = Math.round(obj.v) + '%'; } }, 0.1);
+    tl.to(pre, { opacity: 0, duration: 0.4, ease: ease.exit }, '+=0.1');
   });
 }
 
-// await runPreloader();
+await runPreloader();
 
 const lenis = new Lenis({ duration: 1.15, easing: t => Math.min(1, 1.001 - Math.pow(2, -10 * t)), smoothWheel: true, smoothTouch: false });
 lenis.on('scroll', ScrollTrigger.update);
 gsap.ticker.add(time => lenis.raf(time * 1000));
 gsap.ticker.lagSmoothing(0);
 
-const header = document.getElementById('header');
-let lastScroll = 0;
-ScrollTrigger.create({
-  start: 'top -100', end: 99999,
-  onUpdate: () => {
-    const s = window.scrollY;
-    if (s > lastScroll && s > 200) header.style.transform = 'translateY(-100%)';
-    else header.style.transform = 'translateY(0)';
-    lastScroll = s;
-    header.classList.toggle('is-scrolled', s > 60);
-  }
-});
+initMasthead();
 
 const dot = document.getElementById('cursor-dot');
 const ring = document.getElementById('cursor-ring');
@@ -77,15 +69,65 @@ if (window.matchMedia('(hover:hover)').matches && dot && ring) {
   });
 }
 
-const heroTl = gsap.timeline({ defaults: { ease: 'expo.out' } });
-heroTl.from('.logo, .status, .nav a', { y: -20, opacity: 0, duration: 0.8, stagger: 0.04 }, 0.1);
-heroTl.from('.hero-kicker', { y: 20, opacity: 0, duration: 0.8 }, 0.2);
-heroTl.to('.hero h1 .word', { y: 0, duration: 1.2, stagger: 0.12 }, 0.3);
-heroTl.to('.hero-lede', { opacity: 1, y: 0, duration: 0.8 }, 0.9);
-heroTl.to('.hero-meta', { opacity: 1, duration: 0.8 }, 1.1);
+const heroTl = gsap.timeline({ defaults: { ease: ease.cinematic } });
+heroTl.from('.logo, .status, .nav a', { y: -20, opacity: 0, duration: duration.reveal, stagger: staggerProfiles.fast.each }, 0.1);
+heroTl.from('.hero-kicker', { y: 20, opacity: 0, duration: duration.reveal }, 0.2);
+heroTl.to('.hero h1 .word', { y: 0, duration: duration.cinematic, stagger: staggerProfiles.slow.each }, 0.3);
+heroTl.to('.hero-lede', { opacity: 1, y: 0, duration: duration.reveal }, 0.9);
+heroTl.to('.hero-meta', { opacity: 1, duration: duration.reveal }, 1.1);
 
 gsap.utils.toArray('.section, .glossary-group, .carousel-card').forEach(el => {
-  gsap.from(el, { scrollTrigger: { trigger: el, start: 'top 88%' }, y: 30, opacity: 0, duration: 1, ease: 'power3.out' });
+  gsap.from(el, { scrollTrigger: { trigger: el, start: 'top 88%' }, y: 30, opacity: 0, duration: duration.reveal, ease: ease.editorial });
+});
+
+// ═══ SİNEMATİK MİKRO-ETKİLEŞİMLER ═══
+
+// Nav hover — neon glow pulse
+if (window.matchMedia('(hover:hover)').matches) {
+  document.querySelectorAll('.nav-link, .nav-btn, .lab-tab, .cmd-btn, .type-chip, .filter-btn, .pl-pill, .pl-chip').forEach(el => {
+    el.addEventListener('mouseenter', () => {
+      gsap.to(el, { scale: 1.04, duration: duration.ui, ease: ease.data, overwrite: true });
+    });
+    el.addEventListener('mouseleave', () => {
+      gsap.to(el, { scale: 1, duration: duration.ui, ease: ease.ui, overwrite: true });
+    });
+  });
+
+  // Card hover — sinematik kaldırma
+  document.querySelectorAll('.art-card, .article-card, .carousel-card, .featured-card').forEach(el => {
+    el.addEventListener('mouseenter', () => {
+      gsap.to(el, { y: -3, duration: duration.ui, ease: ease.editorial, overwrite: true });
+    });
+    el.addEventListener('mouseleave', () => {
+      gsap.to(el, { y: 0, duration: duration.ui, ease: ease.editorial, overwrite: true });
+    });
+  });
+}
+
+// Viz konteynerleri — saha inşası gibi sinematik giriş
+gsap.utils.toArray('[data-viz], [data-visual-body]').forEach(el => {
+  ScrollTrigger.create({
+    trigger: el,
+    start: 'top 85%',
+    once: true,
+    onEnter: () => {
+      gsap.fromTo(el,
+        { opacity: 0, y: 30, scale: 0.98 },
+        { opacity: 1, y: 0, scale: 1, duration: duration.cinematic, ease: ease.cinematic }
+      );
+      el.classList.add('viz-active');
+      const svgPaths = el.querySelectorAll('svg path, svg line, svg polyline');
+      if (svgPaths.length && svgPaths.length < 200) {
+        svgPaths.forEach(p => {
+          const len = p.getTotalLength ? p.getTotalLength() : 200;
+          if (len > 0 && len < 5000) {
+            gsap.set(p, { strokeDasharray: len, strokeDashoffset: len });
+            gsap.to(p, { strokeDashoffset: 0, duration: duration.cinematic, ease: ease.draw, delay: 0.2 });
+          }
+        });
+      }
+    },
+  });
 });
 
 document.querySelectorAll('.filter-group').forEach(group => {
@@ -94,7 +136,7 @@ document.querySelectorAll('.filter-group').forEach(group => {
   if (!ind || !btns.length) return;
   const update = (btn, animate = true) => {
     const gr = group.getBoundingClientRect(), br = btn.getBoundingClientRect();
-    const opts = { x: br.left - gr.left, width: br.width, duration: animate ? 0.5 : 0, ease: 'expo.out' };
+    const opts = { x: br.left - gr.left, width: br.width, duration: animate ? duration.ui : 0, ease: ease.cinematic };
     if (animate) gsap.to(ind, opts); else gsap.set(ind, opts);
   };
   const active = group.querySelector('.filter-btn.active') || btns[0];
@@ -227,4 +269,14 @@ if (document.getElementById('derbi-shotmap')) {
 }
 
 // HPAnalytic — interaktif görseller
-import '/src/visuals-init.js';
+
+
+// ═══ PREMIUM INIT (SplitType) ═══
+document.addEventListener('DOMContentLoaded', () => {
+    const heroTitle = document.querySelector('.hero-title');
+    if (heroTitle && typeof gsap !== 'undefined' && typeof SplitType !== 'undefined') {
+        const split = new SplitType(heroTitle, { types: 'words,chars' });
+        gsap.from(split.chars, { y: 50, opacity: 0, duration: 1, ease: "power3.out", stagger: 0.03, delay: 0.2 });
+    }
+});
+// ═══ PREMIUM INIT SONU ═══

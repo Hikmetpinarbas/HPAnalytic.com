@@ -1,0 +1,66 @@
+{
+  "xG": {
+    "definition": "Beklenen Gol (Expected Goals)",
+    "status": "VERIFIED",
+    "scale": "[0, 1] per shot",
+    "unit": "probability"
+  },
+  "OxG": {
+    "definition": "Rakip Beklenen Golü (Opponent Expected Goals conceded)",
+    "status": "VERIFIED",
+    "scale": "goals",
+    "unit": "expected_goals"
+  },
+  "PPDA": {
+    "definition": "Savunma Aksiyonu Başına İzin Verilen Pas (Passes Allowed Per Defensive Action)",
+    "status": "VERIFIED",
+    "scale": "ratio",
+    "unit": "passes/def_action"
+  },
+  "OPP_PPDA": {
+    "definition": "Rakibin Savunma Aksiyonu Başına Pası (Baskı Dayanıklılığı)",
+    "status": "VERIFIED",
+    "scale": "ratio",
+    "unit": "passes/def_action"
+  },
+  "Progressive passes": {
+    "definition": "Topun rakip kale yönünde en az 10 metre (veya ceza sahasına) taşındığı başarılı pas",
+    "status": "VERIFIED",
+    "unit": "count"
+  },
+  "Deep Completions": {
+    "definition": "Rakip ceza sahası içine atılan başarılı pas veya orta",
+    "status": "VERIFIED",
+    "unit": "count"
+  },
+  "High Regains": {
+    "definition": "Rakip yarı sahanın son 40 metresinde kazanılan toplar",
+    "status": "VERIFIED",
+    "unit": "count"
+  },
+  "Field Tilt": {
+    "definition": "Son 3. bölgedeki toplam pasların takıma ait yüzdesi",
+    "status": "VERIFIED",
+    "unit": "percentage"
+  },
+  "Direct Speed": {
+    "definition": "Topa sahip olunan akınlarda topun kaleye doğru metre/saniye cinsinden ilerleme hızı",
+    "status": "VERIFIED",
+    "unit": "m/s"
+  },
+  "Shot Centrality": {
+    "definition": "Şutların ceza alanı merkezi aksı (altıpas genişliği) ile uyumu / merkezilik katsayısı",
+    "status": "VERIFIED",
+    "unit": "index"
+  },
+  "Own Half Losses": {
+    "definition": "Kendi yarı sahasında kaybedilen toplam top sayısı",
+    "status": "VERIFIED",
+    "unit": "count"
+  },
+  "Counter Attack xG": {
+    "definition": "Hızlı geçiş / kontratak hücumlarından üretilen gol beklentisi",
+    "status": "VERIFIED",
+    "unit": "expected_goals"
+  }
+}

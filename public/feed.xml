@@ -6,11 +6,46 @@
     <description>HPAnalytic yeni makale ve analiz arşivi</description>
     <language>tr-TR</language>
     <item>
-      <title>Maç Raporu: VfB Stuttgart vs Galatasaray</title>
+      <title>Galatasaray 2-0 Stuttgart: xG Paradoksu</title>
+      <link>https://hpanalytic.com/yazi/2026-11-03-galatasaray-vs-vfb-stuttgart.html</link>
+      <guid isPermaLink="true">https://hpanalytic.com/yazi/2026-11-03-galatasaray-vs-vfb-stuttgart.html</guid>
+      <description>Stuttgart yerleşik düzeniyle sahada baskın bir yapı kurdu, Galatasaray ise geçiş fazında daha etkili hareket etti.</description>
+      <pubDate>Thu, 05 Nov 2026 22:50:25 +0000</pubDate>
+    </item>
+    <item>
+      <title>Fenerbahçe - Liverpool: Maç Analizi</title>
+      <link>https://hpanalytic.com/yazi/2026-11-04-fenerbahce-vs-liverpool.html</link>
+      <guid isPermaLink="true">https://hpanalytic.com/yazi/2026-11-04-fenerbahce-vs-liverpool.html</guid>
+      <description>:::visual pass-network | Pas Ağı | İnteraktif taktik haritası :::</description>
+      <pubDate>Thu, 05 Nov 2026 20:40:38 +0000</pubDate>
+    </item>
+    <item>
+      <title>Galatasaray Stuttgart’ı Nasıl Yendi? Topa Değil, Tehlikenin Yönüne Hükmetmek</title>
       <link>https://hpanalytic.com/yazi/2026-11-03-galatasaray-vs-stuttgart.html</link>
       <guid isPermaLink="true">https://hpanalytic.com/yazi/2026-11-03-galatasaray-vs-stuttgart.html</guid>
-      <description>05.11.2026 · UEFA Şampiyonlar Ligi · HPAnalytic Derin Analiz</description>
-      <pubDate>Thu, 05 Nov 2026 11:10:35 +0000</pubDate>
+      <description>Bir futbol maçında üstünlüğü belirleyen şey, topun hangi takımda daha uzun süre kaldığı mıdır? Yoksa topun rakip savunma için ne kadar büyük bir probleme dönüştüğü mü? Galatasaray’ın Stuttgart karşısında aldığı 2-0’lık galibiyet, bu iki sor</description>
+      <pubDate>Thu, 05 Nov 2026 18:57:35 +0000</pubDate>
+    </item>
+    <item>
+      <title>Maç Raporu: Liverpool FC vs Fenerbahce</title>
+      <link>https://hpanalytic.com/yazi/2026-11-04-fenerbahce-vs-liverpool-fc.html</link>
+      <guid isPermaLink="true">https://hpanalytic.com/yazi/2026-11-04-fenerbahce-vs-liverpool-fc.html</guid>
+      <description>&gt; ⚠️ xT kaynağı: legacy (16x12 değil, 12x8)</description>
+      <pubDate>Thu, 05 Nov 2026 17:19:03 +0000</pubDate>
+    </item>
+    <item>
+      <title>Galatasaray 2-0 Stuttgart: xG Paradoksu</title>
+      <link>https://hpanalytic.com/yazi/galatasaray-stuttgart-xg-paradoksu.html</link>
+      <guid isPermaLink="true">https://hpanalytic.com/yazi/galatasaray-stuttgart-xg-paradoksu.html</guid>
+      <description>Modern futbol analitiğinde skor ile beklenen gol (xG) arasındaki asimetri, şans faktörüyle değil; aksiyonun hangi faza, hangi hızla ve rakip savunmanın hangi yapısal dengesizlik anında taşındığıyla açıklanır. Valeriy Lobanovskyi’nin "fonksi</description>
+      <pubDate>Thu, 05 Nov 2026 17:19:03 +0000</pubDate>
+    </item>
+    <item>
+      <title>Galatasaray vs Stuttgart: Geçiş Koridorlarının Haritası</title>
+      <link>https://hpanalytic.com/yazi/galatasaray-stuttgart-gecis-haritasi.html</link>
+      <guid isPermaLink="true">https://hpanalytic.com/yazi/galatasaray-stuttgart-gecis-haritasi.html</guid>
+      <description>Stuttgart yerleşik düzeniyle sahayı kontrol etti. Galatasaray geçişlerde daha az baskın kaldı.</description>
+      <pubDate>Thu, 05 Nov 2026 17:19:03 +0000</pubDate>
     </item>
     <item>
       <title>0.59'dan 2 gol: Batrakov'un gecesi</title>
@@ -18,13 +53,6 @@
       <guid isPermaLink="true">https://hpanalytic.com/yazi/gs-stuttgart-batrakov-059.html</guid>
       <description>Batrakov'un bitiriciliği ve pas ağındaki konumu, Galatasaray'ın galibiyetiyle Stuttgart'ın sonuçsuz pas hacmini birlikte sorgulatıyor.</description>
       <pubDate>Thu, 05 Nov 2026 09:46:44 +0000</pubDate>
-    </item>
-    <item>
-      <title>Galatasaray 2-0 Stuttgart: xG paradoksu</title>
-      <link>https://hpanalytic.com/yazi/galatasaray-stuttgart-xg-paradoksu.html</link>
-      <guid isPermaLink="true">https://hpanalytic.com/yazi/galatasaray-stuttgart-xg-paradoksu.html</guid>
-      <description>Stuttgart xG 1.74, Galatasaray 1.38. Ama sahadan 2-0 GS ayrıldı.</description>
-      <pubDate>Thu, 05 Nov 2026 08:51:21 +0000</pubDate>
     </item>
     <item>
       <title>Galatasaray 2-1 Fenerbahçe: 20 Şut, 2 Gol — Kanıt ve Sınırları</title>

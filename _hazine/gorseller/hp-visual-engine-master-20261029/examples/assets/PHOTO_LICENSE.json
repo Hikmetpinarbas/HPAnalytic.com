@@ -1,0 +1,12 @@
+{
+  "file": "grace_hopper-original.jpg",
+  "sha256": "a8ca6d734765703b09728ab47fe59f473d93ae3967fc24c7c0288c3c7adb7130",
+  "subject": "Grace M. Hopper, 1984 official portrait",
+  "author": "James S. Davis / U.S. Navy",
+  "source": "Matplotlib bundled sample_data/grace_hopper.jpg; resized derivative of NH 96919-KN",
+  "license": "Public domain in the United States, official U.S. Navy work; Commons PD mark",
+  "evidence": "https://commons.wikimedia.org/wiki/File:Grace_Hopper.jpg",
+  "original_source": "https://www.history.navy.mil/content/history/nhhc/our-collections/photography/numerical-list-of-images/nhhc-series/nh-series/NH-96000/NH-96919-KN.html",
+  "modifications_in_input": "Bundled Matplotlib derivative; copied byte-for-byte locally",
+  "automatic_publication": false
+}

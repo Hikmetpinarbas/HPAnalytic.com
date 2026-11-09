@@ -1,0 +1,91 @@
+{
+  "layers": [
+    {
+      "file": "L-axes-1280x720.png",
+      "id": "axes",
+      "title": "Zaman ekseni (canvas + izgara)",
+      "evidence": "n/a"
+    },
+    {
+      "file": "L-period_marks-1280x720.png",
+      "id": "period_marks",
+      "title": "Devre/bitis cizgileri",
+      "evidence": "n/a"
+    },
+    {
+      "file": "L-area-1280x720.png",
+      "id": "area",
+      "title": "Baski egrisi (xT momentum, model)",
+      "evidence": "blue (model)"
+    },
+    {
+      "file": "L-turning_point-1280x720.png",
+      "id": "turning_point",
+      "title": "Goller / kirilma anlari (gozlem)",
+      "evidence": "amber (gozlem)"
+    },
+    {
+      "file": "L-minute_labels-1280x720.png",
+      "id": "minute_labels",
+      "title": "Dakika etiketleri",
+      "evidence": "n/a"
+    },
+    {
+      "file": "L-momentum_annotation-1280x720.png",
+      "id": "momentum_annotation",
+      "title": "Baski okumasi (panel)",
+      "evidence": "mixed (model+gozlem)"
+    },
+    {
+      "file": "L-meta-1280x720.png",
+      "id": "meta",
+      "title": "14. Lejant ve kanit bandi (veri-disi)",
+      "evidence": "n/a (bant)"
+    }
+  ],
+  "production_order": [
+    "axes",
+    "period_marks",
+    "area",
+    "turning_point",
+    "minute_labels",
+    "momentum_annotation",
+    "meta"
+  ],
+  "composite_order": [
+    "axes",
+    "period_marks",
+    "area",
+    "turning_point",
+    "minute_labels",
+    "momentum_annotation",
+    "meta"
+  ],
+  "composite": "composite-1280x720.png",
+  "size": [
+    1280,
+    720
+  ],
+  "pitch_m": [
+    105.0,
+    68.0
+  ],
+  "xt_model": "HPAnalytic xT v1",
+  "xt_sample": {
+    "matches_used": 40,
+    "passes": 6029,
+    "shots": 987
+  },
+  "match_id": 15946,
+  "team": "Barcelona",
+  "notes": [
+    "satir ici: sutlar StatsBomb events gozlemi; xT ve gol bolgesi model",
+    "sut yogunlugu olay sayimidir (tracking degil); kavramsal/isinli degil",
+    "amber = gozlem/odak, blue = model, red = ihlal; karistirilmaz"
+  ],
+  "active": [],
+  "links": 0,
+  "motifs": 0,
+  "chain": null,
+  "shots": null
+}

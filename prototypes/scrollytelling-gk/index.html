@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Scrollytelling GK — Prototip (synthetic, publication_authorized: false)</title>
+<meta name="description" content="İzole scrollytelling prototipi. Sentetik veri, yayına hazır değil.">
+<link rel="stylesheet" href="./scene.css">
+<script type="importmap">
+{
+  "imports": {
+    "gsap": "../../node_modules/gsap/index.js",
+    "gsap/ScrollTrigger": "../../node_modules/gsap/ScrollTrigger.js",
+    "gsap/Observer": "../../node_modules/gsap/Observer.js",
+    "lenis": "../../node_modules/lenis/dist/lenis.mjs"
+  }
+}
+</script>
+<!-- d3: mevcut node_modules'dan, UMD dist (bare-specifier zincirinden kaçınma). Yeni paket yok. -->
+<script src="../../node_modules/d3/dist/d3.min.js"></script>
+</head>
+<body>
+<main class="container">
+  <header style="padding:28px 0 8px">
+    <h1>Scrollytelling GK — Prototip</h1>
+    <p class="meta">Provenance: <strong>synthetic</strong> · publication_authorized: <strong>false</strong> · Yeni paket yok (gsap/d3/lenis mevcut node_modules)</p>
+    <p class="meta">Klavye: pas çizgileri <span class="kbd">Tab</span> ile gezilir, <span class="kbd">Enter</span> tooltip açar, <span class="kbd">Esc</span> kapatır. Merkezi oyuncular ★ renk + kalın beyaz kenarlık + etiketle vurgulu.</p>
+  </header>
+
+  <div class="wrap">
+    <section class="stage" aria-label="Saha görünümü">
+      <div class="viz-box" id="viz-box">
+        <svg id="pitch" role="img" aria-label="Futbol sahası ve oyuncu konumları"></svg>
+        <div class="tooltip" id="tooltip" hidden></div>
+      </div>
+      <div style="display:flex;gap:8px;flex-wrap:wrap;margin-top:10px">
+        <span class="badge" id="badge-flow">Temsili akış <span id="flow-note">Temsili akış</span></span>
+        <span class="badge" id="badge-move">Temsili hareket <span id="move-note">Temsili hareket</span></span>
+      </div>
+    </section>
+
+    <section class="steps">
+      <article class="step" id="step-1">
+        <h2>Akt 1 — Diziliş</h2>
+        <p>11 oyuncu sentetik dizilişten sırayla yerleşir (stagger 60ms). Scroll geri kaydırılırsa scrub geri sarar. Tek RAF: GSAP ticker Lenis'i sürer.</p>
+      </article>
+      <article class="step" id="step-2">
+        <h2>Akt 2 — Pas ağı</h2>
+        <p>Pas çizgileri scroll ile sırayla çizilir. <em>real_sequence: false</em> olduğundan "Temsili akış" rozeti görünür. Mobilde en güçlü 15 bağlantı listelenir. Çizgiler <span class="kbd">Tab</span> + <span class="kbd">Enter</span> ile erişilebilir.</p>
+      </article>
+      <article class="step" id="step-3">
+        <h2>Akt 3 — Mekânsal değişim</h2>
+        <p>Oyuncular <em>x_from/y_from → x_to/y_to</em> hareket eder. Sadece <code>transform: translate</code> kullanılır (layout thrash yok). <em>real_trajectory: false</em> → "Temsili hareket" rozeti.</p>
+      </article>
+    </section>
+  </div>
+  <footer style="padding:20px 0 60px" class="meta">Prototip verisi asla "yayına hazır" işaretlenmez. Gemini ölçümü: test/budget.html · Codex denetimi: viz/, motion/, scenes/, main.js</footer>
+</main>
+<script type="module" src="./main.js"></script>
+</body>
+</html>
