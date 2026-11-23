@@ -1,9 +1,13 @@
 name: Deploy to GitHub Pages
 
 on:
-  push:
-    branches: [main]
   workflow_dispatch:
+    inputs:
+      release_approved:
+        description: "Explicit owner approval for this release (never automated)"
+        required: true
+        type: boolean
+        default: false
 
 permissions:
   contents: read
@@ -16,6 +20,7 @@ concurrency:
 
 jobs:
   build:
+    if: ${{ github.ref == 'refs/heads/main' && inputs.release_approved == true }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -24,11 +29,13 @@ jobs:
           node-version: 20
       - run: npm install --no-audit --no-fund
       - run: npm run build
+      - run: node scripts/publication-gate.mjs --enforce-dist
       - uses: actions/upload-pages-artifact@v3
         with:
           path: ./dist
 
   deploy:
+    if: ${{ github.ref == 'refs/heads/main' && inputs.release_approved == true }}
     needs: build
     runs-on: ubuntu-latest
     environment:
