@@ -18,6 +18,13 @@ class PagesPublicationGateTest(unittest.TestCase):
         s=WORKFLOW.read_text()
         self.assertGreaterEqual(s.count("github.ref == 'refs/heads/main'"),2)
         self.assertGreaterEqual(s.count("inputs.release_approved == true"),2)
-        self.assertIn("node scripts/publication-gate.mjs --enforce-dist",s)
+        self.assertIn("node scripts/release-security-gate.mjs dist",s)
+
+    def test_immutable_dependencies_and_least_privilege(self):
+        s=WORKFLOW.read_text()
+        self.assertIn("npm ci --no-audit --no-fund",s)
+        self.assertNotIn("npm install",s)
+        self.assertIn("  deploy:\n    permissions:\n      pages: write\n      id-token: write",s)
+        self.assertIn("permissions:\n  contents: read",s)
 
 if __name__=="__main__":unittest.main()

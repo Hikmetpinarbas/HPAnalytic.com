@@ -11,8 +11,6 @@ on:
 
 permissions:
   contents: read
-  pages: write
-  id-token: write
 
 concurrency:
   group: pages
@@ -27,14 +25,17 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-      - run: npm install --no-audit --no-fund
+      - run: npm ci --no-audit --no-fund
       - run: npm run build
-      - run: node scripts/publication-gate.mjs --enforce-dist
+      - run: node scripts/release-security-gate.mjs dist
       - uses: actions/upload-pages-artifact@v3
         with:
           path: ./dist
 
   deploy:
+    permissions:
+      pages: write
+      id-token: write
     if: ${{ github.ref == 'refs/heads/main' && inputs.release_approved == true }}
     needs: build
     runs-on: ubuntu-latest
