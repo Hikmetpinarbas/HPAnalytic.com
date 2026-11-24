@@ -1,0 +1,99 @@
+{
+  "schema_version": "1.0",
+  "task": "HP-REPO-TRANSFER-MISTRAL-001",
+  "repo": "Hikmetpinarbas/HPAnalytic.com",
+  "purpose": "Telefondaki üretim modüllerinden repoya taşınabilecek (allow) / asla girmeyecek (deny) / inceleme gerektiren (needs_review) desenler. Transfer PR'larında otomatik kontrol için girdi.",
+  "allow": {
+    "description": "Transfer edilebilir: kod, test, sözleşme, dokümantasyon. Termux mutlak yolu temizlenmiş olmalı (bkz. must_not_contain).",
+    "paths": [
+      "hpa-pipeline-v3/**/*.py",
+      "hpa-pipeline-v3/tests/*.py",
+      "hpa-pipeline-v3/README.md",
+      "hpa-pipeline-v3/**/__init__.py",
+      "scripts/build_*.py",
+      "scripts/*.mjs",
+      "src/visuals/**",
+      "src/charts/**",
+      "docs/VERI-SOZLESMESI*.json",
+      "docs/*SCHEMA*.json",
+      "docs/*.md",
+      "ORCHESTRATION/*.json",
+      "ORCHESTRATION/*_SOZLESMESI.md",
+      "tests/*.test.mjs"
+    ],
+    "extensions_only": [".py", ".mjs", ".sh", ".md", ".json"]
+  },
+  "deny": {
+    "description": "Halka açık repoya ASLA girmeyecekler. Transfer PR'ında bu desenlerden herhangi biri eşleşirse PR reddedilir.",
+    "paths": [
+      "**/*.csv",
+      "**/*.xml",
+      "**/*.xlsx",
+      "**/*.xls",
+      "**/*.db",
+      "**/*.sqlite*",
+      "**/*.mp4",
+      "**/*.mkv",
+      "**/*.mov",
+      "**/*.webm",
+      "**/*.wav",
+      "**/*.mp3",
+      "**/*.zip",
+      "**/*.tar.gz",
+      "**/__pycache__/**",
+      "**/*.pyc",
+      "**/.vite/**",
+      "**/node_modules/**",
+      "**/*.bak*",
+      "**/*.pre-*.bak",
+      "content/_yeni_yazilar/**",
+      "content/_yeni_yazilar_v*/**",
+      "content/yazilar.bak/**",
+      "content/yazilar/_audit/**",
+      "debug_*.py",
+      "probe*.py",
+      "workaround.py",
+      "**/.env*",
+      "**/*.env.local",
+      "**/hot_cluster/**",
+      "pipeline/input/**",
+      "pipeline/output/**"
+    ],
+    "must_not_contain": [
+      "/data/data/com.termux",
+      "/storage/emulated",
+      "/sdcard",
+      "GEMINI_API_KEY=",
+      "rclone://",
+      "hpnarbas@gmail.com",
+      "gen-lang-client-",
+      "AIza",
+      "sk-"
+    ],
+    "note": "must_not_contain tam hash'lenecek değer maskeli yazıldı; gerçek tokenlar asla bu dosyaya yazılmaz."
+  },
+  "needs_review": {
+    "description": "Vaka bazında karar gerektirir; transfer PR'ında manuel onay.",
+    "paths": [
+      "**/*.png",
+      "**/*.jpg",
+      "**/*.svg",
+      "public_data/**",
+      "**/*.json"
+    ],
+    "size_limit_bytes": 524288,
+    "rules": [
+      "Görsel: kaynağı ORCHESTRATION/GORSEL_KATALOG.md'de izlenebiliyorsa allow, telefondan ham çıktıysa deny.",
+      "public_data: yalnızca sitede yayınlanan son türetilmiş çıktı. Ham veri asla.",
+      "*.json: > 512 KB ise needs_review; veri sözleşmesi ise allow."
+    ]
+  },
+  "existing_whitelisted_exceptions": {
+    "note": "Repo ana dalda bugün mevcut bulunan ve taranırken false-positive verecek dosyalar; transfer kontrolü bunları bilinçli olarak bypass eder ama yeniden transfer etmez.",
+    "paths": [
+      "test/subs_test/*.csv",
+      "test/subs_test/expected.json",
+      "docs/LILLE-GS-SCHEMA.json"
+    ]
+  }
+}
