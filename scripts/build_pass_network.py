@@ -20,7 +20,7 @@ import pandas as pd
 KAYNAK = Path("content/kaynak-veri/gs-stuttgart")
 BASE = Path("public/assets/data/gs-stuttgart")
 OUT = BASE / "pass_network.json"
-PLAYERS_XLSX = Path("/storage/emulated/0/HPAnaliz/SportsBase/maclar/MATCH_2026_11_03_Galatasaray_vs_Stuttgart/MATCH_2026_11_03_Galatasaray_vs_Stuttgart__PLAYERS__XLSX.xlsx")
+PLAYERS_XLSX = Path("/storage/emulated/0/HPAnaliz/SportsBase/maclar/MATCH_2026_11_03_Galatasaray_vs_Stuttgart/MATCH_2026_11_03_Galatasaray_vs_Stuttgart__PLAYERS__XLSX.xlsx")  # hpa:allow-path: cihaz urun kaynagdi; repo veri tasimaz
 
 def norm(s):
     s = s.lower().strip()

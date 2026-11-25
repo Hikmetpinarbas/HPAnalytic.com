@@ -12,7 +12,7 @@ _ap.add_argument('--out', default=None)
 _args, _ = _ap.parse_known_args()
 # --- /AUTO ---
 
-_GK_DEF = "/storage/emulated/0/HPAnaliz/SportsBase/maclar/MATCH_2026_11_03_Galatasaray_vs_Stuttgart/MATCH_2026_11_03_Galatasaray_vs_Stuttgart__GOALKEEPERS__XLSX.xlsx"
+_GK_DEF = "/storage/emulated/0/HPAnaliz/SportsBase/maclar/MATCH_2026_11_03_Galatasaray_vs_Stuttgart/MATCH_2026_11_03_Galatasaray_vs_Stuttgart__GOALKEEPERS__XLSX.xlsx"  # hpa:allow-path: cihaz urun kaynagdi; repo veri tasimaz
 GK_XLSX = str(next(Path(_args.src).glob("*__GOALKEEPERS__XLSX.xlsx"), _GK_DEF)) if _args.src else _GK_DEF
 _PC_DEF = "content/kaynak-veri/gs-stuttgart/players.csv"  # HP-W1-SITE-001: ham CSV kamusal alanda deil
 PLAYERS_CSV = next((str(Path(c)) for c in (f"{_args.out}/players.csv" if _args.out else _PC_DEF, _PC_DEF) if Path(c).exists()), _PC_DEF)
