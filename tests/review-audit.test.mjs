@@ -115,7 +115,7 @@ test('kaynak md hash\'i kayarsa SOURCE_HASH_DRIFT', () => {
 });
 
 test('gizli bilgi sizintisi engellenir (CREDENTIAL_LEAK)', () => {
-  const kok = ortamKur(temizDist([['assets/js/app.js', 'const k="sk-proj-abc123def456ghi789";']]));
+  const kok = ortamKur(temizDist([['assets/js/app.js', 'const k="sk-proj-abc123def456ghi789";']])); // hpa:allow-path: test fixture, gerçek sır değildir
   const { engel } = denetle(kok);
   assert.ok(engel.some(e => e.startsWith('CREDENTIAL_LEAK')));
   rmSync(kok, { recursive: true, force: true });

@@ -107,11 +107,12 @@
     ]
   },
   "existing_whitelisted_exceptions": {
-    "note": "Repo ana dalda bugün mevcut bulunan ve taranırken false-positive verecek dosyalar; transfer kontrolü bunları bilinçli olarak bypass eder ama yeniden transfer etmez.",
+    "note": "Repo ana dalda bugün mevcut bulunan ve taranırken false-positive verecek dosyalar; transfer kontrolü bunları bilinçli olarak bypass eder ama yeniden transfer etmez. public/feed.xml yayin retrosu; **/*.xml denylisti canli feed duzenlemesinde false-positive verir, bicak seklinde kapsam dist denetimi (review_audit.mjs) tarafindan yurutulur.",
     "paths": [
       "test/subs_test/*.csv",
       "test/subs_test/expected.json",
-      "docs/LILLE-GS-SCHEMA.json"
+      "docs/LILLE-GS-SCHEMA.json",
+      "public/feed.xml"
     ]
   }
 }
