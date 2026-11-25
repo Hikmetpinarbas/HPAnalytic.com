@@ -1,0 +1,153 @@
+{
+  "schema_version": "hpa.repo_module_map.v1",
+  "task": "HP-MISTRAL-REPO-026",
+  "repo": "Hikmetpinarbas/HPAnalytic.com",
+  "kural": "Üst düzey klasör yapısı genişletilmez. Her modül, REPO_TRANSFER_PLAN.md §2'deki mevcut eşdeğerinin altına alt klasör/dosya olarak girer. Tek modül -> tek PR.",
+  "katmanlar": ["veri", "bilim", "gorsel", "editoryal", "otonomi", "guvenlik-kalite", "site", "test"],
+  "modules": [
+    {
+      "id": "M01",
+      "name": "kaynak-kabul-dosya-tasnif",
+      "layer": "veri",
+      "durum": "hedef-hazir",
+      "hedef_kok": "hpa-pipeline-v3/ingest",
+      "mevcut_esdegerler": ["hpa-pipeline-v3/ingest/load.py", "scripts/file_ingestion.py"],
+      "kurallar": [
+        "Ham CSV/XML/XLSX repoya girmez; yalnızca kod + sözleşme.",
+        "Kaynak yolları hpa-pipeline-v3/paths.py girdi_koku() üzerinden okunur."
+      ]
+    },
+    {
+      "id": "M02",
+      "name": "veri-muhendisligi-boru-hatti",
+      "layer": "veri",
+      "durum": "hedef-hazir",
+      "hedef_kok": "hpa-pipeline-v3",
+      "mevcut_esdegerler": ["hpa-pipeline-v3/ingest", "hpa-pipeline-v3/reconcile", "hpa-pipeline-v3/derive", "hpa-pipeline-v3/export", "pipeline/"],
+      "kurallar": [
+        "Eşdeğer klasör aşamalarının içine ek dosya olarak girer; çalışan modüller kaldırılmaz.",
+        "Sabit cihaz yolları paths.*, HPA_INPUT_ROOT/HPA_OUTPUT_ROOT ortam değişkenlerine taşınır."
+      ]
+    },
+    {
+      "id": "M03",
+      "name": "csv-xml-uzlastirma-tekillistirme",
+      "layer": "veri",
+      "durum": "hedef-hazir",
+      "hedef_kok": "hpa-pipeline-v3/reconcile",
+      "mevcut_esdegerler": ["hpa-pipeline-v3/reconcile/", "hpa-pipeline-v3/tests/test_reconcile.py"],
+      "kurallar": ["Eşleşme/tekilleştirme hesap mantığı değiştirilemez; yalnızca ekleme."]
+    },
+    {
+      "id": "M04",
+      "name": "xlsx-semantik-hucre-indeksleme",
+      "layer": "veri",
+      "durum": "hedef-hazir",
+      "hedef_kok": "hpa-pipeline-v3/ingest",
+      "mevcut_esdegerler": ["hpa-pipeline-v3/reconcile/xlsx_reader.py", "scripts/process_xlsx_stats.py", "scripts/xlsx-truth.py"],
+      "kurallar": ["- → None ayrımı gibi mevcut davranışlar test_reconcile.py ile korunur."]
+    },
+    {
+      "id": "M05",
+      "name": "bilimsel-analiz-matematik-motorlari",
+      "layer": "bilim",
+      "durum": "hedef-hazir",
+      "hedef_kok": "hpa-pipeline-v3/derive",
+      "mevcut_esdegerler": ["hpa-pipeline-v3/derive/", "pipeline/core/model.py", "pipeline/derive/"],
+      "kurallar": [
+        "Her metrik tanımı ORCHESTRATION/GRAFIK_FORMUL_SOZLESMESI.md ile tutarlı olmalı.",
+        "Metrik hesaplama mantığı repoda değiştirilmez; yeni motorlar yeni dosya olarak eklenir."
+      ]
+    },
+    {
+      "id": "M06",
+      "name": "pas-zincirleri-oyuncu-iliskileri",
+      "layer": "bilim",
+      "durum": "hedef-hazir",
+      "hedef_kok": "hpa-pipeline-v3/derive",
+      "mevcut_esdegerler": ["scripts/build_pass_network.py", "scripts/build_pass_network_v2.py", "scripts/extract-real-passes.py", "ORCHESTRATION/PASS_NETWORK_SOZLESMESI.md"],
+      "kurallar": ["Test kalıbı hpa-pipeline-v3/tests/test_<modul>.py; deterministik fixture zorunlu."]
+    },
+    {
+      "id": "M07",
+      "name": "gorsel-animasyon-fabrikasi",
+      "layer": "gorsel",
+      "durum": "hedef-hazir",
+      "hedef_kok": "scripts",
+      "ikinci_dizin": "src/visuals",
+      "mevcut_esdegerler": ["scripts/build_viz_bundle.py", "src/visuals/", "src/charts/", "ORCHESTRATION/VIZ_STANDART_SOZLESMESI.md", "ORCHESTRATION/GORSEL_KATALOG.md"],
+      "kurallar": [
+        "Yeni üst düzey görsel fabrika klasörü açılmaz; scripts/build_* + src/visuals genişletilir.",
+        "Üretilen görsellerin kaynağı ORCHESTRATION/GORSEL_KATALOG.md'de izlenebilir olmalı."
+      ]
+    },
+    {
+      "id": "M08",
+      "name": "makale-editoryal-uretim-motoru",
+      "layer": "editoryal",
+      "durum": "hedef-hazir",
+      "hedef_kok": "scripts",
+      "ikinci_dizin": "content/yazilar",
+      "mevcut_esdegerler": ["scripts/build-yazi.mjs", "scripts/pipeline-to-article.mjs", "ORCHESTRATION/EDITORYEL_DIL_SOZLESMESI.md"],
+      "kurallar": [
+        "Taslak içerikler (content/_yeni_yazilar*) repoya girmez.",
+        "Araştırma notu tamamlanmamış makale olarak gösterilmez; release_status=HOLD korunur.",
+        "npm run build bozulmadan geçmeli (PR #100 editorial-SHA gate ile uyumlu)."
+      ]
+    },
+    {
+      "id": "M09",
+      "name": "ortak-bilimsel-kanit-sozlesmeleri",
+      "layer": "guvenlik-kalite",
+      "durum": "hedef-hazir",
+      "hedef_kok": "docs",
+      "ikinci_dizin": "ORCHESTRATION",
+      "mevcut_esdegerler": ["docs/VERI-SOZLESMESI.json", "docs/VERI-SOZLESMESI.md", "docs/LILLE-GS-SCHEMA.json", "ORCHESTRATION/GRAFIK_FORMUL_SOZLESMESI.md"],
+      "kurallar": ["Yeni sözleşmeler docs/VERI-SOZLESMESI-<modul>.json kalıbıyla; şema, mevcut sözleşme şemasına uyumlu."]
+    },
+    {
+      "id": "M10",
+      "name": "otonom-uretim-gorev-yonetimi",
+      "layer": "otonomi",
+      "durum": "hedef-hazir",
+      "hedef_kok": "ORCHESTRATION",
+      "mevcut_esdegerler": ["ORCHESTRATION/agents.json", "ORCHESTRATION/SITE_KOORDINATOR_TALIMAT.md", "ORCHESTRATION/pilot_manifest.json"],
+      "kurallar": ["Koordinatörün çağırdığı yol sabitleri paths.py'ye taşınır; agents.json diff'i tek commit ve review edilebilir."]
+    },
+    {
+      "id": "M11",
+      "name": "kaynak-dogrulama-kalite-kontrol",
+      "layer": "guvenlik-kalite",
+      "durum": "hedef-hazir",
+      "hedef_kok": "scripts/transfer",
+      "mevcut_esdegerler": ["scripts/analyze/validate/", "scripts/scan-sources.py", "REPO_TRANSFER_ALLOWLIST.json"],
+      "kurallar": ["Doğrulama scriptleri yalnızca standart kütüphane kullanır; ücretli API çağırmaz."]
+    },
+    {
+      "id": "M12",
+      "name": "site-entegrasyonu",
+      "layer": "site",
+      "durum": "hedef-hazir",
+      "hedef_kok": "src",
+      "ikinci_dizin": "public_data",
+      "mevcut_esdegerler": ["src/", "index.html", "public/", "public_data/", "vite.config.js"],
+      "kurallar": [
+        "Site yalnızca türetilmiş ve onaylı çıktı tüketir (public_data, dist); ham veriyi referans etmez.",
+        "public_data'ya yalnızca sitede yayımlanacak son türetilmiş çıktı girer."
+      ]
+    },
+    {
+      "id": "M13",
+      "name": "regresyon-uctan-uca-kabul-testleri",
+      "layer": "test",
+      "durum": "hedef-hazir",
+      "hedef_kok": "tests",
+      "ikinci_dizin": "hpa-pipeline-v3/tests",
+      "mevcut_esdegerler": ["tests/build-publication.test.mjs", "hpa-pipeline-v3/tests/test_reconcile.py", "test/subs_test/"],
+      "kurallar": [
+        "Fixture'lar sentetik/deterministik; gerçek maç verisi repoya girmez (istisna: mevcut test/subs_test/*).",
+        "E2E kabul testleri transfer manifest'inin test kaydına bağlanır."
+      ]
+    }
+  ]
+}

@@ -1,0 +1,141 @@
+{
+  "schema_version": "hpa.transfer_acceptance_report.v1",
+  "agent_adi": "Mistral",
+  "model_surum": "zai-glm-5-3-flash-vibe-free (Vibe Code / Mistral AI platformu)",
+  "ortam": "Linux sandbox (Python 3.12.14, Node v22.23.5, npm 10.x, git; pandas+openpyxl test kurulumulu)",
+  "gorev_id": "HP-MISTRAL-REPO-026",
+  "tarih_saat_tsi": "2026-11-25 09:57",
+  "durum": "TAMAMLANDI — transfer kabuk altyapısı hazır, hiçbir Termux modülü bu görevde repoya taşınmadı",
+  "rapor_turu": "hazırlık + kabul kapısı teslim raporu",
+  "dal": "vibe/repo-transfer-prep-3b9c33 (PR #101 head)",
+  "pr": "https://github.com/Hikmetpinarbas/HPAnalytic.com/pull/101",
+  "kapsam_notu": "Önceki hazırlık (HP-REPO-TRANSFER-MISTRAL-001: plan, allowlist, checklist) korunmuş ve üzerine genişletilmiştir. Ana dal (main) dokunulmadı. OpenCode Mobil Pro / Termux tarafına müdahale edilmedi; telefon tarafındaki kodların repoya aktarıldığı iddia edilmez.",
+  "yapilan_degisiklikler": [
+    "REPO_TRANSFER_MANIFEST.schema.json (yeni): transfer manifest JSON şeması; SHA-256, kaynak/hedef, bağımlılık, çalıştırma + giriş/çıkış sözleşmesi, test, lisans, çakışma, güvenlik ve yayın kilidi (publication_authorized=false const, review_required=true const, release_status HOLD/IZIN enum)",
+    "REPO_MODULE_MAP.json (yeni): 13 transfer edilecek sistem için hedef yerleşim; üst düzey klasör açılmadan mevcut eşdeğerlerin altına (M01–M13)",
+    "DEPENDENCY_MATRIX.json (yeni): veri/bilim/görsel/editoryal/site/otonomi/güvenlik-kalite/test katman bağımlılık sınırları + paths.py merkezli HPA_* taşınabilir yapılandırma tablosu",
+    "TRANSFER_CONFLICT_POLICY.md (yeni): C1–C7 çakışma sınıfları, fail-closed varsayılan kararlar, sürüm ve yol çatışması yönetimi",
+    "hpa-pipeline-v3/paths.py (yeni): Termux/Ubuntu/UserLAnd/CI tek yol yapılandırma noktası; HPA_DATA_ROOT ve HPA_* override'ları; cihaz sabit yolu yok",
+    "hpa-pipeline-v3/tests/test_paths.py (yeni): paths.py taşınabilirlik testleri",
+    "scripts/transfer/check_transfer_pr.py (yeni): PR diff tabanlı kapı — denylist, gizli bilgi, cihaz yolu, sembolik/broken link, boyut eşiği",
+    "scripts/transfer/validate_manifest.py (yeni): manifest şema+kural+allowlist+module-map+--verify SHA doğrulama",
+    "scripts/transfer/generate_transfer_manifest.py (yeni): gerçek SHA-256'lı manifest üretimi; yayın kilitleri sabit",
+    "scripts/transfer/validate_configs.py (yeni): 5 hazırlık yapılandırma dosyasının tutarlılık denetimi",
+    ".github/workflows/transfer-gate.yml (yeni): PR'larda config doğrulama + transfer kapısı + Python/JS sözdizimi + unittest + manifest doğrulama + site build + node test; DEPLOY YOK",
+    ".gitignore (güncelleme): deny hizalı desenler (*.csv/xml/xlsx/db/parquet, video, arşiv, *.bak*, debug_*/probe*, hot_cluster, pipeline/input|output vb.)",
+    "REPO_TRANSFER_ALLOWLIST.json (güncelleme): hazırlık altyapısı desenleri allowlist'e eklendi; task alanı HP-MISTRAL-REPO-026'ya güncellendi",
+    "REPO_TRANSFER_CHECKLIST.md (güncelleme): §A026 bölümü eklendi; §C eksik listesi güncellendi",
+    "package.json + package-lock.json (onarım): src/js/main.js'in kullandığı split-type bağımlılığı package.json'a eklendi (^0.3.4) — pre-existing build kırığı; import değiştirilmedi",
+    "tests/build-publication.test.mjs (onarım): bayat slug'lı 2 test güncel yayındaki yazıya bağlandı",
+    "REPO_TRANSFER_MANIFEST.example.json (yeni): gerçek SHA-256 ile üretilmiş ve --verify ile doğrulanmış örnek manifest (durum=beklemede, release HOLD)"
+  ],
+  "test_kayitlari": [
+    {
+      "komut": "python3 hpa-pipeline-v3/tests/test_paths.py",
+      "sonuc": "PASS",
+      "sayi": 8,
+      "not": "paths.py taşınabilirlik (env override, ortam tespiti, repo içi kontrol)"
+    },
+    {
+      "komut": "python3 -m unittest tests.test_transfer_prep -v",
+      "sonuc": "PASS",
+      "sayi": 21,
+      "not": "kapı üniteleri + uçtan uca deny/secret/link senaryoları + manifest şema kilidi + yapılandırma tutarlılığı"
+    },
+    {
+      "komut": "python3 hpa-pipeline-v3/tests/test_reconcile.py",
+      "sonuc": "PASS",
+      "sayi": 10,
+      "not": "mevcut regresyon seti (pandas/openpyxl kurulumdan sonra) — transfer ile dokunulmadı"
+    },
+    {
+      "komut": "python3 hpa-pipeline-v3/tests/test_load.py",
+      "sonuc": "PASS",
+      "sayi": "smoke",
+      "not": "çıkış üretmez koşum, exit 0"
+    },
+    {
+      "komut": "node --test tests/*.test.mjs",
+      "sonuc": "PASS",
+      "sayi": 3,
+      "not": "site yayın build regresyonu (2 bayat test onarıldı)"
+    },
+    {
+      "komut": "npm ci --no-audit --no-fund && npm run build",
+      "sonuc": "PASS",
+      "sayi": 1,
+      "not": "vite build başarılı; split-type eksikliği onarıldı"
+    },
+    {
+      "komut": "node --check scripts/*.mjs",
+      "sonuc": "PASS",
+      "sayi": 3,
+      "not": "build-search-index, build-yazi, pipeline-to-article"
+    },
+    {
+      "komut": "python3 -m compileall -q hpa-pipeline-v3 pipeline scripts tests",
+      "sonuc": "PASS",
+      "sayi": 0,
+      "not": "sözdizimi hatası sıfır"
+    },
+    {
+      "komut": "python3 scripts/transfer/check_transfer_pr.py --base origin/main --head HEAD",
+      "sonuc": "PASS",
+      "sayi": 0,
+      "not": "PR diff'i tüm kapıdan geçti — 0 ihlal (GECIRDI)"
+    },
+    {
+      "komut": "python3 scripts/transfer/validate_manifest.py REPO_TRANSFER_MANIFEST.example.json --allowlist REPO_TRANSFER_ALLOWLIST.json --module-map REPO_MODULE_MAP.json --verify",
+      "sonuc": "PASS",
+      "sayi": 1,
+      "not": "gerçek SHA-256 eşleşmesi dahil GECERLI"
+    },
+    {
+      "komut": "python3 scripts/transfer/validate_configs.py",
+      "sonuc": "PASS",
+      "sayi": 5,
+      "not": "allowlist+şema+harita+matris+rapor tutarlı (rapor bu dosya yazıldıktan sonra koşuldu)"
+    }
+  ],
+  "test_toplam": {
+    "python_birim": 29,
+    "node": 3,
+    "kapı_koşumu": 1,
+    "config_koşumu": 1,
+    "manifest_verify": 1,
+    "nasil": "yerel sandbox'ta koşuldu; CI aynı komutları transfer-gate.yml ile PR'larda koşar"
+  },
+  "kabul_hazirligi_13_modul": {
+    "M01 kaynak kabul": "hedef hazır (hpa-pipeline-v3/ingest)",
+    "M02 veri boru hattı": "hedef hazır (hpa-pipeline-v3; paths.py sahada)",
+    "M03 CSV/XML uzlaştırma": "hedef hazır (hpa-pipeline-v3/reconcile)",
+    "M04 XLSX semantik indeks": "hedef hazır (hpa-pipeline-v3/ingest)",
+    "M05 bilimsel motorlar": "hedef hazır (hpa-pipeline-v3/derive)",
+    "M06 pas zincirleri": "hedef hazır (hpa-pipeline-v3/derive + mevcut build_pass_network)",
+    "M07 görsel/animasyon fabrika": "hedef hazır (scripts + src/visuals genişletmesi)",
+    "M08 editoryal motor": "hedef hazır (scripts/content; build onarıldı)",
+    "M09 kanıt sözleşmeleri": "hedef hazır (docs + ORCHESTRATION)",
+    "M10 otonom üretim": "hedef hazır (ORCHESTRATION)",
+    "M11 doğrulama/KK": "şuan sahada (scripts/transfer + transfer-gate.yml)",
+    "M12 site entegrasyonu": "hedef hazır (src/public_data; build yeşil)",
+    "M13 regresyon/E2E": "hedef hazır (tests + hpa-pipeline-v3/tests)"
+  },
+  "termux_sevkiyat_kabul_sirasi": [
+    "1) Modül başına manifest üretimi: python3 scripts/transfer/generate_transfer_manifest.py ... (Termux'ta, gerçek SHA-256 ile)",
+    "2) PR aç: tek modül → tek PR; scripts/transfer/check_transfer_pr.py + transfer-gate.yml diff'i otomatik denetler",
+    "3) validate_manifest.py --verify yeşil; modül testi + npm run build yeşil",
+    "4) İnsan onayı → merge kararı sahibe; canlı deploy ayrı, publication_authorized=false kalır"
+  ],
+  "kalan_engeller": [
+    "v3 ↔ pipeline/ çift nesil birleştirme kararı sahibe alınmadı (TRANSFER_CONFLICT_POLICY.md C3)",
+    "hpa-pipeline-v3 içindeki mevcut kodda Termux sabit yolları (ör. run_reconcile.py:58) — Termux tarafının transfer düzenlemesi kapsamında paths.py'e taşınacak (bu görevde dokunulmadı)",
+    "HPA_* cihaz-spesifik değerleri (Termux/UserLAnd) sahipte doğrulanmalı",
+    "Ana daldaki hâlâ açık PR #100 (fail-closed deploy kapısı) merge edilmedi; transfer-gate.yml bunu gerektirmez ama deploy.yml'in #100 sürümüyle birleşmesi izlemeli"
+  ],
+  "yayin_kilidi": {
+    "publication_authorized": false,
+    "review_required": true,
+    "release_status": "HOLD",
+    "not": "Manifest şeması bu üç alanı zorunlu; CI'da transfer gate deploy tetiklemez; deploy.yml yalnızca main push (PR #100 disiplini)."
+  }
+}

@@ -1,0 +1,183 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "hpa.repo_transfer_manifest.v1",
+  "title": "HPAnalytic Repo Transfer Manifest",
+  "description": "Termux/Ubuntu/UserLAnd ortamından repoya transfer edilen her bileşen için kabul kaydı (HP-MISTRAL-REPO-026). validated by scripts/transfer/validate_manifest.py",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "transfer_id",
+    "module_id",
+    "module_name",
+    "kaynak",
+    "hedef",
+    "dosyalar",
+    "gorev",
+    "bagimliliklar",
+    "calistirma",
+    "test",
+    "kaynak_bilgisi",
+    "cakisma",
+    "guvenlik",
+    "yayin"
+  ],
+  "properties": {
+    "schema_version": { "const": "hpa.repo_transfer_manifest.v1" },
+    "transfer_id": { "type": "string", "pattern": "^[A-Z0-9-]+$" },
+    "module_id": {
+      "type": "string",
+      "pattern": "^M[0-9]{2}$",
+      "description": "REPO_MODULE_MAP.json içindeki module id ile eşleşmelidir."
+    },
+    "module_name": { "type": "string", "minLength": 3 },
+    "durum": {
+      "type": "string",
+      "enum": ["tasindi", "kismi", "beklemede", "ornek"],
+      "description": "tasindi/kismi durumu gerçek taşımayı bildirir; beklemede/ornek manifest transfer iddiası taşımaz."
+    },
+    "kaynak": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["cihaz", "orijinal_yol", "yol_duzenlemesi"],
+      "properties": {
+        "cihaz": { "enum": ["termux", "ubuntu", "userland", "ubuntu-actions", "diger"] },
+        "orijinal_yol": { "type": "string" },
+        "yol_duzenlemesi": {
+          "enum": ["paths.py-portable", "komut-arg", "yeniden-yazildi", "dokuman-ornegi"],
+          "description": "Termux mutlak yolları kodda sabit değilse hangi mekanizmayla taşınabilirleşti."
+        }
+      }
+    },
+    "hedef": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["repo_kok_yolu", "hedef_sha256"],
+      "properties": {
+        "repo_kok_yolu": { "type": "string", "pattern": "^(?!/)(?!.*\\.\\.).+" },
+        "hedef_sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" }
+      }
+    },
+    "dosyalar": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["kaynak_yol", "hedef_yol", "sha256", "boyut_bayt", "rol"],
+        "properties": {
+          "kaynak_yol": { "type": "string" },
+          "hedef_yol": { "type": "string", "pattern": "^(?!/)(?!.*\\.\\.).+" },
+          "sha256": { "type": "string", "pattern": "^[a-f0-9]{64}$" },
+          "boyut_bayt": { "type": "integer", "minimum": 1 },
+          "rol": { "enum": ["kod", "test", "sozlesme", "dokumantasyon", "fixture", "gorsel-kaynak", "diger"] }
+        }
+      }
+    },
+    "gorev": { "type": "string", "minLength": 10 },
+    "bagimliliklar": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["python", "node", "sistem", "icmodul", "eksik", "durum"],
+      "properties": {
+        "python": { "type": "array", "items": { "type": "string" } },
+        "node": { "type": "array", "items": { "type": "string" } },
+        "sistem": { "type": "array", "items": { "type": "string" } },
+        "icmodul": {
+          "type": "array",
+          "items": { "type": "string", "pattern": "^M[0-9]{2}$" }
+        },
+        "eksik": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Repoda veya hedef ortamlarda bulunamayan bağımlılıklar; boş olabilir ama listelenmek zorundadır."
+        },
+        "durum": { "enum": ["tam", "eksik-bilgili"] }
+      }
+    },
+    "calistirma": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["komut", "ortamlar", "giris_sozlesmesi", "cikis_sozlesmesi"],
+      "properties": {
+        "komut": { "type": "string", "minLength": 3 },
+        "ortamlar": {
+          "type": "array",
+          "minItems": 1,
+          "items": { "enum": ["termux", "ubuntu", "userland", "ubuntu-actions"] }
+        },
+        "giris_sozlesmesi": {
+          "type": "object",
+          "required": ["tur", "yol"],
+          "properties": {
+            "tur": { "type": "string" },
+            "yol": { "type": "string", "pattern": "^(?!/)(?!.*\\.\\.).+" },
+            "not": { "type": "string" }
+          }
+        },
+        "cikis_sozlesmesi": {
+          "type": "object",
+          "required": ["tur", "yol"],
+          "properties": {
+            "tur": { "type": "string" },
+            "yol": { "type": "string", "pattern": "^(?!/)(?!.*\\.\\.).+" },
+            "not": { "type": "string" }
+          }
+        }
+      }
+    },
+    "test": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["komut", "durum", "fixture_yolu"],
+      "properties": {
+        "komut": { "type": "string" },
+        "durum": { "enum": ["gecti", "kaldi", "uygulanmadi"] },
+        "kayit_yolu": { "type": "string" },
+        "fixture_yolu": { "type": "string", "pattern": "^(?!/)(?!.*\\.\\.).+" },
+        "not": { "type": "string" }
+      }
+    },
+    "kaynak_bilgisi": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["lisans", "atiflar"],
+      "properties": {
+        "lisans": { "type": "string" },
+        "atiflar": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "cakisma": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["isim_cakismasi", "uzerine_yazilanlar", "surum", "detay"],
+      "properties": {
+        "isim_cakismasi": { "type": "boolean" },
+        "uzerine_yazilanlar": { "type": "array", "items": { "type": "string" } },
+        "surum": { "type": "string" },
+        "detay": { "type": "string" }
+      }
+    },
+    "guvenlik": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["gizli_bilgi_taramasi", "cihaz_yolu_taramasi", "buyuk_dosya_taramasi", "notlar"],
+      "properties": {
+        "gizli_bilgi_taramasi": { "enum": ["temiz"] },
+        "cihaz_yolu_taramasi": { "enum": ["temiz", "dokuman-ornegi"] },
+        "buyuk_dosya_taramasi": { "enum": ["temiz", "istisna-izli"] },
+        "notlar": { "type": "array", "items": { "type": "string" } }
+      }
+    },
+    "yayin": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["release_status", "publication_authorized", "review_required"],
+      "properties": {
+        "release_status": { "enum": ["HOLD", "IZIN"] },
+        "publication_authorized": { "const": false },
+        "review_required": { "const": true }
+      }
+    }
+  }
+}

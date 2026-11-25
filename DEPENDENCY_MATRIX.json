@@ -1,0 +1,101 @@
+{
+  "schema_version": "hpa.dependency_matrix.v1",
+  "task": "HP-MISTRAL-REPO-026",
+  "repo": "Hikmetpinarbas/HPAnalytic.com",
+  "yönelim": "baglanabilir yönü: katmanA -> katmanB, katmanA katmanB'nin çıktısını tüketebilir. Tersine bağımlılık yasaktır.",
+  "portable_config": {
+    "tek_nokta": "hpa-pipeline-v3/paths.py",
+    "ortam_degiskenleri": {
+      "HPA_DATA_ROOT": "Veri kökü; gitmez ise repo kökü/public_data. Termux'ta /data/data/com.termux üzerindeki veri kökü buraya verilir.",
+      "HPA_INPUT_ROOT": "Ham girdi kökü (repoya girmeyen klasör), varsayılan <veri_koku>/pipeline/input",
+      "HPA_OUTPUT_ROOT": "Boru hattı çıktı kökü, varsayılan <veri_koku>/pipeline/output",
+      "HPA_CANONICAL_ROOT": "Kanonik sözleşme dosyaları, varsayılan <veri_koku>/public_data/canonical",
+      "HPA_PUBLIC_DATA_ROOT": "Siteye yayımlanan türetilmiş çıktılar, varsayılan repo kökü/public_data"
+    },
+    "ortam_karsiliklari": {
+      "termux": "HPA_DATA_ROOT=/data/data/com.termux/files/home/pipeline",
+      "ubuntu": "HPA_DATA_ROOT=$HOME/hpanalytic-data",
+      "userland": "HPA_DATA_ROOT=$HOME/hpanalytic-data",
+      "ubuntu-actions": "HPA_DATA_ROOT=$RUNNER_TEMP/hpa-data veya repo varsayılanı"
+    }
+  },
+  "layerlar": [
+    {
+      "ad": "veri",
+      "sahiplik": ["hpa-pipeline-v3/ingest", "hpa-pipeline-v3/reconcile", "pipeline/input (dış veri kökü)"],
+      "baglanabilir": [],
+      "baglanamaz": ["bilim", "gorsel", "editoryal", "otonomi", "site", "ORCHESTRATION modülleri"],
+      "arayuz": ["docs/VERI-SOZLESMESI.json", "docs/VERI-SOZLESMESI.md", "REPO_TRANSFER_MANIFEST.schema.json#note_veri_sozlesmesi"],
+      "dis_bagimliliklar_python": ["pandas", "openpyxl"],
+      "not": "Ham CSV/XML/XLSX bu katmana dışarıdan HPA_INPUT_ROOT ile gösterilir; depoya girmez."
+    },
+    {
+      "ad": "bilim",
+      "sahiplik": ["hpa-pipeline-v3/derive"],
+      "baglanabilir": ["veri"],
+      "baglanamaz": ["gorsel", "editoryal", "site", "otonomi"],
+      "arayuz": ["ORCHESTRATION/GRAFIK_FORMUL_SOZLESMESI.md", "REPO_TRANSFER_MANIFEST.schema.json#note_veri_sozlesmesi"],
+      "dis_bagimliliklar_python": ["numpy? tipik; manifest'te beyan zorunlu"],
+      "not": "Hesaplama mantığına repoda dokunulmaz; yeni motorlar yeni dosya. Deterministik şartlı fixture testi zorunlu."
+    },
+    {
+      "ad": "gorsel",
+      "sahiplik": ["scripts/build_viz_bundle.py ve build_* türevleri", "src/visuals", "src/charts"],
+      "baglanabilir": ["bilim", "veri"],
+      "baglanamaz": ["editoryal üretim mantığı (yazı motorunu import etmez)", "otonomi"],
+      "arayuz": ["ORCHESTRATION/VIZ_STANDART_SOZLESMESI.md", "ORCHESTRATION/GORSEL_KATALOG.md", "src/visuals/ çıktı sözleşmeleri"],
+      "dis_bagimliliklar_node": ["d3", "d3-soccer", "gsap"],
+      "not": "Görsel üretimi site build'inden önce; ORCHESTRATION/GORSEL_KATALOG.md kaynaksız görsel üretimini engeller."
+    },
+    {
+      "ad": "editoryal",
+      "sahiplik": ["scripts/build-yazi.mjs", "scripts/pipeline-to-article.mjs", "content/yazilar/"],
+      "baglanabilir": ["bilim", "gorsel", "veri"],
+      "baglanamaz": ["otonomi (aynı dizinde yaşamaz; ORCHESTRATION'dan config okur ama import etmez)"],
+      "arayuz": ["ORCHESTRATION/EDITORYEL_DIL_SOZLESMESI.md", "content/yayin-defteri.json (PR #100 ledger)"],
+      "dis_bagimliliklar_node": ["marked", "vite", "esbuild"],
+      "not": "release_status=HOLD olmayan içerik build'e girmez; publication_authorized=false kilitlenir."
+    },
+    {
+      "ad": "site",
+      "sahiplik": ["src/", "index.html", "public/", "public_data", "vite.config.js"],
+      "baglanabilir": ["gorsel", "editoryal"],
+      "baglanamaz": ["veri", "bilim (runtime'da Python koduna bağımlı olamaz)"],
+      "arayuz": ["src viz-embed bridge", "public_data türetilmiş JSON/HTML",
+        "PR #100 scripts/release-security-gate.mjs (dist taraması)"],
+      "dis_bagimliliklar_node": ["d3", "gsap", "lenis", "markdown? içerikte marked"],
+      "not": "Site/build yalnızca türetilmiş ve onaylı çıktı tüketir; ham veri referansı yasak."
+    },
+    {
+      "ad": "otonomi",
+      "sahiplik": ["ORCHESTRATION/", "ORCHESTRATION/agents.json", "ORCHESTRATION/SITE_KOORDINATOR_TALIMAT.md"],
+      "baglanabilir": ["guvenlik-kalite", "test"],
+      "baglanamaz": [],
+      "arayuz": ["ORCHESTRATION/agents.json", "ORCHESTRATION/pilot_manifest.json", "ORCHESTRATION/*_SOZLESMESI.md"],
+      "not": "Orkestrasyon, diğer katmanları koordine eder ama hiçbir katman Otonomi'yi import etmez."
+    },
+    {
+      "ad": "guvenlik-kalite",
+      "sahiplik": ["scripts/transfer/", "scripts/analyze/validate", "REPO_TRANSFER_*", "DEPENDENCY_MATRIX.json", ".github/workflows/transfer-gate.yml"],
+      "baglanabilir": ["tüm katmanların dosyalarını okuyabilir (read-only)"],
+      "baglanamaz": ["üretim verisini değiştiremez", "yayın tetikleyemez"],
+      "arayuz": ["REPO_TRANSFER_ALLOWLIST.json", "REPO_TRANSFER_MANIFEST.schema.json", "REPO_MODULE_MAP.json", "TRANSFER_CONFLICT_POLICY.md"],
+      "dis_bagimliliklar_python": ["yalnızca standart kütüphane"],
+      "not": "Fail-closed: şüphede blokla. Ücretli API, token, canlı deploy yok."
+    },
+    {
+      "ad": "test",
+      "sahiplik": ["tests/", "hpa-pipeline-v3/tests/", "test/subs_test (mevcut istisna)"],
+      "baglanabilir": ["tüm katmanlar (sadece test amaçlı)"],
+      "baglanamaz": [],
+      "arayuz": ["tests/*.test.mjs node:test koşumu", "hpa-pipeline-v3/tests/test_*.py bağımsız koşum", "TRANSFER_ACCEPTANCE_REPORT kayıtları"],
+      "dis_bagimliliklar_python": ["pandas", "openpyxl"],
+      "dis_bagimliliklar_node": ["node:test (standart)"],
+      "not": "Fixture sentetik; ham maç verisi test fixture'sına çevrilmeden repoya girmez."
+    }
+  ],
+  "notlar": {
+    "PR100_referansi": "Fail-closed yayın kapısı: scripts/release-security-gate.mjs, PR #100. Transfer süreci publication_authorized=false kilitlerini asla değiştirmez.",
+    "python_v3_eski_pipeline": "v3 (hpa-pipeline-v3) hedef nesil; pipeline/ eski nesil. Birleştirme kararı sahipte; yapılana kadar çift nesil görünür kalır."
+  }
+}

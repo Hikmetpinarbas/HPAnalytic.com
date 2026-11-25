@@ -17,6 +17,20 @@
 - [x] Termux mutlak yol dönüşüm planı → `REPO_TRANSFER_PLAN.md` §4. Kanıt: `hpa-pipeline-v3/reconcile/run_reconcile.py:58` ve 30+ dosyada `/data/data/com.termux/...`.
 - [x] Modül başına ön koşullar → `REPO_TRANSFER_PLAN.md` §5.
 
+### HP-MISTRAL-REPO-026 eklemeleri (transfer kabuk altyapısı)
+- [x] `hpa-pipeline-v3/paths.py` + `hpa-pipeline-v3/tests/test_paths.py` (8/8 test geşti): Termux/Ubuntu/UserLAnd/CI için `HPA_*` ortam değişkenli taşınabilir yol yapılandırması.
+- [x] `REPO_TRANSFER_MANIFEST.schema.json` — transfer başına manifest JSON şeması (SHA-256, bağımlılık, sözleşme, test, lisans, çakışma, yayın kilidi alanları).
+- [x] `REPO_MODULE_MAP.json` — 13 sistem için hedef yerleşim kararı (üst düzey klasör açılmadan mevcut eşdeğerlerin altına).
+- [x] `DEPENDENCY_MATRIX.json` — katman bağımlılık sınırları + portability yapılandırması (HPA_* ortam değişkenleri tablosu).
+- [x] `TRANSFER_CONFLICT_POLICY.md` — C1–C7 çakışma sınıfları ve varsayılan fail-closed kararlar.
+- [x] `scripts/transfer/check_transfer_pr.py` — diff tabanlı denylist + gizli bilgi + cihaz yolu + sembolik/broken link + boyut kapısı.
+- [x] `scripts/transfer/validate_manifest.py` — manifest şema + kurallar + `--verify` SHA-256 eşleşme kontrolü.
+- [x] `scripts/transfer/generate_transfer_manifest.py` — gerçek SHA-256 ile manifest üretimi (yayın kilitleri HOLD/false/true sabit).
+- [x] `scripts/transfer/validate_configs.py` — 5 hazırlık yapılandırma dosyasının tutarlılık denetimi.
+- [x] `.github/workflows/transfer-gate.yml` — PR'larda: config tutarlılığı, transfer kapısı, Python/JS sözdizimi, testler, manifest doğrulama, site build; deploy yok.
+- [x] `tests/test_transfer_prep.py` (21 test) + `REPO_TRANSFER_MANIFEST.example.json` + `TRANSFER_ACCEPTANCE_REPORT.json`.
+- [x] Yayın kilidi korunuyor: `publication_authorized=false`, `review_required=true`, `release_status=HOLD`.
+
 ## B. Her transfer PR'ı için kontrol listesi (ilgili modül geldiğinde)
 
 ### 1. Kapsam

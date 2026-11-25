@@ -1,8 +1,8 @@
 {
   "schema_version": "1.0",
-  "task": "HP-REPO-TRANSFER-MISTRAL-001",
+  "task": "HP-MISTRAL-REPO-026",
   "repo": "Hikmetpinarbas/HPAnalytic.com",
-  "purpose": "Telefondaki üretim modüllerinden repoya taşınabilecek (allow) / asla girmeyecek (deny) / inceleme gerektiren (needs_review) desenler. Transfer PR'larında otomatik kontrol için girdi.",
+  "purpose": "Telefondaki üretim modüllerinden repoya taşınabilecek (allow) / asla girmeyecek (deny) / inceleme gerektiren (needs_review) desenler. Transfer PR'larında otomatik kontrol için girdi. HP-MISTRAL-REPO-026 ile hazırlık altyapısı (transfer scripts, CI workflow, manifest/şema/harita dosyaları) da allowlist'e eklendi.",
   "allow": {
     "description": "Transfer edilebilir: kod, test, sözleşme, dokümantasyon. Termux mutlak yolu temizlenmiş olmalı (bkz. must_not_contain).",
     "paths": [
@@ -19,9 +19,24 @@
       "docs/*.md",
       "ORCHESTRATION/*.json",
       "ORCHESTRATION/*_SOZLESMESI.md",
-      "tests/*.test.mjs"
+      "tests/*.test.mjs",
+      "scripts/transfer/*.py",
+      "tests/*.py",
+      ".github/workflows/*.yml",
+      "REPO_TRANSFER_*.json",
+      "REPO_TRANSFER_*.md",
+      "REPO_MODULE_MAP.json",
+      "DEPENDENCY_MATRIX.json",
+      "TRANSFER_*.md",
+      "TRANSFER_*.json"
     ],
-    "extensions_only": [".py", ".mjs", ".sh", ".md", ".json"]
+    "extensions_only": [
+      ".py",
+      ".mjs",
+      ".sh",
+      ".md",
+      ".json"
+    ]
   },
   "deny": {
     "description": "Halka açık repoya ASLA girmeyecekler. Transfer PR'ında bu desenlerden herhangi biri eşleşirse PR reddedilir.",
