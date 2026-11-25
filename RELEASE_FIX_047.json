@@ -1,0 +1,109 @@
+{
+  "schema": "hpa.release_fix_047.v1",
+  "task": "HP-URGENT-SITE-FINAL-047",
+  "pr": 102,
+  "branch": "vibe/wave1-ticker-hierarchy-e49fa7",
+  "baseline_head": "5b58c13530125577f37d9b073d938ba4c393fdc5",
+  "kaynak_kabul_raporlari": {
+    "codex": "HP-URGENT-QA-042-R2 (HOLD)",
+    "copilot": "HP-URGENT-REL-043-R2 (HOLD)"
+  },
+  "fixes": {
+    "K1_trace_event": {
+      "dosya": "scripts/trace_event.py",
+      "davranis": "Acik --src gecersiz/eksikse repo baglancegina dusulmez, SystemExit ile fail-closed; --out acikca desteklenmez olarak reddedilir (trace_event yalnizca stdout'a rapor verir). Orkestrator (build_viz_bundle.py) --src/--out gondermez, cagri sozlesmesi korunur.",
+      "testler": ["tests/test_trace_event_paths.py"]
+    },
+    "K2_release_baglama": {
+      "dosyalar": [
+        "scripts/release/review_audit.mjs",
+        "scripts/release/verify_release_ready.mjs",
+        ".github/workflows/deploy.yml"
+      ],
+      "davranis": "RELEASE_READY.json artik build_commit_sha, ci_run_id, dist_manifest_sha256 (dist iceriginden deterministik yeniden hesaplanan damga) ve artifakt kimliklerini tasiyor. Deploy adimi verify_release_ready.mjs ile kabul edilen commit (github.sha), CI run (github.run_id), dist manifesti, makbuz semasi (hpa.release_ready.v1), onay protokolu (publication_authorized=false, human_approval_required=true) ve makbuz yasi (14 gun MAKBUZ_ESKI) kontrolunu fail-closed yapar. Yanlis commit (COMMIT_UYUMSUZ), degistirilmis payload / manifest uyumsuzlugu (MANIFEST_UYUMSUZ), eski makbuz (MAKBUZ_ESKI) yakalanir.",
+      "testler": ["tests/release-ready-binding.test.mjs (6 negatif/pozitif)", "tests/test_pages_manual_gate.py"]
+    },
+    "K3_rota_korunmasi": {
+      "dosyalar": [
+        "public/yazi/2026-11-03-galatasaray-vs-stuttgart-llm.html",
+        "public/yazi/2026-11-04-fenerbahce-vs-liverpool-fc.html",
+        "content/yayin-defteri.json",
+        "index.html",
+        "src/js/command-palette.js",
+        "scripts/build-sitemap.mjs"
+      ],
+      "davranis": "Canlida HTTP 200 olan iki makale rotasi statik uyumluluk sayfasi olarak geri getirildi; _redirects kullanilmadi (GitHub Pages uygulamaz). yayin-defteri tur:'uyumluluk' + canonical alanlari tanimlandi; uyumluluk sayfalari feed/sitemap disindadir ve canonical hedefi onayli bir makale olmalidir. /seri/metrikler, /seri/tarihten, /seri/formasyonlar, /seri/futbol-101 ve /top-5 rotalarinin hicbir zaman gercek icerigi yoktu (canlida da 404); index.html'deki kirik <a> baglantilari link'siz 'Yakinda' kartlarina cevrildi, command-palette /top-5 girisleri temizlendi. Sahte icerik uretilmedi.",
+      "testler": ["tests/route-acceptance.test.mjs"]
+    },
+    "K4_calisma_dosyasi_sizinti": {
+      "dosyalar": [
+        "public/assets/data/gs-stuttgart/pass_network_v2.working.json (git rm)",
+        "scripts/release-security-gate.mjs",
+        "scripts/release/review_audit.mjs"
+      ],
+      "davranis": "pass_network_v2.working.json repo takibinden cikarildi; her iki kapida working/draft/taslak/temp/tmp/review-only dosya adi deseni WORKING_FILE olarak reddedir. Yayinlanan pass_network_v2.json (gercek gorsel) yerinde ve degismedigini test kapsiyor.",
+      "testler": ["tests/route-acceptance.test.mjs (negatif kapsam: working|draft|taslak|temp|_pn3d|review-only)"]
+    },
+    "K5_yayin_guvenligi_geri_donus": {
+      "dosyalar": [".github/workflows/deploy.yml", "tests/deploy-workflow.test.mjs"],
+      "degerlendirme": "origin/main'deki mevcut deploy.yml push tetikleyicisiyle otomatik deploy edebiliyor (risk). PR #102 adayinda push tetikleyici yoktur; deploy yalnizca workflow_dispatch + release_approved:true (default false) + main ref kosuluyla calisir; guvenlik kapti + review audit + RELEASE_READY dogrulamasi insan onayindan bagimsiz olarak da fail-closed'dur. GitHub Pages ortami: build_type=workflow, https_enforced=true, environment 'github-pages' yalnizca branch_policy (ortam kurali olarak approval yok) — insan onayi tamamen release_approved input ve kapilar uzerinden sağlanir.",
+      "geri_donus_recetesi": {
+        "hedef_deploy_run": 42089613338,
+        "commit_sha": "fd1c639795c07c8157706a10d4b50cd709a0dcb4",
+        "not": "Geri donus SADECE insan onayiyla urun sahibi tarafindan uygulanir; bu gorevde canli rollback calistirilmadi.",
+        "adimlar": [
+          "1) gh run view 42089613338 --repo Hikmetpinarbas/HPAnalytic.com --json headSha  # dogrulanmis headSha: fd1c639795c07c8157706a10d4b50cd709a0dcb4 (eski deploy artefaktlari EXPIRED, artefakt indirme mumkun degil)",
+          "2) git fetch origin && git checkout -b rollback/release-047 fd1c639795c07c8157706a10d4b50cd709a0dcb4",
+          "3) main'i bu commit'e ileri sarmak yerine rollback dalini main'e birlestir ve deploy.yml'i workflow_dispatch ile, release_approved:true girisiyle insan onayiyla calistir",
+          "4) Deploy run bittiginde gh run view <yeni-run-id> ile conclusion=success ve github-pages environment url dogrulanir",
+          "5) Alternatif (tekrar deploy istenmiyorsa): Pages deploy-pages artefaktini yeni run'dan once, son basarili run'in commit'inden yeniden insa etmek tek yol; eski run'in artefaktlari scope/yaş nedeniyle kullanilamaz"
+        ]
+      },
+      "testler": ["tests/deploy-workflow.test.mjs (5 test)"]
+    },
+    "K6_test_ortami": {
+      "dosyalar": [".gitignore"],
+      "davranis": ".tmp-test/ yetkili gecici test dizini olarak .gitignore'a eklendi; Python testleri TMPDIR=$PWD/.tmp-test ile calistirildi. Test beklentileri gevsetilmedi; yalnizca test_pages_manual_gate'deki deploy makbuz dogrulama beklentisi verify_release_ready.mjs'e tasinan ayni fail-closed semantiyle guncellendi.",
+      "komut": "TMPDIR=$PWD/.tmp-test python3 -m unittest discover -s tests -p 'test_*.py'"
+    }
+  },
+  "test_sonuclari": {
+    "node_test": "63/63 PASS (node --test tests/*.test.mjs)",
+    "python_unittest": "44/44 PASS (TMPDIR=$PWD/.tmp-test python3 -m unittest discover -s tests -p 'test_*.py')",
+    "build": "npm run build OK; dist/sitemap.xml: 17 makale + 2 ozel yol",
+    "review_audit": "YAYIN_DENETIMI_GECTI (node scripts/release/review_audit.mjs dist)",
+    "release_security_gate": "SECURITY_REVIEW_PASS filesChecked=161 approvedArticles=19 publicationAuthorized=false",
+    "release_ready_dogrulama": "verify_release_ready.mjs RELEASE_READY_DOGRULANDI (commit=5b58c13... run=local)",
+    "transfer_gate_yerel": "GECIRDI: 83 dosya, 0 ihlal (python3 scripts/transfer/check_transfer_pr.py --base origin/main --head HEAD)"
+  },
+  "rota_kabul_listesi": {
+    "before_canli_fd1c639": [
+      {"rota": "/yazi/2026-11-03-galatasaray-vs-stuttgart.html", "canli": 200, "aday": "VAR (onayli makale)"},
+      {"rota": "/yazi/2026-11-03-galatasaray-vs-stuttgart-llm.html", "canli": 200, "aday": "EKSIK (source status:review) -> uyumluluk sayfasi eklendi"},
+      {"rota": "/yazi/2026-11-04-fenerbahce-vs-liverpool-fc.html", "canli": 200, "aday": "EKSIK (source status:review) -> taban sayfa geri getirildi + kendine canonical"},
+      {"rota": "/seri/metrikler", "canli": 404, "aday": "404 (icerik yok) -> kirik link kaldirildi"},
+      {"rota": "/seri/tarihten", "canli": 404, "aday": "404 (icerik yok) -> kirik link kaldirildi"},
+      {"rota": "/seri/formasyonlar", "canli": 404, "aday": "404 (icerik yok) -> kirik link kaldirildi"},
+      {"rota": "/seri/futbol-101", "canli": 404, "aday": "404 (icerik yok) -> kirik link kaldirildi"},
+      {"rota": "/top-5", "canli": 404, "aday": "404 (icerik yok) -> kirik link + palette girisleri kaldirildi"}
+    ],
+    "after_loopback_http_dist": [
+      {"kod": 200, "rota": "/index.html"},
+      {"kod": 200, "rota": "/yazi/2026-11-03-galatasaray-vs-stuttgart.html"},
+      {"kod": 200, "rota": "/yazi/2026-11-03-galatasaray-vs-stuttgart-llm.html (canonical -> onayli makale)"},
+      {"kod": 200, "rota": "/yazi/2026-11-04-fenerbahce-vs-liverpool-fc.html (kendine canonical)"},
+      {"kod": 404, "rota": "/seri/metrikler (hicbir dist sayfasindan baglanti yok; icerik hicbir zaman uretilmedi)"},
+      {"kod": 404, "rota": "/seri/tarihten (baglanti yok)"},
+      {"kod": 404, "rota": "/seri/formasyonlar (baglanti yok)"},
+      {"kod": 404, "rota": "/seri/futbol-101 (baglanti yok)"},
+      {"kod": 404, "rota": "/top-5 (baglanti yok)"}
+    ],
+    "not": "Sanalbox'tan dis cikisli HTTP kontrolu engellendigi icin canli 'once' durumu fd1c639 deploy kanitindan, 'sonra' durumu 127.0.0.1 loopback dist servisinden alindi; canli yayin kontrolu teslim sonrasi doende bagimsiz kabulde yapilir."
+  },
+  "sinirlar": {
+    "main_merge": "YOK",
+    "canli_deploy": "YOK",
+    "yayin_kilidi_degisikligi": "YOK",
+    "yeni_ozellik": "YOK"
+  }
+}
