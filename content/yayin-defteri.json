@@ -1,0 +1,151 @@
+{
+  "schema": "hpa.publication_ledger.v1",
+  "olusturma": "2026-11-05",
+  "olusturan": {
+    "ajans_adi": "Mistral",
+    "model": "zai-glm-5-3-flash-vibe-free",
+    "gorev_id": "HP-MISTRAL-RELEASE-030"
+  },
+  "kapsam": "Canli hpanalytic.com feed.xml uzerinde 2026-11-05 dogrulanmis 17 yayimlanmis makalenin md kaynak SHA-256 temeli. Gercek canli madde sayisi 17'dir (kullanicida '18' olarak gecen bilgi canli feed ile eslesmiyor, uydurulmadi).",
+  "publication_authorized": false,
+  "review_required": true,
+  "release_status": "HOLD",
+  "entries": [
+    {
+      "slug": "2002-dunya-kupasi-sans-mi-mekanizma-mi",
+      "source": "2002-dunya-kupasi-sans-mi-mekanizma-mi.md",
+      "source_sha256": "8f6d4d83e0469a91d105c7623e409480507c08de5cb2892d1032453f4cf97f48",
+      "basis": "LIVE_BASELINE",
+      "status": "published",
+      "source_changed_since_deployed_commit": false
+    },
+    {
+      "slug": "2026-11-03-galatasaray-vs-stuttgart",
+      "source": "2026-11-03-galatasaray-vs-stuttgart.md",
+      "source_sha256": "76aeba092583dda5594a59fb3f1176070cc04a1cdbf8f8a5b3e3840a5a6c7dfb",
+      "basis": "LIVE_BASELINE",
+      "status": "published",
+      "source_changed_since_deployed_commit": false
+    },
+    {
+      "slug": "articles-matematik-yalan-soylemeyi-bilmez",
+      "source": "articles-matematik-yalan-soylemeyi-bilmez.md",
+      "source_sha256": "91aed3dbf0337f0cbca25a5e50627dcec9ac2f694d0c68707c5a95c2a053bde5",
+      "basis": "LIVE_BASELINE",
+      "status": "published",
+      "source_changed_since_deployed_commit": false
+    },
+    {
+      "slug": "articles-valeriy-lobanovskyi-takimin-zekasini-tasarlamak",
+      "source": "articles-valeriy-lobanovskyi-takimin-zekasini-tasarlamak.md",
+      "source_sha256": "ca43acf14e7e3f4c0c3fb345daf5dbe4646c4cbce1e2265e3c2cc18e90d78242",
+      "basis": "LIVE_BASELINE",
+      "status": "published",
+      "source_changed_since_deployed_commit": false
+    },
+    {
+      "slug": "avrupa-sampiyonlar-liginde-taktiksel-evrim",
+      "source": "avrupa-sampiyonlar-liginde-taktiksel-evrim.md",
+      "source_sha256": "a0946933e9d6485b61426c530cd52705fa67387363644019030673319b0ae029",
+      "basis": "LIVE_BASELINE",
+      "status": "published",
+      "source_changed_since_deployed_commit": false
+    },
+    {
+      "slug": "filenin-sultanlari-anatomi-ve-mekanizma",
+      "source": "filenin-sultanlari-anatomi-ve-mekanizma.md",
+      "source_sha256": "e531140de3cd7d008acfeab066eb011b5edca289ccf98e98abdaef35d5e2e6d1",
+      "basis": "LIVE_BASELINE",
+      "status": "published",
+      "source_changed_since_deployed_commit": false
+    },
+    {
+      "slug": "galatasaray-stuttgart-xg-paradoksu",
+      "source": "2026-11-03_Galatasaray_vs_Stuttgart_Makale.md",
+      "source_sha256": "60d9dada2a498426fa734aa1258486bf48b78e164699b060eb66c5a7620e4a91",
+      "basis": "LIVE_BASELINE",
+      "status": "published",
+      "source_changed_since_deployed_commit": false
+    },
+    {
+      "slug": "gs-stuttgart-batrakov-059",
+      "source": "gs-stuttgart-batrakov-059.md",
+      "source_sha256": "e524de5e5bb690ec286f8a9fd0588f4d90d49c2675522c9e8a7f824825803110",
+      "basis": "LIVE_BASELINE",
+      "status": "published",
+      "source_changed_since_deployed_commit": false
+    },
+    {
+      "slug": "kadinlar-futbolun-anatomik-ve-taktiksel-evrimi",
+      "source": "kadinlar-futbolun-anatomik-ve-taktiksel-evrimi.md",
+      "source_sha256": "d5480e29a8e9b49fe614a521f7680d5858e5fcffe4442cc38543b1657192612a",
+      "basis": "LIVE_BASELINE",
+      "status": "published",
+      "source_changed_since_deployed_commit": false
+    },
+    {
+      "slug": "leicester-city-verinin-isyani",
+      "source": "leicester-city-verinin-isyani.md",
+      "source_sha256": "680da982c408c593af5237134277a1e42ca1a6adffa0951a47046df6400c8177",
+      "basis": "LIVE_BASELINE",
+      "status": "published",
+      "source_changed_since_deployed_commit": false
+    },
+    {
+      "slug": "mac-besiktas-crystal-palace-2026-10-22",
+      "source": "mac-besiktas-crystal-palace-2026-10-22.md",
+      "source_sha256": "39b81a6339aae569e9c9fde69d073b0ac9a968ae6b048231a44797af2b62e85e",
+      "basis": "LIVE_BASELINE",
+      "status": "published",
+      "source_changed_since_deployed_commit": false
+    },
+    {
+      "slug": "mac-fenerbahce-slavia-prag-2026-10-20",
+      "source": "mac-fenerbahce-slavia-prag-2026-10-20.md",
+      "source_sha256": "c4545bae78103c45994927bf9bbf9c177dd5aa1b4493a5b9cfe1b099545c5500",
+      "basis": "LIVE_BASELINE",
+      "status": "published",
+      "source_changed_since_deployed_commit": false
+    },
+    {
+      "slug": "mac-galatasaray-fenerbahce-2026-10-26",
+      "source": "mac-galatasaray-fenerbahce-2026-10-26.md",
+      "source_sha256": "86caad36f7c67855825fee80d82f61ae90e040bd898fd065dc6f2e93868d6d7e",
+      "basis": "LIVE_BASELINE",
+      "status": "published",
+      "source_changed_since_deployed_commit": false
+    },
+    {
+      "slug": "mac-kon-gal-30-10-2026",
+      "source": "mac-kon-gal-30-10-2026.md",
+      "source_sha256": "bf734cc325c1caa1d261db352bebbcf161e38a4eeaa6a94368aafac25cfb678e",
+      "basis": "LIVE_BASELINE",
+      "status": "published",
+      "source_changed_since_deployed_commit": false
+    },
+    {
+      "slug": "mac-lille-galatasaray-2026-10-21",
+      "source": "mac-lille-galatasaray-2026-10-21.md",
+      "source_sha256": "0b013b9665ba23ab2bcb56b7dbee9918e802508bd3bcff8bbbf9d2e01156779a",
+      "basis": "LIVE_BASELINE",
+      "status": "published",
+      "source_changed_since_deployed_commit": false
+    },
+    {
+      "slug": "portraits-vosse-de-boode",
+      "source": "portraits-vosse-de-boode.md",
+      "source_sha256": "5cdd987b7be507f4c2d68b650796ff5a20762da40ef0fcbb5660bdd59cbff10d",
+      "basis": "LIVE_BASELINE",
+      "status": "published",
+      "source_changed_since_deployed_commit": false
+    },
+    {
+      "slug": "super-lig-turk-futbolunun-veri-devrimi",
+      "source": "super-lig-turk-futbolunun-veri-devrimi.md",
+      "source_sha256": "36326af5e718dea2f57177bff9321c397e6e38e405ba15bde18c175f7a381488",
+      "basis": "LIVE_BASELINE",
+      "status": "published",
+      "source_changed_since_deployed_commit": false
+    }
+  ]
+}

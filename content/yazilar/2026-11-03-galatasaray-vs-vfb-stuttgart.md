@@ -1,4 +1,5 @@
 ---
+status: "review"
 title: "Galatasaray 2-0 Stuttgart: xG Paradoksu"
 date: "2026-11-03"
 author: "Hikmet Pınarbaş"

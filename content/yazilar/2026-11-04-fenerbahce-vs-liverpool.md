@@ -1,4 +1,5 @@
 ---
+status: "review"
 title: "Fenerbahçe - Liverpool: Maç Analizi"
 date: "2026-11-04"
 author: "Hikmet Pınarbaş"
