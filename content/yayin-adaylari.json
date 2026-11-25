@@ -19,6 +19,13 @@
   ],
   "inceleme_adaylari": [
     {
+      "slug": "shakhtar-fenerbahce-mac-oncesi",
+      "kaynak": "shakhtar-fenerbahce-mac-oncesi.md",
+      "durum": "incelemede",
+      "noindex": true,
+      "not": "Mac \u00f6ncesi inceleme iskeleti: veri bloklari onayli kaynaktan gelmeden bos birakilir, uydurulmaz. Ilk yayin adayi (guvenli_entegrasyon ayni yaris)."
+    },
+    {
       "slug": "galatasaray-stuttgart-gecis-haritasi",
       "kaynak": "2026-11-03-galatasaray-vs-stuttgart-llm.md",
       "durum": "incelemede",
