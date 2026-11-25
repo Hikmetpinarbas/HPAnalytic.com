@@ -153,7 +153,11 @@ export function denetle(root = '.', distDir = 'dist', opts = {}) {
         if (canon[1] !== beklenen) U('CANONICAL_TARGET', 'engelli', r + ' -> ' + canon[1]);
       }
       else if (canon[1] !== 'https://hpanalytic.com/yazi/' + slugHtml + '.html') U('CANONICAL_TARGET', 'engelli', r + ' -> ' + canon[1]);
-      if (/<meta\s+name="robots"\s+content="[^"]*noindex/i.test(txt)) U('INDEXED_BUT_NOINDEX', 'engelli', r);
+      const noindexli = /<meta\s+name="robots"\s+content="[^"]*noindex/i.test(txt);
+      // Kendine bagli uyumluluk sayfasi (onayli makale yerine yer tutan) dizine eklenmemeli; noindex zorunlu.
+      const ozUyumluluk = beklenen && canon && canon[1] === 'https://hpanalytic.com/yazi/' + slugHtml + '.html';
+      if (ozUyumluluk && !noindexli) U('UYUMLULUK_NOINDEX_MISSING', 'engelli', r);
+      else if (!beklenen && noindexli) U('INDEXED_BUT_NOINDEX', 'engelli', r);
     }
 
     // HP-W1-SITE-001 — ham JSON sözleşmesi: hpa.* şeması ya da gerekçeli izin yoksa engelle.

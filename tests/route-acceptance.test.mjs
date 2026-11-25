@@ -47,6 +47,27 @@ test('K3: canlı baseline iki makale rotası korunur ve doğru canonical hedefin
   }
 });
 
+// HP-MISTRAL-RELEASE-CLOSURE-085 — fenerbahce-vs-liverpool-fc uyumluluk sayfası onaysız tam metni
+// taşımaz; 200 rotası yalnızca tarafsız uyumluluk açıklaması + noindex ile kalır.
+test('K3: fenerbahce-vs-liverpool-fc uyumluluk sayfası tarafsız özet + noindex ile korunur', () => {
+  const yol = join(dist, 'yazi/2026-11-04-fenerbahce-vs-liverpool-fc.html');
+  assert.ok(existsSync(yol), 'ROTA_KAYIP');
+  const txt = readFileSync(yol, 'utf8');
+  assert.match(txt, /<meta\s+name="robots"\s+content="[^"]*noindex/i, 'NOINDEX_YOK');
+  assert.match(txt, /<link\s+rel="canonical"\s+href="https:\/\/hpanalytic\.com\/yazi\/2026-11-04-fenerbahce-vs-liverpool-fc\.html"/, 'CANONICAL_YOK');
+  assert.ok(txt.length < 4000, 'SAYFA_YENIDEN_SISDI:' + txt.length);
+  const paragraflar = [...txt.matchAll(/<p[\s>]/g)].length;
+  assert.ok(paragraflar <= 5, 'PARAGRAF_SINIRI:' + paragraflar);
+  for (const iz of ['<table', 'Skor ve Sonuç', '<h2', 'xG', 'Pas Ağı', 'Kaleci']) {
+    assert.ok(!txt.includes(iz), 'MAÇ_VERI_SIZDI:' + iz);
+  }
+});
+
+test('K3: uyumluluk sayfası sitemap dışında kalır', () => {
+  const sm = readFileSync(join(dist, 'sitemap.xml'), 'utf8');
+  assert.ok(!sm.includes('2026-11-04-fenerbahce-vs-liverpool-fc'), 'SITEMAPTE_UYUMLULUK');
+});
+
 test('K3: canlı baseline eşdeğer yayımlı makale rotası da dağıtımda bulunur', () => {
   assert.ok(existsSync(join(dist, 'yazi/2026-11-03-galatasaray-vs-stuttgart.html')), 'HEDEF_MAKALE_YOK');
 });

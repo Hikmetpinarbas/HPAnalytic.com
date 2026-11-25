@@ -200,3 +200,28 @@ test('noindex aday sitemap\'a girmemeli (NOINDEX_IN_SITEMAP)', async () => {
   assert.ok(engel.some(e => e.startsWith('NOINDEX_IN_SITEMAP')));
   rmSync(kok, { recursive: true, force: true });
 });
+
+// HP-MISTRAL-RELEASE-CLOSURE-085 — kendine bagli uyumluluk sayfasinda noindex zorunludur.
+test('uyumluluk sayfasi noindex sizsa engellenmez, tayinli makale noindex alamaz', () => {
+  const uyumlulukLedger = () => ({ schema: 'hpa.publication_ledger.v1', entries: [
+    { slug: 'ormek-yazi', source: 'ormek-yazi.md', source_sha256: sha256(MD), basis: 'LIVE_BASELINE', status: 'published' },
+    { slug: 'koruma-sayfasi', source: 'ormek-yazi.md', source_sha256: sha256(MD), basis: 'LIVE_BASELINE', status: 'published', tur: 'uyumluluk', canonical: 'https://hpanalytic.com/yazi/koruma-sayfasi.html' }
+  ] });
+
+  const iyi = ortamKur(temizDist([
+    ['yazi/koruma-sayfasi.html', SAYFA.replace('ormek-yazi', 'koruma-sayfasi') + '<meta name="robots" content="noindex, nofollow"/>']
+  ]));
+  writeFileSync(join(iyi, 'content/yayin-defteri.json'), JSON.stringify(uyumlulukLedger()));
+  assert.deepEqual(denetle(iyi).engel.filter(e => e.includes('koruma-sayfasi') || e.startsWith('UYUMLULUK') || e.startsWith('INDEXED')), []);
+  rmSync(iyi, { recursive: true, force: true });
+
+  const eksik = ortamKur(temizDist([['yazi/koruma-sayfasi.html', SAYFA.replace('ormek-yazi', 'koruma-sayfasi')]]));
+  writeFileSync(join(eksik, 'content/yayin-defteri.json'), JSON.stringify(uyumlulukLedger()));
+  assert.ok(denetle(eksik).engel.some(e => e.startsWith('UYUMLULUK_NOINDEX_MISSING')));
+  rmSync(eksik, { recursive: true, force: true });
+
+  const yayinli = ortamKur(temizDist());
+  writeFileSync(join(yayinli, 'dist', 'yazi/ormek-yazi.html'), '<meta name="robots" content="noindex"/>' + SAYFA);
+  assert.ok(denetle(yayinli).engel.some(e => e.startsWith('INDEXED_BUT_NOINDEX')));
+  rmSync(yayinli, { recursive: true, force: true });
+});
