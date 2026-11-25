@@ -2,8 +2,19 @@ import csv, os
 import pandas as pd
 from pathlib import Path
 
-BASE = Path("content/kaynak-veri/gs-stuttgart")  # HP-W1-SITE-001: ham CSV kamusal alanda deil
-SRC = Path("/storage/emulated/0/HPAnaliz/SportsBase/maclar/MATCH_2026_11_03_Galatasaray_vs_Stuttgart")  # hpa:allow-path: cihaz urun kaynagdi; repo veri tasimaz
+# --- AUTO: --src / --out destegi ---
+import sys, argparse
+from pathlib import Path as _PathAlias
+_ap = argparse.ArgumentParser(add_help=False)
+_ap.add_argument('--src', default=None)
+_ap.add_argument('--out', default=None)
+_args, _ = _ap.parse_known_args()
+# --- /AUTO ---
+
+BASE = Path(_args.src) if _args.src and (Path(_args.src) / "players.csv").exists() else Path("content/kaynak-veri/gs-stuttgart")  # HP-W1-SITE-001: ham CSV kamusal alanda deil
+SRC = Path(_args.src) if _args.src else None
+if SRC is None:
+    raise SystemExit("Kaynak klasoru gerekli: --src <mac veri klasoru>; ham cihaz verisi repoya girmez")
 
 print("=" * 70)
 print("BİR KALE VURUŞUNUN 6 DOSYADAKİ İZİNİ SÜRELİM")
@@ -49,8 +60,8 @@ with open(BASE / "teams.csv", encoding="utf-8") as f:
 
 # 5. XML'ler
 print(f"\n[4] players.XML — aynı ID:")
-xml_path = SRC / "MATCH_2026_11_03_Galatasaray_vs_Stuttgart__PLAYERS__XML.xml"
-if xml_path.exists():
+xml_path = next(SRC.glob("*__PLAYERS__XML.xml"), None)
+if xml_path is not None and xml_path.exists():
     import xml.etree.ElementTree as ET
     tree = ET.parse(xml_path)
     for inst in tree.getroot().iter("instance"):

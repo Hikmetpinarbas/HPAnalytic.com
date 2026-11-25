@@ -16,11 +16,22 @@ from collections import defaultdict
 from pathlib import Path
 import pandas as pd
 
+# --- AUTO: --src / --out destegi ---
+import sys, argparse
+from pathlib import Path as _PathAlias
+_ap = argparse.ArgumentParser(add_help=False)
+_ap.add_argument('--src', default=None)
+_ap.add_argument('--out', default=None)
+_args, _ = _ap.parse_known_args()
+# --- /AUTO ---
+
 # HP-W1-SITE-001: ham CSV kamusal alanda deil; okuma content/kaynak-veri, yaz public turetilmisi.
-KAYNAK = Path("content/kaynak-veri/gs-stuttgart")
-BASE = Path("public/assets/data/gs-stuttgart")
+KAYNAK = Path(_args.src) if _args.src and (Path(_args.src) / "teams.csv").exists() else Path("content/kaynak-veri/gs-stuttgart")
+BASE = Path(_args.out) if _args.out else Path("public/assets/data/gs-stuttgart")
 OUT = BASE / "pass_network.json"
-PLAYERS_XLSX = Path("/storage/emulated/0/HPAnaliz/SportsBase/maclar/MATCH_2026_11_03_Galatasaray_vs_Stuttgart/MATCH_2026_11_03_Galatasaray_vs_Stuttgart__PLAYERS__XLSX.xlsx")  # hpa:allow-path: cihaz urun kaynagdi; repo veri tasimaz
+PLAYERS_XLSX = next(Path(_args.src).glob("*__PLAYERS__XLSX.xlsx"), None) if _args.src else None
+if PLAYERS_XLSX is None:
+    raise SystemExit("PLAYERS xlsx bulunmadi: --src <mac veri klasoru> verin (desen: *__PLAYERS__XLSX.xlsx); ham cihaz verisi repoya girmez")
 
 def norm(s):
     s = s.lower().strip()
