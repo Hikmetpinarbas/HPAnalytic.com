@@ -27,7 +27,21 @@ jobs:
           node-version: 20
       - run: npm ci --no-audit --no-fund
       - run: npm run build
-      - run: node scripts/release-security-gate.mjs dist
+      - name: Yayin guvenlik kapisı (PR #100, fail-closed)
+        run: node scripts/release-security-gate.mjs dist
+      - name: Release Review Audit (HP-W1-SITE-001, fail-closed)
+        run: node scripts/release/review_audit.mjs dist
+      - name: RELEASE_READY makbuzu dogrulamasi (tek makbuz, fail-closed)
+        run: |
+          node -e "const fs=require('fs');const r=JSON.parse(fs.readFileSync('release-review/RELEASE_READY.json','utf8'));if(r.schema!=='hpa.release_ready.v1')throw new Error('MAKBUZ_SEMASI:'+r.schema);if(r.release_status!=='RELEASE_READY')throw new Error('DEPLOY_BLOKE:'+r.release_status+' '+(r.engeller||[]).join('|'));if(r.publication_authorized!==false||r.human_approval_required!==true)throw new Error('ONAY_PROTOKOLU_IHLALI');console.log('RELEASE_READY makbusu dogrulandi: '+r.rollback_manifest_sha256.slice(0,12))"
+      - uses: actions/upload-artifact@v4
+        with:
+          name: release-ready-${{ github.run_id }}
+          path: |
+            release-review/RELEASE_READY.json
+            release-review/release-review-receipt.json
+            release-review/rollback-manifest.json
+          if-no-files-found: error
       - uses: actions/upload-pages-artifact@v3
         with:
           path: ./dist

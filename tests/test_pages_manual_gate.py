@@ -20,6 +20,13 @@ class PagesPublicationGateTest(unittest.TestCase):
         self.assertGreaterEqual(s.count("inputs.release_approved == true"),2)
         self.assertIn("node scripts/release-security-gate.mjs dist",s)
 
+    def test_deploy_gate_runs_review_audit_and_release_ready_receipt(self):
+        s=WORKFLOW.read_text()
+        self.assertIn("node scripts/release/review_audit.mjs dist", s)
+        self.assertIn("RELEASE_READY.json", s)
+        self.assertIn("hpa.release_ready.v1", s)
+        self.assertIn("human_approval_required", s)
+
     def test_immutable_dependencies_and_least_privilege(self):
         s=WORKFLOW.read_text()
         self.assertIn("npm ci --no-audit --no-fund",s)

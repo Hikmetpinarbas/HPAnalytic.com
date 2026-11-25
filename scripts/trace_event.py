@@ -2,7 +2,7 @@ import csv, os
 import pandas as pd
 from pathlib import Path
 
-BASE = Path("public/assets/data/gs-stuttgart")
+BASE = Path("content/kaynak-veri/gs-stuttgart")  # HP-W1-SITE-001: ham CSV kamusal alanda deil
 SRC = Path("/storage/emulated/0/HPAnaliz/SportsBase/maclar/MATCH_2026_11_03_Galatasaray_vs_Stuttgart")
 
 print("=" * 70)

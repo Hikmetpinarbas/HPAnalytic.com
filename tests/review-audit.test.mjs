@@ -67,15 +67,86 @@ test('.bak dosyasi ve hazine yolu engellenir (SENSITIVE_FILE)', () => {
   rmSync(kok, { recursive: true, force: true });
 });
 
-test('istisna disi ham CSV engellenir, istisnali CSV kayda gecer', () => {
+test('ham CSV/XLSX/ZIP istisnasiz engellenir (RAW_DATA_FILE, HP-W1-SITE-001)', () => {
   const kok = ortamKur(temizDist([
     ['assets/data/gs-stuttgart/players.csv', 'a,b'],
-    ['assets/data/yeni-mac/players.csv', 'a,b']
+    ['assets/data/yeni-mac/players.csv', 'a,b'],
+    ['assets/data/yeni-mac/paket.zip', 'PK'],
+    ['assets/data/yeni-mac/skorlar.xlsx', 'x']
   ]));
   const { engel, istisnalar } = denetle(kok);
-  assert.ok(engel.some(e => e.startsWith('RAW_DATA_FILE')));
-  assert.ok(istisnalar.some(i => i.yol === 'assets/data/gs-stuttgart/players.csv'));
+  assert.ok(engel.some(e => e === 'RAW_DATA_FILE:assets/data/gs-stuttgart/players.csv'));
+  assert.ok(engel.some(e => e === 'RAW_DATA_FILE:assets/data/yeni-mac/players.csv'));
+  assert.ok(engel.some(e => e.startsWith('RAW_DATA_FILE:assets/data/yeni-mac/paket.zip')));
+  assert.ok(engel.some(e => e.startsWith('RAW_DATA_FILE:assets/data/yeni-mac/skorlar.xlsx')));
+  assert.ok(!istisnalar.some(i => i.yol.endsWith('.csv')), 'ham CSV istisna kabul etmez');
   rmSync(kok, { recursive: true, force: true });
+});
+
+test('hpa.* semali JSON gecer, semasiz ve izin listesi disi ham JSON engellenir (RAW_JSON_FILE)', () => {
+  const kok = ortamKur(temizDist([
+    ['assets/data/yeni-mac/match_package.json', JSON.stringify({ metadata: { match_id: 'x' }, events: [{ x: 1 }] })],
+    ['assets/data/rendezvous.json', JSON.stringify({ hello: 'world' })],
+    ['assets/data/gs-stuttgart/pass_network_v2.json', JSON.stringify({ nodes: [], edges: [] })]
+  ]));
+  const { engel, istisnalar } = denetle(kok);
+  assert.ok(engel.some(e => e === 'RAW_JSON_FILE:assets/data/yeni-mac/match_package.json'));
+  assert.ok(engel.some(e => e === 'RAW_JSON_FILE:assets/data/rendezvous.json'));
+  assert.ok(istisnalar.some(i => i.yol === 'assets/data/gs-stuttgart/pass_network_v2.json'), 'izinli turetilmis JSON istisna kaydina gecer');
+  rmSync(kok, { recursive: true, force: true });
+});
+
+test('.map dosyasi ve sourceMappingURL referansi engellenir (SOURCE_MAP_LEAK/SOURCE_MAP_REF)', () => {
+  const kok = ortamKur(temizDist([
+    ['assets/js/bundle.js.map', JSON.stringify({ version: 3, sources: ['/src/js/main.js'] })],
+    ['assets/js/bundle.js', '//# sourceMappingURL=main.js.map\nconsole.log(1);'],
+    ['yazi/ormek-yazi.html', '<!doctype html><html><head><link rel="canonical" href="https://hpanalytic.com/yazi/ormek-yazi.html"/></head><body>x</body></html>']
+  ]));
+  const { engel } = denetle(kok);
+  assert.ok(engel.some(e => e === 'SOURCE_MAP_LEAK:assets/js/bundle.js.map'));
+  assert.ok(engel.some(e => e === 'SOURCE_MAP_REF:assets/js/bundle.js'));
+  rmSync(kok, { recursive: true, force: true });
+});
+
+test('yanlis canonical hedefi engellenir (CANONICAL_TARGET)', () => {
+  const yanlisHost = SAYFA.replace('https://hpanalytic.com/yazi/ormek-yazi.html', 'https://hpanalytic-com.pages.dev/yazi/ormek-yazi.html');
+  const yanlisSlug = SAYFA.replace('yazi/ormek-yazi.html', 'yazi/izinsiz.html');
+  const slugCakisma = ortamKur(temizDist([['yazi/ormek-yazi.html', yanlisSlug]]));
+  const { engel } = denetle(slugCakisma);
+  assert.ok(engel.some(e => e.startsWith('CANONICAL_TARGET') && e.includes('izinsiz.html')), 'canonical baska sluga isaret edemez');
+  rmSync(slugCakisma, { recursive: true, force: true });
+  const hostCakisma = ortamKur(temizDist([['yazi/ormek-yazi.html', yanlisHost]]));
+  const { engel: engel2 } = denetle(hostCakisma);
+  assert.ok(engel2.some(e => e.startsWith('CANONICAL_TARGET') && e.includes('pages.dev')), 'canonical baska hosta isaret edemez');
+  rmSync(hostCakisma, { recursive: true, force: true });
+});
+
+test('assets/data altinda sayfa/.md siziintisi engellenir (DATA_DIR_FILE)', () => {
+  const kok = ortamKur(temizDist([
+    ['assets/data/gs-fb-20261026/dashboard.html', '<html><body>dashboard</body></html>'],
+    ['assets/data/gs-fb-20261026/article.md', '# makale']
+  ]));
+  const { engel } = denetle(kok);
+  assert.ok(engel.some(e => e === 'DATA_DIR_FILE:assets/data/gs-fb-20261026/dashboard.html'));
+  assert.ok(engel.some(e => e === 'DATA_DIR_FILE:assets/data/gs-fb-20261026/article.md'));
+  rmSync(kok, { recursive: true, force: true });
+});
+
+test('temiz dist tek RELEASE_READY makbuzu uretir; engelli durum BLOKE yazar', () => {
+  const kok = ortamKur(temizDist());
+  const { ready } = denetle(kok);
+  assert.equal(ready.schema, 'hpa.release_ready.v1');
+  assert.equal(ready.release_status, 'RELEASE_READY');
+  assert.equal(ready.publication_authorized, false);
+  assert.equal(ready.human_approval_required, true);
+  assert.equal(ready.gorev_id, 'HP-W1-SITE-001');
+  assert.equal(ready.onay_durumu, 'INSAN_ONAYI_BEKLIYOR');
+  rmSync(kok, { recursive: true, force: true });
+  const kirli = ortamKur(temizDist([['assets/data/sizinti.json', JSON.stringify({ ham: true })]]));
+  const { ready: ready2 } = denetle(kirli);
+  assert.equal(ready2.release_status, 'BLOKE');
+  assert.ok(ready2.engeller.length > 0);
+  rmSync(kirli, { recursive: true, force: true });
 });
 
 test('source map sizintisi engellenir (SOURCE_MAP_LEAK)', () => {

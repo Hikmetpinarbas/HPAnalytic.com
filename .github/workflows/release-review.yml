@@ -46,6 +46,7 @@ jobs:
         with:
           name: release-review-${{ github.run_id }}
           path: |
+            release-review/RELEASE_READY.json
             release-review/release-review-receipt.json
             release-review/rollback-manifest.json
           if-no-files-found: error

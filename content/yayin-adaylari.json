@@ -73,5 +73,23 @@
     "public/assets/data/gs-fener",
     "public/assets/data/fb-liverpool"
   ],
-  "not": "Arşivler git geçmişinden geri alınabilir; _arsiv/ repo takibine girmez (.gitignore). Kalan engel: galatasaray-stuttgart-xg-paradoksu canlıda yayında ama kaynağı el yapımı sayfa olduğundan gate'in dist/yazi UNAPPROVED_HTML kuralı altında istisna gerektirir (kaynak md şeması PR #100'de)."
+  "not": "Arşivler git geçmişinden geri alınabilir; _arsiv/ repo takibine girmez (.gitignore). Kalan engel: galatasaray-stuttgart-xg-paradoksu canlıda yayında ama kaynağı el yapımı sayfa olduğundan gate'in dist/yazi UNAPPROVED_HTML kuralı altında istisna gerektirir (kaynak md şeması PR #100'de). HP-W1-SITE-001 güncellemesi: ham gs-stuttgart CSV'leri (players.csv/teams.csv) kamusal alandan content/kaynak-veri/gs-stuttgart/ altına taşındı; kamusal alan yalnızca türetilmiş JSON taşıyor; review_audit RAW_DATA_FILE istisnasını kaldırdı. Referanssız gs-fb-20261026 ham paket sayfaları (article.md/dashboard.html/index.html) public'ten kaldırıldı. Ticker tazeliği 6 saatlik Codex sözleşmesine çekildi (48h çelişkisi kaldırıldı).",
+  "guvenli_entegrasyon": {
+    "aday": "Shakhtar Donetsk - Fenerbahce",
+    "schema": "hpa.aday_entegrasyon.v1",
+    "durum": "beklemede",
+    "not": "HP-W1-SITE-001: Copilot denetim engelleri kapanana kadar icerik/gorsel paketi BASLAMAZ. Paket gelince asagidaki noktalara yerlesir; hicbir alan bugun uydurulmaz.",
+    "makale_kaynagi": "content/yazilar/<slug>.md (slug belirlenince) — yayin yalnizca content/yayin-defteri.json'a HUMAN_APPROVAL basis'iyle girdikten sonra",
+    "turetilmis_veri_noktasi": "public/assets/data/shakhtar-fenerbahce/ — yalnizca hpa.* semali turetilmis JSON; ham CSV/XLSX/ZIP RAW_DATA_FILE, semasiz ham JSON RAW_JSON_FILE ile engellenir",
+    "ham_kaynak_noktasi": "content/kaynak-veri/shakhtar-fenerbahce/ — deploy EDILMEYEN ham kaynak agaci (content/kaynak-veri/gs-stuttgart/OKUBENI.md sozlesmesi)",
+    "gorsel_noktasi": "public/assets/images/shakhtar-fenerbahce/",
+    "viz_baglama": "src/js/viz modulleri mevcut oz-dataUrl deseniyle baglanir; yeni modul yazilmadan once VIZ_STANDART_SOZLESMESI.md gecerlidir",
+    "kabul_zinciri": [
+      "1) İnsan onayı: ledger'a HUMAN_APPROVAL + source_sha256",
+      "2) npm run build — canonical https://hpanalytic.com/yazi/<slug>.html",
+      "3) scripts/release-security-gate.mjs dist — SENSITIVE_FILE:0",
+      "4) scripts/release/review_audit.mjs dist — RELEASE_READY makbuzu",
+      "5) deploy.yml workflow_dispatch + release_approved=true (insan onayı) — tek deploy kapısı"
+    ]
+  }
 }

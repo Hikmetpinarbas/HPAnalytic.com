@@ -16,6 +16,8 @@ from collections import defaultdict
 from pathlib import Path
 import pandas as pd
 
+# HP-W1-SITE-001: ham CSV kamusal alanda deil; okuma content/kaynak-veri, yaz public turetilmisi.
+KAYNAK = Path("content/kaynak-veri/gs-stuttgart")
 BASE = Path("public/assets/data/gs-stuttgart")
 OUT = BASE / "pass_network.json"
 PLAYERS_XLSX = Path("/storage/emulated/0/HPAnaliz/SportsBase/maclar/MATCH_2026_11_03_Galatasaray_vs_Stuttgart/MATCH_2026_11_03_Galatasaray_vs_Stuttgart__PLAYERS__XLSX.xlsx")
@@ -39,7 +41,7 @@ player_events = defaultdict(lambda: {
     'by_second': defaultdict(list)  # start -> [(x,y), ...]
 })
 
-with open(BASE / "teams.csv", encoding="utf-8") as f:
+with open(KAYNAK / "teams.csv", encoding="utf-8") as f:
     for row in csv.DictReader(f, delimiter=";"):
         if not row['pos_x'] or ' - ' not in row['code']: continue
         name, pid = parse_player(row['code'])

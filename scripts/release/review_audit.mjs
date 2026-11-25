@@ -1,5 +1,7 @@
 // HP-MISTRAL-RELEASE-030 — dist tabanlı yayın güvenliği denetimi (PR #100 gate ile tamamlayıcı).
-// Fail-closed: şüphede blokla. Dağıtım yetkisi vermez; makbuz ve rollback manifesti üretir.
+// HP-W1-SITE-001 — ham JSON + source map sızıntı denetimi, canonical hedef denetimi ve tek
+// açık RELEASE_READY makbuzu eklendi; denetim gerçek deploy kapısının (deploy.yml build işi)
+// zorunlu fail-closed adımıdır. Yayın yetkisi yine yalnızca insan onayıdır.
 // Kullanım: node scripts/release/review_audit.mjs [distDir]
 import { createHash } from 'node:crypto';
 import { readFileSync, readdirSync, lstatSync, writeFileSync, mkdirSync, existsSync } from 'node:fs';
@@ -13,11 +15,35 @@ const privatePath = /(?:\/data\/data\/com\.termux|\/storage\/emulated\/|\/sdcard
 const credential = /(?:sk-proj-[a-zA-Z0-9_-]{12,}|ghp_[a-zA-Z0-9]{20,}|AIza[a-zA-Z0-9_-]{30,})/; // hpa:allow-path: desen tanımı, sır değildir
 const disallowed = /^(?:hazine\/|assets\/hazine(?:\/|-manifest)|.*(?:data\.bak_|\.bak(?:\.|$)|\.tmp$|\.env(?:\.|$)|\.pem$|\.key$)|(?:test|pilot|draft|taslak|_pn3d)[\w-]*\.html$)/i;
 
-// Çalışan sayfaların çalışma zamanında tüktettiği, canlı verilere referanslı istisna (kanıtla kayıtlı).
-const VERI_ISTISNALARI = new Set([
-  'assets/data/gs-stuttgart/players.csv',
-  'assets/data/gs-stuttgart/teams.csv'
+// HP-W1-SITE-001 — ham CSV/XLSX/ZIP artık hiçbir istisna kabul etmez: players.csv/teams.csv
+// kamusal alandan kaldırıldı; ham kaynaklar deploy EDİLMEYEN content/kaynak-veri ağacında.
+
+// dist'teki .json sözleşmesi: her dosya ya `hpa.*` şeması taşır ya da aşağıdaki gerekçeli
+// görünüm-verisi izin listesindedir; dışındaki her .json ham veri sayılır (RAW_JSON_FILE).
+const JSON_IZIN_ONEKLERI = new Map([
+  ['assets/data/gs-stuttgart/', 'yayımlı makale çalışma zamanı türetilmiş viz verisi (src/js/viz)'],
+  ['assets/data/lille-gs/', 'mac-lille-galatasaray-2026-10-21 çalışma zamanı türetilmiş viz verisi'],
+  ['assets/data/gs-fb/', 'mac-galatasaray-fenerbahce-2026-10-26 türetilmiş özet paketi'],
+  ['assets/data/fdorg/', 'statik lig tablosu/golcü anlık görünümü (çalışma zamanı çekim yok)'],
+  ['assets/data/fitness/', 'oyuncu/takım fitness türetilmiş görünümü'],
+  ['assets/data/crystal-palace/', 'mac-besiktas-crystal-palace-2026-10-22 pitch-layer meta verisi']
 ]);
+const JSON_IZINLI = new Set([
+  'search-index.json',
+  'assets/data/advanced_metrics.json', 'assets/data/articles.json', 'assets/data/carriers_rising.json',
+  'assets/data/marquee_texts.json', 'assets/data/matches.json', 'assets/data/pass_network.json',
+  'assets/data/players.json', 'assets/data/radar_data.json', 'assets/data/rankings.json',
+  'assets/data/shot_map.json', 'assets/data/shot_map_derbi.json', 'assets/data/sl_advanced.json',
+  'assets/data/sl_rankings.json', 'assets/data/sl_standouts.json', 'assets/data/sl_team_rankings.json',
+  'assets/data/sl_teams.json', 'assets/data/standouts.json', 'assets/data/team_highlights.json',
+  'assets/data/teams.json'
+]);
+
+function jsonIzinGerekcesi(yol) {
+  if (JSON_IZINLI.has(yol)) return 'derleme/çalışma zamanı türetilmiş görünüm verisi (ham olay verisi değil)';
+  for (const [onek, gerekce] of JSON_IZIN_ONEKLERI) if (yol.startsWith(onek)) return gerekce;
+  return null;
+}
 
 function filesUnder(base) {
   if (!existsSync(base)) throw new Error('DIST_MISSING');
@@ -89,20 +115,41 @@ export function denetle(root = '.', distDir = 'dist', { yaz = false } = {}) {
       if (privatePath.test(txt)) U('PRIVATE_PATH', 'engelli', r);
       if (credential.test(txt)) U('CREDENTIAL_LEAK', 'engelli', r);
     }
-    if (r.endsWith('.map')) U('SOURCE_MAP_LEAK', 'engelli', r);
-    if (/\.(?:csv|xlsx|zip)$/i.test(r)) {
-      if (VERI_ISTISNALARI.has(r)) istisnalar.push({ yol: r, gerekce: 'yayinli makale calisma zamani verisi (src/js/viz) kullaniyor' });
-      else U('RAW_DATA_FILE', 'engelli', r);
-    }
+    if (/\.(?:csv|xlsx|zip)$/i.test(r)) U('RAW_DATA_FILE', 'engelli', r);
     if (r.endsWith('.xml') && r !== 'feed.xml' && r !== 'sitemap.xml') U('XML_FILE', 'engelli', r);
     if (disallowed.test(r)) U('SENSITIVE_FILE', 'engelli', r);
     if (/^yazi\/[\w-]+\.html$/.test(r)) {
       yaziHtml.add(r.slice(5, -5));
       if (onayli.size && !onayli.has(r.slice(5, -5))) U('UNAPPROVED_HTML', 'engelli', r);
       const txt = readFileSync(f, 'utf8');
-      if (!/rel="canonical"/.test(txt)) U('CANONICAL_MISSING', 'engelli', r);
+      const canon = txt.match(/<link\s+rel="canonical"\s+href="([^"]+)"/);
+      if (!canon) U('CANONICAL_MISSING', 'engelli', r);
+      else if (canon[1] !== 'https://hpanalytic.com/yazi/' + r.slice(5, -5) + '.html') U('CANONICAL_TARGET', 'engelli', r + ' -> ' + canon[1]);
       if (/<meta\s+name="robots"\s+content="[^"]*noindex/i.test(txt)) U('INDEXED_BUT_NOINDEX', 'engelli', r);
     }
+
+    // HP-W1-SITE-001 — ham JSON sözleşmesi: hpa.* şeması ya da gerekçeli izin yoksa engelle.
+    if (/\.json$/i.test(r)) {
+      const jtxt = readFileSync(f, 'utf8');
+      let semali = false;
+      try { const v = JSON.parse(jtxt); semali = typeof v?.schema === 'string' && v.schema.startsWith('hpa.'); } catch { semali = false; }
+      if (!semali) {
+        const gerekce = jsonIzinGerekcesi(r);
+        if (!gerekce) U('RAW_JSON_FILE', 'engelli', r);
+        else istisnalar.push({ yol: r, gerekce, tespit: 'hpa.* semasiz; izin listesi' });
+      }
+    }
+
+    // HP-W1-SITE-001 — source map sızıntısı: hem .map dosyası hem sourceMappingURL referansı.
+    if (/\.map$/i.test(r)) U('SOURCE_MAP_LEAK', 'engelli', r);
+    if (/\.(?:js|css|html)$/i.test(r)) {
+      const jtxt = readFileSync(f, 'utf8');
+      if (/sourceMappingURL/.test(jtxt)) U('SOURCE_MAP_REF', 'engelli', r);
+    }
+
+    // HP-W1-SITE-001 — assets/data yalnızca makine verisi (.json/.svg) içerir;
+    // paketlenmiş .html/.md/.csv vb. sayfa veya ham dosya sızıntısı engellenir.
+    if (r.startsWith('assets/data/') && /\.(?:html|md|markdown|csv|xlsx|zip|xml)$/i.test(r)) U('DATA_DIR_FILE', 'engelli', r);
   }
   U('DIST_SCAN', 'gecti', [...yaziHtml].join(','));
   if (onayli.size) {
@@ -162,9 +209,28 @@ export function denetle(root = '.', distDir = 'dist', { yaz = false } = {}) {
   };
   if (engel.length) makbuz.engeller = engel;
 
-  return { makbuz, manifest, engel, istisnalar, kontroller, yaz: (ciktiDizini) => {
+  // HP-W1-SITE-001 — tek ve açık RELEASE_READY makbuzu (insan onayı olmadan deploy yok).
+  const ready = {
+    schema: 'hpa.release_ready.v1',
+    olusturma: manifest.olusurma,
+    ajans_adi: 'Mistral',
+    model: 'zai-glm-5-3-flash-vibe-free',
+    gorev_id: 'HP-W1-SITE-001',
+    release_status: engel.length ? 'BLOKE' : 'RELEASE_READY',
+    onay_durumu: engel.length ? 'INSAN_ONAYI_BEKLIYOR' : 'INSAN_ONAYI_BEKLIYOR',
+    publication_authorized: false,
+    human_approval_required: true,
+    engeller: engel,
+    istisnalar,
+    tarama: makbuz.tarama,
+    kontrol_sayisi: kontroller.length,
+    rollback_manifest_sha256: sha(manifestStr)
+  };
+
+  return { makbuz, ready, manifest, engel, istisnalar, kontroller, yaz: (ciktiDizini) => {
     mkdirSync(ciktiDizini, { recursive: true });
     writeFileSync(join(ciktiDizini, 'release-review-receipt.json'), JSON.stringify(makbuz, null, 2) + '\n', 'utf-8');
+    writeFileSync(join(ciktiDizini, 'RELEASE_READY.json'), JSON.stringify(ready, null, 2) + '\n', 'utf-8');
     writeFileSync(join(ciktiDizini, 'rollback-manifest.json'), manifestStr + '\n', 'utf-8');
   } };
 }

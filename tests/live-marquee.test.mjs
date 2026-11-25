@@ -30,6 +30,18 @@ test('broken fetched_at fails closed', () => {
   assert.equal(isFresh('2026-11-30T00:00:00Z', NOW), false);
 });
 
+test('ticker freshness contract is 6 hours, not 48', () => {
+  const fetched = (hoursAgo) => new Date(NOW - hoursAgo * 60 * 60 * 1000).toISOString();
+  assert.ok(isFresh(fetched(5.999), NOW), '5h59m must stay fresh');
+  assert.equal(isFresh(fetched(6), NOW), true, 'exactly 6h stays on the boundary');
+  assert.equal(isFresh(fetched(6.001), NOW), false, 'beyond 6h fails closed');
+  assert.equal(isFresh(fetched(47), NOW), false, '47h must be stale under the 6h contract');
+  const stale48h = { schema: 'hpa.live_ticker.v1', available: true, fetched_at: fetched(47),
+    items: [{ home: 'A', away: 'B', status: 'final', score: '1-0', date: '2026-11-23' }] };
+  assert.equal(verifiedMatchLabels(stale48h, NOW).length, 0);
+  assert.ok(!buildPool(stale48h, NOW).join(' ').includes('1-0'));
+});
+
 test('fresh verified final and live scores render, scheduled shows no score', () => {
   const data = {
     schema: 'hpa.live_ticker.v1', available: true, fetched_at: '2026-11-25T11:00:00Z',

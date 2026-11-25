@@ -14,7 +14,10 @@ const FACTS = [
 const NO_DATA_NOTE = "\ud83d\udcca Canl\u0131 do\u011frulanm\u0131\u015f skor yok \u2014 say\u0131 uydurulmaz, sadece analiz yay\u0131nlan\u0131r.";
 
 export const TICKER_URL = '/assets/data/live-ticker.json';
-export const MAX_AGE_MS = 48 * 60 * 60 * 1000;
+// Tazelik sozlesmesi: 6 saat (Codex hpa.live_ticker.v1 sözlesmesiyle uzlastirildi;
+// 48 saatlik eski/çelişkili üst sınır kaldırıldı). Bu süreyi aşan fetched_at eskidir
+// ve skorları canlıymıs gibi gösterilemez (fail-closed).
+export const MAX_AGE_MS = 6 * 60 * 60 * 1000;
 const SCORE_RE = /^\d+\s*[-\u2013\u2014]\s*\d+$/;
 
 export function isFresh(fetchedAt, now) {
