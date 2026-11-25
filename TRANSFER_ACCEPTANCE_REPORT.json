@@ -137,5 +137,43 @@
     "review_required": true,
     "release_status": "HOLD",
     "not": "Manifest şeması bu üç alanı zorunlu; CI'da transfer gate deploy tetiklemez; deploy.yml yalnızca main push (PR #100 disiplini)."
+  },
+  "release_review_R030": {
+    "gorev_id": "HP-MISTRAL-RELEASE-030",
+    "tarih": "2026-11-05",
+    "icerik": "PR #100 yayın güvenliği ile tamamlayıcı dist denetimi, sitemap/canonical, status/noindex mekanizması, public hijyeni, ledger canlı baseline, rollback artefaktı, deploy etmeyen review workflow'u.",
+    "test_kayitlari": [
+      {
+        "test": "node --test tests/*.test.mjs",
+        "sonuc": "14/14 gecti"
+      },
+      {
+        "test": "python3 tests/test_transfer_prep.py",
+        "sonuc": "21/21 gecti"
+      },
+      {
+        "test": "python3 hpa-pipeline-v3/tests/test_paths.py",
+        "sonuc": "8/8 gecti"
+      },
+      {
+        "test": "npm run build",
+        "sonuc": "basarili; dist/sitemap.xml 17 makale + 2 ozel yol"
+      },
+      {
+        "test": "node scripts/release/review_audit.mjs dist",
+        "sonuc": "GECTI (exit 0), rollback manifesti uretildi"
+      },
+      {
+        "test": "python3 scripts/transfer/check_transfer_pr.py --base origin/main --head HEAD",
+        "sonuc": "GECIRDI (commit sonrasi tekrar kosulacak)"
+      }
+    ],
+    "beyanlar": {
+      "canli_makale_sayisi": 17,
+      "not": "Canli feed.xml 17 madde olarak dogrulandi (kullanici '18' diyordu; 18 uydurulmadi).",
+      "ilk_yayin_adayi": "Shakhtar-Fenerbahce (icerik yok; kayit sadece)",
+      "iptal": "Aston Villa-Fenerbahce mac onu yayini Iptal (repoda GS-Villa icerigi yok).",
+      "yayin_kilit": "publication_authorized=false, review_required=true; main merge/deploy yok."
+    }
   }
 }

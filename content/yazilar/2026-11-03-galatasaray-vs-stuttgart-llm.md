@@ -1,4 +1,5 @@
 ---
+status: "review"
 title: "Galatasaray vs Stuttgart: Geçiş Koridorlarının Haritası"
 slug: galatasaray-stuttgart-gecis-haritasi
 date: "2026-11-03"

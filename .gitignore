@@ -47,3 +47,6 @@ pipeline/input/
 pipeline/output/
 hpa-pipeline-v3/**/__pycache__/
 test/subs_cache/
+_arsiv/
+release-review/
+dist-receipts/

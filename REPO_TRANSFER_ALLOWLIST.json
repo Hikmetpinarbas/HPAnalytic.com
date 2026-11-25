@@ -2,7 +2,7 @@
   "schema_version": "1.0",
   "task": "HP-MISTRAL-REPO-026",
   "repo": "Hikmetpinarbas/HPAnalytic.com",
-  "purpose": "Telefondaki üretim modüllerinden repoya taşınabilecek (allow) / asla girmeyecek (deny) / inceleme gerektiren (needs_review) desenler. Transfer PR'larında otomatik kontrol için girdi. HP-MISTRAL-REPO-026 ile hazırlık altyapısı (transfer scripts, CI workflow, manifest/şema/harita dosyaları) da allowlist'e eklendi.",
+  "purpose": "Telefondaki üretim modüllerinden repoya taşınabilecek (allow) / asla girmeyecek (deny) / inceleme gerektiren (needs_review) desenler. Transfer PR'larında otomatik kontrol için girdi. HP-MISTRAL-REPO-026 ile hazırlık altyapısı (transfer scripts, CI workflow, manifest/şema/harita dosyaları) da allowlist'e eklendi. HP-MISTRAL-RELEASE-030: yayin guvenligi/dist denetim duzenlemeleri (prototipler prototypes/ altina, arsivler repoya girmez) ayni kurallarla denetlenir.",
   "allow": {
     "description": "Transfer edilebilir: kod, test, sözleşme, dokümantasyon. Termux mutlak yolu temizlenmiş olmalı (bkz. must_not_contain).",
     "paths": [
@@ -28,7 +28,10 @@
       "REPO_MODULE_MAP.json",
       "DEPENDENCY_MATRIX.json",
       "TRANSFER_*.md",
-      "TRANSFER_*.json"
+      "TRANSFER_*.json",
+      "scripts/release/*.mjs",
+      "content/yayin-defteri.json",
+      "content/yayin-adaylari.json"
     ],
     "extensions_only": [
       ".py",
