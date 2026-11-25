@@ -6376,3 +6376,78 @@ body { cursor: none; }
 
 .return-to-pitch-btn{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:11px;letter-spacing:0.1em;text-transform:uppercase;color:var(--neon);text-decoration:none;padding:16px 24px;border:1px solid var(--neon);border-radius:4px;margin:40px auto;width:max-content;transition:all 0.3s}
 .return-to-pitch-btn:hover{background:rgba(180,255,57,0.1);box-shadow:0 0 20px rgba(180,255,57,0.2)}
+
+/* ═══ YAYIN HATTI (HP-MISTRAL-WAVE1-SITE-01) ═══ */
+.yayin-hatti {
+  padding: 96px var(--gutter);
+  border-bottom: 1px solid var(--line);
+}
+.yh-head { max-width: 1400px; margin: 0 auto 48px; }
+.yh-head .kicker {
+  font-family: var(--mono); font-size: 10px;
+  letter-spacing: .28em; color: var(--orange); text-transform: uppercase;
+  display: inline-flex; align-items: center; gap: 14px; margin-bottom: 20px;
+}
+.yh-head .kicker::before { content: ''; width: 32px; height: 1px; background: var(--orange); }
+.yh-title {
+  font-family: var(--serif); font-weight: 400;
+  font-size: clamp(30px, 5.5vw, 56px); line-height: 1.05;
+  letter-spacing: -.025em; color: var(--ink); margin: 0;
+}
+.yh-title em { font-style: italic; color: var(--neon); }
+.yh-lede {
+  font-size: 14px; line-height: 1.6; color: var(--ink-soft);
+  max-width: 560px; margin: 16px 0 0;
+}
+.yh-rows {
+  list-style: none; max-width: 1400px; margin: 0 auto; padding: 0;
+  display: grid; gap: 1px; background: var(--line);
+}
+.yh-row {
+  background: var(--bg); padding: 28px 20px;
+  display: grid; gap: 18px; align-items: start;
+  grid-template-columns: auto 1fr;
+}
+@media(min-width: 900px) { .yh-row { grid-template-columns: 64px 1fr auto; padding: 32px 28px; } }
+.yh-num {
+  font-family: var(--mono); font-size: 20px; color: var(--orange);
+  letter-spacing: .1em; opacity: .8;
+}
+.yh-row-title {
+  font-family: var(--serif); font-size: 22px; font-weight: 400;
+  margin: 0 0 6px; color: var(--ink); letter-spacing: -.02em;
+}
+.yh-row-note { font-size: 12px; line-height: 1.5; color: var(--ink-soft); margin: 0; }
+.yh-cta {
+  font-family: var(--mono); font-size: 11px; letter-spacing: .18em;
+  text-transform: uppercase; color: var(--neon); text-decoration: none;
+  border: 1px solid var(--line); padding: 10px 18px;
+  justify-self: start; transition: border-color .3s, background .3s;
+}
+@media(min-width: 900px) { .yh-cta { justify-self: end; align-self: center; } }
+.yh-cta:hover { border-color: var(--neon); background: rgba(180,255,57,.04); }
+.yh-fixtures { display: grid; gap: 12px; margin-top: 14px; }
+.yh-card { border: 1px solid var(--line); padding: 18px 20px; display: grid; gap: 10px; }
+.yh-link { text-decoration: none; }
+.yh-link .yh-card { transition: border-color .3s; }
+.yh-link:hover .yh-card { border-color: var(--neon); }
+.yh-card-head { display: flex; flex-wrap: wrap; gap: 10px; align-items: baseline; justify-content: space-between; }
+.yh-vs { font-family: var(--serif); font-size: 18px; color: var(--ink); letter-spacing: -.01em; }
+.yh-date { font-family: var(--mono); font-size: 10px; letter-spacing: .2em; color: var(--neon); text-transform: uppercase; }
+.yh-date-tbc { color: var(--orange); opacity: .85; }
+.yh-note { font-size: 12px; line-height: 1.55; color: var(--ink-soft); margin: 0; max-width: 520px; }
+.yh-chip {
+  font-family: var(--mono); font-size: 9px; letter-spacing: .22em;
+  text-transform: uppercase; color: var(--gold, #D4A548);
+  border: 1px solid rgba(212,165,72,.4); padding: 5px 10px; width: max-content;
+}
+.yh-empty {
+  font-family: var(--mono); font-size: 10px; letter-spacing: .18em;
+  color: var(--ink-faint); text-transform: uppercase;
+  border: 1px dashed var(--line); padding: 14px 18px;
+}
+@media(max-width: 640px) {
+  .yayin-hatti { padding: 72px var(--gutter); }
+  .yh-row { padding: 24px 16px; }
+  .yh-num { font-size: 16px; }
+}

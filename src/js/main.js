@@ -1,7 +1,8 @@
 import SplitType from 'split-type';
 import { initMatrixHero } from './matrix-hero.js';
 import { initTacticalShowcase } from "./tactical-showcase.js";
-import './live-marquee.js';
+import { initLiveMarqueeAsync } from './live-marquee.js';
+import { initYayinHatti } from './yayin-hatti.js';
 import './menu.js';
 import './week-story.js';
 import './mechanism.js';
@@ -46,6 +47,8 @@ gsap.ticker.add(time => lenis.raf(time * 1000));
 gsap.ticker.lagSmoothing(0);
 
 initMasthead();
+initLiveMarqueeAsync();
+initYayinHatti();
 
 const dot = document.getElementById('cursor-dot');
 const ring = document.getElementById('cursor-ring');
