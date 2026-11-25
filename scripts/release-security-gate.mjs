@@ -7,8 +7,8 @@ import {pathToFileURL} from 'node:url';
 
 const sha=s=>createHash('sha256').update(s).digest('hex');
 const deny=(code,detail='')=>{throw Error(code+(detail?':'+detail:''))};
-const privatePath=/(?:\/data\/data\/com\.termux|\/storage\/emulated\/|\/sdcard\/|\/root\/HP_WORKSPACE|\/root\/AI_WRITER_LAB)/i;
-const credential=/(?:sk-proj-[a-zA-Z0-9_-]{12,}|ghp_[a-zA-Z0-9]{20,}|AIza[a-zA-Z0-9_-]{30,})/;
+const privatePath=/(?:\/data\/data\/com\.termux|\/storage\/emulated\/|\/sdcard\/|\/root\/HP_WORKSPACE|\/root\/AI_WRITER_LAB)/i; // hpa:allow-path: tarama desen tanımı, cihaz yolu değil
+const credential=/(?:sk-proj-[a-zA-Z0-9_-]{12,}|ghp_[a-zA-Z0-9]{20,}|AIza[a-zA-Z0-9_-]{30,})/; // hpa:allow-path: tarama desen tanımı, sır değildir
 const disallowed=/^(?:hazine\/|assets\/hazine(?:\/|-manifest)|.*(?:data\.bak_|\.bak(?:\.|$)|\.tmp$|\.env(?:\.|$)|\.pem$|\.key$)|(?:test|pilot|draft|taslak|_pn3d)[\w-]*\.html$)/i;
 
 function filesUnder(base){
