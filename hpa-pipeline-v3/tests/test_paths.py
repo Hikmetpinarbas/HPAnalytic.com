@@ -39,9 +39,10 @@ class PathsTest(unittest.TestCase):
             self.assertEqual(paths.girdi_koku(), Path("/data/data/com.termux/files/home/pipeline/input"))  # hpa:allow-path: test fixture (override değeri), kod sabiti değildir
 
     def test_ortam_tespiti(self):
-        with mock.patch.dict(os.environ, {"TERMUX_VERSION": "0.118"}):
+        temiz = {k: v for k, v in os.environ.items() if k not in ("CI", "GITHUB_ACTIONS", "TERMUX_VERSION", "TERMUX_APP__PACKAGE_NAME")}
+        with mock.patch.dict(os.environ, {**temiz, "TERMUX_VERSION": "0.118"}, clear=True):
             self.assertEqual(paths.ortam_tespiti(), "termux")
-        with mock.patch.dict(os.environ, {"CI": "true", "GITHUB_ACTIONS": "true"}):
+        with mock.patch.dict(os.environ, {**temiz, "CI": "true", "GITHUB_ACTIONS": "true"}, clear=True):
             self.assertEqual(paths.ortam_tespiti(), "ci")
 
     def test_repo_ici_mi(self):
