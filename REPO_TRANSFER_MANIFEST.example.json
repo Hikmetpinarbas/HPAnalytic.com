@@ -31,8 +31,8 @@
     {
       "kaynak_yol": "scripts/transfer/generate_transfer_manifest.py",
       "hedef_yol": "scripts/transfer/generate_transfer_manifest.py",
-      "sha256": "e0204b90d955060808d67dd0574780e036d2ac4a87c5fac1cdccdac57f8d49c6",
-      "boyut_bayt": 8529,
+      "sha256": "2cfbb0b8652f09136b3dd7bc131ef033105ce07cc0f13c3302e4ef162b3ca3e5",
+      "boyut_bayt": 8447,
       "rol": "kod"
     },
     {

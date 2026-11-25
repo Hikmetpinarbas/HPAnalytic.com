@@ -1,4 +1,4 @@
-"""Transfer manifest üretici (HP-MISTRAL-REPO-026).
+r"""Transfer manifest üretici (HP-MISTRAL-REPO-026).
 
 Termux/transfer tarafındaki dosya setinden REPO_TRANSFER_MANIFEST.schema.json
 uyumlu manifest iskeleti üretir: gerçek SHA-256 ve bayt boyutu hesaplar,
@@ -8,14 +8,13 @@ Durum politikası: üretilen manifest varsayılan olarak durum='beklemede' yazar
 transfer ile dosyalar hedefe taşındığında 'tasindi' yapıp --verify ile SHA
 eşleşmesi doğrulanır. Bu script koddan koda transfer yapmaz; yalnızca kayıt üretir.
 
-Kullanım:
+Kullanım (örnek yollar hpa:allow-path imleçli örnektir; kod sabiti değildir):
     python3 scripts/transfer/generate_transfer_manifest.py \
         --transfer-id HP-TR-001 --module-id M02 --module-name veri-muhendisligi-boru-hatti \
-        --device termux --repo-kok /data/data/com.termux/files/home/HPAnaliz/... \  # hpa:allow-path: kullanım örneği, kod sabiti değildir
-        --file /sdcard/a.py:hpa-pipeline-v3/ingest/a.py \  # hpa:allow-path: kullanım örneği, kod sabiti değildir
-        --file /sdcard/b.py:hpa-pipeline-v3/ingest/b.py \  # hpa:allow-path: kullanım örneği, kod sabiti değildir
+        --device termux --repo-kok /data/data/com.termux/files/home/HPAnaliz/... \  # hpa:allow-path: doküman örneği
+        --file /sdcard/a.py:hpa-pipeline-v3/ingest/a.py \  # hpa:allow-path: doküman örneği
+        --file /sdcard/b.py:hpa-pipeline-v3/ingest/b.py \  # hpa:allow-path: doküman örneği
         --out REPO_TRANSFER_MANIFEST.M02-sevkiyat.json
-    python3 scripts/transfer/generate_transfer_manifest.py --verify --manifest X.json
 """
 from __future__ import annotations
 
