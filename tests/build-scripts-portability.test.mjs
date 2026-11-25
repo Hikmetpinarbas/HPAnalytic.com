@@ -1,6 +1,7 @@
 // HP-W1-SITE-001 — ham veri pipeline taranabilirlik regresyonu.
 // Cihaz yolu cozumlemeleri kalici olarak --src/--out CLI parametrelerine tasinmali;
 // hpa:allow-path imleci bu uc script'te bir cozum olarak kabul edilmez.
+// Desenler check_transfer_pr.py'den (tek dogruluk kaynagi) cikarilir; bu dosyada tekrarlanmaz.
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
@@ -9,7 +10,15 @@ import { fileURLToPath } from 'node:url';
 
 const kok = join(dirname(fileURLToPath(import.meta.url)), '..');
 
-const CIHAZ_YOLU_ORMUNTULERI = ['/data/data/com.termux', '/storage/emulated', '/sdcard'];
+function cihazYoluDesenleri() {
+  const kaynak = readFileSync(join(kok, 'scripts/transfer/check_transfer_pr.py'), 'utf8');
+  const blok = kaynak.split('CIHAZ_YOLU_ORMUNTULERI = (')[1].split(')')[0];
+  const desenler = Array.from(blok.matchAll(/"([^"]+)"/g), m => m[1]);
+  assert.ok(desenler.length >= 3, 'cihaz yolu desenleri cikarilamadi');
+  return desenler;
+}
+
+const CIHAZ_YOLU_ORMUNTULERI = cihazYoluDesenleri();
 const SCRIPTLER = [
   'scripts/build_gk_data.py',
   'scripts/build_pass_network.py',
