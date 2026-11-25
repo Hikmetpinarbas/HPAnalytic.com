@@ -22,7 +22,7 @@ function fixture(fn){
 test('safe reviewed article and feed pass',()=>fixture(({root})=>assert.equal(auditRelease(root).approvedArticles,1)));
 test('missing independent approval ledger fails closed',()=>fixture(({root})=>{rmSync(join(root,'content/yayin-defteri.json'));assert.throws(()=>auditRelease(root),/LEDGER_MISSING/)}));
 test('tampered editorial markdown hash fails',()=>fixture(({root,write})=>{write('content/yazilar/approved-article.md','changed');assert.throws(()=>auditRelease(root),/SOURCE_HASH_DRIFT/)}));
-test('unapproved article HTML rejected',()=>fixture(({root,write})=>{write('dist/yazi/draft.html','<html></html>');assert.throws(()=>auditRelease(root),/UNAPPROVED_HTML/)}));
+test('unapproved article HTML rejected',()=>fixture(({root,write})=>{write('dist/yazi/unapproved-article.html','<html></html>');assert.throws(()=>auditRelease(root),/UNAPPROVED_HTML/)}));
 test('raw match CSV rejected',()=>fixture(({root,write})=>{write('dist/assets/data/gs-stuttgart/players.csv','ID,start');assert.throws(()=>auditRelease(root),/SENSITIVE_FILE/)}));
 test('device storage path leak rejected',()=>fixture(({root,write})=>{write('dist/assets/data/analysis.json','{"location":"/data/data/com.termux/files/home"}');assert.throws(()=>auditRelease(root),/PRIVATE_PATH/)})); // hpa:allow-path: tarama fixture'ı, cihaz yolu değil
 test('internal hazine audit rejected',()=>fixture(({root,write})=>{write('dist/hazine/SCHEMA_CONFLICTS.json','{}');assert.throws(()=>auditRelease(root),/SENSITIVE_FILE/)}));

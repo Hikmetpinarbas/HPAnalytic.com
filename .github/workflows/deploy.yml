@@ -31,9 +31,10 @@ jobs:
         run: node scripts/release-security-gate.mjs dist
       - name: Release Review Audit (HP-W1-SITE-001, fail-closed)
         run: node scripts/release/review_audit.mjs dist
-      - name: RELEASE_READY makbuzu dogrulamasi (tek makbuz, fail-closed)
-        run: |
-          node -e "const fs=require('fs');const r=JSON.parse(fs.readFileSync('release-review/RELEASE_READY.json','utf8'));if(r.schema!=='hpa.release_ready.v1')throw new Error('MAKBUZ_SEMASI:'+r.schema);if(r.release_status!=='RELEASE_READY')throw new Error('DEPLOY_BLOKE:'+r.release_status+' '+(r.engeller||[]).join('|'));if(r.publication_authorized!==false||r.human_approval_required!==true)throw new Error('ONAY_PROTOKOLU_IHLALI');console.log('RELEASE_READY makbusu dogrulandi: '+r.rollback_manifest_sha256.slice(0,12))"
+      - name: RELEASE_READY makbuzu dogrulamasi (HP-URGENT-SITE-FINAL-047 K2, fail-closed)
+        # Kabul edilen commit (github.sha), CI run, dist manifesti ve artifakt kimligi birbirine baglanir:
+        # yaln dosya varligi veya makbuz metni yeterli degildir; dist manifesti dist'ten yeniden hesaplanir.
+        run: node scripts/release/verify_release_ready.mjs release-review/RELEASE_READY.json dist ${{ github.sha }} ${{ github.run_id }} 14
       - uses: actions/upload-artifact@v4
         with:
           name: release-ready-${{ github.run_id }}

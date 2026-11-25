@@ -15,6 +15,11 @@ BASE = Path(_args.src) if _args.src and (Path(_args.src) / "players.csv").exists
 SRC = Path(_args.src) if _args.src else None
 if SRC is None:
     raise SystemExit("Kaynak klasoru gerekli: --src <mac veri klasoru>; ham cihaz verisi repoya girmez")
+if _args.out:
+    raise SystemExit("--out desteklenmiyor: trace_event yalnizca stdout'a rapor verir (HP-URGENT-SITE-FINAL-047 K1)")
+if not (_args.src and (Path(_args.src) / "players.csv").exists()):
+    raise SystemExit("--src gecersiz: <mac veri klasoru>/players.csv bulunamadi; repo kaynagina dusulmez (fail-closed)")
+BASE = SRC  # HP-W1-SITE-001: ham CSV kamusal alanda deil
 
 print("=" * 70)
 print("BİR KALE VURUŞUNUN 6 DOSYADAKİ İZİNİ SÜRELİM")

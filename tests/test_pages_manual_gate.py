@@ -24,8 +24,15 @@ class PagesPublicationGateTest(unittest.TestCase):
         s=WORKFLOW.read_text()
         self.assertIn("node scripts/release/review_audit.mjs dist", s)
         self.assertIn("RELEASE_READY.json", s)
-        self.assertIn("hpa.release_ready.v1", s)
-        self.assertIn("human_approval_required", s)
+        # HP-URGENT-SITE-FINAL-047 K2: makbuz semasi (hpa.release_ready.v1) ve human_approval_required
+        # dogrulamasi scripts/release/verify_release_ready.mjs icinde fail-closed uygulanir.
+        # Deploy adimi makbuzu gercek commit ve CI run kimligine baglayarak cagirmalidir.
+        self.assertIn("node scripts/release/verify_release_ready.mjs release-review/RELEASE_READY.json dist", s)
+        self.assertIn("${{ github.sha }}", s)
+        self.assertIn("${{ github.run_id }}", s)
+        verifier=(WORKFLOW.parents[2]/"scripts/release/verify_release_ready.mjs").read_text()
+        self.assertIn("hpa.release_ready.v1", verifier)
+        self.assertIn("human_approval_required", verifier)
 
     def test_immutable_dependencies_and_least_privilege(self):
         s=WORKFLOW.read_text()

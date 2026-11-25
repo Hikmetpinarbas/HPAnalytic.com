@@ -10,6 +10,8 @@ const deny=(code,detail='')=>{throw Error(code+(detail?':'+detail:''))};
 const privatePath=/(?:\/data\/data\/com\.termux|\/storage\/emulated\/|\/sdcard\/|\/root\/HP_WORKSPACE|\/root\/AI_WRITER_LAB)/i; // hpa:allow-path: tarama desen tanımı, cihaz yolu değil
 const credential=/(?:sk-proj-[a-zA-Z0-9_-]{12,}|ghp_[a-zA-Z0-9]{20,}|AIza[a-zA-Z0-9_-]{30,})/; // hpa:allow-path: tarama desen tanımı, sır değildir
 const disallowed=/^(?:hazine\/|assets\/hazine(?:\/|-manifest)|.*(?:data\.bak_|\.bak(?:\.|$)|\.tmp$|\.env(?:\.|$)|\.pem$|\.key$)|(?:test|pilot|draft|taslak|_pn3d)[\w-]*\.html$)/i;
+// HP-URGENT-SITE-FINAL-047 K4 — çalışma/taslak/inceleme dosyaları kamusal dağıtıma giremez.
+const workingFile=/(?:^|[\\/._-])(?:working|draft|taslak|temp|tmp|_pn3d|review[-_]only)(?:[._-]|$)/i;
 
 function filesUnder(base){
  if(!existsSync(base))deny('DIST_MISSING');
@@ -50,6 +52,7 @@ export function auditRelease(root='.',dir='dist'){
  const files=filesUnder(dist);
  for(const f of files){
   const rel=relative(dist,f).split(sep).join('/');
+  if(workingFile.test(rel))deny('WORKING_FILE',rel);
   if(disallowed.test(rel)||/\.(?:csv|xlsx|zip)$/i.test(rel)||(rel.endsWith('.xml')&&rel!=='feed.xml'&&rel!=='sitemap.xml'))deny('SENSITIVE_FILE',rel);
   if(rel.startsWith('yazi/')&&rel.endsWith('.html')&&!allowed.has(rel.slice(5,-5)))deny('UNAPPROVED_HTML',rel);
   if(/\.(?:html|js|css|json|xml|svg|txt|md|csv)$/i.test(rel)){

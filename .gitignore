@@ -50,3 +50,6 @@ test/subs_cache/
 _arsiv/
 release-review/
 dist-receipts/
+
+# HP-URGENT-SITE-FINAL-047 K6 — yetkili gecici test dizini (Termux /tmp bagimsiz)
+.tmp-test/

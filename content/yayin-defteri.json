@@ -146,6 +146,24 @@
       "basis": "LIVE_BASELINE",
       "status": "published",
       "source_changed_since_deployed_commit": false
+    },
+    {
+      "slug": "2026-11-03-galatasaray-vs-stuttgart-llm",
+      "source": "2026-11-03-galatasaray-vs-stuttgart-llm.md",
+      "source_sha256": "b5ea70c6deb07b11d2c2ca5de24058f63bfcea646ffaa295b3ec146445884154",
+      "basis": "LIVE_BASELINE",
+      "tur": "uyumluluk",
+      "canonical": "https://hpanalytic.com/yazi/2026-11-03-galatasaray-vs-stuttgart.html",
+      "status": "published"
+    },
+    {
+      "slug": "2026-11-04-fenerbahce-vs-liverpool-fc",
+      "source": "2026-11-04-fenerbahce-vs-liverpool-fc.md",
+      "source_sha256": "a4e817ecf81017a2ebe5dd47344e0866d6d31d8a7764ef3427dab495f26dadca",
+      "basis": "LIVE_BASELINE",
+      "tur": "uyumluluk",
+      "canonical": "https://hpanalytic.com/yazi/2026-11-04-fenerbahce-vs-liverpool-fc.html",
+      "status": "published"
     }
   ]
 }

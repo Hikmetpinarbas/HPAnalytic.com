@@ -3,7 +3,8 @@ import { readFileSync, writeFileSync } from 'node:fs';
 
 const defteri = JSON.parse(readFileSync('content/yayin-defteri.json', 'utf-8'));
 const adaylar = JSON.parse(readFileSync('content/yayin-adaylari.json', 'utf-8'));
-const Beklenen = new Set(defteri.entries.map(e => e.slug));
+// HP-URGENT-SITE-FINAL-047 K3 — uyumluluk sayfaları (yönlenme/canlı baseline saklama) sitemap'a girmez.
+const Beklenen = new Set(defteri.entries.filter(e => e.tur !== 'uyumluluk').map(e => e.slug));
 const Aday = new Set(adaylar.inceleme_adaylari.map(a => a.slug));
 
 const OZEL = [

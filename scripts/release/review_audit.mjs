@@ -6,9 +6,13 @@
 import { createHash } from 'node:crypto';
 import { readFileSync, readdirSync, lstatSync, writeFileSync, mkdirSync, existsSync } from 'node:fs';
 import { join, resolve, relative, sep } from 'node:path';
+import { execFileSync } from 'node:child_process';
 import { pathToFileURL } from 'node:url';
 
 const sha = s => createHash('sha256').update(s).digest('hex');
+
+// HP-URGENT-SITE-FINAL-047 K4 — çalışma/taslak/inceleme dosyaları kamusal dist'e giremez.
+const CALISMA_DOSYA_DESEN = /(?:^|[\\/._-])(?:working|draft|taslak|temp|tmp|_pn3d|review[-_]only)(?:[._-]|$)/i;
 
 // PR #100 gate ile aynı desenler (tamamlayıcı ikinci katman).
 const privatePath = /(?:\/data\/data\/com\.termux|\/storage\/emulated\/|\/sdcard\/|\/root\/HP_WORKSPACE|\/root\/AI_WRITER_LAB)/i; // hpa:allow-path: desen tanımı, sır değildir
@@ -68,7 +72,15 @@ function feedSlugs(root, dist) {
   return [...new Set([...readFileSync(feed, 'utf8').matchAll(/<link>\s*[^<]*\/yazi\/([^/<>?\s]+)\.html\s*<\/link>/g)].map(m => m[1]))];
 }
 
-export function denetle(root = '.', distDir = 'dist', { yaz = false } = {}) {
+export function denetle(root = '.', distDir = 'dist', opts = {}) {
+  const { yaz = false } = opts;
+
+  // HP-URGENT-SITE-FINAL-047 K2 — makbuz gerçek CI bağlama (commit/CI run/artefakt) bağlıdır.
+  const commitSha = opts.commitSha
+    ?? process.env.GITHUB_SHA
+    ?? (() => { try { return execFileSync('git', ['rev-parse', 'HEAD'], { encoding: 'utf8' }).trim(); } catch { return null; } })();
+  const runId = String(opts.runId ?? process.env.GITHUB_RUN_ID ?? 'local');
+
   const kontroller = [];
   const engel = [];
   const istisnalar = [];
@@ -78,8 +90,10 @@ export function denetle(root = '.', distDir = 'dist', { yaz = false } = {}) {
   const dist = resolve(root, distDir);
   const rel = f => relative(dist, f).split(sep).join('/');
 
-  // 1) Ledger: PR #100 şeması hpa.publication_ledger.v1
+  // 1) Ledger: PR #100 şeması hpa.publication_ledger.v1 — tur:'uyumluluk' girdileri (HP-URGENT-SITE-FINAL-047 K3)
+  //    canlı baseline rotasını korur; canonical hedefi ledger girdisinden zorunlu kılınır.
   const onayli = new Map();
+  const uyumluluk = new Map();
   try {
     const ledger = JSON.parse(readFileSync(join(absolute, 'content/yayin-defteri.json'), 'utf8'));
     if (ledger?.schema !== 'hpa.publication_ledger.v1' || !Array.isArray(ledger.entries)) throw new Error('LEDGER_SCHEMA_INVALID');
@@ -90,10 +104,18 @@ export function denetle(root = '.', distDir = 'dist', { yaz = false } = {}) {
       if (!existsSync(source)) throw new Error('SOURCE_MISSING:' + e.source);
       if (!/^[a-f0-9]{64}$/.test(e.source_sha256 || '') || sha(readFileSync(source)) !== e.source_sha256) throw new Error('SOURCE_HASH_DRIFT:' + e.source);
       if (e.source_changed_since_deployed_commit === true) throw new Error('CHANGED_SINCE_APPROVAL:' + e.slug);
+      if (e.tur === 'uyumluluk') {
+        if (!/^https:\/\/hpanalytic\.com\/yazi\/[\w-]+\.html$/.test(e.canonical || '')) throw new Error('UYUMLULUK_CANONICAL:' + e.slug);
+        uyumluluk.set(e.slug, e.canonical);
+      }
       onayli.set(e.slug, e.source);
     }
+    for (const [slug, hedef] of uyumluluk) {
+      const hedefSlug = hedef.replace(/^https:\/\/hpanalytic\.com\/yazi\//, '').replace(/\.html$/, '');
+      if (hedefSlug !== slug && !onayli.has(hedefSlug)) throw new Error('UYUMLULUK_TARGET_UNAPPROVED:' + slug + '->' + hedefSlug);
+    }
     if (!onayli.size) throw new Error('NO_APPROVED_ARTICLES');
-    U('LEDGER', 'gecti', [...onayli.keys()].join(',') );
+    U('LEDGER', 'gecti', [...onayli.keys()].join(','));
   } catch (err) { U('LEDGER', 'engelli', String(err.message || err)); }
 
   // 2) Adaylar registry: inceleme/iptal adayları dist'e sızmamalı
@@ -110,6 +132,7 @@ export function denetle(root = '.', distDir = 'dist', { yaz = false } = {}) {
   const yaziHtml = new Set();
   for (const f of dosyalar) {
     const r = rel(f);
+    if (CALISMA_DOSYA_DESEN.test(r)) U('WORKING_FILE', 'engelli', r);
     if (/\.(?:html|js|css|json|xml|svg|txt)$/i.test(r)) {
       const txt = readFileSync(f, 'utf8');
       if (privatePath.test(txt)) U('PRIVATE_PATH', 'engelli', r);
@@ -119,12 +142,17 @@ export function denetle(root = '.', distDir = 'dist', { yaz = false } = {}) {
     if (r.endsWith('.xml') && r !== 'feed.xml' && r !== 'sitemap.xml') U('XML_FILE', 'engelli', r);
     if (disallowed.test(r)) U('SENSITIVE_FILE', 'engelli', r);
     if (/^yazi\/[\w-]+\.html$/.test(r)) {
-      yaziHtml.add(r.slice(5, -5));
-      if (onayli.size && !onayli.has(r.slice(5, -5))) U('UNAPPROVED_HTML', 'engelli', r);
+      const slugHtml = r.slice(5, -5);
+      yaziHtml.add(slugHtml);
+      if (onayli.size && !onayli.has(slugHtml)) U('UNAPPROVED_HTML', 'engelli', r);
       const txt = readFileSync(f, 'utf8');
       const canon = txt.match(/<link\s+rel="canonical"\s+href="([^"]+)"/);
+      const beklenen = uyumluluk.get(slugHtml);
       if (!canon) U('CANONICAL_MISSING', 'engelli', r);
-      else if (canon[1] !== 'https://hpanalytic.com/yazi/' + r.slice(5, -5) + '.html') U('CANONICAL_TARGET', 'engelli', r + ' -> ' + canon[1]);
+      else if (beklenen) {
+        if (canon[1] !== beklenen) U('CANONICAL_TARGET', 'engelli', r + ' -> ' + canon[1]);
+      }
+      else if (canon[1] !== 'https://hpanalytic.com/yazi/' + slugHtml + '.html') U('CANONICAL_TARGET', 'engelli', r + ' -> ' + canon[1]);
       if (/<meta\s+name="robots"\s+content="[^"]*noindex/i.test(txt)) U('INDEXED_BUT_NOINDEX', 'engelli', r);
     }
 
@@ -164,7 +192,7 @@ export function denetle(root = '.', distDir = 'dist', { yaz = false } = {}) {
     const gecersiz = feedler.filter(s => !onayli.has(s));
     for (const s of gecersiz) U('FEED_UNAPPROVED', 'engelli', s);
     if (onayli.size && !feedler.length) U('FEED_NO_APPROVED_LINKS', 'engelli', '');
-    const eksik = [...onayli.keys()].filter(s => !feedler.includes(s));
+    const eksik = [...onayli.keys()].filter(s => !uyumluluk.has(s) && !feedler.includes(s));
     if (onayli.size && eksik.length) U('FEED_LEDGER_MISMATCH', 'engelli', 'feedde-olmayan:' + eksik.join(','));
     U('FEED', engel.some(e => e.startsWith('FEED')) ? 'engelli' : 'gecti', `${feedler.length} madde`);
   } catch (err) { U('FEED', 'engelli', String(err.message || err)); }
@@ -176,7 +204,7 @@ export function denetle(root = '.', distDir = 'dist', { yaz = false } = {}) {
     const smSlugs = [...readFileSync(sm, 'utf8').matchAll(/<loc>https:\/\/hpanalytic\.com\/yazi\/([^<]+)\.html<\/loc>/g)].map(m => m[1]);
     const gecersiz = smSlugs.filter(s => !onayli.has(s));
     for (const s of gecersiz) U('SITEMAP_UNAPPROVED', 'engelli', s);
-    const eksik = [...onayli.keys()].filter(s => !smSlugs.includes(s));
+    const eksik = [...onayli.keys()].filter(s => !uyumluluk.has(s) && !smSlugs.includes(s));
     if (onayli.size && eksik.length) U('SITEMAP_MISMATCH', 'engelli', 'sitemapta-olmayan:' + eksik.join(','));
     U('SITEMAP', engel.some(e => e.startsWith('SITEMAP')) ? 'engelli' : 'gecti', smSlugs.join(','));
     const robots = smSlugs.filter(s => (adaylar?.inceleme_adaylari || []).some(a => a.noindex && a.slug === s));
@@ -192,6 +220,12 @@ export function denetle(root = '.', distDir = 'dist', { yaz = false } = {}) {
     dosyalar: dosyalar.map(f => ({ yol: rel(f), sha256: sha(readFileSync(f)), boyut: readFileSync(f).length }))
   };
   const manifestStr = JSON.stringify(manifest, null, 2);
+  // HP-URGENT-SITE-FINAL-047 K2 — zaman damgasından bağımsız deterministik dist damgası:
+  // deploy sırasında gerçek dist'ten yeniden hesaplanabilir (eski makbuz/tamper tespiti).
+  // Sıralama verify_release_ready.mjs ile birebir aynıdır (yol esaslı artan).
+  const distDosyaDamgasi = sha(JSON.stringify(
+    manifest.dosyalar.slice().sort((a, b) => (a.yol < b.yol ? -1 : a.yol > b.yol ? 1 : 0))
+  ));
 
   const makbuz = {
     schema: 'hpa.release_review_receipt.v1',
@@ -203,8 +237,12 @@ export function denetle(root = '.', distDir = 'dist', { yaz = false } = {}) {
     review_required: true,
     release_status: engel.length ? 'HOLD' : 'IZIN',
     dist_kok: distDir,
-    tarama: { dosya: dosyalar.length, onayli_makale: onayli.size, yazi_html: yaziHtml.size },
+    tarama: { dosya: dosyalar.length, onayli_makale: onayli.size - uyumluluk.size, yazi_html: yaziHtml.size },
     kontroller, istisnalar,
+    build_commit_sha: commitSha,
+    ci_run_id: runId,
+    dist_manifest_sha256: distDosyaDamgasi,
+    artifakt: { release_ready: `release-ready-${runId}`, dist_sha256: `dist-sha256-${runId}` },
     rollback_manifest_sha256: sha(manifestStr)
   };
   if (engel.length) makbuz.engeller = engel;
@@ -224,6 +262,10 @@ export function denetle(root = '.', distDir = 'dist', { yaz = false } = {}) {
     istisnalar,
     tarama: makbuz.tarama,
     kontrol_sayisi: kontroller.length,
+    build_commit_sha: commitSha,
+    ci_run_id: runId,
+    dist_manifest_sha256: distDosyaDamgasi,
+    artifakt: makbuz.artifakt,
     rollback_manifest_sha256: sha(manifestStr)
   };
 
