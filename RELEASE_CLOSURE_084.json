@@ -1,0 +1,62 @@
+{
+  "schema": "hpa.release_closure_084.v1",
+  "task": "HP-MISTRAL-RELEASE-CLOSURE-084",
+  "priority": "P0",
+  "pr": 102,
+  "branch": "vibe/wave1-ticker-hierarchy-e49fa7",
+  "audited_head": "2e9d642c7f8233e8424c85e4cc754762fa59aa1f",
+  "pr_durumu_kontrol": {
+    "headRefOid": "2e9d642c7f8233e8424c85e4cc754762fa59aa1f",
+    "isDraft": true,
+    "state": "OPEN",
+    "baseRefName": "main",
+    "mergeStateStatus": "CLEAN",
+    "mergeable": "MERGEABLE",
+    "statusCheckRollup": [
+      { "name": "audit", "conclusion": "SUCCESS", "runId": 45600390590 },
+      { "name": "transfer-gate", "conclusion": "SUCCESS", "runId": 45600390593 }
+    ]
+  },
+  "durum_064": {
+    "sonuc": "TAMAMLANMIS",
+    "yontem": "K1-K6 her madde, ilgili dosya/test icerigi ve canli GitHub CI sonuclari uzerinden bagimsiz olarak dogrulandi; yeniden yapilmadi.",
+    "k1_trace_event": "scripts/trace_event.py fail-closed yol sozlesmesi yerinde; tests/test_trace_event_paths.py 5/5 PASS.",
+    "k2_release_baglama": "deploy.yml deploy adimi verify_release_ready.mjs ile github.sha/github.run_id/dist manifest/makbuz yasi (14 gun) bagliyor; tests/release-ready-binding.test.mjs 6/6 PASS.",
+    "k3_rota_korunmasi": "public/yazi/2026-11-03-galatasaray-vs-stuttgart-llm.html (canonical -> onayli makale) ve public/yazi/2026-11-04-fenerbahce-vs-liverpool-fc.html (kendine canonical) statik uyumluluk sayfasi olarak yerinde; 5 kirik seri/top-5 rotasi link'siz 'Yakinda' kartina cevrilmis; tests/route-acceptance.test.mjs PASS.",
+    "k4_calisma_dosyasi_sizinti": "pass_network_v2.working.json repo takibinde degil; iki kapi da working/draft/taslak/temp/tmp/review-only desenini fail-closed reddediyor; yayinlanan pass_network_v2.json yerinde ve dolu.",
+    "k5_yayin_guvenligi": "PR adayinda deploy.yml push tetikleyicisi YOK; deploy yalnizca workflow_dispatch + release_approved:true (default false) + main ref ile calisir; tests/deploy-workflow.test.mjs PASS.",
+    "k6_test_ortami": ".gitignore .tmp-test/ girisi yerinde; testler TMPDIR=$PWD/.tmp-test ile izole calistirildi."
+  },
+  "odak_alanlari": {
+    "fenerbahce_liverpool_yayin_yetkisi": {
+      "dosya": "public/yazi/2026-11-04-fenerbahce-vs-liverpool-fc.html",
+      "bulgu": "Sayfa LIVE_BASELINE uyumluluk taban sayfasidir (canli fd1c639'ta HTTP 200); content/yayin-defteri.json girdisi tur=uyumluluk + kendine canonical ile tanimli ve status=published (yayinlanmis olandan alinmistir, yeni yayin yetkisi verilmemistir). Kaynak md status:review makale yayina alinmadi; guvenlik kapti publicationAuthorized=false raporladi. Insan onayi olmadan bu rotanin yeni icerigi yayinlanamaz."
+    },
+    "robots_noindex": {
+      "mekanizma": "scripts/build-yazi.mjs:486 status!=yayin veya noindex=true kaynaklari build disinda birakir; scripts/build-search-index.mjs:19 ayni soslesmeyi uygular; scripts/release/review_audit.mjs INDEXED_BUT_NOINDEX ve NOINDEX_IN_SITEMAP negatif kontrollerini fail-closed yapar.",
+      "bulgu": "Uyumluluk sayfasindan 6 inceleme adayi sitemap-disi tutuldu; dist/sitemap.xml 17 makale + 2 ozel yol. Herhangi bir noindex dahil indekslenen sayfa saptanmadi."
+    },
+    "insan_onayi": {
+      "mekanizma": "content/yayin-defteri.json publication_authorized=false + review_required=true + release_status=HOLD; deploy girdisi release_approved default=false ve otomatiklesmesi acikca engelli; RELEASE_READY makbuzu onay protokolunu ve yasini fail-closed dogrular.",
+      "bulgu": "Insan onayi olmadan deploy, merge veya yeni yayin mukun degil; makbuzlar bu kilidi tasidigini dogruladi."
+    },
+    "main_otomatik_deploy_guvenligi": {
+      "bulgu": "PR #102 adayinda deploy.yml push tetikleyicisiz; main'e birlesme sonrasi otomatik deploy artik mumkun olmayacak. Origin/main'deki eski deploy.yml hala push tetikleyicilidir ancak birlesme acik onayimme baglidir ve pr adayindaki fail-closed kapilar birlesmeyle birlikte etkisiz hale getirmek yerine kilidi sikiyor. Bu gorev kapsaminda merge yapilmadi."
+    }
+  },
+  "dogrulama_ekran_kayitlari": {
+    "node_test": "node --test tests/*.test.mjs -> 63/63 PASS (build sonrasi)",
+    "python_unittest": "TMPDIR=$PWD/.tmp-test python3 -m unittest discover -s tests -p 'test_*.py' -> 44/44 PASS (ortamda pandas eksikti, pip ile tamamlandi; test beklentileri degistirilmedi)",
+    "build": "npm ci && npm run build -> OK; dist/sitemap.xml 17 makale + 2 ozel yol (6 inceleme adayi disarda)",
+    "review_audit": "node scripts/release/review_audit.mjs dist -> YAYIN_DENETIMI_GECTI (5 kontrol)",
+    "release_security_gate": "node scripts/release-security-gate.mjs dist -> SECURITY_REVIEW_PASS filesChecked=161 approvedArticles=19 publicationAuthorized=false",
+    "transfer_gate_yerel": "python3 scripts/transfer/check_transfer_pr.py --base origin/main --head HEAD -> GECIRDI (0 ihlal)"
+  },
+  "sinirlar": {
+    "yeni_ozellik": "YOK",
+    "merge": "YOK",
+    "canli_deploy": "YOK",
+    "k1_k6_yeniden_is": "YOK"
+  },
+  "kapanis_karari": "064 duzeltmeleri PR #102 HEAD 2e9d642 uzerinde tam ve dogrulanmis; ek kod duzeltmesi gerekmedi. Bu makbuz yalnizca dokuman olarak eklendi; davranis degisikligi yok."
+}
