@@ -1,0 +1,64 @@
+# HP-MISTRAL-RELEASE-030 — Deploy TETIKLEMEYEN review build + denetim + artefakt teslimi.
+# Bu workflow ASLA yayinlama/deploy yetkisi vermez (permissions: contents: read).
+# Yayin kapisi: PR #100 (scripts/release-security-gate.mjs) + insan onayi; burada yalnizca kanit uretilir.
+name: Release Review Audit
+
+on:
+  workflow_dispatch:
+  pull_request:
+    paths:
+      - 'public/**'
+      - 'content/**'
+      - 'scripts/**'
+      - 'src/**'
+      - 'index.html'
+      - 'package.json'
+      - 'vite.config.js'
+
+permissions:
+  contents: read
+
+jobs:
+  audit:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      - name: Bagimlilik kurulumu
+        run: npm ci
+
+      - name: Site build (yazi + search-index + vite + sitemap)
+        run: npm run build
+
+      - name: Yayin guvenligi denetimi (PR #100 uyumlu, fail-closed)
+        run: node scripts/release/review_audit.mjs dist
+
+      - name: Unit testler (node:test)
+        run: node --test tests/*.test.mjs
+
+      - name: Yayin makbuzu + rollback manifesti (artefakt)
+        uses: actions/upload-artifact@v4
+        with:
+          name: release-review-${{ github.run_id }}
+          path: |
+            release-review/RELEASE_READY.json
+            release-review/release-review-receipt.json
+            release-review/rollback-manifest.json
+          if-no-files-found: error
+
+      - name: Dist SHA-256 makbuzu
+        run: |
+          cd dist && find . -type f ! -name sha256sums.txt -print0 | sort -z | xargs -0 sha256sum > sha256sums.txt && cd ..
+          mkdir -p release-review && cp dist/sha256sums.txt release-review/dist-sha256sums.txt
+
+      - name: SHA makbuzu artefaktı
+        uses: actions/upload-artifact@v4
+        with:
+          name: dist-sha256-${{ github.run_id }}
+          path: release-review/dist-sha256sums.txt
+          if-no-files-found: error

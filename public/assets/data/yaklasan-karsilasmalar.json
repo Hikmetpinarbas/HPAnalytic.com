@@ -1,0 +1,22 @@
+{
+  "schema": "hpa.yaklasan_karsilasmalar.v1",
+  "publication_authorized": false,
+  "review_required": true,
+  "release_status": "HOLD",
+  "olusturan": {
+    "ajans_adi": "Mistral",
+    "model": "zai-glm-5-3-flash-vibe-free",
+    "gorev_id": "HP-MISTRAL-WAVE1-SITE-01"
+  },
+  "items": [
+    {
+      "yaris": "Shakhtar Donetsk — Fenerbahçe",
+      "yayin_adayi": true,
+      "durum": "inceleme",
+      "tarih_dogrulanmis": false,
+      "aciklama": "İçerik ve ön veri henüz yok; uydurulmayacak. Yayın ancak yayın defterine HUMAN_APPROVAL girdikten sonra mümkündür.",
+      "kaynak": "content/yayin-adaylari.json",
+      "href": null
+    }
+  ]
+}

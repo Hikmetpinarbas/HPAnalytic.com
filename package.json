@@ -5,15 +5,17 @@
   "type": "module",
   "scripts": {
     "dev": "vite --host 127.0.0.1",
-    "build": "node scripts/build-yazi.mjs && vite build",
-    "preview": "vite preview --host 127.0.0.1"
+    "build": "node scripts/build-yazi.mjs && node scripts/build-search-index.mjs && vite build && node scripts/build-sitemap.mjs",
+    "preview": "vite preview --host 127.0.0.1",
+    "release:audit": "node scripts/release/review_audit.mjs"
   },
   "dependencies": {
     "d3": "^7.9.0",
     "d3-soccer": "^0.3.0",
     "gsap": "^3.15.0",
     "lenis": "^1.1.14",
-    "marked": "^15.0.0"
+    "marked": "^15.0.0",
+    "split-type": "^0.3.4"
   },
   "devDependencies": {
     "esbuild": "^0.28.2",

@@ -14,6 +14,9 @@ def main():
         print(f"HATA: {src} bulunamadi"); sys.exit(1)
     out = Path("public/assets/data") / slug
     out.mkdir(parents=True, exist_ok=True)
+    # HP-W1-SITE-001: ham CSV deploy edilmez; kaynak kopyalari content/kaynak-veri altinda kalir.
+    kaynak = Path("content/kaynak-veri") / slug
+    kaynak.mkdir(parents=True, exist_ok=True)
     # Icеrik bazli algilama: "N. Isim (ID) - Event" formati hangi dosyada daha cok?
     import re as _re
     _player_re = _re.compile(r"^\d+\.\s+.+?\(\d+\)\s*-")
@@ -40,8 +43,8 @@ def main():
 
     if n_players > n_teams:
         # Ters durum (Fenerbahce gibi): PLAYERS_CSV oyuncu iceriyor
-        if f_players: shutil.copy(f_players, out / "teams.csv"); print("  kopya: teams.csv (PLAYERS_CSV'den)")
-        if f_teams: shutil.copy(f_teams, out / "players.csv"); print("  kopya: players.csv (TEAMS_CSV'den)")
+        if f_players: shutil.copy(f_players, kaynak / "players.csv"); print("  kopya: players.csv -> kaynak-veri (PLAYERS_CSV'den)")
+        if f_teams: shutil.copy(f_teams, kaynak / "teams.csv"); print("  kopya: teams.csv -> kaynak-veri (TEAMS_CSV'den)")
     else:
         # Normal durum (Stuttgart gibi)
         if f_players: shutil.copy(f_players, out / "players.csv"); print("  kopya: players.csv (PLAYERS_CSV'den)")

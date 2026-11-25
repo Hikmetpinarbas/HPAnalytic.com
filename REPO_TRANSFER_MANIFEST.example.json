@@ -1,0 +1,104 @@
+{
+  "schema_version": "hpa.repo_transfer_manifest.v1",
+  "transfer_id": "HP-TR-PREP-000",
+  "module_id": "M11",
+  "module_name": "kaynak-dogrulama-kalite-kontrol",
+  "durum": "beklemede",
+  "kaynak": {
+    "cihaz": "ubuntu-actions",
+    "orijinal_yol": "scripts/transfer (hazirlik sirasinda ayni dizin)",
+    "yol_duzenlemesi": "paths.py-portable"
+  },
+  "hedef": {
+    "repo_kok_yolu": "scripts/transfer",
+    "hedef_sha256": "5dcabd35e90d01379878cc9a5a9e7d944227ac2bbc709775f4dc356a944094f0"
+  },
+  "dosyalar": [
+    {
+      "kaynak_yol": "scripts/transfer/check_transfer_pr.py",
+      "hedef_yol": "scripts/transfer/check_transfer_pr.py",
+      "sha256": "5dcabd35e90d01379878cc9a5a9e7d944227ac2bbc709775f4dc356a944094f0",
+      "boyut_bayt": 7484,
+      "rol": "kod"
+    },
+    {
+      "kaynak_yol": "scripts/transfer/validate_manifest.py",
+      "hedef_yol": "scripts/transfer/validate_manifest.py",
+      "sha256": "34e8377be3e87589c385c747032c14615999b775832a2c054f2461a0070ab799",
+      "boyut_bayt": 8132,
+      "rol": "kod"
+    },
+    {
+      "kaynak_yol": "scripts/transfer/generate_transfer_manifest.py",
+      "hedef_yol": "scripts/transfer/generate_transfer_manifest.py",
+      "sha256": "2cfbb0b8652f09136b3dd7bc131ef033105ce07cc0f13c3302e4ef162b3ca3e5",
+      "boyut_bayt": 8447,
+      "rol": "kod"
+    },
+    {
+      "kaynak_yol": "scripts/transfer/validate_configs.py",
+      "hedef_yol": "scripts/transfer/validate_configs.py",
+      "sha256": "5be7c4292b21f832534b194c2b66bd9dc2461e918eb2c71aa865b1d729ba04ff",
+      "boyut_bayt": 4354,
+      "rol": "kod"
+    }
+  ],
+  "gorev": "Transfer kabul kapisi: PR diff denylist + gizli bilgi + cihaz yolu + link denetimi; manifest sema/dogrulama; config tutarlilik (HP-MISTRAL-REPO-026)",
+  "bagimliliklar": {
+    "python": [],
+    "node": [],
+    "sistem": [],
+    "icmodul": [],
+    "eksik": [],
+    "durum": "tam"
+  },
+  "calistirma": {
+    "komut": "python3 scripts/transfer/check_transfer_pr.py --base origin/main --head HEAD",
+    "ortamlar": [
+      "termux",
+      "ubuntu",
+      "userland",
+      "ubuntu-actions"
+    ],
+    "giris_sozlesmesi": {
+      "tur": "ham-olay-verisi",
+      "yol": "pipeline/input",
+      "not": "Ham veri repoya girmez; HPA_* ortam değişkeniyle gösterilir."
+    },
+    "cikis_sozlesmesi": {
+      "tur": "kabul-raporu-json",
+      "yol": "transfer-gate-report.json",
+      "not": "Türetilmiş çıktı; allowlist desenlerine göre değerlendirilir."
+    }
+  },
+  "test": {
+    "komut": "python3 -m unittest tests.test_transfer_prep -v",
+    "durum": "gecti",
+    "kayit_yolu": "TRANSFER_ACCEPTANCE_REPORT.json#test_kayitlari",
+    "fixture_yolu": "tests/test_transfer_prep.py",
+    "not": "Test kayıtları gerçek koşumlardan alınır; uydurma kayıt kabul edilmez."
+  },
+  "kaynak_bilgisi": {
+    "lisans": "PROPRIETARY-HPANALYTIC (sahip: Hikmet Pınarbaş)",
+    "atiflar": []
+  },
+  "cakisma": {
+    "isim_cakismasi": false,
+    "uzerine_yazilanlar": [],
+    "surum": "1.0",
+    "detay": ""
+  },
+  "guvenlik": {
+    "gizli_bilgi_taramasi": "temiz",
+    "cihaz_yolu_taramasi": "temiz",
+    "buyuk_dosya_taramasi": "temiz",
+    "notlar": [
+      "check_transfer_pr.py ve validate_manifest.py koşumu PR içinde kanıta bağlanır."
+    ]
+  },
+  "yayin": {
+    "release_status": "HOLD",
+    "publication_authorized": false,
+    "review_required": true
+  }
+}

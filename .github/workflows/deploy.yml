@@ -1,14 +1,16 @@
 name: Deploy to GitHub Pages
 
 on:
-  push:
-    branches: [main]
   workflow_dispatch:
+    inputs:
+      release_approved:
+        description: "Explicit owner approval for this release (never automated)"
+        required: true
+        type: boolean
+        default: false
 
 permissions:
   contents: read
-  pages: write
-  id-token: write
 
 concurrency:
   group: pages
@@ -16,19 +18,40 @@ concurrency:
 
 jobs:
   build:
+    if: ${{ github.ref == 'refs/heads/main' && inputs.release_approved == true }}
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-      - run: npm install --no-audit --no-fund
+      - run: npm ci --no-audit --no-fund
       - run: npm run build
+      - name: Yayin guvenlik kapisı (PR #100, fail-closed)
+        run: node scripts/release-security-gate.mjs dist
+      - name: Release Review Audit (HP-W1-SITE-001, fail-closed)
+        run: node scripts/release/review_audit.mjs dist
+      - name: RELEASE_READY makbuzu dogrulamasi (HP-URGENT-SITE-FINAL-047 K2, fail-closed)
+        # Kabul edilen commit (github.sha), CI run, dist manifesti ve artifakt kimligi birbirine baglanir:
+        # yaln dosya varligi veya makbuz metni yeterli degildir; dist manifesti dist'ten yeniden hesaplanir.
+        run: node scripts/release/verify_release_ready.mjs release-review/RELEASE_READY.json dist ${{ github.sha }} ${{ github.run_id }} 14
+      - uses: actions/upload-artifact@v4
+        with:
+          name: release-ready-${{ github.run_id }}
+          path: |
+            release-review/RELEASE_READY.json
+            release-review/release-review-receipt.json
+            release-review/rollback-manifest.json
+          if-no-files-found: error
       - uses: actions/upload-pages-artifact@v3
         with:
           path: ./dist
 
   deploy:
+    permissions:
+      pages: write
+      id-token: write
+    if: ${{ github.ref == 'refs/heads/main' && inputs.release_approved == true }}
     needs: build
     runs-on: ubuntu-latest
     environment:

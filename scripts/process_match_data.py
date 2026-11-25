@@ -1,7 +1,7 @@
 import csv, json, re
 from collections import defaultdict
 
-INPUT_CSV = "public/assets/data/gs-stuttgart/players.csv"
+INPUT_CSV = "content/kaynak-veri/gs-stuttgart/players.csv"  # HP-W1-SITE-001: ham CSV kamusal alanda deil
 OUTPUT_JSON = "public/assets/data/gs-stuttgart/match_data.json"
 
 print("Veri işleniyor...")

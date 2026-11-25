@@ -12,10 +12,15 @@ _ap.add_argument('--out', default=None)
 _args, _ = _ap.parse_known_args()
 # --- /AUTO ---
 
-_GK_DEF = "/storage/emulated/0/HPAnaliz/SportsBase/maclar/MATCH_2026_11_03_Galatasaray_vs_Stuttgart/MATCH_2026_11_03_Galatasaray_vs_Stuttgart__GOALKEEPERS__XLSX.xlsx"
-GK_XLSX = str(next(Path(_args.src).glob("*__GOALKEEPERS__XLSX.xlsx"), _GK_DEF)) if _args.src else _GK_DEF
-_PC_DEF = "public/assets/data/gs-stuttgart/players.csv"
-PLAYERS_CSV = f"{_args.out}/players.csv" if _args.out else _PC_DEF
+GK_XLSX = next(Path(_args.src).glob("*__GOALKEEPERS__XLSX.xlsx"), None) if _args.src else None
+if GK_XLSX is None:
+    raise SystemExit("GK kaynagi bulunmadi: --src <mac veri klasoru> verin (desen: *__GOALKEEPERS__XLSX.xlsx); ham cihaz verisi repoya girmez")
+GK_XLSX = str(GK_XLSX)
+_PC_DEF = "content/kaynak-veri/gs-stuttgart/players.csv"  # HP-W1-SITE-001: ham CSV kamusal alanda deil
+_PC_ADAY = [c for c in (f"{_args.out}/players.csv" if _args.out else None,
+                        f"{_args.src}/players.csv" if _args.src else None,
+                        _PC_DEF) if c]
+PLAYERS_CSV = next((c for c in _PC_ADAY if Path(c).exists()), _PC_DEF)
 _OUT_DEF = "public/assets/data/gs-stuttgart/gk_distribution.json"
 OUT = f"{_args.out}/gk_distribution.json" if _args.out else _OUT_DEF
 

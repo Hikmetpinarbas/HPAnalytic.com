@@ -1,0 +1,13 @@
+{
+  "schema": "hpa.live_ticker.v1",
+  "available": false,
+  "reason": "SEED_NO_SOURCE",
+  "fetched_at": null,
+  "publication_authorized": false,
+  "olusturan": {
+    "ajans_adi": "Mistral",
+    "model": "zai-glm-5-3-flash-vibe-free",
+    "gorev_id": "HP-MISTRAL-WAVE1-SITE-01"
+  },
+  "items": []
+}

@@ -1,0 +1,72 @@
+# Transfer Gate — HP-MISTRAL-REPO-026
+# Yalnızca kontrol: hiçbir adım deploy yapmaz, yayın başlatmaz.
+name: Transfer Gate
+
+on:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: transfer-gate-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  transfer-gate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Yapılandırma tutarlılığı
+        run: python3 scripts/transfer/validate_configs.py
+
+      - name: PR transfer kapısı (denylist, gizli bilgi, cihaz yolu, link)
+        run: |
+          python3 scripts/transfer/check_transfer_pr.py \
+            --base "origin/${{ github.event.pull_request.base.ref || 'main' }}" \
+            --head HEAD \
+            --json transfer-gate-report.json
+
+      - name: Python sözdizimi denetimi
+        run: python3 -m compileall -q hpa-pipeline-v3 pipeline scripts tests
+
+      - name: Transfer doğrulama koşumları (Python)
+        run: |
+          python3 -m pip install --quiet pandas openpyxl
+          python3 -m unittest discover -s tests -p "test_*.py" -v
+          python3 hpa-pipeline-v3/tests/test_paths.py
+          for t in hpa-pipeline-v3/tests/test_*.py; do
+            echo "== $t"; python3 "$t" || exit 1
+          done
+
+      - name: Manifest örneği doğrulama (şema + allowlist + SHA)
+        run: |
+          python3 scripts/transfer/validate_manifest.py REPO_TRANSFER_MANIFEST.example.json \
+            --allowlist REPO_TRANSFER_ALLOWLIST.json \
+            --module-map REPO_MODULE_MAP.json \
+            --verify
+
+      - name: JavaScript sözdizimi denetimi
+        run: |
+          shopt -s globstar nullglob
+          for f in scripts/**/*.mjs scripts/*.mjs; do
+            echo "-- $f"
+            node --check "$f"
+          done
+
+      - name: Site build doğrulaması ve node testleri
+        run: |
+          npm ci --no-audit --no-fund
+          npm run build
+          node --test tests/*.test.mjs

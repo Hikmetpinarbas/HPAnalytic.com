@@ -6,10 +6,6 @@ import * as esbuild from 'esbuild';
 const SRC = resolve('content/yazilar');
 const OUT = resolve('public/yazi');
 mkdirSync(OUT, { recursive: true });
-const semanticSource = resolve('_hazine/veri_beyni/HP_SEMANTIC_DATA_INTELLIGENCE');
-const semanticPublic = resolve('public/hazine/veri_beyni/HP_SEMANTIC_DATA_INTELLIGENCE');
-cpSync(semanticSource, semanticPublic, { recursive: true });
-console.log('OK hazine veri sözlüğü public alana kopyalandı');
 await esbuild.build({ entryPoints: ['src/js/article-viz.js'], bundle: true, format: 'esm', outfile: 'public/assets/js/article-viz.js', minify: true, target: 'es2020', logLevel: 'silent' });
 console.log('OK article-viz.js bundle edildi');
 await esbuild.build({ entryPoints: ['src/js/gsap-micro.js'], bundle: true, format: 'iife', outfile: 'public/gsap-micro.js', minify: true, target: 'es2020', logLevel: 'silent' });
@@ -409,10 +405,10 @@ function resolveTitle(meta, body, file) {
   return candidate && !looksLikeSlug ? candidate : titleFromFilename(file);
 }
 
-function page({ title, bodyHtml, type, typeLabel, typeColor, date, read, excerpt, source, related, portrait = '', portrait_credit = '' }) {
+function page({ slug, title, bodyHtml, type, typeLabel, typeColor, date, read, excerpt, source, related, portrait = '', portrait_credit = '' }) {
   const { html: articleHtml, toc } = buildTOC(bodyHtml);
   const motion = ARTICLE_MOTION[type] || ARTICLE_MOTION.default;
-  return `<!doctype html><html lang="tr"><head><meta charset="utf-8"/><style>html{background:#08090B}body{background:#08090B;color:#F4F2EC;margin:0}</style><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/><meta name="theme-color" content="#08090B"/><title>${esc(title)} — HP//Analytic</title><meta name="description" content="${esc(excerpt || title)}"/><meta property="og:title" content="${esc(title)}"/><meta property="og:description" content="${esc(excerpt || title)}"/><meta property="og:type" content="article"/><meta property="og:site_name" content="HPAnalytic"/>${portrait ? `<meta property="og:image" content="https://hpanalytic.com${portrait}"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:image" content="https://hpanalytic.com${portrait}"/>` : '<meta name="twitter:card" content="summary"/>'}<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;700&family=JetBrains+Mono:wght@400;500;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet"><style>${CSS}</style></head><body data-article-type="${esc(type)}" data-max-layers="${motion.maxConcurrentLayers}" data-preloader-duration="${motion.preloaderDuration}">
+  return `<!doctype html><html lang="tr"><head><meta charset="utf-8"/><style>html{background:#08090B}body{background:#08090B;color:#F4F2EC;margin:0}</style><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/><meta name="theme-color" content="#08090B"/><title>${esc(title)} — HP//Analytic</title><link rel="canonical" href="https://hpanalytic.com/yazi/${esc(slug)}.html"/><meta name="description" content="${esc(excerpt || title)}"/><meta property="og:title" content="${esc(title)}"/><meta property="og:description" content="${esc(excerpt || title)}"/><meta property="og:type" content="article"/><meta property="og:site_name" content="HPAnalytic"/>${portrait ? `<meta property="og:image" content="https://hpanalytic.com${portrait}"/><meta name="twitter:card" content="summary_large_image"/><meta name="twitter:image" content="https://hpanalytic.com${portrait}"/>` : '<meta name="twitter:card" content="summary"/>'}<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@300;400;500;700&family=JetBrains+Mono:wght@400;500;700&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;0,6..72,600;1,6..72,400&display=swap" rel="stylesheet"><style>${CSS}</style></head><body data-article-type="${esc(type)}" data-max-layers="${motion.maxConcurrentLayers}" data-preloader-duration="${motion.preloaderDuration}">
 <div class="progress-bar" id="progress"></div>
 <a href="/" class="back">← Ana sayfa</a>
 <section class="hero">
@@ -486,10 +482,12 @@ for (const file of files) {
   });
   const slug = meta.slug || file.replace(/\.md$/, '');
   if (!/^[a-z0-9-]+$/.test(slug)) { console.warn('⚠ Geçersiz slug: ' + file); continue; }
+  const status = (meta.status || 'yayin').trim().toLowerCase().replace(/["']/g, '');
+  if (status !== 'yayin' || (meta.noindex || '').trim() === 'true') { console.warn('⛔ Yayın dışı (status=' + status + '): ' + slug); continue; }
   const parsedRead = Number(meta.read);
   const read = Number.isFinite(parsedRead) && parsedRead > 0 ? parsedRead : Math.max(1, Math.ceil(m[2].split(/\s+/).length / 200));
   const sourceBody = m[2].trim();
-  const article = { slug, title: resolveTitle(meta, sourceBody, file), type: meta.type || 'articles', excerpt: meta.excerpt || '', date: meta.date || '', read, source: meta.source || '', portrait, portrait_credit, body: sourceBody.replace(/^#\s+.*$/m, '').trim() };
+  const article = { slug, title: resolveTitle(meta, sourceBody, file), type: meta.type || 'articles', excerpt: meta.excerpt || '', date: meta.date || '', read, source: meta.source || '', portrait, portrait_credit, status, body: sourceBody.replace(/^#\s+.*$/m, '').trim() };
   const previous = selectedSources.get(slug);
   if (previous) {
     // The slug-named Markdown is canonical. Never allow a second filename
@@ -517,7 +515,7 @@ for (const a of all) {
   }
   const relatedData = related.map(r => ({ slug: r.slug, title: r.title, typeLabel: TYPE_LABEL[r.type] || 'Yazı' }));
   const bodyHtml = marked.parse(processBlocks(a.body));
-  const out = page({ portrait: a.portrait, portrait_credit: a.portrait_credit, title: a.title, bodyHtml, type: a.type, typeLabel, typeColor, date: a.date, read: a.read, excerpt: a.excerpt, source: a.source, related: relatedData });
+  const out = page({ slug: a.slug, portrait: a.portrait, portrait_credit: a.portrait_credit, title: a.title, bodyHtml, type: a.type, typeLabel, typeColor, date: a.date, read: a.read, excerpt: a.excerpt, source: a.source, related: relatedData });
   writeFileSync(resolve(OUT, a.slug + '.html'), out, 'utf-8');
   console.log('✓ ' + a.slug + ' · ' + out.length + ' bytes');
 }
@@ -526,7 +524,7 @@ console.log('\n── ' + all.length + ' yazı yeniden üretildi ──');
 
 // Build the static recent-articles section from the same Markdown sources.
 const latest = [...all]
-  .filter(a => a.slug && a.title && /^\d{4}-\d{2}-\d{2}$/.test(a.date))
+  .filter(a => a.slug && a.title && a.status === 'yayin' && /^\d{4}-\d{2}-\d{2}$/.test(a.date))
   .sort((a, b) => b.date.localeCompare(a.date) || a.slug.localeCompare(b.slug))
   .slice(0, 6);
 const latestCards = latest.map(a => {

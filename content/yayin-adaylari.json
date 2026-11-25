@@ -1,0 +1,102 @@
+{
+  "schema": "hpa.yayin_adaylari.v1",
+  "olusturma": "2026-11-05",
+  "publication_authorized": false,
+  "review_required": true,
+  "release_status": "HOLD",
+  "ilk_yayin_adayi": {
+    "yaris": "Shakhtar Donetsk - Fenerbahce",
+    "durum": "inceleme",
+    "not": "Tek ilk yeni yayın adayı. İçerik ve ön veri henüz yok; içerik uydurulmayacak. Yayın ancak ledger'a HUMAN_APPROVAL ile girdikten sonra mümkün."
+  },
+  "iptal_edilenler": [
+    {
+      "yaris": "Aston Villa - Fenerbahce (UEFA Sampiyonlar Ligi, 14.10.2026)",
+      "kaynak": "public/assets/data/aston-villa-fb/match_package.json",
+      "durum": "iptal",
+      "karar": "Maç önü yayünü İPTAL (HP-MISTRAL-RELEASE-030). Ham veri paketi public alanından kaldırıldı. Not: repoda 'Galatasaray-Aston Villa' adlı içerik yok; repodaki tek Villa varlığı bu FB-Villa paketidir."
+    }
+  ],
+  "inceleme_adaylari": [
+    {
+      "slug": "shakhtar-fenerbahce-mac-oncesi",
+      "kaynak": "shakhtar-fenerbahce-mac-oncesi.md",
+      "durum": "incelemede",
+      "noindex": true,
+      "not": "Mac \u00f6ncesi inceleme iskeleti: veri bloklari onayli kaynaktan gelmeden bos birakilir, uydurulmaz. Ilk yayin adayi (guvenli_entegrasyon ayni yaris)."
+    },
+    {
+      "slug": "galatasaray-stuttgart-gecis-haritasi",
+      "kaynak": "2026-11-03-galatasaray-vs-stuttgart-llm.md",
+      "durum": "incelemede",
+      "noindex": true,
+      "not": "Canlıda 404; feed'den çıkarıldı. LLM etiketli variant dosyanın canonical hedefi."
+    },
+    {
+      "slug": "2026-11-03-galatasaray-vs-vfb-stuttgart",
+      "kaynak": "2026-11-03-galatasaray-vs-vfb-stuttgart.md",
+      "durum": "incelemede",
+      "noindex": true,
+      "not": "xg-paradoksu ile içerik çakışan variant."
+    },
+    {
+      "slug": "2026-11-04-fenerbahce-vs-liverpool",
+      "kaynak": "2026-11-04-fenerbahce-vs-liverpool.md",
+      "durum": "incelemede",
+      "noindex": true,
+      "not": "Canlıda 404; feed'den çıkarıldı."
+    },
+    {
+      "slug": "2026-11-04-fenerbahce-vs-liverpool-fc",
+      "kaynak": "2026-11-04-fenerbahce-vs-liverpool-fc.md",
+      "durum": "incelemede",
+      "noindex": true,
+      "not": "Canlıda 404; feed'den çıkarıldı. -fc variantı."
+    },
+    {
+      "slug": "mac-gs-fb-2026-10-26",
+      "kaynak": "mac-gs-fb-2026-10-26.md",
+      "durum": "iptal",
+      "noindex": true,
+      "not": "pipeline:hpa.placeholder.fallback.v1 kaynaklı yer tutucu; tam klasörün (mac-galatasaray-fenerbahce-2026-10-26) kopyası."
+    },
+    {
+      "slug": "draft",
+      "kaynak": "draft.md",
+      "durum": "iptal",
+      "noindex": true,
+      "not": "Test içerikli taslak."
+    }
+  ],
+  "arseve_kaldirilanlar": [
+    "public/yazi/*.bak.*",
+    "public/yazi/*.bozuk.*",
+    "public/test-*.html",
+    "banner-343.html",
+    "interaktif-test.html",
+    "public/hazine/",
+    "public/assets/data/aston-villa-fb",
+    "public/assets/data/scp-gs",
+    "public/assets/data/gs-fener",
+    "public/assets/data/fb-liverpool"
+  ],
+  "not": "Arşivler git geçmişinden geri alınabilir; _arsiv/ repo takibine girmez (.gitignore). Kalan engel: galatasaray-stuttgart-xg-paradoksu canlıda yayında ama kaynağı el yapımı sayfa olduğundan gate'in dist/yazi UNAPPROVED_HTML kuralı altında istisna gerektirir (kaynak md şeması PR #100'de). HP-W1-SITE-001 güncellemesi: ham gs-stuttgart CSV'leri (players.csv/teams.csv) kamusal alandan content/kaynak-veri/gs-stuttgart/ altına taşındı; kamusal alan yalnızca türetilmiş JSON taşıyor; review_audit RAW_DATA_FILE istisnasını kaldırdı. Referanssız gs-fb-20261026 ham paket sayfaları (article.md/dashboard.html/index.html) public'ten kaldırıldı. Ticker tazeliği 6 saatlik Codex sözleşmesine çekildi (48h çelişkisi kaldırıldı).",
+  "guvenli_entegrasyon": {
+    "aday": "Shakhtar Donetsk - Fenerbahce",
+    "schema": "hpa.aday_entegrasyon.v1",
+    "durum": "beklemede",
+    "not": "HP-W1-SITE-001: Copilot denetim engelleri kapanana kadar icerik/gorsel paketi BASLAMAZ. Paket gelince asagidaki noktalara yerlesir; hicbir alan bugun uydurulmaz.",
+    "makale_kaynagi": "content/yazilar/<slug>.md (slug belirlenince) — yayin yalnizca content/yayin-defteri.json'a HUMAN_APPROVAL basis'iyle girdikten sonra",
+    "turetilmis_veri_noktasi": "public/assets/data/shakhtar-fenerbahce/ — yalnizca hpa.* semali turetilmis JSON; ham CSV/XLSX/ZIP RAW_DATA_FILE, semasiz ham JSON RAW_JSON_FILE ile engellenir",
+    "ham_kaynak_noktasi": "content/kaynak-veri/shakhtar-fenerbahce/ — deploy EDILMEYEN ham kaynak agaci (content/kaynak-veri/gs-stuttgart/OKUBENI.md sozlesmesi)",
+    "gorsel_noktasi": "public/assets/images/shakhtar-fenerbahce/",
+    "viz_baglama": "src/js/viz modulleri mevcut oz-dataUrl deseniyle baglanir; yeni modul yazilmadan once VIZ_STANDART_SOZLESMESI.md gecerlidir",
+    "kabul_zinciri": [
+      "1) İnsan onayı: ledger'a HUMAN_APPROVAL + source_sha256",
+      "2) npm run build — canonical https://hpanalytic.com/yazi/<slug>.html",
+      "3) scripts/release-security-gate.mjs dist — SENSITIVE_FILE:0",
+      "4) scripts/release/review_audit.mjs dist — RELEASE_READY makbuzu",
+      "5) deploy.yml workflow_dispatch + release_approved=true (insan onayı) — tek deploy kapısı"
+    ]
+  }
+}

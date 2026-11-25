@@ -16,6 +16,7 @@ _args, _ = _ap.parse_known_args()
 # --- /AUTO ---
 
 BASE = Path(_args.out) if _args.out else Path("public/assets/data/gs-stuttgart")
+KAYNAK = Path(_args.src) if _args.src and (Path(_args.src) / "teams.csv").exists() else Path("content/kaynak-veri/gs-stuttgart")
 OUT = BASE / "player_zones.json"
 
 def parse(code):
@@ -42,7 +43,7 @@ def convex_hull(points):
 
 # === 1. teams.csv'den pas noktaları ===
 player_passes = defaultdict(list)
-with open(BASE / "teams.csv", encoding="utf-8") as f:
+with open(KAYNAK / "teams.csv", encoding="utf-8") as f:
     for row in csv.DictReader(f, delimiter=";"):
         if not row["pos_x"] or " - " not in row["code"]: continue
         name, pid = parse(row["code"])

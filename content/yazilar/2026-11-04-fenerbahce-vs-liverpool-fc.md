@@ -1,4 +1,5 @@
 ---
+status: "review"
 title: "Maç Raporu: Liverpool FC vs Fenerbahce"
 date: "2026-11-04"
 author: "Hikmet Pınarbaş"
