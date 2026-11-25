@@ -31,15 +31,15 @@
     {
       "kaynak_yol": "scripts/transfer/generate_transfer_manifest.py",
       "hedef_yol": "scripts/transfer/generate_transfer_manifest.py",
-      "sha256": "b09316b570caad8d73d55ee82165fdd6069d8545f7a22c4ab09990c552ce5d1c",
-      "boyut_bayt": 8349,
+      "sha256": "e0204b90d955060808d67dd0574780e036d2ac4a87c5fac1cdccdac57f8d49c6",
+      "boyut_bayt": 8529,
       "rol": "kod"
     },
     {
       "kaynak_yol": "scripts/transfer/validate_configs.py",
       "hedef_yol": "scripts/transfer/validate_configs.py",
-      "sha256": "20c229a7e7a1698c6df00f28a2a1c43d764732eb41396c6fd50bd40d7cca38b6",
-      "boyut_bayt": 4143,
+      "sha256": "5be7c4292b21f832534b194c2b66bd9dc2461e918eb2c71aa865b1d729ba04ff",
+      "boyut_bayt": 4354,
       "rol": "kod"
     }
   ],

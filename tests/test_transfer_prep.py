@@ -26,7 +26,7 @@ HARITA = json.loads((REPO / "REPO_MODULE_MAP.json").read_text(encoding="utf-8"))
 
 class KapiTanisiTest(unittest.TestCase):
     def test_secret_ormu_yakalar(self):
-        self.assertTrue(gate.gizli_bilgi_tara('key = "sk-proj-ABCDEFGHIJKLMNOPQRSTUVWXYZ123"'))
+        self.assertTrue(gate.gizli_bilgi_tara('key = "sk-proj-ABCDEFGHIJKLMNOPQRSTUVWXYZ123"'))  # hpa:allow-path: test fixture, gerçek sır/yol değildir
 
     def test_temiz_dosya_secret_vermez(self):
         self.assertEqual(gate.gizli_bilgi_tara("import os\nprint('merhaba')\n"), [])
@@ -36,7 +36,7 @@ class KapiTanisiTest(unittest.TestCase):
         self.assertEqual(gate.cihaz_yolu_tara(satir), [])
 
     def test_cihaz_yolu_yakalar(self):
-        self.assertNotEqual(gate.cihaz_yolu_tara('Path("/storage/emulated/0/HPAnaliz")\n'), [])
+        self.assertNotEqual(gate.cihaz_yolu_tara('Path("/storage/emulated/0/HPAnaliz")\n'), [])  # hpa:allow-path: test fixture, gerçek sır/yol değildir
 
     def test_denylist_eslesme(self):
         self.assertTrue(gate.eslesiyor(ALLOWLIST["deny"]["paths"], "pipeline/input/x.csv"))
@@ -46,12 +46,12 @@ class KapiTanisiTest(unittest.TestCase):
         self.assertTrue(gate.eslesiyor(ALLOWLIST["existing_whitelisted_exceptions"]["paths"], "test/subs_test/expected.json"))
 
 
-class GATEEndToEndTest(unittest.TestCase):
+class GATEEndToEndTest(unittest.TestCase):  # hpa:allow-path: test fixture, gerçek sır/yol değildir
     def test_temiz_kume_gecer(self):
         ihlal = gate.denetle(["hpa-pipeline-v3/paths.py", "scripts/transfer/check_transfer_pr.py"],
                              ALLOWLIST, repo=REPO)
-        tip = set(t for t, _, _ in ihlal)
-        hatalar = [i for i in ihlal if i[0] in {"SECRET_SCAN", "DEVICE_PATH", "DENYLIST", "SYMLINK", "BROKEN_REFERENCE"}]
+        tip = set(t for t, _, _ in ihlal)  # hpa:allow-path: test fixture, gerçek sır/yol değildir
+        hatalar = [i for i in ihlal if i[0] in {"SECRET_SCAN", "DEVICE_PATH", "DENYLIST", "SYMLINK", "BROKEN_REFERENCE"}]  # hpa:allow-path: test fixture, gerçek sır/yol değildir
         self.assertEqual(hatalar, [], f"beklenmedik ihlal: {ihlal}")
         self.assertTrue(tip <= {"SIZE_NEEDS_REVIEW"} or not tip)
 
@@ -65,7 +65,7 @@ class GATEEndToEndTest(unittest.TestCase):
     def test_secret_iceren_kod_blok(self):
         with tempfile.TemporaryDirectory() as d:
             tmp = Path(d) / "leak.py"
-            tmp.write_text("cfg = {\"api_key\": \"sk-proj-ABCDEFGHIJKLMNOPQRSTUVWXYZ123\"}\n")
+            tmp.write_text("cfg = {\"api_key\": \"sk-proj-ABCDEFGHIJKLMNOPQRSTUVWXYZ123\"}\n")  # hpa:allow-path: test fixture, gerçek sır/yol değildir
             ihlal = gate.denetle(["leak.py"], ALLOWLIST, repo=Path(d))
             self.assertTrue(any(t == "SECRET_SCAN" for t, _, _ in ihlal))
 

@@ -35,8 +35,8 @@ class PathsTest(unittest.TestCase):
             self.assertEqual(paths.veri_koku(), paths.repo_root() / "public_data")
 
     def test_hpa_input_root_override(self):
-        with mock.patch.dict(os.environ, {"HPA_INPUT_ROOT": "/data/data/com.termux/files/home/pipeline/input"}):
-            self.assertEqual(paths.girdi_koku(), Path("/data/data/com.termux/files/home/pipeline/input"))
+        with mock.patch.dict(os.environ, {"HPA_INPUT_ROOT": "/data/data/com.termux/files/home/pipeline/input"}):  # hpa:allow-path: test fixture (override değeri), kod sabiti değildir
+            self.assertEqual(paths.girdi_koku(), Path("/data/data/com.termux/files/home/pipeline/input"))  # hpa:allow-path: test fixture (override değeri), kod sabiti değildir
 
     def test_ortam_tespiti(self):
         with mock.patch.dict(os.environ, {"TERMUX_VERSION": "0.118"}):
@@ -46,12 +46,12 @@ class PathsTest(unittest.TestCase):
 
     def test_repo_ici_mi(self):
         self.assertTrue(paths.repo_ici_mi(paths.repo_root() / "public_data"))
-        self.assertFalse(paths.repo_ici_mi("/data/data/com.termux/files/home"))
+        self.assertFalse(paths.repo_ici_mi("/data/data/com.termux/files/home"))  # hpa:allow-path: test fixture (override değeri), kod sabiti değildir
 
     def test_kendi_kaynagi_cihaz_yolu_sabiti_kullanmaz(self):
         kaynak = (Path(__file__).parent.parent / "paths.py").read_text(encoding="utf-8")
-        self.assertNotIn('Path("/data/data/com.termux', kaynak)
-        self.assertNotIn("'/data/data/com.termux", kaynak)
+        self.assertNotIn('Path("/data/data/com.termux', kaynak)  # hpa:allow-path: test fixture (override değeri), kod sabiti değildir
+        self.assertNotIn("'/data/data/com.termux", kaynak)  # hpa:allow-path: test fixture (override değeri), kod sabiti değildir
 
 
 if __name__ == "__main__":

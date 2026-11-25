@@ -11,9 +11,9 @@ eşleşmesi doğrulanır. Bu script koddan koda transfer yapmaz; yalnızca kayı
 Kullanım:
     python3 scripts/transfer/generate_transfer_manifest.py \
         --transfer-id HP-TR-001 --module-id M02 --module-name veri-muhendisligi-boru-hatti \
-        --device termux --repo-kok /data/data/com.termux/files/home/HPAnaliz/... \
-        --file /sdcard/a.py:hpa-pipeline-v3/ingest/a.py \
-        --file /sdcard/b.py:hpa-pipeline-v3/ingest/b.py \
+        --device termux --repo-kok /data/data/com.termux/files/home/HPAnaliz/... \  # hpa:allow-path: kullanım örneği, kod sabiti değildir
+        --file /sdcard/a.py:hpa-pipeline-v3/ingest/a.py \  # hpa:allow-path: kullanım örneği, kod sabiti değildir
+        --file /sdcard/b.py:hpa-pipeline-v3/ingest/b.py \  # hpa:allow-path: kullanım örneği, kod sabiti değildir
         --out REPO_TRANSFER_MANIFEST.M02-sevkiyat.json
     python3 scripts/transfer/generate_transfer_manifest.py --verify --manifest X.json
 """
