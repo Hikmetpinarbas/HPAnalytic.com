@@ -178,6 +178,15 @@ if (carousel) {
   `).join('');
 }
 
+const returnToPitch = document.getElementById('return-to-pitch');
+if (returnToPitch) {
+  returnToPitch.addEventListener('click', (e) => {
+    e.preventDefault();
+    if (lenis) lenis.scrollTo(0, { duration: 1.2 });
+    else window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+}
+
 const clock = document.getElementById('footer-clock');
 if (clock) {
   const tick = () => { clock.textContent = new Date().toLocaleString('tr-TR', { hour: '2-digit', minute: '2-digit', day: '2-digit', month: '2-digit' }); };

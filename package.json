@@ -9,6 +9,9 @@
     "verify": "node scripts/verify-build.mjs",
     "preview": "vite preview --host 127.0.0.1",
     "test": "node tests/ticker-contract.test.mjs",
+    "test:e2e": "node tests/e2e/ticker-menu.puppeteer.test.mjs",
+    "ticker:build": "node scripts/ticker-feed.mjs",
+    "inventory": "node scripts/make-acceptance-inventory.mjs",
     "verify:ci": "npm run test && npm run build"
   },
   "dependencies": {

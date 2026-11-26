@@ -534,6 +534,8 @@ body[data-cursor="drag"] .cursor-ring{width:80px;height:80px;border-color:var(--
 .manifesto { padding: 128px var(--gutter); text-align: center; border-bottom: 1px solid var(--line); }
 .manifesto-text { font-family: var(--serif); font-size: clamp(24px, 4vw, 40px); line-height: 1.3; font-weight: 400; color: var(--ink); max-width: 880px; margin: 0 auto 24px; letter-spacing: -0.01em; }
 .manifesto-sig { font-family: var(--mono); font-size: 11px; letter-spacing: 0.24em; text-transform: uppercase; color: var(--ink-faint); }
+.manifesto-link { display: inline-block; margin-bottom: 18px; font-family: var(--mono); font-size: 11px; letter-spacing: 0.18em; text-transform: uppercase; color: var(--neon); text-decoration: none; border-bottom: 1px solid rgba(180,255,57,0.4); padding-bottom: 2px; }
+.manifesto-link:hover { border-color: var(--neon); }
 .featured { padding: 96px var(--gutter); border-bottom: 1px solid var(--line); }
 .featured-tag { font-family: var(--mono); font-size: 10px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--orange); margin-bottom: 24px; display: inline-flex; align-items: center; gap: 12px; }
 .featured-tag::before { content: ''; width: 32px; height: 1px; background: var(--orange); }
