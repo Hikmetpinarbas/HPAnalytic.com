@@ -126,13 +126,7 @@ _Ham tag: 3493 → Benzersiz pencere: 1275 (ort. 2.7 tag/pencere)_
 
 ## 5. Bölgesel Zone Geçiş Ağı (NetworkX)
 
-**Toplam Düğüm:**  | **Toplam Kenar:** 
-
-| Kaynak → Hedef | Pas Sayısı |
-|---|---|
-
-
-![Pas Ağı Görseli](/assets/images/pass_net_Liverpool_FC.png)
+> ⚠️ Bu maç için hesaplanmış zone geçiş verisi (düğüm/kenar) bulunmuyor; bölgesel geçiş görseli üretilmedi. Kaynak doğrulaması tamamlandığında bu bölüm tamamlanacaktır.
 
 ---
 

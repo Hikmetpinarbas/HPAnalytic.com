@@ -7,11 +7,8 @@ const ok = (name) => console.log(`  PASS ${name}`);
 const fail = (name, detail) => { failures++; console.error(`  FAIL ${name} ${detail || ''}`); };
 
 const SPA_ROUTES = ['/seri/', '/top-5'];
-const KNOWN_MISSING = [
-  { ref: '/assets/images/pass_net_Liverpool_FC.png', page: '/yazi/2026-11-04-fenerbahce-vs-liverpool-fc.html', reason: 'main dalindan devralinan eksik gorsel; pass_network_v2.json gorsellestirmesi ayri gorev' },
-  { ref: '/scroll-build.js', page: '/lab/manifesto.html', reason: 'main dalindan devralinan eksik script' },
-  { refPrefix: 'vendor/vega', page: '/assets/data/gs-fb-20261026/dashboard.html', reason: 'main dalindan devralinan eksik vega vendor dosyalari' },
-];
+
+const AGENT_TAG_RE = /\b(openai|groq|claude|copilot|codex|mistral|gemini|deepseek|qwen|ollama|llama-[0-9]|gpt-[0-9a-z]|zai-glm|vibe-code)\b/i;
 
 function walk(dir, out = []) {
   for (const entry of readdirSync(dir)) {
@@ -23,19 +20,28 @@ function walk(dir, out = []) {
 
 const files = walk(DIST);
 const html = files.filter((f) => f.endsWith('.html'));
+const textFiles = files.filter((f) => /\.(html|js|css|json|xml|txt|mjs)$/.test(f));
 
 console.log('1) Build çıktısı mevcut');
 existsSync(join(DIST, 'index.html')) ? ok('dist/index.html') : fail('dist/index.html yok');
 html.length > 0 ? ok(`${html.length} HTML sayfası`) : fail('HTML yok');
 
-console.log('2) Geçici/test içeriği dist dışı');
+console.log('2) Geçici/test içeriği dist dışı (kalıcı gate)');
 for (const banned of ['draft.html', 'test-visuals.html', 'test-pitch.html', 'test-pitch-layers.html', 'interaktif-test.html', 'banner-343.html', 'js/visuals.js']) {
   existsSync(join(DIST, banned)) ? fail(`kalıntı: ${banned}`) : ok(`yok: ${banned}`);
 }
-const hasBak = files.some((f) => /\.bak|\.bozuk/.test(f));
-hasBak ? fail('.bak dosyası dist içinde') : ok('dist içinde .bak yok');
+const tempFiles = files.filter((f) => /\.(bak|bozuk|old|tmp)(\.|$)|(^|\/)draft[-_.]|[-_]test[-_.]/.test(f.replace(DIST, '')));
+tempFiles.length === 0 ? ok('geçici dosya adı yok') : fail(`geçici dosya adları: ${tempFiles.slice(0, 6).join(', ')}`);
 
-console.log('3) Yerel link/asset bütünlüğü');
+console.log('3) Kullanıcıya görünür ajan/etiket taraması (kalıcı gate)');
+const tagged = [];
+for (const f of textFiles) {
+  const m = readFileSync(f, 'utf8').match(AGENT_TAG_RE);
+  if (m) tagged.push(`${f.replace(DIST, '')} (${m[0]})`);
+}
+tagged.length === 0 ? ok(`${textFiles.length} metin dosyası temiz`) : fail(`ajan etiketi sızdı: ${tagged.slice(0, 6).join(', ')}`);
+
+console.log('4) Yerel link/asset bütünlüğü');
 let checked = 0; let broken = 0;
 for (const f of html) {
   const src = readFileSync(f, 'utf8');
@@ -46,9 +52,6 @@ for (const f of html) {
     if (SPA_ROUTES.some((r) => ref.startsWith(r))) continue;
     const target = ref.split('?')[0].split('#')[0];
     if (!target) continue;
-    const page = f.replace(DIST, '');
-    const known = KNOWN_MISSING.some((k) => (k.ref ? k.ref === (target.startsWith('/') ? target : ref) : k.refPrefix && ref.startsWith(k.refPrefix)) && page.endsWith(k.page));
-    if (known) continue;
     checked++;
     const candidate = resolve(dirname(f), decodeURIComponent(target));
     if (!existsSync(candidate) && !existsSync(join(DIST, target.replace(/^\//, '')))) { broken++; console.error(`    kırık: ${f.replace(DIST, '')} -> ${ref}`); }
@@ -56,13 +59,7 @@ for (const f of html) {
 }
 broken === 0 ? ok(`${checked} yerel referans sağlam`) : fail(`${broken} kırık referans`);
 
-console.log('3b) main dalından devralınan bilinen eksikler (uyarı, build fail değil)');
-for (const k of KNOWN_MISSING) {
-  const hit = files.some((f) => f.endsWith(k.page) && readFileSync(f, 'utf8').includes(k.ref || k.refPrefix));
-  hit ? console.log(`  KNOWN ${k.ref || k.refPrefix} — ${k.reason}`) : ok(`artık yok: ${k.ref || k.refPrefix}`);
-}
-
-console.log('4) Mobil uyumluluk (viewport + responsive)');
+console.log('5) Mobil uyumluluk (viewport + responsive)');
 let missingViewport = 0;
 for (const f of html) {
   const src = readFileSync(f, 'utf8');
@@ -72,10 +69,6 @@ missingViewport === 0 ? ok(`${html.length} sayfada viewport meta`) : fail(`${mis
 const cssFiles = files.filter((f) => f.endsWith('.css'));
 const mediaCount = cssFiles.reduce((n, f) => n + (readFileSync(f, 'utf8').match(/@media/g) || []).length, 0);
 mediaCount > 0 ? ok(`${cssFiles.length} CSS dosyasında ${mediaCount} @media bloğu`) : fail('responsive @media yok');
-
-console.log('5) Route listesi');
-const routes = html.map((f) => f.replace(DIST, '').replace('index.html', ''));
-console.log(`  ${routes.length} route üretildi`);
 
 if (failures > 0) { console.error(`\n${failures} DOĞRULAMA BAŞARISIZ`); process.exit(1); }
 console.log('\nTÜM DOĞRULAMALAR GEÇTİ');
