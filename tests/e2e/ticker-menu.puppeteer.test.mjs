@@ -56,6 +56,7 @@ async function startPreview() {
 
 async function newPage(browser, { tickerJson, reducedMotion = false } = {}) {
   const page = await browser.newPage();
+  page.setDefaultTimeout(12000);
   const badResponses = [];
   page.on('response', (res) => {
     if (res.status() >= 400) badResponses.push(`${res.status()} ${res.url()}`);
@@ -265,6 +266,13 @@ async function runSuite(browser) {
   }
 }
 
+// Genel gözcü: suite her koşulda 8 dakikada sonlanmalı (CI'da askıda kalmasın)
+setTimeout(() => {
+  console.error('E2E GÖZCÜ: 8 dk sınırı aşıldı — suite sonlandırıldı');
+  console.log(`\nE2E: ${results.length - failures}/${results.length} GEÇTİ, ${failures} BAŞARISIZ (_timeout_)`);
+  process.exit(2);
+}, 8 * 60 * 1000).unref?.();
+
 const server = await startPreview();
 try {
   const browser = await puppeteer.launch({ headless: 'new', args: ['--no-sandbox', '--disable-setuid-sandbox', '--disable-dev-shm-usage'] });
@@ -274,7 +282,7 @@ try {
     await browser.close();
   }
 } finally {
-  server.kill();
+  server.kill('SIGKILL');
 }
 
 console.log(`\nE2E: ${results.length - failures}/${results.length} GEÇTİ, ${failures} BAŞARISIZ`);
