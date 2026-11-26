@@ -1,0 +1,46 @@
+name: E2E (Chromium/Puppeteer) — ticker + menü
+
+on:
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  e2e:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci --no-audit --no-fund
+      - run: npx puppeteer browsers install chrome-headless-shell
+      - run: npm run test
+      - run: npm run build
+      - name: Puppeteer E2E (390 / 768 / 1440)
+        run: |
+          set -o pipefail
+          node tests/e2e/ticker-menu.puppeteer.test.mjs 2>&1 | tee /tmp/e2e-report.txt
+      - name: Kabul makbuzu
+        if: always()
+        run: |
+          {
+            echo "## E2E kabul makbuzu"
+            echo ""
+            echo "Koşu: ${GITHUB_SERVER_URL}/${GITHUB_REPOSITORY}/actions/runs/${GITHUB_RUN_ID}"
+            echo ""
+            echo '~~~'
+            cat /tmp/e2e-report.txt 2>/dev/null || echo "(rapor üretilmedi)"
+            echo '~~~'
+          } > e2e-receipt.md
+          cat e2e-receipt.md
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: e2e-receipt
+          path: e2e-receipt.md
+          retention-days: 30

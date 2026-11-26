@@ -178,6 +178,15 @@ if (carousel) {
   `).join('');
 }
 
+const returnToPitch = document.getElementById('return-to-pitch');
+if (returnToPitch) {
+  returnToPitch.addEventListener('click', (e) => {
+    e.preventDefault();
+    if (lenis) lenis.scrollTo(0, { duration: 1.2 });
+    else window.scrollTo({ top: 0, behavior: 'smooth' });
+  });
+}
+
 const clock = document.getElementById('footer-clock');
 if (clock) {
   const tick = () => { clock.textContent = new Date().toLocaleString('tr-TR', { hour: '2-digit', minute: '2-digit', day: '2-digit', month: '2-digit' }); };
@@ -244,21 +253,8 @@ if (document.readyState === "loading") {
 if (import.meta && import.meta.hot) {
   import.meta.hot.accept(() => { bootAll(); });
 }
-// ── Akan Yazı (Marquee) Enjeksiyonu ──
-(function injectMarquee() {
-  const jerseySection = document.querySelector('.jersey-section');
-  if (jerseySection && !document.querySelector('.marquee-section')) {
-    const marqueeHTML = `
-      <section class="marquee-section">
-        <div class="marquee-track">
-          <span>PAS AĞLARI <span class="hl">·</span> XG HARİTALARI <span class="hl">·</span> MEKANİZMA RAPORLARI <span class="hl">·</span> ON-BALL VERİ <span class="hl">·</span> SPORTSBASE <span class="hl">·</span> </span>
-          <span>PAS AĞLARI <span class="hl">·</span> XG HARİTALARI <span class="hl">·</span> MEKANİZMA RAPORLARI <span class="hl">·</span> ON-BALL VERİ <span class="hl">·</span> SPORTSBASE <span class="hl">·</span> </span>
-        </div>
-      </section>
-    `;
-    jerseySection.insertAdjacentHTML('afterend', marqueeHTML);
-  }
-})();
+// Eski statik marquee enjeksiyonu kaldırıldı — bülten tamamen
+// src/js/live-marquee.js üzerinden veri sözleşmesiyle yönetiliyor.
 
 
 

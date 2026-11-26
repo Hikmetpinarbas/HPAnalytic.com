@@ -1,0 +1,8 @@
+{
+  "schema": "hpa.live_ticker.v1",
+  "available": false,
+  "reason": "SEED_NO_SOURCE",
+  "fetched_at": null,
+  "publication_authorized": false,
+  "items": []
+}
