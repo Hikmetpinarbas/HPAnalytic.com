@@ -47,14 +47,7 @@
     el.appendChild(span);
   });
 
-  // ── 3. MARQUEE CANLI NOKTA ──
-  const marquee = document.querySelector('.marquee, [class*="marquee"]');
-  if (marquee) {
-    const firstSpan = marquee.querySelector('span');
-    if (firstSpan && !firstSpan.querySelector('.hpa-live-dot')) {
-      const dot = document.createElement('span');
-      dot.className = 'hpa-live-dot';
-      firstSpan.prepend(dot);
-    }
-  }
+  // ── 3. MARQUEE CANLI NOKTA (kaldırıldı) ──
+  // Fail-closed bülten şeritinde yanlış "canlı" izlenimi yaratmasın diye
+  // sabit canlı noktası eklenmez; canlılık yalnızca sözleşmeli veriyle gelir.
 })();

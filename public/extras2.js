@@ -128,30 +128,9 @@
     document.querySelectorAll('.c-card-title, .c-card-excerpt').forEach(el => tagTerms(el));
   }, 500);
 
-  // ═══ 3. LIVE TICKER ═══
-  fetch('/assets/data/matches.json')
-    .then((r) => r.json())
-    .then((matches) => {
-      const marquee = document.querySelector('.marquee, [class*="marquee"]');
-      if (!marquee || !matches.length) return;
-      const track = marquee.querySelector('[class*="track"], .marquee-track');
-      if (!track) return;
-
-      // İlk 8 maçı al
-      const top = matches.slice(0, 8);
-      const items = top.map((m) => {
-        const match = m.match || '—';
-        const goals = m.goals != null ? m.goals : '—';
-        const shots = m.shots != null ? m.shots : '—';
-        return `<span class="ticker-item"><strong>${match}</strong><span class="ticker-score">${goals} gol · ${shots} şut</span></span>`;
-      }).join('');
-
-      // İçeriği değiştir — 2 kopya seamless loop için
-      track.innerHTML = `<div class="ticker-group">${items}</div><div class="ticker-group">${items}</div>`;
-    })
-    .catch(() => {});
-
-  // Ticker grup stili
+  // Eski "LIVE TICKER" (matches.json enjeksiyonu) kaldırıldı — bülten yalnızca
+  // hpa.live_ticker.v1 sözleşmesiyle src/js/live-marquee.js üzerinden beslenir.
+  // Geriye kalan stiller:
   const style = document.createElement('style');
   style.textContent = `
     .ticker-group { display: inline-flex; padding-right: 0; }
