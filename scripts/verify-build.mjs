@@ -1,12 +1,12 @@
 import { readdirSync, readFileSync, existsSync, statSync } from 'node:fs';
 import { resolve, join, dirname } from 'node:path';
+import { TICKER_SCHEMA, auditItems } from '../src/js/ticker-contract.mjs';
 
 const DIST = resolve('dist');
 let failures = 0;
 const ok = (name) => console.log(`  PASS ${name}`);
 const fail = (name, detail) => { failures++; console.error(`  FAIL ${name} ${detail || ''}`); };
 
-const SPA_ROUTES = ['/seri/', '/top-5'];
 
 const AGENT_TAG_RE = /\b(openai|groq|claude|copilot|codex|mistral|gemini|deepseek|qwen|ollama|llama-[0-9]|gpt-[0-9a-z]|zai-glm|vibe-code)\b/i;
 
@@ -49,7 +49,6 @@ for (const f of html) {
   for (const ref of refs) {
     if (/^(https?:|mailto:|data:|\/\/)/.test(ref)) continue;
     if (ref.includes('${')) continue;
-    if (SPA_ROUTES.some((r) => ref.startsWith(r))) continue;
     const target = ref.split('?')[0].split('#')[0];
     if (!target) continue;
     checked++;
@@ -70,35 +69,37 @@ const cssFiles = files.filter((f) => f.endsWith('.css'));
 const mediaCount = cssFiles.reduce((n, f) => n + (readFileSync(f, 'utf8').match(/@media/g) || []).length, 0);
 mediaCount > 0 ? ok(`${cssFiles.length} CSS dosyasında ${mediaCount} @media bloğu`) : fail('responsive @media yok');
 
-console.log('6) Canlı ticker sözleşmesi (fail-closed)');
+console.log('6) Canlı ticker sözleşmesi (fail-closed — src/js/ticker-contract.mjs ile aynı kural)');
 const tickerPath = join(DIST, 'assets/data/live-ticker.json');
 if (!existsSync(tickerPath)) {
   ok('ticker JSON yok (opsiyonel)');
 } else {
   try {
     const j = JSON.parse(readFileSync(tickerPath, 'utf8'));
-    if (j.schema !== 'hpa.live_ticker.v1') {
+    if (j.schema !== TICKER_SCHEMA) {
       fail('ticker schema beklenmedik:', j.schema);
     } else if (j.available !== true || j.publication_authorized !== true) {
       ok(`fail-closed seed (available=${j.available}, authorized=${j.publication_authorized})`);
     } else {
-      if (!j.fetched_at || Number.isNaN(Date.parse(j.fetched_at))) fail('ticker fetched_at geçersiz');
-      const items = Array.isArray(j.items) ? j.items : [];
-      const bad = items.filter((it) =>
-        !it || typeof it.text !== 'string' || !it.text.trim()
-        || typeof it.kaynak !== 'string' || !it.kaynak.trim()
-        || !/^\d{4}-\d{2}-\d{2}$/.test(it.tarih || '')
-        || !['dogrulanmis', 'proxy', 'hipotez'].includes(it.dogrulama));
-      if (!Number.isNaN(Date.parse(j.fetched_at)) && bad.length === 0) {
-        ok(`${items.length} ticker maddesi kaynak/tarih/doğrulama alanlarıyla geçerli`);
-      } else if (bad.length) {
-        fail(`${bad.length} ticker maddesi zorunlu alanları (text/kaynak/tarih/doğrulama) eksik`);
+      const audit = auditItems(j, Date.now());
+      if (audit.dropped.some((d) => d.index === -1)) {
+        fail(`ticker feed geçerli değil: ${audit.dropped.map((d) => d.reason).join('; ')}`);
+      } else if (audit.dropped.length > 0) {
+        const reasons = audit.dropped.map((d) => `#${d.index} ${d.reason}`).join(', ');
+        fail(`${audit.dropped.length} ticker maddesi sözleşmeye aykırı (yayınlanmaz): ${reasons}`);
+      } else {
+        ok(`${audit.kept.length} ticker maddesi sözleşmeyle geçerli (kaynak/tarih/doğrulama)`);
       }
     }
   } catch (e) {
     fail('ticker JSON bozuk:', e.message);
   }
 }
+
+console.log('7) Favicon');
+existsSync(join(DIST, 'favicon.svg')) ? ok('dist/favicon.svg') : fail('dist/favicon.svg yok');
+const missingIcon = html.filter((f) => !readFileSync(f, 'utf8').includes('rel="icon"'));
+missingIcon.length === 0 ? ok(`${html.length} sayfada favicon link`) : fail(`favicon link eksik: ${missingIcon.slice(0, 4).map((f) => f.replace(DIST, '')).join(', ')}`);
 
 if (failures > 0) { console.error(`\n${failures} DOĞRULAMA BAŞARISIZ`); process.exit(1); }
 console.log('\nTÜM DOĞRULAMALAR GEÇTİ');

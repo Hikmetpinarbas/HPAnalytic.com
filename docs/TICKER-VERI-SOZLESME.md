@@ -49,6 +49,32 @@ veriyle çalışır. Uydurma içerik yoktur; veri yoksa şerit nötr yetenek met
 | `items[].href` | hayır | yalnızca `/` ile başlayan yerel yol; `//` başlangıçlı dış URL reddedilir |
 | `items[].expires_at` | hayır | yoksa `fetched_at + ttl_minutes` kullanılır |
 
+## Tek sözleşme kaynağı
+
+Sözleşmenin tek kod kaynağı `src/js/ticker-contract.mjs` modülüdür. İstemci
+(`live-marquee.js`), build gate (`verify-build.mjs`) ve testler aynı modülü
+kullanır; kural çift bakımı yapılmaz. Modül şunları export eder:
+
+| Export | Anlamı |
+|---|---|
+| `TICKER_SCHEMA` | `hpa.live_ticker.v1` |
+| `REFETCH_MS` | istemci yenileme aralığı (5 dk) |
+| `FALLBACK_TEXT` | fail-closed nötr şerit metni (içerik iddiası taşımaz) |
+| `VERIFICATION` | doğrulama rozetleri: `dogrulanmis` / `proxy` / `hipotez` |
+| `formatTR(iso)` | `2026-11-05` → `05.11.2026` |
+| `collectItems(json, now)` | sözleşmeye uyan maddeler; şema uyuşmazlığında `null` |
+| `auditItems(json, now)` | gate/test için ayrıntılı rapor (`kept` + `dropped`) |
+
+## PR #102 ile uzlaştırma
+
+#102'nin skor biçimi (`home`, `away`, `score`, `status`, `date`) kabul edilir ve
+kanonik editoryal biçime normalize edilir: metin `Ev 3-2 Deplasman (MS/LİVE)`
+olarak üretilir, `date` → `tarih` olarak alınır. **Her iki biçimde de `kaynak`
+ve `dogrulama` zorunludur**; bu alanları taşımayan skor maddesi yayınlanmaz
+(fail-closed). Harici metadata alanları (`olusturan` gibi) istemci tarafından
+yoksayılır; yayınlanan JSON'a ajan/model etiketi yazmak yasaktır
+(`verify-build.mjs` 3. adım bunu build'i fail ederek durdurur).
+
 ## Fail-closed davranışı (istemci)
 
 - Fetch hatası, bozuk JSON, şema uyuşmazlığı → içerik yok, nötr şerit.
@@ -58,9 +84,32 @@ veriyle çalışır. Uydurma içerik yoktur; veri yoksa şerit nötr yetenek met
   içeren maddeler tek tek elenir; hiç madde kalmazsa nötr şerit.
 - İstemci her 5 dakikada bir yeniden çeker; ekran dışındayken animasyon durur.
 
+## Erişilebilirlik ve hareket
+
+- Şerit klonu (sonsuz kaydırma kopyası) `aria-hidden="true"` + `inert` olur ve
+  içindeki bağlantılar `tabindex="-1"` alır; klavye odağı klonlara düşemez.
+- `prefers-reduced-motion: reduce` durumunda animasyon CSS ile kapatılır,
+  JS klonu hiç render etmez (tek grup, sarılmayan değil satan metin).
+
+## Besleme adaptörü
+
+`scripts/ticker-feed.mjs` gerçek kaynaklardan sözleşme uyumlu feed üretir:
+
+- Yayın defteri: `content/yazilar/*.md` — yalnızca geçerli tarih + slug + title
+  taşıyan yayındaki makaleler (`kaynak` = yayın tipi, `dogrulama` = `dogrulanmis`).
+- `HPA_TICKER_SOURCE_URL` ortam değişkeni verilirse sözleşmeye uyan harici feed
+  denetlenerek katılır; uymayan maddeler raporlanır ve yayınlanmaz.
+- `--publish` olmadan veya geçerli madde kalmazsa çıktı her zaman fail-closed
+  seed'dir. Uydurma skor/içerik üretme yolu yoktur.
+
+```bash
+node scripts/ticker-feed.mjs            # fail-closed seed
+node scripts/ticker-feed.mjs --publish  # gerçek kaynaklarla yayın feed'i
+```
+
 ## Doğrulama gate'i
 
-`scripts/verify-build.mjs` 6. adım: `available=true` yayınlanan ticker'da her madde
-için `text`, `kaynak`, `tarih` (YYYY-MM-DD) ve geçerli `dogrulama` zorunludur; aksi
-hâlde build başarısız olur. Bu kural uydurma/eksik bülten verisinin yayına girmesini
-engeller.
+`scripts/verify-build.mjs` 6. adım ticker denetimini `src/js/ticker-contract.mjs`
+üzerinden yapar (aynı kural, tek kaynak): `available=true` yayınlanan ticker'da
+sözleşmeye aykırı tek madde bile build'i fail eder. Ayrıca 7. adım favicon varlığını
+doğrular.

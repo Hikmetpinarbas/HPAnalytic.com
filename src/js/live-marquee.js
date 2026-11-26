@@ -2,9 +2,20 @@
 // Veri sözleşmesi: docs/TICKER-VERI-SOZLESME.md (hpa.live_ticker.v1)
 // Fail-closed: veri yoksa, yayın yetkisi yoksa, TTL dolmuşsa veya zorunlu
 // alanlar eksikse hiçbir içerik iddiası gösterilmez; nötr yetenek şeridine dönülür.
+import {
+  VERIFICATION,
+  FALLBACK_TEXT,
+  REFETCH_MS,
+  formatTR,
+  collectItems
+} from './ticker-contract.mjs';
 
 const TICKER_URL = '/assets/data/live-ticker.json';
-import { collectItems } from './ticker-contract.mjs';
+
+function prefersReducedMotion() {
+  return typeof window.matchMedia === 'function'
+    && window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+}
 
 function buildItemNode(item) {
   const verif = VERIFICATION[item.dogrulama];
@@ -35,7 +46,10 @@ function renderFallback(section) {
   track.replaceChildren();
   for (let i = 0; i < 2; i++) {
     const group = document.createElement('span');
-    if (i === 1) group.setAttribute('aria-hidden', 'true');
+    if (i === 1) {
+      group.setAttribute('aria-hidden', 'true');
+      group.inert = true;
+    }
     group.textContent = FALLBACK_TEXT;
     track.appendChild(group);
   }
@@ -49,9 +63,16 @@ function renderLive(section, items) {
   const group = document.createElement('span');
   group.className = 'ticker-group';
   items.forEach(item => group.appendChild(buildItemNode(item)));
+  track.append(group);
+  // Reduced-motion'da animasyon kapalıdır; ikinci kopya yalnızca tekrar
+  // olur — klon hiç render edilmez. Animasyonlu durumda klon aria-hidden
+  // + inert yapılır; klondaki bağlantılar klavye odağı alamaz.
+  if (prefersReducedMotion()) return;
   const clone = group.cloneNode(true);
   clone.setAttribute('aria-hidden', 'true');
-  track.append(group, clone);
+  clone.inert = true;
+  clone.querySelectorAll('a').forEach(a => { a.tabIndex = -1; });
+  track.append(clone);
 }
 
 function ensureSection() {
@@ -79,14 +100,29 @@ function watchVisibility(section) {
   io.observe(section);
 }
 
+function watchReducedMotion(section, rerender) {
+  if (typeof window.matchMedia !== 'function') return;
+  const mq = window.matchMedia('(prefers-reduced-motion: reduce)');
+  const onChange = () => rerender();
+  if (typeof mq.addEventListener === 'function') mq.addEventListener('change', onChange);
+  else if (typeof mq.addListener === 'function') mq.addListener(onChange);
+}
+
 export function initLiveMarquee() {
   const section = ensureSection();
   if (!section) return;
   if (section.dataset.tickerBound === '1') return;
   section.dataset.tickerBound = '1';
 
+  let lastItems = null;
+  const rerender = () => {
+    if (lastItems === null || lastItems.length === 0) renderFallback(section);
+    else renderLive(section, lastItems);
+  };
+
   renderFallback(section);
   watchVisibility(section);
+  watchReducedMotion(section, rerender);
 
   const refresh = async () => {
     try {
@@ -94,9 +130,11 @@ export function initLiveMarquee() {
       if (!res.ok) throw new Error(String(res.status));
       const json = await res.json();
       const items = collectItems(json, Date.now());
+      lastItems = items;
       if (items === null || items.length === 0) renderFallback(section);
       else renderLive(section, items);
     } catch {
+      lastItems = null;
       renderFallback(section);
     }
   };
@@ -105,8 +143,10 @@ export function initLiveMarquee() {
   setInterval(refresh, REFETCH_MS);
 }
 
-if (document.readyState === 'loading') {
-  document.addEventListener('DOMContentLoaded', initLiveMarquee);
-} else {
-  initLiveMarquee();
+if (typeof document !== 'undefined') {
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initLiveMarquee);
+  } else {
+    initLiveMarquee();
+  }
 }
