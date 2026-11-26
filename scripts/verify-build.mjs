@@ -70,5 +70,35 @@ const cssFiles = files.filter((f) => f.endsWith('.css'));
 const mediaCount = cssFiles.reduce((n, f) => n + (readFileSync(f, 'utf8').match(/@media/g) || []).length, 0);
 mediaCount > 0 ? ok(`${cssFiles.length} CSS dosyasında ${mediaCount} @media bloğu`) : fail('responsive @media yok');
 
+console.log('6) Canlı ticker sözleşmesi (fail-closed)');
+const tickerPath = join(DIST, 'assets/data/live-ticker.json');
+if (!existsSync(tickerPath)) {
+  ok('ticker JSON yok (opsiyonel)');
+} else {
+  try {
+    const j = JSON.parse(readFileSync(tickerPath, 'utf8'));
+    if (j.schema !== 'hpa.live_ticker.v1') {
+      fail('ticker schema beklenmedik:', j.schema);
+    } else if (j.available !== true || j.publication_authorized !== true) {
+      ok(`fail-closed seed (available=${j.available}, authorized=${j.publication_authorized})`);
+    } else {
+      if (!j.fetched_at || Number.isNaN(Date.parse(j.fetched_at))) fail('ticker fetched_at geçersiz');
+      const items = Array.isArray(j.items) ? j.items : [];
+      const bad = items.filter((it) =>
+        !it || typeof it.text !== 'string' || !it.text.trim()
+        || typeof it.kaynak !== 'string' || !it.kaynak.trim()
+        || !/^\d{4}-\d{2}-\d{2}$/.test(it.tarih || '')
+        || !['dogrulanmis', 'proxy', 'hipotez'].includes(it.dogrulama));
+      if (!Number.isNaN(Date.parse(j.fetched_at)) && bad.length === 0) {
+        ok(`${items.length} ticker maddesi kaynak/tarih/doğrulama alanlarıyla geçerli`);
+      } else if (bad.length) {
+        fail(`${bad.length} ticker maddesi zorunlu alanları (text/kaynak/tarih/doğrulama) eksik`);
+      }
+    }
+  } catch (e) {
+    fail('ticker JSON bozuk:', e.message);
+  }
+}
+
 if (failures > 0) { console.error(`\n${failures} DOĞRULAMA BAŞARISIZ`); process.exit(1); }
 console.log('\nTÜM DOĞRULAMALAR GEÇTİ');

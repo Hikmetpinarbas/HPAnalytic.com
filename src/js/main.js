@@ -244,21 +244,8 @@ if (document.readyState === "loading") {
 if (import.meta && import.meta.hot) {
   import.meta.hot.accept(() => { bootAll(); });
 }
-// ── Akan Yazı (Marquee) Enjeksiyonu ──
-(function injectMarquee() {
-  const jerseySection = document.querySelector('.jersey-section');
-  if (jerseySection && !document.querySelector('.marquee-section')) {
-    const marqueeHTML = `
-      <section class="marquee-section">
-        <div class="marquee-track">
-          <span>PAS AĞLARI <span class="hl">·</span> XG HARİTALARI <span class="hl">·</span> MEKANİZMA RAPORLARI <span class="hl">·</span> ON-BALL VERİ <span class="hl">·</span> SPORTSBASE <span class="hl">·</span> </span>
-          <span>PAS AĞLARI <span class="hl">·</span> XG HARİTALARI <span class="hl">·</span> MEKANİZMA RAPORLARI <span class="hl">·</span> ON-BALL VERİ <span class="hl">·</span> SPORTSBASE <span class="hl">·</span> </span>
-        </div>
-      </section>
-    `;
-    jerseySection.insertAdjacentHTML('afterend', marqueeHTML);
-  }
-})();
+// Eski statik marquee enjeksiyonu kaldırıldı — bülten tamamen
+// src/js/live-marquee.js üzerinden veri sözleşmesiyle yönetiliyor.
 
 
 

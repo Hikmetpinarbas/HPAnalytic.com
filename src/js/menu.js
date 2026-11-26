@@ -129,3 +129,105 @@ if (mobileBurger && mobileMenu) {
     });
   });
 }
+
+// ── İçindekiler / Bölüm menüsü (masthead index düğmesine bağlı) ──
+const INDEX_SECTIONS = [
+  { id: 'explore', label: 'Son Analizler' },
+  { id: 'mechanism', label: 'Mekanizma' },
+  { id: 'week-story', label: 'Haftanın Hikâyesi' },
+  { id: 'series', label: 'Seriler' },
+  { id: 'women', label: 'Sahanın Dışındaki Kadınlar' },
+  { id: 'dl-teaser', label: 'Data Lab Teaser' }
+];
+
+function buildIndexPanel() {
+  let panel = document.getElementById('site-index');
+  if (panel) return panel;
+
+  panel = document.createElement('div');
+  panel.id = 'site-index';
+  panel.className = 'site-index';
+  panel.hidden = true;
+  panel.setAttribute('role', 'dialog');
+  panel.setAttribute('aria-label', 'İçindekiler');
+
+  const inner = document.createElement('div');
+  inner.className = 'site-index-inner';
+
+  const head = document.createElement('div');
+  head.className = 'si-head';
+  head.innerHTML = '<span class="kicker">İÇİNDEKİLER</span>';
+  inner.appendChild(head);
+
+  const sections = INDEX_SECTIONS
+    .map(s => ({ ...s, el: document.getElementById(s.id) }))
+    .filter(s => s.el);
+  if (sections.length) {
+    const nav = document.createElement('nav');
+    nav.className = 'si-group';
+    nav.setAttribute('aria-label', 'Bölümler');
+    sections.forEach(s => {
+      const a = document.createElement('a');
+      a.href = `#${s.id}`;
+      a.className = 'si-link';
+      a.textContent = s.label;
+      nav.appendChild(a);
+    });
+    inner.appendChild(nav);
+  }
+
+  const latest = document.getElementById('explore-latest');
+  const liveLinks = latest
+    ? [...latest.querySelectorAll('a[href^="/yazi/"]')].slice(0, 4)
+    : [];
+  if (liveLinks.length) {
+    const label = document.createElement('span');
+    label.className = 'si-label';
+    label.textContent = 'GÜNCEL MAÇ ANALİZLERİ';
+    inner.appendChild(label);
+    const nav = document.createElement('nav');
+    nav.className = 'si-group';
+    nav.setAttribute('aria-label', 'Güncel maç analizleri');
+    liveLinks.forEach(src => {
+      const a = document.createElement('a');
+      a.href = src.getAttribute('href');
+      a.className = 'si-link';
+      const title = src.querySelector('.ec-title');
+      const date = src.querySelector('.ec-date');
+      a.innerHTML = `<span>${title ? title.textContent : ''}</span><small>${date ? date.textContent : ''}</small>`;
+      nav.appendChild(a);
+    });
+    inner.appendChild(nav);
+  }
+
+  const labLink = document.createElement('a');
+  labLink.href = '/lab/';
+  labLink.className = 'si-link si-lab';
+  labLink.textContent = 'Data Lab →';
+  inner.appendChild(labLink);
+
+  panel.appendChild(inner);
+  document.body.appendChild(panel);
+  return panel;
+}
+
+let siteIndexOpen = false;
+function toggleSiteIndex(open) {
+  const panel = buildIndexPanel();
+  if (!panel) return;
+  siteIndexOpen = typeof open === 'boolean' ? open : !siteIndexOpen;
+  panel.hidden = !siteIndexOpen;
+  document.body.classList.toggle('site-index-open', siteIndexOpen);
+}
+
+document.addEventListener('masthead:index', (e) => toggleSiteIndex(!!e.detail?.open));
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && siteIndexOpen) toggleSiteIndex(false);
+});
+
+document.addEventListener('click', (e) => {
+  if (!siteIndexOpen) return;
+  if (e.target.closest('#site-index a')) { toggleSiteIndex(false); return; }
+  if (!e.target.closest('#site-index') && !e.target.closest('.index-btn')) toggleSiteIndex(false);
+});
