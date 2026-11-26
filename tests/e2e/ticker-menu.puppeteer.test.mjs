@@ -87,6 +87,12 @@ async function openHome(page, width, height) {
     const s = document.querySelector('.marquee-section');
     return s && (s.dataset.state === 'live' || s.dataset.state === 'fallback');
   }, { timeout: 15000 });
+  // Preloader katmanı tıklamaları yutmasın: tamamen kalkmasını bekle
+  await page.waitForFunction(() => {
+    const pre = document.getElementById('preloader');
+    return !pre || pre.style.display === 'none' || !pre.isConnected;
+  }, { timeout: 15000 }).catch(() => {});
+  await sleep(300);
 }
 
 async function runSuite(browser) {
