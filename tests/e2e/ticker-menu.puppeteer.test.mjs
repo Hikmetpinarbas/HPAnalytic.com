@@ -201,8 +201,18 @@ async function runSuite(browser) {
       await page.waitForSelector('.index-btn', { timeout: 15000 });
       await page.click('.index-btn');
       await page.waitForSelector('#site-index:not([hidden])', { timeout: 5000 });
-      const focusInPanel = await page.evaluate(() => document.getElementById('site-index').contains(document.activeElement));
-      record(name, 'menü: açılınca odak panele girer', focusInPanel);
+      const focusInPanel = await page.waitForFunction(() => {
+        const panel = document.getElementById('site-index');
+        return panel && panel.contains(document.activeElement);
+      }, { timeout: 5000 }).then(() => true).catch(async () => {
+        const diag = await page.evaluate(() => ({
+          active: document.activeElement ? document.activeElement.tagName + '.' + document.activeElement.className : 'none',
+          hidden: document.getElementById('site-index')?.hidden
+        }));
+        record(name, 'menü: odak tanılama', false, JSON.stringify(diag));
+        return false;
+      });
+      record(name, 'menü: açılınca odak panele girer', focusInPanel === true);
       const expanded = await page.$eval('.index-btn', (b) => b.getAttribute('aria-expanded'));
       record(name, 'menü: düğme aria-expanded=true', expanded === 'true');
 
